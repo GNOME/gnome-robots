@@ -91,7 +91,6 @@ static GtkWidget         *etext[12];
 static gint                timeout_id   = -1;
 static gint                anim_counter = 0;
 static GnobotsProperties  properties;
-static GnobotsProperties  temp_prop;
 
 static gint default_keys1[12] = {
   GDK_Y, GDK_K, GDK_U, 
@@ -120,12 +119,11 @@ static GConfClient *gconf_client;
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static void copy_properties (GnobotsProperties*, GnobotsProperties*);
-static gint  timeout_cb (void*);
+static gint timeout_cb (void*);
 static void remove_timeout (void);
 static void add_timeout (void);
 static void clear_draw_area (void);
-static gint  start_anim_cb (void*);
+static gint start_anim_cb (void*);
 static void apply_changes (void);
 static void apply_cb (GtkWidget*, gpointer);
 static void destroy_cb (GtkWidget*, gpointer);
@@ -147,32 +145,6 @@ static void fill_pmapmenu (GtkWidget*);
 /**********************************************************************/
 
 /**
- * copy_properties
- * @p1: source properties
- * @p2: destination properties
- *
- * Description:
- * copies a GnobotsProperties structure
- **/
-static void
-copy_properties (GnobotsProperties *p1, GnobotsProperties *p2)
-{
-  gint i;
-
-  p2->safe_moves        = p1->safe_moves;
-  p2->super_safe_moves  = p1->super_safe_moves;
-  p2->sound             = p1->sound;
-  p2->splats            = p1->splats;
-  p2->selected_graphics = p1->selected_graphics;
-  p2->selected_config   = p1->selected_config;
-
-  for (i = 0; i < 12; ++i){
-    p2->keys[i] = p1->keys[i];
-  }
-}
-
-
-/**
  * timeout_cb
  * @data: callback data
  *
@@ -187,7 +159,7 @@ timeout_cb (void *data)
 {
   gint rtile = (anim_counter%4);
   gint ptile = (anim_counter%6);
-  gint pno = temp_prop.selected_graphics;
+  gint pno = properties.selected_graphics;
 
   if (ptile >= 4) ptile = 6 - ptile;
 
@@ -245,7 +217,7 @@ add_timeout (void)
 static void
 clear_draw_area (void)
 {
-  GdkColor bgcolor = game_graphics_background (temp_prop.selected_graphics);
+  GdkColor bgcolor = game_graphics_background (properties.selected_graphics);
 
   gdk_window_set_background (darea->window, &bgcolor);
   gdk_window_clear_area (darea->window, 0, 0, DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT);
@@ -282,14 +254,6 @@ start_anim_cb (void *data)
 static void
 apply_changes (void)
 {
-  copy_properties (&temp_prop, &properties);
-
-  set_game_graphics (properties.selected_graphics);
-  clear_game_area ();
-
-  set_game_config (properties.selected_config);
-
-  keyboard_set (properties.keys);
   update_score_state ();
 }
 
@@ -310,11 +274,8 @@ apply_cb (GtkWidget *w, gpointer data)
 {
   apply_changes ();
 
-  save_properties ();
-
   gtk_widget_destroy (propbox);
   propbox = NULL;
-  
 }
 
 
@@ -356,7 +317,7 @@ fill_property_list (void)
 
   list = (GtkListStore *) gtk_tree_view_get_model (GTK_TREE_VIEW (list_view));
 
-  gc = game_config_settings (temp_prop.selected_config);
+  gc = game_config_settings (properties.selected_config);
 
   if ((gc->initial_type2 <= 0) && 
       (gc->increment_type2 <= 0) && 
@@ -630,8 +591,12 @@ pmap_selection (GtkWidget *widget, gpointer data)
 {
   gint num = (gint)data;
 
-  temp_prop.selected_graphics = num;
+  properties.selected_graphics = num;
 
+  gconf_set_theme (game_graphics_name (properties.selected_graphics));
+
+  set_game_graphics (properties.selected_graphics);
+  clear_game_area ();
   clear_draw_area ();
 }
 
@@ -649,8 +614,12 @@ type_selection (GtkWidget *widget, gpointer data)
 {
   gint num = (gint)data;
 
-  temp_prop.selected_config = num;
+  properties.selected_config = num;
   fill_property_list ();
+
+  gconf_set_configuration (game_config_name (properties.selected_config));
+
+  set_game_config (properties.selected_config);
 }
 
 
@@ -665,7 +634,8 @@ type_selection (GtkWidget *widget, gpointer data)
 static void
 safe_cb (GtkWidget *widget, gpointer data)
 {
-  temp_prop.safe_moves = GTK_TOGGLE_BUTTON (widget)->active;
+  properties.safe_moves = GTK_TOGGLE_BUTTON (widget)->active;
+  gconf_set_use_safe_moves (properties.safe_moves);
 }
 
 
@@ -680,7 +650,8 @@ safe_cb (GtkWidget *widget, gpointer data)
 static void
 super_safe_cb (GtkWidget *widget, gpointer data)
 {
-  temp_prop.super_safe_moves = GTK_TOGGLE_BUTTON (widget)->active;
+  properties.super_safe_moves = GTK_TOGGLE_BUTTON (widget)->active;
+  gconf_set_use_super_safe_moves (properties.super_safe_moves);
 }
 
 
@@ -695,7 +666,8 @@ super_safe_cb (GtkWidget *widget, gpointer data)
 static void
 sound_cb (GtkWidget *widget, gpointer data)
 {
-  temp_prop.sound = GTK_TOGGLE_BUTTON (widget)->active;
+  properties.sound = GTK_TOGGLE_BUTTON (widget)->active;
+  gconf_set_enable_sound (properties.sound);
 }
 
 
@@ -710,7 +682,8 @@ sound_cb (GtkWidget *widget, gpointer data)
 static void
 splat_cb (GtkWidget *widget, gpointer data)
 {
-  temp_prop.splats = GTK_TOGGLE_BUTTON (widget)->active;
+  properties.splats = GTK_TOGGLE_BUTTON (widget)->active;
+  gconf_set_enable_splats (properties.splats);
 }
 
 
@@ -731,9 +704,12 @@ keypad_cb (GtkWidget *widget, GdkEventKey *event, gpointer data)
 
   keyval = keyboard_preferred (keyval);
 
-  temp_prop.keys[knum] = keyval;
+  properties.keys[knum] = keyval;
 
   gtk_entry_set_text (GTK_ENTRY (widget), keyboard_string (keyval));
+  gconf_set_control_key (knum, keyboard_string (keyval));
+
+  keyboard_set (properties.keys);
 }
 
 
@@ -752,11 +728,12 @@ defkey_cb (GtkWidget *widget, gpointer data)
   gint *dkeys = (gint*)data;
 
   for (i = 0; i < 12; ++i){
-    temp_prop.keys[i] = dkeys[i];
+    properties.keys[i] = dkeys[i];
     gtk_entry_set_text (GTK_ENTRY (etext[i]), 
-                        keyboard_string (temp_prop.keys[i]));    
+                        keyboard_string (properties.keys[i]));    
+    gconf_set_control_key (i, keyboard_string (properties.keys[i]));
   }
-
+  keyboard_set (properties.keys);
 }
 
 
@@ -794,7 +771,7 @@ fill_typemenu (GtkWidget *menu)
                       G_CALLBACK (type_selection), (gpointer)i);
   }
 
-  gtk_menu_set_active (GTK_MENU (menu), temp_prop.selected_config);
+  gtk_menu_set_active (GTK_MENU (menu), properties.selected_config);
 }
 
 
@@ -833,7 +810,7 @@ fill_pmapmenu (GtkWidget *menu)
                       G_CALLBACK (pmap_selection), (gpointer)i);
   }
 
-  gtk_menu_set_active (GTK_MENU (menu), temp_prop.selected_graphics);
+  gtk_menu_set_active (GTK_MENU (menu), properties.selected_graphics);
 
 }
 
@@ -870,12 +847,9 @@ show_properties_dialog (void)
   if (propbox) 
     return;
 
-  /* Copy current setting into temporary */
-  copy_properties (&properties, &temp_prop);
-
   propbox = gtk_dialog_new_with_buttons (_("GNOME Robots Preferences"),
                                          GTK_WINDOW  (app),
-                                         GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+                                         GTK_DIALOG_DESTROY_WITH_PARENT,
                                          GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
                                          NULL);
   /* Set up notebook and add it to hbox of the gtk_dialog */
@@ -900,10 +874,6 @@ show_properties_dialog (void)
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, GNOME_PAD);
 
   if (game_state == STATE_NOT_PLAYING) {
-    /*
-    label = gtk_label_new (_("Game Type:"));
-    gtk_box_pack_start_defaults (GTK_BOX (hbox), label);
-    */
     typemenu = gtk_option_menu_new ();
     menu = gtk_menu_new ();
     fill_typemenu (menu);
@@ -968,25 +938,25 @@ show_properties_dialog (void)
     gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, TRUE, GNOME_PAD);
 
     chkbox = gtk_check_button_new_with_label (_("Use safe moves"));
-    GTK_TOGGLE_BUTTON (chkbox)->active = temp_prop.safe_moves;
+    GTK_TOGGLE_BUTTON (chkbox)->active = properties.safe_moves;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)safe_cb, NULL);
     gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 0, 1, 0, 1);
 
     chkbox = gtk_check_button_new_with_label (_("Use super safe moves"));
-    GTK_TOGGLE_BUTTON (chkbox)->active = temp_prop.super_safe_moves;
+    GTK_TOGGLE_BUTTON (chkbox)->active = properties.super_safe_moves;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)super_safe_cb, NULL);
     gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 0, 1, 1, 2);
 
     chkbox = gtk_check_button_new_with_label (_("Enable sounds"));
-    GTK_TOGGLE_BUTTON (chkbox)->active = temp_prop.sound;
+    GTK_TOGGLE_BUTTON (chkbox)->active = properties.sound;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)sound_cb, NULL);
     gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 1, 2, 0, 1);
 
     chkbox = gtk_check_button_new_with_label (_("Enable splats"));
-    GTK_TOGGLE_BUTTON (chkbox)->active = temp_prop.splats;
+    GTK_TOGGLE_BUTTON (chkbox)->active = properties.splats;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)splat_cb, NULL);
     gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 1, 2, 1, 2);

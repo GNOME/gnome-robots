@@ -1,5 +1,7 @@
 2003-06-19  William Jon McCann  <mccann@jhu.edu>
 
+	* properties.c: Made preferences instant apply.
+
 	* statusbar.c (gnobots_statusbar_new): Decrease spacing
 	between status bar items since we no longer need room for a
 	GTK separator.

@@ -59,7 +59,9 @@ config_DATA = robots2.cfg \
               robots_with_safe_teleport.cfg \
               nightmare.cfg
 
-soundlist_DATA = gnobots2.soundlist
+soundlist_in_files = gnobots2.soundlist.in
+soundlist_DATA = $(soundlist_in_files:.soundlist.in=.soundlist)
+@INTLTOOL_SOUNDLIST_RULE@
 
 sound_DATA = bad.wav \
 	     die.wav \
@@ -68,12 +70,14 @@ sound_DATA = bad.wav \
              victory.wav \
              yahoo.wav
 
-Games_DATA = gnobots2.desktop
+Games_in_files = gnobots2.desktop.in
+Games_DATA = $(Games_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST = README \
              AUTHORS \
-             gnobots2.desktop \
-             gnobots2.soundlist \
+             gnobots2.desktop.in \
+             gnobots2.soundlist.in \
              $(appicon_DATA) \
              $(pixmap_DATA) \
 	     $(sound_DATA) \

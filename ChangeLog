@@ -1,3 +1,8 @@
+2005-02-01  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/C/gnobots2.xml: Documentation updates from Adam Weinberger
+	(bug #165575).
+
 2004-11-21  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* gnobots2.soundlist.in (_description): Fix the description.

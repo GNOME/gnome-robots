@@ -269,8 +269,6 @@ char *argv[]
 
   cleanup_game();
 
-  gtk_object_unref(GTK_OBJECT(client));
-  
   return 0;
 }
 

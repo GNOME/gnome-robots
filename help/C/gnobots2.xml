@@ -2,12 +2,12 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appversion "2.6">
-  <!ENTITY manrevision "2.6">
-  <!ENTITY date "March 2002">
+  <!ENTITY appversion "2.8">
+  <!ENTITY manrevision "2.8">
+  <!ENTITY date "September 2004">
   <!ENTITY app "<application>GNOME Robots</application>">
   <!ENTITY appname "GNOME Robots">
-  <!ENTITY version "2.6.0"> 
+  <!ENTITY version "2.8.0"> 
 ]>
 
 <!-- 
@@ -149,7 +149,7 @@
        To run <application>GNOME Robots</application>, select
        <menuchoice>
        <guisubmenu>games</guisubmenu>
-       <guimenuitem>GNOME Robots</guimenuitem>
+       <guimenuitem>Robots</guimenuitem>
        </menuchoice>
        from the <guimenu>Main Menu</guimenu>, or type
        <command>gnobots2</command> on the command line.
@@ -199,10 +199,10 @@
      </para>
    
      <para>
-       If you press the 'Wait' key (see below) you will no longer be able to
+       If you press the 'Wait' button (see below) you will no longer be able to
        move until either all of the robots, which still move towards you, are
-       gone or you are killed. Doing this may earn you extra safe teleports
-       as described above.
+       gone or you are killed. Doing this is risky, but may earn you extra 
+       safe teleports.
      </para>
    
      <para> If you manage to reach the point where more than half of
@@ -219,8 +219,7 @@
     <title>Using GNOME Robots</title>
     <para>
       <application>GNOME Robots</application> is extremely simple to play. 
-      You make your moves by using your keyboard. You can even decide which 
-      keys are used for the moves. 
+      You can use either the mouse of the keypad.
        This section describes basic usage of
       <application>GNOME Robots</application>.
     </para>
@@ -254,6 +253,14 @@
         To start a new game, click on <guimenuitem>New Game</guimenuitem> in the 
         <guimenu>Game</guimenu> menu. 
       </para>
+
+      <para>
+        To move, either click in the direction you want to move (the
+        cursor will show you which way you will go) or press the
+        appropriate arrow on the keypad. Clicking on the little man
+        will keep you still. To teleport, safely or unsafely, and to
+        wait, use the buttons on the toolbar.
+	</para>
     </sect2>
   </sect1>
     

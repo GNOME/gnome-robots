@@ -86,7 +86,7 @@ GdkPixmap **mask
   GdkPixbuf *image;
 
   if(!g_file_test (fname, G_FILE_TEST_EXISTS)){
-    printf(_("Could not find \'%s\' pixmap file for Gnome Robots\n"), fname);
+    printf(_("Could not find \'%s\' pixmap file for GNOME Robots\n"), fname);
     return FALSE;
   }
 

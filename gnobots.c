@@ -191,7 +191,7 @@ char *argv[]
   g_signal_connect(GTK_OBJECT(client), "die",
 		     GTK_SIGNAL_FUNC(session_die), argv[0]);
 
-  app = gnome_app_new(GAME_NAME, _("Gnome Robots II") );
+  app = gnome_app_new(GAME_NAME, _("GNOME Robots II") );
   gtk_window_set_policy(GTK_WINDOW(app), FALSE, FALSE, TRUE);
 
   g_signal_connect(GTK_OBJECT(app), "delete_event",

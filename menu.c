@@ -228,7 +228,7 @@ gpointer data
   
   about = gnome_about_new(_("Gnobots II"), VERSION,
                           "(C) 1998 Mark Rae",
-                          _("Gnome Robots Game"),
+                          _("GNOME Robots Game"),
                           (const char **)authors,
                           (const char **)documenters,
                           strcmp (translator_credits, "translator_credits") != 0 ? translator_credits : NULL,

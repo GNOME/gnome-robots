@@ -196,7 +196,7 @@ static void about_cb(
 GtkWidget *widget, 
 gpointer data
 ){
-  GtkWidget *about = NULL;
+  static GtkWidget *about = NULL;
   GdkPixbuf *pixbuf = NULL;
   
   const gchar *authors[]= {
@@ -209,6 +209,10 @@ gpointer data
   /* Translator credits */
   gchar *translator_credits = _("translator_credits");
 
+  if (about != NULL) {
+    gtk_window_present (GTK_WINDOW(about));
+    return;
+  }
   {
 	  char *filename = NULL;
 
@@ -230,7 +234,8 @@ gpointer data
                           strcmp (translator_credits, "translator_credits") != 0 ? translator_credits : NULL,
                           pixbuf);
   gtk_window_set_transient_for (GTK_WINDOW (about), GTK_WINDOW(app));
-  
+  g_signal_connect (G_OBJECT(about), "destroy", G_CALLBACK(gtk_widget_destroyed), &about);
+
   gtk_widget_show(about);
 }
 

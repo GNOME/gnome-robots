@@ -103,6 +103,7 @@ gchar *msg
 void show_scores(
 guint pos
 ){
+  static GtkWidget *score_dialog = NULL;
   gchar sbuf[256];
   gchar nbuf[256];
 
@@ -124,7 +125,14 @@ guint pos
     sprintf(nbuf, "'%s'", _(game_config_name(current_game_config())));
   }
 
-  gnome_scores_display(nbuf, GAME_NAME, sbuf, pos);
+  if (score_dialog != NULL) {
+    gtk_window_present (GTK_WINDOW(score_dialog));
+    return;
+  }
+  score_dialog = gnome_scores_display (nbuf, GAME_NAME, sbuf, pos);
+  gtk_window_set_transient_for (GTK_WINDOW(score_dialog), GTK_WINDOW(app));
+  g_signal_connect (G_OBJECT(score_dialog), "destroy",
+    G_CALLBACK(gtk_widget_destroyed), &score_dialog);
 }
 
 

@@ -1,3 +1,9 @@
+2002-11-11  Tim Musson <trmusson@ihug.co.nz>
+
+	* game.c: (show_scores): no more multiple Score dialogs.
+	* menu.c: (about_cb): no more multiple About dialogs. These fix
+	#97320 for gnobots.
+
 2002-11-11  Ross Burton  <ross@burtonini.com>
 
 	* gnome-gnobots2.png: New icon contributed by Timothy Musson.

@@ -12,6 +12,8 @@ gchar*    game_graphics_name (gint);
 GdkColor  game_graphics_background (gint);
 gint      current_game_graphics (void);
 gint      set_game_graphics (gint);
+void      set_background_color (GdkColor color);
+void      set_background_color_from_name (gchar *name);
 
 void      add_yahoo_bubble (gint, gint);
 void      add_aieee_bubble (gint, gint);

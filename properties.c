@@ -39,8 +39,7 @@
 /**********************************************************************/
 /* Defines                                                            */
 /**********************************************************************/
-#define DRAW_AREA_WIDTH  176
-#define DRAW_AREA_HEIGHT 48
+
 #define KB_TEXT_WIDTH    60
 #define KB_TEXT_HEIGHT   32
 
@@ -52,7 +51,7 @@
 #define KEY_SUPER_SAFE_MOVES "/apps/gnobots2/preferences/use_super_safe_moves"
 #define KEY_ENABLE_SOUND     "/apps/gnobots2/preferences/enable_sound"
 #define KEY_ENABLE_SPLATS    "/apps/gnobots2/preferences/enable_splats"
-
+#define KEY_BACKGROUND_COLOR "/apps/gnobots2/preferences/background_color"
 
 /**********************************************************************/
 
@@ -67,9 +66,10 @@ struct _GnobotsProperties {
   gboolean super_safe_moves;
   gboolean sound;
   gboolean splats;
-  gint      selected_graphics;
-  gint      selected_config;
-  gint      keys[12];
+  gchar    *background_color;
+  gint     selected_graphics;
+  gint     selected_config;
+  gint     keys[12];
 };
 /**********************************************************************/
 
@@ -78,7 +78,6 @@ struct _GnobotsProperties {
 /* File Static Variables                                              */
 /**********************************************************************/
 static GtkWidget         *propbox      = NULL;
-static GtkWidget         *darea        = NULL;
 static GtkWidget         *list_view    = NULL;
 enum {
   PROPERTY_STRING,
@@ -88,8 +87,6 @@ enum {
 }; /* Column indices for list */
 
 static GtkWidget         *etext[12];
-static gint                timeout_id   = -1;
-static gint                anim_counter = 0;
 static GnobotsProperties  properties;
 
 static gint default_keys1[12] = {
@@ -119,11 +116,6 @@ static GConfClient *gconf_client;
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static gint timeout_cb (void*);
-static void remove_timeout (void);
-static void add_timeout (void);
-static void clear_draw_area (void);
-static gint start_anim_cb (void*);
 static void apply_changes (void);
 static void apply_cb (GtkWidget*, gpointer);
 static void destroy_cb (GtkWidget*, gpointer);
@@ -143,107 +135,6 @@ static void fill_pmapmenu (GtkWidget*);
 /**********************************************************************/
 /* Function Definitions                                               */
 /**********************************************************************/
-
-/**
- * timeout_cb
- * @data: callback data
- *
- * Description:
- * timer callback
- *
- * Returns:
- * TRUE if timer is to be retriggered, FALSE otherwise
- **/
-static gint
-timeout_cb (void *data)
-{
-  gint rtile = (anim_counter%4);
-  gint ptile = (anim_counter%6);
-  gint pno = properties.selected_graphics;
-
-  if (ptile >= 4) ptile = 6 - ptile;
-
-  draw_tile_pixmap (SCENARIO_ROBOT1_START+rtile, pno, 16, 16, darea);
-  draw_tile_pixmap (SCENARIO_HEAP_POS,           pno, 48, 16, darea);
-  draw_tile_pixmap (SCENARIO_PLAYER_START+ptile, pno, 80, 16, darea);
-  draw_tile_pixmap (SCENARIO_HEAP_POS,           pno, 112, 16, darea);
-  draw_tile_pixmap (SCENARIO_ROBOT2_START+rtile, pno, 144, 16, darea);
-
-  ++anim_counter;
-
-  return TRUE;
-}
-
-
-/**
- * remove_timeout
- *
- * Description:
- * Removes the timer
- **/
-static void
-remove_timeout (void)
-{
-  if (timeout_id != -1){
-    gtk_timeout_remove (timeout_id);
-    timeout_id = -1;
-  }
-}
-
-
-/**
- * add_timeout
- *
- * Description:
- * creates a timer for the animation
- **/
-static void
-add_timeout (void)
-{
-  if (timeout_id != -1){
-    remove_timeout ();
-  }
-
-  timeout_id = gtk_timeout_add (ANIMATION_DELAY, timeout_cb, 0);
-}
-
-
-/**
- * clear_draw_area
- *
- * Description:
- * Clears the area for drawing the graphics
- **/
-static void
-clear_draw_area (void)
-{
-  GdkColor bgcolor = game_graphics_background (properties.selected_graphics);
-
-  gdk_window_set_background (darea->window, &bgcolor);
-  gdk_window_clear_area (darea->window, 0, 0, DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT);
-}
-
-
-/**
- * start_anim_cb
- * @data: callback data
- *
- * Description:
- * starts the animation
- *
- * Returns:
- * TRUE if the event was handled
- **/
-static gint
-start_anim_cb (void *data)
-{
-  clear_draw_area ();
-
-  add_timeout ();
-
-  return TRUE;
-}
-
 
 /**
  * apply_changes
@@ -290,8 +181,6 @@ apply_cb (GtkWidget *w, gpointer data)
 static void
 destroy_cb (GtkWidget *w, gpointer data)
 {
-  remove_timeout ();
-
   propbox = NULL;
 }
 
@@ -597,7 +486,6 @@ pmap_selection (GtkWidget *widget, gpointer data)
 
   set_game_graphics (properties.selected_graphics);
   clear_game_area ();
-  clear_draw_area ();
 }
 
 
@@ -814,6 +702,24 @@ fill_pmapmenu (GtkWidget *menu)
 
 }
 
+static void
+bg_color_callback (GtkWidget *widget, gpointer data)
+{
+  gchar *tmp;
+  guint8 r, g, b, a;
+
+  gnome_color_picker_get_i8 (GNOME_COLOR_PICKER (widget),
+                             &r, &g, &b, &a);
+  
+  tmp = g_strdup_printf ("#%02x%02x%02x", r, g, b);
+  
+  set_background_color_from_name (tmp);
+  clear_game_area ();
+  if (properties.background_color)
+    g_free (properties.background_color);
+  properties.background_color = tmp;
+  gconf_set_background_color (tmp);
+}
 
 /**
  * show_properties_dialog
@@ -839,6 +745,7 @@ show_properties_dialog (void)
   GtkWidget *dbut;
   GtkWidget *scrolled;
   GtkWidget *frame;
+  GtkWidget *w;
   GtkListStore *list;
   GtkTreeViewColumn *column;
   GtkCellRenderer *renderer;
@@ -976,31 +883,37 @@ show_properties_dialog (void)
 
   frame = games_frame_new (_("Graphics Theme"));
   gtk_box_pack_start (GTK_BOX (gpage), frame, FALSE, FALSE, GNOME_PAD);
-  vbox = gtk_vbox_new (FALSE, 6);
-  gtk_container_add (GTK_CONTAINER (frame), vbox);
 
-  hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, FALSE, GNOME_PAD);
+  table = gtk_table_new (2, 2, FALSE);
+  gtk_container_set_border_width (GTK_CONTAINER (table), 0);
+  gtk_table_set_row_spacings (GTK_TABLE (table), 6);
+  gtk_table_set_col_spacings (GTK_TABLE (table), 6);
+  gtk_container_add (GTK_CONTAINER (frame), table);
 
-  /*
   label = gtk_label_new (_("Image theme:"));
-  gtk_box_pack_start_defaults (GTK_BOX (hbox), label);
-  */
+  gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
+  gtk_table_attach_defaults (GTK_TABLE (table), label, 0, 1, 0, 1);
+
   pmapmenu = gtk_option_menu_new ();
   menu = gtk_menu_new ();
   fill_pmapmenu (menu);
   gtk_option_menu_set_menu (GTK_OPTION_MENU (pmapmenu), menu);
-  gtk_box_pack_start_defaults (GTK_BOX (hbox), pmapmenu);
+  gtk_table_attach_defaults (GTK_TABLE (table), pmapmenu, 1, 2, 0, 1);
 
-  hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, GNOME_PAD);
-  darea = gtk_drawing_area_new ();
-  gtk_widget_set_size_request (darea, DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT);
+  label = gtk_label_new (_("Background Color:"));
+  gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
+  gtk_table_attach_defaults (GTK_TABLE (table), label, 0, 1, 1, 2);
 
-  gtk_box_pack_start (GTK_BOX (hbox), darea, TRUE, TRUE, 0);
-
-  g_signal_connect (G_OBJECT (darea), "realize",
-                    G_CALLBACK (start_anim_cb), NULL);
+  {
+    int ur, ug, ub;
+    
+    w  = gnome_color_picker_new ();
+    sscanf (properties.background_color, "#%02x%02x%02x", &ur, &ug, &ub);
+    gnome_color_picker_set_i8 (GNOME_COLOR_PICKER (w), ur, ug, ub, 0);
+    g_signal_connect (G_OBJECT (w), "color_set",
+                      G_CALLBACK (bg_color_callback), NULL);
+  }
+  gtk_table_attach_defaults (GTK_TABLE (table), w, 1, 2, 1, 2);
 
   label = gtk_label_new_with_mnemonic (_("_Appearance"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), gpage, label);
@@ -1247,6 +1160,11 @@ load_properties (void)
     g_free (str);
   }
 
+  properties.background_color = gconf_client_get_string (get_gconf_client (),
+                                                         KEY_BACKGROUND_COLOR, NULL);
+  if (properties.background_color == NULL)
+    properties.background_color = g_strdup ("#7590AE");
+  
   sname = gconf_client_get_string (get_gconf_client (), KEY_THEME, NULL);
   if (sname == NULL)
     sname = g_strdup ("robots");
@@ -1282,6 +1200,7 @@ load_properties (void)
   properties.splats = gconf_client_get_bool (get_gconf_client (),
                                              KEY_ENABLE_SPLATS, NULL);
 
+  set_background_color_from_name (properties.background_color);
   set_game_graphics (properties.selected_graphics);
   set_game_config (properties.selected_config);
   keyboard_set (properties.keys);
@@ -1293,6 +1212,13 @@ void
 gconf_set_theme (gchar *value)
 {
   gconf_client_set_string (get_gconf_client (), KEY_THEME,
+                           value, NULL);
+}
+
+void
+gconf_set_background_color (gchar *value)
+{
+  gconf_client_set_string (get_gconf_client (), KEY_BACKGROUND_COLOR,
                            value, NULL);
 }
 

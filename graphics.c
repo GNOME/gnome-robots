@@ -37,11 +37,13 @@
 /**********************************************************************/
 /* GraphicInfo Structure Definition                                   */
 /**********************************************************************/
-typedef struct _GraphicInfo{
+
+typedef struct _GraphicInfo {
   GString   *name;
-  GdkPixmap *pixmap;
+  GdkPixbuf *pixbuf;
   GdkColor   bgcolor;
-}GraphicInfo;
+} GraphicInfo;
+
 /**********************************************************************/
 
 
@@ -51,12 +53,9 @@ typedef struct _GraphicInfo{
 static gint          num_graphics     = -1;
 static gint          current_graphics = -1;
 static GraphicInfo **game_graphic     = NULL;
-static GdkPixmap    *aieee_pixmap     = NULL;
-static GdkPixmap    *yahoo_pixmap     = NULL;
-static GdkPixmap    *splat_pixmap     = NULL;
-static GdkPixmap    *aieee_mask       = NULL;
-static GdkPixmap    *yahoo_mask       = NULL;
-static GdkPixmap    *splat_mask       = NULL;
+static GdkPixbuf    *aieee_pixbuf     = NULL;
+static GdkPixbuf    *yahoo_pixbuf     = NULL;
+static GdkPixbuf    *splat_pixbuf     = NULL;
 
 static gint          robot_animation  = 0;
 static gint          player_animation = 0;
@@ -69,17 +68,16 @@ static gint          bubble_ypos = 0;
 static gint          bubble_xo   = 0;
 static gint          bubble_yo   = 0;
 static gint          bubble_type = BUBBLE_NONE;
-/**********************************************************************/
 
 
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static gboolean load_bubble_graphic (gchar*, GdkPixmap**, GdkPixmap**);
+
+static gboolean load_bubble_graphic (gchar*, GdkPixbuf**);
 static gboolean load_bubble_graphics (void);
 static void clear_bubble_area (void);
 static void add_bubble (gint, gint);
-/**********************************************************************/
 
 
 /**********************************************************************/
@@ -88,9 +86,8 @@ static void add_bubble (gint, gint);
 
 /**
  * load_bubble_graphic
- * @fname: pixmap filename
- * @pixmap: pointer to pixmap pointer
- * @mask: pointer to pixmap mask pointer
+ * @fname: pixbuf filename
+ * @pixbuf: pointer to pixbuf pointer
  *
  * Description:
  * loads a 'Speech Bubble' graphic - i.e. one requiring a transparency
@@ -100,19 +97,15 @@ static void add_bubble (gint, gint);
  * TRUE on success FALSE otherwise
  **/
 static gboolean
-load_bubble_graphic (gchar *fname, GdkPixmap **pixmap, GdkPixmap **mask)
+load_bubble_graphic (gchar *fname, GdkPixbuf **pixbuf)
 {
-  GdkPixbuf *image;
 
   if (!g_file_test (fname, G_FILE_TEST_EXISTS)) {
-    printf (_("Could not find \'%s\' pixmap file for GNOME Robots\n"), fname);
+    printf (_("Could not find \'%s\' image file for GNOME Robots\n"), fname);
     return FALSE;
   }
 
-  image = gdk_pixbuf_new_from_file (fname, NULL);
-  
-  gdk_pixbuf_render_pixmap_and_mask (image, pixmap, mask, 127);
-  gdk_pixbuf_unref (image);
+  *pixbuf = gdk_pixbuf_new_from_file (fname, NULL);
   
   return TRUE;
 }
@@ -135,16 +128,16 @@ load_bubble_graphics (void)
                                             GAME_NAME, FALSE, NULL);
 
   buffer = g_build_filename (dname, "yahoo.png", NULL);
-  if (! load_bubble_graphic (buffer, &yahoo_pixmap, &yahoo_mask))
+  if (! load_bubble_graphic (buffer, &yahoo_pixbuf))
     return FALSE;
   g_free (buffer);
 
   buffer = g_build_filename (dname, "aieee.png", NULL);
-  if (! load_bubble_graphic (buffer, &aieee_pixmap, &aieee_mask))
+  if (! load_bubble_graphic (buffer, &aieee_pixbuf))
     return FALSE;
 
   buffer = g_build_filename (dname, "splat.png", NULL);
-  if (! load_bubble_graphic (buffer, &splat_pixmap, &splat_mask))
+  if (! load_bubble_graphic (buffer, &splat_pixbuf))
     return FALSE;
 
   return TRUE;
@@ -169,8 +162,6 @@ load_game_graphics (void)
   gchar          *buffer;
   gchar          *bptr;
   GdkPixbuf      *image;
-  GdkImage       *tmpimage;
-  GdkPixmap      *pixmap;
 
   gchar *dname = gnome_program_locate_file (NULL, 
                                             GNOME_FILE_DOMAIN_APP_PIXMAP,
@@ -231,13 +222,10 @@ load_game_graphics (void)
 
     image = gdk_pixbuf_new_from_file (buffer, NULL);
     g_free (buffer);
-    gdk_pixbuf_render_pixmap_and_mask (image, &pixmap, NULL, 127);
-    tmpimage = gdk_drawable_get_image (pixmap, 0, 0, 1, 1);
-    game_graphic[num_graphics]->bgcolor.pixel = gdk_image_get_pixel (tmpimage, 0, 0);
-    g_object_unref (tmpimage);
-    gdk_pixbuf_unref (image);
 
-    game_graphic[num_graphics]->pixmap = pixmap;
+    /*game_graphic[num_graphics]->bgcolor.pixel = gdk_image_get_pixel (tmpimage, 0, 0);*/
+
+    game_graphic[num_graphics]->pixbuf = image;
 
     num_graphics++;
   }
@@ -280,26 +268,17 @@ free_game_graphics (void)
   num_graphics = -1;
   current_graphics = -1;
 
-  if (aieee_pixmap) 
-    g_object_unref (aieee_pixmap);
-  aieee_pixmap = NULL;
-  if (aieee_mask)
-    g_object_unref (aieee_mask);
-  aieee_mask = NULL;
+  if (aieee_pixbuf) 
+    g_object_unref (aieee_pixbuf);
+  aieee_pixbuf = NULL;
 
-  if (yahoo_pixmap)
-    g_object_unref (yahoo_pixmap);
-  yahoo_pixmap = NULL;
-  if (yahoo_mask)
-    g_object_unref (yahoo_mask);
-  yahoo_mask = NULL;
+  if (yahoo_pixbuf)
+    g_object_unref (yahoo_pixbuf);
+  yahoo_pixbuf = NULL;
 
-  if (splat_pixmap)
-    g_object_unref (splat_pixmap);
-  splat_pixmap = NULL;
-  if (splat_mask)
-    g_object_unref (splat_mask);
-  splat_mask = NULL;
+  if (splat_pixbuf)
+    g_object_unref (splat_pixbuf);
+  splat_pixbuf = NULL;
 
   return TRUE;
 }
@@ -401,13 +380,35 @@ set_game_graphics (gint ng)
   current_graphics = ng;
 
   if (game_area != NULL) {
-    gdk_window_set_background (game_area->window,
-                               &game_graphic[current_graphics]->bgcolor);
+    /*set_background_color (&game_graphic[current_graphics]->bgcolor);*/
   }
-
   return current_graphics;
 }
 
+void
+set_background_color (GdkColor color)
+{
+  GdkColormap *colormap;
+
+  if (game_area != NULL) {
+    colormap = gtk_widget_get_colormap (game_area);
+    gdk_colormap_alloc_color (colormap, &color, FALSE, TRUE);
+
+    gdk_window_set_background (game_area->window, &color);
+  }
+}
+
+void
+set_background_color_from_name (gchar *name)
+{
+  GdkColor color;
+
+  if (name == NULL)
+    return;
+    
+  gdk_color_parse (name, &color);
+  set_background_color (color);
+}
 
 /**
  * draw_tile_pixmap
@@ -424,12 +425,17 @@ set_game_graphics (gint ng)
 void
 draw_tile_pixmap (gint tileno, gint pno, gint x, gint y, GtkWidget *area)
 {
+
+  gdk_window_clear_area (area->window, x, y, TILE_WIDTH, TILE_HEIGHT);
+
   if ((tileno < 0) || (tileno >= SCENARIO_PIXMAP_WIDTH)) {
-    gdk_window_clear_area (area->window, x, y, TILE_WIDTH, TILE_HEIGHT);
+    /* nothing */
   } else {
-    gdk_draw_drawable (area->window, area->style->black_gc,
-                       game_graphic[pno]->pixmap, tileno*TILE_WIDTH, 
-                       0, x, y, TILE_WIDTH, TILE_HEIGHT);
+    gdk_draw_pixbuf (area->window, area->style->black_gc,
+                     game_graphic[pno]->pixbuf,
+                     tileno * TILE_WIDTH, 0,
+                     x, y, TILE_WIDTH, TILE_HEIGHT,
+                     GDK_RGB_DITHER_NORMAL, 0, 0);
   }
 
 }
@@ -585,29 +591,22 @@ animate_game_graphics (void)
 void
 draw_bubble (void)
 {
-  GdkPixmap *pmap;
-  GdkPixmap *mask;
+  GdkPixbuf *pmap;
 
   if (bubble_type == BUBBLE_NONE) return;
 
   if (bubble_type == BUBBLE_YAHOO) {
-    pmap = yahoo_pixmap;
-    mask = yahoo_mask;
+    pmap = yahoo_pixbuf;
   } else if (bubble_type == BUBBLE_AIEEE) {
-    pmap = aieee_pixmap;
-    mask = aieee_mask;
+    pmap = aieee_pixbuf;
   } else {
-    pmap = splat_pixmap;
-    mask = splat_mask;
+    pmap = splat_pixbuf;
   }
 
-  gdk_gc_set_clip_origin (game_area->style->black_gc, 
-                          bubble_xpos-bubble_xo, bubble_ypos-bubble_yo);
-  gdk_gc_set_clip_mask (game_area->style->black_gc, mask);
-  gdk_draw_drawable (game_area->window, game_area->style->black_gc,
-                     pmap, bubble_xo, bubble_yo, bubble_xpos, bubble_ypos, 
-                     BUBBLE_WIDTH, BUBBLE_HEIGHT);
-  gdk_gc_set_clip_mask (game_area->style->black_gc, NULL);
+  gdk_draw_pixbuf (game_area->window, game_area->style->black_gc, pmap,
+                   bubble_xo, bubble_yo, bubble_xpos, bubble_ypos, 
+                   BUBBLE_WIDTH, BUBBLE_HEIGHT,
+                   GDK_RGB_DITHER_NORMAL, 0, 0);
 }
 
 

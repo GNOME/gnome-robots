@@ -1,5 +1,16 @@
 2003-06-19  William Jon McCann  <mccann@jhu.edu>
 
+	* properties.h: 
+	* properties.c: Removed icon theme draw area.  After
+	the pref became instant apply it wasn't needed.
+	Added background color configuration.
+
+	* graphics.h:
+	* graphics.c: Convert to use pixbufs.  This will allow
+	us to use image themes with transparency and be able to
+	easily scale the images.  Added the ability to configure
+	the background color like the other games.
+
 	* gameconfig.c (load_game_configs): 
 	* graphics.c (load_game_graphics): Use glib file utilities
 	and don't make so many assumptions about filenames (like

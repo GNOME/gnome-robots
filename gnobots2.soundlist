@@ -10,6 +10,7 @@ description[ko]=±×³ð ·Îº¿ II
 description[lt]=Gnome Robots II
 description[no]=Gnome roboter II
 description[pl]=Roboty GNOME II
+description[sk]=GNOME Roboti II
 
 [bad-move]
 file=gnobots2/bad.wav
@@ -24,6 +25,7 @@ description[ko]=Àß¸ø ¿òÁ÷ÀÓ
 description[lt]=Blogas ëjimas
 description[no]=Ugyldig trekk
 description[pl]=Niew³a¶ciwy ruch
+description[sk]=Neplatný »ah
 
 [die]
 file=gnobots2/die.wav
@@ -38,6 +40,7 @@ description[ko]=ÇÃ·¹ÀÌ¾î Á×À½
 description[lt]=Þaidëjas mirðta
 description[no]=Spiller dør
 description[pl]=Smieræ gracza
+description[sk]=Smr» hráèa
 
 [splat]
 file=gnobots2/splat.wav
@@ -51,6 +54,7 @@ description[gl]=¡O robot foi destrozado!
 description[ko]=·Îº¿ ÆøÆÄ!
 description[lt]=Robotas sutraiðkytas!
 description[no]=Roboten ble ødelagt!
+description[sk]=Robot bol rozmaèkaný!
 
 [teleport]
 file=gnobots2/teleport.wav
@@ -65,6 +69,7 @@ description[ko]=ÇÃ·¹ÀÌ¾î ¼ø°£ ÀÌµ¿
 description[lt]=Þaidëjas teleportuojasi
 description[no]=Spiller teleportert
 description[pl]=Teleportacja gracza
+description[sk]=Teleport hráèa
 
 [victory]
 file=gnobots2/victory.wav
@@ -79,6 +84,7 @@ description[ko]=½Â¸®!!
 description[lt]=Pergalë!
 description[no]=Seier!!
 description[pl]=Zwyciêstwo!!
+description[sk]=Ví»azstvo!!
 
 [yahoo]
 file=gnobots2/yahoo.wav
@@ -93,3 +99,4 @@ description[ko]=·¹º§ ¸¶Ä§
 description[lt]=Lygis uþbaigtas
 description[no]=Nivå komplett
 description[pl]=Ukoñczenie poziomu
+description[sk]=Úroveò dokonèená

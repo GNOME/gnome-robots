@@ -1,3 +1,11 @@
+2003-05-30 Callum McKenzie <callum@physics.otago.ac.nz>
+
+	* help/.cvsignore:
+	* help/C/.cvsignore:
+	* help/da/.cvsignore:
+	* help/es/.cvsignore:
+	* help/it/.cvsignore: Added (got lost in the shuffle).
+
 2002-12-11  Ross Burton  <ross@burtonini.com>
 
 	* help/C/gnobots2.xml

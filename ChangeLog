@@ -1,3 +1,9 @@
+2004-06-30  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* teleport.png:
+	* rteleport.png:
+	* menu.c: Add custom menu icons for teleport and rteleport.
+
 2004-06-23  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* game.c: 

@@ -106,8 +106,17 @@ GnomeUIInfo toolbar[] = {
   GNOMEUIINFO_ITEM_STOCK(N_("New"), N_("Start a new game"),
                          new_cb, GTK_STOCK_NEW),
   GNOMEUIINFO_SEPARATOR,
-  GNOMEUIINFO_ITEM_STOCK (N_("Teleport"), N_("Teleport, safely if possible"), teleport_cb, GTK_STOCK_JUMP_TO),
-  GNOMEUIINFO_ITEM_STOCK (N_("Random"), N_("Teleport randomly"), randteleport_cb, GTK_STOCK_JUMP_TO),
+
+  /* FIXME: Someday these should be part of a gnome-games icon theme. */
+
+  { GNOME_APP_UI_ITEM, N_("Teleport"), N_("Teleport, safely if possible"), 
+    teleport_cb, NULL, NULL, GNOME_APP_PIXMAP_FILENAME, "teleport.png",
+    0, 0, NULL},
+
+  { GNOME_APP_UI_ITEM, N_("Random"), N_("Teleport randomly"), 
+    randteleport_cb, NULL, NULL, GNOME_APP_PIXMAP_FILENAME, "rteleport.png",
+    0, 0, NULL},
+
   GNOMEUIINFO_ITEM_STOCK (N_("Wait"), N_("Wait for the robots"), wait_cb, GTK_STOCK_STOP),
   GNOMEUIINFO_END
 };

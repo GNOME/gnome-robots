@@ -1,3 +1,7 @@
+2004-05-26  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* properties.c: Fix compiler warnings.
+
 2004-03-03  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/C/gnobots2.xml: Update the version since it is still

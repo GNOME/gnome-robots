@@ -594,7 +594,7 @@ static void
 keypad_cb (GtkWidget *widget, GdkEventKey *event, gpointer data)
 {
   gint keyval = event->keyval;
-  gint knum = (gint)data;
+  gint knum = GPOINTER_TO_INT(data);
 
   keyval = keyboard_preferred (keyval);
 
@@ -961,7 +961,7 @@ show_properties_dialog (void)
                       keylayoutx[i]+1 , keylayoutx[i]+2, keylayouty[i],
                       keylayouty[i]+1, GTK_FILL, GTK_FILL, 3, 3);
     g_signal_connect (G_OBJECT (etext[i]), "key_press_event",
-                      G_CALLBACK (keypad_cb), (gpointer)i);
+                      G_CALLBACK (keypad_cb), GINT_TO_POINTER(i));
     g_signal_connect (G_OBJECT (key_labels[i]), "clicked",
                       G_CALLBACK (enable_entry_cb), etext[i]);
   }

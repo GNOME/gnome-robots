@@ -5,7 +5,8 @@ soundlistdir=$(sysconfdir)/sound/events
 sounddir=$(datadir)/sounds/gnobots2
 appicondir=$(datadir)/pixmaps
 Gamesdir=$(datadir)/apps/Games
-helpdir=$(datadir)/gnome/help/gnobots2/C
+
+SUBDIRS = help
 
 INCLUDES = 			\
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
@@ -73,8 +74,6 @@ Games_DATA = gnobots2.desktop
 EXTRA_DIST = README \
              AUTHORS \
              gnobots2.desktop \
-             index.html \
-             gnobots2-topic.dat \
              gnobots2.soundlist \
              $(appicon_DATA) \
              $(pixmap_DATA)
@@ -89,6 +88,3 @@ install-data-local:
 	    touch echo $$fname2; chmod 664 $$fname2; chown games:games $$fname1; \
 	    done
 	-chgrp games $(bindir)/gnobots2 && chmod 2111 $(bindir)/gnobots2
-	-$(mkinstalldirs) $(helpdir)
-	-$(INSTALL_DATA) $(srcdir)/index.html $(helpdir)
-	-$(INSTALL_DATA) $(srcdir)/gnobots2-topic.dat $(helpdir)/topic.dat

@@ -68,7 +68,6 @@ static struct poptOption options[] = {
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static gchar *nstr(gint);
 static gint   save_state(GnomeClient*, gint, GnomeRestartStyle, gint, GnomeInteractStyle, gint, gpointer);
 static void   session_die(gpointer);
 /**********************************************************************/
@@ -77,25 +76,6 @@ static void   session_die(gpointer);
 /**********************************************************************/
 /* Function Definitions                                               */
 /**********************************************************************/
-
-/**
- * nstr
- * @n: number
- *
- * Description:
- * creates a new string containing a number
- *
- * Returns:
- * a new string containing a number
- **/
-static gchar *nstr(
-gint n
-){
-  gchar buf[20];
-  sprintf(buf, "%d", n);
-  return strdup(buf);
-}
-
 
 /**
  * save_state
@@ -123,25 +103,24 @@ gint                fast,
 gpointer            client_data
 ){
   char *argv[20];
-  gint i;
-  gint xpos, ypos;
+  int i;
+  int xpos, ypos;
 
   gdk_window_get_origin(app->window, &xpos, &ypos);
 
   i = 0;
   argv[i++] = (char *)client_data;
   argv[i++] = "-x";
-  argv[i++] = nstr(xpos);
+  argv[i++] = g_strdup_printf("%d",xpos);
   argv[i++] = "-y";
-  argv[i++] = nstr(ypos);
+  argv[i++] = g_strdup_printf("%d",ypos);
 
   gnome_client_set_restart_command(client, i, argv);
   /* i.e. clone_command = restart_command - '--sm-client-id' */
   gnome_client_set_clone_command(client, 0, NULL);
 
-  /* free memory from nstr(s) */
-  free(argv[2]);
-  free(argv[4]);
+  g_free(argv[2]);
+  g_free(argv[4]);
 
   return TRUE;
 }

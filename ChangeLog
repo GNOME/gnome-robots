@@ -3,7 +3,7 @@
 	* properties.c: Set the keypad to be the standard set of
 	keys. "Use Standard Robots Keys" has been renamed "Use Original
 	Robots Keys". Reversed the key labels appropriately. Also
-	capitalisation fixes as per HIG.
+	capitalisation fixes as per HIG. Added tooltips to the checkboxes.
 
 	* gnobots2.schemas.in: Added schemas for all the keys and set the
 	default to be the numeric keypad.

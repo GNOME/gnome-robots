@@ -94,11 +94,11 @@ gpointer  data
     GtkWidget *mb;
     int response;
     mb = gtk_message_dialog_new (GTK_WINDOW(app), 
-				 GTK_DIALOG_MODAL,
-				 GTK_MESSAGE_WARNING,
-				 GTK_BUTTONS_YES_NO,
-				 _("Do you really want to restart the current game?"),
-				 NULL);
+			   GTK_DIALOG_MODAL,
+			   GTK_MESSAGE_QUESTION,
+			   GTK_BUTTONS_YES_NO,
+			   _("Are you sure you want to start a new game?"),
+			   NULL);
     response = gtk_dialog_run (GTK_DIALOG(mb));
     gtk_widget_destroy (mb);
     if (response == GTK_RESPONSE_YES) {
@@ -166,7 +166,7 @@ exit_cb(GtkWidget *widget, gpointer  data)
 				 GTK_DIALOG_MODAL,
 				 GTK_MESSAGE_QUESTION,
 				 GTK_BUTTONS_NONE,
-				 _("Do you really want to quit the game?"),
+				 _("Are you sure you want to quit Gnobots II?"),
 				 NULL);
     gtk_dialog_add_buttons (GTK_DIALOG(mb), GTK_STOCK_CANCEL, GTK_RESPONSE_REJECT,
 			    GTK_STOCK_QUIT, GTK_RESPONSE_ACCEPT,

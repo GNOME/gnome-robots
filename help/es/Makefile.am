@@ -8,5 +8,5 @@ gnobots2_helpdir = $(datadir)/gnome/help/gnobots2/es
 install-data-local:
 	$(mkinstalldirs) $(gnobots2_helpdir)
 	$(INSTALL_DATA)  index.html $(gnobots2_helpdir)
-	$(INSTALL_DATA)  topic.dat $(gnobots22_helpdir)
+	$(INSTALL_DATA)  topic.dat $(gnobots2_helpdir)
 

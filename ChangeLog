@@ -1,3 +1,9 @@
+2005-02-02  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* gnobots.c (main): 
+	* graphics.c (load_game_graphics): Make sure that we have at least
+	one theme. If not, complain.
+
 2005-02-01  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/C/gnobots2.xml: Documentation updates from Adam Weinberger

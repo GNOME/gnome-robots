@@ -242,7 +242,21 @@ main (int argc, char *argv[])
 
   gtk_widget_show (app);
   
-  load_game_graphics ();
+  if (!load_game_graphics ()) {
+    /* Oops, no graphics, we probably haven't been installed properly. */
+    errordialog = gtk_message_dialog_new (GTK_WINDOW (app), 
+					  GTK_DIALOG_MODAL,
+					  GTK_MESSAGE_ERROR,
+                                          GTK_BUTTONS_OK,
+                                          "<b>%s</b>\n\n%s",
+                                          _("Some graphics files are missing or corrupt."),
+                                          _("The program GNOME Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."));
+    gtk_label_set_use_markup (GTK_LABEL (GTK_MESSAGE_DIALOG (errordialog)->label), TRUE);
+
+    gtk_dialog_run (GTK_DIALOG (errordialog));
+    exit (1);
+  }
+
   load_properties ();
   
   init_sound ();

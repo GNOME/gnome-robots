@@ -223,12 +223,17 @@ load_game_graphics (void)
     image = gdk_pixbuf_new_from_file (buffer, NULL);
     g_free (buffer);
 
-    /*game_graphic[num_graphics]->bgcolor.pixel = gdk_image_get_pixel (tmpimage, 0, 0);*/
-
-    game_graphic[num_graphics]->pixbuf = image;
-
-    num_graphics++;
+    if (image == NULL) {
+      g_free (game_graphic[num_graphics]->name);
+      g_free (game_graphic[num_graphics]);
+    } else {
+      game_graphic[num_graphics]->pixbuf = image;
+      num_graphics++;
+    }
   }
+
+  if (num_graphics == 0)
+    return FALSE;
 
   g_dir_close (dir);
 

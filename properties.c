@@ -25,6 +25,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <gconf/gconf-client.h>
 #include <games-frame.h>
+#include <games-controls.h>
 
 #include "properties.h"
 #include "gameconfig.h"
@@ -87,7 +88,6 @@ enum {
 }; /* Column indices for list */
 
 static GtkWidget         *etext[12];
-static GtkWidget         *key_labels[12];
 static GnobotsProperties  properties;
 
 static gint default_keys1[12] = {
@@ -126,7 +126,6 @@ static void type_selection (GtkWidget*, gpointer);
 static void safe_cb (GtkWidget*, gpointer);
 static void sound_cb (GtkWidget*, gpointer);
 static void splat_cb (GtkWidget*, gpointer);
-static void keypad_cb (GtkWidget*, GdkEventKey*, gpointer);
 static void defkey_cb (GtkWidget*, gpointer);
 static void fill_typemenu (GtkWidget*);
 static void fill_pmapmenu (GtkWidget*);
@@ -582,35 +581,6 @@ splat_cb (GtkWidget *widget, gpointer data)
 
 
 /**
- * keypad_cb
- * @widget: widget
- * @event: event
- * @data: callback data
- *
- * Description:
- * handles message from the key selection widgets
- **/
-static void
-keypad_cb (GtkWidget *widget, GdkEventKey *event, gpointer data)
-{
-  gint keyval = event->keyval;
-  gint knum = GPOINTER_TO_INT(data);
-
-  keyval = keyboard_preferred (keyval);
-
-  properties.keys[knum] = keyval;
-
-  gtk_entry_set_text (GTK_ENTRY (widget), keyboard_string (keyval));
-  gtk_widget_set_sensitive (widget, FALSE);
-  gtk_widget_grab_focus (key_labels[knum]);
-  
-  gconf_set_control_key (knum, keyboard_string (keyval));
-  
-  keyboard_set (properties.keys);
-}
-
-
-/**
  * defkey_cb
  * @widget: widget
  * @data: callback data
@@ -713,13 +683,6 @@ bg_color_callback (GtkWidget *widget, gpointer data)
   gconf_set_background_color (&properties.bgcolour);
 }
 
-static void
-enable_entry_cb (GtkWidget * widget, GtkWidget * target)
-{
-  gtk_widget_set_sensitive (target, TRUE);
-  gtk_widget_grab_focus (target);
-}
-
 /**
  * show_properties_dialog
  *
@@ -744,17 +707,13 @@ show_properties_dialog (void)
   GtkWidget *scrolled;
   GtkWidget *frame;
   GtkWidget *w;
+  GtkWidget *controls_list;
   GtkTooltips *tooltips;
   GtkListStore *list;
   GtkTreeViewColumn *column;
   GtkCellRenderer *renderer;
   GtkTreeSelection *selection;
-  gint keylayoutx[9] = { 0, 2, 4, 0, 2, 4, 0, 2, 4 };
-  gint keylayouty[9] = { 0, 0, 0, 1, 1, 1, 2, 2, 2 };
-  gchar * keylabels[9] = { "NW", "N", "NE", "W", "Hold",
-                            "E", "SW", "S", "SE"};
-  gint i;
-  
+
   if (propbox) 
     return;
 
@@ -941,81 +900,23 @@ show_properties_dialog (void)
   vbox = gtk_vbox_new (FALSE, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
-  hbox = gtk_hbox_new (FALSE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, GNOME_PAD);
+  controls_list = games_controls_list_new ();
+  games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list), 
+				    "/apps/gnobots2/preferences/key00",
+				    "/apps/gnobots2/preferences/key01",
+				    "/apps/gnobots2/preferences/key02",
+				    "/apps/gnobots2/preferences/key03",
+				    "/apps/gnobots2/preferences/key04",
+				    "/apps/gnobots2/preferences/key05",
+				    "/apps/gnobots2/preferences/key06",
+				    "/apps/gnobots2/preferences/key07",
+				    "/apps/gnobots2/preferences/key08",
+				    "/apps/gnobots2/preferences/key09",
+				    "/apps/gnobots2/preferences/key10",
+				    "/apps/gnobots2/preferences/key11",
+				    NULL);
 
-  table = gtk_table_new (8, 3, TRUE);
-
-  for (i = 0; i<9; i++) {
-    key_labels[i] = gtk_button_new_with_label (keylabels[i]);
-    gtk_table_attach (GTK_TABLE (table), key_labels[i], keylayoutx[i],
-                      keylayoutx[i]+1, keylayouty[i], keylayouty[i]+1,
-                      GTK_FILL, GTK_FILL, 3, 3);
-    etext[i] = gtk_entry_new ();
-    gtk_entry_set_text (GTK_ENTRY (etext[i]),
-                        keyboard_string (properties.keys[i]));
-    gtk_editable_set_editable (GTK_EDITABLE (etext[i]), FALSE);
-    gtk_widget_set_sensitive (etext[i], FALSE);
-    gtk_widget_set_size_request (etext[i], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
-    gtk_table_attach (GTK_TABLE (table), etext[i],
-                      keylayoutx[i]+1 , keylayoutx[i]+2, keylayouty[i],
-                      keylayouty[i]+1, GTK_FILL, GTK_FILL, 3, 3);
-    g_signal_connect (G_OBJECT (etext[i]), "key_press_event",
-                      G_CALLBACK (keypad_cb), GINT_TO_POINTER(i));
-    g_signal_connect (G_OBJECT (key_labels[i]), "clicked",
-                      G_CALLBACK (enable_entry_cb), etext[i]);
-  }
-  
-  gtk_box_pack_start (GTK_BOX (hbox), table, TRUE, TRUE, GNOME_PAD);
-
-  table = gtk_table_new (2, 3, FALSE);
-
-  key_labels[9] = gtk_button_new_with_label (_("Teleport"));
-  gtk_table_attach (GTK_TABLE (table), key_labels[9], 0, 1, 0, 1, GTK_FILL, GTK_FILL, 3, 3);
-  etext[9] = gtk_entry_new ();
-  gtk_entry_set_text (GTK_ENTRY (etext[9]),
-                      keyboard_string (properties.keys[9]));
-  gtk_widget_set_sensitive (etext[9], FALSE);
-  gtk_editable_set_editable (GTK_EDITABLE (etext[9]), FALSE);
-  gtk_widget_set_size_request (etext[9], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
-  gtk_table_attach (GTK_TABLE (table), etext[9], 1, 2, 0, 1, GTK_FILL, GTK_FILL, 3, 3);
-  g_signal_connect (G_OBJECT (etext[9]), "key_press_event",
-                    G_CALLBACK (keypad_cb), (gpointer)9);
-  g_signal_connect (G_OBJECT (key_labels[9]), "clicked",
-                    G_CALLBACK (enable_entry_cb), etext[9]);
-  
-  key_labels[10] = gtk_button_new_with_label (_("Random Teleport"));
-  gtk_table_attach (GTK_TABLE (table), key_labels[10], 0, 1, 1, 2, GTK_FILL, GTK_FILL, 3, 3);
-  etext[10] = gtk_entry_new ();
-  gtk_entry_set_text (GTK_ENTRY (etext[10]),
-                      keyboard_string (properties.keys[10]));
-  gtk_editable_set_editable (GTK_EDITABLE (etext[10]), FALSE);
-  gtk_widget_set_sensitive (etext[10], FALSE);
-  gtk_widget_set_size_request (etext[10], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
-  gtk_table_attach (GTK_TABLE (table), etext[10], 1, 2, 1, 2, GTK_FILL, GTK_FILL, 3, 3);
-  g_signal_connect (G_OBJECT (etext[10]), "key_press_event",
-                    G_CALLBACK (keypad_cb), (gpointer)10);
-  g_signal_connect (G_OBJECT (key_labels[10]), "clicked",
-                    G_CALLBACK (enable_entry_cb), etext[10]);
-
-  key_labels[11] = gtk_button_new_with_label (_("Wait"));
-  gtk_table_attach (GTK_TABLE (table), key_labels[11], 0, 1, 2, 3, GTK_FILL, GTK_FILL, 3, 3);
-  etext[11] = gtk_entry_new ();
-  gtk_entry_set_text (GTK_ENTRY (etext[11]),
-                      keyboard_string (properties.keys[11]));
-  gtk_widget_set_sensitive (etext[11], FALSE);
-  gtk_editable_set_editable (GTK_EDITABLE (etext[11]), FALSE);
-  gtk_widget_set_size_request (etext[11], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
-  gtk_table_attach (GTK_TABLE (table), etext[11], 1, 2, 2, 3, GTK_FILL, GTK_FILL, 3, 3);
-  g_signal_connect (G_OBJECT (etext[11]), "key_press_event",
-                    G_CALLBACK (keypad_cb), (gpointer)11);
-  g_signal_connect (G_OBJECT (key_labels[11]), "clicked",
-                    G_CALLBACK (enable_entry_cb), etext[11]);
-
-  gtk_box_pack_start (GTK_BOX (hbox), table, TRUE, TRUE, GNOME_PAD);
-
-  hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, GNOME_PAD);
 
   dbut = gtk_button_new_with_label (_("Use the Keypad"));
   g_signal_connect (G_OBJECT (dbut), "clicked",

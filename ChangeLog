@@ -1,3 +1,8 @@
+2004-07-18  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* properties.c: Convert the keyboard control list to Paolo's
+	games_controls_list.
+
 2004-07-05  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* game.c:

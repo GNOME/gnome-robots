@@ -261,19 +261,22 @@ update_score_state (void)
   gfloat *scores = NULL;
   time_t *scoretimes = NULL;
   gint top;
-  gchar sbuf[256];
+  gchar *sbuf = NULL;
   
   if (properties_super_safe_moves ()) {
-    sprintf (sbuf, "%s-super-safe",
-             game_config_filename (current_game_config ()));
+    sbuf = g_strdup_printf ("%s-super-safe",
+                            game_config_filename (current_game_config ()));
   } else if (properties_safe_moves ()) {
-    sprintf (sbuf, "%s-safe", game_config_filename (current_game_config ()));
+    sbuf = g_strdup_printf ("%s-safe", 
+                            game_config_filename (current_game_config ()));
   } else {
-    sprintf (sbuf, "%s", game_config_filename (current_game_config ()));
+    sbuf = g_strdup_printf ("%s",
+                            game_config_filename (current_game_config ()));
   }
   
   top = gnome_score_get_notable (GAME_NAME, sbuf,
                                  &names, &scores, &scoretimes);
+  g_free (sbuf);
   if (top > 0) {
     gtk_widget_set_sensitive (gamemenu[2].widget, TRUE);
     g_strfreev (names);

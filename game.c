@@ -126,25 +126,25 @@ void
 show_scores (guint pos)
 {
   static GtkWidget *score_dialog = NULL;
-  gchar sbuf[256];
-  gchar nbuf[256];
+  gchar *sbuf = NULL;
+  gchar *nbuf = NULL;
 
   if (properties_super_safe_moves ()) {
-    sprintf (sbuf, "%s-super-safe", game_config_filename (current_game_config ()));
+    sbuf = g_strdup_printf ("%s-super-safe", game_config_filename (current_game_config ()));
   } else if (properties_safe_moves ()) {
-    sprintf (sbuf, "%s-safe", game_config_filename (current_game_config ()));
+    sbuf = g_strdup_printf ("%s-safe", game_config_filename (current_game_config ()));
   } else {
-    sprintf (sbuf, "%s", game_config_filename (current_game_config ()));
+    sbuf = g_strdup_printf ("%s", game_config_filename (current_game_config ()));
   }
 
   if (properties_super_safe_moves ()) {
-    sprintf (nbuf, _("'%s' with super-safe moves"), 
-             _(game_config_name (current_game_config ())));
+    nbuf = g_strdup_printf (_("'%s' with super-safe moves"), 
+                            _(game_config_name (current_game_config ())));
   } else if (properties_safe_moves ()) {
-    sprintf (nbuf, _("'%s' with safe moves"), 
-             _(game_config_name (current_game_config ())));
+    nbuf = g_strdup_printf (_("'%s' with safe moves"), 
+                            _(game_config_name (current_game_config ())));
   } else {
-    sprintf (nbuf, "'%s'", _(game_config_name (current_game_config ())));
+    nbuf = g_strdup_printf ("'%s'", _(game_config_name (current_game_config ())));
   }
 
   if (score_dialog != NULL) {
@@ -152,6 +152,8 @@ show_scores (guint pos)
     return;
   }
   score_dialog = gnome_scores_display (nbuf, GAME_NAME, sbuf, pos);
+  g_free (sbuf);
+  g_free (nbuf);
   gtk_window_set_transient_for (GTK_WINDOW (score_dialog), GTK_WINDOW (app));
   g_signal_connect (G_OBJECT (score_dialog), "destroy",
                     G_CALLBACK (gtk_widget_destroyed), &score_dialog);
@@ -172,17 +174,19 @@ static guint
 log_score (gint sc)
 {
   guint pos;
-  gchar sbuf[256];
+  gchar *sbuf = NULL;
 
   if (properties_super_safe_moves ()) {
-    sprintf (sbuf, "%s-super-safe", game_config_filename (current_game_config ()));  } else
-      if (properties_safe_moves ()) {
-        sprintf (sbuf, "%s-safe", game_config_filename (current_game_config ()));
-      } else {
-        sprintf (sbuf, "%s", game_config_filename (current_game_config ()));
-      }
+    sbuf = g_strdup_printf ("%s-super-safe", game_config_filename (current_game_config ()));  
+  } else
+    if (properties_safe_moves ()) {
+      sbuf = g_strdup_printf ("%s-safe", game_config_filename (current_game_config ()));
+    } else {
+      sbuf = g_strdup_printf ("%s", game_config_filename (current_game_config ()));
+    }
 
   pos = gnome_score_log ((gfloat)sc, sbuf, TRUE);
+  g_free (sbuf);
   update_score_state  ();
 
   return pos;

@@ -150,13 +150,14 @@ gnobots_statusbar_delete (void)
 gboolean
 gnobots_statusbar_set_score (gint score)
 {
-  gchar buffer[32];
+  gchar *buffer = NULL;
 
   if (statusbar == NULL)
     return FALSE;
 
-  sprintf (buffer, "%d", score);
+  buffer = g_strdup_printf ("%d", score);
   gtk_label_set_text (GTK_LABEL (score_label), buffer);
+  g_free (buffer);
   return TRUE;
 }
 
@@ -174,13 +175,14 @@ gnobots_statusbar_set_score (gint score)
 gboolean
 gnobots_statusbar_set_level (gint level)
 {
-  gchar buffer[32];
+  gchar *buffer = NULL;
 
   if (statusbar == NULL)
     return FALSE;
 
-  sprintf (buffer, "%d", level);
+  buffer = g_strdup_printf ("%d", level);
   gtk_label_set_text (GTK_LABEL (level_label), buffer);
+  g_free (buffer);
   return TRUE;
 }
 
@@ -198,13 +200,14 @@ gnobots_statusbar_set_level (gint level)
 gboolean
 gnobots_statusbar_set_safe_teleports (gint stel)
 {
-  gchar buffer[32];
+  gchar *buffer = NULL;
 
   if (statusbar == NULL)
     return FALSE;
 
-  sprintf (buffer, "%d", stel);
+  buffer = g_strdup_printf ("%d", stel);
   gtk_label_set_text (GTK_LABEL (safe_label), buffer);
+  g_free (buffer);
   return TRUE;
 }
 
@@ -223,17 +226,18 @@ gnobots_statusbar_set_safe_teleports (gint stel)
 gboolean
 gnobots_statusbar_set_remaining (gint rem1, gint rem2)
 {
-  gchar buffer[32];
+  gchar *buffer = NULL;
 
   if (statusbar == NULL)
     return FALSE;
 
   if (show_both){
-    sprintf (buffer, "%d+%d %d", rem1, rem2, rem1+rem2);
+    buffer = g_strdup_printf ("%d+%d %d", rem1, rem2, rem1+rem2);
   } else {
-    sprintf (buffer, "%d", rem1);
+    buffer = g_strdup_printf ("%d", rem1);
   }
   gtk_label_set_text (GTK_LABEL (remaining_label), buffer);
+  g_free (buffer);
   return TRUE;
 }
 

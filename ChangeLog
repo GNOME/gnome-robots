@@ -1,3 +1,13 @@
+2003-06-24  William Jon McCann  <mccann@jhu.edu>
+
+	* statusbar.c (gnobots_statusbar_set_remaining) 
+	(gnobots_statusbar_set_score, gnobots_statusbar_set_level) 
+	(gnobots_statusbar_set_safe_teleports):
+	* menu.c (update_score_state): 
+	* game.c (show_scores): 
+	(log_score): Don't use fixed length buffer for
+	strings that may come from the user or gconf.
+
 2003-06-23  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* game.c: Removed dead code.

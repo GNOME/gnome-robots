@@ -119,7 +119,7 @@ static GConfClient *gconf_client;
 /**********************************************************************/
 static void apply_changes (void);
 static void apply_cb (GtkWidget*, gpointer);
-static void destroy_cb (GtkWidget*, gpointer);
+static gboolean delete_cb (GtkWidget*, gpointer);
 static void fill_property_list (void);
 static void pmap_selection (GtkWidget*, gpointer);
 static void type_selection (GtkWidget*, gpointer);
@@ -168,6 +168,7 @@ apply_cb (GtkWidget *w, gpointer data)
   apply_changes ();
 
   gtk_widget_destroy (propbox);
+  list_view = NULL;
   propbox = NULL;
 }
 
@@ -180,10 +181,13 @@ apply_cb (GtkWidget *w, gpointer data)
  * Description:
  * handles property-box destruction messages
  **/
-static void
-destroy_cb (GtkWidget *w, gpointer data)
+static gboolean
+delete_cb (GtkWidget *w, gpointer data)
 {
+  list_view = NULL;
   propbox = NULL;
+
+  return FALSE;
 }
 
 
@@ -1017,8 +1021,8 @@ show_properties_dialog (void)
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), kpage, label);
 
 
-  g_signal_connect  (G_OBJECT  (propbox), "destroy",
-                     G_CALLBACK (destroy_cb), NULL);
+  g_signal_connect  (G_OBJECT  (propbox), "delete_event",
+                     G_CALLBACK (delete_cb), NULL);
   g_signal_connect (G_OBJECT (propbox), "response",
                     G_CALLBACK (apply_cb), NULL);
 

@@ -21,6 +21,7 @@
 
 #include <config.h>
 #include <gnome.h>
+#include <libgnomeui/gnome-window-icon.h>
 #include <sys/time.h>
 #include <string.h>
 
@@ -193,7 +194,7 @@ char *argv[]
   textdomain(PACKAGE);
 
   gnome_init_with_popt_table(GAME_NAME, VERSION, argc, argv, options, 0, NULL);
-
+  gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-gnobots2.png");
   /*
   gtk_widget_push_visual (gdk_imlib_get_visual ());
   gtk_widget_push_colormap (gdk_imlib_get_colormap ());

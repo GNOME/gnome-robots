@@ -1,3 +1,7 @@
+1999-02-21  Changwoo Ryu  <cwryu@adam.kaist.ac.kr>
+
+	* properties.c, game.c: Marked more translatable strings with _().
+
 1999-02-13  Ian Peters  <ipeters@acm.org>
 
 	* Nothing was connected to delete_event, segfault on wm close.  Removed

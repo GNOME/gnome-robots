@@ -817,7 +817,8 @@ void show_properties_dialog(
 
   table = gtk_table_new(5, 5, TRUE);
 
-  label = gtk_label_new("NW");
+  /* North West */
+  label = gtk_label_new(_("NW"));
   gtk_table_attach(GTK_TABLE(table), label, 0, 1, 0, 1, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[0] = gtk_entry_new();
@@ -829,7 +830,8 @@ void show_properties_dialog(
   gtk_signal_connect(GTK_OBJECT(etext[0]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)0);
 
-  label = gtk_label_new("N");
+  /* North */
+  label = gtk_label_new(_("N"));
   gtk_table_attach(GTK_TABLE(table), label, 2, 3, 0, 1, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[1] = gtk_entry_new();
@@ -841,7 +843,8 @@ void show_properties_dialog(
   gtk_signal_connect(GTK_OBJECT(etext[1]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)1);
 
-  label = gtk_label_new("NE");
+  /* North East */
+  label = gtk_label_new(_("NE"));
   gtk_table_attach(GTK_TABLE(table), label, 4, 5, 0, 1, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[2] = gtk_entry_new();
@@ -854,6 +857,7 @@ void show_properties_dialog(
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)2);
 
 
+  /* West */
   label = gtk_label_new("W");
   gtk_table_attach(GTK_TABLE(table), label, 0, 1, 2, 3, 0, 0, 3, 3);
   gtk_widget_show(label);
@@ -875,7 +879,8 @@ void show_properties_dialog(
   gtk_signal_connect(GTK_OBJECT(etext[4]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)4);
 
-  label = gtk_label_new("E");
+  /* East */
+  label = gtk_label_new(_("E"));
   gtk_table_attach(GTK_TABLE(table), label, 4, 5, 2, 3, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[5] = gtk_entry_new();
@@ -888,7 +893,8 @@ void show_properties_dialog(
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)5);
 
 
-  label = gtk_label_new("SW");
+  /* South West */
+  label = gtk_label_new(_("SW"));
   gtk_table_attach(GTK_TABLE(table), label, 0, 1, 4, 5, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[6] = gtk_entry_new();
@@ -900,7 +906,8 @@ void show_properties_dialog(
   gtk_signal_connect(GTK_OBJECT(etext[6]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)6);
 
-  label = gtk_label_new("S");
+  /* South */
+  label = gtk_label_new(_("S"));
   gtk_table_attach(GTK_TABLE(table), label, 2, 3, 4, 5, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[7] = gtk_entry_new();
@@ -912,7 +919,8 @@ void show_properties_dialog(
   gtk_signal_connect(GTK_OBJECT(etext[7]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)7);
 
-  label = gtk_label_new("SE");
+  /* South East */
+  label = gtk_label_new(_("SE"));
   gtk_table_attach(GTK_TABLE(table), label, 4, 5, 4, 5, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[8] = gtk_entry_new();
@@ -932,7 +940,7 @@ void show_properties_dialog(
 
   gtk_table_set_row_spacing(GTK_TABLE(table), 0, 36);
 
-  label = gtk_label_new("Teleport:");
+  label = gtk_label_new(_("Teleport:"));
   gtk_table_attach(GTK_TABLE(table), label, 0, 1, 1, 2, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[9] = gtk_entry_new();
@@ -944,7 +952,7 @@ void show_properties_dialog(
   gtk_signal_connect(GTK_OBJECT(etext[9]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)9);
 
-  label = gtk_label_new("Random Teleport:");
+  label = gtk_label_new(_("Random Teleport:"));
   gtk_table_attach(GTK_TABLE(table), label, 0, 1, 2, 3, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[10] = gtk_entry_new();
@@ -956,7 +964,7 @@ void show_properties_dialog(
   gtk_signal_connect(GTK_OBJECT(etext[10]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)10);
 
-  label = gtk_label_new("Wait:");
+  label = gtk_label_new(_("Wait:"));
   gtk_table_attach(GTK_TABLE(table), label, 0, 1, 3, 4, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[11] = gtk_entry_new();

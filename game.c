@@ -109,13 +109,13 @@ guint pos
   gchar nbuf[256];
 
   if(properties_safe_moves()){
-    sprintf(sbuf, "%s-safe", game_config_filename(current_game_config()));
+    sprintf(sbuf, _("%s-safe"), game_config_filename(current_game_config()));
   } else {
     sprintf(sbuf, "%s", game_config_filename(current_game_config()));
   }
 
   if(properties_safe_moves()){
-    sprintf(nbuf, "'%s' with safe moves", 
+    sprintf(nbuf, _("'%s' with safe moves"), 
 	    game_config_name(current_game_config()));
   } else {
     sprintf(nbuf, "'%s'", game_config_name(current_game_config()));

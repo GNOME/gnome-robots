@@ -211,7 +211,7 @@ about_cb (GtkWidget *widget, gpointer data)
   }
   
   about = gnome_about_new(_("GNOME Robots"), VERSION,
-                          "Copyright \xc2\xa9 1998-2003 Mark Rae",
+                          "Copyright \xc2\xa9 1998-2004 Mark Rae",
                           _("GNOME Robots Game"),
                           (const char **)authors,
                           (const char **)documenters,

@@ -1158,7 +1158,7 @@ gconf_set_background_color (GdkColor * c)
 {
   gchar * name;
 
-  name = g_strdup_printf ("#%02x%02x%02x", c->red, c->green, c->blue);
+  name = g_strdup_printf ("#%04x%04x%04x", c->red, c->green, c->blue);
   
   gconf_client_set_string (get_gconf_client (), KEY_BACKGROUND_COLOR,
                            name, NULL);

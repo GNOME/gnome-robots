@@ -1,5 +1,5 @@
 figs = \
-        gnobots2-main.png
+        figures/gnobots2-main.png
 docname = gnobots2
 lang = C
 omffile = gnobots2-C.omf

@@ -181,7 +181,7 @@
 	  <title>GNOME Robots II Main Window</title>
 	  <screenshot>
 	    <screeninfo>GNOME Robots II Main Window</screeninfo>
-	    <graphic fileref="gnobots2-main" format="png" srccredit="Patanjali">
+	    <graphic fileref="figures/gnobots2-main" format="png" srccredit="Patanjali">
             </graphic>
 	  </screenshot>
 	</figure>

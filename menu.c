@@ -38,6 +38,9 @@ static void properties_cb (GtkWidget *widget,gpointer data);
 static void scores_cb (GtkWidget *widget,gpointer data);
 void exit_cb (GtkWidget *widget,gpointer  data);
 static void about_cb (GtkWidget *widget, gpointer data);
+static void teleport_cb  (GtkWidget *widget, gpointer data);
+static void randteleport_cb  (GtkWidget *widget, gpointer data);
+static void wait_cb (GtkWidget *widget, gpointer data);
 /**********************************************************************/
 
 
@@ -57,6 +60,13 @@ GnomeUIInfo gamemenu[] = {
   GNOMEUIINFO_END
 };
 /**********************************************************************/
+
+GnomeUIInfo movemenu[] = {
+  GNOMEUIINFO_ITEM_STOCK (N_("Teleport"), N_("Teleport, safely if possible"), teleport_cb, GTK_STOCK_JUMP_TO),
+  GNOMEUIINFO_ITEM_STOCK (N_("Random"), N_("Teleport randomly"), randteleport_cb, GTK_STOCK_JUMP_TO),
+  GNOMEUIINFO_ITEM_STOCK (N_("Wait"), N_("Wait for the robots"), wait_cb, GTK_STOCK_STOP),
+  GNOMEUIINFO_END
+};
 
 
 /**********************************************************************/
@@ -85,11 +95,22 @@ GnomeUIInfo helpmenu[] = {
 /**********************************************************************/
 GnomeUIInfo mainmenu[] = {
   GNOMEUIINFO_MENU_GAME_TREE(gamemenu),
+  GNOMEUIINFO_SUBTREE (N_("_Move"), movemenu),
   GNOMEUIINFO_MENU_SETTINGS_TREE(prefmenu),
   GNOMEUIINFO_MENU_HELP_TREE(helpmenu),
   GNOMEUIINFO_END
 };
 /**********************************************************************/
+
+GnomeUIInfo toolbar[] = {
+  GNOMEUIINFO_ITEM_STOCK(N_("New"), N_("Start a new game"),
+                         new_cb, GTK_STOCK_NEW),
+  GNOMEUIINFO_SEPARATOR,
+  GNOMEUIINFO_ITEM_STOCK (N_("Teleport"), N_("Teleport, safely if possible"), teleport_cb, GTK_STOCK_JUMP_TO),
+  GNOMEUIINFO_ITEM_STOCK (N_("Random"), N_("Teleport randomly"), randteleport_cb, GTK_STOCK_JUMP_TO),
+  GNOMEUIINFO_ITEM_STOCK (N_("Wait"), N_("Wait for the robots"), wait_cb, GTK_STOCK_STOP),
+  GNOMEUIINFO_END
+};
 
 /**********************************************************************/
 
@@ -227,6 +248,21 @@ about_cb (GtkWidget *widget, gpointer data)
   gtk_widget_show (about);
 }
 
+static void teleport_cb  (GtkWidget *widget, gpointer data)
+{
+  game_keypress (KBD_TELE);
+}
+
+static void randteleport_cb  (GtkWidget *widget, gpointer data)
+{
+  game_keypress (KBD_RTEL);
+}
+
+static void wait_cb (GtkWidget *widget, gpointer data)
+{
+  game_keypress (KBD_WAIT);
+}
+
 
 /**
  * create_game_menus
@@ -243,6 +279,7 @@ create_game_menus (void)
 {
   gnome_app_create_menus (GNOME_APP (app), mainmenu);
   gnome_app_install_menu_hints (GNOME_APP (app), mainmenu);
+  gnome_app_create_toolbar (GNOME_APP (app), toolbar);
 
   return TRUE;
 }
@@ -285,5 +322,15 @@ update_score_state (void)
     g_free (scoretimes);
   } else {
     gtk_widget_set_sensitive (gamemenu[2].widget, FALSE);
+  }
+}
+
+void set_move_menu_sensitivity (gboolean state)
+{
+  int i;
+
+  for (i=0; i<3; i++) {
+    gtk_widget_set_sensitive (movemenu[i].widget, state);
+    gtk_widget_set_sensitive (toolbar[i+2].widget, state);
   }
 }

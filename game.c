@@ -457,6 +457,7 @@ update_arena (void)
       endlev_counter = 0;
       add_aieee_bubble (player_xpos, player_ypos);
       player_animation_dead ();
+      set_move_menu_sensitivity (FALSE);
     }
 
     if ((num_robots1 + num_robots2) <= 0) {
@@ -465,12 +466,14 @@ update_arena (void)
       endlev_counter = 0;
       add_yahoo_bubble (player_xpos, player_ypos);
       reset_player_animation ();
+      set_move_menu_sensitivity (FALSE);
     }
   }
 
   display_updated = FALSE;
 
   gnobots_statusbar_set (score, current_level+1, safe_teleports, num_robots1, num_robots2);
+  
 }
 
 
@@ -514,6 +517,7 @@ timeout_cb (void *data)
       clear_game_area ();
       generate_level ();
       game_state = STATE_PLAYING;
+      set_move_menu_sensitivity (TRUE);
       gnobots_statusbar_set (score, current_level+1, safe_teleports, num_robots1, num_robots2);
     }
   } else if (game_state == STATE_DEAD) {
@@ -617,6 +621,8 @@ init_game (void)
 
   g_signal_connect (GTK_OBJECT (app), "key_press_event",
                     GTK_SIGNAL_FUNC (keyboard_cb), 0);  
+
+  set_move_menu_sensitivity (FALSE);
 }
 
 
@@ -667,6 +673,7 @@ start_new_game (void)
   game_state = STATE_PLAYING;
 
   gnobots_statusbar_set (score, current_level+1, safe_teleports, num_robots1, num_robots2);
+  set_move_menu_sensitivity (TRUE);
 }
 
 
@@ -1339,8 +1346,8 @@ gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
   }
 
   /* Otherwise go in the general direction of the mouse click. */
-  dx = e->x - (player_xpos - 0.5) * TILE_WIDTH;
-  dy = e->y - (player_ypos - 0.5) * TILE_HEIGHT;
+  dx = e->x - (player_xpos + 0.5) * TILE_WIDTH;
+  dy = e->y - (player_ypos + 0.5) * TILE_HEIGHT;
 
   angle = atan2 (dy, dx);
 

@@ -109,4 +109,4 @@ endif
 	    done
 	-if test "x$(setgid)" = "xtrue"; then chgrp $(scores_group) $(DESTDIR)$(bindir)/gnobots2 && chmod 2555 $(DESTDIR)$(bindir)/gnobots2 ; fi
 
-CLEANFILES = $(Games_DATA) $(soundlist_DATA)
+CLEANFILES = $(Games_DATA) $(soundlist_DATA) $(schema_DATA)

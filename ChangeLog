@@ -1,3 +1,20 @@
+2003-11-19  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* Makefile.am (CLEANFILES): Clean up the schema data after
+	ourselves.
+
+2003-11-19  Callum McKenzie  <callum@ou030243.otago.ac.nz>
+
+	* help/Makefile.am (SUBDIRS): Disabled the da, es and it
+	translations until I can get them better integrated into the build
+	process (xml, not html is now expected).
+
+2003-11-19  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/it/Makefile.am: 
+	* help/da/Makefile.am:
+	* help/es/Makefile.am: Updated to let make uninstall work.
+
 2003-10-30  Callum McKenzie  <callum@localhost.localdomain>
 
 	* Makefile.am (INCLUDES): Removed *_DISABLE_DEPRECATED.

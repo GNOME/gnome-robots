@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=GnobotsII
+Name[da]=GnobotsII
 Name[de]=GnobotsII
 Name[es]=GnobotsII
 Name[et]=GnobotsII
@@ -10,6 +11,7 @@ Name[no]=GnobotsII
 Name[pt]=GnobotsII
 Name[ru]=çÎÏÂÏÔÓ II
 Comment=Gnome Robots game
+Comment[da]=Robots spil for Gnome - udvidet version
 Comment[de]=robots(6) für Gnome - erweiterte Version
 Comment[es]=Trate de escapar a los robots que le asedian
 Comment[et]=II versioon GNOME robotimängust

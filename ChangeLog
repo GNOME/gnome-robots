@@ -1,5 +1,11 @@
 2003-06-19  William Jon McCann  <mccann@jhu.edu>
 
+	* gameconfig.c (load_game_configs): 
+	* graphics.c (load_game_graphics): Use glib file utilities
+	and don't make so many assumptions about filenames (like
+	don't assume there are no periods).
+	(load_bubble_graphics): Use g_build_filename.
+
 	* properties.c: Made preferences instant apply.
 
 	* statusbar.c (gnobots_statusbar_new): Decrease spacing

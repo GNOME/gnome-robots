@@ -130,24 +130,22 @@ load_bubble_graphic (gchar *fname, GdkPixmap **pixmap, GdkPixmap **mask)
 static gboolean
 load_bubble_graphics (void)
 {
-  gchar buffer[PATH_MAX];
+  gchar *buffer = NULL;
   gchar *dname = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_PIXMAP,
                                             GAME_NAME, FALSE, NULL);
 
-  strcpy (buffer, dname);
-  strcat (buffer, "/");
-  strcat (buffer, "yahoo.png");
-  if (!load_bubble_graphic (buffer, &yahoo_pixmap, &yahoo_mask)) return FALSE;
+  buffer = g_build_filename (dname, "yahoo.png", NULL);
+  if (! load_bubble_graphic (buffer, &yahoo_pixmap, &yahoo_mask))
+    return FALSE;
+  g_free (buffer);
 
-  strcpy (buffer, dname);
-  strcat (buffer, "/");
-  strcat (buffer, "aieee.png");
-  if (!load_bubble_graphic (buffer, &aieee_pixmap, &aieee_mask)) return FALSE;
+  buffer = g_build_filename (dname, "aieee.png", NULL);
+  if (! load_bubble_graphic (buffer, &aieee_pixmap, &aieee_mask))
+    return FALSE;
 
-  strcpy (buffer, dname);
-  strcat (buffer, "/");
-  strcat (buffer, "splat.png");
-  if (!load_bubble_graphic (buffer, &splat_pixmap, &splat_mask)) return FALSE;
+  buffer = g_build_filename (dname, "splat.png", NULL);
+  if (! load_bubble_graphic (buffer, &splat_pixmap, &splat_mask))
+    return FALSE;
 
   return TRUE;
 }
@@ -165,14 +163,15 @@ load_bubble_graphics (void)
 gboolean
 load_game_graphics (void)
 {
-  gint             i;
-  struct dirent  *dent;
-  DIR            *dir;
-  gchar           buffer[PATH_MAX];
+  gint           i;
+  G_CONST_RETURN gchar* dent;
+  GDir           *dir;
+  gchar          *buffer;
   gchar          *bptr;
   GdkPixbuf      *image;
   GdkImage       *tmpimage;
   GdkPixmap      *pixmap;
+
   gchar *dname = gnome_program_locate_file (NULL, 
                                             GNOME_FILE_DOMAIN_APP_PIXMAP,
                                             GAME_NAME, FALSE, 
@@ -182,12 +181,13 @@ load_game_graphics (void)
     free_game_graphics ();
   }
 
-  dir = opendir (dname);
-  if (!dir) return FALSE;
+  dir = g_dir_open (dname, 0, NULL);
+  if (dir == NULL)
+    return FALSE;
 
   num_graphics = 0;
-  while ((dent = readdir (dir)) != NULL) {
-    if (!strstr (dent->d_name, ".png")) {
+  while ((dent = g_dir_read_name (dir)) != NULL) {
+    if (! g_strrstr (dent, ".png")) {
       continue;
     }
     num_graphics++;
@@ -198,49 +198,42 @@ load_game_graphics (void)
     game_graphic[i] = NULL;
   }
 
-  rewinddir (dir);
+  g_dir_rewind (dir);
 
   num_graphics = 0;
-  while ((dent = readdir (dir)) != NULL) {
-    if (!strstr (dent->d_name, ".png")) {
+  while ((dent = g_dir_read_name (dir)) != NULL) {
+    if (! g_strrstr (dent, ".png")) {
       continue;
     }
-    if (!strcmp (dent->d_name, "yahoo.png")) {
+    if (! strcmp (dent, "yahoo.png")) {
       continue;
     }
-    if (!strcmp (dent->d_name, "aieee.png")) {
+    if (! strcmp (dent, "aieee.png")) {
       continue;
     }
-    if (!strcmp (dent->d_name, "splat.png")) {
+    if (! strcmp (dent, "splat.png")) {
       continue;
     }
-    if (!strcmp (dent->d_name, "gnome-gnobots2.png")) {
+    if (! strcmp (dent, "gnome-gnobots2.png")) {
       continue;
     }
 
-    strcpy (buffer, dent->d_name);
-    bptr = buffer;
-    while (bptr) {
-      if (*bptr == '.') {
-	*bptr = 0;
-	break;
-      }
-      bptr++;
-    }
+    buffer = g_strdup (dent);
+    bptr = g_strrstr (buffer, ".png");
+    if (bptr != NULL)
+      *bptr = 0;
 
     game_graphic[num_graphics] = g_new (GraphicInfo, 1);
     game_graphic[num_graphics]->name = g_string_new (buffer);
+    g_free (buffer);
 
-    
-    strcpy (buffer, dname);
-    strcat (buffer, "/");
-    strcat (buffer, dent->d_name);
+    buffer = g_build_filename (dname, dent, NULL);
 
     image = gdk_pixbuf_new_from_file (buffer, NULL);
+    g_free (buffer);
     gdk_pixbuf_render_pixmap_and_mask (image, &pixmap, NULL, 127);
     tmpimage = gdk_drawable_get_image (pixmap, 0, 0, 1, 1);
-    game_graphic[num_graphics]->bgcolor.pixel
-      = gdk_image_get_pixel (tmpimage, 0, 0);
+    game_graphic[num_graphics]->bgcolor.pixel = gdk_image_get_pixel (tmpimage, 0, 0);
     g_object_unref (tmpimage);
     gdk_pixbuf_unref (image);
 
@@ -249,11 +242,12 @@ load_game_graphics (void)
     num_graphics++;
   }
 
-  closedir (dir);
+  g_dir_close (dir);
 
   current_graphics = 0;
 
-  if (!load_bubble_graphics ()) return FALSE;
+  if (! load_bubble_graphics ())
+    return FALSE;
 
   return TRUE;
 }
@@ -286,19 +280,25 @@ free_game_graphics (void)
   num_graphics = -1;
   current_graphics = -1;
 
-  if (aieee_pixmap) g_object_unref (aieee_pixmap);
+  if (aieee_pixmap) 
+    g_object_unref (aieee_pixmap);
   aieee_pixmap = NULL;
-  if (aieee_mask) g_object_unref (aieee_mask);
+  if (aieee_mask)
+    g_object_unref (aieee_mask);
   aieee_mask = NULL;
 
-  if (yahoo_pixmap) g_object_unref (yahoo_pixmap);
+  if (yahoo_pixmap)
+    g_object_unref (yahoo_pixmap);
   yahoo_pixmap = NULL;
-  if (yahoo_mask) g_object_unref (yahoo_mask);
+  if (yahoo_mask)
+    g_object_unref (yahoo_mask);
   yahoo_mask = NULL;
 
-  if (splat_pixmap) g_object_unref (splat_pixmap);
+  if (splat_pixmap)
+    g_object_unref (splat_pixmap);
   splat_pixmap = NULL;
-  if (splat_mask) g_object_unref (splat_mask);
+  if (splat_mask)
+    g_object_unref (splat_mask);
   splat_mask = NULL;
 
   return TRUE;
@@ -317,7 +317,8 @@ free_game_graphics (void)
 gint
 num_game_graphics (void)
 {
-  if (game_graphic == NULL) return -1;
+  if (game_graphic == NULL)
+    return -1;
 
   return num_graphics;
 }
@@ -336,9 +337,11 @@ num_game_graphics (void)
 gchar*
 game_graphics_name (gint n)
 {
-  if (game_graphic == NULL) return NULL;
+  if (game_graphic == NULL) 
+    return NULL;
 
-  if ((n < 0) || (n >= num_graphics)) return NULL;
+  if ((n < 0) || (n >= num_graphics))
+    return NULL;
 
   return game_graphic[n]->name->str;
 }

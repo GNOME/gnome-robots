@@ -68,9 +68,9 @@ load_config (gchar *fname)
   GameConfig *gcfg;
   gint        pflag = 0;
   FILE       *fp;
-  gchar       buffer[PATH_MAX];
+  gchar buffer[PATH_MAX];
   gchar      *bptr;
-  gchar      *bpstart;
+  gchar      *bpstart, *bpstart2;
   gchar      *vptr;
   gint        val;
 
@@ -78,20 +78,17 @@ load_config (gchar *fname)
   if (fp == NULL)
     return NULL;
 
-  gcfg = g_new(GameConfig, 1);
-  strcpy(buffer, fname);
-  bptr = bpstart = buffer;
-  while (*bptr) {
-    if (*bptr == '.') {
-      *bptr = 0;
-      break;
-    }
-    if (*bptr == '/') {
-      bpstart = bptr+1;
-    }
-    ++bptr;
-  }
-  gcfg->description = g_string_new (bpstart);
+  gcfg = g_new (GameConfig, 1);
+
+  bpstart = g_strdup (fname);
+  bptr = g_strrstr (bpstart, ".cfg");
+  if (bptr != NULL)
+    *bptr = 0;
+
+  bpstart2 = g_path_get_basename (bpstart);
+  g_free (bpstart);
+  gcfg->description = g_string_new (bpstart2);
+  g_free (bpstart2);
   
   while (fgets (buffer, 256, fp) != NULL) {
     if (strlen (buffer) < 3) 
@@ -214,9 +211,10 @@ load_game_configs (void)
 {
   gint           i;
   GameConfig    *gcfg;
-  struct dirent *dent;
-  DIR           *dir;
-  gchar buffer[PATH_MAX];
+  G_CONST_RETURN gchar* dent;
+  GDir          *dir;
+  gchar *buffer;
+
   gchar *dname = gnome_program_locate_file (NULL, 
                                             GNOME_FILE_DOMAIN_APP_DATADIR,
                                             (GAME_NAME),
@@ -226,43 +224,42 @@ load_game_configs (void)
     free_game_configs ();
   }
 
-  dir = opendir (dname);
-  if (! dir)
+  dir = g_dir_open (dname, 0, NULL);
+  if (dir == NULL)
     return FALSE;
 
   num_configs = 0;
-  while ((dent = readdir (dir)) != NULL) {
-    if (! strstr (dent->d_name, ".cfg")) {
+  while ((dent = g_dir_read_name (dir)) != NULL) {
+    if (! g_strrstr (dent, ".cfg")) {
       continue;
     }
     num_configs++;
   }
 
   game_configs = g_new (GameConfig*, num_configs);
-  for(i = 0; i < num_configs; ++i) {
+  for (i = 0; i < num_configs; ++i) {
     game_configs[i] = NULL;
   }
 
-  rewinddir (dir);
+  g_dir_rewind (dir);
 
   num_configs = 0;
-  while ((dent = readdir (dir)) != NULL) {
-    if (! strstr(dent->d_name, ".cfg")) {
+  while ((dent = g_dir_read_name (dir)) != NULL) {
+    if (! g_strrstr(dent, ".cfg")) {
       continue;
     }
     
-    strcpy (buffer, dname);
-    strcat (buffer, "/");
-    strcat (buffer, dent->d_name);
+    buffer = g_build_filename (dname, dent, NULL);
 
     gcfg = load_config (buffer);
+    g_free (buffer);
     if (gcfg != NULL) {
       game_configs[num_configs] = gcfg;
       num_configs++;
     }
   }
 
-  closedir (dir);
+  g_dir_close (dir);
 
   if (num_configs >= 0) {
     current_config = 0;

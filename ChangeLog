@@ -1,3 +1,10 @@
+1999-03-04  Ian Peters  <itp@acm.org>
+
+	* keyboard.c: keyboard_cb: Commented out suspicious line checking
+	keyboard modifiers, as this breaks some X setups with Numlock as
+	modifier.  What was this for anyway?  Gtk+ can grab events fine
+	regardless of what you do.
+
 1999-02-21  Changwoo Ryu  <cwryu@adam.kaist.ac.kr>
 
 	* properties.c, game.c: Marked more translatable strings with _().

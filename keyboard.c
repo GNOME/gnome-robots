@@ -127,7 +127,10 @@ gpointer     data
 ){
   gint i, kv;
 
+  /* What is this for?  This causes problems for those people whose Numlock is
+   * a modifier.
   if(event->state &= GDK_MODIFIER_MASK) return FALSE;
+  */
 
   kv = keyboard_preferred(event->keyval);
 

@@ -101,7 +101,7 @@ load_bubble_graphic (gchar *fname, GdkPixbuf **pixbuf)
 {
 
   if (!g_file_test (fname, G_FILE_TEST_EXISTS)) {
-    printf (_("Could not find \'%s\' image file for GNOME Robots\n"), fname);
+    printf (_("Could not find \'%s\' pixmap file\n"), fname);
     return FALSE;
   }
 

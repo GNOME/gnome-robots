@@ -1,3 +1,8 @@
+2004-07-20  Christian Neumair  <chris@gnome-de.org>
+
+	* graphics.c (load_bubble_graphic): Assimilate gettextized warning to
+	other ones.
+
 2004-07-18  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* properties.c: Convert the keyboard control list to Paolo's

@@ -244,11 +244,18 @@ gpointer data
     "Mark Rae <m.rae@inpharmatica.co.uk>",
     NULL
   };
+  gchar *documenters[] = {
+                	  NULL
+        		  };
+  /* Translator credits */
+  gchar *translator_credits = _("");
   
   about = gnome_about_new(_("Gnobots II"), VERSION,
                           "(C) 1998 Mark Rae",
-                          authors,
                           _("Gnome Robots Game"),
+                          (const char **)authors,
+                          (const char **)documenters,
+                          (const char *)translator_credits,
                           NULL);
   gnome_dialog_set_parent(GNOME_DIALOG(about), GTK_WINDOW(app));
   gtk_window_set_modal(GTK_WINDOW(about), TRUE);

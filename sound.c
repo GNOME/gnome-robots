@@ -74,11 +74,14 @@ gint sno
 	gnome_triggers_do("", "program", GAME_NAME, "splat", NULL);
         break;
       case SOUND_BAD:
+#if 0
       	if(gnome_sound_connection >= 0){
           gnome_triggers_do("", "program", GAME_NAME, "bad-move", NULL);
 	} else {
           gdk_beep();
 	}
+#endif
+	gdk_beep();
         break;
       case SOUND_YAHOO:
 	gnome_triggers_do("", "program", GAME_NAME, "yahoo", NULL);

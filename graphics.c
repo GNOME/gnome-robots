@@ -90,7 +90,7 @@ GdkPixmap **mask
     return FALSE;
   }
 
-  image = gdk_pixbuf_new_from_file(fname);
+  image = gdk_pixbuf_new_from_file(fname, NULL);
   
   gdk_pixbuf_render_pixmap_and_mask (image, pixmap, mask, 127);
   gdk_pixbuf_unref (image);
@@ -211,7 +211,7 @@ gboolean load_game_graphics(
     strcat(buffer, "/");
     strcat(buffer, dent->d_name);
 
-    image = gdk_pixbuf_new_from_file (buffer);
+    image = gdk_pixbuf_new_from_file (buffer, NULL);
     gdk_pixbuf_render_pixmap_and_mask (image, &pixmap, NULL, 127);
     tmpimage = gdk_image_get(pixmap, 0, 0, 1, 1);
     game_graphic[num_graphics]->bgcolor.pixel = gdk_image_get_pixel(tmpimage, 0, 0);

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=GnobotsII
+Name[de]=GnobotsII
+Name[es]=GnobotsII
+Name[fr]=GnobotsII
+Name[ko]=GnobotsII
+Name[no]=GnobotsII
+Name[pt]=GnobotsII
+Comment=Gnome Robots game
+Comment[de]=Gnome Robots game
+Comment[es]=Trate de escapar a los robots que le asedian
+Comment[fr]=Essayez d'échaper aux robots qui vous poursuivent
+Comment[ko]=Gnome Robots game
+Comment[no]=Gnome Robots game
+Comment[pt]=Jogo Gnome Robots
+Exec=gnobots2
+Icon=gnome-gnobots2.png
+Terminal=0
+Type=Application

@@ -1,0 +1,2348 @@
+<h2>Function</h2>
+<i>static void</i>
+<b>message_box</b>
+(<i>gchar *</i> <b>msg</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gchar *</i> <b>msg</b>
+<dd> message
+</dl>
+<h3>Description</h3>
+<ul>
+Displays a modal dialog box with a given message
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>show_scores</b>
+(<i>guint</i> <b>pos</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>guint</i> <b>pos</b>
+<dd> score-table position
+</dl>
+<h3>Description</h3>
+<ul>
+Displays the high-score table
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static guint</i>
+<b>log_score</b>
+(<i>gint</i> <b>sc</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>sc</b>
+<dd> score
+</dl>
+<h3>Description</h3>
+<ul>
+Enters a score in the high-score table
+</ul>
+<h3>Returns</h3>
+<ul>
+the position in the high-score table
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>add_kill</b>
+(<i>gint</i> <b>type</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>type</b>
+<dd> robot type
+</dl>
+<h3>Description</h3>
+<ul>
+registers a robot kill and updates the score
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>clear_arena</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+clears the arena
+</ul>
+<h3>Description</h3>
+<ul>
+clears the arena
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>add_object</b>
+(<i>gint</i> <b>x</b>
+, <i>gint</i> <b>y</b>
+, <i>gint</i> <b>type</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>x</b>
+<dd> object x position
+<dt><i>gint</i> <b>y</b>
+<dd> object y position
+<dt><i>gint</i> <b>type</b>
+<dd> object type
+</dl>
+<h3>Description</h3>
+<ul>
+Adds an object to the arena
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gint</i>
+<b>check_location</b>
+(<i>gint</i> <b>x</b>
+, <i>gint</i> <b>y</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>x</b>
+<dd> x position
+<dt><i>gint</i> <b>y</b>
+<dd> y position
+</dl>
+<h3>Description</h3>
+<ul>
+checks for an object at a given location
+</ul>
+<h3>Returns</h3>
+<ul>
+type of object if present or OBJECT_NONE
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gboolean</i>
+<b>check_heap</b>
+(<i>gint</i> <b>x</b>
+, <i>gint</i> <b>y</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>x</b>
+<dd> x position
+<dt><i>gint</i> <b>y</b>
+<dd> y position
+</dl>
+<h3>Description</h3>
+<ul>
+checks for a junkheap at a given location
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if present or FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>generate_level</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Creates a new level and populates it with robots
+</ul>
+<h3>Description</h3>
+<ul>
+Creates a new level and populates it with robots
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>draw_graphics</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Draws all of the game objects
+</ul>
+<h3>Description</h3>
+<ul>
+Draws all of the game objects
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>update_arena</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Copies the temporary arena into the main game arena
+</ul>
+<h3>Description</h3>
+<ul>
+Copies the temporary arena into the main game arena
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gint</i>
+<b>timeout_cb</b>
+(<i>void *</i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>void *</i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+Game timer callback function
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>destroy_game_timer</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Destroys the game timer
+</ul>
+<h3>Description</h3>
+<ul>
+Destroys the game timer
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>create_game_timer</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Creates the game timer
+</ul>
+<h3>Description</h3>
+<ul>
+Creates the game timer
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>create_demo_objects</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Creates objects for the initial 'demo' screen
+</ul>
+<h3>Description</h3>
+<ul>
+Creates objects for the initial 'demo' screen
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>init_game</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Initialises everything when game first starts up
+</ul>
+<h3>Description</h3>
+<ul>
+Initialises everything when game first starts up
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>cleanup_game</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+cleans up all of game resources
+</ul>
+<h3>Description</h3>
+<ul>
+cleans up all of game resources
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>start_new_game</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Initialises everything needed to start a new game
+</ul>
+<h3>Description</h3>
+<ul>
+Initialises everything needed to start a new game
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>move_all_robots</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Moves all of the robots and checks for collisions
+</ul>
+<h3>Description</h3>
+<ul>
+Moves all of the robots and checks for collisions
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>move_type2_robots</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Makes the extra move for all of the type2 robots
+</ul>
+<h3>Description</h3>
+<ul>
+Makes the extra move for all of the type2 robots
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>move_robots</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Starts the process of moving robots
+</ul>
+<h3>Description</h3>
+<ul>
+Starts the process of moving robots
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gboolean</i>
+<b>check_safe</b>
+(<i>gint</i> <b>x</b>
+, <i>gint</i> <b>y</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>x</b>
+<dd> x position
+<dt><i>gint</i> <b>y</b>
+<dd> y position
+</dl>
+<h3>Description</h3>
+<ul>
+checks whether a given location is safe
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if location is safe, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>signal_bad_move</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Makes a sound when a bad move is made
+</ul>
+<h3>Description</h3>
+<ul>
+Makes a sound when a bad move is made
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gboolean</i>
+<b>push_heap</b>
+(<i>gint</i> <b>x</b>
+, <i>gint</i> <b>y</b>
+, <i>gint</i> <b>dx</b>
+, <i>gint</i> <b>dy</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>x</b>
+<dd> x position
+<dt><i>gint</i> <b>y</b>
+<dd> y position
+<dt><i>gint</i> <b>dx</b>
+<dd> x direction
+<dt><i>gint</i> <b>dy</b>
+<dd> y direction
+</dl>
+<h3>Description</h3>
+<ul>
+pushes a heap in a given direction
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if heap can be pushed, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gboolean</i>
+<b>try_player_move</b>
+(<i>gint</i> <b>dx</b>
+, <i>gint</i> <b>dy</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>dx</b>
+<dd> x direction
+<dt><i>gint</i> <b>dy</b>
+<dd> y direction
+</dl>
+<h3>Description</h3>
+<ul>
+tries to move the player in a given direction
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if the player can move, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gboolean</i>
+<b>safe_move_available</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+checks to see if a safe move was available to the player
+</ul>
+<h3>Description</h3>
+<ul>
+checks to see if a safe move was available to the player
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if there is a possible safe move, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gboolean</i>
+<b>player_move</b>
+(<i>gint</i> <b>dx</b>
+, <i>gint</i> <b>dy</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>dx</b>
+<dd> x direction
+<dt><i>gint</i> <b>dy</b>
+<dd> y direction
+</dl>
+<h3>Description</h3>
+<ul>
+moves the player in a given direction
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if the player can move, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gboolean</i>
+<b>random_teleport</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+randomly teleports the player
+</ul>
+<h3>Description</h3>
+<ul>
+randomly teleports the player
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if the player can be teleported, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gboolean</i>
+<b>safe_teleport</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+teleports the player to safe location
+</ul>
+<h3>Description</h3>
+<ul>
+teleports the player to safe location
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if player can be teleported, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>game_keypress</b>
+(<i>gint</i> <b>key</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>key</b>
+<dd> keycode
+</dl>
+<h3>Description</h3>
+<ul>
+handles keyboard commands
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static GameConfig*</i>
+<b>load_config</b>
+(<i>gchar *</i> <b>fname</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gchar *</i> <b>fname</b>
+<dd> config file name
+</dl>
+<h3>Description</h3>
+<ul>
+loads a configuraion from a file
+</ul>
+<h3>Returns</h3>
+<ul>
+a pointer to a GameConfig structure or NULL on failure
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>load_game_configs</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+loads all of the available configurations
+</ul>
+<h3>Description</h3>
+<ul>
+loads all of the available configurations
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>free_game_configs</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+frees the memory used by the loaded configurations
+</ul>
+<h3>Description</h3>
+<ul>
+frees the memory used by the loaded configurations
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gint</i>
+<b>num_game_configs</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+returns the number of available game configurations
+</ul>
+<h3>Description</h3>
+<ul>
+returns the number of available game configurations
+</ul>
+<h3>Returns</h3>
+<ul>
+number of configurations
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>set_game_config</b>
+(<i>gint</i> <b>n</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>n</b>
+<dd> configuraion number
+</dl>
+<h3>Description</h3>
+<ul>
+sets the game configuration to use
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>GameConfig*</i>
+<b>game_config</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+returns a pointer to the currently selected game configuration
+</ul>
+<h3>Description</h3>
+<ul>
+returns a pointer to the currently selected game configuration
+</ul>
+<h3>Returns</h3>
+<ul>
+pointer to a GameConfig structure or NULL
+</ul>
+<hr>
+<h2>Function</h2>
+<i>GameConfig*</i>
+<b>game_config_settings</b>
+(<i>gint</i> <b>n</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>n</b>
+<dd> config number
+</dl>
+<h3>Description</h3>
+<ul>
+returns a pointer to a specified game configuration
+</ul>
+<h3>Returns</h3>
+<ul>
+pointer to a GameConfig structure or NULL
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gint</i>
+<b>current_game_config</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+returns the number of the currently selected configuration
+</ul>
+<h3>Description</h3>
+<ul>
+returns the number of the currently selected configuration
+</ul>
+<h3>Returns</h3>
+<ul>
+the selected configuration or -1
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gchar*</i>
+<b>game_config_name</b>
+(<i>gint</i> <b>n</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>n</b>
+<dd> configuration number
+</dl>
+<h3>Description</h3>
+<ul>
+returns a string containing the name of the specified configuration
+</ul>
+<h3>Returns</h3>
+<ul>
+pointer to a string containing the name
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gchar*</i>
+<b>game_config_filename</b>
+(<i>gint</i> <b>n</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>n</b>
+<dd> configuration number
+</dl>
+<h3>Description</h3>
+<ul>
+returns a string containing the filename for the specified configuration
+</ul>
+<h3>Returns</h3>
+<ul>
+pointer to a string containing the filename
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gchar *</i>
+<b>nstr</b>
+(<i>gint</i> <b>n</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>n</b>
+<dd> number
+</dl>
+<h3>Description</h3>
+<ul>
+creates a new string containing a number
+</ul>
+<h3>Returns</h3>
+<ul>
+a new string containing a number
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gint</i>
+<b>save_state</b>
+(<i>GnomeClient        *</i> <b>client</b>
+, <i>gint               </i> <b>phase</b>
+, <i>GnomeRestartStyle  </i> <b>save_style</b>
+, <i>gint               </i> <b>shutdown</b>
+, <i>GnomeInteractStyle </i> <b>interact_style</b>
+, <i>gint               </i> <b>fast</b>
+, <i>gpointer           </i> <b>client_data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GnomeClient        *</i> <b>client</b>
+<dd> gnome client
+<dt><i>gint               </i> <b>phase</b>
+<dd> phase
+<dt><i>GnomeRestartStyle  </i> <b>save_style</b>
+<dd> save style
+<dt><i>gint               </i> <b>shutdown</b>
+<dd> shutdown
+<dt><i>GnomeInteractStyle </i> <b>interact_style</b>
+<dd> interact style
+<dt><i>gint               </i> <b>fast</b>
+<dd> fast shutdown
+<dt><i>gpointer           </i> <b>client_data</b>
+<dd> client data
+</dl>
+<h3>Description</h3>
+<ul>
+saves session info
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>session_die</b>
+(<i>gpointer   </i> <b>client_data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gpointer   </i> <b>client_data</b>
+<dd> client data
+</dl>
+<h3>Description</h3>
+<ul>
+cleans up on session death
+</ul>
+<hr>
+<h2>Function</h2>
+<i>int</i>
+<b>main</b>
+(<i>int</i> <b>argc</b>
+, <i>char *</i> <b>argv[]</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>int</i> <b>argc</b>
+<dd> number of arguments
+<dt><i>char *</i> <b>argv[]</b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+main
+</ul>
+<h3>Returns</h3>
+<ul>
+exit code
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gboolean</i>
+<b>load_bubble_graphic</b>
+(<i>gchar *</i> <b>fname</b>
+, <i>GdkPixmap **</i> <b>pixmap</b>
+, <i>GdkPixmap **</i> <b>mask</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gchar *</i> <b>fname</b>
+<dd> pixmap filename
+<dt><i>GdkPixmap **</i> <b>pixmap</b>
+<dd> pointer to pixmap pointer
+<dt><i>GdkPixmap **</i> <b>mask</b>
+<dd> pointer to pixmap mask pointer
+</dl>
+<h3>Description</h3>
+<ul>
+loads a 'Speech Bubble' graphic - i.e. one requiring a transparency
+mask
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gboolean</i>
+<b>load_bubble_graphics</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Loads all of the 'speech bubble' graphics
+</ul>
+<h3>Description</h3>
+<ul>
+Loads all of the 'speech bubble' graphics
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>load_game_graphics</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Loads all of the game graphics
+</ul>
+<h3>Description</h3>
+<ul>
+Loads all of the game graphics
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>free_game_graphics</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Frees all of the resources used by the game graphics
+</ul>
+<h3>Description</h3>
+<ul>
+Frees all of the resources used by the game graphics
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gint</i>
+<b>num_game_graphics</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Returns the number of different graphics scenarios available
+</ul>
+<h3>Description</h3>
+<ul>
+Returns the number of different graphics scenarios available
+</ul>
+<h3>Returns</h3>
+<ul>
+number of graphic types
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gchar*</i>
+<b>game_graphics_name</b>
+(<i>gint</i> <b>n</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>n</b>
+<dd> game graphics number
+</dl>
+<h3>Description</h3>
+<ul>
+The descriptive name of game graphics number <tt><b>n</b></tt>
+</ul>
+<h3>Returns</h3>
+<ul>
+a string containing the graphics name
+</ul>
+<hr>
+<h2>Function</h2>
+<i>GdkColor</i>
+<b>game_graphics_background</b>
+(<i>gint</i> <b>n</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>n</b>
+<dd> game graphics number
+</dl>
+<h3>Description</h3>
+<ul>
+Returns the background colour for game graphics specified by <tt><b>n</b></tt>
+</ul>
+<h3>Returns</h3>
+<ul>
+background colour
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gint</i>
+<b>current_game_graphics</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+returns the currently selected graphics
+</ul>
+<h3>Description</h3>
+<ul>
+returns the currently selected graphics
+</ul>
+<h3>Returns</h3>
+<ul>
+game graphics number
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gint</i>
+<b>set_game_graphics</b>
+(<i>gint</i> <b>ng</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>ng</b>
+<dd> Game graphics number
+</dl>
+<h3>Description</h3>
+<ul>
+Sets the game graphics to use
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>draw_tile_pixmap</b>
+(<i>gint        </i> <b>tileno</b>
+, <i>gint        </i> <b>pno</b>
+, <i>gint        </i> <b>x</b>
+, <i>gint        </i> <b>y</b>
+, <i>GtkWidget  *</i> <b>area</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint        </i> <b>tileno</b>
+<dd> Graphics tile number
+<dt><i>gint        </i> <b>pno</b>
+<dd> Number of graphics set
+<dt><i>gint        </i> <b>x</b>
+<dd> x position in pixels
+<dt><i>gint        </i> <b>y</b>
+<dd> y position in pixels
+<dt><i>GtkWidget  *</i> <b>area</b>
+<dd> Pointer to drawing area widget
+</dl>
+<h3>Description</h3>
+<ul>
+Draws tile pixmap <tt><b>tileno</b></tt> form graphics set <tt><b>pno</b></tt> at (<tt><b>x</b></tt>, <tt><b>y</b></tt>) in
+a widget <tt><b>area</b></tt>
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>draw_object</b>
+(<i>gint</i> <b>x</b>
+, <i>gint</i> <b>y</b>
+, <i>gint</i> <b>type</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>x</b>
+<dd> x position 
+<dt><i>gint</i> <b>y</b>
+<dd> y position 
+<dt><i>gint</i> <b>type</b>
+<dd> object type
+</dl>
+<h3>Description</h3>
+<ul>
+Draws graphics for an object at specified location
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>clear_game_area</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+clears the whole of the game area
+</ul>
+<h3>Description</h3>
+<ul>
+clears the whole of the game area
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>clear_bubble_area</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+clears the area underneath a bubble
+</ul>
+<h3>Description</h3>
+<ul>
+clears the area underneath a bubble
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>reset_player_animation</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+resets player animation to standing position
+</ul>
+<h3>Description</h3>
+<ul>
+resets player animation to standing position
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>player_animation_dead</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+sets player animation to be dead
+</ul>
+<h3>Description</h3>
+<ul>
+sets player animation to be dead
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>animate_game_graphics</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+updates animation for object graphics
+</ul>
+<h3>Description</h3>
+<ul>
+updates animation for object graphics
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>draw_bubble</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Draws a bubble if there is one
+</ul>
+<h3>Description</h3>
+<ul>
+Draws a bubble if there is one
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>add_bubble</b>
+(<i>gint</i> <b>x</b>
+, <i>gint</i> <b>y</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>x</b>
+<dd> x position 
+<dt><i>gint</i> <b>y</b>
+<dd> y position 
+</dl>
+<h3>Description</h3>
+<ul>
+adds a bubble at <tt><b>x</b></tt>,<tt><b>y</b></tt>
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>remove_bubble</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+removes all types of bubble
+</ul>
+<h3>Description</h3>
+<ul>
+removes all types of bubble
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>remove_splat_bubble</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+removes a splat bubble if there is one
+</ul>
+<h3>Description</h3>
+<ul>
+removes a splat bubble if there is one
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>add_yahoo_bubble</b>
+(<i>gint</i> <b>x</b>
+, <i>gint</i> <b>y</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>x</b>
+<dd> x position 
+<dt><i>gint</i> <b>y</b>
+<dd> y position 
+</dl>
+<h3>Description</h3>
+<ul>
+adds and "Yahoo" bubble at <tt><b>x</b></tt>,<tt><b>y</b></tt>
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>add_aieee_bubble</b>
+(<i>gint</i> <b>x</b>
+, <i>gint</i> <b>y</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>x</b>
+<dd> x position 
+<dt><i>gint</i> <b>y</b>
+<dd> y position 
+</dl>
+<h3>Description</h3>
+<ul>
+adds and "Aieee" bubble at <tt><b>x</b></tt>,<tt><b>y</b></tt>
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>add_splat_bubble</b>
+(<i>gint</i> <b>x</b>
+, <i>gint</i> <b>y</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>x</b>
+<dd> x position 
+<dt><i>gint</i> <b>y</b>
+<dd> y position 
+</dl>
+<h3>Description</h3>
+<ul>
+adds a "Splat" speech bubble at <tt><b>x</b></tt>,<tt><b>y</b></tt>
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gchar*</i>
+<b>keyboard_string</b>
+(<i>gint</i> <b>ksym</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>ksym</b>
+<dd> KeySym
+</dl>
+<h3>Description</h3>
+<ul>
+Returns the text description of a keysym
+</ul>
+<h3>Returns</h3>
+<ul>
+String representation of a keysym
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gint</i>
+<b>keyboard_preferred</b>
+(<i>gint</i> <b>ksym</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>ksym</b>
+<dd> KeySym
+</dl>
+<h3>Description</h3>
+<ul>
+Returns the preferred alternative keysym. e.g. converts
+all lovercase letters to uppercase
+</ul>
+<h3>Returns</h3>
+<ul>
+preferred keysym
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>keyboard_set</b>
+(<i>gint*</i> <b>keys</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint*</i> <b>keys</b>
+<dd> array of keysyms
+</dl>
+<h3>Description</h3>
+<ul>
+sets the keybaord mapping
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gint</i>
+<b>keyboard_cb</b>
+(<i>GtkWidget   *</i> <b>widget</b>
+, <i>GdkEventKey *</i> <b>event</b>
+, <i>gpointer    </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget   *</i> <b>widget</b>
+<dd> widget
+<dt><i>GdkEventKey *</i> <b>event</b>
+<dd> event
+<dt><i>gpointer    </i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+handles keyboard events
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if the event is handled
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>really_new_cb</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> Pointer to widget
+<dt><i>gpointer </i> <b>data</b>
+<dd> Callback data
+</dl>
+<h3>Description</h3>
+<ul>
+Callback to really start new game
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>new_cb</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> Pointer to widget
+<dt><i>gpointer </i> <b>data</b>
+<dd> Callback data
+</dl>
+<h3>Description</h3>
+<ul>
+Callback for new menu entry
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>properties_cb</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> Pointer to widget
+<dt><i>gpointer </i> <b>data</b>
+<dd> Callback data
+</dl>
+<h3>Description</h3>
+<ul>
+Callback for properties menu entry
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>scores_cb</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> Pointer to widget
+<dt><i>gpointer </i> <b>data</b>
+<dd> Callback data
+</dl>
+<h3>Description</h3>
+<ul>
+Callback for scores menu entry
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>really_exit_cb</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> Pointer to widget
+<dt><i>gpointer </i> <b>data</b>
+<dd> Callback data
+</dl>
+<h3>Description</h3>
+<ul>
+Callback to really exit game
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>exit_cb</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> Pointer to widget
+<dt><i>gpointer </i> <b>data</b>
+<dd> Callback data
+</dl>
+<h3>Description</h3>
+<ul>
+Callback for exit menu entry
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>about_cb</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer</i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> Pointer to widget
+<dt><i>gpointer</i> <b>data</b>
+<dd> Callback data
+</dl>
+<h3>Description</h3>
+<ul>
+Callback for about menu entry
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>create_game_menus</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Creates the menus for application <tt><b>ap</b></tt>
+</ul>
+<h3>Returns</h3>
+<ul>
+<i>TRUE</i> if successful, <i>FALSE</i> otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>copy_properties</b>
+(<i>GnobotsProperties *</i> <b>p1</b>
+, <i>GnobotsProperties *</i> <b>p2</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GnobotsProperties *</i> <b>p1</b>
+<dd> source properties
+<dt><i>GnobotsProperties *</i> <b>p2</b>
+<dd> destination properties
+</dl>
+<h3>Description</h3>
+<ul>
+copies a GnobotsProperties structure
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gint</i>
+<b>timeout_cb</b>
+(<i>void *</i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>void *</i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+timer callback
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if timer is to be retriggered, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>remove_timeout</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Removes the timer
+</ul>
+<h3>Description</h3>
+<ul>
+Removes the timer
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>add_timeout</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+creates a timer for the animation
+</ul>
+<h3>Description</h3>
+<ul>
+creates a timer for the animation
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>clear_draw_area</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Clears the area for drawing the graphics
+</ul>
+<h3>Description</h3>
+<ul>
+Clears the area for drawing the graphics
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static gint</i>
+<b>start_anim_cb</b>
+(<i>void *</i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>void *</i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+starts the animation
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if the event was handled
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>apply_changes</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Applies the changes made by the user
+</ul>
+<h3>Description</h3>
+<ul>
+Applies the changes made by the user
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>apply_cb</b>
+(<i>GtkWidget   *</i> <b>w</b>
+, <i>gpointer    </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget   *</i> <b>w</b>
+<dd> widget
+<dt><i>gpointer    </i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+handles apply button events
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if the event was handled
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>destroy_cb</b>
+(<i>GtkWidget   *</i> <b>w</b>
+, <i>gpointer    </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget   *</i> <b>w</b>
+<dd> widget
+<dt><i>gpointer    </i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+handles property-box destruction messages
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>fill_property_list</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Fills the property list of configuration values
+</ul>
+<h3>Description</h3>
+<ul>
+Fills the property list of configuration values
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>pmap_selection</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer  </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> widget
+<dt><i>gpointer  </i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+handles pixmap selection messages
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>type_selection</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer  </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> widget
+<dt><i>gpointer  </i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+handles configuration selection messages
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>safe_cb</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer  </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> widget
+<dt><i>gpointer  </i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+handles message from the 'safe moves' checkbox
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>sound_cb</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer  </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> widget
+<dt><i>gpointer  </i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+handles message from the 'sound' checkbox
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>splat_cb</b>
+(<i>GtkWidget *</i> <b>widget</b>
+, <i>gpointer  </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>widget</b>
+<dd> widget
+<dt><i>gpointer  </i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+handles message from the 'splat' checkbox
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>keypad_cb</b>
+(<i>GtkWidget   *</i> <b>widget</b>
+, <i>GdkEventKey *</i> <b>event</b>
+, <i>gpointer    </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget   *</i> <b>widget</b>
+<dd> widget
+<dt><i>GdkEventKey *</i> <b>event</b>
+<dd> event
+<dt><i>gpointer    </i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+handles message from the key selection widgets
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>defkey_cb</b>
+(<i>GtkWidget   *</i> <b>widget</b>
+, <i>gpointer    </i> <b>data</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget   *</i> <b>widget</b>
+<dd> widget
+<dt><i>gpointer    </i> <b>data</b>
+<dd> callback data
+</dl>
+<h3>Description</h3>
+<ul>
+handles message from the default key buttons
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>fill_typemenu</b>
+(<i>GtkWidget *</i> <b>menu</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>menu</b>
+<dd> listbox menu
+</dl>
+<h3>Description</h3>
+<ul>
+fills the listbox with configuration names
+</ul>
+<hr>
+<h2>Function</h2>
+<i>static void</i>
+<b>fill_pmapmenu</b>
+(<i>GtkWidget *</i> <b>menu</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>GtkWidget *</i> <b>menu</b>
+<dd> menu
+</dl>
+<h3>Description</h3>
+<ul>
+fills the listbox with pixmap names
+</ul>
+<hr>
+<h2>Function</h2>
+<i>void</i>
+<b>show_properties_dialog</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+displays the properties dialog
+</ul>
+<h3>Description</h3>
+<ul>
+displays the properties dialog
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>load_properties</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+loads the game properties from a file
+</ul>
+<h3>Description</h3>
+<ul>
+loads the game properties from a file
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if the properties can be loaded, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>save_properties</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+saves the game properties to a file
+</ul>
+<h3>Description</h3>
+<ul>
+saves the game properties to a file
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if the properties can be saved, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>properties_safe_moves</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+returns safe-moves setting
+</ul>
+<h3>Description</h3>
+<ul>
+returns safe-moves setting
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if safe-moves are selected
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>properties_sound</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+returns sound setting
+</ul>
+<h3>Description</h3>
+<ul>
+returns sound setting
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if sound is selected
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>properties_splats</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+returns splat setting
+</ul>
+<h3>Description</h3>
+<ul>
+returns splat setting
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if splats are selected
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>properties_set_config</b>
+(<i>gint</i> <b>n</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>n</b>
+<dd> config number
+</dl>
+<h3>Description</h3>
+<ul>
+sets the current configuration
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE if successful, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>init_sound</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Initialises game sound
+</ul>
+<h3>Description</h3>
+<ul>
+Initialises game sound
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>cleanup_sound</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+Cleans up the sound resources 
+</ul>
+<h3>Description</h3>
+<ul>
+Cleans up the sound resources 
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>play_sound</b>
+(<i>gint</i> <b>sno</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>sno</b>
+<dd> sound number
+</dl>
+<h3>Description</h3>
+<ul>
+Plays a game sound
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>GtkWidget*</i>
+<b>gnobots_statusbar_new</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+creates a new statusbar
+</ul>
+<h3>Description</h3>
+<ul>
+creates a new statusbar
+</ul>
+<h3>Returns</h3>
+<ul>
+a pointer to the statusbar or NULL on failure
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>gnobots_statusbar_delete</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+destroys an existing statusbar
+</ul>
+<h3>Description</h3>
+<ul>
+destroys an existing statusbar
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>gnobots_statusbar_set_score</b>
+(<i>gint</i> <b>score</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>score</b>
+<dd> score
+</dl>
+<h3>Description</h3>
+<ul>
+sets the score on the statusbar
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>gnobots_statusbar_set_level</b>
+(<i>gint</i> <b>level</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>level</b>
+<dd> level
+</dl>
+<h3>Description</h3>
+<ul>
+sets the level on the statusbar
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>gnobots_statusbar_set_safe_teleports</b>
+(<i>gint</i> <b>stel</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>stel</b>
+<dd> safe teleports
+</dl>
+<h3>Description</h3>
+<ul>
+sets the number of safe teleports on the statusbar
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>gnobots_statusbar_set_remaining</b>
+(<i>gint</i> <b>rem1</b>
+, <i>gint</i> <b>rem2</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>rem1</b>
+<dd> remaining type1
+<dt><i>gint</i> <b>rem2</b>
+<dd> remaining type2
+</dl>
+<h3>Description</h3>
+<ul>
+sets the number of remaining robots on the statusbar
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>gnobots_statusbar_set</b>
+(<i>gint</i> <b>score</b>
+, <i>gint</i> <b>level</b>
+, <i>gint</i> <b>stel</b>
+, <i>gint</i> <b>rem1</b>
+, <i>gint</i> <b>rem2</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gint</i> <b>score</b>
+<dd> score
+<dt><i>gint</i> <b>level</b>
+<dd> level
+<dt><i>gint</i> <b>stel</b>
+<dd> number of safe teleports
+<dt><i>gint</i> <b>rem1</b>
+<dd> remaining type1
+<dt><i>gint</i> <b>rem2</b>
+<dd> remaining type2
+</dl>
+<h3>Description</h3>
+<ul>
+sets all of the values on the statusbar
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>gnobots_statusbar_reset</b>
+(<i></i> <b></b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i></i> <b></b>
+<dd>-- undescribed --
+</dl>
+<h3>Description</h3>
+<ul>
+resets all the values on the statusbar to 0
+</ul>
+<h3>Description</h3>
+<ul>
+resets all the values on the statusbar to 0
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>
+<h2>Function</h2>
+<i>gboolean</i>
+<b>gnobots_statusbar_show_both</b>
+(<i>gboolean</i> <b>show</b>
+)
+<h3>Arguments</h3>
+<dl>
+<dt><i>gboolean</i> <b>show</b>
+<dd> show remaining
+</dl>
+<h3>Description</h3>
+<ul>
+selects whether the statusbar should indicate different types of robots
+</ul>
+<h3>Returns</h3>
+<ul>
+TRUE on success, FALSE otherwise
+</ul>
+<hr>

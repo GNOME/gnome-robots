@@ -1,0 +1,28 @@
+[__section_info__]
+description=Gnome Robots II
+
+[bad-move]
+file=gnobots2/bad.wav
+description=Bad Move
+
+[die]
+file=gnobots2/die.wav
+description=Player Dead
+
+[splat]
+file=gnobots2/splat.wav
+description=Robot has been Splatted!
+
+[teleport]
+file=gnobots2/teleport.wav
+description=Player Teleport
+
+[victory]
+file=gnobots2/victory.wav
+description=Victory!!
+
+[yahoo]
+file=gnobots2/yahoo.wav
+description=Level Complete
+
+

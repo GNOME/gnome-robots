@@ -5,6 +5,7 @@ description[es]=Gnome Robots II
 description[fr]=Gnome Robots II
 description[ko]=±×³ð ·Îº¿ II
 description[no]=Gnome roboter II
+description[pl]=Roboty GNOME II
 
 [bad-move]
 file=gnobots2/bad.wav
@@ -14,6 +15,7 @@ description[es]=Movimiento erróneo
 description[fr]=Déplacement non valide
 description[ko]=Àß¸ø ¿òÁ÷ÀÓ
 description[no]=Ugyldig trekk
+description[pl]=Niew³a¶ciwy ruch
 
 [die]
 file=gnobots2/die.wav
@@ -23,6 +25,7 @@ description[es]=Muerte del jugador
 description[fr]=Mort du joueur
 description[ko]=ÇÃ·¹ÀÌ¾î Á×À½
 description[no]=Spiller dør
+description[pl]=Smieræ gracza
 
 [splat]
 file=gnobots2/splat.wav
@@ -41,6 +44,7 @@ description[es]=Teleportación del jugador
 description[fr]=Téléportation du joueur
 description[ko]=ÇÃ·¹ÀÌ¾î ¼ø°£ ÀÌµ¿
 description[no]=Spiller teleportert
+description[pl]=Teleportacja gracza
 
 [victory]
 file=gnobots2/victory.wav
@@ -50,6 +54,7 @@ description[es]=¡¡Victoria!!
 description[fr]=Victoire!!
 description[ko]=½Â¸®!!
 description[no]=Seier!!
+description[pl]=Zwyciêstwo!!
 
 [yahoo]
 file=gnobots2/yahoo.wav
@@ -59,3 +64,4 @@ description[es]=Nivel completado
 description[fr]=Niveau complété
 description[ko]=·¹º§ ¸¶Ä§
 description[no]=Nivå komplett
+description[pl]=Ukoñczenie poziomu

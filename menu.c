@@ -51,7 +51,6 @@ GnomeUIInfo prefmenu[] = {
 /**********************************************************************/
 GnomeUIInfo helpmenu[] = {
   GNOMEUIINFO_HELP(GAME_NAME),
-  GNOMEUIINFO_SEPARATOR,
   GNOMEUIINFO_MENU_ABOUT_ITEM(about_cb, NULL),
   GNOMEUIINFO_END
 };
@@ -223,6 +222,7 @@ GtkWidget *widget,
 gpointer data
 ){
   GtkWidget *about = NULL;
+  GdkPixbuf *pixbuf = NULL;
   
   const gchar *authors[]= {
     "Mark Rae <m.rae@inpharmatica.co.uk>",
@@ -233,6 +233,19 @@ gpointer data
         		  };
   /* Translator credits */
   gchar *translator_credits = _("translator_credits");
+
+  {
+	  char *filename = NULL;
+
+	  filename = gnome_program_locate_file (NULL,
+			  GNOME_FILE_DOMAIN_PIXMAP,  ("gnome-gnobots2.png"),
+			  TRUE, NULL);
+	  if (filename != NULL)
+	  {
+		  pixbuf = gdk_pixbuf_new_from_file(filename, NULL);
+		  g_free (filename);
+	  }
+  }
   
   about = gnome_about_new(_("Gnobots II"), VERSION,
                           "(C) 1998 Mark Rae",
@@ -240,7 +253,7 @@ gpointer data
                           (const char **)authors,
                           (const char **)documenters,
                           strcmp (translator_credits, "translator_credits") != 0 ? translator_credits : NULL,
-                          NULL);
+                          pixbuf);
   gtk_window_set_transient_for (GTK_WINDOW (about), GTK_WINDOW(app));
   gtk_window_set_modal(GTK_WINDOW(about), TRUE);
   

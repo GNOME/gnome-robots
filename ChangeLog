@@ -1,3 +1,8 @@
+2002-06-03  Bastien Nocera  <hadess@hadess.net>
+
+	* menu.c: (about_cb): remove separator in help menu, add icon in the
+	about box
+
 2002-05-10  Dave Neary  <bolsh@gimp.org>
 
 	* Makefile.am:

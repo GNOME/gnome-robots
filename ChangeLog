@@ -1,3 +1,7 @@
+2000-05-12  Andreas Hyden  <a.hyden@cyberpoint.se>
+
+	* gnobots.desktop: Added Swedish translation.
+
 2000-04-22  Ian Peters  <itp@gnu.org>
 
 	* gnobots.c: moved calls to push_[visual|colormap], added calls to

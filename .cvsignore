@@ -2,3 +2,5 @@ Makefile.in
 Makefile
 .deps
 gnobots2
+.libs
+.deps

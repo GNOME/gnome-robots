@@ -101,3 +101,5 @@ install-data-local:
 	    touch $$fname3; chmod 664 $$fname3; chown games:games $$fname3; \
 	    done
 	-chgrp games $(DESTDIR)$(bindir)/gnobots2 && chmod 2555 $(DESTDIR)$(bindir)/gnobots2
+
+CLEANFILES = $(Games_DATA) $(soundlist_DATA)

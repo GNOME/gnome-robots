@@ -13,7 +13,7 @@
 static void new_cb(GtkWidget *widget,gpointer data);
 static void properties_cb(GtkWidget *widget,gpointer data);
 static void scores_cb(GtkWidget *widget,gpointer data);
-static void exit_cb(GtkWidget *widget,gpointer  data);
+void exit_cb(GtkWidget *widget,gpointer  data);
 static void about_cb(GtkWidget *widget, gpointer data);
 /**********************************************************************/
 
@@ -178,7 +178,7 @@ gpointer  data
  *
  * Returns:
  **/
-static void really_exit_cb(
+void really_exit_cb(
 GtkWidget *widget,
 gpointer  data
 ){
@@ -200,7 +200,7 @@ gpointer  data
  *
  * Returns:
  **/
-static void exit_cb(
+void exit_cb(
 GtkWidget *widget,
 gpointer  data
 ){

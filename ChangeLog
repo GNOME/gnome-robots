@@ -1,3 +1,7 @@
+2003-06-22  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* gnobots2.schemas.in: Typo. (Fixes bug 115693.)
+
 2003-06-20  William Jon McCann  <mccann@jhu.edu>
 
 	* Makefile.am: 

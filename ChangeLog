@@ -1,3 +1,12 @@
+2003-06-20  William Jon McCann  <mccann@jhu.edu>
+
+	* cows.png:
+	* eggs.png:
+	* gnomes.png:
+	* mice.png:
+	* robots.png:
+	* windows.png: Made background transparent.
+
 2003-06-19  William Jon McCann  <mccann@jhu.edu>
 
 	* properties.h: 

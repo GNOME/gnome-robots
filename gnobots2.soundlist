@@ -1,28 +1,35 @@
 [__section_info__]
 description=Gnome Robots II
+description[ko]=그놈 로봇 II
 
 [bad-move]
 file=gnobots2/bad.wav
 description=Bad Move
+description[ko]=잘못 움직임
 
 [die]
 file=gnobots2/die.wav
 description=Player Dead
+description[ko]=플레이어 죽음
 
 [splat]
 file=gnobots2/splat.wav
 description=Robot has been Splatted!
+description[ko]=로봇 폭파!
 
 [teleport]
 file=gnobots2/teleport.wav
 description=Player Teleport
+description[ko]=플레이어 순간 이동
 
 [victory]
 file=gnobots2/victory.wav
 description=Victory!!
+description[ko]=승리!!
 
 [yahoo]
 file=gnobots2/yahoo.wav
 description=Level Complete
+description[ko]=레벨 마침
 
 

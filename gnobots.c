@@ -218,11 +218,9 @@ char *argv[]
 
   create_game_menus();
 
-  gtk_widget_push_visual (gdk_rgb_get_visual ());
   gtk_widget_push_colormap (gdk_rgb_get_cmap ());
   game_area = gtk_drawing_area_new();
   gtk_widget_pop_colormap ();
-  gtk_widget_pop_visual ();
   gnome_app_set_contents(GNOME_APP(app), game_area);
   gtk_widget_realize(game_area);
   gtk_drawing_area_size(GTK_DRAWING_AREA(game_area), 

@@ -195,7 +195,7 @@ main (int argc, char *argv[])
 
   initialize_gconf (argc, argv);
 
-  app = gnome_app_new (GAME_NAME, _("GNOME Robots II"));
+  app = gnome_app_new (GAME_NAME, _("GNOME Robots"));
   gtk_window_set_resizable (GTK_WINDOW (app), FALSE);
 
   g_signal_connect (G_OBJECT (app), "delete_event",

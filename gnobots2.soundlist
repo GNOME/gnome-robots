@@ -1,5 +1,6 @@
 [__section_info__]
 description=Gnome Robots II
+description[ca]=Gnome Robots II
 description[es]=Gnome Robots II
 description[fr]=Gnome Robots II
 description[ko]=±×³ð ·Îº¿ II
@@ -7,6 +8,7 @@ description[ko]=±×³ð ·Îº¿ II
 [bad-move]
 file=gnobots2/bad.wav
 description=Bad Move
+description[ca]=Moviment no vàlid
 description[es]=Movimiento erróneo
 description[fr]=Déplacement non valide
 description[ko]=Àß¸ø ¿òÁ÷ÀÓ
@@ -14,6 +16,7 @@ description[ko]=Àß¸ø ¿òÁ÷ÀÓ
 [die]
 file=gnobots2/die.wav
 description=Player Dead
+description[ca]=Mort del jugador
 description[es]=Muerte del jugador
 description[fr]=Mort du joueur
 description[ko]=ÇÃ·¹ÀÌ¾î Á×À½
@@ -21,6 +24,7 @@ description[ko]=ÇÃ·¹ÀÌ¾î Á×À½
 [splat]
 file=gnobots2/splat.wav
 description=Robot has been Splatted!
+description[ca]=Un robot ha estat destrossat!
 description[es]=¡Un robot fué aplastado!
 description[fr]=Un robot a été écrasé!
 description[ko]=·Îº¿ ÆøÆÄ!
@@ -28,6 +32,7 @@ description[ko]=·Îº¿ ÆøÆÄ!
 [teleport]
 file=gnobots2/teleport.wav
 description=Player Teleport
+description[ca]=Teleportació del jugador
 description[es]=Teleportación del jugador
 description[fr]=Téléportation du joueur
 description[ko]=ÇÃ·¹ÀÌ¾î ¼ø°£ ÀÌµ¿
@@ -35,6 +40,7 @@ description[ko]=ÇÃ·¹ÀÌ¾î ¼ø°£ ÀÌµ¿
 [victory]
 file=gnobots2/victory.wav
 description=Victory!!
+description[ca]=Victòria!!
 description[es]=¡¡Victoria!!
 description[fr]=Victoire!!
 description[ko]=½Â¸®!!
@@ -42,6 +48,7 @@ description[ko]=½Â¸®!!
 [yahoo]
 file=gnobots2/yahoo.wav
 description=Level Complete
+description[ca]=Nivell completat
 description[es]=Nivel completado
 description[fr]=Niveau complété
 description[ko]=·¹º§ ¸¶Ä§

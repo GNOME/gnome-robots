@@ -66,7 +66,7 @@ struct _GnobotsProperties {
   gboolean super_safe_moves;
   gboolean sound;
   gboolean splats;
-  gchar    *background_color;
+  GdkColor bgcolour;
   gint     selected_graphics;
   gint     selected_config;
   gint     keys[12];
@@ -130,6 +130,7 @@ static void keypad_cb (GtkWidget*, GdkEventKey*, gpointer);
 static void defkey_cb (GtkWidget*, gpointer);
 static void fill_typemenu (GtkWidget*);
 static void fill_pmapmenu (GtkWidget*);
+static void gconf_set_background_color (GdkColor * c);
 /**********************************************************************/
 
 
@@ -479,7 +480,7 @@ fill_property_list (void)
 static void
 pmap_selection (GtkWidget *widget, gpointer data)
 {
-  gint num = (gint)data;
+  gint num = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
 
   properties.selected_graphics = num;
 
@@ -501,7 +502,7 @@ pmap_selection (GtkWidget *widget, gpointer data)
 static void
 type_selection (GtkWidget *widget, gpointer data)
 {
-  gint num = (gint)data;
+  gint num = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
 
   properties.selected_config = num;
   fill_property_list ();
@@ -639,7 +640,6 @@ defkey_cb (GtkWidget *widget, gpointer data)
 static void
 fill_typemenu (GtkWidget *menu)
 {
-  GtkWidget *item;
   gint i;
 
 #if 0
@@ -656,14 +656,10 @@ fill_typemenu (GtkWidget *menu)
 #endif
 
   for (i = 0; i < num_game_configs (); ++i){
-    item = gtk_menu_item_new_with_label (_(game_config_name (i)));
-    gtk_widget_show (item);
-    gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
-    g_signal_connect (G_OBJECT (item), "activate",
-                      G_CALLBACK (type_selection), (gpointer)i);
+    gtk_combo_box_append_text (GTK_COMBO_BOX (menu), _(game_config_name (i)));
   }
 
-  gtk_menu_set_active (GTK_MENU (menu), properties.selected_config);
+  gtk_combo_box_set_active (GTK_COMBO_BOX (menu), properties.selected_config);
 }
 
 
@@ -677,7 +673,6 @@ fill_typemenu (GtkWidget *menu)
 static void
 fill_pmapmenu (GtkWidget *menu)
 {
-  GtkWidget *item;
   gint i;
 
 #if 0
@@ -695,34 +690,23 @@ fill_pmapmenu (GtkWidget *menu)
 #endif
 
   for (i = 0; i < num_game_graphics (); ++i) {
-    item = gtk_menu_item_new_with_label (_(game_graphics_name (i)));
-    gtk_widget_show (item);
-    gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
-    g_signal_connect (G_OBJECT (item), "activate",
-                      G_CALLBACK (pmap_selection), (gpointer)i);
+    gtk_combo_box_append_text (GTK_COMBO_BOX (menu),
+                               _(game_graphics_name (i)));
   }
 
-  gtk_menu_set_active (GTK_MENU (menu), properties.selected_graphics);
+  gtk_combo_box_set_active (GTK_COMBO_BOX (menu),
+                            properties.selected_graphics);
 
 }
 
 static void
 bg_color_callback (GtkWidget *widget, gpointer data)
 {
-  gchar *tmp;
-  guint8 r, g, b, a;
-
-  gnome_color_picker_get_i8 (GNOME_COLOR_PICKER (widget),
-                             &r, &g, &b, &a);
-  
-  tmp = g_strdup_printf ("#%02x%02x%02x", r, g, b);
-  
-  set_background_color_from_name (tmp);
+  gtk_color_button_get_color (GTK_COLOR_BUTTON (widget),
+                              &properties.bgcolour);  
+  set_background_color (properties.bgcolour);
   clear_game_area ();
-  if (properties.background_color)
-    g_free (properties.background_color);
-  properties.background_color = tmp;
-  gconf_set_background_color (tmp);
+  gconf_set_background_color (&properties.bgcolour);
 }
 
 static void
@@ -750,7 +734,6 @@ show_properties_dialog (void)
   GtkWidget *vbox;
   GtkWidget *typemenu;
   GtkWidget *pmapmenu;
-  GtkWidget *menu;
   GtkWidget *chkbox;
   GtkWidget *table;
   GtkWidget *dbut;
@@ -797,10 +780,10 @@ show_properties_dialog (void)
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, GNOME_PAD);
 
   if (game_state == STATE_NOT_PLAYING) {
-    typemenu = gtk_option_menu_new ();
-    menu = gtk_menu_new ();
-    fill_typemenu (menu);
-    gtk_option_menu_set_menu (GTK_OPTION_MENU (typemenu), menu);
+    typemenu = gtk_combo_box_new_text ();
+    g_signal_connect (G_OBJECT (typemenu), "changed",
+                      G_CALLBACK (type_selection), NULL);
+    fill_typemenu (typemenu);
     gtk_box_pack_start_defaults (GTK_BOX (hbox), typemenu);
 
     list = gtk_list_store_new (NCOLS,
@@ -910,25 +893,21 @@ show_properties_dialog (void)
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
   gtk_table_attach_defaults (GTK_TABLE (table), label, 0, 1, 0, 1);
 
-  pmapmenu = gtk_option_menu_new ();
-  menu = gtk_menu_new ();
-  fill_pmapmenu (menu);
-  gtk_option_menu_set_menu (GTK_OPTION_MENU (pmapmenu), menu);
+  pmapmenu = gtk_combo_box_new_text ();
+  g_signal_connect (G_OBJECT (pmapmenu), "changed",
+                    G_CALLBACK (pmap_selection), NULL);
+  fill_pmapmenu (pmapmenu);
   gtk_table_attach_defaults (GTK_TABLE (table), pmapmenu, 1, 2, 0, 1);
 
   label = gtk_label_new (_("Background Color:"));
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
   gtk_table_attach_defaults (GTK_TABLE (table), label, 0, 1, 1, 2);
 
-  {
-    int ur, ug, ub;
-    
-    w  = gnome_color_picker_new ();
-    sscanf (properties.background_color, "#%02x%02x%02x", &ur, &ug, &ub);
-    gnome_color_picker_set_i8 (GNOME_COLOR_PICKER (w), ur, ug, ub, 0);
-    g_signal_connect (G_OBJECT (w), "color_set",
-                      G_CALLBACK (bg_color_callback), NULL);
-  }
+  w  = gtk_color_button_new ();
+  gtk_color_button_set_color (GTK_COLOR_BUTTON (w), &properties.bgcolour);
+  g_signal_connect (G_OBJECT (w), "color_set",
+                    G_CALLBACK (bg_color_callback), NULL);
+
   gtk_table_attach_defaults (GTK_TABLE (table), w, 1, 2, 1, 2);
 
   label = gtk_label_new_with_mnemonic (_("_Appearance"));
@@ -1081,6 +1060,7 @@ load_properties (void)
   gchar *cname = NULL;
   gint i;
   gchar *str;
+  gchar * bgcolour;
 
   for (i = 0; i < 12; i++) {
     properties.keys[i] = default_keys1[i];
@@ -1097,10 +1077,13 @@ load_properties (void)
     g_free (str);
   }
 
-  properties.background_color = gconf_client_get_string (get_gconf_client (),
-                                                         KEY_BACKGROUND_COLOR, NULL);
-  if (properties.background_color == NULL)
-    properties.background_color = g_strdup ("#7590AE");
+  bgcolour = gconf_client_get_string (get_gconf_client (),
+                                      KEY_BACKGROUND_COLOR, NULL);
+  if (bgcolour == NULL)
+    bgcolour = g_strdup ("#7590AE");
+  
+  gdk_color_parse (bgcolour, &properties.bgcolour);
+  set_background_color (properties.bgcolour);
   
   sname = gconf_client_get_string (get_gconf_client (), KEY_THEME, NULL);
   if (sname == NULL)
@@ -1137,7 +1120,6 @@ load_properties (void)
   properties.splats = gconf_client_get_bool (get_gconf_client (),
                                              KEY_ENABLE_SPLATS, NULL);
 
-  set_background_color_from_name (properties.background_color);
   set_game_graphics (properties.selected_graphics);
   set_game_config (properties.selected_config);
   keyboard_set (properties.keys);
@@ -1152,11 +1134,17 @@ gconf_set_theme (gchar *value)
                            value, NULL);
 }
 
-void
-gconf_set_background_color (gchar *value)
+static void
+gconf_set_background_color (GdkColor * c)
 {
+  gchar * name;
+
+  name = g_strdup_printf ("#%02x%02x%02x", c->red, c->green, c->blue);
+  
   gconf_client_set_string (get_gconf_client (), KEY_BACKGROUND_COLOR,
-                           value, NULL);
+                           name, NULL);
+
+  g_free (name);
 }
 
 void

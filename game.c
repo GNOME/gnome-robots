@@ -548,7 +548,7 @@ static void
 destroy_game_timer (void)
 {
   if (game_timer_id != -1) {
-    gtk_timeout_remove (game_timer_id);
+    g_source_remove (game_timer_id);
     game_timer_id = -1;
   }
 }
@@ -567,7 +567,7 @@ create_game_timer (void)
     destroy_game_timer ();
   }
 
-  game_timer_id = gtk_timeout_add (ANIMATION_DELAY, timeout_cb, 0);
+  game_timer_id = g_timeout_add (ANIMATION_DELAY, timeout_cb, 0);
 }
 
 

@@ -1,3 +1,9 @@
+2003-10-19  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* game.c: 
+	* properties.c: 
+	* properties.h: Replaced deprecated gtk+ functions.
+
 2003-10-01  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* menu.c

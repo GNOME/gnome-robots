@@ -744,6 +744,7 @@ show_properties_dialog (void)
   GtkWidget *scrolled;
   GtkWidget *frame;
   GtkWidget *w;
+  GtkTooltips *tooltips;
   GtkListStore *list;
   GtkTreeViewColumn *column;
   GtkCellRenderer *renderer;
@@ -756,6 +757,8 @@ show_properties_dialog (void)
   
   if (propbox) 
     return;
+
+  tooltips = gtk_tooltips_new ();
 
   propbox = gtk_dialog_new_with_buttons (_("GNOME Robots Preferences"),
                                          GTK_WINDOW  (app),
@@ -852,31 +855,43 @@ show_properties_dialog (void)
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)safe_cb, NULL);
     gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 0, 1, 0, 1);
+    gtk_tooltips_set_tip (tooltips, chkbox,
+			  _("Prevent some dangerous moves"), 
+			  _("Prevent accidental moves that result in getting killed."));
 
     chkbox = gtk_check_button_new_with_label (_("Use super safe moves"));
     GTK_TOGGLE_BUTTON (chkbox)->active = properties.super_safe_moves;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)super_safe_cb, NULL);
     gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 0, 1, 1, 2);
+    gtk_tooltips_set_tip (tooltips, chkbox,
+			  _("Prevent all dangerous moves"), 
+			  _("Prevents all moves that result in getting killed."));
 
     chkbox = gtk_check_button_new_with_label (_("Enable sounds"));
     GTK_TOGGLE_BUTTON (chkbox)->active = properties.sound;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)sound_cb, NULL);
     gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 1, 2, 0, 1);
+    gtk_tooltips_set_tip (tooltips, chkbox,
+			  _("Play sounds for major events"), 
+			  _("Play sounds for events like winning a level and dying."));
 
     chkbox = gtk_check_button_new_with_label (_("Enable splats"));
     GTK_TOGGLE_BUTTON (chkbox)->active = properties.splats;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)splat_cb, NULL);
     gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 1, 2, 1, 2);
+    gtk_tooltips_set_tip (tooltips, chkbox,
+			  _("Play a sound when two robots collied"), 
+			  _("Play the most common, and potentially the most annoying, sound."));
 
   } else {
     label = gtk_label_new (_("You Cannot Change the Game Type When Playing"));
     gtk_box_pack_start_defaults (GTK_BOX (hbox), label);
 
   }
-  label = gtk_label_new_with_mnemonic (_("_Game"));
+  label = gtk_label_new_with_mnemonic (_("Game"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), cpage, label);
 
 
@@ -903,7 +918,7 @@ show_properties_dialog (void)
   fill_pmapmenu (pmapmenu);
   gtk_table_attach_defaults (GTK_TABLE (table), pmapmenu, 1, 2, 0, 1);
 
-  label = gtk_label_new (_("Background Color:"));
+  label = gtk_label_new (_("Background color:"));
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
   gtk_table_attach_defaults (GTK_TABLE (table), label, 0, 1, 1, 2);
 
@@ -914,7 +929,7 @@ show_properties_dialog (void)
 
   gtk_table_attach_defaults (GTK_TABLE (table), w, 1, 2, 1, 2);
 
-  label = gtk_label_new_with_mnemonic (_("_Appearance"));
+  label = gtk_label_new_with_mnemonic (_("Appearance"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), gpage, label);
 
   /* The keyboard page */
@@ -1002,9 +1017,9 @@ show_properties_dialog (void)
   hbox = gtk_hbox_new (TRUE, GNOME_PAD);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, GNOME_PAD);
 
-  dbut = gtk_button_new_with_label (_("Use Standard Robots Keys"));
+  dbut = gtk_button_new_with_label (_("Use the Keypad"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
-                    G_CALLBACK (defkey_cb), (gpointer)default_keys1);  
+                    G_CALLBACK (defkey_cb), (gpointer)default_keys3);  
   gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, GNOME_PAD);
 
   dbut = gtk_button_new_with_label (_("Use Left Hand Keys"));
@@ -1012,12 +1027,12 @@ show_properties_dialog (void)
                     G_CALLBACK (defkey_cb), (gpointer)default_keys2);  
   gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, GNOME_PAD);
 
-  dbut = gtk_button_new_with_label (_("Use the Keypad"));
+  dbut = gtk_button_new_with_label (_("Use Original Robots Keys"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
-                    G_CALLBACK (defkey_cb), (gpointer)default_keys3);  
+                    G_CALLBACK (defkey_cb), (gpointer)default_keys1);  
   gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, GNOME_PAD);
 
-  label = gtk_label_new_with_mnemonic (_("_Keyboard"));
+  label = gtk_label_new_with_mnemonic (_("Keyboard"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), kpage, label);
 
 
@@ -1076,7 +1091,7 @@ load_properties (void)
       properties.keys[i] = gdk_keyval_from_name (str);
     }
     if ((str == NULL) || (properties.keys[i] == GDK_VoidSymbol)) {
-      properties.keys[i] = default_keys1[i];
+      properties.keys[i] = default_keys3[i];
     }
     g_free (str);
   }

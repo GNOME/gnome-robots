@@ -85,6 +85,150 @@
       </locale>
       </schema>
 
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key00</key>
+        <applyto>/apps/gnobots2/preferences/key00</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_7</default>
+        <locale name="C">
+          <short>Key to move NW</short>
+          <long>The name of the key used to move north-west. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key01</key>
+        <applyto>/apps/gnobots2/preferences/key01</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_8</default>
+        <locale name="C">
+          <short>Key to move N</short>
+          <long>The name of the key used to move north. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key02</key>
+        <applyto>/apps/gnobots2/preferences/key02</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_9</default>
+        <locale name="C">
+          <short>Key to move NE</short>
+          <long>The name of the key used to move north-east. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key03</key>
+        <applyto>/apps/gnobots2/preferences/key03</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_4</default>
+        <locale name="C">
+          <short>Key to move W</short>
+          <long>The name of the key used to move west. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key04</key>
+        <applyto>/apps/gnobots2/preferences/key04</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_5</default>
+        <locale name="C">
+          <short>Key to hold</short>
+          <long>The name of the key used to hold still. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key05</key>
+        <applyto>/apps/gnobots2/preferences/key05</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_6</default>
+        <locale name="C">
+          <short>Key to move E</short>
+          <long>The name of the key used to move east. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key06</key>
+        <applyto>/apps/gnobots2/preferences/key06</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_1</default>
+        <locale name="C">
+          <short>Key to move SW</short>
+          <long>The name of the key used to move south-west. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key07</key>
+        <applyto>/apps/gnobots2/preferences/key07</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_2</default>
+        <locale name="C">
+          <short>Key to move S</short>
+          <long>The name of the key used to move south. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key08</key>
+        <applyto>/apps/gnobots2/preferences/key08</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_3</default>
+        <locale name="C">
+          <short>Key to move SE</short>
+          <long>The name of the key used to move south-east. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key09</key>
+        <applyto>/apps/gnobots2/preferences/key09</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_Add</default>
+        <locale name="C">
+          <short>Key to teleport</short>
+          <long>The name of the key used to teleport safely (if possible). The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key10</key>
+        <applyto>/apps/gnobots2/preferences/key10</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_Multiply</default>
+        <locale name="C">
+          <short>Key to teleport randomly</short>
+          <long>The name of the key used to teleport randomly. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/preferences/key11</key>
+        <applyto>/apps/gnobots2/preferences/key11</applyto>
+        <owner>gnobots2</owner>
+        <type>string</type>
+        <default>KP_Enter</default>
+        <locale name="C">
+          <short>Key to wait</short>
+          <long>The name of the key used to wait. The name is a standard X key name.</long>
+        </locale>
+      </schema>
+
   </schemalist>
 
 </gconfschemafile>

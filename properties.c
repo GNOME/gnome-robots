@@ -1091,7 +1091,7 @@ load_properties (void)
     if (str != NULL) {
       properties.keys[i] = gdk_keyval_from_name (str);
     }
-    else {
+    if ((str == NULL) || (properties.keys[i] == GDK_VoidSymbol)) {
       properties.keys[i] = default_keys1[i];
     }
     g_free (str);

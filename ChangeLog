@@ -1,3 +1,8 @@
+2003-08-04  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* graphics.c: 
+	* properties.c: GConf return value checks.
+
 2003-08-01  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* gnobots.c (main): 

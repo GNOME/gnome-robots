@@ -406,7 +406,9 @@ set_background_color_from_name (gchar *name)
   if (name == NULL)
     return;
     
-  gdk_color_parse (name, &color);
+  if (!gdk_color_parse (name, &color)) {
+    gdk_color_parse ("#7590AE", &color);
+  }
   set_background_color (color);
 }
 

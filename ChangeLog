@@ -1,0 +1,6 @@
+1999-01-26  Miguel de Icaza  <miguel@nuclecu.unam.mx>
+
+	* gnobots.c (argv): Visual/Colormap fix.
+
+	* menu.c: Kill file menu.
+

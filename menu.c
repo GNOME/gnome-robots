@@ -23,22 +23,14 @@ static void about_cb(GtkWidget *widget, gpointer data);
 /**********************************************************************/
 
 /**********************************************************************/
-/* File menu entries                                                  */
-/**********************************************************************/
-GnomeUIInfo filemenu[] = {
-  GNOMEUIINFO_MENU_EXIT_ITEM(exit_cb, NULL),
-  GNOMEUIINFO_END
-};
-/**********************************************************************/
-
-
-/**********************************************************************/
 /* Game menu entries                                                  */
 /**********************************************************************/
 GnomeUIInfo gamemenu[] = {
   GNOMEUIINFO_MENU_NEW_GAME_ITEM(new_cb, NULL),
   GNOMEUIINFO_SEPARATOR,
   GNOMEUIINFO_MENU_SCORES_ITEM(scores_cb, NULL),
+  GNOMEUIINFO_SEPARATOR,
+  GNOMEUIINFO_MENU_EXIT_ITEM(exit_cb, NULL),
   GNOMEUIINFO_END
 };
 /**********************************************************************/
@@ -70,7 +62,6 @@ GnomeUIInfo helpmenu[] = {
 /* Main menu                                                          */
 /**********************************************************************/
 GnomeUIInfo mainmenu[] = {
-  GNOMEUIINFO_MENU_FILE_TREE(filemenu),
   GNOMEUIINFO_MENU_GAME_TREE(gamemenu),
   GNOMEUIINFO_MENU_SETTINGS_TREE(prefmenu),
   GNOMEUIINFO_MENU_HELP_TREE(helpmenu),

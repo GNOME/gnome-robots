@@ -122,7 +122,7 @@
   </articleinfo>
 
   <indexterm zone="index"> 
-    <primary>Gnome Robots II</primary> 
+    <primary>GNOME Robots II</primary> 
   </indexterm>
 
    <!-- ============= Document Body ============================= -->
@@ -133,7 +133,7 @@
 
      <para>
        <application>GNOME Robots II</application> 
-       is a development of the original Gnome Robots game which
+       is a development of the original GNOME Robots game which
        was itself based on the text based robots game which can be found
        on a number of UNIX systems, and comes with the BSD games package on Linux
        systems.
@@ -142,14 +142,14 @@
        This new version includes two types of robots, movable junkheaps, 
        multiple game configurations, user definable keyboard layouts, sound using 
        ESD if you have it, as well as all of the other features which were present 
-       in the original Gnome Robots game.	
+       in the original GNOME Robots game.	
      </para>
 
      <para>
        To run <application>GNOME Robots II</application>, select
        <menuchoice>
        <guisubmenu>games</guisubmenu>
-       <guimenuitem>GnobotsII</guimenuitem>
+       <guimenuitem>GNOME Robots</guimenuitem>
        </menuchoice>
        from the <guimenu>Main Menu</guimenu>, or type
        <command>gnobots2</command> on the command line.
@@ -164,9 +164,9 @@
    </sect1>
  
    <sect1 id="objective">
-     <title>Gnome Robots II Objective</title>
+     <title>GNOME Robots II Objective</title>
      <para>
-       The objective of Gnobots2 is quite simple. You are surrounded by a 
+       The objective of GNOME Robots is quite simple. You are surrounded by a 
        number of robots or other hostile adversaries. As you move about 
        they will move directly towards you for every move that you make. 
        Their goal is to kill you. Your goal is to kill all the robots on the 
@@ -597,7 +597,7 @@
       files are found in
       <filename class="directory">
       $PREFIX/share/pixmaps/gnobots2
-      </filename>, where $PREFIX depends on where Gnome
+      </filename>, where $PREFIX depends on where GNOME
       was installed, usually either 
       <filename class="directory">/usr</filename>
       or 

@@ -1,5 +1,6 @@
 2002-12-11  Ross Burton  <ross@burtonini.com>
 
+	* help/C/gnobots2.xml
 	* menu.c: 
 	* properties.c:
 	* gnobots2.soundlist.in:

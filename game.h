@@ -28,6 +28,7 @@ void game_keypress (gint);
 void show_scores (guint);
 void start_new_game (void);
 gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data);
+gboolean move_cb (GtkWidget *widget, GdkEventMotion *e, gpointer data);
 /**********************************************************************/
 
 

@@ -1,3 +1,12 @@
+2004-07-05  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* game.c:
+	* game.h:
+	* cursors.c:
+	* cursors.h:	
+	* gnobots.c: Provide cursor hints to show which way clicking the
+	mouse will take you.
+
 2004-06-30  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* teleport.png:

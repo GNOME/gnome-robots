@@ -34,6 +34,7 @@
 #include "menu.h"
 #include "statusbar.h"
 #include "graphics.h"
+#include "cursors.h"
 
 /**********************************************************************/
 /* Exported Variables                                                 */
@@ -1312,13 +1313,49 @@ game_keypress (gint key)
 
 }
 
-gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
+static void get_dir (int ix, int iy, int * odx, int * ody)
 {
   int x, y, idx, idy;
   double dx, dy, angle;
   int octant;
   const int movetable[8][2] = { {-1, 0}, {-1, -1}, {0, -1}, {1, -1},
 				{1, 0}, {1, 1}, {0, 1}, {-1, 1} };
+  x = CLAMP(ix/TILE_WIDTH, 0, GAME_WIDTH);
+  y = CLAMP(iy/TILE_HEIGHT, 0, GAME_HEIGHT);
+
+  /* If we click on our man then we assume we hold. */
+  if ((x == player_xpos) && (y == player_ypos)) {
+    *odx = 0;
+    *ody = 0;
+    return;
+  }
+
+  /* If the square clicked on is a valid move, go there. */
+  idx = x - player_xpos;
+  idy = y - player_ypos;
+  if ((ABS(idx) < 2) && (ABS(idy) < 2)) {
+    *odx = idx;
+    *ody = idy;
+    return;
+  }
+
+  /* Otherwise go in the general direction of the mouse click. */
+  dx = ix - (player_xpos + 0.5) * TILE_WIDTH;
+  dy = iy - (player_ypos + 0.5) * TILE_HEIGHT;
+
+  angle = atan2 (dy, dx);
+
+  /* Note the adjustment we have to make (+9, not +8) because atan2's idea 
+   * of octants and the ones we want are shifted by PI/8. */
+  octant = (((int)floor(8.0*angle/M_PI) + 9)/2) % 8; 
+
+  *odx = movetable[octant][0];
+  *ody = movetable[octant][1];
+}
+
+gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
+{
+  int dx, dy;
 
   if (game_state == STATE_NOT_PLAYING) {
     start_new_game ();
@@ -1328,36 +1365,22 @@ gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
   if (game_state != STATE_PLAYING)
     return TRUE;
 
-  x = CLAMP(e->x/TILE_WIDTH, 0, GAME_WIDTH);
-  y = CLAMP(e->y/TILE_HEIGHT, 0, GAME_HEIGHT);
+  get_dir (e->x, e->y, &dx, &dy);
 
-  /* If we click on our man then we assume we hold. */
-  if ((x == player_xpos) && (y == player_ypos)) {
-    player_move (0, 0);
-    goto exit;
-  }
+  player_move (dx, dy);
 
-  /* If the square clicked on is a valid move, go there. */
-  idx = x - player_xpos;
-  idy = y - player_ypos;
-  if ((ABS(idx) < 2) && (ABS(idy) < 2)) {
-    player_move (idx, idy);
-    goto exit;
-  }
-
-  /* Otherwise go in the general direction of the mouse click. */
-  dx = e->x - (player_xpos + 0.5) * TILE_WIDTH;
-  dy = e->y - (player_ypos + 0.5) * TILE_HEIGHT;
-
-  angle = atan2 (dy, dx);
-
-  /* Note the adjustment we have to make (+9, not +8) because atan2's idea 
-   * of octants and the ones we want are shifted by PI/8. */
-  octant = (((int)floor(8.0*angle/M_PI) + 9)/2) % 8; 
-  player_move (movetable[octant][0], movetable[octant][1]);
-
-exit:
   move_robots ();
+
+  return TRUE;
+}
+
+gboolean move_cb (GtkWidget *widget, GdkEventMotion *e, gpointer data)
+{
+  int dx, dy;
+
+  get_dir (e->x, e->y, &dx, &dy);
+
+  set_cursor_by_direction (widget->window, dx, dy);
 
   return TRUE;
 }

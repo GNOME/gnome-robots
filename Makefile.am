@@ -41,6 +41,8 @@ gnobots2_SOURCES = \
 	game.h \
 	sound.c \
 	sound.h \
+	cursors.c \
+	cursors.h \
 	gbdefs.h
 
 gnobots2_LDADD = \

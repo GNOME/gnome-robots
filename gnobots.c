@@ -33,6 +33,7 @@
 #include "sound.h"
 #include "properties.h"
 #include "game.h"
+#include "cursors.h"
 
 /**********************************************************************/
 /* Exported Variables                                                 */
@@ -206,11 +207,15 @@ main (int argc, char *argv[])
   gnome_app_set_statusbar (GNOME_APP (app), stbar);
 
   create_game_menus ();
+  make_cursors ();
 
   game_area = gtk_drawing_area_new ();
-  gtk_widget_add_events (game_area, GDK_BUTTON_PRESS_MASK);
+  gtk_widget_add_events (game_area, GDK_BUTTON_PRESS_MASK |
+			 GDK_POINTER_MOTION_MASK);
   g_signal_connect (G_OBJECT (game_area), "button-press-event",
 		    G_CALLBACK (mouse_cb), NULL);
+  g_signal_connect (G_OBJECT (game_area), "motion-notify-event",
+		    G_CALLBACK (move_cb), NULL);
   gnome_app_set_contents (GNOME_APP (app), game_area);
   gtk_widget_set_size_request (GTK_WIDGET (game_area), 
                                TILE_WIDTH * GAME_WIDTH,

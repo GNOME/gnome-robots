@@ -1,3 +1,8 @@
+2004-02-11  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* menu.c (about_cb): translator_credits ->
+	translator-credits.
+
 2004-02-07  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* properties.c: Set the keypad to be the standard set of

@@ -1,0 +1,657 @@
+<!DOCTYPE article PUBLIC "-//GNOME//DTD DocBook PNG Variant V1.1//EN"[
+        <!-- if not using PNG graphic, replace reference above with
+             .....PUBLIC "-//OASIS//DTD DocBook V3.1//EN"[
+         -->
+<!ENTITY version "1.2.0"> 
+]>
+
+
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 1.0.3
+  Template last modified: Nov 16, 2000
+-->
+
+
+<!-- =============Document Header ============================= -->
+
+<article id="index"> <!-- please do not change the id -->
+
+  <artheader>
+    <title>GNOME Robots II Manual</title>
+      <copyright>
+        <year>2001</year>
+        <holder>Patanjali Somayaji, Mark Rae</holder>
+      </copyright>
+
+    <!-- translators: uncomment this:
+
+    <copyright>
+      <year>2000</year>
+      <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+
+    -->
+
+    <!-- do not put authorname in the header except in copyright - use
+    section "authors" below -->
+
+    <!-- Use this legal notice for online documents which depend on -->
+    <!-- core GNOME packages.                                       -->
+    <legalnotice id="legalnotice">
+      <para>
+        Permission is granted to copy, distribute and/or modify this document
+        under the terms of the <ulink type="help" 
+        url="gnome-help:fdl"><citetitle>GNU Free Documentation
+        License</citetitle></ulink>, Version 1.1 or any later version 
+        published by the Free Software Foundation with no Invariant Sections, 
+        no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+        can be found <ulink type="help" url="gnome-help:fdl">here</ulink>.
+      </para>
+      <para>
+        Many of the names used by companies to distinguish their products and
+        services are claimed as trademarks. Where those names appear in any
+        GNOME documentation, and those trademarks are made aware to the members
+        of the GNOME Documentation Project, the names have been printed in caps
+        or initial caps.
+      </para>
+    </legalnotice>
+
+    <!-- This is the manual version, not application version. --> 
+    <releaseinfo>
+      This is version 1.0 of the GNOME Robots II manual.
+    </releaseinfo>
+
+  </artheader>
+
+   <!-- ============= Document Body ============================= -->
+
+   <!-- ============= Introduction ============================== -->
+   <sect1 id="intro">
+     <title>Introduction</title>
+
+     <para>
+       <application>GNOME Robots II</application> 
+       is a development of the original Gnome Robots game which
+       was itself based on the text based robots game which can be found
+       on a number of UNIX systems, and comes with the BSD games package on Linux
+       systems.
+     </para>
+     <para>
+       This new version includes two types of robots, movable junkheaps, 
+       multiple game configurations, user definable keyboard layouts, sound using 
+       ESD if you have it, as well as all of the other features which were present 
+       in the original Gnome Robots game.	
+     </para>
+
+     <para>
+       To run <application>GNOME Robots II</application>, select
+       <menuchoice>
+       <guisubmenu>games</guisubmenu>
+       <guimenuitem>GnobotsII</guimenuitem>
+       </menuchoice>
+       from the <guimenu>Main Menu</guimenu>, or type
+       <command>gnobots2</command> on the command line.
+     </para>
+
+     <para>
+       <application>GNOME Robots II</application> is included in the
+       <filename>gnome-games</filename> package, which is part of the
+       GNOME desktop environment. This document describes version
+       &version; of <application>GNOME Robots II</application>.
+     </para>
+   </sect1>
+ 
+   <sect1 id="objective">
+     <title>Gnome Robots II Objective</title>
+     <para>
+       The objective of Gnobots2 is quite simple. You are surrounded by a 
+       number of robots or other hostile adversaries. As you move about 
+       they will move directly towards you for every move that you make. 
+       Their goal is to kill you. Your goal is to kill all the robots on the 
+       board by taking advantage of their vulnerabilities. 
+     </para>
+   
+     <para>
+       Robots are vulnerable because they will be destroyed if they collide 
+       into each other. They will also be destroyed if they collide with the 
+       debris of some other collision. 
+     </para>    
+
+     <para> 
+       If supported in the game configuration you have chosen, you can 
+       push the junkheaps around to form barricades to protect you. Also if you are
+       daring enough you can Splat! the robots by pushing junkheaps on top of them
+       for an additional bonus.
+     </para>    
+
+     <para>
+       You can also save yourself by teleporting yourself to a random location. 
+       Unfortunately, randomly teleporting means that there is a chance that
+       you might end up being right next to a robot so they can kill you when
+       they  make their move. All is not lost however, as you can have a number of
+       safe teleports which will place you out of immediate danger. You can earn
+       more free teleports as you go along, how you gain them depends on the 
+       chosen game, but typically you get one for each robot that is
+       destroyed while you are 'waiting', up to a maximum of 10. If you don't
+       want to waste your saved up safe teleports you can choose to randomly
+       teleport if you think it's safe enough. 
+     </para>
+   
+     <para>
+       If you press the 'Wait' key (see below) you will no longer be able to
+       move until either all of the robots, which still move towards you, are
+       gone or you are killed. Doing this may earn you extra safe teleports
+       as described above.
+     </para>
+   
+     <para>           
+       If you manage to reach the point where more than half of the screen is
+       occupied by robots, the number of robots will be reset to the starting amount,
+       allowing you to continue.
+     </para>
+  </sect1>
+
+
+  <!-- ================ Usage ================================ -->
+  <!-- This section should describe basic usage of the application. -->
+
+  <sect1 id="usage">
+    <title>Using GNOME Robots II</title>
+    <para>
+      <application>GNOME Robots II</application> is extremely simple to play. 
+      You make your moves by using your keyboard. You can even decide which 
+      keys are used for the moves. 
+       This section describes basic usage of
+      <application>GNOME Robots II</application>.
+    </para>
+
+    <!-- ========= Basic Usage =========================== -->
+    <sect2 id="mainwin">
+      <title>Basic usage</title>
+      <para>
+        Starting <application>GNOME Robots II</application> opens the
+        <interface>Main window</interface>, shown in <xref
+        linkend="mainwindow-fig">. 
+
+        <!-- ==== Figure ==== -->
+        <figure id="mainwindow-fig">
+	  <title>GNOME Robots II Main Window</title>
+	  <screenshot>
+	    <screeninfo>GNOME Robots II Main Window</screeninfo>
+	    <graphic fileref="gnobots2-main" format="png" srccredit="Patanjali">
+            </graphic>
+	  </screenshot>
+	</figure>
+      <!-- ==== End of Figure ==== -->
+      </para> 
+
+      <para>
+        To start a new game, click on <guimenuitem>New Game</guimenuitem> in the 
+        <guimenu>Game</guimenu> menu. 
+      </para>
+    </sect2>
+  </sect1>
+    
+
+  
+  <!-- ========= Menus =========================== --> 
+  
+   <sect1 id="menubar">
+    <title>Menus</title>
+    <para>
+      The menu bar, located at the top of the <interface>game   
+      board</interface>, contains the following menus:
+    </para>
+
+
+    <variablelist>
+      <varlistentry>
+        <term><guimenu>Game</guimenu></term>
+        <listitem>
+        <para>
+          This menu contains three items:
+          <itemizedlist>	
+            <listitem>
+	    <para>
+            <menuchoice> 
+	       <shortcut><keysym>Ctrl-N</keysym></shortcut>
+               <guimenuitem>New Game</guimenuitem> 
+		  </menuchoice> &mdash; starts a new game of GNOME Robots II.
+	   
+            </para>
+            </listitem>     
+       
+	    <listitem>
+	    <para>
+              <menuchoice>
+              <guimenuitem>Scores...</guimenuitem>
+		  </menuchoice> &mdash; shows the scores.
+		</para>
+            </listitem>
+
+       	    <listitem>
+            <para>
+              <menuchoice>
+              <shortcut><keysym>Ctrl-Q</keysym></shortcut>
+              <guimenuitem>Exit</guimenuitem>
+              </menuchoice>
+            </para>
+            </listitem>
+          </itemizedlist>
+        </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><guimenu>Settings</guimenu></term>
+	<listitem>
+	<para>
+          The <guimenu>Settings</guimenu> menu contains only one item:
+          <itemizedlist>
+	    <listitem>
+	    <para>
+              <guimenuitem>Preferences</guimenuitem>
+              which brings up the preferences dialog box.
+            </para>
+	    </listitem>
+	  </itemizedlist>
+        </para>
+	</listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><guimenu>Help</guimenu></term>
+        <listitem>
+        <para>
+          This menu contains:
+          <itemizedlist>
+          <listitem>
+            <para>
+              <guimenuitem>Help</guimenuitem>&mdash;
+              shows this manual.
+            </para>
+          </listitem>
+          <listitem>
+          <para>
+            <guimenuitem>About</guimenuitem>&mdash; shows
+              basic information about
+              <application>GNOME Robots II</application>, such as
+              the author's name and the application version number.
+          </para>
+          </listitem>
+        </itemizedlist>
+
+        </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect1>
+ 
+ <!-- =========Using the Keyboard============== -->
+ 
+  
+  <sect1 id="keyboard">
+    <title>Using the keyboard</title>
+    <para>
+    There are three predefined sets of keys for controlling your player. 
+    </para>
+    <sect2 id="standard-keys">
+    <title>
+    Standard Keys 
+    </title>
+    
+    <para>
+      These standard keys are normally used for playing all versions of 
+      the robot games.
+    </para>
+        <orderedlist>
+          <listitem>
+	  <para>
+            Up Left: <keycap>Y</keycap>
+	  </para>
+          </listitem> 
+          <listitem><para>
+            Up: <keycap>K</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Up Right: <keycap>U</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Left: <keycap>H</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Stand Still: <keycap>.</keycap> or <keycap>space</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Right: <keycap>L</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Left: <keycap>B</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down: <keycap>J</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Right: <keycap>N</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Teleport: <keycap>T</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Ramdomly Teleport: <keycap>R</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Wait: <keycap>W</keycap>	      
+          </para></listitem>
+        </orderedlist>
+  </sect2>
+
+  <sect2 id="set2-keys">	
+      <title>
+      Set 2 
+      </title>
+      <para>
+         In Set 2, the keys are laid out on the main part of the keyboard in star shaped
+        pattern for people who don't like the HJKL layout.
+      </para>
+    <orderedlist>
+          <listitem><para>
+            Up Left: <keycap>Q</keycap>
+          </para></listitem> 
+          <listitem><para>
+            Up: <keycap>W</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Up Right: <keycap>E</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Left: <keycap>A</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Stand Still: <keycap>S</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Right: <keycap>D</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Left: <keycap>Z</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down: <keycap>X</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Right: <keycap>C</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Teleport: <keycap>T</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Ramdomly Teleport: <keycap>R</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Wait: <keycap>Return</keycap>	      
+          </para></listitem>
+        </orderedlist>
+
+
+
+
+      </sect2>
+      
+      <sect2 id="set3-keys">     
+      <title>
+        Set 3 - Using the Numeric Keypad
+      </title>
+      <para>
+        In Set 3, you use the Numeric Keypad.
+        <note>
+        <title>Switch on the NumLock Key</title>
+          <para>
+            You may need to switch on the NumLock to make these work.
+          </para>
+        </note>
+        <orderedlist>
+          <listitem><para>
+            Up Left: <keycap>7</keycap>
+          </para></listitem> 
+          <listitem><para>
+            Up: <keycap>8</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Up Right: <keycap>9</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Left: <keycap>4</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Stand Still: <keycap>5</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Right: <keycap>6</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Left: <keycap>1</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down: <keycap>2</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Right: <keycap>3</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Teleport: <keycap>+</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Ramdomly Teleport: <keycap>-</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Wait: <keycap>Return</keycap>	      
+          </para></listitem>
+        </orderedlist>
+
+      </para>	  
+    </sect2>
+  </sect1>
+   
+  <!-- ============= Customization ============================= -->
+  
+  <sect1 id="customization">
+    <title>
+      Customizing GNOME Robots II
+    </title>
+    <para>
+      You can modify the behaviour and appearance of
+      the game by selecting the properties dialog by clicking on <guimenuitem>
+      Preferences</guimenuitem>
+      of <guimenu>Settings</guimenu>. There are three pages to the dialog:-
+      <itemizedlist>
+        <listitem>
+        <para>
+	    <guimenuitem>Configuration</guimenuitem> &mdash;
+        This page allows you to choose the type of game you want to play.
+        The drop-down box at the top of the page allows you to choos from a number of 
+        predefined games, and the list-box below it shows the settings for that
+        game.
+	
+	
+        <orderedlist>
+          <listitem><para>
+	    The safe moves option will help you to avoid being killed due to a mistake.
+            If you try to make a move that would lead to your death when there is a safe 
+            move available you will not be allowed to procceed. But be warned if there
+            was no safe move available, other than teleporting, the move will be allowed 
+            to proceed.
+	      
+          </para></listitem>
+          <listitem><para>
+	  
+            There is also a ``super safe mode''.  If you select this, you get
+            beeped when there is no safe move and your only option is to teleport out.
+	  
+          </para></listitem>
+          <listitem><para>
+	  
+            If you select the sound check-box the game will play sounds for various
+            events throughout the game. If you do not have ESD installed the game will
+            beep using the computer speaker only on invalid moves.
+	  
+          </para></listitem>
+          <listitem><para>
+           
+	    The 'Splats' checkbox selects whether you want and sound played and a small
+            'Splat!' to appear on the screen.
+	  
+          </para></listitem>
+        </orderedlist>
+	
+	</para>
+	</listitem>
+        <listitem>
+        <para>
+	    <guimenuitem>Graphics</guimenuitem> &mdash;
+          This page allows you to select the graphics used throughout the game from
+          the list in the dropdown-box. You will get a preview of the graphics 
+          below it.
+        </para>
+        </listitem>
+
+        <listitem>
+        
+        <para>
+	    <guimenuitem>Keyboard</guimenuitem> &mdash;
+          This screen allows you to define your own keyboard controls.
+        </para>
+        </listitem>
+      </itemizedlist>
+    </para>
+
+    <para>
+      You can design your own graphics for the game if you want. The graphics
+      files are found in
+      <filename class="directory">
+      $PREFIX/share/pixmaps/gnobots2
+      </filename>, where $PREFIX depends on where Gnome
+      was installed, usually either 
+      <filename class="directory">/usr</filename>
+      or 
+      <filename class="directory">/usr/local</filename>.
+    </para>
+    <para>
+      Each character is 16x16 pixels and there are 14 of them arranged in
+      a PNG file which is 224x16 pixels in size. You can look at the existing
+      files to see the order in which they must be arranged to produce the correct
+      animated sequences.
+    </para>
+    <para>
+      Any graphics files which are placed in the directory are auto-detected
+      so you don't need to alter any configuration files.
+      You can also define your own game configurations by creating extra
+      <filename>
+      .cfg
+      </filename> files which are stored in the 
+      <filename class="directory">
+      $PREFIX/share/gnobots2
+      </filename>
+      directory.
+    </para>
+  </sect1> 
+ 
+  <!-- ============= Various Sections ============================= -->
+ 
+ 
+  <!-- ============= Bugs ================================== -->
+  <!-- This section should describe known bugs and limitations of
+      the program if there are any - please be frank and list all
+      problems you know of. -->
+  <sect1 id="bugs">
+    <title>Known Bugs and Limitations</title>
+    <para>
+      This application has no known bugs.
+    </para>
+  </sect1>
+
+
+<!-- ============= Authors ================================ -->
+
+  <sect1 id="authors">
+    <title>Authors</title>
+    <para>
+      <application>GNOME Robots II</application> was written by Mark Rae
+      (<email>m.rae@inpharmatica.co.uk</email>). Please send all comments, suggestions, and bug
+      reports to the <ulink url="http://bugs.gnome.org" type="http">GNOME
+      bug tracking database</ulink>.  (Instructions for submitting bug
+      reports can be found <ulink
+      url="http://bugs.gnome.org/Reporting.html" type="http">
+      on-line</ulink>.)  You can also use <application>Bug Report
+      Tool</application> (<command>bug-buddy</command>), available in the
+      <guisubmenu>Utilities</guisubmenu> submenu of <guimenu>Main
+      Menu</guimenu>, for submitting bug reports.
+    </para>
+
+    <para>
+      This manual was written by Patanjali Somayaji
+      (<email>patanjali@mindless.com</email>), from the original 
+      HTML documentation by Mark Rae. Please send all comments and
+      suggestions regarding this manual to the <ulink type="http"
+      url="http://developer.gnome.org/projects/gdp">GNOME Documentation
+      Project</ulink> by sending an email to
+      <email>docs@gnome.org</email>. You can also add your comments
+      online by using the <ulink type="http"
+      url="http://developer.gnome.org/projects/gdp/doctable/">GNOME
+      Documentation Status Table</ulink>.
+    </para>
+
+    <!-- For translations: uncomment this:
+
+    <para>
+      Latin translation was done by ME
+      (<email>MYNAME@MYADDRESS</email>). Please send all  comments  and
+      suggestions regarding this translation to SOMEWHERE.
+    </para>
+
+    -->
+
+  </sect1>
+
+
+  <!-- ============= Application License ============================= -->
+
+  <sect1 id="license">
+    <title>License</title>
+    <para>
+      This program is free software; you can redistribute it and/or
+      modify it under the terms of the  <ulink type="help" url="gnome-help:gpl">
+      <citetitle>GNU General Public License</citetitle></ulink> as
+      published by the Free Software Foundation; 
+      either version 2 of the License, or (at your option) any later
+      version.
+    </para>
+    <para>
+      This program is distributed in the hope that it will be useful, but
+      WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      <citetitle>GNU General Public License</citetitle> for more details.
+    </para>
+    <para>
+      A copy of the <citetitle>GNU General Public License</citetitle> is
+      included as an appendix to the <citetitle>GNOME Users
+      Guide</citetitle>.  You may also obtain a copy of the
+      <citetitle>GNU General Public License</citetitle> from the Free
+      Software Foundation by visiting <ulink type="http"
+      url="http://www.fsf.org">their Web site</ulink> or by writing to
+      <address>
+        Free Software Foundation, Inc.
+        <street>59 Temple Place</street> - Suite 330
+        <city>Boston</city>, <state>MA</state> <postcode>02111-1307</postcode>
+        <country>USA</country>
+      </address>
+    </para>
+  </sect1>
+
+
+ 
+
+</article>

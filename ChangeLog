@@ -1,3 +1,7 @@
+2001-03-20 John Fleck <jfleck@swcp.com>
+
+	* adding sgml version of docs - Makefiles still need to be done.
+	
 2000-05-12  Andreas Hyden  <a.hyden@cyberpoint.se>
 
 	* gnobots.desktop: Added Swedish translation.

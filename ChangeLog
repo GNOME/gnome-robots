@@ -1,3 +1,15 @@
+2004-02-14  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/es/gnobots2.xml: 
+	* help/es/gnobots2-es.omf:
+	* help/es/Makefile.am:
+	* help/es/legal.xml:	
+	* help/Makefile.am: Yet another conversion of an old translated
+	document by someone who doesn't understand the language.
+
+	* help/da/gnobots2.xml: Remove accidental reference to gtali in
+	the appname entity.
+
 2004-02-12  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/Makefile.am

@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<omf>
+  <resource>
+    <creator>
+      m.rae@inpharmatica.co.uk (Mark Rae)
+    </creator>
+    <title>
+      Documentación de GNOME Robots
+    </title>
+    <date>
+      Thu Feb 12 22:53:37 NZDT 2004
+    </date>
+    <subject category="GNOME|Juegos"/>
+    <format mime="text/xml" dtd="-//OASIS//DTD DocBook XML V4.1.2//EN"/>
+    <identifier url="gnobots2.xml"/>
+    <language code="es"/>
+  </resource>
+</omf>

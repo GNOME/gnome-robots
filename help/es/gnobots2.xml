@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY legal SYSTEM "legal.xml">
+  <!ENTITY appversion "2.6">
+  <!ENTITY manrevision "2.6">
+  <!ENTITY date "Feb 2004">
+  <!ENTITY app "<application>Robots GNOME</application>">
+  <!ENTITY appname "Robots GNOME">
+  <!ENTITY version "2.6">
+]>
+ 
+<article id="index" lang="es">
+  
+ <articleinfo>
+   <title>Documentación de GNOME Robots</title>
+ 
+   <copyright>
+     <year>1999</year>
+     <holder>Mark Rae</holder>
+   </copyright>
+ 
+   <copyright>
+     <year>1999</year>
+     <holder>Joaquín Cuenca Abela</holder>
+   </copyright>
+   <publisher>
+     <publishername>GNOME Documentation Project </publishername>
+   </publisher>
+   &legal;
+                                                                                
+   <revhistory>
+     <revision>
+       <revnumber>&appname; Manual V&manrevision;</revnumber>
+       <date>&date;</date>
+       <revdescription>
+         <para>Converted from the original HTML by Callum McKenzie, who doesn't speak Spanish.</para>
+       </revdescription>
+     </revision>
+   </revhistory>
+                                                                                
+   <releaseinfo>This manual describes version &appversion; of &appname;.
+   </releaseinfo>
+   <legalnotice>
+      <title>Feedback</title>
+      <para>To report a bug or make a suggestion regarding this game or
+      this manual, follow the directions in the <ulink
+      url="ghelp:gnome-feedback" type="help">GNOME Feedback Page</ulink>.
+      </para>
+    </legalnotice>
+  </articleinfo>
+                                                                                  <indexterm zone="index">
+    <primary>GNOME Robots</primary>
+  </indexterm>
+
+<sect1 id="introduction">
+  <title>Introducción</title>
+  
+  <para>
+Gnome Robots es una versión del juego de texto robots que puede encontrar
+en muchos sistemas UNIX, y que viene con el paquete juegos BSD en los
+sistemas Linux.
+  </para>
+  <para>
+Esta nueva versión incluye dos tipos distintos de robots, montones
+de basura móviles, diferentes configuraciones, la posibilidad de
+redefinir las teclas que se utilizan para jugar, sonido mediante ESD
+(si lo tiene), y el resto de características presentes en el juego
+Gnome Robots original.
+  </para>
+</sect1>
+
+<sect1 id="play">
+  <title>Jugando</title>
+  <para>
+Cuando empiece el juego se encontrará rodeado por robots o por algún
+extraño (pero igualmente agresivo) adversario si ha escogido algún
+escenario diferente al que viene por defecto.
+Conforme se vaya desplazando, los robots se moverán directamente
+hacia usted con un objetivo en mente - matarle. Por si fuese poco, hay
+dos tipos diferentes de robots, ¡y uno de ellos puede ir el doble de
+rápido que usted!
+Afortunadamente tiene varias formas de evitar el desafortunado desenlace.
+  </para>
+  <para>
+Primero, los robots no han sido dotados con una gran cantidad de
+inteligencia, y se destruirán si chocan entre sí o si chocan con
+los desperdicios que hayan quedado de alguna antigua colisión.
+Segundo, si se encuentra en una encerrona, puede teletransportarse
+a un lugar aleatorio de la pantalla.
+Además, si está permitido en la configuración del juego que haya
+elegido, podrá empujar los montones de basura y así hacer una
+barricada que le proteja. Si es lo bastante atrevido puede incluso
+llegar a aplastar a los robots empujando un montón de basura encima de
+ellos, obteniendo así un bonus adicional. 
+  </para>
+  <para>
+Desafortunadamente, cuando hemos dicho teletransporte aleatorio
+queremos decir que hay
+una cierta probabilidad de acabar justo al lado de un robot que acabará
+con usted cuando haga su próximo movimiento. ¡Pero todavía no está
+todo perdido!, ya que tiene una cierta cantidad de teletransportes seguros
+que le llevarán fuera del peligro inmediato. Puede ganar más teletransportes
+seguros conforme transcurre la partida, obteniendo uno por cada robot
+que se destruye mientras usted está `esperando', con un máximo de 10. Si
+no quiere gastar sus teletransportes seguros, puede elegir un teletransporte
+aleatorio si cree que es lo bastante seguro.
+Puede quitar la opción de los teletransportes seguros para hacer que el
+juego sea igual al clásico robots.
+  </para>
+  <para>
+Si presiona la tecla `Esperar' (ver más abajo) ya no será capaz de
+moverse hasta que todos los robots, que van hacia usted se hayan movido
+o hasta que haya sido asesinado. Si hace ésto también tiene la posibilidad
+de ganar teletransportes seguros adicionales, tal y como se ha descrito
+anteriormente.
+  </para>
+  <para>
+Si consigue llegar hasta un momento en el que más de la mitad de la
+pantalla está ocupada por robots, se volverá al número de robots inicial,
+permitiéndole continuar.
+  </para>
+</sect1>
+
+<sect1 id="kbd">
+<title>Teclas</title>
+  <para>
+Hay tres conjuntos de teclas predefinidas para controlar a su jugador -
+  </para>
+<sect2>
+<title>Estándar</title>
+<para>
+Las que vienen a continuación son las teclas estándar que hay para jugar
+en cualquier versión de robot.
+</para>
+
+<programlisting>
+Arriba Izquierda: Y             Arriba: K           Arriba Derecha: U
+       Izquierda: H  Mantener Posición: . o Espacio        Derecha: L
+ Abajo Izquierda: B              Abajo: J            Abajo Derecha: N
+
+           Teletransporte: T
+ Teletransporte aleatorio: R
+                  Esperar: W
+</programlisting>
+</sect2>
+
+<sect2>
+<title>Primer conjunto de teclas</title>
+<para>
+Estas teclas están en la parte principal del teclado y su disposición
+es en forma de estrella. Para los que no les gusten las teclas HJKL.
+</para>
+
+<programlisting>
+Arriba Izquierda: Q             Arriba: W  Arriba Derecha: E
+       Izquierda: A  Mantener Posición: S         Derecha: D
+ Abajo Izquierda: Z              Abajo: X   Abajo Derecha: C
+
+           Teletransporte: T
+ Teletransporte aleatorio: R
+                  Esperar: Enter
+</programlisting>
+</sect2>
+
+<sect2>
+<title>Segundo conjunto de teclas - teclado numérico</title>
+<para>
+Tiene que activar la tecla de Bloque Numérico para que estas teclas
+funcionen.
+</para>
+
+<programlisting>
+Arriba Izquierda: 7             Arriba: 8  Arriba Derecha: 9
+       Izquierda: 4  Mantener Posición: 5         Derecha: 6
+ Abajo Izquierda: 1              Abajo: 2   Abajo Derecha: 3
+
+           Teletransporte: +
+ Teletransporte aleatorio: -
+                  Esperar: Enter
+</programlisting>
+</sect2>
+<sect2>
+  <title>Defina su propio conjunto de teclas</title>
+<para>
+Por supuesto, si no le gusta ninguna de las combinaciones anteriores,
+puede definir su propio conjunto de teclas. Seleccione la caja que hay
+para el movimiento sobre el que quiere actuar y presione la tecla que
+quiere asignarle a ese movimiento. En ese momento debe aparecer en la
+caja la representación mediante texto de la tecla elegida.
+</para>
+</sect2>
+</sect1>
+
+<sect1 id="preferences">
+<title>Preferencias</title>
+<para>
+El cuadro de diálogo preferencias le permite moficicar el comportamiento
+y la apariencia del juego.
+</para>
+
+<sect2>
+<title>Configuración</title>
+<para>
+Esta página le permite elegir el tipo de juego al que quiere jugar. La
+lista que encontrará en lo alto de la página le permitirá elegir un
+juego de entre los predefinidos, y la lista de abajo le mostrará las
+características del juego elegido.</para><para>
+La opción de modo salvación evitará que muera debido a un error. Se
+le impedirá el movimiento si intenta ir a un lugar en el que moriría
+mientras todavía queden sitios en los que pueda salvarse. Además se le
+avisará si no queda ningún sitio en el que pueda salvar (excepto
+usando el teletransporte), y en este caso se le permitirá el movimiento.
+</para><para>
+Si selecciona el botón del sonido se reproducirán distintos sonidos
+para los diferentes eventos que se den en el juego. Si no tiene ESD
+instalado el juego utiliará el altavoz del PC cuando haya un
+movimiento no válido.
+</para><para>
+El botón `Splats' permite seleccionar si quiere que se reproduzca un
+sonido y que aparezca un pequeño `¡Splat!' en la pantalla.
+</para>
+</sect2>
+<sect2>
+<title>Gráficos</title>
+<para>Puede seleccionar que gráficos quiere utilizar en el juego de entre
+aquellos disponibles en la lista. Podrá ver una vista previa de los
+gráficos un poco más abajo del lugar que ocupa la lista.</para>
+</sect2>
+<sect2>
+<title>Teclado</title>
+<para>
+Esta pantalla le permite definir sus propios controles tal y como se
+describe en la sección <link linkend="kbd">Teclas</link>.
+</para>
+</sect2>
+</sect1>
+
+<sect1 id="misc">
+<title>Miscelánea</title>
+<para>
+Si quiere puede diseñar sus propios gráficos para el juego. Los ficheros
+gráficos se encuentran en
+<filename class="directory">$PREFIX/share/pixmaps/gnobots2</filename>, donde <filename class="directory">$PREFIX</filename> depende de
+donde esté instalado GNOME, normalmente <filename class="directory">/usr</filename> o <filename class="directory">/usr/local</filename>.
+Cada personaje tiene 16x16 pixeles, y hay 14 de ellos alineados
+en un fichero PNG que tiene 224x16 pixeles de tamaño. Puede mirar los
+ficheros ya existentes para ver el orden en el que debén alinearse
+para producir la secuencia animada correcta.
+Se autodetectará cualquier fichero gráfico que haya en el directorio
+por lo que no tiene que modificar ningún fichero de configuración.
+</para>
+<para>También puede definir su propia configuración creando ficheros
+.cfg adicionales y guardándolos en el directorio
+<filename class="directory">$PREFIX/share/gnobots2</filename>.
+</para>
+<para>
+Si tiene cualquier sugerencia o descubre cualquier BUG, puede enviarme
+un correo-e a <email>m.rae@inpharmatica.co.uk</email>
+(en inglés).
+</para>
+
+<para>Si tiene cualquier sugerencia o comentario sobre la traducción, puede
+enviar un correo-e a <email>e98cuenc@criens.u-psud.fr</email>.</para>
+</sect1>
+</article>

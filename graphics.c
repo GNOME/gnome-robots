@@ -85,7 +85,7 @@ GdkPixmap **mask
 ){
   GdkPixbuf *image;
 
-  if(!g_file_exists(fname)){
+  if(!g_file_test (fname, G_FILE_TEST_EXISTS)){
     printf(_("Could not find \'%s\' pixmap file for Gnome Robots\n"), fname);
     return FALSE;
   }
@@ -111,7 +111,8 @@ GdkPixmap **mask
 static gboolean load_bubble_graphics(
 ){
   gchar buffer[PATH_MAX];
-  gchar *dname = gnome_unconditional_pixmap_file(GAME_NAME);
+  gchar *dname = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_PIXMAP,  
+                                            GAME_NAME, FALSE, NULL);
 
   strcpy(buffer, dname);
   strcat(buffer, "/");
@@ -151,7 +152,10 @@ gboolean load_game_graphics(
   GdkPixbuf      *image;
   GdkImage       *tmpimage;
   GdkPixmap      *pixmap;
-  gchar          *dname = gnome_unconditional_pixmap_file(GAME_NAME);
+  gchar          *dname = gnome_program_locate_file (NULL, 
+                                                     GNOME_FILE_DOMAIN_PIXMAP,
+                                                     GAME_NAME, FALSE, 
+                                                     NULL);
 
   if(game_graphic != NULL){
     free_game_graphics();
@@ -213,9 +217,9 @@ gboolean load_game_graphics(
 
     image = gdk_pixbuf_new_from_file (buffer, NULL);
     gdk_pixbuf_render_pixmap_and_mask (image, &pixmap, NULL, 127);
-    tmpimage = gdk_image_get(pixmap, 0, 0, 1, 1);
+    tmpimage = gdk_drawable_get_image(pixmap, 0, 0, 1, 1);
     game_graphic[num_graphics]->bgcolor.pixel = gdk_image_get_pixel(tmpimage, 0, 0);
-    gdk_image_destroy(tmpimage);
+    g_object_unref(tmpimage);
     gdk_pixbuf_unref (image);
 
     game_graphic[num_graphics]->pixmap = pixmap;
@@ -259,19 +263,19 @@ gboolean free_game_graphics(
   num_graphics = -1;
   current_graphics = -1;
 
-  if(aieee_pixmap) gdk_pixmap_unref(aieee_pixmap);
+  if(aieee_pixmap) gdk_drawable_unref(aieee_pixmap);
   aieee_pixmap = NULL;
-  if(aieee_mask) gdk_pixmap_unref(aieee_mask);
+  if(aieee_mask) gdk_drawable_unref(aieee_mask);
   aieee_mask = NULL;
 
-  if(yahoo_pixmap) gdk_pixmap_unref(yahoo_pixmap);
+  if(yahoo_pixmap) gdk_drawable_unref(yahoo_pixmap);
   yahoo_pixmap = NULL;
-  if(yahoo_mask) gdk_pixmap_unref(yahoo_mask);
+  if(yahoo_mask) gdk_drawable_unref(yahoo_mask);
   yahoo_mask = NULL;
 
-  if(splat_pixmap) gdk_pixmap_unref(splat_pixmap);
+  if(splat_pixmap) gdk_drawable_unref(splat_pixmap);
   splat_pixmap = NULL;
-  if(splat_mask) gdk_pixmap_unref(splat_mask);
+  if(splat_mask) gdk_drawable_unref(splat_mask);
   splat_mask = NULL;
 
   return TRUE;
@@ -398,7 +402,7 @@ GtkWidget  *area
   if((tileno < 0) || (tileno >= SCENARIO_PIXMAP_WIDTH)){
     gdk_window_clear_area (area->window, x, y, TILE_WIDTH, TILE_HEIGHT);
   } else {
-    gdk_draw_pixmap(area->window, area->style->black_gc,
+    gdk_draw_drawable(area->window, area->style->black_gc,
 		    game_graphic[pno]->pixmap, tileno*TILE_WIDTH, 
 		    0, x, y, TILE_WIDTH, TILE_HEIGHT);
   }
@@ -571,7 +575,7 @@ void draw_bubble(
   gdk_gc_set_clip_origin(game_area->style->black_gc, 
 			 bubble_xpos-bubble_xo, bubble_ypos-bubble_yo);
   gdk_gc_set_clip_mask(game_area->style->black_gc, mask);
-  gdk_draw_pixmap(game_area->window, game_area->style->black_gc,
+  gdk_draw_drawable(game_area->window, game_area->style->black_gc,
 		  pmap, bubble_xo, bubble_yo, bubble_xpos, bubble_ypos, 
 		  BUBBLE_WIDTH, BUBBLE_HEIGHT);
   gdk_gc_set_clip_mask(game_area->style->black_gc, NULL);

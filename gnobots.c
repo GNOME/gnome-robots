@@ -181,15 +181,15 @@ char *argv[]
   gtk_object_ref(GTK_OBJECT(client));
   gtk_object_sink(GTK_OBJECT(client));
 
-  gtk_signal_connect(GTK_OBJECT(client), "save_yourself",
+  g_signal_connect(GTK_OBJECT(client), "save_yourself",
 		     GTK_SIGNAL_FUNC(save_state), argv[0]);
-  gtk_signal_connect(GTK_OBJECT(client), "die",
+  g_signal_connect(GTK_OBJECT(client), "die",
 		     GTK_SIGNAL_FUNC(session_die), argv[0]);
 
   app = gnome_app_new(GAME_NAME, _("Gnome Robots II") );
   gtk_window_set_policy(GTK_WINDOW(app), FALSE, FALSE, TRUE);
 
-  gtk_signal_connect(GTK_OBJECT(app), "delete_event",
+  g_signal_connect(GTK_OBJECT(app), "delete_event",
 		     GTK_SIGNAL_FUNC(exit_cb), NULL);
 
   stbar = gnobots_statusbar_new();
@@ -197,7 +197,7 @@ char *argv[]
 
   create_game_menus();
 
-  gtk_widget_push_colormap (gdk_rgb_get_cmap ());
+  gtk_widget_push_colormap (gdk_rgb_get_colormap ());
   game_area = gtk_drawing_area_new();
   gtk_widget_pop_colormap ();
   gnome_app_set_contents(GNOME_APP(app), game_area);

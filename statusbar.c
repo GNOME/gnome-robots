@@ -132,7 +132,7 @@ gint score
   if(statusbar == NULL) return FALSE;
 
   sprintf(buffer, "%d", score);
-  gtk_label_set(GTK_LABEL(score_label), buffer);
+  gtk_label_set_text(GTK_LABEL(score_label), buffer);
 }
 
 
@@ -154,7 +154,7 @@ gint level
   if(statusbar == NULL) return FALSE;
 
   sprintf(buffer, "%d", level);
-  gtk_label_set(GTK_LABEL(level_label), buffer);
+  gtk_label_set_text(GTK_LABEL(level_label), buffer);
 }
 
 
@@ -176,7 +176,7 @@ gint stel
   if(statusbar == NULL) return FALSE;
 
   sprintf(buffer, "%d", stel);
-  gtk_label_set(GTK_LABEL(safe_label), buffer);
+  gtk_label_set_text(GTK_LABEL(safe_label), buffer);
 }
 
 
@@ -204,7 +204,7 @@ gint rem2
   } else {
     sprintf(buffer, "%d", rem1);
   }
-  gtk_label_set(GTK_LABEL(remaining_label), buffer);
+  gtk_label_set_text(GTK_LABEL(remaining_label), buffer);
 }
 
 

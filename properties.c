@@ -4,6 +4,7 @@
 
 #include "properties.h"
 #include "gameconfig.h"
+#include "gnobots.h"
 #include "graphics.h"
 #include "gbdefs.h"
 #include "keyboard.h"
@@ -42,7 +43,14 @@ struct _GnobotsProperties{
 /**********************************************************************/
 static GtkWidget         *propbox      = NULL;
 static GtkWidget         *darea        = NULL;
-static GtkWidget         *clist        = NULL;
+static GtkWidget         *list_view    = NULL;
+enum {
+  PROPERTY_STRING,
+  VALUE_STRING,
+  INDEX_INT,
+  NCOLS
+}; /* Column indices for list */
+
 static GtkWidget         *etext[12];
 static gint                timeout_id   = -1;
 static gint                anim_counter = 0;
@@ -260,6 +268,10 @@ gpointer     data
   apply_changes();
 
   save_properties();
+
+  gtk_widget_destroy (propbox);
+  propbox = NULL;
+  
 }
 
 
@@ -293,8 +305,14 @@ static void fill_property_list(
   gchar buffer[256];
   GameConfig *gc;
   gboolean type2exist = TRUE;
+  GtkListStore *list;
+  GtkTreeIter iter;
+  GtkTreeSelection *selection;
+  int index = 0;
 
-  if(clist == NULL) return;
+  if(list_view == NULL) return;
+
+  list = (GtkListStore *) gtk_tree_view_get_model(GTK_TREE_VIEW(list_view));
 
   gc = game_config_settings(temp_prop.selected_config);
 
@@ -304,10 +322,9 @@ static void fill_property_list(
     type2exist = FALSE;
   }
 
-  gtk_clist_freeze(GTK_CLIST(clist));
-
-  gtk_clist_clear(GTK_CLIST(clist));
-
+  gtk_list_store_clear(list);
+  /* I think this is just gtk_list_store_clear() */
+  
   if(type2exist){
     entry[0] = _("Initial Number of Type 1 Robots");
   } else {
@@ -315,13 +332,26 @@ static void fill_property_list(
   }
   sprintf(buffer, "%d", gc->initial_type1);
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   if(type2exist){
     entry[0] = _("Initial Number of Type 2 Robots");
     sprintf(buffer, "%d", gc->initial_type2);
     entry[1] = buffer;
-    gtk_clist_append(GTK_CLIST(clist), entry);
+    gtk_list_store_append(list, &iter);
+    gtk_list_store_set (list, &iter,
+                        PROPERTY_STRING, entry[0],
+                        VALUE_STRING, entry[1],
+                        INDEX_INT, index,
+                        -1);
+    index++;
   }
 
   if(type2exist){
@@ -331,13 +361,25 @@ static void fill_property_list(
   }
   sprintf(buffer, "%d", gc->increment_type1);
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   if(type2exist){
     entry[0] = _("Increasing Number of Type 2 Robots per Level");
     sprintf(buffer, "%d", gc->increment_type2);
     entry[1] = buffer;
-    gtk_clist_append(GTK_CLIST(clist), entry);
+    gtk_list_store_append(list, &iter);
+    gtk_list_store_set (list, &iter,
+                        PROPERTY_STRING, entry[0],
+                        VALUE_STRING, entry[1],
+                        INDEX_INT, index,
+                        -1);
+    index++;
   }
 
   if(type2exist){
@@ -351,7 +393,13 @@ static void fill_property_list(
     sprintf(buffer, "%d", gc->maximum_type1);
   }
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   if(type2exist){
     entry[0] = _("Maximum Number of Type 2 Robots");
@@ -361,7 +409,13 @@ static void fill_property_list(
       sprintf(buffer, "%d", gc->maximum_type2);
     }
     entry[1] = buffer;
-    gtk_clist_append(GTK_CLIST(clist), entry);
+    gtk_list_store_append(list, &iter);
+    gtk_list_store_set (list, &iter,
+                        PROPERTY_STRING, entry[0],
+                        VALUE_STRING, entry[1],
+                        INDEX_INT, index,
+                        -1);
+    index++;
   }
 
   if(type2exist){
@@ -371,13 +425,25 @@ static void fill_property_list(
   }
   sprintf(buffer, "%d", gc->score_type1);
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   if(type2exist){
     entry[0] = _("Type 2 Robot Score");
     sprintf(buffer, "%d", gc->score_type2);
     entry[1] = buffer;
-    gtk_clist_append(GTK_CLIST(clist), entry);
+    gtk_list_store_append(list, &iter);
+    gtk_list_store_set (list, &iter,
+                        PROPERTY_STRING, entry[0],
+                        VALUE_STRING, entry[1],
+                        INDEX_INT, index,
+                        -1);
+    index++;
   }
 
   if(type2exist){
@@ -387,13 +453,25 @@ static void fill_property_list(
   }
   sprintf(buffer, "%d", gc->score_type1_waiting);
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   if(type2exist){
     entry[0] = _("Type 2 Robot Score When Waiting");
     sprintf(buffer, "%d", gc->score_type2_waiting);
     entry[1] = buffer;
-    gtk_clist_append(GTK_CLIST(clist), entry);
+    gtk_list_store_append(list, &iter);
+    gtk_list_store_set (list, &iter,
+                        PROPERTY_STRING, entry[0],
+                        VALUE_STRING, entry[1],
+                        INDEX_INT, index,
+                        -1);
+    index++;
   }
 
   if(type2exist){
@@ -403,39 +481,81 @@ static void fill_property_list(
   }
   sprintf(buffer, "%d", gc->score_type1_splatted);
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   if(type2exist){
     entry[0] = _("Type 2 Robot Score When Splatted");
     sprintf(buffer, "%d", gc->score_type2_splatted);
     entry[1] = buffer;
-    gtk_clist_append(GTK_CLIST(clist), entry);
+    gtk_list_store_append(list, &iter);
+    gtk_list_store_set (list, &iter,
+                        PROPERTY_STRING, entry[0],
+                        VALUE_STRING, entry[1],
+                        INDEX_INT, index,
+                        -1);
+    index++;
   }
 
   entry[0] = _("Initial Number of Safe Teleports");
   sprintf(buffer, "%d", gc->initial_safe_teleports);
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   entry[0] = _("Number of Free Safe Teleports per Level");
   sprintf(buffer, "%d", gc->free_safe_teleports);
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   entry[0] = _("Kills Required While Waiting to Get A Safe Teleport");
   sprintf(buffer, "%d", gc->num_robots_per_safe);
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   entry[0] = _("Score Required To Get A Safe Teleport");
   sprintf(buffer, "%d", gc->safe_score_boundary);
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   entry[0] = _("Maximum Number of Safe Teleports");
   sprintf(buffer, "%d", gc->max_safe_teleports);
   entry[1] = buffer;
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
+  index++;
 
   entry[0] = _("Moveable Junkheaps");
   if(gc->moveable_heaps){
@@ -443,9 +563,15 @@ static void fill_property_list(
   } else {
     entry[1] = _("No");
   }
-  gtk_clist_append(GTK_CLIST(clist), entry);
+  gtk_list_store_append(list, &iter);
+  gtk_list_store_set (list, &iter,
+                      PROPERTY_STRING, entry[0],
+                      VALUE_STRING, entry[1],
+                      INDEX_INT, index,
+                      -1);
 
-  gtk_clist_thaw(GTK_CLIST(clist));
+  /* gtk_tree_view_set_model(list_view, list); */
+
 }
 
 
@@ -466,8 +592,6 @@ gpointer   data
   temp_prop.selected_graphics = num;
 
   clear_draw_area();
-
-  gnome_property_box_changed(GNOME_PROPERTY_BOX(propbox));
 }
 
 
@@ -488,7 +612,6 @@ gpointer   data
   temp_prop.selected_config = num;
   fill_property_list();
 
-  gnome_property_box_changed(GNOME_PROPERTY_BOX(propbox));
 }
 
 
@@ -505,7 +628,6 @@ GtkWidget *widget,
 gpointer   data
 ){
   temp_prop.safe_moves = GTK_TOGGLE_BUTTON(widget)->active;
-  gnome_property_box_changed(GNOME_PROPERTY_BOX(propbox));
 }
 
 
@@ -522,7 +644,6 @@ GtkWidget *widget,
 gpointer   data
 ){
   temp_prop.super_safe_moves = GTK_TOGGLE_BUTTON(widget)->active;
-  gnome_property_box_changed(GNOME_PROPERTY_BOX(propbox));
 }
 
 
@@ -539,7 +660,6 @@ GtkWidget *widget,
 gpointer   data
 ){
   temp_prop.sound = GTK_TOGGLE_BUTTON(widget)->active;
-  gnome_property_box_changed(GNOME_PROPERTY_BOX(propbox));
 }
 
 
@@ -556,7 +676,6 @@ GtkWidget *widget,
 gpointer   data
 ){
   temp_prop.splats = GTK_TOGGLE_BUTTON(widget)->active;
-  gnome_property_box_changed(GNOME_PROPERTY_BOX(propbox));
 }
 
 
@@ -583,7 +702,6 @@ gpointer     data
 
   gtk_entry_set_text(GTK_ENTRY(widget), keyboard_string(keyval));
 
-  gnome_property_box_changed(GNOME_PROPERTY_BOX(propbox));
 }
 
 
@@ -608,7 +726,6 @@ gpointer     data
 		       keyboard_string(temp_prop.keys[i]));    
   }
 
-  gnome_property_box_changed(GNOME_PROPERTY_BOX(propbox));
 }
 
 
@@ -641,8 +758,8 @@ GtkWidget *menu
   for(i = 0; i < num_game_configs(); ++i){
     item = gtk_menu_item_new_with_label(_(game_config_name(i)));
     gtk_widget_show(item);
-    gtk_menu_append(GTK_MENU(menu), item);
-    gtk_signal_connect(GTK_OBJECT(item), "activate",
+    gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+    g_signal_connect(GTK_OBJECT(item), "activate",
 		       (GtkSignalFunc)type_selection, (gpointer)i);
   }
 
@@ -681,8 +798,8 @@ GtkWidget *menu
   for(i = 0; i < num_game_graphics(); ++i){
     item = gtk_menu_item_new_with_label(_(game_graphics_name(i)));
     gtk_widget_show(item);
-    gtk_menu_append(GTK_MENU(menu), item);
-    gtk_signal_connect(GTK_OBJECT(item), "activate",
+    gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+    g_signal_connect(GTK_OBJECT(item), "activate",
 		       (GtkSignalFunc)pmap_selection, (gpointer)i);
   }
 
@@ -699,6 +816,7 @@ GtkWidget *menu
  **/
 void show_properties_dialog(
 ){
+  GtkWidget *notebook;
   GtkWidget *cpage;
   GtkWidget *gpage;
   GtkWidget *kpage;
@@ -712,16 +830,30 @@ void show_properties_dialog(
   GtkWidget *table;
   GtkWidget *dbut;
   GtkWidget *scrolled;
+  GtkListStore *list;
+  GtkTreeViewColumn *column;
+  GtkCellRenderer *renderer;
+  GtkTreeSelection *selection;
 
   if(propbox) return;
 
   /* Copy current setting into temporary */
   copy_properties(&properties, &temp_prop);
 
-  propbox = gnome_property_box_new();
-
-  gtk_window_set_title(GTK_WINDOW(&GNOME_PROPERTY_BOX(propbox)->dialog.window),
-		       _("GnobotsII Preferences"));
+  propbox = gtk_dialog_new_with_buttons (_("GnobotsII Preferences"),
+                                         GTK_WINDOW (app),
+                                         GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+                                         /* GTK_STOCK_HELP, GTK_RESPONSE_HELP, */
+                                         GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
+                                         NULL);
+  /* Set up notebook and add it to hbox of the gtk_dialog */
+  g_signal_connect (GTK_OBJECT(propbox), "destroy",
+                    GTK_SIGNAL_FUNC(gtk_widget_destroyed), &propbox);
+  
+  notebook = gtk_notebook_new ();
+  gtk_box_pack_start (GTK_BOX(GTK_DIALOG(propbox)->vbox), notebook, 
+                      TRUE, TRUE, 0);
+  gtk_widget_show (notebook);
 
   /* The configuration page */
   cpage = gtk_vbox_new(FALSE, GNOME_PAD);
@@ -749,28 +881,51 @@ void show_properties_dialog(
     hbox = gtk_hbox_new(TRUE, GNOME_PAD);
     gtk_box_pack_start(GTK_BOX(cpage), hbox, FALSE, TRUE, GNOME_PAD);
 
-    clist = gtk_clist_new(2);
+    list = gtk_list_store_new(NCOLS,
+                              G_TYPE_STRING, /* Property */ 
+                              G_TYPE_STRING, /* Value */
+                              G_TYPE_INT); /* Index - remains hidden */
+    /* Create view */
+    list_view = gtk_tree_view_new_with_model(GTK_TREE_MODEL(list));
+    g_object_unref(list); /* Do I need to create a list store? */
 
-    gtk_clist_set_column_title(GTK_CLIST(clist), 0, _("Property"));
+    renderer = gtk_cell_renderer_text_new();
+    column = gtk_tree_view_column_new_with_attributes(_("Property"), 
+                                                      renderer, 
+                                                      "text", PROPERTY_STRING, 
+                                                      NULL);
+    gtk_tree_view_append_column(GTK_TREE_VIEW(list_view), column);
+    
+    renderer = gtk_cell_renderer_text_new();
+    column = gtk_tree_view_column_new_with_attributes(_("Value"), 
+                                                      renderer, 
+                                                      "text", VALUE_STRING, 
+                                                      NULL);
+    gtk_tree_view_append_column(GTK_TREE_VIEW(list_view), column);
+
+    selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(list_view));
+    gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+
+#if 0
     gtk_clist_set_column_width(GTK_CLIST(clist), 0, 400);
-    gtk_clist_set_column_title(GTK_CLIST(clist), 1, _("Value"));
     gtk_clist_set_column_width(GTK_CLIST(clist), 1, 50);
     gtk_clist_column_titles_passive(GTK_CLIST(clist));
     gtk_clist_column_titles_show(GTK_CLIST(clist));
-    gtk_widget_set_usize(clist, -2, 200);
+#endif
 
     fill_property_list();
 
-    gtk_widget_show(clist);
+    gtk_widget_set_usize(list_view, -2, 200);
+    gtk_widget_show(list_view);
 
     scrolled = gtk_scrolled_window_new(NULL, NULL);
     gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled),
 				   GTK_POLICY_AUTOMATIC,
 				   GTK_POLICY_AUTOMATIC);
-    gtk_container_add(GTK_CONTAINER(scrolled), clist);
+    gtk_container_add(GTK_CONTAINER(scrolled), list_view);
 
     gtk_widget_show(scrolled);
-    gtk_box_pack_start_defaults(GTK_BOX(hbox), scrolled);
+    gtk_box_pack_start (GTK_BOX (hbox), scrolled, TRUE, TRUE, GNOME_PAD_SMALL);
 
     gtk_widget_show(hbox);
 
@@ -780,28 +935,28 @@ void show_properties_dialog(
 
     chkbox = gtk_check_button_new_with_label(_("Safe Moves"));
     GTK_TOGGLE_BUTTON(chkbox)->active = temp_prop.safe_moves;
-    gtk_signal_connect(GTK_OBJECT(chkbox), "clicked",
+    g_signal_connect(GTK_OBJECT(chkbox), "clicked",
 		       (GtkSignalFunc)safe_cb, NULL);
     gtk_box_pack_start(GTK_BOX(hbox), chkbox, TRUE, TRUE, GNOME_PAD);
     gtk_widget_show (chkbox);
 
     chkbox = gtk_check_button_new_with_label(_("Super Safe Moves"));
     GTK_TOGGLE_BUTTON(chkbox)->active = temp_prop.super_safe_moves;
-    gtk_signal_connect(GTK_OBJECT(chkbox), "clicked",
+    g_signal_connect(GTK_OBJECT(chkbox), "clicked",
 		       (GtkSignalFunc)super_safe_cb, NULL);
     gtk_box_pack_start(GTK_BOX(hbox), chkbox, TRUE, TRUE, GNOME_PAD);
     gtk_widget_show (chkbox);
 
     chkbox = gtk_check_button_new_with_label(_("Sound"));
     GTK_TOGGLE_BUTTON(chkbox)->active = temp_prop.sound;
-    gtk_signal_connect(GTK_OBJECT(chkbox), "clicked",
+    g_signal_connect(GTK_OBJECT(chkbox), "clicked",
 		       (GtkSignalFunc)sound_cb, NULL);
     gtk_box_pack_start(GTK_BOX(hbox), chkbox, TRUE, TRUE, GNOME_PAD);
     gtk_widget_show (chkbox);
 
     chkbox = gtk_check_button_new_with_label(_("Splats"));
     GTK_TOGGLE_BUTTON(chkbox)->active = temp_prop.splats;
-    gtk_signal_connect(GTK_OBJECT(chkbox), "clicked",
+    g_signal_connect(GTK_OBJECT(chkbox), "clicked",
 		       (GtkSignalFunc)splat_cb, NULL);
     gtk_box_pack_start(GTK_BOX(hbox), chkbox, TRUE, TRUE, GNOME_PAD);
     gtk_widget_show (chkbox);
@@ -818,8 +973,7 @@ void show_properties_dialog(
   }
   gtk_widget_show(cpage);
   label = gtk_label_new(_("Configuration"));
-  gtk_notebook_append_page(GTK_NOTEBOOK(GNOME_PROPERTY_BOX(propbox)->notebook), 
-			   cpage, label);
+  gtk_notebook_append_page(GTK_NOTEBOOK(notebook), cpage, label);
 
 
   /* The graphics page */
@@ -852,14 +1006,12 @@ void show_properties_dialog(
   gtk_box_pack_start(GTK_BOX(hbox), darea, FALSE, FALSE, GNOME_PAD);
   gtk_widget_show(hbox);
 
-  gtk_signal_connect(GTK_OBJECT(darea), "map",
+  g_signal_connect(GTK_OBJECT(darea), "map",
                       GTK_SIGNAL_FUNC(start_anim_cb), NULL);
 
   gtk_widget_show(gpage);
   label = gtk_label_new(_("Graphics"));
-  gtk_notebook_append_page(GTK_NOTEBOOK(GNOME_PROPERTY_BOX(propbox)->notebook), 
-			   gpage, label);
-
+  gtk_notebook_append_page(GTK_NOTEBOOK(notebook), gpage, label);
 
   /* The keyboard page */
   kpage = gtk_vbox_new(FALSE, GNOME_PAD);
@@ -880,7 +1032,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[0], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[0], 1, 2, 1, 2, 0, 0, 3, 3);
   gtk_widget_show(etext[0]);
-  gtk_signal_connect(GTK_OBJECT(etext[0]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[0]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)0);
 
   /* North */
@@ -893,7 +1045,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[1], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[1], 2, 3, 1, 2, 0, 0, 3, 3);
   gtk_widget_show(etext[1]);
-  gtk_signal_connect(GTK_OBJECT(etext[1]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[1]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)1);
 
   /* North East */
@@ -906,7 +1058,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[2], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[2], 3, 4, 1, 2, 0, 0, 3, 3);
   gtk_widget_show(etext[2]);
-  gtk_signal_connect(GTK_OBJECT(etext[2]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[2]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)2);
 
   /* West */
@@ -919,7 +1071,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[3], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[3], 1, 2, 2, 3, 0, 0, 3, 3);
   gtk_widget_show(etext[3]);
-  gtk_signal_connect(GTK_OBJECT(etext[3]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[3]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)3);
 
   etext[4] = gtk_entry_new();
@@ -928,7 +1080,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[4], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[4], 2, 3, 2, 3, 0, 0, 3, 3);
   gtk_widget_show(etext[4]);
-  gtk_signal_connect(GTK_OBJECT(etext[4]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[4]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)4);
 
   /* East */
@@ -941,7 +1093,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[5], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[5], 3, 4, 2, 3, 0, 0, 3, 3);
   gtk_widget_show(etext[5]);
-  gtk_signal_connect(GTK_OBJECT(etext[5]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[5]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)5);
 
   /* South West */
@@ -954,7 +1106,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[6], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[6], 1, 2, 3, 4, 0, 0, 3, 3);
   gtk_widget_show(etext[6]);
-  gtk_signal_connect(GTK_OBJECT(etext[6]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[6]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)6);
 
   /* South */
@@ -967,7 +1119,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[7], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[7], 2, 3, 3, 4, 0, 0, 3, 3);
   gtk_widget_show(etext[7]);
-  gtk_signal_connect(GTK_OBJECT(etext[7]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[7]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)7);
 
   /* South East */
@@ -980,7 +1132,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[8], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[8], 3, 4, 3, 4, 0, 0, 3, 3);
   gtk_widget_show(etext[8]);
-  gtk_signal_connect(GTK_OBJECT(etext[8]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[8]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)8);
 
   gtk_widget_show(table);
@@ -1000,7 +1152,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[9], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[9], 1, 2, 1, 2, 0, 0, 3, 3);
   gtk_widget_show(etext[9]);
-  gtk_signal_connect(GTK_OBJECT(etext[9]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[9]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)9);
 
   label = gtk_label_new(_("Random Teleport:"));
@@ -1012,7 +1164,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[10], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[10], 1, 2, 2, 3, 0, 0, 3, 3);
   gtk_widget_show(etext[10]);
-  gtk_signal_connect(GTK_OBJECT(etext[10]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[10]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)10);
 
   label = gtk_label_new(_("Wait:"));
@@ -1024,7 +1176,7 @@ void show_properties_dialog(
   gtk_widget_set_usize(etext[11], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach(GTK_TABLE(table), etext[11], 1, 2, 3, 4, 0, 0, 3, 3);
   gtk_widget_show(etext[11]);
-  gtk_signal_connect(GTK_OBJECT(etext[11]), "key_press_event",
+  g_signal_connect(GTK_OBJECT(etext[11]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)11);
 
   gtk_widget_show(table);
@@ -1037,19 +1189,19 @@ void show_properties_dialog(
   gtk_box_pack_start(GTK_BOX(kpage), hbox, FALSE, TRUE, GNOME_PAD);
 
   dbut = gtk_button_new_with_label(_("Standard Robots Keys"));
-  gtk_signal_connect(GTK_OBJECT(dbut), "clicked",
+  g_signal_connect(GTK_OBJECT(dbut), "clicked",
                       GTK_SIGNAL_FUNC(defkey_cb), (gpointer)default_keys1);  
   gtk_widget_show(dbut);
   gtk_box_pack_start(GTK_BOX(hbox), dbut, FALSE, FALSE, GNOME_PAD);
 
   dbut = gtk_button_new_with_label(_("Predefined Set 1"));
-  gtk_signal_connect(GTK_OBJECT(dbut), "clicked",
+  g_signal_connect(GTK_OBJECT(dbut), "clicked",
                       GTK_SIGNAL_FUNC(defkey_cb), (gpointer)default_keys2);  
   gtk_widget_show(dbut);
   gtk_box_pack_start(GTK_BOX(hbox), dbut, FALSE, FALSE, GNOME_PAD);
 
   dbut = gtk_button_new_with_label(_("Predefined Set 2"));
-  gtk_signal_connect(GTK_OBJECT(dbut), "clicked",
+  g_signal_connect(GTK_OBJECT(dbut), "clicked",
                       GTK_SIGNAL_FUNC(defkey_cb), (gpointer)default_keys3);  
   gtk_widget_show(dbut);
   gtk_box_pack_start(GTK_BOX(hbox), dbut, FALSE, FALSE, GNOME_PAD);
@@ -1058,13 +1210,12 @@ void show_properties_dialog(
 
   gtk_widget_show(kpage);
   label = gtk_label_new(_("Keyboard"));
-  gtk_notebook_append_page(GTK_NOTEBOOK(GNOME_PROPERTY_BOX(propbox)->notebook), 
-			   kpage, label);
+  gtk_notebook_append_page(GTK_NOTEBOOK(notebook), kpage, label);
 
 
-  gtk_signal_connect (GTK_OBJECT (propbox), "destroy",
+  g_signal_connect (GTK_OBJECT (propbox), "destroy",
                       GTK_SIGNAL_FUNC (destroy_cb), NULL);
-  gtk_signal_connect (GTK_OBJECT (propbox), "apply",
+  g_signal_connect (GTK_OBJECT (propbox), "response",
                       GTK_SIGNAL_FUNC (apply_cb), NULL);
 
   gtk_widget_show(propbox);

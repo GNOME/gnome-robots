@@ -112,20 +112,12 @@ static void new_cb(
 GtkWidget *widget,
 gpointer  data
 ){
-  GtkWidget *box;
 
   if(game_state != STATE_NOT_PLAYING){
-    box = gnome_message_box_new(_("Do you really want to start a new game?"),
-				GNOME_MESSAGE_BOX_QUESTION,
-				GNOME_STOCK_BUTTON_YES,
-				GNOME_STOCK_BUTTON_NO,
-				NULL);
-    gnome_dialog_set_parent (GNOME_DIALOG(box), GTK_WINDOW(app));
-    gnome_dialog_set_default (GNOME_DIALOG(box), 0);
-    gtk_window_set_modal (GTK_WINDOW(box), TRUE);
-    gtk_signal_connect (GTK_OBJECT(box), "clicked",
-			GTK_SIGNAL_FUNC(really_new_cb), NULL);
-    gtk_widget_show(box);
+    gnome_app_ok_cancel_modal (GNOME_APP(app),
+                               _("Applying this change to Player Selection\nwill end the current game"),
+                               (GnomeReplyCallback)really_new_cb,
+                               NULL);
   } else {
     really_new_cb(widget, (gpointer)0);
   }
@@ -204,20 +196,12 @@ void exit_cb(
 GtkWidget *widget,
 gpointer  data
 ){
-  GtkWidget *box;
 
   if(game_state != STATE_NOT_PLAYING){
-    box = gnome_message_box_new(_("Do you really want to quit the game?"),
-				GNOME_MESSAGE_BOX_QUESTION,
-				GNOME_STOCK_BUTTON_YES,
-				GNOME_STOCK_BUTTON_NO,
-				NULL);
-    gnome_dialog_set_parent(GNOME_DIALOG(box), GTK_WINDOW(app));
-    gnome_dialog_set_default(GNOME_DIALOG(box), 0);
-    gtk_window_set_modal(GTK_WINDOW(box), TRUE);
-    gtk_signal_connect(GTK_OBJECT(box), "clicked",
-		       GTK_SIGNAL_FUNC(really_exit_cb), NULL);
-    gtk_widget_show(box);
+    gnome_app_ok_cancel_modal (GNOME_APP(app),
+                               _("Do you really want to quit the game?"),
+                               (GnomeReplyCallback)really_exit_cb,
+                               NULL);
   } else {
     really_exit_cb(widget, (gpointer)0);
   }
@@ -257,9 +241,9 @@ gpointer data
                           (const char **)documenters,
                           strcmp (translator_credits, "translator_credits") != 0 ? translator_credits : NULL,
                           NULL);
-  gnome_dialog_set_parent(GNOME_DIALOG(about), GTK_WINDOW(app));
+  gtk_window_set_transient_for (GTK_WINDOW (about), GTK_WINDOW(app));
   gtk_window_set_modal(GTK_WINDOW(about), TRUE);
-
+  
   gtk_widget_show(about);
 }
 

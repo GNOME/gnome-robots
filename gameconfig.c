@@ -192,8 +192,10 @@ gboolean load_game_configs(
   struct dirent *dent;
   DIR           *dir;
   gchar          buffer[PATH_MAX];
-  gchar         *dname = gnome_unconditional_datadir_file(GAME_NAME);
-
+  gchar         *dname = gnome_program_locate_file (NULL, 
+                                                    GNOME_FILE_DOMAIN_DATADIR,
+                                                    (GAME_NAME),
+                                                    FALSE, NULL);
 
   if(game_configs != NULL){
     free_game_configs();

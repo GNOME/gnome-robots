@@ -86,9 +86,8 @@ gchar *msg
 ){
   GtkWidget *box;
 
-  box = gnome_message_box_new(msg,
-			      GNOME_MESSAGE_BOX_INFO, 
-			      GNOME_STOCK_BUTTON_OK, NULL);
+  box = gnome_app_message (GNOME_APP(app),
+                           msg);
 
   gtk_window_set_modal(GTK_WINDOW(box), TRUE);
   gtk_widget_show(box);
@@ -629,7 +628,7 @@ void init_game(
 
   create_game_timer();
 
-  gtk_signal_connect(GTK_OBJECT(app), "key_press_event",
+  g_signal_connect(GTK_OBJECT(app), "key_press_event",
 		     GTK_SIGNAL_FUNC(keyboard_cb), 0);  
 }
 

@@ -1,3 +1,17 @@
+2002-05-10  Dave Neary  <bolsh@gimp.org>
+
+	* Makefile.am:
+	* game.c:
+	* gameconfig.c:
+	* gnobots.c:
+	* graphics.c:
+	* menu.c:
+	* properties.c:
+	* statusbar.c: Ported gnobots2 to gnome2, and got it
+	compiling with -D*_DISABLE_DEPRECATED. Left to do: Change
+	all dialogs to "action word" usable stuff. Enable Keynav.
+	Handle changes in properties using gconf.
+
 2002-05-05  Chris Lyttle    <chris@wilddev.net>
 
 	* help/C/gnobots2-C.omf : updated for new format of SK 0.3.8.

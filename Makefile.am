@@ -1,5 +1,8 @@
 
-
+schemadir   = @GCONF_SCHEMA_FILE_DIR@
+schema_in_files = gnobots2.schemas.in
+schema_DATA = $(schema_in_files:.schemas.in=.schemas)
+@INTLTOOL_SCHEMAS_RULE@
 
 pixmapdir=$(datadir)/pixmaps/gnobots2
 configdir=$(datadir)/gnobots2
@@ -91,9 +94,13 @@ EXTRA_DIST = README \
 	     $(sound_DATA) \
 	     $(Games_DATA) \
 	     $(soundlist_DATA) \
-	     $(config_DATA)
+	     $(config_DATA) \
+             $(schema_in_files)
 
 install-data-local:
+if GCONF_SCHEMAS_INSTALL
+	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
+endif
 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
 	-for cfn in $(config_DATA); do \
 	    cfn2=`echo $$cfn | sed -e 's/\.cfg//'`; \

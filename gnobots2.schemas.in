@@ -1,0 +1,91 @@
+<gconfschemafile>
+
+  <schemalist>
+      <schema>
+      <key>/schemas/apps/gnobots2/preferences/theme</key>
+      <applyto>/apps/gnobots2/preferences/theme</applyto>
+      <owner>gnobots2</owner>
+      <type>string</type>
+      <default>robots</default>
+      <locale name="C">
+        <short>Robot image theme</short>
+        <long>Robot image theme.  The theme of the images to use for the robots.</long>
+      </locale>
+      </schema>
+
+      <schema>
+      <key>/schemas/apps/gnobots2/preferences/background_color</key>
+      <applyto>/apps/gnobots2/preferences/background_color</applyto>
+      <owner>gnobots2</owner>
+      <type>string</type>
+      <default>#7590AE</default>
+      <locale name="C">
+        <short>Background color</short>
+        <long>Background color.  The hex specification of the background color.</long>
+      </locale>
+      </schema>
+
+      <schema>
+      <key>/schemas/apps/gnobots2/preferences/configuration</key>
+      <applyto>/apps/gnobots2/preferences/configuration</applyto>
+      <owner>gnobots2</owner>
+      <type>string</type>
+      <default>classic_robots</default>
+      <locale name="C">
+        <short>Game type</short>
+        <long>Game type.  The name of the game variation to use.</long>
+      </locale>
+      </schema>
+
+      <schema>
+      <key>/schemas/apps/gnobots2/preferences/use_safe_moves</key>
+      <applyto>/apps/gnobots2/preferences/use_safe_moves</applyto>
+      <owner>gnobots2</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+        <short>Use safe moves</short>
+        <long>Use safe moves.  The safe moves option will help you to avoid being killed due to a mistake. If you try to make a move that would lead to your death when there is a safe move available you will not be allowed to procceed.</long>
+      </locale>
+      </schema>
+
+      <schema>
+      <key>/schemas/apps/gnobots2/preferences/use_super_safe_moves</key>
+      <applyto>/apps/gnobots2/preferences/use_super_safe_moves</applyto>
+      <owner>gnobots2</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+        <short>Use super safe moves</short>
+        <long>Use super safe moves.  The player is alerted when there is no safe move and the only option is to teleport out.</long>
+      </locale>
+      </schema>
+
+      <schema>
+      <key>/schemas/apps/gnobots2/preferences/enable_sound</key>
+      <applyto>/apps/gnobots2/preferences/enable_sound</applyto>
+      <owner>gnobots2</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+        <short>Enable game sounds</short>
+        <long>Enable game sounds.   Play sounds for various events throughout the game.</long>
+      </locale>
+      </schema>
+
+      <schema>
+      <key>/schemas/apps/gnobots2/preferences/enable_splats</key>
+      <applyto>/apps/gnobots2/preferences/enable_splats</applyto>
+      <owner>gnobots2</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+        <short>Enable splats</short>
+        <long>Enable splats.  Play a sound and show a "Splat!" on the screen.</long>
+      </locale>
+      </schema>
+
+  </schemalist>
+
+</gconfschemafile>
+

@@ -1,5 +1,8 @@
 2003-06-20  William Jon McCann  <mccann@jhu.edu>
 
+	* Makefile.am: 
+	* gnobots2.schemas.in: Added schemas.in.
+
 	* cows.png:
 	* eggs.png:
 	* gnomes.png:

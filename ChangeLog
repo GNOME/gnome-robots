@@ -1,3 +1,7 @@
+2004-02-19  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* properties.c (show_properties_dialog): Typo. Fixes bug #134442.
+
 2004-02-14  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/es/gnobots2.xml: 

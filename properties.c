@@ -883,7 +883,7 @@ show_properties_dialog (void)
                       (GtkSignalFunc)splat_cb, NULL);
     gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 1, 2, 1, 2);
     gtk_tooltips_set_tip (tooltips, chkbox,
-			  _("Play a sound when two robots collied"), 
+			  _("Play a sound when two robots collide"), 
 			  _("Play the most common, and potentially the most annoying, sound."));
 
   } else {

@@ -76,7 +76,11 @@ EXTRA_DIST = README \
              gnobots2.desktop \
              gnobots2.soundlist \
              $(appicon_DATA) \
-             $(pixmap_DATA)
+             $(pixmap_DATA) \
+	     $(sound_DATA) \
+	     $(games_DATA) \
+	     $(soundlist_DATA) \
+	     $(config_DATA)
 
 install-data-local:
 	-$(mkinstalldirs) $(scoredir)

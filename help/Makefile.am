@@ -1,4 +1,4 @@
 ## Process this file with automake to produce Makefile.in.
 
-SUBDIRS = C es it
+SUBDIRS = C es it da
 

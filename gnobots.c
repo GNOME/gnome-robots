@@ -193,6 +193,8 @@ main (int argc, char *argv[])
   g_signal_connect (G_OBJECT(client), "die",
                     G_CALLBACK (session_die), argv[0]);
 
+  initialize_gconf (argc, argv);
+
   app = gnome_app_new (GAME_NAME, _("GNOME Robots II"));
   gtk_window_set_resizable (GTK_WINDOW (app), FALSE);
 

@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY legal SYSTEM "legal.xml">
+  <!ENTITY appversion "2.6">
+  <!ENTITY manrevision "2.6">
+  <!ENTITY date "Feb 2004">
+  <!ENTITY app "<application>GNOME Robots</application>">
+  <!ENTITY appname "GNOME Tali">
+  <!ENTITY version "2.6">
+]>
+
+<article id="index" lang="da">
+  <articleinfo>
+    <title>GNOME Robotter Dokumentation</title>
+
+    <copyright>
+      <year>2001</year>
+      <holder>Patanjali Somayaji, Mark Rae</holder>
+    </copyright>
+
+    <publisher> 
+      <publishername>GNOME Documentation Project </publishername>
+    </publisher>
+  
+    &legal;
+  
+    <revhistory>
+      <revision>
+        <revnumber>&appname; Manual V&manrevision;</revnumber>
+        <date>&date;</date>
+        <revdescription>
+          <para>Converted from the original HTML by Callum McKenzie, who doesn't speak Danish.</para>
+        </revdescription>
+      </revision>
+    </revhistory>
+  
+    <releaseinfo>This manual describes version &appversion; of &appname;.
+    </releaseinfo>
+    <legalnotice>
+      <title>Feedback</title>
+      <para>To report a bug or make a suggestion regarding this game or
+      this manual, follow the directions in the <ulink
+      url="ghelp:gnome-feedback" type="help">GNOME Feedback Page</ulink>.
+      </para>
+    </legalnotice>
+  </articleinfo>
+
+
+  <indexterm zone="index">
+    <primary>GNOME Robots</primary>
+  </indexterm>
+
+  <sect1 id="Introduction">
+    <title>Introduktion</title>
+    <para>
+    Gnome Robotter er en udvikling af det originale Gnome Robot spil, som
+was itself based on the tekst baserede robot spil, som kan findes
+on a number of UNIX systems, and comes with the BSD games package on Linux
+systems.
+    </para>
+    <para>
+    This new version includes two types of robots, movable junkheaps, 
+multiple game configurations, user definable keyboard layouts, sound using 
+ESD if you have it, as well as all of the other features which were present 
+in the original Gnome Robots game.
+    </para>
+  </sect1>
+  
+  <sect1 id="Play">
+    <title>Spillet</title>
+
+    <para>
+When you start the game you will find yourself surrounded by a number of
+robots, or some other strange but equally hostile adversaries if you have
+chosen a scenario other than the default.</para>
+
+<para>As you move about, the robots will move directly towards you with one 
+goal in mind - killing you. As if that wasn't bad enough there are two types 
+of robots, one of which can move twice as fast as you!</para>
+<para>Luckily you have two ways to avoid this unfortunate outcome.</para>
+
+<para>Firstly, the robots have not been blessed with a great deal of intelligence,
+and will be destroyed if they crash into each other, or any other debris
+which has been left around from previous collisions.</para>
+<para>Secondly, if you do find yourself in a tight spot, you have the ability
+to teleport randomly to another spot on the screen.</para>
+<para>And, if supported in the game configuration you have chosen, you can 
+push the junkheaps around to form barricades to protect you. Also if you are
+daring enough you can Splat! the robots by pushing junkheaps on top of them
+for an additional bonus.
+    </para>
+
+<para>
+Unfortunately, randomly teleporting means that there is a chance that
+you might end up being right next to a robot so they can kill you when
+they make their move. All is not lost however, as you can have a number of
+safe teleports which will place you out of immediate danger. You can earn
+more free teleports as you go along, how you gain them depends on the 
+chosen game, but typically you get one for each robot that is
+destroyed while you are 'waiting', up to a maximum of 10. If you don't
+want to waste your saved up safe teleports you can choose to randomly
+teleport if you think it's safe enough.</para>
+
+<para>If you press the 'Wait' key (see below) you will no longer be able to
+move until either all of the robots, which still move towards you, are
+gone or you are killed. Doing this may earn you extra safe teleports
+as described above.</para>
+
+<para>If you manage to reach the point where more than half of the screen is
+occupied by robots, the number of robots will be reset to the starting amount,
+allowing you to continue.</para>
+
+  </sect1>
+ 
+  <sect1 id="kbd">
+    <title>Keys</title>
+
+
+      <sect2 id="set3-keys">     
+      <title>
+        The Keypad
+      </title>
+      <para>
+        When you select this set, you use the numeric keypad on the
+        right hand side of the keyboard (not the separate arrow keys).
+        <note>
+        <title>Switch on the NumLock Key</title>
+          <para>
+            You may need to switch on the NumLock to make these work.
+          </para>
+        </note>
+        <orderedlist>
+          <listitem><para>
+            Up Left: <keycap>7</keycap>
+          </para></listitem> 
+          <listitem><para>
+            Up: <keycap>8</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Up Right: <keycap>9</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Left: <keycap>4</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Stand Still: <keycap>5</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Right: <keycap>6</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Left: <keycap>1</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down: <keycap>2</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Right: <keycap>3</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Teleport: <keycap>+</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Ramdomly Teleport: <keycap>-</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Wait: <keycap>Return</keycap>	      
+          </para></listitem>
+        </orderedlist>
+
+      </para>	  
+    </sect2>
+
+  <sect2 id="set2-keys">	
+      <title>
+      Left Hand Keys 
+      </title>
+      <para>
+         These keys are laid out on the left hand side of the keyboard.
+      </para>
+    <orderedlist>
+          <listitem><para>
+            Up Left: <keycap>Q</keycap>
+          </para></listitem> 
+          <listitem><para>
+            Up: <keycap>W</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Up Right: <keycap>E</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Left: <keycap>A</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Stand Still: <keycap>S</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Right: <keycap>D</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Left: <keycap>Z</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down: <keycap>X</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Right: <keycap>C</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Teleport: <keycap>T</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Ramdomly Teleport: <keycap>R</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Wait: <keycap>Return</keycap>	      
+          </para></listitem>
+        </orderedlist>
+
+
+
+
+      </sect2>
+
+    <sect2 id="standard-keys">
+
+    <title>
+    Original Keys 
+    </title>
+    
+    <para>
+      These keys are the controls used in the original robots
+      game. They will be familiar to people who have played other
+      older text-based games.
+    </para>
+        <orderedlist>
+          <listitem>
+	  <para>
+            Up Left: <keycap>Y</keycap>
+	  </para>
+          </listitem> 
+          <listitem><para>
+            Up: <keycap>K</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Up Right: <keycap>U</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Left: <keycap>H</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Stand Still: <keycap>.</keycap> or <keycap>space</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Right: <keycap>L</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Left: <keycap>B</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down: <keycap>J</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Right: <keycap>N</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Teleport: <keycap>T</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Ramdomly Teleport: <keycap>R</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Wait: <keycap>W</keycap>	      
+          </para></listitem>
+        </orderedlist>
+  </sect2>
+
+  <sect2 id="defining">
+  <title>Definér dine egne</title>
+  <para>Of course if you don't like any of the above keyboard layouts you can
+define your own. Select the box for the required movement and the press
+the key you want, the text representation of that key should then appear
+in the box.</para>
+  </sect2>      
+
+  </sect1>
+
+  <sect1 id="preferences">
+    <title>Præferencer</title>
+
+<para>The properties dialog allows you modify the behaviour and appearance of
+the game. There are three pages to the dialog:</para>
+
+<sect2 id="configuration">
+<title>Konfiguration</title>
+<para>This page allows you to choose the type of game you want to play.
+The drop-down box at the top of the page allows you to choos from a number of 
+predefined games, and the list-box below it shows the settings for that
+game.</para>
+<para>The safe moves option will help you to avoid being killed due to a mistake.
+If you try to make a move that would lead to your death when there is a safe 
+move available you will not be allowed to procceed. But be warned if there
+was no safe move available, other than teleporting, the move will be allowed 
+to proceed.</para>
+<para>There is also a ``super safe mode''.  If you select this, you get
+beeped when there is no safe move and your only option is to teleport out.
+</para>
+<para>If you select the sound check-box the game will play sounds for various
+events throughout the game. If you do not have ESD installed the game will
+beep using the computer speaker only on invalid moves.</para>
+<para>The 'Splats' checkbox selects whether you want and sound played and a small
+'Splat!' to appear on the screen.</para>
+</sect2>
+
+<sect2 id="graphics">
+<title>Grafik</title>
+<para>This page allows you to select the graphics used throughout the game from
+the list in the dropdown-box. You will get a preview of the graphics 
+below it.</para>
+</sect2>
+
+<sect2 id="keys">
+<title>Tastatus</title>
+<para>This screen allows you to define your own keyboard controls as described
+if the <link linkend="kbd">Keys</link> section.</para>
+</sect2>
+
+  </sect1>
+
+<sect1 id="misc">
+<title>Diverse</title>
+<para>You can design your own graphics for the game if you want. The graphics
+files are found in <filename class="directory">$PREFIX/share/pixmaps/gnobots2</filename>, where <filename class="directory">$PREFIX</filename> depends on where Gnome
+was installed, usually either <filename class="directory">/usr</filename> or <filename class="directory">/usr/local</filename></para>
+<para>Each character is 16x16 pixels and there are 14 of them arranged in
+a PNG file which is 224x16 pixels in size. You can look at the existing
+files to see the order in which they must be arranged to produce the correct
+animated sequences.</para>
+<para>Any graphics files which are placed in the directory are auto-detected
+so you don't need to alter any configuration files.</para>
+<para>
+You can also define your own game configurations by creating extra
+'.cfg' files which are stored in the <filename class="directory">$PREFIX/share/gnobots2</filename> directory.</para>
+
+</sect1>
+
+ <sect1 id="authors">
+    <title>Authors</title>
+    <para>
+      <application>GNOME Robots</application> was written by Mark Rae
+      (<email>m.rae@inpharmatica.co.uk</email>). Please send all comments, suggestions, and bug
+      reports to the <ulink url="http://bugs.gnome.org" type="http">GNOME
+      bug tracking database</ulink>.  (Instructions for submitting bug
+      reports can be found <ulink
+      url="http://bugs.gnome.org/Reporting.html" type="http">
+      on-line</ulink>.)  You can also use <application>Bug Report
+      Tool</application> (<command>bug-buddy</command>), available in the
+      <guisubmenu>Utilities</guisubmenu> submenu of <guimenu>Main
+      Menu</guimenu>, for submitting bug reports.
+    </para>
+   <para>
+      This manual was written by Patanjali Somayaji
+      (<email>patanjali@mindless.com</email>), from the original
+      HTML documentation by Mark Rae. Please send all comments and
+      suggestions regarding this manual to the <ulink type="http"
+      url="http://developer.gnome.org/projects/gdp">GNOME Documentation
+      Project</ulink> by sending an email to
+      <email>docs@gnome.org</email>. You can also add your comments
+      online by using the <ulink type="http"
+      url="http://developer.gnome.org/projects/gdp/doctable/">GNOME
+      Documentation Status Table</ulink>.
+    </para>
+</sect1>
+</article>
+

@@ -363,109 +363,7 @@
     <guimenuitem>Keyboard</guimenuitem> tab in the
     <guimenuitem>Preferences</guimenuitem> dialog.
     </para>
-    <sect2 id="standard-keys">
-    <title>
-    Standard Keys 
-    </title>
-    
-    <para>
-      These keys are the controls used in the original robots
-      game. They will be familiar to people who have played other
-      older text-based games.
-    </para>
-        <orderedlist>
-          <listitem>
-	  <para>
-            Up Left: <keycap>Y</keycap>
-	  </para>
-          </listitem> 
-          <listitem><para>
-            Up: <keycap>K</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Up Right: <keycap>U</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Left: <keycap>H</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Stand Still: <keycap>.</keycap> or <keycap>space</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Right: <keycap>L</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down Left: <keycap>B</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down: <keycap>J</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down Right: <keycap>N</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Teleport: <keycap>T</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Ramdomly Teleport: <keycap>R</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Wait: <keycap>W</keycap>	      
-          </para></listitem>
-        </orderedlist>
-  </sect2>
 
-  <sect2 id="set2-keys">	
-      <title>
-      Left Hand Keys 
-      </title>
-      <para>
-         These keys are laid out on the left hand side of the keyboard.
-      </para>
-    <orderedlist>
-          <listitem><para>
-            Up Left: <keycap>Q</keycap>
-          </para></listitem> 
-          <listitem><para>
-            Up: <keycap>W</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Up Right: <keycap>E</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Left: <keycap>A</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Stand Still: <keycap>S</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Right: <keycap>D</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down Left: <keycap>Z</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down: <keycap>X</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down Right: <keycap>C</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Teleport: <keycap>T</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Ramdomly Teleport: <keycap>R</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Wait: <keycap>Return</keycap>	      
-          </para></listitem>
-        </orderedlist>
-
-
-
-
-      </sect2>
-      
       <sect2 id="set3-keys">     
       <title>
         The Keypad
@@ -520,6 +418,111 @@
 
       </para>	  
     </sect2>
+
+  <sect2 id="set2-keys">	
+      <title>
+      Left Hand Keys 
+      </title>
+      <para>
+         These keys are laid out on the left hand side of the keyboard.
+      </para>
+    <orderedlist>
+          <listitem><para>
+            Up Left: <keycap>Q</keycap>
+          </para></listitem> 
+          <listitem><para>
+            Up: <keycap>W</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Up Right: <keycap>E</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Left: <keycap>A</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Stand Still: <keycap>S</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Right: <keycap>D</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Left: <keycap>Z</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down: <keycap>X</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Right: <keycap>C</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Teleport: <keycap>T</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Ramdomly Teleport: <keycap>R</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Wait: <keycap>Return</keycap>	      
+          </para></listitem>
+        </orderedlist>
+
+
+
+
+      </sect2>
+
+    <sect2 id="standard-keys">
+
+    <title>
+    Original Keys 
+    </title>
+    
+    <para>
+      These keys are the controls used in the original robots
+      game. They will be familiar to people who have played other
+      older text-based games.
+    </para>
+        <orderedlist>
+          <listitem>
+	  <para>
+            Up Left: <keycap>Y</keycap>
+	  </para>
+          </listitem> 
+          <listitem><para>
+            Up: <keycap>K</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Up Right: <keycap>U</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Left: <keycap>H</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Stand Still: <keycap>.</keycap> or <keycap>space</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Right: <keycap>L</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Left: <keycap>B</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down: <keycap>J</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Down Right: <keycap>N</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Teleport: <keycap>T</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Ramdomly Teleport: <keycap>R</keycap>	      
+          </para></listitem>
+          <listitem><para>
+            Wait: <keycap>W</keycap>	      
+          </para></listitem>
+        </orderedlist>
+  </sect2>
+      
   </sect1>
    
   <!-- ============= Customization ============================= -->

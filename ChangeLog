@@ -1,3 +1,16 @@
+2004-02-12  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/Makefile.am
+	* help/da/Makefile.am
+	* help/da/gnobots2-da.omf: 
+	* help/da/legal.xml:	
+	* help/da/gnobots2.xml: Converted the old Danish html docs to
+	docbook. The actual content has not been updated (except where cut
+	and paste could fix it). Note that I do not speak Danish.
+
+	* help/C/gnobots2.xml: Rearranged the key-controls section to
+	reflect the new default.
+
 2004-02-11  Richard Hoelscher  <rah@rahga.com>
 
 	* properties.c (gconf_set_background_color): Set saving background

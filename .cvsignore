@@ -1,0 +1,9 @@
+Makefile
+Makefile.in
+*.lo
+.libs
+.deps
+gnobots2
+gnobots2.soundlist
+gnobots2.desktop
+gnobots2.schemas

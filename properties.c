@@ -1155,7 +1155,7 @@ load_properties (void)
       properties.keys[i] = gdk_keyval_from_name (str);
     }
     else {
-      properties.keys[i] = 0;
+      properties.keys[i] = default_keys1[i];
     }
     g_free (str);
   }

@@ -88,7 +88,9 @@ install-data-local:
 	    cfn2=`echo $$cfn | sed -e 's/\.cfg//'`; \
             fname1=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2.scores; \
             fname2=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-safe.scores; \
+            fname3=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-super-safe.scores; \
 	    touch echo $$fname1; chmod 664 $$fname1; chown games:games $$fname1; \
-	    touch echo $$fname2; chmod 664 $$fname2; chown games:games $$fname1; \
+	    touch echo $$fname2; chmod 664 $$fname2; chown games:games $$fname2; \
+	    touch echo $$fname3; chmod 664 $$fname3; chown games:games $$fname3; \
 	    done
 	-chgrp games $(DESTDIR)$(bindir)/gnobots2 && chmod 2111 $(DESTDIR)$(bindir)/gnobots2

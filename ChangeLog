@@ -1,3 +1,12 @@
+2001-06-09  Juan Pablo Mendoza <pablo_juan@yahoo.com>
+
+	Fix bug #50786.
+
+	* game.c (log_score): Use the same logic that in show_scores to
+	  get the score name.
+	* Makefile.am (install-data-local): Generate also the super-safe
+	  score files and fix a typo in the generation of the -safe files.
+
 2001-06-03  Juan Pablo Mendoza Mendoza <pablo_juan@yahoo.com>
 
 	* gnobots.c (main): Don't try to free the gnome_master_client to

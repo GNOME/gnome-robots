@@ -146,10 +146,10 @@ gint sc
   guint pos;
   gchar sbuf[256];
 
-  if(properties_safe_moves()){
+  if(properties_super_safe_moves()){
+    sprintf(sbuf, "%s-super-safe", game_config_filename(current_game_config()));  } else
+if(properties_safe_moves()){
     sprintf(sbuf, "%s-safe", game_config_filename(current_game_config()));
-  } else if(properties_super_safe_moves()){
-    sprintf(sbuf, "%s-super-safe", game_config_filename(current_game_config()));
   } else {
     sprintf(sbuf, "%s", game_config_filename(current_game_config()));
   }

@@ -6,7 +6,7 @@ EXTRA_DIST = index.html \
 gnobots2_helpdir = $(datadir)/gnome/help/gnobots2/C
 
 install-data-local:
-	$(mkinstalldirs) $(gnobots2_helpdir)
-	$(INSTALL_DATA)  $(srcdir)/index.html $(gnobots2_helpdir)
-	$(INSTALL_DATA)  $(srcdir)/topic.dat $(gnobots2_helpdir)
+	$(mkinstalldirs) $(DESTDIR)$(gnobots2_helpdir)
+	$(INSTALL_DATA)  $(srcdir)/index.html $(DESTDIR)$(gnobots2_helpdir)
+	$(INSTALL_DATA)  $(srcdir)/topic.dat $(DESTDIR)$(gnobots2_helpdir)
 

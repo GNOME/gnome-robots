@@ -83,12 +83,12 @@ EXTRA_DIST = README \
 	     $(config_DATA)
 
 install-data-local:
-	-$(mkinstalldirs) $(scoredir)
+	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
 	-for cfn in $(config_DATA); do \
 	    cfn2=`echo $$cfn | sed -e 's/\.cfg//'`; \
-            fname1=$(scoredir)/gnobots2.$$cfn2.scores; \
-            fname2=$(scoredir)/gnobots2.$$cfn2-safe.scores; \
+            fname1=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2.scores; \
+            fname2=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-safe.scores; \
 	    touch echo $$fname1; chmod 664 $$fname1; chown games:games $$fname1; \
 	    touch echo $$fname2; chmod 664 $$fname2; chown games:games $$fname1; \
 	    done
-	-chgrp games $(bindir)/gnobots2 && chmod 2111 $(bindir)/gnobots2
+	-chgrp games $(DESTDIR)$(bindir)/gnobots2 && chmod 2111 $(DESTDIR)$(bindir)/gnobots2

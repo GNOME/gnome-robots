@@ -78,7 +78,7 @@ EXTRA_DIST = README \
              $(appicon_DATA) \
              $(pixmap_DATA) \
 	     $(sound_DATA) \
-	     $(games_DATA) \
+	     $(Games_DATA) \
 	     $(soundlist_DATA) \
 	     $(config_DATA)
 

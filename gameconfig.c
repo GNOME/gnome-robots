@@ -193,7 +193,7 @@ gboolean load_game_configs(
   DIR           *dir;
   gchar          buffer[PATH_MAX];
   gchar         *dname = gnome_program_locate_file (NULL, 
-                                                    GNOME_FILE_DOMAIN_DATADIR,
+                                                    GNOME_FILE_DOMAIN_APP_DATADIR,
                                                     (GAME_NAME),
                                                     FALSE, NULL);
 

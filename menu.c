@@ -238,7 +238,7 @@ gpointer data
 	  char *filename = NULL;
 
 	  filename = gnome_program_locate_file (NULL,
-			  GNOME_FILE_DOMAIN_PIXMAP,  ("gnome-gnobots2.png"),
+			  GNOME_FILE_DOMAIN_APP_PIXMAP,  ("gnome-gnobots2.png"),
 			  TRUE, NULL);
 	  if (filename != NULL)
 	  {

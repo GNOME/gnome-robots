@@ -653,11 +653,16 @@ void cleanup_game(
  **/
 void start_new_game(
 ){
+  GameConfig *conf;
   current_level = 0;
   score = 0;
   kills = 0;
   score_step = 0;
-  safe_teleports = game_config()->initial_safe_teleports;
+
+  conf = game_config();
+  g_return_if_fail (conf != NULL);
+
+  safe_teleports = conf->initial_safe_teleports;
 
   remove_bubble();
   reset_player_animation();

@@ -111,7 +111,7 @@ GdkPixmap **mask
 static gboolean load_bubble_graphics(
 ){
   gchar buffer[PATH_MAX];
-  gchar *dname = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_PIXMAP,  
+  gchar *dname = gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_PIXMAP,  
                                             GAME_NAME, FALSE, NULL);
 
   strcpy(buffer, dname);
@@ -153,7 +153,7 @@ gboolean load_game_graphics(
   GdkImage       *tmpimage;
   GdkPixmap      *pixmap;
   gchar          *dname = gnome_program_locate_file (NULL, 
-                                                     GNOME_FILE_DOMAIN_PIXMAP,
+                                                     GNOME_FILE_DOMAIN_APP_PIXMAP,
                                                      GAME_NAME, FALSE, 
                                                      NULL);
 

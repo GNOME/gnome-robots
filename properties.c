@@ -89,19 +89,7 @@ enum {
 
 static GnobotsProperties  properties;
 
-static gint default_keys1[12] = {
-  GDK_Y, GDK_K, GDK_U, 
-  GDK_H, GDK_period, GDK_L,
-  GDK_B, GDK_J, GDK_N,
-  GDK_T, GDK_R, GDK_Return};
-
-static gint default_keys2[12] = {
-  GDK_Q, GDK_W, GDK_E, 
-  GDK_A, GDK_S, GDK_D,
-  GDK_Z, GDK_X, GDK_C,
-  GDK_T, GDK_R, GDK_Return};
-
-static gint default_keys3[12] = {
+static gint default_keys[12] = {
   GDK_KP_7, GDK_KP_8, GDK_KP_9, 
   GDK_KP_4, GDK_KP_5, GDK_KP_6,
   GDK_KP_1, GDK_KP_2, GDK_KP_3,
@@ -921,23 +909,14 @@ show_properties_dialog (void)
 
   gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, 0);
 
-  hbox = gtk_hbox_new (TRUE, 12);
+  hbox = gtk_hbutton_box_new ();
+  gtk_button_box_set_layout (GTK_BUTTON_BOX (hbox), GTK_BUTTONBOX_START);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
-  dbut = gtk_button_new_with_mnemonic (_("Use the _Keypad"));
+  dbut = gtk_button_new_with_mnemonic (_("_Restore Defaults"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
-                    G_CALLBACK (defkey_cb), (gpointer)default_keys3);  
-  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, 0);
-
-  dbut = gtk_button_new_with_mnemonic (_("Use _Left Hand Keys"));
-  g_signal_connect (G_OBJECT (dbut), "clicked",
-                    G_CALLBACK (defkey_cb), (gpointer)default_keys2);  
-  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, 0);
-
-  dbut = gtk_button_new_with_mnemonic (_("Use _Original Robots Keys"));
-  g_signal_connect (G_OBJECT (dbut), "clicked",
-                    G_CALLBACK (defkey_cb), (gpointer)default_keys1);  
-  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, 0);
+                    G_CALLBACK (defkey_cb), (gpointer)default_keys);  
+  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, FALSE, 0);
 
   label = gtk_label_new_with_mnemonic (_("Keyboard"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), kpage, label);
@@ -989,7 +968,7 @@ load_properties (void)
   gchar * bgcolour;
 
   for (i = 0; i < 12; i++) {
-    properties.keys[i] = default_keys1[i];
+    properties.keys[i] = default_keys[i];
 
     sprintf (buffer, KEY_CONTROL_KEY, i);
 
@@ -998,7 +977,7 @@ load_properties (void)
       properties.keys[i] = gdk_keyval_from_name (str);
     }
     if ((str == NULL) || (properties.keys[i] == GDK_VoidSymbol)) {
-      properties.keys[i] = default_keys3[i];
+      properties.keys[i] = default_keys[i];
     }
     g_free (str);
   }

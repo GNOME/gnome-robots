@@ -1,3 +1,15 @@
+2005-03-28  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* properties.c: Remove the three different preset key sets and
+	replace them with a "restore defaults" button. The set of people
+	who are hardcore enough to use the original keyset and the set of
+	people who can't figure out how to change the keys do not
+	intersect. Furthermore the left-hand key-set doesn't work outside
+	of nearly-US-standard keyboards and most left-handers have found
+	some way to deal with the keypad already. The rest can change the
+	keys to suit themselves. This was all motivated by bug #171745
+	which has an entirely different root cause.
+
 2005-03-23  Dennis Cranston  <dennis_cranston@yahoo.com>
 
 	* menu.c: Add mnemonics to Move menu items.

@@ -358,6 +358,10 @@ static void generate_level(
 
   safe_teleports += game_config()->free_safe_teleports;
 
+  if(safe_teleports > game_config()->max_safe_teleports){
+   safe_teleports = game_config()->max_safe_teleports;
+  }
+
   for(i = 0; i < num_robots1; ++i){
     while(1){
       xp = rand() % GAME_WIDTH;

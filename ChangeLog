@@ -1,3 +1,8 @@
+2001-06-10  Juan Pablo Mendoza <pablo_juan@yahoo.com>
+
+	* game.c : Apply patch from Matthew Sullivan <mattsull@iname.com>.
+	  Bug #10664.
+
 2001-06-09  Juan Pablo Mendoza <pablo_juan@yahoo.com>
 
 	Fix bug #50786.

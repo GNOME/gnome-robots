@@ -1,5 +1,6 @@
 #include <config.h>
 #include <gnome.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 
 #include <sys/types.h>
 #include <string.h>
@@ -82,18 +83,17 @@ gchar *fname,
 GdkPixmap **pixmap,
 GdkPixmap **mask
 ){
-  GdkImlibImage *image;
+  GdkPixbuf *image;
 
   if(!g_file_exists(fname)){
     printf(_("Could not find \'%s\' pixmap file for Gnome Robots\n"), fname);
     return FALSE;
   }
 
-  image = gdk_imlib_load_image(fname);
-  gdk_imlib_render(image, image->rgb_width, image->rgb_height);
-  *pixmap = gdk_imlib_move_image(image);
-  *mask = gdk_imlib_move_mask(image);
-  gdk_imlib_destroy_image(image);
+  image = gdk_pixbuf_new_from_file(fname);
+  
+  gdk_pixbuf_render_pixmap_and_mask (image, pixmap, mask, 127);
+  gdk_pixbuf_unref (image);
   
   return TRUE;
 }
@@ -148,9 +148,8 @@ gboolean load_game_graphics(
   DIR            *dir;
   gchar           buffer[PATH_MAX];
   gchar          *bptr;
-  GdkImlibImage  *image;
+  GdkPixbuf      *image;
   GdkImage       *tmpimage;
-  GdkVisual      *visual;
   GdkPixmap      *pixmap;
   gchar          *dname = gnome_unconditional_pixmap_file(GAME_NAME);
 
@@ -212,17 +211,12 @@ gboolean load_game_graphics(
     strcat(buffer, "/");
     strcat(buffer, dent->d_name);
 
-    image = gdk_imlib_load_image(buffer);
-    visual = gdk_imlib_get_visual();
-    if(visual->type != GDK_VISUAL_TRUE_COLOR){
-        gdk_imlib_set_render_type(RT_PLAIN_PALETTE);
-    }
-    gdk_imlib_render(image, image->rgb_width, image->rgb_height);
-    pixmap = gdk_imlib_move_image(image);
+    image = gdk_pixbuf_new_from_file (buffer);
+    gdk_pixbuf_render_pixmap_and_mask (image, &pixmap, NULL, 127);
     tmpimage = gdk_image_get(pixmap, 0, 0, 1, 1);
     game_graphic[num_graphics]->bgcolor.pixel = gdk_image_get_pixel(tmpimage, 0, 0);
     gdk_image_destroy(tmpimage);
-    gdk_imlib_destroy_image(image);
+    gdk_pixbuf_unref (image);
 
     game_graphic[num_graphics]->pixmap = pixmap;
 

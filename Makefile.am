@@ -11,7 +11,7 @@ SUBDIRS = help
 INCLUDES = 			\
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-I$(includedir)				 \
-	$(GNOME_INCLUDEDIR)
+	$(GNOME_INCLUDEDIR) $(GDK_PIXBUF_CFLAGS)
 
 bin_PROGRAMS = gnobots2
 
@@ -40,6 +40,7 @@ gnobots2_SOURCES = \
 gnobots2_LDADD = \
 	$(GNOME_LIBDIR) \
 	$(GNOMEUI_LIBS)	\
+	$(GDK_PIXBUF_LIBS) \
 	$(INTLLIBS)
 
 appicon_DATA = gnome-gnobots2.png

@@ -195,10 +195,6 @@ char *argv[]
 
   gnome_init_with_popt_table(GAME_NAME, VERSION, argc, argv, options, 0, NULL);
   gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-gnobots2.png");
-  /*
-  gtk_widget_push_visual (gdk_imlib_get_visual ());
-  gtk_widget_push_colormap (gdk_imlib_get_colormap ());
-  */
 
   client = gnome_master_client();
 
@@ -221,8 +217,8 @@ char *argv[]
 
   create_game_menus();
 
-  gtk_widget_push_visual (gdk_imlib_get_visual ());
-  gtk_widget_push_colormap (gdk_imlib_get_colormap ());
+  gtk_widget_push_visual (gdk_rgb_get_visual ());
+  gtk_widget_push_colormap (gdk_rgb_get_cmap ());
   game_area = gtk_drawing_area_new();
   gtk_widget_pop_colormap ();
   gtk_widget_pop_visual ();

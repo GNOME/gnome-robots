@@ -1,3 +1,9 @@
+2005-03-15  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* game.c (start_new_game): Make New Game record the score. This
+	brings it into line with the other game and sots half of bug
+	#107846.
+
 2005-03-02  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/C/gnobots2.xml: Bump the app version number. No revisions.

@@ -655,6 +655,9 @@ start_new_game (void)
   kills = 0;
   score_step = 0;
 
+  if (game_state == STATE_PLAYING)
+    log_score (score);
+
   conf = game_config ();
   g_return_if_fail  (conf != NULL);
 

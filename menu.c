@@ -76,28 +76,6 @@ GnomeUIInfo mainmenu[] = {
 /**********************************************************************/
 
 /**
- * really_new_cb
- * @widget: Pointer to widget
- * @data: Callback data
- *
- * Description:
- * Callback to really start new game
- *
- * Returns:
- **/
-static void really_new_cb(
-GtkWidget *widget,
-gpointer  data
-){
-  gint button = GPOINTER_TO_INT(data);
-    
-  if(button != 0) return;
-
-  start_new_game();
-}
-
-
-/**
  * new_cb
  * @widget: Pointer to widget
  * @data: Callback data
@@ -113,12 +91,21 @@ gpointer  data
 ){
 
   if(game_state != STATE_NOT_PLAYING){
-    gnome_app_ok_cancel_modal (GNOME_APP(app),
-                               _("Applying this change to Player Selection\nwill end the current game"),
-                               (GnomeReplyCallback)really_new_cb,
-                               NULL);
+    GtkWidget *mb;
+    int response;
+    mb = gtk_message_dialog_new (GTK_WINDOW(app), 
+				 GTK_DIALOG_MODAL,
+				 GTK_MESSAGE_WARNING,
+				 GTK_BUTTONS_YES_NO,
+				 _("Do you really want to restart the current game?"),
+				 NULL);
+    response = gtk_dialog_run (GTK_DIALOG(mb));
+    gtk_widget_destroy (mb);
+    if (response == GTK_RESPONSE_YES) {
+      start_new_game();
+    }
   } else {
-    really_new_cb(widget, (gpointer)0);
+    start_new_game();
   }
 }
 
@@ -160,28 +147,6 @@ gpointer  data
 
 
 /**
- * really_exit_cb
- * @widget: Pointer to widget
- * @data: Callback data
- *
- * Description:
- * Callback to really exit game
- *
- * Returns:
- **/
-void really_exit_cb(
-GtkWidget *widget,
-gpointer  data
-){
-  gint button = GPOINTER_TO_INT(data);
-    
-  if(button != 0) return;
-
-  gtk_main_quit();
-}
-
-
-/**
  * exit_cb
  * @widget: Pointer to widget
  * @data: Callback data
@@ -191,18 +156,28 @@ gpointer  data
  *
  * Returns:
  **/
-void exit_cb(
-GtkWidget *widget,
-gpointer  data
-){
-
-  if(game_state != STATE_NOT_PLAYING){
-    gnome_app_ok_cancel_modal (GNOME_APP(app),
-                               _("Do you really want to quit the game?"),
-                               (GnomeReplyCallback)really_exit_cb,
-                               NULL);
+void
+exit_cb(GtkWidget *widget, gpointer  data)
+{
+  if(game_state != STATE_NOT_PLAYING) {
+    GtkWidget *mb;
+    int response;
+    mb = gtk_message_dialog_new (GTK_WINDOW(app), 
+				 GTK_DIALOG_MODAL,
+				 GTK_MESSAGE_QUESTION,
+				 GTK_BUTTONS_NONE,
+				 _("Do you really want to quit the game?"),
+				 NULL);
+    gtk_dialog_add_buttons (GTK_DIALOG(mb), GTK_STOCK_CANCEL, GTK_RESPONSE_REJECT,
+			    GTK_STOCK_QUIT, GTK_RESPONSE_ACCEPT,
+			    NULL);
+    response = gtk_dialog_run (GTK_DIALOG(mb));
+    gtk_widget_destroy (mb);
+    if (response == GTK_RESPONSE_ACCEPT) {
+      gtk_main_quit();
+    }
   } else {
-    really_exit_cb(widget, (gpointer)0);
+    gtk_main_quit();
   }
 }
 

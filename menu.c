@@ -254,3 +254,36 @@ gboolean create_game_menus(
 }
 
 /**********************************************************************/
+
+/**
+ * update_score_state
+ *
+ * Description:
+ * Changes menu item enabled/disabled state depending on high score availability
+ **/
+void update_score_state ()
+{
+        gchar **names = NULL;
+        gfloat *scores = NULL;
+        time_t *scoretimes = NULL;
+	gint top;
+	gchar sbuf[256];
+
+	  if(properties_super_safe_moves()){
+	    sprintf(sbuf, "%s-super-safe", game_config_filename(current_game_config()));
+	  } else if(properties_safe_moves()){
+	    sprintf(sbuf, "%s-safe", game_config_filename(current_game_config()));
+	  } else {
+	    sprintf(sbuf, "%s", game_config_filename(current_game_config()));
+	  }
+
+	top = gnome_score_get_notable(GAME_NAME, sbuf, &names, &scores, &scoretimes);
+	if (top > 0) {
+		gtk_widget_set_sensitive (gamemenu[2].widget, TRUE);
+		g_strfreev(names);
+		g_free(scores);
+		g_free(scoretimes);
+	} else {
+		gtk_widget_set_sensitive (gamemenu[2].widget, FALSE);
+	}
+}

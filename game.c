@@ -93,7 +93,6 @@ gchar *msg
   gtk_widget_show(box);
 }
 
-
 /**
  * show_scores
  * @pos: score-table position
@@ -154,6 +153,7 @@ if(properties_safe_moves()){
   }
 
   pos = gnome_score_log((gfloat)sc, sbuf, TRUE);
+  update_score_state ();
 
   return pos;
 }

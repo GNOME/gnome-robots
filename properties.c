@@ -9,6 +9,7 @@
 #include "gbdefs.h"
 #include "keyboard.h"
 #include "game.h"
+#include "menu.h"
 
 
 /**********************************************************************/
@@ -247,6 +248,7 @@ static void apply_changes(
   set_game_config(properties.selected_config);
 
   keyboard_set(properties.keys);
+  update_score_state ();
 }
 
 
@@ -1290,6 +1292,7 @@ gboolean load_properties(
   set_game_graphics(properties.selected_graphics);
   set_game_config(properties.selected_config);
   keyboard_set(properties.keys);
+  update_score_state ();
 }
 
 

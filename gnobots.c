@@ -244,6 +244,8 @@ char *argv[]
     }
   }
 
+  update_score_state ();
+
   gtk_main();
 
   cleanup_game();

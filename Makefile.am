@@ -98,10 +98,10 @@ install-data-local:
             fname1=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2.scores; \
             fname2=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-safe.scores; \
             fname3=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-super-safe.scores; \
-	    touch $$fname1; chmod 664 $$fname1; chown games:games $$fname1; \
-	    touch $$fname2; chmod 664 $$fname2; chown games:games $$fname2; \
-	    touch $$fname3; chmod 664 $$fname3; chown games:games $$fname3; \
+	    touch $$fname1; chmod 664 $$fname1; chown $(scores_user):$(scores_group) $$fname1; \
+	    touch $$fname2; chmod 664 $$fname2; chown $(scores_user):$(scores_group) $$fname2; \
+	    touch $$fname3; chmod 664 $$fname3; chown $(scores_user):$(scores_group) $$fname3; \
 	    done
-	-chgrp games $(DESTDIR)$(bindir)/gnobots2 && chmod 2555 $(DESTDIR)$(bindir)/gnobots2
+	-if test "x$(setgid)" = "xtrue"; then chgrp $(scores_group) $(DESTDIR)$(bindir)/gnobots2 && chmod 2555 $(DESTDIR)$(bindir)/gnobots2 ; fi
 
 CLEANFILES = $(Games_DATA) $(soundlist_DATA)

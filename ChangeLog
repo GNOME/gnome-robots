@@ -1,3 +1,10 @@
+2002-12-11  Ross Burton  <ross@burtonini.com>
+
+	* menu.c: 
+	* properties.c:
+	* gnobots2.soundlist.in:
+	* gnobots2.desktop.in: Rename game to "GNOME Robots"
+
 2002-11-27  Ross Burton  <ross@burtonini.com>
 
 	* menu.c: 

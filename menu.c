@@ -166,7 +166,7 @@ exit_cb(GtkWidget *widget, gpointer  data)
 				 GTK_DIALOG_MODAL,
 				 GTK_MESSAGE_QUESTION,
 				 GTK_BUTTONS_NONE,
-				 _("Are you sure you want to quit Gnobots II?"),
+				 _("Are you sure you want to quit GNOME Robots?"),
 				 NULL);
     gtk_dialog_add_buttons (GTK_DIALOG(mb), GTK_STOCK_CANCEL, GTK_RESPONSE_REJECT,
 			    GTK_STOCK_QUIT, GTK_RESPONSE_ACCEPT,
@@ -226,7 +226,7 @@ gpointer data
 	  }
   }
   
-  about = gnome_about_new(_("Gnobots II"), VERSION,
+  about = gnome_about_new(_("GNOME Robots"), VERSION,
                           "(C) 1998 Mark Rae",
                           _("GNOME Robots Game"),
                           (const char **)authors,

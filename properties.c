@@ -842,7 +842,7 @@ void show_properties_dialog(
   /* Copy current setting into temporary */
   copy_properties(&properties, &temp_prop);
 
-  propbox = gtk_dialog_new_with_buttons (_("GnobotsII Preferences"),
+  propbox = gtk_dialog_new_with_buttons (_("GNOME Robots Preferences"),
                                          GTK_WINDOW (app),
                                          GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
                                          /* GTK_STOCK_HELP, GTK_RESPONSE_HELP, */

@@ -10,6 +10,7 @@ SUBDIRS = help
 
 INCLUDES = 			\
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
+	-DDATADIR=\""$(datadir)"\"		   \
 	-DG_DISABLE_DEPRECATED				\
 	-DGDK_DISABLE_DEPRECATED 			\
 	-DGTK_DISABLE_DEPRECATED 			\

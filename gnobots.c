@@ -173,7 +173,12 @@ char *argv[]
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain(GETTEXT_PACKAGE);
 
-  gnome_init_with_popt_table(GAME_NAME, VERSION, argc, argv, options, 0, NULL);
+  gnome_program_init (GAME_NAME, VERSION,
+ 		      LIBGNOMEUI_MODULE,
+ 		      argc, argv,
+ 		      GNOME_PARAM_POPT_TABLE, options,
+ 		      GNOME_PARAM_APP_DATADIR, DATADIR, NULL);
+
   gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-gnobots2.png");
 
   client = gnome_master_client();

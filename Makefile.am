@@ -4,7 +4,7 @@ configdir=$(datadir)/gnobots2
 soundlistdir=$(sysconfdir)/sound/events
 sounddir=$(datadir)/sounds/gnobots2
 appicondir=$(datadir)/pixmaps
-Gamesdir=$(datadir)/apps/Games
+Gamesdir=$(datadir)/gnome/apps/Games
 
 SUBDIRS = help
 

@@ -53,11 +53,7 @@ gnobots2_LDADD = \
 appicon_DATA = gnome-gnobots2.png teleport.png rteleport.png
 
 pixmap_DATA = gnomes.png \
-              cows.png \
-	      eggs.png \
-              mice.png \
               robots.png \
-              windows.png \
 	      yahoo.png \
 	      aieee.png \
 	      splat.png

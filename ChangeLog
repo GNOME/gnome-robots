@@ -1,3 +1,11 @@
+2004-08-15  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* cows.png:
+	* eggs.png:
+	* mice.png:
+	* windows.png: Moved these themes to the gnome-games-extra-data
+	package.
+	
 2004-07-20  Christian Neumair  <chris@gnome-de.org>
 
 	* graphics.c (load_bubble_graphic): Assimilate gettextized warning to

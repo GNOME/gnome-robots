@@ -1,5 +1,5 @@
 [__section_info__]
-_description=GNOME Robots II
+_description=Robots
 
 [bad-move]
 file=gnobots2/bad.wav

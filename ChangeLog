@@ -1,3 +1,7 @@
+2004-11-21  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* gnobots2.soundlist.in (_description): Fix the description.
+
 2004-09-09  callum  <callum@spooky-possum.org>
 
 	* help/C/figures/gnobots2-main.png:

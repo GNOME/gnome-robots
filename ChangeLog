@@ -1,3 +1,12 @@
+2003-06-23  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* game.c: Removed dead code.
+
+	* keyboard.c (keyboard_cb): Removed the comment asking "what is
+	this for" since it is now clear. It is so we don't try and
+	interpret accelerators like Ctrl-N as just 'N'. I've limited the
+	mask so we hopefully don't have the old problems.
+
 2003-06-22  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* gnobots2.schemas.in: Typo. (Fixes bug 115693.)

@@ -115,10 +115,12 @@ keyboard_cb (GtkWidget *widget, GdkEventKey *event, gpointer data)
 {
   gint i, kv;
 
-  /* What is this for?  This causes problems for those people whose Numlock is
-   * a modifier.
-  if(event->state &= GDK_MODIFIER_MASK) return FALSE;
-  */
+  /* This is a bit of a kludge to let through accelerator keys, otherwise
+   * if N is used as a key, then Ctrl-N is never picked up. The cleaner
+   * option, making the signal a connect_after signal skims the arrow keys
+   * before we can get to them which is a bigger problem. */
+  if (event->state &= (GDK_CONTROL_MASK | GDK_MOD1_MASK))
+    return FALSE;
 
   kv = keyboard_preferred (event->keyval);
 

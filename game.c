@@ -71,9 +71,7 @@ static void message_box (gchar *msg);
 static guint log_score (gint sc);
 static void add_kill (gint type);
 static void clear_arena (void);
-static void add_object (gint x, gint y, gint type);
 static gint check_location (gint x, gint y);
-static gboolean check_heap (gint x, gint y);
 static void generate_level (void);
 static void draw_graphics (void);
 static void update_arena (void);
@@ -85,7 +83,6 @@ static void move_all_robots (void);
 static void move_type2_robots (void);
 static void move_robots (void);
 static gboolean check_safe (gint x, gint y);
-static void signal_bad_move (void);
 static gboolean push_heap (gint x, gint y, gint dx, gint dy);
 static gboolean try_player_move (gint dx, gint dy);
 static gboolean safe_move_available (void);
@@ -269,35 +266,6 @@ clear_arena (void)
 
 
 /**
- * add_object
- * @x: object x position
- * @y: object y position
- * @type: object type
- *
- * Description:
- * Adds an object to the arena
- **/
-static void
-add_object (gint x, gint y, gint type)
-{
-  arena[x][y] = type;
-
-  switch (type) {
-  case OBJECT_ROBOT1:
-    ++num_robots1;
-    break;
-  case OBJECT_ROBOT2:
-    ++num_robots2;
-    break;
-  case OBJECT_PLAYER:
-    player_xpos = x;
-    player_ypos = y;
-    break;
-  }
-}
-
-
-/**
  * check_location
  * @x: x position
  * @y: y position
@@ -317,27 +285,6 @@ check_location (gint x, gint y)
 
   return arena[x][y];
 }
-
-
-/**
- * check_heap
- * @x: x position
- * @y: y position
- *
- * Description:
- * checks for a junkheap at a given location
- *
- * Returns:
- * TRUE if present or FALSE otherwise
- **/
-static gboolean
-check_heap (gint x, gint y)
-{
-  if (arena[x][y] == OBJECT_HEAP) return TRUE;
-  
-  return FALSE;
-}
-
 
 /**
  * generate_level
@@ -934,20 +881,6 @@ check_safe (gint x, gint y)
 
   return TRUE;
 }
-
-
-/**
- * signal_bad_move
- *
- * Description:
- * Makes a sound when a bad move is made
- **/
-static void
-signal_bad_move (void)
-{
-  play_sound (SOUND_BAD);
-}
-
 
 /**
  * push_heap

@@ -3,6 +3,10 @@
 	* menu.c: (new_cb) (exit_cb): changed new game / quit dialogs for
 	consistancy with other parts of gnome-games package. (Bug #97321)
 
+2002-11-18  Fernando Herrera <fherrera@onirica.com>
+
+	* gnobots2.desktop.in: add X-GNOME-BUGZILLA stuff
+
 2002-11-11  Tim Musson <trmusson@ihug.co.nz>
 
 	* game.c: (show_scores): no more multiple Score dialogs.

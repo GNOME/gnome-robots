@@ -207,11 +207,11 @@ main (int argc, char *argv[])
 
   create_game_menus ();
 
-  gtk_widget_push_colormap (gdk_rgb_get_colormap ());
   game_area = gtk_drawing_area_new ();
-  gtk_widget_pop_colormap ();
+  gtk_widget_add_events (game_area, GDK_BUTTON_PRESS_MASK);
+  g_signal_connect (G_OBJECT (game_area), "button-press-event",
+		    G_CALLBACK (mouse_cb), NULL);
   gnome_app_set_contents (GNOME_APP (app), game_area);
-  gtk_widget_realize (game_area);
   gtk_widget_set_size_request (GTK_WIDGET (game_area), 
                                TILE_WIDTH * GAME_WIDTH,
                                TILE_HEIGHT * GAME_HEIGHT);

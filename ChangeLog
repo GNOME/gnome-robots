@@ -1,3 +1,11 @@
+2004-06-22  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* gnobots.c:	
+	* game.c: Add basic mouse support. You can successfully play the
+	game with the mouse, but there is no guide as to what direction
+	will be used yet. Also, you can click at the title screen to start
+	a new game.
+
 2004-05-26  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* properties.c: Fix compiler warnings.

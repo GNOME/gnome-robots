@@ -22,6 +22,7 @@
 #include <config.h>
 #include <gnome.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "gbdefs.h"
 #include "gameconfig.h"
@@ -1302,6 +1303,56 @@ game_keypress (gint key)
     }
   }
 
+}
+
+gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
+{
+  int x, y, idx, idy;
+  double dx, dy, angle;
+  int octant;
+  const int movetable[8][2] = { {-1, 0}, {-1, -1}, {0, -1}, {1, -1},
+				{1, 0}, {1, 1}, {0, 1}, {-1, 1} };
+
+  if (game_state == STATE_NOT_PLAYING) {
+    start_new_game ();
+    return TRUE;
+  }
+
+  if (game_state != STATE_PLAYING)
+    return TRUE;
+
+  x = CLAMP(e->x/TILE_WIDTH, 0, GAME_WIDTH);
+  y = CLAMP(e->y/TILE_HEIGHT, 0, GAME_HEIGHT);
+
+  /* If we click on our man then we assume we hold. */
+  if ((x == player_xpos) && (y == player_ypos)) {
+    player_move (0, 0);
+    goto exit;
+  }
+
+  /* If the square clicked on is a valid move, go there. */
+  idx = x - player_xpos;
+  idy = y - player_ypos;
+  if ((ABS(idx) < 2) && (ABS(idy) < 2)) {
+    player_move (idx, idy);
+    goto exit;
+  }
+
+  /* Otherwise go in the general direction of the mouse click. */
+  dx = e->x - (player_xpos - 0.5) * TILE_WIDTH;
+  dy = e->y - (player_ypos - 0.5) * TILE_HEIGHT;
+
+  angle = atan2 (dy, dx);
+
+  /* Note the adjustment we have to make (+9, not +8) because atan2's idea 
+   * of octants and the ones we want are shifted by PI/8. */
+  octant = (((int)floor(8.0*angle/M_PI) + 9)/2) % 8; 
+  player_move (movetable[octant][0], movetable[octant][1]);
+
+exit:
+  move_robots ();
+
+  return TRUE;
 }
 
 /**********************************************************************/

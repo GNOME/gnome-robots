@@ -500,6 +500,8 @@ type_selection (GtkWidget *widget, gpointer data)
   gconf_set_configuration (game_config_name (properties.selected_config));
 
   set_game_config (properties.selected_config);
+
+  start_new_game ();
 }
 
 
@@ -734,111 +736,96 @@ show_properties_dialog (void)
   hbox = gtk_hbox_new (TRUE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
-  if (game_state == STATE_NOT_PLAYING) {
-    typemenu = gtk_combo_box_new_text ();
-    g_signal_connect (G_OBJECT (typemenu), "changed",
-                      G_CALLBACK (type_selection), NULL);
-    fill_typemenu (typemenu);
-    gtk_box_pack_start_defaults (GTK_BOX (hbox), typemenu);
-
-    list = gtk_list_store_new (NCOLS,
-                               G_TYPE_STRING, /* Property */ 
-                               G_TYPE_STRING, /* Value */
-                               G_TYPE_INT); /* Index - remains hidden */
-    /* Create view */
-    list_view = gtk_tree_view_new_with_model (GTK_TREE_MODEL (list));
-    g_object_unref (list); /* Do I need to create a list store? */
-
-    renderer = gtk_cell_renderer_text_new ();
-    column = gtk_tree_view_column_new_with_attributes (_("Property"), 
-                                                       renderer, 
-                                                       "text", PROPERTY_STRING, 
-                                                       NULL);
-    gtk_tree_view_append_column (GTK_TREE_VIEW (list_view), column);
+  typemenu = gtk_combo_box_new_text ();
+  g_signal_connect (G_OBJECT (typemenu), "changed",
+		    G_CALLBACK (type_selection), NULL);
+  fill_typemenu (typemenu);
+  gtk_box_pack_start_defaults (GTK_BOX (hbox), typemenu);
+  
+  list = gtk_list_store_new (NCOLS,
+			     G_TYPE_STRING, /* Property */ 
+			     G_TYPE_STRING, /* Value */
+			     G_TYPE_INT); /* Index - remains hidden */
+  /* Create view */
+  list_view = gtk_tree_view_new_with_model (GTK_TREE_MODEL (list));
+  
+  renderer = gtk_cell_renderer_text_new ();
+  column = gtk_tree_view_column_new_with_attributes (_("Property"), 
+						     renderer, 
+						     "text", PROPERTY_STRING, 
+						     NULL);
+  gtk_tree_view_append_column (GTK_TREE_VIEW (list_view), column);
     
-    renderer = gtk_cell_renderer_text_new ();
-    column = gtk_tree_view_column_new_with_attributes (_("Value"), 
-                                                       renderer, 
-                                                       "text", VALUE_STRING, 
-                                                       NULL);
-    gtk_tree_view_append_column (GTK_TREE_VIEW (list_view), column);
+  renderer = gtk_cell_renderer_text_new ();
+  column = gtk_tree_view_column_new_with_attributes (_("Value"), 
+						     renderer, 
+						     "text", VALUE_STRING, 
+						     NULL);
+  gtk_tree_view_append_column (GTK_TREE_VIEW (list_view), column);
 
-    selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (list_view));
-    gtk_tree_selection_set_mode  (selection, GTK_SELECTION_SINGLE);
+  selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (list_view));
+  gtk_tree_selection_set_mode  (selection, GTK_SELECTION_SINGLE);
 
-#if 0
-    gtk_clist_set_column_width (GTK_CLIST (clist), 0, 400);
-    gtk_clist_set_column_width (GTK_CLIST (clist), 1, 50);
-    gtk_clist_column_titles_passive (GTK_CLIST (clist));
-    gtk_clist_column_titles_show (GTK_CLIST (clist));
-#endif
+  fill_property_list ();
 
-    fill_property_list ();
+  scrolled = gtk_scrolled_window_new (NULL, NULL);
+  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
+				  GTK_POLICY_AUTOMATIC,
+				  GTK_POLICY_AUTOMATIC);
+  gtk_scrolled_window_set_shadow_type 
+    (GTK_SCROLLED_WINDOW (scrolled), GTK_SHADOW_IN);
+  gtk_widget_set_size_request (scrolled, 400, 200);
+  gtk_container_add (GTK_CONTAINER (scrolled), list_view);
 
-    /*gtk_widget_set_size_request (list_view, 300, 200);*/
+  gtk_box_pack_start (GTK_BOX (vbox), scrolled, TRUE, TRUE, 0);
 
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
-                                    GTK_POLICY_AUTOMATIC,
-                                    GTK_POLICY_AUTOMATIC);
-    gtk_scrolled_window_set_shadow_type 
-      (GTK_SCROLLED_WINDOW (scrolled), GTK_SHADOW_IN);
-    gtk_widget_set_size_request (scrolled, 400, 200);
-    gtk_container_add (GTK_CONTAINER (scrolled), list_view);
+  frame = games_frame_new (_("Options"));
+  gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
+  vbox = gtk_vbox_new (TRUE, 6);
+  gtk_container_add (GTK_CONTAINER (frame), vbox);
 
-    gtk_box_pack_start (GTK_BOX (vbox), scrolled, TRUE, TRUE, 0);
+  table = gtk_table_new (2, 2, FALSE);
+  gtk_table_set_row_spacings (GTK_TABLE (table), 6);
+  gtk_table_set_col_spacings (GTK_TABLE (table), 12);
+  gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
 
-    frame = games_frame_new (_("Options"));
-    gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
-    vbox = gtk_vbox_new (TRUE, 6);
-    gtk_container_add (GTK_CONTAINER (frame), vbox);
+  chkbox = gtk_check_button_new_with_mnemonic (_("_Use safe moves"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox), 
+				properties.safe_moves);
+  g_signal_connect (G_OBJECT (chkbox), "clicked",
+		    (GtkSignalFunc)safe_cb, NULL);
+  gtk_table_attach (GTK_TABLE (table), chkbox, 0, 1, 0, 1, GTK_FILL, 0, 0, 0);
+  gtk_tooltips_set_tip (tooltips, chkbox,
+			_("Prevent some dangerous moves"), 
+			_("Prevent accidental moves that result in getting killed."));
 
-    table = gtk_table_new (2, 2, FALSE);
-    gtk_table_set_row_spacings (GTK_TABLE (table), 6);
-    gtk_table_set_col_spacings (GTK_TABLE (table), 12);
-    gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
+  chkbox = gtk_check_button_new_with_mnemonic (_("U_se super safe moves"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox), properties.super_safe_moves);
+  g_signal_connect (G_OBJECT (chkbox), "clicked",
+		    (GtkSignalFunc)super_safe_cb, NULL);
+  gtk_table_attach (GTK_TABLE (table), chkbox, 0, 1, 1, 2, GTK_FILL, 0, 0, 0);
+  gtk_tooltips_set_tip (tooltips, chkbox,
+			_("Prevent all dangerous moves"), 
+			_("Prevents all moves that result in getting killed."));
 
-    chkbox = gtk_check_button_new_with_mnemonic (_("_Use safe moves"));
-    GTK_TOGGLE_BUTTON (chkbox)->active = properties.safe_moves;
-    g_signal_connect (G_OBJECT (chkbox), "clicked",
-                      (GtkSignalFunc)safe_cb, NULL);
-    gtk_table_attach (GTK_TABLE (table), chkbox, 0, 1, 0, 1, GTK_FILL, 0, 0, 0);
-    gtk_tooltips_set_tip (tooltips, chkbox,
-			  _("Prevent some dangerous moves"), 
-			  _("Prevent accidental moves that result in getting killed."));
+  chkbox = gtk_check_button_new_with_mnemonic (_("_Enable sounds"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox), properties.sound);
+  g_signal_connect (G_OBJECT (chkbox), "clicked",
+		    (GtkSignalFunc)sound_cb, NULL);
+  gtk_table_attach (GTK_TABLE (table), chkbox, 1, 2, 0, 1, GTK_FILL, 0, 0, 0);
+  gtk_tooltips_set_tip (tooltips, chkbox,
+			_("Play sounds for major events"), 
+			_("Play sounds for events like winning a level and dying."));
 
-    chkbox = gtk_check_button_new_with_mnemonic (_("U_se super safe moves"));
-    GTK_TOGGLE_BUTTON (chkbox)->active = properties.super_safe_moves;
-    g_signal_connect (G_OBJECT (chkbox), "clicked",
-                      (GtkSignalFunc)super_safe_cb, NULL);
-    gtk_table_attach (GTK_TABLE (table), chkbox, 0, 1, 1, 2, GTK_FILL, 0, 0, 0);
-    gtk_tooltips_set_tip (tooltips, chkbox,
-			  _("Prevent all dangerous moves"), 
-			  _("Prevents all moves that result in getting killed."));
+  chkbox = gtk_check_button_new_with_mnemonic (_("E_nable splats"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox), properties.splats);
+  g_signal_connect (G_OBJECT (chkbox), "clicked",
+		    (GtkSignalFunc)splat_cb, NULL);
+  gtk_table_attach (GTK_TABLE (table), chkbox, 1, 2, 1, 2, GTK_FILL, 0, 0, 0);
+  gtk_tooltips_set_tip (tooltips, chkbox,
+			_("Play a sound when two robots collide"), 
+			_("Play the most common, and potentially the most annoying, sound."));
 
-    chkbox = gtk_check_button_new_with_mnemonic (_("_Enable sounds"));
-    GTK_TOGGLE_BUTTON (chkbox)->active = properties.sound;
-    g_signal_connect (G_OBJECT (chkbox), "clicked",
-                      (GtkSignalFunc)sound_cb, NULL);
-    gtk_table_attach (GTK_TABLE (table), chkbox, 1, 2, 0, 1, GTK_FILL, 0, 0, 0);
-    gtk_tooltips_set_tip (tooltips, chkbox,
-			  _("Play sounds for major events"), 
-			  _("Play sounds for events like winning a level and dying."));
-
-    chkbox = gtk_check_button_new_with_mnemonic (_("E_nable splats"));
-    GTK_TOGGLE_BUTTON (chkbox)->active = properties.splats;
-    g_signal_connect (G_OBJECT (chkbox), "clicked",
-                      (GtkSignalFunc)splat_cb, NULL);
-    gtk_table_attach (GTK_TABLE (table), chkbox, 1, 2, 1, 2, GTK_FILL, 0, 0, 0);
-    gtk_tooltips_set_tip (tooltips, chkbox,
-			  _("Play a sound when two robots collide"), 
-			  _("Play the most common, and potentially the most annoying, sound."));
-
-  } else {
-    label = gtk_label_new (_("You Cannot Change the Game Type When Playing"));
-    gtk_box_pack_start_defaults (GTK_BOX (hbox), label);
-
-  }
   label = gtk_label_new_with_mnemonic (_("Game"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), cpage, label);
 

@@ -39,7 +39,7 @@
 /**********************************************************************/
 /* Exported Variables                                                 */
 /**********************************************************************/
-gint         game_state = STATE_NOT_PLAYING;
+gint         game_state = STATE_PLAYING;
 /**********************************************************************/
 
 
@@ -191,7 +191,8 @@ log_score (gint sc)
       sbuf = g_strdup_printf ("%s", game_config_filename (current_game_config ()));
     }
 
-  pos = gnome_score_log ((gfloat)sc, sbuf, TRUE);
+  if (sc != 0)
+    pos = gnome_score_log ((gfloat)sc, sbuf, TRUE);
   g_free (sbuf);
   update_score_state  ();
 
@@ -454,25 +455,23 @@ update_arena (void)
     }
   }
 
-  if (game_state != STATE_NOT_PLAYING) {
-    if (arena[player_xpos][player_ypos] != OBJECT_PLAYER) {
-      game_state = STATE_DEAD;
-      play_sound (SOUND_DIE);
-      arena[player_xpos][player_ypos] = OBJECT_PLAYER;
-      endlev_counter = 0;
-      add_aieee_bubble (player_xpos, player_ypos);
-      player_animation_dead ();
-      set_move_menu_sensitivity (FALSE);
-    }
+  if (arena[player_xpos][player_ypos] != OBJECT_PLAYER) {
+    game_state = STATE_DEAD;
+    play_sound (SOUND_DIE);
+    arena[player_xpos][player_ypos] = OBJECT_PLAYER;
+    endlev_counter = 0;
+    add_aieee_bubble (player_xpos, player_ypos);
+    player_animation_dead ();
+    set_move_menu_sensitivity (FALSE);
+  }
 
-    if ((num_robots1 + num_robots2) <= 0) {
-      game_state = STATE_COMPLETE;
-      play_sound (SOUND_YAHOO);
-      endlev_counter = 0;
-      add_yahoo_bubble (player_xpos, player_ypos);
-      reset_player_animation ();
-      set_move_menu_sensitivity (FALSE);
-    }
+  if ((num_robots1 + num_robots2) <= 0) {
+    game_state = STATE_COMPLETE;
+    play_sound (SOUND_YAHOO);
+    endlev_counter = 0;
+    add_yahoo_bubble (player_xpos, player_ypos);
+    reset_player_animation ();
+    set_move_menu_sensitivity (FALSE);
   }
 
   display_updated = FALSE;
@@ -535,12 +534,7 @@ timeout_cb (void *data)
 	  show_scores (sp);
 	}
       }
-      game_state = STATE_NOT_PLAYING;
-      remove_bubble ();
-      reset_player_animation ();
-      clear_game_area ();
-      create_demo_objects ();      
-      game_state = STATE_NOT_PLAYING;
+      start_new_game ();
     }
   }
 
@@ -582,34 +576,6 @@ create_game_timer (void)
 
 
 /**
- * create_demo_objects
- *
- * Description:
- * Creates objects for the initial 'demo' screen
- **/
-static void
-create_demo_objects (void)
-{
-  clear_arena ();
-
-  arena[22][15] = OBJECT_PLAYER;
-
-  arena[22][9] = OBJECT_ROBOT1;
-  arena[22][21] = OBJECT_ROBOT1;
-
-  arena[28][15] = OBJECT_ROBOT2;
-  arena[16][15] = OBJECT_ROBOT2;
-
-  arena[28][9] = OBJECT_HEAP;
-  arena[28][21] = OBJECT_HEAP;
-  arena[16][9] = OBJECT_HEAP;
-  arena[16][21] = OBJECT_HEAP;
-
-  gnobots_statusbar_set (0, 0, 0, 0, 0);
-}
-
-
-/**
  * init_game
  *
  * Description:
@@ -618,16 +584,12 @@ create_demo_objects (void)
 void
 init_game (void)
 {
-  clear_game_area ();
-
-  create_demo_objects ();
-
   create_game_timer ();
 
   g_signal_connect (GTK_OBJECT (app), "key_press_event",
-                    GTK_SIGNAL_FUNC (keyboard_cb), 0);  
+                    GTK_SIGNAL_FUNC (keyboard_cb), 0);
 
-  set_move_menu_sensitivity (FALSE);
+  start_new_game ();
 }
 
 
@@ -1363,11 +1325,6 @@ static void get_dir (int ix, int iy, int * odx, int * ody)
 gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
 {
   int dx, dy;
-
-  if (game_state == STATE_NOT_PLAYING) {
-    start_new_game ();
-    return TRUE;
-  }
 
   if (game_state != STATE_PLAYING)
     return TRUE;

@@ -84,7 +84,6 @@
 /*
  * Game states
  */
-#define STATE_NOT_PLAYING 0
 #define STATE_PLAYING     1
 #define STATE_WAITING     2
 #define STATE_COMPLETE    3

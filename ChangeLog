@@ -1,3 +1,15 @@
+2005-04-04  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* game.c: Only log a score if it is non-zero. This avoids problems
+	with auto-started games that aren't actually played.
+	
+	* properties.c:
+	* game.c:	
+	* gbdefs.h: Patch from Michael Terry to make Robots start
+	instantly. The properties are no longer disabled during play and
+	changing the game starts a new one. Also some minor fixes by me
+	for old-style GTK stuff.
+
 2005-03-28  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* properties.c: Remove the three different preset key sets and

@@ -194,8 +194,10 @@ char *argv[]
 
   gnome_init_with_popt_table(GAME_NAME, VERSION, argc, argv, options, 0, NULL);
 
+  /*
   gtk_widget_push_visual (gdk_imlib_get_visual ());
   gtk_widget_push_colormap (gdk_imlib_get_colormap ());
+  */
 
   client = gnome_master_client();
 
@@ -218,7 +220,11 @@ char *argv[]
 
   create_game_menus();
 
+  gtk_widget_push_visual (gdk_imlib_get_visual ());
+  gtk_widget_push_colormap (gdk_imlib_get_colormap ());
   game_area = gtk_drawing_area_new();
+  gtk_widget_pop_colormap ();
+  gtk_widget_pop_visual ();
   gnome_app_set_contents(GNOME_APP(app), game_area);
   gtk_widget_realize(game_area);
   gtk_drawing_area_size(GTK_DRAWING_AREA(game_area), 

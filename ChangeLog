@@ -1,3 +1,9 @@
+2000-04-22  Ian Peters  <itp@gnu.org>
+
+	* gnobots.c: moved calls to push_[visual|colormap], added calls to
+	  pop_[colormap|visual] -- these are for the drawing_area only, not for
+	  everything.
+
 1999-03-04  Ian Peters  <itp@acm.org>
 
 	* keyboard.c: keyboard_cb: Commented out suspicious line checking

@@ -263,6 +263,8 @@ load_game_configs (void)
 
   if (num_configs >= 0) {
     current_config = 0;
+  } else {
+    return FALSE;
   }
 
   return TRUE;

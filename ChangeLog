@@ -1,3 +1,9 @@
+2003-08-01  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* gnobots.c (main): 
+	* gameconfig.c (load_game_configs): Handle the case where we find
+	no configuration files to load. This fixes bug #112059.
+
 2003-07-31  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/C/gnobots2.xml: Updated for 2.4, including the screenshot.

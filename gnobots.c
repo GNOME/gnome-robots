@@ -162,6 +162,7 @@ int
 main (int argc, char *argv[])
 {
   GtkWidget      *stbar;
+  GtkWidget      *errordialog;
   GnomeClient    *client;
   struct timeval tv;
   gint           i;
@@ -221,9 +222,21 @@ main (int argc, char *argv[])
     gtk_window_move (GTK_WINDOW (app), session_xpos, session_ypos);
   }
 
-  gtk_widget_show (app);
+  if (!load_game_configs ()) {
+    /* Oops, no configs, we probably haven't been installed properly. */
+    errordialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR,
+                                          GTK_BUTTONS_OK,
+                                          "<b>%s</b>\n\n%s",
+                                          _("No game data could be found."),
+                                          _("The program GNOME Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
+    gtk_label_set_use_markup (GTK_LABEL (GTK_MESSAGE_DIALOG (errordialog)->label), TRUE);
+    gtk_window_set_resizable (GTK_WINDOW (errordialog), FALSE);
+    gtk_dialog_run (GTK_DIALOG (errordialog));
+    exit (1);
+  }
 
-  load_game_configs ();
+  gtk_widget_show (app);
+  
   load_game_graphics ();
   load_properties ();
   

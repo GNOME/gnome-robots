@@ -1,3 +1,7 @@
+2004-02-23  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/it/.cvsignore: Making it correct.
+
 2004-02-22  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/Makefile.am:

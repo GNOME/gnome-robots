@@ -615,6 +615,7 @@ GtkWidget *menu
 	N_("robots2"),
 	N_("robots2 easy"),
 	N_("robots with safe teleport"),
+	N_("nightmare")
   };
 #endif
 

@@ -605,9 +605,21 @@ GtkWidget *menu
 ){
   GtkWidget *item;
   gint i;
-  
+
+#if 0
+  /* this is just a place holder so that xgettext can found the strings to
+   * translate (those are the default games types)
+   */
+  char *just_a_place_holder[]={ 
+	N_("classic robots"),
+	N_("robots2"),
+	N_("robots2 easy"),
+	N_("robots with safe teleport"),
+  };
+#endif
+
   for(i = 0; i < num_game_configs(); ++i){
-    item = gtk_menu_item_new_with_label(game_config_name(i));
+    item = gtk_menu_item_new_with_label(_(game_config_name(i)));
     gtk_widget_show(item);
     gtk_menu_append(GTK_MENU(menu), item);
     gtk_signal_connect(GTK_OBJECT(item), "activate",
@@ -632,8 +644,22 @@ GtkWidget *menu
   gint i;
   gchar buffer[256];
 
+#if 0
+  /* this is just a place holder so that xgettext can found the strings to
+   * translate (those are the default graphic styles)
+   */
+  char *just_a_place_holder[]={
+        N_("robots"),
+        N_("cows"),
+        N_("eggs"),
+        N_("gnomes"),
+	N_("mice"),
+	N_("windows"),
+  };
+#endif
+
   for(i = 0; i < num_game_graphics(); ++i){
-    item = gtk_menu_item_new_with_label(game_graphics_name(i));
+    item = gtk_menu_item_new_with_label(_(game_graphics_name(i)));
     gtk_widget_show(item);
     gtk_menu_append(GTK_MENU(menu), item);
     gtk_signal_connect(GTK_OBJECT(item), "activate",
@@ -856,9 +882,8 @@ void show_properties_dialog(
   gtk_signal_connect(GTK_OBJECT(etext[2]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)2);
 
-
   /* West */
-  label = gtk_label_new("W");
+  label = gtk_label_new(_("W"));
   gtk_table_attach(GTK_TABLE(table), label, 0, 1, 2, 3, 0, 0, 3, 3);
   gtk_widget_show(label);
   etext[3] = gtk_entry_new();
@@ -891,7 +916,6 @@ void show_properties_dialog(
   gtk_widget_show(etext[5]);
   gtk_signal_connect(GTK_OBJECT(etext[5]), "key_press_event",
                       GTK_SIGNAL_FUNC(keypad_cb), (gpointer)5);
-
 
   /* South West */
   label = gtk_label_new(_("SW"));

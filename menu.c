@@ -248,14 +248,14 @@ gpointer data
                 	  NULL
         		  };
   /* Translator credits */
-  gchar *translator_credits = _("");
+  gchar *translator_credits = _("translator_credits");
   
   about = gnome_about_new(_("Gnobots II"), VERSION,
                           "(C) 1998 Mark Rae",
                           _("Gnome Robots Game"),
                           (const char **)authors,
                           (const char **)documenters,
-                          (const char *)translator_credits,
+                          strcmp (translator_credits, "translator_credits") != 0 ? translator_credits : NULL,
                           NULL);
   gnome_dialog_set_parent(GNOME_DIALOG(about), GTK_WINDOW(app));
   gtk_window_set_modal(GTK_WINDOW(about), TRUE);

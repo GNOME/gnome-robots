@@ -87,7 +87,6 @@ enum {
   NCOLS
 }; /* Column indices for list */
 
-static GtkWidget         *etext[12];
 static GnobotsProperties  properties;
 
 static gint default_keys1[12] = {
@@ -596,8 +595,6 @@ defkey_cb (GtkWidget *widget, gpointer data)
 
   for (i = 0; i < 12; ++i){
     properties.keys[i] = dkeys[i];
-    gtk_entry_set_text (GTK_ENTRY (etext[i]), 
-                        keyboard_string (properties.keys[i]));    
     gconf_set_control_key (i, keyboard_string (properties.keys[i]));
   }
   keyboard_set (properties.keys);
@@ -896,7 +893,7 @@ show_properties_dialog (void)
   gtk_container_set_border_width (GTK_CONTAINER (kpage), GNOME_PAD_SMALL);
 
   frame = games_frame_new (_("Keyboard Controls"));
-  gtk_box_pack_start (GTK_BOX (kpage), frame, FALSE, FALSE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (kpage), frame, TRUE, TRUE, GNOME_PAD);
   vbox = gtk_vbox_new (FALSE, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
@@ -906,17 +903,20 @@ show_properties_dialog (void)
 				    "/apps/gnobots2/preferences/key01",
 				    "/apps/gnobots2/preferences/key02",
 				    "/apps/gnobots2/preferences/key03",
-				    "/apps/gnobots2/preferences/key04",
 				    "/apps/gnobots2/preferences/key05",
 				    "/apps/gnobots2/preferences/key06",
 				    "/apps/gnobots2/preferences/key07",
 				    "/apps/gnobots2/preferences/key08",
+				    "/apps/gnobots2/preferences/key04",
 				    "/apps/gnobots2/preferences/key09",
 				    "/apps/gnobots2/preferences/key10",
 				    "/apps/gnobots2/preferences/key11",
 				    NULL);
 
   gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, GNOME_PAD);
+
+  hbox = gtk_hbox_new (TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, GNOME_PAD);
 
   dbut = gtk_button_new_with_label (_("Use the Keypad"));
   g_signal_connect (G_OBJECT (dbut), "clicked",

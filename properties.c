@@ -27,6 +27,7 @@ typedef struct _GnobotsProperties GnobotsProperties;
 
 struct _GnobotsProperties{
   gboolean safe_moves;
+  gboolean super_safe_moves;
   gboolean sound;
   gboolean splats;
   gint      selected_graphics;
@@ -112,6 +113,7 @@ GnobotsProperties *p2
   gint i;
 
   p2->safe_moves        = p1->safe_moves;
+  p2->super_safe_moves  = p1->super_safe_moves;
   p2->sound             = p1->sound;
   p2->splats            = p1->splats;
   p2->selected_graphics = p1->selected_graphics;
@@ -508,6 +510,23 @@ gpointer   data
 
 
 /**
+ * super_safe_cb
+ * @widget: widget
+ * @data: callback data
+ *
+ * Description:
+ * handles message from the 'super_safe moves' checkbox
+ **/
+static void super_safe_cb(
+GtkWidget *widget,
+gpointer   data
+){
+  temp_prop.super_safe_moves = GTK_TOGGLE_BUTTON(widget)->active;
+  gnome_property_box_changed(GNOME_PROPERTY_BOX(propbox));
+}
+
+
+/**
  * sound_cb
  * @widget: widget
  * @data: callback data
@@ -763,6 +782,13 @@ void show_properties_dialog(
     GTK_TOGGLE_BUTTON(chkbox)->active = temp_prop.safe_moves;
     gtk_signal_connect(GTK_OBJECT(chkbox), "clicked",
 		       (GtkSignalFunc)safe_cb, NULL);
+    gtk_box_pack_start(GTK_BOX(hbox), chkbox, TRUE, TRUE, GNOME_PAD);
+    gtk_widget_show (chkbox);
+
+    chkbox = gtk_check_button_new_with_label(_("Super Safe Moves"));
+    GTK_TOGGLE_BUTTON(chkbox)->active = temp_prop.super_safe_moves;
+    gtk_signal_connect(GTK_OBJECT(chkbox), "clicked",
+		       (GtkSignalFunc)super_safe_cb, NULL);
     gtk_box_pack_start(GTK_BOX(hbox), chkbox, TRUE, TRUE, GNOME_PAD);
     gtk_widget_show (chkbox);
 
@@ -1103,6 +1129,8 @@ gboolean load_properties(
 
   properties.safe_moves = gnome_config_get_int_with_default(
 		           "/gnobots2/Properties/SafeMoves=1", NULL);
+  properties.super_safe_moves = gnome_config_get_int_with_default(
+		           "/gnobots2/Properties/SuperSafeMoves=1", NULL);
   properties.sound      = gnome_config_get_int_with_default(
                            "/gnobots2/Properties/Sound=1", NULL);
   properties.splats     = gnome_config_get_int_with_default(
@@ -1139,6 +1167,7 @@ gboolean save_properties(
   gnome_config_set_string("/gnobots2/Properties/Configuration", 
 			  game_config_name(properties.selected_config));
   gnome_config_set_int("/gnobots2/Properties/SafeMoves", properties.safe_moves);
+  gnome_config_set_int("/gnobots2/Properties/SuperSafeMoves", properties.safe_moves);
   gnome_config_set_int("/gnobots2/Properties/Sound", properties.sound);
   gnome_config_set_int("/gnobots2/Properties/Splats", properties.splats);
     
@@ -1158,6 +1187,21 @@ gboolean save_properties(
 gboolean properties_safe_moves(
 ){
   return properties.safe_moves;
+}
+
+
+/**
+ * properties_super_safe_moves
+ *
+ * Description:
+ * returns super-safe-moves setting
+ *
+ * Returns:
+ * TRUE if safe-moves are selected
+ **/
+gboolean properties_super_safe_moves(
+){
+  return properties.super_safe_moves;
 }
 
 

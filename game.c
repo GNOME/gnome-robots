@@ -108,13 +108,18 @@ guint pos
   gchar sbuf[256];
   gchar nbuf[256];
 
-  if(properties_safe_moves()){
+  if(properties_super_safe_moves()){
+    sprintf(sbuf, "%s-super-safe", game_config_filename(current_game_config()));
+  } else if(properties_safe_moves()){
     sprintf(sbuf, "%s-safe", game_config_filename(current_game_config()));
   } else {
     sprintf(sbuf, "%s", game_config_filename(current_game_config()));
   }
 
-  if(properties_safe_moves()){
+  if(properties_super_safe_moves()){
+    sprintf(nbuf, _("'%s' with super-safe moves"), 
+	    _(game_config_name(current_game_config())));
+  } else if(properties_safe_moves()){
     sprintf(nbuf, _("'%s' with safe moves"), 
 	    _(game_config_name(current_game_config())));
   } else {
@@ -143,6 +148,8 @@ gint sc
 
   if(properties_safe_moves()){
     sprintf(sbuf, "%s-safe", game_config_filename(current_game_config()));
+  } else if(properties_super_safe_moves()){
+    sprintf(sbuf, "%s-super-safe", game_config_filename(current_game_config()));
   } else {
     sprintf(sbuf, "%s", game_config_filename(current_game_config()));
   }
@@ -1077,7 +1084,7 @@ gint dy
       return FALSE;
     } else {
       if(!check_safe(nx, ny)){
-	if(safe_move_available()){
+	if(properties_super_safe_moves() || safe_move_available()){
 	  play_sound(SOUND_BAD);
 	  return FALSE;	
 	}

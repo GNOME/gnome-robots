@@ -1,6 +1,6 @@
 [Desktop Entry]
-_Name=GnobotsII
-_Comment=Gnome Robots game
+_Name=Gnobots II
+_Comment=Robots game
 Exec=gnobots2
 Icon=gnome-gnobots2.png
 Terminal=0

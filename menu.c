@@ -62,9 +62,9 @@ GnomeUIInfo gamemenu[] = {
 /**********************************************************************/
 
 GnomeUIInfo movemenu[] = {
-  GNOMEUIINFO_ITEM_STOCK (N_("Teleport"), N_("Teleport, safely if possible"), teleport_cb, GTK_STOCK_JUMP_TO),
-  GNOMEUIINFO_ITEM_STOCK (N_("Random"), N_("Teleport randomly"), randteleport_cb, GTK_STOCK_JUMP_TO),
-  GNOMEUIINFO_ITEM_STOCK (N_("Wait"), N_("Wait for the robots"), wait_cb, GTK_STOCK_STOP),
+  GNOMEUIINFO_ITEM_STOCK (N_("_Teleport"), N_("Teleport, safely if possible"), teleport_cb, GTK_STOCK_JUMP_TO),
+  GNOMEUIINFO_ITEM_STOCK (N_("_Random"), N_("Teleport randomly"), randteleport_cb, GTK_STOCK_JUMP_TO),
+  GNOMEUIINFO_ITEM_STOCK (N_("_Wait"), N_("Wait for the robots"), wait_cb, GTK_STOCK_STOP),
   GNOMEUIINFO_END
 };
 

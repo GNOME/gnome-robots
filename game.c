@@ -157,6 +157,10 @@ show_scores (guint pos)
   g_free (sbuf);
   g_free (nbuf);
   gtk_window_set_transient_for (GTK_WINDOW (score_dialog), GTK_WINDOW (app));
+  gtk_dialog_set_has_separator (GTK_DIALOG (score_dialog), FALSE);
+  gtk_container_set_border_width (GTK_CONTAINER (score_dialog), 5);
+  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (score_dialog)->vbox), 2);
+  gtk_window_set_resizable (GTK_WINDOW (score_dialog), FALSE);
   g_signal_connect (G_OBJECT (score_dialog), "destroy",
                     G_CALLBACK (gtk_widget_destroyed), &score_dialog);
 }

@@ -721,26 +721,30 @@ show_properties_dialog (void)
                                          GTK_DIALOG_DESTROY_WITH_PARENT,
                                          GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
                                          NULL);
+  gtk_dialog_set_has_separator (GTK_DIALOG (propbox), FALSE);
+  gtk_container_set_border_width (GTK_CONTAINER (propbox), 5);
+  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (propbox)->vbox), 2);
   /* Set up notebook and add it to hbox of the gtk_dialog */
   g_signal_connect (G_OBJECT (propbox), "destroy",
                     G_CALLBACK (gtk_widget_destroyed), &propbox);
   
   notebook = gtk_notebook_new ();
+  gtk_container_set_border_width (GTK_CONTAINER (notebook), 5);
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (propbox)->vbox), notebook, 
                       TRUE, TRUE, 0);
 
   /* The configuration page */
-  cpage = gtk_vbox_new (FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (cpage), GNOME_PAD_SMALL);
+  cpage = gtk_vbox_new (FALSE, 18);
+  gtk_container_set_border_width (GTK_CONTAINER (cpage), 12);
 
   frame = games_frame_new (_("Game Type"));
-  gtk_box_pack_start (GTK_BOX (cpage), frame, TRUE, TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (cpage), frame, TRUE, TRUE, 0);
 
-  vbox = gtk_vbox_new (FALSE, 0);
+  vbox = gtk_vbox_new (FALSE, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
-  hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, GNOME_PAD);
+  hbox = gtk_hbox_new (TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
   if (game_state == STATE_NOT_PLAYING) {
     typemenu = gtk_combo_box_new_text ();
@@ -794,50 +798,50 @@ show_properties_dialog (void)
     gtk_widget_set_size_request (scrolled, 400, 200);
     gtk_container_add (GTK_CONTAINER (scrolled), list_view);
 
-    gtk_box_pack_start (GTK_BOX (vbox), scrolled, TRUE, TRUE, GNOME_PAD_SMALL);
+    gtk_box_pack_start (GTK_BOX (vbox), scrolled, TRUE, TRUE, 0);
 
     frame = games_frame_new (_("Options"));
-    gtk_box_pack_start (GTK_BOX (cpage), frame, TRUE, TRUE, GNOME_PAD);
+    gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
     vbox = gtk_vbox_new (TRUE, 6);
     gtk_container_add (GTK_CONTAINER (frame), vbox);
 
-    table = gtk_table_new (2, 2, TRUE);
+    table = gtk_table_new (2, 2, FALSE);
     gtk_table_set_row_spacings (GTK_TABLE (table), 6);
-    gtk_table_set_col_spacings (GTK_TABLE (table), 6);
-    gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, TRUE, GNOME_PAD);
+    gtk_table_set_col_spacings (GTK_TABLE (table), 12);
+    gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
 
-    chkbox = gtk_check_button_new_with_label (_("Use safe moves"));
+    chkbox = gtk_check_button_new_with_mnemonic (_("_Use safe moves"));
     GTK_TOGGLE_BUTTON (chkbox)->active = properties.safe_moves;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)safe_cb, NULL);
-    gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 0, 1, 0, 1);
+    gtk_table_attach (GTK_TABLE (table), chkbox, 0, 1, 0, 1, GTK_FILL, 0, 0, 0);
     gtk_tooltips_set_tip (tooltips, chkbox,
 			  _("Prevent some dangerous moves"), 
 			  _("Prevent accidental moves that result in getting killed."));
 
-    chkbox = gtk_check_button_new_with_label (_("Use super safe moves"));
+    chkbox = gtk_check_button_new_with_mnemonic (_("U_se super safe moves"));
     GTK_TOGGLE_BUTTON (chkbox)->active = properties.super_safe_moves;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)super_safe_cb, NULL);
-    gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 0, 1, 1, 2);
+    gtk_table_attach (GTK_TABLE (table), chkbox, 0, 1, 1, 2, GTK_FILL, 0, 0, 0);
     gtk_tooltips_set_tip (tooltips, chkbox,
 			  _("Prevent all dangerous moves"), 
 			  _("Prevents all moves that result in getting killed."));
 
-    chkbox = gtk_check_button_new_with_label (_("Enable sounds"));
+    chkbox = gtk_check_button_new_with_mnemonic (_("_Enable sounds"));
     GTK_TOGGLE_BUTTON (chkbox)->active = properties.sound;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)sound_cb, NULL);
-    gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 1, 2, 0, 1);
+    gtk_table_attach (GTK_TABLE (table), chkbox, 1, 2, 0, 1, GTK_FILL, 0, 0, 0);
     gtk_tooltips_set_tip (tooltips, chkbox,
 			  _("Play sounds for major events"), 
 			  _("Play sounds for events like winning a level and dying."));
 
-    chkbox = gtk_check_button_new_with_label (_("Enable splats"));
+    chkbox = gtk_check_button_new_with_mnemonic (_("E_nable splats"));
     GTK_TOGGLE_BUTTON (chkbox)->active = properties.splats;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)splat_cb, NULL);
-    gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 1, 2, 1, 2);
+    gtk_table_attach (GTK_TABLE (table), chkbox, 1, 2, 1, 2, GTK_FILL, 0, 0, 0);
     gtk_tooltips_set_tip (tooltips, chkbox,
 			  _("Play a sound when two robots collide"), 
 			  _("Play the most common, and potentially the most annoying, sound."));
@@ -852,36 +856,38 @@ show_properties_dialog (void)
 
 
   /* The graphics page */
-  gpage = gtk_vbox_new (FALSE, GNOME_PAD);
-  gtk_container_set_border_width (GTK_CONTAINER (gpage), GNOME_PAD_SMALL);
+  gpage = gtk_vbox_new (FALSE, 18);
+  gtk_container_set_border_width (GTK_CONTAINER (gpage), 12);
 
   frame = games_frame_new (_("Graphics Theme"));
-  gtk_box_pack_start (GTK_BOX (gpage), frame, FALSE, FALSE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (gpage), frame, FALSE, FALSE, 0);
 
   table = gtk_table_new (2, 2, FALSE);
-  gtk_container_set_border_width (GTK_CONTAINER (table), 0);
   gtk_table_set_row_spacings (GTK_TABLE (table), 6);
-  gtk_table_set_col_spacings (GTK_TABLE (table), 6);
+  gtk_table_set_col_spacings (GTK_TABLE (table), 12);
   gtk_container_add (GTK_CONTAINER (frame), table);
 
-  label = gtk_label_new (_("Image theme:"));
+  label = gtk_label_new_with_mnemonic (_("_Image theme:"));
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
-  gtk_table_attach_defaults (GTK_TABLE (table), label, 0, 1, 0, 1);
+  gtk_table_attach (GTK_TABLE (table), label, 0, 1, 0, 1, GTK_FILL, 0, 0, 0);
 
   pmapmenu = gtk_combo_box_new_text ();
   g_signal_connect (G_OBJECT (pmapmenu), "changed",
                     G_CALLBACK (pmap_selection), NULL);
+  gtk_label_set_mnemonic_widget (GTK_LABEL (label), pmapmenu);
+
   fill_pmapmenu (pmapmenu);
   gtk_table_attach_defaults (GTK_TABLE (table), pmapmenu, 1, 2, 0, 1);
 
-  label = gtk_label_new (_("Background color:"));
+  label = gtk_label_new_with_mnemonic (_("_Background color:"));
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
-  gtk_table_attach_defaults (GTK_TABLE (table), label, 0, 1, 1, 2);
+  gtk_table_attach (GTK_TABLE (table), label, 0, 1, 1, 2, GTK_FILL, 0, 0, 0);
 
   w  = gtk_color_button_new ();
   gtk_color_button_set_color (GTK_COLOR_BUTTON (w), &properties.bgcolour);
   g_signal_connect (G_OBJECT (w), "color_set",
                     G_CALLBACK (bg_color_callback), NULL);
+  gtk_label_set_mnemonic_widget (GTK_LABEL (label), w);
 
   gtk_table_attach_defaults (GTK_TABLE (table), w, 1, 2, 1, 2);
 
@@ -889,11 +895,11 @@ show_properties_dialog (void)
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), gpage, label);
 
   /* The keyboard page */
-  kpage = gtk_vbox_new (FALSE, GNOME_PAD);
-  gtk_container_set_border_width (GTK_CONTAINER (kpage), GNOME_PAD_SMALL);
+  kpage = gtk_vbox_new (FALSE, 18);
+  gtk_container_set_border_width (GTK_CONTAINER (kpage), 12);
 
   frame = games_frame_new (_("Keyboard Controls"));
-  gtk_box_pack_start (GTK_BOX (kpage), frame, TRUE, TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (kpage), frame, TRUE, TRUE, 0);
   vbox = gtk_vbox_new (FALSE, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
@@ -913,25 +919,25 @@ show_properties_dialog (void)
 				    "/apps/gnobots2/preferences/key11",
 				    NULL);
 
-  gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, 0);
 
-  hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, GNOME_PAD);
+  hbox = gtk_hbox_new (TRUE, 12);
+  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
-  dbut = gtk_button_new_with_label (_("Use the Keypad"));
+  dbut = gtk_button_new_with_mnemonic (_("Use the _Keypad"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
                     G_CALLBACK (defkey_cb), (gpointer)default_keys3);  
-  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, 0);
 
-  dbut = gtk_button_new_with_label (_("Use Left Hand Keys"));
+  dbut = gtk_button_new_with_mnemonic (_("Use _Left Hand Keys"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
                     G_CALLBACK (defkey_cb), (gpointer)default_keys2);  
-  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, 0);
 
-  dbut = gtk_button_new_with_label (_("Use Original Robots Keys"));
+  dbut = gtk_button_new_with_mnemonic (_("Use _Original Robots Keys"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
                     G_CALLBACK (defkey_cb), (gpointer)default_keys1);  
-  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, TRUE, 0);
 
   label = gtk_label_new_with_mnemonic (_("Keyboard"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), kpage, label);

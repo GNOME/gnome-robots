@@ -1,3 +1,9 @@
+2005-03-23  Dennis Cranston  <dennis_cranston@yahoo.com>
+
+	* menu.c: Add mnemonics to Move menu items.
+	* game.c: Make scores dialog more HIG compliant.
+	* properties.c: Make preference dialog more HIG compliant.
+	
 2005-03-15  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* game.c (start_new_game): Make New Game record the score. This

@@ -89,24 +89,7 @@ static void new_cb(
 GtkWidget *widget,
 gpointer  data
 ){
-
-  if(game_state != STATE_NOT_PLAYING){
-    GtkWidget *mb;
-    int response;
-    mb = gtk_message_dialog_new (GTK_WINDOW(app), 
-			   GTK_DIALOG_MODAL,
-			   GTK_MESSAGE_QUESTION,
-			   GTK_BUTTONS_YES_NO,
-			   _("Are you sure you want to start a new game?"),
-			   NULL);
-    response = gtk_dialog_run (GTK_DIALOG(mb));
-    gtk_widget_destroy (mb);
-    if (response == GTK_RESPONSE_YES) {
-      start_new_game();
-    }
-  } else {
     start_new_game();
-  }
 }
 
 
@@ -159,26 +142,7 @@ gpointer  data
 void
 exit_cb(GtkWidget *widget, gpointer  data)
 {
-  if(game_state != STATE_NOT_PLAYING) {
-    GtkWidget *mb;
-    int response;
-    mb = gtk_message_dialog_new (GTK_WINDOW(app), 
-				 GTK_DIALOG_MODAL,
-				 GTK_MESSAGE_QUESTION,
-				 GTK_BUTTONS_NONE,
-				 _("Are you sure you want to quit GNOME Robots?"),
-				 NULL);
-    gtk_dialog_add_buttons (GTK_DIALOG(mb), GTK_STOCK_CANCEL, GTK_RESPONSE_REJECT,
-			    GTK_STOCK_QUIT, GTK_RESPONSE_ACCEPT,
-			    NULL);
-    response = gtk_dialog_run (GTK_DIALOG(mb));
-    gtk_widget_destroy (mb);
-    if (response == GTK_RESPONSE_ACCEPT) {
-      gtk_main_quit();
-    }
-  } else {
     gtk_main_quit();
-  }
 }
 
 

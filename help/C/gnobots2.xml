@@ -1,7 +1,6 @@
-<!DOCTYPE article PUBLIC "-//GNOME//DTD DocBook PNG Variant V1.1//EN"[
-        <!-- if not using PNG graphic, replace reference above with
-             .....PUBLIC "-//OASIS//DTD DocBook V3.1//EN"[
-         -->
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
 <!ENTITY version "1.2.0"> 
 ]>
 
@@ -19,7 +18,7 @@
 
 <article id="index"> <!-- please do not change the id -->
 
-  <artheader>
+  <articleinfo>
     <title>GNOME Robots II Manual</title>
       <copyright>
         <year>2001</year>
@@ -64,7 +63,7 @@
       This is version 1.0 of the GNOME Robots II manual.
     </releaseinfo>
 
-  </artheader>
+  </articleinfo>
 
    <!-- ============= Document Body ============================= -->
 
@@ -174,15 +173,20 @@
       <para>
         Starting <application>GNOME Robots II</application> opens the
         <interface>Main window</interface>, shown in <xref
-        linkend="mainwindow-fig">. 
+        linkend="mainwindow-fig"/>. 
 
         <!-- ==== Figure ==== -->
         <figure id="mainwindow-fig">
 	  <title>GNOME Robots II Main Window</title>
 	  <screenshot>
-	    <screeninfo>GNOME Robots II Main Window</screeninfo>
-	    <graphic fileref="figures/gnobots2-main" format="png" srccredit="Patanjali">
-            </graphic>
+	  <mediaobject> 
+ 	   <imageobject>
+ 	 <imagedata fileref="figures/gnobots2-main.png" format="PNG" srccredit="Patanjali"/>
+ 	   </imageobject>
+ 	   <textobject> 
+ 	     <phrase>GNOME Robots II Main Window.</phrase> 
+ 	   </textobject> 
+ 	 </mediaobject>
 	  </screenshot>
 	</figure>
       <!-- ==== End of Figure ==== -->

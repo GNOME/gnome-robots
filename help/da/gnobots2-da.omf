@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<omf>
+  <resource>
+    <title>
+      GNOME Robots II Documentation
+    </title>
+    <subject>
+      <category>GNOME|Spil</category>
+    </subject>
+    <format mime="text/html"/>
+    <identifier url="index.html"/>
+    <language code="da"/>
+  </resource>
+</omf>

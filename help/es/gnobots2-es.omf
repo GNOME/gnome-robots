@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<omf>
+  <resource>
+    <title>
+      Documentación de GNOME Robots II
+    </title>
+    <subject>
+      <category>GNOME|Juegos</category>
+    </subject>
+    <format mime="text/html"/>
+    <identifier url="index.html"/>
+    <language code="es"/>
+  </resource>
+</omf>

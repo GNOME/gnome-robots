@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<omf>
+  <resource>
+    <title>
+      Gnobots2 Manual
+    </title>
+    <subject>
+      <category>GNOME|Games</category>
+    </subject>
+    <format mime="text/html"/>
+    <identifier url="index.html"/>
+    <language code="C"/>
+  </resource>
+</omf>

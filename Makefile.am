@@ -11,7 +11,6 @@ SUBDIRS = help
 INCLUDES = 			\
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	$(GNOME_GAMES_CFLAGS)
-	-I$(includedir)				 
 	
 bin_PROGRAMS = gnobots2
 

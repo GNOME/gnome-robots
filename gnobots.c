@@ -266,8 +266,6 @@ main (int argc, char *argv[])
 
   gtk_main ();
 
-  cleanup_game ();
-
   return 0;
 }
 

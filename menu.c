@@ -162,6 +162,7 @@ scores_cb (GtkWidget *widget, gpointer data)
 void
 exit_cb (GtkWidget *widget, gpointer  data)
 {
+  cleanup_game ();
   gtk_main_quit ();
 }
 

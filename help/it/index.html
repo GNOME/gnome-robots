@@ -1,0 +1,196 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Keywords" CONTENT="Robots, Robots 2, Gnobots, GnobotsII">
+   <META NAME="Author" CONTENT="m.rae@inpharmatica.co.uk">
+   <TITLE>GNOME Robots II Documentation</TITLE>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1>
+GNOME Robots II - Documentazione</h1>
+Copyright (C) 1999, Mark Rae
+
+<br>Traduzione in italiano di Fabrizio Stefani&nbsp; (fabrizio_stefani@yahoo.it)
+
+<p>This program and the documentation are free software; you can redistribute
+it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version. This program is distributed in the
+hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.&nbsp;
+See the GNU General Public License for more details.
+
+<p>Questo programma e la relativa documentazione sono free software; potete
+ridistribuirlo e/o modificarlo se sono soddisfatti i termini della Licenza
+Pubblica Generica dello GNU, pubblicata dalla Free Software Foundation, relativi
+alla versione 2, o (a vostra scelta) qualunque altra versione successiva. 
+Questo programma &egrave; distribuito nella speranza che possa essere utile, 
+ma SENZA NESSUNA GARANZIA, senza nemmeno la garanzia implicita di 
+COMMERCIABILIT&Agrave; o UTILIZZABILIT&Agrave; PER UN PARTICOLARE SCOPO.&nbsp;
+Vedere la Licensa Pubblica Generica GNU (GNU General Public License) per
+maggiori dettagli.&nbsp;
+
+<p>Dovreste aver ricevuto una copia delle Licenza Pubblica Generica dello
+GNU insieme a questo programma, se cos&igrave; non fosse, scrivete alla
+Free Software Foundation Inc. 59 Temple Place, Suite 330, Boston, MA&nbsp;
+02111-1307&nbsp; USA
+<p>Per maggiori dettagli vedere il file COPYING.
+<br>&nbsp;
+<h2>
+1. Introduzione</h2>
+Gnome Robots II &egrave; uno sviluppo del gioco originale Gnome Robots
+che, a sua volta, era basato sul gioco di Robot, che girava in modo testo,
+che pu&ograve; essere trovato in buona parte dei sistemi UNIX, poi approdato
+sui sistemi Linux con il pacchetto di giochi (games) di BSD.
+<br>Questa nuova versione include: due tipi di robot, mucchi di rottami
+spostabili, configurazioni di gioco multiple, configurazioni della tastiera
+definibili dall'utente, sonoro (con ESD, se ce l'avete), cos&igrave; come
+tutte le altre caratteristiche presenti nello Gnome Robots originale.
+<br>&nbsp;
+<h2>
+2. Giocare</h2>
+Quando iniziate il gioco vi ritroverete circondati da un certo numero di
+robot, o, se avete scelto uno scenario diverso da quello standard, da qualche
+altro tipo si strani, ma altrettanto pericolosi, avversari.
+<br>Appena vi muovete, i robot si dirigeranno direttamente verso di voi,
+con un solo obiettivo in mente - uccidervi. Come se ci&ograve; non bastasse,
+ci sono due tipi di robot, di cui uno si pu&ograve; muovere due volte pi&ugrave;
+velocemente di voi!
+<br>Fortunatamente avete due modi di evitare un cos&igrave; sfortunato
+destino.
+<p>Innanzi tutto, i robot non sono dotati di grande intelligenza e si 
+distruggeranno se si scontrano l'un l'altro, o con qualche altro frammento 
+rimasto in giro da collisioni precedenti.
+<br>In secondo luogo, se venite irrimediabilmente accerchiati, avete la
+capacit&agrave; di teletrasportarvi in un altro posto a caso sullo schermo.
+<br>E, se &egrave; previsto nella configurazione di gioco che avete scelto,
+potete spingere i rottami muvendoli in giro per formare delle barricate
+che vi proteggano. Se siete abbastanza audaci, potete anche spiaccicare
+(Splat!) i robot spingendogli sopra un mucchio di rottami e guadagnare
+cos&igrave; un bonus.
+<p>Sfortunatamente, teletrasportarsi a caso significa che c'&egrave; la
+possibilit&agrave; di riapparire proprio vicino ad un robot, e cos&igrave; 
+esso potr&agrave; uccidervi appena f&agrave; la sua mossa. Per&ograve; non 
+&egrave; tutto perduto poich&eacute; potete avere un certo numero di 
+teletrasporti sicuri che vi spostano lontano da pericoli immediati.
+Durante il gioco potete guadagnare pi&ugrave; teletrasporti, il come dipende
+dal tipo di gioco scelto, ma tipicamente ne vincerete uno (fino ad un massimo 
+di 10) per ogni robot che viene distrutto mentre state 'aspettando'.
+Se non volete sprecare la vostra scorta di teletrasporti sicuri potete
+scegliere di teletrasportarvi a caso, se pensate che sia abbastanza sicuro.
+<p>Se premete il tasto 'Aspetta' (vedere sotto) non potrete pi&ugrave;
+muovervi fino a che o tutti i robot, che si stanno ancora muovendo verso
+di voi, vengono distrutti, oppure venite uccisi. Facendo cos&igrave; potreste
+guadagnare altri teletrasporti sicuri, come detto sopra.
+<p>Se vi muovete fino a raggiungere un punto in cui pi&ugrave; della met&agrave;
+dello schermo &egrave; occupata da robot, il numero di robot verr&agrave;
+riportato alla quantit&agrave; iniziale, permettendovi di 
+continuare.&nbsp;<a NAME="kbd"></a>
+<h2>
+3. Tasti</h2>
+Ci sono tre insiemi predefiniti di tasti con cui controllare il vostro
+giocatore:
+<h3>
+Standard</h3>
+Questi sono i tasti standard usati, di solito, per giocare con tutte le 
+versioni di Robots.
+<pre> 
+ S&ugrave; Sinistra: Y           S&ugrave;: K           S&ugrave; Destra: U
+    Sinistra: H        Fermo: . o spazio     Destra: L
+Gi&ugrave; Sinistra: B          Gi&ugrave;: J          Gi&ugrave; Destra: N
+
+       Teletrasporto: T
+Teletrasporto a caso: R
+             Aspetta: W
+</pre>
+
+<h3>
+Insieme 1</h3>
+Questi tasti si trovano sulla parte principale della tastiera e sono presi
+a forma di stella, per quelli a cui non piace la disposizione HJKL.
+<pre>
+ S&ugrave; Sinistra: Q           S&ugrave;: W         S&ugrave; Destra: E
+    Sinistra: A        Fermo: S            Destra: D
+Gi&ugrave; Sinistra: Z          Gi&ugrave;: X        Gi&ugrave; Destra: C
+
+       Teletrasporto: T
+Teletrasporto a caso: R
+             Aspetta: Invio
+</pre>
+
+<h3>
+Insieme 2 - Tastierino numerico</h3>
+Potreste dover abilitare il Blocco Numerico (Num Lock) per far funzionare 
+questa combinazione di tasti.
+<pre>
+ S&ugrave; Sinistra: 7           S&ugrave;: 8         S&ugrave; Destra: 9
+    Sinistra: 4        Fermo: 5            Destra: 6
+Gi&ugrave; Sinistra: 1          Gi&ugrave;: 2        Gi&ugrave; Destra: 3
+
+       Teletrasporto: +
+Teletrasporto a caso: *
+             Aspetta: Invio
+</pre>
+
+<h3>
+Definite il vostro.</h3>
+Naturalmente, se non vi piace nessuno degli insiemi di tasti appena visti,
+potete definire il vostro. Selezionate il riquadro relativo al movimento che
+interessa e premete il tasto che volete assegnargli, apparir&agrave; un testo 
+che rappresenta il tasto scelto.
+<h2>
+4. Preferenze</h2>
+La finestra di dialogo delle propriet&agrave; vi permette di modificare il
+comportamento e l'aspetto del gioco. Ci sono tre pagine in tale finestra:
+<h3>
+Configurazione</h3>
+Questa pagina permette di scegliere il tipo di gioco da fare. L'elenco a 
+discesa in cima alla pagina permette di scegliere fra un certo numero di 
+giochi predefiniti, al di sotto di esso vengono mostrate le impostazioni 
+per quel gioco.
+<br>L'opzione per le mosse sicure vi aiuta ad evitare di essere uccisi per
+errore. Se provate a fare una mossa che vi porterebbe alla morte, quando
+invece c'&egrave; una possibile mossa sicura, non vi sar&agrave; permesso
+di fare quella mossa. Ma siete avvertiti che se non c'&egrave; nessuna
+mossa sicura da fare in quella situazione, a parte un teletrasporto,
+allora vi sar&agrave; permesso di farla.
+<br>C'&egrave; anche un ``modo super sicuro''. Se lo scegliete, verr&agrave;
+emesso un biip quando non &egrave; possibile nessuna mossa sicura e la
+vostra unica possibilit&agrave; &egrave; di teletrasportarvi.
+<br>Se impostate l'opzione 'Suono' verranno riprodotti degli effetti
+sonori in corrispondenza a vari eventi durante il gioco. Se ESD non &egrave;
+installato il gioco emetter&agrave; dei biip con l'altoparlantino del
+computer, ma solo in corrispondenza di mosse non valide.
+<br>L'opzione 'Splat!' serve ad indicare se volete che, quando 
+spiaccicate un robot, venga emesso un suono ed appaia un piccolo 'Splat!'
+sullo schermo.
+<h3>
+Grafica</h3>
+Questa pagina permette di scegliere, da una lista a discesa, la grafica usata 
+nel gioco. Al di sotto della lista viene mostrata una anteprima della scelta.
+<h3>
+Tastiera</h3>
+Questa pagina permette di definire il tipo di controlli della tastiera, come
+descritto nella sezione <a href="#kbd">Tasti</a>.
+<h2>
+5. Miscellanea</h2>
+Potete disegnare una vostra grafica per il gioco. I file grafici si trovano
+in
+<br>$PREFIX/share/pixmaps/gnobots2, dove $PREFIX dipende da dove &egrave;
+stato installato Gnome, di solito o in '/usr' o in '/usr/local'.
+<br>Ogni elemento &egrave; descritto da una mappa di 16x16 pixel ed essi 
+vengono messi in gruppi di 14 in un file PNG di 224x16 pixel. Potete guardare
+in un file gi&agrave; esistente per vedere in che ordine devono essere disposti
+per produrre le corrette sequenze animate.
+<br>Tutti i file messi nella suddetta directory vengono rilevati 
+automaticamente e quindi non dovrete cambiare nessun file di configurazione.
+<p>Potete anche definire una vostra configurazione di gioco creando un file
+'.cfg' aggiuntivo nella directory $PREFIX/share/gnobots2.
+<p>Per qualunque suggerimento, o per segnalare un malfunzionamento (un bug), 
+potete mandare una e-mail all'autore presso 
+<A HREF="mailto:m.rae@inpharmatica.co.uk">m.rae@inpharmatica.co.uk</A>
+<br>&nbsp;
+</body>
+</html>

@@ -51,15 +51,11 @@ static gint control_keys[12];
 gchar*
 keyboard_string (gint ksym)
 {
-  gint i;
+  gchar *name;
 
-  for (i = 0; i < KB_MAP_SIZE; ++i) {
-    if (ksym == kb_map[i].ksym) {
-      return kb_map[i].str;
-    }
-  }
+  name = gdk_keyval_name (ksym);
 
-  return "UNK";
+  return name;
 }
 
 
@@ -77,34 +73,7 @@ keyboard_string (gint ksym)
 gint
 keyboard_preferred (gint ksym)
 {
-  if(ksym == GDK_a) return GDK_A;
-  if(ksym == GDK_b) return GDK_B;
-  if(ksym == GDK_c) return GDK_C;
-  if(ksym == GDK_d) return GDK_D;
-  if(ksym == GDK_e) return GDK_E;
-  if(ksym == GDK_f) return GDK_F;
-  if(ksym == GDK_g) return GDK_G;
-  if(ksym == GDK_h) return GDK_H;
-  if(ksym == GDK_i) return GDK_I;
-  if(ksym == GDK_j) return GDK_J;
-  if(ksym == GDK_k) return GDK_K;
-  if(ksym == GDK_l) return GDK_L;
-  if(ksym == GDK_m) return GDK_M;
-  if(ksym == GDK_n) return GDK_N;
-  if(ksym == GDK_o) return GDK_O;
-  if(ksym == GDK_p) return GDK_P;
-  if(ksym == GDK_q) return GDK_Q;
-  if(ksym == GDK_r) return GDK_R;
-  if(ksym == GDK_s) return GDK_S;
-  if(ksym == GDK_t) return GDK_T;
-  if(ksym == GDK_u) return GDK_U;
-  if(ksym == GDK_v) return GDK_V;
-  if(ksym == GDK_w) return GDK_W;
-  if(ksym == GDK_x) return GDK_X;
-  if(ksym == GDK_y) return GDK_Y;
-  if(ksym == GDK_z) return GDK_Z;
-
-  return ksym;
+  return gdk_keyval_to_upper (ksym);
 }
 
 

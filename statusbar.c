@@ -70,7 +70,7 @@ gnobots_statusbar_new (void)
   gtk_table_attach (GTK_TABLE (sbtbl), score_label, 1, 2, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (score_label);
 
-  gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 2, 32);
+  gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 2, 12);
     
   label = gtk_label_new (_("Safe Teleports:"));
   gtk_table_attach (GTK_TABLE(sbtbl), label, 3, 4, 0, 1, 0, 0, 3, 3);
@@ -79,9 +79,9 @@ gnobots_statusbar_new (void)
   safe_label = gtk_label_new ("0");
   gtk_table_attach (GTK_TABLE (sbtbl), safe_label, 4, 5, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (safe_label);
-    
-  gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 5, 32);
-    
+
+  gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 5, 12);
+
   label = gtk_label_new (_("Level:"));
   gtk_table_attach (GTK_TABLE (sbtbl), label, 6, 7, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (label);
@@ -90,7 +90,7 @@ gnobots_statusbar_new (void)
   gtk_table_attach (GTK_TABLE (sbtbl), level_label, 7, 8, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (level_label);
     
-  gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 8, 32);
+  gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 8, 12);
 
   label = gtk_label_new (_("Remaining:"));
   gtk_table_attach (GTK_TABLE (sbtbl), label, 9, 10, 0, 1, 0, 0, 3, 3);

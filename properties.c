@@ -23,6 +23,7 @@
 #include <gnome.h>
 #include <string.h>
 #include <gdk/gdkkeysyms.h>
+#include <gconf/gconf-client.h>
 #include <games-frame.h>
 
 #include "properties.h"
@@ -42,6 +43,17 @@
 #define DRAW_AREA_HEIGHT 48
 #define KB_TEXT_WIDTH    60
 #define KB_TEXT_HEIGHT   32
+
+#define KEY_DIR              "/apps/gnobots2"
+#define KEY_CONTROL_KEY      "/apps/gnobots2/preferences/key%02d"
+#define KEY_THEME            "/apps/gnobots2/preferences/theme"
+#define KEY_CONFIGURATION    "/apps/gnobots2/preferences/configuration"
+#define KEY_SAFE_MOVES       "/apps/gnobots2/preferences/use_safe_moves"
+#define KEY_SUPER_SAFE_MOVES "/apps/gnobots2/preferences/use_super_safe_moves"
+#define KEY_ENABLE_SOUND     "/apps/gnobots2/preferences/enable_sound"
+#define KEY_ENABLE_SPLATS    "/apps/gnobots2/preferences/enable_splats"
+
+
 /**********************************************************************/
 
 
@@ -98,6 +110,10 @@ static gint default_keys3[12] = {
   GDK_KP_4, GDK_KP_5, GDK_KP_6,
   GDK_KP_1, GDK_KP_2, GDK_KP_3,
   GDK_KP_Add, GDK_KP_Multiply, GDK_KP_Enter};
+
+
+static GConfClient *gconf_client;
+
 /**********************************************************************/
 
 
@@ -1013,7 +1029,7 @@ show_properties_dialog (void)
 
   gtk_box_pack_start (GTK_BOX (hbox), darea, TRUE, TRUE, 0);
 
-  g_signal_connect (G_OBJECT (darea), "map",
+  g_signal_connect (G_OBJECT (darea), "realize",
                     G_CALLBACK (start_anim_cb), NULL);
 
   label = gtk_label_new_with_mnemonic (_("_Appearance"));
@@ -1211,6 +1227,23 @@ show_properties_dialog (void)
 }
 
 
+GConfClient *
+get_gconf_client ()
+{
+  if (!gconf_client) 
+    gconf_client = gconf_client_get_default ();
+  return gconf_client;
+}
+
+void
+initialize_gconf (int argc, char *argv[])
+{
+  gconf_init (argc, argv, NULL);
+  gconf_client = get_gconf_client ();
+  gconf_client_add_dir (gconf_client, KEY_DIR,
+                        GCONF_CLIENT_PRELOAD_NONE, NULL);
+}
+
 /**
  * load_properties
  *
@@ -1226,35 +1259,40 @@ load_properties (void)
   gchar buffer[256];
   gchar *sname = NULL;
   gchar *cname = NULL;
-  gint i, v;
+  gint i;
+  gchar *str;
 
   for (i = 0; i < 12; i++) {
     properties.keys[i] = default_keys1[i];
 
-    sprintf (buffer, "/gnobots2/Properties/Key%02d=0", i);
+    sprintf (buffer, KEY_CONTROL_KEY, i);
 
-    v = gnome_config_get_int_with_default (buffer, NULL);    
-    if (v > 0) {
-      properties.keys[i] = v;
+    str = gconf_client_get_string (get_gconf_client (), buffer, NULL);    
+    if (str != NULL) {
+      properties.keys[i] = gdk_keyval_from_name (str);
     }
+    else {
+      properties.keys[i] = 0;
+    }
+    g_free (str);
   }
 
-
-  sname = gnome_config_get_string_with_default 
-    ("/gnobots2/Properties/Scenario=robots", NULL);
+  sname = gconf_client_get_string (get_gconf_client (), KEY_THEME, NULL);
+  if (sname == NULL)
+    sname = g_strdup ("robots");
 
   properties.selected_graphics = 0;
   for (i = 0; i < num_game_graphics (); ++i) {
-    if (!strcmp (sname, game_graphics_name (i))) {
+    if (! strcmp (sname, game_graphics_name (i))) {
       properties.selected_graphics = i;
       break;
     }
   }
-
   g_free (sname);
 
-  cname = gnome_config_get_string_with_default 
-    ("/gnobots2/Properties/Configuration=classic_robots", NULL);
+  cname = gconf_client_get_string (get_gconf_client (), KEY_CONFIGURATION, NULL);
+  if (cname == NULL)
+    cname = g_strdup ("classic_robots");
 
   properties.selected_config = 0;
   for (i = 0; i < num_game_configs (); ++i) {
@@ -1263,17 +1301,16 @@ load_properties (void)
       break;
     }
   }
-
   g_free (cname);
 
-  properties.safe_moves = gnome_config_get_int_with_default 
-    ("/gnobots2/Properties/SafeMoves=1", NULL);
-  properties.super_safe_moves = gnome_config_get_int_with_default 
-    ("/gnobots2/Properties/SuperSafeMoves=1", NULL);
-  properties.sound = gnome_config_get_int_with_default 
-    ("/gnobots2/Properties/Sound=1", NULL);
-  properties.splats = gnome_config_get_int_with_default 
-    ("/gnobots2/Properties/Splats=1", NULL);
+  properties.safe_moves = gconf_client_get_bool (get_gconf_client (),
+                                                 KEY_SAFE_MOVES, NULL);
+  properties.super_safe_moves = gconf_client_get_bool (get_gconf_client (),
+                                                       KEY_SUPER_SAFE_MOVES, NULL);
+  properties.sound = gconf_client_get_bool (get_gconf_client (),
+                                            KEY_ENABLE_SOUND, NULL);
+  properties.splats = gconf_client_get_bool (get_gconf_client (),
+                                             KEY_ENABLE_SPLATS, NULL);
 
   set_game_graphics (properties.selected_graphics);
   set_game_config (properties.selected_config);
@@ -1282,6 +1319,57 @@ load_properties (void)
   return TRUE;
 }
 
+void
+gconf_set_theme (gchar *value)
+{
+  gconf_client_set_string (get_gconf_client (), KEY_THEME,
+                           value, NULL);
+}
+
+void
+gconf_set_configuration (gchar *value)
+{
+  gconf_client_set_string (get_gconf_client (), KEY_CONFIGURATION,
+                           value, NULL);
+}
+
+void
+gconf_set_use_safe_moves (gboolean value)
+{
+  gconf_client_set_bool (get_gconf_client (), KEY_SAFE_MOVES,
+                         value, NULL);
+}
+
+void
+gconf_set_use_super_safe_moves (gboolean value)
+{
+  gconf_client_set_bool (get_gconf_client (), KEY_SUPER_SAFE_MOVES,
+                         value, NULL);
+}
+
+void
+gconf_set_enable_sound (gboolean value)
+{
+  gconf_client_set_bool (get_gconf_client (), KEY_ENABLE_SOUND,
+                         value, NULL);
+}
+
+void
+gconf_set_enable_splats (gboolean value)
+{
+  gconf_client_set_bool (get_gconf_client (), KEY_ENABLE_SPLATS,
+                         value, NULL);
+}
+
+void
+gconf_set_control_key (gint i, gchar *value)
+{
+  gchar *buffer;
+  buffer = g_strdup_printf (KEY_CONTROL_KEY, i);
+  gconf_client_set_string (get_gconf_client (), buffer,
+                           value, NULL);
+  g_free (buffer);
+}
 
 /**
  * save_properties
@@ -1295,27 +1383,19 @@ load_properties (void)
 gboolean
 save_properties (void)
 {
-  gchar buffer[256];
   gint   i;
 
   for (i = 0; i < 12; i++) {
-    sprintf (buffer, "/gnobots2/Properties/Key%02d", i);
-
-    gnome_config_set_int (buffer, properties.keys[i]);    
+    gconf_set_control_key (i, gdk_keyval_name (properties.keys[i]));
   }
+  
+  gconf_set_theme (game_graphics_name (properties.selected_graphics));
+  gconf_set_configuration (game_config_name (properties.selected_config));
+  gconf_set_use_safe_moves (properties.safe_moves);
+  gconf_set_use_super_safe_moves (properties.super_safe_moves);
+  gconf_set_enable_sound (properties.sound);
+  gconf_set_enable_splats (properties.splats);
 
-  gnome_config_set_string ("/gnobots2/Properties/Scenario", 
-                           game_graphics_name (properties.selected_graphics));
-  gnome_config_set_string ("/gnobots2/Properties/Configuration", 
-                           game_config_name (properties.selected_config));
-  gnome_config_set_int ("/gnobots2/Properties/SafeMoves",
-                        properties.safe_moves);
-  gnome_config_set_int ("/gnobots2/Properties/SuperSafeMoves",
-                        properties.safe_moves);
-  gnome_config_set_int ("/gnobots2/Properties/Sound", properties.sound);
-  gnome_config_set_int ("/gnobots2/Properties/Splats", properties.splats);
-    
-  gnome_config_sync ();
   return TRUE;
 }
 

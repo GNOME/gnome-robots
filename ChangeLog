@@ -1,3 +1,19 @@
+2003-06-19  William Jon McCann  <mccann@jhu.edu>
+
+	* statusbar.c (gnobots_statusbar_new): Decrease spacing
+	between status bar items since we no longer need room for a
+	GTK separator.
+
+	* main.c: 
+	* properties.h: 
+	* properties.c: Initial conversion to gconf.
+
+	* keyboard.c (keyboard_string): Use gdk_keyval_name for
+	num to name mapping.  When we verify that nothing else
+	uses keylabels.h it can be removed.
+	(keyboard_preferred): Use gdk_keyval_to_upper to convert
+	case.
+
 2003-06-18  William Jon McCann  <mccann@jhu.edu>
 
 	* properties.c (show_properties_dialog): Clean up preferences

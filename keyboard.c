@@ -1,10 +1,31 @@
+/*
+ * Gnome Robots II
+ * written by Mark Rae <m.rae@inpharmatica.co.uk>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * For more details see the file COPYING.
+ */
+
 #include <config.h>
 #include <gnome.h>
 #include <gdk/gdkkeysyms.h>
 
 #include "keyboard.h"
 #include "keylabels.h"
-
+#include "game.h"
 
 /**********************************************************************/
 /* File Static Variables                                              */
@@ -27,13 +48,13 @@ static gint control_keys[12];
  * Returns:
  * String representation of a keysym
  **/
-gchar* keyboard_string(
-gint ksym
-){
+gchar*
+keyboard_string (gint ksym)
+{
   gint i;
 
-  for(i = 0; i < KB_MAP_SIZE; ++i){
-    if(ksym == kb_map[i].ksym){
+  for (i = 0; i < KB_MAP_SIZE; ++i) {
+    if (ksym == kb_map[i].ksym) {
       return kb_map[i].str;
     }
   }
@@ -53,9 +74,9 @@ gint ksym
  * Returns:
  * preferred keysym
  **/
-gint keyboard_preferred(
-gint ksym
-){
+gint
+keyboard_preferred (gint ksym)
+{
   if(ksym == GDK_a) return GDK_A;
   if(ksym == GDK_b) return GDK_B;
   if(ksym == GDK_c) return GDK_C;
@@ -94,17 +115,17 @@ gint ksym
  * Description:
  * sets the keybaord mapping
  **/
-void keyboard_set(
-gint* keys
-){
+void
+keyboard_set (gint* keys)
+{
   gint i;
 
-  if(keys == NULL) return;
+  if (keys == NULL)
+    return;
 
-  for(i = 0; i < 12; ++i){
+  for (i = 0; i < 12; ++i) {
     control_keys[i] = keys[i];
   }
-
 }
 
 
@@ -120,11 +141,9 @@ gint* keys
  * Returns:
  * TRUE if the event is handled
  **/
-gint keyboard_cb(
-GtkWidget   *widget, 
-GdkEventKey *event, 
-gpointer     data
-){
+gint
+keyboard_cb (GtkWidget *widget, GdkEventKey *event, gpointer data)
+{
   gint i, kv;
 
   /* What is this for?  This causes problems for those people whose Numlock is
@@ -132,11 +151,11 @@ gpointer     data
   if(event->state &= GDK_MODIFIER_MASK) return FALSE;
   */
 
-  kv = keyboard_preferred(event->keyval);
+  kv = keyboard_preferred (event->keyval);
 
-  for(i = 0; i < 12; ++i){
-    if(kv == control_keys[i]){
-      game_keypress(i);
+  for (i = 0; i < 12; ++i) {
+    if (kv == control_keys[i]) {
+      game_keypress (i);
       return TRUE;
     }
   }

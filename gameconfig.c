@@ -1,3 +1,24 @@
+/*
+ * Gnome Robots II
+ * written by Mark Rae <m.rae@inpharmatica.co.uk>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * For more details see the file COPYING.
+ */
+
 #include <config.h>
 #include <gnome.h>
 
@@ -41,9 +62,9 @@ static GameConfig* load_config(gchar*);
  * Returns:
  * a pointer to a GameConfig structure or NULL on failure
  **/
-static GameConfig* load_config(
-gchar *fname
-){
+static GameConfig*
+load_config (gchar *fname)
+{
   GameConfig *gcfg;
   gint        pflag = 0;
   FILE       *fp;
@@ -53,31 +74,33 @@ gchar *fname
   gchar      *vptr;
   gint        val;
 
-  fp = fopen(fname, "r");
-  if(fp == NULL) return NULL;
+  fp = fopen (fname, "r");
+  if (fp == NULL)
+    return NULL;
 
   gcfg = g_new(GameConfig, 1);
   strcpy(buffer, fname);
   bptr = bpstart = buffer;
-  while(*bptr){
-    if(*bptr == '.'){
+  while (*bptr) {
+    if (*bptr == '.') {
       *bptr = 0;
       break;
     }
-    if(*bptr == '/'){
+    if (*bptr == '/') {
       bpstart = bptr+1;
     }
     ++bptr;
   }
-  gcfg->description = g_string_new(bpstart);
+  gcfg->description = g_string_new (bpstart);
   
-  while(fgets(buffer, 256, fp) != NULL){
-    if(strlen(buffer) < 3) continue;
+  while (fgets (buffer, 256, fp) != NULL) {
+    if (strlen (buffer) < 3) 
+      continue;
 
     bptr = buffer;
     vptr = NULL;
-    while(bptr){
-      if(*bptr == '='){
+    while (bptr) {
+      if (*bptr == '=') {
 	*bptr = 0;
 	vptr = ++bptr;
 	break;
@@ -85,78 +108,80 @@ gchar *fname
       bptr++;
     }
 
-    if(!vptr) continue;
-    if(sscanf(vptr, "%d", &val) != 1) continue;
+    if (! vptr)
+      continue;
+    if (sscanf (vptr, "%d", &val) != 1)
+      continue;
 
-    if(!strcmp(buffer, "initial_type1")){
+    if (! strcmp (buffer, "initial_type1")) {
       gcfg->initial_type1 = val;
       pflag |= 0x00000001;
     }
-    if(!strcmp(buffer, "initial_type2")){
+    if (! strcmp (buffer, "initial_type2")) {
       gcfg->initial_type2 = val;
       pflag |= 0x00000002;
     }
-    if(!strcmp(buffer, "increment_type1")){
+    if (! strcmp (buffer, "increment_type1")) {
       gcfg->increment_type1 = val;
       pflag |= 0x00000004;
     }
-    if(!strcmp(buffer, "increment_type2")){
+    if (! strcmp (buffer, "increment_type2")) {
       gcfg->increment_type2 = val;
       pflag |= 0x00000008;
     }
-    if(!strcmp(buffer, "maximum_type1")){
+    if (! strcmp (buffer, "maximum_type1")) {
       gcfg->maximum_type1 = val;
       pflag |= 0x00000010;
     }
-    if(!strcmp(buffer, "maximum_type2")){
+    if (! strcmp (buffer, "maximum_type2")) {
       gcfg->maximum_type2 = val;
       pflag |= 0x00000020;
     }
-    if(!strcmp(buffer, "score_type1")){
+    if (! strcmp (buffer, "score_type1")) {
       gcfg->score_type1 = val;
       pflag |= 0x00000040;
     }
-    if(!strcmp(buffer, "score_type2")){
+    if (! strcmp (buffer, "score_type2")) {
       gcfg->score_type2 = val;
       pflag |= 0x00000080;
     }
-    if(!strcmp(buffer, "score_type1_waiting")){
+    if (! strcmp (buffer, "score_type1_waiting")) {
       gcfg->score_type1_waiting = val;
       pflag |= 0x00000100;
     }
-    if(!strcmp(buffer, "score_type2_waiting")){
+    if (! strcmp (buffer, "score_type2_waiting")) {
       gcfg->score_type2_waiting = val;
       pflag |= 0x00000200;
     }
-    if(!strcmp(buffer, "score_type1_splatted")){
+    if (! strcmp (buffer, "score_type1_splatted")) {
       gcfg->score_type1_splatted = val;
       pflag |= 0x00000400;
     }
-    if(!strcmp(buffer, "score_type2_splatted")){
+    if (! strcmp (buffer, "score_type2_splatted")) {
       gcfg->score_type2_splatted = val;
       pflag |= 0x00000800;
     }
-    if(!strcmp(buffer, "num_robots_per_safe")){
+    if (! strcmp (buffer, "num_robots_per_safe")) {
       gcfg->num_robots_per_safe = val;
       pflag |= 0x00001000;
     }
-    if(!strcmp(buffer, "safe_score_boundary")){
+    if (! strcmp (buffer, "safe_score_boundary")) {
       gcfg->safe_score_boundary = val;
       pflag |= 0x00002000;
     }
-    if(!strcmp(buffer, "max_safe_teleports")){
+    if (! strcmp (buffer, "max_safe_teleports")) {
       gcfg->max_safe_teleports = val;
       pflag |= 0x00004000;
     }
-    if(!strcmp(buffer, "initial_safe_teleports")){
+    if (! strcmp (buffer, "initial_safe_teleports")) {
       gcfg->initial_safe_teleports = val;
       pflag |= 0x00008000;
     }
-    if(!strcmp(buffer, "free_safe_teleports")){
+    if (! strcmp (buffer, "free_safe_teleports")) {
       gcfg->free_safe_teleports = val;
       pflag |= 0x00010000;
     }
-    if(!strcmp(buffer, "moveable_heaps")){
+    if (! strcmp (buffer, "moveable_heaps")) {
       gcfg->moveable_heaps = val;
       pflag |= 0x00020000;
     }
@@ -166,8 +191,8 @@ gchar *fname
   fclose(fp);
 
   /* Check we have got all types */
-  if(pflag != 0x0003ffff){
-    g_free(gcfg);
+  if (pflag != 0x0003ffff) {
+    g_free (gcfg);
     gcfg = NULL;
   }
 
@@ -184,61 +209,62 @@ gchar *fname
  * Returns:
  * TRUE on success, FALSE otherwise
  **/
-gboolean load_game_configs(
-){
+gboolean
+load_game_configs (void)
+{
   gint           i;
-  gchar         *tmp;
   GameConfig    *gcfg;
   struct dirent *dent;
   DIR           *dir;
-  gchar          buffer[PATH_MAX];
-  gchar         *dname = gnome_program_locate_file (NULL, 
-                                                    GNOME_FILE_DOMAIN_APP_DATADIR,
-                                                    (GAME_NAME),
-                                                    FALSE, NULL);
+  gchar buffer[PATH_MAX];
+  gchar *dname = gnome_program_locate_file (NULL, 
+                                            GNOME_FILE_DOMAIN_APP_DATADIR,
+                                            (GAME_NAME),
+                                            FALSE, NULL);
 
-  if(game_configs != NULL){
-    free_game_configs();
+  if (game_configs != NULL) {
+    free_game_configs ();
   }
 
-  dir = opendir(dname);
-  if(!dir) return FALSE;
+  dir = opendir (dname);
+  if (! dir)
+    return FALSE;
 
   num_configs = 0;
-  while((dent = readdir(dir)) != NULL){
-    if(!strstr(dent->d_name, ".cfg")){
+  while ((dent = readdir (dir)) != NULL) {
+    if (! strstr (dent->d_name, ".cfg")) {
       continue;
     }
     num_configs++;
   }
 
-  game_configs = g_new(GameConfig*, num_configs);
-  for(i = 0; i < num_configs; ++i){
+  game_configs = g_new (GameConfig*, num_configs);
+  for(i = 0; i < num_configs; ++i) {
     game_configs[i] = NULL;
   }
 
-  rewinddir(dir);
+  rewinddir (dir);
 
   num_configs = 0;
-  while((dent = readdir(dir)) != NULL){
-    if(!strstr(dent->d_name, ".cfg")){
+  while ((dent = readdir (dir)) != NULL) {
+    if (! strstr(dent->d_name, ".cfg")) {
       continue;
     }
     
-    strcpy(buffer, dname);
-    strcat(buffer, "/");
-    strcat(buffer, dent->d_name);
+    strcpy (buffer, dname);
+    strcat (buffer, "/");
+    strcat (buffer, dent->d_name);
 
-    gcfg = load_config(buffer);
-    if(gcfg != NULL){
+    gcfg = load_config (buffer);
+    if (gcfg != NULL) {
       game_configs[num_configs] = gcfg;
       num_configs++;
     }
   }
 
-  closedir(dir);
+  closedir (dir);
 
-  if(num_configs >= 0){
+  if (num_configs >= 0) {
     current_config = 0;
   }
 
@@ -255,18 +281,19 @@ gboolean load_game_configs(
  * Returns:
  * TRUE on success, FALSE otherwise
  **/
-gboolean free_game_configs(
-){
+gboolean
+free_game_configs (void)
+{
   gint i;
 
-  if(game_configs == NULL){
+  if (game_configs == NULL) {
     return FALSE;
   }
 
-  for(i = 0; i < num_configs; ++i){
-    g_free(game_configs[i]);
+  for (i = 0; i < num_configs; ++i) {
+    g_free (game_configs[i]);
   }
-  g_free(game_configs);
+  g_free (game_configs);
 
   game_configs = NULL;
   current_config = -1;
@@ -285,9 +312,11 @@ gboolean free_game_configs(
  * Returns:
  * number of configurations
  **/
-gint num_game_configs(
-){
-  if(game_configs == NULL) return -1;
+gint
+num_game_configs (void)
+{
+  if (game_configs == NULL)
+    return -1;
 
   return num_configs;
 }
@@ -303,12 +332,14 @@ gint num_game_configs(
  * Returns:
  * TRUE on success, FALSE otherwise
  **/
-gboolean set_game_config(
-gint n
-){
-  if(game_configs == NULL) return FALSE;
+gboolean
+set_game_config (gint n)
+{
+  if (game_configs == NULL)
+    return FALSE;
 
-  if((n < 0) || (n >= num_configs)) return FALSE;
+  if ((n < 0) || (n >= num_configs))
+    return FALSE;
 
   current_config = n;
 
@@ -325,9 +356,11 @@ gint n
  * Returns:
  * pointer to a GameConfig structure or NULL
  **/
-GameConfig* game_config(
-){
-  if(game_configs == NULL) return NULL;
+GameConfig*
+game_config (void)
+{
+  if (game_configs == NULL)
+    return NULL;
   
   return game_configs[current_config];
 }
@@ -343,12 +376,14 @@ GameConfig* game_config(
  * Returns:
  * pointer to a GameConfig structure or NULL
  **/
-GameConfig* game_config_settings(
-gint n
-){
-  if(game_configs == NULL) return NULL;
+GameConfig*
+game_config_settings (gint n)
+{
+  if (game_configs == NULL)
+    return NULL;
   
-  if((n < 0) || (n >= num_configs)) return NULL;
+  if ((n < 0) || (n >= num_configs))
+    return NULL;
 
   return game_configs[n];
 }
@@ -363,9 +398,11 @@ gint n
  * Returns:
  * the selected configuration or -1
  **/
-gint current_game_config(
-){
-  if(game_configs == NULL) return -1;
+gint
+current_game_config (void)
+{
+  if (game_configs == NULL)
+    return -1;
 
   return current_config;
 }
@@ -381,20 +418,22 @@ gint current_game_config(
  * Returns:
  * pointer to a string containing the name
  **/
-gchar* game_config_name(
-gint n
-){
+gchar*
+game_config_name (gint n)
+{
   static gchar buffer[PATH_MAX];
   gchar *ptr = buffer;
 
-  if(game_configs == NULL) return NULL;
+  if (game_configs == NULL)
+    return NULL;
 
-  if((n < 0) || (n >= num_configs)) return NULL;
+  if ((n < 0) || (n >= num_configs))
+    return NULL;
   
-  strcpy(buffer, game_configs[n]->description->str);
+  strcpy (buffer, game_configs[n]->description->str);
 
-  while(*ptr){
-    if(*ptr == '_'){
+  while (*ptr) {
+    if (*ptr == '_') {
       *ptr = ' ';
     }
     ++ptr;
@@ -414,12 +453,14 @@ gint n
  * Returns:
  * pointer to a string containing the filename
  **/
-gchar* game_config_filename(
-gint n
-){
-  if(game_configs == NULL) return NULL;
+gchar*
+game_config_filename (gint n)
+{
+  if (game_configs == NULL)
+    return NULL;
 
-  if((n < 0) || (n >= num_configs)) return NULL;
+  if ((n < 0) || (n >= num_configs))
+    return NULL;
 
   return game_configs[n]->description->str;
 }

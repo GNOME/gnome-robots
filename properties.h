@@ -5,14 +5,14 @@
 /**********************************************************************/
 /* Exported functions                                                 */
 /**********************************************************************/
-gboolean load_properties();
-gboolean save_properties();
-void     show_properties_dialog();
-gboolean properties_super_safe_moves();
-gboolean properties_safe_moves();
-gboolean properties_sound();
-gboolean properties_splats();
-gboolean properties_set_config(gint);
+gboolean load_properties (void);
+gboolean save_properties (void);
+void     show_properties_dialog (void);
+gboolean properties_super_safe_moves (void);
+gboolean properties_safe_moves (void);
+gboolean properties_sound (void);
+gboolean properties_splats (void);
+gboolean properties_set_config (gint);
 /**********************************************************************/
 
 

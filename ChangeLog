@@ -1,3 +1,20 @@
+2003-06-18  William Jon McCann  <mccann@jhu.edu>
+
+	* keyboard.c: 
+	* keyboard.h: 
+	* sound.c: 
+	* sound.h: 
+	* game.c: 
+	* graphics.c: 
+	* graphics.h: 
+	* menu.c: 
+	* menu.h: 
+	* gameconfig.c: 
+	* gameconfig.h: 
+	* gnobots.c: 
+	* statusbar.h: 
+	* statusbar.c: Fixed compiler warnings.
+
 2003-06-13  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* menu.c: Removed all the "Are you sure questions".

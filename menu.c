@@ -1,20 +1,43 @@
+/*
+ * Gnome Robots II
+ * written by Mark Rae <m.rae@inpharmatica.co.uk>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * For more details see the file COPYING.
+ */
+
 #include <config.h>
 #include <gnome.h>
+#include <string.h>
 
 #include "gbdefs.h"
 #include "menu.h"
 #include "game.h"
 #include "gnobots.h"
-
+#include "properties.h"
+#include "gameconfig.h"
 
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static void new_cb(GtkWidget *widget,gpointer data);
-static void properties_cb(GtkWidget *widget,gpointer data);
-static void scores_cb(GtkWidget *widget,gpointer data);
-void exit_cb(GtkWidget *widget,gpointer  data);
-static void about_cb(GtkWidget *widget, gpointer data);
+static void new_cb (GtkWidget *widget,gpointer data);
+static void properties_cb (GtkWidget *widget,gpointer data);
+static void scores_cb (GtkWidget *widget,gpointer data);
+void exit_cb (GtkWidget *widget,gpointer  data);
+static void about_cb (GtkWidget *widget, gpointer data);
 /**********************************************************************/
 
 
@@ -85,11 +108,10 @@ GnomeUIInfo mainmenu[] = {
  *
  * Returns:
  **/
-static void new_cb(
-GtkWidget *widget,
-gpointer  data
-){
-    start_new_game();
+static void
+new_cb (GtkWidget *widget, gpointer  data)
+{
+    start_new_game ();
 }
 
 
@@ -103,11 +125,10 @@ gpointer  data
  *
  * Returns:
  **/
-static void properties_cb(
-GtkWidget *widget,
-gpointer  data
-){
-  show_properties_dialog();
+static void
+properties_cb (GtkWidget *widget, gpointer  data)
+{
+  show_properties_dialog ();
 }
 
 
@@ -121,11 +142,10 @@ gpointer  data
  *
  * Returns:
  **/
-static void scores_cb(
-GtkWidget *widget,
-gpointer  data
-){
-  show_scores(0);
+static void
+scores_cb (GtkWidget *widget, gpointer data)
+{
+  show_scores (0);
 }
 
 
@@ -140,9 +160,9 @@ gpointer  data
  * Returns:
  **/
 void
-exit_cb(GtkWidget *widget, gpointer  data)
+exit_cb (GtkWidget *widget, gpointer  data)
 {
-    gtk_main_quit();
+  gtk_main_quit ();
 }
 
 
@@ -156,10 +176,9 @@ exit_cb(GtkWidget *widget, gpointer  data)
  *
  * Returns:
  **/
-static void about_cb(
-GtkWidget *widget, 
-gpointer data
-){
+static void
+about_cb (GtkWidget *widget, gpointer data)
+{
   static GtkWidget *about = NULL;
   GdkPixbuf *pixbuf = NULL;
   
@@ -174,20 +193,20 @@ gpointer data
   gchar *translator_credits = _("translator_credits");
 
   if (about != NULL) {
-    gtk_window_present (GTK_WINDOW(about));
+    gtk_window_present (GTK_WINDOW (about));
     return;
   }
   {
-	  char *filename = NULL;
-
-	  filename = gnome_program_locate_file (NULL,
-			  GNOME_FILE_DOMAIN_APP_PIXMAP,  ("gnome-gnobots2.png"),
-			  TRUE, NULL);
-	  if (filename != NULL)
-	  {
-		  pixbuf = gdk_pixbuf_new_from_file(filename, NULL);
-		  g_free (filename);
-	  }
+    char *filename = NULL;
+    
+    filename = gnome_program_locate_file (NULL,
+                                          GNOME_FILE_DOMAIN_APP_PIXMAP,
+                                          ("gnome-gnobots2.png"),
+                                          TRUE, NULL);
+    if (filename != NULL) {
+      pixbuf = gdk_pixbuf_new_from_file(filename, NULL);
+      g_free (filename);
+    }
   }
   
   about = gnome_about_new(_("GNOME Robots"), VERSION,
@@ -200,10 +219,11 @@ gpointer data
   if (pixbuf != NULL)
     gdk_pixbuf_unref (pixbuf);
 	
-  gtk_window_set_transient_for (GTK_WINDOW (about), GTK_WINDOW(app));
-  g_signal_connect (G_OBJECT(about), "destroy", G_CALLBACK(gtk_widget_destroyed), &about);
+  gtk_window_set_transient_for (GTK_WINDOW (about), GTK_WINDOW (app));
+  g_signal_connect (G_OBJECT (about), "destroy",
+                    G_CALLBACK (gtk_widget_destroyed), &about);
 
-  gtk_widget_show(about);
+  gtk_widget_show (about);
 }
 
 
@@ -217,10 +237,11 @@ gpointer data
  * Returns:
  * %TRUE if successful, %FALSE otherwise
  **/
-gboolean create_game_menus(
-){
-  gnome_app_create_menus(GNOME_APP(app), mainmenu);
-  gnome_app_install_menu_hints(GNOME_APP(app), mainmenu);
+gboolean
+create_game_menus (void)
+{
+  gnome_app_create_menus (GNOME_APP (app), mainmenu);
+  gnome_app_install_menu_hints (GNOME_APP (app), mainmenu);
 
   return TRUE;
 }
@@ -233,29 +254,32 @@ gboolean create_game_menus(
  * Description:
  * Changes menu item enabled/disabled state depending on high score availability
  **/
-void update_score_state ()
+void
+update_score_state (void)
 {
-        gchar **names = NULL;
-        gfloat *scores = NULL;
-        time_t *scoretimes = NULL;
-	gint top;
-	gchar sbuf[256];
-
-	  if(properties_super_safe_moves()){
-	    sprintf(sbuf, "%s-super-safe", game_config_filename(current_game_config()));
-	  } else if(properties_safe_moves()){
-	    sprintf(sbuf, "%s-safe", game_config_filename(current_game_config()));
-	  } else {
-	    sprintf(sbuf, "%s", game_config_filename(current_game_config()));
-	  }
-
-	top = gnome_score_get_notable(GAME_NAME, sbuf, &names, &scores, &scoretimes);
-	if (top > 0) {
-		gtk_widget_set_sensitive (gamemenu[2].widget, TRUE);
-		g_strfreev(names);
-		g_free(scores);
-		g_free(scoretimes);
-	} else {
-		gtk_widget_set_sensitive (gamemenu[2].widget, FALSE);
-	}
+  gchar **names = NULL;
+  gfloat *scores = NULL;
+  time_t *scoretimes = NULL;
+  gint top;
+  gchar sbuf[256];
+  
+  if (properties_super_safe_moves ()) {
+    sprintf (sbuf, "%s-super-safe",
+             game_config_filename (current_game_config ()));
+  } else if (properties_safe_moves ()) {
+    sprintf (sbuf, "%s-safe", game_config_filename (current_game_config ()));
+  } else {
+    sprintf (sbuf, "%s", game_config_filename (current_game_config ()));
+  }
+  
+  top = gnome_score_get_notable (GAME_NAME, sbuf,
+                                 &names, &scores, &scoretimes);
+  if (top > 0) {
+    gtk_widget_set_sensitive (gamemenu[2].widget, TRUE);
+    g_strfreev (names);
+    g_free (scores);
+    g_free (scoretimes);
+  } else {
+    gtk_widget_set_sensitive (gamemenu[2].widget, FALSE);
+  }
 }

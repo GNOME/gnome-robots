@@ -43,15 +43,15 @@ struct _GameConfig {
 /**********************************************************************/
 /* Exported functions                                                 */
 /**********************************************************************/
-gboolean    load_game_configs();
-gboolean    free_game_configs();
-gint        num_game_configs();
-gchar*      game_config_name(gint);
-gchar*      game_config_filename(gint);
-GameConfig* game_config();
-GameConfig* game_config_settings(gint);
-gint        current_game_config();
-gboolean    set_game_config(gint);
+gboolean    load_game_configs (void);
+gboolean    free_game_configs (void);
+gint        num_game_configs (void);
+gchar*      game_config_name (gint);
+gchar*      game_config_filename (gint);
+GameConfig* game_config (void);
+GameConfig* game_config_settings (gint);
+gint        current_game_config (void);
+gboolean    set_game_config (gint);
 /**********************************************************************/
 
 

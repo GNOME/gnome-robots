@@ -31,6 +31,8 @@
 #include "graphics.h"
 #include "menu.h"
 #include "sound.h"
+#include "properties.h"
+#include "game.h"
 
 /**********************************************************************/
 /* Exported Variables                                                 */
@@ -93,34 +95,35 @@ static void   session_die(gpointer);
  * Returns:
  * TRUE on success, FALSE otherwise
  **/
-static gint save_state(
-GnomeClient        *client,
-gint                phase,
-GnomeRestartStyle   save_style,
-gint                shutdown,
-GnomeInteractStyle  interact_style,
-gint                fast,
-gpointer            client_data
-){
+static gint
+save_state (
+            GnomeClient        *client,
+            gint                phase,
+            GnomeRestartStyle   save_style,
+            gint                shutdown,
+            GnomeInteractStyle  interact_style,
+            gint                fast,
+            gpointer            client_data)
+{
   char *argv[20];
   int i;
   int xpos, ypos;
 
-  gdk_window_get_origin(app->window, &xpos, &ypos);
+  gdk_window_get_origin (app->window, &xpos, &ypos);
 
   i = 0;
   argv[i++] = (char *)client_data;
   argv[i++] = "-x";
-  argv[i++] = g_strdup_printf("%d",xpos);
+  argv[i++] = g_strdup_printf ("%d",xpos);
   argv[i++] = "-y";
-  argv[i++] = g_strdup_printf("%d",ypos);
+  argv[i++] = g_strdup_printf ("%d",ypos);
 
-  gnome_client_set_restart_command(client, i, argv);
+  gnome_client_set_restart_command (client, i, argv);
   /* i.e. clone_command = restart_command - '--sm-client-id' */
-  gnome_client_set_clone_command(client, 0, NULL);
+  gnome_client_set_clone_command (client, 0, NULL);
 
-  g_free(argv[2]);
-  g_free(argv[4]);
+  g_free (argv[2]);
+  g_free (argv[4]);
 
   return TRUE;
 }
@@ -133,14 +136,14 @@ gpointer            client_data
  * Description:
  * cleans up on session death
  **/
-static void session_die(
-gpointer    client_data
-){
-  cleanup_game();
-  cleanup_sound();
+static void
+session_die (gpointer client_data)
+{
+  cleanup_game ();
+  cleanup_sound ();
   
-  gtk_widget_destroy(app);
-  gtk_main_quit();    
+  gtk_widget_destroy (app);
+  gtk_main_quit ();
 }
 
 
@@ -155,23 +158,22 @@ gpointer    client_data
  * Returns:
  * exit code
  **/
-int main(
-int argc,
-char *argv[]
-){
+int
+main (int argc, char *argv[])
+{
   GtkWidget      *stbar;
   GnomeClient    *client;
   struct timeval tv;
   gint           i;
 
-  gettimeofday(&tv, NULL);
-  srand(tv.tv_usec);
+  gettimeofday (&tv, NULL);
+  srand (tv.tv_usec);
 
-  gnome_score_init(GAME_NAME);
+  gnome_score_init (GAME_NAME);
 
-  bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
+  bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-  textdomain(GETTEXT_PACKAGE);
+  textdomain (GETTEXT_PACKAGE);
 
   gnome_program_init (GAME_NAME, VERSION,
  		      LIBGNOMEUI_MODULE,
@@ -181,64 +183,65 @@ char *argv[]
 
   gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-gnobots2.png");
 
-  client = gnome_master_client();
+  client = gnome_master_client ();
 
-  gtk_object_ref(GTK_OBJECT(client));
-  gtk_object_sink(GTK_OBJECT(client));
+  g_object_ref (G_OBJECT (client));
+  gtk_object_sink (GTK_OBJECT (client));
 
-  g_signal_connect(GTK_OBJECT(client), "save_yourself",
-		     GTK_SIGNAL_FUNC(save_state), argv[0]);
-  g_signal_connect(GTK_OBJECT(client), "die",
-		     GTK_SIGNAL_FUNC(session_die), argv[0]);
+  g_signal_connect (G_OBJECT (client), "save_yourself",
+                    G_CALLBACK (save_state), argv[0]);
+  g_signal_connect (G_OBJECT(client), "die",
+                    G_CALLBACK (session_die), argv[0]);
 
-  app = gnome_app_new(GAME_NAME, _("GNOME Robots II") );
-  gtk_window_set_policy(GTK_WINDOW(app), FALSE, FALSE, TRUE);
+  app = gnome_app_new (GAME_NAME, _("GNOME Robots II"));
+  gtk_window_set_resizable (GTK_WINDOW (app), FALSE);
 
-  g_signal_connect(GTK_OBJECT(app), "delete_event",
-		     GTK_SIGNAL_FUNC(exit_cb), NULL);
+  g_signal_connect (G_OBJECT (app), "delete_event",
+                    G_CALLBACK (exit_cb), NULL);
 
-  stbar = gnobots_statusbar_new();
-  gnome_app_set_statusbar(GNOME_APP(app), stbar);
+  stbar = gnobots_statusbar_new ();
+  gnome_app_set_statusbar (GNOME_APP (app), stbar);
 
-  create_game_menus();
+  create_game_menus ();
 
   gtk_widget_push_colormap (gdk_rgb_get_colormap ());
-  game_area = gtk_drawing_area_new();
+  game_area = gtk_drawing_area_new ();
   gtk_widget_pop_colormap ();
-  gnome_app_set_contents(GNOME_APP(app), game_area);
-  gtk_widget_realize(game_area);
-  gtk_drawing_area_size(GTK_DRAWING_AREA(game_area), 
-			TILE_WIDTH*GAME_WIDTH, TILE_HEIGHT*GAME_HEIGHT);
-  gtk_widget_show(game_area);
+  gnome_app_set_contents (GNOME_APP (app), game_area);
+  gtk_widget_realize (game_area);
+  gtk_widget_set_size_request (GTK_WIDGET (game_area), 
+                               TILE_WIDTH * GAME_WIDTH,
+                               TILE_HEIGHT * GAME_HEIGHT);
+  gtk_widget_show (game_area);
 
   /* Set the window position if it was set by the session manager */
-  if(session_xpos >= 0 && session_ypos >= 0){
-    gtk_widget_set_uposition(app, session_xpos, session_ypos);
+  if (session_xpos >= 0 && session_ypos >= 0){
+    gtk_window_move (GTK_WINDOW (app), session_xpos, session_ypos);
   }
 
-  gtk_widget_show(app);
+  gtk_widget_show (app);
 
-  load_game_configs();
-  load_game_graphics();
-  load_properties();
+  load_game_configs ();
+  load_game_graphics ();
+  load_properties ();
   
-  init_sound();
+  init_sound ();
 
-  init_game();
+  init_game ();
 
-  if(cmdline_scenario){
-    for(i = 0; i < num_game_graphics(); ++i){
-      if(!strcmp(cmdline_scenario, game_graphics_name(i))){
-	set_game_graphics(i);
+  if (cmdline_scenario) {
+    for (i = 0; i < num_game_graphics (); ++i){
+      if (! strcmp (cmdline_scenario, game_graphics_name (i))){
+	set_game_graphics (i);
 	break;
       }
     }
   }
 
-  if(cmdline_config){
-    for(i = 0; i < num_game_configs(); ++i){
-      if(!strcmp(cmdline_config, game_config_name(i))){
-	properties_set_config(i);
+  if (cmdline_config) {
+    for(i = 0; i < num_game_configs (); ++i){
+      if (! strcmp (cmdline_config, game_config_name (i))){
+	properties_set_config (i);
 	break;
       }
     }
@@ -246,9 +249,9 @@ char *argv[]
 
   update_score_state ();
 
-  gtk_main();
+  gtk_main ();
 
-  cleanup_game();
+  cleanup_game ();
 
   return 0;
 }

@@ -18,9 +18,9 @@
 /**********************************************************************/
 /* Exported functions                                                 */
 /**********************************************************************/
-gboolean init_sound();
-gboolean cleanup_sound();
-gboolean play_sound(gint);
+gboolean init_sound (void);
+gboolean cleanup_sound (void);
+gboolean play_sound (gint);
 /**********************************************************************/
 
 #endif /* SOUND_H */

@@ -1,3 +1,7 @@
+2001-07-27  Abel Cheung  <maddog@linux.org.hk>
+
+	* gnobots2.desktop: Added traditional Chinese translation.
+
 2001-07-12  Juan Pablo Mendoza <pablo_juan@yahoo.com>
 
 	* Makefile.am: Don't create a `echo' file.

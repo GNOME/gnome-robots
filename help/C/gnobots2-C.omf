@@ -7,8 +7,8 @@
     <subject>
       <category>GNOME|Games</category>
     </subject>
-    <format mime="text/sgml"/>
-    <identifier url="gnobots2.sgml"/>
+    <format mime="text/xml"/>
+    <identifier url="gnobots2.xml"/>
     <language code="C"/>
   </resource>
 </omf>

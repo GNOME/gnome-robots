@@ -17,6 +17,7 @@ INCLUDES = 			\
 	-DGDK_DISABLE_DEPRECATED 			\
 	-DGTK_DISABLE_DEPRECATED 			\
 	-DGNOME_DISABLE_DEPRECATED			\
+	-I$(top_srcdir)/libgames-support   	        \
 	$(GNOME_GAMES_CFLAGS)
 
 bin_PROGRAMS = gnobots2
@@ -45,6 +46,7 @@ gnobots2_SOURCES = \
 
 gnobots2_LDADD = \
 	$(GNOME_GAMES_LIBS) \
+	$(top_srcdir)/libgames-support/libgames-support.la \
 	$(INTLLIBS)
 
 appicon_DATA = gnome-gnobots2.png

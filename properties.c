@@ -23,6 +23,7 @@
 #include <gnome.h>
 #include <string.h>
 #include <gdk/gdkkeysyms.h>
+#include <games-frame.h>
 
 #include "properties.h"
 #include "gameconfig.h"
@@ -836,6 +837,7 @@ show_properties_dialog (void)
   GtkWidget *kpage;
   GtkWidget *label;
   GtkWidget *hbox;
+  GtkWidget *vbox;
   GtkWidget *typemenu;
   GtkWidget *pmapmenu;
   GtkWidget *menu;
@@ -843,6 +845,7 @@ show_properties_dialog (void)
   GtkWidget *table;
   GtkWidget *dbut;
   GtkWidget *scrolled;
+  GtkWidget *frame;
   GtkListStore *list;
   GtkTreeViewColumn *column;
   GtkCellRenderer *renderer;
@@ -866,33 +869,30 @@ show_properties_dialog (void)
   notebook = gtk_notebook_new ();
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (propbox)->vbox), notebook, 
                       TRUE, TRUE, 0);
-  gtk_widget_show (notebook);
 
   /* The configuration page */
-  cpage = gtk_vbox_new (FALSE, GNOME_PAD);
+  cpage = gtk_vbox_new (FALSE, 0);
   gtk_container_set_border_width (GTK_CONTAINER (cpage), GNOME_PAD_SMALL);
 
+  frame = games_frame_new (_("Game Type"));
+  gtk_box_pack_start (GTK_BOX (cpage), frame, TRUE, TRUE, GNOME_PAD);
+
+  vbox = gtk_vbox_new (FALSE, 0);
+  gtk_container_add (GTK_CONTAINER (frame), vbox);
+
   hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (cpage), hbox, FALSE, TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, GNOME_PAD);
 
-  if (game_state == STATE_NOT_PLAYING){
-
+  if (game_state == STATE_NOT_PLAYING) {
+    /*
     label = gtk_label_new (_("Game Type:"));
-    gtk_widget_show (label);
     gtk_box_pack_start_defaults (GTK_BOX (hbox), label);
-
+    */
     typemenu = gtk_option_menu_new ();
     menu = gtk_menu_new ();
     fill_typemenu (menu);
-    gtk_widget_show (typemenu);
     gtk_option_menu_set_menu (GTK_OPTION_MENU (typemenu), menu);
     gtk_box_pack_start_defaults (GTK_BOX (hbox), typemenu);
-
-    gtk_widget_show (hbox);
-
-
-    hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-    gtk_box_pack_start (GTK_BOX (cpage), hbox, FALSE, TRUE, GNOME_PAD);
 
     list = gtk_list_store_new (NCOLS,
                                G_TYPE_STRING, /* Property */ 
@@ -928,64 +928,59 @@ show_properties_dialog (void)
 
     fill_property_list ();
 
-    gtk_widget_set_size_request (list_view, 200, 200);
-    gtk_widget_show (list_view);
+    /*gtk_widget_set_size_request (list_view, 300, 200);*/
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
                                     GTK_POLICY_AUTOMATIC,
                                     GTK_POLICY_AUTOMATIC);
+    gtk_scrolled_window_set_shadow_type 
+      (GTK_SCROLLED_WINDOW (scrolled), GTK_SHADOW_IN);
+    gtk_widget_set_size_request (scrolled, 400, 200);
     gtk_container_add (GTK_CONTAINER (scrolled), list_view);
 
-    gtk_widget_show (scrolled);
-    gtk_box_pack_start (GTK_BOX (hbox), scrolled, TRUE, TRUE, GNOME_PAD_SMALL);
+    gtk_box_pack_start (GTK_BOX (vbox), scrolled, TRUE, TRUE, GNOME_PAD_SMALL);
 
-    gtk_widget_show (hbox);
+    frame = games_frame_new (_("Options"));
+    gtk_box_pack_start (GTK_BOX (cpage), frame, TRUE, TRUE, GNOME_PAD);
+    vbox = gtk_vbox_new (TRUE, 6);
+    gtk_container_add (GTK_CONTAINER (frame), vbox);
 
+    table = gtk_table_new (2, 2, TRUE);
+    gtk_table_set_row_spacings (GTK_TABLE (table), 6);
+    gtk_table_set_col_spacings (GTK_TABLE (table), 6);
+    gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, TRUE, GNOME_PAD);
 
-    hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-    gtk_box_pack_start (GTK_BOX (cpage), hbox, FALSE, TRUE, GNOME_PAD);
-
-    chkbox = gtk_check_button_new_with_label (_("Safe Moves"));
+    chkbox = gtk_check_button_new_with_label (_("Use safe moves"));
     GTK_TOGGLE_BUTTON (chkbox)->active = temp_prop.safe_moves;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)safe_cb, NULL);
-    gtk_box_pack_start (GTK_BOX (hbox), chkbox, TRUE, TRUE, GNOME_PAD);
-    gtk_widget_show (chkbox);
+    gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 0, 1, 0, 1);
 
-    chkbox = gtk_check_button_new_with_label (_("Super Safe Moves"));
+    chkbox = gtk_check_button_new_with_label (_("Use super safe moves"));
     GTK_TOGGLE_BUTTON (chkbox)->active = temp_prop.super_safe_moves;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)super_safe_cb, NULL);
-    gtk_box_pack_start (GTK_BOX (hbox), chkbox, TRUE, TRUE, GNOME_PAD);
-    gtk_widget_show (chkbox);
+    gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 0, 1, 1, 2);
 
-    chkbox = gtk_check_button_new_with_label (_("Sound"));
+    chkbox = gtk_check_button_new_with_label (_("Enable sounds"));
     GTK_TOGGLE_BUTTON (chkbox)->active = temp_prop.sound;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)sound_cb, NULL);
-    gtk_box_pack_start (GTK_BOX (hbox), chkbox, TRUE, TRUE, GNOME_PAD);
-    gtk_widget_show (chkbox);
+    gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 1, 2, 0, 1);
 
-    chkbox = gtk_check_button_new_with_label (_("Splats"));
+    chkbox = gtk_check_button_new_with_label (_("Enable splats"));
     GTK_TOGGLE_BUTTON (chkbox)->active = temp_prop.splats;
     g_signal_connect (G_OBJECT (chkbox), "clicked",
                       (GtkSignalFunc)splat_cb, NULL);
-    gtk_box_pack_start (GTK_BOX (hbox), chkbox, TRUE, TRUE, GNOME_PAD);
-    gtk_widget_show (chkbox);
-
-    gtk_widget_show (hbox);
-
+    gtk_table_attach_defaults (GTK_TABLE (table), chkbox, 1, 2, 1, 2);
 
   } else {
     label = gtk_label_new (_("You Cannot Change the Game Type When Playing"));
-    gtk_widget_show (label);
     gtk_box_pack_start_defaults (GTK_BOX (hbox), label);
 
-    gtk_widget_show (hbox);
   }
-  gtk_widget_show (cpage);
-  label = gtk_label_new (_("Configuration"));
+  label = gtk_label_new_with_mnemonic (_("_Game"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), cpage, label);
 
 
@@ -993,101 +988,96 @@ show_properties_dialog (void)
   gpage = gtk_vbox_new (FALSE, GNOME_PAD);
   gtk_container_set_border_width (GTK_CONTAINER (gpage), GNOME_PAD_SMALL);
 
+  frame = games_frame_new (_("Graphics Theme"));
+  gtk_box_pack_start (GTK_BOX (gpage), frame, FALSE, FALSE, GNOME_PAD);
+  vbox = gtk_vbox_new (FALSE, 6);
+  gtk_container_add (GTK_CONTAINER (frame), vbox);
 
   hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (gpage), hbox, FALSE, TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, FALSE, GNOME_PAD);
 
-  label = gtk_label_new (_("Graphics:"));
-  gtk_widget_show (label);
+  /*
+  label = gtk_label_new (_("Image theme:"));
   gtk_box_pack_start_defaults (GTK_BOX (hbox), label);
-
+  */
   pmapmenu = gtk_option_menu_new ();
   menu = gtk_menu_new ();
   fill_pmapmenu (menu);
-  gtk_widget_show (pmapmenu);
   gtk_option_menu_set_menu (GTK_OPTION_MENU (pmapmenu), menu);
   gtk_box_pack_start_defaults (GTK_BOX (hbox), pmapmenu);
 
-  gtk_widget_show (hbox);
-
-
   hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (gpage), hbox, FALSE, TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, GNOME_PAD);
   darea = gtk_drawing_area_new ();
   gtk_widget_set_size_request (darea, DRAW_AREA_WIDTH, DRAW_AREA_HEIGHT);
-  gtk_widget_show (darea);
-  gtk_box_pack_start (GTK_BOX (hbox), darea, FALSE, FALSE, GNOME_PAD);
-  gtk_widget_show (hbox);
+
+  gtk_box_pack_start (GTK_BOX (hbox), darea, TRUE, TRUE, 0);
 
   g_signal_connect (G_OBJECT (darea), "map",
                     G_CALLBACK (start_anim_cb), NULL);
 
-  gtk_widget_show (gpage);
-  label = gtk_label_new (_("Graphics"));
+  label = gtk_label_new_with_mnemonic (_("_Appearance"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), gpage, label);
 
   /* The keyboard page */
   kpage = gtk_vbox_new (FALSE, GNOME_PAD);
   gtk_container_set_border_width (GTK_CONTAINER (kpage), GNOME_PAD_SMALL);
 
+  frame = games_frame_new (_("Keyboard Controls"));
+  gtk_box_pack_start (GTK_BOX (kpage), frame, FALSE, FALSE, GNOME_PAD);
+  vbox = gtk_vbox_new (FALSE, 6);
+  gtk_container_add (GTK_CONTAINER (frame), vbox);
+
   hbox = gtk_hbox_new (FALSE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (kpage), hbox, FALSE, FALSE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, GNOME_PAD);
 
   table = gtk_table_new (5, 5, TRUE);
 
   /* North West */
   label = gtk_label_new (_("NW"));
   gtk_table_attach (GTK_TABLE (table), label, 0, 1, 0, 1, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[0] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[0]),
                       keyboard_string (properties.keys[0]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[0]), FALSE);
   gtk_widget_set_size_request (etext[0], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[0], 1, 2, 1, 2, 0, 0, 3, 3);
-  gtk_widget_show (etext[0]);
   g_signal_connect (G_OBJECT (etext[0]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)0);
 
   /* North */
   label = gtk_label_new (_("N"));
   gtk_table_attach (GTK_TABLE (table), label, 2, 3, 0, 1, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[1] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[1]),
                       keyboard_string (properties.keys[1]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[1]), FALSE);
   gtk_widget_set_size_request (etext[1], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[1], 2, 3, 1, 2, 0, 0, 3, 3);
-  gtk_widget_show (etext[1]);
   g_signal_connect (G_OBJECT (etext[1]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)1);
 
   /* North East */
   label = gtk_label_new (_("NE"));
   gtk_table_attach (GTK_TABLE (table), label, 4, 5, 0, 1, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[2] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[2]),
                       keyboard_string (properties.keys[2]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[2]), FALSE);
   gtk_widget_set_size_request (etext[2], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[2], 3, 4, 1, 2, 0, 0, 3, 3);
-  gtk_widget_show (etext[2]);
   g_signal_connect (G_OBJECT (etext[2]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)2);
 
   /* West */
   label = gtk_label_new (_("W"));
   gtk_table_attach (GTK_TABLE (table), label, 0, 1, 2, 3, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[3] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[3]),
                       keyboard_string (properties.keys[3]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[3]), FALSE);
   gtk_widget_set_size_request (etext[3], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[3], 1, 2, 2, 3, 0, 0, 3, 3);
-  gtk_widget_show (etext[3]);
   g_signal_connect (G_OBJECT (etext[3]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)3);
 
@@ -1097,67 +1087,57 @@ show_properties_dialog (void)
   gtk_editable_set_editable (GTK_EDITABLE (etext[4]), FALSE);
   gtk_widget_set_size_request (etext[4], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[4], 2, 3, 2, 3, 0, 0, 3, 3);
-  gtk_widget_show (etext[4]);
   g_signal_connect (G_OBJECT (etext[4]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)4);
 
   /* East */
   label = gtk_label_new (_("E"));
   gtk_table_attach (GTK_TABLE (table), label, 4, 5, 2, 3, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[5] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[5]),
                       keyboard_string (properties.keys[5]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[5]), FALSE);
   gtk_widget_set_size_request (etext[5], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[5], 3, 4, 2, 3, 0, 0, 3, 3);
-  gtk_widget_show (etext[5]);
   g_signal_connect (G_OBJECT (etext[5]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)5);
 
   /* South West */
   label = gtk_label_new (_("SW"));
   gtk_table_attach (GTK_TABLE (table), label, 0, 1, 4, 5, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[6] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[6]),
                       keyboard_string (properties.keys[6]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[6]), FALSE);
   gtk_widget_set_size_request (etext[6], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[6], 1, 2, 3, 4, 0, 0, 3, 3);
-  gtk_widget_show (etext[6]);
   g_signal_connect (G_OBJECT (etext[6]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)6);
 
   /* South */
   label = gtk_label_new (_("S"));
   gtk_table_attach (GTK_TABLE (table), label, 2, 3, 4, 5, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[7] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[7]),
                       keyboard_string (properties.keys[7]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[7]), FALSE);
   gtk_widget_set_size_request (etext[7], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[7], 2, 3, 3, 4, 0, 0, 3, 3);
-  gtk_widget_show (etext[7]);
   g_signal_connect (G_OBJECT (etext[7]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)7);
 
   /* South East */
   label = gtk_label_new (_("SE"));
   gtk_table_attach (GTK_TABLE (table), label, 4, 5, 4, 5, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[8] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[8]),
                       keyboard_string (properties.keys[8]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[8]), FALSE);
   gtk_widget_set_size_request (etext[8], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[8], 3, 4, 3, 4, 0, 0, 3, 3);
-  gtk_widget_show (etext[8]);
   g_signal_connect (G_OBJECT (etext[8]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)8);
 
-  gtk_widget_show (table);
   gtk_box_pack_start (GTK_BOX (hbox), table, TRUE, TRUE, GNOME_PAD);
 
 
@@ -1167,74 +1147,58 @@ show_properties_dialog (void)
 
   label = gtk_label_new (_("Teleport:"));
   gtk_table_attach (GTK_TABLE (table), label, 0, 1, 1, 2, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[9] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[9]),
                       keyboard_string (properties.keys[9]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[9]), FALSE);
   gtk_widget_set_size_request (etext[9], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[9], 1, 2, 1, 2, 0, 0, 3, 3);
-  gtk_widget_show (etext[9]);
   g_signal_connect (G_OBJECT (etext[9]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)9);
 
   label = gtk_label_new (_("Random Teleport:"));
   gtk_table_attach (GTK_TABLE (table), label, 0, 1, 2, 3, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[10] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[10]),
                       keyboard_string (properties.keys[10]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[10]), FALSE);
   gtk_widget_set_size_request (etext[10], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[10], 1, 2, 2, 3, 0, 0, 3, 3);
-  gtk_widget_show (etext[10]);
   g_signal_connect (G_OBJECT (etext[10]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)10);
 
   label = gtk_label_new (_("Wait:"));
   gtk_table_attach (GTK_TABLE (table), label, 0, 1, 3, 4, 0, 0, 3, 3);
-  gtk_widget_show (label);
   etext[11] = gtk_entry_new ();
   gtk_entry_set_text (GTK_ENTRY (etext[11]),
                       keyboard_string (properties.keys[11]));
   gtk_editable_set_editable (GTK_EDITABLE (etext[11]), FALSE);
   gtk_widget_set_size_request (etext[11], KB_TEXT_WIDTH, KB_TEXT_HEIGHT);
   gtk_table_attach (GTK_TABLE (table), etext[11], 1, 2, 3, 4, 0, 0, 3, 3);
-  gtk_widget_show (etext[11]);
   g_signal_connect (G_OBJECT (etext[11]), "key_press_event",
                     G_CALLBACK (keypad_cb), (gpointer)11);
 
-  gtk_widget_show (table);
   gtk_box_pack_start (GTK_BOX (hbox), table, TRUE, TRUE, GNOME_PAD);
 
-  gtk_widget_show (hbox);
-
-
   hbox = gtk_hbox_new (TRUE, GNOME_PAD);
-  gtk_box_pack_start (GTK_BOX (kpage), hbox, FALSE, TRUE, GNOME_PAD);
+  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, TRUE, GNOME_PAD);
 
   dbut = gtk_button_new_with_label (_("Standard Robots Keys"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
                     G_CALLBACK (defkey_cb), (gpointer)default_keys1);  
-  gtk_widget_show (dbut);
   gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, FALSE, GNOME_PAD);
 
   dbut = gtk_button_new_with_label (_("Predefined Set 1"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
                     G_CALLBACK (defkey_cb), (gpointer)default_keys2);  
-  gtk_widget_show (dbut);
   gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, FALSE, GNOME_PAD);
 
   dbut = gtk_button_new_with_label (_("Predefined Set 2"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
                     G_CALLBACK (defkey_cb), (gpointer)default_keys3);  
-  gtk_widget_show (dbut);
   gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, FALSE, GNOME_PAD);
 
-  gtk_widget_show (hbox);
-
-  gtk_widget_show (kpage);
-  label = gtk_label_new (_("Keyboard"));
+  label = gtk_label_new_with_mnemonic (_("_Keyboard"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), kpage, label);
 
 
@@ -1243,7 +1207,7 @@ show_properties_dialog (void)
   g_signal_connect (G_OBJECT (propbox), "response",
                     G_CALLBACK (apply_cb), NULL);
 
-  gtk_widget_show (propbox);
+  gtk_widget_show_all (propbox);
 }
 
 

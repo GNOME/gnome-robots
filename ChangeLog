@@ -1,5 +1,8 @@
 2003-06-18  William Jon McCann  <mccann@jhu.edu>
 
+	* properties.c (show_properties_dialog): Clean up preferences
+	dialog layout.
+
 	* keyboard.c: 
 	* keyboard.h: 
 	* sound.c: 

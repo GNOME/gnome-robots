@@ -196,6 +196,7 @@ char *argv[]
 
   gtk_widget_push_visual (gdk_imlib_get_visual ());
   gtk_widget_push_colormap (gdk_imlib_get_colormap ());
+
   client = gnome_master_client();
 
   gtk_object_ref(GTK_OBJECT(client));

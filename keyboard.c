@@ -137,11 +137,11 @@ gpointer     data
   for(i = 0; i < 12; ++i){
     if(kv == control_keys[i]){
       game_keypress(i);
-      break;
+      return TRUE;
     }
   }
 
-  return TRUE;
+  return FALSE;
 }
 
 /**********************************************************************/

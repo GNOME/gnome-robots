@@ -255,7 +255,6 @@ gpointer data
                           strcmp (translator_credits, "translator_credits") != 0 ? translator_credits : NULL,
                           pixbuf);
   gtk_window_set_transient_for (GTK_WINDOW (about), GTK_WINDOW(app));
-  gtk_window_set_modal(GTK_WINDOW(about), TRUE);
   
   gtk_widget_show(about);
 }

@@ -1,3 +1,11 @@
+2002-07-06  Ross Burton  <ross@burtonini.com>
+
+	* keyboard.c (keyboard_cb): Allow the menu keyboard navigation
+	(such as Alt-g) to work.
+	* menu.c (about_cb): Allow the About -> Credits dialog to be
+	closed.
+	(both of these are from Timothy Musson <trmusson@ihug.co.nz>)
+
 2002-06-02  Ross Burton  <ross@burtonini.com>
 
 	* graphics.c: Use the application pixmap path instead of the

@@ -1,3 +1,7 @@
+2003-07-31  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/C/gnobots2.xml: Updated for 2.4, including the screenshot.
+
 2003-07-28  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* properties.c: Finally make the key-control entry dialog usable

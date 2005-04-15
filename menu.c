@@ -210,51 +210,16 @@ exit_cb (GtkWidget *widget, gpointer  data)
 static void
 about_cb (GtkWidget *widget, gpointer data)
 {
-  static GtkWidget *about = NULL;
-  GdkPixbuf *pixbuf = NULL;
-  
-  const gchar *authors[]= {
-    "Mark Rae <m.rae@inpharmatica.co.uk>",
-    NULL
-  };
-  gchar *documenters[] = {
-                	  NULL
-        		  };
-  /* Translator credits */
-  gchar *translator_credits = _("translator-credits");
+  const gchar *authors[]= { "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
 
-  if (about != NULL) {
-    gtk_window_present (GTK_WINDOW (about));
-    return;
-  }
-  {
-    char *filename = NULL;
-    
-    filename = gnome_program_locate_file (NULL,
-                                          GNOME_FILE_DOMAIN_APP_PIXMAP,
-                                          ("gnome-gnobots2.png"),
-                                          TRUE, NULL);
-    if (filename != NULL) {
-      pixbuf = gdk_pixbuf_new_from_file(filename, NULL);
-      g_free (filename);
-    }
-  }
-  
-  about = gnome_about_new(_("GNOME Robots"), VERSION,
-                          "Copyright \xc2\xa9 1998-2004 Mark Rae",
-                          _("GNOME Robots Game"),
-                          (const char **)authors,
-                          (const char **)documenters,
-                          strcmp (translator_credits, "translator-credits") != 0 ? translator_credits : NULL,
-                          pixbuf);
-  if (pixbuf != NULL)
-    gdk_pixbuf_unref (pixbuf);
-	
-  gtk_window_set_transient_for (GTK_WINDOW (about), GTK_WINDOW (app));
-  g_signal_connect (G_OBJECT (about), "destroy",
-                    G_CALLBACK (gtk_widget_destroyed), &about);
-
-  gtk_widget_show (about);
+  gtk_show_about_dialog (GTK_WINDOW (app),
+			 "name", _("GNOME Robots"),
+			 "version", VERSION,
+			 "copyright", "Copyright \xc2\xa9 1998-2004 Mark Rae",
+                         "comments", _("Based on classic BSD Robots."),
+			 "authors", authors,
+			 "translator_credits", _("translator-credits"),
+			 NULL);
 }
 
 static void teleport_cb  (GtkWidget *widget, gpointer data)

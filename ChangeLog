@@ -1,3 +1,9 @@
+2005-04-11  Richard Hoelscher  <rah@rahga.com>
+
+	* game.c: Remove protoype for create_demo_objects.
+	(log_score): Initialize score position as 0.
+	* menu.c (about_cb): Use GtkAboutDialog.
+
 2005-04-04  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* game.c: Only log a score if it is non-zero. This avoids problems

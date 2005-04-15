@@ -80,7 +80,6 @@ static void update_arena (void);
 static gint timeout_cb (void *data);
 static void destroy_game_timer (void);
 static void create_game_timer (void);
-static void create_demo_objects (void);
 static void move_all_robots (void);
 static void move_type2_robots (void);
 static void move_robots (void);
@@ -179,7 +178,7 @@ show_scores (guint pos)
 static guint
 log_score (gint sc)
 {
-  guint pos;
+  guint pos = 0;
   gchar *sbuf = NULL;
 
   if (properties_super_safe_moves ()) {

@@ -1,3 +1,9 @@
+2005-06-03  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* menu.c:
+	* properties.c:
+	* gnobots.c: Debranding.
+
 2005-04-11  Richard Hoelscher  <rah@rahga.com>
 
 	* game.c: Remove protoype for create_demo_objects.

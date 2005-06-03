@@ -213,7 +213,7 @@ about_cb (GtkWidget *widget, gpointer data)
   const gchar *authors[]= { "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
 
   gtk_show_about_dialog (GTK_WINDOW (app),
-			 "name", _("GNOME Robots"),
+			 "name", _("Robots"),
 			 "version", VERSION,
 			 "copyright", "Copyright \xc2\xa9 1998-2004 Mark Rae",
                          "comments", _("Based on classic BSD Robots."),

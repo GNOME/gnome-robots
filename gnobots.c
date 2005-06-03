@@ -197,7 +197,7 @@ main (int argc, char *argv[])
 
   initialize_gconf (argc, argv);
 
-  app = gnome_app_new (GAME_NAME, _("GNOME Robots"));
+  app = gnome_app_new (GAME_NAME, _("Robots"));
   gtk_window_set_resizable (GTK_WINDOW (app), FALSE);
 
   g_signal_connect (G_OBJECT (app), "delete_event",
@@ -233,7 +233,7 @@ main (int argc, char *argv[])
                                           GTK_BUTTONS_OK,
                                           "<b>%s</b>\n\n%s",
                                           _("No game data could be found."),
-                                          _("The program GNOME Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
+                                          _("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
     gtk_label_set_use_markup (GTK_LABEL (GTK_MESSAGE_DIALOG (errordialog)->label), TRUE);
     gtk_window_set_resizable (GTK_WINDOW (errordialog), FALSE);
     gtk_dialog_run (GTK_DIALOG (errordialog));
@@ -250,7 +250,7 @@ main (int argc, char *argv[])
                                           GTK_BUTTONS_OK,
                                           "<b>%s</b>\n\n%s",
                                           _("Some graphics files are missing or corrupt."),
-                                          _("The program GNOME Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."));
+                                          _("The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."));
     gtk_label_set_use_markup (GTK_LABEL (GTK_MESSAGE_DIALOG (errordialog)->label), TRUE);
 
     gtk_dialog_run (GTK_DIALOG (errordialog));

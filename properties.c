@@ -706,7 +706,7 @@ show_properties_dialog (void)
 
   tooltips = gtk_tooltips_new ();
 
-  propbox = gtk_dialog_new_with_buttons (_("GNOME Robots Preferences"),
+  propbox = gtk_dialog_new_with_buttons (_("Robots Preferences"),
                                          GTK_WINDOW  (app),
                                          GTK_DIALOG_DESTROY_WITH_PARENT,
                                          GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,

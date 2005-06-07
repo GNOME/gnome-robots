@@ -13,6 +13,7 @@ gboolean properties_super_safe_moves (void);
 gboolean properties_safe_moves (void);
 gboolean properties_sound (void);
 gboolean properties_splats (void);
+gboolean properties_show_toolbar (void);
 gboolean properties_set_config (gint);
 
 GConfClient *get_gconf_client (void);
@@ -24,6 +25,7 @@ void gconf_set_enable_sound (gboolean value);
 void gconf_set_enable_splats (gboolean value);
 void gconf_set_use_safe_moves (gboolean value);
 void gconf_set_use_super_safe_moves (gboolean value);
+void gconf_set_show_toolbar (gboolean value);
 
 /**********************************************************************/
 

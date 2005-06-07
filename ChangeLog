@@ -1,3 +1,20 @@
+2005-06-06  Richard Hoelscher  <rah@rahga.com>
+
+	* sound.[ch] (cleanup_sound): Removed.
+	* properties.[ch]: Though technically outside of the properties
+	dialog, support added for saving state of "Show Toolbar" menu item.
+	It's handled here to keep everything gconf-related in one file.
+	* menu.[ch]: Support the new GtkAction menus.
+	(connect_handle_box_to_toolbar_toggle): Connect the Show Toolbar
+	action to show and hide the toolbar's handle box.
+	* gnobots2.schemas.in: Support the show_toolbar key.
+	* gnobots.c (session_die): Removed, replaced by quit_game().
+	(main): Updated to support GtkUIManager, GtkStatusBar, and toolbars
+	using GtkHandleBox. 
+	* game.[ch] (quit_game): Renamed cleanup_game, does gtk_main_quit().
+	(show_scores): Check the result of gnome_scores_display, as we could
+	crash if it returned null when dealing with bad score files.
+
 2005-06-03  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* menu.c:

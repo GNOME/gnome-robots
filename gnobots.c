@@ -24,6 +24,7 @@
 #include <libgnomeui/gnome-window-icon.h>
 #include <sys/time.h>
 #include <string.h>
+#include <games-stock.h>
 
 #include "gbdefs.h"
 #include "statusbar.h"
@@ -72,7 +73,6 @@ static struct poptOption options[] = {
 /* Function Prototypes                                                */
 /**********************************************************************/
 static gint   save_state(GnomeClient*, gint, GnomeRestartStyle, gint, GnomeInteractStyle, gint, gpointer);
-static void   session_die(gpointer);
 /**********************************************************************/
 
 
@@ -131,24 +131,6 @@ save_state (
 
 
 /**
- * session_die
- * @client_data: client data
- *
- * Description:
- * cleans up on session death
- **/
-static void
-session_die (gpointer client_data)
-{
-  cleanup_game ();
-  cleanup_sound ();
-  
-  gtk_widget_destroy (app);
-  gtk_main_quit ();
-}
-
-
-/**
  * main
  * @argc: number of arguments
  * @argv: arguments
@@ -162,8 +144,10 @@ session_die (gpointer client_data)
 int
 main (int argc, char *argv[])
 {
-  GtkWidget      *stbar;
   GtkWidget      *errordialog;
+  GtkWidget      *vbox, *menubar, *toolbar, *statusbar;
+  GtkWidget      *handle_box;
+  GtkUIManager   *ui_manager;
   GnomeClient    *client;
   struct timeval tv;
   gint           i;
@@ -193,7 +177,7 @@ main (int argc, char *argv[])
   g_signal_connect (G_OBJECT (client), "save_yourself",
                     G_CALLBACK (save_state), argv[0]);
   g_signal_connect (G_OBJECT(client), "die",
-                    G_CALLBACK (session_die), argv[0]);
+                    G_CALLBACK (quit_game), argv[0]);
 
   initialize_gconf (argc, argv);
 
@@ -201,12 +185,20 @@ main (int argc, char *argv[])
   gtk_window_set_resizable (GTK_WINDOW (app), FALSE);
 
   g_signal_connect (G_OBJECT (app), "delete_event",
-                    G_CALLBACK (exit_cb), NULL);
+                    G_CALLBACK (quit_game), NULL);
 
-  stbar = gnobots_statusbar_new ();
-  gnome_app_set_statusbar (GNOME_APP (app), stbar);
+  statusbar = gnobots_statusbar_new ();
+  ui_manager = gtk_ui_manager_new ();
 
-  create_game_menus ();
+  games_stock_prepare_for_statusbar_tooltips (ui_manager, statusbar);
+  create_game_menus (ui_manager);
+
+  handle_box = gtk_handle_box_new ();
+  menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");
+  toolbar = gtk_ui_manager_get_widget (ui_manager, "/Toolbar");
+  gtk_widget_set_size_request (toolbar, 250, -1);
+  gtk_container_add (GTK_CONTAINER (handle_box), toolbar);
+
   make_cursors ();
 
   game_area = gtk_drawing_area_new ();
@@ -216,11 +208,20 @@ main (int argc, char *argv[])
 		    G_CALLBACK (mouse_cb), NULL);
   g_signal_connect (G_OBJECT (game_area), "motion-notify-event",
 		    G_CALLBACK (move_cb), NULL);
-  gnome_app_set_contents (GNOME_APP (app), game_area);
+
+  vbox = gtk_vbox_new (FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), menubar, FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), handle_box, FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), game_area, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
+
+  gnome_app_set_contents (GNOME_APP (app), vbox);
+
   gtk_widget_set_size_request (GTK_WIDGET (game_area), 
                                TILE_WIDTH * GAME_WIDTH,
                                TILE_HEIGHT * GAME_HEIGHT);
   gtk_widget_show (game_area);
+  gtk_widget_show (statusbar);
 
   /* Set the window position if it was set by the session manager */
   if (session_xpos >= 0 && session_ypos >= 0){
@@ -258,6 +259,8 @@ main (int argc, char *argv[])
   }
 
   load_properties ();
+
+  connect_handle_box_to_toolbar_toggle (handle_box);
   
   init_sound ();
 

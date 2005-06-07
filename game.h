@@ -23,7 +23,7 @@ struct _GameObject {
 /* Exported functions                                                 */
 /**********************************************************************/
 void init_game (void);
-void cleanup_game (void);
+void quit_game (void);
 void game_keypress (gint);
 void show_scores (guint);
 void start_new_game (void);

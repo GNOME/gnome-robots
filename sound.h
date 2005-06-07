@@ -19,7 +19,6 @@
 /* Exported functions                                                 */
 /**********************************************************************/
 gboolean init_sound (void);
-gboolean cleanup_sound (void);
 gboolean play_sound (gint);
 /**********************************************************************/
 

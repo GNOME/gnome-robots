@@ -22,6 +22,7 @@
 #include <config.h>
 #include <gnome.h>
 #include <string.h>
+#include <games-stock.h>
 
 #include "gbdefs.h"
 #include "menu.h"
@@ -30,78 +31,85 @@
 #include "properties.h"
 #include "gameconfig.h"
 
+GtkAction *scores_action;
+GtkAction *pause_action;
+GtkAction *teleport_action;
+GtkAction *random_action;
+GtkAction *wait_action;
+GtkAction *toolbar_toggle_action;
+
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static void new_cb (GtkWidget *widget,gpointer data);
-static void properties_cb (GtkWidget *widget,gpointer data);
-static void scores_cb (GtkWidget *widget,gpointer data);
-void exit_cb (GtkWidget *widget,gpointer  data);
-static void about_cb (GtkWidget *widget, gpointer data);
-static void teleport_cb  (GtkWidget *widget, gpointer data);
-static void randteleport_cb  (GtkWidget *widget, gpointer data);
-static void wait_cb (GtkWidget *widget, gpointer data);
+static void new_cb (GtkAction *action, gpointer data);
+static void properties_cb (GtkAction *action,gpointer data);
+static void scores_cb (GtkAction *action,gpointer data);
+void quit_cb (GtkAction *action,gpointer  data);
+static void about_cb (GtkAction *action, gpointer data);
+static void help_cb (GtkAction *action, gpointer data);
+static void teleport_cb  (GtkAction *action, gpointer data);
+static void randteleport_cb  (GtkAction *action, gpointer data);
+static void wait_cb (GtkAction *action, gpointer data);
+static void show_toolbar_cb (GtkAction *action, gpointer data);
 /**********************************************************************/
 
-
-/**********************************************************************/
-/* Menu entries                                                       */
-/**********************************************************************/
-
-/**********************************************************************/
-/* Game menu entries                                                  */
-/**********************************************************************/
-GnomeUIInfo gamemenu[] = {
-  GNOMEUIINFO_MENU_NEW_GAME_ITEM(new_cb, NULL),
-  GNOMEUIINFO_SEPARATOR,
-  GNOMEUIINFO_MENU_SCORES_ITEM(scores_cb, NULL),
-  GNOMEUIINFO_SEPARATOR,
-  GNOMEUIINFO_MENU_EXIT_ITEM(exit_cb, NULL),
-  GNOMEUIINFO_END
-};
-/**********************************************************************/
-
-GnomeUIInfo movemenu[] = {
-  GNOMEUIINFO_ITEM_STOCK (N_("_Teleport"), N_("Teleport, safely if possible"), teleport_cb, GTK_STOCK_JUMP_TO),
-  GNOMEUIINFO_ITEM_STOCK (N_("_Random"), N_("Teleport randomly"), randteleport_cb, GTK_STOCK_JUMP_TO),
-  GNOMEUIINFO_ITEM_STOCK (N_("_Wait"), N_("Wait for the robots"), wait_cb, GTK_STOCK_STOP),
-  GNOMEUIINFO_END
+const GtkActionEntry action_entry[] = {
+  { "GameMenu", NULL, N_("_Game") },
+  { "MoveMenu", NULL, N_("_Move") },
+  { "SettingsMenu", NULL, N_("_Settings") },
+  { "HelpMenu", NULL, N_("_Help") },
+  { "NewGame", GAMES_STOCK_NEW_GAME, NULL, NULL, NULL, G_CALLBACK (new_cb) },
+  { "Scores", GAMES_STOCK_SCORES, NULL, NULL, NULL, G_CALLBACK (scores_cb) },
+  { "Quit", GTK_STOCK_QUIT, NULL, NULL, NULL, G_CALLBACK (quit_cb) },
+  { "Teleport", GTK_STOCK_JUMP_TO, N_("_Teleport"), NULL, N_("Teleport, safely if possible"), G_CALLBACK(teleport_cb) },
+  { "Random", GTK_STOCK_JUMP_TO, N_("_Random"), NULL, N_("Teleport randomly"), G_CALLBACK(randteleport_cb) },
+  { "Wait", GTK_STOCK_STOP, N_("_Wait"), NULL, N_("Wait for the robots"), G_CALLBACK (wait_cb) },
+  { "Preferences", GTK_STOCK_PREFERENCES, NULL, NULL, NULL, G_CALLBACK (properties_cb) },
+  { "Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL, G_CALLBACK (help_cb) }, /*EASYFIX*/
+  { "About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK (about_cb) }
 };
 
 
-/**********************************************************************/
-/* Preferences menu entries                                           */
-/**********************************************************************/
-GnomeUIInfo prefmenu[] = {
-  GNOMEUIINFO_MENU_PREFERENCES_ITEM(properties_cb, NULL),
-  GNOMEUIINFO_END
+const GtkToggleActionEntry toggle_action_entry[] = {
+        { "ShowToolbar", NULL, N_("_Toolbar"), NULL, N_("Show or hide the toolbar"), G_CALLBACK (show_toolbar_cb) }
 };
-/**********************************************************************/
 
 
-/**********************************************************************/
-/* Help menu entries                                                  */
-/**********************************************************************/
-GnomeUIInfo helpmenu[] = {
-  GNOMEUIINFO_HELP(GAME_NAME),
-  GNOMEUIINFO_MENU_ABOUT_ITEM(about_cb, NULL),
-  GNOMEUIINFO_END
-};
-/**********************************************************************/
+const char *ui_description =
+"<ui>"
+"  <menubar name='MainMenu'>"
+"    <menu action='GameMenu'>"
+"      <menuitem action='NewGame'/>"
+"      <separator/>"
+"      <menuitem action='Scores'/>"
+"      <separator/>"
+"      <menuitem action='Quit'/>"
+"    </menu>"
+"    <menu action='MoveMenu'>"
+"      <menuitem action='Teleport'/>"
+"      <menuitem action='Random'/>"
+"      <menuitem action='Wait'/>"
+"    </menu>"
+"    <menu action='SettingsMenu'>"
+"      <menuitem action='ShowToolbar'/>"
+"      <menuitem action='Preferences'/>"
+"    </menu>"
+"    <menu action='HelpMenu'>"
+"      <menuitem action='Contents'/>"
+"      <menuitem action='About'/>"
+"    </menu>"
+"  </menubar>"
+"  <toolbar name='Toolbar'>"
+"    <toolitem action='NewGame'/>"
+"    <separator/>"
+"    <toolitem action='Teleport'/>"
+"    <toolitem action='Random'/>"
+"    <toolitem action='Wait'/>"
+"  </toolbar>"
+"</ui>";
 
-
-/**********************************************************************/
-/* Main menu                                                          */
-/**********************************************************************/
-GnomeUIInfo mainmenu[] = {
-  GNOMEUIINFO_MENU_GAME_TREE(gamemenu),
-  GNOMEUIINFO_SUBTREE (N_("_Move"), movemenu),
-  GNOMEUIINFO_MENU_SETTINGS_TREE(prefmenu),
-  GNOMEUIINFO_MENU_HELP_TREE(helpmenu),
-  GNOMEUIINFO_END
-};
-/**********************************************************************/
-
+/* FIXME: We don't actually use this toolbar anymore, but
+ * I still need to move each teleport.png into stock. -rah*/
 GnomeUIInfo toolbar[] = {
   GNOMEUIINFO_ITEM_STOCK(N_("New"), N_("Start a new game"),
                          new_cb, GTK_STOCK_NEW),
@@ -122,15 +130,12 @@ GnomeUIInfo toolbar[] = {
 };
 
 /**********************************************************************/
-
-
-/**********************************************************************/
 /* Function Definitions                                               */
 /**********************************************************************/
 
 /**
  * new_cb
- * @widget: Pointer to widget
+ * @action: Pointer to action
  * @data: Callback data
  *
  * Description:
@@ -139,15 +144,36 @@ GnomeUIInfo toolbar[] = {
  * Returns:
  **/
 static void
-new_cb (GtkWidget *widget, gpointer  data)
+new_cb (GtkAction *action, gpointer  data)
 {
     start_new_game ();
 }
 
 
 /**
+ * show_toolbar_cb
+ * @action: Pointer to action
+ * @data: Callback data
+ *
+ * Description:
+ * Callback for toolbar menu entry. This does gconf work, while show and
+ * hide of toolbar is handled by connect_handle_box_to_toolbar_toggle()
+ *
+ * Returns:
+ **/
+static void
+show_toolbar_cb (GtkAction *action, gpointer  data)
+{
+  gboolean state;
+
+  state = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
+  gconf_set_show_toolbar (state);
+}
+
+
+/**
  * properties_cb
- * @widget: Pointer to widget
+ * @action: Pointer to action
  * @data: Callback data
  *
  * Description:
@@ -156,7 +182,7 @@ new_cb (GtkWidget *widget, gpointer  data)
  * Returns:
  **/
 static void
-properties_cb (GtkWidget *widget, gpointer  data)
+properties_cb (GtkAction *action, gpointer  data)
 {
   show_properties_dialog ();
 }
@@ -164,7 +190,7 @@ properties_cb (GtkWidget *widget, gpointer  data)
 
 /**
  * scores_cb
- * @widget: Pointer to widget
+ * @action: Pointer to action
  * @data: Callback data
  *
  * Description:
@@ -173,15 +199,15 @@ properties_cb (GtkWidget *widget, gpointer  data)
  * Returns:
  **/
 static void
-scores_cb (GtkWidget *widget, gpointer data)
+scores_cb (GtkAction *action, gpointer data)
 {
   show_scores (0);
 }
 
 
 /**
- * exit_cb
- * @widget: Pointer to widget
+ * quit_cb
+ * @action: Pointer to action
  * @data: Callback data
  *
  * Description:
@@ -190,16 +216,32 @@ scores_cb (GtkWidget *widget, gpointer data)
  * Returns:
  **/
 void
-exit_cb (GtkWidget *widget, gpointer  data)
+quit_cb (GtkAction *action, gpointer  data)
 {
-  cleanup_game ();
-  gtk_main_quit ();
+  quit_game();
+}
+
+
+/**
+ * help_cb
+ * @action: Pointer to action
+ * @data: Callback data
+ *
+ * Description:
+ * Callback for help menu entry
+ *
+ * Returns:
+ **/
+static void
+help_cb (GtkAction *action, gpointer data)
+{
+        gnome_help_display ("gnobots2.xml", NULL, NULL);
 }
 
 
 /**
  * about_cb
- * @widget: Pointer to widget
+ * @action: Pointer to action
  * @data: Callback data
  *
  * Description:
@@ -208,7 +250,7 @@ exit_cb (GtkWidget *widget, gpointer  data)
  * Returns:
  **/
 static void
-about_cb (GtkWidget *widget, gpointer data)
+about_cb (GtkAction *action, gpointer data)
 {
   const gchar *authors[]= { "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
 
@@ -222,17 +264,17 @@ about_cb (GtkWidget *widget, gpointer data)
 			 NULL);
 }
 
-static void teleport_cb  (GtkWidget *widget, gpointer data)
+static void teleport_cb  (GtkAction *action, gpointer data)
 {
   game_keypress (KBD_TELE);
 }
 
-static void randteleport_cb  (GtkWidget *widget, gpointer data)
+static void randteleport_cb  (GtkAction *action, gpointer data)
 {
   game_keypress (KBD_RTEL);
 }
 
-static void wait_cb (GtkWidget *widget, gpointer data)
+static void wait_cb (GtkAction *action, gpointer data)
 {
   game_keypress (KBD_WAIT);
 }
@@ -245,17 +287,29 @@ static void wait_cb (GtkWidget *widget, gpointer data)
  * Description:
  * Creates the menus for application @ap
  *
- * Returns:
- * %TRUE if successful, %FALSE otherwise
  **/
-gboolean
-create_game_menus (void)
+void
+create_game_menus (GtkUIManager *ui_manager)
 {
-  gnome_app_create_menus (GNOME_APP (app), mainmenu);
-  gnome_app_install_menu_hints (GNOME_APP (app), mainmenu);
-  gnome_app_create_toolbar (GNOME_APP (app), toolbar);
 
-  return TRUE;
+  GtkActionGroup *action_group;
+  games_stock_init ();
+
+  action_group = gtk_action_group_new ("actions");
+
+  gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
+  gtk_action_group_add_actions (action_group, action_entry, G_N_ELEMENTS (action_entry), app);
+  gtk_action_group_add_toggle_actions (action_group, toggle_action_entry, G_N_ELEMENTS (toggle_action_entry), app);
+
+  gtk_ui_manager_insert_action_group (ui_manager, action_group, 0);
+  gtk_ui_manager_add_ui_from_string (ui_manager, ui_description, -1, NULL);
+
+  scores_action = gtk_action_group_get_action (action_group, "Scores");
+  teleport_action = gtk_action_group_get_action (action_group, "Teleport"); 
+  random_action = gtk_action_group_get_action (action_group, "Random");
+  wait_action = gtk_action_group_get_action (action_group, "Wait");
+  toolbar_toggle_action = gtk_action_group_get_action (action_group, "ShowToolbar");
+  return;
 }
 
 /**********************************************************************/
@@ -290,21 +344,39 @@ update_score_state (void)
                                  &names, &scores, &scoretimes);
   g_free (sbuf);
   if (top > 0) {
-    gtk_widget_set_sensitive (gamemenu[2].widget, TRUE);
+    gtk_action_set_sensitive (scores_action, TRUE);
     g_strfreev (names);
     g_free (scores);
     g_free (scoretimes);
   } else {
-    gtk_widget_set_sensitive (gamemenu[2].widget, FALSE);
+    gtk_action_set_sensitive (scores_action, FALSE);
   }
 }
 
 void set_move_menu_sensitivity (gboolean state)
 {
-  int i;
+  gtk_action_set_sensitive (teleport_action, state);
+  gtk_action_set_sensitive (random_action, state);
+  gtk_action_set_sensitive (wait_action, state);
+}
 
-  for (i=0; i<3; i++) {
-    gtk_widget_set_sensitive (movemenu[i].widget, state);
-    gtk_widget_set_sensitive (toolbar[i+2].widget, state);
+static void
+toggle_toolbar_cb (GtkAction *action, GtkWidget *handle_box)
+{
+  gboolean state;
+
+  state = gtk_toggle_action_get_active(GTK_TOGGLE_ACTION (action));
+  if (state) {
+    gtk_widget_show (handle_box);
+  } else {
+    gtk_widget_hide (handle_box);
   }
+}
+
+void
+connect_handle_box_to_toolbar_toggle (GtkWidget *handle_box)
+{
+  g_signal_connect (toolbar_toggle_action, "activate", G_CALLBACK (toggle_toolbar_cb), handle_box);
+  gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (toolbar_toggle_action),
+				properties_show_toolbar());
 }

@@ -103,8 +103,7 @@ gnobots_statusbar_new (void)
     
   gtk_widget_show (sbtbl);
 
-
-  statusbar = gnome_appbar_new (FALSE, TRUE, GNOME_PREFERENCES_USER);
+  statusbar = gtk_statusbar_new ();
   gtk_box_pack_start (GTK_BOX (statusbar), sbtbl, FALSE, FALSE, 0);
 
   show_both = TRUE;

@@ -5,11 +5,11 @@
 /**********************************************************************/
 /* Exported functions                                                 */
 /**********************************************************************/
-gboolean create_game_menus (void);
-void really_exit_cb (GtkWidget *, gpointer);
-void exit_cb (GtkWidget *, gpointer);
+void create_game_menus (GtkUIManager *);
+void quit_cb (GtkAction *, gpointer);
 void update_score_state (void);
 void set_move_menu_sensitivity (gboolean state);
+void connect_handle_box_to_toolbar_toggle (GtkWidget *);
 /**********************************************************************/
 
 

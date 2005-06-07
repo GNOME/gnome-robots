@@ -2,6 +2,19 @@
 
   <schemalist>
       <schema>
+      <key>/schemas/apps/gnobots2/preferences/show_toolbar</key>
+      <applyto>/apps/gnobots2/preferences/show_toolbar</applyto>
+      <owner>gnobots2</owner>
+      <type>bool</type>
+      <default>TRUE</default>
+      <locale name="C">
+        <short>Show toolbar</short>
+        <long>Show toolbar. A standard option for toolbars.</long>
+      </locale>
+      </schema>
+
+
+      <schema>
       <key>/schemas/apps/gnobots2/preferences/theme</key>
       <applyto>/apps/gnobots2/preferences/theme</applyto>
       <owner>gnobots2</owner>

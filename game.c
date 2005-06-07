@@ -155,6 +155,10 @@ show_scores (guint pos)
   score_dialog = gnome_scores_display (nbuf, GAME_NAME, sbuf, pos);
   g_free (sbuf);
   g_free (nbuf);
+
+  if (!score_dialog)
+    return;
+
   gtk_window_set_transient_for (GTK_WINDOW (score_dialog), GTK_WINDOW (app));
   gtk_dialog_set_has_separator (GTK_DIALOG (score_dialog), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (score_dialog), 5);
@@ -593,15 +597,16 @@ init_game (void)
 
 
 /**
- * cleanup_game
+ * quit_game
  *
  * Description:
- * cleans up all of game resources
+ * Stop animation timeouts and exit.
  **/
 void
-cleanup_game (void)
+quit_game (void)
 {
   destroy_game_timer ();
+  gtk_main_quit();
 }
 
 

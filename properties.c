@@ -45,6 +45,7 @@
 #define KB_TEXT_HEIGHT   32
 
 #define KEY_DIR              "/apps/gnobots2"
+#define KEY_SHOW_TOOLBAR     "/apps/gnobots2/preferences/show_toolbar"
 #define KEY_CONTROL_KEY      "/apps/gnobots2/preferences/key%02d"
 #define KEY_THEME            "/apps/gnobots2/preferences/theme"
 #define KEY_CONFIGURATION    "/apps/gnobots2/preferences/configuration"
@@ -67,6 +68,7 @@ struct _GnobotsProperties {
   gboolean super_safe_moves;
   gboolean sound;
   gboolean splats;
+  gboolean show_toolbar;
   GdkColor bgcolour;
   gint     selected_graphics;
   gint     selected_config;
@@ -1011,6 +1013,8 @@ load_properties (void)
                                             KEY_ENABLE_SOUND, NULL);
   properties.splats = gconf_client_get_bool (get_gconf_client (),
                                              KEY_ENABLE_SPLATS, NULL);
+  properties.show_toolbar = gconf_client_get_bool (get_gconf_client (),
+						   KEY_SHOW_TOOLBAR, NULL);
 
   set_game_graphics (properties.selected_graphics);
   set_game_config (properties.selected_config);
@@ -1072,6 +1076,13 @@ gconf_set_enable_splats (gboolean value)
 {
   gconf_client_set_bool (get_gconf_client (), KEY_ENABLE_SPLATS,
                          value, NULL);
+}
+
+void
+gconf_set_show_toolbar (gboolean value)
+{
+  gconf_client_set_bool (get_gconf_client (), KEY_SHOW_TOOLBAR,
+			 value, NULL);
 }
 
 void
@@ -1175,6 +1186,23 @@ properties_splats (void)
 {
   return properties.splats;
 }
+
+
+/**
+ * properties_show_toolbar
+ *
+ * Description:
+ * returns toolbar setting
+ *
+ * Returns:
+ * TRUE if splats are selected
+ **/
+gboolean
+properties_show_toolbar (void)
+{
+  return properties.show_toolbar;
+}
+
 
 /**
  * properties_set_config

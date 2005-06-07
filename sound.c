@@ -48,22 +48,6 @@ init_sound (void)
 
 
 /**
- * cleanup_sound
- *
- * Description:
- * Cleans up the sound resources 
- *
- * Returns:
- * TRUE on success FALSE otherwise
- **/
-gboolean
-cleanup_sound (void)
-{
-  return TRUE;
-}
-
-
-/**
  * play_sound
  * @sno: sound number
  *

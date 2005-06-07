@@ -65,7 +65,7 @@ const GtkActionEntry action_entry[] = {
   { "Random", GTK_STOCK_JUMP_TO, N_("_Random"), NULL, N_("Teleport randomly"), G_CALLBACK(randteleport_cb) },
   { "Wait", GTK_STOCK_STOP, N_("_Wait"), NULL, N_("Wait for the robots"), G_CALLBACK (wait_cb) },
   { "Preferences", GTK_STOCK_PREFERENCES, NULL, NULL, NULL, G_CALLBACK (properties_cb) },
-  { "Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL, G_CALLBACK (help_cb) }, /*EASYFIX*/
+  { "Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL, G_CALLBACK (help_cb) }, 
   { "About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK (about_cb) }
 };
 

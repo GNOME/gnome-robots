@@ -1,3 +1,8 @@
+2005-06-27  Richard Hoelscher  <rah@rahga.com>
+
+	* statusbar.c: Remove statubar resize grip to match GnomeAppBar and
+	the rest of gnome-games.
+
 2005-06-06  Richard Hoelscher  <rah@rahga.com>
 
 	* sound.[ch] (cleanup_sound): Removed.

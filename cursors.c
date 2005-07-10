@@ -224,8 +224,8 @@ void make_cursors (void)
 
   c = cursor_list;
   for (i=0; i<sizeof(cursor_list)/sizeof(cursor_props); i++) {
-    source = gdk_bitmap_create_from_data (NULL, c->bits, c->width, c->height);
-    mask = gdk_bitmap_create_from_data (NULL, c->mask, c->width, c->height);
+    source = gdk_bitmap_create_from_data (NULL, (gchar *)c->bits, c->width, c->height);
+    mask = gdk_bitmap_create_from_data (NULL, (gchar *)c->mask, c->width, c->height);
 
     c->cursor = gdk_cursor_new_from_pixmap (source, mask, &fg, &bg, 
 					    c->hsx, c->hsy);

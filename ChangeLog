@@ -1,3 +1,7 @@
+2005-07-08  Richard Hoelscher  <rah@rahga.com>
+
+	* cursors.c (make_cursors): Added casts to kill signedness warnings.
+
 2005-06-27  Richard Hoelscher  <rah@rahga.com>
 
 	* statusbar.c: Remove statubar resize grip to match GnomeAppBar and

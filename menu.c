@@ -75,7 +75,7 @@ const GtkToggleActionEntry toggle_action_entry[] = {
 };
 
 
-const char *ui_description =
+const char ui_description[] =
 "<ui>"
 "  <menubar name='MainMenu'>"
 "    <menu action='GameMenu'>"

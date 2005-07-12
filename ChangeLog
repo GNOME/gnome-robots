@@ -1,3 +1,8 @@
+2005-07-11  Richard Hoelscher  <rah@rahga.com>
+
+	* gnobots.c (main): Fix keyboard accelerators.
+	* menu.c: Make ui_description readonly.
+
 2005-07-08  Richard Hoelscher  <rah@rahga.com>
 
 	* cursors.c (make_cursors): Added casts to kill signedness warnings.

@@ -192,6 +192,8 @@ main (int argc, char *argv[])
 
   games_stock_prepare_for_statusbar_tooltips (ui_manager, statusbar);
   create_game_menus (ui_manager);
+  gtk_window_add_accel_group (GTK_WINDOW (app),
+			      gtk_ui_manager_get_accel_group (ui_manager));
 
   handle_box = gtk_handle_box_new ();
   menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");

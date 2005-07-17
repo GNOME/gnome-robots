@@ -96,7 +96,7 @@ load_config (gchar *fname)
 
     bptr = buffer;
     vptr = NULL;
-    while (bptr) {
+    while (*bptr) {
       if (*bptr == '=') {
 	*bptr = 0;
 	vptr = ++bptr;

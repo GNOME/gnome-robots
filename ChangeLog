@@ -1,3 +1,10 @@
+2005-07-17  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* gameconfig.c (load_config): The while loop had a bad termination
+	condition (bptr rather than *bptr). Fortunately there was another
+	way out (and also fortunate that this is trusted data, there is
+	basically no error checking in that routine). 
+
 2005-07-11  Richard Hoelscher  <rah@rahga.com>
 
 	* gnobots.c (main): Fix keyboard accelerators.

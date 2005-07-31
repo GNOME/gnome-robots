@@ -1,3 +1,10 @@
+2005-07-31  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/C/figures/gnobots2-main.png: Update with the restored
+	icons.
+
+	* menu.c: Use the proper icons for teleport and random teleport.
+
 2005-07-29  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/C/figures/*:

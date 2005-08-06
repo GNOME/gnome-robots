@@ -1,3 +1,9 @@
+2005-08-06  Callum McKenzie  <callum@physics.otago.ac.nz>
+
+	* help/da/gnobots2.xml:
+	* help/C/gnobots2.xml: Remove the mention of the
+	no-longer-existing bug reporting guidelines. See bug #312723.
+
 2005-07-31  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/C/figures/gnobots2-main.png: Update with the restored

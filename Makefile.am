@@ -50,7 +50,7 @@ gnobots2_LDADD = \
 	../libgames-support/libgames-support.la \
 	$(INTLLIBS)
 
-appicon_DATA = gnome-gnobots2.png teleport.png rteleport.png
+appicon_DATA = gnome-gnobots2.png
 
 pixmap_DATA = gnomes.png \
               robots.png \

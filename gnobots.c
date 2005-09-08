@@ -146,7 +146,6 @@ main (int argc, char *argv[])
 {
   GtkWidget      *errordialog;
   GtkWidget      *vbox, *menubar, *toolbar, *statusbar;
-  GtkWidget      *handle_box;
   GtkUIManager   *ui_manager;
   GnomeClient    *client;
   struct timeval tv;
@@ -195,11 +194,8 @@ main (int argc, char *argv[])
   gtk_window_add_accel_group (GTK_WINDOW (app),
 			      gtk_ui_manager_get_accel_group (ui_manager));
 
-  handle_box = gtk_handle_box_new ();
   menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");
   toolbar = gtk_ui_manager_get_widget (ui_manager, "/Toolbar");
-  gtk_widget_set_size_request (toolbar, 250, -1);
-  gtk_container_add (GTK_CONTAINER (handle_box), toolbar);
 
   make_cursors ();
 
@@ -213,7 +209,7 @@ main (int argc, char *argv[])
 
   vbox = gtk_vbox_new (FALSE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), menubar, FALSE, FALSE, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), handle_box, FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), toolbar, FALSE, FALSE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), game_area, TRUE, TRUE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
 
@@ -262,7 +258,7 @@ main (int argc, char *argv[])
 
   load_properties ();
 
-  connect_handle_box_to_toolbar_toggle (handle_box);
+  connect_toolbar_toggle (toolbar);
   
   init_sound ();
 

@@ -81,13 +81,6 @@ struct _GnobotsProperties {
 /* File Static Variables                                              */
 /**********************************************************************/
 static GtkWidget         *propbox      = NULL;
-static GtkWidget         *list_view    = NULL;
-enum {
-  PROPERTY_STRING,
-  VALUE_STRING,
-  INDEX_INT,
-  NCOLS
-}; /* Column indices for list */
 
 static GnobotsProperties  properties;
 
@@ -109,7 +102,6 @@ static GConfClient *gconf_client;
 static void apply_changes (void);
 static void apply_cb (GtkWidget*, gpointer);
 static gboolean delete_cb (GtkWidget*, gpointer);
-static void fill_property_list (void);
 static void pmap_selection (GtkWidget*, gpointer);
 static void type_selection (GtkWidget*, gpointer);
 static void safe_cb (GtkWidget*, gpointer);
@@ -156,7 +148,6 @@ apply_cb (GtkWidget *w, gpointer data)
   apply_changes ();
 
   gtk_widget_destroy (propbox);
-  list_view = NULL;
   propbox = NULL;
 }
 
@@ -172,294 +163,10 @@ apply_cb (GtkWidget *w, gpointer data)
 static gboolean
 delete_cb (GtkWidget *w, gpointer data)
 {
-  list_view = NULL;
   propbox = NULL;
 
   return FALSE;
 }
-
-
-/**
- * fill_property_list
- *
- * Description:
- * Fills the property list of configuration values
- **/
-static void
-fill_property_list (void)
-{
-  gchar *entry[2];
-  gchar buffer[256];
-  GameConfig *gc;
-  gboolean type2exist = TRUE;
-  GtkListStore *list;
-  GtkTreeIter iter;
-  int index = 0;
-
-  if (list_view == NULL) return;
-
-  list = (GtkListStore *) gtk_tree_view_get_model (GTK_TREE_VIEW (list_view));
-
-  gc = game_config_settings (properties.selected_config);
-
-  if ((gc->initial_type2 <= 0) && 
-      (gc->increment_type2 <= 0) && 
-      (gc->maximum_type2 <= 0)){
-    type2exist = FALSE;
-  }
-
-  gtk_list_store_clear (list);
-  /* I think this is just gtk_list_store_clear () */
-  
-  if (type2exist){
-    entry[0] = _("Initial Number of Type 1 Robots");
-  } else {
-    entry[0] = _("Initial Number of Robots");
-  }
-  sprintf (buffer, "%d", gc->initial_type1);
-  entry[1] = buffer;
-
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  if (type2exist){
-    entry[0] = _("Initial Number of Type 2 Robots");
-    sprintf (buffer, "%d", gc->initial_type2);
-    entry[1] = buffer;
-    gtk_list_store_append (list, &iter);
-    gtk_list_store_set (list, &iter,
-                        PROPERTY_STRING, entry[0],
-                        VALUE_STRING, entry[1],
-                        INDEX_INT, index,
-                        -1);
-    index++;
-  }
-
-  if (type2exist){
-    entry[0] = _("Increasing Number of Type 1 Robots per Level");
-  } else {
-    entry[0] = _("Increasing Number of Robots per Level");
-  }
-  sprintf (buffer, "%d", gc->increment_type1);
-  entry[1] = buffer;
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  if (type2exist){
-    entry[0] = _("Increasing Number of Type 2 Robots per Level");
-    sprintf (buffer, "%d", gc->increment_type2);
-    entry[1] = buffer;
-    gtk_list_store_append (list, &iter);
-    gtk_list_store_set (list, &iter,
-                        PROPERTY_STRING, entry[0],
-                        VALUE_STRING, entry[1],
-                        INDEX_INT, index,
-                        -1);
-    index++;
-  }
-
-  if (type2exist){
-    entry[0] = _("Maximum Number of Type 1 Robots");
-  } else {
-    entry[0] = _("Maximum Number of Robots");
-  }
-  if (gc->maximum_type1 > MAX_ROBOTS){
-    sprintf (buffer, _("Fill Screen"));
-  } else {
-    sprintf (buffer, "%d", gc->maximum_type1);
-  }
-  entry[1] = buffer;
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  if (type2exist){
-    entry[0] = _("Maximum Number of Type 2 Robots");
-    if (gc->maximum_type2 > MAX_ROBOTS){
-      sprintf (buffer, _("Fill Screen"));
-    } else {
-      sprintf (buffer, "%d", gc->maximum_type2);
-    }
-    entry[1] = buffer;
-    gtk_list_store_append (list, &iter);
-    gtk_list_store_set (list, &iter,
-                        PROPERTY_STRING, entry[0],
-                        VALUE_STRING, entry[1],
-                        INDEX_INT, index,
-                        -1);
-    index++;
-  }
-
-  if (type2exist){
-    entry[0] = _("Type 1 Robot Score");
-  } else {
-    entry[0] = _("Robot Score");
-  }
-  sprintf (buffer, "%d", gc->score_type1);
-  entry[1] = buffer;
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  if (type2exist){
-    entry[0] = _("Type 2 Robot Score");
-    sprintf (buffer, "%d", gc->score_type2);
-    entry[1] = buffer;
-    gtk_list_store_append (list, &iter);
-    gtk_list_store_set (list, &iter,
-                        PROPERTY_STRING, entry[0],
-                        VALUE_STRING, entry[1],
-                        INDEX_INT, index,
-                        -1);
-    index++;
-  }
-
-  if (type2exist){
-    entry[0] = _("Type 1 Robot Score When Waiting");
-  } else {
-    entry[0] = _("Robot Score When Waiting");
-  }
-  sprintf (buffer, "%d", gc->score_type1_waiting);
-  entry[1] = buffer;
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  if (type2exist){
-    entry[0] = _("Type 2 Robot Score When Waiting");
-    sprintf (buffer, "%d", gc->score_type2_waiting);
-    entry[1] = buffer;
-    gtk_list_store_append (list, &iter);
-    gtk_list_store_set (list, &iter,
-                        PROPERTY_STRING, entry[0],
-                        VALUE_STRING, entry[1],
-                        INDEX_INT, index,
-                        -1);
-    index++;
-  }
-
-  if (type2exist){
-    entry[0] = _("Type 1 Robot Score When Splatted");
-  } else {
-    entry[0] = _("Robot Score When Splatted");
-  }
-  sprintf (buffer, "%d", gc->score_type1_splatted);
-  entry[1] = buffer;
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  if (type2exist){
-    entry[0] = _("Type 2 Robot Score When Splatted");
-    sprintf (buffer, "%d", gc->score_type2_splatted);
-    entry[1] = buffer;
-    gtk_list_store_append (list, &iter);
-    gtk_list_store_set (list, &iter,
-                        PROPERTY_STRING, entry[0],
-                        VALUE_STRING, entry[1],
-                        INDEX_INT, index,
-                        -1);
-    index++;
-  }
-
-  entry[0] = _("Initial Number of Safe Teleports");
-  sprintf (buffer, "%d", gc->initial_safe_teleports);
-  entry[1] = buffer;
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  entry[0] = _("Number of Free Safe Teleports per Level");
-  sprintf (buffer, "%d", gc->free_safe_teleports);
-  entry[1] = buffer;
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  entry[0] = _("Kills Required While Waiting to Get A Safe Teleport");
-  sprintf (buffer, "%d", gc->num_robots_per_safe);
-  entry[1] = buffer;
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  entry[0] = _("Score Required To Get A Safe Teleport");
-  sprintf (buffer, "%d", gc->safe_score_boundary);
-  entry[1] = buffer;
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  entry[0] = _("Maximum Number of Safe Teleports");
-  sprintf (buffer, "%d", gc->max_safe_teleports);
-  entry[1] = buffer;
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-  index++;
-
-  entry[0] = _("Moveable Junkheaps");
-  if (gc->moveable_heaps) {
-    entry[1] = _("Yes");
-  } else {
-    entry[1] = _("No");
-  }
-  gtk_list_store_append (list, &iter);
-  gtk_list_store_set (list, &iter,
-                      PROPERTY_STRING, entry[0],
-                      VALUE_STRING, entry[1],
-                      INDEX_INT, index,
-                      -1);
-
-  /* gtk_tree_view_set_model (list_view, list); */
-
-}
-
 
 /**
  * pmap_selection
@@ -497,7 +204,6 @@ type_selection (GtkWidget *widget, gpointer data)
   gint num = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
 
   properties.selected_config = num;
-  fill_property_list ();
 
   gconf_set_configuration (game_config_name (properties.selected_config));
 
@@ -693,15 +399,10 @@ show_properties_dialog (void)
   GtkWidget *chkbox;
   GtkWidget *table;
   GtkWidget *dbut;
-  GtkWidget *scrolled;
   GtkWidget *frame;
   GtkWidget *w;
   GtkWidget *controls_list;
   GtkTooltips *tooltips;
-  GtkListStore *list;
-  GtkTreeViewColumn *column;
-  GtkCellRenderer *renderer;
-  GtkTreeSelection *selection;
 
   if (propbox) 
     return;
@@ -744,43 +445,6 @@ show_properties_dialog (void)
   fill_typemenu (typemenu);
   gtk_box_pack_start_defaults (GTK_BOX (hbox), typemenu);
   
-  list = gtk_list_store_new (NCOLS,
-			     G_TYPE_STRING, /* Property */ 
-			     G_TYPE_STRING, /* Value */
-			     G_TYPE_INT); /* Index - remains hidden */
-  /* Create view */
-  list_view = gtk_tree_view_new_with_model (GTK_TREE_MODEL (list));
-  
-  renderer = gtk_cell_renderer_text_new ();
-  column = gtk_tree_view_column_new_with_attributes (_("Property"), 
-						     renderer, 
-						     "text", PROPERTY_STRING, 
-						     NULL);
-  gtk_tree_view_append_column (GTK_TREE_VIEW (list_view), column);
-    
-  renderer = gtk_cell_renderer_text_new ();
-  column = gtk_tree_view_column_new_with_attributes (_("Value"), 
-						     renderer, 
-						     "text", VALUE_STRING, 
-						     NULL);
-  gtk_tree_view_append_column (GTK_TREE_VIEW (list_view), column);
-
-  selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (list_view));
-  gtk_tree_selection_set_mode  (selection, GTK_SELECTION_SINGLE);
-
-  fill_property_list ();
-
-  scrolled = gtk_scrolled_window_new (NULL, NULL);
-  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
-				  GTK_POLICY_AUTOMATIC,
-				  GTK_POLICY_AUTOMATIC);
-  gtk_scrolled_window_set_shadow_type 
-    (GTK_SCROLLED_WINDOW (scrolled), GTK_SHADOW_IN);
-  gtk_widget_set_size_request (scrolled, 400, 200);
-  gtk_container_add (GTK_CONTAINER (scrolled), list_view);
-
-  gtk_box_pack_start (GTK_BOX (vbox), scrolled, TRUE, TRUE, 0);
-
   frame = games_frame_new (_("Options"));
   gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
   vbox = gtk_vbox_new (TRUE, 6);

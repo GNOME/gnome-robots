@@ -108,27 +108,6 @@ const char ui_description[] =
 "  </toolbar>"
 "</ui>";
 
-/* FIXME: We don't actually use this toolbar anymore, but
- * I still need to move each teleport.png into stock. -rah*/
-GnomeUIInfo toolbar[] = {
-  GNOMEUIINFO_ITEM_STOCK(N_("New"), N_("Start a new game"),
-                         new_cb, GTK_STOCK_NEW),
-  GNOMEUIINFO_SEPARATOR,
-
-  /* FIXME: Someday these should be part of a gnome-games icon theme. */
-
-  { GNOME_APP_UI_ITEM, N_("Teleport"), N_("Teleport, safely if possible"), 
-    teleport_cb, NULL, NULL, GNOME_APP_PIXMAP_FILENAME, "teleport.png",
-    0, 0, NULL},
-
-  { GNOME_APP_UI_ITEM, N_("Random"), N_("Teleport randomly"), 
-    randteleport_cb, NULL, NULL, GNOME_APP_PIXMAP_FILENAME, "rteleport.png",
-    0, 0, NULL},
-
-  GNOMEUIINFO_ITEM_STOCK (N_("Wait"), N_("Wait for the robots"), wait_cb, GTK_STOCK_STOP),
-  GNOMEUIINFO_END
-};
-
 /**********************************************************************/
 /* Function Definitions                                               */
 /**********************************************************************/
@@ -156,9 +135,8 @@ new_cb (GtkAction *action, gpointer  data)
  * @data: Callback data
  *
  * Description:
- * Callback for toolbar menu entry. This does gconf work, while show and
- * hide of toolbar is handled by connect_handle_box_to_toolbar_toggle()
- *
+ * Callback for toolbar menu entry. 
+ * 
  * Returns:
  **/
 static void
@@ -361,22 +339,22 @@ void set_move_menu_sensitivity (gboolean state)
 }
 
 static void
-toggle_toolbar_cb (GtkAction *action, GtkWidget *handle_box)
+toggle_toolbar_cb (GtkAction *action, GtkWidget *toolbar)
 {
   gboolean state;
 
   state = gtk_toggle_action_get_active(GTK_TOGGLE_ACTION (action));
   if (state) {
-    gtk_widget_show (handle_box);
+    gtk_widget_show (toolbar);
   } else {
-    gtk_widget_hide (handle_box);
+    gtk_widget_hide (toolbar);
   }
 }
 
 void
-connect_handle_box_to_toolbar_toggle (GtkWidget *handle_box)
+connect_toolbar_toggle (GtkWidget *toolbar)
 {
-  g_signal_connect (toolbar_toggle_action, "activate", G_CALLBACK (toggle_toolbar_cb), handle_box);
+  g_signal_connect (toolbar_toggle_action, "activate", G_CALLBACK (toggle_toolbar_cb), toolbar);
   gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (toolbar_toggle_action),
 				properties_show_toolbar());
 }

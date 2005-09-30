@@ -46,8 +46,8 @@ gnobots2_SOURCES = \
 	gbdefs.h
 
 gnobots2_LDADD = \
-	$(GNOME_GAMES_LIBS) \
 	../libgames-support/libgames-support.la \
+	$(GNOME_GAMES_LIBS) \
 	$(INTLLIBS)
 
 appicon_DATA = gnome-gnobots2.png

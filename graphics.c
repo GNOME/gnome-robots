@@ -399,7 +399,7 @@ set_background_color (GdkColor color)
     colormap = gtk_widget_get_colormap (game_area);
     gdk_colormap_alloc_color (colormap, &color, FALSE, TRUE);
 
-    gdk_window_set_background (game_area->window, &color);
+    gtk_widget_modify_bg (game_area, GTK_STATE_NORMAL, &color);
   }
 }
 
@@ -432,7 +432,6 @@ set_background_color_from_name (gchar *name)
 void
 draw_tile_pixmap (gint tileno, gint pno, gint x, gint y, GtkWidget *area)
 {
-
   gdk_window_clear_area (area->window, x, y, TILE_WIDTH, TILE_HEIGHT);
 
   if ((tileno < 0) || (tileno >= SCENARIO_PIXMAP_WIDTH)) {

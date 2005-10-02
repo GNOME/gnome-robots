@@ -240,7 +240,7 @@ main (int argc, char *argv[])
   }
 
   gtk_widget_show (app);
-  
+
   if (!load_game_graphics ()) {
     /* Oops, no graphics, we probably haven't been installed properly. */
     errordialog = gtk_message_dialog_new (GTK_WINDOW (app), 

@@ -1,3 +1,9 @@
+2005-10-02  Callum McKenzie  <callum@spooky-possum.org>
+
+	* graphics.c (set_background_color): Use gtk_widget_modify_bg
+	rather than setting the GdkWindow background colour directly. This
+	stops it being overwritten. See bug #317522.
+
 2005-08-06  Callum McKenzie  <callum@physics.otago.ac.nz>
 
 	* help/da/gnobots2.xml:

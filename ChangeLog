@@ -1,3 +1,7 @@
+2006-01-12  Richard Hoelscher  <rah@rahga.com>
+
+	* game.c (mouse_cb): Fix safe moves + mouse control. See bug #169765.
+
 2005-10-02  Callum McKenzie  <callum@spooky-possum.org>
 
 	* graphics.c (set_background_color): Use gtk_widget_modify_bg

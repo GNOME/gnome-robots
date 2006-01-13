@@ -1335,9 +1335,9 @@ gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
 
   get_dir (e->x, e->y, &dx, &dy);
 
-  player_move (dx, dy);
-
-  move_robots ();
+  if (player_move (dx, dy)) {
+    move_robots ();
+  }
 
   return TRUE;
 }

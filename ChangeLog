@@ -1,3 +1,8 @@
+2006-01-16  Callum McKenzie  <callum@spooky-possum.org>
+
+	* robots.png: New graphics from Nicu Buculei. Also added the
+	source robots.svg file for future use.
+
 2006-01-12  Richard Hoelscher  <rah@rahga.com>
 
 	* game.c (mouse_cb): Fix safe moves + mouse control. See bug #169765.

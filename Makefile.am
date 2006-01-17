@@ -50,7 +50,7 @@ gnobots2_LDADD = \
 	$(GNOME_GAMES_LIBS) \
 	$(INTLLIBS)
 
-appicon_DATA = gnome-gnobots2.png
+appicon_DATA = gnome-gnobots2.svg
 
 pixmap_DATA = gnomes.png \
               robots.png \

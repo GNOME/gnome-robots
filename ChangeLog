@@ -1,5 +1,9 @@
 2006-01-17  Callum McKenzie  <callum@spooky-possum.org>
 
+	* Makefile.am: 
+	* gnobots2.desktop.in: Replace the PNG icon with an SVG icon from
+	Nicu Buculei.
+
 	* gnobots.c: Patch from Scott Bronson to ensure user-edited
 	accelerators are saved (bug #327280).
 

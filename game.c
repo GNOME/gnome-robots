@@ -87,6 +87,7 @@ static gboolean check_safe (gint x, gint y);
 static gboolean push_heap (gint x, gint y, gint dx, gint dy);
 static gboolean try_player_move (gint dx, gint dy);
 static gboolean safe_move_available (void);
+static gboolean safe_teleport_available (void);
 static gboolean player_move (gint dx, gint dy);
 static gboolean random_teleport (void);
 static gboolean safe_teleport (void);
@@ -953,7 +954,6 @@ try_player_move (gint dx, gint dy)
   return TRUE;
 }
 
-
 /**
  * safe_move_available
  *
@@ -1017,6 +1017,30 @@ safe_move_available (void)
   return FALSE;
 }
 
+/**
+ * safe_teleport_available
+ *
+ * Description:
+ * Check for a safe teleport.
+ *
+ * Returns:
+ * TRUE is a safe teleport is possible, FALSE otherwise.
+ *
+ */
+static gboolean
+safe_teleport_available (void)
+{
+  int x, y;
+
+  for (y = 0; y < GAME_WIDTH; y++) {
+    for (x = 0; x < GAME_HEIGHT; x++) {
+      if (check_safe (x, y))
+	return TRUE;
+    }
+  }
+
+  return FALSE;
+}
 
 /**
  * player_move
@@ -1128,6 +1152,7 @@ random_teleport (void)
     }
 
     if ((xp == ixp) && (yp == iyp)) {
+      /* This should never happen. */
       message_box (_("There are no teleport locations left!!"));      
       return FALSE;
     }
@@ -1154,9 +1179,25 @@ safe_teleport (void)
 {
   gint xp, yp, ixp, iyp;
   gint i, j;
+  GtkWidget *dialog;
 
-  if (safe_teleports <= 0) {
-    return random_teleport ();
+  if (properties_super_safe_moves () && !safe_teleport_available ()) {
+    /* FIXME: This code is untested - in normal play you have to get to 
+     * about level 61. */
+    if (!safe_move_available ()) {
+      dialog = gtk_message_dialog_new (GTK_WINDOW (app), GTK_DIALOG_MODAL, 
+				       GTK_MESSAGE_INFO, GTK_BUTTONS_OK, 
+				       _("You have run out of safe moves - the robots have won!"));
+      gtk_dialog_run (GTK_DIALOG (dialog));
+      /* This is a complete hack to force death. */
+      arena[player_xpos][player_ypos] = OBJECT_ROBOT1;
+      return FALSE;
+    } else if (safe_teleports > 0) {
+      message_box (_("There are no safe locations to teleport to!!"));
+      return FALSE;
+    } else {
+      return random_teleport ();
+    }
   }
   
   for (i = 0; i < GAME_WIDTH; ++i) {
@@ -1194,11 +1235,6 @@ safe_teleport (void)
       if (yp >= GAME_HEIGHT) {
 	yp = 0;
       }
-    }
-
-    if ((xp == ixp) && (yp == iyp)) {
-      message_box (_("There are no safe locations to teleport to!!"));
-      return FALSE;
     }
   }
   

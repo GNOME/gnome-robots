@@ -1,3 +1,10 @@
+2006-01-25  Callum McKenzie  <callum@spooky-possum.org>
+
+	* game.c: If we run out of spaces to move or teleport to in the
+	safe-moves and safe-teleport mode we declare the game over and log
+	a high score (See bug #107846). Also added the safe_teleport_available
+	function to assist this.
+
 2006-01-17  Callum McKenzie  <callum@spooky-possum.org>
 
 	* Makefile.am: 

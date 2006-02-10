@@ -1,3 +1,9 @@
+2006-02-10  Callum McKenzie  <callum@spooky-possum.org>
+
+	* game.c: Set up the temporary arena correctly when testing for
+	safe teleports. Also restore the AWOL logic for checking that we
+	aren't over-using safe teleports.
+
 2006-01-25  Callum McKenzie  <callum@spooky-possum.org>
 
 	* game.c: If we run out of spaces to move or teleport to in the

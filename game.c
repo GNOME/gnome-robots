@@ -279,6 +279,28 @@ clear_arena (void)
   num_robots2 = 0;
 }
 
+/**
+ * load_temp_arena
+ *
+ * Description:
+ * Set up the temporary arena for processing speculative moves. 
+ *
+ **/
+static void
+load_temp_arena (void)
+{
+  gint i, j;
+
+  for (i = 0; i < GAME_WIDTH; ++i) {
+    for (j = 0; j < GAME_HEIGHT; ++j) {
+      if (arena[i][j] != OBJECT_PLAYER) {
+	temp_arena[i][j] = arena[i][j];
+      } else {
+	temp_arena[i][j] = OBJECT_NONE;
+      }
+    }
+  }
+}
 
 /**
  * check_location
@@ -920,7 +942,6 @@ push_heap (gint x, gint y, gint dx, gint dy)
 static gboolean
 try_player_move (gint dx, gint dy)
 {
-  gint i, j;
   gint nx, ny;
 
   nx = player_xpos + dx;
@@ -930,15 +951,7 @@ try_player_move (gint dx, gint dy)
     return FALSE;
   }
 
-  for (i = 0; i < GAME_WIDTH; ++i) {
-    for (j = 0; j < GAME_HEIGHT; ++j) {
-      if (arena[i][j] != OBJECT_PLAYER) {
-	temp_arena[i][j] = arena[i][j];
-      } else {
-	temp_arena[i][j] = OBJECT_NONE;
-      }
-    }
-  }
+  load_temp_arena ();
 
   if (temp_arena[nx][ny] == OBJECT_HEAP) {
     if (game_config ()->moveable_heaps) {
@@ -1031,6 +1044,8 @@ static gboolean
 safe_teleport_available (void)
 {
   int x, y;
+
+  load_temp_arena ();
 
   for (y = 0; y < GAME_WIDTH; y++) {
     for (x = 0; x < GAME_HEIGHT; x++) {
@@ -1200,6 +1215,9 @@ safe_teleport (void)
     }
   }
   
+  if (safe_teleports <= 0)
+    return random_teleport ();
+
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if (arena[i][j] != OBJECT_PLAYER) {

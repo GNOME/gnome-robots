@@ -2,7 +2,9 @@
 
 	* game.c: Set up the temporary arena correctly when testing for
 	safe teleports. Also restore the AWOL logic for checking that we
-	aren't over-using safe teleports.
+	aren't over-using safe teleports. Also make sure the player is
+	killed properly (and factorise out the code to do it).
+	(message_box): Update to use gtk_message_dialog.
 
 2006-01-25  Callum McKenzie  <callum@spooky-possum.org>
 

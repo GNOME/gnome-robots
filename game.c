@@ -110,11 +110,11 @@ message_box (gchar *msg)
 {
   GtkWidget *box;
 
-  box = gnome_app_message (GNOME_APP (app),
-                           msg);
-
-  gtk_window_set_modal (GTK_WINDOW (box), TRUE);
-  gtk_widget_show (box);
+  box = gtk_message_dialog_new (GTK_WINDOW (app), GTK_DIALOG_MODAL, 
+				GTK_MESSAGE_INFO, GTK_BUTTONS_OK,
+				msg);
+  gtk_dialog_run (GTK_DIALOG (box));
+  gtk_widget_destroy (box);
 }
 
 /**
@@ -203,6 +203,23 @@ log_score (gint sc)
   return pos;
 }
 
+/**
+ * kill_player
+ *
+ * Description:
+ * Ends the current game.
+ **/
+static void
+kill_player (void)
+{
+    game_state = STATE_DEAD;
+    play_sound (SOUND_DIE);
+    arena[player_xpos][player_ypos] = OBJECT_PLAYER;
+    endlev_counter = 0;
+    add_aieee_bubble (player_xpos, player_ypos);
+    player_animation_dead ();
+    set_move_menu_sensitivity (FALSE);
+}
 
 /**
  * add_kill
@@ -481,15 +498,8 @@ update_arena (void)
     }
   }
 
-  if (arena[player_xpos][player_ypos] != OBJECT_PLAYER) {
-    game_state = STATE_DEAD;
-    play_sound (SOUND_DIE);
-    arena[player_xpos][player_ypos] = OBJECT_PLAYER;
-    endlev_counter = 0;
-    add_aieee_bubble (player_xpos, player_ypos);
-    player_animation_dead ();
-    set_move_menu_sensitivity (FALSE);
-  }
+  if (arena[player_xpos][player_ypos] != OBJECT_PLAYER)
+    kill_player ();
 
   if ((num_robots1 + num_robots2) <= 0) {
     game_state = STATE_COMPLETE;
@@ -1194,18 +1204,13 @@ safe_teleport (void)
 {
   gint xp, yp, ixp, iyp;
   gint i, j;
-  GtkWidget *dialog;
 
   if (properties_super_safe_moves () && !safe_teleport_available ()) {
     /* FIXME: This code is untested - in normal play you have to get to 
      * about level 61. */
     if (!safe_move_available ()) {
-      dialog = gtk_message_dialog_new (GTK_WINDOW (app), GTK_DIALOG_MODAL, 
-				       GTK_MESSAGE_INFO, GTK_BUTTONS_OK, 
-				       _("You have run out of safe moves - the robots have won!"));
-      gtk_dialog_run (GTK_DIALOG (dialog));
-      /* This is a complete hack to force death. */
-      arena[player_xpos][player_ypos] = OBJECT_ROBOT1;
+      message_box (_("You have run out of safe moves - the robots have won!"));
+      kill_player ();
       return FALSE;
     } else if (safe_teleports > 0) {
       message_box (_("There are no safe locations to teleport to!!"));
@@ -1214,7 +1219,7 @@ safe_teleport (void)
       return random_teleport ();
     }
   }
-  
+
   if (safe_teleports <= 0)
     return random_teleport ();
 

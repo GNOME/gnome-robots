@@ -166,7 +166,7 @@ main (int argc, char *argv[])
  		      GNOME_PARAM_POPT_TABLE, options,
  		      GNOME_PARAM_APP_DATADIR, DATADIR, NULL);
 
-  gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-gnobots2.png");
+  gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-gnobots2.svg");
 
   client = gnome_master_client ();
 

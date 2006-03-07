@@ -58,25 +58,6 @@ keyboard_string (gint ksym)
   return name;
 }
 
-
-/**
- * keyboard_preferred
- * @ksym: KeySym
- *
- * Description:
- * Returns the preferred alternative keysym. e.g. converts
- * all lovercase letters to uppercase
- *
- * Returns:
- * preferred keysym
- **/
-gint
-keyboard_preferred (gint ksym)
-{
-  return gdk_keyval_to_upper (ksym);
-}
-
-
 /**
  * keyboard_set
  * @keys: array of keysyms
@@ -113,7 +94,7 @@ keyboard_set (gint* keys)
 gint
 keyboard_cb (GtkWidget *widget, GdkEventKey *event, gpointer data)
 {
-  gint i, kv;
+  gint i;
 
   /* This is a bit of a kludge to let through accelerator keys, otherwise
    * if N is used as a key, then Ctrl-N is never picked up. The cleaner
@@ -122,10 +103,8 @@ keyboard_cb (GtkWidget *widget, GdkEventKey *event, gpointer data)
   if (event->state &= (GDK_CONTROL_MASK | GDK_MOD1_MASK))
     return FALSE;
 
-  kv = keyboard_preferred (event->keyval);
-
   for (i = 0; i < 12; ++i) {
-    if (kv == control_keys[i]) {
+    if (event->keyval == control_keys[i]) {
       game_keypress (i);
       return TRUE;
     }

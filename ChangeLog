@@ -1,3 +1,8 @@
+2006-03-26  Callum McKenzie  <callum@spooky-possum.org>
+
+	* game.c (update_arena): Make sure a player killed by the last two
+	robots colliding on top of him stays dead. Fixes bug #335920.
+
 2006-03-22  Callum McKenzie  <callum@spooky-possum.org>
 
 	* help/C/gnobots2.xml: Remove the doctable link, it was broken

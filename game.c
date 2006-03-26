@@ -498,16 +498,20 @@ update_arena (void)
     }
   }
 
-  if (arena[player_xpos][player_ypos] != OBJECT_PLAYER)
+  if (arena[player_xpos][player_ypos] != OBJECT_PLAYER) {
     kill_player ();
-
-  if ((num_robots1 + num_robots2) <= 0) {
-    game_state = STATE_COMPLETE;
-    play_sound (SOUND_YAHOO);
-    endlev_counter = 0;
-    add_yahoo_bubble (player_xpos, player_ypos);
-    reset_player_animation ();
-    set_move_menu_sensitivity (FALSE);
+  } else {
+    /* This is in the else statement to catch the case where the last
+     * two robots collide on top of the human. Without the "else" this
+     * leads to the player being ressurected and winning. */
+    if ((num_robots1 + num_robots2) <= 0) {
+      game_state = STATE_COMPLETE;
+      play_sound (SOUND_YAHOO);
+      endlev_counter = 0;
+      add_yahoo_bubble (player_xpos, player_ypos);
+      reset_player_animation ();
+      set_move_menu_sensitivity (FALSE);
+    }
   }
 
   display_updated = FALSE;

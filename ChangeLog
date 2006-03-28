@@ -1,3 +1,9 @@
+2006-03-28  Callum McKenzie  <callum@spooky-possum.org>
+
+	* gnobots.c: Patch from Thomas Thurman to upgrade popt to
+	GOption. Minor fixes as suggested by Paolo Borelli. Converted
+	gnome_window_icon_... to gtk_window_set_default... .
+
 2006-03-26  Callum McKenzie  <callum@spooky-possum.org>
 
 	* game.c (update_arena): Make sure a player killed by the last two

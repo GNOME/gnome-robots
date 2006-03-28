@@ -57,15 +57,16 @@ static gint    session_ypos     = -1;
 /**********************************************************************/
 /* File Static Variables                                              */
 /**********************************************************************/
-static struct poptOption options[] = {
-  {"scenario", 's', POPT_ARG_STRING, &cmdline_scenario, 0, 
+static const GOptionEntry options[] = {
+  {"scenario", 's', 0, G_OPTION_ARG_STRING, &cmdline_scenario,
    N_("Set game scenario"), N_("NAME")},
-  {"config", 'c', POPT_ARG_STRING, &cmdline_config, 0, 
+  {"config", 'c', 0, G_OPTION_ARG_STRING, &cmdline_config,
    N_("Set game configuration"), N_("NAME")},
-  {"x", 'x', POPT_ARG_INT, &session_xpos, 0, NULL, N_("X")},
-  {"y", 'y', POPT_ARG_INT, &session_ypos, 0, NULL, N_("Y")},
-  {NULL, '\0', 0, NULL, 0}
+  {"x", 'x', 0, G_OPTION_ARG_INT, &session_xpos, N_("Initial window position"), N_("X")},
+  {"y", 'y', 0, G_OPTION_ARG_INT, &session_ypos, N_("Initial window position"), N_("Y")},
+  { NULL },
 };
+
 /**********************************************************************/
 
 
@@ -148,6 +149,7 @@ main (int argc, char *argv[])
   GtkWidget      *vbox, *menubar, *toolbar, *statusbar;
   GtkUIManager   *ui_manager;
   GnomeClient    *client;
+  GOptionContext *option_context;
   struct timeval tv;
   gint           i;
 
@@ -160,13 +162,18 @@ main (int argc, char *argv[])
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
+  option_context = g_option_context_new ("");
+  g_option_context_add_main_entries (option_context, options, GETTEXT_PACKAGE);
+  
   gnome_program_init (GAME_NAME, VERSION,
  		      LIBGNOMEUI_MODULE,
  		      argc, argv,
- 		      GNOME_PARAM_POPT_TABLE, options,
- 		      GNOME_PARAM_APP_DATADIR, DATADIR, NULL);
+ 		      GNOME_PARAM_GOPTION_CONTEXT, option_context,
+ 		      GNOME_PARAM_APP_DATADIR, DATADIR,
+                      GNOME_PARAM_NONE);
 
-  gnome_window_icon_set_default_from_file (GNOME_ICONDIR"/gnome-gnobots2.svg");
+  gtk_window_set_default_icon_from_file (GNOME_ICONDIR"/gnome-gnobots2.svg", 
+					 NULL);
 
   client = gnome_master_client ();
 

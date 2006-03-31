@@ -8,7 +8,6 @@ pixmapdir=$(datadir)/pixmaps/gnobots2
 configdir=$(datadir)/gnobots2
 soundlistdir=$(sysconfdir)/sound/events
 sounddir=$(datadir)/sounds/gnobots2
-appicondir=$(datadir)/pixmaps
 Gamesdir=$(datadir)/applications
 
 SUBDIRS = help
@@ -50,8 +49,6 @@ gnobots2_LDADD = \
 	$(GNOME_GAMES_LIBS) \
 	$(INTLLIBS)
 
-appicon_DATA = gnome-gnobots2.svg
-
 pixmap_DATA = gnomes.png \
               robots.png \
 	      yahoo.png \
@@ -83,13 +80,30 @@ EXTRA_DIST = README \
              AUTHORS \
              gnobots2.desktop.in \
              gnobots2.soundlist.in \
-             $(appicon_DATA) \
+	     $(icon_DATA) \
+	     $(svgicon_DATA) \
              $(pixmap_DATA) \
 	     $(sound_DATA) \
 	     $(Games_DATA) \
 	     $(soundlist_DATA) \
 	     $(config_DATA) \
              $(schema_in_files)
+
+icondir = $(datadir)/icons/hicolor/48x48/apps
+icon_DATA = gnome-robots.png
+svgicondir = $(datadir)/icons/hicolor/scalable/apps
+svgicon_DATA = gnome-robots.svg
+
+gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
+
+install-data-hook:
+	@-if test -z "$(DESTDIR)"; then \
+		echo "Updating Gtk icon cache."; \
+		$(gtk_update_icon_cache); \
+	else \
+		echo "*** Icon cache not updated.  After install, run this:"; \
+		echo "***   $(gtk_update_icon_cache)"; \
+	fi
 
 install-data-local:
 if GCONF_SCHEMAS_INSTALL

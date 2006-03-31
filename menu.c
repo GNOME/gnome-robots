@@ -239,6 +239,7 @@ about_cb (GtkAction *action, gpointer data)
                          "comments", _("Based on classic BSD Robots."),
 			 "authors", authors,
 			 "translator_credits", _("translator-credits"),
+			 "logo-icon-name", "gnome-robots",
 			 NULL);
 }
 

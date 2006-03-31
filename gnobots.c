@@ -172,8 +172,7 @@ main (int argc, char *argv[])
  		      GNOME_PARAM_APP_DATADIR, DATADIR,
                       GNOME_PARAM_NONE);
 
-  gtk_window_set_default_icon_from_file (GNOME_ICONDIR"/gnome-gnobots2.svg", 
-					 NULL);
+  gtk_window_set_default_icon_name ("gnome-robots");
 
   client = gnome_master_client ();
 

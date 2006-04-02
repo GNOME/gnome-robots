@@ -1,3 +1,10 @@
+2006-04-02  Callum McKenzie  <callum@spooky-possum.org>
+
+	* gnobots.c: Remove libgnomeui/gnome-window-icon.h from the
+	includes.
+
+	* Makefile.am: Move the icon cache update down the build tree.
+
 2006-03-31  Callum McKenzie  <callum@spooky-possum.org>
 
 	* menu.c (about_cb): Add the icon to the about dialog properties.

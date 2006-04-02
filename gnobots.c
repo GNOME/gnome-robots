@@ -21,7 +21,6 @@
 
 #include <config.h>
 #include <gnome.h>
-#include <libgnomeui/gnome-window-icon.h>
 #include <sys/time.h>
 #include <string.h>
 #include <games-stock.h>

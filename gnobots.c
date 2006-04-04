@@ -148,6 +148,7 @@ main (int argc, char *argv[])
   GtkWidget      *vbox, *menubar, *toolbar, *statusbar;
   GtkUIManager   *ui_manager;
   GnomeClient    *client;
+  GnomeProgram   *program;
   GOptionContext *option_context;
   struct timeval tv;
   gint           i;
@@ -164,12 +165,12 @@ main (int argc, char *argv[])
   option_context = g_option_context_new ("");
   g_option_context_add_main_entries (option_context, options, GETTEXT_PACKAGE);
   
-  gnome_program_init (GAME_NAME, VERSION,
- 		      LIBGNOMEUI_MODULE,
- 		      argc, argv,
- 		      GNOME_PARAM_GOPTION_CONTEXT, option_context,
- 		      GNOME_PARAM_APP_DATADIR, DATADIR,
-                      GNOME_PARAM_NONE);
+  program = gnome_program_init (GAME_NAME, VERSION,
+ 				LIBGNOMEUI_MODULE,
+ 				argc, argv,
+ 				GNOME_PARAM_GOPTION_CONTEXT, option_context,
+ 				GNOME_PARAM_APP_DATADIR, DATADIR,
+  				GNOME_PARAM_NONE);
 
   gtk_window_set_default_icon_name ("gnome-robots");
 
@@ -292,6 +293,8 @@ main (int argc, char *argv[])
   gtk_main ();
 
   gnome_accelerators_sync();
+
+  g_object_unref (program);
 
   return 0;
 }

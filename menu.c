@@ -232,14 +232,20 @@ about_cb (GtkAction *action, gpointer data)
 {
   const gchar *authors[]= { "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
 
+  const gchar *documenters[]= { "Patanjali Somayaji", "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
+
   gtk_show_about_dialog (GTK_WINDOW (app),
 			 "name", _("Robots"),
 			 "version", VERSION,
-			 "copyright", "Copyright \xc2\xa9 1998-2004 Mark Rae",
+			 "copyright", "Copyright \xc2\xa9 1998-2006 Mark Rae",
+			 "license", "GPL 2+",
                          "comments", _("Based on classic BSD Robots."),
 			 "authors", authors,
+			 "documenters", documenters,
 			 "translator_credits", _("translator-credits"),
 			 "logo-icon-name", "gnome-robots",
+			 "website", "http://www.gnome.org/projects/gnome-games/",
+			 "wrap-license", TRUE,
 			 NULL);
 }
 

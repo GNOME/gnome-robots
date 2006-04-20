@@ -1,3 +1,14 @@
+2006-04-20  Callum McKenzie  <callum@spooky-possum.org>
+
+	* gnobots2.schemas.in: 
+	* gnobots.c:
+	* gbdefs.h:
+	* game.c:
+	* properties.c:
+	* graphics.h: 
+	* graphics.c: Make the graphics scalable. Nothing fancy. We even
+	keep the old drawing engine. Also no SVG support.
+
 2006-04-06  Thomas Andersen  <phomes@gmail.com>
 
 	* menu.c: Update About dialog

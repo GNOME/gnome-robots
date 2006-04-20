@@ -23,6 +23,8 @@
 #include <gnome.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
+#include <games-preimage.h>
+
 #include <sys/types.h>
 #include <string.h>
 #include <stdlib.h>
@@ -41,6 +43,7 @@
 typedef struct _GraphicInfo {
   GString   *name;
   GdkPixbuf *pixbuf;
+  GamesPreimage *preimage;
   GdkColor   bgcolor;
 } GraphicInfo;
 
@@ -69,6 +72,8 @@ static gint          bubble_xo   = 0;
 static gint          bubble_yo   = 0;
 static gint          bubble_type = BUBBLE_NONE;
 
+gint tile_width = 0;
+gint tile_height = 0;
 
 /**********************************************************************/
 /* Function Prototypes                                                */
@@ -83,6 +88,36 @@ static void add_bubble (gint, gint);
 /**********************************************************************/
 /* Function Definitions                                               */
 /**********************************************************************/
+
+static void
+render_graphics (void)
+{
+  gint i;
+
+  for (i=0; i<num_graphics; i++) {
+    game_graphic[i]->pixbuf = games_preimage_render (game_graphic[i]->preimage,
+						     14*tile_width, 
+						     tile_height, 
+						     NULL);
+  }
+}
+
+gint resize_cb (GtkWidget *w, GdkEventConfigure *e, gpointer data)
+{
+  gint trial_width;
+  gint trial_height;
+
+  trial_width = e->width/GAME_WIDTH;
+  trial_height = e->height/GAME_HEIGHT;
+
+  if ((trial_width != tile_width) || (trial_height != tile_height)) {
+    tile_width = trial_width;
+    tile_height = trial_height;
+    render_graphics ();
+  }
+
+  return FALSE;
+}
 
 /**
  * load_bubble_graphic
@@ -161,7 +196,7 @@ load_game_graphics (void)
   GDir           *dir;
   gchar          *buffer;
   gchar          *bptr;
-  GdkPixbuf      *image;
+  GamesPreimage  *preimage;
 
   gchar *dname = gnome_program_locate_file (NULL, 
                                             GNOME_FILE_DOMAIN_APP_PIXMAP,
@@ -220,14 +255,15 @@ load_game_graphics (void)
 
     buffer = g_build_filename (dname, dent, NULL);
 
-    image = gdk_pixbuf_new_from_file (buffer, NULL);
+    preimage = games_preimage_new_from_file (buffer, NULL);
     g_free (buffer);
 
-    if (image == NULL) {
+    if (preimage == NULL) {
       g_free (game_graphic[num_graphics]->name);
       g_free (game_graphic[num_graphics]);
     } else {
-      game_graphic[num_graphics]->pixbuf = image;
+      game_graphic[num_graphics]->preimage = preimage;
+      game_graphic[num_graphics]->pixbuf = NULL;
       num_graphics++;
     }
   }
@@ -265,6 +301,10 @@ free_game_graphics (void)
   }
 
   for (i = 0; i < num_graphics; ++i) {
+    g_free (game_graphic[i]->name);
+    if (game_graphic[i]->pixbuf)
+      g_object_unref (game_graphic[i]->pixbuf);
+    g_object_unref (game_graphic[i]->preimage);
     g_free (game_graphic[i]);
   }
   g_free (game_graphic);
@@ -287,7 +327,6 @@ free_game_graphics (void)
 
   return TRUE;
 }
-
 
 /**
  * num_game_graphics
@@ -426,21 +465,21 @@ set_background_color_from_name (gchar *name)
  * @area: Pointer to drawing area widget
  *
  * Description:
- * Draws tile pixmap @tileno form graphics set @pno at (@x, @y) in
+ * Draws tile pixmap @tileno from graphics set @pno at (@x, @y) in
  * a widget @area
  **/
 void
 draw_tile_pixmap (gint tileno, gint pno, gint x, gint y, GtkWidget *area)
 {
-  gdk_window_clear_area (area->window, x, y, TILE_WIDTH, TILE_HEIGHT);
+  gdk_window_clear_area (area->window, x, y, tile_width, tile_height);
 
   if ((tileno < 0) || (tileno >= SCENARIO_PIXMAP_WIDTH)) {
     /* nothing */
   } else {
     gdk_draw_pixbuf (area->window, area->style->black_gc,
                      game_graphic[pno]->pixbuf,
-                     tileno * TILE_WIDTH, 0,
-                     x, y, TILE_WIDTH, TILE_HEIGHT,
+                     tileno * tile_width, 0,
+                     x, y, tile_width, tile_height,
                      GDK_RGB_DITHER_NORMAL, 0, 0);
   }
 
@@ -459,8 +498,8 @@ draw_tile_pixmap (gint tileno, gint pno, gint x, gint y, GtkWidget *area)
 void
 draw_object (gint x, gint y, gint type)
 {
-  gint xpos = x * TILE_WIDTH;
-  gint ypos = y * TILE_HEIGHT;
+  gint xpos = x * tile_width;
+  gint ypos = y * tile_height;
 
   if ((game_area == NULL) || (game_graphic == NULL)) return;
 
@@ -500,7 +539,7 @@ clear_game_area (void)
   if ((game_area == NULL) || (game_graphic == NULL)) return;
   
   gdk_window_clear_area (game_area->window, 0, 0, 
-                         GAME_WIDTH*TILE_WIDTH, GAME_HEIGHT*TILE_HEIGHT);
+                         GAME_WIDTH*tile_width, GAME_HEIGHT*tile_height);
 }
 
 
@@ -627,8 +666,8 @@ draw_bubble (void)
 static void
 add_bubble (gint x, gint y)
 {
-  bubble_xpos = x * TILE_WIDTH - BUBBLE_WIDTH + BUBBLE_XOFFSET;
-  bubble_ypos = y * TILE_HEIGHT - BUBBLE_HEIGHT + BUBBLE_YOFFSET;
+  bubble_xpos = x * tile_width - BUBBLE_WIDTH + BUBBLE_XOFFSET;
+  bubble_ypos = y * tile_height - BUBBLE_HEIGHT + BUBBLE_YOFFSET;
 
   bubble_xo = 0;
   bubble_yo = 0;

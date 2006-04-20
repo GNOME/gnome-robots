@@ -27,6 +27,9 @@ void gconf_set_use_safe_moves (gboolean value);
 void gconf_set_use_super_safe_moves (gboolean value);
 void gconf_set_show_toolbar (gboolean value);
 
+gint save_window_geometry (GtkWidget *w, GdkEventConfigure *e, gpointer data);
+void set_window_geometry (GtkWidget *window);
+
 /**********************************************************************/
 
 

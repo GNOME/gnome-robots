@@ -1,10 +1,14 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
+/* The size of an individual tile. */
+extern gint tile_width;
+extern gint tile_height;
 
 /**********************************************************************/
 /* Exported functions                                                 */
 /**********************************************************************/
+gint      resize_cb (GtkWidget *w, GdkEventConfigure *e, gpointer data);
 gboolean  load_game_graphics (void);
 gboolean  free_game_graphics (void);
 gint      num_game_graphics (void);

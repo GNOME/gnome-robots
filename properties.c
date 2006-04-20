@@ -54,6 +54,8 @@
 #define KEY_ENABLE_SOUND     "/apps/gnobots2/preferences/enable_sound"
 #define KEY_ENABLE_SPLATS    "/apps/gnobots2/preferences/enable_splats"
 #define KEY_BACKGROUND_COLOR "/apps/gnobots2/preferences/background_color"
+#define KEY_WINDOW_WIDTH     "/apps/gnobots2/geometry/width"
+#define KEY_WINDOW_HEIGHT    "/apps/gnobots2/geometry/height"
 
 /**********************************************************************/
 
@@ -166,6 +168,24 @@ delete_cb (GtkWidget *w, gpointer data)
   propbox = NULL;
 
   return FALSE;
+}
+
+gint save_window_geometry (GtkWidget *w, GdkEventConfigure *e, gpointer data)
+{
+  gconf_client_set_int (gconf_client, KEY_WINDOW_WIDTH, e->width, NULL);
+  gconf_client_set_int (gconf_client, KEY_WINDOW_HEIGHT, e->height, NULL);
+
+  return FALSE;
+}
+
+void set_window_geometry (GtkWidget *window)
+{
+  int w, h;
+
+  w = gconf_client_get_int (gconf_client, KEY_WINDOW_WIDTH, NULL);
+  h = gconf_client_get_int (gconf_client, KEY_WINDOW_HEIGHT, NULL);
+
+  gtk_window_resize (GTK_WINDOW (window), w, h);
 }
 
 /**

@@ -242,6 +242,30 @@
         </locale>
       </schema>
 
+      <schema>
+        <key>/schemas/apps/gnobots2/geometry/width</key>
+        <applyto>/apps/gnobots2/geometry/width</applyto>
+        <owner>glines</owner>
+        <type>int</type>
+        <default>720</default>
+        <locale name="C">
+          <short>Window width</short>
+          <long>The width of the main window.</long>
+        </locale>
+      </schema>
+
+      <schema>
+        <key>/schemas/apps/gnobots2/geometry/height</key>
+        <applyto>/apps/gnobots2/geometry/height</applyto>
+        <owner>glines</owner>
+        <type>int</type>
+        <default>566</default>
+        <locale name="C">
+          <short>Window height</short>
+          <long>The height of the main window.</long>
+        </locale>
+      </schema>
+
   </schemalist>
 
 </gconfschemafile>

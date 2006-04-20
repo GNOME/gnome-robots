@@ -24,6 +24,7 @@
 #include <sys/time.h>
 #include <string.h>
 #include <games-stock.h>
+#include <games-gridframe.h>
 
 #include "gbdefs.h"
 #include "statusbar.h"
@@ -34,6 +35,10 @@
 #include "properties.h"
 #include "game.h"
 #include "cursors.h"
+
+/* Minimum sizes. */
+#define MINIMUM_TILE_WIDTH   8
+#define MINIMUM_TILE_HEIGHT  MINIMUM_TILE_WIDTH
 
 /**********************************************************************/
 /* Exported Variables                                                 */
@@ -145,7 +150,7 @@ int
 main (int argc, char *argv[])
 {
   GtkWidget      *errordialog;
-  GtkWidget      *vbox, *menubar, *toolbar, *statusbar;
+  GtkWidget      *vbox, *menubar, *toolbar, *statusbar, *gridframe;
   GtkUIManager   *ui_manager;
   GnomeClient    *client;
   GnomeProgram   *program;
@@ -187,10 +192,13 @@ main (int argc, char *argv[])
   initialize_gconf (argc, argv);
 
   app = gnome_app_new (GAME_NAME, _("Robots"));
-  gtk_window_set_resizable (GTK_WINDOW (app), FALSE);
 
   g_signal_connect (G_OBJECT (app), "delete_event",
                     G_CALLBACK (quit_game), NULL);
+  g_signal_connect (G_OBJECT (app), "configure_event",
+		    G_CALLBACK (save_window_geometry), NULL);
+
+  set_window_geometry (app);
 
   statusbar = gnobots_statusbar_new ();
   ui_manager = gtk_ui_manager_new ();
@@ -212,20 +220,23 @@ main (int argc, char *argv[])
 		    G_CALLBACK (mouse_cb), NULL);
   g_signal_connect (G_OBJECT (game_area), "motion-notify-event",
 		    G_CALLBACK (move_cb), NULL);
+  g_signal_connect (G_OBJECT (game_area), "configure-event",
+		    G_CALLBACK (resize_cb), NULL);
+
+  gridframe = games_grid_frame_new (GAME_WIDTH, GAME_HEIGHT);
+  gtk_container_add (GTK_CONTAINER (gridframe), game_area);
 
   vbox = gtk_vbox_new (FALSE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), menubar, FALSE, FALSE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), toolbar, FALSE, FALSE, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), game_area, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), gridframe, TRUE, TRUE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
 
   gnome_app_set_contents (GNOME_APP (app), vbox);
 
   gtk_widget_set_size_request (GTK_WIDGET (game_area), 
-                               TILE_WIDTH * GAME_WIDTH,
-                               TILE_HEIGHT * GAME_HEIGHT);
-  gtk_widget_show (game_area);
-  gtk_widget_show (statusbar);
+                               MINIMUM_TILE_WIDTH * GAME_WIDTH,
+                               MINIMUM_TILE_HEIGHT * GAME_HEIGHT); 
 
   /* Set the window position if it was set by the session manager */
   if (session_xpos >= 0 && session_ypos >= 0){
@@ -245,8 +256,6 @@ main (int argc, char *argv[])
     exit (1);
   }
 
-  gtk_widget_show (app);
-
   if (!load_game_graphics ()) {
     /* Oops, no graphics, we probably haven't been installed properly. */
     errordialog = gtk_message_dialog_new (GTK_WINDOW (app), 
@@ -261,6 +270,8 @@ main (int argc, char *argv[])
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
   }
+
+  gtk_widget_show_all (app);
 
   load_properties ();
 

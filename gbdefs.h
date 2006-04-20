@@ -10,12 +10,6 @@
 #define GAME_NAME    "gnobots2"
 
 /*
- * Size of the game tiles
- */
-#define TILE_WIDTH   16
-#define TILE_HEIGHT  TILE_WIDTH
-
-/*
  * Bubble Sizes
  */
 #define BUBBLE_WIDTH   86

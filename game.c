@@ -1356,8 +1356,8 @@ static void get_dir (int ix, int iy, int * odx, int * ody)
   int octant;
   const int movetable[8][2] = { {-1, 0}, {-1, -1}, {0, -1}, {1, -1},
 				{1, 0}, {1, 1}, {0, 1}, {-1, 1} };
-  x = CLAMP(ix/TILE_WIDTH, 0, GAME_WIDTH);
-  y = CLAMP(iy/TILE_HEIGHT, 0, GAME_HEIGHT);
+  x = CLAMP(ix/tile_width, 0, GAME_WIDTH);
+  y = CLAMP(iy/tile_height, 0, GAME_HEIGHT);
 
   /* If we click on our man then we assume we hold. */
   if ((x == player_xpos) && (y == player_ypos)) {
@@ -1376,8 +1376,8 @@ static void get_dir (int ix, int iy, int * odx, int * ody)
   }
 
   /* Otherwise go in the general direction of the mouse click. */
-  dx = ix - (player_xpos + 0.5) * TILE_WIDTH;
-  dy = iy - (player_ypos + 0.5) * TILE_HEIGHT;
+  dx = ix - (player_xpos + 0.5) * tile_width;
+  dy = iy - (player_ypos + 0.5) * tile_height;
 
   angle = atan2 (dy, dx);
 

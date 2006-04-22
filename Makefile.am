@@ -15,6 +15,7 @@ SUBDIRS = help
 INCLUDES = 			\
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DDATADIR=\""$(datadir)"\"		   \
+	-DPIXMAPDIR=\""$(pixmapdir)"\"		\
 	-I$(top_srcdir)/libgames-support   	        \
 	$(GNOME_GAMES_CFLAGS)
 
@@ -50,10 +51,12 @@ gnobots2_LDADD = \
 	$(INTLLIBS)
 
 pixmap_DATA = gnomes.png \
-              robots.png \
 	      yahoo.png \
 	      aieee.png \
-	      splat.png
+	      splat.png \
+	      robots.svg \
+	      boo.svg \
+              ufo.svg
 
 config_DATA = robots2.cfg \
               robots2_easy.cfg \

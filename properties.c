@@ -26,6 +26,7 @@
 #include <gconf/gconf-client.h>
 #include <games-frame.h>
 #include <games-controls.h>
+#include <games-files.h>
 
 #include "properties.h"
 #include "gameconfig.h"
@@ -72,9 +73,9 @@ struct _GnobotsProperties {
   gboolean splats;
   gboolean show_toolbar;
   GdkColor bgcolour;
-  gint     selected_graphics;
   gint     selected_config;
   gint     keys[12];
+  gchar    *themename;
 };
 /**********************************************************************/
 
@@ -83,6 +84,8 @@ struct _GnobotsProperties {
 /* File Static Variables                                              */
 /**********************************************************************/
 static GtkWidget         *propbox      = NULL;
+
+static GamesFileList     *theme_list   = NULL;
 
 static GnobotsProperties  properties;
 
@@ -111,7 +114,6 @@ static void sound_cb (GtkWidget*, gpointer);
 static void splat_cb (GtkWidget*, gpointer);
 static void defkey_cb (GtkWidget*, gpointer);
 static void fill_typemenu (GtkWidget*);
-static void fill_pmapmenu (GtkWidget*);
 static void gconf_set_background_color (GdkColor * c);
 /**********************************************************************/
 
@@ -199,13 +201,16 @@ void set_window_geometry (GtkWidget *window)
 static void
 pmap_selection (GtkWidget *widget, gpointer data)
 {
-  gint num = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
+  gint n;
 
-  properties.selected_graphics = num;
+  n = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
 
-  gconf_set_theme (game_graphics_name (properties.selected_graphics));
+  /* FIXME: Should be de-suffixed. */
+  properties.themename = games_file_list_get_nth (theme_list, n);
 
-  set_game_graphics (properties.selected_graphics);
+  gconf_set_theme (properties.themename);
+
+  set_game_graphics (properties.themename);
   clear_game_area ();
 }
 
@@ -359,10 +364,17 @@ fill_typemenu (GtkWidget *menu)
  * Description:
  * fills the listbox with pixmap names
  **/
-static void
-fill_pmapmenu (GtkWidget *menu)
+static GtkWidget *
+make_theme_menu (void)
 {
-  gint i;
+  if (theme_list)
+    g_object_unref (theme_list);
+
+  theme_list = games_file_list_new_images (PIXMAPDIR, NULL);
+  games_file_list_transform_basename (theme_list);
+
+  /* FIXME: Get rid of the bubbles images from the list (preferably by
+   * getting tid of the bubble pixmaps. */
 
 #if 0
   /* this is just a place holder so that xgettext can found the strings to
@@ -374,18 +386,15 @@ fill_pmapmenu (GtkWidget *menu)
     N_("eggs"),
     N_("gnomes"),
     N_("mice"),
-    N_("windows"),
+    N_("ufo"),
+    N_("boo"),
   };
 #endif
 
-  for (i = 0; i < num_game_graphics (); ++i) {
-    gtk_combo_box_append_text (GTK_COMBO_BOX (menu),
-                               _(game_graphics_name (i)));
-  }
-
-  gtk_combo_box_set_active (GTK_COMBO_BOX (menu),
-                            properties.selected_graphics);
-
+  return games_file_list_create_widget (theme_list, 
+					properties.themename,
+					GAMES_FILE_LIST_REMOVE_EXTENSION |
+					GAMES_FILE_LIST_REPLACE_UNDERSCORES);
 }
 
 static void
@@ -396,6 +405,12 @@ bg_color_callback (GtkWidget *widget, gpointer data)
   set_background_color (properties.bgcolour);
   clear_game_area ();
   gconf_set_background_color (&properties.bgcolour);
+}
+
+gchar *
+properties_theme_name (void)
+{
+  return properties.themename;
 }
 
 /**
@@ -532,12 +547,11 @@ show_properties_dialog (void)
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
   gtk_table_attach (GTK_TABLE (table), label, 0, 1, 0, 1, GTK_FILL, 0, 0, 0);
 
-  pmapmenu = gtk_combo_box_new_text ();
+  pmapmenu = make_theme_menu ();
   g_signal_connect (G_OBJECT (pmapmenu), "changed",
                     G_CALLBACK (pmap_selection), NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), pmapmenu);
 
-  fill_pmapmenu (pmapmenu);
   gtk_table_attach_defaults (GTK_TABLE (table), pmapmenu, 1, 2, 0, 1);
 
   label = gtk_label_new_with_mnemonic (_("_Background color:"));
@@ -634,7 +648,6 @@ gboolean
 load_properties (void)
 {
   gchar buffer[256];
-  gchar *sname = NULL;
   gchar *cname = NULL;
   gint i;
   gchar *str;
@@ -663,18 +676,10 @@ load_properties (void)
   gdk_color_parse (bgcolour, &properties.bgcolour);
   set_background_color (properties.bgcolour);
   
-  sname = gconf_client_get_string (get_gconf_client (), KEY_THEME, NULL);
-  if (sname == NULL)
-    sname = g_strdup ("robots");
-
-  properties.selected_graphics = 0;
-  for (i = 0; i < num_game_graphics (); ++i) {
-    if (! strcmp (sname, game_graphics_name (i))) {
-      properties.selected_graphics = i;
-      break;
-    }
-  }
-  g_free (sname);
+  properties.themename = gconf_client_get_string (get_gconf_client (), 
+						  KEY_THEME, NULL);
+  if (properties.themename == NULL)
+    properties.themename = ("robots");
 
   cname = gconf_client_get_string (get_gconf_client (), KEY_CONFIGURATION, NULL);
   if (cname == NULL)
@@ -700,7 +705,7 @@ load_properties (void)
   properties.show_toolbar = gconf_client_get_bool (get_gconf_client (),
 						   KEY_SHOW_TOOLBAR, NULL);
 
-  set_game_graphics (properties.selected_graphics);
+  set_game_graphics (properties.themename);
   set_game_config (properties.selected_config);
   keyboard_set (properties.keys);
   update_score_state ();
@@ -797,7 +802,7 @@ save_properties (void)
     gconf_set_control_key (i, gdk_keyval_name (properties.keys[i]));
   }
   
-  gconf_set_theme (game_graphics_name (properties.selected_graphics));
+  gconf_set_theme (properties.themename);
   gconf_set_configuration (game_config_name (properties.selected_config));
   gconf_set_use_safe_moves (properties.safe_moves);
   gconf_set_use_super_safe_moves (properties.super_safe_moves);

@@ -24,6 +24,7 @@
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
 #include <games-preimage.h>
+#include <games-find-file.h>
 
 #include <sys/types.h>
 #include <string.h>
@@ -34,18 +35,7 @@
 #include "graphics.h"
 #include "gbdefs.h"
 #include "gnobots.h"
-
-
-/**********************************************************************/
-/* GraphicInfo Structure Definition                                   */
-/**********************************************************************/
-
-typedef struct _GraphicInfo {
-  GString   *name;
-  GdkPixbuf *pixbuf;
-  GamesPreimage *preimage;
-  GdkColor   bgcolor;
-} GraphicInfo;
+#include "properties.h"
 
 /**********************************************************************/
 
@@ -53,9 +43,10 @@ typedef struct _GraphicInfo {
 /**********************************************************************/
 /* File Static Variables                                              */
 /**********************************************************************/
-static gint          num_graphics     = -1;
-static gint          current_graphics = -1;
-static GraphicInfo **game_graphic     = NULL;
+static GamesPreimage *theme_preimage = NULL;
+static GdkPixbuf *theme_pixbuf = NULL;
+static gboolean rerender_needed = TRUE;
+
 static GdkPixbuf    *aieee_pixbuf     = NULL;
 static GdkPixbuf    *yahoo_pixbuf     = NULL;
 static GdkPixbuf    *splat_pixbuf     = NULL;
@@ -92,14 +83,10 @@ static void add_bubble (gint, gint);
 static void
 render_graphics (void)
 {
-  gint i;
-
-  for (i=0; i<num_graphics; i++) {
-    game_graphic[i]->pixbuf = games_preimage_render (game_graphic[i]->preimage,
-						     14*tile_width, 
-						     tile_height, 
-						     NULL);
-  }
+  theme_pixbuf = games_preimage_render (theme_preimage,
+					14*tile_width, tile_height, 
+					NULL);
+  rerender_needed = FALSE;
 }
 
 gint resize_cb (GtkWidget *w, GdkEventConfigure *e, gpointer data)
@@ -113,7 +100,7 @@ gint resize_cb (GtkWidget *w, GdkEventConfigure *e, gpointer data)
   if ((trial_width != tile_width) || (trial_height != tile_height)) {
     tile_width = trial_width;
     tile_height = trial_height;
-    render_graphics ();
+    rerender_needed = TRUE;
   }
 
   return FALSE;
@@ -191,92 +178,27 @@ load_bubble_graphics (void)
 gboolean
 load_game_graphics (void)
 {
-  gint           i;
-  G_CONST_RETURN gchar* dent;
-  GDir           *dir;
-  gchar          *buffer;
-  gchar          *bptr;
-  GamesPreimage  *preimage;
+  gchar          *filename;
 
-  gchar *dname = gnome_program_locate_file (NULL, 
-                                            GNOME_FILE_DOMAIN_APP_PIXMAP,
-                                            GAME_NAME, FALSE, 
-                                            NULL);
-
-  if (game_graphic != NULL) {
+  if (theme_preimage != NULL) {
     free_game_graphics ();
   }
 
-  dir = g_dir_open (dname, 0, NULL);
-  if (dir == NULL)
-    return FALSE;
+  filename = games_find_similar_file (properties_theme_name (), PIXMAPDIR);
 
-  num_graphics = 0;
-  while ((dent = g_dir_read_name (dir)) != NULL) {
-    if (! g_strrstr (dent, ".png")) {
-      continue;
-    }
-    num_graphics++;
+  theme_preimage = games_preimage_new_from_file (filename, NULL);
+  g_free (filename);
+
+  if (theme_preimage == NULL) {
+    filename = games_find_similar_file ("robots", PIXMAPDIR);
+    theme_preimage = games_preimage_new_from_file (filename, NULL);
+    g_free (filename);
   }
-
-  game_graphic = g_new (GraphicInfo*, num_graphics);
-  for (i = 0; i < num_graphics; ++i) {
-    game_graphic[i] = NULL;
-  }
-
-  g_dir_rewind (dir);
-
-  num_graphics = 0;
-  while ((dent = g_dir_read_name (dir)) != NULL) {
-    if (! g_strrstr (dent, ".png")) {
-      continue;
-    }
-    if (! strcmp (dent, "yahoo.png")) {
-      continue;
-    }
-    if (! strcmp (dent, "aieee.png")) {
-      continue;
-    }
-    if (! strcmp (dent, "splat.png")) {
-      continue;
-    }
-    if (! strcmp (dent, "gnome-gnobots2.png")) {
-      continue;
-    }
-
-    buffer = g_strdup (dent);
-    bptr = g_strrstr (buffer, ".png");
-    if (bptr != NULL)
-      *bptr = 0;
-
-    game_graphic[num_graphics] = g_new (GraphicInfo, 1);
-    game_graphic[num_graphics]->name = g_string_new (buffer);
-    g_free (buffer);
-
-    buffer = g_build_filename (dname, dent, NULL);
-
-    preimage = games_preimage_new_from_file (buffer, NULL);
-    g_free (buffer);
-
-    if (preimage == NULL) {
-      g_free (game_graphic[num_graphics]->name);
-      g_free (game_graphic[num_graphics]);
-    } else {
-      game_graphic[num_graphics]->preimage = preimage;
-      game_graphic[num_graphics]->pixbuf = NULL;
-      num_graphics++;
-    }
-  }
-
-  if (num_graphics == 0)
-    return FALSE;
-
-  g_dir_close (dir);
-
-  current_graphics = 0;
 
   if (! load_bubble_graphics ())
     return FALSE;
+
+  rerender_needed = TRUE;
 
   return TRUE;
 }
@@ -294,24 +216,15 @@ load_game_graphics (void)
 gboolean
 free_game_graphics (void)
 {
-  gint i;
-
-  if (game_graphic == NULL) {
-    return FALSE;
+  if (theme_preimage != NULL) {
+    g_object_unref (theme_preimage);
+    theme_preimage = NULL;
   }
 
-  for (i = 0; i < num_graphics; ++i) {
-    g_free (game_graphic[i]->name);
-    if (game_graphic[i]->pixbuf)
-      g_object_unref (game_graphic[i]->pixbuf);
-    g_object_unref (game_graphic[i]->preimage);
-    g_free (game_graphic[i]);
+  if (theme_pixbuf != NULL) {
+    g_object_unref (theme_pixbuf);
+    theme_pixbuf = NULL;
   }
-  g_free (game_graphic);
-
-  game_graphic = NULL;
-  num_graphics = -1;
-  current_graphics = -1;
 
   if (aieee_pixbuf) 
     g_object_unref (aieee_pixbuf);
@@ -329,104 +242,16 @@ free_game_graphics (void)
 }
 
 /**
- * num_game_graphics
- *
- * Description:
- * Returns the number of different graphics scenarios available
- *
- * Returns:
- * number of graphic types
- **/
-gint
-num_game_graphics (void)
-{
-  if (game_graphic == NULL)
-    return -1;
-
-  return num_graphics;
-}
-
-
-/**
- * ganme_graphics_name
- * @n: game graphics number
- *
- * Description:
- * The descriptive name of game graphics number @n
- *
- * Returns:
- * a string containing the graphics name
- **/
-gchar*
-game_graphics_name (gint n)
-{
-  if (game_graphic == NULL) 
-    return NULL;
-
-  if ((n < 0) || (n >= num_graphics))
-    return NULL;
-
-  return game_graphic[n]->name->str;
-}
-
-
-/**
- * game_graphics_background
- * @n: game graphics number
- *
- * Description:
- * Returns the background colour for game graphics specified by @n
- *
- * Returns:
- * background colour
- **/
-GdkColor
-game_graphics_background (gint n)
-{
-  static GdkColor nocol = {0, 0, 0, 0};
-
-  if (game_graphic == NULL) return nocol;
-
-  if ((n < 0) || (n >= num_graphics)) return nocol;
-
-  return game_graphic[n]->bgcolor;
-}
-
-
-/**
- * current_game_graphics
- *
- * Description:
- * returns the currently selected graphics
- *
- * Returns:
- * game graphics number
- **/
-gint
-current_game_graphics (void)
-{
-  return current_graphics;
-}
-
-
-/**
  * set_game_graphics
  * @ng: Game graphics number
  *
  * Description:
  * Sets the game graphics to use
  **/
-gint
-set_game_graphics (gint ng)
+void
+set_game_graphics (gchar *name)
 {
-  if ((ng < 0) || (ng >= num_graphics)) return -1;
-
-  current_graphics = ng;
-
-  if (game_area != NULL) {
-    /*set_background_color (&game_graphic[current_graphics]->bgcolor);*/
-  }
-  return current_graphics;
+  load_game_graphics ();
 }
 
 void
@@ -469,20 +294,22 @@ set_background_color_from_name (gchar *name)
  * a widget @area
  **/
 void
-draw_tile_pixmap (gint tileno, gint pno, gint x, gint y, GtkWidget *area)
+draw_tile_pixmap (gint tileno, gint x, gint y, GtkWidget *area)
 {
   gdk_window_clear_area (area->window, x, y, tile_width, tile_height);
+
+  if (rerender_needed)
+    render_graphics ();
 
   if ((tileno < 0) || (tileno >= SCENARIO_PIXMAP_WIDTH)) {
     /* nothing */
   } else {
     gdk_draw_pixbuf (area->window, area->style->black_gc,
-                     game_graphic[pno]->pixbuf,
+                     theme_pixbuf,
                      tileno * tile_width, 0,
                      x, y, tile_width, tile_height,
                      GDK_RGB_DITHER_NORMAL, 0, 0);
   }
-
 }
 
 
@@ -501,27 +328,27 @@ draw_object (gint x, gint y, gint type)
   gint xpos = x * tile_width;
   gint ypos = y * tile_height;
 
-  if ((game_area == NULL) || (game_graphic == NULL)) return;
+  if (game_area == NULL) return;
 
   switch (type) {
   case OBJECT_PLAYER:
     draw_tile_pixmap (SCENARIO_PLAYER_START+player_animation, 
-                      current_graphics, xpos, ypos, game_area);
+                      xpos, ypos, game_area);
     break;
   case OBJECT_ROBOT1:
     draw_tile_pixmap (SCENARIO_ROBOT1_START+robot_animation, 
-                      current_graphics, xpos, ypos, game_area);
+                      xpos, ypos, game_area);
     break;
   case OBJECT_ROBOT2:
     draw_tile_pixmap (SCENARIO_ROBOT2_START+robot_animation, 
-                      current_graphics, xpos, ypos, game_area);
+                      xpos, ypos, game_area);
     break;
   case OBJECT_HEAP:
     draw_tile_pixmap (SCENARIO_HEAP_POS, 
-                      current_graphics, xpos, ypos, game_area);
+                      xpos, ypos, game_area);
     break;
   case OBJECT_NONE:
-    draw_tile_pixmap (-1, current_graphics, xpos, ypos, game_area);
+    draw_tile_pixmap (-1, xpos, ypos, game_area);
     break;
   }
 }
@@ -536,7 +363,7 @@ draw_object (gint x, gint y, gint type)
 void
 clear_game_area (void)
 {
-  if ((game_area == NULL) || (game_graphic == NULL)) return;
+  if (game_area == NULL) return;
   
   gdk_window_clear_area (game_area->window, 0, 0, 
                          GAME_WIDTH*tile_width, GAME_HEIGHT*tile_height);
@@ -552,7 +379,7 @@ clear_game_area (void)
 static void
 clear_bubble_area (void)
 {
-  if ((game_area == NULL) || (game_graphic == NULL)) return;
+  if (game_area == NULL) return;
   
   gdk_window_clear_area (game_area->window, bubble_xpos, bubble_ypos, 
                          BUBBLE_WIDTH, BUBBLE_HEIGHT);

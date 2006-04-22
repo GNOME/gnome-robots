@@ -15,6 +15,7 @@ gboolean properties_sound (void);
 gboolean properties_splats (void);
 gboolean properties_show_toolbar (void);
 gboolean properties_set_config (gint);
+gchar   *properties_theme_name (void);
 
 GConfClient *get_gconf_client (void);
 void initialize_gconf (int argc, char *argv[]);

@@ -256,6 +256,8 @@ main (int argc, char *argv[])
     exit (1);
   }
 
+  load_properties ();
+
   if (!load_game_graphics ()) {
     /* Oops, no graphics, we probably haven't been installed properly. */
     errordialog = gtk_message_dialog_new (GTK_WINDOW (app), 
@@ -273,8 +275,6 @@ main (int argc, char *argv[])
 
   gtk_widget_show_all (app);
 
-  load_properties ();
-
   connect_toolbar_toggle (toolbar);
   
   init_sound ();
@@ -282,12 +282,7 @@ main (int argc, char *argv[])
   init_game ();
 
   if (cmdline_scenario) {
-    for (i = 0; i < num_game_graphics (); ++i){
-      if (! strcmp (cmdline_scenario, game_graphics_name (i))){
-	set_game_graphics (i);
-	break;
-      }
-    }
+    set_game_graphics (cmdline_scenario);
   }
 
   if (cmdline_config) {

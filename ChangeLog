@@ -1,3 +1,19 @@
+2006-04-22  Callum McKenzie  <callum@spooky-possum.org>
+
+	* gnobots.c: 
+	* graphics.c:
+	* graphics.h:
+	* properties.h:
+	* properties.c: Load only one set of graphics at a time. Use
+	GamesFileList to create the list of themes. Allow all image 
+	formats to be used (including SVG, but also, unfortunately, the 
+	bubble-graphics).
+
+	* ufo.svg:
+	* robots.svg:
+	* boo.svg:
+	* Makefile.am: Add Nicu's SVG themes.
+
 2006-04-20  Callum McKenzie  <callum@spooky-possum.org>
 
 	* gnobots2.schemas.in: 

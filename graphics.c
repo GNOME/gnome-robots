@@ -47,6 +47,9 @@ static GamesPreimage *theme_preimage = NULL;
 static GdkPixbuf *theme_pixbuf = NULL;
 static gboolean rerender_needed = TRUE;
 
+static GdkGC *light_bggc = NULL;
+static GdkGC *dark_bggc = NULL;
+
 static GdkPixbuf    *aieee_pixbuf     = NULL;
 static GdkPixbuf    *yahoo_pixbuf     = NULL;
 static GdkPixbuf    *splat_pixbuf     = NULL;
@@ -104,6 +107,26 @@ gint resize_cb (GtkWidget *w, GdkEventConfigure *e, gpointer data)
   }
 
   return FALSE;
+}
+
+gint expose_cb (GtkWidget *w, GdkEventExpose *e, gpointer data)
+{
+  int i, j;
+  int x1, y1, x2, y2;
+
+  x1 = e->area.x/tile_width;
+  y1 = e->area.y/tile_height;
+  x2 = x1 + e->area.width/tile_width + 1;
+  y2 = y1 + e->area.height/tile_height + 1;
+
+  for (j=y1; j<=y2; j++) {
+    for (i=x1; i<=x2; i++) {
+      /* Draw a blank space. Animation fills the objects in. */
+      draw_tile_pixmap (-1, i, j, w);
+    }
+  }
+
+  return TRUE;
 }
 
 /**
@@ -258,13 +281,45 @@ void
 set_background_color (GdkColor color)
 {
   GdkColormap *colormap;
+  guint32 brightness;
+  GdkColor color2;
 
-  if (game_area != NULL) {
-    colormap = gtk_widget_get_colormap (game_area);
-    gdk_colormap_alloc_color (colormap, &color, FALSE, TRUE);
+  if (game_area == NULL)
+    return;
 
-    gtk_widget_modify_bg (game_area, GTK_STATE_NORMAL, &color);
+  if (dark_bggc == NULL) {
+    dark_bggc = gdk_gc_new (game_area->window);
+    gdk_gc_copy (dark_bggc, game_area->style->black_gc);
+    light_bggc = gdk_gc_new (game_area->window);
+    gdk_gc_copy (light_bggc, game_area->style->white_gc);
   }
+
+  /* While the two colours are labelled "light" and "dark" which one is
+   * which actually depends on how light or dark the base colour is. */
+
+  brightness = color.red + color.green + color.blue;
+  if (brightness > 0xe8ba) { /* 0xe8ba = 0x10000/1.1 */
+    /* Darken light colours. */
+    color2.red = 0.9*color.red;
+    color2.green = 0.9*color.green;
+    color2.blue = 0.9*color.blue;
+  } else if (brightness > 0xa00) { /* Lighten darker colours. */
+    color2.red = 1.1*color.red;
+    color2.green = 1.1*color.green;
+    color2.blue = 1.1*color.blue;
+  } else { /* Very dark colours, add ratehr than multiply. */
+    color2.red += 0xa00;
+    color2.green += 0xa00;
+    color2.blue += 0xa00;
+  }
+
+  colormap = gtk_widget_get_colormap (game_area);
+  gdk_colormap_alloc_color (colormap, &color, FALSE, TRUE);
+  gdk_gc_set_foreground (dark_bggc, &color);
+  gdk_colormap_alloc_color (colormap, &color2, FALSE, TRUE);
+  gdk_gc_set_foreground (light_bggc, &color2);
+
+  clear_game_area ();
 }
 
 void
@@ -285,8 +340,8 @@ set_background_color_from_name (gchar *name)
  * draw_tile_pixmap
  * @tileno: Graphics tile number
  * @pno: Number of graphics set
- * @x: x position in pixels
- * @y: y position in pixels
+ * @x: x position in grid squares
+ * @y: y position in grid squares
  * @area: Pointer to drawing area widget
  *
  * Description:
@@ -296,7 +351,18 @@ set_background_color_from_name (gchar *name)
 void
 draw_tile_pixmap (gint tileno, gint x, gint y, GtkWidget *area)
 {
-  gdk_window_clear_area (area->window, x, y, tile_width, tile_height);
+  GdkGC *bg;
+
+  if ((x & 1) ^ (y & 1)) {
+    bg = dark_bggc;
+  } else {
+    bg = light_bggc;
+  }
+
+  x *= tile_width;
+  y *= tile_height;
+
+  gdk_draw_rectangle (area->window, bg, TRUE, x, y, tile_width, tile_height);
 
   if (rerender_needed)
     render_graphics ();
@@ -325,30 +391,27 @@ draw_tile_pixmap (gint tileno, gint x, gint y, GtkWidget *area)
 void
 draw_object (gint x, gint y, gint type)
 {
-  gint xpos = x * tile_width;
-  gint ypos = y * tile_height;
-
   if (game_area == NULL) return;
 
   switch (type) {
   case OBJECT_PLAYER:
     draw_tile_pixmap (SCENARIO_PLAYER_START+player_animation, 
-                      xpos, ypos, game_area);
+                      x, y, game_area);
     break;
   case OBJECT_ROBOT1:
     draw_tile_pixmap (SCENARIO_ROBOT1_START+robot_animation, 
-                      xpos, ypos, game_area);
+                      x, y, game_area);
     break;
   case OBJECT_ROBOT2:
     draw_tile_pixmap (SCENARIO_ROBOT2_START+robot_animation, 
-                      xpos, ypos, game_area);
+                      x, y, game_area);
     break;
   case OBJECT_HEAP:
     draw_tile_pixmap (SCENARIO_HEAP_POS, 
-                      xpos, ypos, game_area);
+                      x, y, game_area);
     break;
   case OBJECT_NONE:
-    draw_tile_pixmap (-1, xpos, ypos, game_area);
+    draw_tile_pixmap (-1, x, y, game_area);
     break;
   }
 }
@@ -365,8 +428,7 @@ clear_game_area (void)
 {
   if (game_area == NULL) return;
   
-  gdk_window_clear_area (game_area->window, 0, 0, 
-                         GAME_WIDTH*tile_width, GAME_HEIGHT*tile_height);
+  gtk_widget_queue_draw (game_area);
 }
 
 

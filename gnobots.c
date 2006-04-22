@@ -222,6 +222,8 @@ main (int argc, char *argv[])
 		    G_CALLBACK (move_cb), NULL);
   g_signal_connect (G_OBJECT (game_area), "configure-event",
 		    G_CALLBACK (resize_cb), NULL);
+  g_signal_connect (G_OBJECT (game_area), "expose-event",
+		    G_CALLBACK (expose_cb), NULL);
 
   gridframe = games_grid_frame_new (GAME_WIDTH, GAME_HEIGHT);
   gtk_container_add (GTK_CONTAINER (gridframe), game_area);
@@ -242,6 +244,8 @@ main (int argc, char *argv[])
   if (session_xpos >= 0 && session_ypos >= 0){
     gtk_window_move (GTK_WINDOW (app), session_xpos, session_ypos);
   }
+
+  gtk_widget_show_all (app);
 
   if (!load_game_configs ()) {
     /* Oops, no configs, we probably haven't been installed properly. */
@@ -272,8 +276,6 @@ main (int argc, char *argv[])
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
   }
-
-  gtk_widget_show_all (app);
 
   connect_toolbar_toggle (toolbar);
   

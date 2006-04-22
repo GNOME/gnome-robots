@@ -1,6 +1,12 @@
 2006-04-22  Callum McKenzie  <callum@spooky-possum.org>
+	
+	* gnobots.c:
+	* graphics.h:
+	* graphics.c: Add a checkered background. Draw it explicitly
+	rather than setting the window background. As a side-effect
+	converted draw_tile_pixmap from pixel to grid coordinates.
 
-	* gnobots.c: 
+	* gnobots.c:
 	* graphics.c:
 	* graphics.h:
 	* properties.h:

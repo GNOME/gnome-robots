@@ -1,3 +1,7 @@
+2006-05-19  Callum McKenzie  <callum@spooky-possum.org>
+
+	* gnobots2.desktop.in (Icon): Really fix the icon name this time.
+
 2006-05-11  Callum McKenzie  <callum@spooky-possum.org>
 
 	* gnobots2.desktop.in (Icon): Use the correct icon name. See bug

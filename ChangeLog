@@ -1,3 +1,7 @@
+2006-06-15  Richard Hoelscher  <rah@rahga.com>
+
+	* README: Unusued, removed.
+
 2006-05-19  Callum McKenzie  <callum@spooky-possum.org>
 
 	* gnobots2.desktop.in (Icon): Really fix the icon name this time.

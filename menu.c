@@ -37,6 +37,8 @@ GtkAction *teleport_action;
 GtkAction *random_action;
 GtkAction *wait_action;
 GtkAction *toolbar_toggle_action;
+GtkAction *fullscreen_action;
+GtkAction *leave_fullscreen_action;
 
 /**********************************************************************/
 /* Function Prototypes                                                */
@@ -51,10 +53,13 @@ static void teleport_cb  (GtkAction *action, gpointer data);
 static void randteleport_cb  (GtkAction *action, gpointer data);
 static void wait_cb (GtkAction *action, gpointer data);
 static void show_toolbar_cb (GtkAction *action, gpointer data);
+static void set_fullscreen_actions (gboolean is_fullscreen);
+static void fullscreen_cb (GtkAction *action);
 /**********************************************************************/
 
 const GtkActionEntry action_entry[] = {
   { "GameMenu", NULL, N_("_Game") },
+  { "ViewMenu", NULL, N_("_View") },
   { "MoveMenu", NULL, N_("_Move") },
   { "SettingsMenu", NULL, N_("_Settings") },
   { "HelpMenu", NULL, N_("_Help") },
@@ -64,6 +69,9 @@ const GtkActionEntry action_entry[] = {
   { "Teleport", GAMES_STOCK_TELEPORT, N_("_Teleport"), NULL, N_("Teleport, safely if possible"), G_CALLBACK(teleport_cb) },
   { "Random", GAMES_STOCK_RTELEPORT, N_("_Random"), NULL, N_("Teleport randomly"), G_CALLBACK(randteleport_cb) },
   { "Wait", GTK_STOCK_STOP, N_("_Wait"), NULL, N_("Wait for the robots"), G_CALLBACK (wait_cb) },
+  { "Fullscreen", GAMES_STOCK_FULLSCREEN, NULL, NULL, NULL, G_CALLBACK (fullscreen_cb) },
+  { "LeaveFullscreen", GAMES_STOCK_LEAVE_FULLSCREEN, NULL, NULL, NULL, G_CALLBACK (fullscreen_cb) },
+
   { "Preferences", GTK_STOCK_PREFERENCES, NULL, NULL, NULL, G_CALLBACK (properties_cb) },
   { "Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL, G_CALLBACK (help_cb) }, 
   { "About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK (about_cb) }
@@ -85,13 +93,17 @@ const char ui_description[] =
 "      <separator/>"
 "      <menuitem action='Quit'/>"
 "    </menu>"
+"    <menu action='ViewMenu'>"
+"      <menuitem action='ShowToolbar'/>"
+"      <menuitem action='Fullscreen'/>"
+"      <menuitem action='LeaveFullscreen'/>"
+"    </menu>"
 "    <menu action='MoveMenu'>"
 "      <menuitem action='Teleport'/>"
 "      <menuitem action='Random'/>"
 "      <menuitem action='Wait'/>"
 "    </menu>"
 "    <menu action='SettingsMenu'>"
-"      <menuitem action='ShowToolbar'/>"
 "      <menuitem action='Preferences'/>"
 "    </menu>"
 "    <menu action='HelpMenu'>"
@@ -264,6 +276,33 @@ static void wait_cb (GtkAction *action, gpointer data)
   game_keypress (KBD_WAIT);
 }
 
+static void 
+set_fullscreen_actions (gboolean is_fullscreen)
+{
+  gtk_action_set_sensitive (leave_fullscreen_action, is_fullscreen);
+  gtk_action_set_visible (leave_fullscreen_action, is_fullscreen);
+
+  gtk_action_set_sensitive (fullscreen_action, !is_fullscreen);
+  gtk_action_set_visible (fullscreen_action, !is_fullscreen);
+}
+
+static void 
+fullscreen_cb (GtkAction *action)
+{
+  if (action == fullscreen_action) {
+    gtk_window_fullscreen (GTK_WINDOW (app));
+  } else {
+    gtk_window_unfullscreen (GTK_WINDOW (app));
+  }
+}
+
+/* Just in case something else takes us to/from fullscreen. */
+void window_state_cb (GtkWidget *widget, GdkEventWindowState *event)
+{
+  if (event->changed_mask & GDK_WINDOW_STATE_FULLSCREEN)
+    set_fullscreen_actions (event->new_window_state 
+                            & GDK_WINDOW_STATE_FULLSCREEN);
+}
 
 /**
  * create_game_menus
@@ -294,6 +333,12 @@ create_game_menus (GtkUIManager *ui_manager)
   random_action = gtk_action_group_get_action (action_group, "Random");
   wait_action = gtk_action_group_get_action (action_group, "Wait");
   toolbar_toggle_action = gtk_action_group_get_action (action_group, "ShowToolbar");
+  fullscreen_action = gtk_action_group_get_action (action_group, "Fullscreen");
+  leave_fullscreen_action = gtk_action_group_get_action (action_group,
+						         "LeaveFullscreen");
+  set_fullscreen_actions (FALSE);
+
+
   return;
 }
 

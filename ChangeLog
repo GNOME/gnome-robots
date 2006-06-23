@@ -1,3 +1,10 @@
+2006-06-21  Andreas Røsdal  <andrearo@stud.ntnu.no>
+
+	* menu.c:
+	* menu.h: 
+	* gnobots.c: Add fullscreen mode.
+
+
 2006-06-15  Richard Hoelscher  <rah@rahga.com>
 
 	* README: Unusued, removed.

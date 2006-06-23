@@ -197,6 +197,9 @@ main (int argc, char *argv[])
                     G_CALLBACK (quit_game), NULL);
   g_signal_connect (G_OBJECT (app), "configure_event",
 		    G_CALLBACK (save_window_geometry), NULL);
+  g_signal_connect (G_OBJECT (app), "window_state_event",
+                    G_CALLBACK (window_state_cb), NULL);
+
 
   set_window_geometry (app);
 

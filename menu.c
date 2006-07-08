@@ -63,7 +63,7 @@ const GtkActionEntry action_entry[] = {
   { "MoveMenu", NULL, N_("_Move") },
   { "SettingsMenu", NULL, N_("_Settings") },
   { "HelpMenu", NULL, N_("_Help") },
-  { "NewGame", GAMES_STOCK_NEW_GAME, NULL, NULL, NULL, G_CALLBACK (new_cb) },
+  { "NewGame", GAMES_STOCK_NEW_GAME, NULL, NULL, N_("Start a new game"), G_CALLBACK (new_cb) },
   { "Scores", GAMES_STOCK_SCORES, NULL, NULL, NULL, G_CALLBACK (scores_cb) },
   { "Quit", GTK_STOCK_QUIT, NULL, NULL, NULL, G_CALLBACK (quit_cb) },
   { "Teleport", GAMES_STOCK_TELEPORT, N_("_Teleport"), NULL, N_("Teleport, safely if possible"), G_CALLBACK(teleport_cb) },

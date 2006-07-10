@@ -79,8 +79,7 @@ Games_in_files = gnobots2.desktop.in
 Games_DATA = $(Games_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-EXTRA_DIST = README \
-             AUTHORS \
+EXTRA_DIST = AUTHORS \
              gnobots2.desktop.in \
              gnobots2.soundlist.in \
 	     $(icon_DATA) \

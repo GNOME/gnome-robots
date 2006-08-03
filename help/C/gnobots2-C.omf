@@ -19,7 +19,7 @@
      <version identifier="2.0" date="2002-05-05" description="Updated to full OMF format"/>
      <subject category="GNOME|Games"/>
      <description>
-    GNOME Robots is a development of the text based robots game which can be found on a number of UNIX systems, and comes with the BSD games package on Linux systems.
+    GNOME Robots is a development of the text based robots game which can be found on a number of UNIX systems.
    </description>
      <type>
      user's guide

@@ -246,11 +246,13 @@ about_cb (GtkAction *action, gpointer data)
 
   const gchar *documenters[]= { "Patanjali Somayaji", "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
 
+  gchar *license = games_get_license (_("Robots"));
+
   gtk_show_about_dialog (GTK_WINDOW (app),
 			 "name", _("Robots"),
 			 "version", VERSION,
 			 "copyright", "Copyright \xc2\xa9 1998-2006 Mark Rae",
-			 "license", "GPL 2+",
+			 "license", license,
                          "comments", _("Based on classic BSD Robots."),
 			 "authors", authors,
 			 "documenters", documenters,
@@ -259,6 +261,7 @@ about_cb (GtkAction *action, gpointer data)
 			 "website", "http://www.gnome.org/projects/gnome-games/",
 			 "wrap-license", TRUE,
 			 NULL);
+  g_free (license);
 }
 
 static void teleport_cb  (GtkAction *action, gpointer data)

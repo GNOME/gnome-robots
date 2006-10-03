@@ -83,9 +83,9 @@ play_sound (gint sno)
     case SOUND_BAD:
 #if 0
       if (gnome_sound_connection >= 0) {
-        gnome_triggers_do ("", "program", GAME_NAME, "bad-move", NULL);
+	gnome_triggers_do ("", "program", GAME_NAME, "bad-move", NULL);
       } else {
-        gdk_beep ();
+	gdk_beep ();
       }
 #endif
       gdk_beep ();
@@ -96,7 +96,7 @@ play_sound (gint sno)
     }
 
   }
-  
+
   return TRUE;
 }
 

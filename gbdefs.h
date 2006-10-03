@@ -103,8 +103,3 @@
 #define KBD_WAIT 11
 
 #endif /* GBDEFS_H */
-
-
-
-
-

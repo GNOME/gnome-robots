@@ -43,7 +43,7 @@
 /**********************************************************************/
 /* Exported Variables                                                 */
 /**********************************************************************/
-GtkWidget *app       = NULL;
+GtkWidget *app = NULL;
 GtkWidget *game_area = NULL;
 /**********************************************************************/
 
@@ -51,10 +51,10 @@ GtkWidget *game_area = NULL;
 /**********************************************************************/
 /* File Static Variables                                              */
 /**********************************************************************/
-static gchar  *cmdline_scenario = NULL;
-static gchar  *cmdline_config   = NULL;
-static gint    session_xpos     = -1;
-static gint    session_ypos     = -1;
+static gchar *cmdline_scenario = NULL;
+static gchar *cmdline_config = NULL;
+static gint session_xpos = -1;
+static gint session_ypos = -1;
 /**********************************************************************/
 
 
@@ -66,9 +66,11 @@ static const GOptionEntry options[] = {
    N_("Set game scenario"), N_("NAME")},
   {"config", 'c', 0, G_OPTION_ARG_STRING, &cmdline_config,
    N_("Set game configuration"), N_("NAME")},
-  {"x", 'x', 0, G_OPTION_ARG_INT, &session_xpos, N_("Initial window position"), N_("X")},
-  {"y", 'y', 0, G_OPTION_ARG_INT, &session_ypos, N_("Initial window position"), N_("Y")},
-  { NULL },
+  {"x", 'x', 0, G_OPTION_ARG_INT, &session_xpos,
+   N_("Initial window position"), N_("X")},
+  {"y", 'y', 0, G_OPTION_ARG_INT, &session_ypos,
+   N_("Initial window position"), N_("Y")},
+  {NULL},
 };
 
 /**********************************************************************/
@@ -77,7 +79,8 @@ static const GOptionEntry options[] = {
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static gint   save_state(GnomeClient*, gint, GnomeRestartStyle, gint, GnomeInteractStyle, gint, gpointer);
+static gint save_state (GnomeClient *, gint, GnomeRestartStyle, gint,
+			GnomeInteractStyle, gint, gpointer);
 /**********************************************************************/
 
 
@@ -102,14 +105,12 @@ static gint   save_state(GnomeClient*, gint, GnomeRestartStyle, gint, GnomeInter
  * TRUE on success, FALSE otherwise
  **/
 static gint
-save_state (
-            GnomeClient        *client,
-            gint                phase,
-            GnomeRestartStyle   save_style,
-            gint                shutdown,
-            GnomeInteractStyle  interact_style,
-            gint                fast,
-            gpointer            client_data)
+save_state (GnomeClient * client,
+	    gint phase,
+	    GnomeRestartStyle save_style,
+	    gint shutdown,
+	    GnomeInteractStyle interact_style,
+	    gint fast, gpointer client_data)
 {
   char *argv[20];
   int i;
@@ -118,11 +119,11 @@ save_state (
   gdk_window_get_origin (app->window, &xpos, &ypos);
 
   i = 0;
-  argv[i++] = (char *)client_data;
+  argv[i++] = (char *) client_data;
   argv[i++] = "-x";
-  argv[i++] = g_strdup_printf ("%d",xpos);
+  argv[i++] = g_strdup_printf ("%d", xpos);
   argv[i++] = "-y";
-  argv[i++] = g_strdup_printf ("%d",ypos);
+  argv[i++] = g_strdup_printf ("%d", ypos);
 
   gnome_client_set_restart_command (client, i, argv);
   /* i.e. clone_command = restart_command - '--sm-client-id' */
@@ -149,14 +150,14 @@ save_state (
 int
 main (int argc, char *argv[])
 {
-  GtkWidget      *errordialog;
-  GtkWidget      *vbox, *menubar, *toolbar, *statusbar, *gridframe;
-  GtkUIManager   *ui_manager;
-  GnomeClient    *client;
-  GnomeProgram   *program;
+  GtkWidget *errordialog;
+  GtkWidget *vbox, *menubar, *toolbar, *statusbar, *gridframe;
+  GtkUIManager *ui_manager;
+  GnomeClient *client;
+  GnomeProgram *program;
   GOptionContext *option_context;
   struct timeval tv;
-  gint           i;
+  gint i;
 
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
@@ -168,14 +169,15 @@ main (int argc, char *argv[])
   textdomain (GETTEXT_PACKAGE);
 
   option_context = g_option_context_new ("");
-  g_option_context_add_main_entries (option_context, options, GETTEXT_PACKAGE);
-  
+  g_option_context_add_main_entries (option_context, options,
+				     GETTEXT_PACKAGE);
+
   program = gnome_program_init (GAME_NAME, VERSION,
- 				LIBGNOMEUI_MODULE,
- 				argc, argv,
- 				GNOME_PARAM_GOPTION_CONTEXT, option_context,
- 				GNOME_PARAM_APP_DATADIR, DATADIR,
-  				GNOME_PARAM_NONE);
+				LIBGNOMEUI_MODULE,
+				argc, argv,
+				GNOME_PARAM_GOPTION_CONTEXT, option_context,
+				GNOME_PARAM_APP_DATADIR, DATADIR,
+				GNOME_PARAM_NONE);
 
   gtk_window_set_default_icon_name ("gnome-robots");
 
@@ -185,20 +187,20 @@ main (int argc, char *argv[])
   gtk_object_sink (GTK_OBJECT (client));
 
   g_signal_connect (G_OBJECT (client), "save_yourself",
-                    G_CALLBACK (save_state), argv[0]);
-  g_signal_connect (G_OBJECT(client), "die",
-                    G_CALLBACK (quit_game), argv[0]);
+		    G_CALLBACK (save_state), argv[0]);
+  g_signal_connect (G_OBJECT (client), "die",
+		    G_CALLBACK (quit_game), argv[0]);
 
   initialize_gconf (argc, argv);
 
   app = gnome_app_new (GAME_NAME, _("Robots"));
 
   g_signal_connect (G_OBJECT (app), "delete_event",
-                    G_CALLBACK (quit_game), NULL);
+		    G_CALLBACK (quit_game), NULL);
   g_signal_connect (G_OBJECT (app), "configure_event",
 		    G_CALLBACK (save_window_geometry), NULL);
   g_signal_connect (G_OBJECT (app), "window_state_event",
-                    G_CALLBACK (window_state_cb), NULL);
+		    G_CALLBACK (window_state_cb), NULL);
 
 
   set_window_geometry (app);
@@ -239,12 +241,12 @@ main (int argc, char *argv[])
 
   gnome_app_set_contents (GNOME_APP (app), vbox);
 
-  gtk_widget_set_size_request (GTK_WIDGET (game_area), 
-                               MINIMUM_TILE_WIDTH * GAME_WIDTH,
-                               MINIMUM_TILE_HEIGHT * GAME_HEIGHT); 
+  gtk_widget_set_size_request (GTK_WIDGET (game_area),
+			       MINIMUM_TILE_WIDTH * GAME_WIDTH,
+			       MINIMUM_TILE_HEIGHT * GAME_HEIGHT);
 
   /* Set the window position if it was set by the session manager */
-  if (session_xpos >= 0 && session_ypos >= 0){
+  if (session_xpos >= 0 && session_ypos >= 0) {
     gtk_window_move (GTK_WINDOW (app), session_xpos, session_ypos);
   }
 
@@ -253,11 +255,14 @@ main (int argc, char *argv[])
   if (!load_game_configs ()) {
     /* Oops, no configs, we probably haven't been installed properly. */
     errordialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR,
-                                          GTK_BUTTONS_OK,
-                                          "<b>%s</b>\n\n%s",
-                                          _("No game data could be found."),
-                                          _("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
-    gtk_label_set_use_markup (GTK_LABEL (GTK_MESSAGE_DIALOG (errordialog)->label), TRUE);
+					  GTK_BUTTONS_OK,
+					  "<b>%s</b>\n\n%s",
+					  _("No game data could be found."),
+					  _
+					  ("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
+    gtk_label_set_use_markup (GTK_LABEL
+			      (GTK_MESSAGE_DIALOG (errordialog)->label),
+			      TRUE);
     gtk_window_set_resizable (GTK_WINDOW (errordialog), FALSE);
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
@@ -267,21 +272,25 @@ main (int argc, char *argv[])
 
   if (!load_game_graphics ()) {
     /* Oops, no graphics, we probably haven't been installed properly. */
-    errordialog = gtk_message_dialog_new (GTK_WINDOW (app), 
+    errordialog = gtk_message_dialog_new (GTK_WINDOW (app),
 					  GTK_DIALOG_MODAL,
 					  GTK_MESSAGE_ERROR,
-                                          GTK_BUTTONS_OK,
-                                          "<b>%s</b>\n\n%s",
-                                          _("Some graphics files are missing or corrupt."),
-                                          _("The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."));
-    gtk_label_set_use_markup (GTK_LABEL (GTK_MESSAGE_DIALOG (errordialog)->label), TRUE);
+					  GTK_BUTTONS_OK,
+					  "<b>%s</b>\n\n%s",
+					  _
+					  ("Some graphics files are missing or corrupt."),
+					  _
+					  ("The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."));
+    gtk_label_set_use_markup (GTK_LABEL
+			      (GTK_MESSAGE_DIALOG (errordialog)->label),
+			      TRUE);
 
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
   }
 
   connect_toolbar_toggle (toolbar);
-  
+
   init_sound ();
 
   init_game ();
@@ -291,8 +300,8 @@ main (int argc, char *argv[])
   }
 
   if (cmdline_config) {
-    for(i = 0; i < num_game_configs (); ++i){
-      if (! strcmp (cmdline_config, game_config_name (i))){
+    for (i = 0; i < num_game_configs (); ++i) {
+      if (!strcmp (cmdline_config, game_config_name (i))) {
 	properties_set_config (i);
 	break;
       }
@@ -303,7 +312,7 @@ main (int argc, char *argv[])
 
   gtk_main ();
 
-  gnome_accelerators_sync();
+  gnome_accelerators_sync ();
 
   g_object_unref (program);
 

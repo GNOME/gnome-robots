@@ -7,8 +7,8 @@
 /**********************************************************************/
 typedef struct _KBMap KBMap;
 
-struct _KBMap{
-  gint   ksym;
+struct _KBMap {
+  gint ksym;
   gchar *str;
 };
 /**********************************************************************/
@@ -1337,6 +1337,7 @@ KBMap kb_map[KB_MAP_SIZE] = {
   {GDK_Hangul_J_YeorinHieuh, "Hangul_J_YeorinHieuh"},
   {GDK_Korean_Won, "Korean_Won"},
 };
+
 /**********************************************************************/
 
 

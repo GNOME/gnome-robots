@@ -39,37 +39,37 @@
 /**********************************************************************/
 /* Exported Variables                                                 */
 /**********************************************************************/
-gint         game_state = STATE_PLAYING;
+gint game_state = STATE_PLAYING;
 /**********************************************************************/
 
 
 /**********************************************************************/
 /* File Static Variables                                              */
 /**********************************************************************/
-static gint      num_robots1    = 0;
-static gint      num_robots2    = 0;
-static gint      endlev_counter = 0;
-static gint      current_level  = 0;
-static gint      score          = 0;
-static gint      kills          = 0;
-static gint      score_step     = 0;
-static gint      safe_teleports = 0;
-static gboolean  display_updated = 0;
-static gint      player_xpos    = 0;
-static gint      player_ypos    = 0;
-static gint      push_xpos      = -1;
-static gint      push_ypos      = -1;
-static gint      game_timer_id  = -1;
-static gint      arena[GAME_WIDTH][GAME_HEIGHT];
-static gint      old_arena[GAME_WIDTH][GAME_HEIGHT];
-static gint      temp_arena[GAME_WIDTH][GAME_HEIGHT];
+static gint num_robots1 = 0;
+static gint num_robots2 = 0;
+static gint endlev_counter = 0;
+static gint current_level = 0;
+static gint score = 0;
+static gint kills = 0;
+static gint score_step = 0;
+static gint safe_teleports = 0;
+static gboolean display_updated = 0;
+static gint player_xpos = 0;
+static gint player_ypos = 0;
+static gint push_xpos = -1;
+static gint push_ypos = -1;
+static gint game_timer_id = -1;
+static gint arena[GAME_WIDTH][GAME_HEIGHT];
+static gint old_arena[GAME_WIDTH][GAME_HEIGHT];
+static gint temp_arena[GAME_WIDTH][GAME_HEIGHT];
 /**********************************************************************/
 
 
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static void message_box (gchar *msg);
+static void message_box (gchar * msg);
 static guint log_score (gint sc);
 static void add_kill (gint type);
 static void clear_arena (void);
@@ -106,13 +106,12 @@ static gboolean safe_teleport (void);
  * Displays a modal dialog box with a given message
  **/
 static void
-message_box (gchar *msg)
+message_box (gchar * msg)
 {
   GtkWidget *box;
 
-  box = gtk_message_dialog_new (GTK_WINDOW (app), GTK_DIALOG_MODAL, 
-				GTK_MESSAGE_INFO, GTK_BUTTONS_OK,
-				msg);
+  box = gtk_message_dialog_new (GTK_WINDOW (app), GTK_DIALOG_MODAL,
+				GTK_MESSAGE_INFO, GTK_BUTTONS_OK, msg);
   gtk_dialog_run (GTK_DIALOG (box));
   gtk_widget_destroy (box);
 }
@@ -132,21 +131,27 @@ show_scores (guint pos)
   gchar *nbuf = NULL;
 
   if (properties_super_safe_moves ()) {
-    sbuf = g_strdup_printf ("%s-super-safe", game_config_filename (current_game_config ()));
+    sbuf =
+      g_strdup_printf ("%s-super-safe",
+		       game_config_filename (current_game_config ()));
   } else if (properties_safe_moves ()) {
-    sbuf = g_strdup_printf ("%s-safe", game_config_filename (current_game_config ()));
+    sbuf =
+      g_strdup_printf ("%s-safe",
+		       game_config_filename (current_game_config ()));
   } else {
-    sbuf = g_strdup_printf ("%s", game_config_filename (current_game_config ()));
+    sbuf =
+      g_strdup_printf ("%s", game_config_filename (current_game_config ()));
   }
 
   if (properties_super_safe_moves ()) {
-    nbuf = g_strdup_printf (_("'%s' with super-safe moves"), 
-                            _(game_config_name (current_game_config ())));
+    nbuf = g_strdup_printf (_("'%s' with super-safe moves"),
+			    _(game_config_name (current_game_config ())));
   } else if (properties_safe_moves ()) {
-    nbuf = g_strdup_printf (_("'%s' with safe moves"), 
-                            _(game_config_name (current_game_config ())));
+    nbuf = g_strdup_printf (_("'%s' with safe moves"),
+			    _(game_config_name (current_game_config ())));
   } else {
-    nbuf = g_strdup_printf ("'%s'", _(game_config_name (current_game_config ())));
+    nbuf =
+      g_strdup_printf ("'%s'", _(game_config_name (current_game_config ())));
   }
 
   if (score_dialog != NULL) {
@@ -166,7 +171,7 @@ show_scores (guint pos)
   gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (score_dialog)->vbox), 2);
   gtk_window_set_resizable (GTK_WINDOW (score_dialog), FALSE);
   g_signal_connect (G_OBJECT (score_dialog), "destroy",
-                    G_CALLBACK (gtk_widget_destroyed), &score_dialog);
+		    G_CALLBACK (gtk_widget_destroyed), &score_dialog);
 }
 
 
@@ -187,18 +192,22 @@ log_score (gint sc)
   gchar *sbuf = NULL;
 
   if (properties_super_safe_moves ()) {
-    sbuf = g_strdup_printf ("%s-super-safe", game_config_filename (current_game_config ()));  
-  } else
-    if (properties_safe_moves ()) {
-      sbuf = g_strdup_printf ("%s-safe", game_config_filename (current_game_config ()));
-    } else {
-      sbuf = g_strdup_printf ("%s", game_config_filename (current_game_config ()));
-    }
+    sbuf =
+      g_strdup_printf ("%s-super-safe",
+		       game_config_filename (current_game_config ()));
+  } else if (properties_safe_moves ()) {
+    sbuf =
+      g_strdup_printf ("%s-safe",
+		       game_config_filename (current_game_config ()));
+  } else {
+    sbuf =
+      g_strdup_printf ("%s", game_config_filename (current_game_config ()));
+  }
 
   if (sc != 0)
-    pos = gnome_score_log ((gfloat)sc, sbuf, TRUE);
+    pos = gnome_score_log ((gfloat) sc, sbuf, TRUE);
   g_free (sbuf);
-  update_score_state  ();
+  update_score_state ();
 
   return pos;
 }
@@ -212,13 +221,13 @@ log_score (gint sc)
 static void
 kill_player (void)
 {
-    game_state = STATE_DEAD;
-    play_sound (SOUND_DIE);
-    arena[player_xpos][player_ypos] = OBJECT_PLAYER;
-    endlev_counter = 0;
-    add_aieee_bubble (player_xpos, player_ypos);
-    player_animation_dead ();
-    set_move_menu_sensitivity (FALSE);
+  game_state = STATE_DEAD;
+  play_sound (SOUND_DIE);
+  arena[player_xpos][player_ypos] = OBJECT_PLAYER;
+  endlev_counter = 0;
+  add_aieee_bubble (player_xpos, player_ypos);
+  player_animation_dead ();
+  set_move_menu_sensitivity (FALSE);
 }
 
 /**
@@ -251,26 +260,27 @@ add_kill (gint type)
 
   score += si;
   score_step += si;
-  
+
   if (game_config ()->safe_score_boundary > 0) {
     while (score_step >= game_config ()->safe_score_boundary) {
       safe_teleports += 1;
       score_step -= game_config ()->safe_score_boundary;
     }
   }
-  
+
   if (game_config ()->num_robots_per_safe > 0) {
     while (kills >= game_config ()->num_robots_per_safe) {
       safe_teleports += 1;
       kills -= game_config ()->num_robots_per_safe;
     }
   }
-  
+
   if (safe_teleports > game_config ()->max_safe_teleports) {
     safe_teleports = game_config ()->max_safe_teleports;
   }
-  
-  gnobots_statusbar_set (score, current_level+1, safe_teleports, num_robots1, num_robots2);
+
+  gnobots_statusbar_set (score, current_level + 1, safe_teleports,
+			 num_robots1, num_robots2);
 }
 
 
@@ -367,7 +377,8 @@ generate_level (void)
   if (num_robots1 > MAX_ROBOTS) {
     current_level = 0;
     num_robots1 = game_config ()->initial_type1;
-    message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
+    message_box (_
+		 ("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
     play_sound (SOUND_VICTORY);
   }
 
@@ -378,11 +389,12 @@ generate_level (void)
     num_robots2 = game_config ()->maximum_type2;
   }
 
-  if ((num_robots1+num_robots2) > MAX_ROBOTS) {
+  if ((num_robots1 + num_robots2) > MAX_ROBOTS) {
     current_level = 0;
     num_robots1 = game_config ()->initial_type1;
     num_robots2 = game_config ()->initial_type2;
-    message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
+    message_box (_
+		 ("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
     play_sound (SOUND_VICTORY);
   }
 
@@ -468,9 +480,9 @@ update_arena (void)
     for (j = 0; j < GAME_HEIGHT; ++j) {
 
 
-      if ( (temp_arena[i][j] == OBJECT_HEAP) && 
-           (push_xpos == i) && (push_ypos == j)) {
-	if (arena[i][j] == OBJECT_ROBOT1) {	
+      if ((temp_arena[i][j] == OBJECT_HEAP) &&
+	  (push_xpos == i) && (push_ypos == j)) {
+	if (arena[i][j] == OBJECT_ROBOT1) {
 	  if (properties_splats ()) {
 	    add_splat_bubble (i, j);
 	    play_sound (SOUND_SPLAT);
@@ -516,8 +528,9 @@ update_arena (void)
 
   display_updated = FALSE;
 
-  gnobots_statusbar_set (score, current_level+1, safe_teleports, num_robots1, num_robots2);
-  
+  gnobots_statusbar_set (score, current_level + 1, safe_teleports,
+			 num_robots1, num_robots2);
+
 }
 
 
@@ -537,7 +550,7 @@ timeout_cb (void *data)
 
   draw_graphics ();
 
-  if ( (game_state == STATE_TYPE2) || (game_state == STATE_WTYPE2)) {
+  if ((game_state == STATE_TYPE2) || (game_state == STATE_WTYPE2)) {
     if (display_updated) {
       move_type2_robots ();
       update_arena ();
@@ -562,7 +575,8 @@ timeout_cb (void *data)
       generate_level ();
       game_state = STATE_PLAYING;
       set_move_menu_sensitivity (TRUE);
-      gnobots_statusbar_set (score, current_level+1, safe_teleports, num_robots1, num_robots2);
+      gnobots_statusbar_set (score, current_level + 1, safe_teleports,
+			     num_robots1, num_robots2);
     }
   } else if (game_state == STATE_DEAD) {
     ++endlev_counter;
@@ -627,7 +641,7 @@ init_game (void)
   create_game_timer ();
 
   g_signal_connect (GTK_OBJECT (app), "key_press_event",
-                    GTK_SIGNAL_FUNC (keyboard_cb), 0);
+		    GTK_SIGNAL_FUNC (keyboard_cb), 0);
 
   start_new_game ();
 }
@@ -643,7 +657,7 @@ void
 quit_game (void)
 {
   destroy_game_timer ();
-  gtk_main_quit();
+  gtk_main_quit ();
 }
 
 
@@ -666,7 +680,7 @@ start_new_game (void)
     log_score (score);
 
   conf = game_config ();
-  g_return_if_fail  (conf != NULL);
+  g_return_if_fail (conf != NULL);
 
   safe_teleports = conf->initial_safe_teleports;
 
@@ -683,7 +697,8 @@ start_new_game (void)
 
   game_state = STATE_PLAYING;
 
-  gnobots_statusbar_set (score, current_level+1, safe_teleports, num_robots1, num_robots2);
+  gnobots_statusbar_set (score, current_level + 1, safe_teleports,
+			 num_robots1, num_robots2);
   set_move_menu_sensitivity (TRUE);
 }
 
@@ -702,9 +717,8 @@ move_all_robots (void)
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if ((arena[i][j] == OBJECT_PLAYER) ||
-          (arena[i][j] == OBJECT_HEAP)) {
-	temp_arena[i][j] = arena[i][j];	
+      if ((arena[i][j] == OBJECT_PLAYER) || (arena[i][j] == OBJECT_HEAP)) {
+	temp_arena[i][j] = arena[i][j];
       } else {
 	temp_arena[i][j] = OBJECT_NONE;
       }
@@ -716,15 +730,19 @@ move_all_robots (void)
       if ((arena[i][j] == OBJECT_ROBOT1) || (arena[i][j] == OBJECT_ROBOT2)) {
 	nx = i;
 	ny = j;
-	if (player_xpos < nx) nx -= 1;
-	if (player_xpos > nx) nx += 1;
-	if (player_ypos < ny) ny -= 1;
-	if (player_ypos > ny) ny += 1;
-	
+	if (player_xpos < nx)
+	  nx -= 1;
+	if (player_xpos > nx)
+	  nx += 1;
+	if (player_ypos < ny)
+	  ny -= 1;
+	if (player_ypos > ny)
+	  ny += 1;
+
 	if (temp_arena[nx][ny] == OBJECT_HEAP) {
 	  add_kill (arena[i][j]);
-	} else if ((temp_arena[nx][ny] == OBJECT_ROBOT1) || 
-                   (temp_arena[nx][ny] == OBJECT_ROBOT2)) {
+	} else if ((temp_arena[nx][ny] == OBJECT_ROBOT1) ||
+		   (temp_arena[nx][ny] == OBJECT_ROBOT2)) {
 	  add_kill (arena[i][j]);
 	  add_kill (temp_arena[nx][ny]);
 	  temp_arena[nx][ny] = OBJECT_HEAP;
@@ -753,9 +771,8 @@ move_type2_robots (void)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if ((arena[i][j] == OBJECT_PLAYER) ||
-          (arena[i][j] == OBJECT_ROBOT1) ||
-          (arena[i][j] == OBJECT_HEAP)) {
-	temp_arena[i][j] = arena[i][j];	
+	  (arena[i][j] == OBJECT_ROBOT1) || (arena[i][j] == OBJECT_HEAP)) {
+	temp_arena[i][j] = arena[i][j];
       } else {
 	temp_arena[i][j] = OBJECT_NONE;
       }
@@ -767,15 +784,19 @@ move_type2_robots (void)
       if (arena[i][j] == OBJECT_ROBOT2) {
 	nx = i;
 	ny = j;
-	if (player_xpos < nx) nx -= 1;
-	if (player_xpos > nx) nx += 1;
-	if (player_ypos < ny) ny -= 1;
-	if (player_ypos > ny) ny += 1;
-	
+	if (player_xpos < nx)
+	  nx -= 1;
+	if (player_xpos > nx)
+	  nx += 1;
+	if (player_ypos < ny)
+	  ny -= 1;
+	if (player_ypos > ny)
+	  ny += 1;
+
 	if (temp_arena[nx][ny] == OBJECT_HEAP) {
 	  add_kill (arena[i][j]);
-	} else if ((temp_arena[nx][ny] == OBJECT_ROBOT1) || 
-                   (temp_arena[nx][ny] == OBJECT_ROBOT2)) {
+	} else if ((temp_arena[nx][ny] == OBJECT_ROBOT1) ||
+		   (temp_arena[nx][ny] == OBJECT_ROBOT2)) {
 	  add_kill (arena[i][j]);
 	  add_kill (temp_arena[nx][ny]);
 	  temp_arena[nx][ny] = OBJECT_HEAP;
@@ -831,13 +852,14 @@ check_safe (gint x, gint y)
   gint i, j;
   gint nx, ny;
 
-  if (temp_arena[x][y] != OBJECT_NONE) return FALSE;
+  if (temp_arena[x][y] != OBJECT_NONE)
+    return FALSE;
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if ((temp_arena[i][j] == OBJECT_PLAYER) ||
-          (temp_arena[i][j] == OBJECT_HEAP)) {
-	temp2_arena[i][j] = temp_arena[i][j];	
+	  (temp_arena[i][j] == OBJECT_HEAP)) {
+	temp2_arena[i][j] = temp_arena[i][j];
       } else {
 	temp2_arena[i][j] = OBJECT_NONE;
       }
@@ -846,18 +868,22 @@ check_safe (gint x, gint y)
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if ((temp_arena[i][j] == OBJECT_ROBOT1) || 
-          (temp_arena[i][j] == OBJECT_ROBOT2)) {
+      if ((temp_arena[i][j] == OBJECT_ROBOT1) ||
+	  (temp_arena[i][j] == OBJECT_ROBOT2)) {
 	nx = i;
 	ny = j;
-	if (x < nx) nx -= 1;
-	if (x > nx) nx += 1;
-	if (y < ny) ny -= 1;
-	if (y > ny) ny += 1;
-	
-	if ((temp2_arena[nx][ny] == OBJECT_ROBOT1) || 
-            (temp2_arena[nx][ny] == OBJECT_ROBOT2) ||
-            (temp2_arena[nx][ny] == OBJECT_HEAP)) {
+	if (x < nx)
+	  nx -= 1;
+	if (x > nx)
+	  nx += 1;
+	if (y < ny)
+	  ny -= 1;
+	if (y > ny)
+	  ny += 1;
+
+	if ((temp2_arena[nx][ny] == OBJECT_ROBOT1) ||
+	    (temp2_arena[nx][ny] == OBJECT_ROBOT2) ||
+	    (temp2_arena[nx][ny] == OBJECT_HEAP)) {
 	  temp2_arena[nx][ny] = OBJECT_HEAP;
 	} else {
 	  temp2_arena[nx][ny] = temp_arena[i][j];
@@ -866,13 +892,14 @@ check_safe (gint x, gint y)
     }
   }
 
-  if (temp2_arena[x][y] != OBJECT_NONE) return FALSE;
+  if (temp2_arena[x][y] != OBJECT_NONE)
+    return FALSE;
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if ((temp2_arena[i][j] == OBJECT_PLAYER) ||
-          (temp2_arena[i][j] == OBJECT_HEAP)) {
-	temp3_arena[i][j] = temp2_arena[i][j];	
+	  (temp2_arena[i][j] == OBJECT_HEAP)) {
+	temp3_arena[i][j] = temp2_arena[i][j];
       } else {
 	temp3_arena[i][j] = OBJECT_NONE;
       }
@@ -884,14 +911,18 @@ check_safe (gint x, gint y)
       if (temp2_arena[i][j] == OBJECT_ROBOT2) {
 	nx = i;
 	ny = j;
-	if (x < nx) nx -= 1;
-	if (x > nx) nx += 1;
-	if (y < ny) ny -= 1;
-	if (y > ny) ny += 1;
-	
-	if ((temp3_arena[nx][ny] == OBJECT_ROBOT1) || 
-            (temp3_arena[nx][ny] == OBJECT_ROBOT2) ||
-            (temp3_arena[nx][ny] == OBJECT_HEAP)) {
+	if (x < nx)
+	  nx -= 1;
+	if (x > nx)
+	  nx += 1;
+	if (y < ny)
+	  ny -= 1;
+	if (y > ny)
+	  ny += 1;
+
+	if ((temp3_arena[nx][ny] == OBJECT_ROBOT1) ||
+	    (temp3_arena[nx][ny] == OBJECT_ROBOT2) ||
+	    (temp3_arena[nx][ny] == OBJECT_HEAP)) {
 	  temp3_arena[nx][ny] = OBJECT_HEAP;
 	} else {
 	  temp3_arena[nx][ny] = temp2_arena[i][j];
@@ -900,7 +931,8 @@ check_safe (gint x, gint y)
     }
   }
 
-  if (temp3_arena[x][y] != OBJECT_NONE) return FALSE;
+  if (temp3_arena[x][y] != OBJECT_NONE)
+    return FALSE;
 
   return TRUE;
 }
@@ -921,16 +953,18 @@ check_safe (gint x, gint y)
 static gboolean
 push_heap (gint x, gint y, gint dx, gint dy)
 {
-  gint nx = x+dx;
-  gint ny = y+dy;
+  gint nx = x + dx;
+  gint ny = y + dy;
 
-  if (temp_arena[x][y] != OBJECT_HEAP) return FALSE;
-  
+  if (temp_arena[x][y] != OBJECT_HEAP)
+    return FALSE;
+
   if ((nx < 0) || (nx >= GAME_WIDTH) || (ny < 0) || (ny >= GAME_HEIGHT)) {
     return FALSE;
   }
 
-  if (temp_arena[nx][ny] == OBJECT_HEAP) return FALSE;
+  if (temp_arena[nx][ny] == OBJECT_HEAP)
+    return FALSE;
 
   push_xpos = nx;
   push_ypos = ny;
@@ -994,23 +1028,23 @@ static gboolean
 safe_move_available (void)
 {
   if (try_player_move (-1, -1)) {
-    if (check_safe (player_xpos-1, player_ypos-1)) {
+    if (check_safe (player_xpos - 1, player_ypos - 1)) {
       return TRUE;
     }
   }
   if (try_player_move (0, -1)) {
-    if (check_safe (player_xpos, player_ypos-1)) {
+    if (check_safe (player_xpos, player_ypos - 1)) {
       return TRUE;
     }
   }
   if (try_player_move (1, -1)) {
-    if (check_safe (player_xpos+1, player_ypos-1)) {
+    if (check_safe (player_xpos + 1, player_ypos - 1)) {
       return TRUE;
     }
   }
 
   if (try_player_move (-1, 0)) {
-    if (check_safe (player_xpos-1, player_ypos)) {
+    if (check_safe (player_xpos - 1, player_ypos)) {
       return TRUE;
     }
   }
@@ -1020,23 +1054,23 @@ safe_move_available (void)
     }
   }
   if (try_player_move (1, 0)) {
-    if (check_safe (player_xpos+1, player_ypos)) {
+    if (check_safe (player_xpos + 1, player_ypos)) {
       return TRUE;
     }
   }
 
   if (try_player_move (-1, 1)) {
-    if (check_safe (player_xpos-1, player_ypos+1)) {
+    if (check_safe (player_xpos - 1, player_ypos + 1)) {
       return TRUE;
     }
   }
   if (try_player_move (0, 1)) {
-    if (check_safe (player_xpos, player_ypos+1)) {
+    if (check_safe (player_xpos, player_ypos + 1)) {
       return TRUE;
     }
   }
   if (try_player_move (1, 1)) {
-    if (check_safe (player_xpos+1, player_ypos+1)) {
+    if (check_safe (player_xpos + 1, player_ypos + 1)) {
       return TRUE;
     }
   }
@@ -1102,7 +1136,7 @@ player_move (gint dx, gint dy)
       if (!check_safe (nx, ny)) {
 	if (properties_super_safe_moves () || safe_move_available ()) {
 	  play_sound (SOUND_BAD);
-	  return FALSE;	
+	  return FALSE;
 	}
       }
     }
@@ -1166,7 +1200,7 @@ random_teleport (void)
       temp_arena[player_xpos][player_ypos] = OBJECT_PLAYER;
 
       reset_player_animation ();
-      
+
       update_arena ();
       break;
     }
@@ -1182,7 +1216,7 @@ random_teleport (void)
 
     if ((xp == ixp) && (yp == iyp)) {
       /* This should never happen. */
-      message_box (_("There are no teleport locations left!!"));      
+      message_box (_("There are no teleport locations left!!"));
       return FALSE;
     }
   }
@@ -1213,7 +1247,8 @@ safe_teleport (void)
     /* FIXME: This code is untested - in normal play you have to get to 
      * about level 61. */
     if (!safe_move_available ()) {
-      message_box (_("You have run out of safe moves - the robots have won!"));
+      message_box (_
+		   ("You have run out of safe moves - the robots have won!"));
       kill_player ();
       return FALSE;
     } else if (safe_teleports > 0) {
@@ -1264,7 +1299,7 @@ safe_teleport (void)
       }
     }
   }
-  
+
   remove_splat_bubble ();
   play_sound (SOUND_TELEPORT);
 
@@ -1282,63 +1317,64 @@ safe_teleport (void)
 void
 game_keypress (gint key)
 {
-  if (!display_updated) return;
+  if (!display_updated)
+    return;
 
   if (game_state == STATE_PLAYING) {
     switch (key) {
     case KBD_NW:
       if (player_move (-1, -1)) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_N:
       if (player_move (0, -1)) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_NE:
       if (player_move (1, -1)) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_W:
       if (player_move (-1, 0)) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_STAY:
       if (player_move (0, 0)) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_E:
       if (player_move (1, 0)) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_SW:
       if (player_move (-1, 1)) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_S:
       if (player_move (0, 1)) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_SE:
       if (player_move (1, 1)) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_TELE:
       if (safe_teleport ()) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_RTEL:
       if (random_teleport ()) {
-        move_robots ();
+	move_robots ();
       }
       break;
     case KBD_WAIT:
@@ -1349,15 +1385,17 @@ game_keypress (gint key)
 
 }
 
-static void get_dir (int ix, int iy, int * odx, int * ody)
+static void
+get_dir (int ix, int iy, int *odx, int *ody)
 {
   int x, y, idx, idy;
   double dx, dy, angle;
   int octant;
   const int movetable[8][2] = { {-1, 0}, {-1, -1}, {0, -1}, {1, -1},
-				{1, 0}, {1, 1}, {0, 1}, {-1, 1} };
-  x = CLAMP(ix/tile_width, 0, GAME_WIDTH);
-  y = CLAMP(iy/tile_height, 0, GAME_HEIGHT);
+  {1, 0}, {1, 1}, {0, 1}, {-1, 1}
+  };
+  x = CLAMP (ix / tile_width, 0, GAME_WIDTH);
+  y = CLAMP (iy / tile_height, 0, GAME_HEIGHT);
 
   /* If we click on our man then we assume we hold. */
   if ((x == player_xpos) && (y == player_ypos)) {
@@ -1369,7 +1407,7 @@ static void get_dir (int ix, int iy, int * odx, int * ody)
   /* If the square clicked on is a valid move, go there. */
   idx = x - player_xpos;
   idy = y - player_ypos;
-  if ((ABS(idx) < 2) && (ABS(idy) < 2)) {
+  if ((ABS (idx) < 2) && (ABS (idy) < 2)) {
     *odx = idx;
     *ody = idy;
     return;
@@ -1383,13 +1421,14 @@ static void get_dir (int ix, int iy, int * odx, int * ody)
 
   /* Note the adjustment we have to make (+9, not +8) because atan2's idea 
    * of octants and the ones we want are shifted by PI/8. */
-  octant = (((int)floor(8.0*angle/M_PI) + 9)/2) % 8; 
+  octant = (((int) floor (8.0 * angle / M_PI) + 9) / 2) % 8;
 
   *odx = movetable[octant][0];
   *ody = movetable[octant][1];
 }
 
-gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
+gboolean
+mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
 {
   int dx, dy;
 
@@ -1405,7 +1444,8 @@ gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
   return TRUE;
 }
 
-gboolean move_cb (GtkWidget *widget, GdkEventMotion *e, gpointer data)
+gboolean
+move_cb (GtkWidget * widget, GdkEventMotion * e, gpointer data)
 {
   int dx, dy;
 

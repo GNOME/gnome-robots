@@ -48,7 +48,7 @@ static gint control_keys[12];
  * Returns:
  * String representation of a keysym
  **/
-gchar*
+gchar *
 keyboard_string (gint ksym)
 {
   gchar *name;
@@ -66,7 +66,7 @@ keyboard_string (gint ksym)
  * sets the keybaord mapping
  **/
 void
-keyboard_set (gint* keys)
+keyboard_set (gint * keys)
 {
   gint i;
 
@@ -92,7 +92,7 @@ keyboard_set (gint* keys)
  * TRUE if the event is handled
  **/
 gint
-keyboard_cb (GtkWidget *widget, GdkEventKey *event, gpointer data)
+keyboard_cb (GtkWidget * widget, GdkEventKey * event, gpointer data)
 {
   gint i;
 

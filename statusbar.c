@@ -28,13 +28,13 @@
 /**********************************************************************/
 /* File Static Variables                                              */
 /**********************************************************************/
-static GtkWidget *statusbar        = NULL;
-static GtkWidget *sbtbl            = NULL;
-static GtkWidget *score_label      = NULL;
-static GtkWidget *safe_label       = NULL;
-static GtkWidget *level_label      = NULL;
-static GtkWidget *remaining_label  = NULL;
-static gboolean   show_both        = TRUE;
+static GtkWidget *statusbar = NULL;
+static GtkWidget *sbtbl = NULL;
+static GtkWidget *score_label = NULL;
+static GtkWidget *safe_label = NULL;
+static GtkWidget *level_label = NULL;
+static GtkWidget *remaining_label = NULL;
+static gboolean show_both = TRUE;
 /**********************************************************************/
 
 
@@ -51,12 +51,12 @@ static gboolean   show_both        = TRUE;
  * Returns:
  * a pointer to the statusbar or NULL on failure
  **/
-GtkWidget*
+GtkWidget *
 gnobots_statusbar_new (void)
 {
   GtkWidget *label;
 
-  if (statusbar != NULL){
+  if (statusbar != NULL) {
     return statusbar;
   }
 
@@ -65,17 +65,17 @@ gnobots_statusbar_new (void)
   label = gtk_label_new (_("Score:"));
   gtk_table_attach (GTK_TABLE (sbtbl), label, 0, 1, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (label);
-    
+
   score_label = gtk_label_new ("0");
   gtk_table_attach (GTK_TABLE (sbtbl), score_label, 1, 2, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (score_label);
 
   gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 2, 12);
-    
+
   label = gtk_label_new (_("Safe Teleports:"));
-  gtk_table_attach (GTK_TABLE(sbtbl), label, 3, 4, 0, 1, 0, 0, 3, 3);
+  gtk_table_attach (GTK_TABLE (sbtbl), label, 3, 4, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (label);
-    
+
   safe_label = gtk_label_new ("0");
   gtk_table_attach (GTK_TABLE (sbtbl), safe_label, 4, 5, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (safe_label);
@@ -85,22 +85,22 @@ gnobots_statusbar_new (void)
   label = gtk_label_new (_("Level:"));
   gtk_table_attach (GTK_TABLE (sbtbl), label, 6, 7, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (label);
-    
+
   level_label = gtk_label_new ("0");
   gtk_table_attach (GTK_TABLE (sbtbl), level_label, 7, 8, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (level_label);
-    
+
   gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 8, 12);
 
   label = gtk_label_new (_("Remaining:"));
   gtk_table_attach (GTK_TABLE (sbtbl), label, 9, 10, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (label);
-    
+
   remaining_label = gtk_label_new ("0");
   gtk_table_attach (GTK_TABLE (sbtbl), remaining_label,
-                    10, 11, 0, 1, 0, 0, 3, 3);
+		    10, 11, 0, 1, 0, 0, 3, 3);
   gtk_widget_show (remaining_label);
-    
+
   gtk_widget_show (sbtbl);
 
   statusbar = gtk_statusbar_new ();
@@ -127,7 +127,8 @@ gnobots_statusbar_new (void)
 gboolean
 gnobots_statusbar_delete (void)
 {
-  if(statusbar == NULL) return FALSE;
+  if (statusbar == NULL)
+    return FALSE;
 
   gtk_widget_unref (statusbar);
 
@@ -231,8 +232,8 @@ gnobots_statusbar_set_remaining (gint rem1, gint rem2)
   if (statusbar == NULL)
     return FALSE;
 
-  if (show_both){
-    buffer = g_strdup_printf ("%d+%d %d", rem1, rem2, rem1+rem2);
+  if (show_both) {
+    buffer = g_strdup_printf ("%d+%d %d", rem1, rem2, rem1 + rem2);
   } else {
     buffer = g_strdup_printf ("%d", rem1);
   }
@@ -258,12 +259,9 @@ gnobots_statusbar_set_remaining (gint rem1, gint rem2)
  **/
 gboolean
 gnobots_statusbar_set (gint score,
-                       gint level,
-                       gint stel,
-                       gint rem1,
-                       gint rem2)
+		       gint level, gint stel, gint rem1, gint rem2)
 {
-  if (statusbar == NULL) 
+  if (statusbar == NULL)
     return FALSE;
 
   gnobots_statusbar_set_score (score);

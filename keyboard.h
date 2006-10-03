@@ -5,9 +5,9 @@
 /**********************************************************************/
 /* Exported functions                                                 */
 /**********************************************************************/
-gchar* keyboard_string (gint);
-void   keyboard_set (gint*);
-gint   keyboard_cb (GtkWidget*, GdkEventKey*, gpointer);
+gchar *keyboard_string (gint);
+void keyboard_set (gint *);
+gint keyboard_cb (GtkWidget *, GdkEventKey *, gpointer);
 /**********************************************************************/
 
 

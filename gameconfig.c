@@ -35,16 +35,16 @@
 /**********************************************************************/
 /* File Static Variables                                              */
 /**********************************************************************/
-static gint         num_configs    = -1;
-static GameConfig **game_configs   = NULL;
-static gint         current_config = -1;
+static gint num_configs = -1;
+static GameConfig **game_configs = NULL;
+static gint current_config = -1;
 /**********************************************************************/
 
 
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static GameConfig* load_config(gchar*);
+static GameConfig *load_config (gchar *);
 /**********************************************************************/
 
 
@@ -62,17 +62,17 @@ static GameConfig* load_config(gchar*);
  * Returns:
  * a pointer to a GameConfig structure or NULL on failure
  **/
-static GameConfig*
-load_config (gchar *fname)
+static GameConfig *
+load_config (gchar * fname)
 {
   GameConfig *gcfg;
-  gint        pflag = 0;
-  FILE       *fp;
+  gint pflag = 0;
+  FILE *fp;
   gchar buffer[PATH_MAX];
-  gchar      *bptr;
-  gchar      *bpstart, *bpstart2;
-  gchar      *vptr;
-  gint        val;
+  gchar *bptr;
+  gchar *bpstart, *bpstart2;
+  gchar *vptr;
+  gint val;
 
   fp = fopen (fname, "r");
   if (fp == NULL)
@@ -89,9 +89,9 @@ load_config (gchar *fname)
   g_free (bpstart);
   gcfg->description = g_string_new (bpstart2);
   g_free (bpstart2);
-  
+
   while (fgets (buffer, 256, fp) != NULL) {
-    if (strlen (buffer) < 3) 
+    if (strlen (buffer) < 3)
       continue;
 
     bptr = buffer;
@@ -105,87 +105,87 @@ load_config (gchar *fname)
       bptr++;
     }
 
-    if (! vptr)
+    if (!vptr)
       continue;
     if (sscanf (vptr, "%d", &val) != 1)
       continue;
 
-    if (! strcmp (buffer, "initial_type1")) {
+    if (!strcmp (buffer, "initial_type1")) {
       gcfg->initial_type1 = val;
       pflag |= 0x00000001;
     }
-    if (! strcmp (buffer, "initial_type2")) {
+    if (!strcmp (buffer, "initial_type2")) {
       gcfg->initial_type2 = val;
       pflag |= 0x00000002;
     }
-    if (! strcmp (buffer, "increment_type1")) {
+    if (!strcmp (buffer, "increment_type1")) {
       gcfg->increment_type1 = val;
       pflag |= 0x00000004;
     }
-    if (! strcmp (buffer, "increment_type2")) {
+    if (!strcmp (buffer, "increment_type2")) {
       gcfg->increment_type2 = val;
       pflag |= 0x00000008;
     }
-    if (! strcmp (buffer, "maximum_type1")) {
+    if (!strcmp (buffer, "maximum_type1")) {
       gcfg->maximum_type1 = val;
       pflag |= 0x00000010;
     }
-    if (! strcmp (buffer, "maximum_type2")) {
+    if (!strcmp (buffer, "maximum_type2")) {
       gcfg->maximum_type2 = val;
       pflag |= 0x00000020;
     }
-    if (! strcmp (buffer, "score_type1")) {
+    if (!strcmp (buffer, "score_type1")) {
       gcfg->score_type1 = val;
       pflag |= 0x00000040;
     }
-    if (! strcmp (buffer, "score_type2")) {
+    if (!strcmp (buffer, "score_type2")) {
       gcfg->score_type2 = val;
       pflag |= 0x00000080;
     }
-    if (! strcmp (buffer, "score_type1_waiting")) {
+    if (!strcmp (buffer, "score_type1_waiting")) {
       gcfg->score_type1_waiting = val;
       pflag |= 0x00000100;
     }
-    if (! strcmp (buffer, "score_type2_waiting")) {
+    if (!strcmp (buffer, "score_type2_waiting")) {
       gcfg->score_type2_waiting = val;
       pflag |= 0x00000200;
     }
-    if (! strcmp (buffer, "score_type1_splatted")) {
+    if (!strcmp (buffer, "score_type1_splatted")) {
       gcfg->score_type1_splatted = val;
       pflag |= 0x00000400;
     }
-    if (! strcmp (buffer, "score_type2_splatted")) {
+    if (!strcmp (buffer, "score_type2_splatted")) {
       gcfg->score_type2_splatted = val;
       pflag |= 0x00000800;
     }
-    if (! strcmp (buffer, "num_robots_per_safe")) {
+    if (!strcmp (buffer, "num_robots_per_safe")) {
       gcfg->num_robots_per_safe = val;
       pflag |= 0x00001000;
     }
-    if (! strcmp (buffer, "safe_score_boundary")) {
+    if (!strcmp (buffer, "safe_score_boundary")) {
       gcfg->safe_score_boundary = val;
       pflag |= 0x00002000;
     }
-    if (! strcmp (buffer, "max_safe_teleports")) {
+    if (!strcmp (buffer, "max_safe_teleports")) {
       gcfg->max_safe_teleports = val;
       pflag |= 0x00004000;
     }
-    if (! strcmp (buffer, "initial_safe_teleports")) {
+    if (!strcmp (buffer, "initial_safe_teleports")) {
       gcfg->initial_safe_teleports = val;
       pflag |= 0x00008000;
     }
-    if (! strcmp (buffer, "free_safe_teleports")) {
+    if (!strcmp (buffer, "free_safe_teleports")) {
       gcfg->free_safe_teleports = val;
       pflag |= 0x00010000;
     }
-    if (! strcmp (buffer, "moveable_heaps")) {
+    if (!strcmp (buffer, "moveable_heaps")) {
       gcfg->moveable_heaps = val;
       pflag |= 0x00020000;
     }
 
   }
 
-  fclose(fp);
+  fclose (fp);
 
   /* Check we have got all types */
   if (pflag != 0x0003ffff) {
@@ -209,16 +209,16 @@ load_config (gchar *fname)
 gboolean
 load_game_configs (void)
 {
-  gint           i;
-  GameConfig    *gcfg;
-  G_CONST_RETURN gchar* dent;
-  GDir          *dir;
+  gint i;
+  GameConfig *gcfg;
+  G_CONST_RETURN gchar *dent;
+  GDir *dir;
   gchar *buffer;
 
-  gchar *dname = gnome_program_locate_file (NULL, 
-                                            GNOME_FILE_DOMAIN_APP_DATADIR,
-                                            (GAME_NAME),
-                                            FALSE, NULL);
+  gchar *dname = gnome_program_locate_file (NULL,
+					    GNOME_FILE_DOMAIN_APP_DATADIR,
+					    (GAME_NAME),
+					    FALSE, NULL);
 
   if (game_configs != NULL) {
     free_game_configs ();
@@ -230,13 +230,13 @@ load_game_configs (void)
 
   num_configs = 0;
   while ((dent = g_dir_read_name (dir)) != NULL) {
-    if (! g_strrstr (dent, ".cfg")) {
+    if (!g_strrstr (dent, ".cfg")) {
       continue;
     }
     num_configs++;
   }
 
-  game_configs = g_new (GameConfig*, num_configs);
+  game_configs = g_new (GameConfig *, num_configs);
   for (i = 0; i < num_configs; ++i) {
     game_configs[i] = NULL;
   }
@@ -245,10 +245,10 @@ load_game_configs (void)
 
   num_configs = 0;
   while ((dent = g_dir_read_name (dir)) != NULL) {
-    if (! g_strrstr(dent, ".cfg")) {
+    if (!g_strrstr (dent, ".cfg")) {
       continue;
     }
-    
+
     buffer = g_build_filename (dname, dent, NULL);
 
     gcfg = load_config (buffer);
@@ -297,7 +297,7 @@ free_game_configs (void)
   game_configs = NULL;
   current_config = -1;
   num_configs = -1;
-  
+
   return TRUE;
 }
 
@@ -355,12 +355,12 @@ set_game_config (gint n)
  * Returns:
  * pointer to a GameConfig structure or NULL
  **/
-GameConfig*
+GameConfig *
 game_config (void)
 {
   if (game_configs == NULL)
     return NULL;
-  
+
   return game_configs[current_config];
 }
 
@@ -375,12 +375,12 @@ game_config (void)
  * Returns:
  * pointer to a GameConfig structure or NULL
  **/
-GameConfig*
+GameConfig *
 game_config_settings (gint n)
 {
   if (game_configs == NULL)
     return NULL;
-  
+
   if ((n < 0) || (n >= num_configs))
     return NULL;
 
@@ -417,7 +417,7 @@ current_game_config (void)
  * Returns:
  * pointer to a string containing the name
  **/
-gchar*
+gchar *
 game_config_name (gint n)
 {
   static gchar buffer[PATH_MAX];
@@ -428,7 +428,7 @@ game_config_name (gint n)
 
   if ((n < 0) || (n >= num_configs))
     return NULL;
-  
+
   strcpy (buffer, game_configs[n]->description->str);
 
   while (*ptr) {
@@ -452,7 +452,7 @@ game_config_name (gint n)
  * Returns:
  * pointer to a string containing the filename
  **/
-gchar*
+gchar *
 game_config_filename (gint n)
 {
   if (game_configs == NULL)
@@ -465,4 +465,3 @@ game_config_filename (gint n)
 }
 
 /**********************************************************************/
-

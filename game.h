@@ -8,11 +8,11 @@
 typedef struct _GameObject GameObject;
 
 struct _GameObject {
-  gint        x;
-  gint        y;
-  gint        type;
-  gint        oldx;
-  gint        oldy;
+  gint x;
+  gint y;
+  gint type;
+  gint oldx;
+  gint oldy;
   GameObject *next;
   GameObject *prev;
 };
@@ -28,7 +28,7 @@ void game_keypress (gint);
 void show_scores (guint);
 void start_new_game (void);
 gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data);
-gboolean move_cb (GtkWidget *widget, GdkEventMotion *e, gpointer data);
+gboolean move_cb (GtkWidget * widget, GdkEventMotion * e, gpointer data);
 /**********************************************************************/
 
 
@@ -40,9 +40,3 @@ extern gint game_state;
 
 
 #endif /* GAME_H */
-
-
-
-
-
-

@@ -43,82 +43,88 @@ GtkAction *leave_fullscreen_action;
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static void new_cb (GtkAction *action, gpointer data);
-static void properties_cb (GtkAction *action,gpointer data);
-static void scores_cb (GtkAction *action,gpointer data);
-void quit_cb (GtkAction *action,gpointer  data);
-static void about_cb (GtkAction *action, gpointer data);
-static void help_cb (GtkAction *action, gpointer data);
-static void teleport_cb  (GtkAction *action, gpointer data);
-static void randteleport_cb  (GtkAction *action, gpointer data);
-static void wait_cb (GtkAction *action, gpointer data);
-static void show_toolbar_cb (GtkAction *action, gpointer data);
+static void new_cb (GtkAction * action, gpointer data);
+static void properties_cb (GtkAction * action, gpointer data);
+static void scores_cb (GtkAction * action, gpointer data);
+void quit_cb (GtkAction * action, gpointer data);
+static void about_cb (GtkAction * action, gpointer data);
+static void help_cb (GtkAction * action, gpointer data);
+static void teleport_cb (GtkAction * action, gpointer data);
+static void randteleport_cb (GtkAction * action, gpointer data);
+static void wait_cb (GtkAction * action, gpointer data);
+static void show_toolbar_cb (GtkAction * action, gpointer data);
 static void set_fullscreen_actions (gboolean is_fullscreen);
-static void fullscreen_cb (GtkAction *action);
+static void fullscreen_cb (GtkAction * action);
 /**********************************************************************/
 
 const GtkActionEntry action_entry[] = {
-  { "GameMenu", NULL, N_("_Game") },
-  { "ViewMenu", NULL, N_("_View") },
-  { "MoveMenu", NULL, N_("_Move") },
-  { "SettingsMenu", NULL, N_("_Settings") },
-  { "HelpMenu", NULL, N_("_Help") },
-  { "NewGame", GAMES_STOCK_NEW_GAME, NULL, NULL, N_("Start a new game"), G_CALLBACK (new_cb) },
-  { "Scores", GAMES_STOCK_SCORES, NULL, NULL, NULL, G_CALLBACK (scores_cb) },
-  { "Quit", GTK_STOCK_QUIT, NULL, NULL, NULL, G_CALLBACK (quit_cb) },
-  { "Teleport", GAMES_STOCK_TELEPORT, N_("_Teleport"), NULL, N_("Teleport, safely if possible"), G_CALLBACK(teleport_cb) },
-  { "Random", GAMES_STOCK_RTELEPORT, N_("_Random"), NULL, N_("Teleport randomly"), G_CALLBACK(randteleport_cb) },
-  { "Wait", GTK_STOCK_STOP, N_("_Wait"), NULL, N_("Wait for the robots"), G_CALLBACK (wait_cb) },
-  { "Fullscreen", GAMES_STOCK_FULLSCREEN, NULL, NULL, NULL, G_CALLBACK (fullscreen_cb) },
-  { "LeaveFullscreen", GAMES_STOCK_LEAVE_FULLSCREEN, NULL, NULL, NULL, G_CALLBACK (fullscreen_cb) },
+  {"GameMenu", NULL, N_("_Game")},
+  {"ViewMenu", NULL, N_("_View")},
+  {"MoveMenu", NULL, N_("_Move")},
+  {"SettingsMenu", NULL, N_("_Settings")},
+  {"HelpMenu", NULL, N_("_Help")},
+  {"NewGame", GAMES_STOCK_NEW_GAME, NULL, NULL, N_("Start a new game"),
+   G_CALLBACK (new_cb)},
+  {"Scores", GAMES_STOCK_SCORES, NULL, NULL, NULL, G_CALLBACK (scores_cb)},
+  {"Quit", GTK_STOCK_QUIT, NULL, NULL, NULL, G_CALLBACK (quit_cb)},
+  {"Teleport", GAMES_STOCK_TELEPORT, N_("_Teleport"), NULL,
+   N_("Teleport, safely if possible"), G_CALLBACK (teleport_cb)},
+  {"Random", GAMES_STOCK_RTELEPORT, N_("_Random"), NULL,
+   N_("Teleport randomly"), G_CALLBACK (randteleport_cb)},
+  {"Wait", GTK_STOCK_STOP, N_("_Wait"), NULL, N_("Wait for the robots"),
+   G_CALLBACK (wait_cb)},
+  {"Fullscreen", GAMES_STOCK_FULLSCREEN, NULL, NULL, NULL,
+   G_CALLBACK (fullscreen_cb)},
+  {"LeaveFullscreen", GAMES_STOCK_LEAVE_FULLSCREEN, NULL, NULL, NULL,
+   G_CALLBACK (fullscreen_cb)},
 
-  { "Preferences", GTK_STOCK_PREFERENCES, NULL, NULL, NULL, G_CALLBACK (properties_cb) },
-  { "Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL, G_CALLBACK (help_cb) }, 
-  { "About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK (about_cb) }
+  {"Preferences", GTK_STOCK_PREFERENCES, NULL, NULL, NULL,
+   G_CALLBACK (properties_cb)},
+  {"Contents", GAMES_STOCK_CONTENTS, NULL, NULL, NULL, G_CALLBACK (help_cb)},
+  {"About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK (about_cb)}
 };
 
 
 const GtkToggleActionEntry toggle_action_entry[] = {
-        { "ShowToolbar", NULL, N_("_Toolbar"), NULL, N_("Show or hide the toolbar"), G_CALLBACK (show_toolbar_cb) }
+  {"ShowToolbar", NULL, N_("_Toolbar"), NULL, N_("Show or hide the toolbar"),
+   G_CALLBACK (show_toolbar_cb)}
 };
 
 
 const char ui_description[] =
-"<ui>"
-"  <menubar name='MainMenu'>"
-"    <menu action='GameMenu'>"
-"      <menuitem action='NewGame'/>"
-"      <separator/>"
-"      <menuitem action='Scores'/>"
-"      <separator/>"
-"      <menuitem action='Quit'/>"
-"    </menu>"
-"    <menu action='ViewMenu'>"
-"      <menuitem action='ShowToolbar'/>"
-"      <menuitem action='Fullscreen'/>"
-"      <menuitem action='LeaveFullscreen'/>"
-"    </menu>"
-"    <menu action='MoveMenu'>"
-"      <menuitem action='Teleport'/>"
-"      <menuitem action='Random'/>"
-"      <menuitem action='Wait'/>"
-"    </menu>"
-"    <menu action='SettingsMenu'>"
-"      <menuitem action='Preferences'/>"
-"    </menu>"
-"    <menu action='HelpMenu'>"
-"      <menuitem action='Contents'/>"
-"      <menuitem action='About'/>"
-"    </menu>"
-"  </menubar>"
-"  <toolbar name='Toolbar'>"
-"    <toolitem action='NewGame'/>"
-"    <separator/>"
-"    <toolitem action='Teleport'/>"
-"    <toolitem action='Random'/>"
-"    <toolitem action='Wait'/>"
-"  </toolbar>"
-"</ui>";
+  "<ui>"
+  "  <menubar name='MainMenu'>"
+  "    <menu action='GameMenu'>"
+  "      <menuitem action='NewGame'/>"
+  "      <separator/>"
+  "      <menuitem action='Scores'/>"
+  "      <separator/>"
+  "      <menuitem action='Quit'/>"
+  "    </menu>"
+  "    <menu action='ViewMenu'>"
+  "      <menuitem action='ShowToolbar'/>"
+  "      <menuitem action='Fullscreen'/>"
+  "      <menuitem action='LeaveFullscreen'/>"
+  "    </menu>"
+  "    <menu action='MoveMenu'>"
+  "      <menuitem action='Teleport'/>"
+  "      <menuitem action='Random'/>"
+  "      <menuitem action='Wait'/>"
+  "    </menu>"
+  "    <menu action='SettingsMenu'>"
+  "      <menuitem action='Preferences'/>"
+  "    </menu>"
+  "    <menu action='HelpMenu'>"
+  "      <menuitem action='Contents'/>"
+  "      <menuitem action='About'/>"
+  "    </menu>"
+  "  </menubar>"
+  "  <toolbar name='Toolbar'>"
+  "    <toolitem action='NewGame'/>"
+  "    <separator/>"
+  "    <toolitem action='Teleport'/>"
+  "    <toolitem action='Random'/>"
+  "    <toolitem action='Wait'/>" "  </toolbar>" "</ui>";
 
 /**********************************************************************/
 /* Function Definitions                                               */
@@ -135,9 +141,9 @@ const char ui_description[] =
  * Returns:
  **/
 static void
-new_cb (GtkAction *action, gpointer  data)
+new_cb (GtkAction * action, gpointer data)
 {
-    start_new_game ();
+  start_new_game ();
 }
 
 
@@ -152,7 +158,7 @@ new_cb (GtkAction *action, gpointer  data)
  * Returns:
  **/
 static void
-show_toolbar_cb (GtkAction *action, gpointer  data)
+show_toolbar_cb (GtkAction * action, gpointer data)
 {
   gboolean state;
 
@@ -172,7 +178,7 @@ show_toolbar_cb (GtkAction *action, gpointer  data)
  * Returns:
  **/
 static void
-properties_cb (GtkAction *action, gpointer  data)
+properties_cb (GtkAction * action, gpointer data)
 {
   show_properties_dialog ();
 }
@@ -189,7 +195,7 @@ properties_cb (GtkAction *action, gpointer  data)
  * Returns:
  **/
 static void
-scores_cb (GtkAction *action, gpointer data)
+scores_cb (GtkAction * action, gpointer data)
 {
   show_scores (0);
 }
@@ -206,9 +212,9 @@ scores_cb (GtkAction *action, gpointer data)
  * Returns:
  **/
 void
-quit_cb (GtkAction *action, gpointer  data)
+quit_cb (GtkAction * action, gpointer data)
 {
-  quit_game();
+  quit_game ();
 }
 
 
@@ -223,9 +229,9 @@ quit_cb (GtkAction *action, gpointer  data)
  * Returns:
  **/
 static void
-help_cb (GtkAction *action, gpointer data)
+help_cb (GtkAction * action, gpointer data)
 {
-        gnome_help_display ("gnobots2.xml", NULL, NULL);
+  gnome_help_display ("gnobots2.xml", NULL, NULL);
 }
 
 
@@ -240,11 +246,12 @@ help_cb (GtkAction *action, gpointer data)
  * Returns:
  **/
 static void
-about_cb (GtkAction *action, gpointer data)
+about_cb (GtkAction * action, gpointer data)
 {
-  const gchar *authors[]= { "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
+  const gchar *authors[] = { "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
 
-  const gchar *documenters[]= { "Patanjali Somayaji", "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
+  const gchar *documenters[] =
+    { "Patanjali Somayaji", "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
 
   gchar *license = games_get_license (_("Robots"));
 
@@ -253,33 +260,36 @@ about_cb (GtkAction *action, gpointer data)
 			 "version", VERSION,
 			 "copyright", "Copyright \xc2\xa9 1998-2006 Mark Rae",
 			 "license", license,
-                         "comments", _("Based on classic BSD Robots."),
+			 "comments", _("Based on classic BSD Robots."),
 			 "authors", authors,
 			 "documenters", documenters,
 			 "translator_credits", _("translator-credits"),
 			 "logo-icon-name", "gnome-robots",
-			 "website", "http://www.gnome.org/projects/gnome-games/",
-			 "wrap-license", TRUE,
-			 NULL);
+			 "website",
+			 "http://www.gnome.org/projects/gnome-games/",
+			 "wrap-license", TRUE, NULL);
   g_free (license);
 }
 
-static void teleport_cb  (GtkAction *action, gpointer data)
+static void
+teleport_cb (GtkAction * action, gpointer data)
 {
   game_keypress (KBD_TELE);
 }
 
-static void randteleport_cb  (GtkAction *action, gpointer data)
+static void
+randteleport_cb (GtkAction * action, gpointer data)
 {
   game_keypress (KBD_RTEL);
 }
 
-static void wait_cb (GtkAction *action, gpointer data)
+static void
+wait_cb (GtkAction * action, gpointer data)
 {
   game_keypress (KBD_WAIT);
 }
 
-static void 
+static void
 set_fullscreen_actions (gboolean is_fullscreen)
 {
   gtk_action_set_sensitive (leave_fullscreen_action, is_fullscreen);
@@ -289,8 +299,8 @@ set_fullscreen_actions (gboolean is_fullscreen)
   gtk_action_set_visible (fullscreen_action, !is_fullscreen);
 }
 
-static void 
-fullscreen_cb (GtkAction *action)
+static void
+fullscreen_cb (GtkAction * action)
 {
   if (action == fullscreen_action) {
     gtk_window_fullscreen (GTK_WINDOW (app));
@@ -300,11 +310,12 @@ fullscreen_cb (GtkAction *action)
 }
 
 /* Just in case something else takes us to/from fullscreen. */
-void window_state_cb (GtkWidget *widget, GdkEventWindowState *event)
+void
+window_state_cb (GtkWidget * widget, GdkEventWindowState * event)
 {
   if (event->changed_mask & GDK_WINDOW_STATE_FULLSCREEN)
-    set_fullscreen_actions (event->new_window_state 
-                            & GDK_WINDOW_STATE_FULLSCREEN);
+    set_fullscreen_actions (event->new_window_state
+			    & GDK_WINDOW_STATE_FULLSCREEN);
 }
 
 /**
@@ -316,7 +327,7 @@ void window_state_cb (GtkWidget *widget, GdkEventWindowState *event)
  *
  **/
 void
-create_game_menus (GtkUIManager *ui_manager)
+create_game_menus (GtkUIManager * ui_manager)
 {
 
   GtkActionGroup *action_group;
@@ -324,21 +335,26 @@ create_game_menus (GtkUIManager *ui_manager)
 
   action_group = gtk_action_group_new ("actions");
 
-  gtk_action_group_set_translation_domain(action_group, GETTEXT_PACKAGE);
-  gtk_action_group_add_actions (action_group, action_entry, G_N_ELEMENTS (action_entry), app);
-  gtk_action_group_add_toggle_actions (action_group, toggle_action_entry, G_N_ELEMENTS (toggle_action_entry), app);
+  gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+  gtk_action_group_add_actions (action_group, action_entry,
+				G_N_ELEMENTS (action_entry), app);
+  gtk_action_group_add_toggle_actions (action_group, toggle_action_entry,
+				       G_N_ELEMENTS (toggle_action_entry),
+				       app);
 
   gtk_ui_manager_insert_action_group (ui_manager, action_group, 0);
   gtk_ui_manager_add_ui_from_string (ui_manager, ui_description, -1, NULL);
 
   scores_action = gtk_action_group_get_action (action_group, "Scores");
-  teleport_action = gtk_action_group_get_action (action_group, "Teleport"); 
+  teleport_action = gtk_action_group_get_action (action_group, "Teleport");
   random_action = gtk_action_group_get_action (action_group, "Random");
   wait_action = gtk_action_group_get_action (action_group, "Wait");
-  toolbar_toggle_action = gtk_action_group_get_action (action_group, "ShowToolbar");
-  fullscreen_action = gtk_action_group_get_action (action_group, "Fullscreen");
-  leave_fullscreen_action = gtk_action_group_get_action (action_group,
-						         "LeaveFullscreen");
+  toolbar_toggle_action =
+    gtk_action_group_get_action (action_group, "ShowToolbar");
+  fullscreen_action =
+    gtk_action_group_get_action (action_group, "Fullscreen");
+  leave_fullscreen_action =
+    gtk_action_group_get_action (action_group, "LeaveFullscreen");
   set_fullscreen_actions (FALSE);
 
 
@@ -361,20 +377,20 @@ update_score_state (void)
   time_t *scoretimes = NULL;
   gint top;
   gchar *sbuf = NULL;
-  
+
   if (properties_super_safe_moves ()) {
     sbuf = g_strdup_printf ("%s-super-safe",
-                            game_config_filename (current_game_config ()));
+			    game_config_filename (current_game_config ()));
   } else if (properties_safe_moves ()) {
-    sbuf = g_strdup_printf ("%s-safe", 
-                            game_config_filename (current_game_config ()));
+    sbuf = g_strdup_printf ("%s-safe",
+			    game_config_filename (current_game_config ()));
   } else {
     sbuf = g_strdup_printf ("%s",
-                            game_config_filename (current_game_config ()));
+			    game_config_filename (current_game_config ()));
   }
-  
+
   top = gnome_score_get_notable (GAME_NAME, sbuf,
-                                 &names, &scores, &scoretimes);
+				 &names, &scores, &scoretimes);
   g_free (sbuf);
   if (top > 0) {
     gtk_action_set_sensitive (scores_action, TRUE);
@@ -386,7 +402,8 @@ update_score_state (void)
   }
 }
 
-void set_move_menu_sensitivity (gboolean state)
+void
+set_move_menu_sensitivity (gboolean state)
 {
   gtk_action_set_sensitive (teleport_action, state);
   gtk_action_set_sensitive (random_action, state);
@@ -394,11 +411,11 @@ void set_move_menu_sensitivity (gboolean state)
 }
 
 static void
-toggle_toolbar_cb (GtkAction *action, GtkWidget *toolbar)
+toggle_toolbar_cb (GtkAction * action, GtkWidget * toolbar)
 {
   gboolean state;
 
-  state = gtk_toggle_action_get_active(GTK_TOGGLE_ACTION (action));
+  state = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
   if (state) {
     gtk_widget_show (toolbar);
   } else {
@@ -407,9 +424,10 @@ toggle_toolbar_cb (GtkAction *action, GtkWidget *toolbar)
 }
 
 void
-connect_toolbar_toggle (GtkWidget *toolbar)
+connect_toolbar_toggle (GtkWidget * toolbar)
 {
-  g_signal_connect (toolbar_toggle_action, "activate", G_CALLBACK (toggle_toolbar_cb), toolbar);
+  g_signal_connect (toolbar_toggle_action, "activate",
+		    G_CALLBACK (toggle_toolbar_cb), toolbar);
   gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (toolbar_toggle_action),
-				properties_show_toolbar());
+				properties_show_toolbar ());
 }

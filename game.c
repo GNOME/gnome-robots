@@ -1095,8 +1095,8 @@ safe_teleport_available (void)
 
   load_temp_arena ();
 
-  for (y = 0; y < GAME_WIDTH; y++) {
-    for (x = 0; x < GAME_HEIGHT; x++) {
+  for (x = 0; x < GAME_WIDTH; x++) {
+    for (y = 0; y < GAME_HEIGHT; y++) {
       if (check_safe (x, y))
 	return TRUE;
     }

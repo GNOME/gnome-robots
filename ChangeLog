@@ -1,3 +1,8 @@
+2006-10-28  Andreas Røsdal  <andrearo@stud.ntnu.no>
+
+	* game.c: Close Bug #Bug 353303: safe_teleport_available function
+	is confusing GAME_WIDTH with GAME_HEIGHT.
+
 2006-08-03 Jason Clinton <me@jasonclinton.com>
 
 	* help/C/gnobots2-C.omf:

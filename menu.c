@@ -258,7 +258,7 @@ about_cb (GtkAction * action, gpointer data)
   gtk_show_about_dialog (GTK_WINDOW (app),
 			 "name", _("Robots"),
 			 "version", VERSION,
-			 "copyright", "Copyright \xc2\xa9 1998-2006 Mark Rae",
+			 "copyright", "Copyright \xc2\xa9 1998-2007 Mark Rae",
 			 "license", license,
 			 "comments", _("Based on classic BSD Robots."),
 			 "authors", authors,

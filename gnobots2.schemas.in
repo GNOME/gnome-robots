@@ -245,7 +245,7 @@
       <schema>
         <key>/schemas/apps/gnobots2/geometry/width</key>
         <applyto>/apps/gnobots2/geometry/width</applyto>
-        <owner>glines</owner>
+        <owner>gnobots2</owner>
         <type>int</type>
         <default>720</default>
         <locale name="C">
@@ -257,7 +257,7 @@
       <schema>
         <key>/schemas/apps/gnobots2/geometry/height</key>
         <applyto>/apps/gnobots2/geometry/height</applyto>
-        <owner>glines</owner>
+        <owner>gnobots2</owner>
         <type>int</type>
         <default>566</default>
         <locale name="C">

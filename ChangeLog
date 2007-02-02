@@ -1,3 +1,7 @@
+2006-10-28  Robert Ancell  <robert.ancell@gmail.com>
+
+	* gnobots2.schemas.in: Change key owners from glines to gnobots2 (Bug #403426)
+
 2006-10-28  Andreas Røsdal  <andrearo@stud.ntnu.no>
 
 	* game.c: Close Bug #Bug 353303: safe_teleport_available function

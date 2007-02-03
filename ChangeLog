@@ -1,3 +1,8 @@
+2007-02-03  Andreas Røsdal  <andreasr@gnome.org>
+
+	* properties.c: Cheating was possible while the preferences dialog
+	is open. Patch from Thomas Andersen in Bug #403421.
+
 2007-02-02  Robert Ancell  <robert.ancell@gmail.com>
 
 	* gnobots2.schemas.in: Change key owners from glines to gnobots2 (Bug #403426)

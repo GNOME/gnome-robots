@@ -173,7 +173,7 @@ delete_cb (GtkWidget * w, gpointer data)
   return FALSE;
 }
 
-gint
+gboolean
 save_window_geometry (GtkWidget * w, GdkEventConfigure * e, gpointer data)
 {
   gconf_client_set_int (gconf_client, KEY_WINDOW_WIDTH, e->width, NULL);

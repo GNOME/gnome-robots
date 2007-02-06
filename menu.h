@@ -10,7 +10,7 @@ void quit_cb (GtkAction *, gpointer);
 void update_score_state (void);
 void set_move_menu_sensitivity (gboolean state);
 void connect_toolbar_toggle (GtkWidget *);
-void window_state_cb (GtkWidget * widget, GdkEventWindowState * event);
+gboolean window_state_cb (GtkWidget * widget, GdkEventWindowState * event);
 /**********************************************************************/
 
 

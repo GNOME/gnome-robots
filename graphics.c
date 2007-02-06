@@ -91,7 +91,7 @@ render_graphics (void)
   rerender_needed = FALSE;
 }
 
-gint
+gboolean
 resize_cb (GtkWidget * w, GdkEventConfigure * e, gpointer data)
 {
   gint trial_width;

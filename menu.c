@@ -310,12 +310,14 @@ fullscreen_cb (GtkAction * action)
 }
 
 /* Just in case something else takes us to/from fullscreen. */
-void
+gboolean
 window_state_cb (GtkWidget * widget, GdkEventWindowState * event)
 {
   if (event->changed_mask & GDK_WINDOW_STATE_FULLSCREEN)
     set_fullscreen_actions (event->new_window_state
 			    & GDK_WINDOW_STATE_FULLSCREEN);
+    
+  return FALSE;
 }
 
 /**

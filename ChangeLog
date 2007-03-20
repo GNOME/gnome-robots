@@ -1,5 +1,16 @@
 2007-02-03  Andreas Røsdal  <andreasr@gnome.org>
 
+	* gnobots2/graphics.c
+	* gnobots.c
+	* gnobots.h
+	* menu.c
+	* game.c
+	* game.h
+	* properties.c: Migrate gnobots to new high scores API.
+	Patch from Thomas Andersen in bug #316360.
+
+2007-02-03  Andreas Røsdal  <andreasr@gnome.org>
+
 	* properties.c: Cheating was possible while the preferences dialog
 	is open. Patch from Thomas Andersen in Bug #403421.
 

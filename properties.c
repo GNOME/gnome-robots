@@ -27,6 +27,8 @@
 #include <games-frame.h>
 #include <games-controls.h>
 #include <games-files.h>
+#include <games-scores.h>
+#include <games-scores-dialog.h>
 
 #include "properties.h"
 #include "gameconfig.h"

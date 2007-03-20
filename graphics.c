@@ -25,6 +25,8 @@
 
 #include <games-preimage.h>
 #include <games-find-file.h>
+#include <games-scores.h>
+#include <games-scores-dialog.h>
 
 #include <sys/types.h>
 #include <string.h>

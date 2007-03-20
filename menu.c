@@ -23,6 +23,8 @@
 #include <gnome.h>
 #include <string.h>
 #include <games-stock.h>
+#include <games-scores.h>
+#include <games-scores-dialog.h>
 
 #include "gbdefs.h"
 #include "menu.h"
@@ -197,7 +199,7 @@ properties_cb (GtkAction * action, gpointer data)
 static void
 scores_cb (GtkAction * action, gpointer data)
 {
-  show_scores (0);
+  show_scores (0, FALSE);
 }
 
 
@@ -374,34 +376,10 @@ create_game_menus (GtkUIManager * ui_manager)
 void
 update_score_state (void)
 {
-  gchar **names = NULL;
-  gfloat *scores = NULL;
-  time_t *scoretimes = NULL;
-  gint top;
-  gchar *sbuf = NULL;
+  GList *top;
 
-  if (properties_super_safe_moves ()) {
-    sbuf = g_strdup_printf ("%s-super-safe",
-			    game_config_filename (current_game_config ()));
-  } else if (properties_safe_moves ()) {
-    sbuf = g_strdup_printf ("%s-safe",
-			    game_config_filename (current_game_config ()));
-  } else {
-    sbuf = g_strdup_printf ("%s",
-			    game_config_filename (current_game_config ()));
-  }
-
-  top = gnome_score_get_notable (GAME_NAME, sbuf,
-				 &names, &scores, &scoretimes);
-  g_free (sbuf);
-  if (top > 0) {
-    gtk_action_set_sensitive (scores_action, TRUE);
-    g_strfreev (names);
-    g_free (scores);
-    g_free (scoretimes);
-  } else {
-    gtk_action_set_sensitive (scores_action, FALSE);
-  }
+  top = games_scores_get (highscores);
+  gtk_action_set_sensitive (scores_action, top != NULL);
 }
 
 void

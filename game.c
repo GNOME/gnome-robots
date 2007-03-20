@@ -23,6 +23,8 @@
 #include <gnome.h>
 #include <stdlib.h>
 #include <math.h>
+#include <games-scores.h>
+#include <games-scores-dialog.h>
 
 #include "gbdefs.h"
 #include "gameconfig.h"
@@ -119,61 +121,82 @@ message_box (gchar * msg)
 /**
  * show_scores
  * @pos: score-table position
+ * @endofgame: game state
  *
  * Description:
  * Displays the high-score table
  **/
-void
-show_scores (guint pos)
+
+gint
+show_scores (gint pos, gboolean endofgame)
 {
-  static GtkWidget *score_dialog = NULL;
-  gchar *sbuf = NULL;
-  gchar *nbuf = NULL;
+  gchar *message;
+  static GtkWidget *scoresdialog = NULL;
+  static GtkWidget *sorrydialog = NULL;
+  GtkWidget *dialog;
+  gint result;
 
-  if (properties_super_safe_moves ()) {
-    sbuf =
-      g_strdup_printf ("%s-super-safe",
-		       game_config_filename (current_game_config ()));
-  } else if (properties_safe_moves ()) {
-    sbuf =
-      g_strdup_printf ("%s-safe",
-		       game_config_filename (current_game_config ()));
+  if (endofgame && (pos <= 0)) {
+    if (sorrydialog != NULL) {
+      gtk_window_present (GTK_WINDOW (sorrydialog));
+    } else {
+      sorrydialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (app),
+							GTK_DIALOG_DESTROY_WITH_PARENT,
+							GTK_MESSAGE_INFO,
+							GTK_BUTTONS_NONE,
+							"<b>%s</b>\n%s",
+							_
+							("Game over!"),
+							_
+							("Great work, but unfortunately your score did not make the top ten."));
+      gtk_dialog_add_buttons (GTK_DIALOG (sorrydialog), GTK_STOCK_QUIT,
+			      GTK_RESPONSE_REJECT, _("_New Game"),
+			      GTK_RESPONSE_ACCEPT, NULL);
+      gtk_dialog_set_default_response (GTK_DIALOG (sorrydialog),
+				       GTK_RESPONSE_ACCEPT);
+      gtk_window_set_title (GTK_WINDOW (sorrydialog), "");
+    }
+    dialog = sorrydialog;
   } else {
-    sbuf =
-      g_strdup_printf ("%s", game_config_filename (current_game_config ()));
+
+    if (scoresdialog != NULL) {
+      gtk_window_present (GTK_WINDOW (scoresdialog));
+    } else {
+      scoresdialog = games_scores_dialog_new (highscores, _(" Scores"));
+      games_scores_dialog_set_category_description (GAMES_SCORES_DIALOG
+						    (scoresdialog),
+						    _("Map:"));
+    }
+
+    if (pos > 0) {
+      games_scores_dialog_set_hilight (GAMES_SCORES_DIALOG (scoresdialog),
+				       pos);
+      message = g_strdup_printf ("<b>%s</b>\n\n%s",
+				 _("Congratulations!"),
+				 _("Your score has made the top ten."));
+      games_scores_dialog_set_message (GAMES_SCORES_DIALOG (scoresdialog),
+				       message);
+      g_free (message);
+    } else {
+      games_scores_dialog_set_message (GAMES_SCORES_DIALOG (scoresdialog),
+				       NULL);
+    }
+
+    if (endofgame) {
+      games_scores_dialog_set_buttons (GAMES_SCORES_DIALOG (scoresdialog),
+				       GAMES_SCORES_QUIT_BUTTON |
+				       GAMES_SCORES_NEW_GAME_BUTTON);
+    } else {
+      games_scores_dialog_set_buttons (GAMES_SCORES_DIALOG (scoresdialog), 0);
+    }
+    dialog = scoresdialog;
   }
 
-  if (properties_super_safe_moves ()) {
-    nbuf = g_strdup_printf (_("'%s' with super-safe moves"),
-			    _(game_config_name (current_game_config ())));
-  } else if (properties_safe_moves ()) {
-    nbuf = g_strdup_printf (_("'%s' with safe moves"),
-			    _(game_config_name (current_game_config ())));
-  } else {
-    nbuf =
-      g_strdup_printf ("'%s'", _(game_config_name (current_game_config ())));
-  }
+  result = gtk_dialog_run (GTK_DIALOG (dialog));
+  gtk_widget_hide (dialog);
 
-  if (score_dialog != NULL) {
-    gtk_window_present (GTK_WINDOW (score_dialog));
-    return;
-  }
-  score_dialog = gnome_scores_display (nbuf, GAME_NAME, sbuf, pos);
-  g_free (sbuf);
-  g_free (nbuf);
-
-  if (!score_dialog)
-    return;
-
-  gtk_window_set_transient_for (GTK_WINDOW (score_dialog), GTK_WINDOW (app));
-  gtk_dialog_set_has_separator (GTK_DIALOG (score_dialog), FALSE);
-  gtk_container_set_border_width (GTK_CONTAINER (score_dialog), 5);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (score_dialog)->vbox), 2);
-  gtk_window_set_resizable (GTK_WINDOW (score_dialog), FALSE);
-  g_signal_connect (G_OBJECT (score_dialog), "destroy",
-		    G_CALLBACK (gtk_widget_destroyed), &score_dialog);
+  return result;
 }
-
 
 /**
  * log_score
@@ -190,6 +213,7 @@ log_score (gint sc)
 {
   guint pos = 0;
   gchar *sbuf = NULL;
+  GamesScoreValue score;
 
   if (properties_super_safe_moves ()) {
     sbuf =
@@ -204,8 +228,11 @@ log_score (gint sc)
       g_strdup_printf ("%s", game_config_filename (current_game_config ()));
   }
 
-  if (sc != 0)
-    pos = gnome_score_log ((gfloat) sc, sbuf, TRUE);
+  if (sc != 0) {
+    score.plain = (guint32) sc;
+    games_scores_set_category (highscores, sbuf);
+    pos = games_scores_add_score (highscores, score);
+  }
   g_free (sbuf);
   update_score_state ();
 
@@ -585,7 +612,9 @@ timeout_cb (void *data)
 	sp = log_score (score);
 	if (sp > 0) {
 	  play_sound (SOUND_VICTORY);
-	  show_scores (sp);
+          if (show_scores (sp, TRUE) == GTK_RESPONSE_REJECT) {
+            quit_game ();
+          }
 	}
       }
       start_new_game ();

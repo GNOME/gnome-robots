@@ -24,6 +24,8 @@
 #include <sys/time.h>
 #include <string.h>
 #include <games-stock.h>
+#include <games-scores.h>
+#include <games-scores-dialog.h>
 #include <games-gridframe.h>
 
 #include "gbdefs.h"
@@ -45,6 +47,7 @@
 /**********************************************************************/
 GtkWidget *app = NULL;
 GtkWidget *game_area = NULL;
+GamesScores *highscores;
 /**********************************************************************/
 
 
@@ -71,6 +74,31 @@ static const GOptionEntry options[] = {
   {"y", 'y', 0, G_OPTION_ARG_INT, &session_ypos,
    N_("Initial window position"), N_("Y")},
   {NULL},
+};
+
+static const GamesScoresCategory scorecats[] = { 
+  {"classic_robots", N_("Classic robots")},
+  {"classic_robots-safe", N_("Classic robots with safe moves")},
+  {"classic_robots-super-safe", N_("Classic robots with super-safe moves")},
+  {"nightmare", N_("Nightmare")},
+  {"nightmare-safe", N_("Nightmare with safe moves")},
+  {"nightmare.-super-safe", N_("Nightmare with super-safe moves")},
+  {"robots2", N_("Robots2")},
+  {"robots2-safe", N_("Robots2 with safe moves")},
+  {"robots2-super-safe", N_("Robots2 with super-safe moves")},
+  {"robots2_easy", N_("Robots2 easy")},
+  {"robots2_easy-safe", N_("Robots2 easy with safe moves")},
+  {"robots2_easy-super-safe", N_("Robots2 easy with super-safe moves")},
+  {"robots_with_safe_teleport", N_("Robots with safe teleport")},
+  {"robots_with_safe_teleport-safe", N_("Robots with safe teleport with safe moves")},
+  {"robots_with_safe_teleport-super-safe", N_("Robots with safe teleport with super-safe moves")},
+  GAMES_SCORES_LAST_CATEGORY
+};
+
+static const GamesScoresDescription scoredesc = { scorecats,
+  "classic_robots",
+  "gnobots2",
+  GAMES_SCORES_STYLE_PLAIN_DESCENDING
 };
 
 /**********************************************************************/
@@ -162,7 +190,7 @@ main (int argc, char *argv[])
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
 
-  gnome_score_init (GAME_NAME);
+  setgid_io_init ();
 
   bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -178,6 +206,8 @@ main (int argc, char *argv[])
 				GNOME_PARAM_GOPTION_CONTEXT, option_context,
 				GNOME_PARAM_APP_DATADIR, DATADIR,
 				GNOME_PARAM_NONE);
+
+  highscores = games_scores_new (&scoredesc);
 
   gtk_window_set_default_icon_name ("gnome-robots");
 

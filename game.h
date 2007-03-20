@@ -25,7 +25,7 @@ struct _GameObject {
 void init_game (void);
 void quit_game (void);
 void game_keypress (gint);
-void show_scores (guint);
+gint show_scores (gint, gboolean);
 void start_new_game (void);
 gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data);
 gboolean move_cb (GtkWidget * widget, GdkEventMotion * e, gpointer data);

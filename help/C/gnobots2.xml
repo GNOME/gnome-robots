@@ -25,6 +25,13 @@
 <!-- appropriate code -->
   <articleinfo>
     <title>&app; Manual V&manrevision;</title>
+
+    <abstract role="description">
+      <para>
+      GNOME Robots is a development of the text based robots game which can be found on a number of UNIX systems.
+      </para>
+    </abstract>
+
       <copyright>
         <year>2001</year>
         <holder>Patanjali Somayaji, Mark Rae</holder>
@@ -52,7 +59,7 @@
 	any of this. -->
 
     <authorgroup> 
-      <author> 
+      <author role="maintainer"> 
 	<firstname>Patanjali</firstname> 
 	<surname>Somayaji</surname> 
 	<affiliation> 

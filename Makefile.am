@@ -82,19 +82,12 @@ Games_DATA = $(Games_in_files:.desktop.in=.desktop)
 EXTRA_DIST = AUTHORS \
              gnobots2.desktop.in \
              gnobots2.soundlist.in \
-	     $(icon_DATA) \
-	     $(svgicon_DATA) \
              $(pixmap_DATA) \
 	     $(sound_DATA) \
 	     $(Games_DATA) \
 	     $(soundlist_DATA) \
 	     $(config_DATA) \
              $(schema_in_files)
-
-icondir = $(datadir)/icons/hicolor/48x48/apps
-icon_DATA = gnome-robots.png
-svgicondir = $(datadir)/icons/hicolor/scalable/apps
-svgicon_DATA = gnome-robots.svg
 
 install-data-local:
 if GCONF_SCHEMAS_INSTALL

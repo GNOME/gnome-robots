@@ -37,6 +37,8 @@ gnobots2_SOURCES = \
 	keylabels.h \
 	game.c \
 	game.h \
+	sound.c \
+	sound.h \
 	cursors.c \
 	cursors.h \
 	gbdefs.h

@@ -22,6 +22,8 @@
 #include <config.h>
 #include <gnome.h>
 
+#include <games-sound.h>
+
 #include "gbdefs.h"
 #include "sound.h"
 #include "properties.h"
@@ -69,16 +71,16 @@ play_sound (gint sno)
 
     switch (sno) {
     case SOUND_VICTORY:
-      gnome_triggers_do ("", "program", GAME_NAME, "victory", NULL);
+      games_sound_play ("victory");
       break;
     case SOUND_DIE:
-      gnome_triggers_do ("", "program", GAME_NAME, "die", NULL);
+      games_sound_play ("die");
       break;
     case SOUND_TELEPORT:
-      gnome_triggers_do ("", "program", GAME_NAME, "teleport", NULL);
+      games_sound_play ("teleport");
       break;
     case SOUND_SPLAT:
-      gnome_triggers_do ("", "program", GAME_NAME, "splat", NULL);
+      games_sound_play ("splat");
       break;
     case SOUND_BAD:
 #if 0
@@ -91,7 +93,7 @@ play_sound (gint sno)
       gdk_beep ();
       break;
     case SOUND_YAHOO:
-      gnome_triggers_do ("", "program", GAME_NAME, "yahoo", NULL);
+      games_sound_play ("yahoo");
       break;
     }
 

@@ -6,8 +6,6 @@ schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 
 pixmapdir=$(datadir)/pixmaps/gnobots2
 configdir=$(datadir)/gnobots2
-soundlistdir=$(sysconfdir)/sound/events
-sounddir=$(datadir)/sounds/gnobots2
 Gamesdir=$(datadir)/applications
 
 SUBDIRS = help
@@ -39,8 +37,6 @@ gnobots2_SOURCES = \
 	keylabels.h \
 	game.c \
 	game.h \
-	sound.c \
-	sound.h \
 	cursors.c \
 	cursors.h \
 	gbdefs.h
@@ -64,28 +60,14 @@ config_DATA = robots2.cfg \
               robots_with_safe_teleport.cfg \
               nightmare.cfg
 
-soundlist_in_files = gnobots2.soundlist.in
-soundlist_DATA = $(soundlist_in_files:.soundlist.in=.soundlist)
-@INTLTOOL_SOUNDLIST_RULE@
-
-sound_DATA = bad.wav \
-	     die.wav \
-             splat.wav \
-             teleport.wav \
-             victory.wav \
-             yahoo.wav
-
 Games_in_files = gnobots2.desktop.in
 Games_DATA = $(Games_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST = AUTHORS \
              gnobots2.desktop.in \
-             gnobots2.soundlist.in \
              $(pixmap_DATA) \
-	     $(sound_DATA) \
 	     $(Games_DATA) \
-	     $(soundlist_DATA) \
 	     $(config_DATA) \
              $(schema_in_files)
 
@@ -105,4 +87,4 @@ endif
 	    done
 	-if test "x$(setgid)" = "xtrue"; then chgrp $(scores_group) $(DESTDIR)$(bindir)/gnobots2 && chmod 2555 $(DESTDIR)$(bindir)/gnobots2 ; fi
 
-DISTCLEANFILES = $(Games_DATA) $(soundlist_DATA) $(schema_DATA)
+DISTCLEANFILES = $(Games_DATA) $(schema_DATA)

@@ -26,6 +26,7 @@
 #include <games-stock.h>
 #include <games-scores.h>
 #include <games-scores-dialog.h>
+#include <games-sound.h>
 #include <games-gridframe.h>
 
 #include "gbdefs.h"
@@ -195,10 +196,13 @@ main (int argc, char *argv[])
   bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
+ 
+  g_thread_init (NULL);
 
   option_context = g_option_context_new ("");
   g_option_context_add_main_entries (option_context, options,
 				     GETTEXT_PACKAGE);
+  g_option_context_add_group (option_context, games_sound_get_option_group ());
 
   program = gnome_program_init (GAME_NAME, VERSION,
 				LIBGNOMEUI_MODULE,

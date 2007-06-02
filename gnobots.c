@@ -188,18 +188,18 @@ main (int argc, char *argv[])
   struct timeval tv;
   gint i;
 
-  gettimeofday (&tv, NULL);
-  srand (tv.tv_usec);
-
-  setgid_io_init ();
-
   bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
  
   g_thread_init (NULL);
 
-  option_context = g_option_context_new ("");
+  gettimeofday (&tv, NULL);
+  srand (tv.tv_usec);
+
+  setgid_io_init ();
+
+  option_context = g_option_context_new (NULL);
   g_option_context_add_main_entries (option_context, options,
 				     GETTEXT_PACKAGE);
   g_option_context_add_group (option_context, games_sound_get_option_group ());

@@ -89,7 +89,7 @@ static void
 render_graphics (void)
 {
   theme_pixbuf = games_preimage_render (theme_preimage,
-					14 * tile_width, tile_height, NULL);
+					14 * tile_width, tile_height);
   rerender_needed = FALSE;
 }
 

@@ -1,4 +1,3 @@
-
 schemadir   = @GCONF_SCHEMA_FILE_DIR@
 schema_in_files = gnobots2.schemas.in
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)
@@ -62,12 +61,11 @@ config_DATA = robots2.cfg \
               robots_with_safe_teleport.cfg \
               nightmare.cfg
 
-Games_in_files = gnobots2.desktop.in
-Games_DATA = $(Games_in_files:.desktop.in=.desktop)
+Games_in_files = gnobots2.desktop.in.in
+Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST = AUTHORS \
-             gnobots2.desktop.in \
              $(pixmap_DATA) \
 	     $(Games_DATA) \
 	     $(config_DATA) \

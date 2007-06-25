@@ -83,7 +83,7 @@ keyboard_cb (GtkWidget * widget, GdkEventKey * event, gpointer data)
    * if N is used as a key, then Ctrl-N is never picked up. The cleaner
    * option, making the signal a connect_after signal skims the arrow keys
    * before we can get to them which is a bigger problem. */
-  if (event->state &= (GDK_CONTROL_MASK | GDK_MOD1_MASK))
+  if (event->state & (GDK_CONTROL_MASK | GDK_MOD1_MASK))
     return FALSE;
 
   for (i = 0; i < 12; ++i) {

@@ -47,6 +47,8 @@
 #define DEFAULT_WIDTH 720
 #define DEFAULT_HEIGHT 566
 
+#define KEY_GEOMETRY_GROUP "geometry"
+
 /**********************************************************************/
 /* Exported Variables                                                 */
 /**********************************************************************/
@@ -231,7 +233,7 @@ main (int argc, char *argv[])
   app = gnome_app_new (GAME_NAME, _("Robots"));
 
   gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
-  games_conf_add_window (GTK_WINDOW (app));
+  games_conf_add_window (GTK_WINDOW (app), KEY_GEOMETRY_GROUP);
 
   g_signal_connect (G_OBJECT (app), "delete_event",
 		    G_CALLBACK (quit_game), NULL);

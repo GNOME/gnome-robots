@@ -1,8 +1,6 @@
 #ifndef PROPERTIES_H
 #define PROPERTIES_H
 
-#include <gconf/gconf-client.h>
-
 /**********************************************************************/
 /* Exported functions                                                 */
 /**********************************************************************/
@@ -17,20 +15,14 @@ gboolean properties_show_toolbar (void);
 gboolean properties_set_config (gint);
 gchar *properties_theme_name (void);
 
-GConfClient *get_gconf_client (void);
-void initialize_gconf (int argc, char *argv[]);
-void gconf_set_theme (gchar * value);
-void gconf_set_configuration (gchar * value);
-void gconf_set_control_key (gint i, gchar * value);
-void gconf_set_enable_sound (gboolean value);
-void gconf_set_enable_splats (gboolean value);
-void gconf_set_use_safe_moves (gboolean value);
-void gconf_set_use_super_safe_moves (gboolean value);
-void gconf_set_show_toolbar (gboolean value);
-
-gboolean save_window_geometry (GtkWidget * w, GdkEventConfigure * e,
-                               gpointer data);
-void set_window_geometry (GtkWidget * window);
+void conf_set_theme (gchar * value);
+void conf_set_configuration (gchar * value);
+void conf_set_control_key (gint i, guint keyval);
+void conf_set_enable_sound (gboolean value);
+void conf_set_enable_splats (gboolean value);
+void conf_set_use_safe_moves (gboolean value);
+void conf_set_use_super_safe_moves (gboolean value);
+void conf_set_show_toolbar (gboolean value);
 
 /**********************************************************************/
 

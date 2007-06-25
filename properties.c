@@ -23,12 +23,12 @@
 #include <gnome.h>
 #include <string.h>
 #include <gdk/gdkkeysyms.h>
-#include <gconf/gconf-client.h>
 #include <games-frame.h>
 #include <games-controls.h>
 #include <games-files.h>
 #include <games-scores.h>
 #include <games-scores-dialog.h>
+#include <games-conf.h>
 
 #include "properties.h"
 #include "gameconfig.h"
@@ -47,18 +47,16 @@
 #define KB_TEXT_WIDTH    60
 #define KB_TEXT_HEIGHT   32
 
-#define KEY_DIR              "/apps/gnobots2"
-#define KEY_SHOW_TOOLBAR     "/apps/gnobots2/preferences/show_toolbar"
-#define KEY_CONTROL_KEY      "/apps/gnobots2/preferences/key%02d"
-#define KEY_THEME            "/apps/gnobots2/preferences/theme"
-#define KEY_CONFIGURATION    "/apps/gnobots2/preferences/configuration"
-#define KEY_SAFE_MOVES       "/apps/gnobots2/preferences/use_safe_moves"
-#define KEY_SUPER_SAFE_MOVES "/apps/gnobots2/preferences/use_super_safe_moves"
-#define KEY_ENABLE_SOUND     "/apps/gnobots2/preferences/enable_sound"
-#define KEY_ENABLE_SPLATS    "/apps/gnobots2/preferences/enable_splats"
-#define KEY_BACKGROUND_COLOR "/apps/gnobots2/preferences/background_color"
-#define KEY_WINDOW_WIDTH     "/apps/gnobots2/geometry/width"
-#define KEY_WINDOW_HEIGHT    "/apps/gnobots2/geometry/height"
+#define KEY_PREFERENCES_GROUP "preferences"
+#define KEY_BACKGROUND_COLOR  "background_color"
+#define KEY_CONFIGURATION     "configuration"
+#define KEY_ENABLE_SOUND      "enable_sound"
+#define KEY_ENABLE_SPLATS     "enable_splats"
+#define KEY_SAFE_MOVES        "use_safe_moves"
+#define KEY_SHOW_TOOLBAR      "show_toolbar"
+#define KEY_SUPER_SAFE_MOVES  "use_super_safe_moves"
+#define KEY_THEME             "theme"
+#define KEY_CONTROL_KEY       "key%02d"
 
 /**********************************************************************/
 
@@ -68,6 +66,8 @@
 /**********************************************************************/
 typedef struct _GnobotsProperties GnobotsProperties;
 
+#define N_KEYS 12
+
 struct _GnobotsProperties {
   gboolean safe_moves;
   gboolean super_safe_moves;
@@ -76,7 +76,7 @@ struct _GnobotsProperties {
   gboolean show_toolbar;
   GdkColor bgcolour;
   gint selected_config;
-  gint keys[12];
+  guint keys[N_KEYS];
   gchar *themename;
 };
 /**********************************************************************/
@@ -91,15 +91,12 @@ static GamesFileList *theme_list = NULL;
 
 static GnobotsProperties properties;
 
-static gint default_keys[12] = {
+static const guint default_keys[N_KEYS] = {
   GDK_KP_7, GDK_KP_8, GDK_KP_9,
   GDK_KP_4, GDK_KP_5, GDK_KP_6,
   GDK_KP_1, GDK_KP_2, GDK_KP_3,
   GDK_KP_Add, GDK_KP_Multiply, GDK_KP_Enter
 };
-
-
-static GConfClient *gconf_client;
 
 /**********************************************************************/
 
@@ -117,7 +114,7 @@ static void sound_cb (GtkWidget *, gpointer);
 static void splat_cb (GtkWidget *, gpointer);
 static void defkey_cb (GtkWidget *, gpointer);
 static void fill_typemenu (GtkWidget *);
-static void gconf_set_background_color (GdkColor * c);
+static void conf_set_background_color (GdkColor * c);
 /**********************************************************************/
 
 
@@ -175,26 +172,6 @@ delete_cb (GtkWidget * w, gpointer data)
   return FALSE;
 }
 
-gboolean
-save_window_geometry (GtkWidget * w, GdkEventConfigure * e, gpointer data)
-{
-  gconf_client_set_int (gconf_client, KEY_WINDOW_WIDTH, e->width, NULL);
-  gconf_client_set_int (gconf_client, KEY_WINDOW_HEIGHT, e->height, NULL);
-
-  return FALSE;
-}
-
-void
-set_window_geometry (GtkWidget * window)
-{
-  int w, h;
-
-  w = gconf_client_get_int (gconf_client, KEY_WINDOW_WIDTH, NULL);
-  h = gconf_client_get_int (gconf_client, KEY_WINDOW_HEIGHT, NULL);
-
-  gtk_window_resize (GTK_WINDOW (window), w, h);
-}
-
 /**
  * pmap_selection
  * @widget: widget
@@ -213,7 +190,7 @@ pmap_selection (GtkWidget * widget, gpointer data)
   /* FIXME: Should be de-suffixed. */
   properties.themename = games_file_list_get_nth (theme_list, n);
 
-  gconf_set_theme (properties.themename);
+  conf_set_theme (properties.themename);
 
   set_game_graphics (properties.themename);
   clear_game_area ();
@@ -235,7 +212,7 @@ type_selection (GtkWidget * widget, gpointer data)
 
   properties.selected_config = num;
 
-  gconf_set_configuration (game_config_name (properties.selected_config));
+  conf_set_configuration (game_config_name (properties.selected_config));
 
   set_game_config (properties.selected_config);
 
@@ -255,7 +232,7 @@ static void
 safe_cb (GtkWidget * widget, gpointer data)
 {
   properties.safe_moves = GTK_TOGGLE_BUTTON (widget)->active;
-  gconf_set_use_safe_moves (properties.safe_moves);
+  conf_set_use_safe_moves (properties.safe_moves);
 }
 
 
@@ -271,7 +248,7 @@ static void
 super_safe_cb (GtkWidget * widget, gpointer data)
 {
   properties.super_safe_moves = GTK_TOGGLE_BUTTON (widget)->active;
-  gconf_set_use_super_safe_moves (properties.super_safe_moves);
+  conf_set_use_super_safe_moves (properties.super_safe_moves);
 }
 
 
@@ -287,7 +264,7 @@ static void
 sound_cb (GtkWidget * widget, gpointer data)
 {
   properties.sound = GTK_TOGGLE_BUTTON (widget)->active;
-  gconf_set_enable_sound (properties.sound);
+  conf_set_enable_sound (properties.sound);
 }
 
 
@@ -303,7 +280,7 @@ static void
 splat_cb (GtkWidget * widget, gpointer data)
 {
   properties.splats = GTK_TOGGLE_BUTTON (widget)->active;
-  gconf_set_enable_splats (properties.splats);
+  conf_set_enable_splats (properties.splats);
 }
 
 
@@ -319,11 +296,11 @@ static void
 defkey_cb (GtkWidget * widget, gpointer data)
 {
   gint i;
-  gint *dkeys = (gint *) data;
+  guint *dkeys = (guint *) data;
 
   for (i = 0; i < 12; ++i) {
     properties.keys[i] = dkeys[i];
-    gconf_set_control_key (i, keyboard_string (properties.keys[i]));
+    conf_set_control_key (i, properties.keys[i]);
   }
   keyboard_set (properties.keys);
 }
@@ -409,7 +386,7 @@ bg_color_callback (GtkWidget * widget, gpointer data)
 			      &properties.bgcolour);
   set_background_color (properties.bgcolour);
   clear_game_area ();
-  gconf_set_background_color (&properties.bgcolour);
+  conf_set_background_color (&properties.bgcolour);
 }
 
 gchar *
@@ -589,20 +566,21 @@ show_properties_dialog (void)
   vbox = gtk_vbox_new (FALSE, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
-  controls_list = games_controls_list_new ();
+  controls_list = games_controls_list_new (KEY_PREFERENCES_GROUP);
   games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),
-				    "/apps/gnobots2/preferences/key00",
-				    "/apps/gnobots2/preferences/key01",
-				    "/apps/gnobots2/preferences/key02",
-				    "/apps/gnobots2/preferences/key03",
-				    "/apps/gnobots2/preferences/key05",
-				    "/apps/gnobots2/preferences/key06",
-				    "/apps/gnobots2/preferences/key07",
-				    "/apps/gnobots2/preferences/key08",
-				    "/apps/gnobots2/preferences/key04",
-				    "/apps/gnobots2/preferences/key09",
-				    "/apps/gnobots2/preferences/key10",
-				    "/apps/gnobots2/preferences/key11", NULL);
+				    "key00", _("Key to move NW"), default_keys[0],
+				    "key01", _("Key to move N"), default_keys[1],
+				    "key02", _("Key to move NE"), default_keys[2],
+				    "key03", _("Key to move W"), default_keys[3],
+				    "key05", _("Key to move E"), default_keys[5],
+				    "key06", _("Key to move SW"), default_keys[6],
+				    "key07", _("Key to move S"), default_keys[7],
+				    "key08", _("Key to move SE"), default_keys[8],
+                                    "key04", _("Key to hold"), default_keys[4],
+				    "key09", _("Key to teleport"), default_keys[9],
+				    "key10", _("Key to teleport randomly"), default_keys[10],
+				    "key11", _("Key to wait"), default_keys[11],
+                                    NULL);
 
   gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, 0);
 
@@ -628,24 +606,6 @@ show_properties_dialog (void)
   gtk_widget_show_all (propbox);
 }
 
-
-GConfClient *
-get_gconf_client ()
-{
-  if (!gconf_client)
-    gconf_client = gconf_client_get_default ();
-  return gconf_client;
-}
-
-void
-initialize_gconf (int argc, char *argv[])
-{
-  gconf_init (argc, argv, NULL);
-  gconf_client = get_gconf_client ();
-  gconf_client_add_dir (gconf_client, KEY_DIR,
-			GCONF_CLIENT_PRELOAD_NONE, NULL);
-}
-
 /**
  * load_properties
  *
@@ -661,41 +621,27 @@ load_properties (void)
   gchar buffer[256];
   gchar *cname = NULL;
   gint i;
-  gchar *str;
   gchar *bgcolour;
 
   for (i = 0; i < 12; i++) {
     properties.keys[i] = default_keys[i];
 
-    sprintf (buffer, KEY_CONTROL_KEY, i);
+    g_snprintf (buffer, sizeof (buffer), KEY_CONTROL_KEY, i);
 
-    str = gconf_client_get_string (get_gconf_client (), buffer, NULL);
-    if (str != NULL) {
-      properties.keys[i] = gdk_keyval_from_name (str);
-    }
-    if ((str == NULL) || (properties.keys[i] == GDK_VoidSymbol)) {
-      properties.keys[i] = default_keys[i];
-    }
-    g_free (str);
+    properties.keys[i] = games_conf_get_keyval_with_default (KEY_PREFERENCES_GROUP,
+                                                             buffer, default_keys[i]);
   }
 
-  bgcolour = gconf_client_get_string (get_gconf_client (),
-				      KEY_BACKGROUND_COLOR, NULL);
-  if (bgcolour == NULL)
-    bgcolour = g_strdup ("#7590AE");
-
+  bgcolour = games_conf_get_string_with_default (KEY_PREFERENCES_GROUP,
+                                                 KEY_BACKGROUND_COLOR, "#7590AE");
   gdk_color_parse (bgcolour, &properties.bgcolour);
   set_background_color (properties.bgcolour);
 
-  properties.themename = gconf_client_get_string (get_gconf_client (),
-						  KEY_THEME, NULL);
-  if (properties.themename == NULL)
-    properties.themename = ("robots");
+  properties.themename = games_conf_get_string_with_default (KEY_PREFERENCES_GROUP,
+                                                             KEY_THEME, "robots");
 
-  cname =
-    gconf_client_get_string (get_gconf_client (), KEY_CONFIGURATION, NULL);
-  if (cname == NULL)
-    cname = g_strdup ("classic_robots");
+  cname = games_conf_get_string_with_default (KEY_PREFERENCES_GROUP,
+                                              KEY_CONFIGURATION, "classic_robots");
 
   properties.selected_config = 0;
   for (i = 0; i < num_game_configs (); ++i) {
@@ -706,17 +652,17 @@ load_properties (void)
   }
   g_free (cname);
 
-  properties.safe_moves = gconf_client_get_bool (get_gconf_client (),
-						 KEY_SAFE_MOVES, NULL);
-  properties.super_safe_moves = gconf_client_get_bool (get_gconf_client (),
-						       KEY_SUPER_SAFE_MOVES,
-						       NULL);
-  properties.sound =
-    gconf_client_get_bool (get_gconf_client (), KEY_ENABLE_SOUND, NULL);
-  properties.splats =
-    gconf_client_get_bool (get_gconf_client (), KEY_ENABLE_SPLATS, NULL);
-  properties.show_toolbar =
-    gconf_client_get_bool (get_gconf_client (), KEY_SHOW_TOOLBAR, NULL);
+  properties.safe_moves = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
+						  KEY_SAFE_MOVES, NULL);
+  properties.super_safe_moves = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
+						        KEY_SUPER_SAFE_MOVES,
+						        NULL);
+  properties.sound = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
+                                             KEY_ENABLE_SOUND, NULL);
+  properties.splats = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
+                                              KEY_ENABLE_SPLATS, NULL);
+  properties.show_toolbar = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
+                                                    KEY_SHOW_TOOLBAR, NULL);
 
   set_game_graphics (properties.themename);
   set_game_config (properties.selected_config);
@@ -726,69 +672,63 @@ load_properties (void)
 }
 
 void
-gconf_set_theme (gchar * value)
+conf_set_theme (gchar * value)
 {
-  gconf_client_set_string (get_gconf_client (), KEY_THEME, value, NULL);
+  games_conf_set_string (KEY_PREFERENCES_GROUP, KEY_THEME, value);
 }
 
 static void
-gconf_set_background_color (GdkColor * c)
+conf_set_background_color (GdkColor * c)
 {
-  gchar *name;
+  char colour[64];
 
-  name = g_strdup_printf ("#%04x%04x%04x", c->red, c->green, c->blue);
+  g_snprintf (colour, sizeof (colour), "#%04x%04x%04x", c->red, c->green, c->blue);
 
-  gconf_client_set_string (get_gconf_client (), KEY_BACKGROUND_COLOR,
-			   name, NULL);
-
-  g_free (name);
+  games_conf_set_string (KEY_PREFERENCES_GROUP, KEY_BACKGROUND_COLOR, colour);
 }
 
 void
-gconf_set_configuration (gchar * value)
+conf_set_configuration (gchar * value)
 {
-  gconf_client_set_string (get_gconf_client (), KEY_CONFIGURATION,
-			   value, NULL);
+  games_conf_set_string (KEY_PREFERENCES_GROUP, KEY_CONFIGURATION, value);
 }
 
 void
-gconf_set_use_safe_moves (gboolean value)
+conf_set_use_safe_moves (gboolean value)
 {
-  gconf_client_set_bool (get_gconf_client (), KEY_SAFE_MOVES, value, NULL);
+  games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_SAFE_MOVES, value);
 }
 
 void
-gconf_set_use_super_safe_moves (gboolean value)
+conf_set_use_super_safe_moves (gboolean value)
 {
-  gconf_client_set_bool (get_gconf_client (), KEY_SUPER_SAFE_MOVES,
-			 value, NULL);
+  games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_SUPER_SAFE_MOVES, value);
 }
 
 void
-gconf_set_enable_sound (gboolean value)
+conf_set_enable_sound (gboolean value)
 {
-  gconf_client_set_bool (get_gconf_client (), KEY_ENABLE_SOUND, value, NULL);
+  games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_ENABLE_SOUND, value);
 }
 
 void
-gconf_set_enable_splats (gboolean value)
+conf_set_enable_splats (gboolean value)
 {
-  gconf_client_set_bool (get_gconf_client (), KEY_ENABLE_SPLATS, value, NULL);
+  games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_ENABLE_SPLATS, value);
 }
 
 void
-gconf_set_show_toolbar (gboolean value)
+conf_set_show_toolbar (gboolean value)
 {
-  gconf_client_set_bool (get_gconf_client (), KEY_SHOW_TOOLBAR, value, NULL);
+  games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_SHOW_TOOLBAR, value);
 }
 
 void
-gconf_set_control_key (gint i, gchar * value)
+conf_set_control_key (gint i, guint keyval)
 {
-  gchar *buffer;
-  buffer = g_strdup_printf (KEY_CONTROL_KEY, i);
-  gconf_client_set_string (get_gconf_client (), buffer, value, NULL);
-  g_free (buffer);
+  char buffer[64];
+  g_snprintf (buffer, sizeof (buffer), KEY_CONTROL_KEY, i);
+  games_conf_set_keyval (KEY_PREFERENCES_GROUP, buffer, keyval);
 }
 
 /**
@@ -806,15 +746,15 @@ save_properties (void)
   gint i;
 
   for (i = 0; i < 12; i++) {
-    gconf_set_control_key (i, gdk_keyval_name (properties.keys[i]));
+    conf_set_control_key (i, properties.keys[i]);
   }
 
-  gconf_set_theme (properties.themename);
-  gconf_set_configuration (game_config_name (properties.selected_config));
-  gconf_set_use_safe_moves (properties.safe_moves);
-  gconf_set_use_super_safe_moves (properties.super_safe_moves);
-  gconf_set_enable_sound (properties.sound);
-  gconf_set_enable_splats (properties.splats);
+  conf_set_theme (properties.themename);
+  conf_set_configuration (game_config_name (properties.selected_config));
+  conf_set_use_safe_moves (properties.safe_moves);
+  conf_set_use_super_safe_moves (properties.super_safe_moves);
+  conf_set_enable_sound (properties.sound);
+  conf_set_enable_splats (properties.splats);
 
   return TRUE;
 }

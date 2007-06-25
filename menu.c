@@ -165,7 +165,7 @@ show_toolbar_cb (GtkAction * action, gpointer data)
   gboolean state;
 
   state = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
-  gconf_set_show_toolbar (state);
+  conf_set_show_toolbar (state);
 }
 
 

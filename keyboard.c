@@ -30,33 +30,16 @@
 /**********************************************************************/
 /* File Static Variables                                              */
 /**********************************************************************/
-static gint control_keys[12];
+#define N_KEYS 12
+
+static guint control_keys[N_KEYS];
+
 /**********************************************************************/
 
 
 /**********************************************************************/
 /* Function Definitions                                               */
 /**********************************************************************/
-
-/**
- * keyboard_string
- * @ksym: KeySym
- *
- * Description:
- * Returns the text description of a keysym
- *
- * Returns:
- * String representation of a keysym
- **/
-gchar *
-keyboard_string (gint ksym)
-{
-  gchar *name;
-
-  name = gdk_keyval_name (ksym);
-
-  return name;
-}
 
 /**
  * keyboard_set
@@ -66,7 +49,7 @@ keyboard_string (gint ksym)
  * sets the keybaord mapping
  **/
 void
-keyboard_set (gint * keys)
+keyboard_set (guint * keys)
 {
   gint i;
 

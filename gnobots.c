@@ -28,6 +28,7 @@
 #include <games-scores-dialog.h>
 #include <games-sound.h>
 #include <games-gridframe.h>
+#include <games-conf.h>
 
 #include "gbdefs.h"
 #include "statusbar.h"
@@ -42,6 +43,9 @@
 /* Minimum sizes. */
 #define MINIMUM_TILE_WIDTH   8
 #define MINIMUM_TILE_HEIGHT  MINIMUM_TILE_WIDTH
+
+#define DEFAULT_WIDTH 720
+#define DEFAULT_HEIGHT 566
 
 /**********************************************************************/
 /* Exported Variables                                                 */
@@ -213,31 +217,26 @@ main (int argc, char *argv[])
 
   highscores = games_scores_new (&scoredesc);
 
+  games_conf_initialise ("Gnobots2");
+
   gtk_window_set_default_icon_name ("gnome-robots");
 
   client = gnome_master_client ();
-
-  g_object_ref (G_OBJECT (client));
-  gtk_object_sink (GTK_OBJECT (client));
 
   g_signal_connect (G_OBJECT (client), "save_yourself",
 		    G_CALLBACK (save_state), argv[0]);
   g_signal_connect (G_OBJECT (client), "die",
 		    G_CALLBACK (quit_game), argv[0]);
 
-  initialize_gconf (argc, argv);
-
   app = gnome_app_new (GAME_NAME, _("Robots"));
+
+  gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
+  games_conf_add_window (GTK_WINDOW (app));
 
   g_signal_connect (G_OBJECT (app), "delete_event",
 		    G_CALLBACK (quit_game), NULL);
-  g_signal_connect (G_OBJECT (app), "configure_event",
-		    G_CALLBACK (save_window_geometry), NULL);
   g_signal_connect (G_OBJECT (app), "window_state_event",
 		    G_CALLBACK (window_state_cb), NULL);
-
-
-  set_window_geometry (app);
 
   statusbar = gnobots_statusbar_new ();
   ui_manager = gtk_ui_manager_new ();
@@ -346,7 +345,7 @@ main (int argc, char *argv[])
 
   gtk_main ();
 
-  gnome_accelerators_sync ();
+  games_conf_shutdown ();
 
   g_object_unref (program);
 

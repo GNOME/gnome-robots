@@ -1,3 +1,7 @@
+2007-06-26  Thomas H.P. Andersen  <phomes@gmail.com>
+
+	* game.c: Don't use klotski as game name in high score list
+
 2007-02-03  Andreas Røsdal  <andreasr@gnome.org>
 
 	* gnobots2/graphics.c

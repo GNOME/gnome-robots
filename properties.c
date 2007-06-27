@@ -92,9 +92,9 @@ static GamesFileList *theme_list = NULL;
 static GnobotsProperties properties;
 
 static const guint default_keys[N_KEYS] = {
-  GDK_KP_7, GDK_KP_8, GDK_KP_9,
-  GDK_KP_4, GDK_KP_5, GDK_KP_6,
-  GDK_KP_1, GDK_KP_2, GDK_KP_3,
+  GDK_KP_Home, GDK_KP_Up, GDK_KP_Page_Up,
+  GDK_KP_Left, GDK_KP_Begin, GDK_KP_Right,
+  GDK_KP_End, GDK_KP_Down, GDK_KP_Page_Down,
   GDK_KP_Add, GDK_KP_Multiply, GDK_KP_Enter
 };
 

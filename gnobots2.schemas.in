@@ -103,7 +103,7 @@
         <applyto>/apps/gnobots2/preferences/key00</applyto>
         <owner>gnobots2</owner>
         <type>string</type>
-        <default>KP_7</default>
+        <default>KP_Home</default>
         <locale name="C">
           <short>Key to move NW</short>
           <long>The name of the key used to move north-west. The name is a standard X key name.</long>
@@ -115,7 +115,7 @@
         <applyto>/apps/gnobots2/preferences/key01</applyto>
         <owner>gnobots2</owner>
         <type>string</type>
-        <default>KP_8</default>
+        <default>KP_Up</default>
         <locale name="C">
           <short>Key to move N</short>
           <long>The name of the key used to move north. The name is a standard X key name.</long>
@@ -127,7 +127,7 @@
         <applyto>/apps/gnobots2/preferences/key02</applyto>
         <owner>gnobots2</owner>
         <type>string</type>
-        <default>KP_9</default>
+        <default>KP_Page_Up</default>
         <locale name="C">
           <short>Key to move NE</short>
           <long>The name of the key used to move north-east. The name is a standard X key name.</long>
@@ -139,7 +139,7 @@
         <applyto>/apps/gnobots2/preferences/key03</applyto>
         <owner>gnobots2</owner>
         <type>string</type>
-        <default>KP_4</default>
+        <default>KP_Left</default>
         <locale name="C">
           <short>Key to move W</short>
           <long>The name of the key used to move west. The name is a standard X key name.</long>
@@ -151,7 +151,7 @@
         <applyto>/apps/gnobots2/preferences/key04</applyto>
         <owner>gnobots2</owner>
         <type>string</type>
-        <default>KP_5</default>
+        <default>KP_Begin</default>
         <locale name="C">
           <short>Key to hold</short>
           <long>The name of the key used to hold still. The name is a standard X key name.</long>
@@ -163,7 +163,7 @@
         <applyto>/apps/gnobots2/preferences/key05</applyto>
         <owner>gnobots2</owner>
         <type>string</type>
-        <default>KP_6</default>
+        <default>KP_Right</default>
         <locale name="C">
           <short>Key to move E</short>
           <long>The name of the key used to move east. The name is a standard X key name.</long>
@@ -175,7 +175,7 @@
         <applyto>/apps/gnobots2/preferences/key06</applyto>
         <owner>gnobots2</owner>
         <type>string</type>
-        <default>KP_1</default>
+        <default>KP_End</default>
         <locale name="C">
           <short>Key to move SW</short>
           <long>The name of the key used to move south-west. The name is a standard X key name.</long>
@@ -187,7 +187,7 @@
         <applyto>/apps/gnobots2/preferences/key07</applyto>
         <owner>gnobots2</owner>
         <type>string</type>
-        <default>KP_2</default>
+        <default>KP_Down</default>
         <locale name="C">
           <short>Key to move S</short>
           <long>The name of the key used to move south. The name is a standard X key name.</long>
@@ -199,7 +199,7 @@
         <applyto>/apps/gnobots2/preferences/key08</applyto>
         <owner>gnobots2</owner>
         <type>string</type>
-        <default>KP_3</default>
+        <default>KP_Page_Down</default>
         <locale name="C">
           <short>Key to move SE</short>
           <long>The name of the key used to move south-east. The name is a standard X key name.</long>

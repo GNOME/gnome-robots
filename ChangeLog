@@ -1,3 +1,8 @@
+2007-06-27  Thomas H.P. Andersen  <phomes@gmail.com>
+
+	* properties.c:
+	* gnobots2.schemas.in: Change default keys to non-numlock values (Bug #392584)
+
 2007-06-26  Thomas H.P. Andersen  <phomes@gmail.com>
 
 	* game.c: Don't use klotski as game name in high score list

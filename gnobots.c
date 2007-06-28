@@ -208,7 +208,7 @@ main (int argc, char *argv[])
   option_context = g_option_context_new (NULL);
   g_option_context_add_main_entries (option_context, options,
 				     GETTEXT_PACKAGE);
-  g_option_context_add_group (option_context, games_sound_get_option_group ());
+  games_sound_add_option_group (option_context);
 
   program = gnome_program_init (GAME_NAME, VERSION,
 				LIBGNOMEUI_MODULE,

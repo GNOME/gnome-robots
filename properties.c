@@ -29,6 +29,7 @@
 #include <games-scores.h>
 #include <games-scores-dialog.h>
 #include <games-conf.h>
+#include <games-sound.h>
 
 #include "properties.h"
 #include "gameconfig.h"
@@ -264,6 +265,7 @@ static void
 sound_cb (GtkWidget * widget, gpointer data)
 {
   properties.sound = GTK_TOGGLE_BUTTON (widget)->active;
+  games_sound_enable (properties.sound);
   conf_set_enable_sound (properties.sound);
 }
 
@@ -664,6 +666,7 @@ load_properties (void)
   properties.show_toolbar = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
                                                     KEY_SHOW_TOOLBAR, NULL);
 
+  games_sound_enable (properties.sound);
   set_game_graphics (properties.themename);
   set_game_config (properties.selected_config);
   keyboard_set (properties.keys);

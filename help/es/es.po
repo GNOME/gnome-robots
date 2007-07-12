@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnobots2.HEAD\n"
-"POT-Creation-Date: 2007-05-07 17:54+0100\n"
+"POT-Creation-Date: 2007-06-04 03:45+0100\n"
 "PO-Revision-Date: 2007-06-03 09:53+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
@@ -15,16 +15,22 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnobots2.xml:248(None)
-msgid "@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
-msgstr "@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+msgid ""
+"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+msgstr ""
+"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
 
 #: C/gnobots2.xml:27(title)
 msgid "<application>GNOME Robots</application> Manual V2.8"
 msgstr "Manual de <application>Robots</application> V2.8"
 
 #: C/gnobots2.xml:30(para)
-msgid "GNOME Robots is a development of the text based robots game which can be found on a number of UNIX systems."
+msgid ""
+"GNOME Robots is a development of the text based robots game which can be "
+"found on a number of UNIX systems."
 msgstr ""
+"Robots es un desarrollo del juego basado en texto robots que se puede "
+"encontrar en cierto número de sistemas UNIX."
 
 #: C/gnobots2.xml:36(year)
 msgid "2001"
@@ -34,12 +40,19 @@ msgstr "2001"
 msgid "Patanjali Somayaji, Mark Rae"
 msgstr "Patanjali Somayaji, Mark Rae"
 
-#: C/gnobots2.xml:53(publishername) C/gnobots2.xml:98(para) C/gnobots2.xml:108(para)
+#: C/gnobots2.xml:53(publishername) C/gnobots2.xml:98(para)
+#: C/gnobots2.xml:108(para)
 msgid "GNOME Documentation Project"
 msgstr "Proyecto de documentación de GNOME"
 
 #: C/gnobots2.xml:2(para)
-msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any later version published by the Free Software Foundation with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
 msgstr ""
 "Se otorga permiso para copiar, distribuir y/o modificar este documento bajo "
 "los términos de la Licencia de Documentación Libre de GNU, Versión 1.1 o "
@@ -50,7 +63,11 @@ msgstr ""
 "COPYING-DOCS distribuido con este manual."
 
 #: C/gnobots2.xml:12(para)
-msgid "This manual is part of a collection of GNOME manuals distributed under the GFDL. If you want to distribute this manual separately from the collection, you can do so by adding a copy of the license to the manual, as described in section 6 of the license."
+msgid ""
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
 msgstr ""
 "Este manual es parte de una colección de manuales de GNOME distribuido bajo "
 "la GFDL. Si quiere distribuir este manual por separado de la colección, "
@@ -58,7 +75,12 @@ msgstr ""
 "describe en la sección 6 de la licencia."
 
 #: C/gnobots2.xml:19(para)
-msgid "Many of the names used by companies to distinguish their products and services are claimed as trademarks. Where those names appear in any GNOME documentation, and the members of the GNOME Documentation Project are made aware of those trademarks, then the names are in capital letters or initial capital letters."
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
 msgstr ""
 "Muchos de los nombres utilizados por las empresas para distinguir sus "
 "productos y servicios se consideran marcas comerciales. Cuando estos nombres "
@@ -68,7 +90,18 @@ msgstr ""
 "mayúsculas."
 
 #: C/gnobots2.xml:35(para)
-msgid "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
 msgstr ""
 "EL DOCUMENTO SE PROPORCIONA \"TAL CUAL\", SIN GARANTÍA DE NINGÚN TIPO, NI "
 "EXPLÍCITA NI IMPLÍCITA INCLUYENDO, SIN LIMITACIÓN, GARANTÍA DE QUE EL "
@@ -84,7 +117,17 @@ msgstr ""
 "DE LA RENUNCIA;Y"
 
 #: C/gnobots2.xml:55(para)
-msgid "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES."
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
 msgstr ""
 "EN NINGUNA CIRCUNSTANCIA NI SEGÚN NINGÚN ARGUMENTO LEGAL, SEA POR MOTIVOS "
 "CULPOSOS (INCLUIDA LA NEGLIGENCIA), CONTRACTUALES O DE OTRO TIPO, NI EL "
@@ -100,7 +143,10 @@ msgstr ""
 "DAÑOS."
 
 #: C/gnobots2.xml:28(para)
-msgid "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <placeholder-1/>"
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<placeholder-1/>"
 msgstr ""
 "ESTE DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL MISMO SE PROPORCIONAN SEGÚN "
 "LAS CONDICIONES ESTABLECIDAS EN LA LICENCIA DE DOCUMENTACIÓN LIBRE DE GNU "
@@ -163,8 +209,16 @@ msgid "Feedback"
 msgstr "Comentarios"
 
 #: C/gnobots2.xml:121(para)
-msgid "To report a bug or make a suggestion regarding the <application>GNOME Robots</application> application or this manual, follow the directions in the <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
+msgid ""
+"To report a bug or make a suggestion regarding the <application>GNOME "
+"Robots</application> application or this manual, follow the directions in "
+"the <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</"
+"ulink>."
 msgstr ""
+"Para informar de un fallo, o hacer alguna sugerencia concerniente la "
+"aplicación <application>Robots</application> o este manual, siga las "
+"indicaciones en la <ulink url=\"ghelp:gnome-feedback\" type=\"help\">Página "
+"de comentarios de GNOME</ulink>."
 
 #: C/gnobots2.xml:132(primary)
 msgid "GNOME Robots"
@@ -175,47 +229,113 @@ msgid "Introduction"
 msgstr "Introducción"
 
 #: C/gnobots2.xml:141(para)
-msgid "<application>GNOME Robots</application> is a game where you try and avoid a band of marauding robots which are, for no adequately explained reason, trying to kill you. It is based on the text-based robots game which can be found on a number of UNIX systems."
+msgid ""
+"<application>GNOME Robots</application> is a game where you try and avoid a "
+"band of marauding robots which are, for no adequately explained reason, "
+"trying to kill you. It is based on the text-based robots game which can be "
+"found on a number of UNIX systems."
 msgstr ""
+"<application>Robots</application> es un juego donde tine que tratar de evitar "
+"una panda de robots merodeadores que, por alguna razón sin explicación, "
+"tratan de matarle. Está basado en el juego tipo texto robots que se puede "
+"encontrar en cierto número de sistemas UNIX."
 
 #: C/gnobots2.xml:148(para)
-msgid "This new version includes two types of robots, movable junkheaps, multiple game configurations, user definable keyboard layouts, and sound, as well as all of the features which were present in the original GNOME Robots game."
+msgid ""
+"This new version includes two types of robots, movable junkheaps, multiple "
+"game configurations, user definable keyboard layouts, and sound, as well as "
+"all of the features which were present in the original GNOME Robots game."
 msgstr ""
+"Esta nueva versión incluye dos tipos de robots, chatarra móvil, múltiples "
+"configuraciones para el juego, disposiciones de teclado definibles por el usuario y "
+"sonidos, así como todas las características que estaban disponibles en el juego "
+"Robots original."
 
 #: C/gnobots2.xml:155(para)
-msgid "To run <application>GNOME Robots</application>, select <menuchoice><guisubmenu>games</guisubmenu><guimenuitem>Robots</guimenuitem></menuchoice> from the <guimenu>Main Menu</guimenu>, or type <command>gnobots2</command> on the command line."
+msgid ""
+"To run <application>GNOME Robots</application>, select "
+"<menuchoice><guisubmenu>games</guisubmenu><guimenuitem>Robots</guimenuitem></"
+"menuchoice> from the <guimenu>Main Menu</guimenu>, or type "
+"<command>gnobots2</command> on the command line."
 msgstr ""
+"Para ejecutar <application>Robots</application>, seleccione "
+"<menuchoice><guisubmenu>Juegos</guisubmenu><guimenuitem>Robots</guimenuitem></"
+"menuchoice> del <guimenu>Menú principal</guimenu>, o escriba "
+"<command>gnobots2</command> en la línea de comandos."
 
 #: C/gnobots2.xml:165(para)
-msgid "<application>GNOME Robots</application> is included in the <filename>gnome-games</filename> package, which is part of the GNOME desktop environment. This document describes version 2.8.0 of <application>GNOME Robots</application>."
+msgid ""
+"<application>GNOME Robots</application> is included in the <filename>gnome-"
+"games</filename> package, which is part of the GNOME desktop environment. "
+"This document describes version 2.8.0 of <application>GNOME Robots</"
+"application>."
 msgstr ""
+"<application>Robots</application> está incluido en el paquete gnome-games, "
+"que es parte del entorno de escritorio GNOME. Este documento describe la "
+"versión 2.8.0 de <application>Robots</application>."
 
 #: C/gnobots2.xml:174(title)
 msgid "GNOME Robots Objective"
-msgstr ""
+msgstr "Objetivo de Robots"
 
 #: C/gnobots2.xml:175(para)
-msgid "The objective of GNOME Robots is quite simple. You are surrounded by a number of robots or other hostile adversaries. As you move about they will move directly towards you for every move that you make. Their goal is to kill you. Your goal is to kill all the robots on the board by taking advantage of their vulnerabilities."
+msgid ""
+"The objective of GNOME Robots is quite simple. You are surrounded by a "
+"number of robots or other hostile adversaries. As you move about they will "
+"move directly towards you for every move that you make. Their goal is to "
+"kill you. Your goal is to kill all the robots on the board by taking "
+"advantage of their vulnerabilities."
 msgstr ""
+"El objetivo de Robots es bastanet simple. Está rodeado por un número "
+"de robots u otros adversarios hostiles. Conforme se va moviendo ellos "
+"tratarán de moverse hacia su posición con cada movimiento que haga. Su "
+"objetivo es matarle. Mientras que debe tratar de matar a todos los robots "
+"en el tablero tomando ventaja de sus vulnerabilidades."
 
 #: C/gnobots2.xml:183(para)
-msgid "Robots are destroyed when they collide with each other, or when they collide with the debris of some previous collision. You die if a robot ends up right next to you."
+msgid ""
+"Robots are destroyed when they collide with each other, or when they collide "
+"with the debris of some previous collision. You die if a robot ends up right "
+"next to you."
 msgstr ""
+"Los robots se destruyen cuando chocan entre ellos o cuando chocan contra basura "
+"de una colisión previa. Morirá si un robot acaba posicionandose a su lado."
 
 #: C/gnobots2.xml:189(para)
-msgid "In some of the game configurations (you can choose from five different sets of rules), you can push the junkheaps around to form barricades to protect you. Also, if you are daring enough, you can Splat! the robots by pushing junkheaps on top of them for an additional bonus."
+msgid ""
+"In some of the game configurations (you can choose from five different sets "
+"of rules), you can push the junkheaps around to form barricades to protect "
+"you. Also, if you are daring enough, you can Splat! the robots by pushing "
+"junkheaps on top of them for an additional bonus."
 msgstr ""
 
 #: C/gnobots2.xml:194(para)
-msgid "You can also save yourself by teleporting yourself to a random location. Unfortunately, randomly teleporting means that you might end up being right next to a robot, so they can kill you when they make their move. Luckily, there are also safe teleports which will place you out of immediate danger, but there are only a limited supply of them. You can earn more free teleports as you go along (how you gain them depends on the chosen game), but typically you get one for each robot that is destroyed while you are 'waiting', up to a maximum of 10. If you don't want to waste your saved-up safe teleports, you can choose to teleport randomly if you think it's safe enough."
+msgid ""
+"You can also save yourself by teleporting yourself to a random location. "
+"Unfortunately, randomly teleporting means that you might end up being right "
+"next to a robot, so they can kill you when they make their move. Luckily, "
+"there are also safe teleports which will place you out of immediate danger, "
+"but there are only a limited supply of them. You can earn more free "
+"teleports as you go along (how you gain them depends on the chosen game), "
+"but typically you get one for each robot that is destroyed while you are "
+"'waiting', up to a maximum of 10. If you don't want to waste your saved-up "
+"safe teleports, you can choose to teleport randomly if you think it's safe "
+"enough."
 msgstr ""
 
 #: C/gnobots2.xml:208(para)
-msgid "If you press the 'Wait' button (see below) you will no longer be able to move until either all of the robots (which still move towards you) are gone, or you are killed. Doing this is risky, but may earn you extra safe teleports."
+msgid ""
+"If you press the 'Wait' button (see below) you will no longer be able to "
+"move until either all of the robots (which still move towards you) are gone, "
+"or you are killed. Doing this is risky, but may earn you extra safe "
+"teleports."
 msgstr ""
 
 #: C/gnobots2.xml:215(para)
-msgid "If you manage to reach the point where more than half of the screen is occupied by robots, the number of robots will be reset to the starting amount, allowing you to continue."
+msgid ""
+"If you manage to reach the point where more than half of the screen is "
+"occupied by robots, the number of robots will be reset to the starting "
+"amount, allowing you to continue."
 msgstr ""
 
 #: C/gnobots2.xml:226(title)
@@ -223,7 +343,10 @@ msgid "Using GNOME Robots"
 msgstr ""
 
 #: C/gnobots2.xml:227(para)
-msgid "<application>GNOME Robots</application> is extremely simple to play. You can use either the mouse of the keypad. This section describes basic usage of <application>GNOME Robots</application>."
+msgid ""
+"<application>GNOME Robots</application> is extremely simple to play. You can "
+"use either the mouse of the keypad. This section describes basic usage of "
+"<application>GNOME Robots</application>."
 msgstr ""
 
 #: C/gnobots2.xml:236(title)
@@ -232,22 +355,31 @@ msgstr "Uso básico"
 
 #: C/gnobots2.xml:244(title)
 msgid "GNOME Robots Main Window"
-msgstr ""
+msgstr "Ventana principal de Robots"
 
 #: C/gnobots2.xml:251(phrase)
 msgid "GNOME Robots Main Window."
-msgstr ""
+msgstr "Ventana principal de Robots."
 
 #: C/gnobots2.xml:237(para)
-msgid "Starting <application>GNOME Robots</application> opens the <interface>Main window</interface>, shown in <xref linkend=\"mainwindow-fig\"/>. <placeholder-1/>"
+msgid ""
+"Starting <application>GNOME Robots</application> opens the <interface>Main "
+"window</interface>, shown in <xref linkend=\"mainwindow-fig\"/>. "
+"<placeholder-1/>"
 msgstr ""
 
 #: C/gnobots2.xml:259(para)
-msgid "To start a new game, click on <guimenuitem>New Game</guimenuitem> in the <guimenu>Game</guimenu> menu."
+msgid ""
+"To start a new game, click on <guimenuitem>New Game</guimenuitem> in the "
+"<guimenu>Game</guimenu> menu."
 msgstr ""
 
 #: C/gnobots2.xml:264(para)
-msgid "To move, either click in the direction you want to move (the cursor will show you which way you will go) or press the appropriate arrow on the keypad. Clicking on the little man will keep you still. To teleport (safely or unsafely), and to wait, use the buttons on the toolbar."
+msgid ""
+"To move, either click in the direction you want to move (the cursor will "
+"show you which way you will go) or press the appropriate arrow on the "
+"keypad. Clicking on the little man will keep you still. To teleport (safely "
+"or unsafely), and to wait, use the buttons on the toolbar."
 msgstr ""
 
 #: C/gnobots2.xml:279(title)
@@ -255,7 +387,9 @@ msgid "Menus"
 msgstr "Menús"
 
 #: C/gnobots2.xml:280(para)
-msgid "The menu bar, located at the top of the <interface>game board</interface>, contains the following menus:"
+msgid ""
+"The menu bar, located at the top of the <interface>game board</interface>, "
+"contains the following menus:"
 msgstr ""
 
 #: C/gnobots2.xml:288(guimenu)
@@ -263,11 +397,15 @@ msgid "Game"
 msgstr "Juego"
 
 #: C/gnobots2.xml:294(para)
-msgid "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New Game</guimenuitem></menuchoice>&mdash; starts a new game of GNOME Robots."
+msgid ""
+"<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New "
+"Game</guimenuitem></menuchoice>&mdash; starts a new game of GNOME Robots."
 msgstr ""
 
 #: C/gnobots2.xml:304(para)
-msgid "<menuchoice><guimenuitem>Scores...</guimenuitem></menuchoice>&mdash; shows the scores."
+msgid ""
+"<menuchoice><guimenuitem>Scores...</guimenuitem></menuchoice>&mdash; shows "
+"the scores."
 msgstr ""
 
 #: C/gnobots2.xml:314(keysym)
@@ -287,11 +425,14 @@ msgid "Settings"
 msgstr "Configuración"
 
 #: C/gnobots2.xml:331(para)
-msgid "<guimenuitem>Preferences</guimenuitem> which brings up the preferences dialog box."
+msgid ""
+"<guimenuitem>Preferences</guimenuitem> which brings up the preferences "
+"dialog box."
 msgstr ""
 
 #: C/gnobots2.xml:327(para)
-msgid "The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
+msgid ""
+"The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
 msgstr ""
 
 #: C/gnobots2.xml:342(guimenu)
@@ -303,7 +444,10 @@ msgid "<guimenuitem>Contents</guimenuitem>&mdash; shows this manual."
 msgstr ""
 
 #: C/gnobots2.xml:354(para)
-msgid "<guimenuitem>About</guimenuitem>&mdash; shows basic information about <application>GNOME Robots</application>, such as the author's name and the application version number."
+msgid ""
+"<guimenuitem>About</guimenuitem>&mdash; shows basic information about "
+"<application>GNOME Robots</application>, such as the author's name and the "
+"application version number."
 msgstr ""
 
 #: C/gnobots2.xml:344(para)
@@ -315,7 +459,10 @@ msgid "Using the keyboard"
 msgstr ""
 
 #: C/gnobots2.xml:374(para)
-msgid "There are three predefined sets of keys for controlling your player. You can select which set to using the <guimenuitem>Keyboard</guimenuitem> tab in the <guimenuitem>Preferences</guimenuitem> dialog."
+msgid ""
+"There are three predefined sets of keys for controlling your player. You can "
+"select which set to using the <guimenuitem>Keyboard</guimenuitem> tab in the "
+"<guimenuitem>Preferences</guimenuitem> dialog."
 msgstr ""
 
 #: C/gnobots2.xml:382(title)
@@ -379,7 +526,10 @@ msgid "Wait: <keycap>Return</keycap>"
 msgstr ""
 
 #: C/gnobots2.xml:385(para)
-msgid "When you select this set, you use the numeric keypad on the right-hand side of the keyboard (not the separate arrow keys). <placeholder-1/><placeholder-2/>"
+msgid ""
+"When you select this set, you use the numeric keypad on the right-hand side "
+"of the keyboard (not the separate arrow keys). <placeholder-1/><placeholder-"
+"2/>"
 msgstr ""
 
 #: C/gnobots2.xml:437(title)
@@ -439,7 +589,9 @@ msgid "Original Keys"
 msgstr ""
 
 #: C/gnobots2.xml:493(para)
-msgid "These keys are the controls used in the original robots game. They will be familiar to people who have played the older text-based versions."
+msgid ""
+"These keys are the controls used in the original robots game. They will be "
+"familiar to people who have played the older text-based versions."
 msgstr ""
 
 #: C/gnobots2.xml:500(para)
@@ -487,51 +639,93 @@ msgid "Customizing GNOME Robots"
 msgstr ""
 
 #: C/gnobots2.xml:567(para)
-msgid "The safe moves option will help you to avoid being killed due to a mistake. If you try to make a move that would lead to your death when there is a safe move available, you will not be allowed to proceed. But be warned: if there was no safe move available, other than teleporting, the move will be allowed to proceed."
+msgid ""
+"The safe moves option will help you to avoid being killed due to a mistake. "
+"If you try to make a move that would lead to your death when there is a safe "
+"move available, you will not be allowed to proceed. But be warned: if there "
+"was no safe move available, other than teleporting, the move will be allowed "
+"to proceed."
 msgstr ""
 
 #: C/gnobots2.xml:575(para)
-msgid "There is also a ``super safe mode''. If you select this, you get beeped when there is no safe move and your only option is to teleport out."
+msgid ""
+"There is also a ``super safe mode''. If you select this, you get beeped when "
+"there is no safe move and your only option is to teleport out."
 msgstr ""
 
 #: C/gnobots2.xml:582(para)
-msgid "If you select the sound check-box the game will play sounds for various events throughout the game."
+msgid ""
+"If you select the sound check-box the game will play sounds for various "
+"events throughout the game."
 msgstr ""
 
 #: C/gnobots2.xml:588(para)
-msgid "The 'Splats' checkbox selects whether you want the sound played and a small 'Splat!' to appear on the screen."
+msgid ""
+"The 'Splats' checkbox selects whether you want the sound played and a small "
+"'Splat!' to appear on the screen."
 msgstr ""
 
 #: C/gnobots2.xml:556(para)
-msgid "<guimenuitem>Game</guimenuitem>&mdash; This page allows you to choose the type of game you want to play. The drop-down box at the top of the page allows you to choose from a number of predefined games, and the list-box below it shows the settings for that game. You can't change these options in the middle of a game, so they will be disabled then. There are also several options at the bottom of the dialog: <placeholder-1/>"
+msgid ""
+"<guimenuitem>Game</guimenuitem>&mdash; This page allows you to choose the "
+"type of game you want to play. The drop-down box at the top of the page "
+"allows you to choose from a number of predefined games, and the list-box "
+"below it shows the settings for that game. You can't change these options in "
+"the middle of a game, so they will be disabled then. There are also several "
+"options at the bottom of the dialog: <placeholder-1/>"
 msgstr ""
 
 #: C/gnobots2.xml:599(para)
-msgid "<guimenuitem>Graphics</guimenuitem>&mdash; This page allows you to select the graphics used throughout the game from the list in the dropdown-box. You can also select the background colour from this tab."
+msgid ""
+"<guimenuitem>Graphics</guimenuitem>&mdash; This page allows you to select "
+"the graphics used throughout the game from the list in the dropdown-box. You "
+"can also select the background colour from this tab."
 msgstr ""
 
 #: C/gnobots2.xml:609(para)
-msgid "<guimenuitem>Keyboard</guimenuitem>&mdash; This screen allows you to define your own keyboard controls. The three pre-defined sets at the bottom were described in the previous section. To select a different key for a command, click on the button for that command and then press the key you want to use."
+msgid ""
+"<guimenuitem>Keyboard</guimenuitem>&mdash; This screen allows you to define "
+"your own keyboard controls. The three pre-defined sets at the bottom were "
+"described in the previous section. To select a different key for a command, "
+"click on the button for that command and then press the key you want to use."
 msgstr ""
 
 #: C/gnobots2.xml:548(para)
-msgid "You can modify the behaviour and appearance of the game by selecting <guimenuitem> Preferences</guimenuitem> under the <guimenu>Settings</guimenu> menu. This brings up a dialog with three tabs: <placeholder-1/>"
+msgid ""
+"You can modify the behaviour and appearance of the game by selecting "
+"<guimenuitem> Preferences</guimenuitem> under the <guimenu>Settings</"
+"guimenu> menu. This brings up a dialog with three tabs: <placeholder-1/>"
 msgstr ""
 
 #: C/gnobots2.xml:621(para)
-msgid "Any changes you make take effect immediately and are automatically saved."
+msgid ""
+"Any changes you make take effect immediately and are automatically saved."
 msgstr ""
 
 #: C/gnobots2.xml:625(para)
-msgid "You can design your own graphics for the game if you want. The graphics files are found in <filename class=\"directory\"> $PREFIX/share/pixmaps/gnobots2 </filename>, where $PREFIX is the prefix into which GNOME was installed. This is usually either <filename class=\"directory\">/usr</filename> or <filename class=\"directory\">/usr/local</filename>."
+msgid ""
+"You can design your own graphics for the game if you want. The graphics "
+"files are found in <filename class=\"directory\"> $PREFIX/share/pixmaps/"
+"gnobots2 </filename>, where $PREFIX is the prefix into which GNOME was "
+"installed. This is usually either <filename class=\"directory\">/usr</"
+"filename> or <filename class=\"directory\">/usr/local</filename>."
 msgstr ""
 
 #: C/gnobots2.xml:636(para)
-msgid "Each character is 16x16 pixels and there are 14 of them arranged in a PNG file which is 224x16 pixels in size. You can look at the existing files to see the order in which they must be arranged to produce the correct animated sequences."
+msgid ""
+"Each character is 16x16 pixels and there are 14 of them arranged in a PNG "
+"file which is 224x16 pixels in size. You can look at the existing files to "
+"see the order in which they must be arranged to produce the correct animated "
+"sequences."
 msgstr ""
 
 #: C/gnobots2.xml:642(para)
-msgid "Any graphics files which are placed in the directory are auto-detected, so you don't need to alter any configuration files. You can also define your own game configurations by creating extra <filename> .cfg </filename> files which are stored in the <filename class=\"directory\"> $PREFIX/share/gnobots2 </filename> directory."
+msgid ""
+"Any graphics files which are placed in the directory are auto-detected, so "
+"you don't need to alter any configuration files. You can also define your "
+"own game configurations by creating extra <filename> .cfg </filename> files "
+"which are stored in the <filename class=\"directory\"> $PREFIX/share/"
+"gnobots2 </filename> directory."
 msgstr ""
 
 #: C/gnobots2.xml:664(title)
@@ -547,7 +741,13 @@ msgid "Authors"
 msgstr "Autores"
 
 #: C/gnobots2.xml:675(para)
-msgid "<application>GNOME Robots</application> was written by Mark Rae (<email>m.rae@inpharmatica.co.uk</email>). This manual was written by Patanjali Somayaji (<email>patanjali@mindless.com</email>), from the original HTML documentation by Mark Rae. To report a bug or make a suggestion regarding this application or this manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" type=\"help\">document</ulink>."
+msgid ""
+"<application>GNOME Robots</application> was written by Mark Rae (<email>m."
+"rae@inpharmatica.co.uk</email>). This manual was written by Patanjali "
+"Somayaji (<email>patanjali@mindless.com</email>), from the original HTML "
+"documentation by Mark Rae. To report a bug or make a suggestion regarding "
+"this application or this manual, follow the directions in this <ulink url="
+"\"ghelp:gnome-feedback\" type=\"help\">document</ulink>."
 msgstr ""
 
 #: C/gnobots2.xml:702(title)
@@ -555,11 +755,25 @@ msgid "License"
 msgstr "Licencia"
 
 #: C/gnobots2.xml:703(para)
-msgid "This program is free software; you can redistribute it and/or modify it under the terms of the <ulink type=\"help\" url=\"gnome-help:gpl\"><citetitle>GNU General Public License</citetitle></ulink> as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
-msgstr "Este programa es software libre; puede redistribuirlo y/o modificarlo bajo los términos de la <ulink type=\"help\" url=\"gnome-help:gpl\"><citetitle>Licencia Pública General GNU</citetitle></ulink> tal como se publica por la Free Software Foundation; ya sea la versión 2 de la Licencia, o (a su elección) cualquier versión posterior."
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the <ulink type=\"help\" url=\"gnome-help:gpl"
+"\"><citetitle>GNU General Public License</citetitle></ulink> as published by "
+"the Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version."
+msgstr ""
+"Este programa es software libre; puede redistribuirlo y/o modificarlo bajo "
+"los términos de la <ulink type=\"help\" url=\"gnome-help:gpl"
+"\"><citetitle>Licencia Pública General GNU</citetitle></ulink> tal como se "
+"publica por la Free Software Foundation; ya sea la versión 2 de la Licencia, "
+"o (a su elección) cualquier versión posterior."
 
 #: C/gnobots2.xml:711(para)
-msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public License</citetitle> for more details."
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public "
+"License</citetitle> for more details."
 msgstr ""
 "Este programa se distribuye con la esperanza de que le sea útil, pero SIN "
 "NINGUNA GARANTÍA; sin incluso la garantía implícita de MERCANTILIDAD o "
@@ -567,11 +781,26 @@ msgstr ""
 "General GNU</citetitle> para más detalles."
 
 #: C/gnobots2.xml:717(para)
-msgid "A copy of the <citetitle>GNU General Public License</citetitle> is included as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also obtain a copy of the <citetitle>GNU General Public License</citetitle> from the Free Software Foundation by visiting <ulink type=\"http\" url=\"http://www.fsf.org\">their Web site</ulink> or by writing to <address> Free Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 <city>Boston</city>, <state>MA</state><postcode>02111-1307</postcode><country>USA</country></address>"
-msgstr "Una copia de la <citetitle>Licencia Pública General GNU</citetitle> está incluida en el apéndice de la <citetitle>Guía de Usuario de GNOME</citetitle>. También puede obtener una copia de la <citetitle>Licencia Pública General GNU</citetitle> de la Free Software Foundation visitando <ulink url=\"http://www.fsf.org\" type=\"http\">su página web</ulink> o escribiendo a la Free Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 <city>Boston</city>, <state>MA</state><postcode>02111-1307</postcode><country>USA</country></address>"
+msgid ""
+"A copy of the <citetitle>GNU General Public License</citetitle> is included "
+"as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
+"obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
+"the Free Software Foundation by visiting <ulink type=\"http\" url=\"http://"
+"www.fsf.org\">their Web site</ulink> or by writing to <address> Free "
+"Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 "
+"<city>Boston</city>, <state>MA</state><postcode>02111-1307</"
+"postcode><country>USA</country></address>"
+msgstr ""
+"Una copia de la <citetitle>Licencia Pública General GNU</citetitle> está "
+"incluida en el apéndice de la <citetitle>Guía de Usuario de GNOME</"
+"citetitle>. También puede obtener una copia de la <citetitle>Licencia "
+"Pública General GNU</citetitle> de la Free Software Foundation visitando "
+"<ulink url=\"http://www.fsf.org\" type=\"http\">su página web</ulink> o "
+"escribiendo a la Free Software Foundation, Inc. <street>59 Temple Place</"
+"street> - Suite 330 <city>Boston</city>, <state>MA</state><postcode>02111-"
+"1307</postcode><country>USA</country></address>"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/gnobots2.xml:0(None)
 msgid "translator-credits"
 msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007"
-

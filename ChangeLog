@@ -1,3 +1,8 @@
+2007-07-13  Thomas H.P. Andersen  <phomes@gmail.com>
+
+	* game.c Don't enter endless loop when there are no safe teleport locations
+	Patch from Ferenc Gerlits in bug #438829.
+
 2007-06-27  Thomas H.P. Andersen  <phomes@gmail.com>
 
 	* properties.c:

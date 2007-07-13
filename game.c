@@ -1273,20 +1273,10 @@ safe_teleport (void)
   gint xp, yp, ixp, iyp;
   gint i, j;
 
-  if (properties_super_safe_moves () && !safe_teleport_available ()) {
-    /* FIXME: This code is untested - in normal play you have to get to 
-     * about level 61. */
-    if (!safe_move_available ()) {
-      message_box (_
-		   ("You have run out of safe moves - the robots have won!"));
-      kill_player ();
-      return FALSE;
-    } else if (safe_teleports > 0) {
-      message_box (_("There are no safe locations to teleport to!!"));
-      return FALSE;
-    } else {
-      return random_teleport ();
-    }
+  if (!safe_teleport_available ()) {
+    message_box (_("There are no safe locations to teleport to!!"));
+    kill_player ();
+    return FALSE;
   }
 
   if (safe_teleports <= 0)

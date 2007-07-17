@@ -265,7 +265,7 @@ about_cb (GtkAction * action, gpointer data)
 			 "comments", _("Based on classic BSD Robots."),
 			 "authors", authors,
 			 "documenters", documenters,
-			 "translator_credits", _("translator-credits"),
+			 "translator-credits", _("translator-credits"),
 			 "logo-icon-name", "gnome-robots",
 			 "website",
 			 "http://www.gnome.org/projects/gnome-games/",

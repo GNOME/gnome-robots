@@ -1,3 +1,15 @@
+2007-07-27  Andreas Røsdal  <andreasr@gnome.org>
+
+	* es/gnobots2-es.omf:
+	* es/legal.xml:
+	* es/topic.dat:
+	* es/Makefile.am:
+	* es/gnobots2.xml:
+	* Makefile.am: Resolve bug #459693, which caused
+	'make distcheck' to fail. This was caused by the previous
+	commit which didn't remove the obsolete files when migrating
+	the translation to gnome-doc-utils.
+
 2007-07-15  Jorge Gonzalez <jorgegonz@svn.gnome.org>
 
         * es.po: Updated Spanish translation

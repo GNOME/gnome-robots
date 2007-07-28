@@ -1,3 +1,8 @@
+2007-07-28  Andreas Røsdal  <andreasr@gnome.org>
+
+	* menu.c: Apply "view toolbar" property on startup. Patch from
+	Ferenc Gerlits in bug #451360.
+
 2007-07-13  Thomas H.P. Andersen  <phomes@gmail.com>
 
 	* game.c Don't enter endless loop when there are no safe teleport locations

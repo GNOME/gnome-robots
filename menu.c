@@ -410,4 +410,6 @@ connect_toolbar_toggle (GtkWidget * toolbar)
 		    G_CALLBACK (toggle_toolbar_cb), toolbar);
   gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (toolbar_toggle_action),
 				properties_show_toolbar ());
+
+  toggle_toolbar_cb (GTK_TOGGLE_ACTION (toolbar_toggle_action), toolbar);
 }

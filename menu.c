@@ -262,7 +262,7 @@ about_cb (GtkAction * action, gpointer data)
 			 "version", VERSION,
 			 "copyright", "Copyright \xc2\xa9 1998-2007 Mark Rae",
 			 "license", license,
-			 "comments", _("Based on classic BSD Robots."),
+			 "comments", _("Based on classic BSD Robots.\n\nRobots is a part of GNOME Games."),
 			 "authors", authors,
 			 "documenters", documenters,
 			 "translator-credits", _("translator-credits"),

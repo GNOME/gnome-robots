@@ -2,12 +2,11 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
     "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appversion "2.12">
-  <!ENTITY manrevision "2.8">
-  <!ENTITY date "September 2004">
+  <!ENTITY appversion "2.18">
+  <!ENTITY manrevision "2.9">
+  <!ENTITY date "August 2007">
   <!ENTITY app "<application>GNOME Robots</application>">
   <!ENTITY appname "GNOME Robots">
-  <!ENTITY version "2.8.0"> 
 ]>
 
 <!-- 
@@ -89,21 +88,24 @@
 
     <revhistory>
       <revision> 
-	<revnumber>&appname; Manual V&manrevision;</revnumber> 
-	<date>&date;</date> 
+	<revnumber>&appname; Manual V2.8</revnumber> 
+	<date>September 2004</date> 
 	<revdescription> 
 	  <para role="author">Patanjali Somayaji
 	    <email>patanjali@mindless.com</email>
+	  </para>
+	  <para role="author">Mark Rae
+	    <email>m.rae@inpharmatica.co.uk</email>
 	  </para>
 	  <para role="publisher">GNOME Documentation Project</para>
 	</revdescription> 
       </revision> 
       <revision> 
-	<revnumber>Full title of previous manual.</revnumber> 
-	<date>Release date of previous manual.</date> 
+	<revnumber>&appname; Manual V&manrevision;</revnumber> 
+	<date>&date;</date> 
 	<revdescription> 
-	  <para role="author">Mark Rae
-	    <email>m.rae@inpharmatica.co.uk</email>
+	  <para role="author">Claude Paroz
+	    <email>claude@2xlibre.net</email>
 	  </para>
 	  <para role="publisher">GNOME Documentation Project</para>
 	</revdescription> 
@@ -155,7 +157,7 @@
      <para>
        To run <application>GNOME Robots</application>, select
        <menuchoice>
-       <guisubmenu>games</guisubmenu>
+       <guisubmenu>Games</guisubmenu>
        <guimenuitem>Robots</guimenuitem>
        </menuchoice>
        from the <guimenu>Main Menu</guimenu>, or type
@@ -166,7 +168,7 @@
        <application>GNOME Robots</application> is included in the
        <filename>gnome-games</filename> package, which is part of the
        GNOME desktop environment. This document describes version
-       &version; of <application>GNOME Robots</application>.
+       &appversion; of <application>GNOME Robots</application>.
      </para>
    </sect1>
  
@@ -206,7 +208,7 @@
      </para>
    
      <para>
-       If you press the 'Wait' button (see below) you will no longer be able to
+       If you press the <guibutton>Wait</guibutton> button (see below) you will no longer be able to
        move until either all of the robots (which still move towards you) are
        gone, or you are killed. Doing this is risky, but may earn you extra 
        safe teleports.
@@ -226,7 +228,7 @@
     <title>Using GNOME Robots</title>
     <para>
       <application>GNOME Robots</application> is extremely simple to play. 
-      You can use either the mouse of the keypad.
+      You can use either the mouse or the keyboard.
        This section describes basic usage of
       <application>GNOME Robots</application>.
     </para>
@@ -257,16 +259,18 @@
       </para> 
 
       <para>
-        To start a new game, click on <guimenuitem>New Game</guimenuitem> in the 
-        <guimenu>Game</guimenu> menu. 
+        To start a new game, choose <guimenuitem>New</guimenuitem> in the 
+        <guimenu>Game</guimenu> menu or click on the <guibutton>New</guibutton> button
+        on the toolbar. 
       </para>
 
       <para>
         To move, either click in the direction you want to move (the
         cursor will show you which way you will go) or press the
-        appropriate arrow on the keypad. Clicking on the little man
+        appropriate key on the keyboard (keypad by default). Clicking on the little man
         will keep you still. To teleport (safely or unsafely), and to
-        wait, use the buttons on the toolbar.
+        wait, use the buttons on the toolbar or use the items in the
+        <guimenu>Move</guimenu> menu.
 	</para>
     </sect2>
   </sect1>
@@ -294,7 +298,7 @@
 	    <para>
             <menuchoice> 
 	       <shortcut><keysym>Ctrl-N</keysym></shortcut>
-               <guimenuitem>New Game</guimenuitem> 
+               <guimenuitem>New</guimenuitem> 
 		  </menuchoice> &mdash; starts a new game of GNOME Robots.
 	   
             </para>
@@ -303,8 +307,8 @@
 	    <listitem>
 	    <para>
               <menuchoice>
-              <guimenuitem>Scores...</guimenuitem>
-		  </menuchoice> &mdash; shows the scores.
+              <guimenuitem>Scores</guimenuitem>
+		  </menuchoice> &mdash; shows the higher scores.
 		</para>
             </listitem>
 
@@ -312,11 +316,40 @@
             <para>
               <menuchoice>
               <shortcut><keysym>Ctrl-Q</keysym></shortcut>
-              <guimenuitem>Exit</guimenuitem>
+              <guimenuitem>Quit</guimenuitem>
               </menuchoice>
             </para>
             </listitem>
           </itemizedlist>
+        </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><guimenu>Move</guimenu></term>
+        <listitem>
+        <para>
+          This menu contains:
+          <itemizedlist>
+          <listitem>
+            <para>
+              <guimenuitem>Teleport</guimenuitem>&mdash;
+              teleports you in a safe location.
+            </para>
+          </listitem>
+          <listitem>
+          <para>
+            <guimenuitem>Random</guimenuitem>&mdash; teleports you in
+            a random location.
+          </para>
+          </listitem>
+          <listitem>
+          <para>
+            <guimenuitem>Wait</guimenuitem>&mdash; places you in wait mode.
+          </para>
+          </listitem>
+        </itemizedlist>
+
         </para>
         </listitem>
       </varlistentry>
@@ -372,18 +405,20 @@
   <sect1 id="keyboard">
     <title>Using the keyboard</title>
     <para>
-    There are three predefined sets of keys for controlling your
-    player. You can select which set to using the
-    <guimenuitem>Keyboard</guimenuitem> tab in the
-    <guimenuitem>Preferences</guimenuitem> dialog.
+    You can use the keyboard to control the little man. By default, the keys from
+    the keypad are configured for the game. However you can customize the key
+    mappings in the <guimenuitem>Keyboard</guimenuitem> tab in the
+    <guimenuitem>Preferences</guimenuitem> dialog. To select a different key
+    for a command, double-click on the line for that command and then
+    press the key you want to use.
     </para>
 
-      <sect2 id="set3-keys">     
+      <sect2 id="default-keys">     
       <title>
-        The Keypad
+        Default Key Mappings
       </title>
       <para>
-        When you select this set, you use the numeric keypad on the
+        By default, you use the numeric keypad on the
         right-hand side of the keyboard (not the separate arrow keys).
         <note>
         <title>Switch on the NumLock Key</title>
@@ -393,158 +428,53 @@
         </note>
         <orderedlist>
           <listitem><para>
-            Up Left: <keycap>7</keycap>
+            Up Left: <keycap>Home</keycap>
           </para></listitem> 
           <listitem><para>
-            Up: <keycap>8</keycap>	      
+            Up: <keycap>Up</keycap>	      
           </para></listitem>
           <listitem><para>
-            Up Right: <keycap>9</keycap>	      
+            Up Right: <keycap>Page Up</keycap>	      
           </para></listitem>
           <listitem><para>
-            Left: <keycap>4</keycap>	      
+            Left: <keycap>Left</keycap>	      
           </para></listitem>
           <listitem><para>
-            Stand Still: <keycap>5</keycap>	      
+            Stand Still: <keycap>Begin</keycap>	      
           </para></listitem>
           <listitem><para>
-            Right: <keycap>6</keycap>	      
+            Right: <keycap>Right</keycap>	      
           </para></listitem>
           <listitem><para>
-            Down Left: <keycap>1</keycap>	      
+            Down Left: <keycap>End</keycap>	      
           </para></listitem>
           <listitem><para>
-            Down: <keycap>2</keycap>	      
+            Down: <keycap>Down</keycap>	      
           </para></listitem>
           <listitem><para>
-            Down Right: <keycap>3</keycap>	      
+            Down Right: <keycap>Page Down</keycap>	      
           </para></listitem>
           <listitem><para>
             Teleport: <keycap>+</keycap>	      
           </para></listitem>
           <listitem><para>
-            Randomly Teleport: <keycap>-</keycap>	      
+            Randomly Teleport: <keycap>*</keycap>	      
           </para></listitem>
           <listitem><para>
-            Wait: <keycap>Return</keycap>	      
+            Wait: <keycap>Enter</keycap>	      
           </para></listitem>
         </orderedlist>
 
       </para>	  
     </sect2>
 
-  <sect2 id="set2-keys">	
-      <title>
-      Left Hand Keys 
-      </title>
-      <para>
-         These keys are laid out on the left-hand side of the keyboard.
-      </para>
-    <orderedlist>
-          <listitem><para>
-            Up Left: <keycap>Q</keycap>
-          </para></listitem> 
-          <listitem><para>
-            Up: <keycap>W</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Up Right: <keycap>E</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Left: <keycap>A</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Stand Still: <keycap>S</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Right: <keycap>D</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down Left: <keycap>Z</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down: <keycap>X</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down Right: <keycap>C</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Teleport: <keycap>T</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Randomly Teleport: <keycap>R</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Wait: <keycap>Return</keycap>	      
-          </para></listitem>
-        </orderedlist>
-
-
-
-
-      </sect2>
-
-    <sect2 id="standard-keys">
-
-    <title>
-    Original Keys 
-    </title>
-    
-    <para>
-      These keys are the controls used in the original robots
-      game. They will be familiar to people who have played the
-      older text-based versions.
-    </para>
-        <orderedlist>
-          <listitem>
-	  <para>
-            Up Left: <keycap>Y</keycap>
-	  </para>
-          </listitem> 
-          <listitem><para>
-            Up: <keycap>K</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Up Right: <keycap>U</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Left: <keycap>H</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Stand Still: <keycap>.</keycap> or <keycap>space</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Right: <keycap>L</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down Left: <keycap>B</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down: <keycap>J</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Down Right: <keycap>N</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Teleport: <keycap>T</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Randomly Teleport: <keycap>R</keycap>	      
-          </para></listitem>
-          <listitem><para>
-            Wait: <keycap>W</keycap>	      
-          </para></listitem>
-        </orderedlist>
-  </sect2>
       
   </sect1>
    
   <!-- ============= Customization ============================= -->
   
   <sect1 id="customization">
-    <title>
-      Customizing GNOME Robots
-    </title>
+    <title>Customizing GNOME Robots</title>
     <para>
       You can modify the behaviour and appearance of
       the game by selecting <guimenuitem>
@@ -557,8 +487,7 @@
 	    <guimenuitem>Game</guimenuitem> &mdash; This page allows
         you to choose the type of game you want to play.  The
         drop-down box at the top of the page allows you to choose from
-        a number of predefined games, and the list-box below it shows
-        the settings for that game. You can't change these options in
+        a number of predefined games. You can't change these options in
         the middle of a game, so they will be disabled then. There are
         also several options at the bottom of the dialog:
 	
@@ -574,21 +503,21 @@
           </para></listitem>
           <listitem><para>
 	  
-            There is also a ``super safe mode''.  If you select this,
+            There is also a <quote>super safe mode</quote>.  If you select this,
             you get beeped when there is no safe move and your only
             option is to teleport out.
 	  
           </para></listitem>
           <listitem><para>
 	  
-            If you select the sound check-box the game will play
+            If you select the sound checkbox the game will play
             sounds for various events throughout the game.
 	  
           </para></listitem>
           <listitem><para>
            
-	    The 'Splats' checkbox selects whether you want the sound
-            played and a small 'Splat!' to appear on the screen.
+	    The <quote>Splats</quote> checkbox selects whether you want the sound
+            played and a small <quote>Splat!</quote> to appear on the screen.
 	  
           </para></listitem>
         </orderedlist>
@@ -597,7 +526,7 @@
 	</listitem>
         <listitem>
         <para>
-	    <guimenuitem>Graphics</guimenuitem> &mdash; This page
+	    <guimenuitem>Appearance</guimenuitem> &mdash; This page
           allows you to select the graphics used throughout the game
           from the list in the dropdown-box. You can also select the
           background colour from this tab.
@@ -609,9 +538,8 @@
         <para>
 	    <guimenuitem>Keyboard</guimenuitem> &mdash;
           This screen allows you to define your own keyboard
-          controls. The three pre-defined sets at the bottom were
-          described in the previous section. To select a different key
-          for a command, click on the button for that command and then
+          controls. To select a different key
+          for a command, double-click on the button for that command and then
           press the key you want to use.
         </para>
         </listitem>
@@ -660,13 +588,13 @@ Any changes you make take effect immediately and are automatically saved.
   <!-- This section should describe known bugs and limitations of
       the program if there are any - please be frank and list all
       problems you know of. -->
-  <sect1 id="bugs">
+<!--  <sect1 id="bugs">
     <title>Known Bugs and Limitations</title>
     <para>
       This application has no known bugs.
     </para>
   </sect1>
-
+-->
 
 <!-- ============= Authors ================================ -->
 
@@ -723,14 +651,11 @@ Any changes you make take effect immediately and are automatically saved.
       url="http://www.fsf.org">their Web site</ulink> or by writing to
       <address>
         Free Software Foundation, Inc.
-        <street>59 Temple Place</street> - Suite 330
-        <city>Boston</city>, <state>MA</state> <postcode>02111-1307</postcode>
+        <street>51 Franklin Street, Fifth Floor</street>
+        <city>Boston</city>, <state>MA</state> <postcode>02110-1301</postcode>
         <country>USA</country>
       </address>
     </para>
   </sect1>
-
-
- 
 
 </article>

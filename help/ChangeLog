@@ -1,3 +1,8 @@
+2007-08-29  Claude Paroz  <claude@2xlibre.net>
+
+	* C/gnobots2.xml: Updated documentation, especially keyboard controls.
+	Fixes #392586.
+
 2007-07-27  Andreas Røsdal  <andreasr@gnome.org>
 
 	* es/gnobots2-es.omf:

@@ -1,5 +1,9 @@
 2007-08-29  Claude Paroz  <claude@2xlibre.net>
 
+	* C/gnobots2.xml: NumLock key should now be recommended off.
+
+2007-08-29  Claude Paroz  <claude@2xlibre.net>
+
 	* C/gnobots2.xml: Updated documentation, especially keyboard controls.
 	Fixes #392586.
 

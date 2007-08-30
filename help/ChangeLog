@@ -1,3 +1,7 @@
+2007-08-30  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
+
+	* es/es.po: Updated Spanish translation
+
 2007-08-29  Claude Paroz  <claude@2xlibre.net>
 
 	* C/gnobots2.xml: NumLock key should now be recommended off.
@@ -19,11 +23,11 @@
 	commit which didn't remove the obsolete files when migrating
 	the translation to gnome-doc-utils.
 
-2007-07-15  Jorge Gonzalez <jorgegonz@svn.gnome.org>
+2007-07-15  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
-        * es.po: Updated Spanish translation
+        * es/es.po: Updated Spanish translation
 
-2007-07-12  Jorge Gonzalez <jorgegonz@svn.gnome.org>
+2007-07-12  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
         * es/es.po: Updated Spanish translation
         * Makefile.am: Added es to DOC_LINGUAS

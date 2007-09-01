@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnobots2.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-04 03:45+0100\n"
-"PO-Revision-Date: 2007-08-23 00:16+0200\n"
+"POT-Creation-Date: 2007-08-30 03:29+0100\n"
+"PO-Revision-Date: 2007-09-01 16:17+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,32 +16,34 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnobots2.xml:248(None)
-msgid "@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
-msgstr "@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+#: C/gnobots2.xml:250(None)
+msgid ""
+"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+msgstr ""
+"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
 
-#: C/gnobots2.xml:27(title)
-msgid "<application>GNOME Robots</application> Manual V2.8"
+#: C/gnobots2.xml:26(title)
+msgid "<application>GNOME Robots</application> Manual V2.9"
 msgstr ""
 
-#: C/gnobots2.xml:30(para)
+#: C/gnobots2.xml:29(para)
 msgid ""
 "GNOME Robots is a development of the text based robots game which can be "
 "found on a number of UNIX systems."
 msgstr ""
 
-#: C/gnobots2.xml:36(year)
+#: C/gnobots2.xml:35(year)
 msgid "2001"
 msgstr "2001"
 
-#: C/gnobots2.xml:37(holder)
+#: C/gnobots2.xml:36(holder)
 msgid "Patanjali Somayaji, Mark Rae"
-msgstr ""
+msgstr "Patanjali Somayaji, Mark Rae"
 
-#: C/gnobots2.xml:53(publishername) C/gnobots2.xml:98(para)
-#: C/gnobots2.xml:108(para)
+#: C/gnobots2.xml:52(publishername) C/gnobots2.xml:100(para)
+#: C/gnobots2.xml:110(para)
 msgid "GNOME Documentation Project"
-msgstr ""
+msgstr "_Créer un point d&apos;arrêt"
 
 #: C/gnobots2.xml:2(para)
 msgid ""
@@ -106,63 +108,67 @@ msgid ""
 "<placeholder-1/>"
 msgstr ""
 
-#: C/gnobots2.xml:63(firstname)
+#: C/gnobots2.xml:62(firstname)
 msgid "Patanjali"
 msgstr "Patanjali"
 
-#: C/gnobots2.xml:64(surname)
+#: C/gnobots2.xml:63(surname)
 msgid "Somayaji"
-msgstr ""
+msgstr "Somayaji"
 
-#: C/gnobots2.xml:66(email)
+#: C/gnobots2.xml:65(email)
 msgid "patanjali@mindless.com"
-msgstr ""
+msgstr "patanjali@mindless.com"
 
-#: C/gnobots2.xml:70(firstname)
+#: C/gnobots2.xml:69(firstname)
 msgid "Mark"
-msgstr ""
+msgstr "Mark"
 
-#: C/gnobots2.xml:71(surname)
+#: C/gnobots2.xml:70(surname)
 msgid "Rae"
 msgstr "Rae"
 
-#: C/gnobots2.xml:73(email)
+#: C/gnobots2.xml:72(email)
 msgid "m.rae@inpharmatica.co.uk"
-msgstr ""
+msgstr "m.rae@inpharmatica.co.uk"
 
-#: C/gnobots2.xml:92(revnumber)
+#: C/gnobots2.xml:91(revnumber)
 msgid "GNOME Robots Manual V2.8"
 msgstr ""
 
-#: C/gnobots2.xml:93(date)
+#: C/gnobots2.xml:92(date)
 msgid "September 2004"
 msgstr "Setembre de 2004"
 
-#: C/gnobots2.xml:95(para)
+#: C/gnobots2.xml:94(para)
 msgid "Patanjali Somayaji <email>patanjali@mindless.com</email>"
-msgstr ""
+msgstr "Patanjali Somayaji <email>patanjali@mindless.com</email>"
 
-#: C/gnobots2.xml:102(revnumber)
-msgid "Full title of previous manual."
-msgstr ""
-
-#: C/gnobots2.xml:103(date)
-msgid "Release date of previous manual."
-msgstr ""
-
-#: C/gnobots2.xml:105(para)
+#: C/gnobots2.xml:97(para)
 msgid "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
+msgstr "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
+
+#: C/gnobots2.xml:104(revnumber)
+msgid "GNOME Robots Manual V2.9"
 msgstr ""
 
-#: C/gnobots2.xml:113(releaseinfo)
-msgid "This manual describes version 2.12 of GNOME Robots."
+#: C/gnobots2.xml:105(date)
+msgid "August 2007"
+msgstr "Agost de 2007"
+
+#: C/gnobots2.xml:107(para)
+msgid "Claude Paroz <email>claude@2xlibre.net</email>"
+msgstr "Claude Paroz <email>claude@2xlibre.net</email>"
+
+#: C/gnobots2.xml:115(releaseinfo)
+msgid "This manual describes version 2.18 of GNOME Robots."
 msgstr ""
 
-#: C/gnobots2.xml:120(title)
+#: C/gnobots2.xml:122(title)
 msgid "Feedback"
 msgstr ""
 
-#: C/gnobots2.xml:121(para)
+#: C/gnobots2.xml:123(para)
 msgid ""
 "To report a bug or make a suggestion regarding the <application>GNOME "
 "Robots</application> application or this manual, follow the directions in "
@@ -170,15 +176,15 @@ msgid ""
 "ulink>."
 msgstr ""
 
-#: C/gnobots2.xml:132(primary)
+#: C/gnobots2.xml:134(primary)
 msgid "GNOME Robots"
-msgstr ""
+msgstr "GNOME Robots"
 
-#: C/gnobots2.xml:139(title)
+#: C/gnobots2.xml:141(title)
 msgid "Introduction"
 msgstr "Introduccion"
 
-#: C/gnobots2.xml:141(para)
+#: C/gnobots2.xml:143(para)
 msgid ""
 "<application>GNOME Robots</application> is a game where you try and avoid a "
 "band of marauding robots which are, for no adequately explained reason, "
@@ -186,34 +192,34 @@ msgid ""
 "found on a number of UNIX systems."
 msgstr ""
 
-#: C/gnobots2.xml:148(para)
+#: C/gnobots2.xml:150(para)
 msgid ""
 "This new version includes two types of robots, movable junkheaps, multiple "
 "game configurations, user definable keyboard layouts, and sound, as well as "
 "all of the features which were present in the original GNOME Robots game."
 msgstr ""
 
-#: C/gnobots2.xml:155(para)
+#: C/gnobots2.xml:157(para)
 msgid ""
 "To run <application>GNOME Robots</application>, select "
-"<menuchoice><guisubmenu>games</guisubmenu><guimenuitem>Robots</guimenuitem></"
+"<menuchoice><guisubmenu>Games</guisubmenu><guimenuitem>Robots</guimenuitem></"
 "menuchoice> from the <guimenu>Main Menu</guimenu>, or type "
 "<command>gnobots2</command> on the command line."
 msgstr ""
 
-#: C/gnobots2.xml:165(para)
+#: C/gnobots2.xml:167(para)
 msgid ""
 "<application>GNOME Robots</application> is included in the <filename>gnome-"
 "games</filename> package, which is part of the GNOME desktop environment. "
-"This document describes version 2.8.0 of <application>GNOME Robots</"
+"This document describes version 2.18 of <application>GNOME Robots</"
 "application>."
 msgstr ""
 
-#: C/gnobots2.xml:174(title)
+#: C/gnobots2.xml:176(title)
 msgid "GNOME Robots Objective"
 msgstr ""
 
-#: C/gnobots2.xml:175(para)
+#: C/gnobots2.xml:177(para)
 msgid ""
 "The objective of GNOME Robots is quite simple. You are surrounded by a "
 "number of robots or other hostile adversaries. As you move about they will "
@@ -222,14 +228,14 @@ msgid ""
 "advantage of their vulnerabilities."
 msgstr ""
 
-#: C/gnobots2.xml:183(para)
+#: C/gnobots2.xml:185(para)
 msgid ""
 "Robots are destroyed when they collide with each other, or when they collide "
 "with the debris of some previous collision. You die if a robot ends up right "
 "next to you."
 msgstr ""
 
-#: C/gnobots2.xml:189(para)
+#: C/gnobots2.xml:191(para)
 msgid ""
 "In some of the game configurations (you can choose from five different sets "
 "of rules), you can push the junkheaps around to form barricades to protect "
@@ -237,7 +243,7 @@ msgid ""
 "junkheaps on top of them for an additional bonus."
 msgstr ""
 
-#: C/gnobots2.xml:194(para)
+#: C/gnobots2.xml:196(para)
 msgid ""
 "You can also save yourself by teleporting yourself to a random location. "
 "Unfortunately, randomly teleporting means that you might end up being right "
@@ -251,321 +257,242 @@ msgid ""
 "enough."
 msgstr ""
 
-#: C/gnobots2.xml:208(para)
+#: C/gnobots2.xml:210(para)
 msgid ""
-"If you press the 'Wait' button (see below) you will no longer be able to "
-"move until either all of the robots (which still move towards you) are gone, "
-"or you are killed. Doing this is risky, but may earn you extra safe "
-"teleports."
+"If you press the <guibutton>Wait</guibutton> button (see below) you will no "
+"longer be able to move until either all of the robots (which still move "
+"towards you) are gone, or you are killed. Doing this is risky, but may earn "
+"you extra safe teleports."
 msgstr ""
 
-#: C/gnobots2.xml:215(para)
+#: C/gnobots2.xml:217(para)
 msgid ""
 "If you manage to reach the point where more than half of the screen is "
 "occupied by robots, the number of robots will be reset to the starting "
 "amount, allowing you to continue."
 msgstr ""
 
-#: C/gnobots2.xml:226(title)
+#: C/gnobots2.xml:228(title)
 msgid "Using GNOME Robots"
 msgstr ""
 
-#: C/gnobots2.xml:227(para)
+#: C/gnobots2.xml:229(para)
 msgid ""
 "<application>GNOME Robots</application> is extremely simple to play. You can "
-"use either the mouse of the keypad. This section describes basic usage of "
+"use either the mouse or the keyboard. This section describes basic usage of "
 "<application>GNOME Robots</application>."
 msgstr ""
 
-#: C/gnobots2.xml:236(title)
+#: C/gnobots2.xml:238(title)
 msgid "Basic usage"
 msgstr ""
 
-#: C/gnobots2.xml:244(title)
+#: C/gnobots2.xml:246(title)
 msgid "GNOME Robots Main Window"
 msgstr ""
 
-#: C/gnobots2.xml:251(phrase)
+#: C/gnobots2.xml:253(phrase)
 msgid "GNOME Robots Main Window."
 msgstr ""
 
-#: C/gnobots2.xml:237(para)
+#: C/gnobots2.xml:239(para)
 msgid ""
 "Starting <application>GNOME Robots</application> opens the <interface>Main "
 "window</interface>, shown in <xref linkend=\"mainwindow-fig\"/>. "
 "<placeholder-1/>"
 msgstr ""
 
-#: C/gnobots2.xml:259(para)
+#: C/gnobots2.xml:261(para)
 msgid ""
-"To start a new game, click on <guimenuitem>New Game</guimenuitem> in the "
-"<guimenu>Game</guimenu> menu."
+"To start a new game, choose <guimenuitem>New</guimenuitem> in the "
+"<guimenu>Game</guimenu> menu or click on the <guibutton>New</guibutton> "
+"button on the toolbar."
 msgstr ""
 
-#: C/gnobots2.xml:264(para)
+#: C/gnobots2.xml:267(para)
 msgid ""
 "To move, either click in the direction you want to move (the cursor will "
-"show you which way you will go) or press the appropriate arrow on the "
-"keypad. Clicking on the little man will keep you still. To teleport (safely "
-"or unsafely), and to wait, use the buttons on the toolbar."
+"show you which way you will go) or press the appropriate key on the keyboard "
+"(keypad by default). Clicking on the little man will keep you still. To "
+"teleport (safely or unsafely), and to wait, use the buttons on the toolbar "
+"or use the items in the <guimenu>Move</guimenu> menu."
 msgstr ""
 
-#: C/gnobots2.xml:279(title)
+#: C/gnobots2.xml:283(title)
 msgid "Menus"
 msgstr "Menuts"
 
-#: C/gnobots2.xml:280(para)
+#: C/gnobots2.xml:284(para)
 msgid ""
 "The menu bar, located at the top of the <interface>game board</interface>, "
 "contains the following menus:"
 msgstr ""
 
-#: C/gnobots2.xml:288(guimenu)
+#: C/gnobots2.xml:292(guimenu)
 msgid "Game"
 msgstr "Jòc"
 
-#: C/gnobots2.xml:294(para)
+#: C/gnobots2.xml:298(para)
 msgid ""
-"<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New "
-"Game</guimenuitem></menuchoice>&mdash; starts a new game of GNOME Robots."
+"<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
+"guimenuitem></menuchoice>&mdash; starts a new game of GNOME Robots."
 msgstr ""
 
-#: C/gnobots2.xml:304(para)
+#: C/gnobots2.xml:308(para)
 msgid ""
-"<menuchoice><guimenuitem>Scores...</guimenuitem></menuchoice>&mdash; shows "
-"the scores."
+"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice>&mdash; shows the "
+"higher scores."
 msgstr ""
 
-#: C/gnobots2.xml:314(keysym)
+#: C/gnobots2.xml:318(keysym)
 msgid "Ctrl-Q"
 msgstr "Ctrl-Q"
 
-#: C/gnobots2.xml:315(guimenuitem)
-msgid "Exit"
-msgstr "Sortir"
+#: C/gnobots2.xml:319(guimenuitem)
+msgid "Quit"
+msgstr "Quitar"
 
-#: C/gnobots2.xml:290(para)
+#: C/gnobots2.xml:294(para)
 msgid "This menu contains three items: <placeholder-1/>"
 msgstr ""
 
-#: C/gnobots2.xml:325(guimenu)
+#: C/gnobots2.xml:329(guimenu)
+msgid "Move"
+msgstr "Desplaçar"
+
+#: C/gnobots2.xml:335(para)
+msgid ""
+"<guimenuitem>Teleport</guimenuitem>&mdash; teleports you in a safe location."
+msgstr ""
+
+#: C/gnobots2.xml:341(para)
+msgid ""
+"<guimenuitem>Random</guimenuitem>&mdash; teleports you in a random location."
+msgstr ""
+
+#: C/gnobots2.xml:347(para)
+msgid "<guimenuitem>Wait</guimenuitem>&mdash; places you in wait mode."
+msgstr ""
+
+#: C/gnobots2.xml:331(para) C/gnobots2.xml:377(para)
+msgid "This menu contains: <placeholder-1/>"
+msgstr ""
+
+#: C/gnobots2.xml:358(guimenu)
 msgid "Settings"
 msgstr "Paramètres"
 
-#: C/gnobots2.xml:331(para)
+#: C/gnobots2.xml:364(para)
 msgid ""
 "<guimenuitem>Preferences</guimenuitem> which brings up the preferences "
 "dialog box."
 msgstr ""
 
-#: C/gnobots2.xml:327(para)
-msgid "The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
+#: C/gnobots2.xml:360(para)
+msgid ""
+"The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
 msgstr ""
 
-#: C/gnobots2.xml:342(guimenu)
+#: C/gnobots2.xml:375(guimenu)
 msgid "Help"
 msgstr "Ajuda"
 
-#: C/gnobots2.xml:348(para)
+#: C/gnobots2.xml:381(para)
 msgid "<guimenuitem>Contents</guimenuitem>&mdash; shows this manual."
 msgstr ""
 
-#: C/gnobots2.xml:354(para)
+#: C/gnobots2.xml:387(para)
 msgid ""
 "<guimenuitem>About</guimenuitem>&mdash; shows basic information about "
 "<application>GNOME Robots</application>, such as the author's name and the "
 "application version number."
 msgstr ""
 
-#: C/gnobots2.xml:344(para)
-msgid "This menu contains: <placeholder-1/>"
-msgstr ""
-
-#: C/gnobots2.xml:373(title)
+#: C/gnobots2.xml:406(title)
 msgid "Using the keyboard"
 msgstr ""
 
-#: C/gnobots2.xml:374(para)
-msgid ""
-"There are three predefined sets of keys for controlling your player. You can "
-"select which set to using the <guimenuitem>Keyboard</guimenuitem> tab in the "
-"<guimenuitem>Preferences</guimenuitem> dialog."
-msgstr ""
-
-#: C/gnobots2.xml:382(title)
-msgid "The Keypad"
-msgstr ""
-
-#: C/gnobots2.xml:389(title)
-msgid "Switch on the NumLock Key"
-msgstr ""
-
-#: C/gnobots2.xml:390(para)
-msgid "You may need to switch on the NumLock to make these work."
-msgstr ""
-
-#: C/gnobots2.xml:395(para)
-msgid "Up Left: <keycap>7</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:398(para)
-msgid "Up: <keycap>8</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:401(para)
-msgid "Up Right: <keycap>9</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:404(para)
-msgid "Left: <keycap>4</keycap>"
-msgstr ""
-
 #: C/gnobots2.xml:407(para)
-msgid "Stand Still: <keycap>5</keycap>"
+msgid ""
+"You can use the keyboard to control the little man. By default, the keys "
+"from the keypad are configured for the game. However you can customize the "
+"key mappings in the <guimenuitem>Keyboard</guimenuitem> tab in the "
+"<guimenuitem>Preferences</guimenuitem> dialog. To select a different key for "
+"a command, double-click on the line for that command and then press the key "
+"you want to use."
 msgstr ""
 
-#: C/gnobots2.xml:410(para)
-msgid "Right: <keycap>6</keycap>"
+#: C/gnobots2.xml:417(title)
+msgid "Default Key Mappings"
 msgstr ""
 
-#: C/gnobots2.xml:413(para)
-msgid "Down Left: <keycap>1</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:416(para)
-msgid "Down: <keycap>2</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:419(para)
-msgid "Down Right: <keycap>3</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:422(para)
-msgid "Teleport: <keycap>+</keycap>"
+#: C/gnobots2.xml:424(title)
+msgid "Switch off the NumLock Key"
 msgstr ""
 
 #: C/gnobots2.xml:425(para)
-msgid "Randomly Teleport: <keycap>-</keycap>"
+msgid "You may need to switch off the NumLock to make these work."
 msgstr ""
 
-#: C/gnobots2.xml:428(para) C/gnobots2.xml:477(para)
-msgid "Wait: <keycap>Return</keycap>"
+#: C/gnobots2.xml:430(para)
+msgid "Up Left: <keycap>Home</keycap>"
 msgstr ""
 
-#: C/gnobots2.xml:385(para)
+#: C/gnobots2.xml:433(para)
+msgid "Up: <keycap>Up</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:436(para)
+msgid "Up Right: <keycap>Page Up</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:439(para)
+msgid "Left: <keycap>Left</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:442(para)
+msgid "Stand Still: <keycap>Begin</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:445(para)
+msgid "Right: <keycap>Right</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:448(para)
+msgid "Down Left: <keycap>End</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:451(para)
+msgid "Down: <keycap>Down</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:454(para)
+msgid "Down Right: <keycap>Page Down</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:457(para)
+msgid "Teleport: <keycap>+</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:460(para)
+msgid "Randomly Teleport: <keycap>*</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:463(para)
+msgid "Wait: <keycap>Enter</keycap>"
+msgstr ""
+
+#: C/gnobots2.xml:420(para)
 msgid ""
-"When you select this set, you use the numeric keypad on the right-hand side "
-"of the keyboard (not the separate arrow keys). <placeholder-1/><placeholder-"
-"2/>"
+"By default, you use the numeric keypad on the right-hand side of the "
+"keyboard (not the separate arrow keys). <placeholder-1/><placeholder-2/>"
 msgstr ""
 
-#: C/gnobots2.xml:437(title)
-msgid "Left Hand Keys"
-msgstr ""
-
-#: C/gnobots2.xml:440(para)
-msgid "These keys are laid out on the left-hand side of the keyboard."
-msgstr ""
-
-#: C/gnobots2.xml:444(para)
-msgid "Up Left: <keycap>Q</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:447(para)
-msgid "Up: <keycap>W</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:450(para)
-msgid "Up Right: <keycap>E</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:453(para)
-msgid "Left: <keycap>A</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:456(para)
-msgid "Stand Still: <keycap>S</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:459(para)
-msgid "Right: <keycap>D</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:462(para)
-msgid "Down Left: <keycap>Z</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:465(para)
-msgid "Down: <keycap>X</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:468(para)
-msgid "Down Right: <keycap>C</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:471(para) C/gnobots2.xml:528(para)
-msgid "Teleport: <keycap>T</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:474(para) C/gnobots2.xml:531(para)
-msgid "Randomly Teleport: <keycap>R</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:489(title)
-msgid "Original Keys"
-msgstr ""
-
-#: C/gnobots2.xml:493(para)
-msgid ""
-"These keys are the controls used in the original robots game. They will be "
-"familiar to people who have played the older text-based versions."
-msgstr ""
-
-#: C/gnobots2.xml:500(para)
-msgid "Up Left: <keycap>Y</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:504(para)
-msgid "Up: <keycap>K</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:507(para)
-msgid "Up Right: <keycap>U</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:510(para)
-msgid "Left: <keycap>H</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:513(para)
-msgid "Stand Still: <keycap>.</keycap> or <keycap>space</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:516(para)
-msgid "Right: <keycap>L</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:519(para)
-msgid "Down Left: <keycap>B</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:522(para)
-msgid "Down: <keycap>J</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:525(para)
-msgid "Down Right: <keycap>N</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:534(para)
-msgid "Wait: <keycap>W</keycap>"
-msgstr ""
-
-#: C/gnobots2.xml:545(title)
+#: C/gnobots2.xml:477(title)
 msgid "Customizing GNOME Robots"
 msgstr ""
 
-#: C/gnobots2.xml:567(para)
+#: C/gnobots2.xml:496(para)
 msgid ""
 "The safe moves option will help you to avoid being killed due to a mistake. "
 "If you try to make a move that would lead to your death when there is a safe "
@@ -574,61 +501,60 @@ msgid ""
 "to proceed."
 msgstr ""
 
-#: C/gnobots2.xml:575(para)
+#: C/gnobots2.xml:504(para)
 msgid ""
-"There is also a ``super safe mode''. If you select this, you get beeped when "
-"there is no safe move and your only option is to teleport out."
+"There is also a <quote>super safe mode</quote>. If you select this, you get "
+"beeped when there is no safe move and your only option is to teleport out."
 msgstr ""
 
-#: C/gnobots2.xml:582(para)
+#: C/gnobots2.xml:511(para)
 msgid ""
-"If you select the sound check-box the game will play sounds for various "
+"If you select the sound checkbox the game will play sounds for various "
 "events throughout the game."
 msgstr ""
 
-#: C/gnobots2.xml:588(para)
+#: C/gnobots2.xml:517(para)
 msgid ""
-"The 'Splats' checkbox selects whether you want the sound played and a small "
-"'Splat!' to appear on the screen."
+"The <quote>Splats</quote> checkbox selects whether you want the sound played "
+"and a small <quote>Splat!</quote> to appear on the screen."
 msgstr ""
 
-#: C/gnobots2.xml:556(para)
+#: C/gnobots2.xml:486(para)
 msgid ""
 "<guimenuitem>Game</guimenuitem>&mdash; This page allows you to choose the "
 "type of game you want to play. The drop-down box at the top of the page "
-"allows you to choose from a number of predefined games, and the list-box "
-"below it shows the settings for that game. You can't change these options in "
-"the middle of a game, so they will be disabled then. There are also several "
-"options at the bottom of the dialog: <placeholder-1/>"
+"allows you to choose from a number of predefined games. You can't change "
+"these options in the middle of a game, so they will be disabled then. There "
+"are also several options at the bottom of the dialog: <placeholder-1/>"
 msgstr ""
 
-#: C/gnobots2.xml:599(para)
+#: C/gnobots2.xml:528(para)
 msgid ""
-"<guimenuitem>Graphics</guimenuitem>&mdash; This page allows you to select "
+"<guimenuitem>Appearance</guimenuitem>&mdash; This page allows you to select "
 "the graphics used throughout the game from the list in the dropdown-box. You "
 "can also select the background colour from this tab."
 msgstr ""
 
-#: C/gnobots2.xml:609(para)
+#: C/gnobots2.xml:538(para)
 msgid ""
 "<guimenuitem>Keyboard</guimenuitem>&mdash; This screen allows you to define "
-"your own keyboard controls. The three pre-defined sets at the bottom were "
-"described in the previous section. To select a different key for a command, "
+"your own keyboard controls. To select a different key for a command, double-"
 "click on the button for that command and then press the key you want to use."
 msgstr ""
 
-#: C/gnobots2.xml:548(para)
+#: C/gnobots2.xml:478(para)
 msgid ""
 "You can modify the behaviour and appearance of the game by selecting "
 "<guimenuitem> Preferences</guimenuitem> under the <guimenu>Settings</"
 "guimenu> menu. This brings up a dialog with three tabs: <placeholder-1/>"
 msgstr ""
 
-#: C/gnobots2.xml:621(para)
-msgid "Any changes you make take effect immediately and are automatically saved."
+#: C/gnobots2.xml:549(para)
+msgid ""
+"Any changes you make take effect immediately and are automatically saved."
 msgstr ""
 
-#: C/gnobots2.xml:625(para)
+#: C/gnobots2.xml:553(para)
 msgid ""
 "You can design your own graphics for the game if you want. The graphics "
 "files are found in <filename class=\"directory\"> $PREFIX/share/pixmaps/"
@@ -637,7 +563,7 @@ msgid ""
 "filename> or <filename class=\"directory\">/usr/local</filename>."
 msgstr ""
 
-#: C/gnobots2.xml:636(para)
+#: C/gnobots2.xml:564(para)
 msgid ""
 "Each character is 16x16 pixels and there are 14 of them arranged in a PNG "
 "file which is 224x16 pixels in size. You can look at the existing files to "
@@ -645,7 +571,7 @@ msgid ""
 "sequences."
 msgstr ""
 
-#: C/gnobots2.xml:642(para)
+#: C/gnobots2.xml:570(para)
 msgid ""
 "Any graphics files which are placed in the directory are auto-detected, so "
 "you don't need to alter any configuration files. You can also define your "
@@ -654,19 +580,11 @@ msgid ""
 "gnobots2 </filename> directory."
 msgstr ""
 
-#: C/gnobots2.xml:664(title)
-msgid "Known Bugs and Limitations"
-msgstr ""
-
-#: C/gnobots2.xml:665(para)
-msgid "This application has no known bugs."
-msgstr ""
-
-#: C/gnobots2.xml:674(title)
+#: C/gnobots2.xml:602(title)
 msgid "Authors"
 msgstr "Autors"
 
-#: C/gnobots2.xml:675(para)
+#: C/gnobots2.xml:603(para)
 msgid ""
 "<application>GNOME Robots</application> was written by Mark Rae (<email>m."
 "rae@inpharmatica.co.uk</email>). This manual was written by Patanjali "
@@ -676,11 +594,11 @@ msgid ""
 "\"ghelp:gnome-feedback\" type=\"help\">document</ulink>."
 msgstr ""
 
-#: C/gnobots2.xml:702(title)
+#: C/gnobots2.xml:630(title)
 msgid "License"
 msgstr "Licéncia"
 
-#: C/gnobots2.xml:703(para)
+#: C/gnobots2.xml:631(para)
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the <ulink type=\"help\" url=\"gnome-help:gpl"
@@ -689,7 +607,7 @@ msgid ""
 "option) any later version."
 msgstr ""
 
-#: C/gnobots2.xml:711(para)
+#: C/gnobots2.xml:639(para)
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -697,20 +615,24 @@ msgid ""
 "License</citetitle> for more details."
 msgstr ""
 
-#: C/gnobots2.xml:717(para)
+#: C/gnobots2.xml:645(para)
 msgid ""
 "A copy of the <citetitle>GNU General Public License</citetitle> is included "
 "as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
 "obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
 "the Free Software Foundation by visiting <ulink type=\"http\" url=\"http://"
 "www.fsf.org\">their Web site</ulink> or by writing to <address> Free "
-"Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 "
-"<city>Boston</city>, <state>MA</state><postcode>02111-1307</"
+"Software Foundation, Inc. <street>51 Franklin Street, Fifth Floor</"
+"street><city>Boston</city>, <state>MA</state><postcode>02110-1301</"
 "postcode><country>USA</country></address>"
 msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/gnobots2.xml:0(None)
 msgid "translator-credits"
-msgstr "La còla occitana de revirada d'Ubuntu, 2007 - ubuntu-l10n-oci@lists.ubuntu.com"
+msgstr ""
+"La còla occitana de revirada d'Ubuntu, 2007 - ubuntu-l10n-oci@lists.ubuntu."
+"com"
 
+#~ msgid "Exit"
+#~ msgstr "Sortir"

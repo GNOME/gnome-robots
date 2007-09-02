@@ -398,6 +398,7 @@ toggle_toolbar_cb (GtkAction * action, GtkWidget * toolbar)
 
   state = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
   if (state) {
+    gtk_widget_hide (toolbar); /* hack to unfocus the toolbar */
     gtk_widget_show (toolbar);
   } else {
     gtk_widget_hide (toolbar);

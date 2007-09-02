@@ -1,5 +1,10 @@
 2007-09-02  Thomas H.P. Andersen  <phomes@gmail.com>
 
+	* menu.c: Make the toolbar not have focus as default.
+	Fixes bug #451372
+
+2007-09-02  Thomas H.P. Andersen  <phomes@gmail.com>
+
 	* properties.c: Apply new keys when closing preferences window.
 	Fixes bug #449656 
 

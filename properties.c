@@ -132,6 +132,8 @@ static void conf_set_background_color (GdkColor * c);
 static void
 apply_changes (void)
 {
+  load_keys ();
+  keyboard_set (properties.keys);
   update_score_state ();
 }
 
@@ -620,19 +622,11 @@ show_properties_dialog (void)
 gboolean
 load_properties (void)
 {
-  gchar buffer[256];
   gchar *cname = NULL;
   gint i;
   gchar *bgcolour;
 
-  for (i = 0; i < 12; i++) {
-    properties.keys[i] = default_keys[i];
-
-    g_snprintf (buffer, sizeof (buffer), KEY_CONTROL_KEY, i);
-
-    properties.keys[i] = games_conf_get_keyval_with_default (KEY_PREFERENCES_GROUP,
-                                                             buffer, default_keys[i]);
-  }
+  load_keys ();
 
   bgcolour = games_conf_get_string_with_default (KEY_PREFERENCES_GROUP,
                                                  KEY_BACKGROUND_COLOR, "#7590AE");
@@ -672,6 +666,22 @@ load_properties (void)
   keyboard_set (properties.keys);
   update_score_state ();
   return TRUE;
+}
+
+void
+load_keys (void)
+{
+  gchar buffer[256];
+  gint i;
+
+  for (i = 0; i < 12; i++) {
+    properties.keys[i] = default_keys[i];
+
+    g_snprintf (buffer, sizeof (buffer), KEY_CONTROL_KEY, i);
+
+    properties.keys[i] = games_conf_get_keyval_with_default (KEY_PREFERENCES_GROUP,
+                                                             buffer, default_keys[i]);
+  }
 }
 
 void

@@ -1,3 +1,8 @@
+2007-09-04  Thomas H.P. Andersen  <phomes@gmail.com>
+
+	* properties.c: Add prototype to load_keys() function. Fix from 
+	Damien Carbery. Fixes bug #473327
+
 2007-09-02  Thomas H.P. Andersen  <phomes@gmail.com>
 
 	* menu.c: Make the toolbar not have focus as default.

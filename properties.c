@@ -105,6 +105,7 @@ static const guint default_keys[N_KEYS] = {
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
+static void load_keys (void);
 static void apply_changes (void);
 static void apply_cb (GtkWidget *, gpointer);
 static gboolean delete_cb (GtkWidget *, gpointer);

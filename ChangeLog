@@ -1,3 +1,8 @@
+2007-10-02  Thomas H.P. Andersen  <phomes@gmail.com>
+
+	* gnobots.c: Fix typo in score-category nightmare with super safe moves.
+	Fixes bug #482188
+
 2007-09-04  Thomas H.P. Andersen  <phomes@gmail.com>
 
 	* properties.c: Add prototype to load_keys() function. Fix from 

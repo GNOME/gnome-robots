@@ -89,7 +89,7 @@ static const GamesScoresCategory scorecats[] = {
   {"classic_robots-super-safe", N_("Classic robots with super-safe moves")},
   {"nightmare", N_("Nightmare")},
   {"nightmare-safe", N_("Nightmare with safe moves")},
-  {"nightmare.-super-safe", N_("Nightmare with super-safe moves")},
+  {"nightmare-super-safe", N_("Nightmare with super-safe moves")},
   {"robots2", N_("Robots2")},
   {"robots2-safe", N_("Robots2 with safe moves")},
   {"robots2-super-safe", N_("Robots2 with super-safe moves")},

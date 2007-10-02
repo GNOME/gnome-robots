@@ -170,6 +170,8 @@ show_scores (gint pos, gboolean endofgame)
     }
 
     if (pos > 0) {
+      play_sound (SOUND_VICTORY);
+
       games_scores_dialog_set_hilight (GAMES_SCORES_DIALOG (scoresdialog),
 				       pos);
       message = g_strdup_printf ("<b>%s</b>\n\n%s",
@@ -611,12 +613,9 @@ timeout_cb (void *data)
     if (endlev_counter >= DEAD_DELAY) {
       if (score > 0) {
 	sp = log_score (score);
-	if (sp > 0) {
-	  play_sound (SOUND_VICTORY);
-          if (show_scores (sp, TRUE) == GTK_RESPONSE_REJECT) {
-            quit_game ();
-          }
-	}
+        if (show_scores (sp, TRUE) == GTK_RESPONSE_REJECT) {
+          quit_game ();
+        }
       }
       start_new_game ();
     }

@@ -1,3 +1,8 @@
+2007-10-03  Thomas H.P. Andersen  <phomes@gmail.com>
+
+	* game.c: Show highscore and new/quit option even when score is not good
+	enough to enter the highscore. Fixes bug #466667
+
 2007-10-02  Thomas H.P. Andersen  <phomes@gmail.com>
 
 	* gnobots.c: Fix typo in score-category nightmare with super safe moves.

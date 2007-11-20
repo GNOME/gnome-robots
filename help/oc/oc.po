@@ -1,26 +1,27 @@
+# translation of oc.po to Occitan
 #
 # Yannig MARCHEGAY (yannig@marchegay.org) - 2006-2007
 #
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnobots2.HEAD.es\n"
+"Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-30 03:29+0100\n"
-"PO-Revision-Date: 2007-09-01 16:17+0200\n"
+"PO-Revision-Date: 2007-11-20 14:31+0100\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
-"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);"
+"Plural-Forms: nplurals=2; plural=(n > 1);X-Generator: KBabel 1.11.4\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnobots2.xml:250(None)
-msgid ""
-"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
-msgstr ""
-"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+msgid "@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+msgstr "@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
 
 #: C/gnobots2.xml:26(title)
 msgid "<application>GNOME Robots</application> Manual V2.9"
@@ -43,7 +44,7 @@ msgstr "Patanjali Somayaji, Mark Rae"
 #: C/gnobots2.xml:52(publishername) C/gnobots2.xml:100(para)
 #: C/gnobots2.xml:110(para)
 msgid "GNOME Documentation Project"
-msgstr "_Créer un point d&apos;arrêt"
+msgstr "Projècte de documentacion de GNOME"
 
 #: C/gnobots2.xml:2(para)
 msgid ""
@@ -361,13 +362,11 @@ msgid "Move"
 msgstr "Desplaçar"
 
 #: C/gnobots2.xml:335(para)
-msgid ""
-"<guimenuitem>Teleport</guimenuitem>&mdash; teleports you in a safe location."
+msgid "<guimenuitem>Teleport</guimenuitem>&mdash; teleports you in a safe location."
 msgstr ""
 
 #: C/gnobots2.xml:341(para)
-msgid ""
-"<guimenuitem>Random</guimenuitem>&mdash; teleports you in a random location."
+msgid "<guimenuitem>Random</guimenuitem>&mdash; teleports you in a random location."
 msgstr ""
 
 #: C/gnobots2.xml:347(para)
@@ -389,8 +388,7 @@ msgid ""
 msgstr ""
 
 #: C/gnobots2.xml:360(para)
-msgid ""
-"The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
+msgid "The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
 msgstr ""
 
 #: C/gnobots2.xml:375(guimenu)
@@ -550,8 +548,7 @@ msgid ""
 msgstr ""
 
 #: C/gnobots2.xml:549(para)
-msgid ""
-"Any changes you make take effect immediately and are automatically saved."
+msgid "Any changes you make take effect immediately and are automatically saved."
 msgstr ""
 
 #: C/gnobots2.xml:553(para)
@@ -630,4 +627,5 @@ msgstr ""
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/gnobots2.xml:0(None)
 msgid "translator-credits"
-msgstr "Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>"
+msgstr "Yannig Marchegay (Kokoyaya) <yannig@marchegay.org)"
+

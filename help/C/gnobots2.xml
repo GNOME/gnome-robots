@@ -5,8 +5,8 @@
   <!ENTITY appversion "2.18">
   <!ENTITY manrevision "2.9">
   <!ENTITY date "August 2007">
-  <!ENTITY app "<application>GNOME Robots</application>">
-  <!ENTITY appname "GNOME Robots">
+  <!ENTITY app "<application>Robots</application>">
+  <!ENTITY appname "Robots">
 ]>
 
 <!-- 
@@ -23,11 +23,14 @@
 <!-- please do not change the id; for translations, change lang to -->
 <!-- appropriate code -->
   <articleinfo>
-    <title>&app; Manual V&manrevision;</title>
+    <title>&app; Manual</title>
 
     <abstract role="description">
       <para>
-      GNOME Robots is a development of the text based robots game which can be found on a number of UNIX systems.
+	Robots is a graphical version of the original text based 
+	robots game, which can be found on a number of UNIX systems. 
+	The player must outwit the robots chasing him/her by getting 
+	them to run into each other.
       </para>
     </abstract>
 

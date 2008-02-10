@@ -260,7 +260,7 @@ about_cb (GtkAction * action, gpointer data)
   gtk_show_about_dialog (GTK_WINDOW (app),
 			 "name", _("Robots"),
 			 "version", VERSION,
-			 "copyright", "Copyright \xc2\xa9 1998-2007 Mark Rae",
+			 "copyright", "Copyright \xc2\xa9 1998-2008 Mark Rae",
 			 "license", license,
 		         "website-label", _("GNOME Games web site"),
 			 "comments", _("Based on classic BSD Robots.\n\nRobots is a part of GNOME Games."),

@@ -535,7 +535,7 @@ update_arena (void)
       if (arena[i][j] == OBJECT_ROBOT1) {
 	num_robots1 += 1;
       } else if (arena[i][j] == OBJECT_ROBOT2) {
-	num_robots2 += 2;
+	num_robots2 += 1;
       }
     }
   }

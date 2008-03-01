@@ -1,3 +1,9 @@
+2008-03-01  Andreas Røsdal  <andreasr@gnome.org>
+
+	* graphics.c:
+	* game.c: Fix a bug where an annoying blank rectangle is left 
+	after a robot splat. Patch by Fernando Martins in bug #506162.
+
 2007-10-03  Thomas H.P. Andersen  <phomes@gmail.com>
 
 	* game.c: Show highscore and new/quit option even when score is not good

@@ -446,11 +446,35 @@ clear_game_area (void)
 static void
 clear_bubble_area (void)
 {
+  int t0i, t0j; /* (i,j) coordinates of bubble's top/left tile */
+  int ntiles_hor, ntiles_ver; /* number of tiles hotizontal/vertically affected */
+  int delta; /* pixels from tile's left/top border to bubble's left/top border */
+  int i, j;
+
   if (game_area == NULL)
     return;
 
-  gdk_window_clear_area (game_area->window, bubble_xpos, bubble_ypos,
-			 BUBBLE_WIDTH, BUBBLE_HEIGHT);
+  t0i = bubble_xpos / tile_width;
+  t0j = bubble_ypos / tile_height;
+  ntiles_hor = (BUBBLE_WIDTH + tile_width - 1) / tile_width; /* first shot at number of tiles affected */
+  delta = bubble_xpos % tile_width;
+  if (delta > 0) { /* buble does not start at a tile's left boundary */
+    if ((BUBBLE_WIDTH + delta) > ntiles_hor * tile_width) { /* catches an extra tile */
+      ntiles_hor++;
+    }
+  }
+  ntiles_ver = (BUBBLE_HEIGHT + tile_height - 1) / tile_height;
+  delta = bubble_ypos % tile_height;
+  if (delta > 0) { /* buble does not start at a tile's top boundary */
+    if ((BUBBLE_HEIGHT + delta) > ntiles_ver * tile_height) { /* catches an extra tile */
+      ntiles_ver++;
+    }
+  }
+  for (i = t0i; i < t0i + ntiles_hor; ++i) {
+    for (j = t0j; j < t0j + ntiles_ver; ++j) {
+      draw_tile_pixmap (-1, i, j, game_area);
+    }
+  }
 }
 
 

@@ -1,3 +1,10 @@
+2008-03-08  Luca Ferretti  <elle.uca@libero.it>
+
+	* Makefile.am: Removed it from SUBDIRS and added to DOC_LINGUAS.
+	* it/*: Removed all old translation files.
+	* it/it.po: Added Italian translation by Alessio Treglia.
+	* it/figures/*: Added Italian screenshot by Alessio Treglia.
+
 2008-03-07  Jorge Gonzalez <jorgegonz@svn.gnome.org>
 
 	* es/es.po: Updated Spanish translation

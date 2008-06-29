@@ -22,6 +22,7 @@
 #include <config.h>
 #include <gnome.h>
 #include <gdk/gdkkeysyms.h>
+#include <ctype.h>
 
 #include "keyboard.h"
 #include "keylabels.h"
@@ -86,8 +87,10 @@ keyboard_cb (GtkWidget * widget, GdkEventKey * event, gpointer data)
   if (event->state & (GDK_CONTROL_MASK | GDK_MOD1_MASK))
     return FALSE;
 
+  gint keyval = toupper(event->keyval);
+
   for (i = 0; i < 12; ++i) {
-    if (event->keyval == control_keys[i]) {
+    if (keyval == toupper(control_keys[i])) {
       game_keypress (i);
       return TRUE;
     }

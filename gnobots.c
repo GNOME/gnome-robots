@@ -29,6 +29,7 @@
 #include <games-sound.h>
 #include <games-gridframe.h>
 #include <games-conf.h>
+#include <games-runtime.h>
 
 #include "gbdefs.h"
 #include "statusbar.h"
@@ -200,6 +201,9 @@ main (int argc, char *argv[])
  
   g_thread_init (NULL);
 
+  if (!games_runtime_init ("gnobots"))
+    return 1;
+
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
 
@@ -350,6 +354,8 @@ main (int argc, char *argv[])
   games_conf_shutdown ();
 
   g_object_unref (program);
+
+  games_runtime_shutdown ();
 
   return 0;
 }

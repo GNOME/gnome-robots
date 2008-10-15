@@ -20,9 +20,8 @@
  */
 
 #include <config.h>
-#include <gnome.h>
 
-#include <games-sound.h>
+#include <libgames-support/games-sound.h>
 
 #include "gbdefs.h"
 #include "sound.h"
@@ -83,13 +82,6 @@ play_sound (gint sno)
       games_sound_play ("splat");
       break;
     case SOUND_BAD:
-#if 0
-      if (gnome_sound_connection >= 0) {
-	gnome_triggers_do ("", "program", GAME_NAME, "bad-move", NULL);
-      } else {
-	gdk_beep ();
-      }
-#endif
       gdk_beep ();
       break;
     case SOUND_YAHOO:

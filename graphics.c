@@ -20,11 +20,14 @@
  */
 
 #include <config.h>
-#include <gnome.h>
+
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
-#include <games-preimage.h>
 #include <games-find-file.h>
+#include <games-preimage.h>
+#include <games-runtime.h>
 #include <games-scores.h>
 #include <games-scores-dialog.h>
 
@@ -172,9 +175,9 @@ static gboolean
 load_bubble_graphics (void)
 {
   gchar *buffer = NULL;
-  gchar *dname =
-    gnome_program_locate_file (NULL, GNOME_FILE_DOMAIN_APP_PIXMAP,
-			       GAME_NAME, FALSE, NULL);
+  const char *dname;
+
+  dname = games_runtime_get_directory (GAMES_RUNTIME_GAME_PIXMAP_DIRECTORY);
 
   buffer = g_build_filename (dname, "yahoo.png", NULL);
   if (!load_bubble_graphic (buffer, &yahoo_pixbuf))

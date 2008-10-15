@@ -20,16 +20,20 @@
  */
 
 #include <config.h>
-#include <gnome.h>
+
 #include <string.h>
+
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#include <games-frame.h>
-#include <games-controls.h>
-#include <games-files.h>
-#include <games-scores.h>
-#include <games-scores-dialog.h>
-#include <games-conf.h>
-#include <games-sound.h>
+
+#include <libgames-support/games-frame.h>
+#include <libgames-support/games-controls.h>
+#include <libgames-support/games-files.h>
+#include <libgames-support/games-scores.h>
+#include <libgames-support/games-scores-dialog.h>
+#include <libgames-support/games-conf.h>
+#include <libgames-support/games-sound.h>
 
 #include "properties.h"
 #include "gameconfig.h"

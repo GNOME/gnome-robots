@@ -20,9 +20,11 @@
  */
 
 #include <config.h>
-#include <gnome.h>
-#include <gdk/gdkkeysyms.h>
+
 #include <ctype.h>
+
+#include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
 
 #include "keyboard.h"
 #include "keylabels.h"

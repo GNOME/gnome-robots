@@ -20,13 +20,16 @@
  */
 
 #include <config.h>
-#include <gnome.h>
 
 #include <sys/types.h>
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
 #include <dirent.h>
+
+#include <gtk/gtk.h>
+
+#include <libgames-support/games-runtime.h>
 
 #include "gameconfig.h"
 #include "gbdefs.h"
@@ -214,12 +217,12 @@ load_game_configs (void)
   G_CONST_RETURN gchar *dent;
   GDir *dir;
   gchar *buffer;
+  const char *dname;
 
-  gchar *dname = gnome_program_locate_file (NULL,
-					    GNOME_FILE_DOMAIN_APP_DATADIR,
-					    (GAME_NAME),
-					    FALSE, NULL);
-
+  dname = games_runtime_get_directory (GAMES_RUNTIME_GAME_GAMES_DIRECTORY);
+  g_printerr("sti:\n");
+  g_printerr(dname);
+  g_printerr("/sti:\n");
   if (game_configs != NULL) {
     free_game_configs ();
   }

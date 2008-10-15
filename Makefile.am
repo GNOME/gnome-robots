@@ -3,8 +3,8 @@ schema_in_files = gnobots2.schemas.in
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 @INTLTOOL_SCHEMAS_RULE@
 
-pixmapdir=$(datadir)/pixmaps/gnobots2
-configdir=$(datadir)/gnobots2
+pixmapdir=$(datadir)/gnome-games/gnobots2/pixmaps
+configdir=$(datadir)/gnome-games/gnobots2/games
 Gamesdir=$(datadir)/applications
 
 SUBDIRS = help
@@ -48,16 +48,16 @@ gnobots2_LDADD = \
 	$(INTLLIBS)
 
 pixmap_DATA = gnomes.png \
-	      yahoo.png \
-	      aieee.png \
-	      splat.png \
-	      robots.svg \
-	      boo.svg \
+              yahoo.png \
+              aieee.png \
+              splat.png \
+              robots.svg \
+              boo.svg \
               ufo.svg
 
 config_DATA = robots2.cfg \
               robots2_easy.cfg \
-	      classic_robots.cfg \
+              classic_robots.cfg \
               robots_with_safe_teleport.cfg \
               nightmare.cfg
 
@@ -67,8 +67,8 @@ Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
 
 EXTRA_DIST = AUTHORS \
              $(pixmap_DATA) \
-	     $(Games_DATA) \
-	     $(config_DATA) \
+             $(Games_DATA) \
+             $(config_DATA) \
              $(schema_in_files)
 
 install-data-local:

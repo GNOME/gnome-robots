@@ -20,11 +20,15 @@
  */
 
 #include <config.h>
-#include <gnome.h>
+
 #include <string.h>
-#include <games-stock.h>
-#include <games-scores.h>
-#include <games-scores-dialog.h>
+
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+
+#include <libgames-support/games-stock.h>
+#include <libgames-support/games-scores.h>
+#include <libgames-support/games-scores-dialog.h>
 
 #include "gbdefs.h"
 #include "menu.h"

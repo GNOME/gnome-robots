@@ -20,16 +20,19 @@
  */
 
 #include <config.h>
-#include <gnome.h>
+
 #include <sys/time.h>
 #include <string.h>
-#include <games-stock.h>
-#include <games-scores.h>
-#include <games-scores-dialog.h>
-#include <games-sound.h>
-#include <games-gridframe.h>
-#include <games-conf.h>
-#include <games-runtime.h>
+
+#include <gnome.h>
+
+#include <libgames-support/games-conf.h>
+#include <libgames-support/games-gridframe.h>
+#include <libgames-support/games-runtime.h>
+#include <libgames-support/games-scores.h>
+#include <libgames-support/games-scores-dialog.h>
+#include <libgames-support/games-sound.h>
+#include <libgames-support/games-stock.h>
 
 #include "gbdefs.h"
 #include "statusbar.h"
@@ -195,15 +198,15 @@ main (int argc, char *argv[])
   struct timeval tv;
   gint i;
 
-  bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+  g_thread_init (NULL);
+
+  if (!games_runtime_init ("gnobots2"))
+    return 1;
+
+  bindtextdomain (GETTEXT_PACKAGE, games_runtime_get_directory (GAMES_RUNTIME_LOCALE_DIRECTORY));
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
  
-  g_thread_init (NULL);
-
-  if (!games_runtime_init ("gnobots"))
-    return 1;
-
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
 
@@ -234,7 +237,8 @@ main (int argc, char *argv[])
   g_signal_connect (G_OBJECT (client), "die",
 		    G_CALLBACK (quit_game), argv[0]);
 
-  app = gnome_app_new (GAME_NAME, _("Robots"));
+  app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (app), _("Robots"));
 
   gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
   games_conf_add_window (GTK_WINDOW (app), KEY_GEOMETRY_GROUP);
@@ -278,7 +282,7 @@ main (int argc, char *argv[])
   gtk_box_pack_start (GTK_BOX (vbox), gridframe, TRUE, TRUE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
 
-  gnome_app_set_contents (GNOME_APP (app), vbox);
+  gtk_container_add (GTK_CONTAINER (app), vbox);
 
   gtk_widget_set_size_request (GTK_WIDGET (game_area),
 			       MINIMUM_TILE_WIDTH * GAME_WIDTH,

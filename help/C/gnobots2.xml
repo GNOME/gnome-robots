@@ -557,7 +557,7 @@ Any changes you make take effect immediately and are automatically saved.
       You can design your own graphics for the game if you want. The graphics
       files are found in
       <filename class="directory">
-      $PREFIX/share/pixmaps/gnobots2
+      $PREFIX/share/gnome-games/gnobots2/pixmaps
       </filename>, where $PREFIX is the prefix into which GNOME
       was installed. This is usually either 
       <filename class="directory">/usr</filename>
@@ -578,7 +578,7 @@ Any changes you make take effect immediately and are automatically saved.
       .cfg
       </filename> files which are stored in the 
       <filename class="directory">
-      $PREFIX/share/gnobots2
+      $PREFIX/share/gnome-games/gnobots2/games
       </filename>
       directory.
     </para>

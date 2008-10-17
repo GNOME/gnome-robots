@@ -220,9 +220,7 @@ load_game_configs (void)
   const char *dname;
 
   dname = games_runtime_get_directory (GAMES_RUNTIME_GAME_GAMES_DIRECTORY);
-  g_printerr("sti:\n");
-  g_printerr(dname);
-  g_printerr("/sti:\n");
+
   if (game_configs != NULL) {
     free_game_configs ();
   }

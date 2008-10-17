@@ -24,7 +24,8 @@
 #include <sys/time.h>
 #include <string.h>
 
-#include <gnome.h>
+#include <glib/gi18n.h>
+#include <glib/gthread.h>
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>
@@ -33,6 +34,10 @@
 #include <libgames-support/games-scores-dialog.h>
 #include <libgames-support/games-sound.h>
 #include <libgames-support/games-stock.h>
+
+#ifdef WITH_SMCLIENT
+#include <libgames-support/eggsmclient.h>
+#endif /* WITH_SMCLIENT */
 
 #include "gbdefs.h"
 #include "statusbar.h"
@@ -118,8 +123,10 @@ static const GamesScoresDescription scoredesc = { scorecats,
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-static gint save_state (GnomeClient *, gint, GnomeRestartStyle, gint,
-			GnomeInteractStyle, gint, gpointer);
+#ifdef WITH_SMCLIENT
+static gint save_state_cb (EggSMClient *, GKeyFile *, gpointer);
+static gint quit_sm_cb (EggSMClient *, gpointer);
+#endif /* WITH_SMCLIENT */
 /**********************************************************************/
 
 
@@ -127,6 +134,7 @@ static gint save_state (GnomeClient *, gint, GnomeRestartStyle, gint,
 /* Function Definitions                                               */
 /**********************************************************************/
 
+#ifdef WITH_SMCLIENT
 /**
  * save_state
  * @client: gnome client
@@ -144,12 +152,9 @@ static gint save_state (GnomeClient *, gint, GnomeRestartStyle, gint,
  * TRUE on success, FALSE otherwise
  **/
 static gint
-save_state (GnomeClient * client,
-	    gint phase,
-	    GnomeRestartStyle save_style,
-	    gint shutdown,
-	    GnomeInteractStyle interact_style,
-	    gint fast, gpointer client_data)
+save_state_cb (EggSMClient *client,
+	    GKeyFile* keyfile,
+	    gpointer client_data)
 {
   char *argv[20];
   int i;
@@ -164,9 +169,7 @@ save_state (GnomeClient * client,
   argv[i++] = "-y";
   argv[i++] = g_strdup_printf ("%d", ypos);
 
-  gnome_client_set_restart_command (client, i, argv);
-  /* i.e. clone_command = restart_command - '--sm-client-id' */
-  gnome_client_set_clone_command (client, 0, NULL);
+  egg_sm_client_set_restart_command (client, i, (const char **) argv);
 
   g_free (argv[2]);
   g_free (argv[4]);
@@ -174,6 +177,15 @@ save_state (GnomeClient * client,
   return TRUE;
 }
 
+static gint
+quit_sm_cb (EggSMClient *client,
+         gpointer client_data)
+{
+  quit_game();
+
+  return FALSE;
+}
+#endif /* WITH_SMCLIENT */
 
 /**
  * main
@@ -192,11 +204,14 @@ main (int argc, char *argv[])
   GtkWidget *errordialog;
   GtkWidget *vbox, *menubar, *toolbar, *statusbar, *gridframe;
   GtkUIManager *ui_manager;
-  GnomeClient *client;
-  GnomeProgram *program;
-  GOptionContext *option_context;
+  GOptionContext *context;
   struct timeval tv;
   gint i;
+  gboolean retval;
+  GError *error = NULL;
+#ifdef WITH_SMCLIENT
+  EggSMClient *sm_client;
+#endif /* WITH_SMCLIENT */
 
   g_thread_init (NULL);
 
@@ -212,17 +227,28 @@ main (int argc, char *argv[])
 
   setgid_io_init ();
 
-  option_context = g_option_context_new (NULL);
-  g_option_context_add_main_entries (option_context, options,
-				     GETTEXT_PACKAGE);
-  games_sound_add_option_group (option_context);
+  context = g_option_context_new (NULL);
+#if GLIB_CHECK_VERSION (2, 12, 0)
+  g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
+#endif
 
-  program = gnome_program_init (GAME_NAME, VERSION,
-				LIBGNOMEUI_MODULE,
-				argc, argv,
-				GNOME_PARAM_GOPTION_CONTEXT, option_context,
-				GNOME_PARAM_APP_DATADIR, DATADIR,
-				GNOME_PARAM_NONE);
+  g_option_context_add_group (context, gtk_get_option_group (TRUE));
+#ifdef WITH_SMCLIENT
+  g_option_context_add_group (context, egg_sm_client_get_option_group ());
+#endif /* WITH_SMCLIENT */
+
+  g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
+  games_sound_add_option_group (context);
+
+  retval = g_option_context_parse (context, &argc, &argv, &error);
+  g_option_context_free (context);
+  if (!retval) {
+    g_print ("%s", error->message);
+    g_error_free (error);
+    exit (1);
+  }
+
+  g_set_application_name (_("Robots"));
 
   highscores = games_scores_new (&scoredesc);
 
@@ -230,12 +256,13 @@ main (int argc, char *argv[])
 
   gtk_window_set_default_icon_name ("gnome-robots");
 
-  client = gnome_master_client ();
-
-  g_signal_connect (G_OBJECT (client), "save_yourself",
-		    G_CALLBACK (save_state), argv[0]);
-  g_signal_connect (G_OBJECT (client), "die",
-		    G_CALLBACK (quit_game), argv[0]);
+#ifdef WITH_SMCLIENT
+  sm_client = egg_sm_client_get ();
+  g_signal_connect (sm_client, "save-state",
+		    G_CALLBACK (save_state_cb), NULL);
+  g_signal_connect (sm_client, "quit",
+                    G_CALLBACK (quit_sm_cb), NULL);
+#endif /* WITH_SMCLIENT */
 
   app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (app), _("Robots"));
@@ -356,8 +383,6 @@ main (int argc, char *argv[])
   gtk_main ();
 
   games_conf_shutdown ();
-
-  g_object_unref (program);
 
   games_runtime_shutdown ();
 

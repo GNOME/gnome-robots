@@ -13,7 +13,7 @@ INCLUDES = 			\
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DDATADIR=\""$(datadir)"\"		   \
 	-DPIXMAPDIR=\""$(pixmapdir)"\"		\
-	-I$(top_srcdir)/libgames-support   	        \
+	-I$(top_srcdir)   	        \
 	$(GNOME_GAMES_CFLAGS)
 
 bin_PROGRAMS = gnobots2

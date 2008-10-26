@@ -23,9 +23,10 @@
 
 #include <sys/time.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include <glib/gi18n.h>
-#include <glib/gthread.h>
+#include <glib.h>
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>

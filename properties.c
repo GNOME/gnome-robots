@@ -428,12 +428,9 @@ show_properties_dialog (void)
   GtkWidget *frame;
   GtkWidget *w;
   GtkWidget *controls_list;
-  GtkTooltips *tooltips;
 
   if (propbox)
     return;
-
-  tooltips = gtk_tooltips_new ();
 
   propbox = gtk_dialog_new_with_buttons (_("Robots Preferences"),
 					 GTK_WINDOW (app),
@@ -469,7 +466,7 @@ show_properties_dialog (void)
   g_signal_connect (G_OBJECT (typemenu), "changed",
 		    G_CALLBACK (type_selection), NULL);
   fill_typemenu (typemenu);
-  gtk_box_pack_start_defaults (GTK_BOX (hbox), typemenu);
+  gtk_box_pack_start (GTK_BOX (hbox), typemenu, TRUE, TRUE, 0);
 
   frame = games_frame_new (_("Options"));
   gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
@@ -485,44 +482,36 @@ show_properties_dialog (void)
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),
 				properties.safe_moves);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
-		    (GtkSignalFunc) safe_cb, NULL);
+		    (GCallback) safe_cb, NULL);
   gtk_table_attach (GTK_TABLE (table), chkbox, 0, 1, 0, 1, GTK_FILL, 0, 0, 0);
-  gtk_tooltips_set_tip (tooltips, chkbox,
-			_("Prevent some dangerous moves"),
-			_
-			("Prevent accidental moves that result in getting killed."));
+  gtk_widget_set_tooltip_text (chkbox,
+                               _("Prevent accidental moves that result in getting killed."));
 
   chkbox = gtk_check_button_new_with_mnemonic (_("U_se super safe moves"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),
 				properties.super_safe_moves);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
-		    (GtkSignalFunc) super_safe_cb, NULL);
+		    (GCallback) super_safe_cb, NULL);
   gtk_table_attach (GTK_TABLE (table), chkbox, 0, 1, 1, 2, GTK_FILL, 0, 0, 0);
-  gtk_tooltips_set_tip (tooltips, chkbox,
-			_("Prevent all dangerous moves"),
-			_
-			("Prevents all moves that result in getting killed."));
+  gtk_widget_set_tooltip_text (chkbox,
+                               _("Prevents all moves that result in getting killed."));
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Enable sounds"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox), properties.sound);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
-		    (GtkSignalFunc) sound_cb, NULL);
+		    (GCallback) sound_cb, NULL);
   gtk_table_attach (GTK_TABLE (table), chkbox, 1, 2, 0, 1, GTK_FILL, 0, 0, 0);
-  gtk_tooltips_set_tip (tooltips, chkbox,
-			_("Play sounds for major events"),
-			_
-			("Play sounds for events like winning a level and dying."));
+  gtk_widget_set_tooltip_text (chkbox,
+                               _("Play sounds for events like winning a level and dying."));
 
   chkbox = gtk_check_button_new_with_mnemonic (_("E_nable splats"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),
 				properties.splats);
-  g_signal_connect (G_OBJECT (chkbox), "clicked", (GtkSignalFunc) splat_cb,
+  g_signal_connect (G_OBJECT (chkbox), "clicked", (GCallback) splat_cb,
 		    NULL);
   gtk_table_attach (GTK_TABLE (table), chkbox, 1, 2, 1, 2, GTK_FILL, 0, 0, 0);
-  gtk_tooltips_set_tip (tooltips, chkbox,
-			_("Play a sound when two robots collide"),
-			_
-			("Play the most common, and potentially the most annoying, sound."));
+  gtk_widget_set_tooltip_text (chkbox,
+                               _("Play the most common, and potentially the most annoying, sound."));
 
   label = gtk_label_new_with_mnemonic (_("Game"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), cpage, label);

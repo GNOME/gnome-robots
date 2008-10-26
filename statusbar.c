@@ -132,7 +132,7 @@ gnobots_statusbar_delete (void)
   if (statusbar == NULL)
     return FALSE;
 
-  gtk_widget_unref (statusbar);
+  g_object_unref (statusbar);
 
   statusbar = FALSE;
 

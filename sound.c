@@ -21,6 +21,8 @@
 
 #include <config.h>
 
+#include <gdk/gdk.h>
+
 #include <libgames-support/games-sound.h>
 
 #include "gbdefs.h"

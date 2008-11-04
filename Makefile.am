@@ -3,18 +3,7 @@ schema_in_files = gnobots2.schemas.in
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 @INTLTOOL_SCHEMAS_RULE@
 
-pixmapdir=$(datadir)/gnome-games/gnobots2/pixmaps
-configdir=$(datadir)/gnome-games/gnobots2/games
-Gamesdir=$(datadir)/applications
-
 SUBDIRS = help
-
-INCLUDES = 			\
-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
-	-DDATADIR=\""$(datadir)"\"		   \
-	-DPIXMAPDIR=\""$(pixmapdir)"\"		\
-	-I$(top_srcdir)   	        \
-	$(GNOME_GAMES_CFLAGS)
 
 bin_PROGRAMS = gnobots2
 
@@ -42,11 +31,20 @@ gnobots2_SOURCES = \
 	cursors.h \
 	gbdefs.h
 
+gnobots2_CPPFLAGS = \
+	-I$(top_srcdir) \
+	$(AM_CPPFLAGS)
+
+gnobots2_CFLAGS = \
+	$(GNOME_GAMES_CFLAGS) \
+	$(AM_CFLAGS)
+
 gnobots2_LDADD = \
-	../libgames-support/libgames-support.la \
+	$(top_builddir)/libgames-support/libgames-support.la \
 	$(GNOME_GAMES_LIBS) \
 	$(INTLLIBS)
 
+pixmapdir = $(pkgdatadir)/gnobots2/pixmaps
 pixmap_DATA = gnomes.png \
               yahoo.png \
               aieee.png \
@@ -55,12 +53,14 @@ pixmap_DATA = gnomes.png \
               boo.svg \
               ufo.svg
 
+configdir = $(pkgdatadir)/gnobots2/games
 config_DATA = robots2.cfg \
               robots2_easy.cfg \
               classic_robots.cfg \
               robots_with_safe_teleport.cfg \
               nightmare.cfg
 
+Gamesdir = $(datadir)/applications
 Games_in_files = gnobots2.desktop.in.in
 Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@

@@ -209,18 +209,20 @@ gboolean
 load_game_graphics (void)
 {
   gchar *filename;
+  const char *pixmapdir;
 
   if (theme_preimage != NULL) {
     free_game_graphics ();
   }
 
-  filename = games_find_similar_file (properties_theme_name (), PIXMAPDIR);
+  pixmapdir = games_runtime_get_directory (GAMES_RUNTIME_GAME_PIXMAP_DIRECTORY);
+  filename = games_find_similar_file (properties_theme_name (), pixmapdir);
 
   theme_preimage = games_preimage_new_from_file (filename, NULL);
   g_free (filename);
 
   if (theme_preimage == NULL) {
-    filename = games_find_similar_file ("robots", PIXMAPDIR);
+    filename = games_find_similar_file ("robots", pixmapdir);
     theme_preimage = games_preimage_new_from_file (filename, NULL);
     g_free (filename);
   }

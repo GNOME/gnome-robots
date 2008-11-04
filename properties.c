@@ -34,6 +34,7 @@
 #include <libgames-support/games-scores-dialog.h>
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-sound.h>
+#include <libgames-support/games-runtime.h>
 
 #include "properties.h"
 #include "gameconfig.h"
@@ -358,10 +359,13 @@ fill_typemenu (GtkWidget * menu)
 static GtkWidget *
 make_theme_menu (void)
 {
+  const char *pixmapdir;
+
   if (theme_list)
     g_object_unref (theme_list);
 
-  theme_list = games_file_list_new_images (PIXMAPDIR, NULL);
+  pixmapdir = games_runtime_get_directory (GAMES_RUNTIME_GAME_PIXMAP_DIRECTORY);
+  theme_list = games_file_list_new_images (pixmapdir, NULL);
   games_file_list_transform_basename (theme_list);
 
   /* FIXME: Get rid of the bubbles images from the list (preferably by

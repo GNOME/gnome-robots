@@ -373,21 +373,6 @@ create_game_menus (GtkUIManager * ui_manager)
 
 /**********************************************************************/
 
-/**
- * update_score_state
- *
- * Description:
- * Changes menu item enabled/disabled state depending on high score availability
- **/
-void
-update_score_state (void)
-{
-  GList *top;
-
-  top = games_scores_get (highscores);
-  gtk_action_set_sensitive (scores_action, top != NULL);
-}
-
 void
 set_move_menu_sensitivity (gboolean state)
 {

@@ -241,7 +241,6 @@ log_score (gint sc)
     pos = games_scores_add_score (highscores, score);
   }
   g_free (sbuf);
-  update_score_state ();
 
   return pos;
 }

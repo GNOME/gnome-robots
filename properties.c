@@ -140,7 +140,6 @@ apply_changes (void)
 {
   load_keys ();
   keyboard_set (properties.keys);
-  update_score_state ();
 }
 
 
@@ -662,7 +661,6 @@ load_properties (void)
   set_game_graphics (properties.themename);
   set_game_config (properties.selected_config);
   keyboard_set (properties.keys);
-  update_score_state ();
   return TRUE;
 }
 

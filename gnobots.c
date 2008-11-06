@@ -379,8 +379,6 @@ main (int argc, char *argv[])
     }
   }
 
-  update_score_state ();
-
   gtk_main ();
 
   games_conf_shutdown ();

@@ -20,6 +20,7 @@
  * For more details see the file COPYING.
  */
 
+#include <config.h>
 #include <gtk/gtk.h>
 
 #include "cursors.h"

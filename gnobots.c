@@ -108,14 +108,7 @@ static const GamesScoresCategory scorecats[] = {
   {"robots2_easy-super-safe", N_("Robots2 easy with super-safe moves")},
   {"robots_with_safe_teleport", N_("Robots with safe teleport")},
   {"robots_with_safe_teleport-safe", N_("Robots with safe teleport with safe moves")},
-  {"robots_with_safe_teleport-super-safe", N_("Robots with safe teleport with super-safe moves")},
-  GAMES_SCORES_LAST_CATEGORY
-};
-
-static const GamesScoresDescription scoredesc = { scorecats,
-  "classic_robots",
-  "gnobots2",
-  GAMES_SCORES_STYLE_PLAIN_DESCENDING
+  {"robots_with_safe_teleport-super-safe", N_("Robots with safe teleport with super-safe moves")}
 };
 
 /**********************************************************************/
@@ -245,7 +238,11 @@ main (int argc, char *argv[])
 
   g_set_application_name (_("Robots"));
 
-  highscores = games_scores_new (&scoredesc);
+  highscores = games_scores_new ("gnobots2",
+                                 scorecats, G_N_ELEMENTS (scorecats),
+                                 NULL, NULL,
+                                 0 /* default category */,
+                                 GAMES_SCORES_STYLE_PLAIN_DESCENDING);
 
   games_conf_initialise ("Gnobots2");
 

@@ -441,17 +441,17 @@ msgstr "Partida"
 #: C/gnobots2.xml:301(para)
 msgid ""
 "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
-"guimenuitem></menuchoice>&mdash; starts a new game of GNOME Robots."
+"guimenuitem></menuchoice>— starts a new game of GNOME Robots."
 msgstr ""
 "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>Nova</"
-"guimenuitem></menuchoice>&mdash; inicia una partida nova del Robots."
+"guimenuitem></menuchoice>— inicia una partida nova del Robots."
 
 #: C/gnobots2.xml:311(para)
 msgid ""
-"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice>&mdash; shows the "
+"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice>— shows the "
 "higher scores."
 msgstr ""
-"<menuchoice><guimenuitem>Puntuacions</guimenuitem></menuchoice>&mdash; "
+"<menuchoice><guimenuitem>Puntuacions</guimenuitem></menuchoice>— "
 "mostra les puntuacions màximes."
 
 #: C/gnobots2.xml:321(keysym)
@@ -472,21 +472,21 @@ msgstr "Mou"
 
 #: C/gnobots2.xml:338(para)
 msgid ""
-"<guimenuitem>Teleport</guimenuitem>&mdash; teleports you in a safe location."
+"<guimenuitem>Teleport</guimenuitem>— teleports you in a safe location."
 msgstr ""
-"<guimenuitem>Teleporta</guimenuitem>&mdash; us teleporta a un emplaçament "
+"<guimenuitem>Teleporta</guimenuitem>— us teleporta a un emplaçament "
 "segur."
 
 #: C/gnobots2.xml:344(para)
 msgid ""
-"<guimenuitem>Random</guimenuitem>&mdash; teleports you in a random location."
+"<guimenuitem>Random</guimenuitem>— teleports you in a random location."
 msgstr ""
-"<guimenuitem>Aleatori</guimenuitem>&mdash; us teleporta a un emplaçament "
+"<guimenuitem>Aleatori</guimenuitem>— us teleporta a un emplaçament "
 "aleatori."
 
 #: C/gnobots2.xml:350(para)
-msgid "<guimenuitem>Wait</guimenuitem>&mdash; places you in wait mode."
-msgstr "<guimenuitem>Espera</guimenuitem>&mdash; us deixa en mode espera."
+msgid "<guimenuitem>Wait</guimenuitem>— places you in wait mode."
+msgstr "<guimenuitem>Espera</guimenuitem>— us deixa en mode espera."
 
 #: C/gnobots2.xml:334(para) C/gnobots2.xml:380(para)
 msgid "This menu contains: <placeholder-1/>"
@@ -501,7 +501,7 @@ msgid ""
 "<guimenuitem>Preferences</guimenuitem> which brings up the preferences "
 "dialog box."
 msgstr ""
-"<guimenuitem>Preferències</guimenuitem>&mdash; el qual mostra el quadre de "
+"<guimenuitem>Preferències</guimenuitem>— el qual mostra el quadre de "
 "diàleg de preferències."
 
 #: C/gnobots2.xml:363(para)
@@ -516,16 +516,16 @@ msgid "Help"
 msgstr "Ajuda"
 
 #: C/gnobots2.xml:384(para)
-msgid "<guimenuitem>Contents</guimenuitem>&mdash; shows this manual."
-msgstr "<guimenuitem>Continguts</guimenuitem>&mdash; mostra aquest manual."
+msgid "<guimenuitem>Contents</guimenuitem>— shows this manual."
+msgstr "<guimenuitem>Continguts</guimenuitem>— mostra aquest manual."
 
 #: C/gnobots2.xml:390(para)
 msgid ""
-"<guimenuitem>About</guimenuitem>&mdash; shows basic information about "
+"<guimenuitem>About</guimenuitem>— shows basic information about "
 "<application>GNOME Robots</application>, such as the author's name and the "
 "application version number."
 msgstr ""
-"<guimenuitem>Quant a</guimenuitem>&mdash; mostra informació bàsica sobre el "
+"<guimenuitem>Quant a</guimenuitem>— mostra informació bàsica sobre el "
 "<application>Robots</application>, com el nom dels autors i el número de "
 "versió de l'aplicació."
 
@@ -663,13 +663,13 @@ msgstr ""
 
 #: C/gnobots2.xml:489(para)
 msgid ""
-"<guimenuitem>Game</guimenuitem>&mdash; This page allows you to choose the "
+"<guimenuitem>Game</guimenuitem>— This page allows you to choose the "
 "type of game you want to play. The drop-down box at the top of the page "
 "allows you to choose from a number of predefined games. You can't change "
 "these options in the middle of a game, so they will be disabled then. There "
 "are also several options at the bottom of the dialog: <placeholder-1/>"
 msgstr ""
-"<guimenuitem>Partida</guimenuitem>&mdash; Aquesta pestanya us permet "
+"<guimenuitem>Partida</guimenuitem>— Aquesta pestanya us permet "
 "seleccionar el tipus de joc que voleu jugar. El quadre desplegable a la part "
 "superior de la pàgina us permet seleccionar un número de jocs "
 "predeterminats. No podeu canviar aquestes opcions enmig d'una partida, de "
@@ -678,21 +678,21 @@ msgstr ""
 
 #: C/gnobots2.xml:531(para)
 msgid ""
-"<guimenuitem>Appearance</guimenuitem>&mdash; This page allows you to select "
+"<guimenuitem>Appearance</guimenuitem>— This page allows you to select "
 "the graphics used throughout the game from the list in the dropdown-box. You "
 "can also select the background colour from this tab."
 msgstr ""
-"<guimenuitem>Aparença</guimenuitem>&mdash; Aquesta pestanya us permet "
+"<guimenuitem>Aparença</guimenuitem>— Aquesta pestanya us permet "
 "seleccionar els gràfics que s'utilitzen en la partida mitjançant un quadre "
 "desplegable. També podeu seleccionar el color de fons."
 
 #: C/gnobots2.xml:541(para)
 msgid ""
-"<guimenuitem>Keyboard</guimenuitem>&mdash; This screen allows you to define "
+"<guimenuitem>Keyboard</guimenuitem>— This screen allows you to define "
 "your own keyboard controls. To select a different key for a command, double-"
 "click on the button for that command and then press the key you want to use."
 msgstr ""
-"<guimenuitem>Teclat</guimenuitem>&mdash; Aquesta pestanya us permet definir "
+"<guimenuitem>Teclat</guimenuitem>— Aquesta pestanya us permet definir "
 "els controls del teclat. Per a seleccionar una altra tecla per a una ordre, "
 "feu doble clic en la línia d'aquesta ordre i premeu la tecla que voleu "
 "utilitzar."

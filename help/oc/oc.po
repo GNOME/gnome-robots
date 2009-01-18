@@ -336,12 +336,12 @@ msgstr "Jòc"
 #: C/gnobots2.xml:298(para)
 msgid ""
 "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
-"guimenuitem></menuchoice>&mdash; starts a new game of GNOME Robots."
+"guimenuitem></menuchoice>— starts a new game of GNOME Robots."
 msgstr ""
 
 #: C/gnobots2.xml:308(para)
 msgid ""
-"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice>&mdash; shows the "
+"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice>— shows the "
 "higher scores."
 msgstr ""
 
@@ -362,15 +362,15 @@ msgid "Move"
 msgstr "Desplaçar"
 
 #: C/gnobots2.xml:335(para)
-msgid "<guimenuitem>Teleport</guimenuitem>&mdash; teleports you in a safe location."
+msgid "<guimenuitem>Teleport</guimenuitem>— teleports you in a safe location."
 msgstr ""
 
 #: C/gnobots2.xml:341(para)
-msgid "<guimenuitem>Random</guimenuitem>&mdash; teleports you in a random location."
+msgid "<guimenuitem>Random</guimenuitem>— teleports you in a random location."
 msgstr ""
 
 #: C/gnobots2.xml:347(para)
-msgid "<guimenuitem>Wait</guimenuitem>&mdash; places you in wait mode."
+msgid "<guimenuitem>Wait</guimenuitem>— places you in wait mode."
 msgstr ""
 
 #: C/gnobots2.xml:331(para) C/gnobots2.xml:377(para)
@@ -396,12 +396,12 @@ msgid "Help"
 msgstr "Ajuda"
 
 #: C/gnobots2.xml:381(para)
-msgid "<guimenuitem>Contents</guimenuitem>&mdash; shows this manual."
+msgid "<guimenuitem>Contents</guimenuitem>— shows this manual."
 msgstr ""
 
 #: C/gnobots2.xml:387(para)
 msgid ""
-"<guimenuitem>About</guimenuitem>&mdash; shows basic information about "
+"<guimenuitem>About</guimenuitem>— shows basic information about "
 "<application>GNOME Robots</application>, such as the author's name and the "
 "application version number."
 msgstr ""
@@ -519,7 +519,7 @@ msgstr ""
 
 #: C/gnobots2.xml:486(para)
 msgid ""
-"<guimenuitem>Game</guimenuitem>&mdash; This page allows you to choose the "
+"<guimenuitem>Game</guimenuitem>— This page allows you to choose the "
 "type of game you want to play. The drop-down box at the top of the page "
 "allows you to choose from a number of predefined games. You can't change "
 "these options in the middle of a game, so they will be disabled then. There "
@@ -528,14 +528,14 @@ msgstr ""
 
 #: C/gnobots2.xml:528(para)
 msgid ""
-"<guimenuitem>Appearance</guimenuitem>&mdash; This page allows you to select "
+"<guimenuitem>Appearance</guimenuitem>— This page allows you to select "
 "the graphics used throughout the game from the list in the dropdown-box. You "
 "can also select the background colour from this tab."
 msgstr ""
 
 #: C/gnobots2.xml:538(para)
 msgid ""
-"<guimenuitem>Keyboard</guimenuitem>&mdash; This screen allows you to define "
+"<guimenuitem>Keyboard</guimenuitem>— This screen allows you to define "
 "your own keyboard controls. To select a different key for a command, double-"
 "click on the button for that command and then press the key you want to use."
 msgstr ""

@@ -302,7 +302,7 @@
             <menuchoice> 
 	       <shortcut><keysym>Ctrl-N</keysym></shortcut>
                <guimenuitem>New</guimenuitem> 
-		  </menuchoice> &mdash; starts a new game of GNOME Robots.
+		  </menuchoice> — starts a new game of GNOME Robots.
 	   
             </para>
             </listitem>     
@@ -311,7 +311,7 @@
 	    <para>
               <menuchoice>
               <guimenuitem>Scores</guimenuitem>
-		  </menuchoice> &mdash; shows the higher scores.
+		  </menuchoice> — shows the higher scores.
 		</para>
             </listitem>
 
@@ -336,19 +336,19 @@
           <itemizedlist>
           <listitem>
             <para>
-              <guimenuitem>Teleport</guimenuitem>&mdash;
+              <guimenuitem>Teleport</guimenuitem>—
               teleports you in a safe location.
             </para>
           </listitem>
           <listitem>
           <para>
-            <guimenuitem>Random</guimenuitem>&mdash; teleports you in
+            <guimenuitem>Random</guimenuitem>— teleports you in
             a random location.
           </para>
           </listitem>
           <listitem>
           <para>
-            <guimenuitem>Wait</guimenuitem>&mdash; places you in wait mode.
+            <guimenuitem>Wait</guimenuitem>— places you in wait mode.
           </para>
           </listitem>
         </itemizedlist>
@@ -382,13 +382,13 @@
           <itemizedlist>
           <listitem>
             <para>
-              <guimenuitem>Contents</guimenuitem>&mdash;
+              <guimenuitem>Contents</guimenuitem>—
               shows this manual.
             </para>
           </listitem>
           <listitem>
           <para>
-            <guimenuitem>About</guimenuitem>&mdash; shows
+            <guimenuitem>About</guimenuitem>— shows
               basic information about
               <application>GNOME Robots</application>, such as
               the author's name and the application version number.
@@ -487,7 +487,7 @@
       <itemizedlist>
         <listitem>
         <para>
-	    <guimenuitem>Game</guimenuitem> &mdash; This page allows
+	    <guimenuitem>Game</guimenuitem> — This page allows
         you to choose the type of game you want to play.  The
         drop-down box at the top of the page allows you to choose from
         a number of predefined games. You can't change these options in
@@ -529,7 +529,7 @@
 	</listitem>
         <listitem>
         <para>
-	    <guimenuitem>Appearance</guimenuitem> &mdash; This page
+	    <guimenuitem>Appearance</guimenuitem> — This page
           allows you to select the graphics used throughout the game
           from the list in the dropdown-box. You can also select the
           background colour from this tab.
@@ -539,7 +539,7 @@
         <listitem>
         
         <para>
-	    <guimenuitem>Keyboard</guimenuitem> &mdash;
+	    <guimenuitem>Keyboard</guimenuitem> —
           This screen allows you to define your own keyboard
           controls. To select a different key
           for a command, double-click on the button for that command and then

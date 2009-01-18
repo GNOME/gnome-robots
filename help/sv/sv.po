@@ -218,11 +218,11 @@ msgid "Game"
 msgstr "Spel"
 
 #: C/gnobots2.xml:294(para)
-msgid "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New Game</guimenuitem></menuchoice>&mdash; starts a new game of GNOME Robots."
+msgid "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New Game</guimenuitem></menuchoice>— starts a new game of GNOME Robots."
 msgstr ""
 
 #: C/gnobots2.xml:304(para)
-msgid "<menuchoice><guimenuitem>Scores...</guimenuitem></menuchoice>&mdash; shows the scores."
+msgid "<menuchoice><guimenuitem>Scores...</guimenuitem></menuchoice>— shows the scores."
 msgstr ""
 
 #: C/gnobots2.xml:314(keysym)
@@ -254,11 +254,11 @@ msgid "Help"
 msgstr "Hjälp"
 
 #: C/gnobots2.xml:348(para)
-msgid "<guimenuitem>Contents</guimenuitem>&mdash; shows this manual."
+msgid "<guimenuitem>Contents</guimenuitem>— shows this manual."
 msgstr ""
 
 #: C/gnobots2.xml:354(para)
-msgid "<guimenuitem>About</guimenuitem>&mdash; shows basic information about <application>GNOME Robots</application>, such as the author's name and the application version number."
+msgid "<guimenuitem>About</guimenuitem>— shows basic information about <application>GNOME Robots</application>, such as the author's name and the application version number."
 msgstr ""
 
 #: C/gnobots2.xml:344(para)
@@ -461,15 +461,15 @@ msgid "The 'Splats' checkbox selects whether you want the sound played and a sma
 msgstr ""
 
 #: C/gnobots2.xml:556(para)
-msgid "<guimenuitem>Game</guimenuitem>&mdash; This page allows you to choose the type of game you want to play. The drop-down box at the top of the page allows you to choose from a number of predefined games, and the list-box below it shows the settings for that game. You can't change these options in the middle of a game, so they will be disabled then. There are also several options at the bottom of the dialog: <placeholder-1/>"
+msgid "<guimenuitem>Game</guimenuitem>— This page allows you to choose the type of game you want to play. The drop-down box at the top of the page allows you to choose from a number of predefined games, and the list-box below it shows the settings for that game. You can't change these options in the middle of a game, so they will be disabled then. There are also several options at the bottom of the dialog: <placeholder-1/>"
 msgstr ""
 
 #: C/gnobots2.xml:599(para)
-msgid "<guimenuitem>Graphics</guimenuitem>&mdash; This page allows you to select the graphics used throughout the game from the list in the dropdown-box. You can also select the background colour from this tab."
+msgid "<guimenuitem>Graphics</guimenuitem>— This page allows you to select the graphics used throughout the game from the list in the dropdown-box. You can also select the background colour from this tab."
 msgstr ""
 
 #: C/gnobots2.xml:609(para)
-msgid "<guimenuitem>Keyboard</guimenuitem>&mdash; This screen allows you to define your own keyboard controls. The three pre-defined sets at the bottom were described in the previous section. To select a different key for a command, click on the button for that command and then press the key you want to use."
+msgid "<guimenuitem>Keyboard</guimenuitem>— This screen allows you to define your own keyboard controls. The three pre-defined sets at the bottom were described in the previous section. To select a different key for a command, click on the button for that command and then press the key you want to use."
 msgstr ""
 
 #: C/gnobots2.xml:548(para)

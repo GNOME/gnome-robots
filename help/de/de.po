@@ -342,17 +342,17 @@ msgstr "Spiel"
 #: ../C/gnobots2.xml:301(para)
 msgid ""
 "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
-"guimenuitem></menuchoice>&mdash; starts a new game of GNOME Robots."
+"guimenuitem></menuchoice>— starts a new game of GNOME Robots."
 msgstr ""
 "<menuchoice><shortcut><keysym>Strg+N</keysym></shortcut><guimenuitem>Neu</"
-"guimenuitem></menuchoice>&mdash; beginnt ein neues Spiel von Robots."
+"guimenuitem></menuchoice>— beginnt ein neues Spiel von Robots."
 
 #: ../C/gnobots2.xml:311(para)
 msgid ""
-"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice>&mdash; shows the "
+"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice>— shows the "
 "higher scores."
 msgstr ""
-"<menuchoice><guimenuitem>Ergebnisse</guimenuitem></menuchoice>&mdash; zeigt "
+"<menuchoice><guimenuitem>Ergebnisse</guimenuitem></menuchoice>— zeigt "
 "die besten Ergebnisse."
 
 #: ../C/gnobots2.xml:321(keysym)
@@ -373,21 +373,21 @@ msgstr "Bewegen"
 
 #: ../C/gnobots2.xml:338(para)
 msgid ""
-"<guimenuitem>Teleport</guimenuitem>&mdash; teleports you in a safe location."
+"<guimenuitem>Teleport</guimenuitem>— teleports you in a safe location."
 msgstr ""
-"<guimenuitem>Teleport</guimenuitem>&mdash; teleportiert Sie an einen "
+"<guimenuitem>Teleport</guimenuitem>— teleportiert Sie an einen "
 "sicheren Ort."
 
 #: ../C/gnobots2.xml:344(para)
 msgid ""
-"<guimenuitem>Random</guimenuitem>&mdash; teleports you in a random location."
+"<guimenuitem>Random</guimenuitem>— teleports you in a random location."
 msgstr ""
-"<guimenuitem>Zufall</guimenuitem>&mdash; teleportiert Sie an einem "
+"<guimenuitem>Zufall</guimenuitem>— teleportiert Sie an einem "
 "zufälligen Ort."
 
 #: ../C/gnobots2.xml:350(para)
-msgid "<guimenuitem>Wait</guimenuitem>&mdash; places you in wait mode."
-msgstr "<guimenuitem>Warten</guimenuitem>&mdash; bringt Sie in den Wartemodus."
+msgid "<guimenuitem>Wait</guimenuitem>— places you in wait mode."
+msgstr "<guimenuitem>Warten</guimenuitem>— bringt Sie in den Wartemodus."
 
 #: ../C/gnobots2.xml:334(para) ../C/gnobots2.xml:380(para)
 msgid "This menu contains: <placeholder-1/>"
@@ -416,16 +416,16 @@ msgid "Help"
 msgstr "Hilfe"
 
 #: ../C/gnobots2.xml:384(para)
-msgid "<guimenuitem>Contents</guimenuitem>&mdash; shows this manual."
-msgstr "<guimenuitem>Inhalt</guimenuitem>&mdash; zeigt dieses Handbuch an."
+msgid "<guimenuitem>Contents</guimenuitem>— shows this manual."
+msgstr "<guimenuitem>Inhalt</guimenuitem>— zeigt dieses Handbuch an."
 
 #: ../C/gnobots2.xml:390(para)
 msgid ""
-"<guimenuitem>About</guimenuitem>&mdash; shows basic information about "
+"<guimenuitem>About</guimenuitem>— shows basic information about "
 "<application>GNOME Robots</application>, such as the author's name and the "
 "application version number."
 msgstr ""
-"<guimenuitem>Info</guimenuitem>&mdash; zeigt allgemeine Informationen über "
+"<guimenuitem>Info</guimenuitem>— zeigt allgemeine Informationen über "
 "<application>Robots</application> an, so wie den Namen des Autoren und die "
 "Versionsnummer der Anwendung."
 
@@ -565,13 +565,13 @@ msgstr ""
 
 #: ../C/gnobots2.xml:489(para)
 msgid ""
-"<guimenuitem>Game</guimenuitem>&mdash; This page allows you to choose the "
+"<guimenuitem>Game</guimenuitem>— This page allows you to choose the "
 "type of game you want to play. The drop-down box at the top of the page "
 "allows you to choose from a number of predefined games. You can't change "
 "these options in the middle of a game, so they will be disabled then. There "
 "are also several options at the bottom of the dialog: <placeholder-1/>"
 msgstr ""
-"<guimenuitem>Spiel</guimenuitem>&mdash; Auf dieser Seite können Sie den "
+"<guimenuitem>Spiel</guimenuitem>— Auf dieser Seite können Sie den "
 "Spieltyp wählen. Im Auswahlfeld oben können Sie aus einigen voreingestellten "
 "Spieltypen wählen. Sie können diese Optionen nicht während eines laufenden "
 "Spiels ändern, weshalb sie zu der Zeit nicht aktiv sind. Es gibt außerdem "
@@ -579,21 +579,21 @@ msgstr ""
 
 #: ../C/gnobots2.xml:531(para)
 msgid ""
-"<guimenuitem>Appearance</guimenuitem>&mdash; This page allows you to select "
+"<guimenuitem>Appearance</guimenuitem>— This page allows you to select "
 "the graphics used throughout the game from the list in the dropdown-box. You "
 "can also select the background colour from this tab."
 msgstr ""
-"<guimenuitem>Erscheinungsbild</guimenuitem>&mdash; Auf dieser Seite können "
+"<guimenuitem>Erscheinungsbild</guimenuitem>— Auf dieser Seite können "
 "Sie in einem Auswahlfeld die Grafiken wählen, die im Spiel verwendet werden. "
 "Sie können in diesem Reiter außerdem die Hintergrundfarbe ändern."
 
 #: ../C/gnobots2.xml:541(para)
 msgid ""
-"<guimenuitem>Keyboard</guimenuitem>&mdash; This screen allows you to define "
+"<guimenuitem>Keyboard</guimenuitem>— This screen allows you to define "
 "your own keyboard controls. To select a different key for a command, double-"
 "click on the button for that command and then press the key you want to use."
 msgstr ""
-"<guimenuitem>Tastatur</guimenuitem>&mdash; Auf dieser Seite können Sie Ihre "
+"<guimenuitem>Tastatur</guimenuitem>— Auf dieser Seite können Sie Ihre "
 "eigene Tastaturbelegung einstellen. Um eine andere Taste für einen Befehl zu "
 "wählen, machen Sie einen Doppelklick auf den Befehl und drücken dann die "
 "Taste, die Sie verwenden möchten."

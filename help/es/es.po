@@ -1,10 +1,10 @@
 # translation of gnobots2.HEAD.po to Español
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 200, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnobots2.HEAD\n"
-"POT-Creation-Date: 2008-11-07 12:56+0100\n"
-"PO-Revision-Date: 2008-11-08 13:23+0100\n"
+"POT-Creation-Date: 2009-01-18 15:48+0000\n"
+"PO-Revision-Date: 2009-01-19 13:27+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -446,20 +446,26 @@ msgid "Game"
 msgstr "Juego"
 
 #: C/gnobots2.xml:301(para)
+#| msgid ""
+#| "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
+#| "guimenuitem></menuchoice>— starts a new game of GNOME Robots."
 msgid ""
 "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
-"guimenuitem></menuchoice>— starts a new game of GNOME Robots."
+"guimenuitem></menuchoice> — starts a new game of GNOME Robots."
 msgstr ""
 "<menuchoice><shortcut><keysym>Ctrl+N</keysym></shortcut><guimenuitem>Nuevo</"
 "guimenuitem></menuchoice>: inicia una nueva partida de Robots."
 
 #: C/gnobots2.xml:311(para)
+#| msgid ""
+#| "<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice>— shows the "
+#| "higher scores."
 msgid ""
-"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice>— shows the "
+"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> — shows the "
 "higher scores."
 msgstr ""
-"<menuchoice><guimenuitem>Puntuación</guimenuitem></menuchoice>: muestra las "
-"puntuaciones."
+"<menuchoice><guimenuitem>Puntuaciones</guimenuitem></menuchoice>: muestra "
+"las puntuaciones."
 
 #: C/gnobots2.xml:321(keysym)
 msgid "Ctrl-Q"
@@ -478,15 +484,13 @@ msgid "Move"
 msgstr "Mover"
 
 #: C/gnobots2.xml:338(para)
-msgid ""
-"<guimenuitem>Teleport</guimenuitem>— teleports you in a safe location."
+msgid "<guimenuitem>Teleport</guimenuitem>— teleports you in a safe location."
 msgstr ""
 "<guimenuitem>Teletransportación</guimenuitem>: le teletransporta a un lugar "
 "seguro."
 
 #: C/gnobots2.xml:344(para)
-msgid ""
-"<guimenuitem>Random</guimenuitem>— teleports you in a random location."
+msgid "<guimenuitem>Random</guimenuitem>— teleports you in a random location."
 msgstr ""
 "<guimenuitem>Al azar</guimenuitem>: le teletransporta a un lugar aleatorio."
 
@@ -522,7 +526,7 @@ msgstr "Ayuda"
 
 #: C/gnobots2.xml:384(para)
 msgid "<guimenuitem>Contents</guimenuitem>— shows this manual."
-msgstr "<guimenuitem>Contenido</guimenuitem>: muestra este manual."
+msgstr "<guimenuitem>Índice</guimenuitem>: muestra este manual."
 
 #: C/gnobots2.xml:390(para)
 msgid ""
@@ -668,12 +672,18 @@ msgstr ""
 "aparezca una pequeño «¡Splat!» en la pantalla."
 
 #: C/gnobots2.xml:489(para)
+#| msgid ""
+#| "<guimenuitem>Game</guimenuitem>— This page allows you to choose the type "
+#| "of game you want to play. The drop-down box at the top of the page allows "
+#| "you to choose from a number of predefined games. You can't change these "
+#| "options in the middle of a game, so they will be disabled then. There are "
+#| "also several options at the bottom of the dialog: <placeholder-1/>"
 msgid ""
-"<guimenuitem>Game</guimenuitem>— This page allows you to choose the "
-"type of game you want to play. The drop-down box at the top of the page "
-"allows you to choose from a number of predefined games. You can't change "
-"these options in the middle of a game, so they will be disabled then. There "
-"are also several options at the bottom of the dialog: <placeholder-1/>"
+"<guimenuitem>Game</guimenuitem> — This page allows you to choose the type of "
+"game you want to play. The drop-down box at the top of the page allows you "
+"to choose from a number of predefined games. You can't change these options "
+"in the middle of a game, so they will be disabled then. There are also "
+"several options at the bottom of the dialog: <placeholder-1/>"
 msgstr ""
 "<guimenuitem>Juego</guimenuitem>: Esta página le permite elegir el tipo de "
 "partida que quiere jugar. La lista desplegable en la parte superior de la "
@@ -683,20 +693,29 @@ msgstr ""
 "inferior del diálogo: <placeholder-1/>"
 
 #: C/gnobots2.xml:531(para)
+#| msgid ""
+#| "<guimenuitem>Appearance</guimenuitem>— This page allows you to select the "
+#| "graphics used throughout the game from the list in the dropdown-box. You "
+#| "can also select the background colour from this tab."
 msgid ""
-"<guimenuitem>Appearance</guimenuitem>— This page allows you to select "
-"the graphics used throughout the game from the list in the dropdown-box. You "
-"can also select the background colour from this tab."
+"<guimenuitem>Appearance</guimenuitem> — This page allows you to select the "
+"graphics used throughout the game from the list in the dropdown-box. You can "
+"also select the background colour from this tab."
 msgstr ""
 "<guimenuitem>Aspecto</guimenuitem>: Esta página le permite seleccionar los "
 "gráficos para usar durante el juego desde la lista desplegable. Desde esta "
 "solapa también puede seleccionar el color del fondo."
 
 #: C/gnobots2.xml:541(para)
+#| msgid ""
+#| "<guimenuitem>Keyboard</guimenuitem>— This screen allows you to define "
+#| "your own keyboard controls. To select a different key for a command, "
+#| "double-click on the button for that command and then press the key you "
+#| "want to use."
 msgid ""
-"<guimenuitem>Keyboard</guimenuitem>— This screen allows you to define "
-"your own keyboard controls. To select a different key for a command, double-"
-"click on the button for that command and then press the key you want to use."
+"<guimenuitem>Keyboard</guimenuitem> — This screen allows you to define your "
+"own keyboard controls. To select a different key for a command, double-click "
+"on the button for that command and then press the key you want to use."
 msgstr ""
 "<guimenuitem>Teclado</guimenuitem>: Esta pantalla le permite definir sus "
 "propios controles de teclado. Para seleccionar una tecla diferente para un "
@@ -835,4 +854,4 @@ msgstr ""
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/gnobots2.xml:0(None)
 msgid "translator-credits"
-msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007-2008."
+msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"

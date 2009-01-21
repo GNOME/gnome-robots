@@ -36,13 +36,28 @@ gnobots2_CPPFLAGS = \
 	$(AM_CPPFLAGS)
 
 gnobots2_CFLAGS = \
-	$(GNOME_GAMES_CFLAGS) \
+	$(GTK_CFLAGS) \
 	$(AM_CFLAGS)
 
 gnobots2_LDADD = \
 	$(top_builddir)/libgames-support/libgames-support.la \
-	$(GNOME_GAMES_LIBS) \
+	$(GTK_LIBS) \
 	$(INTLLIBS)
+
+if HAVE_GNOME
+gnobots2_CFLAGS += $(GNOME_CFLAGS)
+gnobots2_LDADD += $(GNOME_LIBS)
+endif
+
+if HAVE_RSVG
+gnobots2_CFLAGS += $(RSVG_CFLAGS)
+gnobots2_LDADD += $(RSVG_LIBS)
+endif
+
+if WITH_GTHREAD
+gnobots2_CFLAGS += $(GHTREAD_CFLAGS)
+gnobots2_LDADD += $(GTHREAD_LIBS)
+endif
 
 pixmapdir = $(pkgdatadir)/gnobots2/pixmaps
 pixmap_DATA = gnomes.png \

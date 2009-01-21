@@ -25,11 +25,11 @@
 #include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
-#include <games-find-file.h>
-#include <games-preimage.h>
-#include <games-runtime.h>
-#include <games-scores.h>
-#include <games-scores-dialog.h>
+#include <libgames-support/games-find-file.h>
+#include <libgames-support/games-preimage.h>
+#include <libgames-support/games-runtime.h>
+#include <libgames-support/games-scores.h>
+#include <libgames-support/games-scores-dialog.h>
 
 #include <sys/types.h>
 #include <string.h>

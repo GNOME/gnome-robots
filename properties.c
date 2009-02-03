@@ -457,7 +457,7 @@ show_properties_dialog (void)
   gtk_container_set_border_width (GTK_CONTAINER (cpage), 12);
 
   frame = games_frame_new (_("Game Type"));
-  gtk_box_pack_start (GTK_BOX (cpage), frame, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
 
   vbox = gtk_vbox_new (FALSE, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);

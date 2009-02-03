@@ -80,7 +80,7 @@ keyboard_set (guint * keys)
 gint
 keyboard_cb (GtkWidget * widget, GdkEventKey * event, gpointer data)
 {
-  gint i;
+  gint i, keyval;
 
   /* This is a bit of a kludge to let through accelerator keys, otherwise
    * if N is used as a key, then Ctrl-N is never picked up. The cleaner
@@ -89,7 +89,7 @@ keyboard_cb (GtkWidget * widget, GdkEventKey * event, gpointer data)
   if (event->state & (GDK_CONTROL_MASK | GDK_MOD1_MASK))
     return FALSE;
 
-  gint keyval = toupper(event->keyval);
+  keyval = toupper(event->keyval);
 
   for (i = 0; i < 12; ++i) {
     if (keyval == toupper(control_keys[i])) {

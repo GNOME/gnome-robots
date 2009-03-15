@@ -438,7 +438,7 @@ msgid ""
 "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
 "guimenuitem></menuchoice> — starts a new game of GNOME Robots."
 msgstr ""
-"<menuchoice><shortcut><keycap>Ctrl</keycap><keycap>N</keycap></"
+"<menuchoice><shortcut><keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo></"
 "shortcut><guimenuitem>New</guimenuitem></menuchoice> — starts a new game of "
 "GNOME Robots."
 

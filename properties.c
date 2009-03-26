@@ -476,17 +476,12 @@ show_properties_dialog (void)
   vbox = gtk_vbox_new (TRUE, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
-  table = gtk_table_new (2, 2, FALSE);
-  gtk_table_set_row_spacings (GTK_TABLE (table), 6);
-  gtk_table_set_col_spacings (GTK_TABLE (table), 12);
-  gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
-
   chkbox = gtk_check_button_new_with_mnemonic (_("_Use safe moves"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),
 				properties.safe_moves);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
 		    (GCallback) safe_cb, NULL);
-  gtk_table_attach (GTK_TABLE (table), chkbox, 0, 1, 0, 1, GTK_FILL, 0, 0, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), chkbox, TRUE, TRUE, 0);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Prevent accidental moves that result in getting killed."));
 
@@ -495,15 +490,20 @@ show_properties_dialog (void)
 				properties.super_safe_moves);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
 		    (GCallback) super_safe_cb, NULL);
-  gtk_table_attach (GTK_TABLE (table), chkbox, 0, 1, 1, 2, GTK_FILL, 0, 0, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), chkbox, TRUE, TRUE, 0);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Prevents all moves that result in getting killed."));
+
+  frame = games_frame_new (_("Sound"));
+  gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
+  vbox = gtk_vbox_new (TRUE, 6);
+  gtk_container_add (GTK_CONTAINER (frame), vbox);
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Enable sounds"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox), properties.sound);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
 		    (GCallback) sound_cb, NULL);
-  gtk_table_attach (GTK_TABLE (table), chkbox, 1, 2, 0, 1, GTK_FILL, 0, 0, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), chkbox, TRUE, TRUE, 0);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Play sounds for events like winning a level and dying."));
 
@@ -512,7 +512,7 @@ show_properties_dialog (void)
 				properties.splats);
   g_signal_connect (G_OBJECT (chkbox), "clicked", (GCallback) splat_cb,
 		    NULL);
-  gtk_table_attach (GTK_TABLE (table), chkbox, 1, 2, 1, 2, GTK_FILL, 0, 0, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), chkbox, TRUE, TRUE, 0);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Play the most common, and potentially the most annoying, sound."));
 

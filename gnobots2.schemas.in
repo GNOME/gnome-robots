@@ -87,18 +87,6 @@
       </schema>
 
       <schema>
-      <key>/schemas/apps/gnobots2/preferences/enable_splats</key>
-      <applyto>/apps/gnobots2/preferences/enable_splats</applyto>
-      <owner>gnobots2</owner>
-      <type>bool</type>
-      <default>TRUE</default>
-      <locale name="C">
-        <short>Enable splats</short>
-        <long>Enable splats.  Play a sound and show a "Splat!" on the screen.</long>
-      </locale>
-      </schema>
-
-      <schema>
         <key>/schemas/apps/gnobots2/preferences/key00</key>
         <applyto>/apps/gnobots2/preferences/key00</applyto>
         <owner>gnobots2</owner>

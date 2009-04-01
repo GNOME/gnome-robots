@@ -517,18 +517,14 @@ update_arena (void)
       if ((temp_arena[i][j] == OBJECT_HEAP) &&
 	  (push_xpos == i) && (push_ypos == j)) {
 	if (arena[i][j] == OBJECT_ROBOT1) {
-	  if (properties_splats ()) {
-	    add_splat_bubble (i, j);
-	    play_sound (SOUND_SPLAT);
-	  }
+	  add_splat_bubble (i, j);
+	  play_sound (SOUND_SPLAT);
 	  push_xpos = push_ypos = -1;
 	  score += game_config ()->score_type1_splatted;
 	}
 	if (arena[i][j] == OBJECT_ROBOT2) {
-	  if (properties_splats ()) {
-	    add_splat_bubble (i, j);
-	    play_sound (SOUND_SPLAT);
-	  }
+	  add_splat_bubble (i, j);
+	  play_sound (SOUND_SPLAT);
 	  push_xpos = push_ypos = -1;
 	  score += game_config ()->score_type2_splatted;
 	}

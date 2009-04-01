@@ -57,7 +57,6 @@
 #define KEY_BACKGROUND_COLOR  "background_color"
 #define KEY_CONFIGURATION     "configuration"
 #define KEY_ENABLE_SOUND      "enable_sound"
-#define KEY_ENABLE_SPLATS     "enable_splats"
 #define KEY_SAFE_MOVES        "use_safe_moves"
 #define KEY_SHOW_TOOLBAR      "show_toolbar"
 #define KEY_SUPER_SAFE_MOVES  "use_super_safe_moves"
@@ -78,7 +77,6 @@ struct _GnobotsProperties {
   gboolean safe_moves;
   gboolean super_safe_moves;
   gboolean sound;
-  gboolean splats;
   gboolean show_toolbar;
   GdkColor bgcolour;
   gint selected_config;
@@ -118,7 +116,6 @@ static void pmap_selection (GtkWidget *, gpointer);
 static void type_selection (GtkWidget *, gpointer);
 static void safe_cb (GtkWidget *, gpointer);
 static void sound_cb (GtkWidget *, gpointer);
-static void splat_cb (GtkWidget *, gpointer);
 static void defkey_cb (GtkWidget *, gpointer);
 static void fill_typemenu (GtkWidget *);
 static void conf_set_background_color (GdkColor * c);
@@ -274,22 +271,6 @@ sound_cb (GtkWidget * widget, gpointer data)
   properties.sound = GTK_TOGGLE_BUTTON (widget)->active;
   games_sound_enable (properties.sound);
   conf_set_enable_sound (properties.sound);
-}
-
-
-/**
- * splat_cb
- * @widget: widget
- * @data: callback data
- *
- * Description:
- * handles message from the 'splat' checkbox
- **/
-static void
-splat_cb (GtkWidget * widget, gpointer data)
-{
-  properties.splats = GTK_TOGGLE_BUTTON (widget)->active;
-  conf_set_enable_splats (properties.splats);
 }
 
 
@@ -507,15 +488,6 @@ show_properties_dialog (void)
   gtk_widget_set_tooltip_text (chkbox,
                                _("Play sounds for events like winning a level and dying."));
 
-  chkbox = gtk_check_button_new_with_mnemonic (_("E_nable splats"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),
-				properties.splats);
-  g_signal_connect (G_OBJECT (chkbox), "clicked", (GCallback) splat_cb,
-		    NULL);
-  gtk_box_pack_start (GTK_BOX (vbox), chkbox, TRUE, TRUE, 0);
-  gtk_widget_set_tooltip_text (chkbox,
-                               _("Play the most common, and potentially the most annoying, sound."));
-
   label = gtk_label_new_with_mnemonic (_("Game"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), cpage, label);
 
@@ -652,8 +624,6 @@ load_properties (void)
 						        NULL);
   properties.sound = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
                                              KEY_ENABLE_SOUND, NULL);
-  properties.splats = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
-                                              KEY_ENABLE_SPLATS, NULL);
   properties.show_toolbar = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
                                                     KEY_SHOW_TOOLBAR, NULL);
 
@@ -721,12 +691,6 @@ conf_set_enable_sound (gboolean value)
 }
 
 void
-conf_set_enable_splats (gboolean value)
-{
-  games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_ENABLE_SPLATS, value);
-}
-
-void
 conf_set_show_toolbar (gboolean value)
 {
   games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_SHOW_TOOLBAR, value);
@@ -763,7 +727,6 @@ save_properties (void)
   conf_set_use_safe_moves (properties.safe_moves);
   conf_set_use_super_safe_moves (properties.super_safe_moves);
   conf_set_enable_sound (properties.sound);
-  conf_set_enable_splats (properties.splats);
 
   return TRUE;
 }
@@ -814,22 +777,6 @@ gboolean
 properties_sound (void)
 {
   return properties.sound;
-}
-
-
-/**
- * properties_splats
- *
- * Description:
- * returns splat setting
- *
- * Returns:
- * TRUE if splats are selected
- **/
-gboolean
-properties_splats (void)
-{
-  return properties.splats;
 }
 
 

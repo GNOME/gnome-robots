@@ -650,7 +650,7 @@ msgid ""
 "The <quote>Splats</quote> checkbox selects whether you want the sound played "
 "and a small <quote>Splat!</quote> to appear on the screen."
 msgstr ""
-"<guote>Plast</guote> kontrol-laukia hautatzen baduzu, soinua entzungo duzu "
+"<quote>Plast</quote> kontrol-laukia hautatzen baduzu, soinua entzungo duzu "
 "eta <quote>Plast!</quote> ikur txikia agertuko da pantailan."
 
 #: C/gnobots2.xml:489(para)

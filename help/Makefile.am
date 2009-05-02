@@ -2,8 +2,6 @@
 # remove your language code from SUBDIRS here and from AC_CONFIG_FILES
 # in configure.in once you've migrated.
 
-SUBDIRS = da
-
 # GNOME doc utils
 
 include $(top_srcdir)/gnome-doc-utils.make

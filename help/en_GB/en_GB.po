@@ -638,7 +638,7 @@ msgid ""
 "If you select the sound checkbox the game will play sounds for various "
 "events throughout the game."
 msgstr ""
-"If you select the sound checkbox the game will play sounds for various "
+"If you select the sound tickbox the game will play sounds for various "
 "events throughout the game."
 
 #: C/gnobots2.xml:520(para)
@@ -646,7 +646,7 @@ msgid ""
 "The <quote>Splats</quote> checkbox selects whether you want the sound played "
 "and a small <quote>Splat!</quote> to appear on the screen."
 msgstr ""
-"The <guilabel>Splats</guilabel> checkbox selects whether you want the sound "
+"The <guilabel>Splats</guilabel> tickbox selects whether you want the sound "
 "played and a small <quote>Splat!</quote> to appear on the screen."
 
 #: C/gnobots2.xml:489(para)

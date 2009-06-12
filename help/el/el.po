@@ -216,10 +216,10 @@ msgstr "Ανάδραση"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Robots</"
 "application> application or this manual, follow the directions in the <ulink "
-"url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
+"url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME Feedback Page</ulink>."
 msgstr ""
 "Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με την εφαρμογή "
-"<application>Ρομπότ</application> ή αυτό το έγγραφο, ακολουθήστε τις  οδηγίες στη <ulink url=\"ghelp:gnome-feedback\" type=\"help\">σελίδα "
+"<application>Ρομπότ</application> ή αυτό το έγγραφο, ακολουθήστε τις  οδηγίες στη <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">σελίδα "
 "ανάδρασης του GNOME</ulink>."
 
 #: C/gnobots2.xml:137(primary)
@@ -772,14 +772,14 @@ msgid ""
 "Somayaji (<email>patanjali@mindless.com</email>), from the original HTML "
 "documentation by Mark Rae. To report a bug or make a suggestion regarding "
 "this application or this manual, follow the directions in this <ulink url="
-"\"ghelp:gnome-feedback\" type=\"help\">document</ulink>."
+"\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
 msgstr ""
 "Το <application>Ρομπότ</application> γράφτηκε από τον Mark Rae (<email>m."
 "rae@inpharmatica.co.uk</email>). Αυτό το εγχειρίδιο γράφτηκε από τον "
 "Patanjali Somayaji (<email>patanjali@mindless.com</email>), από την "
 "αυθεντική τεκμηρίωση σε HTML από τον Mark Rae. Για να αναφέρετε ένα σφάλμα ή "
 "να κάνετε μια εισήγηση σχετικά με αυτό το εγχειρίδιο. ακολουθήστε τις "
-"οδηγίες σ' αυτό το <ulink url=\"ghelp:gnome-feedback\" type=\"help"
+"οδηγίες σ' αυτό το <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help"
 "\">έγγραφο</ulink>."
 
 #: C/gnobots2.xml:633(title)

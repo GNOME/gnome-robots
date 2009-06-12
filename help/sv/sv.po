@@ -126,7 +126,7 @@ msgid "Feedback"
 msgstr "Återkoppling"
 
 #: C/gnobots2.xml:126(para)
-msgid "To report a bug or make a suggestion regarding the <application>Robots</application> application or this manual, follow the directions in the <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
+msgid "To report a bug or make a suggestion regarding the <application>Robots</application> application or this manual, follow the directions in the <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME Feedback Page</ulink>."
 msgstr ""
 
 #: C/gnobots2.xml:137(primary)
@@ -419,7 +419,7 @@ msgid "Authors"
 msgstr "Upphovsmän"
 
 #: C/gnobots2.xml:606(para)
-msgid "<application>GNOME Robots</application> was written by Mark Rae (<email>m.rae@inpharmatica.co.uk</email>). This manual was written by Patanjali Somayaji (<email>patanjali@mindless.com</email>), from the original HTML documentation by Mark Rae. To report a bug or make a suggestion regarding this application or this manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" type=\"help\">document</ulink>."
+msgid "<application>GNOME Robots</application> was written by Mark Rae (<email>m.rae@inpharmatica.co.uk</email>). This manual was written by Patanjali Somayaji (<email>patanjali@mindless.com</email>), from the original HTML documentation by Mark Rae. To report a bug or make a suggestion regarding this application or this manual, follow the directions in this <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
 msgstr ""
 
 #: C/gnobots2.xml:633(title)

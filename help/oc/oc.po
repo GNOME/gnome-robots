@@ -173,7 +173,7 @@ msgstr ""
 msgid ""
 "To report a bug or make a suggestion regarding the <application>GNOME "
 "Robots</application> application or this manual, follow the directions in "
-"the <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</"
+"the <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME Feedback Page</"
 "ulink>."
 msgstr ""
 
@@ -588,7 +588,7 @@ msgid ""
 "Somayaji (<email>patanjali@mindless.com</email>), from the original HTML "
 "documentation by Mark Rae. To report a bug or make a suggestion regarding "
 "this application or this manual, follow the directions in this <ulink url="
-"\"ghelp:gnome-feedback\" type=\"help\">document</ulink>."
+"\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
 msgstr ""
 
 #: C/gnobots2.xml:630(title)

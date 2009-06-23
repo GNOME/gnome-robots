@@ -1470,7 +1470,7 @@ move_cb (GtkWidget * widget, GdkEventMotion * e, gpointer data)
 
   get_dir (e->x, e->y, &dx, &dy);
 
-  set_cursor_by_direction (widget->window, dx, dy);
+  set_cursor_by_direction (gtk_widget_get_window (widget), dx, dy);
 
   return TRUE;
 }

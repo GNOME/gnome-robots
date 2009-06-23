@@ -236,7 +236,7 @@ type_selection (GtkWidget * widget, gpointer data)
 static void
 safe_cb (GtkWidget * widget, gpointer data)
 {
-  properties.safe_moves = GTK_TOGGLE_BUTTON (widget)->active;
+  properties.safe_moves = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
   conf_set_use_safe_moves (properties.safe_moves);
 }
 
@@ -252,7 +252,7 @@ safe_cb (GtkWidget * widget, gpointer data)
 static void
 super_safe_cb (GtkWidget * widget, gpointer data)
 {
-  properties.super_safe_moves = GTK_TOGGLE_BUTTON (widget)->active;
+  properties.super_safe_moves = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
   conf_set_use_super_safe_moves (properties.super_safe_moves);
 }
 
@@ -268,7 +268,7 @@ super_safe_cb (GtkWidget * widget, gpointer data)
 static void
 sound_cb (GtkWidget * widget, gpointer data)
 {
-  properties.sound = GTK_TOGGLE_BUTTON (widget)->active;
+  properties.sound = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
   games_sound_enable (properties.sound);
   conf_set_enable_sound (properties.sound);
 }
@@ -423,15 +423,15 @@ show_properties_dialog (void)
 					 NULL);
   gtk_dialog_set_has_separator (GTK_DIALOG (propbox), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (propbox), 5);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (propbox)->vbox), 2);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))), 2);
   /* Set up notebook and add it to hbox of the gtk_dialog */
   g_signal_connect (G_OBJECT (propbox), "destroy",
 		    G_CALLBACK (gtk_widget_destroyed), &propbox);
 
   notebook = gtk_notebook_new ();
   gtk_container_set_border_width (GTK_CONTAINER (notebook), 5);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (propbox)->vbox), notebook,
-		      TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))),
+              notebook, TRUE, TRUE, 0);
 
   /* The configuration page */
   cpage = gtk_vbox_new (FALSE, 18);

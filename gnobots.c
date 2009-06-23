@@ -153,7 +153,7 @@ save_state_cb (EggSMClient *client,
   int i;
   int xpos, ypos;
 
-  gdk_window_get_origin (app->window, &xpos, &ypos);
+  gdk_window_get_origin (gtk_widget_get_window (app), &xpos, &ypos);
 
   i = 0;
   argv[i++] = (char *) client_data;
@@ -316,15 +316,12 @@ main (int argc, char *argv[])
 
   if (!load_game_configs ()) {
     /* Oops, no configs, we probably haven't been installed properly. */
-    errordialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR,
+    errordialog = gtk_message_dialog_new_with_markup (NULL, 0, GTK_MESSAGE_ERROR,
 					  GTK_BUTTONS_OK,
 					  "<b>%s</b>\n\n%s",
 					  _("No game data could be found."),
 					  _
 					  ("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
-    gtk_label_set_use_markup (GTK_LABEL
-			      (GTK_MESSAGE_DIALOG (errordialog)->label),
-			      TRUE);
     gtk_window_set_resizable (GTK_WINDOW (errordialog), FALSE);
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
@@ -334,7 +331,7 @@ main (int argc, char *argv[])
 
   if (!load_game_graphics ()) {
     /* Oops, no graphics, we probably haven't been installed properly. */
-    errordialog = gtk_message_dialog_new (GTK_WINDOW (app),
+    errordialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (app),
 					  GTK_DIALOG_MODAL,
 					  GTK_MESSAGE_ERROR,
 					  GTK_BUTTONS_OK,
@@ -343,10 +340,6 @@ main (int argc, char *argv[])
 					  ("Some graphics files are missing or corrupt."),
 					  _
 					  ("The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."));
-    gtk_label_set_use_markup (GTK_LABEL
-			      (GTK_MESSAGE_DIALOG (errordialog)->label),
-			      TRUE);
-
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
   }

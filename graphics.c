@@ -297,10 +297,10 @@ set_background_color (GdkColor color)
     return;
 
   if (dark_bggc == NULL) {
-    dark_bggc = gdk_gc_new (game_area->window);
-    gdk_gc_copy (dark_bggc, game_area->style->black_gc);
-    light_bggc = gdk_gc_new (game_area->window);
-    gdk_gc_copy (light_bggc, game_area->style->white_gc);
+    dark_bggc = gdk_gc_new (gtk_widget_get_window (game_area));
+    gdk_gc_copy (dark_bggc, gtk_widget_get_style (game_area)->black_gc);
+    light_bggc = gdk_gc_new (gtk_widget_get_window (game_area));
+    gdk_gc_copy (light_bggc, gtk_widget_get_style (game_area)->white_gc);
   }
 
   /* While the two colours are labelled "light" and "dark" which one is
@@ -371,7 +371,8 @@ draw_tile_pixmap (gint tileno, gint x, gint y, GtkWidget * area)
   x *= tile_width;
   y *= tile_height;
 
-  gdk_draw_rectangle (area->window, bg, TRUE, x, y, tile_width, tile_height);
+  gdk_draw_rectangle (gtk_widget_get_window (area), bg, TRUE, x, y, tile_width,
+                      tile_height);
 
   if (rerender_needed)
     render_graphics ();
@@ -379,8 +380,8 @@ draw_tile_pixmap (gint tileno, gint x, gint y, GtkWidget * area)
   if ((tileno < 0) || (tileno >= SCENARIO_PIXMAP_WIDTH)) {
     /* nothing */
   } else {
-    gdk_draw_pixbuf (area->window, area->style->black_gc,
-		     theme_pixbuf,
+    gdk_draw_pixbuf (gtk_widget_get_window (area),
+             gtk_widget_get_style (area)->black_gc, theme_pixbuf,
 		     tileno * tile_width, 0,
 		     x, y, tile_width, tile_height,
 		     GDK_RGB_DITHER_NORMAL, 0, 0);
@@ -573,7 +574,8 @@ draw_bubble (void)
     pmap = splat_pixbuf;
   }
 
-  gdk_draw_pixbuf (game_area->window, game_area->style->black_gc, pmap,
+  gdk_draw_pixbuf (gtk_widget_get_window (game_area), 
+           gtk_widget_get_style (game_area)->black_gc, pmap,
 		   bubble_xo, bubble_yo, bubble_xpos, bubble_ypos,
 		   BUBBLE_WIDTH, BUBBLE_HEIGHT, GDK_RGB_DITHER_NORMAL, 0, 0);
 }

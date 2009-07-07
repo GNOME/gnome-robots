@@ -1,9 +1,13 @@
+SUBDIRS =
+
+if BUILD_HELP
+SUBDIRS += help
+endif
+
 schemadir   = @GCONF_SCHEMA_FILE_DIR@
 schema_in_files = gnobots2.schemas.in
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 @INTLTOOL_SCHEMAS_RULE@
-
-SUBDIRS = help
 
 bin_PROGRAMS = gnobots2
 

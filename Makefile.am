@@ -4,6 +4,8 @@ if BUILD_HELP
 SUBDIRS += help
 endif
 
+NULL =
+
 schemadir   = @GCONF_SCHEMA_FILE_DIR@
 schema_in_files = gnobots2.schemas.in
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)
@@ -33,7 +35,10 @@ gnobots2_SOURCES = \
 	sound.h \
 	cursors.c \
 	cursors.h \
-	gbdefs.h
+	gbdefs.h \
+	find-file.c \
+	find-file.h \
+	$(NULL)
 
 gnobots2_CPPFLAGS = \
 	-I$(top_srcdir) \

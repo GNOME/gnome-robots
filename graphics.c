@@ -25,7 +25,6 @@
 #include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
-#include <libgames-support/games-find-file.h>
 #include <libgames-support/games-preimage.h>
 #include <libgames-support/games-runtime.h>
 #include <libgames-support/games-scores.h>
@@ -37,6 +36,7 @@
 #include <time.h>
 #include <dirent.h>
 
+#include "find-file.h"
 #include "graphics.h"
 #include "gbdefs.h"
 #include "gnobots.h"

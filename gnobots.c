@@ -212,7 +212,9 @@ main (int argc, char *argv[])
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
 
+#ifdef ENABLE_SETGID
   setgid_io_init ();
+#endif
 
   context = g_option_context_new (NULL);
 #if GLIB_CHECK_VERSION (2, 12, 0)

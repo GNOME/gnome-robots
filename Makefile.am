@@ -72,13 +72,15 @@ gnobots2_LDADD += $(GTHREAD_LIBS)
 endif
 
 pixmapdir = $(pkgdatadir)/gnobots2/pixmaps
-pixmap_DATA = gnomes.png \
-              yahoo.png \
+pixmap_DATA = yahoo.png \
               aieee.png \
-              splat.png \
-              robots.svg \
-              boo.svg \
-              ufo.svg
+              splat.png
+
+themedir = $(pkgdatadir)/gnobots2/themes
+theme_DATA = gnomes.png \
+             robots.svg \
+             boo.svg \
+             ufo.svg
 
 configdir = $(pkgdatadir)/gnobots2/games
 config_DATA = robots2.cfg \
@@ -94,6 +96,7 @@ Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
 
 EXTRA_DIST = AUTHORS \
              $(pixmap_DATA) \
+             $(theme_DATA) \	     
              $(Games_DATA) \
              $(config_DATA) \
              $(schema_in_files)

@@ -344,7 +344,7 @@ make_theme_menu (void)
   if (theme_list)
     g_object_unref (theme_list);
 
-  pixmapdir = games_runtime_get_directory (GAMES_RUNTIME_GAME_PIXMAP_DIRECTORY);
+  pixmapdir = games_runtime_get_directory (GAMES_RUNTIME_GAME_THEME_DIRECTORY);
   theme_list = games_file_list_new_images (pixmapdir, NULL);
   games_file_list_transform_basename (theme_list);
 

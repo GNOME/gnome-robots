@@ -14,6 +14,8 @@ endif
 
 @INTLTOOL_SCHEMAS_RULE@
 
+man_MANS = gnobots2.6
+
 bin_PROGRAMS = gnobots2
 
 gnobots2_SOURCES = \
@@ -99,7 +101,8 @@ EXTRA_DIST = AUTHORS \
              $(theme_DATA) \	     
              $(Games_DATA) \
              $(config_DATA) \
-             $(schema_in_files)
+             $(schema_in_files) \
+             $(man_MANS)
 
 install-data-local:
 if GCONF_SCHEMAS_INSTALL

@@ -98,7 +98,7 @@ Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
 
 EXTRA_DIST = AUTHORS \
              $(pixmap_DATA) \
-             $(theme_DATA) \	     
+             $(theme_DATA) \
              $(Games_DATA) \
              $(config_DATA) \
              $(schema_in_files) \

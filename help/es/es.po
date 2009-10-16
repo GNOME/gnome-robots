@@ -1,10 +1,10 @@
-# translation of gnobots2.HEAD.po to Español
+# translation of es.po to Español
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 200, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnobots2.HEAD\n"
+"Project-Id-Version: es\n"
 "POT-Creation-Date: 2009-01-18 15:48+0000\n"
-"PO-Revision-Date: 2009-01-19 13:27+0100\n"
+"PO-Revision-Date: 2009-10-16 16:17+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,10 +16,8 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnobots2.xml:253(None)
-msgid ""
-"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
-msgstr ""
-"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+msgid "@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+msgstr "@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
 
 #: C/gnobots2.xml:26(title)
 msgid "<application>Robots</application> Manual"
@@ -293,7 +291,7 @@ msgid ""
 "kill you. Your goal is to kill all the robots on the board by taking "
 "advantage of their vulnerabilities."
 msgstr ""
-"El objetivo de Robots es bastanet simple. Está rodeado por un número de "
+"El objetivo de Robots es bastante simple. Está rodeado por un número de "
 "robots u otros adversarios hostiles. Conforme se va moviendo ellos tratarán "
 "de moverse hacia su posición con cada movimiento que haga. Su objetivo es "
 "matarle. Mientras que debe tratar de matar a todos los robots en el tablero "
@@ -491,8 +489,7 @@ msgstr ""
 
 #: C/gnobots2.xml:344(para)
 msgid "<guimenuitem>Random</guimenuitem>— teleports you in a random location."
-msgstr ""
-"<guimenuitem>Al azar</guimenuitem>: le teletransporta a un lugar aleatorio."
+msgstr "<guimenuitem>Al azar</guimenuitem>: le teletransporta a un lugar aleatorio."
 
 #: C/gnobots2.xml:350(para)
 msgid "<guimenuitem>Wait</guimenuitem>— places you in wait mode."
@@ -510,12 +507,10 @@ msgstr "Configuración"
 msgid ""
 "<guimenuitem>Preferences</guimenuitem> which brings up the preferences "
 "dialog box."
-msgstr ""
-"<guimenuitem>Preferencias</guimenuitem> muestra el diálogo de preferencias."
+msgstr "<guimenuitem>Preferencias</guimenuitem> muestra el diálogo de preferencias."
 
 #: C/gnobots2.xml:363(para)
-msgid ""
-"The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
+msgid "The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
 msgstr ""
 "El menú <guimenu>Ajustes</guimenu> contiene un solo elemento: <placeholder-1/"
 ">"
@@ -733,8 +728,7 @@ msgstr ""
 "guimenu>. Se mostrará un diálogo con tres solapas: <placeholder-1/>"
 
 #: C/gnobots2.xml:552(para)
-msgid ""
-"Any changes you make take effect immediately and are automatically saved."
+msgid "Any changes you make take effect immediately and are automatically saved."
 msgstr ""
 "Cualquier cambio que haga toma efecto inmediatamente y se guarda de forma "
 "automática."
@@ -855,3 +849,4 @@ msgstr ""
 #: C/gnobots2.xml:0(None)
 msgid "translator-credits"
 msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
+

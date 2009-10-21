@@ -125,3 +125,5 @@ install-exec-hook:
 	fi
 
 DISTCLEANFILES = $(Games_DATA) $(schema_DATA)
+
+-include $(top_srcdir)/git.mk

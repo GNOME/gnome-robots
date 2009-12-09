@@ -9,7 +9,7 @@ extern gint tile_height;
 /* Exported functions                                                 */
 /**********************************************************************/
 gboolean resize_cb (GtkWidget * w, GdkEventConfigure * e, gpointer data);
-gint expose_cb (GtkWidget * w, GdkEventExpose * e, gpointer data);
+gboolean expose_cb (GtkWidget * w, GdkEventExpose * e, gpointer data);
 gboolean load_game_graphics (void);
 gboolean free_game_graphics (void);
 gint num_game_graphics (void);

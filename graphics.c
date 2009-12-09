@@ -114,7 +114,7 @@ resize_cb (GtkWidget * w, GdkEventConfigure * e, gpointer data)
   return FALSE;
 }
 
-gint
+gboolean
 expose_cb (GtkWidget * w, GdkEventExpose * e, gpointer data)
 {
   int i, j;

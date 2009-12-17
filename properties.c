@@ -213,11 +213,14 @@ pmap_selection (GtkWidget * widget, gpointer data)
 static void
 type_selection (GtkWidget * widget, gpointer data)
 {
+  gchar *config;
   gint num = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
 
   properties.selected_config = num;
 
-  conf_set_configuration (game_config_name (properties.selected_config));
+  config = game_config_name (properties.selected_config);
+  conf_set_configuration (config);
+  g_free (config);
 
   set_game_config (properties.selected_config);
 
@@ -307,6 +310,7 @@ static void
 fill_typemenu (GtkWidget * menu)
 {
   gint i;
+  gchar *config;
 
 #if 0
   /* this is just a place holder so that xgettext can found the strings to
@@ -322,7 +326,9 @@ fill_typemenu (GtkWidget * menu)
 #endif
 
   for (i = 0; i < num_game_configs (); ++i) {
-    gtk_combo_box_append_text (GTK_COMBO_BOX (menu), _(game_config_name (i)));
+    config = game_config_name (i);
+    gtk_combo_box_append_text (GTK_COMBO_BOX (menu), _(config));
+    g_free (config);
   }
 
   gtk_combo_box_set_active (GTK_COMBO_BOX (menu), properties.selected_config);
@@ -593,7 +599,7 @@ load_properties (void)
 {
   gchar *cname = NULL;
   gint i;
-  gchar *bgcolour;
+  gchar *bgcolour, *config;
 
   load_keys ();
 
@@ -610,10 +616,13 @@ load_properties (void)
 
   properties.selected_config = 0;
   for (i = 0; i < num_game_configs (); ++i) {
-    if (!strcmp (cname, game_config_name (i))) {
+    config = game_config_name (i);
+    if (!strcmp (cname, config)) {
+      g_free (config);
       properties.selected_config = i;
       break;
     }
+    g_free (config);
   }
   g_free (cname);
 
@@ -717,13 +726,18 @@ gboolean
 save_properties (void)
 {
   gint i;
+  gchar *config;
 
   for (i = 0; i < 12; i++) {
     conf_set_control_key (i, properties.keys[i]);
   }
 
   conf_set_theme (properties.themename);
-  conf_set_configuration (game_config_name (properties.selected_config));
+
+  config = game_config_name (properties.selected_config);
+  conf_set_configuration (config);
+  g_free (config);
+
   conf_set_use_safe_moves (properties.safe_moves);
   conf_set_use_super_safe_moves (properties.super_safe_moves);
   conf_set_enable_sound (properties.sound);

@@ -200,6 +200,7 @@ main (int argc, char *argv[])
   GOptionContext *context;
   struct timeval tv;
   gint i;
+  gchar *config;
   gboolean retval;
   GError *error = NULL;
 #ifdef WITH_SMCLIENT
@@ -356,10 +357,13 @@ main (int argc, char *argv[])
 
   if (cmdline_config) {
     for (i = 0; i < num_game_configs (); ++i) {
-      if (!strcmp (cmdline_config, game_config_name (i))) {
+      config = game_config_name (i);
+      if (!strcmp (cmdline_config, config)) {
 	properties_set_config (i);
+	g_free (config);
 	break;
       }
+      g_free (config);
     }
   }
 

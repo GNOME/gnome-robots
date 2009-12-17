@@ -71,7 +71,7 @@ load_config (gchar * fname)
   GameConfig *gcfg;
   gint pflag = 0;
   FILE *fp;
-  gchar buffer[PATH_MAX];
+  gchar buffer[256];
   gchar *bptr;
   gchar *bpstart, *bpstart2;
   gchar *vptr;
@@ -93,7 +93,7 @@ load_config (gchar * fname)
   gcfg->description = g_string_new (bpstart2);
   g_free (bpstart2);
 
-  while (fgets (buffer, 256, fp) != NULL) {
+  while (fgets (buffer, sizeof(buffer), fp) != NULL) {
     if (strlen (buffer) < 3)
       continue;
 
@@ -416,13 +416,12 @@ current_game_config (void)
  * returns a string containing the name of the specified configuration
  *
  * Returns:
- * pointer to a string containing the name
+ * pointer to a string containing the name that the caller must free.
  **/
 gchar *
 game_config_name (gint n)
 {
-  static gchar buffer[PATH_MAX];
-  gchar *ptr = buffer;
+  gchar *buffer, *ptr;
 
   if (game_configs == NULL)
     return NULL;
@@ -430,7 +429,8 @@ game_config_name (gint n)
   if ((n < 0) || (n >= num_configs))
     return NULL;
 
-  strcpy (buffer, game_configs[n]->description->str);
+  buffer = g_strdup (game_configs[n]->description->str);
+  ptr = buffer;
 
   while (*ptr) {
     if (*ptr == '_') {

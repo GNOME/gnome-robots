@@ -56,7 +56,9 @@ gnobots2_CFLAGS = \
 gnobots2_LDADD = \
 	$(top_builddir)/libgames-support/libgames-support.la \
 	$(GTK_LIBS) \
-	$(INTLLIBS)
+	$(INTLLIBS) \
+	-lm \
+	$(NULL)
 
 if HAVE_GNOME
 gnobots2_CFLAGS += $(GNOME_CFLAGS)

@@ -265,8 +265,6 @@ main (int argc, char *argv[])
 
   g_signal_connect (G_OBJECT (app), "delete_event",
 		    G_CALLBACK (quit_game), NULL);
-  g_signal_connect (G_OBJECT (app), "window_state_event",
-		    G_CALLBACK (window_state_cb), NULL);
 
   statusbar = gnobots_statusbar_new ();
   ui_manager = gtk_ui_manager_new ();

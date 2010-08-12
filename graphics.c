@@ -52,8 +52,8 @@ static GamesPreimage *theme_preimage = NULL;
 static GdkPixbuf *theme_pixbuf = NULL;
 static gboolean rerender_needed = TRUE;
 
-static GdkGC *light_bggc = NULL;
-static GdkGC *dark_bggc = NULL;
+static GdkColor light_background;
+static GdkColor dark_background;
 
 static GdkPixbuf *aieee_pixbuf = NULL;
 static GdkPixbuf *yahoo_pixbuf = NULL;
@@ -289,19 +289,10 @@ set_game_graphics (gchar * name)
 void
 set_background_color (GdkColor color)
 {
-  GdkColormap *colormap;
   guint32 brightness;
-  GdkColor color2;
 
   if (game_area == NULL)
     return;
-
-  if (dark_bggc == NULL) {
-    dark_bggc = gdk_gc_new (gtk_widget_get_window (game_area));
-    gdk_gc_copy (dark_bggc, gtk_widget_get_style (game_area)->black_gc);
-    light_bggc = gdk_gc_new (gtk_widget_get_window (game_area));
-    gdk_gc_copy (light_bggc, gtk_widget_get_style (game_area)->white_gc);
-  }
 
   /* While the two colours are labelled "light" and "dark" which one is
    * which actually depends on how light or dark the base colour is. */
@@ -309,24 +300,20 @@ set_background_color (GdkColor color)
   brightness = color.red + color.green + color.blue;
   if (brightness > 0xe8ba) {	/* 0xe8ba = 0x10000/1.1 */
     /* Darken light colours. */
-    color2.red = 0.9 * color.red;
-    color2.green = 0.9 * color.green;
-    color2.blue = 0.9 * color.blue;
+    light_background.red = 0.9 * color.red;
+    light_background.green = 0.9 * color.green;
+    light_background.blue = 0.9 * color.blue;
   } else if (brightness > 0xa00) {	/* Lighten darker colours. */
-    color2.red = 1.1 * color.red;
-    color2.green = 1.1 * color.green;
-    color2.blue = 1.1 * color.blue;
+    light_background.red = 1.1 * color.red;
+    light_background.green = 1.1 * color.green;
+    light_background.blue = 1.1 * color.blue;
   } else {			/* Very dark colours, add ratehr than multiply. */
-    color2.red += 0xa00;
-    color2.green += 0xa00;
-    color2.blue += 0xa00;
+    light_background.red += 0xa00;
+    light_background.green += 0xa00;
+    light_background.blue += 0xa00;
   }
 
-  colormap = gtk_widget_get_colormap (game_area);
-  gdk_colormap_alloc_color (colormap, &color, FALSE, TRUE);
-  gdk_gc_set_foreground (dark_bggc, &color);
-  gdk_colormap_alloc_color (colormap, &color2, FALSE, TRUE);
-  gdk_gc_set_foreground (light_bggc, &color2);
+  dark_background = color;
 
   clear_game_area ();
 }
@@ -360,19 +347,22 @@ set_background_color_from_name (gchar * name)
 void
 draw_tile_pixmap (gint tileno, gint x, gint y, GtkWidget * area)
 {
-  GdkGC *bg;
+  cairo_t *cr;
+
+  cr = gdk_cairo_create (gtk_widget_get_window (area));
 
   if ((x & 1) ^ (y & 1)) {
-    bg = dark_bggc;
+    gdk_cairo_set_source_color (cr, &dark_background);
   } else {
-    bg = light_bggc;
+    gdk_cairo_set_source_color (cr, &light_background);
   }
 
   x *= tile_width;
   y *= tile_height;
-
-  gdk_draw_rectangle (gtk_widget_get_window (area), bg, TRUE, x, y, tile_width,
-                      tile_height);
+  
+  cairo_rectangle (cr, x, y, tile_width, tile_height);
+  cairo_fill (cr);
+  cairo_destroy (cr);
 
   if (rerender_needed)
     render_graphics ();

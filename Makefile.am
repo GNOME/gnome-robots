@@ -43,6 +43,15 @@ gnobots2_SOURCES = \
 	gbdefs.h \
 	find-file.c \
 	find-file.h \
+	cursor-down.h \
+	cursor-down-left.h \
+	cursor-down-right.h \
+	cursor-hold.h \
+	cursor-left.h \
+	cursor-right.h \
+	cursor-up.h \
+	cursor-up-left.h \
+	cursor-up-right.h \
 	$(NULL)
 
 gnobots2_CPPFLAGS = \
@@ -75,6 +84,18 @@ gnobots2_CFLAGS += $(GHTREAD_CFLAGS)
 gnobots2_LDADD += $(GTHREAD_LIBS)
 endif
 
+cursor_files = \
+	cursor-down-left.png	\
+	cursor-down.png		\
+	cursor-down-right.png	\
+	cursor-hold.png		\
+	cursor-left.png		\
+	cursor-right.png	\
+	cursor-up-left.png	\
+	cursor-up.png		\
+	cursor-up-right.png	\
+	$(NULL)
+
 pixmapdir = $(pkgdatadir)/gnobots2/pixmaps
 pixmap_DATA = yahoo.png \
               aieee.png \
@@ -99,6 +120,7 @@ Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST = AUTHORS \
+	     $(cursor_files) \
              $(pixmap_DATA) \
              $(theme_DATA) \
              $(Games_DATA) \

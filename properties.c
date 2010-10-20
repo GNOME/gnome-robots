@@ -327,7 +327,7 @@ fill_typemenu (GtkWidget * menu)
 
   for (i = 0; i < num_game_configs (); ++i) {
     config = game_config_name (i);
-    gtk_combo_box_append_text (GTK_COMBO_BOX (menu), _(config));
+    gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (menu), _(config));
     g_free (config);
   }
 
@@ -452,7 +452,7 @@ show_properties_dialog (void)
   hbox = gtk_hbox_new (TRUE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
-  typemenu = gtk_combo_box_new_text ();
+  typemenu = gtk_combo_box_text_new ();
   g_signal_connect (G_OBJECT (typemenu), "changed",
 		    G_CALLBACK (type_selection), NULL);
   fill_typemenu (typemenu);

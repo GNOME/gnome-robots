@@ -96,10 +96,10 @@ static GamesFileList *theme_list = NULL;
 static GnobotsProperties properties;
 
 static const guint default_keys[N_KEYS] = {
-  GDK_KP_Home, GDK_KP_Up, GDK_KP_Page_Up,
-  GDK_KP_Left, GDK_KP_Begin, GDK_KP_Right,
-  GDK_KP_End, GDK_KP_Down, GDK_KP_Page_Down,
-  GDK_KP_Add, GDK_KP_Multiply, GDK_KP_Enter
+  GDK_KEY_KP_Home, GDK_KEY_KP_Up, GDK_KEY_KP_Page_Up,
+  GDK_KEY_KP_Left, GDK_KEY_KP_Begin, GDK_KEY_KP_Right,
+  GDK_KEY_KP_End, GDK_KEY_KP_Down, GDK_KEY_KP_Page_Down,
+  GDK_KEY_KP_Add, GDK_KEY_KP_Multiply, GDK_KEY_KP_Enter
 };
 
 /**********************************************************************/
@@ -427,7 +427,6 @@ show_properties_dialog (void)
 					 GTK_DIALOG_DESTROY_WITH_PARENT,
 					 GTK_STOCK_CLOSE, GTK_RESPONSE_ACCEPT,
 					 NULL);
-  gtk_dialog_set_has_separator (GTK_DIALOG (propbox), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (propbox), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))), 2);
   /* Set up notebook and add it to hbox of the gtk_dialog */

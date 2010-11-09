@@ -33,7 +33,6 @@ gnobots2_SOURCES = \
 	graphics.h \
 	keyboard.c \
 	keyboard.h \
-	keylabels.h \
 	game.c \
 	game.h \
 	sound.c \

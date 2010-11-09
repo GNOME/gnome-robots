@@ -669,7 +669,7 @@ init_game (void)
 {
   create_game_timer ();
 
-  g_signal_connect (GTK_OBJECT (app), "key_press_event",
+  g_signal_connect (GTK_WIDGET (app), "key_press_event",
 		    G_CALLBACK (keyboard_cb), 0);
 
   start_new_game ();

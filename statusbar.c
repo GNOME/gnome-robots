@@ -106,7 +106,6 @@ gnobots_statusbar_new (void)
   gtk_widget_show (sbtbl);
 
   statusbar = gtk_statusbar_new ();
-  gtk_statusbar_set_has_resize_grip (GTK_STATUSBAR (statusbar), FALSE);
   gtk_box_pack_start (GTK_BOX (statusbar), sbtbl, FALSE, FALSE, 0);
 
   show_both = TRUE;

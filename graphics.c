@@ -39,6 +39,7 @@
 #include "find-file.h"
 #include "graphics.h"
 #include "gbdefs.h"
+#include "game.h"
 #include "gnobots.h"
 #include "properties.h"
 
@@ -80,8 +81,10 @@ gint tile_height = 0;
 
 static gboolean load_bubble_graphic (gchar *, GdkPixbuf **);
 static gboolean load_bubble_graphics (void);
-static void clear_bubble_area (void);
-static void add_bubble (gint, gint);
+static void draw_bubble (cairo_t * cr);
+static void add_bubble (gint, gint, gint);
+static void draw_tile_pixmap (gint, gint, gint, cairo_t * cr);
+static void draw_object (gint x, gint y, gint type, cairo_t * cr);
 
 
 /**********************************************************************/
@@ -92,7 +95,7 @@ static void
 render_graphics (void)
 {
   theme_pixbuf = games_preimage_render (theme_preimage,
-					14 * tile_width, tile_height);
+                                        14 * tile_width, tile_height);
   rerender_needed = FALSE;
 }
 
@@ -115,22 +118,17 @@ resize_cb (GtkWidget * w, GdkEventConfigure * e, gpointer data)
 }
 
 gboolean
-expose_cb (GtkWidget * w, GdkEventExpose * e, gpointer data)
+draw_cb (GtkWidget * w, cairo_t * cr, gpointer data)
 {
   int i, j;
-  int x1, y1, x2, y2;
 
-  x1 = e->area.x / tile_width;
-  y1 = e->area.y / tile_height;
-  x2 = x1 + e->area.width / tile_width + 1;
-  y2 = y1 + e->area.height / tile_height + 1;
-
-  for (j = y1; j <= y2; j++) {
-    for (i = x1; i <= x2; i++) {
-      /* Draw a blank space. Animation fills the objects in. */
-      draw_tile_pixmap (-1, i, j, w);
+  for (j = 0; j < GAME_HEIGHT; j++) {
+    for (i = 0; i < GAME_WIDTH; i++) {
+      draw_object (i, j, arena[i][j], cr);
     }
   }
+
+  draw_bubble (cr);
 
   return TRUE;
 }
@@ -298,16 +296,16 @@ set_background_color (GdkColor color)
    * which actually depends on how light or dark the base colour is. */
 
   brightness = color.red + color.green + color.blue;
-  if (brightness > 0xe8ba) {	/* 0xe8ba = 0x10000/1.1 */
+  if (brightness > 0xe8ba) {        /* 0xe8ba = 0x10000/1.1 */
     /* Darken light colours. */
     light_background.red = 0.9 * color.red;
     light_background.green = 0.9 * color.green;
     light_background.blue = 0.9 * color.blue;
-  } else if (brightness > 0xa00) {	/* Lighten darker colours. */
+  } else if (brightness > 0xa00) {        /* Lighten darker colours. */
     light_background.red = 1.1 * color.red;
     light_background.green = 1.1 * color.green;
     light_background.blue = 1.1 * color.blue;
-  } else {			/* Very dark colours, add ratehr than multiply. */
+  } else {                        /* Very dark colours, add ratehr than multiply. */
     light_background.red += 0xa00;
     light_background.green += 0xa00;
     light_background.blue += 0xa00;
@@ -338,19 +336,15 @@ set_background_color_from_name (gchar * name)
  * @pno: Number of graphics set
  * @x: x position in grid squares
  * @y: y position in grid squares
- * @area: Pointer to drawing area widget
+ * @cr: context to draw on
  *
  * Description:
  * Draws tile pixmap @tileno from graphics set @pno at (@x, @y) in
  * a widget @area
  **/
-void
-draw_tile_pixmap (gint tileno, gint x, gint y, GtkWidget * area)
+static void
+draw_tile_pixmap (gint tileno, gint x, gint y, cairo_t * cr)
 {
-  cairo_t *cr;
-
-  cr = gdk_cairo_create (gtk_widget_get_window (area));
-
   if ((x & 1) ^ (y & 1)) {
     gdk_cairo_set_source_color (cr, &dark_background);
   } else {
@@ -362,7 +356,6 @@ draw_tile_pixmap (gint tileno, gint x, gint y, GtkWidget * area)
   
   cairo_rectangle (cr, x, y, tile_width, tile_height);
   cairo_fill (cr);
-  cairo_destroy (cr);
 
   if (rerender_needed)
     render_graphics ();
@@ -370,11 +363,9 @@ draw_tile_pixmap (gint tileno, gint x, gint y, GtkWidget * area)
   if ((tileno < 0) || (tileno >= SCENARIO_PIXMAP_WIDTH)) {
     /* nothing */
   } else {
-    gdk_draw_pixbuf (gtk_widget_get_window (area),
-             gtk_widget_get_style (area)->black_gc, theme_pixbuf,
-		     tileno * tile_width, 0,
-		     x, y, tile_width, tile_height,
-		     GDK_RGB_DITHER_NORMAL, 0, 0);
+    gdk_cairo_set_source_pixbuf (cr, theme_pixbuf, x - tileno * tile_width, y);
+    cairo_rectangle (cr, x, y, tile_width, tile_height);
+    cairo_fill (cr);
   }
 }
 
@@ -384,12 +375,13 @@ draw_tile_pixmap (gint tileno, gint x, gint y, GtkWidget * area)
  * @x: x position 
  * @y: y position 
  * @type: object type
+ * @cr: context to draw on
  *
  * Description:
  * Draws graphics for an object at specified location
  **/
-void
-draw_object (gint x, gint y, gint type)
+static void
+draw_object (gint x, gint y, gint type, cairo_t * cr)
 {
   if (game_area == NULL)
     return;
@@ -397,21 +389,21 @@ draw_object (gint x, gint y, gint type)
   switch (type) {
   case OBJECT_PLAYER:
     draw_tile_pixmap (SCENARIO_PLAYER_START + player_animation,
-		      x, y, game_area);
+                      x, y, cr);
     break;
   case OBJECT_ROBOT1:
     draw_tile_pixmap (SCENARIO_ROBOT1_START + robot_animation,
-		      x, y, game_area);
+                      x, y, cr);
     break;
   case OBJECT_ROBOT2:
     draw_tile_pixmap (SCENARIO_ROBOT2_START + robot_animation,
-		      x, y, game_area);
+                      x, y, cr);
     break;
   case OBJECT_HEAP:
-    draw_tile_pixmap (SCENARIO_HEAP_POS, x, y, game_area);
+    draw_tile_pixmap (SCENARIO_HEAP_POS, x, y, cr);
     break;
   case OBJECT_NONE:
-    draw_tile_pixmap (-1, x, y, game_area);
+    draw_tile_pixmap (-1, x, y, cr);
     break;
   }
 }
@@ -430,47 +422,6 @@ clear_game_area (void)
     return;
 
   gtk_widget_queue_draw (game_area);
-}
-
-
-/**
- * clear_bubble_area
- *
- * Description:
- * clears the area underneath a bubble
- **/
-static void
-clear_bubble_area (void)
-{
-  int t0i, t0j; /* (i,j) coordinates of bubble's top/left tile */
-  int ntiles_hor, ntiles_ver; /* number of tiles hotizontal/vertically affected */
-  int delta; /* pixels from tile's left/top border to bubble's left/top border */
-  int i, j;
-
-  if (game_area == NULL)
-    return;
-
-  t0i = bubble_xpos / tile_width;
-  t0j = bubble_ypos / tile_height;
-  ntiles_hor = (BUBBLE_WIDTH + tile_width - 1) / tile_width; /* first shot at number of tiles affected */
-  delta = bubble_xpos % tile_width;
-  if (delta > 0) { /* buble does not start at a tile's left boundary */
-    if ((BUBBLE_WIDTH + delta) > ntiles_hor * tile_width) { /* catches an extra tile */
-      ntiles_hor++;
-    }
-  }
-  ntiles_ver = (BUBBLE_HEIGHT + tile_height - 1) / tile_height;
-  delta = bubble_ypos % tile_height;
-  if (delta > 0) { /* buble does not start at a tile's top boundary */
-    if ((BUBBLE_HEIGHT + delta) > ntiles_ver * tile_height) { /* catches an extra tile */
-      ntiles_ver++;
-    }
-  }
-  for (i = t0i; i < t0i + ntiles_hor; ++i) {
-    for (j = t0j; j < t0j + ntiles_ver; ++j) {
-      draw_tile_pixmap (-1, i, j, game_area);
-    }
-  }
 }
 
 
@@ -535,7 +486,7 @@ animate_game_graphics (void)
       player_animation = 1;
       ++player_num_waves;
       if (player_num_waves >= PLAYER_NUM_WAVES) {
-	reset_player_animation ();
+        reset_player_animation ();
       }
     }
   }
@@ -548,8 +499,8 @@ animate_game_graphics (void)
  * Description:
  * Draws a bubble if there is one
  **/
-void
-draw_bubble (void)
+static void
+draw_bubble (cairo_t * cr)
 {
   GdkPixbuf *pmap;
 
@@ -564,10 +515,9 @@ draw_bubble (void)
     pmap = splat_pixbuf;
   }
 
-  gdk_draw_pixbuf (gtk_widget_get_window (game_area), 
-           gtk_widget_get_style (game_area)->black_gc, pmap,
-		   bubble_xo, bubble_yo, bubble_xpos, bubble_ypos,
-		   BUBBLE_WIDTH, BUBBLE_HEIGHT, GDK_RGB_DITHER_NORMAL, 0, 0);
+  gdk_cairo_set_source_pixbuf (cr, pmap, bubble_xpos - bubble_xo, bubble_ypos - bubble_yo);
+  cairo_rectangle (cr, bubble_xpos, bubble_ypos, BUBBLE_WIDTH, BUBBLE_HEIGHT);
+  cairo_fill (cr);
 }
 
 
@@ -580,8 +530,9 @@ draw_bubble (void)
  * adds a bubble at @x,@y
  **/
 static void
-add_bubble (gint x, gint y)
+add_bubble (gint type, gint x, gint y)
 {
+  bubble_type = type;
   bubble_xpos = x * tile_width - BUBBLE_WIDTH + BUBBLE_XOFFSET;
   bubble_ypos = y * tile_height - BUBBLE_HEIGHT + BUBBLE_YOFFSET;
 
@@ -596,7 +547,7 @@ add_bubble (gint x, gint y)
     bubble_xo = BUBBLE_WIDTH;
     bubble_xpos += BUBBLE_WIDTH;
   }
-
+  gtk_widget_queue_draw (game_area);
 }
 
 
@@ -612,8 +563,8 @@ remove_bubble (void)
   if (bubble_type == BUBBLE_NONE)
     return;
 
-  clear_bubble_area ();
   bubble_type = BUBBLE_NONE;
+  gtk_widget_queue_draw (game_area);
 }
 
 
@@ -629,8 +580,8 @@ remove_splat_bubble (void)
   if (bubble_type != BUBBLE_SPLAT)
     return;
 
-  clear_bubble_area ();
   bubble_type = BUBBLE_NONE;
+  gtk_widget_queue_draw (game_area);
 }
 
 
@@ -645,9 +596,7 @@ remove_splat_bubble (void)
 void
 add_yahoo_bubble (gint x, gint y)
 {
-  remove_bubble ();
-  add_bubble (x, y);
-  bubble_type = BUBBLE_YAHOO;
+  add_bubble (BUBBLE_YAHOO, x, y);
 }
 
 
@@ -662,9 +611,7 @@ add_yahoo_bubble (gint x, gint y)
 void
 add_aieee_bubble (gint x, gint y)
 {
-  remove_bubble ();
-  add_bubble (x, y);
-  bubble_type = BUBBLE_AIEEE;
+  add_bubble (BUBBLE_AIEEE, x, y);
 }
 
 /**
@@ -678,12 +625,8 @@ add_aieee_bubble (gint x, gint y)
 void
 add_splat_bubble (gint x, gint y)
 {
-  remove_bubble ();
-  add_bubble (x, y);
-
+  add_bubble (BUBBLE_SPLAT, x, y);
   bubble_ypos += BUBBLE_YOFFSET;
-
-  bubble_type = BUBBLE_SPLAT;
 }
 
 /**********************************************************************/

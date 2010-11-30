@@ -9,7 +9,7 @@ extern gint tile_height;
 /* Exported functions                                                 */
 /**********************************************************************/
 gboolean resize_cb (GtkWidget * w, GdkEventConfigure * e, gpointer data);
-gboolean expose_cb (GtkWidget * w, GdkEventExpose * e, gpointer data);
+gboolean draw_cb (GtkWidget * w, cairo_t * cr, gpointer data);
 gboolean load_game_graphics (void);
 gboolean free_game_graphics (void);
 gint num_game_graphics (void);
@@ -22,10 +22,8 @@ void add_aieee_bubble (gint, gint);
 void add_splat_bubble (gint, gint);
 void remove_bubble (void);
 void remove_splat_bubble (void);
-void draw_bubble (void);
 
-void draw_tile_pixmap (gint, gint, gint, GtkWidget *);
-void draw_object (gint, gint, gint);
+void redraw (void);
 void clear_game_area (void);
 void animate_game_graphics (void);
 void reset_player_animation (void);

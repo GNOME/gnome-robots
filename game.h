@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include "gbdefs.h"
 
 /**********************************************************************/
 /* Game Object Structure                                              */
@@ -36,6 +37,7 @@ gboolean move_cb (GtkWidget * widget, GdkEventMotion * e, gpointer data);
 /* Exported Variables                                                 */
 /**********************************************************************/
 extern gint game_state;
+extern gint arena[GAME_WIDTH][GAME_HEIGHT];
 /**********************************************************************/
 
 

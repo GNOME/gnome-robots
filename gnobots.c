@@ -288,8 +288,8 @@ main (int argc, char *argv[])
 		    G_CALLBACK (move_cb), NULL);
   g_signal_connect (G_OBJECT (game_area), "configure-event",
 		    G_CALLBACK (resize_cb), NULL);
-  g_signal_connect (G_OBJECT (game_area), "expose-event",
-		    G_CALLBACK (expose_cb), NULL);
+  g_signal_connect (G_OBJECT (game_area), "draw",
+		    G_CALLBACK (draw_cb), NULL);
 
   gridframe = games_grid_frame_new (GAME_WIDTH, GAME_HEIGHT);
   gtk_container_add (GTK_CONTAINER (gridframe), game_area);

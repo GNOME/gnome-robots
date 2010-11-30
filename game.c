@@ -46,6 +46,7 @@
 /* Exported Variables                                                 */
 /**********************************************************************/
 gint game_state = STATE_PLAYING;
+gint arena[GAME_WIDTH][GAME_HEIGHT];
 /**********************************************************************/
 
 
@@ -60,14 +61,11 @@ static gint score = 0;
 static gint kills = 0;
 static gint score_step = 0;
 static gint safe_teleports = 0;
-static gboolean display_updated = 0;
 static gint player_xpos = 0;
 static gint player_ypos = 0;
 static gint push_xpos = -1;
 static gint push_ypos = -1;
 static gint game_timer_id = -1;
-static gint arena[GAME_WIDTH][GAME_HEIGHT];
-static gint old_arena[GAME_WIDTH][GAME_HEIGHT];
 static gint temp_arena[GAME_WIDTH][GAME_HEIGHT];
 /**********************************************************************/
 
@@ -81,7 +79,6 @@ static void add_kill (gint type);
 static void clear_arena (void);
 static gint check_location (gint x, gint y);
 static void generate_level (void);
-static void draw_graphics (void);
 static void update_arena (void);
 static gint timeout_cb (void *data);
 static void destroy_game_timer (void);
@@ -117,7 +114,7 @@ message_box (gchar * msg)
   GtkWidget *box;
 
   box = gtk_message_dialog_new (GTK_WINDOW (app), GTK_DIALOG_MODAL,
-				GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "%s", msg);
+                                GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "%s", msg);
   gtk_dialog_run (GTK_DIALOG (box));
   gtk_widget_destroy (box);
 }
@@ -145,19 +142,19 @@ show_scores (gint pos, gboolean endofgame)
       gtk_window_present (GTK_WINDOW (sorrydialog));
     } else {
       sorrydialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (app),
-							GTK_DIALOG_DESTROY_WITH_PARENT,
-							GTK_MESSAGE_INFO,
-							GTK_BUTTONS_NONE,
-							"<b>%s</b>\n%s",
-							_
-							("Game over!"),
-							_
-							("Great work, but unfortunately your score did not make the top ten."));
+                                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                        GTK_MESSAGE_INFO,
+                                                        GTK_BUTTONS_NONE,
+                                                        "<b>%s</b>\n%s",
+                                                        _
+                                                        ("Game over!"),
+                                                        _
+                                                        ("Great work, but unfortunately your score did not make the top ten."));
       gtk_dialog_add_buttons (GTK_DIALOG (sorrydialog), GTK_STOCK_QUIT,
-			      GTK_RESPONSE_REJECT, _("_New Game"),
-			      GTK_RESPONSE_ACCEPT, NULL);
+                              GTK_RESPONSE_REJECT, _("_New Game"),
+                              GTK_RESPONSE_ACCEPT, NULL);
       gtk_dialog_set_default_response (GTK_DIALOG (sorrydialog),
-				       GTK_RESPONSE_ACCEPT);
+                                       GTK_RESPONSE_ACCEPT);
       gtk_window_set_title (GTK_WINDOW (sorrydialog), "");
     }
     dialog = sorrydialog;
@@ -167,33 +164,33 @@ show_scores (gint pos, gboolean endofgame)
       gtk_window_present (GTK_WINDOW (scoresdialog));
     } else {
       scoresdialog = games_scores_dialog_new (GTK_WINDOW (app), 
-					highscores, _("Robots Scores"));
+                                        highscores, _("Robots Scores"));
       games_scores_dialog_set_category_description (GAMES_SCORES_DIALOG
-						    (scoresdialog),
-						    _("Map:"));
+                                                    (scoresdialog),
+                                                    _("Map:"));
     }
 
     if (pos > 0) {
       play_sound (SOUND_VICTORY);
 
       games_scores_dialog_set_hilight (GAMES_SCORES_DIALOG (scoresdialog),
-				       pos);
+                                       pos);
       message = g_strdup_printf ("<b>%s</b>\n\n%s",
-				 _("Congratulations!"),
+                                 _("Congratulations!"),
                                  pos == 1 ? _("Your score is the best!") :
-				 _("Your score has made the top ten."));
+                                 _("Your score has made the top ten."));
       games_scores_dialog_set_message (GAMES_SCORES_DIALOG (scoresdialog),
-				       message);
+                                       message);
       g_free (message);
     } else {
       games_scores_dialog_set_message (GAMES_SCORES_DIALOG (scoresdialog),
-				       NULL);
+                                       NULL);
     }
 
     if (endofgame) {
       games_scores_dialog_set_buttons (GAMES_SCORES_DIALOG (scoresdialog),
-				       GAMES_SCORES_QUIT_BUTTON |
-				       GAMES_SCORES_NEW_GAME_BUTTON);
+                                       GAMES_SCORES_QUIT_BUTTON |
+                                       GAMES_SCORES_NEW_GAME_BUTTON);
     } else {
       games_scores_dialog_set_buttons (GAMES_SCORES_DIALOG (scoresdialog), 0);
     }
@@ -226,11 +223,11 @@ log_score (gint sc)
   if (properties_super_safe_moves ()) {
     sbuf =
       g_strdup_printf ("%s-super-safe",
-		       game_config_filename (current_game_config ()));
+                       game_config_filename (current_game_config ()));
   } else if (properties_safe_moves ()) {
     sbuf =
       g_strdup_printf ("%s-safe",
-		       game_config_filename (current_game_config ()));
+                       game_config_filename (current_game_config ()));
   } else {
     sbuf =
       g_strdup_printf ("%s", game_config_filename (current_game_config ()));
@@ -314,7 +311,7 @@ add_kill (gint type)
   }
 
   gnobots_statusbar_set (score, current_level + 1, safe_teleports,
-			 num_robots1, num_robots2);
+                         num_robots1, num_robots2);
 }
 
 
@@ -332,7 +329,6 @@ clear_arena (void)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       arena[i][j] = OBJECT_NONE;
-      old_arena[i][j] = OBJECT_FOO;
     }
   }
 
@@ -355,9 +351,9 @@ load_temp_arena (void)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if (arena[i][j] != OBJECT_PLAYER) {
-	temp_arena[i][j] = arena[i][j];
+        temp_arena[i][j] = arena[i][j];
       } else {
-	temp_arena[i][j] = OBJECT_NONE;
+        temp_arena[i][j] = OBJECT_NONE;
       }
     }
   }
@@ -412,7 +408,7 @@ generate_level (void)
     current_level = 0;
     num_robots1 = game_config ()->initial_type1;
     message_box (_
-		 ("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
+                 ("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
     play_sound (SOUND_VICTORY);
   }
 
@@ -428,7 +424,7 @@ generate_level (void)
     num_robots1 = game_config ()->initial_type1;
     num_robots2 = game_config ()->initial_type2;
     message_box (_
-		 ("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
+                 ("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
     play_sound (SOUND_VICTORY);
   }
 
@@ -444,8 +440,8 @@ generate_level (void)
       yp = rand () % GAME_HEIGHT;
 
       if (check_location (xp, yp) == OBJECT_NONE) {
-	arena[xp][yp] = OBJECT_ROBOT1;
-	break;
+        arena[xp][yp] = OBJECT_ROBOT1;
+        break;
       }
     }
   }
@@ -457,44 +453,13 @@ generate_level (void)
       yp = rand () % GAME_HEIGHT;
 
       if (check_location (xp, yp) == OBJECT_NONE) {
-	arena[xp][yp] = OBJECT_ROBOT2;
-	break;
+        arena[xp][yp] = OBJECT_ROBOT2;
+        break;
       }
     }
   }
 
 }
-
-/**
- * draw_graphics
- *
- * Description:
- * Draws all of the game objects
- **/
-static void
-draw_graphics (void)
-{
-  gint i, j;
-
-  for (i = 0; i < GAME_WIDTH; ++i) {
-    for (j = 0; j < GAME_HEIGHT; ++j) {
-      if (arena[i][j] == OBJECT_NONE) {
-	if (arena[i][j] != old_arena[i][j]) {
-	  draw_object (i, j, arena[i][j]);
-	}
-      } else {
-	draw_object (i, j, arena[i][j]);
-      }
-
-      old_arena[i][j] = arena[i][j];
-    }
-  }
-
-  draw_bubble ();
-
-  display_updated = TRUE;
-}
-
 
 /**
  * update_arena
@@ -515,27 +480,27 @@ update_arena (void)
 
 
       if ((temp_arena[i][j] == OBJECT_HEAP) &&
-	  (push_xpos == i) && (push_ypos == j)) {
-	if (arena[i][j] == OBJECT_ROBOT1) {
-	  add_splat_bubble (i, j);
-	  play_sound (SOUND_SPLAT);
-	  push_xpos = push_ypos = -1;
-	  score += game_config ()->score_type1_splatted;
-	}
-	if (arena[i][j] == OBJECT_ROBOT2) {
-	  add_splat_bubble (i, j);
-	  play_sound (SOUND_SPLAT);
-	  push_xpos = push_ypos = -1;
-	  score += game_config ()->score_type2_splatted;
-	}
+          (push_xpos == i) && (push_ypos == j)) {
+        if (arena[i][j] == OBJECT_ROBOT1) {
+          add_splat_bubble (i, j);
+          play_sound (SOUND_SPLAT);
+          push_xpos = push_ypos = -1;
+          score += game_config ()->score_type1_splatted;
+        }
+        if (arena[i][j] == OBJECT_ROBOT2) {
+          add_splat_bubble (i, j);
+          play_sound (SOUND_SPLAT);
+          push_xpos = push_ypos = -1;
+          score += game_config ()->score_type2_splatted;
+        }
       }
 
 
       arena[i][j] = temp_arena[i][j];
       if (arena[i][j] == OBJECT_ROBOT1) {
-	num_robots1 += 1;
+        num_robots1 += 1;
       } else if (arena[i][j] == OBJECT_ROBOT2) {
-	num_robots2 += 1;
+        num_robots2 += 1;
       }
     }
   }
@@ -556,10 +521,8 @@ update_arena (void)
     }
   }
 
-  display_updated = FALSE;
-
   gnobots_statusbar_set (score, current_level + 1, safe_teleports,
-			 num_robots1, num_robots2);
+                         num_robots1, num_robots2);
 
 }
 
@@ -578,23 +541,19 @@ timeout_cb (void *data)
 
   animate_game_graphics ();
 
-  draw_graphics ();
+  clear_game_area ();
 
   if ((game_state == STATE_TYPE2) || (game_state == STATE_WTYPE2)) {
-    if (display_updated) {
-      move_type2_robots ();
-      update_arena ();
-      if (game_state == STATE_TYPE2) {
-	game_state = STATE_PLAYING;
-      } else if (game_state == STATE_WTYPE2) {
-	game_state = STATE_WAITING;
-      }
+    move_type2_robots ();
+    update_arena ();
+    if (game_state == STATE_TYPE2) {
+      game_state = STATE_PLAYING;
+    } else if (game_state == STATE_WTYPE2) {
+      game_state = STATE_WAITING;
     }
   } else if (game_state == STATE_WAITING) {
-    if (display_updated) {
-      remove_splat_bubble ();
-      move_robots ();
-    }
+    remove_splat_bubble ();
+    move_robots ();
   } else if (game_state == STATE_COMPLETE) {
     ++endlev_counter;
     if (endlev_counter >= CHANGE_DELAY) {
@@ -606,13 +565,13 @@ timeout_cb (void *data)
       game_state = STATE_PLAYING;
       set_move_menu_sensitivity (TRUE);
       gnobots_statusbar_set (score, current_level + 1, safe_teleports,
-			     num_robots1, num_robots2);
+                             num_robots1, num_robots2);
     }
   } else if (game_state == STATE_DEAD) {
     ++endlev_counter;
     if (endlev_counter >= DEAD_DELAY) {
       if (score > 0) {
-	sp = log_score (score);
+        sp = log_score (score);
         if (show_scores (sp, TRUE) == GTK_RESPONSE_REJECT) {
           quit_game ();
         }
@@ -670,7 +629,7 @@ init_game (void)
   create_game_timer ();
 
   g_signal_connect (GTK_WIDGET (app), "key_press_event",
-		    G_CALLBACK (keyboard_cb), 0);
+                    G_CALLBACK (keyboard_cb), 0);
 
   start_new_game ();
 }
@@ -727,7 +686,7 @@ start_new_game (void)
   game_state = STATE_PLAYING;
 
   gnobots_statusbar_set (score, current_level + 1, safe_teleports,
-			 num_robots1, num_robots2);
+                         num_robots1, num_robots2);
   set_move_menu_sensitivity (TRUE);
 }
 
@@ -747,9 +706,9 @@ move_all_robots (void)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if ((arena[i][j] == OBJECT_PLAYER) || (arena[i][j] == OBJECT_HEAP)) {
-	temp_arena[i][j] = arena[i][j];
+        temp_arena[i][j] = arena[i][j];
       } else {
-	temp_arena[i][j] = OBJECT_NONE;
+        temp_arena[i][j] = OBJECT_NONE;
       }
     }
   }
@@ -757,27 +716,27 @@ move_all_robots (void)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if ((arena[i][j] == OBJECT_ROBOT1) || (arena[i][j] == OBJECT_ROBOT2)) {
-	nx = i;
-	ny = j;
-	if (player_xpos < nx)
-	  nx -= 1;
-	if (player_xpos > nx)
-	  nx += 1;
-	if (player_ypos < ny)
-	  ny -= 1;
-	if (player_ypos > ny)
-	  ny += 1;
+        nx = i;
+        ny = j;
+        if (player_xpos < nx)
+          nx -= 1;
+        if (player_xpos > nx)
+          nx += 1;
+        if (player_ypos < ny)
+          ny -= 1;
+        if (player_ypos > ny)
+          ny += 1;
 
-	if (temp_arena[nx][ny] == OBJECT_HEAP) {
-	  add_kill (arena[i][j]);
-	} else if ((temp_arena[nx][ny] == OBJECT_ROBOT1) ||
-		   (temp_arena[nx][ny] == OBJECT_ROBOT2)) {
-	  add_kill (arena[i][j]);
-	  add_kill (temp_arena[nx][ny]);
-	  temp_arena[nx][ny] = OBJECT_HEAP;
-	} else {
-	  temp_arena[nx][ny] = arena[i][j];
-	}
+        if (temp_arena[nx][ny] == OBJECT_HEAP) {
+          add_kill (arena[i][j]);
+        } else if ((temp_arena[nx][ny] == OBJECT_ROBOT1) ||
+                   (temp_arena[nx][ny] == OBJECT_ROBOT2)) {
+          add_kill (arena[i][j]);
+          add_kill (temp_arena[nx][ny]);
+          temp_arena[nx][ny] = OBJECT_HEAP;
+        } else {
+          temp_arena[nx][ny] = arena[i][j];
+        }
       }
     }
   }
@@ -800,10 +759,10 @@ move_type2_robots (void)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if ((arena[i][j] == OBJECT_PLAYER) ||
-	  (arena[i][j] == OBJECT_ROBOT1) || (arena[i][j] == OBJECT_HEAP)) {
-	temp_arena[i][j] = arena[i][j];
+          (arena[i][j] == OBJECT_ROBOT1) || (arena[i][j] == OBJECT_HEAP)) {
+        temp_arena[i][j] = arena[i][j];
       } else {
-	temp_arena[i][j] = OBJECT_NONE;
+        temp_arena[i][j] = OBJECT_NONE;
       }
     }
   }
@@ -811,27 +770,27 @@ move_type2_robots (void)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if (arena[i][j] == OBJECT_ROBOT2) {
-	nx = i;
-	ny = j;
-	if (player_xpos < nx)
-	  nx -= 1;
-	if (player_xpos > nx)
-	  nx += 1;
-	if (player_ypos < ny)
-	  ny -= 1;
-	if (player_ypos > ny)
-	  ny += 1;
+        nx = i;
+        ny = j;
+        if (player_xpos < nx)
+          nx -= 1;
+        if (player_xpos > nx)
+          nx += 1;
+        if (player_ypos < ny)
+          ny -= 1;
+        if (player_ypos > ny)
+          ny += 1;
 
-	if (temp_arena[nx][ny] == OBJECT_HEAP) {
-	  add_kill (arena[i][j]);
-	} else if ((temp_arena[nx][ny] == OBJECT_ROBOT1) ||
-		   (temp_arena[nx][ny] == OBJECT_ROBOT2)) {
-	  add_kill (arena[i][j]);
-	  add_kill (temp_arena[nx][ny]);
-	  temp_arena[nx][ny] = OBJECT_HEAP;
-	} else {
-	  temp_arena[nx][ny] = arena[i][j];
-	}
+        if (temp_arena[nx][ny] == OBJECT_HEAP) {
+          add_kill (arena[i][j]);
+        } else if ((temp_arena[nx][ny] == OBJECT_ROBOT1) ||
+                   (temp_arena[nx][ny] == OBJECT_ROBOT2)) {
+          add_kill (arena[i][j]);
+          add_kill (temp_arena[nx][ny]);
+          temp_arena[nx][ny] = OBJECT_HEAP;
+        } else {
+          temp_arena[nx][ny] = arena[i][j];
+        }
       }
     }
   }
@@ -887,10 +846,10 @@ check_safe (gint x, gint y)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if ((temp_arena[i][j] == OBJECT_PLAYER) ||
-	  (temp_arena[i][j] == OBJECT_HEAP)) {
-	temp2_arena[i][j] = temp_arena[i][j];
+          (temp_arena[i][j] == OBJECT_HEAP)) {
+        temp2_arena[i][j] = temp_arena[i][j];
       } else {
-	temp2_arena[i][j] = OBJECT_NONE;
+        temp2_arena[i][j] = OBJECT_NONE;
       }
     }
   }
@@ -898,25 +857,25 @@ check_safe (gint x, gint y)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if ((temp_arena[i][j] == OBJECT_ROBOT1) ||
-	  (temp_arena[i][j] == OBJECT_ROBOT2)) {
-	nx = i;
-	ny = j;
-	if (x < nx)
-	  nx -= 1;
-	if (x > nx)
-	  nx += 1;
-	if (y < ny)
-	  ny -= 1;
-	if (y > ny)
-	  ny += 1;
+          (temp_arena[i][j] == OBJECT_ROBOT2)) {
+        nx = i;
+        ny = j;
+        if (x < nx)
+          nx -= 1;
+        if (x > nx)
+          nx += 1;
+        if (y < ny)
+          ny -= 1;
+        if (y > ny)
+          ny += 1;
 
-	if ((temp2_arena[nx][ny] == OBJECT_ROBOT1) ||
-	    (temp2_arena[nx][ny] == OBJECT_ROBOT2) ||
-	    (temp2_arena[nx][ny] == OBJECT_HEAP)) {
-	  temp2_arena[nx][ny] = OBJECT_HEAP;
-	} else {
-	  temp2_arena[nx][ny] = temp_arena[i][j];
-	}
+        if ((temp2_arena[nx][ny] == OBJECT_ROBOT1) ||
+            (temp2_arena[nx][ny] == OBJECT_ROBOT2) ||
+            (temp2_arena[nx][ny] == OBJECT_HEAP)) {
+          temp2_arena[nx][ny] = OBJECT_HEAP;
+        } else {
+          temp2_arena[nx][ny] = temp_arena[i][j];
+        }
       }
     }
   }
@@ -927,10 +886,10 @@ check_safe (gint x, gint y)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if ((temp2_arena[i][j] == OBJECT_PLAYER) ||
-	  (temp2_arena[i][j] == OBJECT_HEAP)) {
-	temp3_arena[i][j] = temp2_arena[i][j];
+          (temp2_arena[i][j] == OBJECT_HEAP)) {
+        temp3_arena[i][j] = temp2_arena[i][j];
       } else {
-	temp3_arena[i][j] = OBJECT_NONE;
+        temp3_arena[i][j] = OBJECT_NONE;
       }
     }
   }
@@ -938,24 +897,24 @@ check_safe (gint x, gint y)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if (temp2_arena[i][j] == OBJECT_ROBOT2) {
-	nx = i;
-	ny = j;
-	if (x < nx)
-	  nx -= 1;
-	if (x > nx)
-	  nx += 1;
-	if (y < ny)
-	  ny -= 1;
-	if (y > ny)
-	  ny += 1;
+        nx = i;
+        ny = j;
+        if (x < nx)
+          nx -= 1;
+        if (x > nx)
+          nx += 1;
+        if (y < ny)
+          ny -= 1;
+        if (y > ny)
+          ny += 1;
 
-	if ((temp3_arena[nx][ny] == OBJECT_ROBOT1) ||
-	    (temp3_arena[nx][ny] == OBJECT_ROBOT2) ||
-	    (temp3_arena[nx][ny] == OBJECT_HEAP)) {
-	  temp3_arena[nx][ny] = OBJECT_HEAP;
-	} else {
-	  temp3_arena[nx][ny] = temp2_arena[i][j];
-	}
+        if ((temp3_arena[nx][ny] == OBJECT_ROBOT1) ||
+            (temp3_arena[nx][ny] == OBJECT_ROBOT2) ||
+            (temp3_arena[nx][ny] == OBJECT_HEAP)) {
+          temp3_arena[nx][ny] = OBJECT_HEAP;
+        } else {
+          temp3_arena[nx][ny] = temp2_arena[i][j];
+        }
       }
     }
   }
@@ -1033,8 +992,8 @@ try_player_move (gint dx, gint dy)
   if (temp_arena[nx][ny] == OBJECT_HEAP) {
     if (game_config ()->moveable_heaps) {
       if (!push_heap (nx, ny, dx, dy)) {
-	push_xpos = push_ypos = -1;
-	return FALSE;
+        push_xpos = push_ypos = -1;
+        return FALSE;
       }
     } else {
       return FALSE;
@@ -1127,7 +1086,7 @@ safe_teleport_available (void)
   for (x = 0; x < GAME_WIDTH; x++) {
     for (y = 0; y < GAME_HEIGHT; y++) {
       if (check_safe (x, y))
-	return TRUE;
+        return TRUE;
     }
   }
 
@@ -1163,10 +1122,10 @@ player_move (gint dx, gint dy)
       return FALSE;
     } else {
       if (!check_safe (nx, ny)) {
-	if (properties_super_safe_moves () || safe_move_available ()) {
-	  play_sound (SOUND_BAD);
-	  return FALSE;
-	}
+        if (properties_super_safe_moves () || safe_move_available ()) {
+          play_sound (SOUND_BAD);
+          return FALSE;
+        }
       }
     }
   } else {
@@ -1211,9 +1170,9 @@ random_teleport (void)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if (arena[i][j] != OBJECT_PLAYER) {
-	temp_arena[i][j] = arena[i][j];
+        temp_arena[i][j] = arena[i][j];
       } else {
-	temp_arena[i][j] = OBJECT_NONE;
+        temp_arena[i][j] = OBJECT_NONE;
       }
     }
   }
@@ -1239,7 +1198,7 @@ random_teleport (void)
       xp = 0;
       ++yp;
       if (yp >= GAME_HEIGHT) {
-	yp = 0;
+        yp = 0;
       }
     }
 
@@ -1284,9 +1243,9 @@ safe_teleport (void)
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
       if (arena[i][j] != OBJECT_PLAYER) {
-	temp_arena[i][j] = arena[i][j];
+        temp_arena[i][j] = arena[i][j];
       } else {
-	temp_arena[i][j] = OBJECT_NONE;
+        temp_arena[i][j] = OBJECT_NONE;
       }
     }
   }
@@ -1314,7 +1273,7 @@ safe_teleport (void)
       xp = 0;
       ++yp;
       if (yp >= GAME_HEIGHT) {
-	yp = 0;
+        yp = 0;
       }
     }
   }
@@ -1336,64 +1295,61 @@ safe_teleport (void)
 void
 game_keypress (gint key)
 {
-  if (!display_updated)
-    return;
-
   if (game_state == STATE_PLAYING) {
     switch (key) {
     case KBD_NW:
       if (player_move (-1, -1)) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_N:
       if (player_move (0, -1)) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_NE:
       if (player_move (1, -1)) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_W:
       if (player_move (-1, 0)) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_STAY:
       if (player_move (0, 0)) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_E:
       if (player_move (1, 0)) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_SW:
       if (player_move (-1, 1)) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_S:
       if (player_move (0, 1)) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_SE:
       if (player_move (1, 1)) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_TELE:
       if (safe_teleport ()) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_RTEL:
       if (random_teleport ()) {
-	move_robots ();
+        move_robots ();
       }
       break;
     case KBD_WAIT:

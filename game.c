@@ -218,7 +218,6 @@ log_score (gint sc)
 {
   guint pos = 0;
   gchar *sbuf = NULL;
-  GamesScoreValue score;
 
   if (properties_super_safe_moves ()) {
     sbuf =
@@ -234,9 +233,8 @@ log_score (gint sc)
   }
 
   if (sc != 0) {
-    score.plain = (guint32) sc;
     games_scores_set_category (highscores, sbuf);
-    pos = games_scores_add_score (highscores, score);
+    pos = games_scores_add_plain_score (highscores, (guint32) sc);
   }
   g_free (sbuf);
 

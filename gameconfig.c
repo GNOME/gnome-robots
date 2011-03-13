@@ -214,7 +214,7 @@ load_game_configs (void)
 {
   gint i;
   GameConfig *gcfg;
-  G_CONST_RETURN gchar *dent;
+  const gchar *dent;
   GDir *dir;
   gchar *buffer;
   const char *dname;

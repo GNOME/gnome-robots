@@ -1105,14 +1105,10 @@ safe_teleport_available (void)
 static gboolean
 player_move (gint dx, gint dy)
 {
-  gint opx, opy;
   gint nx, ny;
 
   nx = player_xpos + dx;
   ny = player_ypos + dy;
-
-  opx = player_xpos;
-  opy = player_ypos;
 
   if (properties_safe_moves ()) {
     if (!try_player_move (dx, dy)) {
@@ -1226,7 +1222,7 @@ random_teleport (void)
 static gboolean
 safe_teleport (void)
 {
-  gint xp, yp, ixp, iyp;
+  gint xp, yp;
   gint i, j;
 
   if (!safe_teleport_available ()) {
@@ -1247,9 +1243,6 @@ safe_teleport (void)
       }
     }
   }
-
-  ixp = xp = rand () % GAME_WIDTH;
-  iyp = yp = rand () % GAME_HEIGHT;
 
   while (1) {
 

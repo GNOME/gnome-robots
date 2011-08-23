@@ -1244,6 +1244,9 @@ safe_teleport (void)
     }
   }
 
+  xp = rand () % GAME_WIDTH;
+  yp = rand () % GAME_HEIGHT;
+
   while (1) {
 
     if ((temp_arena[xp][yp] == OBJECT_NONE) && check_safe (xp, yp)) {

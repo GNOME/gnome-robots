@@ -439,16 +439,17 @@ show_properties_dialog (void)
               notebook, TRUE, TRUE, 0);
 
   /* The configuration page */
-  cpage = gtk_vbox_new (FALSE, 18);
+  cpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
   gtk_container_set_border_width (GTK_CONTAINER (cpage), 12);
 
   frame = games_frame_new (_("Game Type"));
   gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
 
-  vbox = gtk_vbox_new (FALSE, 6);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
-  hbox = gtk_hbox_new (TRUE, 0);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+  gtk_box_set_homogeneous (GTK_BOX (hbox), TRUE);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
   typemenu = gtk_combo_box_text_new ();
@@ -459,7 +460,8 @@ show_properties_dialog (void)
 
   frame = games_frame_new (_("Options"));
   gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
-  vbox = gtk_vbox_new (TRUE, 6);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_box_set_homogeneous (GTK_BOX (vbox), TRUE);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Use safe moves"));
@@ -482,7 +484,8 @@ show_properties_dialog (void)
 
   frame = games_frame_new (_("Sound"));
   gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
-  vbox = gtk_vbox_new (TRUE, 6);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_box_set_homogeneous (GTK_BOX (vbox), TRUE);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Enable sounds"));
@@ -498,7 +501,7 @@ show_properties_dialog (void)
 
 
   /* The graphics page */
-  gpage = gtk_vbox_new (FALSE, 18);
+  gpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
   gtk_container_set_border_width (GTK_CONTAINER (gpage), 12);
 
   frame = games_frame_new (_("Graphics Theme"));
@@ -536,12 +539,12 @@ show_properties_dialog (void)
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), gpage, label);
 
   /* The keyboard page */
-  kpage = gtk_vbox_new (FALSE, 18);
+  kpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
   gtk_container_set_border_width (GTK_CONTAINER (kpage), 12);
 
   frame = games_frame_new (_("Keyboard Controls"));
   gtk_box_pack_start (GTK_BOX (kpage), frame, TRUE, TRUE, 0);
-  vbox = gtk_vbox_new (FALSE, 6);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
   controls_list = games_controls_list_new (KEY_PREFERENCES_GROUP);

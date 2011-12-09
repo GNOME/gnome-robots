@@ -250,6 +250,8 @@ about_cb (GtkAction * action, gpointer data)
 {
   const gchar *authors[] = { "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
 
+  const gchar *artists[] = { "Kirstie Opstad - <K.Opstad@ed.ac.uk>", NULL };
+
   const gchar *documenters[] =
     { "Patanjali Somayaji", "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
 
@@ -263,6 +265,7 @@ about_cb (GtkAction * action, gpointer data)
 		         "website-label", _("GNOME Games web site"),
 			 "comments", _("Based on classic BSD Robots.\n\nRobots is a part of GNOME Games."),
 			 "authors", authors,
+			 "artists", artists,
 			 "documenters", documenters,
 			 "translator-credits", _("translator-credits"),
 			 "logo-icon-name", "gnome-robots",

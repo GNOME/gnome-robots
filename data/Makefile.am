@@ -42,8 +42,7 @@ Games_in_files = gnobots2.desktop.in.in
 Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-EXTRA_DIST = AUTHORS \
-	     $(cursor_files) \
+EXTRA_DIST = $(cursor_files) \
              $(pixmap_DATA) \
              $(theme_DATA) \
              $(Games_DATA) \

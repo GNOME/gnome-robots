@@ -565,7 +565,7 @@ show_properties_dialog (void)
 
   gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, 0);
 
-  hbox = gtk_hbutton_box_new ();
+  hbox = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
   gtk_button_box_set_layout (GTK_BUTTON_BOX (hbox), GTK_BUTTONBOX_START);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 

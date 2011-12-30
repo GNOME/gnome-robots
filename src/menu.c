@@ -268,7 +268,7 @@ about_cb (GtkAction * action, gpointer data)
 			 "artists", artists,
 			 "documenters", documenters,
 			 "translator-credits", _("translator-credits"),
-			 "logo-icon-name", "gnome-robots",
+			 "logo-icon-name", "gnobots2",
 			 "website",
 			 "http://www.gnome.org/projects/gnome-games/",
 			 "wrap-license", TRUE, NULL);

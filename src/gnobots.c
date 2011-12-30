@@ -244,7 +244,7 @@ main (int argc, char *argv[])
 
   games_conf_initialise ("Gnobots2");
 
-  gtk_window_set_default_icon_name ("gnome-robots");
+  gtk_window_set_default_icon_name ("gnobots2");
 
 #ifdef WITH_SMCLIENT
   sm_client = egg_sm_client_get ();

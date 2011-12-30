@@ -1,3 +1,5 @@
+SUBDIRS = icons
+
 schema_in_files = gnobots2.schemas.in
 if HAVE_GNOME
 schemadir = $(GCONF_SCHEMA_FILE_DIR)

@@ -31,7 +31,7 @@
 /* File Static Variables                                              */
 /**********************************************************************/
 static GtkWidget *statusbar = NULL;
-static GtkWidget *sbtbl = NULL;
+static GtkWidget *sbgrid = NULL;
 static GtkWidget *score_label = NULL;
 static GtkWidget *safe_label = NULL;
 static GtkWidget *level_label = NULL;
@@ -62,51 +62,51 @@ gnobots_statusbar_new (void)
     return statusbar;
   }
 
-  sbtbl = gtk_table_new (1, 11, FALSE);
+  sbgrid = gtk_grid_new ();
+  gtk_grid_set_column_spacing (GTK_GRID (sbgrid), 6);
 
   label = gtk_label_new (_("Score:"));
-  gtk_table_attach (GTK_TABLE (sbtbl), label, 0, 1, 0, 1, 0, 0, 3, 3);
+  gtk_grid_attach (GTK_GRID (sbgrid), label, 0, 0, 1, 1);
   gtk_widget_show (label);
 
   score_label = gtk_label_new ("0");
-  gtk_table_attach (GTK_TABLE (sbtbl), score_label, 1, 2, 0, 1, 0, 0, 3, 3);
+  gtk_grid_attach (GTK_GRID (sbgrid), score_label, 1, 0, 1, 1);
   gtk_widget_show (score_label);
 
-  gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 2, 12);
+  gtk_table_set_col_spacing (GTK_GRID (sbgrid), 2, 12);
 
   label = gtk_label_new (_("Safe Teleports:"));
-  gtk_table_attach (GTK_TABLE (sbtbl), label, 3, 4, 0, 1, 0, 0, 3, 3);
+  gtk_grid_attach (GTK_GRID (sbgrid), label, 3, 0, 1, 1);
   gtk_widget_show (label);
 
   safe_label = gtk_label_new ("0");
-  gtk_table_attach (GTK_TABLE (sbtbl), safe_label, 4, 5, 0, 1, 0, 0, 3, 3);
+  gtk_grid_attach (GTK_GRID (sbgrid), safe_label, 4, 0, 1, 1);
   gtk_widget_show (safe_label);
 
-  gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 5, 12);
+  gtk_table_set_col_spacing (GTK_GRID (sbgrid), 5, 12);
 
   label = gtk_label_new (_("Level:"));
-  gtk_table_attach (GTK_TABLE (sbtbl), label, 6, 7, 0, 1, 0, 0, 3, 3);
+  gtk_grid_attach (GTK_GRID (sbgrid), label, 6, 0, 1, 1);
   gtk_widget_show (label);
 
   level_label = gtk_label_new ("0");
-  gtk_table_attach (GTK_TABLE (sbtbl), level_label, 7, 8, 0, 1, 0, 0, 3, 3);
+  gtk_grid_attach (GTK_GRID (sbgrid), level_label, 7, 0, 1, 1);
   gtk_widget_show (level_label);
 
-  gtk_table_set_col_spacing (GTK_TABLE (sbtbl), 8, 12);
+  gtk_table_set_col_spacing (GTK_GRID (sbgrid), 8, 12);
 
   label = gtk_label_new (_("Remaining:"));
-  gtk_table_attach (GTK_TABLE (sbtbl), label, 9, 10, 0, 1, 0, 0, 3, 3);
+  gtk_grid_attach (GTK_GRID (sbgrid), label, 9, 0, 1, 1);
   gtk_widget_show (label);
 
   remaining_label = gtk_label_new ("0");
-  gtk_table_attach (GTK_TABLE (sbtbl), remaining_label,
-		    10, 11, 0, 1, 0, 0, 3, 3);
+  gtk_grid_attach (GTK_GRID (sbgrid), remaining_label, 10, 0, 1, 1);
   gtk_widget_show (remaining_label);
 
-  gtk_widget_show (sbtbl);
+  gtk_widget_show (sbgrid);
 
   statusbar = gtk_statusbar_new ();
-  gtk_box_pack_start (GTK_BOX (statusbar), sbtbl, FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (statusbar), sbgrid, FALSE, FALSE, 0);
 
   show_both = TRUE;
 

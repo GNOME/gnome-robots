@@ -413,7 +413,7 @@ show_properties_dialog (void)
   GtkWidget *typemenu;
   GtkWidget *pmapmenu;
   GtkWidget *chkbox;
-  GtkWidget *table;
+  GtkWidget *grid;
   GtkWidget *dbut;
   GtkWidget *frame;
   GtkWidget *w;
@@ -507,25 +507,25 @@ show_properties_dialog (void)
   frame = games_frame_new (_("Graphics Theme"));
   gtk_box_pack_start (GTK_BOX (gpage), frame, FALSE, FALSE, 0);
 
-  table = gtk_table_new (2, 2, FALSE);
-  gtk_table_set_row_spacings (GTK_TABLE (table), 6);
-  gtk_table_set_col_spacings (GTK_TABLE (table), 12);
-  gtk_container_add (GTK_CONTAINER (frame), table);
+  grid = gtk_grid_new ();
+  gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 12);
+  gtk_container_add (GTK_CONTAINER (frame), grid);
 
   label = gtk_label_new_with_mnemonic (_("_Image theme:"));
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
-  gtk_table_attach (GTK_TABLE (table), label, 0, 1, 0, 1, GTK_FILL, 0, 0, 0);
+  gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
   pmapmenu = make_theme_menu ();
   g_signal_connect (G_OBJECT (pmapmenu), "changed",
 		    G_CALLBACK (pmap_selection), NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), pmapmenu);
 
-  gtk_table_attach_defaults (GTK_TABLE (table), pmapmenu, 1, 2, 0, 1);
+  gtk_grid_attach (GTK_GRID (grid), pmapmenu, 1, 0, 1, 1);
 
   label = gtk_label_new_with_mnemonic (_("_Background color:"));
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
-  gtk_table_attach (GTK_TABLE (table), label, 0, 1, 1, 2, GTK_FILL, 0, 0, 0);
+  gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
 
   w = gtk_color_button_new ();
   gtk_color_button_set_color (GTK_COLOR_BUTTON (w), &properties.bgcolour);
@@ -533,7 +533,7 @@ show_properties_dialog (void)
 		    G_CALLBACK (bg_color_callback), NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), w);
 
-  gtk_table_attach_defaults (GTK_TABLE (table), w, 1, 2, 1, 2);
+  gtk_grid_attach (GTK_GRID (grid), w, 1, 1, 1, 1);
 
   label = gtk_label_new_with_mnemonic (_("Appearance"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), gpage, label);

@@ -22,8 +22,7 @@
 #include <config.h>
 
 #include <gdk/gdk.h>
-
-#include <libgames-support/games-sound.h>
+#include <canberra-gtk.h>
 
 #include "gbdefs.h"
 #include "sound.h"
@@ -69,28 +68,43 @@ play_sound (gint sno)
   }
 
   if (properties_sound ()) {
+    gchar *name = NULL;
 
     switch (sno) {
     case SOUND_VICTORY:
-      games_sound_play ("victory");
+      name = "victory";
       break;
     case SOUND_DIE:
-      games_sound_play ("die");
+      name = "die";
       break;
     case SOUND_TELEPORT:
-      games_sound_play ("teleport");
+      name = "teleport";
       break;
     case SOUND_SPLAT:
-      games_sound_play ("splat");
+      name = "splat";
       break;
     case SOUND_BAD:
       gdk_beep ();
       break;
     case SOUND_YAHOO:
-      games_sound_play ("yahoo");
+      name = "yahoo";
       break;
     }
 
+    if (name)
+    {
+      gchar *filename, *path;
+
+      filename = g_strdup_printf ("%s.ogg", name);
+      path = g_build_filename (SOUND_DIRECTORY, filename, NULL);
+      g_free (filename);
+
+      ca_context_play (ca_gtk_context_get_for_screen (gdk_screen_get_default ()),
+                      0,
+                      CA_PROP_MEDIA_NAME, name,
+                      CA_PROP_MEDIA_FILENAME, path, NULL);
+      g_free (path);
+    }
   }
 
   return TRUE;

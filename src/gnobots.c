@@ -35,10 +35,6 @@
 #include <libgames-support/games-scores-dialog.h>
 #include <libgames-support/games-stock.h>
 
-#ifdef WITH_SMCLIENT
-#include <libgames-support/eggsmclient.h>
-#endif /* WITH_SMCLIENT */
-
 #include "gbdefs.h"
 #include "statusbar.h"
 #include "gameconfig.h"
@@ -116,69 +112,12 @@ static const GamesScoresCategory scorecats[] = {
 /**********************************************************************/
 /* Function Prototypes                                                */
 /**********************************************************************/
-#ifdef WITH_SMCLIENT
-static gint save_state_cb (EggSMClient *, GKeyFile *, gpointer);
-static gint quit_sm_cb (EggSMClient *, gpointer);
-#endif /* WITH_SMCLIENT */
 /**********************************************************************/
 
 
 /**********************************************************************/
 /* Function Definitions                                               */
 /**********************************************************************/
-
-#ifdef WITH_SMCLIENT
-/**
- * save_state
- * @client: gnome client
- * @phase: phase
- * @save_style: save style
- * @shutdown: shutdown
- * @interact_style: interact style
- * @fast: fast shutdown
- * @client_data: client data
- *
- * Description:
- * saves session info
- *
- * Returns:
- * TRUE on success, FALSE otherwise
- **/
-static gint
-save_state_cb (EggSMClient *client,
-	    GKeyFile* keyfile,
-	    gpointer client_data)
-{
-  char *argv[20];
-  int i;
-  int xpos, ypos;
-
-  gdk_window_get_origin (gtk_widget_get_window (app), &xpos, &ypos);
-
-  i = 0;
-  argv[i++] = (char *) client_data;
-  argv[i++] = "-x";
-  argv[i++] = g_strdup_printf ("%d", xpos);
-  argv[i++] = "-y";
-  argv[i++] = g_strdup_printf ("%d", ypos);
-
-  egg_sm_client_set_restart_command (client, i, (const char **) argv);
-
-  g_free (argv[2]);
-  g_free (argv[4]);
-
-  return TRUE;
-}
-
-static gint
-quit_sm_cb (EggSMClient *client,
-         gpointer client_data)
-{
-  quit_game();
-
-  return FALSE;
-}
-#endif /* WITH_SMCLIENT */
 
 /**
  * main
@@ -203,9 +142,6 @@ main (int argc, char *argv[])
   gchar *config;
   gboolean retval;
   GError *error = NULL;
-#ifdef WITH_SMCLIENT
-  EggSMClient *sm_client;
-#endif /* WITH_SMCLIENT */
 
   if (!games_runtime_init ("gnobots2"))
     return 1;
@@ -220,9 +156,6 @@ main (int argc, char *argv[])
   context = g_option_context_new (NULL);
   g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
   g_option_context_add_group (context, gtk_get_option_group (TRUE));
-#ifdef WITH_SMCLIENT
-  g_option_context_add_group (context, egg_sm_client_get_option_group ());
-#endif /* WITH_SMCLIENT */
 
   g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
 
@@ -245,14 +178,6 @@ main (int argc, char *argv[])
   games_conf_initialise ("Gnobots2");
 
   gtk_window_set_default_icon_name ("gnobots2");
-
-#ifdef WITH_SMCLIENT
-  sm_client = egg_sm_client_get ();
-  g_signal_connect (sm_client, "save-state",
-		    G_CALLBACK (save_state_cb), NULL);
-  g_signal_connect (sm_client, "quit",
-                    G_CALLBACK (quit_sm_cb), NULL);
-#endif /* WITH_SMCLIENT */
 
   app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (app), _("Robots"));

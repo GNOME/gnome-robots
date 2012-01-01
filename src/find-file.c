@@ -22,7 +22,7 @@
 
 #include <glib.h>
 
-#include <libgames-support/games-files.h>
+#include <libgames-support/games-file-list.h>
 #include "find-file.h"
 
 static gchar *

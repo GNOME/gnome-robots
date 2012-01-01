@@ -29,7 +29,7 @@
 
 #include <libgames-support/games-frame.h>
 #include <libgames-support/games-controls.h>
-#include <libgames-support/games-files.h>
+#include <libgames-support/games-file-list.h>
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
 #include <libgames-support/games-conf.h>

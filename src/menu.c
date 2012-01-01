@@ -26,7 +26,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include <libgames-support/games-help.h>
 #include <libgames-support/games-stock.h>
 #include <libgames-support/games-fullscreen-action.h>
 #include <libgames-support/games-scores.h>
@@ -231,7 +230,12 @@ quit_cb (GtkAction * action, gpointer data)
 static void
 help_cb (GtkAction * action, gpointer data)
 {
-  games_help_display (app, "gnobots2", NULL);
+  GError *error = NULL;
+
+  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (app)), "ghelp:gnobots2", gtk_get_current_event_time (), &error);
+  if (error)
+    g_warning ("Failed to show help: %s", error->message);
+  g_clear_error (&error);
 }
 
 

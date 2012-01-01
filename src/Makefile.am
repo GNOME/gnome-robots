@@ -39,6 +39,7 @@ gnobots2_CPPFLAGS = \
 	$(AM_CPPFLAGS)
 
 gnobots2_CFLAGS = \
+	-DDATA_DIRECTORY=\"$(datadir)/gnobots2\" \
 	-DSOUND_DIRECTORY=\"$(pkgdatadir)/sounds\" \
 	$(GTK_CFLAGS) \
 	$(CANBERRA_GTK_CFLAGS) \

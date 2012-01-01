@@ -173,20 +173,17 @@ static gboolean
 load_bubble_graphics (void)
 {
   gchar *buffer = NULL;
-  const char *dname;
 
-  dname = games_runtime_get_directory (GAMES_RUNTIME_GAME_PIXMAP_DIRECTORY);
-
-  buffer = g_build_filename (dname, "yahoo.png", NULL);
+  buffer = g_build_filename (DATA_DIRECTORY, "pixmaps", "yahoo.png", NULL);
   if (!load_bubble_graphic (buffer, &yahoo_pixbuf))
     return FALSE;
   g_free (buffer);
 
-  buffer = g_build_filename (dname, "aieee.png", NULL);
+  buffer = g_build_filename (DATA_DIRECTORY, "pixmaps", "aieee.png", NULL);
   if (!load_bubble_graphic (buffer, &aieee_pixbuf))
     return FALSE;
 
-  buffer = g_build_filename (dname, "splat.png", NULL);
+  buffer = g_build_filename (DATA_DIRECTORY, "pixmaps", "splat.png", NULL);
   if (!load_bubble_graphic (buffer, &splat_pixbuf))
     return FALSE;
 
@@ -206,14 +203,13 @@ load_bubble_graphics (void)
 gboolean
 load_game_graphics (void)
 {
-  gchar *filename;
-  const char *themedir;
+  gchar *themedir, *filename;
 
   if (theme_preimage != NULL) {
     free_game_graphics ();
   }
 
-  themedir = games_runtime_get_directory (GAMES_RUNTIME_GAME_THEME_DIRECTORY);
+  themedir = g_build_filename (DATA_DIRECTORY, "themes", NULL);
   filename = games_find_similar_file (properties_theme_name (), themedir);
 
   theme_preimage = games_preimage_new_from_file (filename, NULL);
@@ -224,6 +220,7 @@ load_game_graphics (void)
     theme_preimage = games_preimage_new_from_file (filename, NULL);
     g_free (filename);
   }
+  g_free (themedir);
 
   if (!load_bubble_graphics ())
     return FALSE;

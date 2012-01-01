@@ -217,9 +217,9 @@ load_game_configs (void)
   const gchar *dent;
   GDir *dir;
   gchar *buffer;
-  const char *dname;
+  gchar *dname;
 
-  dname = games_runtime_get_directory (GAMES_RUNTIME_GAME_GAMES_DIRECTORY);
+  dname = g_build_filename (DATA_DIRECTORY, "games", NULL);
 
   if (game_configs != NULL) {
     free_game_configs ();
@@ -259,6 +259,7 @@ load_game_configs (void)
       num_configs++;
     }
   }
+  g_free (dname);
 
   g_dir_close (dir);
 

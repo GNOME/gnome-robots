@@ -21,18 +21,18 @@ cursor_files = \
 	cursor-up.png		\
 	cursor-up-right.png
 
-pixmapdir = $(pkgdatadir)/gnobots2/pixmaps
+pixmapdir = $(datadir)/gnobots2/pixmaps
 pixmap_DATA = yahoo.png \
               aieee.png \
               splat.png
 
-themedir = $(pkgdatadir)/gnobots2/themes
+themedir = $(datadir)/gnobots2/themes
 theme_DATA = gnomes.png \
              robots.svg \
              boo.svg \
              ufo.svg
 
-configdir = $(pkgdatadir)/gnobots2/games
+configdir = $(datadir)/gnobots2/games
 config_DATA = robots2.cfg \
               robots2_easy.cfg \
               classic_robots.cfg \

@@ -343,13 +343,14 @@ fill_typemenu (GtkWidget * menu)
 static GtkWidget *
 make_theme_menu (void)
 {
-  const char *pixmapdir;
+  gchar *dir;
 
   if (theme_list)
     g_object_unref (theme_list);
 
-  pixmapdir = games_runtime_get_directory (GAMES_RUNTIME_GAME_THEME_DIRECTORY);
-  theme_list = games_file_list_new_images (pixmapdir, NULL);
+  dir = g_build_filename (DATA_DIRECTORY, "themes", NULL);
+  theme_list = games_file_list_new_images (dir, NULL);
+  g_free (dir);
   games_file_list_transform_basename (theme_list);
 
   /* FIXME: Get rid of the bubbles images from the list (preferably by

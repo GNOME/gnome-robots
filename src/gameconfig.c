@@ -29,8 +29,6 @@
 
 #include <gtk/gtk.h>
 
-#include <libgames-support/games-runtime.h>
-
 #include "gameconfig.h"
 #include "gbdefs.h"
 

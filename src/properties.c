@@ -33,7 +33,6 @@
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
 #include <libgames-support/games-conf.h>
-#include <libgames-support/games-runtime.h>
 
 #include "properties.h"
 #include "gameconfig.h"

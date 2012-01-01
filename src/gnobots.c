@@ -30,7 +30,6 @@
 
 #include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>
-#include <libgames-support/games-runtime.h>
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
 #include <libgames-support/games-stock.h>
@@ -142,9 +141,6 @@ main (int argc, char *argv[])
   gchar *config;
   gboolean retval;
   GError *error = NULL;
-
-  if (!games_runtime_init ("gnobots2"))
-    return 1;
 
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
@@ -293,8 +289,6 @@ main (int argc, char *argv[])
   gtk_main ();
 
   games_conf_shutdown ();
-
-  games_runtime_shutdown ();
 
   return 0;
 }

@@ -26,7 +26,6 @@
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
 #include <libgames-support/games-preimage.h>
-#include <libgames-support/games-runtime.h>
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
 

@@ -5,8 +5,6 @@ gsettings_SCHEMAS = $(gsettings_in_file:.xml.in=.xml)
 @INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
 
-@INTLTOOL_SCHEMAS_RULE@
-
 man_MANS = gnobots2.6
 
 cursor_files = \
@@ -48,9 +46,9 @@ EXTRA_DIST = $(cursor_files) \
              $(theme_DATA) \
              $(Games_DATA) \
              $(config_DATA) \
-             $(gsettings_in_files) \
+             $(gsettings_in_file) \
              $(man_MANS)
 
-DISTCLEANFILES = $(Games_DATA) $(gsettings_DATA)
+DISTCLEANFILES = $(Games_DATA) $(gsettings_SCHEMAS)
 
 -include $(top_srcdir)/git.mk

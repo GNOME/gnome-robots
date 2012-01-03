@@ -57,11 +57,6 @@ gnobots2_CFLAGS += $(RSVG_CFLAGS)
 gnobots2_LDADD += $(RSVG_LIBS)
 endif
 
-if WITH_GTHREAD
-gnobots2_CFLAGS += $(GHTREAD_CFLAGS)
-gnobots2_LDADD += $(GTHREAD_LIBS)
-endif
-
 install-exec-hook:
 	-if test "$(setgid)" = "true"; then \
 	  chgrp $(scores_group) $(DESTDIR)$(bindir)/gnobots2 && chmod 2555 $(DESTDIR)$(bindir)/gnobots2 ;\

@@ -52,11 +52,6 @@ gnobots2_LDADD = \
 	$(INTLLIBS) \
 	-lm
 
-if HAVE_GNOME
-gnobots2_CFLAGS += $(GNOME_CFLAGS)
-gnobots2_LDADD += $(GNOME_LIBS)
-endif
-
 if HAVE_RSVG
 gnobots2_CFLAGS += $(RSVG_CFLAGS)
 gnobots2_LDADD += $(RSVG_LIBS)

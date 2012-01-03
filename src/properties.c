@@ -545,7 +545,7 @@ show_properties_dialog (void)
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
-  controls_list = games_controls_list_new_settings (settings);
+  controls_list = games_controls_list_new (settings);
   games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),
 				    "key00", _("Key to move NW"), default_keys[0],
 				    "key01", _("Key to move N"), default_keys[1],

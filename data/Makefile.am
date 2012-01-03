@@ -1,10 +1,9 @@
 SUBDIRS = icons
 
-schema_in_files = gnobots2.schemas.in
-if HAVE_GNOME
-schemadir = $(GCONF_SCHEMA_FILE_DIR)
-schema_DATA = $(schema_in_files:.schemas.in=.schemas)
-endif
+gsettings_in_file = org.gnome.gnobots2.gschema.xml.in
+gsettings_SCHEMAS = $(gsettings_in_file:.xml.in=.xml)
+@INTLTOOL_XML_NOMERGE_RULE@
+@GSETTINGS_RULES@
 
 @INTLTOOL_SCHEMAS_RULE@
 
@@ -49,14 +48,9 @@ EXTRA_DIST = $(cursor_files) \
              $(theme_DATA) \
              $(Games_DATA) \
              $(config_DATA) \
-             $(schema_in_files) \
+             $(gsettings_in_files) \
              $(man_MANS)
 
-install-data-local:
-if GCONF_SCHEMAS_INSTALL
-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(top_builddir)/gnobots2/data/$(schema_DATA)
-endif
-
-DISTCLEANFILES = $(Games_DATA) $(schema_DATA)
+DISTCLEANFILES = $(Games_DATA) $(gsettings_DATA)
 
 -include $(top_srcdir)/git.mk

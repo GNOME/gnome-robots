@@ -8,6 +8,7 @@
 extern GtkWidget *app;
 extern GtkWidget *game_area;
 extern GamesScores *highscores;
+extern GSettings *settings;
 /**********************************************************************/
 
 

@@ -32,7 +32,7 @@
 #include <libgames-support/games-file-list.h>
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
-#include <libgames-support/games-conf.h>
+#include <libgames-support/games-settings.h>
 
 #include "properties.h"
 #include "gameconfig.h"
@@ -52,12 +52,12 @@
 #define KB_TEXT_HEIGHT   32
 
 #define KEY_PREFERENCES_GROUP "preferences"
-#define KEY_BACKGROUND_COLOR  "background_color"
+#define KEY_BACKGROUND_COLOR  "background-color"
 #define KEY_CONFIGURATION     "configuration"
-#define KEY_ENABLE_SOUND      "enable_sound"
-#define KEY_SAFE_MOVES        "use_safe_moves"
-#define KEY_SHOW_TOOLBAR      "show_toolbar"
-#define KEY_SUPER_SAFE_MOVES  "use_super_safe_moves"
+#define KEY_ENABLE_SOUND      "enable-sound"
+#define KEY_SAFE_MOVES        "use-safe-moves"
+#define KEY_SHOW_TOOLBAR      "show-toolbar"
+#define KEY_SUPER_SAFE_MOVES  "use-super-safe-moves"
 #define KEY_THEME             "theme"
 #define KEY_CONTROL_KEY       "key%02d"
 
@@ -545,7 +545,7 @@ show_properties_dialog (void)
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_add (GTK_CONTAINER (frame), vbox);
 
-  controls_list = games_controls_list_new (KEY_PREFERENCES_GROUP);
+  controls_list = games_controls_list_new_settings (settings);
   games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),
 				    "key00", _("Key to move NW"), default_keys[0],
 				    "key01", _("Key to move N"), default_keys[1],
@@ -603,16 +603,13 @@ load_properties (void)
 
   load_keys ();
 
-  bgcolour = games_conf_get_string_with_default (KEY_PREFERENCES_GROUP,
-                                                 KEY_BACKGROUND_COLOR, "#7590AE");
+  bgcolour = g_settings_get_string (settings, KEY_BACKGROUND_COLOR);
   gdk_color_parse (bgcolour, &properties.bgcolour);
   set_background_color (properties.bgcolour);
 
-  properties.themename = games_conf_get_string_with_default (KEY_PREFERENCES_GROUP,
-                                                             KEY_THEME, "robots");
+  properties.themename = g_settings_get_string (settings, KEY_THEME);
 
-  cname = games_conf_get_string_with_default (KEY_PREFERENCES_GROUP,
-                                              KEY_CONFIGURATION, "classic_robots");
+  cname = g_settings_get_string (settings, KEY_CONFIGURATION);
 
   properties.selected_config = 0;
   for (i = 0; i < num_game_configs (); ++i) {
@@ -626,15 +623,14 @@ load_properties (void)
   }
   g_free (cname);
 
-  properties.safe_moves = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
-						  KEY_SAFE_MOVES, NULL);
-  properties.super_safe_moves = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
-						        KEY_SUPER_SAFE_MOVES,
-						        NULL);
-  properties.sound = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
-                                             KEY_ENABLE_SOUND, NULL);
-  properties.show_toolbar = games_conf_get_boolean (KEY_PREFERENCES_GROUP,
-                                                    KEY_SHOW_TOOLBAR, NULL);
+  properties.safe_moves = g_settings_get_boolean (settings,
+						  KEY_SAFE_MOVES);
+  properties.super_safe_moves = g_settings_get_boolean (settings,
+						        KEY_SUPER_SAFE_MOVES);
+  properties.sound = g_settings_get_boolean (settings,
+                                             KEY_ENABLE_SOUND);
+  properties.show_toolbar = g_settings_get_boolean (settings,
+                                                    KEY_SHOW_TOOLBAR);
 
   set_game_graphics (properties.themename);
   set_game_config (properties.selected_config);
@@ -649,19 +645,15 @@ load_keys (void)
   gint i;
 
   for (i = 0; i < 12; i++) {
-    properties.keys[i] = default_keys[i];
-
     g_snprintf (buffer, sizeof (buffer), KEY_CONTROL_KEY, i);
-
-    properties.keys[i] = games_conf_get_keyval_with_default (KEY_PREFERENCES_GROUP,
-                                                             buffer, default_keys[i]);
+    properties.keys[i] = g_settings_get_int (settings, buffer);
   }
 }
 
 void
 conf_set_theme (gchar * value)
 {
-  games_conf_set_string (KEY_PREFERENCES_GROUP, KEY_THEME, value);
+  g_settings_set_string (settings, KEY_THEME, value);
 }
 
 static void
@@ -671,45 +663,48 @@ conf_set_background_color (GdkColor * c)
 
   g_snprintf (colour, sizeof (colour), "#%04x%04x%04x", c->red, c->green, c->blue);
 
-  games_conf_set_string (KEY_PREFERENCES_GROUP, KEY_BACKGROUND_COLOR, colour);
+  g_settings_set_string (settings, KEY_BACKGROUND_COLOR, colour);
 }
 
 void
 conf_set_configuration (gchar * value)
 {
-  games_conf_set_string (KEY_PREFERENCES_GROUP, KEY_CONFIGURATION, value);
+  g_settings_set_string (settings, KEY_CONFIGURATION, value);
 }
 
 void
 conf_set_use_safe_moves (gboolean value)
 {
-  games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_SAFE_MOVES, value);
+  g_settings_set_boolean (settings, KEY_SAFE_MOVES, value);
 }
 
 void
 conf_set_use_super_safe_moves (gboolean value)
 {
-  games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_SUPER_SAFE_MOVES, value);
+  g_settings_set_boolean (settings, KEY_SUPER_SAFE_MOVES, value);
 }
 
 void
 conf_set_enable_sound (gboolean value)
 {
-  games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_ENABLE_SOUND, value);
+  g_settings_set_boolean (settings, KEY_ENABLE_SOUND, value);
 }
 
 void
 conf_set_show_toolbar (gboolean value)
 {
-  games_conf_set_boolean (KEY_PREFERENCES_GROUP, KEY_SHOW_TOOLBAR, value);
+  g_settings_set_boolean (settings, KEY_SHOW_TOOLBAR, value);
 }
 
 void
 conf_set_control_key (gint i, guint keyval)
 {
   char buffer[64];
+  gchar *keyval_name;
+
   g_snprintf (buffer, sizeof (buffer), KEY_CONTROL_KEY, i);
-  games_conf_set_keyval (KEY_PREFERENCES_GROUP, buffer, keyval);
+  keyval_name = gdk_keyval_name (keyval);
+  g_settings_set_string (settings, buffer, keyval_name);
 }
 
 /**

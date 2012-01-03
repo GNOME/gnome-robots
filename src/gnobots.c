@@ -28,10 +28,10 @@
 #include <glib/gi18n.h>
 #include <glib.h>
 
-#include <libgames-support/games-conf.h>
 #include <libgames-support/games-gridframe.h>
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
+#include <libgames-support/games-settings.h>
 #include <libgames-support/games-stock.h>
 
 #include "gbdefs.h"
@@ -59,6 +59,7 @@
 GtkWidget *app = NULL;
 GtkWidget *game_area = NULL;
 GamesScores *highscores;
+GSettings *settings;
 /**********************************************************************/
 
 
@@ -167,7 +168,7 @@ main (int argc, char *argv[])
                                  0 /* default category */,
                                  GAMES_SCORES_STYLE_PLAIN_DESCENDING);
 
-  games_conf_initialise ("Gnobots2");
+  settings = g_settings_new ("org.gnome.gnobots2");
 
   gtk_window_set_default_icon_name ("gnobots2");
 
@@ -175,7 +176,7 @@ main (int argc, char *argv[])
   gtk_window_set_title (GTK_WINDOW (app), _("Robots"));
 
   gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
-  games_conf_add_window (GTK_WINDOW (app), KEY_GEOMETRY_GROUP);
+  games_settings_bind_window_state ("/org/gnome/gnobots2/", GTK_WINDOW (app));
 
   g_signal_connect (G_OBJECT (app), "delete_event",
 		    G_CALLBACK (quit_game), NULL);
@@ -284,7 +285,7 @@ main (int argc, char *argv[])
 
   gtk_main ();
 
-  games_conf_shutdown ();
+  g_settings_sync();
 
   return 0;
 }

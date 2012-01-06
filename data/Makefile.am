@@ -49,6 +49,7 @@ EXTRA_DIST = $(cursor_files) \
              $(gsettings_in_file) \
              $(man_MANS)
 
+CLEANFILES = $(Games_DATA) $(gsettings_SCHEMAS)
 DISTCLEANFILES = $(Games_DATA) $(gsettings_SCHEMAS)
 
 -include $(top_srcdir)/git.mk

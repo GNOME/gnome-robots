@@ -1,19 +1,17 @@
 # translation of es.po to Español
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 200, 2009.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
-"POT-Creation-Date: 2011-12-03 18:36+0000\n"
-"PO-Revision-Date: 2012-01-07 19:07+0100\n"
-"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"POT-Creation-Date: 2011-02-08 00:22+0000\n"
+"PO-Revision-Date: 2009-10-26 08:21+0100\n"
+"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -514,8 +512,8 @@ msgstr ""
 msgid ""
 "The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
 msgstr ""
-"El menú <guimenu>Configuración</guimenu> contiene un solo elemento: "
-"<placeholder-1/>"
+"El menú <guimenu>Ajustes</guimenu> contiene un solo elemento: <placeholder-1/"
+">"
 
 #: C/gnobots2.xml:380(guimenu)
 msgid "Help"
@@ -648,9 +646,9 @@ msgid ""
 "There is also a <quote>super safe mode</quote>. If you select this, you get "
 "beeped when there is no safe move and your only option is to teleport out."
 msgstr ""
-"También existe la opción «Usar movimientos superseguros». Si selecciona "
-"esto, una alarma sonora se activará cuando no haya movimientos seguros y su "
-"única opción sea teletransportarse."
+"También existe la opción «Usar movimientos superseguros». Si selecciona esto, "
+"una alarma sonora se activará cuando no haya movimientos seguros y su única "
+"opción sea teletransportarse."
 
 #: C/gnobots2.xml:516(para)
 msgid ""
@@ -711,7 +709,7 @@ msgid ""
 "guimenu> menu. This brings up a dialog with three tabs: <placeholder-1/>"
 msgstr ""
 "Puede modificar el comportamiento y apariencia del juego seleccionando "
-"<guimenuitem>Preferencias</guimenuitem> bajo el menú <guimenu>Configuración</"
+"<guimenuitem>Preferencias</guimenuitem> bajo el menú <guimenu>Ajustes</"
 "guimenu>. Se mostrará un diálogo con tres pestañas: <placeholder-1/>"
 
 #: C/gnobots2.xml:554(para)

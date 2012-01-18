@@ -143,6 +143,8 @@ main (int argc, char *argv[])
   gboolean retval;
   GError *error = NULL;
 
+  games_scores_startup ();
+
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
 

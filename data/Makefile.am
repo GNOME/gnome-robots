@@ -23,6 +23,14 @@ pixmap_DATA = yahoo.png \
               aieee.png \
               splat.png
 
+soundsdir = $(datadir)/gnobots2/sounds
+sounds_DATA = \
+	die.ogg \
+	splat.ogg \
+	teleport.ogg \
+	victory.ogg \
+	yahoo.ogg
+
 themedir = $(datadir)/gnobots2/themes
 theme_DATA = gnomes.png \
              robots.svg \
@@ -55,6 +63,7 @@ install-data-local:
 
 EXTRA_DIST = $(cursor_files) \
              $(pixmap_DATA) \
+             $(sounds_DATA) \
              $(theme_DATA) \
              $(Games_DATA) \
              $(config_DATA) \

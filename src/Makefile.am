@@ -40,7 +40,7 @@ gnobots2_CPPFLAGS = \
 
 gnobots2_CFLAGS = \
 	-DDATA_DIRECTORY=\"$(datadir)/gnobots2\" \
-	-DSOUND_DIRECTORY=\"$(pkgdatadir)/sounds\" \
+	-DSOUND_DIRECTORY=\"$(datadir)/gnobots2/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	$(GTK_CFLAGS) \
 	$(CANBERRA_GTK_CFLAGS) \

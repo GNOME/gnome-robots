@@ -14,7 +14,7 @@ gboolean load_game_graphics (void);
 gboolean free_game_graphics (void);
 gint num_game_graphics (void);
 void set_game_graphics (gchar *);
-void set_background_color (GdkColor color);
+void set_background_color (GdkRGBA color);
 void set_background_color_from_name (gchar * name);
 
 void add_yahoo_bubble (gint, gint);

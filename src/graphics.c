@@ -52,8 +52,8 @@ static GamesPreimage *theme_preimage = NULL;
 static GdkPixbuf *theme_pixbuf = NULL;
 static gboolean rerender_needed = TRUE;
 
-static GdkColor light_background;
-static GdkColor dark_background;
+static GdkRGBA light_background;
+static GdkRGBA dark_background;
 
 static GdkPixbuf *aieee_pixbuf = NULL;
 static GdkPixbuf *yahoo_pixbuf = NULL;
@@ -281,9 +281,9 @@ set_game_graphics (gchar * name)
 }
 
 void
-set_background_color (GdkColor color)
+set_background_color (GdkRGBA color)
 {
-  guint32 brightness;
+  gdouble brightness;
 
   if (game_area == NULL)
     return;
@@ -292,20 +292,21 @@ set_background_color (GdkColor color)
    * which actually depends on how light or dark the base colour is. */
 
   brightness = color.red + color.green + color.blue;
-  if (brightness > 0xe8ba) {        /* 0xe8ba = 0x10000/1.1 */
+  if (brightness > (1.0 / 1.1)) {
     /* Darken light colours. */
     light_background.red = 0.9 * color.red;
     light_background.green = 0.9 * color.green;
     light_background.blue = 0.9 * color.blue;
-  } else if (brightness > 0xa00) {        /* Lighten darker colours. */
+  } else if (brightness > 0.04) {        /* Lighten darker colours. */
     light_background.red = 1.1 * color.red;
     light_background.green = 1.1 * color.green;
     light_background.blue = 1.1 * color.blue;
-  } else {                        /* Very dark colours, add ratehr than multiply. */
-    light_background.red += 0xa00;
-    light_background.green += 0xa00;
-    light_background.blue += 0xa00;
+  } else {                        /* Very dark colours, add rather than multiply. */
+    light_background.red += 0.04;
+    light_background.green += 0.04;
+    light_background.blue += 0.04;
   }
+  light_background.alpha = 1.0;
 
   dark_background = color;
 
@@ -315,13 +316,13 @@ set_background_color (GdkColor color)
 void
 set_background_color_from_name (gchar * name)
 {
-  GdkColor color;
+  GdkRGBA color;
 
   if (name == NULL)
     return;
 
-  if (!gdk_color_parse (name, &color)) {
-    gdk_color_parse ("#7590AE", &color);
+  if (!gdk_rgba_parse (&color, name)) {
+    gdk_rgba_parse (&color, "#7590AE");
   }
   set_background_color (color);
 }
@@ -342,9 +343,9 @@ static void
 draw_tile_pixmap (gint tileno, gint x, gint y, cairo_t * cr)
 {
   if ((x & 1) ^ (y & 1)) {
-    gdk_cairo_set_source_color (cr, &dark_background);
+    gdk_cairo_set_source_rgba (cr, &dark_background);
   } else {
-    gdk_cairo_set_source_color (cr, &light_background);
+    gdk_cairo_set_source_rgba (cr, &light_background);
   }
 
   x *= tile_width;

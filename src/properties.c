@@ -76,7 +76,7 @@ struct _GnobotsProperties {
   gboolean super_safe_moves;
   gboolean sound;
   gboolean show_toolbar;
-  GdkColor bgcolour;
+  GdkRGBA bgcolour;
   gint selected_config;
   guint keys[N_KEYS];
   gchar *themename;
@@ -116,7 +116,7 @@ static void safe_cb (GtkWidget *, gpointer);
 static void sound_cb (GtkWidget *, gpointer);
 static void defkey_cb (GtkWidget *, gpointer);
 static void fill_typemenu (GtkWidget *);
-static void conf_set_background_color (GdkColor * c);
+static void conf_set_background_color (GdkRGBA * c);
 /**********************************************************************/
 
 
@@ -379,7 +379,7 @@ make_theme_menu (void)
 static void
 bg_color_callback (GtkWidget * widget, gpointer data)
 {
-  gtk_color_button_get_color (GTK_COLOR_BUTTON (widget),
+  gtk_color_button_get_rgba (GTK_COLOR_BUTTON (widget),
 			      &properties.bgcolour);
   set_background_color (properties.bgcolour);
   clear_game_area ();
@@ -526,7 +526,7 @@ show_properties_dialog (void)
   gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
 
   w = gtk_color_button_new ();
-  gtk_color_button_set_color (GTK_COLOR_BUTTON (w), &properties.bgcolour);
+  gtk_color_button_set_rgba (GTK_COLOR_BUTTON (w), &properties.bgcolour);
   g_signal_connect (G_OBJECT (w), "color_set",
 		    G_CALLBACK (bg_color_callback), NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), w);
@@ -604,7 +604,7 @@ load_properties (void)
   load_keys ();
 
   bgcolour = g_settings_get_string (settings, KEY_BACKGROUND_COLOR);
-  gdk_color_parse (bgcolour, &properties.bgcolour);
+  gdk_rgba_parse (&properties.bgcolour, bgcolour);
   set_background_color (properties.bgcolour);
 
   properties.themename = g_settings_get_string (settings, KEY_THEME);
@@ -657,11 +657,11 @@ conf_set_theme (gchar * value)
 }
 
 static void
-conf_set_background_color (GdkColor * c)
+conf_set_background_color (GdkRGBA * c)
 {
   char colour[64];
 
-  g_snprintf (colour, sizeof (colour), "#%04x%04x%04x", c->red, c->green, c->blue);
+  g_snprintf (colour, sizeof (colour), "#%04x%04x%04x", (int) (c->red * 65535 + 0.5), (int) (c->green * 65535 + 0.5), (int) (c->blue * 65535 + 0.5));
 
   g_settings_set_string (settings, KEY_BACKGROUND_COLOR, colour);
 }

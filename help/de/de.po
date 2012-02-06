@@ -876,7 +876,7 @@ msgstr ""
 "Software Foundation veröffentlichten Version ohne unveränderbare Abschnitte "
 "sowie ohne Texte auf dem vorderen und hinteren Buchdeckel kopiert, verteilt "
 "und/oder modifiziert werden. Eine Kopie der GFDL finden Sie unter diesem "
-"<ulink type=\"help\" <_:ulink-1/> oder in der mit diesem Handbuch gelieferten "
+"<_:ulink-1/> oder in der mit diesem Handbuch gelieferten "
 "Datei COPYING-DOCS."
 
 #~ msgid "2001"

@@ -43,20 +43,17 @@ gnobots2_CFLAGS = \
 	-DSOUND_DIRECTORY=\"$(datadir)/gnobots2/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	$(GTK_CFLAGS) \
+	$(RSVG_CFLAGS) \
 	$(CANBERRA_GTK_CFLAGS) \
 	$(AM_CFLAGS)
 
 gnobots2_LDADD = \
 	$(top_builddir)/libgames-support/libgames-support.la \
 	$(GTK_LIBS) \
+	$(RSVG_LIBS) \
 	$(CANBERRA_GTK_LIBS) \
 	$(INTLLIBS) \
 	-lm
-
-if HAVE_RSVG
-gnobots2_CFLAGS += $(RSVG_CFLAGS)
-gnobots2_LDADD += $(RSVG_LIBS)
-endif
 
 install-exec-hook:
 	-if test "$(setgid)" = "true"; then \

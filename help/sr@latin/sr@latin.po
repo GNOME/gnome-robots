@@ -1,36 +1,57 @@
 # Serbian translation of gnome-games
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2009.
-#
 # This file is distributed under the same license as the gnome-games package.
-#
 # Translated on 2009-10-23 by Branko Kokanović <branko.kokanovic@gmail.com>
-#
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
-"POT-Creation-Date: 2009-10-31 02:28+0000\n"
-"PO-Revision-Date: 2009-11-01 22:44+0100\n"
-"Last-Translator: Branko Kokanović <branko.kokanovic@gmail.com>\n"
+"POT-Creation-Date: 2012-01-22 20:07+0000\n"
+"PO-Revision-Date: 2012-03-23 11:46+0200\n"
+"Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n%"
-"10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Project-Style: gnome\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnobots2.xml:255(None)
-msgid ""
-"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+#| msgid "translator-credits"
+msgctxt "_"
+msgid "translator-credits"
 msgstr ""
-"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+"Branko Kokanović <branko.kokanovic@gmail.com>\n"
+"\n"
+"Prevod.org — prevod na srpski jezik"
 
-#: C/gnobots2.xml:26(title)
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#.
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/gnobots2.xml:255(imagedata)
+#| msgid ""
+#| "@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+msgctxt "_"
+msgid ""
+"external ref='figures/gnobots2-main.png' "
+"md5='aade859d773abd55a6f903b51d92e4b9'"
+msgstr ""
+"external ref='figures/gnobots2-main.png' "
+"md5='aade859d773abd55a6f903b51d92e4b9'"
+
+#: C/gnobots2.xml:26(articleinfo/title)
 msgid "<application>Robots</application> Manual"
 msgstr "Uputstvo za <application>Robote</application>"
 
-#: C/gnobots2.xml:29(para)
+#: C/gnobots2.xml:29(abstract/para)
 msgid ""
 "Robots is a graphical version of the original text based robots game, which "
 "can be found on a number of UNIX systems. The player must outwit the robots "
@@ -40,20 +61,18 @@ msgstr ""
 "dosta UNIX sistema. Igrač mora da nadmudri robote koji ga jure tako što ih "
 "natera da se sudaraju međusobno."
 
-#: C/gnobots2.xml:38(year)
-msgid "2001"
-msgstr "2001"
+#: C/gnobots2.xml:37(articleinfo/copyright)
+#| msgid "Patanjali Somayaji, Mark Rae"
+msgid "<year>2001</year> <holder>Patanjali Somayaji, Mark Rae</holder>"
+msgstr "<year>2001</year> <holder>Patandžali Somajadži, Mark Rae</holder>"
 
-#: C/gnobots2.xml:39(holder)
-msgid "Patanjali Somayaji, Mark Rae"
-msgstr "Patanjali Somayaji, Mark Rae"
-
-#: C/gnobots2.xml:55(publishername) C/gnobots2.xml:105(para)
-#: C/gnobots2.xml:115(para)
+#: C/gnobots2.xml:55(publisher/publishername)
+#: C/gnobots2.xml:105(revdescription/para)
+#: C/gnobots2.xml:115(revdescription/para)
 msgid "GNOME Documentation Project"
 msgstr "Projekat Gnomove dokumentacije"
 
-#: C/gnobots2.xml:2(para)
+#: C/gnobots2.xml:2(legalnotice/para)
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
@@ -69,7 +88,7 @@ msgstr ""
 "možete pronaći na ovoj <ulink type=\"help\" url=\"ghelp:fdl\">adresi</ulink> "
 "ili u datoteci COPYING-DOCS koja je priložena uz ovo uputstvo."
 
-#: C/gnobots2.xml:12(para)
+#: C/gnobots2.xml:12(legalnotice/para) C/legal.xml:12(legalnotice/para)
 msgid ""
 "This manual is part of a collection of GNOME manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
@@ -81,7 +100,7 @@ msgstr ""
 "dodavanjem primerka licence dokumentu, kako je opisano u odeljku 6 same "
 "licence."
 
-#: C/gnobots2.xml:19(para)
+#: C/gnobots2.xml:19(legalnotice/para) C/legal.xml:19(legalnotice/para)
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any GNOME "
@@ -95,7 +114,7 @@ msgstr ""
 "dokumentacionog projekta imaju saznanja o tome, tada su nazivi ispisani "
 "velikim slovima ili sa velikim početnim slovima."
 
-#: C/gnobots2.xml:35(para)
+#: C/gnobots2.xml:35(listitem/para) C/legal.xml:35(listitem/para)
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -122,7 +141,7 @@ msgstr ""
 "ILI NJEGOVE IZMENJENE VERZIJE NIJE DOZVOLJENA OSIM POD USLOVIMA OVOG OGRANIČENJA "
 "JAMSTVA."
 
-#: C/gnobots2.xml:55(para)
+#: C/gnobots2.xml:55(listitem/para) C/legal.xml:55(listitem/para)
 msgid ""
 "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
 "NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
@@ -145,76 +164,72 @@ msgstr ""
 "GUBITKE NASTALE USLED KORIŠĆENJA DOKUMENTA I NJEGOVIH IZMENJENIH VERZIJA ČAK I "
 "AKO JE OŠTEĆENA STRANA BILA OBAVEŠTENA O MOGUĆNOSTI NASTANKA TE ŠTETE."
 
-#: C/gnobots2.xml:28(para)
+#: C/gnobots2.xml:28(legalnotice/para) C/legal.xml:28(legalnotice/para)
+#| msgid ""
+#| "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE "
+#| "TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER "
+#| "UNDERSTANDING THAT: <placeholder-1/>"
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<placeholder-1/>"
+"<_:orderedlist-1/>"
 msgstr ""
 "OVAJ DOKUMENT I NJEGOVE IZMENJENE VERZIJE SU DOSTUPNE POD USLOVIMA GNU-OVE "
-"SLOBODNE DOKUMENTACIONE DOZVOLE UZ DODATNU SAGLASNOST DA: <placeholder-1/>"
+"SLOBODNE DOKUMENTACIONE DOZVOLE UZ DODATNU SAGLASNOST DA: <_:orderedlist-1/>"
 
-#: C/gnobots2.xml:65(firstname)
-msgid "Patanjali"
-msgstr "Patanjali"
+#: C/gnobots2.xml:64(authorgroup/author)
+msgid ""
+"<firstname>Patanjali</firstname> <surname>Somayaji</surname> <affiliation> "
+"<address> <email>patanjali@mindless.com</email> </address> </affiliation>"
+msgstr ""
+"<firstname>Patandžali</firstname> <surname>Somajadži</surname> <affiliation> "
+"<address> <email>patanjali@mindless.com</email> </address> </affiliation>"
 
-#: C/gnobots2.xml:66(surname)
-msgid "Somayaji"
-msgstr "Somayaji"
+#: C/gnobots2.xml:71(authorgroup/author)
+msgid ""
+"<firstname>Mark</firstname> <surname>Rae</surname> <affiliation> <address> "
+"<email>m.rae@inpharmatica.co.uk</email> </address> </affiliation>"
+msgstr ""
+"<firstname>Mark</firstname> <surname>Rae</surname> <affiliation> <address> "
+"<email>m.rae@inpharmatica.co.uk</email> </address> </affiliation>"
 
-#: C/gnobots2.xml:68(email)
-msgid "patanjali@mindless.com"
-msgstr "patanjali@mindless.com"
-
-#: C/gnobots2.xml:72(firstname)
-msgid "Mark"
-msgstr "Mark"
-
-#: C/gnobots2.xml:73(surname)
-msgid "Rae"
-msgstr "Rae"
-
-#: C/gnobots2.xml:75(email)
-msgid "m.rae@inpharmatica.co.uk"
-msgstr "m.rae@inpharmatica.co.uk"
-
-#: C/gnobots2.xml:96(revnumber)
-msgid "Robots Manual V2.8"
-msgstr "Uputstvo za Robote v2.8"
-
-#: C/gnobots2.xml:97(date)
-msgid "September 2004"
-msgstr "Septembar 2004."
-
-#: C/gnobots2.xml:99(para)
+#: C/gnobots2.xml:99(revdescription/para)
 msgid "Patanjali Somayaji <email>patanjali@mindless.com</email>"
 msgstr "Patanjali Somayaji <email>patanjali@mindless.com</email>"
 
-#: C/gnobots2.xml:102(para)
+#: C/gnobots2.xml:102(revdescription/para)
 msgid "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
 msgstr "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
 
-#: C/gnobots2.xml:109(revnumber)
-msgid "Robots Manual V2.9"
-msgstr "Uputstvo za Robote v2.9"
+#: C/gnobots2.xml:95(revhistory/revision)
+msgid ""
+"<revnumber>Robots Manual V2.8</revnumber> <date>September 2004</date> <_:"
+"revdescription-1/>"
+msgstr ""
+"<revnumber>Uputstvo za Robote v2.8</revnumber> <date>Septembar 2004</date> "
+"<_:revdescription-1/>"
 
-#: C/gnobots2.xml:110(date)
-msgid "August 2007"
-msgstr "Avgust 2007."
-
-#: C/gnobots2.xml:112(para)
+#: C/gnobots2.xml:112(revdescription/para)
 msgid "Claude Paroz <email>claude@2xlibre.net</email>"
-msgstr "Claude Paroz <email>claude@2xlibre.net</email>"
+msgstr "Klod Paro <email>claude@2xlibre.net</email>"
 
-#: C/gnobots2.xml:120(releaseinfo)
+#: C/gnobots2.xml:108(revhistory/revision)
+msgid ""
+"<revnumber>Robots Manual V2.9</revnumber> <date>August 2007</date> <_:"
+"revdescription-1/>"
+msgstr ""
+"<revnumber>Uputstvo za Robote v2.9</revnumber> <date>Avgust 2007</date> "
+"<_:revdescription-1/>"
+
+#: C/gnobots2.xml:120(articleinfo/releaseinfo)
 msgid "This manual describes version 2.18 of Robots."
 msgstr "Ovo upustvo je napisano za Robote 2.18."
 
-#: C/gnobots2.xml:127(title)
+#: C/gnobots2.xml:127(legalnotice/title)
 msgid "Feedback"
 msgstr "Primedbe"
 
-#: C/gnobots2.xml:128(para)
+#: C/gnobots2.xml:128(legalnotice/para)
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Robots</"
 "application> application or this manual, follow the directions in the <ulink "
@@ -226,15 +241,15 @@ msgstr ""
 "<ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">Gnomovoj strani "
 "za primedbe</ulink>."
 
-#: C/gnobots2.xml:139(primary)
-msgid "GNOME Robots"
-msgstr "Roboti"
+#: C/gnobots2.xml:138(article/indexterm)
+msgid "<primary>GNOME Robots</primary>"
+msgstr "<primary>Gnomovi Roboti</primary>"
 
-#: C/gnobots2.xml:146(title)
+#: C/gnobots2.xml:146(sect1/title)
 msgid "Introduction"
 msgstr "Uvod"
 
-#: C/gnobots2.xml:148(para)
+#: C/gnobots2.xml:148(sect1/para)
 msgid ""
 "<application>GNOME Robots</application> is a game where you try and avoid a "
 "band of marauding robots which are, for no adequately explained reason, "
@@ -246,7 +261,7 @@ msgstr ""
 "ubiju. Igra je zasnovana na tekstualnoj igri sa robotima koja se može naći "
 "na mnogo UNIX sistema."
 
-#: C/gnobots2.xml:155(para)
+#: C/gnobots2.xml:155(sect1/para)
 msgid ""
 "This new version includes two types of robots, movable junkheaps, multiple "
 "game configurations, user definable keyboard layouts, and sound, as well as "
@@ -257,19 +272,24 @@ msgstr ""
 "zvuk, kao i sve one stvari koje su već bile prisutne u originalnoj Gnomovoj "
 "igri sa robotima."
 
-#: C/gnobots2.xml:162(para)
+#: C/gnobots2.xml:162(sect1/para)
+#| msgid ""
+#| "To run <application>GNOME Robots</application>, select "
+#| "<menuchoice><guisubmenu>Games</guisubmenu><guimenuitem>Robots</"
+#| "guimenuitem></menuchoice> from the <guimenu>Main Menu</guimenu>, or type "
+#| "<command>gnobots2</command> on the command line."
 msgid ""
-"To run <application>GNOME Robots</application>, select "
-"<menuchoice><guisubmenu>Games</guisubmenu><guimenuitem>Robots</guimenuitem></"
+"To run <application>GNOME Robots</application>, select <menuchoice> "
+"<guisubmenu>Games</guisubmenu> <guimenuitem>Robots</guimenuitem> </"
 "menuchoice> from the <guimenu>Main Menu</guimenu>, or type "
 "<command>gnobots2</command> on the command line."
 msgstr ""
-"Da biste pokrenuli <application>Robote</application>, odaberite "
-"<menuchoice><guisubmenu>Igre</guisubmenu><guimenuitem>Roboti</guimenuitem></"
-"menuchoice> iz <guimenu>Glavnog menija</guimenu>, ili otkucajte "
+"Da pokrenete <application>Robote</application>, odaberite <menuchoice> "
+"<guisubmenu>Igre</guisubmenu><guimenuitem>Roboti</guimenuitem> </menuchoice> "
+"iz <guimenu>Glavnog menija</guimenu>, ili otkucajte "
 "<command>gnobots2</command> u komandnoj liniji."
 
-#: C/gnobots2.xml:172(para)
+#: C/gnobots2.xml:172(sect1/para)
 msgid ""
 "<application>GNOME Robots</application> is included in the <filename>gnome-"
 "games</filename> package, which is part of the GNOME desktop environment. "
@@ -280,11 +300,11 @@ msgstr ""
 "filename> paket, koji je deo Gnomovog radnog okruženja. Ovaj dokument je "
 "napisan za <application>Gnomove robote</application> 2.18."
 
-#: C/gnobots2.xml:181(title)
+#: C/gnobots2.xml:181(sect1/title)
 msgid "GNOME Robots Objective"
 msgstr "Cilj Robota"
 
-#: C/gnobots2.xml:182(para)
+#: C/gnobots2.xml:182(sect1/para)
 msgid ""
 "The objective of GNOME Robots is quite simple. You are surrounded by a "
 "number of robots or other hostile adversaries. As you move about they will "
@@ -294,10 +314,10 @@ msgid ""
 msgstr ""
 "Cilj igre Roboti je veoma jednostavan. Okruženi ste određenim brojem robota i "
 "ostalim neprijateljski nastrojenim protivnicima. Kako se vi pomerite, tako se "
-"i oni pomeraju ka vama. Njihov cilj je da vas "
-"ubiju. Vaš cilj je da ubijete sve robote na tabli koristeći njihove slabosti."
+"i oni pomeraju ka vama. Njihov cilj je da vas ubiju. Vaš cilj je da ubijete sve "
+"robote na tabli koristeći njihove slabosti."
 
-#: C/gnobots2.xml:190(para)
+#: C/gnobots2.xml:190(sect1/para)
 msgid ""
 "Robots are destroyed when they collide with each other, or when they collide "
 "with the debris of some previous collision. You die if a robot ends up right "
@@ -306,7 +326,7 @@ msgstr ""
 "Roboti su uništeni kada se međusobno sudare, ili kada se sudare sa ostacima "
 "nekih prethodnih sudara. Vi umirete ako je robot pored vas."
 
-#: C/gnobots2.xml:196(para)
+#: C/gnobots2.xml:196(sect1/para)
 msgid ""
 "In some of the game configurations (you can choose from five different sets "
 "of rules), you can push the junkheaps around to form barricades to protect "
@@ -318,7 +338,7 @@ msgstr ""
 "ako ste dovoljno hrabri, možete i da spljeskate robote gurajući otpad na njih "
 "za dodatni bonus."
 
-#: C/gnobots2.xml:201(para)
+#: C/gnobots2.xml:201(sect1/para)
 msgid ""
 "You can also save yourself by teleporting yourself to a random location. "
 "Unfortunately, randomly teleporting means that you might end up being right "
@@ -341,7 +361,7 @@ msgstr ""
 "želite da trošite vaše sačuvane bezbedne teleporte, možete da se "
 "teleportujete slučajno, ako mislite da je to dovoljno bezbedno."
 
-#: C/gnobots2.xml:215(para)
+#: C/gnobots2.xml:215(sect1/para)
 msgid ""
 "If you press the <guibutton>Wait</guibutton> button (see below) you will no "
 "longer be able to move until either all of the robots (which still move "
@@ -353,7 +373,7 @@ msgstr ""
 "vama) ne budu uništeni, ili vi poginete. Ovo je rizično, ali sa ovim možete "
 "zaraditi dodatne bezbedne teleporte."
 
-#: C/gnobots2.xml:222(para)
+#: C/gnobots2.xml:222(sect1/para)
 msgid ""
 "If you manage to reach the point where more than half of the screen is "
 "occupied by robots, the number of robots will be reset to the starting "
@@ -363,11 +383,11 @@ msgstr ""
 "robotima, broj robota će se resetovati na početnu vrednost, omogućujući vam "
 "da nastavite."
 
-#: C/gnobots2.xml:233(title)
+#: C/gnobots2.xml:233(sect1/title)
 msgid "Using GNOME Robots"
 msgstr "Korišćenje Robota"
 
-#: C/gnobots2.xml:234(para)
+#: C/gnobots2.xml:234(sect1/para)
 msgid ""
 "<application>GNOME Robots</application> is extremely simple to play. You can "
 "use either the mouse or the keyboard. This section describes basic usage of "
@@ -377,28 +397,38 @@ msgstr ""
 "koristiti miša ili tastaturu. Ovaj odeljak opisuje osnovnu upotrebu "
 "<application>Robota</application>."
 
-#: C/gnobots2.xml:243(title)
+#: C/gnobots2.xml:243(sect2/title)
 msgid "Basic usage"
 msgstr "Osnovna upotreba"
 
-#: C/gnobots2.xml:251(title)
+#: C/gnobots2.xml:251(figure/title)
 msgid "GNOME Robots Main Window"
 msgstr "Glavni prozor Robota"
 
-#: C/gnobots2.xml:258(phrase)
-msgid "GNOME Robots Main Window."
-msgstr "Glavni prozor Robota."
+#: C/gnobots2.xml:253(screenshot/mediaobject)
+msgid ""
+"<imageobject> <imagedata fileref=\"figures/gnobots2-main.png\" format=\"PNG"
+"\" srccredit=\"Patanjali\"/> </imageobject> <textobject> <phrase>GNOME "
+"Robots Main Window.</phrase> </textobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"figures/gnobots2-main.png\" format=\"PNG\" "
+"srccredit=\"Patanjali\"/> </imageobject> <textobject> <phrase>Glavni prozor "
+"Gnomovih Robota.</phrase> </textobject>"
 
-#: C/gnobots2.xml:244(para)
+#: C/gnobots2.xml:244(sect2/para)
+#| msgid ""
+#| "Starting <application>GNOME Robots</application> opens the "
+#| "<interface>Main window</interface>, shown in <xref linkend=\"mainwindow-"
+#| "fig\"/>. <placeholder-1/>"
 msgid ""
 "Starting <application>GNOME Robots</application> opens the <interface>Main "
-"window</interface>, shown in <xref linkend=\"mainwindow-fig\"/>. "
-"<placeholder-1/>"
+"window</interface>, shown in <xref linkend=\"mainwindow-fig\"/>. <_:figure-1/"
+">"
 msgstr ""
 "Pokretanjem <application>Robota</application> se otvara <interface>Glavni "
-"prozor</interface> (<xref linkend=\"mainwindow-fig\"/>). <placeholder-1/>"
+"prozor</interface> (<xref linkend=\"mainwindow-fig\"/>). <_:figure-1/>"
 
-#: C/gnobots2.xml:266(para)
+#: C/gnobots2.xml:266(sect2/para)
 msgid ""
 "To start a new game, choose <guimenuitem>New</guimenuitem> in the "
 "<guimenu>Game</guimenu> menu or click on the <guibutton>New</guibutton> "
@@ -408,7 +438,7 @@ msgstr ""
 "<guimenu>Igra</guimenu> ili kliknite dugme <guibutton>Nova</guibutton> na "
 "traci alata."
 
-#: C/gnobots2.xml:272(para)
+#: C/gnobots2.xml:272(sect2/para)
 msgid ""
 "To move, either click in the direction you want to move (the cursor will "
 "show you which way you will go) or press the appropriate key on the keyboard "
@@ -423,11 +453,11 @@ msgstr ""
 "nebezbedno), ili da čekate, koristite dugmad na traci alata ili koristite "
 "stavke u meniju <guimenu>Pomeri</guimenu>."
 
-#: C/gnobots2.xml:288(title)
+#: C/gnobots2.xml:288(sect1/title)
 msgid "Menus"
 msgstr "Meniji"
 
-#: C/gnobots2.xml:289(para)
+#: C/gnobots2.xml:289(sect1/para)
 msgid ""
 "The menu bar, located at the top of the <interface>game board</interface>, "
 "contains the following menus:"
@@ -435,86 +465,102 @@ msgstr ""
 "Traka menija, koja se nalazi na vrhu <interface>table za igru</interface>, "
 "sadrži sledeće menije:"
 
-#: C/gnobots2.xml:297(guimenu)
-msgid "Game"
-msgstr "Igra"
+#: C/gnobots2.xml:297(varlistentry/term)
+msgid "<guimenu>Game</guimenu>"
+msgstr "<guimenu>Igra</guimenu>"
 
-#: C/gnobots2.xml:303(para)
+#: C/gnobots2.xml:303(listitem/para)
+#| msgid ""
+#| "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
+#| "guimenuitem></menuchoice> — starts a new game of GNOME Robots."
 msgid ""
-"<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
-"guimenuitem></menuchoice> — starts a new game of GNOME Robots."
+"<menuchoice> <shortcut><keysym>Ctrl-N</keysym></shortcut> <guimenuitem>New</"
+"guimenuitem> </menuchoice> — starts a new game of GNOME Robots."
 msgstr ""
-"<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>Nova</"
-"guimenuitem></menuchoice> — pokreće novu igru Robota."
+"<menuchoice> <shortcut><keysym>Ctrl-N</keysym></shortcut> "
+"<guimenuitem>Nova</guimenuitem> </menuchoice> — pokreće novu igru Robota."
 
-#: C/gnobots2.xml:313(para)
+#: C/gnobots2.xml:313(listitem/para)
+#| msgid ""
+#| "<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> — shows the "
+#| "higher scores."
 msgid ""
-"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> — shows the "
+"<menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> — shows the "
 "higher scores."
 msgstr ""
-"<menuchoice><guimenuitem>Rezultati</guimenuitem></menuchoice> — prikazuje "
+"<menuchoice> <guimenuitem>Rezultati</guimenuitem> </menuchoice> — prikazuje "
 "najbolje rezultate."
 
-#: C/gnobots2.xml:323(keysym)
-msgid "Ctrl-Q"
-msgstr "Ctrl-Q"
+#: C/gnobots2.xml:321(listitem/para)
+#| msgid ""
+#| "<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
+#| "guimenuitem></menuchoice> — starts a new game of GNOME Robots."
+msgid ""
+"<menuchoice> <shortcut><keysym>Ctrl-Q</keysym></shortcut> <guimenuitem>Quit</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut><keysym>Ctrl-Q</keysym></shortcut> "
+"<guimenuitem>Izađi</guimenuitem> </menuchoice>"
 
-#: C/gnobots2.xml:324(guimenuitem)
-msgid "Quit"
-msgstr "Izađi"
+#: C/gnobots2.xml:299(listitem/para)
+#| msgid "This menu contains three items: <placeholder-1/>"
+msgid "This menu contains three items: <_:itemizedlist-1/>"
+msgstr "Ovaj meni sadrži tri stavke: <_:itemizedlist-1/>"
 
-#: C/gnobots2.xml:299(para)
-msgid "This menu contains three items: <placeholder-1/>"
-msgstr "Ovaj meni sadrži tri stavke: <placeholder-1/>"
+#: C/gnobots2.xml:334(varlistentry/term)
+msgid "<guimenu>Move</guimenu>"
+msgstr "<guimenu>Pomeri</guimenu>"
 
-#: C/gnobots2.xml:334(guimenu)
-msgid "Move"
-msgstr "Pomeranje"
-
-#: C/gnobots2.xml:340(para)
+#: C/gnobots2.xml:340(listitem/para)
 msgid "<guimenuitem>Teleport</guimenuitem>— teleports you in a safe location."
 msgstr ""
 "<guimenuitem>Teleportuj</guimenuitem> — teleportuje vas na bezbedno mesto."
 
-#: C/gnobots2.xml:346(para)
+#: C/gnobots2.xml:346(listitem/para)
 msgid "<guimenuitem>Random</guimenuitem>— teleports you in a random location."
 msgstr ""
 "<guimenuitem>Slučajno</guimenuitem> — teleportuje vas na slučajno mesto."
 
-#: C/gnobots2.xml:352(para)
+#: C/gnobots2.xml:352(listitem/para)
 msgid "<guimenuitem>Wait</guimenuitem>— places you in wait mode."
 msgstr "<guimenuitem>Čekaj</guimenuitem> — postavlja vas u režim čekanja."
 
-#: C/gnobots2.xml:336(para) C/gnobots2.xml:382(para)
-msgid "This menu contains: <placeholder-1/>"
-msgstr "Ovaj meni sadrži: <placeholder-1/>"
+#: C/gnobots2.xml:336(listitem/para) C/gnobots2.xml:382(listitem/para)
+#| msgid "This menu contains: <placeholder-1/>"
+msgid "This menu contains: <_:itemizedlist-1/>"
+msgstr "Ovaj meni sadrži: <_:itemizedlist-1/>"
 
-#: C/gnobots2.xml:363(guimenu)
-msgid "Settings"
-msgstr "Podešavanja"
+#: C/gnobots2.xml:363(varlistentry/term)
+msgid "<guimenu>Settings</guimenu>"
+msgstr "<guimenu>Podešavanja</guimenu>"
 
-#: C/gnobots2.xml:369(para)
+#: C/gnobots2.xml:369(listitem/para)
 msgid ""
 "<guimenuitem>Preferences</guimenuitem> which brings up the preferences "
 "dialog box."
 msgstr ""
 "<guimenuitem>Postavke</guimenuitem> koje prikazuju prozorče sa postavkama."
 
-#: C/gnobots2.xml:365(para)
+#: C/gnobots2.xml:365(listitem/para)
+#| msgid ""
+#| "The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-"
+#| "1/>"
 msgid ""
-"The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
+"The <guimenu>Settings</guimenu> menu contains only one item: <_:itemizedlist-"
+"1/>"
 msgstr ""
-"Meni <guimenu>Podešavanja</guimenu> sadrži samo jednu stavku: <placeholder-1/>"
+"Izbornik <guimenu>Podešavanja</guimenu> sadrži samo jednu stavku: "
+"<_:itemizedlist-1/>"
 
-#: C/gnobots2.xml:380(guimenu)
-msgid "Help"
-msgstr "Pomoć"
+#: C/gnobots2.xml:380(varlistentry/term)
+msgid "<guimenu>Help</guimenu>"
+msgstr "<guimenu>Pomoć</guimenu>"
 
-#: C/gnobots2.xml:386(para)
+#: C/gnobots2.xml:386(listitem/para)
 msgid "<guimenuitem>Contents</guimenuitem>— shows this manual."
 msgstr "<guimenuitem>Sadržaj</guimenuitem> — prikazuje ovo uputstvo."
 
-#: C/gnobots2.xml:392(para)
+#: C/gnobots2.xml:392(listitem/para)
 msgid ""
 "<guimenuitem>About</guimenuitem>— shows basic information about "
 "<application>GNOME Robots</application>, such as the author's name and the "
@@ -524,11 +570,11 @@ msgstr ""
 "<application>Robotima</application>, kao što su imena autora i izdanje "
 "programa."
 
-#: C/gnobots2.xml:411(title)
+#: C/gnobots2.xml:411(sect1/title)
 msgid "Using the keyboard"
 msgstr "Korišćenje tastature"
 
-#: C/gnobots2.xml:412(para)
+#: C/gnobots2.xml:412(sect1/para)
 msgid ""
 "You can use the keyboard to control the little man. By default, the keys "
 "from the keypad are configured for the game. However you can customize the "
@@ -540,83 +586,86 @@ msgstr ""
 "Možete koristiti tastaturu da biste kontrolisali čovečuljka. Za igru su "
 "podrazumevano podešeni tasteri sa numeričke tastature. I pored toga, možete "
 "prilagoditi mapiranja tastera na jezičku <guimenuitem>Tastatura</guimenuitem> "
-"u prozorčetu sa <guimenuitem>Postavkama</guimenuitem>. Da biste odabrali drugi "
-"taster, kliknite dvaput na liniju sa naredbom koju želite da promenite i "
-"potom pritisnite taster koji želite da koristite."
+"u prozorčetu sa <guimenuitem>Postavkama</guimenuitem>. Da biste odabrali "
+"drugi taster, kliknite dvaput na liniju sa naredbom koju želite da promenite "
+"i potom pritisnite taster koji želite da koristite."
 
-#: C/gnobots2.xml:422(title)
+#: C/gnobots2.xml:422(sect2/title)
 msgid "Default Key Mappings"
 msgstr "Podrazumevana mapiranja tastera"
 
-#: C/gnobots2.xml:429(title)
+#: C/gnobots2.xml:429(note/title)
 msgid "Switch off the NumLock Key"
 msgstr "Isključite NumLock taster"
 
-#: C/gnobots2.xml:430(para)
+#: C/gnobots2.xml:430(note/para)
 msgid "You may need to switch off the NumLock to make these work."
 msgstr "Morate isključiti NumLock taster da bi vam ovo radilo."
 
-#: C/gnobots2.xml:435(para)
+#: C/gnobots2.xml:435(listitem/para)
 msgid "Up Left: <keycap>Home</keycap>"
 msgstr "Gore levo: <keycap>Home</keycap>"
 
-#: C/gnobots2.xml:438(para)
+#: C/gnobots2.xml:438(listitem/para)
 msgid "Up: <keycap>Up</keycap>"
 msgstr "Gore: <keycap>Up</keycap>"
 
-#: C/gnobots2.xml:441(para)
+#: C/gnobots2.xml:441(listitem/para)
 msgid "Up Right: <keycap>Page Up</keycap>"
 msgstr "Gore desno: <keycap>Page Up</keycap>"
 
-#: C/gnobots2.xml:444(para)
+#: C/gnobots2.xml:444(listitem/para)
 msgid "Left: <keycap>Left</keycap>"
 msgstr "Levo: <keycap>Left</keycap>"
 
-#: C/gnobots2.xml:447(para)
+#: C/gnobots2.xml:447(listitem/para)
 msgid "Stand Still: <keycap>Begin</keycap>"
 msgstr "Stajanje mirno: <keycap>Begin</keycap>"
 
-#: C/gnobots2.xml:450(para)
+#: C/gnobots2.xml:450(listitem/para)
 msgid "Right: <keycap>Right</keycap>"
 msgstr "Desno: <keycap>Right</keycap>"
 
-#: C/gnobots2.xml:453(para)
+#: C/gnobots2.xml:453(listitem/para)
 msgid "Down Left: <keycap>End</keycap>"
 msgstr "Dole levo: <keycap>End</keycap>"
 
-#: C/gnobots2.xml:456(para)
+#: C/gnobots2.xml:456(listitem/para)
 msgid "Down: <keycap>Down</keycap>"
 msgstr "Dole: <keycap>Down</keycap>"
 
-#: C/gnobots2.xml:459(para)
+#: C/gnobots2.xml:459(listitem/para)
 msgid "Down Right: <keycap>Page Down</keycap>"
 msgstr "Dole desno: <keycap>Page Down</keycap>"
 
-#: C/gnobots2.xml:462(para)
+#: C/gnobots2.xml:462(listitem/para)
 msgid "Teleport: <keycap>+</keycap>"
 msgstr "Teleport: <keycap>+</keycap>"
 
-#: C/gnobots2.xml:465(para)
+#: C/gnobots2.xml:465(listitem/para)
 msgid "Randomly Teleport: <keycap>*</keycap>"
 msgstr "Slučajni teleport: <keycap>*</keycap>"
 
-#: C/gnobots2.xml:468(para)
+#: C/gnobots2.xml:468(listitem/para)
 msgid "Wait: <keycap>Enter</keycap>"
 msgstr "Čekaj: <keycap>Enter</keycap>"
 
-#: C/gnobots2.xml:425(para)
+#: C/gnobots2.xml:425(sect2/para)
+#| msgid ""
+#| "By default, you use the numeric keypad on the right-hand side of the "
+#| "keyboard (not the separate arrow keys). <placeholder-1/><placeholder-2/>"
 msgid ""
 "By default, you use the numeric keypad on the right-hand side of the "
-"keyboard (not the separate arrow keys). <placeholder-1/><placeholder-2/>"
+"keyboard (not the separate arrow keys). <_:note-1/> <_:orderedlist-2/>"
 msgstr ""
 "Podrazumevano koristite numeričku tastaturu na desnoj strani tastature (ne "
-"tastere sa strelicama). <placeholder-1/><placeholder-2/>"
+"tastere sa strelicama). <_:note-1/> <_:orderedlist-2/>"
 
-#: C/gnobots2.xml:482(title)
+#: C/gnobots2.xml:482(sect1/title)
 msgid "Customizing GNOME Robots"
 msgstr "Prilagođavanje Robota"
 
-#: C/gnobots2.xml:501(para)
+#: C/gnobots2.xml:501(listitem/para)
 msgid ""
 "The safe moves option will help you to avoid being killed due to a mistake. "
 "If you try to make a move that would lead to your death when there is a safe "
@@ -629,7 +678,7 @@ msgstr ""
 "moći da se pokrenete. Ali, upozoreni ste: ako ne postoji bezbedan potez osim "
 "teleportovanja, pomerićete se."
 
-#: C/gnobots2.xml:509(para)
+#: C/gnobots2.xml:509(listitem/para)
 msgid ""
 "There is also a <quote>super safe mode</quote>. If you select this, you get "
 "beeped when there is no safe move and your only option is to teleport out."
@@ -638,35 +687,41 @@ msgstr ""
 "igra će pištati kada nema bezbednih poteza i jedini izlaz vam je "
 "teleportacija."
 
-#: C/gnobots2.xml:516(para)
+#: C/gnobots2.xml:516(listitem/para)
 msgid ""
 "If you select the sound checkbox the game will play sounds for various "
 "events throughout the game."
 msgstr "Ako uključite zvukove, igra će puštati zvukove za različite događaje."
 
-#: C/gnobots2.xml:522(para)
+#: C/gnobots2.xml:522(listitem/para)
 msgid ""
 "The <quote>Splats</quote> checkbox selects whether you want the sound played "
 "and a small <quote>Splat!</quote> to appear on the screen."
 msgstr ""
-"Uključivanjem <quote>Prskanja</quote> birate da li želite da se pusti zvuk i "
-"da se pojavi malo <quote>Splat!</quote> na ekranu."
+"Uključivanjem <quote>Prskanja</quote> birate da li želite da se pusti zvuk i da "
+"se pojavi malo <quote>Splat!</quote> na ekranu."
 
-#: C/gnobots2.xml:491(para)
+#: C/gnobots2.xml:491(listitem/para)
+#| msgid ""
+#| "<guimenuitem>Game</guimenuitem> — This page allows you to choose the type "
+#| "of game you want to play. The drop-down box at the top of the page allows "
+#| "you to choose from a number of predefined games. You can't change these "
+#| "options in the middle of a game, so they will be disabled then. There are "
+#| "also several options at the bottom of the dialog: <placeholder-1/>"
 msgid ""
 "<guimenuitem>Game</guimenuitem> — This page allows you to choose the type of "
 "game you want to play. The drop-down box at the top of the page allows you "
 "to choose from a number of predefined games. You can't change these options "
 "in the middle of a game, so they will be disabled then. There are also "
-"several options at the bottom of the dialog: <placeholder-1/>"
+"several options at the bottom of the dialog: <_:orderedlist-1/>"
 msgstr ""
 "<guimenuitem>Igra</guimenuitem> — Ova strana vam omogućava da odaberete tip "
 "igre koji želite da igrate. Padajuća lista na vrhu vam omogućava da "
 "odaberete od brojnih predefinisanih igara. Ne možete promeniti ove stvari "
 "dok ste u igri, pa će tad biti onemogućene. Postoji još nekoliko opcija na "
-"dnu dijaloga: <placeholder-1/>"
+"dnu dijaloga: <_:orderedlist-1/>"
 
-#: C/gnobots2.xml:533(para)
+#: C/gnobots2.xml:533(listitem/para)
 msgid ""
 "<guimenuitem>Appearance</guimenuitem> — This page allows you to select the "
 "graphics used throughout the game from the list in the dropdown-box. You can "
@@ -676,33 +731,36 @@ msgstr ""
 "grafiku korišćenu u igri iz padajuće liste. Sa ovog jezička takođe možete "
 "odabrati i boju pozadine."
 
-#: C/gnobots2.xml:543(para)
+#: C/gnobots2.xml:543(listitem/para)
 msgid ""
 "<guimenuitem>Keyboard</guimenuitem> — This screen allows you to define your "
 "own keyboard controls. To select a different key for a command, double-click "
 "on the button for that command and then press the key you want to use."
 msgstr ""
 "<guimenuitem>Tastatura</guimenuitem> — Ovaj ekran vam omogućava da "
-"definišete vaše kontrole na tastaturi. Da izaberete drugi taster, "
-"kliknite dvaput na naredbu, a zatim pritisnite taster koji želite da "
-"koristite."
+"definišete vaše kontrole na tastaturi. Da izaberete drugi taster, kliknite "
+"dvaput na naredbu, a zatim pritisnite taster koji želite da koristite."
 
-#: C/gnobots2.xml:483(para)
+#: C/gnobots2.xml:483(sect1/para)
+#| msgid ""
+#| "You can modify the behaviour and appearance of the game by selecting "
+#| "<guimenuitem> Preferences</guimenuitem> under the <guimenu>Settings</"
+#| "guimenu> menu. This brings up a dialog with three tabs: <placeholder-1/>"
 msgid ""
 "You can modify the behaviour and appearance of the game by selecting "
 "<guimenuitem> Preferences</guimenuitem> under the <guimenu>Settings</"
-"guimenu> menu. This brings up a dialog with three tabs: <placeholder-1/>"
+"guimenu> menu. This brings up a dialog with three tabs: <_:itemizedlist-1/>"
 msgstr ""
-"Možete izmeniti ponašanje i izgled igre iz <guimenuitem>Postavki</"
-"guimenuitem> u meniju <guimenu>Podešavanja</guimenu>. Ovim se otvara prozorče "
-"sa tri jezička: <placeholder-1/>"
+"Možete izmeniti ponašanje i izgled igre iz "
+"<guimenuitem>Postavki</guimenuitem> u meniju <guimenu>Podešavanja</guimenu>. "
+"Ovim se otvara prozorče sa tri jezička: <_:itemizedlist-1/>"
 
-#: C/gnobots2.xml:554(para)
+#: C/gnobots2.xml:554(sect1/para)
 msgid ""
 "Any changes you make take effect immediately and are automatically saved."
 msgstr "Sve izmene koje načinite se odmah primenjuju i automatski su sačuvane."
 
-#: C/gnobots2.xml:558(para)
+#: C/gnobots2.xml:558(sect1/para)
 msgid ""
 "You can design your own graphics for the game if you want. The graphics "
 "files are found in <filename class=\"directory\"> $PREFIX/share/gnome-games/"
@@ -716,7 +774,7 @@ msgstr ""
 "Ovo je uglavnom <filename class=\"directory\">/usr</filename> ili <filename "
 "class=\"directory\">/usr/local</filename>."
 
-#: C/gnobots2.xml:569(para)
+#: C/gnobots2.xml:569(sect1/para)
 msgid ""
 "Each character is 16x16 pixels and there are 14 of them arranged in a PNG "
 "file which is 224x16 pixels in size. You can look at the existing files to "
@@ -728,7 +786,7 @@ msgstr ""
 "datoteke da biste videli redosled u kome ih treba poređati da naprave "
 "pravilnu sekvencu animacije."
 
-#: C/gnobots2.xml:575(para)
+#: C/gnobots2.xml:575(sect1/para)
 msgid ""
 "Any graphics files which are placed in the directory are auto-detected, so "
 "you don't need to alter any configuration files. You can also define your "
@@ -738,15 +796,15 @@ msgid ""
 msgstr ""
 "Sve grafičke datoteke koje se stave u fasciklu se automatski prepoznaju, "
 "tako da ne morate da menjate nikakve datoteke sa podešavanjima. Takođe možete "
-"napraviti vaša podešavanja igre praveći dodatne <filename> .cfg </"
-"filename> datoteke koje se nalaze u fascikli <filename class=\"directory\"> "
-"$PREFIX/share/gnome-games/gnobots2/games </filename>."
+"napraviti vaša podešavanja igre praveći dodatne <filename> .cfg </filename> "
+"datoteke koje se nalaze u fascikli <filename class=\"directory\"> $PREFIX/"
+"share/gnome-games/gnobots2/games </filename>."
 
-#: C/gnobots2.xml:607(title)
+#: C/gnobots2.xml:607(sect1/title)
 msgid "Authors"
 msgstr "Autori"
 
-#: C/gnobots2.xml:608(para)
+#: C/gnobots2.xml:608(sect1/para)
 msgid ""
 "<application>GNOME Robots</application> was written by Mark Rae (<email>m."
 "rae@inpharmatica.co.uk</email>). This manual was written by Patanjali "
@@ -763,24 +821,31 @@ msgstr ""
 "<ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">dokumenta</"
 "ulink>."
 
-#: C/gnobots2.xml:635(title)
+#: C/gnobots2.xml:635(sect1/title)
 msgid "License"
 msgstr "Licenca"
 
-#: C/gnobots2.xml:636(para)
+#: C/gnobots2.xml:636(sect1/para)
+#| msgid ""
+#| "This program is free software; you can redistribute it and/or modify it "
+#| "under the terms of the <ulink type=\"help\" url=\"gnome-help:gpl"
+#| "\"><citetitle>GNU General Public License</citetitle></ulink> as published "
+#| "by the Free Software Foundation; either version 2 of the License, or (at "
+#| "your option) any later version."
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
-"under the terms of the <ulink type=\"help\" url=\"gnome-help:gpl"
-"\"><citetitle>GNU General Public License</citetitle></ulink> as published by "
+"under the terms of the <ulink type=\"help\" url=\"gnome-help:gpl\"> "
+"<citetitle>GNU General Public License</citetitle></ulink> as published by "
 "the Free Software Foundation; either version 2 of the License, or (at your "
 "option) any later version."
 msgstr ""
 "Ovaj program je slobodan softver; možete ga raspodeljivati i/ili ga menjati "
-"pod uslovima <citetitle>GNU Opšte Javne Licence (GNU GPL)</citetitle> kako "
-"je objavljuje Zadužbina za Slobodni Softver (FSF); bilo verzije 2 te Licence, "
-"bilo (po vašem nahođenju) bilo koje novije verzije."
+"pod uslovima <ulink type=\"help\" url=\"gnome-help:gpl\"> <citetitle>GNU Opšte "
+"Javne Licence</citetitle></ulink> kako je objavljuje Zadužbina Slobodnog "
+"Softvera; bilo verzije 2 te Licence, bilo (po vašem nahođenju) bilo koje "
+"novije verzije."
 
-#: C/gnobots2.xml:644(para)
+#: C/gnobots2.xml:644(sect1/para)
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -792,30 +857,127 @@ msgstr ""
 "ODREĐENOJ NAMENI.  Vidite <citetitle>GNU Opštu Javnu Licencu</citetitle> za "
 "više detalja."
 
-#: C/gnobots2.xml:650(para)
+#: C/gnobots2.xml:657(para/address)
+#, no-wrap
+msgid ""
+"\n"
+"        Free Software Foundation, Inc.\n"
+"        <street>51 Franklin Street, Fifth Floor</street>\n"
+"        <city>Boston</city>, <state>MA</state> <postcode>02110-1301</postcode>\n"
+"        <country>USA</country>\n"
+"      "
+msgstr ""
+"\n"
+"        Free Software Foundation, Inc.\n"
+"        <street>51 Franklin Street, Fifth Floor</street>\n"
+"        <city>Boston</city>, <state>MA</state> "
+"<postcode>02110-1301</postcode>\n"
+"        <country>USA</country>\n"
+"      "
+
+#: C/gnobots2.xml:650(sect1/para)
+#| msgid ""
+#| "A copy of the <citetitle>GNU General Public License</citetitle> is "
+#| "included as an appendix to the <citetitle>GNOME Users Guide</citetitle>. "
+#| "You may also obtain a copy of the <citetitle>GNU General Public License</"
+#| "citetitle> from the Free Software Foundation by visiting <ulink type="
+#| "\"http\" url=\"http://www.fsf.org\">their Web site</ulink> or by writing "
+#| "to <address> Free Software Foundation, Inc. <street>51 Franklin Street, "
+#| "Fifth Floor</street><city>Boston</city>, <state>MA</state><postcode>02110-"
+#| "1301</postcode><country>USA</country></address>"
 msgid ""
 "A copy of the <citetitle>GNU General Public License</citetitle> is included "
 "as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
 "obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
 "the Free Software Foundation by visiting <ulink type=\"http\" url=\"http://"
-"www.fsf.org\">their Web site</ulink> or by writing to <address> Free "
-"Software Foundation, Inc. <street>51 Franklin Street, Fifth Floor</"
-"street><city>Boston</city>, <state>MA</state><postcode>02110-1301</"
-"postcode><country>USA</country></address>"
+"www.fsf.org\">their Web site</ulink> or by writing to <_:address-1/>"
 msgstr ""
 "Primerak <citetitle>GNU Opšte Javne Licence</citetitle> je uključen u dodatku "
 "<citetitle>Gnomovog korisničkog vodiča</citetitle>. Takođe možete nabaviti "
-"primerak <citetitle>GNU Opšte Javne Licence</citetitle> od Zadužbine za "
-"Slobodni Softver odlazeći na <ulink url=\"http://www.fsf.org\" type=\"http"
-"\">njihovu veb adresu</ulink> ili pišući na <address> Free Software "
-"Foundation, Inc. <street>59 Temple Place</street> - Suite 330 <city>Boston</"
-"city>, <state>MA</state><postcode>02111-1307</postcode><country>USA</"
-"country></address>"
+"primerak <citetitle>GNU Opšte Javne Licence</citetitle> od Zadužbine "
+"Slobodnog Softvera posetivši <ulink url=\"http://www.fsf.org\" "
+"type=\"http\">njihov veb sajt</ulink> ili pišući na <_:address-1/>"
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: C/gnobots2.xml:0(None)
-msgid "translator-credits"
+#: C/legal.xml:9(para/ulink)
+msgid "link"
+msgstr "vezi"
+
+#: C/legal.xml:2(legalnotice/para)
+#| msgid ""
+#| "Permission is granted to copy, distribute and/or modify this document "
+#| "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#| "or any later version published by the Free Software Foundation with no "
+#| "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#| "can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl"
+#| "\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
 msgstr ""
-"Branko Kokanović <branko.kokanovic@gmail.com>\n"
-"\n"
-"Prevod.org — prevod na srpski jezik"
+"Dozvoljeno je umnožavanje, raspodela, vršenje izmena ovog dokumenta pod "
+"uslovima Gnu-ove Licence Slobodne Dokumentacije (GLSD), verzije 1.1 ili bilo "
+"koje kasnije verzije bez nepromenjivih odeljaka, teksta na naslovnoj i "
+"poslednjoj strani, a koju je objavila Zadužbina Slobodnog Softvera. Primerak "
+"GLSD možete pronaći na ovoj <_:ulink-1/> ili u datoteci „COPYING-DOCS“ koja "
+"je priložena uz ovo uputstvo."
+
+#~ msgid "2001"
+#~ msgstr "2001"
+
+#~ msgid "Patanjali"
+#~ msgstr "Patanjali"
+
+#~ msgid "Somayaji"
+#~ msgstr "Somayaji"
+
+#~ msgid "patanjali@mindless.com"
+#~ msgstr "patanjali@mindless.com"
+
+#~ msgid "Mark"
+#~ msgstr "Mark"
+
+#~ msgid "Rae"
+#~ msgstr "Rae"
+
+#~ msgid "m.rae@inpharmatica.co.uk"
+#~ msgstr "m.rae@inpharmatica.co.uk"
+
+#~ msgid "Robots Manual V2.8"
+#~ msgstr "Uputstvo za Robote v2.8"
+
+#~ msgid "September 2004"
+#~ msgstr "Septembar 2004."
+
+#~ msgid "Robots Manual V2.9"
+#~ msgstr "Uputstvo za Robote v2.9"
+
+#~ msgid "August 2007"
+#~ msgstr "Avgust 2007."
+
+#~ msgid "GNOME Robots"
+#~ msgstr "Roboti"
+
+#~ msgid "GNOME Robots Main Window."
+#~ msgstr "Glavni prozor Robota."
+
+#~ msgid "Game"
+#~ msgstr "Igra"
+
+#~ msgid "Ctrl-Q"
+#~ msgstr "Ctrl-Q"
+
+#~ msgid "Quit"
+#~ msgstr "Izađi"
+
+#~ msgid "Move"
+#~ msgstr "Pomeranje"
+
+#~ msgid "Settings"
+#~ msgstr "Podešavanja"
+
+#~ msgid "Help"
+#~ msgstr "Pomoć"

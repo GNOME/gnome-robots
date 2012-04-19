@@ -5,7 +5,7 @@ HELP_MEDIA = \
 	figures/gnobots2-main.png
 
 HELP_FILES = \
-	gnobots2.xml \
+	index.docbook \
 	legal.xml
 
 HELP_LINGUAS = ca cs da de el en_GB es eu fr it oc sl sr sr@latin sv zh_CN

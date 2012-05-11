@@ -309,19 +309,6 @@ fill_typemenu (GtkWidget * menu)
   gint i;
   gchar *config;
 
-#if 0
-  /* this is just a place holder so that xgettext can found the strings to
-   * translate (those are the default games types)
-   */
-  char *just_a_place_holder[] = {
-    N_("classic robots"),
-    N_("robots2"),
-    N_("robots2 easy"),
-    N_("robots with safe teleport"),
-    N_("nightmare")
-  };
-#endif
-
   for (i = 0; i < num_game_configs (); ++i) {
     config = game_config_name (i);
     gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (menu), _(config));
@@ -354,21 +341,6 @@ make_theme_menu (void)
 
   /* FIXME: Get rid of the bubbles images from the list (preferably by
    * getting tid of the bubble pixmaps. */
-
-#if 0
-  /* this is just a place holder so that xgettext can found the strings to
-   * translate (those are the default graphic styles)
-   */
-  char *just_a_place_holder[] = {
-    N_("robots"),
-    N_("cows"),
-    N_("eggs"),
-    N_("gnomes"),
-    N_("mice"),
-    N_("ufo"),
-    N_("boo"),
-  };
-#endif
 
   return games_file_list_create_widget (theme_list,
 					properties.themename,

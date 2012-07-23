@@ -27,7 +27,6 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 
-#include <libgames-support/games-frame.h>
 #include <libgames-support/games-controls.h>
 #include <libgames-support/games-file-list.h>
 #include <libgames-support/games-scores.h>
@@ -385,7 +384,6 @@ show_properties_dialog (void)
   GtkWidget *chkbox;
   GtkWidget *grid;
   GtkWidget *dbut;
-  GtkWidget *frame;
   GtkWidget *w;
   GtkWidget *controls_list;
 
@@ -412,34 +410,26 @@ show_properties_dialog (void)
   cpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
   gtk_container_set_border_width (GTK_CONTAINER (cpage), 12);
 
-  frame = games_frame_new (_("Game Type"));
-  gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
+  grid = gtk_grid_new ();
+  gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 12);
+  gtk_box_pack_start (GTK_BOX (cpage), grid, FALSE, FALSE, 0);
 
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_container_add (GTK_CONTAINER (frame), vbox);
-
-  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-  gtk_box_set_homogeneous (GTK_BOX (hbox), TRUE);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+  label = gtk_label_new (_("Game Type"));
+  gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
   typemenu = gtk_combo_box_text_new ();
   g_signal_connect (G_OBJECT (typemenu), "changed",
 		    G_CALLBACK (type_selection), NULL);
   fill_typemenu (typemenu);
-  gtk_box_pack_start (GTK_BOX (hbox), typemenu, TRUE, TRUE, 0);
-
-  frame = games_frame_new (_("Options"));
-  gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_box_set_homogeneous (GTK_BOX (vbox), TRUE);
-  gtk_container_add (GTK_CONTAINER (frame), vbox);
+  gtk_grid_attach (GTK_GRID (grid), typemenu, 1, 0, 1, 1);
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Use safe moves"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),
 				properties.safe_moves);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
 		    (GCallback) safe_cb, NULL);
-  gtk_box_pack_start (GTK_BOX (vbox), chkbox, TRUE, TRUE, 0);
+  gtk_grid_attach (GTK_GRID (grid), chkbox, 0, 1, 2, 1);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Prevent accidental moves that result in getting killed."));
 
@@ -448,21 +438,15 @@ show_properties_dialog (void)
 				properties.super_safe_moves);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
 		    (GCallback) super_safe_cb, NULL);
-  gtk_box_pack_start (GTK_BOX (vbox), chkbox, TRUE, TRUE, 0);
+  gtk_grid_attach (GTK_GRID (grid), chkbox, 0, 2, 2, 1);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Prevents all moves that result in getting killed."));
-
-  frame = games_frame_new (_("Sound"));
-  gtk_box_pack_start (GTK_BOX (cpage), frame, FALSE, FALSE, 0);
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_box_set_homogeneous (GTK_BOX (vbox), TRUE);
-  gtk_container_add (GTK_CONTAINER (frame), vbox);
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Enable sounds"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox), properties.sound);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
 		    (GCallback) sound_cb, NULL);
-  gtk_box_pack_start (GTK_BOX (vbox), chkbox, TRUE, TRUE, 0);
+  gtk_grid_attach (GTK_GRID (grid), chkbox, 0, 3, 2, 1);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Play sounds for events like winning a level and dying."));
 
@@ -474,15 +458,13 @@ show_properties_dialog (void)
   gpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
   gtk_container_set_border_width (GTK_CONTAINER (gpage), 12);
 
-  frame = games_frame_new (_("Graphics Theme"));
-  gtk_box_pack_start (GTK_BOX (gpage), frame, FALSE, FALSE, 0);
-
   grid = gtk_grid_new ();
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
   gtk_grid_set_column_spacing (GTK_GRID (grid), 12);
-  gtk_container_add (GTK_CONTAINER (frame), grid);
+  gtk_box_pack_start (GTK_BOX (gpage), grid, FALSE, FALSE, 0);
 
   label = gtk_label_new_with_mnemonic (_("_Image theme:"));
+  gtk_widget_set_hexpand (label, TRUE);
   gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
   gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
@@ -512,10 +494,8 @@ show_properties_dialog (void)
   kpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
   gtk_container_set_border_width (GTK_CONTAINER (kpage), 12);
 
-  frame = games_frame_new (_("Keyboard Controls"));
-  gtk_box_pack_start (GTK_BOX (kpage), frame, TRUE, TRUE, 0);
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_container_add (GTK_CONTAINER (frame), vbox);
+  gtk_box_pack_start (GTK_BOX (kpage), vbox, TRUE, TRUE, 0);
 
   controls_list = games_controls_list_new (settings);
   games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),

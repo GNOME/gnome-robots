@@ -25,7 +25,6 @@
 #include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
-#include <libgames-support/games-preimage.h>
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
 
@@ -41,6 +40,7 @@
 #include "game.h"
 #include "gnobots.h"
 #include "properties.h"
+#include "games-preimage.h"
 
 /**********************************************************************/
 

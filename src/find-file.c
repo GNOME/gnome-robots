@@ -22,8 +22,8 @@
 
 #include <glib.h>
 
-#include <libgames-support/games-file-list.h>
 #include "find-file.h"
+#include "games-file-list.h"
 
 static gchar *
 make_canonical_name (const gchar * name)

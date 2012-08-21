@@ -24,6 +24,8 @@ gnobots2_SOURCES = \
 	gbdefs.h \
 	find-file.c \
 	find-file.h \
+	games-file-list.c \
+	games-file-list.h \
 	cursor-down.h \
 	cursor-down-left.h \
 	cursor-down-right.h \

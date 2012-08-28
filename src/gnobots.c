@@ -29,7 +29,6 @@
 #include <glib/gi18n.h>
 #include <glib.h>
 
-#include <libgames-support/games-gridframe.h>
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
 #include <libgames-support/games-settings.h>
@@ -44,6 +43,7 @@
 #include "properties.h"
 #include "game.h"
 #include "cursors.h"
+#include "games-gridframe.h"
 
 /* Minimum sizes. */
 #define MINIMUM_TILE_WIDTH   8

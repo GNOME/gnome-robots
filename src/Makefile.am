@@ -26,6 +26,8 @@ gnobots2_SOURCES = \
 	find-file.h \
 	games-file-list.c \
 	games-file-list.h \
+	games-gridframe.c \
+	games-gridframe.h \
 	games-preimage.c \
 	games-preimage.h \
 	cursor-down.h \

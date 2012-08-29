@@ -26,6 +26,8 @@ gnobots2_SOURCES = \
 	find-file.h \
 	games-file-list.c \
 	games-file-list.h \
+	games-fullscreen-action.c \
+	games-fullscreen-action.h \
 	games-gridframe.c \
 	games-gridframe.h \
 	games-preimage.c \

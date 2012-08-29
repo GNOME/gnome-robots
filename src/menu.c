@@ -27,7 +27,6 @@
 #include <gtk/gtk.h>
 
 #include <libgames-support/games-stock.h>
-#include <libgames-support/games-fullscreen-action.h>
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
 
@@ -37,6 +36,7 @@
 #include "gnobots.h"
 #include "properties.h"
 #include "gameconfig.h"
+#include "games-fullscreen-action.h"
 
 GtkAction *scores_action;
 GtkAction *pause_action;

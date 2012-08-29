@@ -30,6 +30,8 @@ gnobots2_SOURCES = \
 	games-gridframe.h \
 	games-preimage.c \
 	games-preimage.h \
+	games-settings.c \
+	games-settings.h \
 	cursor-down.h \
 	cursor-down-left.h \
 	cursor-down-right.h \

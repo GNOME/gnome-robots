@@ -30,7 +30,6 @@
 #include <libgames-support/games-controls.h>
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
-#include <libgames-support/games-settings.h>
 
 #include "properties.h"
 #include "gameconfig.h"
@@ -41,6 +40,7 @@
 #include "game.h"
 #include "menu.h"
 #include "games-file-list.h"
+#include "games-settings.h"
 
 
 /**********************************************************************/

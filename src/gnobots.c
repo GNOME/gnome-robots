@@ -31,7 +31,6 @@
 
 #include <libgames-support/games-scores.h>
 #include <libgames-support/games-scores-dialog.h>
-#include <libgames-support/games-settings.h>
 #include <libgames-support/games-stock.h>
 
 #include "gbdefs.h"
@@ -44,6 +43,7 @@
 #include "game.h"
 #include "cursors.h"
 #include "games-gridframe.h"
+#include "games-settings.h"
 
 /* Minimum sizes. */
 #define MINIMUM_TILE_WIDTH   8

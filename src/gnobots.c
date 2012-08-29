@@ -42,15 +42,11 @@
 #include "game.h"
 #include "cursors.h"
 #include "games-gridframe.h"
-#include "games-settings.h"
 #include "games-stock.h"
 
 /* Minimum sizes. */
 #define MINIMUM_TILE_WIDTH   8
 #define MINIMUM_TILE_HEIGHT  MINIMUM_TILE_WIDTH
-
-#define DEFAULT_WIDTH 720
-#define DEFAULT_HEIGHT 566
 
 #define KEY_GEOMETRY_GROUP "geometry"
 
@@ -58,6 +54,8 @@
 /* Exported Variables                                                 */
 /**********************************************************************/
 GtkWidget *app = NULL;
+static gint window_width = 0, window_height = 0;
+static gboolean window_is_fullscreen = FALSE, window_is_maximized = FALSE;
 GtkWidget *game_area = NULL;
 GamesScores *highscores;
 GSettings *settings;
@@ -119,6 +117,38 @@ static const GamesScoresCategory scorecats[] = {
 /**********************************************************************/
 /* Function Definitions                                               */
 /**********************************************************************/
+
+static gboolean
+window_configure_event_cb (GtkWidget *widget, GdkEventConfigure *event)
+{
+  if (!window_is_maximized && !window_is_fullscreen)
+  {
+    window_width = event->width;
+    window_height = event->height;
+  }
+  
+  return FALSE;
+}
+
+static gboolean
+window_state_event_cb (GtkWidget *widget, GdkEventWindowState *event)
+{
+  if ((event->changed_mask & GDK_WINDOW_STATE_MAXIMIZED) != 0)
+    window_is_maximized = (event->new_window_state & GDK_WINDOW_STATE_MAXIMIZED) != 0;
+  if ((event->changed_mask & GDK_WINDOW_STATE_FULLSCREEN) != 0)
+    window_is_fullscreen = (event->new_window_state & GDK_WINDOW_STATE_FULLSCREEN) != 0;
+  return FALSE;
+}
+
+void
+quit_game (void)
+{
+  g_settings_set_int (settings, "window-width", window_width);
+  g_settings_set_int (settings, "window-height", window_height);
+  g_settings_set_boolean (settings, "window-is-maximized", window_is_maximized);
+  g_settings_set_boolean (settings, "window-is-fullscreen", window_is_fullscreen);
+  gtk_main_quit ();
+}
 
 /**
  * main
@@ -182,12 +212,16 @@ main (int argc, char *argv[])
 
   app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (app), _("Robots"));
-
-  gtk_window_set_default_size (GTK_WINDOW (app), DEFAULT_WIDTH, DEFAULT_HEIGHT);
-  games_settings_bind_window_state ("/org/gnome/gnobots2/", GTK_WINDOW (app));
+  g_signal_connect (GTK_WINDOW (app), "configure-event", G_CALLBACK (window_configure_event_cb), NULL);
+  g_signal_connect (GTK_WINDOW (app), "window-state-event", G_CALLBACK (window_state_event_cb), NULL);
+  gtk_window_set_default_size (GTK_WINDOW (app), g_settings_get_int (settings, "window-width"), g_settings_get_int (settings, "window-height"));
+  if (g_settings_get_boolean (settings, "window-is-fullscreen"))
+    gtk_window_fullscreen (GTK_WINDOW (app));
+  if (g_settings_get_boolean (settings, "window-is-maximized"))
+    gtk_window_maximize (GTK_WINDOW (app));
 
   g_signal_connect (G_OBJECT (app), "delete_event",
-		    G_CALLBACK (quit_game), NULL);
+                   G_CALLBACK (quit_game), NULL);
 
   statusbar = gnobots_statusbar_new ();
   ui_manager = gtk_ui_manager_new ();

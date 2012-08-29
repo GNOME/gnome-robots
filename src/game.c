@@ -634,20 +634,6 @@ init_game (void)
 
 
 /**
- * quit_game
- *
- * Description:
- * Stop animation timeouts and exit.
- **/
-void
-quit_game (void)
-{
-  destroy_game_timer ();
-  gtk_main_quit ();
-}
-
-
-/**
  * start_new_game
  *
  * Description:

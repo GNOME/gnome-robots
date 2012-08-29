@@ -40,7 +40,6 @@
 #include "game.h"
 #include "menu.h"
 #include "games-file-list.h"
-#include "games-settings.h"
 
 
 /**********************************************************************/

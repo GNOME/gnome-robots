@@ -116,5 +116,25 @@
       <_description>The key used to wait.</_description>
     </key>
 
+    <key name="window-width" type="i">
+      <default>720</default>
+      <_summary>Width of the window in pixels</_summary>
+    </key>
+
+    <key name="window-height" type="i">
+      <default>566</default>
+      <_summary>Height of the window in pixels</_summary>
+    </key>
+
+    <key name="window-is-maximized" type="b">
+      <default>false</default>
+      <_summary>true if the window is maximized</_summary>
+    </key>
+
+    <key name="window-is-fullscreen" type="b">
+      <default>false</default>
+      <_summary>true if the window is fullscren</_summary>
+    </key>
+
   </schema>
 </schemalist>

@@ -34,6 +34,8 @@ gnobots2_SOURCES = \
 	games-preimage.h \
 	games-settings.c \
 	games-settings.h \
+	games-stock.c \
+	games-stock.h \
 	cursor-down.h \
 	cursor-down-left.h \
 	cursor-down-right.h \
@@ -52,6 +54,7 @@ gnobots2_CFLAGS = \
 	-DDATA_DIRECTORY=\"$(datadir)/gnobots2\" \
 	-DSOUND_DIRECTORY=\"$(datadir)/gnobots2/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
+	-DICON_THEME_DIRECTORY="\"$(datadir)/icons\"" \
 	$(GTK_CFLAGS) \
 	$(RSVG_CFLAGS) \
 	$(CANBERRA_GTK_CFLAGS) \

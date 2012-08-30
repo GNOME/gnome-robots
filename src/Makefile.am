@@ -24,6 +24,8 @@ gnobots2_SOURCES = \
 	gbdefs.h \
 	find-file.c \
 	find-file.h \
+	games-controls.c \
+	games-controls.h \
 	games-file-list.c \
 	games-file-list.h \
 	games-fullscreen-action.c \

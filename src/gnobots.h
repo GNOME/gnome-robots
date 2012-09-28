@@ -1,6 +1,9 @@
 #ifndef GNOBOTS_H
 #define GNOBOTS_H
 
+#include <gtk/gtk.h>
+
+#include "games-scores.h"
 
 /**********************************************************************/
 /* Exported Variables                                                 */

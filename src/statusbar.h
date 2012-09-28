@@ -1,6 +1,8 @@
 #ifndef STATUSBAR_H
 #define STATUSBAR_H
 
+#include <gtk/gtk.h>
+
 
 /**********************************************************************/
 /* Exported functions                                                 */

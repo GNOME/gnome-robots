@@ -26,9 +26,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include <libgames-support/games-scores.h>
-#include <libgames-support/games-scores-dialog.h>
-
 #include "gbdefs.h"
 #include "menu.h"
 #include "game.h"
@@ -36,6 +33,8 @@
 #include "properties.h"
 #include "gameconfig.h"
 #include "games-fullscreen-action.h"
+#include "games-scores.h"
+#include "games-scores-dialog.h"
 #include "games-stock.h"
 
 GtkAction *scores_action;

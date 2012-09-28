@@ -34,6 +34,14 @@ gnobots2_SOURCES = \
 	games-gridframe.h \
 	games-preimage.c \
 	games-preimage.h \
+	games-score.h			\
+	games-score.c			\
+	games-scores.c			\
+	games-scores.h			\
+	games-scores-dialog.c	\
+	games-scores-dialog.h	\
+	games-scores-backend.c	\
+	games-scores-backend.h	\
 	games-stock.c \
 	games-stock.h \
 	cursor-down.h \
@@ -46,6 +54,12 @@ gnobots2_SOURCES = \
 	cursor-up-left.h \
 	cursor-up-right.h
 
+if ENABLE_SETGID
+gnobots2_SOURCES +=		\
+	games-setgid-io.c		\
+	games-setgid-io.h
+endif # ENABLE_SETGID
+
 gnobots2_CPPFLAGS = \
 	-I$(top_srcdir) \
 	$(AM_CPPFLAGS)
@@ -55,13 +69,13 @@ gnobots2_CFLAGS = \
 	-DSOUND_DIRECTORY=\"$(datadir)/gnobots2/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	-DICON_THEME_DIRECTORY="\"$(datadir)/icons\"" \
+	-DSCORESDIR="\"$(scoredir)\""				\
 	$(GTK_CFLAGS) \
 	$(RSVG_CFLAGS) \
 	$(CANBERRA_GTK_CFLAGS) \
 	$(AM_CFLAGS)
 
 gnobots2_LDADD = \
-	$(top_builddir)/libgames-support/libgames-support.la \
 	$(GTK_LIBS) \
 	$(RSVG_LIBS) \
 	$(CANBERRA_GTK_LIBS) \

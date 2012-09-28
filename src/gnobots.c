@@ -29,9 +29,6 @@
 #include <glib/gi18n.h>
 #include <glib.h>
 
-#include <libgames-support/games-scores.h>
-#include <libgames-support/games-scores-dialog.h>
-
 #include "gbdefs.h"
 #include "statusbar.h"
 #include "gameconfig.h"
@@ -42,6 +39,8 @@
 #include "game.h"
 #include "cursors.h"
 #include "games-gridframe.h"
+#include "games-scores.h"
+#include "games-scores-dialog.h"
 #include "games-stock.h"
 
 /* Minimum sizes. */

@@ -27,9 +27,6 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 
-#include <libgames-support/games-scores.h>
-#include <libgames-support/games-scores-dialog.h>
-
 #include "properties.h"
 #include "gameconfig.h"
 #include "gnobots.h"
@@ -40,6 +37,8 @@
 #include "menu.h"
 #include "games-file-list.h"
 #include "games-controls.h"
+#include "games-scores.h"
+#include "games-scores-dialog.h"
 
 
 /**********************************************************************/

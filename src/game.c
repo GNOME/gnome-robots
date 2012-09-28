@@ -27,9 +27,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include <libgames-support/games-scores.h>
-#include <libgames-support/games-scores-dialog.h>
-
 #include "gbdefs.h"
 #include "gameconfig.h"
 #include "keyboard.h"
@@ -41,6 +38,8 @@
 #include "statusbar.h"
 #include "graphics.h"
 #include "cursors.h"
+#include "games-scores.h"
+#include "games-scores-dialog.h"
 
 /**********************************************************************/
 /* Exported Variables                                                 */

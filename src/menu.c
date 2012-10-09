@@ -231,7 +231,7 @@ help_cb (GtkAction * action, gpointer data)
 {
   GError *error = NULL;
 
-  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (app)), "help:gnobots2", gtk_get_current_event_time (), &error);
+  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (app)), "help:gnome-robots", gtk_get_current_event_time (), &error);
   if (error)
     g_warning ("Failed to show help: %s", error->message);
   g_clear_error (&error);
@@ -271,7 +271,7 @@ about_cb (GtkAction * action, gpointer data)
 			 "artists", artists,
 			 "documenters", documenters,
 			 "translator-credits", _("translator-credits"),
-			 "logo-icon-name", "gnobots2",
+			 "logo-icon-name", "gnome-robots",
 			 "website",
 			 "http://www.gnome.org/projects/gnome-games/",
 			 "wrap-license", TRUE, NULL);

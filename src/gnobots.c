@@ -199,15 +199,15 @@ main (int argc, char *argv[])
 
   g_set_application_name (_("Robots"));
 
-  highscores = games_scores_new ("gnobots2",
+  highscores = games_scores_new ("gnome-robots",
                                  scorecats, G_N_ELEMENTS (scorecats),
                                  NULL, NULL,
                                  0 /* default category */,
                                  GAMES_SCORES_STYLE_PLAIN_DESCENDING);
 
-  settings = g_settings_new ("org.gnome.gnobots2");
+  settings = g_settings_new ("org.gnome.robots");
 
-  gtk_window_set_default_icon_name ("gnobots2");
+  gtk_window_set_default_icon_name ("gnome-robots");
 
   app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (app), _("Robots"));

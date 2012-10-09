@@ -5,11 +5,6 @@
 #define GBDEFS_H
 
 /*
- * Nmae of the Game
- */
-#define GAME_NAME    "gnobots2"
-
-/*
  * Bubble Sizes
  */
 #define BUBBLE_WIDTH   86

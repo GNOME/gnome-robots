@@ -1,0 +1,14 @@
+# List of source files containing translatable strings.
+# Please keep this file in alphabetical order.
+[encoding: UTF-8]
+gnobots2/data/gnobots2.desktop.in.in
+gnobots2/data/org.gnome.gnobots2.gschema.xml.in
+gnobots2/src/game.c
+gnobots2/src/games-controls.c
+gnobots2/src/games-scores-dialog.c
+gnobots2/src/games-stock.c
+gnobots2/src/gnobots.c
+gnobots2/src/graphics.c
+gnobots2/src/menu.c
+gnobots2/src/properties.c
+gnobots2/src/statusbar.c

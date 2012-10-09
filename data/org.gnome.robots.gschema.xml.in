@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id="org.gnome.gnobots2" path="/org/gnome/gnobots2/" gettext-domain="gnome-games">
+  <schema id="org.gnome.robots" path="/org/gnome/robots/" gettext-domain="gnome-games">
  
     <key name="show-toolbar" type="b">
       <default>true</default>

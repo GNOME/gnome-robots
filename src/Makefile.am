@@ -1,6 +1,6 @@
-bin_PROGRAMS = gnobots2
+bin_PROGRAMS = gnome-robots
 
-gnobots2_SOURCES = \
+gnome_robots_SOURCES = \
 	gnobots.c \
 	gnobots.h \
 	statusbar.c \
@@ -55,36 +55,30 @@ gnobots2_SOURCES = \
 	cursor-up-right.h
 
 if ENABLE_SETGID
-gnobots2_SOURCES +=		\
+gnome_robots_SOURCES +=		\
 	games-setgid-io.c		\
 	games-setgid-io.h
 endif # ENABLE_SETGID
 
-gnobots2_CPPFLAGS = \
+gnome_robots_CPPFLAGS = \
 	-I$(top_srcdir) \
 	$(AM_CPPFLAGS)
 
-gnobots2_CFLAGS = \
-	-DDATA_DIRECTORY=\"$(datadir)/gnobots2\" \
-	-DSOUND_DIRECTORY=\"$(datadir)/gnobots2/sounds\" \
+gnome_robots_CFLAGS = \
+	-DDATA_DIRECTORY=\"$(datadir)/gnome-robots\" \
+	-DSOUND_DIRECTORY=\"$(datadir)/gnome-robots/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	-DICON_THEME_DIRECTORY="\"$(datadir)/icons\"" \
 	-DSCORESDIR="\"$(scoredir)\""				\
-	$(GTK_CFLAGS) \
-	$(RSVG_CFLAGS) \
-	$(CANBERRA_GTK_CFLAGS) \
-	$(AM_CFLAGS)
+	$(ROBOTS_CFLAGS)
 
-gnobots2_LDADD = \
-	$(GTK_LIBS) \
-	$(RSVG_LIBS) \
-	$(CANBERRA_GTK_LIBS) \
-	$(INTLLIBS) \
+gnome_robots_LDADD = \
+	$(ROBOTS_LIBS) \
 	-lm
 
 install-exec-hook:
 	-if test "$(setgid)" = "true"; then \
-	  chgrp $(scores_group) $(DESTDIR)$(bindir)/gnobots2 && chmod 2555 $(DESTDIR)$(bindir)/gnobots2 ;\
+	  chgrp $(scores_group) $(DESTDIR)$(bindir)/gnome-robots && chmod 2555 $(DESTDIR)$(bindir)/gnome-robots ;\
 	fi
 
 -include $(top_srcdir)/git.mk

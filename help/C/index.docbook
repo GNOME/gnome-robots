@@ -166,7 +166,7 @@
        <guimenuitem>Robots</guimenuitem>
        </menuchoice>
        from the <guimenu>Main Menu</guimenu>, or type
-       <command>gnobots2</command> on the command line.
+       <command>gnome-robots</command> on the command line.
      </para>
 
      <para>
@@ -252,7 +252,7 @@
 	  <screenshot>
 	  <mediaobject> 
  	   <imageobject>
- 	 <imagedata fileref="figures/gnobots2-main.png" format="PNG" srccredit="Patanjali"/>
+ 	 <imagedata fileref="figures/gnome-robots-main.png" format="PNG" srccredit="Patanjali"/>
  	   </imageobject>
  	   <textobject> 
  	     <phrase>GNOME Robots Main Window.</phrase> 
@@ -559,7 +559,7 @@ Any changes you make take effect immediately and are automatically saved.
       You can design your own graphics for the game if you want. The graphics
       files are found in
       <filename class="directory">
-      $PREFIX/share/gnome-games/gnobots2/pixmaps
+      $PREFIX/share/gnome-games/gnome-robots/pixmaps
       </filename>, where $PREFIX is the prefix into which GNOME
       was installed. This is usually either 
       <filename class="directory">/usr</filename>
@@ -580,7 +580,7 @@ Any changes you make take effect immediately and are automatically saved.
       .cfg
       </filename> files which are stored in the 
       <filename class="directory">
-      $PREFIX/share/gnome-games/gnobots2/games
+      $PREFIX/share/gnome-games/gnome-robots/games
       </filename>
       directory.
     </para>

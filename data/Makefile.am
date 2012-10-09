@@ -1,11 +1,11 @@
 SUBDIRS = icons
 
-gsettings_in_file = org.gnome.gnobots2.gschema.xml.in
+gsettings_in_file = org.gnome.robots.gschema.xml.in
 gsettings_SCHEMAS = $(gsettings_in_file:.xml.in=.xml)
 @INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
 
-man_MANS = gnobots2.6
+man_MANS = gnome-robots.6
 
 cursor_files = \
 	cursor-down-left.png	\
@@ -18,12 +18,12 @@ cursor_files = \
 	cursor-up.png		\
 	cursor-up-right.png
 
-pixmapdir = $(datadir)/gnobots2/pixmaps
+pixmapdir = $(datadir)/gnome-robots/pixmaps
 pixmap_DATA = yahoo.png \
               aieee.png \
               splat.png
 
-soundsdir = $(datadir)/gnobots2/sounds
+soundsdir = $(datadir)/gnome-robots/sounds
 sounds_DATA = \
 	die.ogg \
 	splat.ogg \
@@ -31,13 +31,13 @@ sounds_DATA = \
 	victory.ogg \
 	yahoo.ogg
 
-themedir = $(datadir)/gnobots2/themes
+themedir = $(datadir)/gnome-robots/themes
 theme_DATA = gnomes.png \
              robots.svg \
              boo.svg \
              ufo.svg
 
-configdir = $(datadir)/gnobots2/games
+configdir = $(datadir)/gnome-robots/games
 config_DATA = robots2.cfg \
               robots2_easy.cfg \
               classic_robots.cfg \
@@ -45,7 +45,7 @@ config_DATA = robots2.cfg \
               nightmare.cfg
 
 Gamesdir = $(datadir)/applications
-Games_in_files = gnobots2.desktop.in.in
+Games_in_files = gnome-robots.desktop.in.in
 Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
@@ -53,9 +53,9 @@ install-data-local:
 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
 	-for cfn in $(config_DATA); do \
 	    cfn2=`echo $$cfn | sed -e 's/\.cfg//'`; \
-            fname1=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2.scores; \
-            fname2=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-safe.scores; \
-            fname3=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-super-safe.scores; \
+            fname1=$(DESTDIR)$(scoredir)/gnome-robots.$$cfn2.scores; \
+            fname2=$(DESTDIR)$(scoredir)/gnome-robots.$$cfn2-safe.scores; \
+            fname3=$(DESTDIR)$(scoredir)/gnome-robots.$$cfn2-super-safe.scores; \
 	    touch $$fname1; chmod 664 $$fname1; chown $(scores_user):$(scores_group) $$fname1; \
 	    touch $$fname2; chmod 664 $$fname2; chown $(scores_user):$(scores_group) $$fname2; \
 	    touch $$fname3; chmod 664 $$fname3; chown $(scores_user):$(scores_group) $$fname3; \

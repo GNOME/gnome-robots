@@ -1,8 +1,8 @@
 @YELP_HELP_RULES@
-HELP_ID = gnobots2
+HELP_ID = gnome-robots
 
 HELP_MEDIA = \
-	figures/gnobots2-main.png
+	figures/gnome-robots-main.png
 
 HELP_FILES = \
 	index.docbook \

@@ -61,6 +61,17 @@ install-data-local:
 	    touch $$fname3; chmod 664 $$fname3; chown $(scores_user):$(scores_group) $$fname3; \
 	    done
 
+uninstall-local:
+	-for cfn in $(config_DATA); do \
+	    cfn2=`echo $$cfn | sed -e 's/\.cfg//'`; \
+            fname1=$(DESTDIR)$(scoredir)/gnome-robots.$$cfn2.scores; \
+            fname2=$(DESTDIR)$(scoredir)/gnome-robots.$$cfn2-safe.scores; \
+            fname3=$(DESTDIR)$(scoredir)/gnome-robots.$$cfn2-super-safe.scores; \
+	    rm -f $$fname1; \
+	    rm -f $$fname2; \
+	    rm -f $$fname3; \
+	    done
+
 EXTRA_DIST = $(cursor_files) \
              $(pixmap_DATA) \
              $(sounds_DATA) \

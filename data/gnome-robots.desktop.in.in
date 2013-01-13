@@ -1,6 +1,7 @@
 [Desktop Entry]
 _Name=Robots
 _Comment=Avoid the robots and make them crash into each other
+_Keywords=game;arcade;teleport;
 Exec=gnobots2
 Icon=gnobots2
 Terminal=false

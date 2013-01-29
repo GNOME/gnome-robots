@@ -1,14 +1,14 @@
-# Norwegian bokmål translation of gnome-games.
+# Norwegian bokmål translation of gnome-robots.
 # Copyright © 1998-2002 Free Software Foundation, Inc.
 # Kjartan Maraas <kmaraas@gnome.org>, 1998-2013.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-games 3.7.x\n"
+"Project-Id-Version: gnome-robots 3.7.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-21 11:44+0100\n"
-"PO-Revision-Date: 2013-01-21 11:45+0100\n"
+"POT-Creation-Date: 2013-01-29 19:12+0100\n"
+"PO-Revision-Date: 2013-01-29 19:12+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -25,6 +25,10 @@ msgstr "Roboter"
 #: ../data/gnome-robots.desktop.in.in.h:2
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Unngå roboter og få dem til å krasje med hverandre"
+
+#: ../data/gnome-robots.desktop.in.in.h:3
+msgid "game;arcade;teleport;"
+msgstr "spill;arcade;teleportering;"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:1
 msgid "Show toolbar"

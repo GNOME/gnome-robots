@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-12-02 22:15+0000\n"
-"PO-Revision-Date: 2011-11-09 16:10+0900\n"
-"Last-Translator: Gheyret Kenji<gheyret@yahoo.com>\n"
+"POT-Creation-Date: 2013-01-28 23:16+0000\n"
+"PO-Revision-Date: 2013-02-02 12:37+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,10 @@ msgstr "ماشىنا ئادەم"
 #: ../data/gnome-robots.desktop.in.in.h:2
 msgid "Avoid the robots and make them crash into each other"
 msgstr "ماشىنا ئادەملەردىن ئۆزىنى تارتىپ ئۇلارنى ئۆزئارا سوقۇشتۇر"
+
+#: ../data/gnome-robots.desktop.in.in.h:3
+msgid "game;arcade;teleport;"
+msgstr "game؛arcade؛teleport؛ئويۇن؛"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:1
 msgid "Show toolbar"
@@ -94,7 +98,6 @@ msgid "Key to move NW"
 msgstr "‹NW›(غەربىي شىمالغا) يۆتكەيدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:16
-#| msgid "Key press to move right."
 msgid "The key used to move north-west."
 msgstr "غەربىي-شىمالغا يۆتكەيدىغان كۇنۇپكا."
 
@@ -103,7 +106,6 @@ msgid "Key to move N"
 msgstr "‹N›(شىمالغا) يۆتكەيدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:18
-#| msgid "Key press to move right."
 msgid "The key used to move north."
 msgstr "شىمالغا يۆتكەيدىغان كۇنۇپكا."
 
@@ -112,7 +114,6 @@ msgid "Key to move NE"
 msgstr "‹NE›(شەرقىي شىمالغا) يۆتكەيدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:20
-#| msgid "Key press to move right."
 msgid "The key used to move north-east."
 msgstr "شەرقىي-شىمالغا يۆتكەيدىغان كۇنۇپكا."
 
@@ -121,7 +122,6 @@ msgid "Key to move W"
 msgstr "‹W›(غەربكە) يۆتكەيدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:22
-#| msgid "Key press to move left."
 msgid "The key used to move west."
 msgstr "غەربكە يۆتكەيدىغان كۇنۇپكا."
 
@@ -138,7 +138,6 @@ msgid "Key to move E"
 msgstr "‹E›(شەرققە) يۆتكەيدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:26
-#| msgid "Key press to move left."
 msgid "The key used to move east."
 msgstr "شەرققە يۆتكەيدىغان كۇنۇپكا."
 
@@ -147,7 +146,6 @@ msgid "Key to move SW"
 msgstr "‹SW›(غەربىي جەنۇبقا) يۆتكەيدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:28
-#| msgid "There are no more moves."
 msgid "The key used to move south-west."
 msgstr "غەربىي-جەنۇبقا يۆتكەيدىغان كۇنۇپكا."
 
@@ -156,7 +154,6 @@ msgid "Key to move S"
 msgstr "‹S›(جەنۇبقا) يۆتكەيدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:30
-#| msgid "Key press to move left."
 msgid "The key used to move south."
 msgstr "جەنۇبقا يۆتكەيدىغان كۇنۇپكا."
 
@@ -165,7 +162,6 @@ msgid "Key to move SE"
 msgstr "‹SE›(شەرقىي جەنۇبقا) يۆتكەيدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:32
-#| msgid "There are no more moves."
 msgid "The key used to move south-east."
 msgstr "شەرقىي-جەنۇبقا يۆتكەيدىغان كۇنۇپكا."
 
@@ -174,7 +170,6 @@ msgid "Key to teleport"
 msgstr "تېلېپورت قىلىدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:34
-#| msgid "Teleport, safely if possible"
 msgid "The key used to teleport safely (if possible)."
 msgstr "بىخەتەر teleport قىلىدىغان كۇنۇپكا(مۇمكىن بولسا)."
 
@@ -183,7 +178,6 @@ msgid "Key to teleport randomly"
 msgstr "قالايمىقان تېلېپورت قىلىدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:36
-#| msgid "Key to teleport randomly"
 msgid "The key used to teleport randomly."
 msgstr "تەرتىپسىز teleport قىلىدىغان كۇنۇپكا."
 
@@ -192,17 +186,14 @@ msgid "Key to wait"
 msgstr "كۈتىدىغان كۇنۇپكا"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:38
-#| msgid "Key to wait"
 msgid "The key used to wait."
 msgstr "كۈتۈشكە ئىشلىتىدىغان كۇنۇپكا."
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:39
-#| msgid "The width of the main window in pixels."
 msgid "Width of the window in pixels"
 msgstr "كۆزنەكنىڭ پىكسېل  بىلەن ئىپادىلەنگەن كەڭلىكى"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:40
-#| msgid "The height of the main window in pixels."
 msgid "Height of the window in pixels"
 msgstr "كۆزنەكنىڭ پىكسېل  بىلەن ئىپادىلەنگەن ئېگىزلىكى"
 
@@ -269,14 +260,12 @@ msgstr "نامەلۇم بۇيرۇق"
 
 #. Score dialog column header for the score time (e.g. 1 minute)
 #: ../src/games-scores-dialog.c:136
-#| msgid "Time"
 msgctxt "score-dialog"
 msgid "Time"
 msgstr "ۋاقىت"
 
 #. Score dialog column header for the score value (e.g. 30 moves)
 #: ../src/games-scores-dialog.c:142
-#| msgid "Score"
 msgctxt "score-dialog"
 msgid "Score"
 msgstr "ئېرىشكەن نومۇر"
@@ -284,7 +273,6 @@ msgstr "ئېرىشكەن نومۇر"
 #. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
 #: ../src/games-scores-dialog.c:307
 #, c-format
-#| msgid "%dm %ds"
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$dm %2$ds"
@@ -295,7 +283,6 @@ msgstr "يېڭى ئويۇن"
 
 #. Score dialog column header for the name of the player who recorded the score
 #: ../src/games-scores-dialog.c:571
-#| msgid "Name"
 msgctxt "score-dialog"
 msgid "Name"
 msgstr "ئاتى"
@@ -663,13 +650,7 @@ msgstr "كلاسسىك BSD Robots(ماشىنا ئادەم) ئاساسىدا يا
 msgid "translator-credits"
 msgstr "Gheyret Kenji <gheyret@gmail.com>\n"
 "Sahran<sahran@live.com>\n"
-"Muhemmed Erdem <misran_erdem@hotmail.com>\n"
-"\n"
-"Launchpad Contributions:\n"
-"  Abdumomin.Kadir https://launchpad.net/~abdumomin-kadir\n"
-"  Gheyret T.Kenji https://launchpad.net/~gheyret\n"
-"  Gheyret T.Kenji https://launchpad.net/~gheyretkenji\n"
-"  Sahran https://launchpad.net/~sahran"
+"Muhemmed Erdem <misran_erdem@hotmail.com>"
 
 #: ../src/properties.c:391
 msgid "Robots Preferences"

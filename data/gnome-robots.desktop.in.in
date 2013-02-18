@@ -2,8 +2,8 @@
 _Name=Robots
 _Comment=Avoid the robots and make them crash into each other
 _Keywords=game;arcade;teleport;
-Exec=gnobots2
-Icon=gnobots2
+Exec=gnome-robots
+Icon=gnome-robots
 Terminal=false
 Type=Application
 Categories=GNOME;GTK;Game;ArcadeGame;

@@ -90,6 +90,8 @@ Makefile
 po/Makefile.in
 data/Makefile
 data/icons/Makefile
+data/icons/hicolor/Makefile
+data/icons/HighContrast/Makefile
 data/gnome-robots.desktop.in
 help/Makefile
 src/Makefile

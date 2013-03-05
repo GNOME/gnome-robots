@@ -32,9 +32,16 @@ sounds_DATA = \
 	yahoo.ogg
 
 themedir = $(datadir)/gnome-robots/themes
-theme_DATA = gnomes.png \
-             robots.svg \
+theme_DATA = anthills.png \
              boo.svg \
+             cows.png \
+             eggs.png \
+             gnomes.png \
+             mice.png \
+             robots.svg \
+             spills.png \
+             stormclouds.png \
+             toasters.png \
              ufo.svg
 
 configdir = $(datadir)/gnome-robots/games

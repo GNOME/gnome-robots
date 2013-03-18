@@ -52,7 +52,7 @@ config_DATA = robots2.cfg \
               nightmare.cfg
 
 Gamesdir = $(datadir)/applications
-Games_in_files = gnome-robots.desktop.in.in
+Games_in_files = gnobots2.desktop.in.in
 Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 

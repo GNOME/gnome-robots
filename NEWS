@@ -1,3 +1,11 @@
+gnome-robots 3.7.92
+====================
+
+ * Rename the desktop file back to gnobots2.desktop
+ * Move themes in from gnome-games-extra-data
+ * Add high contrast icons
+ * Translations
+
 gnome-robots 3.7.90
 ====================
 

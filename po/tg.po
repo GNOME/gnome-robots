@@ -1,0 +1,719 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Tajik Gnome\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"robots&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-18 18:39+0000\n"
+"PO-Revision-Date: 2013-01-21 15:31+0500\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"Language-Team: \n"
+"Language: Tajik\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../data/gnobots2.desktop.in.in.h:1 ../src/gnobots.c:200
+#: ../src/gnobots.c:213 ../src/menu.c:261 ../src/menu.c:264
+msgid "Robots"
+msgstr "Роботҳо"
+
+#: ../data/gnobots2.desktop.in.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr ""
+
+#: ../data/gnobots2.desktop.in.in.h:3
+msgid "game;arcade;teleport;"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:1
+msgid "Show toolbar"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:2
+msgid "Show toolbar. A standard option for toolbars."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:3
+msgid "Robot image theme"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:4
+msgid "Robot image theme. The theme of the images to use for the robots."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:5
+msgid "Background color"
+msgstr "Ранги пасзамина"
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:6
+msgid "Background color. The hex specification of the background color."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:7
+msgid "Game type"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:8
+msgid "Game type. The name of the game variation to use."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:9
+msgid "Use safe moves"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:10
+msgid ""
+"Use safe moves. The safe moves option will help you to avoid being killed "
+"due to a mistake. If you try to make a move that would lead to your death "
+"when there is a safe move available you will not be allowed to proceed."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:11
+msgid "Use super safe moves"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:12
+msgid ""
+"Use super safe moves. The player is alerted when there is no safe move and "
+"the only option is to teleport out."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:13
+msgid "Enable game sounds"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:14
+msgid "Enable game sounds. Play sounds for various events throughout the game."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:15 ../src/properties.c:500
+msgid "Key to move NW"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:16
+msgid "The key used to move north-west."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:17 ../src/properties.c:501
+msgid "Key to move N"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:18
+msgid "The key used to move north."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:19 ../src/properties.c:502
+msgid "Key to move NE"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:20
+msgid "The key used to move north-east."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:21 ../src/properties.c:503
+msgid "Key to move W"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:22
+msgid "The key used to move west."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:23 ../src/properties.c:508
+msgid "Key to hold"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:24
+msgid "The key used to hold still."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:25 ../src/properties.c:504
+msgid "Key to move E"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:26
+msgid "The key used to move east."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:27 ../src/properties.c:505
+msgid "Key to move SW"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:28
+msgid "The key used to move south-west."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:29 ../src/properties.c:506
+msgid "Key to move S"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:30
+msgid "The key used to move south."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:31 ../src/properties.c:507
+msgid "Key to move SE"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:32
+msgid "The key used to move south-east."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:33 ../src/properties.c:509
+msgid "Key to teleport"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:34
+msgid "The key used to teleport safely (if possible)."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:35 ../src/properties.c:510
+msgid "Key to teleport randomly"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:36
+msgid "The key used to teleport randomly."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:37 ../src/properties.c:511
+msgid "Key to wait"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:38
+msgid "The key used to wait."
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:39
+msgid "Width of the window in pixels"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:40
+msgid "Height of the window in pixels"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:41
+msgid "true if the window is maximized"
+msgstr ""
+
+#: ../data/org.gnome.robots.gschema.xml.in.h:42
+msgid "true if the window is fullscren"
+msgstr ""
+
+#: ../src/game.c:149
+msgid "Game over!"
+msgstr ""
+
+#: ../src/game.c:151
+msgid "Great work, but unfortunately your score did not make the top ten."
+msgstr ""
+
+#. Translators: This "_New Game" is for the game-over dialogue
+#: ../src/game.c:153 ../src/games-stock.c:253
+msgid "_New Game"
+msgstr "_Бозии нав"
+
+#: ../src/game.c:166
+msgid "Robots Scores"
+msgstr ""
+
+#: ../src/game.c:169
+msgid "Map:"
+msgstr "Харита:"
+
+#: ../src/game.c:178
+msgid "Congratulations!"
+msgstr "Табрик!"
+
+#: ../src/game.c:179
+msgid "Your score is the best!"
+msgstr ""
+
+#: ../src/game.c:180
+msgid "Your score has made the top ten."
+msgstr ""
+
+#: ../src/game.c:408 ../src/game.c:424
+msgid ""
+"Congratulations, You Have Defeated the Robots!! \n"
+"But Can You do it Again?"
+msgstr ""
+
+#. This should never happen.
+#: ../src/game.c:1186
+msgid "There are no teleport locations left!!"
+msgstr ""
+
+#: ../src/game.c:1214
+msgid "There are no safe locations to teleport to!!"
+msgstr ""
+
+#: ../src/games-controls.c:288
+msgid "Unknown Command"
+msgstr ""
+
+#. Score dialog column header for the score time (e.g. 1 minute)
+#: ../src/games-scores-dialog.c:136
+msgctxt "score-dialog"
+msgid "Time"
+msgstr "Вақт"
+
+#. Score dialog column header for the score value (e.g. 30 moves)
+#: ../src/games-scores-dialog.c:142
+msgctxt "score-dialog"
+msgid "Score"
+msgstr ""
+
+#. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
+#: ../src/games-scores-dialog.c:307
+#, c-format
+msgctxt "score-dialog"
+msgid "%1$dm %2$ds"
+msgstr ""
+
+#: ../src/games-scores-dialog.c:470
+msgid "New Game"
+msgstr "Бозии нав"
+
+#. Score dialog column header for the name of the player who recorded the score
+#: ../src/games-scores-dialog.c:571
+msgctxt "score-dialog"
+msgid "Name"
+msgstr "Ном"
+
+#. Score dialog column header for the date the score was recorded
+#: ../src/games-scores-dialog.c:580
+msgid "Date"
+msgstr "Сана"
+
+#: ../src/games-stock.c:41
+msgid "View help for this game"
+msgstr ""
+
+#: ../src/games-stock.c:42
+msgid "End the current game"
+msgstr ""
+
+#: ../src/games-stock.c:43
+msgid "Toggle fullscreen mode"
+msgstr ""
+
+#: ../src/games-stock.c:44
+msgid "Get a hint for your next move"
+msgstr ""
+
+#: ../src/games-stock.c:45
+msgid "Leave fullscreen mode"
+msgstr ""
+
+#: ../src/games-stock.c:46
+msgid "Start a new multiplayer network game"
+msgstr ""
+
+#: ../src/games-stock.c:47
+msgid "End the current network game and return to network server"
+msgstr ""
+
+#: ../src/games-stock.c:48 ../src/menu.c:69
+msgid "Start a new game"
+msgstr ""
+
+#: ../src/games-stock.c:49
+msgid "Pause the game"
+msgstr ""
+
+#: ../src/games-stock.c:50
+msgid "Show a list of players in the network game"
+msgstr ""
+
+#: ../src/games-stock.c:51
+msgid "Redo the undone move"
+msgstr ""
+
+#: ../src/games-stock.c:52
+msgid "Restart the game"
+msgstr ""
+
+#: ../src/games-stock.c:53
+msgid "Resume the paused game"
+msgstr ""
+
+#: ../src/games-stock.c:54
+msgid "View the scores"
+msgstr ""
+
+#: ../src/games-stock.c:55
+msgid "Undo the last move"
+msgstr ""
+
+#: ../src/games-stock.c:56
+msgid "About this game"
+msgstr ""
+
+#: ../src/games-stock.c:57
+msgid "Close this window"
+msgstr ""
+
+#: ../src/games-stock.c:58
+msgid "Configure the game"
+msgstr ""
+
+#: ../src/games-stock.c:59
+msgid "Quit this game"
+msgstr ""
+
+#: ../src/games-stock.c:247
+msgid "_Contents"
+msgstr "_Мундариҷа"
+
+#: ../src/games-stock.c:248
+msgid "_Fullscreen"
+msgstr "_Экрани пурра"
+
+#: ../src/games-stock.c:249
+msgid "_Hint"
+msgstr ""
+
+#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
+#: ../src/games-stock.c:251
+msgid "_New"
+msgstr "_Нав"
+
+#: ../src/games-stock.c:254
+msgid "_Redo Move"
+msgstr ""
+
+#. Translators: this is the "Reset" scores button in a scores dialogue
+#: ../src/games-stock.c:256
+msgid "_Reset"
+msgstr "_Танзими дубора"
+
+#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
+#: ../src/games-stock.c:258
+msgid "_Restart"
+msgstr "_Бозоғозидан"
+
+#: ../src/games-stock.c:259
+msgid "_Undo Move"
+msgstr "_Ботил сохтани интиқолдиҳӣ"
+
+#: ../src/games-stock.c:260
+msgid "_Deal"
+msgstr ""
+
+#: ../src/games-stock.c:261
+msgid "_Leave Fullscreen"
+msgstr ""
+
+#: ../src/games-stock.c:262
+msgid "Network _Game"
+msgstr ""
+
+#: ../src/games-stock.c:263
+msgid "L_eave Game"
+msgstr ""
+
+#: ../src/games-stock.c:264
+msgid "Player _List"
+msgstr ""
+
+#: ../src/games-stock.c:265
+msgid "_Pause"
+msgstr "_Таваққуф кардан"
+
+#: ../src/games-stock.c:266
+msgid "Res_ume"
+msgstr ""
+
+#: ../src/games-stock.c:267
+msgid "_Scores"
+msgstr ""
+
+#: ../src/games-stock.c:268
+msgid "_End Game"
+msgstr ""
+
+#. %s is replaced with the name of the game in gnome-games.
+#: ../src/games-stock.c:317
+#, c-format
+msgid ""
+"%s is free software; you can redistribute it and/or modify it under the "
+"terms of the GNU General Public License as published by the Free Software "
+"Foundation; either version %d of the License, or (at your option) any later "
+"version."
+msgstr ""
+
+#: ../src/games-stock.c:322
+#, c-format
+msgid ""
+"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
+msgstr ""
+
+#: ../src/games-stock.c:327
+#, c-format
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
+"Fifth Floor, Boston, MA  02110-1301  USA"
+msgstr ""
+
+#: ../src/games-stock.c:331
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program.  If not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+
+#: ../src/gnobots.c:79
+msgid "Set game scenario"
+msgstr ""
+
+#: ../src/gnobots.c:79 ../src/gnobots.c:81
+msgid "NAME"
+msgstr "НОМ"
+
+#: ../src/gnobots.c:81
+msgid "Set game configuration"
+msgstr ""
+
+#: ../src/gnobots.c:83 ../src/gnobots.c:85
+msgid "Initial window position"
+msgstr ""
+
+#: ../src/gnobots.c:83
+msgid "X"
+msgstr ""
+
+#: ../src/gnobots.c:85
+msgid "Y"
+msgstr ""
+
+#: ../src/gnobots.c:90
+msgid "Classic robots"
+msgstr ""
+
+#: ../src/gnobots.c:91
+msgid "Classic robots with safe moves"
+msgstr ""
+
+#: ../src/gnobots.c:92
+msgid "Classic robots with super-safe moves"
+msgstr ""
+
+#: ../src/gnobots.c:93
+msgid "Nightmare"
+msgstr ""
+
+#: ../src/gnobots.c:94
+msgid "Nightmare with safe moves"
+msgstr ""
+
+#: ../src/gnobots.c:95
+msgid "Nightmare with super-safe moves"
+msgstr ""
+
+#: ../src/gnobots.c:96
+msgid "Robots2"
+msgstr ""
+
+#: ../src/gnobots.c:97
+msgid "Robots2 with safe moves"
+msgstr ""
+
+#: ../src/gnobots.c:98
+msgid "Robots2 with super-safe moves"
+msgstr ""
+
+#: ../src/gnobots.c:99
+msgid "Robots2 easy"
+msgstr ""
+
+#: ../src/gnobots.c:100
+msgid "Robots2 easy with safe moves"
+msgstr ""
+
+#: ../src/gnobots.c:101
+msgid "Robots2 easy with super-safe moves"
+msgstr ""
+
+#: ../src/gnobots.c:102
+msgid "Robots with safe teleport"
+msgstr ""
+
+#: ../src/gnobots.c:103
+msgid "Robots with safe teleport with safe moves"
+msgstr ""
+
+#: ../src/gnobots.c:104
+msgid "Robots with safe teleport with super-safe moves"
+msgstr ""
+
+#: ../src/gnobots.c:280
+msgid "No game data could be found."
+msgstr ""
+
+#: ../src/gnobots.c:282
+msgid ""
+"The program Robots was unable to find any valid game configuration files. "
+"Please check that the program is installed correctly."
+msgstr ""
+
+#: ../src/gnobots.c:298
+msgid "Some graphics files are missing or corrupt."
+msgstr ""
+
+#: ../src/gnobots.c:300
+msgid ""
+"The program Robots was unable to load all the necessary graphics files. "
+"Please check that the program is installed correctly."
+msgstr ""
+
+#: ../src/graphics.c:151
+#, c-format
+msgid "Could not find '%s' pixmap file\n"
+msgstr ""
+
+#: ../src/menu.c:64
+msgid "_Game"
+msgstr "_Бозӣ"
+
+#: ../src/menu.c:65
+msgid "_View"
+msgstr "_Намоиш"
+
+#: ../src/menu.c:66
+msgid "_Move"
+msgstr "_Интиқол додан"
+
+#: ../src/menu.c:67
+msgid "_Settings"
+msgstr "_Танзимот"
+
+#: ../src/menu.c:68
+msgid "_Help"
+msgstr "_Кӯмак"
+
+#: ../src/menu.c:73
+msgid "_Teleport"
+msgstr ""
+
+#: ../src/menu.c:74
+msgid "Teleport, safely if possible"
+msgstr ""
+
+#: ../src/menu.c:75
+msgid "_Random"
+msgstr ""
+
+#: ../src/menu.c:76
+msgid "Teleport randomly"
+msgstr ""
+
+#: ../src/menu.c:77
+msgid "_Wait"
+msgstr "_Интизор шавед"
+
+#: ../src/menu.c:77
+msgid "Wait for the robots"
+msgstr ""
+
+#: ../src/menu.c:88
+msgid "_Toolbar"
+msgstr "_Навори абзорҳо"
+
+#: ../src/menu.c:88
+msgid "Show or hide the toolbar"
+msgstr ""
+
+#: ../src/menu.c:268
+msgid "GNOME Games web site"
+msgstr ""
+
+#: ../src/menu.c:269
+msgid ""
+"Based on classic BSD Robots.\n"
+"\n"
+"Robots is a part of GNOME Games."
+msgstr ""
+
+#: ../src/menu.c:273
+msgid "translator-credits"
+msgstr ""
+
+#: ../src/properties.c:391
+msgid "Robots Preferences"
+msgstr ""
+
+#: ../src/properties.c:416
+msgid "Game Type"
+msgstr ""
+
+#: ../src/properties.c:425
+msgid "_Use safe moves"
+msgstr ""
+
+#: ../src/properties.c:432
+msgid "Prevent accidental moves that result in getting killed."
+msgstr ""
+
+#: ../src/properties.c:434
+msgid "U_se super safe moves"
+msgstr ""
+
+#: ../src/properties.c:441
+msgid "Prevents all moves that result in getting killed."
+msgstr ""
+
+#: ../src/properties.c:443
+msgid "_Enable sounds"
+msgstr ""
+
+#: ../src/properties.c:449
+msgid "Play sounds for events like winning a level and dying."
+msgstr ""
+
+#: ../src/properties.c:451
+msgid "Game"
+msgstr "Бозӣ"
+
+#: ../src/properties.c:464
+msgid "_Image theme:"
+msgstr ""
+
+#: ../src/properties.c:476
+msgid "_Background color:"
+msgstr "_Ранги пасзамина:"
+
+#: ../src/properties.c:488
+msgid "Appearance"
+msgstr "Намуди зоҳирӣ"
+
+#: ../src/properties.c:520
+msgid "_Restore Defaults"
+msgstr ""
+
+#: ../src/properties.c:525
+msgid "Keyboard"
+msgstr "Клавиатура"
+
+#: ../src/statusbar.c:68
+msgid "Score:"
+msgstr ""
+
+#: ../src/statusbar.c:76
+msgid "Safe Teleports:"
+msgstr ""
+
+#: ../src/statusbar.c:85
+msgid "Level:"
+msgstr "Сатҳ:"
+
+#: ../src/statusbar.c:94
+msgid "Remaining:"
+msgstr "Боқимонда:"

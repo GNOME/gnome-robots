@@ -92,7 +92,7 @@ data/Makefile
 data/icons/Makefile
 data/icons/hicolor/Makefile
 data/icons/HighContrast/Makefile
-data/gnome-robots.desktop.in
+data/gnobots2.desktop.in
 help/Makefile
 src/Makefile
 ])

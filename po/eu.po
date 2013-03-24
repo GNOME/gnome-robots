@@ -29,7 +29,7 @@ msgstr "Saihestu robotak, eta robotei elkarrekin talka eginarazi"
 
 #: ../data/gnobots2.desktop.in.in.h:3
 msgid "game;arcade;teleport;"
-msgstr "jokoa:arkade:aldendu:"
+msgstr "jokoa;arkade;aldendu;"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:1
 msgid "Show toolbar"

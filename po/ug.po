@@ -29,6 +29,7 @@ msgid "Avoid the robots and make them crash into each other"
 msgstr "ماشىنا ئادەملەردىن ئۆزىنى تارتىپ ئۇلارنى ئۆزئارا سوقۇشتۇر"
 
 #: ../data/gnome-robots.desktop.in.in.h:3
+#, fuzzy
 msgid "game;arcade;teleport;"
 msgstr "game؛arcade؛teleport؛ئويۇن؛"
 

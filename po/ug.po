@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-28 23:16+0000\n"
-"PO-Revision-Date: 2013-02-02 12:37+0900\n"
+"POT-Creation-Date: 2013-03-27 16:32+0000\n"
+"PO-Revision-Date: 2013-04-06 18:52+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: \n"
@@ -19,19 +19,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/gnome-robots.desktop.in.in.h:1 ../src/gnobots.c:200
+#: ../data/gnobots2.desktop.in.in.h:1 ../src/gnobots.c:200
 #: ../src/gnobots.c:213 ../src/menu.c:261 ../src/menu.c:264
 msgid "Robots"
 msgstr "ماشىنا ئادەم"
 
-#: ../data/gnome-robots.desktop.in.in.h:2
+#: ../data/gnobots2.desktop.in.in.h:2
 msgid "Avoid the robots and make them crash into each other"
 msgstr "ماشىنا ئادەملەردىن ئۆزىنى تارتىپ ئۇلارنى ئۆزئارا سوقۇشتۇر"
 
-#: ../data/gnome-robots.desktop.in.in.h:3
-#, fuzzy
+#: ../data/gnobots2.desktop.in.in.h:3
 msgid "game;arcade;teleport;"
-msgstr "game؛arcade؛teleport؛ئويۇن؛"
+msgstr "game;arcade;teleport;ئويۇن;"
 
 #: ../data/org.gnome.robots.gschema.xml.in.h:1
 msgid "Show toolbar"

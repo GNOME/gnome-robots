@@ -1,0 +1,33 @@
+<page xmlns="http://projectmallard.org/1.0/"
+	type="guide" style="task"
+	id="index">
+
+  <info>
+    <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Index</desc>
+  </info>
+
+  <title>Robots</title>
+
+  <p><app>Robots</app> is based on the UNIX command-line game of the same
+  name. The aim of the game is to destroy all the robots by getting them to
+  crash into each other or into junk-heaps from previous collisions, while
+  stopping them from crashing into you.</p>
+
+  <section id="play" style="2column">
+    <title>Game play</title>
+  </section>
+
+  <section id="preferences" style="2column">
+    <title>Preferences</title>
+  </section>
+
+</page>

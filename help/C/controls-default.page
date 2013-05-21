@@ -1,0 +1,135 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its"
+      type="guide" style="task"
+      id="controls-default">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author copyright">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>How do I control the main character?</desc>
+  </info>
+
+<title>Mouse and keyboard controls for <app>Robots</app></title>
+
+<section id="keyboard">
+  <title>Keyboard controls</title>
+
+  <p>Use the following keys from the numeric keypad on the far right of your
+  keyboard, to move in <app>Robots</app>.</p>
+
+  <table frame="all">
+    <tr>
+      <td><p>Possible moves</p></td>
+      <td><p>Key</p></td>
+    </tr>
+    <tr>
+      <td><p>North west</p></td>
+      <td><p><key>Home</key></p></td>
+    </tr>
+    <tr>
+      <td><p>North</p></td>
+      <td><p><key>&#8593;</key></p></td>
+    </tr>
+    <tr>
+      <td><p>North east</p></td>
+      <td><p><key>PgUp</key></p></td>
+    </tr>
+    <tr>
+      <td><p>West</p></td>
+      <td><p><key>&#8594;</key></p></td>
+    </tr>
+    <tr>
+      <td><p>East</p></td>
+      <td><p><key>&#8592;</key></p></td>
+    </tr>
+    <tr>
+      <td><p>South west</p></td>
+      <td><p><key>End</key></p></td>
+    </tr>
+    <tr>
+      <td><p>South</p></td>
+      <td><p><key>&#8595;</key></p></td>
+    </tr>
+    <tr>
+      <td><p>South east</p></td>
+      <td><p><key>PgDn</key></p></td>
+    </tr>
+    <tr>
+      <td><p>Stay in the same position</p></td>
+      <td><p><key>5</key></p></td>
+    </tr>
+    <tr>
+      <td><p>Teleport safely</p></td>
+      <td><p><key>+</key></p></td>
+    </tr>
+    <tr>
+      <td><p>Teleport randomly</p></td>
+      <td><p><key>*</key></p></td>
+    </tr>
+    <tr>
+      <td><p>Wait for the robots</p></td>
+      <td><p><key>Enter</key></p></td>
+    </tr>
+  </table>
+
+  <note style="info">
+    <p>You can <link xref="controls-change">change</link> the default controls
+    to suit your preference.</p>
+  </note>
+
+</section>
+
+<section id="mouse">
+  <title>Use the mouse to move around</title>
+
+  <terms>
+    <item>
+    <title>Move in a particular direction</title>
+      <p>When you move your mouse around the main character, a small black
+      arrow will appear pointing towards the direction in which the character
+      will move if you click. For example, to move north, if you move your
+      cursor to the column above the main character, a small black arrow will
+      appear pointing northwards. On clicking, the character will move one
+      square northwards.</p>
+    </item>
+    <item>
+    <title>Stay in the same position</title>
+      <p>Click on the main character to stay put in the same square.</p>
+    </item>
+    <item>
+    <title>Wait for the robots</title>
+      <p>Click the
+      <media type="image" its:translate="no" src="figures/wait.png"/>
+      button on the toolbar or select
+      <guiseq><gui style="menu">Move</gui>
+      <gui style="menuitem">Wait</gui></guiseq> to wait for the enemy
+      robots to finish making all their moves.</p>
+    </item>
+    <item>
+    <title>Safe teleports</title>
+      <p>To safely teleport, click the
+      <media type="image" its:translate="no" src="figures/teleport.png"/>
+      button on the toolbar or select <guiseq><gui style="menu">Move</gui>
+      <gui style="menuitem">Teleport</gui></guiseq>.</p>
+    </item>
+    <item>
+    <title>Random teleports</title>
+      <p>To teleport to a random spot, click the
+      <media type="image" its:translate="no" src="figures/random.png"/> button
+      on the toolbar or select <guiseq><gui style="menu">Move</gui>
+      <gui style="menuitem">Random</gui></guiseq>.</p>
+    </item>
+  </terms>
+
+</section>
+
+</page>

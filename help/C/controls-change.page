@@ -1,0 +1,59 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its"
+      type="guide" style="task"
+      id="controls-change">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author copyright">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Change the default keys in <app>Robots</app>.</desc>
+  </info>
+
+  <title>Customize the keyboard controls</title>
+
+  <p>The <link xref="controls-default">default controls</link> can be
+  changed in <app>Robots</app> to suit your preference.</p>
+
+  <steps>
+  <title>To change the default keys:</title>
+    <item>
+      <p>Select <guiseq><gui style="menu">Settings</gui>
+      <gui style="menuitem">Preferences</gui><gui>Keyboard</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>In the <gui style="group">Keyboard Controls</gui> list, select the
+      line, then click on the control. This highlights the line and the words
+      <gui>New accelerator…</gui> are now present in place of the old
+      control.</p>
+    </item>
+    <item>
+      <p>Press the key you want to use instead of the default key.</p>
+      <note style="tip">
+        <p>To keep the old setting click <gui>New accelerator…</gui> again,
+        right click on <gui>New accelerator…</gui>, press <key>Esc</key> or
+        click anywhere else inside the <gui>Nibbles Preferences</gui> box.</p>
+      </note>
+    </item>
+    <item>
+      <p>Repeat the above step to change the other default keys.</p>
+    </item>
+    <item>
+      <p>Click <gui style="button">Close</gui>.</p>
+    </item>
+  </steps>
+
+  <note style="tip">
+    <p>You can always reset the controls to the default controls by clicking
+    the <gui style="button">Restore Defaults</gui> button.</p>
+  </note>
+
+</page>

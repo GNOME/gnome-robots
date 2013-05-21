@@ -1,0 +1,82 @@
+<page xmlns="http://projectmallard.org/1.0/"
+	type="guide" style="task"
+	id="scores">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author copyright">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Scoring points in <app>Robots</app></desc>
+  </info>
+
+<title>Scores</title>
+
+  <p>There are two type of enemies in <app>Robots</app>, enemies that give you
+  10 points when they die and enemies that give you 20 points when they
+  die.</p>
+
+<section id="high-risk">
+  <title>High-risk enemies</title>
+
+  <p>Depending on your <link xref="appearance">game theme</link>, the
+  following are the enemies that give you 20 points when they die.</p>
+
+  <list>
+    <item>
+      <p>Bats <media type="image" src="figures/boo-high-risk.png" height="20"
+      width="20"/></p>
+    </item>
+    <item>
+      <p>High-risk Robots
+      <media type="image" src="figures/robots-high-risk.png" height="20"
+      width="20"/></p>
+    </item>
+    <item>
+      <p>High-risk gnomes <media type="image" src="figures/gnome-high-risk.png"
+      height="20" width="20"/></p>
+    </item>
+    <item>
+      <p>High-risk UFOs <media type="image" src="figures/ufo-high-risk.png"
+      height="20" width="20"/></p>
+    </item>
+  </list>
+
+</section>
+
+<section id="low-risk">
+  <title>Low-risk enemies</title>
+
+  <p>The following are the enemies that give you 10 points when they die.
+  Again, it is your theme that determines which of these will appear in a
+  game.</p>
+
+  <list>
+    <item>
+      <p>Ghosts <media type="image" src="figures/boo-low-risk.png" height="20"
+      width="20"/></p>
+    </item>
+    <item>
+      <p>Low-risk Robots <media type="image" src="figures/robots-low-risk.png"
+      height="20" width="20"/></p>
+    </item>
+    <item>
+      <p>Low-risk gnomes <media type="image" src="figures/gnome-low-risk.png"
+      height="20" width="20"/></p>
+    </item>
+    <item>
+      <p>Low-risk UFOs <media type="image" src="figures/ufo-low-risk.png"
+      height="20" width="20"/></p>
+    </item>
+  </list>
+
+</section>
+
+</page>

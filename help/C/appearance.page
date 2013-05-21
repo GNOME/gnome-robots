@@ -1,0 +1,65 @@
+<page xmlns="http://projectmallard.org/1.0/"
+	type="guide" style="task"
+	id="appearance">
+
+  <info>
+    <link type="guide" xref="index#preferences"/>
+
+    <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author copyright">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Use different game-themes in <app>Robots</app>.</desc>
+  </info>
+
+<title>Change the default appearance of the game</title>
+
+  <p>You can change the <app>Robots</app> backdrop and the different robots
+  that are present in a game by changing the game theme and background.</p>
+
+  <steps>
+  <title>To change the game theme and background:</title>
+    <item>
+      <p>Select<guiseq><gui style="menu">Settings</gui>
+      <gui style="menuitem">Preferences</gui>
+      <gui style="menuitem">Appearance</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Select a theme from the drop-down menu available when you click the
+      button next to <gui>Image theme</gui>.</p>
+      <list>
+      <title>Available themes:</title>
+        <item>
+          <p>boo</p>
+        </item>
+        <item>
+          <p>gnomes</p>
+        </item>
+        <item>
+          <p>robots</p>
+        </item>
+        <item>
+          <p>ufo</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>To change your background color, click the button next to
+      <gui>Background color</gui>. Select a color from the choices avaialable
+      and click <gui style="button">Select</gui>.</p>
+    </item>
+  </steps>
+
+  <note style="info">
+    <p>You can hide the toolbar that contains buttons to start a new game,
+    wait and teleport, by selecting <guiseq><gui style="menu">View</gui>
+    <gui style="menuitem">Toolbar</gui></guiseq>. The small tick mark next to
+    <gui>Toolbar</gui> will disappear and the toolbar will be hidden.</p>
+  </note>
+
+</page>

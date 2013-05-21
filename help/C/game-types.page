@@ -1,0 +1,96 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its"
+      type="guide" style="task"
+      id="game-types">
+
+  <info>
+    <link type="guide" xref="index#preferences"/>
+
+    <revision pkgversion="3.8" version="0.1" date="2013-05-21" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author copyright">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Change the level of difficulty in <app>Robots</app>.</desc>
+  </info>
+
+  <title>Game type</title>
+
+  <p>You can play <app>Robots</app> in different ways by choosing a different
+  game type. This changes the level of difficulty involved in playing
+  <app>Robots</app>.</p>
+
+  <steps>
+    <title>To change the level of difficulty:</title>
+    <item>
+      <p>Select <guiseq>
+      <gui style="menu">Settings</gui>
+      <gui>Preferences</gui><gui>Game</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>From the drop down menu next to <gui>Game Type</gui>, choose your
+      option.</p>
+      <table frame="all">
+      <tr>
+        <td><p>Game Type</p></td>
+        <td><p>Initial safe <link xref="moves#teleport">teleports</link></p>
+	</td>
+        <td><p>Initial
+	<link xref="scores#low-risk">low-risk enemy robots</link></p></td>
+        <td><p>Initial
+	<link xref="scores#high-risk">high-risk enemy robots</link></p></td>
+        <td><p>Do safe teleports increase in successive levels?</p></td>
+      </tr>
+      <tr>
+        <td><p><gui>robots2 easy</gui></p></td>
+        <td><p>3</p></td>
+        <td><p>8</p></td>
+        <td><p>2</p></td>
+        <td><p>Yes</p></td>
+      </tr>
+      <tr>
+        <td><p><gui>robots with safe teleport</gui></p></td>
+        <td><p>0</p></td>
+        <td><p>10</p></td>
+        <td><p>0</p></td>
+        <td><p>Yes, but only if robots are killed while
+	<link xref="moves#wait">waiting</link></p></td>
+      </tr>
+      <tr>
+        <td><p><gui>classic robots</gui></p></td>
+        <td><p>0</p></td>
+        <td><p>10</p></td>
+        <td><p>0</p></td>
+        <td><p>No</p></td>
+      </tr>
+      <tr>
+        <td><p><gui>nightmare</gui></p></td>
+        <td><p>2</p></td>
+        <td><p>2</p></td>
+        <td><p>8</p></td>
+        <td><p>Yes</p></td>
+      </tr>
+      <tr>
+        <td><p><gui>robots2</gui></p></td>
+        <td><p>1</p></td>
+        <td><p>8</p></td>
+        <td><p>2</p></td>
+        <td><p>Yes, but only if robots are killed while
+	<link xref="moves#wait">waiting</link></p></td>
+      </tr>
+    </table>
+    </item>
+    <item>
+      <p>Check the <gui style="checkbox">Use safe moves</gui> and
+      <gui style="checkbox">Use super safe moves</gui> checkboxes if you want
+      your random teleports to be as safe as possible. This reduces the level
+      of difficulty. You can always uncheck these if you find the game too
+      easy.</p>
+    </item>
+  </steps>
+
+</page>

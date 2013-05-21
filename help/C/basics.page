@@ -1,0 +1,61 @@
+<page xmlns="http://projectmallard.org/1.0/"
+	type="guide" style="task"
+	id="basics">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <credit type="author copyright">
+      <name>Aruna Sankaranarayanan</name>
+      <email>safincrazy@gmail.com</email>
+    </credit>
+
+    <desc>Start, quit and play <app>Robots</app> in fullscreen.</desc>
+  </info>
+
+<title>Basic instructions</title>
+
+<section id="start">
+  <title>Start a new game</title>
+
+  <p>Select <guiseq><gui style="menu">Game</gui>
+  <gui style="menuitem">New</gui></guiseq>
+  or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new
+  game.</p>
+
+</section>
+
+<section id="fullscreen">
+  <title>Play <app>Robots</app> in fullscreen mode</title>
+
+  <p>Select <guiseq><gui style="menu">View</gui>
+  <gui style="menuitem">Fullscreen</gui></guiseq> or press <key>F11</key> to
+  play your game in fullscreen mode. You can return to the default screen size
+  by pressing <key>F11</key> again.</p>
+
+</section>
+
+<section id="sounds">
+  <title>Enable sounds</title>
+  <p>Select<guiseq>
+  <gui style="menu">Settings</gui><gui>Preferences</gui>
+  <gui>Game</gui></guiseq>. Check the
+  <gui style="checkbox">Enable sounds</gui> checkbox to enable sounds.</p>
+
+</section>
+
+<section id="quit">
+  <title>Quit <app>Robots</app></title>
+
+  <p>Select <guiseq><gui style="menu">Game</gui>
+  <gui style="menuitem">Quit</gui></guiseq> or press
+  <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Robots</app>
+  at any time.</p>
+
+</section>
+
+</page>

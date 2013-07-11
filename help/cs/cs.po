@@ -1,15 +1,17 @@
 # Czech translation of gnobots2 help.
 # Copyright (C) 2009 the author(s) of gnome-games.
 # This file is distributed under the same license as the gnobots2 help.
-# Marek Černocký <marek@manet.cz>, 2009.
+#
+# Marek Černocký <marek@manet.cz>, 2009, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games gnome-2-28\n"
-"POT-Creation-Date: 2009-07-07 21:32+0000\n"
-"PO-Revision-Date: 2009-07-08 22:15+0100\n"
+"POT-Creation-Date: 2012-12-02 22:18+0000\n"
+"PO-Revision-Date: 2013-07-11 11:24+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,20 +19,36 @@ msgstr ""
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnobots2.xml:255(None)
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Marek Černocký <marek@manet.cz>, 2009, 2013"
+
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#.
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:255(imagedata)
+msgctxt "_"
 msgid ""
-"@@image: 'figures/gnobots2-main.png'; md5=aade859d773abd55a6f903b51d92e4b9"
+"external ref='figures/gnome-robots-main.png' "
+"md5='aade859d773abd55a6f903b51d92e4b9'"
 msgstr ""
-"@@image: 'figures/gnobots2-main.png'; md5=d06cf584bb575d3fbfef1d9425dbf197"
+"external ref='figures/gnome-robots-main.png' "
+"md5='aade859d773abd55a6f903b51d92e4b9'"
 
-#: C/gnobots2.xml:26(title)
+#: C/index.docbook:26(articleinfo/title)
 msgid "<application>Robots</application> Manual"
 msgstr "Příručka ke hře <application>Roboti</application>"
 
-#: C/gnobots2.xml:29(para)
+#: C/index.docbook:29(abstract/para)
 msgid ""
 "Robots is a graphical version of the original text based robots game, which "
 "can be found on a number of UNIX systems. The player must outwit the robots "
@@ -40,47 +58,44 @@ msgstr ""
 "najít v mnoha UNIXových systémech. Hráč musí uniknout robotům, kteří jej "
 "pronásledují, a přimět je, aby narazili do sebe navzájem."
 
-#: C/gnobots2.xml:38(year)
-msgid "2001"
-msgstr "2001"
+#: C/index.docbook:37(articleinfo/copyright)
+msgid "<year>2001</year> <holder>Patanjali Somayaji, Mark Rae</holder>"
+msgstr "<year>2001</year> <holder>Patanjali Somayaji, Mark Rae</holder>"
 
-#: C/gnobots2.xml:39(holder)
-msgid "Patanjali Somayaji, Mark Rae"
-msgstr "Patanjali Somayaji, Mark Rae"
-
-#: C/gnobots2.xml:55(publishername) C/gnobots2.xml:105(para)
-#: C/gnobots2.xml:115(para)
+#: C/index.docbook:55(publisher/publishername)
+#: C/index.docbook:105(revdescription/para)
+#: C/index.docbook:115(revdescription/para)
 msgid "GNOME Documentation Project"
 msgstr "Dokumentační projekt GNOME"
 
-#: C/gnobots2.xml:2(para)
+#: C/index.docbook:2(legalnotice/para)
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
 "Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
-"in the file COPYING-DOCS distributed with this manual."
+"of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or in "
+"the file COPYING-DOCS distributed with this manual."
 msgstr ""
 "Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU "
-"Free Documentation License, verze 1.1 nebo jakékoli další verze vydané "
-"nadací Free Software Foundation; bez neměnných oddílů, bez textů předních "
-"desek a bez textů zadních desek. Kopie této licence je zahrnuta v oddílu "
-"jménem <ulink type=\"help\" url=\"help:fdl\">GNU Free Documentation "
-"License</ulink> nebo v souboru COPYING-DOCS dodávaném s touto příručkou."
+"Free Documentation License (GFDL) ve verzi 1.1 nebo v jakékoli další verzi "
+"vydané nadací Free Software Foundation; bez neměnných oddílů, bez textů "
+"předních desek a bez textů zadních desek. Kopii licence GFDL naleznete pod "
+"<ulink type=\"help\" url=\"help:fdl\">tímto odkazem</ulink> nebo v souboru "
+"COPYING-DOCS dodávaném s touto příručkou."
 
-#: C/gnobots2.xml:12(para)
+#: C/index.docbook:12(legalnotice/para) C/legal.xml:12(legalnotice/para)
 msgid ""
 "This manual is part of a collection of GNOME manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in "
 "section 6 of the license."
 msgstr ""
-"Tato příručka je součástí kolekce příruček GNOME, distribuovaných pod "
-"licencí GNU FDL. Pokud chcete tento dokument šířit odděleně od kolekce, "
-"musíte přiložit kopii licence dle popisu v sekci 6 dané licence."
+"Tato příručka je součástí sbírky příruček GNOME šířených za podmínek licence "
+"GNU FDL. Pokud chcete tento dokument šířit odděleně od sbírky, musíte "
+"přiložit kopii licence dle popisu v oddílu 6 dané licence."
 
-#: C/gnobots2.xml:19(para)
+#: C/index.docbook:19(legalnotice/para) C/legal.xml:19(legalnotice/para)
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any GNOME "
@@ -88,13 +103,13 @@ msgid ""
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
-"Mnoho užívaných jmen určených k zviditelnění produktů nebo služeb jsou "
+"Mnoho užívaných názvů určených k zviditelnění produktů nebo služeb jsou "
 "ochranné známky. Na místech, kde jsou tato jména v dokumentaci užita a "
 "členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se "
 "jedná o ochrannou známku, je takové jméno psáno velkými písmeny celé nebo s "
 "velkým písmenem na začátku."
 
-#: C/gnobots2.xml:35(para)
+#: C/index.docbook:35(listitem/para) C/legal.xml:35(listitem/para)
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -108,18 +123,18 @@ msgid ""
 "ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
 "OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
 msgstr ""
-"DOKUMENT JE POSKYTOVÁN V PODOBĚ „JAK JE“ BEZ ZÁRUKY V JAKÉKOLIV PODOBĚ, "
+"DOKUMENT JE POSKYTOVÁN V PODOBĚ „JAK JE“, BEZ ZÁRUKY JAKÉHOKOLIV DRUHU, "
 "NEPOSKYTUJÍ SE ANI ODVOZENÉ ZÁRUKY, ZÁRUKY, ŽE DOKUMENT, NEBO JEHO UPRAVENÁ "
-"VERZE, JE BEZCHYBNÝ NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL NEBO "
-"NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ DOKUMENTU, "
-"NEBO JEHO UPRAVENÉ VERZE, LEŽÍ NA VÁS. POKUD KVŮLI TOMUTO DOKUMENTU, NEBO "
-"JEHO UPRAVENÉ VERZI, NASTANE PROBLÉM, VY (NIKOLIV PŮVODNÍ AUTOR NEBO "
-"JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE JAKÉKOLIV NÁKLADY ZA NUTNÉ ÚPRAVY, OPRAVY "
-"ČI SLUŽBY. TOTO PROHLÁŠENÍ O ZÁRUCE PŘEDSTAVUJE ZÁKLADNÍ SOUČÁST TÉTO "
-"LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ, PODLE TÉTO DOHODY, POVOLENO UŽÍVÁNÍ ANI "
-"ÚPRAVY TOHOTO DOKUMENTU; DÁLE"
+"VERZE, JE BEZCHYBNÝ, NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL, "
+"NEBO NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ "
+"DOKUMENTU, NEBO JEHO UPRAVENÉ VERZE, NESETE VY. POKUD JE TENTO DOKUMENT NEBO "
+"JEHO UPRAVENÁ VERZE VADNÁ V JAKÉMKOLIV SMYSLU, VY (NIKOLIV PŮVODCE, AUTOR "
+"NEBO JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE ODPOVĚDNOST ZA JAKÉKOLIV NÁKLADY NA "
+"NUTNÉ ÚPRAVY, OPRAVY ČI SLUŽBY. TOTO PROHLÁŠENÍ O ZÁRUCE PŘEDSTAVUJE "
+"ZÁKLADNÍ SOUČÁST TÉTO LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ PODLE TÉTO DOHODY "
+"POVOLENO UŽÍVÁNÍ ANI ÚPRAVY TOHOTO DOKUMENTU; DÁLE"
 
-#: C/gnobots2.xml:55(para)
+#: C/index.docbook:55(listitem/para) C/legal.xml:55(listitem/para)
 msgid ""
 "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
 "NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
@@ -143,76 +158,68 @@ msgstr ""
 "K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY "
 "TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ."
 
-#: C/gnobots2.xml:28(para)
+#: C/index.docbook:28(legalnotice/para) C/legal.xml:28(legalnotice/para)
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<placeholder-1/>"
+"<_:orderedlist-1/>"
 msgstr ""
 "DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU "
-"FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <placeholder-1/>"
+"FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <_:orderedlist-1/>"
 
-#: C/gnobots2.xml:65(firstname)
-msgid "Patanjali"
-msgstr "Patanjali"
+#: C/index.docbook:64(authorgroup/author)
+msgid ""
+"<firstname>Patanjali</firstname> <surname>Somayaji</surname> <affiliation> "
+"<address> <email>patanjali@mindless.com</email> </address> </affiliation>"
+msgstr ""
+"<firstname>Patanjali</firstname> <surname>Somayaji</surname> <affiliation> "
+"<address> <email>patanjali@mindless.com</email> </address> </affiliation>"
 
-#: C/gnobots2.xml:66(surname)
-msgid "Somayaji"
-msgstr "Somayaji"
+#: C/index.docbook:71(authorgroup/author)
+msgid ""
+"<firstname>Mark</firstname> <surname>Rae</surname> <affiliation> <address> "
+"<email>m.rae@inpharmatica.co.uk</email> </address> </affiliation>"
+msgstr ""
+"<firstname>Mark</firstname> <surname>Rae</surname> <affiliation> <address> "
+"<email>m.rae@inpharmatica.co.uk</email> </address> </affiliation>"
 
-#: C/gnobots2.xml:68(email)
-msgid "patanjali@mindless.com"
-msgstr "patanjali@mindless.com"
-
-#: C/gnobots2.xml:72(firstname)
-msgid "Mark"
-msgstr "Mark"
-
-#: C/gnobots2.xml:73(surname)
-msgid "Rae"
-msgstr "Rae"
-
-#: C/gnobots2.xml:75(email)
-msgid "m.rae@inpharmatica.co.uk"
-msgstr "m.rae@inpharmatica.co.uk"
-
-#: C/gnobots2.xml:96(revnumber)
-msgid "Robots Manual V2.8"
-msgstr "Příručka V2.8 ke hře Roboti"
-
-#: C/gnobots2.xml:97(date)
-msgid "September 2004"
-msgstr "Září 2004"
-
-#: C/gnobots2.xml:99(para)
+#: C/index.docbook:99(revdescription/para)
 msgid "Patanjali Somayaji <email>patanjali@mindless.com</email>"
 msgstr "Patanjali Somayaji <email>patanjali@mindless.com</email>"
 
-#: C/gnobots2.xml:102(para)
+#: C/index.docbook:102(revdescription/para)
 msgid "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
 msgstr "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
 
-#: C/gnobots2.xml:109(revnumber)
-msgid "Robots Manual V2.9"
-msgstr "Příručka V2.9 ke hře Roboti"
+#: C/index.docbook:95(revhistory/revision)
+msgid ""
+"<revnumber>Robots Manual V2.8</revnumber> <date>September 2004</date> <_:"
+"revdescription-1/>"
+msgstr ""
+"<revnumber>Příručka V2.8 ke hře Roboti GNOME</revnumber> <date>září 2004</"
+"date> <_:revdescription-1/>"
 
-#: C/gnobots2.xml:110(date)
-msgid "August 2007"
-msgstr "Srpen 2007"
-
-#: C/gnobots2.xml:112(para)
+#: C/index.docbook:112(revdescription/para)
 msgid "Claude Paroz <email>claude@2xlibre.net</email>"
 msgstr "Claude Paroz <email>claude@2xlibre.net</email>"
 
-#: C/gnobots2.xml:120(releaseinfo)
+#: C/index.docbook:108(revhistory/revision)
+msgid ""
+"<revnumber>Robots Manual V2.9</revnumber> <date>August 2007</date> <_:"
+"revdescription-1/>"
+msgstr ""
+"<revnumber>Příručka V2.9 ke hře Roboti GNOME</revnumber> <date>srpen 2007</"
+"date> <_:revdescription-1/>"
+
+#: C/index.docbook:120(articleinfo/releaseinfo)
 msgid "This manual describes version 2.18 of Robots."
 msgstr "Tato příručka popisuje hru Roboti ve verzi 2.18"
 
-#: C/gnobots2.xml:127(title)
+#: C/index.docbook:127(legalnotice/title)
 msgid "Feedback"
 msgstr "Ohlasy"
 
-#: C/gnobots2.xml:128(para)
+#: C/index.docbook:128(legalnotice/para)
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Robots</"
 "application> application or this manual, follow the directions in the <ulink "
@@ -224,27 +231,27 @@ msgstr ""
 "instrukcí na stránce <ulink url=\"ghelp:user-guide?feedback-bugs\" type="
 "\"help\">Stránka s ohlasy na GNOME</ulink>."
 
-#: C/gnobots2.xml:139(primary)
-msgid "GNOME Robots"
-msgstr "GNOME Roboti"
+#: C/index.docbook:138(article/indexterm)
+msgid "<primary>GNOME Robots</primary>"
+msgstr "<primary>Roboti GNOME</primary>"
 
-#: C/gnobots2.xml:146(title)
+#: C/index.docbook:146(sect1/title)
 msgid "Introduction"
 msgstr "Úvod"
 
-#: C/gnobots2.xml:148(para)
+#: C/index.docbook:148(sect1/para)
 msgid ""
 "<application>GNOME Robots</application> is a game where you try and avoid a "
 "band of marauding robots which are, for no adequately explained reason, "
 "trying to kill you. It is based on the text-based robots game which can be "
 "found on a number of UNIX systems."
 msgstr ""
-"<application>GNOME Roboti</application> je hra, ve které zkoušíte uniknout "
+"<application>Roboti GNOME</application> je hra, ve které zkoušíte uniknout "
 "bandě zlotřilých robotů, kteří se vás snaží, bez udání rozumného důvodu, "
 "zabít. Hra vychází z textové hry s roboty, kterou můžete najít v mnoha "
 "UNIXových systémech."
 
-#: C/gnobots2.xml:155(para)
+#: C/index.docbook:155(sect1/para)
 msgid ""
 "This new version includes two types of robots, movable junkheaps, multiple "
 "game configurations, user definable keyboard layouts, and sound, as well as "
@@ -252,36 +259,36 @@ msgid ""
 msgstr ""
 "Tato nová verze obsahuje dva typy robotů, přesouvatelné hromady harampádí, "
 "výběr z několika her, uživatelem definovatelné ovládání klávesami a zvuky, a "
-"vše co obsahovala původní hra GNOME Roboti."
+"vše co obsahovala původní hra Roboti GNOME."
 
-#: C/gnobots2.xml:162(para)
+#: C/index.docbook:162(sect1/para)
 msgid ""
-"To run <application>GNOME Robots</application>, select "
-"<menuchoice><guisubmenu>Games</guisubmenu><guimenuitem>Robots</guimenuitem></"
-"menuchoice> from the <guimenu>Main Menu</guimenu>, or type "
-"<command>gnobots2</command> on the command line."
+"To run <application>GNOME Robots</application>, select <menuchoice> "
+"<guisubmenu>Games</guisubmenu> <guimenuitem>Robots</guimenuitem> </"
+"menuchoice> from the <guimenu>Main Menu</guimenu>, or type <command>gnome-"
+"robots</command> on the command line."
 msgstr ""
-"Jestliže chcete hru <application>GNOME Robots</application> spustit, zvolte "
+"Jestliže chcete hru <application>Roboti GNOME</application> spustit, zvolte "
 "<menuchoice><guisubmenu>Hry</guisubmenu><guimenuitem>Roboti</guimenuitem></"
-"menuchoice> z <guimenu>hlavní nabídky</guimenu> nebo zadejte "
-"<command>gnobots2</command> v příkazovém řádku."
+"menuchoice> z <guimenu>hlavní nabídky</guimenu> nebo zadejte <command>gnome-"
+"robots</command> v příkazovém řádku."
 
-#: C/gnobots2.xml:172(para)
+#: C/index.docbook:172(sect1/para)
 msgid ""
 "<application>GNOME Robots</application> is included in the <filename>gnome-"
 "games</filename> package, which is part of the GNOME desktop environment. "
 "This document describes version 2.18 of <application>GNOME Robots</"
 "application>."
 msgstr ""
-"<application>GNOME Roboti</application> je součástí balíku <filename>gnome-"
+"<application>Roboti GNOME</application> je součástí balíku <filename>gnome-"
 "games</filename>, který patří k pracovnímu prostředí GNOME. Tento dokument "
-"popisuje verzi 2.18 aplikace <application>GNOME Roboti</application>."
+"popisuje verzi 2.18 aplikace <application>Roboti GNOME</application>."
 
-#: C/gnobots2.xml:181(title)
+#: C/index.docbook:181(sect1/title)
 msgid "GNOME Robots Objective"
-msgstr "Cíl hry GNOME Roboti"
+msgstr "Cíl hry Roboti GNOME"
 
-#: C/gnobots2.xml:182(para)
+#: C/index.docbook:182(sect1/para)
 msgid ""
 "The objective of GNOME Robots is quite simple. You are surrounded by a "
 "number of robots or other hostile adversaries. As you move about they will "
@@ -289,13 +296,13 @@ msgid ""
 "kill you. Your goal is to kill all the robots on the board by taking "
 "advantage of their vulnerabilities."
 msgstr ""
-"Cíl hry GNOME Roboti je docela jednoduchý. Jste obklopen několika roboty "
+"Cíl hry Roboti GNOME je docela jednoduchý. Jste obklopen několika roboty "
 "nebo jinými nepřátelskými protivníky. Jak se pohybujete, oni se při každém "
 "tahu, který uděláte, pohnou směrem k vám. Jejich cílem je vás zabít. Vašim "
 "cílem je naopak zabít všechny roboty na ploše tak, že s výhodou využijete "
 "jejich zranitelnost."
 
-#: C/gnobots2.xml:190(para)
+#: C/index.docbook:190(sect1/para)
 msgid ""
 "Robots are destroyed when they collide with each other, or when they collide "
 "with the debris of some previous collision. You die if a robot ends up right "
@@ -305,7 +312,7 @@ msgstr ""
 "trosek některé z předchozích kolizí. Pokud se ale robot dostane až k vám, "
 "tak zemřete."
 
-#: C/gnobots2.xml:196(para)
+#: C/index.docbook:196(sect1/para)
 msgid ""
 "In some of the game configurations (you can choose from five different sets "
 "of rules), you can push the junkheaps around to form barricades to protect "
@@ -317,7 +324,7 @@ msgstr ""
 "A také můžete, pokud si na to tedy troufnete, roboty rozmačkat roboty tím, "
 "že na ně hromadu harampádí položíte, za což získáte přídavný bonus."
 
-#: C/gnobots2.xml:201(para)
+#: C/index.docbook:201(sect1/para)
 msgid ""
 "You can also save yourself by teleporting yourself to a random location. "
 "Unfortunately, randomly teleporting means that you might end up being right "
@@ -340,7 +347,7 @@ msgstr ""
 "nechcete své našetřené bezpečné teleportace promrhat, můžete v situacích, "
 "kdy vám to připadá dostatečně bezpečné, použít náhodnou teleportaci."
 
-#: C/gnobots2.xml:215(para)
+#: C/index.docbook:215(sect1/para)
 msgid ""
 "If you press the <guibutton>Wait</guibutton> button (see below) you will no "
 "longer be able to move until either all of the robots (which still move "
@@ -352,7 +359,7 @@ msgstr ""
 "pohybují směrem k vám) nezničí nebo nebudete zabit. Udělat něco takového je "
 "riskantní, ale můžete za to získat navíc bezpečné teleportace."
 
-#: C/gnobots2.xml:222(para)
+#: C/index.docbook:222(sect1/para)
 msgid ""
 "If you manage to reach the point where more than half of the screen is "
 "occupied by robots, the number of robots will be reset to the starting "
@@ -362,43 +369,49 @@ msgstr ""
 "roboty, bude počet robotů vrácen do stavu, jako na začátku hry, abyste vůbec "
 "mohli pokračovat."
 
-#: C/gnobots2.xml:233(title)
+#: C/index.docbook:233(sect1/title)
 msgid "Using GNOME Robots"
-msgstr "Používání hry GNOME Roboti"
+msgstr "Používání hry Roboti GNOME"
 
-#: C/gnobots2.xml:234(para)
+#: C/index.docbook:234(sect1/para)
 msgid ""
 "<application>GNOME Robots</application> is extremely simple to play. You can "
 "use either the mouse or the keyboard. This section describes basic usage of "
 "<application>GNOME Robots</application>."
 msgstr ""
-"<application>GNOME Roboti</application> jsou na hraní extrémně jednodušší. "
+"<application>Roboti GNOME</application> jsou na hraní extrémně jednodušší. "
 "Můžete používat myš nebo klávesnici. Tato kapitola popisuje základy "
 "používání <application>Robotů</application>."
 
-#: C/gnobots2.xml:243(title)
+#: C/index.docbook:243(sect2/title)
 msgid "Basic usage"
 msgstr "Základy používání"
 
-#: C/gnobots2.xml:251(title)
+#: C/index.docbook:251(figure/title)
 msgid "GNOME Robots Main Window"
 msgstr "Hlavní okno Robotů."
 
-#: C/gnobots2.xml:258(phrase)
-msgid "GNOME Robots Main Window."
-msgstr "Hlavní okno hry GNOME Roboti."
+#: C/index.docbook:253(screenshot/mediaobject)
+msgid ""
+"<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
+"\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> <phrase>GNOME "
+"Robots Main Window.</phrase> </textobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
+"\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> <phrase>Hlavní "
+"okno hry Roboti GNOME.</phrase> </textobject>"
 
-#: C/gnobots2.xml:244(para)
+#: C/index.docbook:244(sect2/para)
 msgid ""
 "Starting <application>GNOME Robots</application> opens the <interface>Main "
-"window</interface>, shown in <xref linkend=\"mainwindow-fig\"/>. "
-"<placeholder-1/>"
+"window</interface>, shown in <xref linkend=\"mainwindow-fig\"/>. <_:figure-1/"
+">"
 msgstr ""
-"Spuštěním <application>GNOME Roboti</application> se otevře "
+"Spuštěním hry <application>Roboti GNOME</application> se otevře "
 "<interface>hlavní okno</interface>, tak jak jej ukazuje <xref linkend="
-"\"mainwindow-fig\"/>. <placeholder-1/>"
+"\"mainwindow-fig\"/>. <_:figure-1/>"
 
-#: C/gnobots2.xml:266(para)
+#: C/index.docbook:266(sect2/para)
 msgid ""
 "To start a new game, choose <guimenuitem>New</guimenuitem> in the "
 "<guimenu>Game</guimenu> menu or click on the <guibutton>New</guibutton> "
@@ -408,7 +421,7 @@ msgstr ""
 "<guimenu>Hry</guimenu> nebo kliknutím na tlačítko <guibutton>Nová</"
 "guibutton> na panelu nástrojů."
 
-#: C/gnobots2.xml:272(para)
+#: C/index.docbook:272(sect2/para)
 msgid ""
 "To move, either click in the direction you want to move (the cursor will "
 "show you which way you will go) or press the appropriate key on the keyboard "
@@ -422,11 +435,11 @@ msgstr ""
 "teleportaci (bezpečnou nebo náhodnou) a čekání použijte tlačítka na panelu "
 "nástrojů nebo položky v nabídce <guimenu>Posunout</guimenu>."
 
-#: C/gnobots2.xml:288(title)
+#: C/index.docbook:288(sect1/title)
 msgid "Menus"
 msgstr "Nabídky"
 
-#: C/gnobots2.xml:289(para)
+#: C/index.docbook:289(sect1/para)
 msgid ""
 "The menu bar, located at the top of the <interface>game board</interface>, "
 "contains the following menus:"
@@ -434,100 +447,101 @@ msgstr ""
 "Panel nabídek, který se nachází nad <interface>herní deskou</interface>, "
 "obsahuje následující nabídky:"
 
-#: C/gnobots2.xml:297(guimenu)
-msgid "Game"
-msgstr "Hra"
+#: C/index.docbook:297(varlistentry/term)
+msgid "<guimenu>Game</guimenu>"
+msgstr "<guimenu>Hra</guimenu>"
 
-#: C/gnobots2.xml:303(para)
+#: C/index.docbook:303(listitem/para)
 msgid ""
-"<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>New</"
-"guimenuitem></menuchoice> — starts a new game of GNOME Robots."
+"<menuchoice> <shortcut><keysym>Ctrl-N</keysym></shortcut> <guimenuitem>New</"
+"guimenuitem> </menuchoice> — starts a new game of GNOME Robots."
 msgstr ""
-"<menuchoice><shortcut><keysym>Ctrl-N</keysym></shortcut><guimenuitem>Nová</"
+"<menuchoice><shortcut><keysym>Ctrl+N</keysym></shortcut> <guimenuitem>Nová</"
 "guimenuitem></menuchoice> — začne novou hru Robotů."
 
-#: C/gnobots2.xml:313(para)
+#: C/index.docbook:313(listitem/para)
 msgid ""
-"<menuchoice><guimenuitem>Scores</guimenuitem></menuchoice> — shows the "
+"<menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> — shows the "
 "higher scores."
 msgstr ""
 "<menuchoice><guimenuitem>Skóre</guimenuitem></menuchoice> — zobrazí nejlepší "
 "výsledky."
 
-#: C/gnobots2.xml:323(keysym)
-msgid "Ctrl-Q"
-msgstr "Ctrl-Q"
+#: C/index.docbook:321(listitem/para)
+msgid ""
+"<menuchoice> <shortcut><keysym>Ctrl-Q</keysym></shortcut> <guimenuitem>Quit</"
+"guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice><shortcut><keysym>Ctrl+Q</keysym></shortcut> "
+"<guimenuitem>Ukončit</guimenuitem></menuchoice>"
 
-#: C/gnobots2.xml:324(guimenuitem)
-msgid "Quit"
-msgstr "Ukončit"
+#: C/index.docbook:299(listitem/para)
+msgid "This menu contains three items: <_:itemizedlist-1/>"
+msgstr "Tato nabídka obsahuje tři položky: <_:itemizedlist-1/>"
 
-#: C/gnobots2.xml:299(para)
-msgid "This menu contains three items: <placeholder-1/>"
-msgstr "Tato nabídka obsahuje tři položky: <placeholder-1/>"
+#: C/index.docbook:334(varlistentry/term)
+msgid "<guimenu>Move</guimenu>"
+msgstr "<guimenu>Posunout</guimenu>"
 
-#: C/gnobots2.xml:334(guimenu)
-msgid "Move"
-msgstr "Posunout"
-
-#: C/gnobots2.xml:340(para)
+#: C/index.docbook:340(listitem/para)
 msgid "<guimenuitem>Teleport</guimenuitem>— teleports you in a safe location."
 msgstr ""
 "<guimenuitem>Teleportovat</guimenuitem> — teleportuje vás na bezpečné místo."
 
-#: C/gnobots2.xml:346(para)
+#: C/index.docbook:346(listitem/para)
 msgid "<guimenuitem>Random</guimenuitem>— teleports you in a random location."
 msgstr "<guimenuitem>Náhodně</guimenuitem> — teleportuje vás na náhodné místo."
 
-#: C/gnobots2.xml:352(para)
+#: C/index.docbook:352(listitem/para)
 msgid "<guimenuitem>Wait</guimenuitem>— places you in wait mode."
 msgstr "<guimenuitem>Čekat</guimenuitem> — přepne vás do čekacího režimu."
 
-#: C/gnobots2.xml:336(para) C/gnobots2.xml:382(para)
-msgid "This menu contains: <placeholder-1/>"
-msgstr "Tato nabídka obsahuje: <placeholder-1/>"
+#: C/index.docbook:336(listitem/para) C/index.docbook:382(listitem/para)
+msgid "This menu contains: <_:itemizedlist-1/>"
+msgstr "Tato nabídka obsahuje: <_:itemizedlist-1/>"
 
-#: C/gnobots2.xml:363(guimenu)
-msgid "Settings"
-msgstr "Nastavení"
+#: C/index.docbook:363(varlistentry/term)
+msgid "<guimenu>Settings</guimenu>"
+msgstr "<guimenu>Nastavení</guimenu>"
 
-#: C/gnobots2.xml:369(para)
+#: C/index.docbook:369(listitem/para)
 msgid ""
 "<guimenuitem>Preferences</guimenuitem> which brings up the preferences "
 "dialog box."
 msgstr ""
 "<guimenuitem>Předvolby</guimenuitem> — otevře dialogové okno předvoleb."
 
-#: C/gnobots2.xml:365(para)
+#: C/index.docbook:365(listitem/para)
 msgid ""
-"The <guimenu>Settings</guimenu> menu contains only one item: <placeholder-1/>"
+"The <guimenu>Settings</guimenu> menu contains only one item: <_:"
+"itemizedlist-1/>"
 msgstr ""
-"Nabídka <guimenu>Nastavení</guimenu> obsahuje pouze jednu položku: "
-"<placeholder-1/>"
+"Nabídka <guimenu>Nastavení</guimenu> obsahuje pouze jednu položku: <_:"
+"itemizedlist-1/>"
 
-#: C/gnobots2.xml:380(guimenu)
-msgid "Help"
-msgstr "Nápověda"
+#: C/index.docbook:380(varlistentry/term)
+msgid "<guimenu>Help</guimenu>"
+msgstr "<guimenu>Nápověda</guimenu>"
 
-#: C/gnobots2.xml:386(para)
+#: C/index.docbook:386(listitem/para)
 msgid "<guimenuitem>Contents</guimenuitem>— shows this manual."
 msgstr "<guimenuitem>Obsah</guimenuitem> — zobrazí tuto příručku."
 
-#: C/gnobots2.xml:392(para)
+#: C/index.docbook:392(listitem/para)
 msgid ""
 "<guimenuitem>About</guimenuitem>— shows basic information about "
 "<application>GNOME Robots</application>, such as the author's name and the "
 "application version number."
 msgstr ""
 "<guimenuitem>O aplikaci</guimenuitem> — ukáže základní informace o hře "
-"<application>GNOME Roboti</application>, jako je jméno autora a číslo verze "
+"<application>Roboti GNOME</application>, jako je jméno autora a číslo verze "
 "aplikace."
 
-#: C/gnobots2.xml:411(title)
+#: C/index.docbook:411(sect1/title)
 msgid "Using the keyboard"
 msgstr "Používání klávesnice"
 
-#: C/gnobots2.xml:412(para)
+#: C/index.docbook:412(sect1/para)
 msgid ""
 "You can use the keyboard to control the little man. By default, the keys "
 "from the keypad are configured for the game. However you can customize the "
@@ -543,81 +557,81 @@ msgstr ""
 "provedete tak, že dvojitě kliknete na řádek s příkazem a po té zmáčknete "
 "klávesu, kterou chcete používat."
 
-#: C/gnobots2.xml:422(title)
+#: C/index.docbook:422(sect2/title)
 msgid "Default Key Mappings"
 msgstr "Výchozí mapování kláves"
 
-#: C/gnobots2.xml:429(title)
+#: C/index.docbook:429(note/title)
 msgid "Switch off the NumLock Key"
 msgstr "Vypnutí numerické klávesnice"
 
-#: C/gnobots2.xml:430(para)
+#: C/index.docbook:430(note/para)
 msgid "You may need to switch off the NumLock to make these work."
 msgstr ""
 "Aby to fungovalo, je na některých klávesnicích potřeba vypnout numerickou "
 "část (pomocí NumLock)."
 
-#: C/gnobots2.xml:435(para)
+#: C/index.docbook:435(listitem/para)
 msgid "Up Left: <keycap>Home</keycap>"
 msgstr "Vlevo nahoru: <keycap>Home</keycap>"
 
-#: C/gnobots2.xml:438(para)
+#: C/index.docbook:438(listitem/para)
 msgid "Up: <keycap>Up</keycap>"
 msgstr "Nahoru: <keycap>šipka nahoru</keycap>"
 
-#: C/gnobots2.xml:441(para)
+#: C/index.docbook:441(listitem/para)
 msgid "Up Right: <keycap>Page Up</keycap>"
 msgstr "Vpravo nahoru: <keycap>Page Up</keycap>"
 
-#: C/gnobots2.xml:444(para)
+#: C/index.docbook:444(listitem/para)
 msgid "Left: <keycap>Left</keycap>"
 msgstr "Vlevo: <keycap>šipka vlevo</keycap>"
 
-#: C/gnobots2.xml:447(para)
+#: C/index.docbook:447(listitem/para)
 msgid "Stand Still: <keycap>Begin</keycap>"
 msgstr "Stát na místě: <keycap>Begin</keycap> (prostřední klávesa s číslicí 5)"
 
-#: C/gnobots2.xml:450(para)
+#: C/index.docbook:450(listitem/para)
 msgid "Right: <keycap>Right</keycap>"
 msgstr "Vpravo: <keycap>šipka vpravo</keycap>"
 
-#: C/gnobots2.xml:453(para)
+#: C/index.docbook:453(listitem/para)
 msgid "Down Left: <keycap>End</keycap>"
 msgstr "Vlevo dolů: <keycap>End</keycap>"
 
-#: C/gnobots2.xml:456(para)
+#: C/index.docbook:456(listitem/para)
 msgid "Down: <keycap>Down</keycap>"
 msgstr "Dolů: <keycap>šipka dolů</keycap>"
 
-#: C/gnobots2.xml:459(para)
+#: C/index.docbook:459(listitem/para)
 msgid "Down Right: <keycap>Page Down</keycap>"
 msgstr "Vpravo dolů: <keycap>Page Down</keycap>"
 
-#: C/gnobots2.xml:462(para)
+#: C/index.docbook:462(listitem/para)
 msgid "Teleport: <keycap>+</keycap>"
 msgstr "Teleportovat: <keycap>+</keycap>"
 
-#: C/gnobots2.xml:465(para)
+#: C/index.docbook:465(listitem/para)
 msgid "Randomly Teleport: <keycap>*</keycap>"
 msgstr "Náhodně teleportovat: <keycap>*</keycap>"
 
-#: C/gnobots2.xml:468(para)
+#: C/index.docbook:468(listitem/para)
 msgid "Wait: <keycap>Enter</keycap>"
 msgstr "Čekat: <keycap>Enter</keycap>"
 
-#: C/gnobots2.xml:425(para)
+#: C/index.docbook:425(sect2/para)
 msgid ""
 "By default, you use the numeric keypad on the right-hand side of the "
-"keyboard (not the separate arrow keys). <placeholder-1/><placeholder-2/>"
+"keyboard (not the separate arrow keys). <_:note-1/> <_:orderedlist-2/>"
 msgstr ""
 "Standardně se k ovládání používá numerická klávesnice vpravo (a ne "
-"samostatné šipky). <placeholder-1/><placeholder-2/>"
+"samostatné šipky). <_:note-1/> <_:orderedlist-2/>"
 
-#: C/gnobots2.xml:482(title)
+#: C/index.docbook:482(sect1/title)
 msgid "Customizing GNOME Robots"
-msgstr "Přizpůsobení hry GNOME Roboti"
+msgstr "Přizpůsobení hry Roboti GNOME"
 
-#: C/gnobots2.xml:501(para)
+#: C/index.docbook:501(listitem/para)
 msgid ""
 "The safe moves option will help you to avoid being killed due to a mistake. "
 "If you try to make a move that would lead to your death when there is a safe "
@@ -631,7 +645,7 @@ msgstr ""
 "pohyb k dispozici není, mimo teleportace, tak vám bude umožněno provést ten "
 "chybný."
 
-#: C/gnobots2.xml:509(para)
+#: C/index.docbook:509(listitem/para)
 msgid ""
 "There is also a <quote>super safe mode</quote>. If you select this, you get "
 "beeped when there is no safe move and your only option is to teleport out."
@@ -640,7 +654,7 @@ msgstr ""
 "ten, tak se ozve pípnutí pokaždé, kdy není k dispozici bezpečný pohyb a "
 "jedinou možností úniku je teleportace."
 
-#: C/gnobots2.xml:516(para)
+#: C/index.docbook:516(listitem/para)
 msgid ""
 "If you select the sound checkbox the game will play sounds for various "
 "events throughout the game."
@@ -648,7 +662,7 @@ msgstr ""
 "Pokud zapnete volbu Povolit zvuky, bud hra v různých situacích v průběhu hry "
 "vydávat zvuky."
 
-#: C/gnobots2.xml:522(para)
+#: C/index.docbook:522(listitem/para)
 msgid ""
 "The <quote>Splats</quote> checkbox selects whether you want the sound played "
 "and a small <quote>Splat!</quote> to appear on the screen."
@@ -656,21 +670,21 @@ msgstr ""
 "Volbu Povolit rozmáčknutí zapněte, pokud chcete aby se ozval zvuk a na "
 "obrazovce objevilo malé <quote>Splat!</quote>."
 
-#: C/gnobots2.xml:491(para)
+#: C/index.docbook:491(listitem/para)
 msgid ""
 "<guimenuitem>Game</guimenuitem> — This page allows you to choose the type of "
 "game you want to play. The drop-down box at the top of the page allows you "
 "to choose from a number of predefined games. You can't change these options "
 "in the middle of a game, so they will be disabled then. There are also "
-"several options at the bottom of the dialog: <placeholder-1/>"
+"several options at the bottom of the dialog: <_:orderedlist-1/>"
 msgstr ""
 "<guimenuitem>Hra</guimenuitem> — Na této kartě si můžete vybrat typ hry, "
 "kterou chcete hrát. V nabídkovém seznamu v horní části karty si můžete "
 "vybrat z několika předdefinovaných her. Tuto volbu nemůžete změnit uprostřed "
 "hry, proto je v takové chvíli zakázaná. V dolní části karty je několik "
-"dalších voleb: <placeholder-1/>"
+"dalších voleb: <_:orderedlist-1/>"
 
-#: C/gnobots2.xml:533(para)
+#: C/index.docbook:533(listitem/para)
 msgid ""
 "<guimenuitem>Appearance</guimenuitem> — This page allows you to select the "
 "graphics used throughout the game from the list in the dropdown-box. You can "
@@ -680,7 +694,7 @@ msgstr ""
 "volíte grafiku použitou ve hře. Navíc si na této kartě můžete zvolit barvu "
 "pozadí."
 
-#: C/gnobots2.xml:543(para)
+#: C/index.docbook:543(listitem/para)
 msgid ""
 "<guimenuitem>Keyboard</guimenuitem> — This screen allows you to define your "
 "own keyboard controls. To select a different key for a command, double-click "
@@ -691,36 +705,36 @@ msgstr ""
 "dvojitě kliknete a následně zmáčknete klávesu, kterou pro něj chcete "
 "používat."
 
-#: C/gnobots2.xml:483(para)
+#: C/index.docbook:483(sect1/para)
 msgid ""
 "You can modify the behaviour and appearance of the game by selecting "
 "<guimenuitem> Preferences</guimenuitem> under the <guimenu>Settings</"
-"guimenu> menu. This brings up a dialog with three tabs: <placeholder-1/>"
+"guimenu> menu. This brings up a dialog with three tabs: <_:itemizedlist-1/>"
 msgstr ""
 "Můžete si upravit chování a vzhled hry pomocí <guimenuitem>Předvolby</"
 "guimenuitem> pod nabídkou <guimenu>Nastavení</guimenu>. Tím otevřete "
-"dialogové okno se třemi kartami: <placeholder-1/>"
+"dialogové okno se třemi kartami: <_:itemizedlist-1/>"
 
-#: C/gnobots2.xml:554(para)
+#: C/index.docbook:554(sect1/para)
 msgid ""
 "Any changes you make take effect immediately and are automatically saved."
 msgstr "Změny, které provedete, se ihned použijí a automaticky uloží."
 
-#: C/gnobots2.xml:558(para)
+#: C/index.docbook:558(sect1/para)
 msgid ""
 "You can design your own graphics for the game if you want. The graphics "
 "files are found in <filename class=\"directory\"> $PREFIX/share/gnome-games/"
-"gnobots2/pixmaps </filename>, where $PREFIX is the prefix into which GNOME "
-"was installed. This is usually either <filename class=\"directory\">/usr</"
-"filename> or <filename class=\"directory\">/usr/local</filename>."
+"gnome-robots/pixmaps </filename>, where $PREFIX is the prefix into which "
+"GNOME was installed. This is usually either <filename class=\"directory\">/"
+"usr</filename> or <filename class=\"directory\">/usr/local</filename>."
 msgstr ""
 "Pokud chcete, můžete si pro hru navrhnout vlastní grafiku. Grafické soubory "
-"najdete v <filename class=\"directory\">$PREFIX/share/gnome-games/gnobots2/"
+"najdete v <filename class=\"directory\">$PREFIX/share/gnome-games/gnome-robots/"
 "pixmaps</filename>, kde $PRFIX je cesta použitá pro instalaci GNOME. Obvykle "
 "to bývá <filename class=\"directory\">/usr</filename> nebo <filename class="
 "\"directory\">/usr/local</filename>."
 
-#: C/gnobots2.xml:569(para)
+#: C/index.docbook:569(sect1/para)
 msgid ""
 "Each character is 16x16 pixels and there are 14 of them arranged in a PNG "
 "file which is 224x16 pixels in size. You can look at the existing files to "
@@ -732,25 +746,25 @@ msgstr ""
 "abyste viděli v jakém pořadí jsou poskládané, aby vytvořily správnou "
 "výslednou animovanou sekvenci."
 
-#: C/gnobots2.xml:575(para)
+#: C/index.docbook:575(sect1/para)
 msgid ""
 "Any graphics files which are placed in the directory are auto-detected, so "
 "you don't need to alter any configuration files. You can also define your "
 "own game configurations by creating extra <filename> .cfg </filename> files "
 "which are stored in the <filename class=\"directory\"> $PREFIX/share/gnome-"
-"games/gnobots2/games </filename> directory."
+"games/gnome-robots/games </filename> directory."
 msgstr ""
 "Grafické soubory, které umístíte do složky se automaticky detekují, takže "
 "nemusíte nikde nic nastavovat. Můžete si také vytvořit svoje vlastní "
 "nastavení hry tím, že vytvoříte další soubory <filename>.cfg </filename>, "
 "které jsou uložené ve složce <filename class=\"directory\">$PREFIX/share/"
-"gnome-games/gnobots2/games</filename>."
+"gnome-games/gnome-robots/games</filename>."
 
-#: C/gnobots2.xml:607(title)
+#: C/index.docbook:607(sect1/title)
 msgid "Authors"
 msgstr "Autoři"
 
-#: C/gnobots2.xml:608(para)
+#: C/index.docbook:608(sect1/para)
 msgid ""
 "<application>GNOME Robots</application> was written by Mark Rae (<email>m."
 "rae@inpharmatica.co.uk</email>). This manual was written by Patanjali "
@@ -759,7 +773,7 @@ msgid ""
 "this application or this manual, follow the directions in this <ulink url="
 "\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
 msgstr ""
-"Hru <application>GNOME Roboti</application> napsal Mark Rae (<email>m."
+"Hru <application>Roboti GNOME</application> napsal Mark Rae (<email>m."
 "rae@inpharmatica.co.uk</email>). Tuto příručku napsal Patanjali Somayaji "
 "(<email>patanjali@mindless.com</email>) podle původní dokumentace v HTML, "
 "kterou napsal Mark Rae. Pokud chcete nahlásit chybu nebo podat návrh "
@@ -767,24 +781,30 @@ msgstr ""
 "tomto <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">dokumentu</"
 "ulink>."
 
-#: C/gnobots2.xml:635(title)
+#: C/index.docbook:635(sect1/title)
 msgid "License"
 msgstr "Licence"
 
-#: C/gnobots2.xml:636(para)
+#: C/index.docbook:636(sect1/para)
+#| msgid ""
+#| "This program is free software; you can redistribute it and/or modify it "
+#| "under the terms of the <ulink type=\"help\" url=\"help:gpl"
+#| "\"><citetitle>GNU General Public License</citetitle></ulink> as published "
+#| "by the Free Software Foundation; either version 2 of the License, or (at "
+#| "your option) any later version."
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
-"under the terms of the <ulink type=\"help\" url=\"help:gpl"
-"\"><citetitle>GNU General Public License</citetitle></ulink> as published by "
-"the Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version."
+"under the terms of the <ulink type=\"help\" url=\"help:gpl\"> <citetitle>GNU "
+"General Public License</citetitle></ulink> as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
 msgstr ""
 "Tento program je svobodný software. Můžete jej dále šířit a/nebo upravovat "
-"za dodržení podmínek <ulink type=\"help\" url=\"help:gpl"
-"\"><citetitle>GNU General Public License</citetitle></ulink>, tak jak ji "
-"vydala Free Software Foundation ve verzi 2 nebo (dle vaší volby) novější."
+"za dodržení podmínek <ulink type=\"help\" url=\"help:gpl\"><citetitle>GNU "
+"General Public License</citetitle></ulink>, tak jak ji vydala Free Software "
+"Foundation ve verzi 2 nebo (dle vaší volby) novější."
 
-#: C/gnobots2.xml:644(para)
+#: C/index.docbook:644(sect1/para)
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -796,27 +816,52 @@ msgstr ""
 "VHODNOST PRO URČITÝ ÚČEL. Více podrobností najdete v <citetitle>GNU General "
 "Public License</citetitle>."
 
-#: C/gnobots2.xml:650(para)
+#: C/index.docbook:657(para/address)
+#, no-wrap
+msgid ""
+"\n"
+"        Free Software Foundation, Inc.\n"
+"        <street>51 Franklin Street, Fifth Floor</street>\n"
+"        <city>Boston</city>, <state>MA</state> <postcode>02110-1301</postcode>\n"
+"        <country>USA</country>\n"
+"      "
+msgstr ""
+"\n"
+"        Free Software Foundation, Inc.\n"
+"        <street>51 Franklin Street, Fifth Floor</street>\n"
+"        <city>Boston</city>, <state>MA</state> <postcode>02110-1301</postcode>\n"
+"        <country>USA</country>\n"
+"      "
+
+#: C/index.docbook:650(sect1/para)
 msgid ""
 "A copy of the <citetitle>GNU General Public License</citetitle> is included "
 "as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
 "obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
 "the Free Software Foundation by visiting <ulink type=\"http\" url=\"http://"
-"www.fsf.org\">their Web site</ulink> or by writing to <address> Free "
-"Software Foundation, Inc. <street>51 Franklin Street, Fifth Floor</"
-"street><city>Boston</city>, <state>MA</state><postcode>02110-1301</"
-"postcode><country>USA</country></address>"
+"www.fsf.org\">their Web site</ulink> or by writing to <_:address-1/>"
 msgstr ""
 "Kopie <citetitle>GNU General Public License</citetitle> je zahrnuta v "
 "dodatku <citetitle>Uživatelské přiručky GNOME</citetitle>. Kopii "
 "<citetitle>GNU General Public License</citetitle> můžete také získat od Free "
 "Software Foundation navštívením <ulink type=\"http\" url=\"http://www.fsf.org"
-"\">jejich webu</ulink> nebo zasláním žádosti na <address> Free Software "
-"Foundation, Inc. <street>59 Temple Place</street> - Suite 330 <city>Boston</"
-"city>, <state>MA</state><postcode>02111-1307</postcode><country>USA</"
-"country></address>"
+"\">jejich webu</ulink> nebo zasláním žádosti na <_:address-1/>"
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
-#: C/gnobots2.xml:0(None)
-msgid "translator-credits"
-msgstr "Marek Černocký <marek@manet.cz>, 2009."
+#: C/legal.xml:9(para/ulink)
+msgid "link"
+msgstr "odkazem"
+
+#: C/legal.xml:2(legalnotice/para)
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
+msgstr ""
+"Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU "
+"Free Documentation License (GFDL) ve verzi 1.1 nebo v jakékoli další verzi "
+"vydané nadací Free Software Foundation; bez neměnných oddílů, bez textů "
+"předních desek a bez textů zadních desek. Kopii licence GFDL naleznete pod "
+"tímto <_:ulink-1/> nebo v souboru COPYING-DOCS dodávaném s touto příručkou."

@@ -15,3 +15,5 @@ iconscalable_DATA = scalable/gnome-robots.svg
 action_DATA = teleport.png teleport-random.png
 
 EXTRA_DIST = $(icon16_DATA) $(icon22_DATA) $(icon24_DATA) $(icon32_DATA) $(icon48_DATA) $(iconscalable_DATA) $(action_DATA)
+
+-include $(top_srcdir)/git.mk

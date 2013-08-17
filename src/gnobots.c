@@ -183,6 +183,12 @@ main (int argc, char *argv[])
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
 
+  /*
+   * Required because the binary doesn't match the desktop file.
+   * Has to be before the call to g_option_context_parse.
+   */
+  g_set_prgname ("gnobots2");
+
   context = g_option_context_new (NULL);
   g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
   g_option_context_add_group (context, gtk_get_option_group (TRUE));

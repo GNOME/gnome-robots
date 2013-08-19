@@ -196,7 +196,7 @@ msgid ""
 "<revnumber>Robots Manual V2.8</revnumber> <date>September 2004</date> <_:"
 "revdescription-1/>"
 msgstr ""
-"<revnumber>Příručka V2.8 ke hře Roboti GNOME</revnumber> <date>září 2004</"
+"<revnumber>Příručka V2.8 ke hře GNOME Roboti</revnumber> <date>září 2004</"
 "date> <_:revdescription-1/>"
 
 #: C/index.docbook:112(revdescription/para)
@@ -208,7 +208,7 @@ msgid ""
 "<revnumber>Robots Manual V2.9</revnumber> <date>August 2007</date> <_:"
 "revdescription-1/>"
 msgstr ""
-"<revnumber>Příručka V2.9 ke hře Roboti GNOME</revnumber> <date>srpen 2007</"
+"<revnumber>Příručka V2.9 ke hře GNOME Roboti</revnumber> <date>srpen 2007</"
 "date> <_:revdescription-1/>"
 
 #: C/index.docbook:120(articleinfo/releaseinfo)
@@ -233,7 +233,7 @@ msgstr ""
 
 #: C/index.docbook:138(article/indexterm)
 msgid "<primary>GNOME Robots</primary>"
-msgstr "<primary>Roboti GNOME</primary>"
+msgstr "<primary>GNOME Roboti</primary>"
 
 #: C/index.docbook:146(sect1/title)
 msgid "Introduction"
@@ -246,7 +246,7 @@ msgid ""
 "trying to kill you. It is based on the text-based robots game which can be "
 "found on a number of UNIX systems."
 msgstr ""
-"<application>Roboti GNOME</application> je hra, ve které zkoušíte uniknout "
+"<application>GNOME Roboti</application> je hra, ve které zkoušíte uniknout "
 "bandě zlotřilých robotů, kteří se vás snaží, bez udání rozumného důvodu, "
 "zabít. Hra vychází z textové hry s roboty, kterou můžete najít v mnoha "
 "UNIXových systémech."
@@ -259,7 +259,7 @@ msgid ""
 msgstr ""
 "Tato nová verze obsahuje dva typy robotů, přesouvatelné hromady harampádí, "
 "výběr z několika her, uživatelem definovatelné ovládání klávesami a zvuky, a "
-"vše co obsahovala původní hra Roboti GNOME."
+"vše co obsahovala původní hra GNOME Roboti."
 
 #: C/index.docbook:162(sect1/para)
 msgid ""
@@ -268,7 +268,7 @@ msgid ""
 "menuchoice> from the <guimenu>Main Menu</guimenu>, or type <command>gnome-"
 "robots</command> on the command line."
 msgstr ""
-"Jestliže chcete hru <application>Roboti GNOME</application> spustit, zvolte "
+"Jestliže chcete hru <application>GNOME Roboti</application> spustit, zvolte "
 "<menuchoice><guisubmenu>Hry</guisubmenu><guimenuitem>Roboti</guimenuitem></"
 "menuchoice> z <guimenu>hlavní nabídky</guimenu> nebo zadejte <command>gnome-"
 "robots</command> v příkazovém řádku."
@@ -280,13 +280,13 @@ msgid ""
 "This document describes version 2.18 of <application>GNOME Robots</"
 "application>."
 msgstr ""
-"<application>Roboti GNOME</application> je součástí balíku <filename>gnome-"
+"<application>GNOME Roboti</application> je součástí balíku <filename>gnome-"
 "games</filename>, který patří k pracovnímu prostředí GNOME. Tento dokument "
-"popisuje verzi 2.18 aplikace <application>Roboti GNOME</application>."
+"popisuje verzi 2.18 aplikace <application>GNOME Roboti</application>."
 
 #: C/index.docbook:181(sect1/title)
 msgid "GNOME Robots Objective"
-msgstr "Cíl hry Roboti GNOME"
+msgstr "Cíl hry GNOME Roboti"
 
 #: C/index.docbook:182(sect1/para)
 msgid ""
@@ -296,7 +296,7 @@ msgid ""
 "kill you. Your goal is to kill all the robots on the board by taking "
 "advantage of their vulnerabilities."
 msgstr ""
-"Cíl hry Roboti GNOME je docela jednoduchý. Jste obklopen několika roboty "
+"Cíl hry GNOME Roboti je docela jednoduchý. Jste obklopen několika roboty "
 "nebo jinými nepřátelskými protivníky. Jak se pohybujete, oni se při každém "
 "tahu, který uděláte, pohnou směrem k vám. Jejich cílem je vás zabít. Vašim "
 "cílem je naopak zabít všechny roboty na ploše tak, že s výhodou využijete "
@@ -371,7 +371,7 @@ msgstr ""
 
 #: C/index.docbook:233(sect1/title)
 msgid "Using GNOME Robots"
-msgstr "Používání hry Roboti GNOME"
+msgstr "Používání hry GNOME Roboti"
 
 #: C/index.docbook:234(sect1/para)
 msgid ""
@@ -379,7 +379,7 @@ msgid ""
 "use either the mouse or the keyboard. This section describes basic usage of "
 "<application>GNOME Robots</application>."
 msgstr ""
-"<application>Roboti GNOME</application> jsou na hraní extrémně jednodušší. "
+"<application>GNOME Roboti</application> jsou na hraní extrémně jednodušší. "
 "Můžete používat myš nebo klávesnici. Tato kapitola popisuje základy "
 "používání <application>Robotů</application>."
 
@@ -399,7 +399,7 @@ msgid ""
 msgstr ""
 "<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
 "\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> <phrase>Hlavní "
-"okno hry Roboti GNOME.</phrase> </textobject>"
+"okno hry GNOME Roboti.</phrase> </textobject>"
 
 #: C/index.docbook:244(sect2/para)
 msgid ""
@@ -407,7 +407,7 @@ msgid ""
 "window</interface>, shown in <xref linkend=\"mainwindow-fig\"/>. <_:figure-1/"
 ">"
 msgstr ""
-"Spuštěním hry <application>Roboti GNOME</application> se otevře "
+"Spuštěním hry <application>GNOME Roboti</application> se otevře "
 "<interface>hlavní okno</interface>, tak jak jej ukazuje <xref linkend="
 "\"mainwindow-fig\"/>. <_:figure-1/>"
 
@@ -534,7 +534,7 @@ msgid ""
 "application version number."
 msgstr ""
 "<guimenuitem>O aplikaci</guimenuitem> — ukáže základní informace o hře "
-"<application>Roboti GNOME</application>, jako je jméno autora a číslo verze "
+"<application>GNOME Roboti</application>, jako je jméno autora a číslo verze "
 "aplikace."
 
 #: C/index.docbook:411(sect1/title)
@@ -629,7 +629,7 @@ msgstr ""
 
 #: C/index.docbook:482(sect1/title)
 msgid "Customizing GNOME Robots"
-msgstr "Přizpůsobení hry Roboti GNOME"
+msgstr "Přizpůsobení hry GNOME Roboti"
 
 #: C/index.docbook:501(listitem/para)
 msgid ""
@@ -773,7 +773,7 @@ msgid ""
 "this application or this manual, follow the directions in this <ulink url="
 "\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
 msgstr ""
-"Hru <application>Roboti GNOME</application> napsal Mark Rae (<email>m."
+"Hru <application>GNOME Roboti</application> napsal Mark Rae (<email>m."
 "rae@inpharmatica.co.uk</email>). Tuto příručku napsal Patanjali Somayaji "
 "(<email>patanjali@mindless.com</email>) podle původní dokumentace v HTML, "
 "kterou napsal Mark Rae. Pokud chcete nahlásit chybu nebo podat návrh "

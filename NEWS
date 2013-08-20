@@ -1,3 +1,9 @@
+gnome-robots 3.9.90
+===================
+
+ * Set prgname so WM_CLASS matches the desktop file
+ * Translation updates
+
 gnome-robots 3.8.0
 ==================
 

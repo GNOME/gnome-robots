@@ -56,6 +56,9 @@ Games_in_files = gnobots2.desktop.in.in
 Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
+appdatadir = $(datadir)/appdata
+appdata_DATA = gnome-robots.appdata.xml
+
 install-data-local:
 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
 	-for cfn in $(config_DATA); do \
@@ -80,6 +83,7 @@ uninstall-local:
 	    done
 
 EXTRA_DIST = $(cursor_files) \
+	     $(appdata_DATA) \
              $(pixmap_DATA) \
              $(sounds_DATA) \
              $(theme_DATA) \

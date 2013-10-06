@@ -51,9 +51,9 @@ config_DATA = robots2.cfg \
               robots_with_safe_teleport.cfg \
               nightmare.cfg
 
-Gamesdir = $(datadir)/applications
-Games_in_files = gnobots2.desktop.in.in
-Games_DATA = $(Games_in_files:.desktop.in.in=.desktop)
+desktopdir = $(datadir)/applications
+desktop_in_files = gnobots2.desktop.in
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 appdatadir = $(datadir)/appdata
@@ -87,13 +87,13 @@ EXTRA_DIST = $(cursor_files) \
              $(pixmap_DATA) \
              $(sounds_DATA) \
              $(theme_DATA) \
-             $(Games_DATA) \
+             $(desktop_in_files) \
              $(config_DATA) \
              $(gsettings_in_file) \
              $(man_MANS)
 
-CLEANFILES = $(Games_DATA) $(gsettings_SCHEMAS)
-DISTCLEANFILES = $(Games_DATA) $(gsettings_SCHEMAS)
+CLEANFILES = $(desktop_DATA) $(gsettings_SCHEMAS)
+DISTCLEANFILES = $(gsettings_SCHEMAS)
 
 check-local: $(appdata_DATA) $(desktop_DATA)
 	$(APPDATA_VALIDATE) $(appdata_DATA)

@@ -67,6 +67,9 @@ PKG_CHECK_MODULES(ROBOTS, [
   libcanberra-gtk3 >= $CANBERRA_GTK_REQUIRED
 ])
 
+AC_PATH_PROG(APPDATA_VALIDATE, appdata-validate)
+AC_PATH_PROG(DESKTOP_FILE_VALIDATE, desktop-file-validate)
+
 dnl ###########################################################################
 dnl Internationalization
 dnl ###########################################################################

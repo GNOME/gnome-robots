@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games-master-po-gl-54590\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-07 01:13+0100\n"
-"PO-Revision-Date: 2013-02-07 01:13+0200\n"
+"POT-Creation-Date: 2013-11-01 16:42+0100\n"
+"PO-Revision-Date: 2013-11-01 16:46+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -27,59 +27,94 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/gnome-robots.desktop.in.in.h:1 ../src/gnobots.c:200
-#: ../src/gnobots.c:213 ../src/menu.c:261 ../src/menu.c:264
+#: ../data/gnobots2.desktop.in.h:1 ../src/gnobots.c:206 ../src/gnobots.c:219
+#: ../src/menu.c:261 ../src/menu.c:264
 msgid "Robots"
 msgstr "Robots"
 
-#: ../data/gnome-robots.desktop.in.in.h:2
+#: ../data/gnobots2.desktop.in.h:2
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Evitar os robots e facer que choquen entre eles"
 
-#: ../data/gnome-robots.desktop.in.in.h:3
+#: ../data/gnobots2.desktop.in.h:3
 msgid "game;arcade;teleport;"
 msgstr "xogo;arcade;teletransporte;"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:1
+#: ../data/gnome-robots.appdata.xml.in.h:1
+msgid "GNOME Robots"
+msgstr "Robots de GNOME"
+
+#: ../data/gnome-robots.appdata.xml.in.h:2
+msgid ""
+"It is the distant future – the year 2000. Evil robots are trying to kill "
+"you. Avoid the robots or face certain death."
+msgstr ""
+"É un futuro distante - o ano 2000. Os robots demoníacos están tentando "
+"matarte. Evita os robots ou verás a morte."
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
+msgid ""
+"Fortunately, the robots are extremely stupid and will always move directly "
+"towards you. Trick them into colliding into each other, resulting in their "
+"destruction, or into the junk piles that result. You can defend yourself by "
+"moving the junk piles, or escape to safety with your handy teleportation "
+"device."
+msgstr ""
+"Por sorte, os robots son extremadamente estúpidos e moveranse sempre cara "
+"ti. Engánaos para que colisionen entre eles, o que resulta na súa destrución "
+"ou, ou nas pilas de lixo ou escapa de forma segura co teu dispositivo de "
+"teletransporte."
+
+#: ../data/gnome-robots.appdata.xml.in.h:4
+msgid ""
+"Your supply of safe teleports is limited, and once you run out, "
+"teleportation could land you right next to a robot, who will kill you. "
+"Survive for as long as possible!"
+msgstr ""
+"A cantidade de teletransportes seguros é limitada e cando se che acaben, o "
+"teletransporte podería poñerche xusto ao lado dun robot o cal che matará. "
+"Sobrevive tanto como poidas!"
+
+#: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
 msgstr "Mostrar a barra de ferramentas"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:2
+#: ../data/org.gnome.robots.gschema.xml.h:2
 msgid "Show toolbar. A standard option for toolbars."
 msgstr ""
 "Mostrar barra de ferramentas. Unha opción estándar para a barra de "
 "ferramentas."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:3
+#: ../data/org.gnome.robots.gschema.xml.h:3
 msgid "Robot image theme"
 msgstr "Tema da imaxe do robot"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:4
+#: ../data/org.gnome.robots.gschema.xml.h:4
 msgid "Robot image theme. The theme of the images to use for the robots."
 msgstr ""
 "Tema da imaxe do robot. O tema das imaxes que se van usar para os robots."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:5
+#: ../data/org.gnome.robots.gschema.xml.h:5
 msgid "Background color"
 msgstr "Cor de fondo"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:6
+#: ../data/org.gnome.robots.gschema.xml.h:6
 msgid "Background color. The hex specification of the background color."
 msgstr "Cor de fondo. Valor hexadecimal da cor de fondo."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:7
+#: ../data/org.gnome.robots.gschema.xml.h:7
 msgid "Game type"
 msgstr "Tipo de xogo"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:8
+#: ../data/org.gnome.robots.gschema.xml.h:8
 msgid "Game type. The name of the game variation to use."
 msgstr "Tipo de xogo. Nome da variación do xogo que se vai usar."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:9
+#: ../data/org.gnome.robots.gschema.xml.h:9
 msgid "Use safe moves"
 msgstr "Usar movementos seguros"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:10
+#: ../data/org.gnome.robots.gschema.xml.h:10
 msgid ""
 "Use safe moves. The safe moves option will help you to avoid being killed "
 "due to a mistake. If you try to make a move that would lead to your death "
@@ -89,11 +124,11 @@ msgstr ""
 "que o maten por algún erro. Se tenta facer un movemento no que o van matar "
 "cando resulta que pode facer outro seguro, non se lle permitirá realizalo."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:11
+#: ../data/org.gnome.robots.gschema.xml.h:11
 msgid "Use super safe moves"
 msgstr "Usar movementos moi seguros"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:12
+#: ../data/org.gnome.robots.gschema.xml.h:12
 msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
@@ -101,125 +136,125 @@ msgstr ""
 "Usar movementos moi seguros. Avisarase ao xogador cando non haxa movementos "
 "seguros e a única opción sexa teleportarse."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:13
+#: ../data/org.gnome.robots.gschema.xml.h:13
 msgid "Enable game sounds"
 msgstr "Activar os sons do xogo"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:14
+#: ../data/org.gnome.robots.gschema.xml.h:14
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Activar os sons do xogo. Reproducir sons para diversos eventos ao longo da "
 "partida."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:15 ../src/properties.c:500
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:500
 msgid "Key to move NW"
 msgstr "Tecla para moverse ao NO"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:16
+#: ../data/org.gnome.robots.gschema.xml.h:16
 msgid "The key used to move north-west."
 msgstr "A tecla usada para moverse ao noroeste."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:17 ../src/properties.c:501
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:501
 msgid "Key to move N"
 msgstr "Tecla para moverse ao N"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:18
+#: ../data/org.gnome.robots.gschema.xml.h:18
 msgid "The key used to move north."
 msgstr "A tecla usada para moverse ao norte."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:19 ../src/properties.c:502
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:502
 msgid "Key to move NE"
 msgstr "Tecla para moverse ao NL"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:20
+#: ../data/org.gnome.robots.gschema.xml.h:20
 msgid "The key used to move north-east."
 msgstr "A tecla usada para moverse ao noreste."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:21 ../src/properties.c:503
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:503
 msgid "Key to move W"
 msgstr "Tecla para moverse ao O"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:22
+#: ../data/org.gnome.robots.gschema.xml.h:22
 msgid "The key used to move west."
 msgstr "A tecla usada para moverse ao oeste."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:23 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:508
 msgid "Key to hold"
 msgstr "Tecla para permanecer quieto"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:24
+#: ../data/org.gnome.robots.gschema.xml.h:24
 msgid "The key used to hold still."
 msgstr "a tecla usada para quedarse quieto."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:25 ../src/properties.c:504
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:504
 msgid "Key to move E"
 msgstr "Tecla para moverse ao L"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:26
+#: ../data/org.gnome.robots.gschema.xml.h:26
 msgid "The key used to move east."
 msgstr "A tecla usada para moverse ao este."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:27 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:505
 msgid "Key to move SW"
 msgstr "Tecla para moverse ao SO"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:28
+#: ../data/org.gnome.robots.gschema.xml.h:28
 msgid "The key used to move south-west."
 msgstr "A tecla usada para moverse ao suroeste."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:29 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:506
 msgid "Key to move S"
 msgstr "Tecla para moverse ao S"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:30
+#: ../data/org.gnome.robots.gschema.xml.h:30
 msgid "The key used to move south."
 msgstr "A tecla usada para moverse ao sur."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:31 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:507
 msgid "Key to move SE"
 msgstr "Tecla para moverse ao SL"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:32
+#: ../data/org.gnome.robots.gschema.xml.h:32
 msgid "The key used to move south-east."
 msgstr "A tecla usada para moverse ao sudeste."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:33 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:509
 msgid "Key to teleport"
 msgstr "Tecla para teleportarse"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:34
+#: ../data/org.gnome.robots.gschema.xml.h:34
 msgid "The key used to teleport safely (if possible)."
 msgstr "A tecla usada para teletransportarse con seguranza (se é posíbel)."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:35 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:510
 msgid "Key to teleport randomly"
 msgstr "Tecla para teleportarse aleatoriamente"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:36
+#: ../data/org.gnome.robots.gschema.xml.h:36
 msgid "The key used to teleport randomly."
 msgstr "A tecla usada para teletransportarse ao chou."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:37 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:511
 msgid "Key to wait"
 msgstr "Tecla para esperar"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:38
+#: ../data/org.gnome.robots.gschema.xml.h:38
 msgid "The key used to wait."
 msgstr "A tecla usada para agardar."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:39
+#: ../data/org.gnome.robots.gschema.xml.h:39
 msgid "Width of the window in pixels"
 msgstr "Largura da xanela en píxeles"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:40
+#: ../data/org.gnome.robots.gschema.xml.h:40
 msgid "Height of the window in pixels"
 msgstr "Altura da xanela en píxeles"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:41
+#: ../data/org.gnome.robots.gschema.xml.h:41
 msgid "true if the window is maximized"
 msgstr "verdadeiro se a xanela está maximizada"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:42
+#: ../data/org.gnome.robots.gschema.xml.h:42
 msgid "true if the window is fullscren"
 msgstr "verdadeiro se a xanela está en en pantalla completa"
 
@@ -588,11 +623,11 @@ msgstr "Robots con teleportación segura e movementos seguros"
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robots con teleportación segura e movementos moi seguros"
 
-#: ../src/gnobots.c:280
+#: ../src/gnobots.c:286
 msgid "No game data could be found."
 msgstr "Non foi posíbel atopar datos do xogo."
 
-#: ../src/gnobots.c:282
+#: ../src/gnobots.c:288
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -600,11 +635,11 @@ msgstr ""
 "O programa Robots non puido atopar ningún ficheiro de configuración de xogo "
 "válido. Comprobe que o programa foi instalado correctamente."
 
-#: ../src/gnobots.c:298
+#: ../src/gnobots.c:304
 msgid "Some graphics files are missing or corrupt."
 msgstr "Algúns ficheiros de gráficas faltan ou están corrompidos."
 
-#: ../src/gnobots.c:300
+#: ../src/gnobots.c:306
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."

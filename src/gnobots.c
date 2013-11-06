@@ -205,7 +205,7 @@ main (int argc, char *argv[])
 
   g_set_application_name (_("Robots"));
 
-  highscores = games_scores_new ("gnobots2",
+  highscores = games_scores_new ("gnome-robots",
                                  scorecats, G_N_ELEMENTS (scorecats),
                                  NULL, NULL,
                                  0 /* default category */,

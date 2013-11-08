@@ -54,12 +54,6 @@ gnome_robots_SOURCES = \
 	cursor-up-left.h \
 	cursor-up-right.h
 
-if ENABLE_SETGID
-gnome_robots_SOURCES +=		\
-	games-setgid-io.c		\
-	games-setgid-io.h
-endif # ENABLE_SETGID
-
 gnome_robots_CPPFLAGS = \
 	-I$(top_srcdir) \
 	$(AM_CPPFLAGS)
@@ -69,16 +63,10 @@ gnome_robots_CFLAGS = \
 	-DSOUND_DIRECTORY=\"$(datadir)/gnome-robots/sounds\" \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	-DICON_THEME_DIRECTORY="\"$(datadir)/icons\"" \
-	-DSCORESDIR="\"$(scoredir)\""				\
 	$(ROBOTS_CFLAGS)
 
 gnome_robots_LDADD = \
 	$(ROBOTS_LIBS) \
 	-lm
-
-install-exec-hook:
-	-if test "$(setgid)" = "true"; then \
-	  chgrp $(scores_group) $(DESTDIR)$(bindir)/gnome-robots && chmod 2555 $(DESTDIR)$(bindir)/gnome-robots ;\
-	fi
 
 -include $(top_srcdir)/git.mk

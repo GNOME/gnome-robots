@@ -1,3 +1,9 @@
+gnome-robots 3.8.2
+==================
+
+* Fix score system (requires setguid)
+* Translations updates
+
 gnome-robots 3.8.1
 ==================
 

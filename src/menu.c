@@ -258,13 +258,11 @@ about_cb (GtkAction * action, gpointer data)
   const gchar *documenters[] =
     { "Patanjali Somayaji", "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
 
-  gchar *license = games_get_license (_("Robots"));
-
   gtk_show_about_dialog (GTK_WINDOW (app),
 			 "name", _("Robots"),
 			 "version", VERSION,
 			 "copyright", "Copyright \xc2\xa9 1998-2008 Mark Rae",
-			 "license", license,
+			 "license-type", GTK_LICENSE_GPL_2_0,
 		         "website-label", _("GNOME Games web site"),
 			 "comments", _("Based on classic BSD Robots.\n\nRobots is a part of GNOME Games."),
 			 "authors", authors,
@@ -274,8 +272,7 @@ about_cb (GtkAction * action, gpointer data)
 			 "logo-icon-name", "gnome-robots",
 			 "website",
 			 "http://www.gnome.org/projects/gnome-games/",
-			 "wrap-license", TRUE, NULL);
-  g_free (license);
+			 NULL);
 }
 
 static void

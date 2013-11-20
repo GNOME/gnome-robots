@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gnome-games.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-20 03:16+0000\n"
-"PO-Revision-Date: 2013-11-04 16:20+0100\n"
+"POT-Creation-Date: 2013-11-19 17:48+0000\n"
+"PO-Revision-Date: 2013-11-20 13:08+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: ../data/gnobots2.desktop.in.h:1 ../src/gnobots.c:206 ../src/gnobots.c:219
-#: ../src/menu.c:261 ../src/menu.c:264
+#: ../src/menu.c:262
 msgid "Robots"
 msgstr "Robots"
 
@@ -38,7 +38,6 @@ msgid "game;arcade;teleport;"
 msgstr "juego;arcade;teletransporte;"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
-#| msgid "Robots"
 msgid "GNOME Robots"
 msgstr "GNOME Robots"
 
@@ -705,21 +704,25 @@ msgstr "Barra de herramien_tas"
 msgid "Show or hide the toolbar"
 msgstr "Mostrar u ocultar la barra de herramientas"
 
-#: ../src/menu.c:268
+#: ../src/menu.c:266
 msgid "GNOME Games web site"
 msgstr "Página web de los juegos de GNOME"
 
-#: ../src/menu.c:269
+#: ../src/menu.c:267
+#| msgid ""
+#| "Based on classic BSD Robots.\n"
+#| "\n"
+#| "Robots is a part of GNOME Games."
 msgid ""
-"Based on classic BSD Robots.\n"
+"Based on classic BSD Robots\n"
 "\n"
 "Robots is a part of GNOME Games."
 msgstr ""
 "Basado en el clásico de BSD «Robots»\n"
 "\n"
-"Robots es parte de los Juegos de GNOME."
+"Robots es parte de los juegos de GNOME."
 
-#: ../src/menu.c:273
+#: ../src/menu.c:271
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2008-2012\n"

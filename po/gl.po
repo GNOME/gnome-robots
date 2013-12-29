@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games-master-po-gl-54590\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-01 16:42+0100\n"
-"PO-Revision-Date: 2013-11-01 16:46+0200\n"
+"POT-Creation-Date: 2013-12-30 00:56+0100\n"
+"PO-Revision-Date: 2013-12-30 00:56+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: ../data/gnobots2.desktop.in.h:1 ../src/gnobots.c:206 ../src/gnobots.c:219
-#: ../src/menu.c:261 ../src/menu.c:264
+#: ../src/menu.c:262
 msgid "Robots"
 msgstr "Robots"
 
@@ -704,21 +704,21 @@ msgstr "_Barra de ferramentas"
 msgid "Show or hide the toolbar"
 msgstr "Mostrar ou agochar a barra de ferramentas"
 
-#: ../src/menu.c:268
+#: ../src/menu.c:266
 msgid "GNOME Games web site"
 msgstr "Sitio web do GNOME Games"
 
-#: ../src/menu.c:269
+#: ../src/menu.c:267
 msgid ""
-"Based on classic BSD Robots.\n"
+"Based on classic BSD Robots\n"
 "\n"
 "Robots is a part of GNOME Games."
 msgstr ""
-"Beaseado no clásico BSD Robots.\n"
+"Beaseado no clásico BSD Robots\n"
 "\n"
 "O Robots forma parte do GNOME Games."
 
-#: ../src/menu.c:273
+#: ../src/menu.c:271
 msgid "translator-credits"
 msgstr ""
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.\n"

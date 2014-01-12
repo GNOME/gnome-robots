@@ -263,7 +263,6 @@ about_cb (GtkAction * action, gpointer data)
 			 "version", VERSION,
 			 "copyright", "Copyright \xc2\xa9 1998-2008 Mark Rae",
 			 "license-type", GTK_LICENSE_GPL_2_0,
-		         "website-label", _("GNOME Games web site"),
 			 "comments", _("Based on classic BSD Robots\n\nRobots is a part of GNOME Games."),
 			 "authors", authors,
 			 "artists", artists,
@@ -271,7 +270,7 @@ about_cb (GtkAction * action, gpointer data)
 			 "translator-credits", _("translator-credits"),
 			 "logo-icon-name", "gnome-robots",
 			 "website",
-			 "http://www.gnome.org/projects/gnome-games/",
+			 "https://wiki.gnome.org/Apps/Robots",
 			 NULL);
 }
 

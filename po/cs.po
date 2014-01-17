@@ -49,7 +49,6 @@ msgid "game;arcade;teleport;"
 msgstr "hra;arkádová;teleportace;"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
-#| msgid "Robots"
 msgid "GNOME Robots"
 msgstr "Roboti GNOME"
 
@@ -712,16 +711,12 @@ msgid "Show or hide the toolbar"
 msgstr "Zobrazit nebo skrýt lištu nástrojů"
 
 #: ../src/menu.c:266
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
 msgid ""
 "Based on classic BSD Robots\n"
 "\n"
 "Robots is a part of GNOME Games."
 msgstr ""
-"Založeno na klasických Robotech BSD.\n"
+"Založeno na klasických Robotech BSD\n"
 "\n"
 "Roboti jsou součástí her GNOME."
 
@@ -813,6 +808,3 @@ msgstr "Úroveň:"
 #: ../src/statusbar.c:94
 msgid "Remaining:"
 msgstr "Zbývá:"
-
-#~ msgid "GNOME Games web site"
-#~ msgstr "Webové stránky her GNOME"

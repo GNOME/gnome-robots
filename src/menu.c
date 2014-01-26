@@ -256,7 +256,7 @@ about_cb (GtkAction * action, gpointer data)
   const gchar *artists[] = { "Kirstie Opstad - <K.Opstad@ed.ac.uk>", NULL };
 
   const gchar *documenters[] =
-    { "Patanjali Somayaji", "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
+    { "Aruna Sankaranarayanan", NULL };
 
   gtk_show_about_dialog (GTK_WINDOW (app),
 			 "name", _("Robots"),

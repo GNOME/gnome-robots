@@ -17,9 +17,7 @@
   </info>
 
   <title>
-    <media type="image" its:translate="no" src="figures/gnome-robots.png">
-      <span its:translate="yes">Robots logo</span>
-    </media>
+    <media type="image" its:translate="no" src="figures/gnome-robots.png" />
     Robots
   </title>
 

@@ -6,6 +6,7 @@ HELP_MEDIA = \
 	figures/boo-low-risk.png \
 	figures/gnome-high-risk.png \
 	figures/gnome-low-risk.png \
+	figures/gnome-robots.png \
 	figures/random.png \
 	figures/robots-high-risk.png \
 	figures/robots-low-risk.png \

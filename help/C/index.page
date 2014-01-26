@@ -1,4 +1,5 @@
 <page xmlns="http://projectmallard.org/1.0/"
+	xmlns:its="http://www.w3.org/2005/11/its"
 	type="guide" style="task"
 	id="index">
 
@@ -15,7 +16,12 @@
     <desc>Index</desc>
   </info>
 
-  <title>Robots</title>
+  <title>
+    <media type="image" its:translate="no" src="figures/gnome-robots.png">
+      <span its:translate="yes">Robots logo</span>
+    </media>
+    Robots
+  </title>
 
   <p><app>Robots</app> is based on the UNIX command-line game of the same
   name. The aim of the game is to destroy all the robots by getting them to

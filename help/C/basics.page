@@ -41,7 +41,7 @@
 
 <section id="sounds">
   <title>Enable sounds</title>
-  <p>Select<guiseq>
+  <p>Select <guiseq>
   <gui style="menu">Settings</gui><gui>Preferences</gui>
   <gui>Game</gui></guiseq>. Check the
   <gui style="checkbox">Enable sounds</gui> checkbox to enable sounds.</p>

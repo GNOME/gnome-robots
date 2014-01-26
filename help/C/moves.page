@@ -20,7 +20,7 @@
 
   <title>Different moves in <app>Robots</app></title>
 
-  <p>In <app>Robots</app> you can move in nine possible ways, wait for the
+  <p>In <app>Robots</app> you can move in eight directions, wait for the
   robots, or teleport. The enemy robots and the main character take turns to
   make their move. So, after each of your moves, the enemy robots try to make a
   move that gets them closer to you.</p>

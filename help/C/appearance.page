@@ -25,7 +25,7 @@
   <steps>
   <title>To change the game theme and background:</title>
     <item>
-      <p>Select<guiseq><gui style="menu">Settings</gui>
+      <p>Select <guiseq><gui style="menu">Settings</gui>
       <gui style="menuitem">Preferences</gui>
       <gui style="menuitem">Appearance</gui></guiseq>.</p>
     </item>

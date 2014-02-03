@@ -417,10 +417,11 @@ show_properties_dialog (void)
   gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
   typemenu = gtk_combo_box_text_new ();
-  g_signal_connect (G_OBJECT (typemenu), "changed",
-		    G_CALLBACK (type_selection), NULL);
   fill_typemenu (typemenu);
   gtk_grid_attach (GTK_GRID (grid), typemenu, 1, 0, 1, 1);
+
+  g_signal_connect (G_OBJECT (typemenu), "changed",
+		    G_CALLBACK (type_selection), NULL);
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Use safe moves"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),

@@ -42,7 +42,7 @@ msgstr "Roboti"
 
 #: ../data/gnobots2.desktop.in.h:2
 msgid "Avoid the robots and make them crash into each other"
-msgstr "Unikat robotům a nechat je navzájem do sebe narážet"
+msgstr "Utíkejte před roboty a nechte je do sebe navzájem narážet"
 
 #: ../data/gnobots2.desktop.in.h:3
 msgid "game;arcade;teleport;"

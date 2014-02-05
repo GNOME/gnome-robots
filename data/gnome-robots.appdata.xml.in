@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 Michael Catanzaro -->
 <application>
- <id type="desktop">gnobots2.desktop</id>
+ <id type="desktop">gnome-robots.desktop</id>
  <licence>CC0</licence>
  <_name>GNOME Robots</_name>
  <description>

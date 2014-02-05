@@ -1,8 +1,8 @@
 # List of source files containing translatable strings.
 # Please keep this file in alphabetical order.
 [encoding: UTF-8]
-data/gnobots2.desktop.in
 data/gnome-robots.appdata.xml.in
+data/gnome-robots.desktop.in
 data/org.gnome.robots.gschema.xml
 src/game.c
 src/games-controls.c

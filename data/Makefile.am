@@ -50,7 +50,7 @@ config_DATA = robots2.cfg \
               nightmare.cfg
 
 desktopdir = $(datadir)/applications
-desktop_in_files = gnobots2.desktop.in
+desktop_in_files = gnome-robots.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 

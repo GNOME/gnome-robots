@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
-"POT-Creation-Date: 2014-01-27 23:44+0000\n"
-"PO-Revision-Date: 2014-01-28 14:09+0100\n"
+"POT-Creation-Date: 2014-02-06 08:46+0000\n"
+"PO-Revision-Date: 2014-02-06 13:52+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -24,45 +24,11 @@ msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
 #. (itstool) path: credit/name
-#: C/index.page:12 C/appearance.page:13 C/basics.page:13
-#: C/controls-change.page:14 C/controls-default.page:14 C/game-types.page:14
+#: C/appearance.page:13 C/basics.page:13 C/controls-change.page:14
+#: C/controls-default.page:14 C/game-types.page:14 C/index.page:12
 #: C/moves.page:14 C/scores.page:13
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
-
-#. (itstool) path: info/desc
-#: C/index.page:16
-msgid "Index"
-msgstr "Índice"
-
-#. (itstool) path: page/title
-#: C/index.page:19
-msgid "<_:media-1/> Robots"
-msgstr "<_:media-1/> Robots"
-
-#. (itstool) path: page/p
-#: C/index.page:24
-msgid ""
-"<app>Robots</app> is based on the UNIX command-line game of the same name. "
-"The aim of the game is to destroy all the robots by getting them to crash "
-"into each other or into junk-heaps from previous collisions, while stopping "
-"them from crashing into you."
-msgstr ""
-"<app>Robots</app> está basado en el juego de línea de comandos de UNIX con "
-"el mismo nombre. El objetivo del juego es destruir todos los robots haciendo "
-"que se choquen unos contra otros o contra pilas de basura de colisiones "
-"anteriores, mientras evita que choquen contra el jugador."
-
-#. (itstool) path: section/title
-#: C/index.page:30
-#| msgid "Game"
-msgid "Game play"
-msgstr "Juego"
-
-#. (itstool) path: section/title
-#: C/index.page:34
-msgid "Preferences"
-msgstr "Preferencias"
 
 #. (itstool) path: info/desc
 #: C/appearance.page:17
@@ -130,7 +96,7 @@ msgstr "robots"
 #. (itstool) path: item/p
 #: C/appearance.page:47
 msgid "ufo"
-msgstr "ufo"
+msgstr "ovni"
 
 #. (itstool) path: item/p
 #: C/appearance.page:52
@@ -165,7 +131,6 @@ msgstr ""
 
 #. (itstool) path: page/title
 #: C/basics.page:20
-#| msgid "Introduction"
 msgid "Basic instructions"
 msgstr "Instrucciones básicas"
 
@@ -242,7 +207,6 @@ msgstr "Cambiar las teclas predeterminadas en <app>Robots</app>."
 
 #. (itstool) path: page/title
 #: C/controls-change.page:21
-#| msgid "Using the keyboard"
 msgid "Customize the keyboard controls"
 msgstr "Personalizar los controles del teclado"
 
@@ -360,7 +324,6 @@ msgstr "Noroeste"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:36
-#| msgid "Up Left: <keycap>Home</keycap>"
 msgid "<key>Home</key>"
 msgstr "<key>Inicio</key>"
 
@@ -381,7 +344,6 @@ msgstr "Noreste"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:44
-#| msgid "Up: <keycap>Up</keycap>"
 msgid "<key>PgUp</key>"
 msgstr "<key>Re Pág</key>"
 
@@ -412,7 +374,6 @@ msgstr "Suroeste"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:56
-#| msgid "Down Left: <keycap>End</keycap>"
 msgid "<key>End</key>"
 msgstr "<key>Fin</key>"
 
@@ -433,7 +394,6 @@ msgstr "Sureste"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:64
-#| msgid "Down: <keycap>Down</keycap>"
 msgid "<key>PgDn</key>"
 msgstr "<key>Av Pág</key>"
 
@@ -445,7 +405,6 @@ msgstr "Quedarse en la misma posición"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:68
-#| msgid "Up: <keycap>Up</keycap>"
 msgid "<key>5</key>"
 msgstr "<key>5</key>"
 
@@ -456,7 +415,6 @@ msgstr "Teletransportarse con seguridad"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:72
-#| msgid "Up: <keycap>Up</keycap>"
 msgid "<key>+</key>"
 msgstr "<key>+</key>"
 
@@ -467,7 +425,6 @@ msgstr "Teletransportarse al azar"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:76
-#| msgid "Up: <keycap>Up</keycap>"
 msgid "<key>*</key>"
 msgstr "<key>*</key>"
 
@@ -479,7 +436,6 @@ msgstr "Esperar a los robots"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:80
-#| msgid "Wait: <keycap>Enter</keycap>"
 msgid "<key>Enter</key>"
 msgstr "<key>Intro</key>"
 
@@ -511,6 +467,12 @@ msgid ""
 "above the main character, a small black arrow will appear pointing "
 "northwards. On clicking, the character will move one square northwards."
 msgstr ""
+"Cuando mueva el ratón alrededor del personaje principal, aparecerá una "
+"pequeña flecha negra apuntando a la dirección en la que el personaje se "
+"moverá si le pulsa. Por ejemplo, para moverse hacia el norte, si mueve el "
+"cursor hasta la columna encima del personaje principal, aparecerá una "
+"pequeña flecha negra apuntando hacia el norte. Al pulsar, el personaje se "
+"moverá un cuadrado hacia el norte."
 
 #. (itstool) path: item/p
 #: C/controls-default.page:106
@@ -568,7 +530,6 @@ msgstr "Cambiar el nivel de dificultad en <app>Robots</app>."
 
 #. (itstool) path: page/title
 #: C/game-types.page:21
-#| msgid "Game"
 msgid "Game type"
 msgstr "Tipo de juego"
 
@@ -579,6 +540,9 @@ msgid ""
 "game type. This changes the level of difficulty involved in playing "
 "<app>Robots</app>."
 msgstr ""
+"Puede jugar a <app>Robots</app> de diferentes maneras, eligiendo un tipo de "
+"juego diferente. Esto cambia el nivel de dificultad asociado a <app>Robots</"
+"app>."
 
 #. (itstool) path: steps/title
 #: C/game-types.page:28
@@ -599,32 +563,37 @@ msgstr ""
 msgid ""
 "From the drop down menu next to <gui>Game Type</gui>, choose your option."
 msgstr ""
+"Elija la opción que quiere en el menú desplegable junto a <gui>Tipo de "
+"juego</gui>."
 
 #. (itstool) path: td/p
 #: C/game-types.page:39
-#| msgid "Game"
 msgid "Game Type"
 msgstr "Tipo de juego"
 
 #. (itstool) path: td/p
 #: C/game-types.page:40
 msgid "Initial safe <link xref=\"moves#teleport\">teleports</link>"
-msgstr ""
+msgstr "<link xref=\"moves#teleport\">Teletransportes</link> seguros iniciales"
 
 #. (itstool) path: td/p
 #: C/game-types.page:42
 msgid "Initial <link xref=\"scores#low-risk\">low-risk enemy robots</link>"
 msgstr ""
+"<link xref=\"scores#low-risk\">Robots enemigos de riesgo bajo</link> "
+"iniciales"
 
 #. (itstool) path: td/p
 #: C/game-types.page:44
 msgid "Initial <link xref=\"scores#high-risk\">high-risk enemy robots</link>"
 msgstr ""
+"<link xref=\"scores#high-risk\">Robots enemigos de alto riesgo</link> "
+"iniciales"
 
 #. (itstool) path: td/p
 #: C/game-types.page:46
 msgid "Do safe teleports increase in successive levels?"
-msgstr ""
+msgstr "¿Se incrementan los teletransportes seguros en sucesivos niveles?"
 
 #. (itstool) path: td/p
 #: C/game-types.page:49
@@ -655,7 +624,7 @@ msgstr "Sí"
 #. (itstool) path: td/p
 #: C/game-types.page:56
 msgid "<gui>robots with safe teleport</gui>"
-msgstr ""
+msgstr "<gui>robots con teletransportes seguros</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:57 C/game-types.page:59 C/game-types.page:65
@@ -674,11 +643,13 @@ msgid ""
 "Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
 "link>"
 msgstr ""
+"Sí, pero sólo si se mata a los robots mientras están <link xref=\"moves#wait"
+"\">esperando</link>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:64
 msgid "<gui>classic robots</gui>"
-msgstr ""
+msgstr "<gui>robots clásicos</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:68
@@ -687,7 +658,6 @@ msgstr "No"
 
 #. (itstool) path: td/p
 #: C/game-types.page:71
-#| msgid "<guimenu>Game</guimenu>"
 msgid "<gui>nightmare</gui>"
 msgstr "<gui>pesadilla</gui>"
 
@@ -709,6 +679,44 @@ msgid ""
 "teleports to be as safe as possible. This reduces the level of difficulty. "
 "You can always uncheck these if you find the game too easy."
 msgstr ""
+"Marque las casillas <gui style=\"checkbox\">Usar movimientos seguros</gui> y "
+"<gui style=\"checkbox\">Usar movimientos superseguros</gui> si quiere que "
+"los teletransportes aleatorios sean lo más seguros posibles. Esto reduce el "
+"nivel de dificultad. Siempre puede desmarcarlas si el juego le resulta "
+"demasiado fácil"
+
+#. (itstool) path: info/desc
+#: C/index.page:16
+msgid "Index"
+msgstr "Índice"
+
+#. (itstool) path: page/title
+#: C/index.page:19
+msgid "<_:media-1/> Robots"
+msgstr "<_:media-1/> Robots"
+
+#. (itstool) path: page/p
+#: C/index.page:24
+msgid ""
+"<app>Robots</app> is based on the UNIX command-line game of the same name. "
+"The aim of the game is to destroy all the robots by getting them to crash "
+"into each other or into junk-heaps from previous collisions, while stopping "
+"them from crashing into you."
+msgstr ""
+"<app>Robots</app> está basado en el juego de línea de comandos de UNIX con "
+"el mismo nombre. El objetivo del juego es destruir todos los robots haciendo "
+"que se choquen unos contra otros o contra pilas de basura de colisiones "
+"anteriores, mientras evita que choquen contra el jugador."
+
+#. (itstool) path: section/title
+#: C/index.page:30
+msgid "Game play"
+msgstr "Juego"
+
+#. (itstool) path: section/title
+#: C/index.page:34
+msgid "Preferences"
+msgstr "Preferencias"
 
 #. (itstool) path: info/desc
 #: C/moves.page:18
@@ -728,10 +736,13 @@ msgid ""
 "their move. So, after each of your moves, the enemy robots try to make a "
 "move that gets them closer to you."
 msgstr ""
+"En <app>Robots</app>, puede moverse en 8 direcciones, esperar a los robots o "
+"teletransportarse. Los robots enemigos y el personaje principal se turnan "
+"para mover. Por lo tanto, después de cada uno de sus movimientos, los robots "
+"enemigos intentarán acercarse a usted."
 
 #. (itstool) path: section/title
 #: C/moves.page:29
-#| msgid "Basic usage"
 msgid "Basic moves"
 msgstr "Movimientos básicos"
 
@@ -741,6 +752,8 @@ msgid ""
 "You can move in any of the following directions. Each move takes you one "
 "square forward in the direction of your choice."
 msgstr ""
+"Puede moverse en cualquiera de las siguientes direcciones. Cada movimiento "
+"le desplaza un cuadrado en la dirección que elija."
 
 #. (itstool) path: item/p
 #: C/moves.page:36
@@ -799,6 +812,9 @@ msgid ""
 "This is not advisable unless there are very few robots and you are "
 "absolutely sure that they will all perish before reaching you."
 msgstr ""
+"Puede quedarse quieto y esperar a que los robots terminen de hacer sus "
+"movimientos. Esto no es recomendable, a menos que haya muy pocos robots y "
+"esté absolutamente seguro de que todos morirán antes de alcanzarle."
 
 #. (itstool) path: section/title
 #: C/moves.page:76
@@ -812,6 +828,9 @@ msgid ""
 "board instead of moving square by square, you can teleport. There are two "
 "types of teleports available."
 msgstr ""
+"Si ya no hay más movimientos posibles o si quiere hacer un salto a lo largo "
+"del tablero en lugar de moverse cuadrado a cuadrado, puede "
+"teletransportarse. Hay dos tipos de teletransportes disponibles."
 
 #. (itstool) path: item/p
 #: C/moves.page:85
@@ -819,6 +838,9 @@ msgid ""
 "Safe teleports move the main character to a location that is safe from enemy "
 "robots. In each game only a few safe teleports are allowed."
 msgstr ""
+"Los teletransportes seguros mueven al personaje principal a una ubicación "
+"segura respecto de los robots enemigos. En cada partida sólo se permite un "
+"número determinado de teletransportes."
 
 #. (itstool) path: item/p
 #: C/moves.page:91
@@ -827,6 +849,9 @@ msgid ""
 "may not be safe. You can use as many random teleports as you want during a "
 "game."
 msgstr ""
+"Use los teletransportes aleatorios para teletransportarse a un lugar "
+"aleatorio, que puede ser seguro o no. Puede usar tantos teletransportes "
+"aleatorios como quiera durante la partida."
 
 #. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
@@ -834,10 +859,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/scores.page:35
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/gnome-robots-main.png' "
-#| "md5='aade859d773abd55a6f903b51d92e4b9'"
 msgctxt "_"
 msgid ""
 "external ref='figures/boo-high-risk.png' "
@@ -852,10 +873,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/scores.page:40
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/gnome-robots-main.png' "
-#| "md5='aade859d773abd55a6f903b51d92e4b9'"
 msgctxt "_"
 msgid ""
 "external ref='figures/robots-high-risk.png' "
@@ -870,10 +887,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/scores.page:44
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/gnome-robots-main.png' "
-#| "md5='aade859d773abd55a6f903b51d92e4b9'"
 msgctxt "_"
 msgid ""
 "external ref='figures/gnome-high-risk.png' "
@@ -888,10 +901,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/scores.page:48
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/gnome-robots-main.png' "
-#| "md5='aade859d773abd55a6f903b51d92e4b9'"
 msgctxt "_"
 msgid ""
 "external ref='figures/ufo-high-risk.png' "
@@ -906,10 +915,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/scores.page:64
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/gnome-robots-main.png' "
-#| "md5='aade859d773abd55a6f903b51d92e4b9'"
 msgctxt "_"
 msgid ""
 "external ref='figures/boo-low-risk.png' "
@@ -924,10 +929,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/scores.page:68
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/gnome-robots-main.png' "
-#| "md5='aade859d773abd55a6f903b51d92e4b9'"
 msgctxt "_"
 msgid ""
 "external ref='figures/robots-low-risk.png' "
@@ -942,10 +943,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/scores.page:72
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/gnome-robots-main.png' "
-#| "md5='aade859d773abd55a6f903b51d92e4b9'"
 msgctxt "_"
 msgid ""
 "external ref='figures/gnome-low-risk.png' "
@@ -960,10 +957,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/scores.page:76
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/gnome-robots-main.png' "
-#| "md5='aade859d773abd55a6f903b51d92e4b9'"
 msgctxt "_"
 msgid ""
 "external ref='figures/ufo-low-risk.png' "
@@ -988,11 +981,13 @@ msgid ""
 "There are two type of enemies in <app>Robots</app>, enemies that give you 10 "
 "points when they die and enemies that give you 20 points when they die."
 msgstr ""
+"Hay dos tipos de enemigos en <app>Robots</app>: los que le dan 10 puntos "
+"cuando mueren y los que le dan 20."
 
 #. (itstool) path: section/title
 #: C/scores.page:27
 msgid "High-risk enemies"
-msgstr ""
+msgstr "Enemigos de alto riesgo"
 
 #. (itstool) path: section/p
 #: C/scores.page:29
@@ -1018,6 +1013,8 @@ msgid ""
 "High-risk Robots <media type=\"image\" src=\"figures/robots-high-risk.png\" "
 "height=\"20\" width=\"20\"/>"
 msgstr ""
+"Robots de alto riesgo <media type=\"image\" src=\"figures/robots-high-risk."
+"png\" height=\"20\" width=\"20\"/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:43
@@ -1025,6 +1022,8 @@ msgid ""
 "High-risk gnomes <media type=\"image\" src=\"figures/gnome-high-risk.png\" "
 "height=\"20\" width=\"20\"/>"
 msgstr ""
+"Gnomes de alto riesgo <media type=\"image\" src=\"figures/gnome-high-risk.png"
+"\" height=\"20\" width=\"20\"/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:47
@@ -1032,11 +1031,13 @@ msgid ""
 "High-risk UFOs <media type=\"image\" src=\"figures/ufo-high-risk.png\" "
 "height=\"20\" width=\"20\"/>"
 msgstr ""
+"Ovni de alto riesgo <media type=\"image\" src=\"figures/ufo-high-risk.png\" "
+"height=\"20\" width=\"20\"/>"
 
 #. (itstool) path: section/title
 #: C/scores.page:55
 msgid "Low-risk enemies"
-msgstr ""
+msgstr "Enemigos de riesgo bajo"
 
 #. (itstool) path: section/p
 #: C/scores.page:57
@@ -1044,6 +1045,8 @@ msgid ""
 "The following are the enemies that give you 10 points when they die. Again, "
 "it is your theme that determines which of these will appear in a game."
 msgstr ""
+"Los siguientes enemigos le dan 10 puntos cuando mueren. De nuevo, es el tema "
+"el que determina cuáles de ellos aparecerán en una partida."
 
 #. (itstool) path: item/p
 #: C/scores.page:63
@@ -1060,6 +1063,8 @@ msgid ""
 "Low-risk Robots <media type=\"image\" src=\"figures/robots-low-risk.png\" "
 "height=\"20\" width=\"20\"/>"
 msgstr ""
+"Robots de riesgo bajo <media type=\"image\" src=\"figures/robots-low-risk.png"
+"\" height=\"20\" width=\"20\"/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:71
@@ -1067,6 +1072,8 @@ msgid ""
 "Low-risk gnomes <media type=\"image\" src=\"figures/gnome-low-risk.png\" "
 "height=\"20\" width=\"20\"/>"
 msgstr ""
+"Gnomes de riesgo bajo <media type=\"image\" src=\"figures/gnome-low-risk.png"
+"\" height=\"20\" width=\"20\"/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:75
@@ -1074,7 +1081,7 @@ msgid ""
 "Low-risk UFOs <media type=\"image\" src=\"figures/ufo-low-risk.png\" height="
 "\"20\" width=\"20\"/>"
 msgstr ""
-"Ovnis de riesgo bajo <media type=\"image\" src=\"figures/ufo-low-risk.png\" "
+"Ovni de riesgo bajo <media type=\"image\" src=\"figures/ufo-low-risk.png\" "
 "height=\"20\" width=\"20\"/>"
 
 #. (itstool) path: p/link

@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: gnome-games master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-20 23:58+0000\n"
+"POT-Creation-Date: 2014-03-08 08:19+0000\n"
 "PO-Revision-Date: 2012-03-23 17:59+0800\n"
-"Last-Translator: tuhaihe <wangdianjin@linuxdeepin.com>\n"
+"Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -18,21 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/gnobots2.desktop.in.h:1 ../src/gnobots.c:206 ../src/gnobots.c:219
-#: ../src/menu.c:262
-msgid "Robots"
-msgstr "机器人"
-
-#: ../data/gnobots2.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "避免碰到机器人并让它们撞在一起"
-
-#: ../data/gnobots2.desktop.in.h:3
-msgid "game;arcade;teleport;"
-msgstr "game;arcade;teleport;游戏;街机;模拟器;瞬间移动;传送;"
-
 #: ../data/gnome-robots.appdata.xml.in.h:1
-#| msgid "Robots"
 msgid "GNOME Robots"
 msgstr "GNOME 机器人"
 
@@ -40,7 +26,7 @@ msgstr "GNOME 机器人"
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
-msgstr ""
+msgstr "在遥远的未来 - 3000年。邪恶的机器人想要杀掉你。避开它们，否则必死无疑。"
 
 #: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
@@ -49,14 +35,29 @@ msgid ""
 "destruction, or into the junk piles that result. You can defend yourself by "
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
-msgstr ""
+msgstr "幸运的是，机器人智力很低，只会朝你直线接近。引导它们相撞来销毁它们，撞进垃圾堆也行。"
+"你可以移动垃圾堆保护自己，或用你手头的心灵传送设备逃到安全的地方。"
 
 #: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
-msgstr ""
+msgstr "你手里的安全传送是有限的，一旦用完，游戏可能会把你正好传送到机器人跟前，那你就挂了。"
+"想方设法活下去！"
+
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnobots.c:200
+#: ../src/gnobots.c:213 ../src/menu.c:262
+msgid "Robots"
+msgstr "机器人"
+
+#: ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "避免碰到机器人并让它们撞在一起"
+
+#: ../data/gnome-robots.desktop.in.h:3
+msgid "game;arcade;teleport;"
+msgstr "game;arcade;teleport;游戏;街机;模拟器;瞬间移动;传送;"
 
 #: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
@@ -123,7 +124,7 @@ msgstr "启用游戏音效"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "启用游戏音效。在玩游戏的过程中的各种事件可播放声音。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:500
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:501
 msgid "Key to move NW"
 msgstr "左上移键"
 
@@ -131,7 +132,7 @@ msgstr "左上移键"
 msgid "The key used to move north-west."
 msgstr "左上移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:501
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:502
 msgid "Key to move N"
 msgstr "上移键"
 
@@ -139,7 +140,7 @@ msgstr "上移键"
 msgid "The key used to move north."
 msgstr "上移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:502
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:503
 msgid "Key to move NE"
 msgstr "右上移键"
 
@@ -147,7 +148,7 @@ msgstr "右上移键"
 msgid "The key used to move north-east."
 msgstr "右上移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:503
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:504
 msgid "Key to move W"
 msgstr "左移键"
 
@@ -155,7 +156,7 @@ msgstr "左移键"
 msgid "The key used to move west."
 msgstr "左移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
 msgid "Key to hold"
 msgstr "停住键"
 
@@ -163,7 +164,7 @@ msgstr "停住键"
 msgid "The key used to hold still."
 msgstr "用于停住的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:504
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:505
 msgid "Key to move E"
 msgstr "右移键"
 
@@ -171,7 +172,7 @@ msgstr "右移键"
 msgid "The key used to move east."
 msgstr "右移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:506
 msgid "Key to move SW"
 msgstr "左下移键"
 
@@ -179,7 +180,7 @@ msgstr "左下移键"
 msgid "The key used to move south-west."
 msgstr "左下移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:507
 msgid "Key to move S"
 msgstr "下移键"
 
@@ -187,7 +188,7 @@ msgstr "下移键"
 msgid "The key used to move south."
 msgstr "下移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:508
 msgid "Key to move SE"
 msgstr "右下移键"
 
@@ -195,7 +196,7 @@ msgstr "右下移键"
 msgid "The key used to move south-east."
 msgstr "右下移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:510
 msgid "Key to teleport"
 msgstr "传送键"
 
@@ -203,7 +204,7 @@ msgstr "传送键"
 msgid "The key used to teleport safely (if possible)."
 msgstr "尽可能安全传送的键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:511
 msgid "Key to teleport randomly"
 msgstr "随机传送键"
 
@@ -211,7 +212,7 @@ msgstr "随机传送键"
 msgid "The key used to teleport randomly."
 msgstr "随机传送键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:512
 msgid "Key to wait"
 msgstr "等候键"
 
@@ -590,22 +591,22 @@ msgstr "带有安全传送点的机器人"
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "带有安全传送点的机器人"
 
-#: ../src/gnobots.c:286
+#: ../src/gnobots.c:280
 msgid "No game data could be found."
 msgstr "没有找到游戏数据。"
 
-#: ../src/gnobots.c:288
+#: ../src/gnobots.c:282
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
 msgstr ""
 "GNOME 机器人程序无法找到任何可用的游戏配置文件。请检查程序是否正确安装。"
 
-#: ../src/gnobots.c:304
+#: ../src/gnobots.c:298
 msgid "Some graphics files are missing or corrupt."
 msgstr "某些图像文件缺少或损坏。"
 
-#: ../src/gnobots.c:306
+#: ../src/gnobots.c:300
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -669,10 +670,6 @@ msgid "Show or hide the toolbar"
 msgstr "显示或隐藏工具栏"
 
 #: ../src/menu.c:266
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
 msgid ""
 "Based on classic BSD Robots\n"
 "\n"
@@ -697,51 +694,51 @@ msgstr "机器人首选项"
 msgid "Game Type"
 msgstr "游戏类型"
 
-#: ../src/properties.c:425
+#: ../src/properties.c:426
 msgid "_Use safe moves"
 msgstr "使用安全移动(_U)"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:433
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "阻止会导致死亡的意外移动。"
 
-#: ../src/properties.c:434
+#: ../src/properties.c:435
 msgid "U_se super safe moves"
 msgstr "使用超级安全移动(_S)"
 
-#: ../src/properties.c:441
+#: ../src/properties.c:442
 msgid "Prevents all moves that result in getting killed."
 msgstr "避免将导致丢命的全部移动。"
 
-#: ../src/properties.c:443
+#: ../src/properties.c:444
 msgid "_Enable sounds"
 msgstr "启用声音(_E)"
 
-#: ../src/properties.c:449
+#: ../src/properties.c:450
 msgid "Play sounds for events like winning a level and dying."
 msgstr "对通关或死亡等事件使用声音通知。"
 
-#: ../src/properties.c:451
+#: ../src/properties.c:452
 msgid "Game"
 msgstr "游戏"
 
-#: ../src/properties.c:464
+#: ../src/properties.c:465
 msgid "_Image theme:"
 msgstr "图像主题(_I)："
 
-#: ../src/properties.c:476
+#: ../src/properties.c:477
 msgid "_Background color:"
 msgstr "背景颜色(_B)："
 
-#: ../src/properties.c:488
+#: ../src/properties.c:489
 msgid "Appearance"
 msgstr "外观"
 
-#: ../src/properties.c:520
+#: ../src/properties.c:521
 msgid "_Restore Defaults"
 msgstr "恢复默认值(_R)"
 
-#: ../src/properties.c:525
+#: ../src/properties.c:526
 msgid "Keyboard"
 msgstr "键盘"
 

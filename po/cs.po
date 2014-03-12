@@ -119,7 +119,7 @@ msgstr "Typ hry. Název varianty hry, která se má používat."
 
 #: ../data/org.gnome.robots.gschema.xml.h:9
 msgid "Use safe moves"
-msgstr "Používat bezpečné pohyby"
+msgstr "Používat bezpečné tahy"
 
 #: ../data/org.gnome.robots.gschema.xml.h:10
 msgid ""
@@ -127,20 +127,20 @@ msgid ""
 "due to a mistake. If you try to make a move that would lead to your death "
 "when there is a safe move available you will not be allowed to proceed."
 msgstr ""
-"Používat bezpečné pohyby. Možnost bezpečných pohybů vám pomůže zabránit "
+"Používat bezpečné tahy. Možnost bezpečných tahů vám pomůže zabránit "
 "smrti omylem. Pokud se pokusíte provést tah, který by vedl k vaší smrti, a "
 "existuje bezpečný tah, nebude vám dovoleno pokračovat."
 
 #: ../data/org.gnome.robots.gschema.xml.h:11
 msgid "Use super safe moves"
-msgstr "Používat super-bezpečné pohyby"
+msgstr "Používat superbezpečné tahy"
 
 #: ../data/org.gnome.robots.gschema.xml.h:12
 msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
 msgstr ""
-"Používat super-bezpečné tahy. Hráč je upozorněn, když neexistuje bezpečný "
+"Používat superbezpečné tahy. Hráč je upozorněn, když neexistuje bezpečný "
 "tah a jediná možnost je teleportovat se pryč."
 
 #: ../data/org.gnome.robots.gschema.xml.h:13
@@ -575,11 +575,11 @@ msgstr "Klasičtí roboti"
 
 #: ../src/gnobots.c:91
 msgid "Classic robots with safe moves"
-msgstr "Klasičtí roboti s bezpečnými pohyby"
+msgstr "Klasičtí roboti s bezpečnými tahy"
 
 #: ../src/gnobots.c:92
 msgid "Classic robots with super-safe moves"
-msgstr "Klasičtí roboti se super-bezpečnými pohyby"
+msgstr "Klasičtí roboti se superbezpečnými tahy"
 
 #: ../src/gnobots.c:93
 msgid "Nightmare"
@@ -587,11 +587,11 @@ msgstr "Noční můra"
 
 #: ../src/gnobots.c:94
 msgid "Nightmare with safe moves"
-msgstr "Noční můra s bezpečnými pohyby"
+msgstr "Noční můra s bezpečnými tahy"
 
 #: ../src/gnobots.c:95
 msgid "Nightmare with super-safe moves"
-msgstr "Noční můra se super-bezpečnými pohyby"
+msgstr "Noční můra se superbezpečnými tahy"
 
 #: ../src/gnobots.c:96
 msgid "Robots2"
@@ -599,11 +599,11 @@ msgstr "Roboti 2"
 
 #: ../src/gnobots.c:97
 msgid "Robots2 with safe moves"
-msgstr "Roboti 2 s bezpečnými pohyby"
+msgstr "Roboti 2 s bezpečnými tahy"
 
 #: ../src/gnobots.c:98
 msgid "Robots2 with super-safe moves"
-msgstr "Roboti 2 se super-bezpečnými pohyby"
+msgstr "Roboti 2 se superbezpečnými tahy"
 
 #: ../src/gnobots.c:99
 msgid "Robots2 easy"
@@ -611,11 +611,11 @@ msgstr "Roboti 2 snadní"
 
 #: ../src/gnobots.c:100
 msgid "Robots2 easy with safe moves"
-msgstr "Roboti 2 snadní s bezpečnými pohyby"
+msgstr "Roboti 2 snadní s bezpečnými tahy"
 
 #: ../src/gnobots.c:101
 msgid "Robots2 easy with super-safe moves"
-msgstr "Roboti 2 snadní se super-bezpečnými pohyby"
+msgstr "Roboti 2 snadní se superbezpečnými tahy"
 
 #: ../src/gnobots.c:102
 msgid "Robots with safe teleport"
@@ -623,11 +623,11 @@ msgstr "Roboti s bezpečným teleportem"
 
 #: ../src/gnobots.c:103
 msgid "Robots with safe teleport with safe moves"
-msgstr "Roboti s bezpečným teleportem a bezpečnými pohyby"
+msgstr "Roboti s bezpečným teleportem a bezpečnými tahy"
 
 #: ../src/gnobots.c:104
 msgid "Robots with safe teleport with super-safe moves"
-msgstr "Roboti s bezpečným teleportem se super-bezpečnými pohyby"
+msgstr "Roboti s bezpečným teleportem se superbezpečnými tahy"
 
 #: ../src/gnobots.c:286
 msgid "No game data could be found."
@@ -747,7 +747,7 @@ msgstr "Typ hry"
 
 #: ../src/properties.c:425
 msgid "_Use safe moves"
-msgstr "Používat _bezpečné pohyby"
+msgstr "Používat _bezpečné tahy"
 
 #: ../src/properties.c:432
 msgid "Prevent accidental moves that result in getting killed."
@@ -755,7 +755,7 @@ msgstr "Bránit náhodným tahům, které způsobí smrt."
 
 #: ../src/properties.c:434
 msgid "U_se super safe moves"
-msgstr "Používat _super-bezpečné pohyby"
+msgstr "Používat _superbezpečné tahy"
 
 #: ../src/properties.c:441
 msgid "Prevents all moves that result in getting killed."

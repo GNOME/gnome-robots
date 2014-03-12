@@ -595,7 +595,7 @@ msgstr "Noční můra se super-bezpečnými pohyby"
 
 #: ../src/gnobots.c:96
 msgid "Robots2"
-msgstr "Roboti2"
+msgstr "Roboti 2"
 
 #: ../src/gnobots.c:97
 msgid "Robots2 with safe moves"

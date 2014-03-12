@@ -599,23 +599,23 @@ msgstr "Roboti 2"
 
 #: ../src/gnobots.c:97
 msgid "Robots2 with safe moves"
-msgstr "Roboti2 s bezpečnými pohyby"
+msgstr "Roboti 2 s bezpečnými pohyby"
 
 #: ../src/gnobots.c:98
 msgid "Robots2 with super-safe moves"
-msgstr "Roboti2 se super-bezpečnými pohyby"
+msgstr "Roboti 2 se super-bezpečnými pohyby"
 
 #: ../src/gnobots.c:99
 msgid "Robots2 easy"
-msgstr "Roboti2 snadní"
+msgstr "Roboti 2 snadní"
 
 #: ../src/gnobots.c:100
 msgid "Robots2 easy with safe moves"
-msgstr "Roboti2 snadní s bezpečnými pohyby"
+msgstr "Roboti 2 snadní s bezpečnými pohyby"
 
 #: ../src/gnobots.c:101
 msgid "Robots2 easy with super-safe moves"
-msgstr "Roboti2 snadní se super-bezpečnými pohyby"
+msgstr "Roboti 2 snadní se super-bezpečnými pohyby"
 
 #: ../src/gnobots.c:102
 msgid "Robots with safe teleport"

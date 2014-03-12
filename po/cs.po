@@ -668,11 +668,11 @@ msgstr "_Zobrazit"
 
 #: ../src/menu.c:66
 msgid "_Move"
-msgstr "_Posunout"
+msgstr "_Táhnout"
 
 #: ../src/menu.c:67
 msgid "_Settings"
-msgstr "_Nastavení"
+msgstr "Na_stavení"
 
 #: ../src/menu.c:68
 msgid "_Help"

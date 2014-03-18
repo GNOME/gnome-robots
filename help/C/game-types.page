@@ -40,9 +40,9 @@
         <td><p>Initial safe <link xref="moves#teleport">teleports</link></p>
 	</td>
         <td><p>Initial
-	<link xref="scores#low-risk">low-risk enemy robots</link></p></td>
+	<link xref="scores#high-low-risk">low-risk enemy robots</link></p></td>
         <td><p>Initial
-	<link xref="scores#high-risk">high-risk enemy robots</link></p></td>
+	<link xref="scores#high-low-risk">high-risk enemy robots</link></p></td>
         <td><p>Do safe teleports increase in successive levels?</p></td>
       </tr>
       <tr>

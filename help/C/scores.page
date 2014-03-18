@@ -1,18 +1,23 @@
 <page xmlns="http://projectmallard.org/1.0/"
       xmlns:its="http://www.w3.org/2005/11/its"
-	type="guide" style="task"
-	id="scores">
+      type="guide" style="task"
+      id="scores">
 
   <info>
     <link type="guide" xref="index#play"/>
 
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
+    <revision pkgversion="3.11.90" date="2014-03-22" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
     <credit type="author copyright">
       <name>Aruna Sankaranarayanan</name>
-      <email>safincrazy@gmail.com</email>
+      <email its:translate="no">safincrazy@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name>Rachel Dunstan</name>
+      <email its:translate="no">dunstanrc@gmail.com</email>
     </credit>
 
     <desc>Scoring points in <app>Robots</app></desc>
@@ -20,63 +25,140 @@
 
 <title>Scores</title>
 
-  <p>There are two type of enemies in <app>Robots</app>, enemies that give you
-  10 points when they die and enemies that give you 20 points when they
-  die.</p>
+  <p>There are two type of enemies in <app>Robots</app>: high-risk enemies
+  which give you 20 points when they die and low-risk enemies which give you 10
+  points when they die.</p>
 
-<section id="high-risk">
-  <title>High-risk enemies</title>
+<section id="high-low-risk">
+  <title>High and low risk enemies by theme</title>
 
-  <p>Depending on your <link xref="appearance">game theme</link>, the
-  following are the enemies that give you 20 points when they die.</p>
+  <p>The enemies in a game depend on the <link xref="appearance">game
+  theme</link> chosen.</p>
 
-  <list>
-    <item>
-      <p>Bats <media type="image" src="figures/boo-high-risk.png" height="20"
-      width="20" its:translate="no"/></p>
-    </item>
-    <item>
-      <p>High-risk Robots
-      <media type="image" src="figures/robots-high-risk.png" height="20"
-      width="20" its:translate="no"/></p>
-    </item>
-    <item>
-      <p>High-risk gnomes <media type="image" src="figures/gnome-high-risk.png"
-      height="20" width="20" its:translate="no"/></p>
-    </item>
-    <item>
-      <p>High-risk UFOs <media type="image" src="figures/ufo-high-risk.png"
-      height="20" width="20" its:translate="no"/></p>
-    </item>
-  </list>
+  <table frame="top bottom" rules="rows">
+    <thead>
+    <tr>
+    <td><p>Game theme</p></td>
+    <td><p>High-risk enemy (20 points)</p></td>
+    <td><p>Low-risk enemy (10 points)</p></td></tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><p>anthills</p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/anthills-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk anthill</span></media></p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/anthills-low-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk anthill</span></media></p></td>
+    </tr>
+    <tr>
+    <td><p>boo</p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/boo-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk bat</span></media></p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/boo-high-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk ghost</span></media></p></td>
+    </tr>
+    <tr>
+    <td><p>cows</p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/cows-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk cow</span></media></p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/cows-low-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk cow</span></media></p></td>
+    </tr>
+    <tr>
+    <td><p>eggs</p></td>
+    <td><p>
+    <media type="image" its:translate="no"
+    src="figures/eggs-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk egg</span></media></p></td>
+    <td><p>
+    <media type="image" its:translate="no"
+    src="figures/eggs-low-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk egg</span></media></p></td>
+    </tr>
+    <tr>
+    <td><p>gnomes</p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/gnomes-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk gnome</span></media></p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/gnomes-low-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk gnome</span></media></p></td>
+    </tr>
+    <tr>
+    <td><p>mice</p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/mice-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk mouse</span></media></p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/mice-low-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk mouse</span></media></p></td>
+    </tr>
+    <tr>
+    <td><p>robots</p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/robots-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk robot</span></media></p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/robots-low-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk robot</span></media></p></td>
+    </tr>
+    <tr><td><p>spills</p></td>
+    <td><p>
+    <media type="image" its:translate="no"
+    src="figures/spills-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk spill</span></media></p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/spills-low-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk spill</span></media></p></td>
+    </tr>
+    <tr>
+    <td><p>stormclouds</p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/stormclouds-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk stormcloud</span></media></p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/stormclouds-low-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk stormcloud</span></media></p></td>
+    </tr>
+    <tr>
+    <td><p>toasters</p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/toasters-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk toaster</span></media></p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/toasters-low-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk toaster</span></media></p></td>
+    </tr>
+    <tr>
+    <td><p>ufo</p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/ufo-high-risk.png" height="20" width="20">
+    <span its:translate="yes">High-risk UFO</span></media></p></td>
+    <td><p><media type="image" its:translate="no"
+    src="figures/ufo-low-risk.png" height="20" width="20">
+    <span its:translate="yes">Low-risk anthill</span></media></p></td>
+    </tr>
+  </tbody>
+  </table>
 
 </section>
 
-<section id="low-risk">
-  <title>Low-risk enemies</title>
+<section id="high-scores">
+  <title>High scores</title>
 
-  <p>The following are the enemies that give you 10 points when they die.
-  Again, it is your theme that determines which of these will appear in a
-  game.</p>
+  <p>Select <guiseq><gui style="menu">Game</gui><gui style="menuitem">Scores</gui></guiseq>
+  to view the high scores.</p>
 
-  <list>
-    <item>
-      <p>Ghosts <media type="image" src="figures/boo-low-risk.png" height="20"
-      width="20" its:translate="no"/></p>
-    </item>
-    <item>
-      <p>Low-risk Robots <media type="image" src="figures/robots-low-risk.png"
-      height="20" width="20" its:translate="no"/></p>
-    </item>
-    <item>
-      <p>Low-risk gnomes <media type="image" src="figures/gnome-low-risk.png"
-      height="20" width="20" its:translate="no"/></p>
-    </item>
-    <item>
-      <p>Low-risk UFOs <media type="image" src="figures/ufo-low-risk.png"
-      height="20" width="20" its:translate="no"/></p>
-    </item>
-  </list>
+  <p>Scores are recorded separately for each combination of
+  <link xref="game-types">game type and safe move option</link>. Use the
+  drop-down menu next to <gui>Map</gui> to view scores for a particular game
+  type and safe move option combination.</p>
 
 </section>
 

@@ -7,12 +7,17 @@
     <link type="guide" xref="index#play"/>
 
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
+    <revision pkgversion="3.11.90" date="2014-03-25" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
     <credit type="author copyright">
       <name>Aruna Sankaranarayanan</name>
-      <email>safincrazy@gmail.com</email>
+      <email its:translate="no">safincrazy@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Rachel Dunstan</name>
+      <email its:translate="no">dunstanrc@gmail.com</email>
     </credit>
 
     <desc>How do I control the main character?</desc>
@@ -26,11 +31,14 @@
   <p>Use the following keys from the numeric keypad on the far right of your
   keyboard, to move in <app>Robots</app>.</p>
 
-  <table frame="all">
+  <table frame="top bottom" rules="rows">
+    <thead>
     <tr>
       <td><p>Possible moves</p></td>
       <td><p>Key</p></td>
     </tr>
+    </thead>
+    <tbody>
     <tr>
       <td><p>North west</p></td>
       <td><p><key>Home</key></p></td>
@@ -65,7 +73,8 @@
     </tr>
     <tr>
       <td><p>Stay in the same position</p></td>
-      <td><p><key>5</key></p></td>
+      <td><p><key>Begin</key> (marked only as <key>5</key> on some
+      keypads)</p></td>
     </tr>
     <tr>
       <td><p>Teleport safely</p></td>
@@ -79,6 +88,7 @@
       <td><p>Wait for the robots</p></td>
       <td><p><key>Enter</key></p></td>
     </tr>
+    </tbody>
   </table>
 
   <note style="info">
@@ -107,26 +117,27 @@
     </item>
     <item>
     <title>Wait for the robots</title>
-      <p>Click the
-      <media type="image" its:translate="no" src="figures/wait.png"/>
+      <p>Click the <media type="image" its:translate="no"
+      src="figures/wait.png"><span its:translate="yes">Wait</span></media>
       button on the toolbar or select
-      <guiseq><gui style="menu">Move</gui>
-      <gui style="menuitem">Wait</gui></guiseq> to wait for the enemy
-      robots to finish making all their moves.</p>
+      <guiseq><gui style="menu">Move</gui><gui style="menuitem">Wait</gui></guiseq>
+      to wait for the enemy robots to finish making all their moves.</p>
     </item>
     <item>
     <title>Safe teleports</title>
-      <p>To safely teleport, click the
-      <media type="image" its:translate="no" src="figures/teleport.png"/>
-      button on the toolbar or select <guiseq><gui style="menu">Move</gui>
-      <gui style="menuitem">Teleport</gui></guiseq>.</p>
+      <p>To safely teleport, click the <media type="image" its:translate="no"
+      src="figures/teleport.png"><span
+      its:translate="yes">Teleport</span></media> button on the toolbar or
+      select <guiseq><gui style="menu">Move</gui><gui
+      style="menuitem">Teleport</gui></guiseq>.</p>
     </item>
     <item>
     <title>Random teleports</title>
-      <p>To teleport to a random spot, click the
-      <media type="image" its:translate="no" src="figures/random.png"/> button
-      on the toolbar or select <guiseq><gui style="menu">Move</gui>
-      <gui style="menuitem">Random</gui></guiseq>.</p>
+      <p>To teleport to a random spot, click the <media type="image"
+      its:translate="no" src="figures/random.png"><span
+      its:translate="yes">Random teleport</span></media> button on the toolbar
+      or select <guiseq><gui style="menu">Move</gui><gui
+      style="menuitem">Random</gui></guiseq>.</p>
     </item>
   </terms>
 

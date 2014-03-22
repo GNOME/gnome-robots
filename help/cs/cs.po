@@ -1,14 +1,13 @@
 # Czech translation of gnobots2 help.
 # Copyright (C) 2009 the author(s) of gnome-games.
 # This file is distributed under the same license as the gnobots2 help.
-#
-# Marek Černocký <marek@manet.cz>, 2009, 2013.
+# Marek Černocký <marek@manet.cz>, 2009, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games gnome-2-28\n"
-"POT-Creation-Date: 2012-12-02 22:18+0000\n"
-"PO-Revision-Date: 2013-07-11 11:24+0200\n"
+"POT-Creation-Date: 2014-03-07 08:19+0000\n"
+"PO-Revision-Date: 2014-03-12 10:19+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -24,844 +23,1069 @@ msgstr ""
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Marek Černocký <marek@manet.cz>, 2009, 2013"
+msgstr "Marek Černocký <marek@manet.cz>, 2009, 2013, 2014"
 
+#. (itstool) path: credit/name
+#: C/appearance.page:13 C/basics.page:13 C/controls-change.page:14
+#: C/controls-default.page:14 C/game-types.page:14 C/index.page:12
+#: C/moves.page:14 C/scores.page:13
+msgid "Aruna Sankaranarayanan"
+msgstr "Aruna Sankaranarayanan"
+
+#. (itstool) path: info/desc
+#: C/appearance.page:17
+msgid "Use different game-themes in <app>Robots</app>."
+msgstr "Jak použít jiný motiv hry <app>Roboti</app>."
+
+#. (itstool) path: page/title
+#: C/appearance.page:20
+msgid "Change the default appearance of the game"
+msgstr "Změna výchozího vzhledu hry"
+
+#. (itstool) path: page/p
+#: C/appearance.page:22
+msgid ""
+"You can change the <app>Robots</app> backdrop and the different robots that "
+"are present in a game by changing the game theme and background."
+msgstr ""
+"Změnou motivu hry a pozadí si můžete u hry <app>Roboti</app> upravit pozadí "
+"a vzhled robotů."
+
+#. (itstool) path: steps/title
+#: C/appearance.page:26
+msgid "To change the game theme and background:"
+msgstr "Abyste změnili motiv hry a pozadí:"
+
+#. (itstool) path: item/p
+#: C/appearance.page:28
+msgid ""
+"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"\">Preferences</gui> <gui style=\"menuitem\">Appearance</gui></guiseq>."
+msgstr ""
+"Vyberte <guiseq><gui style=\"menu\">Nastavení</gui> <gui style=\"menuitem"
+"\">Předvolby</gui> <gui style=\"menuitem\">Vzhled</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/appearance.page:33
+msgid ""
+"Select a theme from the drop-down menu available when you click the button "
+"next to <gui>Image theme</gui>."
+msgstr ""
+"Kliknutím na tlačítko vedle <gui>Motiv obrázků</gui> vyberte v rozbalovací "
+"nabídce motiv."
+
+#. (itstool) path: list/title
+#: C/appearance.page:36
+msgid "Available themes:"
+msgstr "Dostupné motivy:"
+
+#. (itstool) path: item/p
+#: C/appearance.page:38
+msgid "boo"
+msgstr "boo"
+
+#. (itstool) path: item/p
+#: C/appearance.page:41
+msgid "gnomes"
+msgstr "gnomes"
+
+#. (itstool) path: item/p
+#: C/appearance.page:44
+msgid "robots"
+msgstr "robots"
+
+#. (itstool) path: item/p
+#: C/appearance.page:47
+msgid "ufo"
+msgstr "ufo"
+
+#. (itstool) path: item/p
+#: C/appearance.page:52
+msgid ""
+"To change your background color, click the button next to <gui>Background "
+"color</gui>. Select a color from the choices avaialable and click <gui style="
+"\"button\">Select</gui>."
+msgstr ""
+"Pokud chcete změnit barvu pozadí, klikněte na tlačítko vedle <gui>Barva "
+"pozadí</gui>. V nabízených volbách si vyberte barvu a klikněte na <gui style="
+"\"button\">Vybrat</gui>."
+
+#. (itstool) path: note/p
+#: C/appearance.page:59
+msgid ""
+"You can hide the toolbar that contains buttons to start a new game, wait and "
+"teleport, by selecting <guiseq><gui style=\"menu\">View</gui> <gui style="
+"\"menuitem\">Toolbar</gui></guiseq>. The small tick mark next to "
+"<gui>Toolbar</gui> will disappear and the toolbar will be hidden."
+msgstr ""
+"Můžete skrýt nástrojovou lištu, která obsahuje tlačítka pro spuštění nové "
+"hry, čekání a teleportaci, tak, že vyberete <guiseq><gui style=\"menu"
+"\">Zobrazit</gui> <gui style=\"menuitem\">Nástrojová lišta</gui></guiseq>. "
+"Zmizí zaškrtávátko vedle položky <gui>Nástrojová lišta</gui> a nástrojová "
+"lišta se skryje."
+
+#. (itstool) path: info/desc
+#: C/basics.page:17
+msgid "Start, quit and play <app>Robots</app> in fullscreen."
+msgstr "Jak spustit, ukončit a hrát <app>Roboty</app> na celé obrazovce."
+
+#. (itstool) path: page/title
+#: C/basics.page:20
+msgid "Basic instructions"
+msgstr "Základní instrukce"
+
+#. (itstool) path: section/title
+#: C/basics.page:23
+msgid "Start a new game"
+msgstr "Spuštění nové hry"
+
+#. (itstool) path: section/p
+#: C/basics.page:25
+msgid ""
+"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">New</"
+"gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start "
+"a new game."
+msgstr ""
+"Novou hru spustíte vybráním <guiseq><gui style=\"menu\">Hra</gui> <gui style="
+"\"menuitem\">Nová</gui></guiseq> nebo zmáčknutím <keyseq><key>Ctrl</"
+"key><key>N</key></keyseq>."
+
+#. (itstool) path: section/title
+#: C/basics.page:33
+msgid "Play <app>Robots</app> in fullscreen mode"
+msgstr "Hraní <app>Robotů</app> přes celou obrazovku"
+
+#. (itstool) path: section/p
+#: C/basics.page:35
+msgid ""
+"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+"\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
+"fullscreen mode. You can return to the default screen size by pressing "
+"<key>F11</key> again."
+msgstr ""
+"Když chcete hru hrát v režimu celé obrazovky, vyberte <guiseq><gui style="
+"\"menu\">Zobrazit</gui> <gui style=\"menuitem\">Celá obrazovka</gui></"
+"guiseq> nebo zmáčkněte <key>F11</key>. Na původní obrazovku se můžete vrátit "
+"opětovným zmáčknutím <key>F11</key>."
+
+#. (itstool) path: section/title
+#: C/basics.page:43
+msgid "Enable sounds"
+msgstr "Povolení zvuků"
+
+#. (itstool) path: section/p
+#: C/basics.page:44
+msgid ""
+"Select <guiseq> <gui style=\"menu\">Settings</gui><gui>Preferences</gui> "
+"<gui>Game</gui></guiseq>. Check the <gui style=\"checkbox\">Enable sounds</"
+"gui> checkbox to enable sounds."
+msgstr ""
+"Zvuky povolíte výběrem <guiseq><gui style=\"menu\">Nastavení</gui> "
+"<gui>Předvolby</gui> <gui>Hra</gui></guiseq> a zaškrtnutím <gui style="
+"\"checkbox\">Povolit zvuky</gui>."
+
+#. (itstool) path: section/title
+#: C/basics.page:52
+msgid "Quit <app>Robots</app>"
+msgstr "Ukončení <app>Robotů</app>"
+
+#. (itstool) path: section/p
+#: C/basics.page:54
+msgid ""
+"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
+"gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
+"<app>Robots</app> at any time."
+msgstr ""
+"Hru <app>Roboti</app> můžete kdykoliv ukončit výběrem <guiseq><gui style="
+"\"menu\">Hra</gui> <gui style=\"menuitem\">Ukončit</gui></guiseq> nebo "
+"zmáčknutím <keyseq><key>Ctrl</key><key>Q</key></keyseq>."
+
+#. (itstool) path: info/desc
+#: C/controls-change.page:18
+msgid "Change the default keys in <app>Robots</app>."
+msgstr "Jak změnit výchozí klávesy v hře <app>Roboti</app>."
+
+#. (itstool) path: page/title
+#: C/controls-change.page:21
+msgid "Customize the keyboard controls"
+msgstr "Přizpůsobení ovládání z klávesnice"
+
+#. (itstool) path: page/p
+#: C/controls-change.page:23
+msgid ""
+"The <link xref=\"controls-default\">default controls</link> can be changed "
+"in <app>Robots</app> to suit your preference."
+msgstr ""
+"<link xref=\"controls-default\">Výchozí ovládání</link> si v <app>Robotech</"
+"app> můžete změnit tak, aby lépe vyhovovalo vašim potřebám."
+
+#. (itstool) path: steps/title
+#: C/controls-change.page:27
+msgid "To change the default keys:"
+msgstr "Když chcete změnit výchozí klávesy:"
+
+#. (itstool) path: item/p
+#: C/controls-change.page:29
+msgid ""
+"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"\">Preferences</gui><gui>Keyboard</gui></guiseq>."
+msgstr ""
+"Vyberte <guiseq><gui style=\"menu\">Nastavení</gui> <gui style=\"menuitem"
+"\">Předvolby</gui> <gui>Klávesnice</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:33
+msgid ""
+"In the <gui style=\"group\">Keyboard Controls</gui> list, select the line, "
+"then click on the control. This highlights the line and the words <gui>New "
+"accelerator…</gui> are now present in place of the old control."
+msgstr ""
+"V seznamu <gui style=\"group\">Ovládání z klávesnice</gui> vyberte řádek a "
+"klikněte na název klávesy. Tím se řádek zvýrazní a na místě původní klávesy "
+"se objeví text <gui>klávesová zkratka</gui>."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:39
+msgid "Press the key you want to use instead of the default key."
+msgstr "Zmáčkněte klávesu, kterou chcete používat místo té původní."
+
+#. (itstool) path: note/p
+#: C/controls-change.page:41
+msgid ""
+"To keep the old setting click <gui>New accelerator…</gui> again, right click "
+"on <gui>New accelerator…</gui>, press <key>Esc</key> or click anywhere else "
+"inside the <gui>Robots Preferences</gui> box."
+msgstr ""
+"Pokud si změnu rozmyslíte, klikněte levým nebo pravým tlačítkem znovu na "
+"<gui>klávesová zkratka</gui> nebo zmáčkněte <gui>Esc</gui> a nebo klikněte "
+"kdekoliv jinde v okně <key>Předvolby robotů</key>."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:47
+msgid "Repeat the above step to change the other default keys."
+msgstr "Stejný pokus opakujte i pro ostatní výchozí klávesy."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:50
+msgid "Click <gui style=\"button\">Close</gui>."
+msgstr "Klikněte na <gui style=\"button\">Zavřít</gui>."
+
+#. (itstool) path: note/p
+#: C/controls-change.page:55
+msgid ""
+"You can always reset the controls to the default controls by clicking the "
+"<gui style=\"button\">Restore Defaults</gui> button."
+msgstr ""
+"Ovládací klávesy můžete kdykoliv vrátit na původní kliknutím na tlačítko "
+"<gui style=\"button\">Obnovit výchozí</gui>."
+
+#. (itstool) path: info/desc
+#: C/controls-default.page:18
+msgid "How do I control the main character?"
+msgstr "Jak můžu ovládat hlavního hrdinu?"
+
+#. (itstool) path: page/title
+#: C/controls-default.page:21
+msgid "Mouse and keyboard controls for <app>Robots</app>"
+msgstr "Ovládání <app>Robotů</app> myší a klávesnicí"
+
+#. (itstool) path: section/title
+#: C/controls-default.page:24
+msgid "Keyboard controls"
+msgstr "Ovládání z klávesnice"
+
+#. (itstool) path: section/p
+#: C/controls-default.page:26
+msgid ""
+"Use the following keys from the numeric keypad on the far right of your "
+"keyboard, to move in <app>Robots</app>."
+msgstr ""
+"K tahům v hře <app>Roboti</app> používejte následující klávesy na číselné "
+"bloku, který se nachází na vaší klávesnici úplně vpravo."
+
+#. (itstool) path: td/p
+#: C/controls-default.page:31
+msgid "Possible moves"
+msgstr "Tah"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:32
+msgid "Key"
+msgstr "Klávesa"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:35
+msgid "North west"
+msgstr "Na severozápad"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:36
+msgid "<key>Home</key>"
+msgstr "<key>Home</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:39
+msgid "North"
+msgstr "Na sever"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:40
+msgid "<key>↑</key>"
+msgstr "<key>↑</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:43
+msgid "North east"
+msgstr "Na severovýchod"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:44
+msgid "<key>PgUp</key>"
+msgstr "<key>Page Up</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:47
+msgid "West"
+msgstr "Na západ"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:48
+msgid "<key>→</key>"
+msgstr "<key>→</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:51
+msgid "East"
+msgstr "Na východ"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:52
+msgid "<key>←</key>"
+msgstr "<key>←</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:55
+msgid "South west"
+msgstr "Na jihozápad"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:56
+msgid "<key>End</key>"
+msgstr "<key>End</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:59
+msgid "South"
+msgstr "Na sever"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:60
+msgid "<key>↓</key>"
+msgstr "<key>↓</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:63
+msgid "South east"
+msgstr "Na jihovýchod"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:64
+msgid "<key>PgDn</key>"
+msgstr "<key>Page Down</key>"
+
+#. (itstool) path: td/p
+#. (itstool) path: item/title
+#: C/controls-default.page:67 C/controls-default.page:105
+msgid "Stay in the same position"
+msgstr "Zůstat na stejném místě"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:68
+msgid "<key>5</key>"
+msgstr "<key>5</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:71
+msgid "Teleport safely"
+msgstr "Teleportovat se bezpečně"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:72
+msgid "<key>+</key>"
+msgstr "<key>+</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:75
+msgid "Teleport randomly"
+msgstr "Teleportovat se náhodně"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:76
+msgid "<key>*</key>"
+msgstr "<key>*</key>"
+
+#. (itstool) path: td/p
+#. (itstool) path: item/title
+#: C/controls-default.page:79 C/controls-default.page:109
+msgid "Wait for the robots"
+msgstr "Čekat na roboty"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:80
+msgid "<key>Enter</key>"
+msgstr "<key>Enter</key>"
+
+#. (itstool) path: note/p
+#: C/controls-default.page:85
+msgid ""
+"You can <link xref=\"controls-change\">change</link> the default controls to "
+"suit your preference."
+msgstr ""
+"Výchozí ovládání můžete <link xref=\"controls-change\">změnit</link>, aby "
+"lépe vyhovovalo vašim potřebám."
+
+#. (itstool) path: section/title
+#: C/controls-default.page:92
+msgid "Use the mouse to move around"
+msgstr "Používání myši k pohybům"
+
+#. (itstool) path: item/title
+#: C/controls-default.page:96
+msgid "Move in a particular direction"
+msgstr "Posunout se konkrétním směrem"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:97
+msgid ""
+"When you move your mouse around the main character, a small black arrow will "
+"appear pointing towards the direction in which the character will move if "
+"you click. For example, to move north, if you move your cursor to the column "
+"above the main character, a small black arrow will appear pointing "
+"northwards. On clicking, the character will move one square northwards."
+msgstr ""
+"Když budete pohybovat myší okolo hlavního hrdiny, uvidíte malou čenou šipku "
+"ukazující ve směru, kterým se hrdina přesune, až kliknete. Pokud se "
+"například chcete přesunout na sever, najeďte ukazatelem myši do sloupce na "
+"hracím poli nad hlavním hrdinou a černá šipka bude ukazovat na sever. Po "
+"kliknutím se hlavní hrdina přesune o jedno políčko na sever."
+
+#. (itstool) path: item/p
+#: C/controls-default.page:106
+msgid "Click on the main character to stay put in the same square."
+msgstr ""
+"Kliknutím na hlavního hrdinu jej přimějete zůstat jeden tah stát na stejném políčku."
+
+#. (itstool) path: item/p
+#: C/controls-default.page:110
+msgid ""
+"Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
+"\"menu\">Move</gui> <gui style=\"menuitem\">Wait</gui></guiseq> to wait for "
+"the enemy robots to finish making all their moves."
+msgstr ""
+"Kliknutím na tlačítko <_:media-1/> na nástrojové liště nebo výběrem "
+"<guiseq><gui style=\"menu\">Táhnout</gui> <gui style=\"menuitem\">Čekat</"
+"gui></guiseq> budete čekat, než nepřátelští roboti dokončí všechny své "
+"přesuny."
+
+#. (itstool) path: item/title
+#: C/controls-default.page:118 C/moves.page:84
+msgid "Safe teleports"
+msgstr "Teleportovat se bezpečně"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:119
+msgid ""
+"To safely teleport, click the <_:media-1/> button on the toolbar or select "
+"<guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem\">Teleport</"
+"gui></guiseq>."
+msgstr ""
+"Kliknutím na tlačítko <_:media-1/> na nástrojové liště nebo výběrem "
+"<guiseq><gui style=\"menu\">Táhnout</gui> <gui style=\"menuitem"
+"\">Teleportovat</gui></guiseq> se bezpečně teleportujete."
+
+#. (itstool) path: item/title
+#: C/controls-default.page:125 C/moves.page:90
+msgid "Random teleports"
+msgstr "Teleportovat se náhodně"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:126
+msgid ""
+"To teleport to a random spot, click the <_:media-1/> button on the toolbar "
+"or select <guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem"
+"\">Random</gui></guiseq>."
+msgstr ""
+"Kliknutím na tlačítko <_:media-1/> na nástrojové liště nebo výběrem "
+"<guiseq><gui style=\"menu\">Táhnout</gui> <gui style=\"menuitem\">Náhodně</"
+"gui></guiseq> se teleportujete na náhodné místo."
+
+#. (itstool) path: info/desc
+#: C/game-types.page:18
+msgid "Change the level of difficulty in <app>Robots</app>."
+msgstr "Jak změnit úroveň obtížnosti hry <app>Roboti</app>."
+
+#. (itstool) path: page/title
+#: C/game-types.page:21
+msgid "Game type"
+msgstr "Typ hry"
+
+#. (itstool) path: page/p
+#: C/game-types.page:23
+msgid ""
+"You can play <app>Robots</app> in different ways by choosing a different "
+"game type. This changes the level of difficulty involved in playing "
+"<app>Robots</app>."
+msgstr ""
+"<app>Roboty</app> můžete hrát různými způsoby podle toho, jaký si vyberete "
+"typ hry. Díky tomu si <app>Roboty</app> zahrajete v různých stupních "
+"obtížnosti."
+
+#. (itstool) path: steps/title
+#: C/game-types.page:28
+msgid "To change the level of difficulty:"
+msgstr "Abyste změnili úroveň obtížnosti:"
+
+#. (itstool) path: item/p
+#: C/game-types.page:30
+msgid ""
+"Select <guiseq> <gui style=\"menu\">Settings</gui> <gui>Preferences</"
+"gui><gui>Game</gui></guiseq>."
+msgstr ""
+"Vyberte <guiseq><gui style=\"menu\">Nastavení</gui> <gui>Předvolby</gui> "
+"<gui>Hra</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/game-types.page:35
+msgid ""
+"From the drop down menu next to <gui>Game Type</gui>, choose your option."
+msgstr "V rozbalovací nabídce vedle <gui>Typ hry</gui> vyberte svoji volbu."
+
+#. (itstool) path: td/p
+#: C/game-types.page:39
+msgid "Game Type"
+msgstr "Typ hry"
+
+#. (itstool) path: td/p
+#: C/game-types.page:40
+msgid "Initial safe <link xref=\"moves#teleport\">teleports</link>"
+msgstr ""
+"Počáteční počet bezpečných <link xref=\"moves#teleport\">teleportů</link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:42
+msgid "Initial <link xref=\"scores#low-risk\">low-risk enemy robots</link>"
+msgstr ""
+"Počáteční počet <link xref=\"scores#low-risk\">málo nepřátelských robotů</"
+"link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:44
+msgid "Initial <link xref=\"scores#high-risk\">high-risk enemy robots</link>"
+msgstr ""
+"Počáteční počet <link xref=\"scores#high-risk\">vysoce nepřátelských robotů</"
+"link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:46
+msgid "Do safe teleports increase in successive levels?"
+msgstr "Zvyšují se postupně bezpečné teleporty v dalších úrovních?"
+
+#. (itstool) path: td/p
+#: C/game-types.page:49
+msgid "<gui>robots2 easy</gui>"
+msgstr "<gui>roboti 2 snadní</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:50
+msgid "3"
+msgstr "3"
+
+#. (itstool) path: td/p
+#: C/game-types.page:51 C/game-types.page:74 C/game-types.page:80
+msgid "8"
+msgstr "8"
+
+#. (itstool) path: td/p
+#: C/game-types.page:52 C/game-types.page:72 C/game-types.page:73
+#: C/game-types.page:81
+msgid "2"
+msgstr "2"
+
+#. (itstool) path: td/p
+#: C/game-types.page:53 C/game-types.page:75
+msgid "Yes"
+msgstr "Ano"
+
+#. (itstool) path: td/p
+#: C/game-types.page:56
+msgid "<gui>robots with safe teleport</gui>"
+msgstr "<gui>roboti s bezpečným teleportem</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:57 C/game-types.page:59 C/game-types.page:65
+#: C/game-types.page:67
+msgid "0"
+msgstr "0"
+
+#. (itstool) path: td/p
+#: C/game-types.page:58 C/game-types.page:66
+msgid "10"
+msgstr "10"
+
+#. (itstool) path: td/p
+#: C/game-types.page:60 C/game-types.page:82
+msgid ""
+"Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
+"link>"
+msgstr ""
+"Ano, ale jen když jsou roboti zabiti během <link xref=\"moves#wait\">čekání</"
+"link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:64
+msgid "<gui>classic robots</gui>"
+msgstr "<gui>klasičtí roboti</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:68
+msgid "No"
+msgstr "Ne"
+
+#. (itstool) path: td/p
+#: C/game-types.page:71
+msgid "<gui>nightmare</gui>"
+msgstr "<gui>noční můra</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:78
+msgid "<gui>robots2</gui>"
+msgstr "<gui>roboti 2</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:79
+msgid "1"
+msgstr "1"
+
+#. (itstool) path: item/p
+#: C/game-types.page:88
+msgid ""
+"Check the <gui style=\"checkbox\">Use safe moves</gui> and <gui style="
+"\"checkbox\">Use super safe moves</gui> checkboxes if you want your random "
+"teleports to be as safe as possible. This reduces the level of difficulty. "
+"You can always uncheck these if you find the game too easy."
+msgstr ""
+"Pokud chcete, aby náhodná teleportace byla aspoň trochu bezpečná, zaškrtněte "
+"<gui style=\"checkbox\">Používat bezpečné tahy</gui> a <gui style=\"checkbox"
+"\">Používat superbezpečné tahy</gui>. Tím se sníží úroveň obtížnosti. Jestli "
+"se vám bude hra zdát příliš snadná, můžete zaškrtnutí těchto voleb vždycky "
+"zrušit."
+
+#. (itstool) path: info/desc
+#: C/index.page:16
+msgid "Index"
+msgstr "Index"
+
+#. (itstool) path: page/title
+#: C/index.page:19
+msgid "<_:media-1/> Robots"
+msgstr "<_:media-1/> Roboti"
+
+#. (itstool) path: page/p
+#: C/index.page:24
+msgid ""
+"<app>Robots</app> is based on the UNIX command-line game of the same name. "
+"The aim of the game is to destroy all the robots by getting them to crash "
+"into each other or into junk-heaps from previous collisions, while stopping "
+"them from crashing into you."
+msgstr ""
+"<app>Roboti</app> vychází ze stejnojmenné hry pro UNIXovou příkazovou řádku. "
+"Cílem hry je zničit všechny roboty tím, že je přimějete srazit se navzájem "
+"nebo narazit do hromady šrotu z dřívější srážky. Přitom se musíte snažit, "
+"aby nenarazili do vás."
+
+#. (itstool) path: section/title
+#: C/index.page:30
+msgid "Game play"
+msgstr "Hraní hry"
+
+#. (itstool) path: section/title
+#: C/index.page:34
+msgid "Preferences"
+msgstr "Předvolby"
+
+#. (itstool) path: info/desc
+#: C/moves.page:18
+msgid "How can I move around in <app>Robots</app>?"
+msgstr "Jak se mohu ve hře <app>Roboti</app> pohybovat?"
+
+#. (itstool) path: page/title
+#: C/moves.page:21
+msgid "Different moves in <app>Robots</app>"
+msgstr "Různé tahy v <app>Robotech</app>"
+
+#. (itstool) path: page/p
+#: C/moves.page:23
+msgid ""
+"In <app>Robots</app> you can move in eight directions, wait for the robots, "
+"or teleport. The enemy robots and the main character take turns to make "
+"their move. So, after each of your moves, the enemy robots try to make a "
+"move that gets them closer to you."
+msgstr ""
+"Ve hře <app>Roboti</app> se můžete přesouvat v osmi směrech, čekat na roboty "
+"nebo se teleportovat. Nepřátelští roboti a hlavní hrdina se v tazích "
+"střídají. Tzn. že po každém vašem tahu se roboti pokusí přesunou blíže k "
+"vám, aby vás dostali."
+
+#. (itstool) path: section/title
+#: C/moves.page:29
+msgid "Basic moves"
+msgstr "Základní tahy"
+
+#. (itstool) path: section/p
+#: C/moves.page:31
+msgid ""
+"You can move in any of the following directions. Each move takes you one "
+"square forward in the direction of your choice."
+msgstr ""
+"Pohybovat se můžete v následujících směrech. V každém tahu se posunete právě "
+"o jedno políčko ve zvoleném směru."
+
+#. (itstool) path: item/p
+#: C/moves.page:36
+msgid "North west or up left"
+msgstr "Na severozápad (doleva nahoru)"
+
+#. (itstool) path: item/p
+#: C/moves.page:39
+msgid "North or up"
+msgstr "Na sever (nahoru)"
+
+#. (itstool) path: item/p
+#: C/moves.page:42
+msgid "North east or up right"
+msgstr "Na severovýchod (doprava nahoru)"
+
+#. (itstool) path: item/p
+#: C/moves.page:45
+msgid "East or right"
+msgstr "Na východ (doprava)"
+
+#. (itstool) path: item/p
+#: C/moves.page:48
+msgid "South east or down right"
+msgstr "Na jihozápad (doleva dolů)"
+
+#. (itstool) path: item/p
+#: C/moves.page:51
+msgid "South or down"
+msgstr "Na jih (dolů)"
+
+#. (itstool) path: item/p
+#: C/moves.page:54
+msgid "South west or down left"
+msgstr "Na jihovýchod (doleva dolů)"
+
+#. (itstool) path: item/p
+#: C/moves.page:57
+msgid "West or left"
+msgstr "Na západ (doleva)"
+
+#. (itstool) path: item/p
+#: C/moves.page:60
+msgid "Stay in the same square"
+msgstr "Zůstat stát na stejném políčku"
+
+#. (itstool) path: section/title
+#: C/moves.page:67
+msgid "Wait"
+msgstr "Čekání"
+
+#. (itstool) path: section/p
+#: C/moves.page:69
+msgid ""
+"You can stay put and wait for the robots to finish making all their moves. "
+"This is not advisable unless there are very few robots and you are "
+"absolutely sure that they will all perish before reaching you."
+msgstr ""
+"Můžete zůstat stát na místě a čekat, až roboti dokončí všechny své přesuny. "
+"To není moc vhodné, vyjma situací, kdy je velmi málo robotů a vy jste si "
+"zcela jisti, že zahynou dřív, než dorazí k vám."
+
+#. (itstool) path: section/title
+#: C/moves.page:76
+msgid "Teleport to a different location"
+msgstr "Teleportace na jiné místo"
+
+#. (itstool) path: section/p
+#: C/moves.page:78
+msgid ""
+"If there are no moves possible or if you want to make a leap across the "
+"board instead of moving square by square, you can teleport. There are two "
+"types of teleports available."
+msgstr ""
+"Když už není možný žádný tah nebo chcete učinit velký skok místo plahočení "
+"políčko po políčku, můžete se teleportovat. K dispozici jsou dva typy "
+"teleportace."
+
+#. (itstool) path: item/p
+#: C/moves.page:85
+msgid ""
+"Safe teleports move the main character to a location that is safe from enemy "
+"robots. In each game only a few safe teleports are allowed."
+msgstr ""
+"Bezpečná teleportace přenese hlavního hrdinu na místo, kde je bezpečno před "
+"roboty. Bezpečných teleportací je ale v každé hře dovoleno jen omezené "
+"množství."
+
+#. (itstool) path: item/p
+#: C/moves.page:91
+msgid ""
+"Use random teleports to teleport to a random location that may be safe or "
+"may not be safe. You can use as many random teleports as you want during a "
+"game."
+msgstr ""
+"Náhodnou teleportaci použijte k teleportování na náhodné místo, kde může, "
+"ale také nemusí, být bezpečno. V průběhu hry můžete náhodných teleportací "
+"používat podle libosti."
+
+#. (itstool) path: media
 #. This is a reference to an external file such as an image or video. When
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#.
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:255(imagedata)
+#: C/scores.page:35
 msgctxt "_"
 msgid ""
-"external ref='figures/gnome-robots-main.png' "
-"md5='aade859d773abd55a6f903b51d92e4b9'"
+"external ref='figures/boo-high-risk.png' "
+"md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
 msgstr ""
-"external ref='figures/gnome-robots-main.png' "
-"md5='aade859d773abd55a6f903b51d92e4b9'"
+"external ref='figures/boo-high-risk.png' "
+"md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
 
-#: C/index.docbook:26(articleinfo/title)
-msgid "<application>Robots</application> Manual"
-msgstr "Příručka ke hře <application>Roboti</application>"
-
-#: C/index.docbook:29(abstract/para)
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/scores.page:40
+msgctxt "_"
 msgid ""
-"Robots is a graphical version of the original text based robots game, which "
-"can be found on a number of UNIX systems. The player must outwit the robots "
-"chasing him/her by getting them to run into each other."
+"external ref='figures/robots-high-risk.png' "
+"md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
 msgstr ""
-"Roboti jsou grafickou verzí původně textové hry s roboty, kterou můžete "
-"najít v mnoha UNIXových systémech. Hráč musí uniknout robotům, kteří jej "
-"pronásledují, a přimět je, aby narazili do sebe navzájem."
+"external ref='figures/robots-high-risk.png' "
+"md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
 
-#: C/index.docbook:37(articleinfo/copyright)
-msgid "<year>2001</year> <holder>Patanjali Somayaji, Mark Rae</holder>"
-msgstr "<year>2001</year> <holder>Patanjali Somayaji, Mark Rae</holder>"
-
-#: C/index.docbook:55(publisher/publishername)
-#: C/index.docbook:105(revdescription/para)
-#: C/index.docbook:115(revdescription/para)
-msgid "GNOME Documentation Project"
-msgstr "Dokumentační projekt GNOME"
-
-#: C/index.docbook:2(legalnotice/para)
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/scores.page:44
+msgctxt "_"
 msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or in "
-"the file COPYING-DOCS distributed with this manual."
+"external ref='figures/gnome-high-risk.png' "
+"md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
 msgstr ""
-"Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU "
-"Free Documentation License (GFDL) ve verzi 1.1 nebo v jakékoli další verzi "
-"vydané nadací Free Software Foundation; bez neměnných oddílů, bez textů "
-"předních desek a bez textů zadních desek. Kopii licence GFDL naleznete pod "
-"<ulink type=\"help\" url=\"help:fdl\">tímto odkazem</ulink> nebo v souboru "
-"COPYING-DOCS dodávaném s touto příručkou."
+"external ref='figures/gnome-high-risk.png' "
+"md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
 
-#: C/index.docbook:12(legalnotice/para) C/legal.xml:12(legalnotice/para)
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/scores.page:48
+msgctxt "_"
 msgid ""
-"This manual is part of a collection of GNOME manuals distributed under the "
-"GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in "
-"section 6 of the license."
+"external ref='figures/ufo-high-risk.png' "
+"md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
 msgstr ""
-"Tato příručka je součástí sbírky příruček GNOME šířených za podmínek licence "
-"GNU FDL. Pokud chcete tento dokument šířit odděleně od sbírky, musíte "
-"přiložit kopii licence dle popisu v oddílu 6 dané licence."
+"external ref='figures/ufo-high-risk.png' "
+"md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
 
-#: C/index.docbook:19(legalnotice/para) C/legal.xml:19(legalnotice/para)
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/scores.page:64
+msgctxt "_"
 msgid ""
-"Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any GNOME "
-"documentation, and the members of the GNOME Documentation Project are made "
-"aware of those trademarks, then the names are in capital letters or initial "
-"capital letters."
+"external ref='figures/boo-low-risk.png' "
+"md5='69c143d6283761adf553b170570e121d'"
 msgstr ""
-"Mnoho užívaných názvů určených k zviditelnění produktů nebo služeb jsou "
-"ochranné známky. Na místech, kde jsou tato jména v dokumentaci užita a "
-"členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se "
-"jedná o ochrannou známku, je takové jméno psáno velkými písmeny celé nebo s "
-"velkým písmenem na začátku."
+"external ref='figures/boo-low-risk.png' "
+"md5='69c143d6283761adf553b170570e121d'"
 
-#: C/index.docbook:35(listitem/para) C/legal.xml:35(listitem/para)
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/scores.page:68
+msgctxt "_"
 msgid ""
-"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
-"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
-"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
-"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
-"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
-"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
-"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
-"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
-"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
-"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
-"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+"external ref='figures/robots-low-risk.png' "
+"md5='55f455ea45fad3d7fb453f992f2aad94'"
 msgstr ""
-"DOKUMENT JE POSKYTOVÁN V PODOBĚ „JAK JE“, BEZ ZÁRUKY JAKÉHOKOLIV DRUHU, "
-"NEPOSKYTUJÍ SE ANI ODVOZENÉ ZÁRUKY, ZÁRUKY, ŽE DOKUMENT, NEBO JEHO UPRAVENÁ "
-"VERZE, JE BEZCHYBNÝ, NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL, "
-"NEBO NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ "
-"DOKUMENTU, NEBO JEHO UPRAVENÉ VERZE, NESETE VY. POKUD JE TENTO DOKUMENT NEBO "
-"JEHO UPRAVENÁ VERZE VADNÁ V JAKÉMKOLIV SMYSLU, VY (NIKOLIV PŮVODCE, AUTOR "
-"NEBO JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE ODPOVĚDNOST ZA JAKÉKOLIV NÁKLADY NA "
-"NUTNÉ ÚPRAVY, OPRAVY ČI SLUŽBY. TOTO PROHLÁŠENÍ O ZÁRUCE PŘEDSTAVUJE "
-"ZÁKLADNÍ SOUČÁST TÉTO LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ PODLE TÉTO DOHODY "
-"POVOLENO UŽÍVÁNÍ ANI ÚPRAVY TOHOTO DOKUMENTU; DÁLE"
+"external ref='figures/robots-low-risk.png' "
+"md5='55f455ea45fad3d7fb453f992f2aad94'"
 
-#: C/index.docbook:55(listitem/para) C/legal.xml:55(listitem/para)
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/scores.page:72
+msgctxt "_"
 msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
-"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
-"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
-"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
-"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
-"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
-"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
-"POSSIBILITY OF SUCH DAMAGES."
+"external ref='figures/gnome-low-risk.png' "
+"md5='1195e6a49de2b6efdf2d9185e1e184e0'"
 msgstr ""
-"ZA ŽÁDNÝCH OKOLNOSTÍ A ŽÁDNÝCH PRÁVNÍCH PŘEDPOKLADŮ, AŤ SE JEDNÁ O PŘEČIN "
-"(VČETNĚ NEDBALOSTNÍCH), SMLOUVU NEBO JINÉ, NENÍ AUTOR, PŮVODNÍ PISATEL, "
-"KTERÝKOLIV PŘISPĚVATEL NEBO KTERÝKOLIV DISTRIBUTOR TOHOTO DOKUMENTU NEBO "
-"UPRAVENÉ VERZE DOKUMENTU NEBO KTERÝKOLIV DODAVATEL NĚKTERÉ Z TĚCHTO STRAN "
-"ODPOVĚDNÝ NĚJAKÉ OSOBĚ ZA PŘÍMÉ, NEPŘÍMÉ, SPECIÁLNÍ, NAHODILÉ NEBO NÁSLEDNÉ "
-"ŠKODY JAKÉHOKOLIV CHARAKTERU, VČETNĚ, ALE NEJEN, ZA POŠKOZENÍ ZE ZTRÁTY "
-"DOBRÉHO JMÉNA, PŘERUŠENÍ PRÁCE, PORUCHY NEBO NESPRÁVNÉ FUNKCE POČÍTAČE NEBO "
-"JINÉHO A VŠECH DALŠÍCH ŠKOD NEBO ZTRÁT VYVSTÁVAJÍCÍCH Z NEBO VZTAHUJÍCÍCH SE "
-"K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY "
-"TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ."
+"external ref='figures/gnome-low-risk.png' "
+"md5='1195e6a49de2b6efdf2d9185e1e184e0'"
 
-#: C/index.docbook:28(legalnotice/para) C/legal.xml:28(legalnotice/para)
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/scores.page:76
+msgctxt "_"
 msgid ""
-"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
-"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<_:orderedlist-1/>"
+"external ref='figures/ufo-low-risk.png' "
+"md5='183efc4bba58248fc97edf5528af5a9a'"
 msgstr ""
-"DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU "
-"FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <_:orderedlist-1/>"
+"external ref='figures/ufo-low-risk.png' "
+"md5='183efc4bba58248fc97edf5528af5a9a'"
 
-#: C/index.docbook:64(authorgroup/author)
+#. (itstool) path: info/desc
+#: C/scores.page:17
+msgid "Scoring points in <app>Robots</app>"
+msgstr "Jak se ve hře <app>Roboti</app> přidělují body."
+
+#. (itstool) path: page/title
+#: C/scores.page:20
+msgid "Scores"
+msgstr "Skóre"
+
+#. (itstool) path: page/p
+#: C/scores.page:22
 msgid ""
-"<firstname>Patanjali</firstname> <surname>Somayaji</surname> <affiliation> "
-"<address> <email>patanjali@mindless.com</email> </address> </affiliation>"
+"There are two type of enemies in <app>Robots</app>, enemies that give you 10 "
+"points when they die and enemies that give you 20 points when they die."
 msgstr ""
-"<firstname>Patanjali</firstname> <surname>Somayaji</surname> <affiliation> "
-"<address> <email>patanjali@mindless.com</email> </address> </affiliation>"
+"V <app>Robotech</app> existují dva typy nepřátel. Nepřátelé, za které "
+"získáte 10 bodů, když zemřou, a nepřátelé, za které ve stejné situaci "
+"získáte 20 bodů."
 
-#: C/index.docbook:71(authorgroup/author)
+#. (itstool) path: section/title
+#: C/scores.page:27
+msgid "High-risk enemies"
+msgstr "Vysoce nebezpeční nepřátelé"
+
+#. (itstool) path: section/p
+#: C/scores.page:29
 msgid ""
-"<firstname>Mark</firstname> <surname>Rae</surname> <affiliation> <address> "
-"<email>m.rae@inpharmatica.co.uk</email> </address> </affiliation>"
+"Depending on your <link xref=\"appearance\">game theme</link>, the following "
+"are the enemies that give you 20 points when they die."
 msgstr ""
-"<firstname>Mark</firstname> <surname>Rae</surname> <affiliation> <address> "
-"<email>m.rae@inpharmatica.co.uk</email> </address> </affiliation>"
+"V závislosti na zvoleném <link xref=\"appearance\">motivu hry</link> "
+"získáváte za smrt některého z následujících nepřátel 20 bodů."
 
-#: C/index.docbook:99(revdescription/para)
-msgid "Patanjali Somayaji <email>patanjali@mindless.com</email>"
-msgstr "Patanjali Somayaji <email>patanjali@mindless.com</email>"
-
-#: C/index.docbook:102(revdescription/para)
-msgid "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
-msgstr "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
-
-#: C/index.docbook:95(revhistory/revision)
+#. (itstool) path: item/p
+#: C/scores.page:34
 msgid ""
-"<revnumber>Robots Manual V2.8</revnumber> <date>September 2004</date> <_:"
-"revdescription-1/>"
+"Bats <media type=\"image\" src=\"figures/boo-high-risk.png\" height=\"20\" "
+"width=\"20\"/>"
 msgstr ""
-"<revnumber>Příručka V2.8 ke hře GNOME Roboti</revnumber> <date>září 2004</"
-"date> <_:revdescription-1/>"
+"Netopýři <media type=\"image\" src=\"figures/boo-high-risk.png\" height="
+"\"20\" width=\"20\"/>"
 
-#: C/index.docbook:112(revdescription/para)
-msgid "Claude Paroz <email>claude@2xlibre.net</email>"
-msgstr "Claude Paroz <email>claude@2xlibre.net</email>"
-
-#: C/index.docbook:108(revhistory/revision)
+#. (itstool) path: item/p
+#: C/scores.page:38
 msgid ""
-"<revnumber>Robots Manual V2.9</revnumber> <date>August 2007</date> <_:"
-"revdescription-1/>"
+"High-risk Robots <media type=\"image\" src=\"figures/robots-high-risk.png\" "
+"height=\"20\" width=\"20\"/>"
 msgstr ""
-"<revnumber>Příručka V2.9 ke hře GNOME Roboti</revnumber> <date>srpen 2007</"
-"date> <_:revdescription-1/>"
+"Vysoce nebezpeční roboti <media type=\"image\" src=\"figures/robots-high-"
+"risk.png\" height=\"20\" width=\"20\"/>"
 
-#: C/index.docbook:120(articleinfo/releaseinfo)
-msgid "This manual describes version 2.18 of Robots."
-msgstr "Tato příručka popisuje hru Roboti ve verzi 2.18"
-
-#: C/index.docbook:127(legalnotice/title)
-msgid "Feedback"
-msgstr "Ohlasy"
-
-#: C/index.docbook:128(legalnotice/para)
+#. (itstool) path: item/p
+#: C/scores.page:43
 msgid ""
-"To report a bug or make a suggestion regarding the <application>Robots</"
-"application> application or this manual, follow the directions in the <ulink "
-"url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME Feedback Page</"
-"ulink>."
+"High-risk gnomes <media type=\"image\" src=\"figures/gnome-high-risk.png\" "
+"height=\"20\" width=\"20\"/>"
 msgstr ""
-"Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci "
-"<application>Roboti</application> nebo této příručce, postupujte dle "
-"instrukcí na stránce <ulink url=\"ghelp:user-guide?feedback-bugs\" type="
-"\"help\">Stránka s ohlasy na GNOME</ulink>."
+"Vysoce nebezpeční trpaslíci <media type=\"image\" src=\"figures/gnome-high-"
+"risk.png\" height=\"20\" width=\"20\"/>"
 
-#: C/index.docbook:138(article/indexterm)
-msgid "<primary>GNOME Robots</primary>"
-msgstr "<primary>GNOME Roboti</primary>"
-
-#: C/index.docbook:146(sect1/title)
-msgid "Introduction"
-msgstr "Úvod"
-
-#: C/index.docbook:148(sect1/para)
+#. (itstool) path: item/p
+#: C/scores.page:47
 msgid ""
-"<application>GNOME Robots</application> is a game where you try and avoid a "
-"band of marauding robots which are, for no adequately explained reason, "
-"trying to kill you. It is based on the text-based robots game which can be "
-"found on a number of UNIX systems."
+"High-risk UFOs <media type=\"image\" src=\"figures/ufo-high-risk.png\" "
+"height=\"20\" width=\"20\"/>"
 msgstr ""
-"<application>GNOME Roboti</application> je hra, ve které zkoušíte uniknout "
-"bandě zlotřilých robotů, kteří se vás snaží, bez udání rozumného důvodu, "
-"zabít. Hra vychází z textové hry s roboty, kterou můžete najít v mnoha "
-"UNIXových systémech."
+"Vysoce nebezpečné UFO <media type=\"image\" src=\"figures/ufo-high-risk.png"
+"\" height=\"20\" width=\"20\"/>"
 
-#: C/index.docbook:155(sect1/para)
+#. (itstool) path: section/title
+#: C/scores.page:55
+msgid "Low-risk enemies"
+msgstr "Málo nebezpeční nepřátelé"
+
+#. (itstool) path: section/p
+#: C/scores.page:57
 msgid ""
-"This new version includes two types of robots, movable junkheaps, multiple "
-"game configurations, user definable keyboard layouts, and sound, as well as "
-"all of the features which were present in the original GNOME Robots game."
+"The following are the enemies that give you 10 points when they die. Again, "
+"it is your theme that determines which of these will appear in a game."
 msgstr ""
-"Tato nová verze obsahuje dva typy robotů, přesouvatelné hromady harampádí, "
-"výběr z několika her, uživatelem definovatelné ovládání klávesami a zvuky, a "
-"vše co obsahovala původní hra GNOME Roboti."
+"Za smrt následujících nepřátel získáváte 10 bodů. Opět, zaleží na motivu, "
+"kteří z nich se ve hře objeví."
 
-#: C/index.docbook:162(sect1/para)
+#. (itstool) path: item/p
+#: C/scores.page:63
 msgid ""
-"To run <application>GNOME Robots</application>, select <menuchoice> "
-"<guisubmenu>Games</guisubmenu> <guimenuitem>Robots</guimenuitem> </"
-"menuchoice> from the <guimenu>Main Menu</guimenu>, or type <command>gnome-"
-"robots</command> on the command line."
+"Ghosts <media type=\"image\" src=\"figures/boo-low-risk.png\" height=\"20\" "
+"width=\"20\"/>"
 msgstr ""
-"Jestliže chcete hru <application>GNOME Roboti</application> spustit, zvolte "
-"<menuchoice><guisubmenu>Hry</guisubmenu><guimenuitem>Roboti</guimenuitem></"
-"menuchoice> z <guimenu>hlavní nabídky</guimenu> nebo zadejte <command>gnome-"
-"robots</command> v příkazovém řádku."
+"Duši <media type=\"image\" src=\"figures/boo-low-risk.png\" height=\"20\" "
+"width=\"20\"/>"
 
-#: C/index.docbook:172(sect1/para)
+#. (itstool) path: item/p
+#: C/scores.page:67
 msgid ""
-"<application>GNOME Robots</application> is included in the <filename>gnome-"
-"games</filename> package, which is part of the GNOME desktop environment. "
-"This document describes version 2.18 of <application>GNOME Robots</"
-"application>."
+"Low-risk Robots <media type=\"image\" src=\"figures/robots-low-risk.png\" "
+"height=\"20\" width=\"20\"/>"
 msgstr ""
-"<application>GNOME Roboti</application> je součástí balíku <filename>gnome-"
-"games</filename>, který patří k pracovnímu prostředí GNOME. Tento dokument "
-"popisuje verzi 2.18 aplikace <application>GNOME Roboti</application>."
+"Málo nebezpeční roboti <media type=\"image\" src=\"figures/robots-low-risk."
+"png\" height=\"20\" width=\"20\"/>"
 
-#: C/index.docbook:181(sect1/title)
-msgid "GNOME Robots Objective"
-msgstr "Cíl hry GNOME Roboti"
-
-#: C/index.docbook:182(sect1/para)
+#. (itstool) path: item/p
+#: C/scores.page:71
 msgid ""
-"The objective of GNOME Robots is quite simple. You are surrounded by a "
-"number of robots or other hostile adversaries. As you move about they will "
-"move directly towards you for every move that you make. Their goal is to "
-"kill you. Your goal is to kill all the robots on the board by taking "
-"advantage of their vulnerabilities."
+"Low-risk gnomes <media type=\"image\" src=\"figures/gnome-low-risk.png\" "
+"height=\"20\" width=\"20\"/>"
 msgstr ""
-"Cíl hry GNOME Roboti je docela jednoduchý. Jste obklopen několika roboty "
-"nebo jinými nepřátelskými protivníky. Jak se pohybujete, oni se při každém "
-"tahu, který uděláte, pohnou směrem k vám. Jejich cílem je vás zabít. Vašim "
-"cílem je naopak zabít všechny roboty na ploše tak, že s výhodou využijete "
-"jejich zranitelnost."
+"Málo nebezpeční trpaslíci <media type=\"image\" src=\"figures/gnome-low-risk."
+"png\" height=\"20\" width=\"20\"/>"
 
-#: C/index.docbook:190(sect1/para)
+#. (itstool) path: item/p
+#: C/scores.page:75
 msgid ""
-"Robots are destroyed when they collide with each other, or when they collide "
-"with the debris of some previous collision. You die if a robot ends up right "
-"next to you."
+"Low-risk UFOs <media type=\"image\" src=\"figures/ufo-low-risk.png\" height="
+"\"20\" width=\"20\"/>"
 msgstr ""
-"Roboti se zničí, když dojde k jejich vzájemnému střetu nebo když narazí do "
-"trosek některé z předchozích kolizí. Pokud se ale robot dostane až k vám, "
-"tak zemřete."
-
-#: C/index.docbook:196(sect1/para)
-msgid ""
-"In some of the game configurations (you can choose from five different sets "
-"of rules), you can push the junkheaps around to form barricades to protect "
-"you. Also, if you are daring enough, you can Splat! the robots by pushing "
-"junkheaps on top of them for an additional bonus."
-msgstr ""
-"V některých typech hry (můžete si vybrat z pěti různých sad pravidel), "
-"můžete pokládat hromady harampádí a tak si stavět na svoji ochranu barikády. "
-"A také můžete, pokud si na to tedy troufnete, roboty rozmačkat roboty tím, "
-"že na ně hromadu harampádí položíte, za což získáte přídavný bonus."
-
-#: C/index.docbook:201(sect1/para)
-msgid ""
-"You can also save yourself by teleporting yourself to a random location. "
-"Unfortunately, randomly teleporting means that you might end up being right "
-"next to a robot, so they can kill you when they make their move. Luckily, "
-"there are also safe teleports which will place you out of immediate danger, "
-"but there are only a limited supply of them. You can earn more free "
-"teleports as you go along (how you gain them depends on the chosen game), "
-"but typically you get one for each robot that is destroyed while you are "
-"'waiting', up to a maximum of 10. If you don't want to waste your saved-up "
-"safe teleports, you can choose to teleport randomly if you think it's safe "
-"enough."
-msgstr ""
-"Sami sebe můžete zachránit tím, že se teleportujete na náhodné místo. "
-"Bohužel, náhodné znamená, že můžete skončit i v těsné blízkosti robota, "
-"takže vás může při svém tahu zabít. Naštěstí je zde i bezpečná teleportace, "
-"která vás přenese na místo mimo dosah nebezpečí, ale tu můžete používat jen "
-"omezeně. Jak postupujete dál, můžete si vysloužit více volné teleportace "
-"(jak ji získáváte záleží na zvolené hře), ale typicky dostanete jednu za "
-"každého robota, který byl zničen během vašeho čekání, až do maxima 10. Pokud "
-"nechcete své našetřené bezpečné teleportace promrhat, můžete v situacích, "
-"kdy vám to připadá dostatečně bezpečné, použít náhodnou teleportaci."
-
-#: C/index.docbook:215(sect1/para)
-msgid ""
-"If you press the <guibutton>Wait</guibutton> button (see below) you will no "
-"longer be able to move until either all of the robots (which still move "
-"towards you) are gone, or you are killed. Doing this is risky, but may earn "
-"you extra safe teleports."
-msgstr ""
-"Pokud zmáčknete tlačítko <guibutton>Čekat</guibutton> (viz dále), nebudete "
-"si již nadále moci hýbat, dokud se buď všichni roboti (kteří se stále "
-"pohybují směrem k vám) nezničí nebo nebudete zabit. Udělat něco takového je "
-"riskantní, ale můžete za to získat navíc bezpečné teleportace."
-
-#: C/index.docbook:222(sect1/para)
-msgid ""
-"If you manage to reach the point where more than half of the screen is "
-"occupied by robots, the number of robots will be reset to the starting "
-"amount, allowing you to continue."
-msgstr ""
-"Jestliže se dostanete do bodu, kde více než půlka obrazovky bude obsazená "
-"roboty, bude počet robotů vrácen do stavu, jako na začátku hry, abyste vůbec "
-"mohli pokračovat."
-
-#: C/index.docbook:233(sect1/title)
-msgid "Using GNOME Robots"
-msgstr "Používání hry GNOME Roboti"
-
-#: C/index.docbook:234(sect1/para)
-msgid ""
-"<application>GNOME Robots</application> is extremely simple to play. You can "
-"use either the mouse or the keyboard. This section describes basic usage of "
-"<application>GNOME Robots</application>."
-msgstr ""
-"<application>GNOME Roboti</application> jsou na hraní extrémně jednodušší. "
-"Můžete používat myš nebo klávesnici. Tato kapitola popisuje základy "
-"používání <application>Robotů</application>."
-
-#: C/index.docbook:243(sect2/title)
-msgid "Basic usage"
-msgstr "Základy používání"
-
-#: C/index.docbook:251(figure/title)
-msgid "GNOME Robots Main Window"
-msgstr "Hlavní okno Robotů."
-
-#: C/index.docbook:253(screenshot/mediaobject)
-msgid ""
-"<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
-"\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> <phrase>GNOME "
-"Robots Main Window.</phrase> </textobject>"
-msgstr ""
-"<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
-"\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> <phrase>Hlavní "
-"okno hry GNOME Roboti.</phrase> </textobject>"
-
-#: C/index.docbook:244(sect2/para)
-msgid ""
-"Starting <application>GNOME Robots</application> opens the <interface>Main "
-"window</interface>, shown in <xref linkend=\"mainwindow-fig\"/>. <_:figure-1/"
-">"
-msgstr ""
-"Spuštěním hry <application>GNOME Roboti</application> se otevře "
-"<interface>hlavní okno</interface>, tak jak jej ukazuje <xref linkend="
-"\"mainwindow-fig\"/>. <_:figure-1/>"
-
-#: C/index.docbook:266(sect2/para)
-msgid ""
-"To start a new game, choose <guimenuitem>New</guimenuitem> in the "
-"<guimenu>Game</guimenu> menu or click on the <guibutton>New</guibutton> "
-"button on the toolbar."
-msgstr ""
-"Novou hru začnete volbou <guimenuitem>Nová</guimenuitem> v nabídce "
-"<guimenu>Hry</guimenu> nebo kliknutím na tlačítko <guibutton>Nová</"
-"guibutton> na panelu nástrojů."
-
-#: C/index.docbook:272(sect2/para)
-msgid ""
-"To move, either click in the direction you want to move (the cursor will "
-"show you which way you will go) or press the appropriate key on the keyboard "
-"(keypad by default). Clicking on the little man will keep you still. To "
-"teleport (safely or unsafely), and to wait, use the buttons on the toolbar "
-"or use the items in the <guimenu>Move</guimenu> menu."
-msgstr ""
-"Když se chcete přesunout, buď příslušným směrem klikněte (kurzor se mění na "
-"šipku, která vám směr ukazuje) nebo zmáčkněte příslušnou klávesu (výchozí "
-"jsou kurzorové klávesy). Kliknutím na panáčka jej udržíte tam, kde je. Pro "
-"teleportaci (bezpečnou nebo náhodnou) a čekání použijte tlačítka na panelu "
-"nástrojů nebo položky v nabídce <guimenu>Posunout</guimenu>."
-
-#: C/index.docbook:288(sect1/title)
-msgid "Menus"
-msgstr "Nabídky"
-
-#: C/index.docbook:289(sect1/para)
-msgid ""
-"The menu bar, located at the top of the <interface>game board</interface>, "
-"contains the following menus:"
-msgstr ""
-"Panel nabídek, který se nachází nad <interface>herní deskou</interface>, "
-"obsahuje následující nabídky:"
-
-#: C/index.docbook:297(varlistentry/term)
-msgid "<guimenu>Game</guimenu>"
-msgstr "<guimenu>Hra</guimenu>"
-
-#: C/index.docbook:303(listitem/para)
-msgid ""
-"<menuchoice> <shortcut><keysym>Ctrl-N</keysym></shortcut> <guimenuitem>New</"
-"guimenuitem> </menuchoice> — starts a new game of GNOME Robots."
-msgstr ""
-"<menuchoice><shortcut><keysym>Ctrl+N</keysym></shortcut> <guimenuitem>Nová</"
-"guimenuitem></menuchoice> — začne novou hru Robotů."
-
-#: C/index.docbook:313(listitem/para)
-msgid ""
-"<menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> — shows the "
-"higher scores."
-msgstr ""
-"<menuchoice><guimenuitem>Skóre</guimenuitem></menuchoice> — zobrazí nejlepší "
-"výsledky."
-
-#: C/index.docbook:321(listitem/para)
-msgid ""
-"<menuchoice> <shortcut><keysym>Ctrl-Q</keysym></shortcut> <guimenuitem>Quit</"
-"guimenuitem> </menuchoice>"
-msgstr ""
-"<menuchoice><shortcut><keysym>Ctrl+Q</keysym></shortcut> "
-"<guimenuitem>Ukončit</guimenuitem></menuchoice>"
-
-#: C/index.docbook:299(listitem/para)
-msgid "This menu contains three items: <_:itemizedlist-1/>"
-msgstr "Tato nabídka obsahuje tři položky: <_:itemizedlist-1/>"
-
-#: C/index.docbook:334(varlistentry/term)
-msgid "<guimenu>Move</guimenu>"
-msgstr "<guimenu>Posunout</guimenu>"
-
-#: C/index.docbook:340(listitem/para)
-msgid "<guimenuitem>Teleport</guimenuitem>— teleports you in a safe location."
-msgstr ""
-"<guimenuitem>Teleportovat</guimenuitem> — teleportuje vás na bezpečné místo."
-
-#: C/index.docbook:346(listitem/para)
-msgid "<guimenuitem>Random</guimenuitem>— teleports you in a random location."
-msgstr "<guimenuitem>Náhodně</guimenuitem> — teleportuje vás na náhodné místo."
-
-#: C/index.docbook:352(listitem/para)
-msgid "<guimenuitem>Wait</guimenuitem>— places you in wait mode."
-msgstr "<guimenuitem>Čekat</guimenuitem> — přepne vás do čekacího režimu."
-
-#: C/index.docbook:336(listitem/para) C/index.docbook:382(listitem/para)
-msgid "This menu contains: <_:itemizedlist-1/>"
-msgstr "Tato nabídka obsahuje: <_:itemizedlist-1/>"
-
-#: C/index.docbook:363(varlistentry/term)
-msgid "<guimenu>Settings</guimenu>"
-msgstr "<guimenu>Nastavení</guimenu>"
-
-#: C/index.docbook:369(listitem/para)
-msgid ""
-"<guimenuitem>Preferences</guimenuitem> which brings up the preferences "
-"dialog box."
-msgstr ""
-"<guimenuitem>Předvolby</guimenuitem> — otevře dialogové okno předvoleb."
-
-#: C/index.docbook:365(listitem/para)
-msgid ""
-"The <guimenu>Settings</guimenu> menu contains only one item: <_:"
-"itemizedlist-1/>"
-msgstr ""
-"Nabídka <guimenu>Nastavení</guimenu> obsahuje pouze jednu položku: <_:"
-"itemizedlist-1/>"
-
-#: C/index.docbook:380(varlistentry/term)
-msgid "<guimenu>Help</guimenu>"
-msgstr "<guimenu>Nápověda</guimenu>"
-
-#: C/index.docbook:386(listitem/para)
-msgid "<guimenuitem>Contents</guimenuitem>— shows this manual."
-msgstr "<guimenuitem>Obsah</guimenuitem> — zobrazí tuto příručku."
-
-#: C/index.docbook:392(listitem/para)
-msgid ""
-"<guimenuitem>About</guimenuitem>— shows basic information about "
-"<application>GNOME Robots</application>, such as the author's name and the "
-"application version number."
-msgstr ""
-"<guimenuitem>O aplikaci</guimenuitem> — ukáže základní informace o hře "
-"<application>GNOME Roboti</application>, jako je jméno autora a číslo verze "
-"aplikace."
-
-#: C/index.docbook:411(sect1/title)
-msgid "Using the keyboard"
-msgstr "Používání klávesnice"
-
-#: C/index.docbook:412(sect1/para)
-msgid ""
-"You can use the keyboard to control the little man. By default, the keys "
-"from the keypad are configured for the game. However you can customize the "
-"key mappings in the <guimenuitem>Keyboard</guimenuitem> tab in the "
-"<guimenuitem>Preferences</guimenuitem> dialog. To select a different key for "
-"a command, double-click on the line for that command and then press the key "
-"you want to use."
-msgstr ""
-"K ovládání panáčka můžete používat klávesnici. Ve výchozím stavu jsou pro "
-"ovládání nastavené kurzorové klávesy. Můžete si však mapování kláves "
-"přizpůsobit na kartě <guimenuitem>Klávesnice</guimenuitem> v dialogovém okně "
-"<guimenuitem>Předvolby Robotů</guimenuitem>. Změnu klávesy na jinou "
-"provedete tak, že dvojitě kliknete na řádek s příkazem a po té zmáčknete "
-"klávesu, kterou chcete používat."
-
-#: C/index.docbook:422(sect2/title)
-msgid "Default Key Mappings"
-msgstr "Výchozí mapování kláves"
-
-#: C/index.docbook:429(note/title)
-msgid "Switch off the NumLock Key"
-msgstr "Vypnutí numerické klávesnice"
-
-#: C/index.docbook:430(note/para)
-msgid "You may need to switch off the NumLock to make these work."
-msgstr ""
-"Aby to fungovalo, je na některých klávesnicích potřeba vypnout numerickou "
-"část (pomocí NumLock)."
-
-#: C/index.docbook:435(listitem/para)
-msgid "Up Left: <keycap>Home</keycap>"
-msgstr "Vlevo nahoru: <keycap>Home</keycap>"
-
-#: C/index.docbook:438(listitem/para)
-msgid "Up: <keycap>Up</keycap>"
-msgstr "Nahoru: <keycap>šipka nahoru</keycap>"
-
-#: C/index.docbook:441(listitem/para)
-msgid "Up Right: <keycap>Page Up</keycap>"
-msgstr "Vpravo nahoru: <keycap>Page Up</keycap>"
-
-#: C/index.docbook:444(listitem/para)
-msgid "Left: <keycap>Left</keycap>"
-msgstr "Vlevo: <keycap>šipka vlevo</keycap>"
-
-#: C/index.docbook:447(listitem/para)
-msgid "Stand Still: <keycap>Begin</keycap>"
-msgstr "Stát na místě: <keycap>Begin</keycap> (prostřední klávesa s číslicí 5)"
-
-#: C/index.docbook:450(listitem/para)
-msgid "Right: <keycap>Right</keycap>"
-msgstr "Vpravo: <keycap>šipka vpravo</keycap>"
-
-#: C/index.docbook:453(listitem/para)
-msgid "Down Left: <keycap>End</keycap>"
-msgstr "Vlevo dolů: <keycap>End</keycap>"
-
-#: C/index.docbook:456(listitem/para)
-msgid "Down: <keycap>Down</keycap>"
-msgstr "Dolů: <keycap>šipka dolů</keycap>"
-
-#: C/index.docbook:459(listitem/para)
-msgid "Down Right: <keycap>Page Down</keycap>"
-msgstr "Vpravo dolů: <keycap>Page Down</keycap>"
-
-#: C/index.docbook:462(listitem/para)
-msgid "Teleport: <keycap>+</keycap>"
-msgstr "Teleportovat: <keycap>+</keycap>"
-
-#: C/index.docbook:465(listitem/para)
-msgid "Randomly Teleport: <keycap>*</keycap>"
-msgstr "Náhodně teleportovat: <keycap>*</keycap>"
-
-#: C/index.docbook:468(listitem/para)
-msgid "Wait: <keycap>Enter</keycap>"
-msgstr "Čekat: <keycap>Enter</keycap>"
-
-#: C/index.docbook:425(sect2/para)
-msgid ""
-"By default, you use the numeric keypad on the right-hand side of the "
-"keyboard (not the separate arrow keys). <_:note-1/> <_:orderedlist-2/>"
-msgstr ""
-"Standardně se k ovládání používá numerická klávesnice vpravo (a ne "
-"samostatné šipky). <_:note-1/> <_:orderedlist-2/>"
-
-#: C/index.docbook:482(sect1/title)
-msgid "Customizing GNOME Robots"
-msgstr "Přizpůsobení hry GNOME Roboti"
-
-#: C/index.docbook:501(listitem/para)
-msgid ""
-"The safe moves option will help you to avoid being killed due to a mistake. "
-"If you try to make a move that would lead to your death when there is a safe "
-"move available, you will not be allowed to proceed. But be warned: if there "
-"was no safe move available, other than teleporting, the move will be allowed "
-"to proceed."
-msgstr ""
-"Volba Používat bezpečné pohyby vám pomůže předejít svému zabití kvůli chybě. "
-"Pokud se pokusíte o pohyb, který by vedl k vaší smrti, přestože existuje "
-"bezpečný pohyb, tak vám to nebude umožněno. Ale pozor, pokud žádný bezpečný "
-"pohyb k dispozici není, mimo teleportace, tak vám bude umožněno provést ten "
-"chybný."
-
-#: C/index.docbook:509(listitem/para)
-msgid ""
-"There is also a <quote>super safe mode</quote>. If you select this, you get "
-"beeped when there is no safe move and your only option is to teleport out."
-msgstr ""
-"Je tu k dispozici také <quote>super-bezpečný režim</quote>. Když zvolíte "
-"ten, tak se ozve pípnutí pokaždé, kdy není k dispozici bezpečný pohyb a "
-"jedinou možností úniku je teleportace."
-
-#: C/index.docbook:516(listitem/para)
-msgid ""
-"If you select the sound checkbox the game will play sounds for various "
-"events throughout the game."
-msgstr ""
-"Pokud zapnete volbu Povolit zvuky, bud hra v různých situacích v průběhu hry "
-"vydávat zvuky."
-
-#: C/index.docbook:522(listitem/para)
-msgid ""
-"The <quote>Splats</quote> checkbox selects whether you want the sound played "
-"and a small <quote>Splat!</quote> to appear on the screen."
-msgstr ""
-"Volbu Povolit rozmáčknutí zapněte, pokud chcete aby se ozval zvuk a na "
-"obrazovce objevilo malé <quote>Splat!</quote>."
-
-#: C/index.docbook:491(listitem/para)
-msgid ""
-"<guimenuitem>Game</guimenuitem> — This page allows you to choose the type of "
-"game you want to play. The drop-down box at the top of the page allows you "
-"to choose from a number of predefined games. You can't change these options "
-"in the middle of a game, so they will be disabled then. There are also "
-"several options at the bottom of the dialog: <_:orderedlist-1/>"
-msgstr ""
-"<guimenuitem>Hra</guimenuitem> — Na této kartě si můžete vybrat typ hry, "
-"kterou chcete hrát. V nabídkovém seznamu v horní části karty si můžete "
-"vybrat z několika předdefinovaných her. Tuto volbu nemůžete změnit uprostřed "
-"hry, proto je v takové chvíli zakázaná. V dolní části karty je několik "
-"dalších voleb: <_:orderedlist-1/>"
-
-#: C/index.docbook:533(listitem/para)
-msgid ""
-"<guimenuitem>Appearance</guimenuitem> — This page allows you to select the "
-"graphics used throughout the game from the list in the dropdown-box. You can "
-"also select the background colour from this tab."
-msgstr ""
-"<guimenuitem>Vzhled</guimenuitem> — Na této kartě si v nabídkovém seznamu "
-"volíte grafiku použitou ve hře. Navíc si na této kartě můžete zvolit barvu "
-"pozadí."
-
-#: C/index.docbook:543(listitem/para)
-msgid ""
-"<guimenuitem>Keyboard</guimenuitem> — This screen allows you to define your "
-"own keyboard controls. To select a different key for a command, double-click "
-"on the button for that command and then press the key you want to use."
-msgstr ""
-"<guimenuitem>Klávesnice</guimenuitem> — Na této kartě definujete své vlastní "
-"ovládání z klávesnice. Klávesu pro daný příkaz změníte tak, že na příkaz "
-"dvojitě kliknete a následně zmáčknete klávesu, kterou pro něj chcete "
-"používat."
-
-#: C/index.docbook:483(sect1/para)
-msgid ""
-"You can modify the behaviour and appearance of the game by selecting "
-"<guimenuitem> Preferences</guimenuitem> under the <guimenu>Settings</"
-"guimenu> menu. This brings up a dialog with three tabs: <_:itemizedlist-1/>"
-msgstr ""
-"Můžete si upravit chování a vzhled hry pomocí <guimenuitem>Předvolby</"
-"guimenuitem> pod nabídkou <guimenu>Nastavení</guimenu>. Tím otevřete "
-"dialogové okno se třemi kartami: <_:itemizedlist-1/>"
-
-#: C/index.docbook:554(sect1/para)
-msgid ""
-"Any changes you make take effect immediately and are automatically saved."
-msgstr "Změny, které provedete, se ihned použijí a automaticky uloží."
-
-#: C/index.docbook:558(sect1/para)
-msgid ""
-"You can design your own graphics for the game if you want. The graphics "
-"files are found in <filename class=\"directory\"> $PREFIX/share/gnome-games/"
-"gnome-robots/pixmaps </filename>, where $PREFIX is the prefix into which "
-"GNOME was installed. This is usually either <filename class=\"directory\">/"
-"usr</filename> or <filename class=\"directory\">/usr/local</filename>."
-msgstr ""
-"Pokud chcete, můžete si pro hru navrhnout vlastní grafiku. Grafické soubory "
-"najdete v <filename class=\"directory\">$PREFIX/share/gnome-games/gnome-robots/"
-"pixmaps</filename>, kde $PRFIX je cesta použitá pro instalaci GNOME. Obvykle "
-"to bývá <filename class=\"directory\">/usr</filename> nebo <filename class="
-"\"directory\">/usr/local</filename>."
-
-#: C/index.docbook:569(sect1/para)
-msgid ""
-"Each character is 16x16 pixels and there are 14 of them arranged in a PNG "
-"file which is 224x16 pixels in size. You can look at the existing files to "
-"see the order in which they must be arranged to produce the correct animated "
-"sequences."
-msgstr ""
-"Každý symbol má 16×16 pixelů a dohromady jich je 14 uspořádaných v souboru "
-"PNG o rozměrech 224×16 pixelů. Můžete se podívat na stávající soubory, "
-"abyste viděli v jakém pořadí jsou poskládané, aby vytvořily správnou "
-"výslednou animovanou sekvenci."
-
-#: C/index.docbook:575(sect1/para)
-msgid ""
-"Any graphics files which are placed in the directory are auto-detected, so "
-"you don't need to alter any configuration files. You can also define your "
-"own game configurations by creating extra <filename> .cfg </filename> files "
-"which are stored in the <filename class=\"directory\"> $PREFIX/share/gnome-"
-"games/gnome-robots/games </filename> directory."
-msgstr ""
-"Grafické soubory, které umístíte do složky se automaticky detekují, takže "
-"nemusíte nikde nic nastavovat. Můžete si také vytvořit svoje vlastní "
-"nastavení hry tím, že vytvoříte další soubory <filename>.cfg </filename>, "
-"které jsou uložené ve složce <filename class=\"directory\">$PREFIX/share/"
-"gnome-games/gnome-robots/games</filename>."
-
-#: C/index.docbook:607(sect1/title)
-msgid "Authors"
-msgstr "Autoři"
-
-#: C/index.docbook:608(sect1/para)
-msgid ""
-"<application>GNOME Robots</application> was written by Mark Rae (<email>m."
-"rae@inpharmatica.co.uk</email>). This manual was written by Patanjali "
-"Somayaji (<email>patanjali@mindless.com</email>), from the original HTML "
-"documentation by Mark Rae. To report a bug or make a suggestion regarding "
-"this application or this manual, follow the directions in this <ulink url="
-"\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
-msgstr ""
-"Hru <application>GNOME Roboti</application> napsal Mark Rae (<email>m."
-"rae@inpharmatica.co.uk</email>). Tuto příručku napsal Patanjali Somayaji "
-"(<email>patanjali@mindless.com</email>) podle původní dokumentace v HTML, "
-"kterou napsal Mark Rae. Pokud chcete nahlásit chybu nebo podat návrh "
-"týkající se této aplikace nebo tohoto návodu, tak se řiďte instrukcemi v "
-"tomto <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">dokumentu</"
-"ulink>."
-
-#: C/index.docbook:635(sect1/title)
-msgid "License"
-msgstr "Licence"
-
-#: C/index.docbook:636(sect1/para)
-#| msgid ""
-#| "This program is free software; you can redistribute it and/or modify it "
-#| "under the terms of the <ulink type=\"help\" url=\"help:gpl"
-#| "\"><citetitle>GNU General Public License</citetitle></ulink> as published "
-#| "by the Free Software Foundation; either version 2 of the License, or (at "
-#| "your option) any later version."
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the <ulink type=\"help\" url=\"help:gpl\"> <citetitle>GNU "
-"General Public License</citetitle></ulink> as published by the Free Software "
-"Foundation; either version 2 of the License, or (at your option) any later "
-"version."
-msgstr ""
-"Tento program je svobodný software. Můžete jej dále šířit a/nebo upravovat "
-"za dodržení podmínek <ulink type=\"help\" url=\"help:gpl\"><citetitle>GNU "
-"General Public License</citetitle></ulink>, tak jak ji vydala Free Software "
-"Foundation ve verzi 2 nebo (dle vaší volby) novější."
-
-#: C/index.docbook:644(sect1/para)
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public "
-"License</citetitle> for more details."
-msgstr ""
-"Tento program je šířen s přesvědčením, že může být užitečný, ale BEZ "
-"JAKÝCHKOLIV ZÁRUK, bez předpokládané záruky na OBCHODOVATELNOST nebo "
-"VHODNOST PRO URČITÝ ÚČEL. Více podrobností najdete v <citetitle>GNU General "
-"Public License</citetitle>."
-
-#: C/index.docbook:657(para/address)
-#, no-wrap
-msgid ""
-"\n"
-"        Free Software Foundation, Inc.\n"
-"        <street>51 Franklin Street, Fifth Floor</street>\n"
-"        <city>Boston</city>, <state>MA</state> <postcode>02110-1301</postcode>\n"
-"        <country>USA</country>\n"
-"      "
-msgstr ""
-"\n"
-"        Free Software Foundation, Inc.\n"
-"        <street>51 Franklin Street, Fifth Floor</street>\n"
-"        <city>Boston</city>, <state>MA</state> <postcode>02110-1301</postcode>\n"
-"        <country>USA</country>\n"
-"      "
-
-#: C/index.docbook:650(sect1/para)
-msgid ""
-"A copy of the <citetitle>GNU General Public License</citetitle> is included "
-"as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
-"obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
-"the Free Software Foundation by visiting <ulink type=\"http\" url=\"http://"
-"www.fsf.org\">their Web site</ulink> or by writing to <_:address-1/>"
-msgstr ""
-"Kopie <citetitle>GNU General Public License</citetitle> je zahrnuta v "
-"dodatku <citetitle>Uživatelské přiručky GNOME</citetitle>. Kopii "
-"<citetitle>GNU General Public License</citetitle> můžete také získat od Free "
-"Software Foundation navštívením <ulink type=\"http\" url=\"http://www.fsf.org"
-"\">jejich webu</ulink> nebo zasláním žádosti na <_:address-1/>"
-
-#: C/legal.xml:9(para/ulink)
-msgid "link"
-msgstr "odkazem"
-
-#: C/legal.xml:2(legalnotice/para)
-msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
-"with this manual."
-msgstr ""
-"Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU "
-"Free Documentation License (GFDL) ve verzi 1.1 nebo v jakékoli další verzi "
-"vydané nadací Free Software Foundation; bez neměnných oddílů, bez textů "
-"předních desek a bez textů zadních desek. Kopii licence GFDL naleznete pod "
-"tímto <_:ulink-1/> nebo v souboru COPYING-DOCS dodávaném s touto příručkou."
+"Málo nebezpečné UFO <media type=\"image\" src=\"figures/ufo-low-risk.png\" "
+"height=\"20\" width=\"20\"/>"
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Tato práce je licencována pro <_:link-1/>"

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
-"POT-Creation-Date: 2014-02-06 08:46+0000\n"
-"PO-Revision-Date: 2014-02-06 13:52+0100\n"
+"POT-Creation-Date: 2014-03-24 08:29+0000\n"
+"PO-Revision-Date: 2014-03-24 13:47+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -24,24 +24,29 @@ msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:13 C/basics.page:13 C/controls-change.page:14
+#: C/appearance.page:15 C/basics.page:13 C/controls-change.page:14
 #: C/controls-default.page:14 C/game-types.page:14 C/index.page:12
 #: C/moves.page:14 C/scores.page:13
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
+#. (itstool) path: credit/name
+#: C/appearance.page:19
+msgid "Rachel Dunstan"
+msgstr "Rachel Dunstan"
+
 #. (itstool) path: info/desc
-#: C/appearance.page:17
+#: C/appearance.page:23
 msgid "Use different game-themes in <app>Robots</app>."
 msgstr "Usar diferentes temas del juego en <app>Robots</app>."
 
 #. (itstool) path: page/title
-#: C/appearance.page:20
+#: C/appearance.page:26
 msgid "Change the default appearance of the game"
 msgstr "Cambiar la apariencia predeterminada del juego"
 
 #. (itstool) path: page/p
-#: C/appearance.page:22
+#: C/appearance.page:28
 msgid ""
 "You can change the <app>Robots</app> backdrop and the different robots that "
 "are present in a game by changing the game theme and background."
@@ -50,12 +55,12 @@ msgstr ""
 "aparecen en el juego cambiando el tema del juego y el fondo."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:26
+#: C/appearance.page:32
 msgid "To change the game theme and background:"
 msgstr "Para cambiar el tema y el fondo:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:28
+#: C/appearance.page:34
 msgid ""
 "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
 "\">Preferences</gui> <gui style=\"menuitem\">Appearance</gui></guiseq>."
@@ -65,7 +70,7 @@ msgstr ""
 "guiseq>."
 
 #. (itstool) path: item/p
-#: C/appearance.page:33
+#: C/appearance.page:39
 msgid ""
 "Select a theme from the drop-down menu available when you click the button "
 "next to <gui>Image theme</gui>."
@@ -73,36 +78,15 @@ msgstr ""
 "Seleccione un tema disponible en el menú desplegable cuando pulse el botón "
 "junto a <gui>Tema de imagen</gui>."
 
-#. (itstool) path: list/title
-#: C/appearance.page:36
-msgid "Available themes:"
-msgstr "Temas disponibles:"
-
 #. (itstool) path: item/p
-#: C/appearance.page:38
-msgid "boo"
-msgstr "boo"
-
-#. (itstool) path: item/p
-#: C/appearance.page:41
-msgid "gnomes"
-msgstr "gnomes"
-
-#. (itstool) path: item/p
-#: C/appearance.page:44
-msgid "robots"
-msgstr "robots"
-
-#. (itstool) path: item/p
-#: C/appearance.page:47
-msgid "ufo"
-msgstr "ovni"
-
-#. (itstool) path: item/p
-#: C/appearance.page:52
+#: C/appearance.page:43
+#| msgid ""
+#| "To change your background color, click the button next to <gui>Background "
+#| "color</gui>. Select a color from the choices avaialable and click <gui "
+#| "style=\"button\">Select</gui>."
 msgid ""
 "To change your background color, click the button next to <gui>Background "
-"color</gui>. Select a color from the choices avaialable and click <gui style="
+"color</gui>. Select a color from the available choices and click <gui style="
 "\"button\">Select</gui>."
 msgstr ""
 "Para cambiar el color de fondo, pulse el botón junto a <gui>Color de fondo</"
@@ -110,7 +94,7 @@ msgstr ""
 "\">Seleccionar</gui>."
 
 #. (itstool) path: note/p
-#: C/appearance.page:59
+#: C/appearance.page:50
 msgid ""
 "You can hide the toolbar that contains buttons to start a new game, wait and "
 "teleport, by selecting <guiseq><gui style=\"menu\">View</gui> <gui style="
@@ -1093,6 +1077,21 @@ msgstr "Creative Commons de Atribución-Compartir Igual 3.0 sin soporte"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
+
+#~ msgid "Available themes:"
+#~ msgstr "Temas disponibles:"
+
+#~ msgid "boo"
+#~ msgstr "boo"
+
+#~ msgid "gnomes"
+#~ msgstr "gnomes"
+
+#~ msgid "robots"
+#~ msgstr "robots"
+
+#~ msgid "ufo"
+#~ msgstr "ovni"
 
 #~ msgid "<application>Robots</application> Manual"
 #~ msgstr "Manual de <application>Robots</application>"

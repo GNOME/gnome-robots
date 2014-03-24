@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnobots2.HEAD\n"
-"POT-Creation-Date: 2014-03-08 20:19+0000\n"
+"POT-Creation-Date: 2014-03-24 08:29+0000\n"
 "PO-Revision-Date: 2014-03-21 19:35+0100\n"
 "Last-Translator: Julien Hardelin <jhardlin@orange.fr>\n"
 "Language-Team: français <GNOME French Team <gnomefr@traduc.org>>\n"
@@ -30,24 +30,29 @@ msgstr ""
 "Julien Hardelin <jhardlin@orange.fr>, 2014"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:13 C/basics.page:13 C/controls-change.page:14
+#: C/appearance.page:15 C/basics.page:13 C/controls-change.page:14
 #: C/controls-default.page:14 C/game-types.page:14 C/index.page:12
 #: C/moves.page:14 C/scores.page:13
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
+#. (itstool) path: credit/name
+#: C/appearance.page:19
+msgid "Rachel Dunstan"
+msgstr "Rachel Dunstan"
+
 #. (itstool) path: info/desc
-#: C/appearance.page:17
+#: C/appearance.page:23
 msgid "Use different game-themes in <app>Robots</app>."
 msgstr "Utiliser les différentes thèmes de jeu de <app>Robots</app>."
 
 #. (itstool) path: page/title
-#: C/appearance.page:20
+#: C/appearance.page:26
 msgid "Change the default appearance of the game"
 msgstr "Changement de l'apparence par défaut du jeu"
 
 #. (itstool) path: page/p
-#: C/appearance.page:22
+#: C/appearance.page:28
 msgid ""
 "You can change the <app>Robots</app> backdrop and the different robots that "
 "are present in a game by changing the game theme and background."
@@ -57,12 +62,12 @@ msgstr ""
 "l'arrière-plan."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:26
+#: C/appearance.page:32
 msgid "To change the game theme and background:"
 msgstr "Changement de thème de jeu et d'arrière-plan"
 
 #. (itstool) path: item/p
-#: C/appearance.page:28
+#: C/appearance.page:34
 msgid ""
 "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
 "\">Preferences</gui> <gui style=\"menuitem\">Appearance</gui></guiseq>."
@@ -72,7 +77,7 @@ msgstr ""
 "guiseq>."
 
 #. (itstool) path: item/p
-#: C/appearance.page:33
+#: C/appearance.page:39
 msgid ""
 "Select a theme from the drop-down menu available when you click the button "
 "next to <gui>Image theme</gui>."
@@ -80,36 +85,11 @@ msgstr ""
 "Sélectionnez un thème dans le menu déroulant disponible en cliquant sur le "
 "bouton près de <gui>Thème d'images</gui>."
 
-#. (itstool) path: list/title
-#: C/appearance.page:36
-msgid "Available themes:"
-msgstr "Thèmes disponibles :"
-
 #. (itstool) path: item/p
-#: C/appearance.page:38
-msgid "boo"
-msgstr "bouh"
-
-#. (itstool) path: item/p
-#: C/appearance.page:41
-msgid "gnomes"
-msgstr "gnomes"
-
-#. (itstool) path: item/p
-#: C/appearance.page:44
-msgid "robots"
-msgstr "robots"
-
-#. (itstool) path: item/p
-#: C/appearance.page:47
-msgid "ufo"
-msgstr "ovni"
-
-#. (itstool) path: item/p
-#: C/appearance.page:52
+#: C/appearance.page:43
 msgid ""
 "To change your background color, click the button next to <gui>Background "
-"color</gui>. Select a color from the choices avaialable and click <gui style="
+"color</gui>. Select a color from the available choices and click <gui style="
 "\"button\">Select</gui>."
 msgstr ""
 "Pour changer de couleur d'arrière-plan, cliquez sur le bouton proche de "
@@ -117,7 +97,7 @@ msgstr ""
 "options disponibles et cliquez sur <gui style=\"button\">Sélectionner</gui>."
 
 #. (itstool) path: note/p
-#: C/appearance.page:59
+#: C/appearance.page:50
 msgid ""
 "You can hide the toolbar that contains buttons to start a new game, wait and "
 "teleport, by selecting <guiseq><gui style=\"menu\">View</gui> <gui style="
@@ -1106,9 +1086,26 @@ msgstr ""
 #. (itstool) path: p/link
 #: C/legal.xml:4
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Licence Creative Commons Paternité-Partage dans les même conditions 3.0 non transposée"
+msgstr ""
+"Licence Creative Commons Paternité-Partage dans les même conditions 3.0 non "
+"transposée"
 
 #. (itstool) path: license/p
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Ce travail est sous licence <_:link-1/>."
+
+#~ msgid "Available themes:"
+#~ msgstr "Thèmes disponibles :"
+
+#~ msgid "boo"
+#~ msgstr "bouh"
+
+#~ msgid "gnomes"
+#~ msgstr "gnomes"
+
+#~ msgid "robots"
+#~ msgstr "robots"
+
+#~ msgid "ufo"
+#~ msgstr "ovni"

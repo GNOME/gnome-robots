@@ -10,10 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-26 13:18+0000\n"
-"PO-Revision-Date: 2014-04-01 18:56+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-01 19:25+0200\n"
+"PO-Revision-Date: 2014-04-01 19:25+0100\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -252,8 +251,7 @@ msgid "true if the window is maximized"
 msgstr "VERO se la finestra è massimizzata"
 
 #: ../data/org.gnome.robots.gschema.xml.h:42
-#| msgid "true if the window is fullscren"
-msgid "true if the window is fullscreen"
+msgid "true if the window is fullscren"
 msgstr "VERO se la finestra è a schermo intero"
 
 #: ../src/game.c:149

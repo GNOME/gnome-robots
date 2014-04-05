@@ -28,14 +28,6 @@ gnome_robots_SOURCES = \
 	games-gridframe.h \
 	games-preimage.c \
 	games-preimage.h \
-	games-score.h			\
-	games-score.c			\
-	games-scores.c			\
-	games-scores.h			\
-	games-scores-dialog.c	\
-	games-scores-dialog.h	\
-	games-scores-backend.c	\
-	games-scores-backend.h	\
 	cursor-down.h \
 	cursor-down-left.h \
 	cursor-down-right.h \

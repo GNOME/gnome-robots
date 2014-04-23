@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-12 18:11+0000\n"
-"PO-Revision-Date: 2014-01-17 15:00+0100\n"
+"POT-Creation-Date: 2014-04-23 07:32+0000\n"
+"PO-Revision-Date: 2014-04-23 11:37+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -34,19 +34,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Gtranslator 2.91.6\n"
 "X-Project-Style: gnome\n"
-
-#: ../data/gnobots2.desktop.in.h:1 ../src/gnobots.c:206 ../src/gnobots.c:219
-#: ../src/menu.c:262
-msgid "Robots"
-msgstr "Roboti"
-
-#: ../data/gnobots2.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Utíkejte před roboty a nechte je do sebe navzájem narážet"
-
-#: ../data/gnobots2.desktop.in.h:3
-msgid "game;arcade;teleport;"
-msgstr "hra;arkádová;teleportace;"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -83,6 +70,19 @@ msgstr ""
 "Použití bezpečných teleportací je ale omezeno a jakmile vám dojdou, může se "
 "stát, že vás teleportace přenese přímo do cesty robota, který vás následně "
 "zabije. Snažte se přežít jak nejdéle to půjde."
+
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnobots.c:200
+#: ../src/gnobots.c:213 ../src/menu.c:262
+msgid "Robots"
+msgstr "Roboti"
+
+#: ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Utíkejte před roboty a nechte je do sebe navzájem narážet"
+
+#: ../data/gnome-robots.desktop.in.h:3
+msgid "game;arcade;teleport;"
+msgstr "hra;arkádová;teleportace;"
 
 #: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
@@ -127,8 +127,8 @@ msgid ""
 "due to a mistake. If you try to make a move that would lead to your death "
 "when there is a safe move available you will not be allowed to proceed."
 msgstr ""
-"Používat bezpečné tahy. Možnost bezpečných tahů vám pomůže zabránit "
-"smrti omylem. Pokud se pokusíte provést tah, který by vedl k vaší smrti, a "
+"Používat bezpečné tahy. Možnost bezpečných tahů vám pomůže zabránit smrti "
+"omylem. Pokud se pokusíte provést tah, který by vedl k vaší smrti, a "
 "existuje bezpečný tah, nebude vám dovoleno pokračovat."
 
 #: ../data/org.gnome.robots.gschema.xml.h:11
@@ -140,8 +140,8 @@ msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
 msgstr ""
-"Používat superbezpečné tahy. Hráč je upozorněn, když neexistuje bezpečný "
-"tah a jediná možnost je teleportovat se pryč."
+"Používat superbezpečné tahy. Hráč je upozorněn, když neexistuje bezpečný tah "
+"a jediná možnost je teleportovat se pryč."
 
 #: ../data/org.gnome.robots.gschema.xml.h:13
 msgid "Enable game sounds"
@@ -151,7 +151,7 @@ msgstr "Povolit zvuky hry"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Povolit zvuky hry. Přehrávat zvuky pro různé události ve hře."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:500
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:508
 msgid "Key to move NW"
 msgstr "Klávesa pro pohyb SZ"
 
@@ -159,7 +159,7 @@ msgstr "Klávesa pro pohyb SZ"
 msgid "The key used to move north-west."
 msgstr "Klávesa sloužící pro přesun severozápadně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:501
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:509
 msgid "Key to move N"
 msgstr "Klávesa pro pohyb S"
 
@@ -167,7 +167,7 @@ msgstr "Klávesa pro pohyb S"
 msgid "The key used to move north."
 msgstr "Klávesa sloužící pro přesun severně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:502
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:510
 msgid "Key to move NE"
 msgstr "Klávesa pro pohyb SV"
 
@@ -175,7 +175,7 @@ msgstr "Klávesa pro pohyb SV"
 msgid "The key used to move north-east."
 msgstr "Klávesa sloužící pro přesun severovýchodně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:503
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:511
 msgid "Key to move W"
 msgstr "Klávesa pro pohyb Z"
 
@@ -183,7 +183,7 @@ msgstr "Klávesa pro pohyb Z"
 msgid "The key used to move west."
 msgstr "Klávesa sloužící pro přesun západně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:516
 msgid "Key to hold"
 msgstr "Klávesa pro stání"
 
@@ -191,7 +191,7 @@ msgstr "Klávesa pro stání"
 msgid "The key used to hold still."
 msgstr "Klávesa sloužící ke stání na místě."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:504
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:512
 msgid "Key to move E"
 msgstr "Klávesa pro pohyb V"
 
@@ -199,7 +199,7 @@ msgstr "Klávesa pro pohyb V"
 msgid "The key used to move east."
 msgstr "Klávesa sloužící pro přesun východně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:513
 msgid "Key to move SW"
 msgstr "Klávesa pro pohyb JZ"
 
@@ -207,7 +207,7 @@ msgstr "Klávesa pro pohyb JZ"
 msgid "The key used to move south-west."
 msgstr "Klávesa sloužící pro přesun jihozápadně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:514
 msgid "Key to move S"
 msgstr "Klávesa pro pohyb J"
 
@@ -215,7 +215,7 @@ msgstr "Klávesa pro pohyb J"
 msgid "The key used to move south."
 msgstr "Klávesa sloužící pro přesun jižně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:515
 msgid "Key to move SE"
 msgstr "Klávesa pro pohyb JV"
 
@@ -223,7 +223,7 @@ msgstr "Klávesa pro pohyb JV"
 msgid "The key used to move south-east."
 msgstr "Klávesa sloužící pro přesun jihovýchodně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:517
 msgid "Key to teleport"
 msgstr "Klávesa pro teleportaci"
 
@@ -231,7 +231,7 @@ msgstr "Klávesa pro teleportaci"
 msgid "The key used to teleport safely (if possible)."
 msgstr "Klávesa sloužící k bezpečné teleportaci (pokud je to možné)."
 
-#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:518
 msgid "Key to teleport randomly"
 msgstr "Klávesa pro náhodnou teleportaci"
 
@@ -239,7 +239,7 @@ msgstr "Klávesa pro náhodnou teleportaci"
 msgid "The key used to teleport randomly."
 msgstr "Klávesa sloužící k náhodné teleportaci."
 
-#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:519
 msgid "Key to wait"
 msgstr "Klávesa pro čekání"
 
@@ -260,7 +260,7 @@ msgid "true if the window is maximized"
 msgstr "Zapnuto, pokud je okno maximalizováno"
 
 #: ../data/org.gnome.robots.gschema.xml.h:42
-msgid "true if the window is fullscren"
+msgid "true if the window is fullscreen"
 msgstr "Zapnuto, pokud je okno v režimu celé obrazovky"
 
 #: ../src/game.c:149
@@ -319,36 +319,30 @@ msgid "Unknown Command"
 msgstr "Neznámý příkaz"
 
 #. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:136
+#: ../src/games-scores-dialog.c:132
 msgctxt "score-dialog"
 msgid "Time"
 msgstr "Čas"
 
 #. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:142
+#: ../src/games-scores-dialog.c:138
 msgctxt "score-dialog"
 msgid "Score"
 msgstr "Skóre"
 
 #. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:307
+#: ../src/games-scores-dialog.c:225
 #, c-format
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$d min %2$d sec"
 
-#: ../src/games-scores-dialog.c:470
+#: ../src/games-scores-dialog.c:385
 msgid "New Game"
 msgstr "Nová hra"
 
-#. Score dialog column header for the name of the player who recorded the score
-#: ../src/games-scores-dialog.c:571
-msgctxt "score-dialog"
-msgid "Name"
-msgstr "Jméno"
-
 #. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:580
+#: ../src/games-scores-dialog.c:478
 msgid "Date"
 msgstr "Datum"
 
@@ -629,11 +623,11 @@ msgstr "Roboti s bezpečným teleportem a bezpečnými tahy"
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Roboti s bezpečným teleportem se superbezpečnými tahy"
 
-#: ../src/gnobots.c:286
+#: ../src/gnobots.c:280
 msgid "No game data could be found."
 msgstr "Nebyla nalezena data hry."
 
-#: ../src/gnobots.c:288
+#: ../src/gnobots.c:282
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -641,11 +635,11 @@ msgstr ""
 "Program Roboti nemohl najít platné soubory nastavení hry. Zkontrolujte "
 "prosím, zda je program správně nainstalován."
 
-#: ../src/gnobots.c:304
+#: ../src/gnobots.c:298
 msgid "Some graphics files are missing or corrupt."
 msgstr "Některé soubory grafiky chybí nebo jsou poškozeny."
 
-#: ../src/gnobots.c:306
+#: ../src/gnobots.c:300
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -737,59 +731,59 @@ msgstr ""
 "Petr Pulc <petrpulc@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: ../src/properties.c:391
+#: ../src/properties.c:395
 msgid "Robots Preferences"
 msgstr "Předvolby Robotů"
 
-#: ../src/properties.c:416
+#: ../src/properties.c:420
 msgid "Game Type"
 msgstr "Typ hry"
 
-#: ../src/properties.c:425
+#: ../src/properties.c:430
 msgid "_Use safe moves"
 msgstr "Používat _bezpečné tahy"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:435
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Bránit náhodným tahům, které způsobí smrt."
 
-#: ../src/properties.c:434
+#: ../src/properties.c:438
 msgid "U_se super safe moves"
 msgstr "Používat _superbezpečné tahy"
 
-#: ../src/properties.c:441
+#: ../src/properties.c:445
 msgid "Prevents all moves that result in getting killed."
 msgstr "Bránit všem tahům, které způsobí smrt."
 
-#: ../src/properties.c:443
+#: ../src/properties.c:451
 msgid "_Enable sounds"
 msgstr "_Povolit zvuky"
 
-#: ../src/properties.c:449
+#: ../src/properties.c:457
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Přehrávat zvuky pro události jako výhra úrovně a smrt."
 
-#: ../src/properties.c:451
+#: ../src/properties.c:459
 msgid "Game"
 msgstr "Hra"
 
-#: ../src/properties.c:464
+#: ../src/properties.c:472
 msgid "_Image theme:"
 msgstr "Motiv _obrázků:"
 
-#: ../src/properties.c:476
+#: ../src/properties.c:484
 msgid "_Background color:"
 msgstr "Barva _pozadí:"
 
-#: ../src/properties.c:488
+#: ../src/properties.c:496
 msgid "Appearance"
 msgstr "Vzhled"
 
-#: ../src/properties.c:520
+#: ../src/properties.c:528
 msgid "_Restore Defaults"
 msgstr "_Obnovit výchozí"
 
-#: ../src/properties.c:525
+#: ../src/properties.c:533
 msgid "Keyboard"
 msgstr "Klávesnice"
 

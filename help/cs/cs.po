@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games gnome-2-28\n"
-"POT-Creation-Date: 2014-03-23 17:17+0000\n"
-"PO-Revision-Date: 2014-03-23 21:25+0100\n"
+"POT-Creation-Date: 2014-04-23 07:32+0000\n"
+"PO-Revision-Date: 2014-04-23 11:05+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -26,14 +26,14 @@ msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>, 2009, 2013, 2014"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:15 C/basics.page:13 C/controls-change.page:14
-#: C/controls-default.page:14 C/game-types.page:14 C/index.page:12
-#: C/moves.page:14 C/scores.page:13
+#: C/appearance.page:15 C/basics.page:15 C/controls-change.page:14
+#: C/controls-default.page:15 C/game-types.page:14 C/index.page:12
+#: C/moves.page:14 C/scores.page:14
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:19
+#: C/appearance.page:19 C/basics.page:19 C/controls-default.page:19
 msgid "Rachel Dunstan"
 msgstr "Rachel Dunstan"
 
@@ -105,38 +105,44 @@ msgstr ""
 "lišta se skryje."
 
 #. (itstool) path: info/desc
-#: C/basics.page:17
+#: C/basics.page:23
 msgid "Start, quit and play <app>Robots</app> in fullscreen."
 msgstr "Jak spustit, ukončit a hrát <app>Roboty</app> na celé obrazovce."
 
 #. (itstool) path: page/title
-#: C/basics.page:20
+#: C/basics.page:26
 msgid "Basic instructions"
 msgstr "Základní instrukce"
 
 #. (itstool) path: section/title
-#: C/basics.page:23
+#: C/basics.page:29
 msgid "Start a new game"
 msgstr "Spuštění nové hry"
 
+#. (itstool) path: media/span
+#: C/basics.page:34
+msgid "New"
+msgstr "Nová"
+
 #. (itstool) path: section/p
-#: C/basics.page:25
+#: C/basics.page:31
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">New</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start "
-"a new game."
+"Select <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">New</"
+"gui></guiseq>, click the <_:media-1/> button on the toolbar, or press "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgstr ""
 "Novou hru spustíte vybráním <guiseq><gui style=\"menu\">Hra</gui> <gui style="
-"\"menuitem\">Nová</gui></guiseq> nebo zmáčknutím <keyseq><key>Ctrl</"
-"key><key>N</key></keyseq>."
+"\"menuitem\">Nová</gui></guiseq> nebo kliknutím na tlačítko <_:media-1/> na "
+"nástrojové liště a nebo zmáčknutím <keyseq><key>Ctrl</key><key>N</key></"
+"keyseq>."
 
 #. (itstool) path: section/title
-#: C/basics.page:33
+#: C/basics.page:40
 msgid "Play <app>Robots</app> in fullscreen mode"
 msgstr "Hraní <app>Robotů</app> přes celou obrazovku"
 
 #. (itstool) path: section/p
-#: C/basics.page:35
+#: C/basics.page:42
 msgid ""
 "Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
 "\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
@@ -149,12 +155,12 @@ msgstr ""
 "opětovným zmáčknutím <key>F11</key>."
 
 #. (itstool) path: section/title
-#: C/basics.page:43
+#: C/basics.page:50
 msgid "Enable sounds"
 msgstr "Povolení zvuků"
 
 #. (itstool) path: section/p
-#: C/basics.page:44
+#: C/basics.page:51
 msgid ""
 "Select <guiseq> <gui style=\"menu\">Settings</gui><gui>Preferences</gui> "
 "<gui>Game</gui></guiseq>. Check the <gui style=\"checkbox\">Enable sounds</"
@@ -165,12 +171,12 @@ msgstr ""
 "\"checkbox\">Povolit zvuky</gui>."
 
 #. (itstool) path: section/title
-#: C/basics.page:52
+#: C/basics.page:59
 msgid "Quit <app>Robots</app>"
 msgstr "Ukončení <app>Robotů</app>"
 
 #. (itstool) path: section/p
-#: C/basics.page:54
+#: C/basics.page:61
 msgid ""
 "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
 "gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
@@ -260,22 +266,22 @@ msgstr ""
 "<gui style=\"button\">Obnovit výchozí</gui>."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:18
+#: C/controls-default.page:23
 msgid "How do I control the main character?"
 msgstr "Jak můžu ovládat hlavního hrdinu?"
 
 #. (itstool) path: page/title
-#: C/controls-default.page:21
+#: C/controls-default.page:26
 msgid "Mouse and keyboard controls for <app>Robots</app>"
 msgstr "Ovládání <app>Robotů</app> myší a klávesnicí"
 
 #. (itstool) path: section/title
-#: C/controls-default.page:24
+#: C/controls-default.page:29
 msgid "Keyboard controls"
 msgstr "Ovládání z klávesnice"
 
 #. (itstool) path: section/p
-#: C/controls-default.page:26
+#: C/controls-default.page:31
 msgid ""
 "Use the following keys from the numeric keypad on the far right of your "
 "keyboard, to move in <app>Robots</app>."
@@ -284,139 +290,139 @@ msgstr ""
 "bloku, který se nachází na vaší klávesnici úplně vpravo."
 
 #. (itstool) path: td/p
-#: C/controls-default.page:31
+#: C/controls-default.page:37
 msgid "Possible moves"
 msgstr "Tah"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:32
+#: C/controls-default.page:38
 msgid "Key"
 msgstr "Klávesa"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:35
+#: C/controls-default.page:43
 msgid "North west"
 msgstr "Na severozápad"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:36
+#: C/controls-default.page:44
 msgid "<key>Home</key>"
 msgstr "<key>Home</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:39
+#: C/controls-default.page:47
 msgid "North"
 msgstr "Na sever"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:40
+#: C/controls-default.page:48
 msgid "<key>↑</key>"
 msgstr "<key>↑</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:43
+#: C/controls-default.page:51
 msgid "North east"
 msgstr "Na severovýchod"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:44
+#: C/controls-default.page:52
 msgid "<key>PgUp</key>"
 msgstr "<key>Page Up</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:47
+#: C/controls-default.page:55
 msgid "West"
 msgstr "Na západ"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:48
+#: C/controls-default.page:56
 msgid "<key>→</key>"
 msgstr "<key>→</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:51
+#: C/controls-default.page:59
 msgid "East"
 msgstr "Na východ"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:52
+#: C/controls-default.page:60
 msgid "<key>←</key>"
 msgstr "<key>←</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:55
+#: C/controls-default.page:63
 msgid "South west"
 msgstr "Na jihozápad"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:56
+#: C/controls-default.page:64
 msgid "<key>End</key>"
 msgstr "<key>End</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:59
+#: C/controls-default.page:67
 msgid "South"
 msgstr "Na sever"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:60
+#: C/controls-default.page:68
 msgid "<key>↓</key>"
 msgstr "<key>↓</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:63
+#: C/controls-default.page:71
 msgid "South east"
 msgstr "Na jihovýchod"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:64
+#: C/controls-default.page:72
 msgid "<key>PgDn</key>"
 msgstr "<key>Page Down</key>"
 
 #. (itstool) path: td/p
 #. (itstool) path: item/title
-#: C/controls-default.page:67 C/controls-default.page:105
+#: C/controls-default.page:75 C/controls-default.page:115
 msgid "Stay in the same position"
 msgstr "Zůstat na stejném místě"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:68
-msgid "<key>5</key>"
-msgstr "<key>5</key>"
+#: C/controls-default.page:76
+msgid "<key>Begin</key> (marked only as <key>5</key> on some keypads)"
+msgstr "<key>Begin</key> (na většině klávesnic označeno jen <key>5</key>)"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:71
+#: C/controls-default.page:80
 msgid "Teleport safely"
 msgstr "Teleportovat se bezpečně"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:72
+#: C/controls-default.page:81
 msgid "<key>+</key>"
 msgstr "<key>+</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:75
+#: C/controls-default.page:84
 msgid "Teleport randomly"
 msgstr "Teleportovat se náhodně"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:76
+#: C/controls-default.page:85
 msgid "<key>*</key>"
 msgstr "<key>*</key>"
 
 #. (itstool) path: td/p
 #. (itstool) path: item/title
-#: C/controls-default.page:79 C/controls-default.page:109
+#: C/controls-default.page:88 C/controls-default.page:119
 msgid "Wait for the robots"
 msgstr "Čekat na roboty"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:80
+#: C/controls-default.page:89
 msgid "<key>Enter</key>"
 msgstr "<key>Enter</key>"
 
 #. (itstool) path: note/p
-#: C/controls-default.page:85
+#: C/controls-default.page:95
 msgid ""
 "You can <link xref=\"controls-change\">change</link> the default controls to "
 "suit your preference."
@@ -425,17 +431,17 @@ msgstr ""
 "lépe vyhovovalo vašim potřebám."
 
 #. (itstool) path: section/title
-#: C/controls-default.page:92
+#: C/controls-default.page:102
 msgid "Use the mouse to move around"
 msgstr "Používání myši k pohybům"
 
 #. (itstool) path: item/title
-#: C/controls-default.page:96
+#: C/controls-default.page:106
 msgid "Move in a particular direction"
 msgstr "Posunout se konkrétním směrem"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:97
+#: C/controls-default.page:107
 msgid ""
 "When you move your mouse around the main character, a small black arrow will "
 "appear pointing towards the direction in which the character will move if "
@@ -450,17 +456,23 @@ msgstr ""
 "kliknutím se hlavní hrdina přesune o jedno políčko na sever."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:106
+#: C/controls-default.page:116
 msgid "Click on the main character to stay put in the same square."
 msgstr ""
 "Kliknutím na hlavního hrdinu jej přimějete zůstat jeden tah stát na stejném "
 "políčku."
 
+#. (itstool) path: media/span
+#. (itstool) path: section/title
+#: C/controls-default.page:121 C/moves.page:67
+msgid "Wait"
+msgstr "Čekání"
+
 #. (itstool) path: item/p
-#: C/controls-default.page:110
+#: C/controls-default.page:120
 msgid ""
 "Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
-"\"menu\">Move</gui> <gui style=\"menuitem\">Wait</gui></guiseq> to wait for "
+"\"menu\">Move</gui><gui style=\"menuitem\">Wait</gui></guiseq> to wait for "
 "the enemy robots to finish making all their moves."
 msgstr ""
 "Kliknutím na tlačítko <_:media-1/> na nástrojové liště nebo výběrem "
@@ -469,15 +481,20 @@ msgstr ""
 "přesuny."
 
 #. (itstool) path: item/title
-#: C/controls-default.page:118 C/moves.page:84
+#: C/controls-default.page:127 C/moves.page:84
 msgid "Safe teleports"
 msgstr "Teleportovat se bezpečně"
 
+#. (itstool) path: media/span
+#: C/controls-default.page:130
+msgid "Teleport"
+msgstr "Teleportace"
+
 #. (itstool) path: item/p
-#: C/controls-default.page:119
+#: C/controls-default.page:128
 msgid ""
 "To safely teleport, click the <_:media-1/> button on the toolbar or select "
-"<guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem\">Teleport</"
+"<guiseq><gui style=\"menu\">Move</gui><gui style=\"menuitem\">Teleport</"
 "gui></guiseq>."
 msgstr ""
 "Kliknutím na tlačítko <_:media-1/> na nástrojové liště nebo výběrem "
@@ -485,15 +502,20 @@ msgstr ""
 "\">Teleportovat</gui></guiseq> se bezpečně teleportujete."
 
 #. (itstool) path: item/title
-#: C/controls-default.page:125 C/moves.page:90
+#: C/controls-default.page:135 C/moves.page:90
 msgid "Random teleports"
 msgstr "Teleportovat se náhodně"
 
+#. (itstool) path: media/span
+#: C/controls-default.page:138
+msgid "Random teleport"
+msgstr "Náhodná teleportace"
+
 #. (itstool) path: item/p
-#: C/controls-default.page:126
+#: C/controls-default.page:136
 msgid ""
 "To teleport to a random spot, click the <_:media-1/> button on the toolbar "
-"or select <guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem"
+"or select <guiseq><gui style=\"menu\">Move</gui><gui style=\"menuitem"
 "\">Random</gui></guiseq>."
 msgstr ""
 "Kliknutím na tlačítko <_:media-1/> na nástrojové liště nebo výběrem "
@@ -776,11 +798,6 @@ msgstr "Na západ (doleva)"
 msgid "Stay in the same square"
 msgstr "Zůstat stát na stejném políčku"
 
-#. (itstool) path: section/title
-#: C/moves.page:67
-msgid "Wait"
-msgstr "Čekání"
-
 #. (itstool) path: section/p
 #: C/moves.page:69
 msgid ""
@@ -829,130 +846,18 @@ msgstr ""
 "ale také nemusí, být bezpečno. V průběhu hry můžete náhodných teleportací "
 "používat podle libosti."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:35
-msgctxt "_"
-msgid ""
-"external ref='figures/boo-high-risk.png' "
-"md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
-msgstr ""
-"external ref='figures/boo-high-risk.png' "
-"md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:40
-msgctxt "_"
-msgid ""
-"external ref='figures/robots-high-risk.png' "
-"md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
-msgstr ""
-"external ref='figures/robots-high-risk.png' "
-"md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:44
-msgctxt "_"
-msgid ""
-"external ref='figures/gnome-high-risk.png' "
-"md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
-msgstr ""
-"external ref='figures/gnome-high-risk.png' "
-"md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:48
-msgctxt "_"
-msgid ""
-"external ref='figures/ufo-high-risk.png' "
-"md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
-msgstr ""
-"external ref='figures/ufo-high-risk.png' "
-"md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:64
-msgctxt "_"
-msgid ""
-"external ref='figures/boo-low-risk.png' "
-"md5='69c143d6283761adf553b170570e121d'"
-msgstr ""
-"external ref='figures/boo-low-risk.png' "
-"md5='69c143d6283761adf553b170570e121d'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:68
-msgctxt "_"
-msgid ""
-"external ref='figures/robots-low-risk.png' "
-"md5='55f455ea45fad3d7fb453f992f2aad94'"
-msgstr ""
-"external ref='figures/robots-low-risk.png' "
-"md5='55f455ea45fad3d7fb453f992f2aad94'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:72
-msgctxt "_"
-msgid ""
-"external ref='figures/gnome-low-risk.png' "
-"md5='1195e6a49de2b6efdf2d9185e1e184e0'"
-msgstr ""
-"external ref='figures/gnome-low-risk.png' "
-"md5='1195e6a49de2b6efdf2d9185e1e184e0'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:76
-msgctxt "_"
-msgid ""
-"external ref='figures/ufo-low-risk.png' "
-"md5='183efc4bba58248fc97edf5528af5a9a'"
-msgstr ""
-"external ref='figures/ufo-low-risk.png' "
-"md5='183efc4bba58248fc97edf5528af5a9a'"
-
 #. (itstool) path: info/desc
-#: C/scores.page:17
+#: C/scores.page:18
 msgid "Scoring points in <app>Robots</app>"
 msgstr "Jak se ve hře <app>Roboti</app> přidělují body."
 
 #. (itstool) path: page/title
-#: C/scores.page:20
+#: C/scores.page:21
 msgid "Scores"
 msgstr "Skóre"
 
 #. (itstool) path: page/p
-#: C/scores.page:22
+#: C/scores.page:23
 msgid ""
 "There are two type of enemies in <app>Robots</app>, enemies that give you 10 "
 "points when they die and enemies that give you 20 points when they die."
@@ -962,12 +867,12 @@ msgstr ""
 "získáte 20 bodů."
 
 #. (itstool) path: section/title
-#: C/scores.page:27
+#: C/scores.page:28
 msgid "High-risk enemies"
 msgstr "Vysoce nebezpeční nepřátelé"
 
 #. (itstool) path: section/p
-#: C/scores.page:29
+#: C/scores.page:30
 msgid ""
 "Depending on your <link xref=\"appearance\">game theme</link>, the following "
 "are the enemies that give you 20 points when they die."
@@ -976,48 +881,32 @@ msgstr ""
 "získáváte za smrt některého z následujících nepřátel 20 bodů."
 
 #. (itstool) path: item/p
-#: C/scores.page:34
-msgid ""
-"Bats <media type=\"image\" src=\"figures/boo-high-risk.png\" height=\"20\" "
-"width=\"20\"/>"
-msgstr ""
-"Netopýři <media type=\"image\" src=\"figures/boo-high-risk.png\" height="
-"\"20\" width=\"20\"/>"
+#: C/scores.page:35
+msgid "Bats <_:media-1/>"
+msgstr "Netopýři <_:media-1/>"
 
 #. (itstool) path: item/p
-#: C/scores.page:38
-msgid ""
-"High-risk Robots <media type=\"image\" src=\"figures/robots-high-risk.png\" "
-"height=\"20\" width=\"20\"/>"
-msgstr ""
-"Vysoce nebezpeční roboti <media type=\"image\" src=\"figures/robots-high-"
-"risk.png\" height=\"20\" width=\"20\"/>"
+#: C/scores.page:39
+msgid "High-risk Robots <_:media-1/>"
+msgstr "Vysoce nebezpeční roboti <_:media-1/>"
 
 #. (itstool) path: item/p
-#: C/scores.page:43
-msgid ""
-"High-risk gnomes <media type=\"image\" src=\"figures/gnome-high-risk.png\" "
-"height=\"20\" width=\"20\"/>"
-msgstr ""
-"Vysoce nebezpeční trpaslíci <media type=\"image\" src=\"figures/gnome-high-"
-"risk.png\" height=\"20\" width=\"20\"/>"
+#: C/scores.page:44
+msgid "High-risk gnomes <_:media-1/>"
+msgstr "Vysoce nebezpeční trpaslíci <_:media-1/>"
 
 #. (itstool) path: item/p
-#: C/scores.page:47
-msgid ""
-"High-risk UFOs <media type=\"image\" src=\"figures/ufo-high-risk.png\" "
-"height=\"20\" width=\"20\"/>"
-msgstr ""
-"Vysoce nebezpečné UFO <media type=\"image\" src=\"figures/ufo-high-risk.png"
-"\" height=\"20\" width=\"20\"/>"
+#: C/scores.page:48
+msgid "High-risk UFOs <_:media-1/>"
+msgstr "Vysoce nebezpečná UFO <_:media-1/>"
 
 #. (itstool) path: section/title
-#: C/scores.page:55
+#: C/scores.page:56
 msgid "Low-risk enemies"
 msgstr "Málo nebezpeční nepřátelé"
 
 #. (itstool) path: section/p
-#: C/scores.page:57
+#: C/scores.page:58
 msgid ""
 "The following are the enemies that give you 10 points when they die. Again, "
 "it is your theme that determines which of these will appear in a game."
@@ -1026,40 +915,24 @@ msgstr ""
 "kteří z nich se ve hře objeví."
 
 #. (itstool) path: item/p
-#: C/scores.page:63
-msgid ""
-"Ghosts <media type=\"image\" src=\"figures/boo-low-risk.png\" height=\"20\" "
-"width=\"20\"/>"
-msgstr ""
-"Duši <media type=\"image\" src=\"figures/boo-low-risk.png\" height=\"20\" "
-"width=\"20\"/>"
+#: C/scores.page:64
+msgid "Ghosts <_:media-1/>"
+msgstr "Duši <_:media-1/>"
 
 #. (itstool) path: item/p
-#: C/scores.page:67
-msgid ""
-"Low-risk Robots <media type=\"image\" src=\"figures/robots-low-risk.png\" "
-"height=\"20\" width=\"20\"/>"
-msgstr ""
-"Málo nebezpeční roboti <media type=\"image\" src=\"figures/robots-low-risk."
-"png\" height=\"20\" width=\"20\"/>"
+#: C/scores.page:68
+msgid "Low-risk Robots <_:media-1/>"
+msgstr "Málo nebezpeční roboti <_:media-1/>"
 
 #. (itstool) path: item/p
-#: C/scores.page:71
-msgid ""
-"Low-risk gnomes <media type=\"image\" src=\"figures/gnome-low-risk.png\" "
-"height=\"20\" width=\"20\"/>"
-msgstr ""
-"Málo nebezpeční trpaslíci <media type=\"image\" src=\"figures/gnome-low-risk."
-"png\" height=\"20\" width=\"20\"/>"
+#: C/scores.page:72
+msgid "Low-risk gnomes <_:media-1/>"
+msgstr "Málo nebezpeční trpaslíci <_:media-1/>"
 
 #. (itstool) path: item/p
-#: C/scores.page:75
-msgid ""
-"Low-risk UFOs <media type=\"image\" src=\"figures/ufo-low-risk.png\" height="
-"\"20\" width=\"20\"/>"
-msgstr ""
-"Málo nebezpečné UFO <media type=\"image\" src=\"figures/ufo-low-risk.png\" "
-"height=\"20\" width=\"20\"/>"
+#: C/scores.page:76
+msgid "Low-risk UFOs <_:media-1/>"
+msgstr "Málo nebezpečná UFO <_:media-1/>"
 
 #. (itstool) path: p/link
 #: C/legal.xml:4

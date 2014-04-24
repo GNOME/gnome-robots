@@ -3,45 +3,48 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2014-02-04 20:45+0000\n"
-"PO-Revision-Date: 2014-02-05 09:10+0300\n"
-"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"POT-Creation-Date: 2014-04-24 07:12+0000\n"
+"PO-Revision-Date: 2014-04-24 13:08+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@lists.gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.0\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Ελληνική μεταφραστική ομάδα GNOME\n"
-" Δημήτρης Σπίγγος <dmtrs32@gmail.com>, 2013, 2014\n"
-" Μάριος Ζηντίλης <m.zindilis@dmajor.org>, 2009\n"
-"Για περισσότερα δείτε http://www.gnome.gr/"
+"Δημήτρης Σπίγγος <dmtrs32@gmail.com>, 2013, 2014\n"
+"Μάριος Ζηντίλης <m.zindilis@dmajor.org>, 2009"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:13 C/basics.page:13 C/controls-change.page:14
+#: C/appearance.page:15 C/basics.page:13 C/controls-change.page:14
 #: C/controls-default.page:14 C/game-types.page:14 C/index.page:12
 #: C/moves.page:14 C/scores.page:13
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
+#. (itstool) path: credit/name
+#: C/appearance.page:19
+msgid "Rachel Dunstan"
+msgstr "Rachel Dunstan"
+
 #. (itstool) path: info/desc
-#: C/appearance.page:17
+#: C/appearance.page:23
 msgid "Use different game-themes in <app>Robots</app>."
 msgstr "Χρήση διαφορετικών θεμάτων παιχνιδιού στο <app>Ρομπότ</app>."
 
 #. (itstool) path: page/title
-#: C/appearance.page:20
+#: C/appearance.page:26
 msgid "Change the default appearance of the game"
 msgstr "Αλλαγή της προεπιλεγμένης εμφάνισης του παιχνιδιού"
 
 #. (itstool) path: page/p
-#: C/appearance.page:22
+#: C/appearance.page:28
 msgid ""
 "You can change the <app>Robots</app> backdrop and the different robots that "
 "are present in a game by changing the game theme and background."
@@ -51,12 +54,12 @@ msgstr ""
 "του παρασκηνίου."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:26
+#: C/appearance.page:32
 msgid "To change the game theme and background:"
 msgstr "Για να αλλάξετε το θέμα του παιχνιδιού και του παρασκηνίου:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:28
+#: C/appearance.page:34
 msgid ""
 "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
 "\">Preferences</gui> <gui style=\"menuitem\">Appearance</gui></guiseq>."
@@ -65,7 +68,7 @@ msgstr ""
 "\">Προτιμήσεις</gui> <gui style=\"menuitem\">Εμφάνιση</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/appearance.page:33
+#: C/appearance.page:39
 msgid ""
 "Select a theme from the drop-down menu available when you click the button "
 "next to <gui>Image theme</gui>."
@@ -73,36 +76,15 @@ msgstr ""
 "Επιλέξτε ένα θέμα από το πτυσσόμενο διαθέσιμο μενού όταν πατήσετε το πλήκτρο "
 "δίπλα στο <gui>Θέμα εικόνας</gui>."
 
-#. (itstool) path: list/title
-#: C/appearance.page:36
-msgid "Available themes:"
-msgstr "Διαθέσιμα θέματα:"
-
 #. (itstool) path: item/p
-#: C/appearance.page:38
-msgid "boo"
-msgstr "αποδοκιμασία"
-
-#. (itstool) path: item/p
-#: C/appearance.page:41
-msgid "gnomes"
-msgstr "ξωτικά"
-
-#. (itstool) path: item/p
-#: C/appearance.page:44
-msgid "robots"
-msgstr "ρομπότ"
-
-#. (itstool) path: item/p
-#: C/appearance.page:47
-msgid "ufo"
-msgstr "ούφο"
-
-#. (itstool) path: item/p
-#: C/appearance.page:52
+#: C/appearance.page:43
+#| msgid ""
+#| "To change your background color, click the button next to <gui>Background "
+#| "color</gui>. Select a color from the choices avaialable and click <gui "
+#| "style=\"button\">Select</gui>."
 msgid ""
 "To change your background color, click the button next to <gui>Background "
-"color</gui>. Select a color from the choices avaialable and click <gui style="
+"color</gui>. Select a color from the available choices and click <gui style="
 "\"button\">Select</gui>."
 msgstr ""
 "Για να αλλάξετε το χρώμα του παρασκηνίου σας, πατήστε στο πλήκτρο δίπλα στο "
@@ -110,7 +92,7 @@ msgstr ""
 "και πατήστε <gui style=\"button\">Επιλογή</gui>."
 
 #. (itstool) path: note/p
-#: C/appearance.page:59
+#: C/appearance.page:50
 msgid ""
 "You can hide the toolbar that contains buttons to start a new game, wait and "
 "teleport, by selecting <guiseq><gui style=\"menu\">View</gui> <gui style="
@@ -1095,6 +1077,21 @@ msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Αυτή η δουλειά αδειοδοτείται από <_:link-1/>."
+
+#~ msgid "Available themes:"
+#~ msgstr "Διαθέσιμα θέματα:"
+
+#~ msgid "boo"
+#~ msgstr "αποδοκιμασία"
+
+#~ msgid "gnomes"
+#~ msgstr "ξωτικά"
+
+#~ msgid "robots"
+#~ msgstr "ρομπότ"
+
+#~ msgid "ufo"
+#~ msgstr "ούφο"
 
 #~ msgid "<application>Robots</application> Manual"
 #~ msgstr "Εγχειρίδιο του <application>Ρομπότ</application>"

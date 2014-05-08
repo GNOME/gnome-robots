@@ -9,13 +9,14 @@
 # Gil Forcada <gilforcada@guifi.net>, 2008, 2010, 2011, 2012.
 # Carles Ferrando <carles.ferrando@gmail.com>, 2010.
 # Jordi Serratosa <jordis@softcatala.cat>, 2012.
+# Gil Forcada <gilforcada@guifi.net>, 2008, 2010, 2011, 2012, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-26 13:18+0000\n"
+"POT-Creation-Date: 2014-05-08 23:30+0000\n"
 "PO-Revision-Date: 2014-03-16 08:47+0100\n"
 "Last-Translator: Joan Montané <jmontane@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -24,6 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -46,10 +48,10 @@ msgid ""
 "device."
 msgstr ""
 "Afortunadament, els robots són molt estúpids i sempre es mouen directament "
-"cap a vós. Enganyeu-los perquè xoquin entre si, de manera que es destrueixin, "
-"o en els munts d'escombraries que en queda. Podeu defensar-vos movent les "
-"piles d'escombraries, o escapar a un lloc segur amb el dispositiu de "
-"teletransport de mà."
+"cap a vós. Enganyeu-los perquè xoquin entre si, de manera que es "
+"destrueixin, o en els munts d'escombraries que en queda. Podeu defensar-vos "
+"movent les piles d'escombraries, o escapar a un lloc segur amb el dispositiu "
+"de teletransport de mà."
 
 #: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
@@ -58,8 +60,8 @@ msgid ""
 "Survive for as long as possible!"
 msgstr ""
 "El nombre de teletransportadors segurs és limitat, i una vegada que no us en "
-"quedeu, el teletransportadors us podria deixar just al costat d'un "
-"robot, que us mataria. Sobreviviu el màxim de temps possible!"
+"quedeu, el teletransportadors us podria deixar just al costat d'un robot, "
+"que us mataria. Sobreviviu el màxim de temps possible!"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnobots.c:200
 #: ../src/gnobots.c:213 ../src/menu.c:262
@@ -254,7 +256,7 @@ msgid "true if the window is maximized"
 msgstr "«true» (cert) si la finestra està maximitzada"
 
 #: ../data/org.gnome.robots.gschema.xml.h:42
-msgid "true if the window is fullscreen"
+msgid "true if the window is fullscren"
 msgstr "«true» (cert) si la finestra està a pantalla completa"
 
 #: ../src/game.c:149

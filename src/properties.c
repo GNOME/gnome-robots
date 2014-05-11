@@ -538,7 +538,6 @@ show_properties_dialog (void)
   g_signal_connect (G_OBJECT (propbox), "response",
 		    G_CALLBACK (apply_cb), NULL);
 
-  gtk_window_set_modal (GTK_WINDOW (propbox), TRUE);
   gtk_widget_show_all (propbox);
 }
 

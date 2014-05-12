@@ -1,5 +1,5 @@
 AC_PREREQ([2.63])
-AC_INIT([GNOME Robots], [3.12.1], [https://bugzilla.gnome.org/],
+AC_INIT([GNOME Robots], [3.12.2], [https://bugzilla.gnome.org/],
         [gnome-robots], [https://wiki.gnome.org/Apps/Robots])
 AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz foreign])
 AM_SILENT_RULES([yes])

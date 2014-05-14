@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-04-23 07:32+0000\n"
-"PO-Revision-Date: 2014-04-23 11:37+0100\n"
+"POT-Creation-Date: 2014-05-14 07:15+0000\n"
+"PO-Revision-Date: 2014-05-14 14:48+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -151,7 +151,7 @@ msgstr "Povolit zvuky hry"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Povolit zvuky hry. Přehrávat zvuky pro různé události ve hře."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:507
 msgid "Key to move NW"
 msgstr "Klávesa pro pohyb SZ"
 
@@ -159,7 +159,7 @@ msgstr "Klávesa pro pohyb SZ"
 msgid "The key used to move north-west."
 msgstr "Klávesa sloužící pro přesun severozápadně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:508
 msgid "Key to move N"
 msgstr "Klávesa pro pohyb S"
 
@@ -167,7 +167,7 @@ msgstr "Klávesa pro pohyb S"
 msgid "The key used to move north."
 msgstr "Klávesa sloužící pro přesun severně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:509
 msgid "Key to move NE"
 msgstr "Klávesa pro pohyb SV"
 
@@ -175,7 +175,7 @@ msgstr "Klávesa pro pohyb SV"
 msgid "The key used to move north-east."
 msgstr "Klávesa sloužící pro přesun severovýchodně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:510
 msgid "Key to move W"
 msgstr "Klávesa pro pohyb Z"
 
@@ -183,7 +183,7 @@ msgstr "Klávesa pro pohyb Z"
 msgid "The key used to move west."
 msgstr "Klávesa sloužící pro přesun západně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:516
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:515
 msgid "Key to hold"
 msgstr "Klávesa pro stání"
 
@@ -191,7 +191,7 @@ msgstr "Klávesa pro stání"
 msgid "The key used to hold still."
 msgstr "Klávesa sloužící ke stání na místě."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:511
 msgid "Key to move E"
 msgstr "Klávesa pro pohyb V"
 
@@ -199,7 +199,7 @@ msgstr "Klávesa pro pohyb V"
 msgid "The key used to move east."
 msgstr "Klávesa sloužící pro přesun východně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:512
 msgid "Key to move SW"
 msgstr "Klávesa pro pohyb JZ"
 
@@ -207,7 +207,7 @@ msgstr "Klávesa pro pohyb JZ"
 msgid "The key used to move south-west."
 msgstr "Klávesa sloužící pro přesun jihozápadně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:514
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:513
 msgid "Key to move S"
 msgstr "Klávesa pro pohyb J"
 
@@ -215,7 +215,7 @@ msgstr "Klávesa pro pohyb J"
 msgid "The key used to move south."
 msgstr "Klávesa sloužící pro přesun jižně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:515
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:514
 msgid "Key to move SE"
 msgstr "Klávesa pro pohyb JV"
 
@@ -223,7 +223,7 @@ msgstr "Klávesa pro pohyb JV"
 msgid "The key used to move south-east."
 msgstr "Klávesa sloužící pro přesun jihovýchodně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:517
+#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:516
 msgid "Key to teleport"
 msgstr "Klávesa pro teleportaci"
 
@@ -231,7 +231,7 @@ msgstr "Klávesa pro teleportaci"
 msgid "The key used to teleport safely (if possible)."
 msgstr "Klávesa sloužící k bezpečné teleportaci (pokud je to možné)."
 
-#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:518
+#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:517
 msgid "Key to teleport randomly"
 msgstr "Klávesa pro náhodnou teleportaci"
 
@@ -239,7 +239,7 @@ msgstr "Klávesa pro náhodnou teleportaci"
 msgid "The key used to teleport randomly."
 msgstr "Klávesa sloužící k náhodné teleportaci."
 
-#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:519
+#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:518
 msgid "Key to wait"
 msgstr "Klávesa pro čekání"
 
@@ -732,58 +732,59 @@ msgstr ""
 "Marek Černocký <marek@manet.cz>"
 
 #: ../src/properties.c:395
-msgid "Robots Preferences"
-msgstr "Předvolby Robotů"
+#| msgid "Robots Preferences"
+msgid "Preferences"
+msgstr "Předvolby"
 
-#: ../src/properties.c:420
+#: ../src/properties.c:419
 msgid "Game Type"
 msgstr "Typ hry"
 
-#: ../src/properties.c:430
+#: ../src/properties.c:429
 msgid "_Use safe moves"
 msgstr "Používat _bezpečné tahy"
 
-#: ../src/properties.c:435
+#: ../src/properties.c:434
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Bránit náhodným tahům, které způsobí smrt."
 
-#: ../src/properties.c:438
+#: ../src/properties.c:437
 msgid "U_se super safe moves"
 msgstr "Používat _superbezpečné tahy"
 
-#: ../src/properties.c:445
+#: ../src/properties.c:444
 msgid "Prevents all moves that result in getting killed."
 msgstr "Bránit všem tahům, které způsobí smrt."
 
-#: ../src/properties.c:451
+#: ../src/properties.c:450
 msgid "_Enable sounds"
 msgstr "_Povolit zvuky"
 
-#: ../src/properties.c:457
+#: ../src/properties.c:456
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Přehrávat zvuky pro události jako výhra úrovně a smrt."
 
-#: ../src/properties.c:459
+#: ../src/properties.c:458
 msgid "Game"
 msgstr "Hra"
 
-#: ../src/properties.c:472
+#: ../src/properties.c:471
 msgid "_Image theme:"
 msgstr "Motiv _obrázků:"
 
-#: ../src/properties.c:484
+#: ../src/properties.c:483
 msgid "_Background color:"
 msgstr "Barva _pozadí:"
 
-#: ../src/properties.c:496
+#: ../src/properties.c:495
 msgid "Appearance"
 msgstr "Vzhled"
 
-#: ../src/properties.c:528
+#: ../src/properties.c:527
 msgid "_Restore Defaults"
 msgstr "_Obnovit výchozí"
 
-#: ../src/properties.c:533
+#: ../src/properties.c:532
 msgid "Keyboard"
 msgstr "Klávesnice"
 

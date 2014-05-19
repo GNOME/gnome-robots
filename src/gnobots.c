@@ -52,7 +52,7 @@
 /**********************************************************************/
 /* Exported Variables                                                 */
 /**********************************************************************/
-GtkWidget *app = NULL;
+GtkWidget *window = NULL;
 static gint window_width = 0, window_height = 0;
 static gboolean window_is_fullscreen = FALSE, window_is_maximized = FALSE;
 GtkWidget *game_area = NULL;
@@ -209,17 +209,17 @@ main (int argc, char *argv[])
 
   gtk_window_set_default_icon_name ("gnome-robots");
 
-  app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (app), _("Robots"));
-  g_signal_connect (GTK_WINDOW (app), "configure-event", G_CALLBACK (window_configure_event_cb), NULL);
-  g_signal_connect (GTK_WINDOW (app), "window-state-event", G_CALLBACK (window_state_event_cb), NULL);
-  gtk_window_set_default_size (GTK_WINDOW (app), g_settings_get_int (settings, "window-width"), g_settings_get_int (settings, "window-height"));
+  window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (window), _("Robots"));
+  g_signal_connect (GTK_WINDOW (window), "configure-event", G_CALLBACK (window_configure_event_cb), NULL);
+  g_signal_connect (GTK_WINDOW (window), "window-state-event", G_CALLBACK (window_state_event_cb), NULL);
+  gtk_window_set_default_size (GTK_WINDOW (window), g_settings_get_int (settings, "window-width"), g_settings_get_int (settings, "window-height"));
   if (g_settings_get_boolean (settings, "window-is-fullscreen"))
-    gtk_window_fullscreen (GTK_WINDOW (app));
+    gtk_window_fullscreen (GTK_WINDOW (window));
   if (g_settings_get_boolean (settings, "window-is-maximized"))
-    gtk_window_maximize (GTK_WINDOW (app));
+    gtk_window_maximize (GTK_WINDOW (window));
 
-  g_signal_connect (G_OBJECT (app), "delete_event",
+  g_signal_connect (G_OBJECT (window), "delete_event",
                    G_CALLBACK (quit_game), NULL);
 
   statusbar = gnobots_statusbar_new ();
@@ -227,7 +227,7 @@ main (int argc, char *argv[])
 
   games_stock_prepare_for_statusbar_tooltips (ui_manager, statusbar);
   create_game_menus (ui_manager);
-  gtk_window_add_accel_group (GTK_WINDOW (app),
+  gtk_window_add_accel_group (GTK_WINDOW (window),
 			      gtk_ui_manager_get_accel_group (ui_manager));
 
   menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");
@@ -259,7 +259,7 @@ main (int argc, char *argv[])
   gtk_box_pack_start (GTK_BOX (vbox), gridframe, TRUE, TRUE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
 
-  gtk_container_add (GTK_CONTAINER (app), vbox);
+  gtk_container_add (GTK_CONTAINER (window), vbox);
 
   gtk_widget_set_size_request (GTK_WIDGET (game_area),
 			       MINIMUM_TILE_WIDTH * GAME_WIDTH,
@@ -267,10 +267,10 @@ main (int argc, char *argv[])
 
   /* Set the window position if it was set by the session manager */
   if (session_xpos >= 0 && session_ypos >= 0) {
-    gtk_window_move (GTK_WINDOW (app), session_xpos, session_ypos);
+    gtk_window_move (GTK_WINDOW (window), session_xpos, session_ypos);
   }
 
-  gtk_widget_show_all (app);
+  gtk_widget_show_all (window);
 
   if (!load_game_configs ()) {
     /* Oops, no configs, we probably haven't been installed properly. */
@@ -289,7 +289,7 @@ main (int argc, char *argv[])
 
   if (!load_game_graphics ()) {
     /* Oops, no graphics, we probably haven't been installed properly. */
-    errordialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (app),
+    errordialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (window),
 					  GTK_DIALOG_MODAL,
 					  GTK_MESSAGE_ERROR,
 					  GTK_BUTTONS_OK,

@@ -112,7 +112,7 @@ message_box (gchar * msg)
 {
   GtkWidget *box;
 
-  box = gtk_message_dialog_new (GTK_WINDOW (app), GTK_DIALOG_MODAL,
+  box = gtk_message_dialog_new (GTK_WINDOW (window), GTK_DIALOG_MODAL,
                                 GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "%s", msg);
   gtk_dialog_run (GTK_DIALOG (box));
   gtk_widget_destroy (box);
@@ -140,7 +140,7 @@ show_scores (gint pos, gboolean endofgame)
     if (sorrydialog != NULL) {
       gtk_window_present (GTK_WINDOW (sorrydialog));
     } else {
-      sorrydialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (app),
+      sorrydialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (window),
                                                         GTK_DIALOG_DESTROY_WITH_PARENT,
                                                         GTK_MESSAGE_INFO,
                                                         GTK_BUTTONS_NONE,
@@ -162,7 +162,7 @@ show_scores (gint pos, gboolean endofgame)
     if (scoresdialog != NULL) {
       gtk_window_present (GTK_WINDOW (scoresdialog));
     } else {
-      scoresdialog = games_scores_dialog_new (GTK_WINDOW (app), 
+      scoresdialog = games_scores_dialog_new (GTK_WINDOW (window),
                                         highscores, _("Robots Scores"));
       games_scores_dialog_set_category_description (GAMES_SCORES_DIALOG
                                                     (scoresdialog),
@@ -625,7 +625,7 @@ init_game (void)
 {
   create_game_timer ();
 
-  g_signal_connect (GTK_WIDGET (app), "key_press_event",
+  g_signal_connect (GTK_WIDGET (window), "key_press_event",
                     G_CALLBACK (keyboard_cb), 0);
 
   start_new_game ();

@@ -231,7 +231,7 @@ help_cb (GtkAction * action, gpointer data)
 {
   GError *error = NULL;
 
-  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (app)), "help:gnome-robots", gtk_get_current_event_time (), &error);
+  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (window)), "help:gnome-robots", gtk_get_current_event_time (), &error);
   if (error)
     g_warning ("Failed to show help: %s", error->message);
   g_clear_error (&error);
@@ -258,7 +258,7 @@ about_cb (GtkAction * action, gpointer data)
   const gchar *documenters[] =
     { "Aruna Sankaranarayanan", NULL };
 
-  gtk_show_about_dialog (GTK_WINDOW (app),
+  gtk_show_about_dialog (GTK_WINDOW (window),
 			 "name", _("Robots"),
 			 "version", VERSION,
 			 "copyright", "Copyright © 1998–2008 Mark Rae",
@@ -311,10 +311,10 @@ create_game_menus (GtkUIManager * ui_manager)
 
   gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
   gtk_action_group_add_actions (action_group, action_entry,
-				G_N_ELEMENTS (action_entry), app);
+				G_N_ELEMENTS (action_entry), window);
   gtk_action_group_add_toggle_actions (action_group, toggle_action_entry,
 				       G_N_ELEMENTS (toggle_action_entry),
-				       app);
+				       window);
 
   gtk_ui_manager_insert_action_group (ui_manager, action_group, 0);
   gtk_ui_manager_add_ui_from_string (ui_manager, ui_description, -1, NULL);
@@ -325,7 +325,7 @@ create_game_menus (GtkUIManager * ui_manager)
   wait_action = gtk_action_group_get_action (action_group, "Wait");
   toolbar_toggle_action =
     gtk_action_group_get_action (action_group, "ShowToolbar");
-  fullscreen_action = GTK_ACTION (games_fullscreen_action_new ("Fullscreen", GTK_WINDOW (app)));
+  fullscreen_action = GTK_ACTION (games_fullscreen_action_new ("Fullscreen", GTK_WINDOW (window)));
   gtk_action_group_add_action_with_accel (action_group, fullscreen_action, NULL);
 
   return;

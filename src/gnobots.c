@@ -309,7 +309,7 @@ main (int argc, char *argv[])
   init_game ();
 
   if (cmdline_scenario) {
-    set_game_graphics (cmdline_scenario);
+    load_game_graphics ();
   }
 
   if (cmdline_config) {

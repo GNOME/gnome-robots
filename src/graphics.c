@@ -266,19 +266,6 @@ free_game_graphics (void)
   return TRUE;
 }
 
-/**
- * set_game_graphics
- * @ng: Game graphics number
- *
- * Description:
- * Sets the game graphics to use
- **/
-void
-set_game_graphics (gchar * name)
-{
-  load_game_graphics ();
-}
-
 void
 set_background_color (GdkRGBA color)
 {

@@ -192,7 +192,7 @@ pmap_selection (GtkWidget * widget, gpointer data)
 
   conf_set_theme (properties.themename);
 
-  set_game_graphics (properties.themename);
+  load_game_graphics ();
   clear_game_area ();
 }
 
@@ -588,7 +588,7 @@ load_properties (void)
   properties.show_toolbar = g_settings_get_boolean (settings,
                                                     KEY_SHOW_TOOLBAR);
 
-  set_game_graphics (properties.themename);
+  load_game_graphics ();
   set_game_config (properties.selected_config);
   keyboard_set (properties.keys);
   return TRUE;

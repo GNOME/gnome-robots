@@ -60,32 +60,9 @@ GamesScores *highscores;
 GSettings *settings;
 /**********************************************************************/
 
-
 /**********************************************************************/
 /* File Static Variables                                              */
 /**********************************************************************/
-static gchar *cmdline_scenario = NULL;
-static gchar *cmdline_config = NULL;
-static gint session_xpos = -1;
-static gint session_ypos = -1;
-/**********************************************************************/
-
-
-/**********************************************************************/
-/* File Static Variables                                              */
-/**********************************************************************/
-static const GOptionEntry options[] = {
-  {"scenario", 's', 0, G_OPTION_ARG_STRING, &cmdline_scenario,
-   N_("Set game scenario"), N_("NAME")},
-  {"config", 'c', 0, G_OPTION_ARG_STRING, &cmdline_config,
-   N_("Set game configuration"), N_("NAME")},
-  {"x", 'x', 0, G_OPTION_ARG_INT, &session_xpos,
-   N_("Initial window position"), N_("X")},
-  {"y", 'y', 0, G_OPTION_ARG_INT, &session_ypos,
-   N_("Initial window position"), N_("Y")},
-  {NULL},
-};
-
 static const GamesScoresCategory scorecats[] = { 
   {"classic_robots", N_("Classic robots")},
   {"classic_robots-safe", N_("Classic robots with safe moves")},
@@ -142,36 +119,13 @@ window_state_event_cb (GtkWidget *widget, GdkEventWindowState *event)
 void
 quit_game (void)
 {
-  g_settings_set_int (settings, "window-width", window_width);
-  g_settings_set_int (settings, "window-height", window_height);
-  g_settings_set_boolean (settings, "window-is-maximized", window_is_maximized);
-  g_settings_set_boolean (settings, "window-is-fullscreen", window_is_fullscreen);
-  gtk_main_quit ();
+  gtk_window_close (window);
 }
 
-/**
- * main
- * @argc: number of arguments
- * @argv: arguments
- *
- * Description:
- * main
- *
- * Returns:
- * exit code
- **/
-int
-main (int argc, char *argv[])
+static void
+startup (GtkApplication *app, gpointer user_data)
 {
-  GtkWidget *errordialog;
-  GtkWidget *vbox, *menubar, *toolbar, *statusbar, *gridframe;
-  GtkUIManager *ui_manager;
-  GOptionContext *context;
   struct timeval tv;
-  gint i;
-  gchar *config;
-  gboolean retval;
-  GError *error = NULL;
 
   setlocale (LC_ALL, "");
   bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
@@ -182,20 +136,6 @@ main (int argc, char *argv[])
 
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
-
-  context = g_option_context_new (NULL);
-  g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
-  g_option_context_add_group (context, gtk_get_option_group (TRUE));
-
-  g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
-
-  retval = g_option_context_parse (context, &argc, &argv, &error);
-  g_option_context_free (context);
-  if (!retval) {
-    g_print ("%s", error->message);
-    g_error_free (error);
-    exit (1);
-  }
 
   g_set_application_name (_("Robots"));
 
@@ -208,8 +148,25 @@ main (int argc, char *argv[])
   settings = g_settings_new ("org.gnome.robots");
 
   gtk_window_set_default_icon_name ("gnome-robots");
+}
 
-  window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+static void
+shutdown (GtkApplication *app, gpointer user_data)
+{
+  g_settings_set_int (settings, "window-width", window_width);
+  g_settings_set_int (settings, "window-height", window_height);
+  g_settings_set_boolean (settings, "window-is-maximized", window_is_maximized);
+  g_settings_set_boolean (settings, "window-is-fullscreen", window_is_fullscreen);
+}
+
+static void
+activate (GtkApplication *app, gpointer user_data)
+{
+  GtkWidget *errordialog;
+  GtkWidget *vbox, *menubar, *toolbar, *statusbar, *gridframe;
+  GtkUIManager *ui_manager;
+
+  window = gtk_application_window_new (app);
   gtk_window_set_title (GTK_WINDOW (window), _("Robots"));
   g_signal_connect (GTK_WINDOW (window), "configure-event", G_CALLBACK (window_configure_event_cb), NULL);
   g_signal_connect (GTK_WINDOW (window), "window-state-event", G_CALLBACK (window_state_event_cb), NULL);
@@ -218,9 +175,6 @@ main (int argc, char *argv[])
     gtk_window_fullscreen (GTK_WINDOW (window));
   if (g_settings_get_boolean (settings, "window-is-maximized"))
     gtk_window_maximize (GTK_WINDOW (window));
-
-  g_signal_connect (G_OBJECT (window), "delete_event",
-                   G_CALLBACK (quit_game), NULL);
 
   statusbar = gnobots_statusbar_new ();
   ui_manager = gtk_ui_manager_new ();
@@ -265,11 +219,6 @@ main (int argc, char *argv[])
 			       MINIMUM_TILE_WIDTH * GAME_WIDTH,
 			       MINIMUM_TILE_HEIGHT * GAME_HEIGHT);
 
-  /* Set the window position if it was set by the session manager */
-  if (session_xpos >= 0 && session_ypos >= 0) {
-    gtk_window_move (GTK_WINDOW (window), session_xpos, session_ypos);
-  }
-
   gtk_widget_show_all (window);
 
   if (!load_game_configs ()) {
@@ -308,27 +257,32 @@ main (int argc, char *argv[])
 
   init_game ();
 
-  if (cmdline_scenario) {
-    load_game_graphics ();
-  }
-
-  if (cmdline_config) {
-    for (i = 0; i < num_game_configs (); ++i) {
-      config = game_config_name (i);
-      if (!strcmp (cmdline_config, config)) {
-	properties_set_config (i);
-	g_free (config);
-	break;
-      }
-      g_free (config);
-    }
-  }
-
-  gtk_main ();
-
   g_settings_sync();
+}
 
-  return 0;
+/**
+ * main
+ * @argc: number of arguments
+ * @argv: arguments
+ *
+ * Description:
+ * main
+ *
+ * Returns:
+ * exit code
+ **/
+int
+main (int argc, char *argv[])
+{
+  GtkApplication *app;
+
+  app = gtk_application_new ("org.gnome.robots", G_APPLICATION_FLAGS_NONE);
+
+  g_signal_connect (app, "startup", G_CALLBACK (startup), NULL);
+  g_signal_connect (app, "shutdown", G_CALLBACK (shutdown), NULL);
+  g_signal_connect (app, "activate", G_CALLBACK (activate), NULL);
+
+  return g_application_run (G_APPLICATION (app), argc, argv);
 }
 
 /**********************************************************************/

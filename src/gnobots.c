@@ -119,7 +119,7 @@ window_state_event_cb (GtkWidget *widget, GdkEventWindowState *event)
 void
 quit_game (void)
 {
-  gtk_window_close (window);
+  gtk_window_close (GTK_WINDOW (window));
 }
 
 static void

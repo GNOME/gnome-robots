@@ -279,12 +279,16 @@ shutdown (GtkApplication *app, gpointer user_data)
 static void
 activate (GtkApplication *app, gpointer user_data)
 {
-  GtkWidget *errordialog, *vbox, *statusbar, *gridframe;
+  GtkWidget *errordialog, *vbox, *statusbar, *gridframe, *headerbar;
   GtkBuilder *builder;
   GMenuModel *appmenu;
 
+  headerbar = gtk_header_bar_new ();
+  gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Robots"));
+  gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);
+
   window = gtk_application_window_new (app);
-  gtk_window_set_title (GTK_WINDOW (window), _("Robots"));
+  gtk_window_set_titlebar (GTK_WINDOW (window), headerbar);
   g_signal_connect (GTK_WINDOW (window), "configure-event", G_CALLBACK (window_configure_event_cb), NULL);
   g_signal_connect (GTK_WINDOW (window), "window-state-event", G_CALLBACK (window_state_event_cb), NULL);
   gtk_window_set_default_size (GTK_WINDOW (window), g_settings_get_int (settings, "window-width"), g_settings_get_int (settings, "window-height"));

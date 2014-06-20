@@ -59,6 +59,8 @@ appdata_in_files = gnome-robots.appdata.xml.in
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 @INTLTOOL_XML_RULE@
 
+pkgdata_DATA = app-menu.ui
+
 EXTRA_DIST = $(cursor_files) \
 	     $(appdata_in_files) \
              $(pixmap_DATA) \
@@ -67,7 +69,8 @@ EXTRA_DIST = $(cursor_files) \
              $(desktop_in_files) \
              $(config_DATA) \
              $(gsettings_SCHEMAS) \
-             $(man_MANS)
+             $(man_MANS) \
+             $(pkgdata_DATA)
 
 CLEANFILES = \
 	$(appdata_DATA) \

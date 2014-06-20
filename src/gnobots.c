@@ -33,7 +33,6 @@
 #include "statusbar.h"
 #include "gameconfig.h"
 #include "graphics.h"
-#include "menu.h"
 #include "sound.h"
 #include "properties.h"
 #include "game.h"
@@ -61,8 +60,39 @@ GSettings *settings;
 /**********************************************************************/
 
 /**********************************************************************/
+/* Function Prototypes                                                */
+/**********************************************************************/
+/**********************************************************************/
+
+static void preferences_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data);
+static void scores_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data);
+static void help_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data);
+static void about_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data);
+static void quit_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data);
+static void new_game_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data);
+static void random_teleport_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data);
+static void safe_teleport_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data);
+static void wait_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data);
+
+/**********************************************************************/
 /* File Static Variables                                              */
 /**********************************************************************/
+
+static const GActionEntry app_entries[] = {
+  { "preferences", preferences_cb, NULL, NULL, NULL },
+  { "scores", scores_cb, NULL, NULL, NULL },
+  { "help", help_cb, NULL, NULL, NULL },
+  { "about", about_cb, NULL, NULL, NULL },
+  { "quit", quit_cb, NULL, NULL, NULL },
+};
+
+static const GActionEntry win_entries[] = {
+  { "new-game", new_game_cb, NULL, NULL, NULL },
+  { "random-teleport", random_teleport_cb, NULL, NULL, NULL },
+  { "safe-teleport", safe_teleport_cb, NULL, NULL, NULL },
+  { "wait", wait_cb, NULL, NULL, NULL },
+};
+
 static const GamesScoresCategory scorecats[] = { 
   {"classic_robots", N_("Classic robots")},
   {"classic_robots-safe", N_("Classic robots with safe moves")},
@@ -83,16 +113,103 @@ static const GamesScoresCategory scorecats[] = {
 
 /**********************************************************************/
 
-
-/**********************************************************************/
-/* Function Prototypes                                                */
-/**********************************************************************/
-/**********************************************************************/
-
-
 /**********************************************************************/
 /* Function Definitions                                               */
 /**********************************************************************/
+
+void
+set_move_action_sensitivity (gboolean state)
+{
+  GAction *action;
+
+  action = g_action_map_lookup_action (G_ACTION_MAP (window), "random-teleport");
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (action), state);
+
+  action = g_action_map_lookup_action (G_ACTION_MAP (window), "safe-teleport");
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (action), state);
+
+  action = g_action_map_lookup_action (G_ACTION_MAP (window), "wait");
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (action), state);
+}
+
+static void
+preferences_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
+{
+  show_properties_dialog ();
+}
+
+static void
+scores_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
+{
+  show_scores (0, FALSE);
+}
+
+static void
+help_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
+{
+  GError *error = NULL;
+
+  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (window)), "help:gnome-robots", gtk_get_current_event_time (), &error);
+  if (error)
+    g_warning ("Failed to show help: %s", error->message);
+  g_clear_error (&error);
+}
+
+static void
+about_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
+{
+  const gchar *authors[] = { "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
+
+  const gchar *artists[] = { "Kirstie Opstad <K.Opstad@ed.ac.uk>", NULL };
+
+  const gchar *documenters[] =
+    { "Aruna Sankaranarayanan", NULL };
+
+  gtk_show_about_dialog (GTK_WINDOW (window),
+			 "name", _("Robots"),
+			 "version", VERSION,
+			 "copyright", "Copyright © 1998–2008 Mark Rae",
+			 "license-type", GTK_LICENSE_GPL_2_0,
+			 "comments", _("Based on classic BSD Robots\n\nRobots is a part of GNOME Games."),
+			 "authors", authors,
+			 "artists", artists,
+			 "documenters", documenters,
+			 "translator-credits", _("translator-credits"),
+			 "logo-icon-name", "gnome-robots",
+			 "website",
+			 "https://wiki.gnome.org/Apps/Robots",
+			 NULL);
+}
+
+static void
+quit_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
+{
+  quit_game ();
+}
+
+static void
+new_game_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
+{
+  start_new_game ();
+}
+
+static void
+random_teleport_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
+{
+  game_keypress (KBD_RTEL);
+}
+
+static void
+safe_teleport_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
+{
+  game_keypress (KBD_TELE);
+}
+
+static void
+wait_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
+{
+  game_keypress (KBD_WAIT);
+}
 
 static gboolean
 window_configure_event_cb (GtkWidget *widget, GdkEventConfigure *event)
@@ -162,9 +279,9 @@ shutdown (GtkApplication *app, gpointer user_data)
 static void
 activate (GtkApplication *app, gpointer user_data)
 {
-  GtkWidget *errordialog;
-  GtkWidget *vbox, *menubar, *toolbar, *statusbar, *gridframe;
-  GtkUIManager *ui_manager;
+  GtkWidget *errordialog, *vbox, *statusbar, *gridframe;
+  GtkBuilder *builder;
+  GMenuModel *appmenu;
 
   window = gtk_application_window_new (app);
   gtk_window_set_title (GTK_WINDOW (window), _("Robots"));
@@ -176,19 +293,15 @@ activate (GtkApplication *app, gpointer user_data)
   if (g_settings_get_boolean (settings, "window-is-maximized"))
     gtk_window_maximize (GTK_WINDOW (window));
 
+  g_action_map_add_action_entries (G_ACTION_MAP (app), app_entries, G_N_ELEMENTS (app_entries), app);
+  g_action_map_add_action_entries (G_ACTION_MAP (window), win_entries, G_N_ELEMENTS (win_entries), app);
+
+  builder = gtk_builder_new_from_file (g_build_filename (DATA_DIRECTORY, "app-menu.ui", NULL));
+  appmenu = G_MENU_MODEL (gtk_builder_get_object (builder, "appmenu"));
+  gtk_application_set_app_menu (app, appmenu);
+  g_object_unref (builder);
+
   statusbar = gnobots_statusbar_new ();
-  ui_manager = gtk_ui_manager_new ();
-
-  games_stock_prepare_for_statusbar_tooltips (ui_manager, statusbar);
-  create_game_menus (ui_manager);
-  gtk_window_add_accel_group (GTK_WINDOW (window),
-			      gtk_ui_manager_get_accel_group (ui_manager));
-
-  menubar = gtk_ui_manager_get_widget (ui_manager, "/MainMenu");
-
-  toolbar = gtk_ui_manager_get_widget (ui_manager, "/Toolbar");
-  gtk_style_context_add_class (gtk_widget_get_style_context (toolbar),
-			       GTK_STYLE_CLASS_PRIMARY_TOOLBAR);
 
   make_cursors ();
 
@@ -208,8 +321,6 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_container_add (GTK_CONTAINER (gridframe), game_area);
 
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), menubar, FALSE, FALSE, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), toolbar, FALSE, FALSE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), gridframe, TRUE, TRUE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
 
@@ -250,8 +361,6 @@ activate (GtkApplication *app, gpointer user_data)
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
   }
-
-  connect_toolbar_toggle (toolbar);
 
   init_sound ();
 

@@ -255,7 +255,7 @@ kill_player (void)
   endlev_counter = 0;
   add_aieee_bubble (player_xpos, player_ypos);
   player_animation_dead ();
-  set_move_menu_sensitivity (FALSE);
+  set_move_action_sensitivity (FALSE);
 }
 
 /**
@@ -514,7 +514,7 @@ update_arena (void)
       endlev_counter = 0;
       add_yahoo_bubble (player_xpos, player_ypos);
       reset_player_animation ();
-      set_move_menu_sensitivity (FALSE);
+      set_move_action_sensitivity (FALSE);
     }
   }
 
@@ -560,7 +560,7 @@ timeout_cb (void *data)
       clear_game_area ();
       generate_level ();
       game_state = STATE_PLAYING;
-      set_move_menu_sensitivity (TRUE);
+      set_move_action_sensitivity (TRUE);
       gnobots_statusbar_set (score, current_level + 1, safe_teleports,
                              num_robots1, num_robots2);
     }
@@ -670,7 +670,7 @@ start_new_game (void)
 
   gnobots_statusbar_set (score, current_level + 1, safe_teleports,
                          num_robots1, num_robots2);
-  set_move_menu_sensitivity (TRUE);
+  set_move_action_sensitivity (TRUE);
 }
 
 

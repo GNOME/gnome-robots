@@ -1,6 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this file in alphabetical order.
 [encoding: UTF-8]
+data/app-menu.ui
 data/gnome-robots.appdata.xml.in
 data/gnome-robots.desktop.in
 data/org.gnome.robots.gschema.xml
@@ -10,6 +11,5 @@ src/games-scores-dialog.c
 src/games-stock.c
 src/gnobots.c
 src/graphics.c
-src/menu.c
 src/properties.c
 src/statusbar.c

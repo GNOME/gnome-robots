@@ -7,8 +7,6 @@ gnome_robots_SOURCES = \
 	statusbar.h \
 	gameconfig.c \
 	gameconfig.h \
-	menu.c \
-	menu.h \
 	properties.c \
 	properties.h \
 	graphics.c \

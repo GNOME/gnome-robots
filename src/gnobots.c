@@ -279,7 +279,8 @@ shutdown (GtkApplication *app, gpointer user_data)
 static void
 activate (GtkApplication *app, gpointer user_data)
 {
-  GtkWidget *errordialog, *vbox, *statusbar, *gridframe, *headerbar;
+  GtkWidget *errordialog, *vbox, *hbox, *label, *button, *statusbar, *gridframe, *headerbar;
+  GtkSizeGroup *size_group;
   GtkBuilder *builder;
   GMenuModel *appmenu;
 
@@ -324,8 +325,41 @@ activate (GtkApplication *app, gpointer user_data)
   gridframe = games_grid_frame_new (GAME_WIDTH, GAME_HEIGHT);
   gtk_container_add (GTK_CONTAINER (gridframe), game_area);
 
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+  size_group = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
+
+  label = gtk_label_new_with_mnemonic (_("Teleport _Randomly"));
+  gtk_widget_set_margin_top (label, 15);
+  gtk_widget_set_margin_bottom (label, 15);
+  button = gtk_button_new ();
+  gtk_container_add (GTK_CONTAINER (button), label);
+  gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.random-teleport");
+  gtk_size_group_add_widget (size_group, button);
+  gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
+
+  label = gtk_label_new_with_mnemonic (_("Teleport _Safely"));
+  gtk_widget_set_margin_top (label, 15);
+  gtk_widget_set_margin_bottom (label, 15);
+  button = gtk_button_new ();
+  gtk_container_add (GTK_CONTAINER (button), label);
+  gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.safe-teleport");
+  gtk_size_group_add_widget (size_group, button);
+  gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
+
+  label = gtk_label_new_with_mnemonic (_("_Wait for Robots"));
+  gtk_widget_set_margin_top (label, 15);
+  gtk_widget_set_margin_bottom (label, 15);
+  button = gtk_button_new ();
+  gtk_container_add (GTK_CONTAINER (button), label);
+  gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.wait");
+  gtk_size_group_add_widget (size_group, button);
+  gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
+
+  g_object_unref (size_group);
+
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
   gtk_box_pack_start (GTK_BOX (vbox), gridframe, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
 
   gtk_container_add (GTK_CONTAINER (window), vbox);

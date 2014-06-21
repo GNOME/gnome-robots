@@ -350,7 +350,7 @@ make_theme_menu (void)
 static void
 bg_color_callback (GtkWidget * widget, gpointer data)
 {
-  gtk_color_button_get_rgba (GTK_COLOR_BUTTON (widget),
+  gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (widget),
 			      &properties.bgcolour);
   set_background_color (properties.bgcolour);
   clear_game_area ();
@@ -484,7 +484,7 @@ show_properties_dialog (void)
   gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
 
   w = gtk_color_button_new ();
-  gtk_color_button_set_rgba (GTK_COLOR_BUTTON (w), &properties.bgcolour);
+  gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (w), &properties.bgcolour);
   g_signal_connect (G_OBJECT (w), "color_set",
 		    G_CALLBACK (bg_color_callback), NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), w);

@@ -281,10 +281,14 @@ defkey_cb (GtkWidget * widget, gpointer data)
   gint i;
 
   for (i = 0; i < 12; ++i) {
+    GVariant *variant;
     char buffer[64];
+
     g_snprintf (buffer, sizeof (buffer), KEY_CONTROL_KEY, i);
     g_settings_reset (settings, buffer);
-    properties.keys[i] = g_settings_get_default_value (settings, buffer);
+    variant = g_settings_get_default_value (settings, buffer);
+    properties.keys[i] = g_variant_get_int32 (variant);
+    g_variant_unref (variant);
   }
 
   keyboard_set (properties.keys);

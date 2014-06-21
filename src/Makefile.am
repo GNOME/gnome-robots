@@ -1,8 +1,8 @@
 bin_PROGRAMS = gnome-robots
 
 gnome_robots_SOURCES = \
-	gnobots.c \
-	gnobots.h \
+	gnome-robots.c \
+	gnome-robots.h \
 	statusbar.c \
 	statusbar.h \
 	gameconfig.c \

@@ -31,7 +31,7 @@
 #include "gameconfig.h"
 #include "keyboard.h"
 #include "game.h"
-#include "gnobots.h"
+#include "gnome-robots.h"
 #include "sound.h"
 #include "properties.h"
 #include "menu.h"

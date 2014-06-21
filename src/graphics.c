@@ -35,7 +35,7 @@
 #include "graphics.h"
 #include "gbdefs.h"
 #include "game.h"
-#include "gnobots.h"
+#include "gnome-robots.h"
 #include "properties.h"
 #include "games-preimage.h"
 #include "games-scores.h"

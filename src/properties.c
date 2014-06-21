@@ -29,7 +29,7 @@
 
 #include "properties.h"
 #include "gameconfig.h"
-#include "gnobots.h"
+#include "gnome-robots.h"
 #include "graphics.h"
 #include "gbdefs.h"
 #include "keyboard.h"

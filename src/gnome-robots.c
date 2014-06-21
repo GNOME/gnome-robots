@@ -94,7 +94,7 @@ static const GActionEntry win_entries[] = {
   { "wait", wait_cb, NULL, NULL, NULL },
 };
 
-static const GamesScoresCategory scorecats[] = { 
+static const GamesScoresCategory scorecats[] = {
   {"classic_robots", N_("Classic robots")},
   {"classic_robots-safe", N_("Classic robots with safe moves")},
   {"classic_robots-super-safe", N_("Classic robots with super-safe moves")},
@@ -236,7 +236,7 @@ window_configure_event_cb (GtkWidget *widget, GdkEventConfigure *event)
     window_width = event->width;
     window_height = event->height;
   }
-  
+
   return FALSE;
 }
 

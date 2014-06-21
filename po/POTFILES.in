@@ -9,7 +9,7 @@ src/game.c
 src/games-controls.c
 src/games-scores-dialog.c
 src/games-stock.c
-src/gnobots.c
+src/gnome-robots.c
 src/graphics.c
 src/properties.c
 src/statusbar.c

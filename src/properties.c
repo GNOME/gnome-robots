@@ -507,7 +507,7 @@ show_properties_dialog (void)
 				    "key01", _("Key to move N"), g_settings_get_default_value (settings, "key01"),
 				    "key02", _("Key to move NE"), g_settings_get_default_value (settings, "key02"),
 				    "key03", _("Key to move W"), g_settings_get_default_value (settings, "key03"),
-                                    "key04", _("Key to hold"), g_settings_get_default_value (settings, "key04"),
+				    "key04", _("Key to hold"), g_settings_get_default_value (settings, "key04"),
 				    "key05", _("Key to move E"), g_settings_get_default_value (settings, "key05"),
 				    "key06", _("Key to move SW"), g_settings_get_default_value (settings, "key06"),
 				    "key07", _("Key to move S"), g_settings_get_default_value (settings, "key07"),

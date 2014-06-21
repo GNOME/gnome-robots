@@ -57,6 +57,7 @@ static gboolean window_is_fullscreen = FALSE, window_is_maximized = FALSE;
 GtkWidget *game_area = NULL;
 GamesScores *highscores;
 GSettings *settings;
+GSimpleAction *safe_teleport_action;
 /**********************************************************************/
 
 /**********************************************************************/
@@ -300,6 +301,8 @@ activate (GtkApplication *app, gpointer user_data)
 
   g_action_map_add_action_entries (G_ACTION_MAP (app), app_entries, G_N_ELEMENTS (app_entries), app);
   g_action_map_add_action_entries (G_ACTION_MAP (window), win_entries, G_N_ELEMENTS (win_entries), app);
+
+  safe_teleport_action = G_SIMPLE_ACTION (g_action_map_lookup_action (G_ACTION_MAP (window), "safe-teleport"));
 
   builder = gtk_builder_new_from_file (g_build_filename (DATA_DIRECTORY, "app-menu.ui", NULL));
   appmenu = G_MENU_MODEL (gtk_builder_get_object (builder, "appmenu"));

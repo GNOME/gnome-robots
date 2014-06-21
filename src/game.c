@@ -100,6 +100,12 @@ static gboolean safe_teleport (void);
 /* Function Definitions                                               */
 /**********************************************************************/
 
+static void
+update_safe_teleport_action (void)
+{
+  g_simple_action_set_enabled (safe_teleport_action, safe_teleports > 0);
+}
+
 /**
  * message_box
  * @msg: message
@@ -307,6 +313,7 @@ add_kill (gint type)
     safe_teleports = game_config ()->max_safe_teleports;
   }
 
+  update_safe_teleport_action ();
   gnobots_statusbar_set (score, current_level + 1, safe_teleports,
                          num_robots1, num_robots2);
 }
@@ -430,6 +437,8 @@ generate_level (void)
   if (safe_teleports > game_config ()->max_safe_teleports) {
     safe_teleports = game_config ()->max_safe_teleports;
   }
+
+  update_safe_teleport_action ();
 
   for (i = 0; i < num_robots1; ++i) {
     while (1) {
@@ -654,6 +663,7 @@ start_new_game (void)
   g_return_if_fail (conf != NULL);
 
   safe_teleports = conf->initial_safe_teleports;
+  update_safe_teleport_action ();
 
   remove_bubble ();
   reset_player_animation ();
@@ -1217,7 +1227,7 @@ safe_teleport (void)
   }
 
   if (safe_teleports <= 0)
-    return random_teleport ();
+    return FALSE;
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
@@ -1242,6 +1252,7 @@ safe_teleport (void)
       reset_player_animation ();
 
       safe_teleports -= 1;
+      update_safe_teleport_action ();
 
       update_arena ();
       break;

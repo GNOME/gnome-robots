@@ -12,6 +12,7 @@ extern GtkWidget *window;
 extern GtkWidget *game_area;
 extern GamesScores *highscores;
 extern GSettings *settings;
+extern GSimpleAction *safe_teleport_action;
 /**********************************************************************/
 
 /**********************************************************************/

@@ -1,3 +1,9 @@
+GNOME Robots 3.12.3
+===================
+
+* Fix default theme name so that correct theme is shown in preferences dialog
+* Fix Restore Defaults button in keyboard section of preferences dialog
+
 GNOME Robots 3.12.2
 ===================
 

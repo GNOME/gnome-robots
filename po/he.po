@@ -4,255 +4,287 @@
 # Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER
 # Gil 'Dolfin' Osher <dolfin@rpg.org.il>, 2002,2003
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2010.
+# Yosef Or Boczko <yoseforb@gnome.org>, 2014.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-02 11:26+0200\n"
-"PO-Revision-Date: 2013-02-02 11:27+0200\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Gezer (Hebrew)\n"
+"POT-Creation-Date: 2014-06-21 22:52+0300\n"
+"PO-Revision-Date: 2014-06-21 22:58+0300\n"
+"Last-Translator: Yosef Or Boczko <yoseforb@gnome.org>\n"
+"Language-Team: עברית <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.6.1\n"
+"X-Generator: Gtranslator 2.91.6\n"
 "X-Launchpad-Export-Date: 2008-01-13 04:36+0000\n"
 "X-Poedit-Language: Hebrew\n"
 
-#: ../data/gnome-robots.desktop.in.in.h:1
-#: ../src/gnobots.c:200
-#: ../src/gnobots.c:213
-#: ../src/menu.c:261
-#: ../src/menu.c:264
+#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "משחק חדש"
+
+#: ../data/app-menu.ui.h:2 ../src/properties.c:394
+msgid "Preferences"
+msgstr "העדפות"
+
+#: ../data/app-menu.ui.h:3
+msgid "Scores"
+msgstr "תוצאות"
+
+#: ../data/app-menu.ui.h:4
+msgid "Help"
+msgstr "עזרה"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "על אודות"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "יציאה"
+
+#: ../data/gnome-robots.appdata.xml.in.h:1
+msgid "GNOME Robots"
+msgstr "‏GNOME רובוטים"
+
+#: ../data/gnome-robots.appdata.xml.in.h:2
+msgid ""
+"It is the distant future – the year 2000. Evil robots are trying to kill "
+"you. Avoid the robots or face certain death."
+msgstr ""
+"It is the distant future – the year 2000. Evil robots are trying to kill "
+"you. Avoid the robots or face certain death."
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
+msgid ""
+"Fortunately, the robots are extremely stupid and will always move directly "
+"towards you. Trick them into colliding into each other, resulting in their "
+"destruction, or into the junk piles that result. You can defend yourself by "
+"moving the junk piles, or escape to safety with your handy teleportation "
+"device."
+msgstr ""
+"Fortunately, the robots are extremely stupid and will always move directly "
+"towards you. Trick them into colliding into each other, resulting in their "
+"destruction, or into the junk piles that result. You can defend yourself by "
+"moving the junk piles, or escape to safety with your handy teleportation "
+"device."
+
+#: ../data/gnome-robots.appdata.xml.in.h:4
+msgid ""
+"Your supply of safe teleports is limited, and once you run out, "
+"teleportation could land you right next to a robot, who will kill you. "
+"Survive for as long as possible!"
+msgstr ""
+"Your supply of safe teleports is limited, and once you run out, "
+"teleportation could land you right next to a robot, who will kill you. "
+"Survive for as long as possible!"
+
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
+#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
 msgid "Robots"
 msgstr "רובוטים"
 
-#: ../data/gnome-robots.desktop.in.in.h:2
+#: ../data/gnome-robots.desktop.in.h:2
 msgid "Avoid the robots and make them crash into each other"
 msgstr "התחמק מהרובוטים וגרום להם להתנגש אחד בשני"
 
-#: ../data/gnome-robots.desktop.in.in.h:3
+#: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
 msgstr "משחק;ארקייד;עלילה;שיגור;טלפורט;"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:1
+#: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
 msgstr "Show toolbar"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:2
+#: ../data/org.gnome.robots.gschema.xml.h:2
 msgid "Show toolbar. A standard option for toolbars."
 msgstr "Show toolbar. A standard option for toolbars."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:3
+#: ../data/org.gnome.robots.gschema.xml.h:3
 msgid "Robot image theme"
 msgstr "Robot image theme"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:4
+#: ../data/org.gnome.robots.gschema.xml.h:4
 msgid "Robot image theme. The theme of the images to use for the robots."
 msgstr "Robot image theme. The theme of the images to use for the robots."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:5
+#: ../data/org.gnome.robots.gschema.xml.h:5
 msgid "Background color"
 msgstr "Background color"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:6
+#: ../data/org.gnome.robots.gschema.xml.h:6
 msgid "Background color. The hex specification of the background color."
 msgstr "Background color. The hex specification of the background color."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:7
+#: ../data/org.gnome.robots.gschema.xml.h:7
 msgid "Game type"
 msgstr "Game type"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:8
+#: ../data/org.gnome.robots.gschema.xml.h:8
 msgid "Game type. The name of the game variation to use."
 msgstr "Game type. The name of the game variation to use."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:9
+#: ../data/org.gnome.robots.gschema.xml.h:9
 msgid "Use safe moves"
 msgstr "Use safe moves"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:10
-msgid "Use safe moves. The safe moves option will help you to avoid being killed due to a mistake. If you try to make a move that would lead to your death when there is a safe move available you will not be allowed to proceed."
-msgstr "Use safe moves. The safe moves option will help you to avoid being killed due to a mistake. If you try to make a move that would lead to your death when there is a safe move available you will not be allowed to proceed."
+#: ../data/org.gnome.robots.gschema.xml.h:10
+msgid ""
+"Use safe moves. The safe moves option will help you to avoid being killed "
+"due to a mistake. If you try to make a move that would lead to your death "
+"when there is a safe move available you will not be allowed to proceed."
+msgstr ""
+"Use safe moves. The safe moves option will help you to avoid being killed "
+"due to a mistake. If you try to make a move that would lead to your death "
+"when there is a safe move available you will not be allowed to proceed."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:11
+#: ../data/org.gnome.robots.gschema.xml.h:11
 msgid "Use super safe moves"
 msgstr "Use super safe moves"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:12
-msgid "Use super safe moves. The player is alerted when there is no safe move and the only option is to teleport out."
-msgstr "Use super safe moves. The player is alerted when there is no safe move and the only option is to teleport out."
+#: ../data/org.gnome.robots.gschema.xml.h:12
+msgid ""
+"Use super safe moves. The player is alerted when there is no safe move and "
+"the only option is to teleport out."
+msgstr ""
+"Use super safe moves. The player is alerted when there is no safe move and "
+"the only option is to teleport out."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:13
+#: ../data/org.gnome.robots.gschema.xml.h:13
 msgid "Enable game sounds"
 msgstr "Enable game sounds"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:14
+#: ../data/org.gnome.robots.gschema.xml.h:14
 msgid "Enable game sounds. Play sounds for various events throughout the game."
-msgstr "Enable game sounds. Play sounds for various events throughout the game."
+msgstr ""
+"Enable game sounds. Play sounds for various events throughout the game."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:15
-#: ../src/properties.c:500
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:506
 msgid "Key to move NW"
 msgstr "לחיצת מקש לתנועה לצפון-מערב"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:16
+#: ../data/org.gnome.robots.gschema.xml.h:16
 msgid "The key used to move north-west."
 msgstr "The key used to move north-west."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:17
-#: ../src/properties.c:501
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:507
 msgid "Key to move N"
 msgstr "לחיצת מקש לתנועה צפונה"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:18
+#: ../data/org.gnome.robots.gschema.xml.h:18
 msgid "The key used to move north."
 msgstr "The key used to move north."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:19
-#: ../src/properties.c:502
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:508
 msgid "Key to move NE"
 msgstr "לחיצת מקש לתנועה לצפון-מזרח"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:20
+#: ../data/org.gnome.robots.gschema.xml.h:20
 msgid "The key used to move north-east."
 msgstr "The key used to move north-east."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:21
-#: ../src/properties.c:503
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:509
 msgid "Key to move W"
 msgstr "מקש לתנועה מערבה"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:22
+#: ../data/org.gnome.robots.gschema.xml.h:22
 msgid "The key used to move west."
 msgstr "The key used to move west."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:23
-#: ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:510
 msgid "Key to hold"
 msgstr "מקש להחזקה"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:24
+#: ../data/org.gnome.robots.gschema.xml.h:24
 msgid "The key used to hold still."
 msgstr "The key used to hold still."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:25
-#: ../src/properties.c:504
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:511
 msgid "Key to move E"
 msgstr "לחיצת מקשה לתנועה מזרחה"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:26
+#: ../data/org.gnome.robots.gschema.xml.h:26
 msgid "The key used to move east."
 msgstr "The key used to move east."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:27
-#: ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:512
 msgid "Key to move SW"
 msgstr "מקש לתנועה לדרום-מערב"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:28
+#: ../data/org.gnome.robots.gschema.xml.h:28
 msgid "The key used to move south-west."
 msgstr "The key used to move south-west."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:29
-#: ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:513
 msgid "Key to move S"
 msgstr "לחיצת מקש לתנועה דרומה"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:30
+#: ../data/org.gnome.robots.gschema.xml.h:30
 msgid "The key used to move south."
 msgstr "The key used to move south."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:31
-#: ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:514
 msgid "Key to move SE"
 msgstr "מקש לתנועה לדרום-מזרח"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:32
+#: ../data/org.gnome.robots.gschema.xml.h:32
 msgid "The key used to move south-east."
 msgstr "The key used to move south-east."
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:33
-#: ../src/properties.c:509
-msgid "Key to teleport"
-msgstr "מקש לשיגור"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:34
-msgid "The key used to teleport safely (if possible)."
-msgstr "The key used to teleport safely (if possible)."
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:35
-#: ../src/properties.c:510
-msgid "Key to teleport randomly"
-msgstr "מקש לשיגור אקראי"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:36
-msgid "The key used to teleport randomly."
-msgstr "The key used to teleport randomly."
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:37
-#: ../src/properties.c:511
-msgid "Key to wait"
-msgstr "מקש להמתנה"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:38
-msgid "The key used to wait."
-msgstr "The key used to wait."
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:39
+#: ../data/org.gnome.robots.gschema.xml.h:33
 msgid "Width of the window in pixels"
 msgstr "Width of the window in pixels"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:40
+#: ../data/org.gnome.robots.gschema.xml.h:34
 msgid "Height of the window in pixels"
 msgstr "Height of the window in pixels"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:41
+#: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
 msgstr "true if the window is maximized"
 
-#: ../data/org.gnome.robots.gschema.xml.in.h:42
-msgid "true if the window is fullscren"
-msgstr "true if the window is fullscren"
-
-#: ../src/game.c:149
+#: ../src/game.c:148
 msgid "Game over!"
 msgstr "המשחק הסתיים!"
 
-#: ../src/game.c:151
+#: ../src/game.c:150
 msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr "עבודה מעולה, אבל למרבה הצער התוצאה שהשגת אינה מספיקה כדי להכנס לעשרת הגדולים."
+msgstr ""
+"עבודה מעולה, אבל למרבה הצער התוצאה שהשגת אינה מספיקה כדי להכנס לעשרת הגדולים."
 
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/game.c:153
-#: ../src/games-stock.c:253
+#: ../src/game.c:151
+msgid "_Quit"
+msgstr "י_ציאה"
+
+#: ../src/game.c:152 ../src/gnome-robots.c:231
 msgid "_New Game"
 msgstr "_משחק חדש"
 
-#: ../src/game.c:166
+#: ../src/game.c:165
 msgid "Robots Scores"
 msgstr "ניקוד ברובוטים"
 
-#: ../src/game.c:169
+#: ../src/game.c:168
 msgid "Map:"
 msgstr "מפה:"
 
-#: ../src/game.c:178
+#: ../src/game.c:177
 msgid "Congratulations!"
 msgstr "ברכות!"
 
-#: ../src/game.c:179
+#: ../src/game.c:178
 msgid "Your score is the best!"
 msgstr "התוצאה שלך היא הגבוהה ביותר!"
 
-#: ../src/game.c:180
+#: ../src/game.c:179
 msgid "Your score has made the top ten."
 msgstr "נכנסת לעשרת הגדולים!"
 
-#: ../src/game.c:408
-#: ../src/game.c:424
+#: ../src/game.c:406 ../src/game.c:422
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -261,11 +293,11 @@ msgstr ""
 "אך האם יש לך את היכולת לעשות זאת שוב?"
 
 #. This should never happen.
-#: ../src/game.c:1186
+#: ../src/game.c:1176
 msgid "There are no teleport locations left!!"
 msgstr "לא נותרו מקומות לשיגור!!"
 
-#: ../src/game.c:1214
+#: ../src/game.c:1204
 msgid "There are no safe locations to teleport to!!"
 msgstr "אין מקומות בטוחים לעשות אליהם שיגור!!"
 
@@ -274,380 +306,117 @@ msgid "Unknown Command"
 msgstr "פקודה לא ידועה"
 
 #. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:136
+#: ../src/games-scores-dialog.c:132
 msgctxt "score-dialog"
 msgid "Time"
 msgstr "זמן"
 
 #. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:142
+#: ../src/games-scores-dialog.c:138
 msgctxt "score-dialog"
 msgid "Score"
 msgstr "ניקוד"
 
 #. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:307
+#: ../src/games-scores-dialog.c:225
 #, c-format
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$dדק׳ %2$dשנ׳"
 
-#: ../src/games-scores-dialog.c:470
-msgid "New Game"
-msgstr "משחק חדש"
-
-#. Score dialog column header for the name of the player who recorded the score
-#: ../src/games-scores-dialog.c:571
-msgctxt "score-dialog"
-msgid "Name"
-msgstr "שם"
-
 #. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:580
+#: ../src/games-scores-dialog.c:478
 msgid "Date"
 msgstr "תאריך"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "הצגת עזרה עבור משחק זה"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "סיים את המשחק הנוכחי"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "הכנס למצב מסך מלא"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "קבלת רמז למהלך הבא שלך"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "צא ממצב מסך מלא"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "התחלת משחק רשת מרובה משתתפים חדש"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "סיום משחק הרשת הנוכחי וחזרה לשרת הרשת"
-
-#: ../src/games-stock.c:48
-#: ../src/menu.c:69
-msgid "Start a new game"
-msgstr "התחלת משחק חדש"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "השהיית המשחק"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "הצגת רשימת השחקנים במשחק הרשת"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "ביצוע חוזר של המהלך המבוטל"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "התחלת המשחק מחדש"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "המשך משחק מושהה"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "הצגת התוצאות"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "ביטול המהלך האחרון"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "על אודות משחק זה"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "סגירת החלון"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "עיצוב המשחק"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "יציאה ממשחק זה"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "_תכנים"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "מסך מ_לא"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "_רמז"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "_חדש"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "_חזרה על המהלך"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "_איפוס"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "ה_תחלה מחדש"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "_ביטול מהלך"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "_חלוקה"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "י_ציאה ממסך מלא"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "_משחק רשת"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "י_ציאה מהמשחק"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "_רשימת שחקנים"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "ה_שהייה"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "המש_ך"
-
-#: ../src/games-stock.c:267
-msgid "_Scores"
-msgstr "_תוצאות"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "_סיום המשחק"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid "%s is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version %d of the License, or (at your option) any later version."
-msgstr "%s is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version %d of the License, or (at your option) any later version."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid "%s is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
-msgstr "%s is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid "You should have received a copy of the GNU General Public License along with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr "You should have received a copy of the GNU General Public License along with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
-
-#: ../src/games-stock.c:331
-msgid "You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr "You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>."
-
-#: ../src/gnobots.c:79
-msgid "Set game scenario"
-msgstr "Set game scenario"
-
-#: ../src/gnobots.c:79
-#: ../src/gnobots.c:81
-msgid "NAME"
-msgstr "NAME"
-
-#: ../src/gnobots.c:81
-msgid "Set game configuration"
-msgstr "Set game configuration"
-
-#: ../src/gnobots.c:83
-#: ../src/gnobots.c:85
-msgid "Initial window position"
-msgstr "Initial window position"
-
-#: ../src/gnobots.c:83
-msgid "X"
-msgstr "X"
-
-#: ../src/gnobots.c:85
-msgid "Y"
-msgstr "Y"
-
-#: ../src/gnobots.c:90
+#: ../src/gnome-robots.c:95
 msgid "Classic robots"
 msgstr "רובוטים קלסי"
 
-#: ../src/gnobots.c:91
+#: ../src/gnome-robots.c:96
 msgid "Classic robots with safe moves"
 msgstr "רובוטים קלסי עם תנועה בטוחה"
 
-#: ../src/gnobots.c:92
+#: ../src/gnome-robots.c:97
 msgid "Classic robots with super-safe moves"
 msgstr "רובוטים קלסי עם תנועה סופר-בטוחה"
 
-#: ../src/gnobots.c:93
+#: ../src/gnome-robots.c:98
 msgid "Nightmare"
 msgstr "סיוט"
 
-#: ../src/gnobots.c:94
+#: ../src/gnome-robots.c:99
 msgid "Nightmare with safe moves"
 msgstr "סיוט עם תנועה בטוחה"
 
-#: ../src/gnobots.c:95
+#: ../src/gnome-robots.c:100
 msgid "Nightmare with super-safe moves"
 msgstr "סיוט עם תנועה סופר-בטוחה"
 
-#: ../src/gnobots.c:96
+#: ../src/gnome-robots.c:101
 msgid "Robots2"
 msgstr "רובוטים2"
 
-#: ../src/gnobots.c:97
+#: ../src/gnome-robots.c:102
 msgid "Robots2 with safe moves"
 msgstr "רובוטים2  עם תנועה בטוחה"
 
-#: ../src/gnobots.c:98
+#: ../src/gnome-robots.c:103
 msgid "Robots2 with super-safe moves"
 msgstr "רובוטים2  עם תנועה סופר-בטוחה"
 
-#: ../src/gnobots.c:99
+#: ../src/gnome-robots.c:104
 msgid "Robots2 easy"
 msgstr "רובוטים2 קל"
 
-#: ../src/gnobots.c:100
+#: ../src/gnome-robots.c:105
 msgid "Robots2 easy with safe moves"
 msgstr "רובוטים2 קל עם תנועות בטוחות"
 
-#: ../src/gnobots.c:101
+#: ../src/gnome-robots.c:106
 msgid "Robots2 easy with super-safe moves"
 msgstr "רובוטים2 קל עם תנועות סופר-בטוחות"
 
-#: ../src/gnobots.c:102
+#: ../src/gnome-robots.c:107
 msgid "Robots with safe teleport"
 msgstr "רובוטים עם שיגור בטוח"
 
-#: ../src/gnobots.c:103
+#: ../src/gnome-robots.c:108
 msgid "Robots with safe teleport with safe moves"
 msgstr "רובוטים עם שיגור בטוח ומהלכים בטוחים"
 
-#: ../src/gnobots.c:104
+#: ../src/gnome-robots.c:109
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "רובוטים עם שיגור בטוח ומהלכים בטוחים מאוד"
 
-#: ../src/gnobots.c:280
-msgid "No game data could be found."
-msgstr "לא נמצא מידע משחק."
-
-#: ../src/gnobots.c:282
-msgid "The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."
-msgstr "התכנית רובוטי GNOME לא הצליחה למצוא קובצי הגדרת משחק תקינים. נא לבדוק שהתכנית מותקנת כראוי."
-
-#: ../src/gnobots.c:298
-msgid "Some graphics files are missing or corrupt."
-msgstr "חלק מקובצי הגרפיקה חסרים או פגומים."
-
-#: ../src/gnobots.c:300
-msgid "The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."
-msgstr "התכנית רובוטי GNOME לא הצליחה לטעון את קובצי הגרפיקה הנחוצים. נא לבדוק שהתכנית מותקנת כראוי."
-
-#: ../src/graphics.c:151
+#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
+#: ../src/gnome-robots.c:144
 #, c-format
-msgid "Could not find '%s' pixmap file\n"
-msgstr "לא ניתן למצוא את קובץ התמונה '%s'\n"
+msgid "Level: %d\tScore: %d"
+msgstr "שלב: %s\tניקוד: %d"
 
-#: ../src/menu.c:64
-msgid "_Game"
-msgstr "_משחק"
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: ../src/gnome-robots.c:155
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(נותר: %d)"
 
-#: ../src/menu.c:65
-msgid "_View"
-msgstr "ע_ריכה"
+#. First line of safe teleports button label.
+#: ../src/gnome-robots.c:157
+msgid "Teleport _Safely"
+msgstr "שיגור _בטוח"
 
-#: ../src/menu.c:66
-msgid "_Move"
-msgstr "ה_זזה"
-
-#: ../src/menu.c:67
-msgid "_Settings"
-msgstr "_אפשרויות"
-
-#: ../src/menu.c:68
-msgid "_Help"
-msgstr "ע_זרה"
-
-#: ../src/menu.c:73
-msgid "_Teleport"
-msgstr "_שיגור"
-
-#: ../src/menu.c:74
-msgid "Teleport, safely if possible"
-msgstr "שיגור, בבטחה אם ניתן"
-
-#: ../src/menu.c:75
-msgid "_Random"
-msgstr "_אקראי"
-
-#: ../src/menu.c:76
-msgid "Teleport randomly"
-msgstr "שיגור אקראי"
-
-#: ../src/menu.c:77
-msgid "_Wait"
-msgstr "_המתן"
-
-#: ../src/menu.c:77
-msgid "Wait for the robots"
-msgstr "המתן לרובוטים"
-
-#: ../src/menu.c:88
-msgid "_Toolbar"
-msgstr "_סרגל כלים"
-
-#: ../src/menu.c:88
-msgid "Show or hide the toolbar"
-msgstr "הצגה או הסתרה של סרגל הכלים"
-
-#: ../src/menu.c:268
-msgid "GNOME Games web site"
-msgstr "אתר משחקי GNOME"
-
-#: ../src/menu.c:269
+#: ../src/gnome-robots.c:202
 msgid ""
-"Based on classic BSD Robots.\n"
+"Based on classic BSD Robots\n"
 "\n"
 "Robots is a part of GNOME Games."
 msgstr ""
-"משחק המבוסס על רובוטים BSD הקלסי.\n"
-"רובוטים הוא חלק מחבילת משחקי GNOME."
+"מבוסס על רובוטים BSD הקלסי.\n"
+"\n"
+"רובוטים הוא חלק ממשחקי GNOME."
 
-#: ../src/menu.c:273
+#: ../src/gnome-robots.c:206
 msgid "translator-credits"
 msgstr ""
 "גיל אשר <dolfin@rpg.org.il>\n"
@@ -657,81 +426,341 @@ msgstr ""
 "‏Yaniv Abir https://launchpad.net/~yanivabir\n"
 "‏dod_basim https://launchpad.net/~yoav-prat\n"
 "ירון שהרבני <sh.yaron@gmail.com>\n"
+"יוסף אור בוצ׳קו <yoseforb@gnome.org>\n"
 "\n"
 "פרויקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
 
-#: ../src/properties.c:391
-msgid "Robots Preferences"
-msgstr "העדפות רובוטים"
+#: ../src/gnome-robots.c:227
+msgid "Are you sure you want to discard the current game?"
+msgstr "האם ברצונך לבטל את המשחק הנוכחי?"
 
-#: ../src/properties.c:416
+#: ../src/gnome-robots.c:230
+msgid "Keep _Playing"
+msgstr "להמשיך _לשחק"
+
+#: ../src/gnome-robots.c:373
+msgid "Teleport _Randomly"
+msgstr "שיגור _אקראי"
+
+#: ../src/gnome-robots.c:392
+msgid "_Wait for Robots"
+msgstr "המ_תנה לרובוטים"
+
+#: ../src/gnome-robots.c:420
+msgid "No game data could be found."
+msgstr "לא נמצא מידע משחק."
+
+#: ../src/gnome-robots.c:422
+msgid ""
+"The program Robots was unable to find any valid game configuration files. "
+"Please check that the program is installed correctly."
+msgstr ""
+"התכנית רובוטי GNOME לא הצליחה למצוא קובצי הגדרת משחק תקינים. נא לבדוק "
+"שהתכנית מותקנת כראוי."
+
+#: ../src/gnome-robots.c:438
+msgid "Some graphics files are missing or corrupt."
+msgstr "חלק מקובצי הגרפיקה חסרים או פגומים."
+
+#: ../src/gnome-robots.c:440
+msgid ""
+"The program Robots was unable to load all the necessary graphics files. "
+"Please check that the program is installed correctly."
+msgstr ""
+"התכנית רובוטי GNOME לא הצליחה לטעון את קובצי הגרפיקה הנחוצים. נא לבדוק "
+"שהתכנית מותקנת כראוי."
+
+#: ../src/graphics.c:151
+#, c-format
+msgid "Could not find '%s' pixmap file\n"
+msgstr "לא ניתן למצוא את קובץ התמונה '%s'\n"
+
+#: ../src/properties.c:418
 msgid "Game Type"
 msgstr "סוג משחק"
 
-#: ../src/properties.c:425
+#: ../src/properties.c:428
 msgid "_Use safe moves"
 msgstr "השת_מש במהלכים בטוחים"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:433
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "מנע תנועות אקראיות שעלולות להוביל למותך."
 
-#: ../src/properties.c:434
+#: ../src/properties.c:436
 msgid "U_se super safe moves"
 msgstr "_השתמש במהלכים בטוחים מאוד"
 
-#: ../src/properties.c:441
+#: ../src/properties.c:443
 msgid "Prevents all moves that result in getting killed."
 msgstr "מונע את כל התנועות שמובילות למותך."
 
-#: ../src/properties.c:443
+#: ../src/properties.c:449
 msgid "_Enable sounds"
 msgstr "ה_פעלת צלילים"
 
-#: ../src/properties.c:449
+#: ../src/properties.c:455
 msgid "Play sounds for events like winning a level and dying."
 msgstr "יש להשמיע צלילים עבור אירועים כגון ניצחון בשלב ותמותה."
 
-#: ../src/properties.c:451
+#: ../src/properties.c:457
 msgid "Game"
 msgstr "משחק"
 
-#: ../src/properties.c:464
+#: ../src/properties.c:470
 msgid "_Image theme:"
 msgstr "ערכת נושא לתמונה:"
 
-#: ../src/properties.c:476
+#: ../src/properties.c:482
 msgid "_Background color:"
 msgstr "_צבע הרקע:"
 
-#: ../src/properties.c:488
+#: ../src/properties.c:494
 msgid "Appearance"
 msgstr "מראה"
 
-#: ../src/properties.c:520
+#: ../src/properties.c:523
 msgid "_Restore Defaults"
 msgstr "_חזרה להגדרות בררת המחדל"
 
-#: ../src/properties.c:525
+#: ../src/properties.c:528
 msgid "Keyboard"
 msgstr "מקלדת"
 
-#: ../src/statusbar.c:68
-msgid "Score:"
-msgstr "תוצאה:"
+#~ msgid "Key to teleport"
+#~ msgstr "מקש לשיגור"
 
-#: ../src/statusbar.c:76
-msgid "Safe Teleports:"
-msgstr "שיגורים בטוחים:"
+#~ msgid "The key used to teleport safely (if possible)."
+#~ msgstr "The key used to teleport safely (if possible)."
 
-#: ../src/statusbar.c:85
-msgid "Level:"
-msgstr "רמה:"
+#~ msgid "Key to teleport randomly"
+#~ msgstr "מקש לשיגור אקראי"
 
-#: ../src/statusbar.c:94
-msgid "Remaining:"
-msgstr "נותרו:"
+#~ msgid "The key used to teleport randomly."
+#~ msgstr "The key used to teleport randomly."
+
+#~ msgid "Key to wait"
+#~ msgstr "מקש להמתנה"
+
+#~ msgid "The key used to wait."
+#~ msgstr "The key used to wait."
+
+#~ msgid "true if the window is fullscren"
+#~ msgstr "true if the window is fullscren"
+
+#~ msgctxt "score-dialog"
+#~ msgid "Name"
+#~ msgstr "שם"
+
+#~ msgid "View help for this game"
+#~ msgstr "הצגת עזרה עבור משחק זה"
+
+#~ msgid "End the current game"
+#~ msgstr "סיים את המשחק הנוכחי"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "הכנס למצב מסך מלא"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "קבלת רמז למהלך הבא שלך"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "צא ממצב מסך מלא"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "התחלת משחק רשת מרובה משתתפים חדש"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr "סיום משחק הרשת הנוכחי וחזרה לשרת הרשת"
+
+#~ msgid "Start a new game"
+#~ msgstr "התחלת משחק חדש"
+
+#~ msgid "Pause the game"
+#~ msgstr "השהיית המשחק"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "הצגת רשימת השחקנים במשחק הרשת"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "ביצוע חוזר של המהלך המבוטל"
+
+#~ msgid "Restart the game"
+#~ msgstr "התחלת המשחק מחדש"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "המשך משחק מושהה"
+
+#~ msgid "View the scores"
+#~ msgstr "הצגת התוצאות"
+
+#~ msgid "Undo the last move"
+#~ msgstr "ביטול המהלך האחרון"
+
+#~ msgid "About this game"
+#~ msgstr "על אודות משחק זה"
+
+#~ msgid "Close this window"
+#~ msgstr "סגירת החלון"
+
+#~ msgid "Configure the game"
+#~ msgstr "עיצוב המשחק"
+
+#~ msgid "Quit this game"
+#~ msgstr "יציאה ממשחק זה"
+
+#~ msgid "_Contents"
+#~ msgstr "_תכנים"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "מסך מ_לא"
+
+#~ msgid "_Hint"
+#~ msgstr "_רמז"
+
+#~ msgid "_New"
+#~ msgstr "_חדש"
+
+#~ msgid "_Redo Move"
+#~ msgstr "_חזרה על המהלך"
+
+#~ msgid "_Reset"
+#~ msgstr "_איפוס"
+
+#~ msgid "_Restart"
+#~ msgstr "ה_תחלה מחדש"
+
+#~ msgid "_Undo Move"
+#~ msgstr "_ביטול מהלך"
+
+#~ msgid "_Deal"
+#~ msgstr "_חלוקה"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "י_ציאה ממסך מלא"
+
+#~ msgid "Network _Game"
+#~ msgstr "_משחק רשת"
+
+#~ msgid "L_eave Game"
+#~ msgstr "י_ציאה מהמשחק"
+
+#~ msgid "Player _List"
+#~ msgstr "_רשימת שחקנים"
+
+#~ msgid "_Pause"
+#~ msgstr "ה_שהייה"
+
+#~ msgid "Res_ume"
+#~ msgstr "המש_ך"
+
+#~ msgid "_Scores"
+#~ msgstr "_תוצאות"
+
+#~ msgid "_End Game"
+#~ msgstr "_סיום המשחק"
+
+#~ msgid ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+#~ msgstr ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+
+#~ msgid ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+#~ msgstr ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+#~ msgstr ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+
+#~ msgid "Set game scenario"
+#~ msgstr "Set game scenario"
+
+#~ msgid "NAME"
+#~ msgstr "NAME"
+
+#~ msgid "Set game configuration"
+#~ msgstr "Set game configuration"
+
+#~ msgid "Initial window position"
+#~ msgstr "Initial window position"
+
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "_Game"
+#~ msgstr "_משחק"
+
+#~ msgid "_View"
+#~ msgstr "ע_ריכה"
+
+#~ msgid "_Move"
+#~ msgstr "ה_זזה"
+
+#~ msgid "_Settings"
+#~ msgstr "_אפשרויות"
+
+#~ msgid "_Teleport"
+#~ msgstr "_שיגור"
+
+#~ msgid "Teleport, safely if possible"
+#~ msgstr "שיגור, בבטחה אם ניתן"
+
+#~ msgid "_Random"
+#~ msgstr "_אקראי"
+
+#~ msgid "_Wait"
+#~ msgstr "_המתן"
+
+#~ msgid "_Toolbar"
+#~ msgstr "_סרגל כלים"
+
+#~ msgid "Show or hide the toolbar"
+#~ msgstr "הצגה או הסתרה של סרגל הכלים"
+
+#~ msgid "GNOME Games web site"
+#~ msgstr "אתר משחקי GNOME"
+
+#~ msgid "Robots Preferences"
+#~ msgstr "העדפות רובוטים"
+
+#~ msgid "Score:"
+#~ msgstr "תוצאה:"
+
+#~ msgid "Safe Teleports:"
+#~ msgstr "שיגורים בטוחים:"
+
+#~ msgid "Level:"
+#~ msgstr "רמה:"
 
 #~ msgid "Chess"
 #~ msgstr "שחמט"
@@ -841,9 +870,6 @@ msgstr "נותרו:"
 #~ msgid "Difficulty of the opponent chess engine"
 #~ msgstr "Difficulty of the opponent chess engine"
 
-#~ msgid "Preferences"
-#~ msgstr "העדפות"
-
 #~ msgid "Play as:"
 #~ msgstr "לשחק בתור:"
 
@@ -891,28 +917,28 @@ msgstr "נותרו:"
 
 #~ msgid "_Appearance"
 #~ msgstr "מ_ראה"
-#~ msgctxt "difficulty"
 
+#~ msgctxt "difficulty"
 #~ msgid "Easy"
 #~ msgstr "קל"
-#~ msgctxt "difficulty"
 
+#~ msgctxt "difficulty"
 #~ msgid "Normal"
 #~ msgstr "רגיל"
-#~ msgctxt "difficulty"
 
+#~ msgctxt "difficulty"
 #~ msgid "Hard"
 #~ msgstr "קשה"
-#~ msgctxt "chess-opponent"
 
+#~ msgctxt "chess-opponent"
 #~ msgid "Human"
 #~ msgstr "אנושי"
-#~ msgctxt "chess-player"
 
+#~ msgctxt "chess-player"
 #~ msgid "White"
 #~ msgstr "לבן"
-#~ msgctxt "chess-player"
 
+#~ msgctxt "chess-player"
 #~ msgid "Black"
 #~ msgstr "שחור"
 
@@ -939,56 +965,56 @@ msgstr "נותרו:"
 
 #~ msgid "Fancy"
 #~ msgstr "מהודר"
-#~ msgctxt "chess-side"
 
+#~ msgctxt "chess-side"
 #~ msgid "White Side"
 #~ msgstr "צד לבן"
-#~ msgctxt "chess-side"
 
+#~ msgctxt "chess-side"
 #~ msgid "Black Side"
 #~ msgstr "צד שחור"
-#~ msgctxt "chess-side"
 
+#~ msgctxt "chess-side"
 #~ msgid "Human Side"
 #~ msgstr "צד אנושי"
-#~ msgctxt "chess-side"
 
+#~ msgctxt "chess-side"
 #~ msgid "Current Player"
 #~ msgstr "השחקן הנוכחי"
-#~ msgctxt "chess-side"
 
+#~ msgctxt "chess-side"
 #~ msgid "Face to Face"
 #~ msgstr "פנים מול פנים"
-#~ msgctxt "chess-move-format"
 
+#~ msgctxt "chess-move-format"
 #~ msgid "Human"
 #~ msgstr "בן אדם"
-#~ msgctxt "chess-move-format"
 
+#~ msgctxt "chess-move-format"
 #~ msgid "Standard Algebraic"
 #~ msgstr "אלגברי רגיל"
-#~ msgctxt "chess-move-format"
 
+#~ msgctxt "chess-move-format"
 #~ msgid "Figurine"
 #~ msgstr "דמות"
-#~ msgctxt "chess-move-format"
 
+#~ msgctxt "chess-move-format"
 #~ msgid "Long Algebraic"
 #~ msgstr "אלגברי ארוך"
-#~ msgctxt "chess-piece"
 
+#~ msgctxt "chess-piece"
 #~ msgid "Queen"
 #~ msgstr "מלכה"
-#~ msgctxt "chess-piece"
 
+#~ msgctxt "chess-piece"
 #~ msgid "Knight"
 #~ msgstr "אביר"
-#~ msgctxt "chess-piece"
 
+#~ msgctxt "chess-piece"
 #~ msgid "Rook"
 #~ msgstr "צריח"
-#~ msgctxt "chess-piece"
 
+#~ msgctxt "chess-piece"
 #~ msgid "Bishop"
 #~ msgstr "רץ"
 
@@ -1264,19 +1290,16 @@ msgstr "נותרו:"
 #~ msgstr "_שמירת המשחק למועד מאוחר יותר"
 
 #~ msgid "second"
-
 #~ msgid_plural "seconds"
 #~ msgstr[0] "שנייה"
 #~ msgstr[1] "שניות"
 
 #~ msgid "minute"
-
 #~ msgid_plural "minutes"
 #~ msgstr[0] "דקה"
 #~ msgstr[1] "דקות"
 
 #~ msgid "hour"
-
 #~ msgid_plural "hours"
 #~ msgstr[0] "שעה"
 #~ msgstr[1] "שעות"
@@ -1354,9 +1377,6 @@ msgstr "נותרו:"
 #~ msgid "Five or more"
 #~ msgstr "חמש או יותר"
 
-#~ msgid "Scores"
-#~ msgstr "תוצאות"
-
 #~ msgid "Next:"
 #~ msgstr "הבא:"
 
@@ -1402,16 +1422,16 @@ msgstr "נותרו:"
 
 #~ msgid "Game preview from last saved session."
 #~ msgstr "Game preview from last saved session."
-#~ msgctxt "board size"
 
+#~ msgctxt "board size"
 #~ msgid "Small"
 #~ msgstr "קטן"
-#~ msgctxt "board size"
 
+#~ msgctxt "board size"
 #~ msgid "Medium"
 #~ msgstr "בינוני"
-#~ msgctxt "board size"
 
+#~ msgctxt "board size"
 #~ msgid "Large"
 #~ msgstr "גדול"
 
@@ -1766,36 +1786,36 @@ msgstr "נותרו:"
 
 #~ msgid "Speed:"
 #~ msgstr "מהירות:"
-#~ msgctxt "game speed"
 
+#~ msgctxt "game speed"
 #~ msgid "Beginner"
 #~ msgstr "מתחיל"
-#~ msgctxt "game speed"
 
+#~ msgctxt "game speed"
 #~ msgid "Slow"
 #~ msgstr "איטי"
-#~ msgctxt "game speed"
 
+#~ msgctxt "game speed"
 #~ msgid "Medium"
 #~ msgstr "בינוני"
-#~ msgctxt "game speed"
 
+#~ msgctxt "game speed"
 #~ msgid "Fast"
 #~ msgstr "מהיר"
-#~ msgctxt "game speed"
 
+#~ msgctxt "game speed"
 #~ msgid "Beginner with Fakes"
 #~ msgstr "מתחיל עם זיופים"
-#~ msgctxt "game speed"
 
+#~ msgctxt "game speed"
 #~ msgid "Slow with Fakes"
 #~ msgstr "איטי עם זיופים"
-#~ msgctxt "game speed"
 
+#~ msgctxt "game speed"
 #~ msgid "Medium with Fakes"
 #~ msgstr "בינוני עם זיופים"
-#~ msgctxt "game speed"
 
+#~ msgctxt "game speed"
 #~ msgid "Fast with Fakes"
 #~ msgstr "מהיר עם זיופים"
 
@@ -1882,36 +1902,36 @@ msgstr "נותרו:"
 
 #~ msgid "Disassemble a pile of tiles by removing matching pairs"
 #~ msgstr "פרק ערמת אריחים על-ידי הסרת זוגות תואמים"
-#~ msgctxt "mahjongg map name"
 
+#~ msgctxt "mahjongg map name"
 #~ msgid "The Ziggurat"
 #~ msgstr "הזיגוראט"
-#~ msgctxt "mahjongg map name"
 
+#~ msgctxt "mahjongg map name"
 #~ msgid "Four Bridges"
 #~ msgstr "ארבע הגשרים"
-#~ msgctxt "mahjongg map name"
 
+#~ msgctxt "mahjongg map name"
 #~ msgid "Cloud"
 #~ msgstr "ענן"
-#~ msgctxt "mahjongg map name"
 
+#~ msgctxt "mahjongg map name"
 #~ msgid "Tic-Tac-Toe"
 #~ msgstr "איקס-מיקס-דריקס"
-#~ msgctxt "mahjongg map name"
 
+#~ msgctxt "mahjongg map name"
 #~ msgid "Red Dragon"
 #~ msgstr "דרקון אדום"
-#~ msgctxt "mahjongg map name"
 
+#~ msgctxt "mahjongg map name"
 #~ msgid "Pyramid's Walls"
 #~ msgstr "קירות פירמידה"
-#~ msgctxt "mahjongg map name"
 
+#~ msgctxt "mahjongg map name"
 #~ msgid "Confounding Cross"
 #~ msgstr "צלב מעורבב"
-#~ msgctxt "mahjongg map name"
 
+#~ msgctxt "mahjongg map name"
 #~ msgid "Difficult"
 #~ msgstr "קשה"
 
@@ -1926,12 +1946,6 @@ msgstr "נותרו:"
 
 #~ msgid "_Preferences"
 #~ msgstr "ה_עדפות"
-
-#~ msgid "_About"
-#~ msgstr "על _אודות"
-
-#~ msgid "_Quit"
-#~ msgstr "י_ציאה"
 
 #~ msgid "Hint"
 #~ msgstr "רמז"
@@ -2087,13 +2101,11 @@ msgstr "נותרו:"
 #~ msgstr "קשה מאד"
 
 #~ msgid "Last played %(n)s second ago"
-
 #~ msgid_plural "Last played %(n)s seconds ago"
 #~ msgstr[0] "משחק אחרון לפני שנייה %(n)s"
 #~ msgstr[1] "משחק אחרון לפני %(n)s שניות"
 
 #~ msgid "Last played %(n)s minute ago"
-
 #~ msgid_plural "Last played %(n)s minutes ago"
 #~ msgstr[0] "משחק אחרון לפני דקה %(n)s"
 #~ msgstr[1] "משחק אחרון לפני %(n)s דקות"
@@ -2123,19 +2135,16 @@ msgstr "נותרו:"
 #~ msgstr "לוח קשה מאוד"
 
 #~ msgid "Played for %d hour"
-
 #~ msgid_plural "Played for %d hours"
 #~ msgstr[0] "משחק למשך שעה %d"
 #~ msgstr[1] "משחק למשך %d שעות"
 
 #~ msgid "Played for %d minute"
-
 #~ msgid_plural "Played for %d minutes"
 #~ msgstr[0] "משחק למשך דקה %d"
 #~ msgstr[1] "משחק למשך %d דקות"
 
 #~ msgid "Played for %d second"
-
 #~ msgid_plural "Played for %d seconds"
 #~ msgstr[0] "משחק למשך שנייה %d"
 #~ msgstr[1] "משחק למשך %d שניות"
@@ -2208,19 +2217,16 @@ msgstr "נותרו:"
 #~ msgstr "_סמן בצבעים את השורה, הטור והתיבה הנוכחיים"
 
 #~ msgid "You completed the puzzle in %d second"
-
 #~ msgid_plural "You completed the puzzle in %d seconds"
 #~ msgstr[0] "השלמת את הלוח תוך שנייה %d "
 #~ msgstr[1] "השלמת את הלוח תוך %d שניות"
 
 #~ msgid "%d minute"
-
 #~ msgid_plural "%d minutes"
 #~ msgstr[0] "דקה %d"
 #~ msgstr[1] "%d דקות"
 
 #~ msgid "%d second"
-
 #~ msgid_plural "%d seconds"
 #~ msgstr[0] "שנייה %d "
 #~ msgstr[1] "%d שניות"
@@ -2229,7 +2235,6 @@ msgstr "נותרו:"
 #~ msgstr "השלמת את הלוח תוך %(minute)s ו־%(second)s"
 
 #~ msgid "%d hour"
-
 #~ msgid_plural "%d hours"
 #~ msgstr[0] "שעה %d"
 #~ msgstr[1] "%d שעות"
@@ -2238,13 +2243,11 @@ msgstr "נותרו:"
 #~ msgstr "השלמת את הלוח תוך %(hour)s, %(minute)s ו־%(second)s"
 
 #~ msgid "You got %(n)s hint."
-
 #~ msgid_plural "You got %(n)s hints."
 #~ msgstr[0] "השתמשת ברמז אחד."
 #~ msgstr[1] "השתמשת ב־%(n)s רמזים."
 
 #~ msgid "You had %(n)s impossibility pointed out."
-
 #~ msgid_plural "You had %(n)s impossibilities pointed out."
 #~ msgstr[0] "הייתה לך אי היתכנות אחת."
 #~ msgstr[1] "היו לך %(n)s אי היתכנויות."
@@ -2378,8 +2381,8 @@ msgstr "נותרו:"
 
 #~ msgid "Size of the board (0-2 = small-large, 3=custom)"
 #~ msgstr "Size of the board (0-2 = small-large, 3=custom)"
-#~ msgctxt "board size"
 
+#~ msgctxt "board size"
 #~ msgid "Custom"
 #~ msgstr "מותאם אישית"
 
@@ -2402,7 +2405,6 @@ msgstr "נותרו:"
 #~ msgstr "ל_שחק במשחק"
 
 #~ msgid "<b>%d</b> mine"
-
 #~ msgid_plural "<b>%d</b> mines"
 #~ msgstr[0] "מוקש <b>אחד</b>"
 #~ msgstr[1] "<b>%d</b> מוקשים"
@@ -2418,9 +2420,6 @@ msgstr "נותרו:"
 
 #~ msgid "Size:"
 #~ msgstr "גודל:"
-
-#~ msgid "Do you want to start a new game?"
-#~ msgstr "האם ברצונך להתחיל משחק חדש?"
 
 #~ msgid "If you start a new game, your current progress will be lost."
 #~ msgstr "אם בחירתך תהיה להתחיל משחק חדש אז התהליך הנוכחי שלך יאבד."
@@ -2736,9 +2735,6 @@ msgstr "נותרו:"
 #~ msgid "Already used! Where do you want to put that?"
 #~ msgstr "כבר היה בשימוש! איפה ברצונך לשים זאת?"
 
-#~ msgid "Score: %d"
-#~ msgstr "ניקוד: %d"
-
 #~ msgid "Field used"
 #~ msgstr "שדה בשימוש"
 
@@ -2768,12 +2764,12 @@ msgstr "נותרו:"
 
 #~ msgid "Number of trials for each roll for the computer"
 #~ msgstr "Number of trials for each roll for the computer"
-#~ msgctxt "game type"
 
+#~ msgctxt "game type"
 #~ msgid "Regular"
 #~ msgstr "רגיל"
-#~ msgctxt "game type"
 
+#~ msgctxt "game type"
 #~ msgid "Colors"
 #~ msgstr "צבעים"
 
@@ -2790,7 +2786,6 @@ msgstr "נותרו:"
 #~ msgstr "תוצאות טאלי"
 
 #~ msgid "%s wins the game with %d point"
-
 #~ msgid_plural "%s wins the game with %d points"
 #~ msgstr[0] "%s זוכה במשחק עם נקודה אחת"
 #~ msgstr[1] "%s זוכה במשחק עם %d נקודות"
@@ -2851,8 +2846,8 @@ msgstr "נותרו:"
 
 #~ msgid "_Difficulty:"
 #~ msgstr "רמת קו_שי:"
-#~ msgctxt "difficulty"
 
+#~ msgctxt "difficulty"
 #~ msgid "Medium"
 #~ msgstr "בינוני"
 
@@ -3221,7 +3216,6 @@ msgstr "נותרו:"
 #~ msgstr "פינוי המסך על ידי הסרת קבוצות של אריחים צבעוניים ובעלי צורה"
 
 #~ msgid "%u point"
-
 #~ msgid_plural "%u points"
 #~ msgstr[0] "נקודה אחת"
 #~ msgstr[1] "%u נקודות"
@@ -3699,44 +3693,44 @@ msgstr "נותרו:"
 
 #~ msgid "SIZE"
 #~ msgstr "SIZE"
-#~ msgctxt "number"
 
+#~ msgctxt "number"
 #~ msgid "0"
 #~ msgstr "0"
-#~ msgctxt "number"
 
+#~ msgctxt "number"
 #~ msgid "1"
 #~ msgstr "1"
-#~ msgctxt "number"
 
+#~ msgctxt "number"
 #~ msgid "2"
 #~ msgstr "2"
-#~ msgctxt "number"
 
+#~ msgctxt "number"
 #~ msgid "3"
 #~ msgstr "3"
-#~ msgctxt "number"
 
+#~ msgctxt "number"
 #~ msgid "4"
 #~ msgstr "4"
-#~ msgctxt "number"
 
+#~ msgctxt "number"
 #~ msgid "5"
 #~ msgstr "5"
-#~ msgctxt "number"
 
+#~ msgctxt "number"
 #~ msgid "6"
 #~ msgstr "6"
-#~ msgctxt "number"
 
+#~ msgctxt "number"
 #~ msgid "7"
 #~ msgstr "7"
-#~ msgctxt "number"
 
+#~ msgctxt "number"
 #~ msgid "8"
 #~ msgstr "8"
-#~ msgctxt "number"
 
+#~ msgctxt "number"
 #~ msgid "9"
 #~ msgstr "9"
 
@@ -3777,8 +3771,8 @@ msgstr "נותרו:"
 
 #~ msgid "Remove matching pairs of tiles."
 #~ msgstr "הסר זוגות של אריחים תואמים."
-#~ msgctxt "mahjongg map name"
 
+#~ msgctxt "mahjongg map name"
 #~ msgid "Easy"
 #~ msgstr "קל"
 
@@ -3884,12 +3878,12 @@ msgstr "נותרו:"
 #~ "Aisleriot cannot load the file “%s”. Please check your Aisleriot "
 #~ "installation."
 #~ msgstr "‏Aisleriot לא יכול לטעון את הקובץ “%s”. אנא בדוק את ההתקנה של המשחק."
-#~ msgctxt "slot type"
 
+#~ msgctxt "slot type"
 #~ msgid "tableau"
 #~ msgstr "שולחן המשחק"
-#~ msgctxt "slot hint"
 
+#~ msgctxt "slot hint"
 #~ msgid "%s on tableau"
 #~ msgstr "%s על השולחן"
 
@@ -4498,8 +4492,8 @@ msgstr "נותרו:"
 
 #~ msgid "Display cards with “%s” card theme"
 #~ msgstr "הצגת קלפים עם ערכת הנושא \"%s\""
-#~ msgctxt "score"
 
+#~ msgctxt "score"
 #~ msgid "%6d"
 #~ msgstr "%6d"
 
@@ -4574,60 +4568,60 @@ msgstr "נותרו:"
 
 #~ msgid "Cannot start the game “%s”"
 #~ msgstr "לא ניתן להתחיל את המשחק “%s”"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "JOKER"
 #~ msgstr "ג׳וקר"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "A"
 #~ msgstr "A"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "2"
 #~ msgstr "2"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "3"
 #~ msgstr "3"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "4"
 #~ msgstr "4"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "5"
 #~ msgstr "5"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "6"
 #~ msgstr "6"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "7"
 #~ msgstr "7"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "8"
 #~ msgstr "8"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "9"
 #~ msgstr "9"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "J"
 #~ msgstr "J"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "Q"
 #~ msgstr "Q"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "K"
 #~ msgstr "K"
-#~ msgctxt "card symbol"
 
+#~ msgctxt "card symbol"
 #~ msgid "1"
 #~ msgstr "1"
 
@@ -5605,92 +5599,92 @@ msgstr "נותרו:"
 
 #~ msgid "AI (%s)"
 #~ msgstr "בינה מלאכותית (%s)"
-#~ msgctxt "chess-file"
 
+#~ msgctxt "chess-file"
 #~ msgid "a"
 #~ msgstr "א"
-#~ msgctxt "chess-file"
 
+#~ msgctxt "chess-file"
 #~ msgid "b"
 #~ msgstr "ב"
-#~ msgctxt "chess-file"
 
+#~ msgctxt "chess-file"
 #~ msgid "c"
 #~ msgstr "ג"
-#~ msgctxt "chess-file"
 
+#~ msgctxt "chess-file"
 #~ msgid "d"
 #~ msgstr "ד"
-#~ msgctxt "chess-file"
 
+#~ msgctxt "chess-file"
 #~ msgid "e"
 #~ msgstr "ה"
-#~ msgctxt "chess-file"
 
+#~ msgctxt "chess-file"
 #~ msgid "f"
 #~ msgstr "ו"
-#~ msgctxt "chess-file"
 
+#~ msgctxt "chess-file"
 #~ msgid "g"
 #~ msgstr "ז"
-#~ msgctxt "chess-file"
 
+#~ msgctxt "chess-file"
 #~ msgid "h"
 #~ msgstr "ח"
-#~ msgctxt "chess-rank"
 
+#~ msgctxt "chess-rank"
 #~ msgid "1"
 #~ msgstr "1"
-#~ msgctxt "chess-rank"
 
+#~ msgctxt "chess-rank"
 #~ msgid "2"
 #~ msgstr "2"
-#~ msgctxt "chess-rank"
 
+#~ msgctxt "chess-rank"
 #~ msgid "3"
 #~ msgstr "3"
-#~ msgctxt "chess-rank"
 
+#~ msgctxt "chess-rank"
 #~ msgid "4"
 #~ msgstr "4"
-#~ msgctxt "chess-rank"
 
+#~ msgctxt "chess-rank"
 #~ msgid "5"
 #~ msgstr "5"
-#~ msgctxt "chess-rank"
 
+#~ msgctxt "chess-rank"
 #~ msgid "6"
 #~ msgstr "6"
-#~ msgctxt "chess-rank"
 
+#~ msgctxt "chess-rank"
 #~ msgid "7"
 #~ msgstr "7"
-#~ msgctxt "chess-rank"
 
+#~ msgctxt "chess-rank"
 #~ msgid "8"
 #~ msgstr "8"
-#~ msgctxt "chess-notation"
 
+#~ msgctxt "chess-notation"
 #~ msgid "P"
 #~ msgstr "P"
-#~ msgctxt "chess-notation"
 
+#~ msgctxt "chess-notation"
 #~ msgid "N"
 #~ msgstr "N"
-#~ msgctxt "chess-notation"
 
+#~ msgctxt "chess-notation"
 #~ msgid "B"
 #~ msgstr "B"
-#~ msgctxt "chess-notation"
 
+#~ msgctxt "chess-notation"
 #~ msgid "R"
 #~ msgstr "R"
-#~ msgctxt "chess-notation"
 
+#~ msgctxt "chess-notation"
 #~ msgid "Q"
 #~ msgstr "Q"
-#~ msgctxt "chess-notation"
 
+#~ msgctxt "chess-notation"
 #~ msgid "K"
 #~ msgstr "K"
 
@@ -5771,25 +5765,21 @@ msgstr "נותרו:"
 #~ msgstr "לוח ברמה %(level)s"
 
 #~ msgid "%(n)s year"
-
 #~ msgid_plural "%(n)s years"
 #~ msgstr[0] "שנה אחת"
 #~ msgstr[1] "%(n)s שנים"
 
 #~ msgid "%(n)s month"
-
 #~ msgid_plural "%(n)s months"
 #~ msgstr[0] "חודש אחד"
 #~ msgstr[1] "%(n)s חודשים"
 
 #~ msgid "%(n)s week"
-
 #~ msgid_plural "%(n)s weeks"
 #~ msgstr[0] "שבוע אחד"
 #~ msgstr[1] "%(n)s שבועות"
 
 #~ msgid "%(n)s day"
-
 #~ msgid_plural "%(n)s days"
 #~ msgstr[0] "יום אחד"
 #~ msgstr[1] "%(n)s ימים"

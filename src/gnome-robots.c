@@ -39,7 +39,6 @@
 #include "games-gridframe.h"
 #include "games-scores.h"
 #include "games-scores-dialog.h"
-#include "games-stock.h"
 
 /* Minimum sizes. */
 #define MINIMUM_TILE_WIDTH   8

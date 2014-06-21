@@ -36,8 +36,6 @@ gnome_robots_SOURCES = \
 	games-scores-dialog.h	\
 	games-scores-backend.c	\
 	games-scores-backend.h	\
-	games-stock.c \
-	games-stock.h \
 	cursor-down.h \
 	cursor-down-left.h \
 	cursor-down-right.h \

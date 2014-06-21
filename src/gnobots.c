@@ -80,6 +80,7 @@ static void wait_cb (GSimpleAction *action, GVariant *parameter, gpointer user_d
 /**********************************************************************/
 
 static const GActionEntry app_entries[] = {
+  { "new-game", new_game_cb, NULL, NULL, NULL },
   { "preferences", preferences_cb, NULL, NULL, NULL },
   { "scores", scores_cb, NULL, NULL, NULL },
   { "help", help_cb, NULL, NULL, NULL },
@@ -88,7 +89,6 @@ static const GActionEntry app_entries[] = {
 };
 
 static const GActionEntry win_entries[] = {
-  { "new-game", new_game_cb, NULL, NULL, NULL },
   { "random-teleport", random_teleport_cb, NULL, NULL, NULL },
   { "safe-teleport", safe_teleport_cb, NULL, NULL, NULL },
   { "wait", wait_cb, NULL, NULL, NULL },

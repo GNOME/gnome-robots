@@ -324,6 +324,7 @@ activate (GtkApplication *app, gpointer user_data)
 {
   GtkWidget *errordialog, *vbox, *hbox, *label, *button, *gridframe;
   GtkSizeGroup *size_group;
+  GtkStyleContext *style_context;
   GtkBuilder *builder;
   GMenuModel *appmenu;
 
@@ -366,6 +367,9 @@ activate (GtkApplication *app, gpointer user_data)
 
   hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
   size_group = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
+
+  style_context = gtk_widget_get_style_context (hbox);
+  gtk_style_context_add_class (style_context, "linked");
 
   label = gtk_label_new_with_mnemonic (_("Teleport _Randomly"));
   gtk_widget_set_margin_top (label, 15);

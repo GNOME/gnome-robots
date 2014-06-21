@@ -35,7 +35,6 @@
 #include "sound.h"
 #include "properties.h"
 #include "menu.h"
-#include "statusbar.h"
 #include "graphics.h"
 #include "cursors.h"
 #include "games-scores.h"
@@ -99,12 +98,6 @@ static gboolean safe_teleport (void);
 /**********************************************************************/
 /* Function Definitions                                               */
 /**********************************************************************/
-
-static void
-update_safe_teleport_action (void)
-{
-  g_simple_action_set_enabled (safe_teleport_action, safe_teleports > 0);
-}
 
 /**
  * message_box
@@ -313,9 +306,7 @@ add_kill (gint type)
     safe_teleports = game_config ()->max_safe_teleports;
   }
 
-  update_safe_teleport_action ();
-  gnobots_statusbar_set (score, current_level + 1, safe_teleports,
-                         num_robots1, num_robots2);
+  update_game_status (score, current_level + 1, safe_teleports);
 }
 
 
@@ -438,7 +429,7 @@ generate_level (void)
     safe_teleports = game_config ()->max_safe_teleports;
   }
 
-  update_safe_teleport_action ();
+  update_game_status (score, current_level, safe_teleports);
 
   for (i = 0; i < num_robots1; ++i) {
     while (1) {
@@ -527,9 +518,7 @@ update_arena (void)
     }
   }
 
-  gnobots_statusbar_set (score, current_level + 1, safe_teleports,
-                         num_robots1, num_robots2);
-
+  update_game_status (score, current_level + 1, safe_teleports);
 }
 
 
@@ -570,8 +559,7 @@ timeout_cb (void *data)
       generate_level ();
       game_state = STATE_PLAYING;
       set_move_action_sensitivity (TRUE);
-      gnobots_statusbar_set (score, current_level + 1, safe_teleports,
-                             num_robots1, num_robots2);
+      update_game_status (score, current_level + 1, safe_teleports);
     }
   } else if (game_state == STATE_DEAD) {
     ++endlev_counter;
@@ -663,23 +651,15 @@ start_new_game (void)
   g_return_if_fail (conf != NULL);
 
   safe_teleports = conf->initial_safe_teleports;
-  update_safe_teleport_action ();
 
   remove_bubble ();
   reset_player_animation ();
   generate_level ();
   clear_game_area ();
 
-  if (game_config ()->maximum_type2 > 0) {
-    gnobots_statusbar_show_both (TRUE);
-  } else {
-    gnobots_statusbar_show_both (FALSE);
-  }
-
   game_state = STATE_PLAYING;
 
-  gnobots_statusbar_set (score, current_level + 1, safe_teleports,
-                         num_robots1, num_robots2);
+  update_game_status (score, current_level + 1, safe_teleports);
   set_move_action_sensitivity (TRUE);
 }
 
@@ -1252,7 +1232,7 @@ safe_teleport (void)
       reset_player_animation ();
 
       safe_teleports -= 1;
-      update_safe_teleport_action ();
+      update_game_status (score, current_level, safe_teleports);
 
       update_arena ();
       break;

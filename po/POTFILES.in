@@ -12,4 +12,3 @@ src/games-stock.c
 src/gnome-robots.c
 src/graphics.c
 src/properties.c
-src/statusbar.c

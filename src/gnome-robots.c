@@ -30,7 +30,6 @@
 #include <glib.h>
 
 #include "gbdefs.h"
-#include "statusbar.h"
 #include "gameconfig.h"
 #include "graphics.h"
 #include "sound.h"
@@ -57,7 +56,6 @@ static gboolean window_is_fullscreen = FALSE, window_is_maximized = FALSE;
 GtkWidget *game_area = NULL;
 GamesScores *highscores;
 GSettings *settings;
-GSimpleAction *safe_teleport_action;
 /**********************************************************************/
 
 /**********************************************************************/
@@ -112,6 +110,10 @@ static const GamesScoresCategory scorecats[] = {
   {"robots_with_safe_teleport-super-safe", N_("Robots with safe teleport with super-safe moves")}
 };
 
+static gint safe_teleports = 0;
+static GtkWidget *safe_teleports_label;
+static GtkWidget *headerbar;
+
 /**********************************************************************/
 
 /**********************************************************************/
@@ -127,10 +129,37 @@ set_move_action_sensitivity (gboolean state)
   g_simple_action_set_enabled (G_SIMPLE_ACTION (action), state);
 
   action = g_action_map_lookup_action (G_ACTION_MAP (window), "safe-teleport");
-  g_simple_action_set_enabled (G_SIMPLE_ACTION (action), state);
+  g_simple_action_set_enabled (G_SIMPLE_ACTION (action), state && safe_teleports > 0);
 
   action = g_action_map_lookup_action (G_ACTION_MAP (window), "wait");
   g_simple_action_set_enabled (G_SIMPLE_ACTION (action), state);
+}
+
+void
+update_game_status (gint score, gint current_level, gint safes)
+{
+  GAction *action;
+  gchar *subtitle, *remaining_teleports_text, *button_text;
+
+  /* Window subtitle. The first %d is the level, the second is the score. \t creates a tab. */
+  subtitle = g_strdup_printf (_("Level: %d\tScore: %d"), current_level, score);
+  gtk_header_bar_set_subtitle (GTK_HEADER_BAR (headerbar), subtitle);
+  g_free (subtitle);
+
+  safe_teleports = safes;
+
+  action = g_action_map_lookup_action (G_ACTION_MAP (window), "safe-teleport");
+  if (g_action_get_enabled (action))
+    g_simple_action_set_enabled (G_SIMPLE_ACTION (action), safe_teleports > 0);
+
+  /* Second line of safe teleports button label. %d is the number of teleports remaining. */
+  remaining_teleports_text = g_strdup_printf (_("(Remaining: %d)"), safe_teleports);
+  /* First line of safe teleports button label. */
+  button_text = g_strdup_printf ("%s\n<small>%s</small>", _("Teleport _Safely"), remaining_teleports_text);
+  gtk_label_set_markup_with_mnemonic (GTK_LABEL (safe_teleports_label), button_text);
+
+  g_free (remaining_teleports_text);
+  g_free (button_text);
 }
 
 static void
@@ -296,7 +325,7 @@ shutdown (GtkApplication *app, gpointer user_data)
 static void
 activate (GtkApplication *app, gpointer user_data)
 {
-  GtkWidget *errordialog, *vbox, *hbox, *label, *button, *statusbar, *gridframe, *headerbar;
+  GtkWidget *errordialog, *vbox, *hbox, *label, *button, *gridframe;
   GtkSizeGroup *size_group;
   GtkBuilder *builder;
   GMenuModel *appmenu;
@@ -318,14 +347,10 @@ activate (GtkApplication *app, gpointer user_data)
   g_action_map_add_action_entries (G_ACTION_MAP (app), app_entries, G_N_ELEMENTS (app_entries), app);
   g_action_map_add_action_entries (G_ACTION_MAP (window), win_entries, G_N_ELEMENTS (win_entries), app);
 
-  safe_teleport_action = G_SIMPLE_ACTION (g_action_map_lookup_action (G_ACTION_MAP (window), "safe-teleport"));
-
   builder = gtk_builder_new_from_file (g_build_filename (DATA_DIRECTORY, "app-menu.ui", NULL));
   appmenu = G_MENU_MODEL (gtk_builder_get_object (builder, "appmenu"));
   gtk_application_set_app_menu (app, appmenu);
   g_object_unref (builder);
-
-  statusbar = gnobots_statusbar_new ();
 
   make_cursors ();
 
@@ -356,11 +381,12 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_size_group_add_widget (size_group, button);
   gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
 
-  label = gtk_label_new_with_mnemonic (_("Teleport _Safely"));
+  safe_teleports_label = gtk_label_new (NULL);
+  gtk_label_set_justify (GTK_LABEL (safe_teleports_label), GTK_JUSTIFY_CENTER);
   gtk_widget_set_margin_top (label, 15);
   gtk_widget_set_margin_bottom (label, 15);
   button = gtk_button_new ();
-  gtk_container_add (GTK_CONTAINER (button), label);
+  gtk_container_add (GTK_CONTAINER (button), safe_teleports_label);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.safe-teleport");
   gtk_size_group_add_widget (size_group, button);
   gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
@@ -379,7 +405,6 @@ activate (GtkApplication *app, gpointer user_data)
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
   gtk_box_pack_start (GTK_BOX (vbox), gridframe, TRUE, TRUE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), statusbar, FALSE, FALSE, 0);
 
   gtk_container_add (GTK_CONTAINER (window), vbox);
 

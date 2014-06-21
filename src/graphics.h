@@ -1,6 +1,8 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
+#include <gtk/gtk.h>
+
 /* The size of an individual tile. */
 extern gint tile_width;
 extern gint tile_height;

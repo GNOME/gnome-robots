@@ -469,7 +469,7 @@ show_properties_dialog (void)
 
   label = gtk_label_new_with_mnemonic (_("_Image theme:"));
   gtk_widget_set_hexpand (label, TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
   gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
 
   pmapmenu = make_theme_menu ();
@@ -480,7 +480,7 @@ show_properties_dialog (void)
   gtk_grid_attach (GTK_GRID (grid), pmapmenu, 1, 0, 1, 1);
 
   label = gtk_label_new_with_mnemonic (_("_Background color:"));
-  gtk_misc_set_alignment (GTK_MISC (label), 0, 0.5);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
   gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
 
   w = gtk_color_button_new ();

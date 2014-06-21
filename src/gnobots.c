@@ -191,7 +191,23 @@ quit_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 static void
 new_game_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
-  start_new_game ();
+  GtkWidget *dialog;
+  int ret;
+
+  dialog = gtk_message_dialog_new (GTK_WINDOW (window), GTK_DIALOG_MODAL,
+                                   GTK_MESSAGE_QUESTION, GTK_BUTTONS_NONE,
+                                   _("Are you sure you want to discard the current game?"));
+
+  gtk_dialog_add_buttons (GTK_DIALOG (dialog),
+                          _("Keep _Playing"), GTK_RESPONSE_REJECT,
+                          _("_New Game"), GTK_RESPONSE_ACCEPT,
+                          NULL);
+
+  ret = gtk_dialog_run (GTK_DIALOG (dialog));
+  gtk_widget_destroy (dialog);
+
+  if (ret == GTK_RESPONSE_ACCEPT)
+    start_new_game ();
 }
 
 static void

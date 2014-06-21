@@ -52,7 +52,7 @@
 /**********************************************************************/
 GtkWidget *window = NULL;
 static gint window_width = 0, window_height = 0;
-static gboolean window_is_fullscreen = FALSE, window_is_maximized = FALSE;
+static gboolean window_is_maximized = FALSE;
 GtkWidget *game_area = NULL;
 GamesScores *highscores;
 GSettings *settings;
@@ -260,7 +260,7 @@ wait_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 static gboolean
 window_configure_event_cb (GtkWidget *widget, GdkEventConfigure *event)
 {
-  if (!window_is_maximized && !window_is_fullscreen)
+  if (!window_is_maximized)
   {
     window_width = event->width;
     window_height = event->height;
@@ -274,8 +274,6 @@ window_state_event_cb (GtkWidget *widget, GdkEventWindowState *event)
 {
   if ((event->changed_mask & GDK_WINDOW_STATE_MAXIMIZED) != 0)
     window_is_maximized = (event->new_window_state & GDK_WINDOW_STATE_MAXIMIZED) != 0;
-  if ((event->changed_mask & GDK_WINDOW_STATE_FULLSCREEN) != 0)
-    window_is_fullscreen = (event->new_window_state & GDK_WINDOW_STATE_FULLSCREEN) != 0;
   return FALSE;
 }
 
@@ -319,7 +317,6 @@ shutdown (GtkApplication *app, gpointer user_data)
   g_settings_set_int (settings, "window-width", window_width);
   g_settings_set_int (settings, "window-height", window_height);
   g_settings_set_boolean (settings, "window-is-maximized", window_is_maximized);
-  g_settings_set_boolean (settings, "window-is-fullscreen", window_is_fullscreen);
 }
 
 static void
@@ -339,8 +336,6 @@ activate (GtkApplication *app, gpointer user_data)
   g_signal_connect (GTK_WINDOW (window), "configure-event", G_CALLBACK (window_configure_event_cb), NULL);
   g_signal_connect (GTK_WINDOW (window), "window-state-event", G_CALLBACK (window_state_event_cb), NULL);
   gtk_window_set_default_size (GTK_WINDOW (window), g_settings_get_int (settings, "window-width"), g_settings_get_int (settings, "window-height"));
-  if (g_settings_get_boolean (settings, "window-is-fullscreen"))
-    gtk_window_fullscreen (GTK_WINDOW (window));
   if (g_settings_get_boolean (settings, "window-is-maximized"))
     gtk_window_maximize (GTK_WINDOW (window));
 

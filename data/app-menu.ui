@@ -8,8 +8,6 @@
         <attribute name="action">app.new-game</attribute>
         <attribute name="accel">&lt;Primary&gt;n</attribute>
       </item>
-    </section>
-    <section>
       <item>
         <attribute name="label" translatable="yes">Preferences</attribute>
         <attribute name="action">app.preferences</attribute>

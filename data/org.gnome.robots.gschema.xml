@@ -6,7 +6,7 @@
       <description>Show toolbar. A standard option for toolbars.</description>
     </key>
     <key name="theme" type="s">
-      <default>"robots"</default>
+      <default>"robots.svg"</default>
       <summary>Robot image theme</summary>
       <description>Robot image theme.  The theme of the images to use for the robots.</description>
     </key>

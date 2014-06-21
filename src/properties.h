@@ -13,9 +13,9 @@ gboolean properties_sound (void);
 gboolean properties_splats (void);
 gboolean properties_show_toolbar (void);
 gboolean properties_set_config (gint);
-gchar *properties_theme_name (void);
+const gchar *properties_theme_name (void);
 
-void conf_set_theme (gchar * value);
+void conf_set_theme (const gchar * value);
 void conf_set_configuration (gchar * value);
 void conf_set_control_key (gint i, guint keyval);
 void conf_set_enable_sound (gboolean value);

@@ -76,7 +76,7 @@ struct _GnobotsProperties {
   GdkRGBA bgcolour;
   gint selected_config;
   guint keys[N_KEYS];
-  gchar *themename;
+  const gchar *themename;
 };
 /**********************************************************************/
 
@@ -353,7 +353,7 @@ bg_color_callback (GtkWidget * widget, gpointer data)
   conf_set_background_color (&properties.bgcolour);
 }
 
-gchar *
+const gchar *
 properties_theme_name (void)
 {
   return properties.themename;
@@ -602,7 +602,7 @@ load_keys (void)
 }
 
 void
-conf_set_theme (gchar * value)
+conf_set_theme (const gchar * value)
 {
   g_settings_set_string (settings, KEY_THEME, value);
 }

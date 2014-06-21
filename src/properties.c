@@ -512,9 +512,6 @@ show_properties_dialog (void)
 				    "key07", _("Key to move S"), g_settings_get_default_value (settings, "key06"),
 				    "key08", _("Key to move SE"), g_settings_get_default_value (settings, "key07"),
                                     "key04", _("Key to hold"), g_settings_get_default_value (settings, "key08"),
-				    "key09", _("Key to teleport"), g_settings_get_default_value (settings, "key09"),
-				    "key10", _("Key to teleport randomly"), g_settings_get_default_value (settings, "key10"),
-				    "key11", _("Key to wait"), g_settings_get_default_value (settings, "key11"),
                                     NULL);
 
   gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, 0);

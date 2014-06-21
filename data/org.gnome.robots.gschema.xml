@@ -36,65 +36,50 @@
       <description>Enable game sounds.   Play sounds for various events throughout the game.</description>
     </key>
     <key name="key00" type="i">
-      <default>65429</default>
+      <default>121</default>
       <summary>Key to move NW</summary>
       <description>The key used to move north-west.</description>
     </key>
     <key name="key01" type="i">
-      <default>65431</default>
+      <default>107</default>
       <summary>Key to move N</summary>
       <description>The key used to move north.</description>
     </key>
     <key name="key02" type="i">
-      <default>65434</default>
+      <default>117</default>
       <summary>Key to move NE</summary>
       <description>The key used to move north-east.</description>
     </key>
     
     <key name="key03" type="i">
-      <default>65430</default>
+      <default>104</default>
       <summary>Key to move W</summary>
       <description>The key used to move west.</description>
     </key>
     <key name="key04" type="i">
-      <default>65437</default>
+      <default>32</default>
       <summary>Key to hold</summary>
       <description>The key used to hold still.</description>
     </key>
     <key name="key05" type="i">
-      <default>65432</default>
+      <default>108</default>
       <summary>Key to move E</summary>
       <description>The key used to move east.</description>
     </key>
     <key name="key06" type="i">
-      <default>65436</default>
+      <default>98</default>
       <summary>Key to move SW</summary>
       <description>The key used to move south-west.</description>
     </key>
     <key name="key07" type="i">
-      <default>65433</default>
+      <default>106</default>
       <summary>Key to move S</summary>
       <description>The key used to move south.</description>
     </key>
     <key name="key08" type="i">
-      <default>65435</default>
+      <default>110</default>
       <summary>Key to move SE</summary>
       <description>The key used to move south-east.</description>
-    </key>
-    <key name="key09" type="i">
-      <default>65451</default>
-      <summary>Key to teleport</summary>
-      <description>The key used to teleport safely (if possible).</description>
-    </key>
-    <key name="key10" type="i">
-      <default>65450</default>
-      <summary>Key to teleport randomly</summary>
-      <description>The key used to teleport randomly.</description>
-    </key>
-    <key name="key11" type="i">
-      <default>65421</default>
-      <summary>Key to wait</summary>
-      <description>The key used to wait.</description>
     </key>
     <key name="window-width" type="i">
       <default>720</default>

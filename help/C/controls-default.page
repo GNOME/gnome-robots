@@ -8,6 +8,7 @@
 
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
     <revision pkgversion="3.11.90" date="2014-03-25" status="review"/>
+    <revision pkgversion="3.13.3" date="2014-06-21" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -41,52 +42,51 @@
     <tbody>
     <tr>
       <td><p>North west</p></td>
-      <td><p><key>Home</key></p></td>
+      <td><p><key>y</key></p></td>
     </tr>
     <tr>
       <td><p>North</p></td>
-      <td><p><key>&#8593;</key></p></td>
+      <td><p><key>k</key></p></td>
     </tr>
     <tr>
       <td><p>North east</p></td>
-      <td><p><key>PgUp</key></p></td>
+      <td><p><key>u</key></p></td>
     </tr>
     <tr>
       <td><p>West</p></td>
-      <td><p><key>&#8594;</key></p></td>
+      <td><p><key>h</key></p></td>
     </tr>
     <tr>
       <td><p>East</p></td>
-      <td><p><key>&#8592;</key></p></td>
+      <td><p><key>l</key></p></td>
     </tr>
     <tr>
       <td><p>South west</p></td>
-      <td><p><key>End</key></p></td>
+      <td><p><key>b</key></p></td>
     </tr>
     <tr>
       <td><p>South</p></td>
-      <td><p><key>&#8595;</key></p></td>
+      <td><p><key>j</key></p></td>
     </tr>
     <tr>
       <td><p>South east</p></td>
-      <td><p><key>PgDn</key></p></td>
+      <td><p><key>n</key></p></td>
     </tr>
     <tr>
-      <td><p>Stay in the same position</p></td>
-      <td><p><key>Begin</key> (marked only as <key>5</key> on some
-      keypads)</p></td>
+      <td><p>Stay in the same position (one turn)</p></td>
+      <td><p>Space</p></td>
     </tr>
     <tr>
       <td><p>Teleport safely</p></td>
-      <td><p><key>+</key></p></td>
+      <td><p><keyseq><key>Alt</key><key>s</key></keyseq></p></td>
     </tr>
     <tr>
       <td><p>Teleport randomly</p></td>
-      <td><p><key>*</key></p></td>
+      <td><p><keyseq><key>Alt</key><key>r</key></keyseq></p></td>
     </tr>
     <tr>
       <td><p>Wait for the robots</p></td>
-      <td><p><key>Enter</key></p></td>
+      <td><p><keyseq><key>Alt</key><key>w</key></keyseq></p></td>
     </tr>
     </tbody>
   </table>

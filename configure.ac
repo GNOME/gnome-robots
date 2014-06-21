@@ -17,7 +17,7 @@ dnl ###########################################################################
 
 GTK_REQUIRED=3.12.0
 GLIB_REQUIRED=2.32
-RSVG_REQUIRED=2.32.0
+RSVG_REQUIRED=2.36.2
 CANBERRA_GTK_REQUIRED=0.26
 
 PKG_CHECK_MODULES(ROBOTS, [

@@ -90,13 +90,6 @@ static GamesFileList *theme_list = NULL;
 
 static GnobotsProperties properties;
 
-static const guint default_keys[N_KEYS] = {
-  GDK_KEY_KP_Home, GDK_KEY_KP_Up, GDK_KEY_KP_Page_Up,
-  GDK_KEY_KP_Left, GDK_KEY_KP_Begin, GDK_KEY_KP_Right,
-  GDK_KEY_KP_End, GDK_KEY_KP_Down, GDK_KEY_KP_Page_Down,
-  GDK_KEY_KP_Add, GDK_KEY_KP_Multiply, GDK_KEY_KP_Enter
-};
-
 /**********************************************************************/
 
 
@@ -286,12 +279,14 @@ static void
 defkey_cb (GtkWidget * widget, gpointer data)
 {
   gint i;
-  guint *dkeys = (guint *) data;
 
   for (i = 0; i < 12; ++i) {
-    properties.keys[i] = dkeys[i];
-    conf_set_control_key (i, properties.keys[i]);
+    char buffer[64];
+    g_snprintf (buffer, sizeof (buffer), KEY_CONTROL_KEY, i);
+    g_settings_reset (settings, buffer);
+    properties.keys[i] = g_settings_get_default_value (settings, buffer);
   }
+
   keyboard_set (properties.keys);
 }
 
@@ -505,18 +500,18 @@ show_properties_dialog (void)
 
   controls_list = games_controls_list_new (settings);
   games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),
-				    "key00", _("Key to move NW"), default_keys[0],
-				    "key01", _("Key to move N"), default_keys[1],
-				    "key02", _("Key to move NE"), default_keys[2],
-				    "key03", _("Key to move W"), default_keys[3],
-				    "key05", _("Key to move E"), default_keys[5],
-				    "key06", _("Key to move SW"), default_keys[6],
-				    "key07", _("Key to move S"), default_keys[7],
-				    "key08", _("Key to move SE"), default_keys[8],
-                                    "key04", _("Key to hold"), default_keys[4],
-				    "key09", _("Key to teleport"), default_keys[9],
-				    "key10", _("Key to teleport randomly"), default_keys[10],
-				    "key11", _("Key to wait"), default_keys[11],
+				    "key00", _("Key to move NW"), g_settings_get_default_value (settings, "key00"),
+				    "key01", _("Key to move N"), g_settings_get_default_value (settings, "key01"),
+				    "key02", _("Key to move NE"), g_settings_get_default_value (settings, "key02"),
+				    "key03", _("Key to move W"), g_settings_get_default_value (settings, "key03"),
+				    "key05", _("Key to move E"), g_settings_get_default_value (settings, "key04"),
+				    "key06", _("Key to move SW"), g_settings_get_default_value (settings, "key05"),
+				    "key07", _("Key to move S"), g_settings_get_default_value (settings, "key06"),
+				    "key08", _("Key to move SE"), g_settings_get_default_value (settings, "key07"),
+                                    "key04", _("Key to hold"), g_settings_get_default_value (settings, "key08"),
+				    "key09", _("Key to teleport"), g_settings_get_default_value (settings, "key09"),
+				    "key10", _("Key to teleport randomly"), g_settings_get_default_value (settings, "key10"),
+				    "key11", _("Key to wait"), g_settings_get_default_value (settings, "key11"),
                                     NULL);
 
   gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, 0);
@@ -527,7 +522,7 @@ show_properties_dialog (void)
 
   dbut = gtk_button_new_with_mnemonic (_("_Restore Defaults"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
-		    G_CALLBACK (defkey_cb), (gpointer) default_keys);
+		    G_CALLBACK (defkey_cb), NULL);
   gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, FALSE, 0);
 
   label = gtk_label_new_with_mnemonic (_("Keyboard"));

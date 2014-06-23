@@ -1,3 +1,14 @@
+GNOME Robots 3.13.3
+===================
+
+* Safe Teleport is now disabled when no safe teleports are remaining
+* Add app menu and header bar
+* Remove menu bar, toolbar, and status bar
+* Remove fullscreen
+* New default hotkeys that do not require number pad
+* Updated translations
+* Updated help
+
 GNOME Robots 3.12.0
 ===================
 

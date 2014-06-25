@@ -287,8 +287,6 @@ startup (GtkApplication *app, gpointer user_data)
 {
   struct timeval tv;
 
-  games_scores_startup ();
-
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
 

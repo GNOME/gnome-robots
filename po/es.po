@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gnome-games.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-05-20 07:15+0000\n"
-"PO-Revision-Date: 2014-05-20 19:09+0200\n"
+"POT-Creation-Date: 2014-06-30 07:17+0000\n"
+"PO-Revision-Date: 2014-06-30 12:44+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -23,6 +23,31 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 2.91.6\n"
 "X-Project-Style: gnome\n"
+
+#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Partida nueva"
+
+#: ../data/app-menu.ui.h:2 ../src/properties.c:394
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: ../data/app-menu.ui.h:3
+msgid "Scores"
+msgstr "Puntuación"
+
+#: ../data/app-menu.ui.h:4
+msgid "Help"
+msgstr "Ayuda"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "Acerca de"
+
+#: ../data/app-menu.ui.h:6
+#| msgid "_Quit"
+msgid "Quit"
+msgstr "Salir"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -59,8 +84,8 @@ msgstr ""
 "el teletransporte puede hacer que aparezca junto a un robot, que le matará. "
 "Sobreviva todo el tiempo que pueda."
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnobots.c:140
-#: ../src/gnobots.c:170 ../src/menu.c:262
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
+#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
 msgid "Robots"
 msgstr "Robots"
 
@@ -144,7 +169,7 @@ msgstr ""
 "Activar sonidos del juego. Reproduce sonidos para distintos eventos durante "
 "el juego."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:506
 msgid "Key to move NW"
 msgstr "Tecla para NO"
 
@@ -152,7 +177,7 @@ msgstr "Tecla para NO"
 msgid "The key used to move north-west."
 msgstr "La tecla usada para moverse al noroeste."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:507
 msgid "Key to move N"
 msgstr "Tecla para N"
 
@@ -160,7 +185,7 @@ msgstr "Tecla para N"
 msgid "The key used to move north."
 msgstr "La tecla usada para moverse al norte."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:508
 msgid "Key to move NE"
 msgstr "Tecla para NE"
 
@@ -168,7 +193,7 @@ msgstr "Tecla para NE"
 msgid "The key used to move north-east."
 msgstr "La tecla usada para moverse al noreste."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:509
 msgid "Key to move W"
 msgstr "Tecla para O"
 
@@ -176,7 +201,7 @@ msgstr "Tecla para O"
 msgid "The key used to move west."
 msgstr "La tecla usada para moverse al oeste."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:515
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:510
 msgid "Key to hold"
 msgstr "Tecla para permanecer quieto"
 
@@ -216,83 +241,57 @@ msgstr "Tecla para SE"
 msgid "The key used to move south-east."
 msgstr "La tecla usada para moverse al sudeste."
 
-#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:516
-msgid "Key to teleport"
-msgstr "Tecla para teletransportarse"
-
-#: ../data/org.gnome.robots.gschema.xml.h:34
-msgid "The key used to teleport safely (if possible)."
-msgstr "La tecla usada para teletransportarse con seguridad (si es posible)."
-
-#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:517
-msgid "Key to teleport randomly"
-msgstr "Tecla para teletransportarse al azar"
-
-#: ../data/org.gnome.robots.gschema.xml.h:36
-msgid "The key used to teleport randomly."
-msgstr "La tecla usada para teletransportarse al azar."
-
-#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:518
-msgid "Key to wait"
-msgstr "Tecla para esperar"
-
-#: ../data/org.gnome.robots.gschema.xml.h:38
-msgid "The key used to wait."
-msgstr "La tecla usada para esperar."
-
-#: ../data/org.gnome.robots.gschema.xml.h:39
+#: ../data/org.gnome.robots.gschema.xml.h:33
 msgid "Width of the window in pixels"
 msgstr "Anchura de la ventana en píxeles"
 
-#: ../data/org.gnome.robots.gschema.xml.h:40
+#: ../data/org.gnome.robots.gschema.xml.h:34
 msgid "Height of the window in pixels"
 msgstr "Altura de la ventana en píxeles"
 
-#: ../data/org.gnome.robots.gschema.xml.h:41
+#: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
 msgstr "cierto si la ventana está maximizada"
 
-#: ../data/org.gnome.robots.gschema.xml.h:42
-#| msgid "true if the window is fullscren"
-msgid "true if the window is fullscreen"
-msgstr "cierto si la ventana está en pantalla completa"
-
-#: ../src/game.c:149
+#: ../src/game.c:148
 msgid "Game over!"
 msgstr "Juego terminado"
 
-#: ../src/game.c:151
+#: ../src/game.c:150
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr ""
 "¡Buen trabajo! Desafortunadamente su puntuación no alcanzó los 10 mejores "
 "puestos."
 
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/game.c:153 ../src/games-stock.c:253
+#: ../src/game.c:151
+msgid "_Quit"
+msgstr "_Salir"
+
+#: ../src/game.c:152 ../src/gnome-robots.c:231
 msgid "_New Game"
 msgstr "Juego _nuevo"
 
-#: ../src/game.c:166
+#: ../src/game.c:165
 msgid "Robots Scores"
 msgstr "Puntuación de Robots"
 
-#: ../src/game.c:169
+#: ../src/game.c:168
 msgid "Map:"
 msgstr "Mapa:"
 
-#: ../src/game.c:178
+#: ../src/game.c:177
 msgid "Congratulations!"
 msgstr "Enhorabuena."
 
-#: ../src/game.c:179
+#: ../src/game.c:178
 msgid "Your score is the best!"
 msgstr "Su puntuación es la mejor"
 
-#: ../src/game.c:180
+#: ../src/game.c:179
 msgid "Your score has made the top ten."
 msgstr "Su puntuación ha alcanzado los 10 mejores."
 
-#: ../src/game.c:408 ../src/game.c:424
+#: ../src/game.c:406 ../src/game.c:422
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -301,11 +300,11 @@ msgstr ""
 "¿Pero, podría hacerlo otra vez?"
 
 #. This should never happen.
-#: ../src/game.c:1186
+#: ../src/game.c:1176
 msgid "There are no teleport locations left!!"
 msgstr "No quedan lugares a los que teletransportarse"
 
-#: ../src/game.c:1214
+#: ../src/game.c:1204
 msgid "There are no safe locations to teleport to!!"
 msgstr "No hay ningún lugar seguro hacia el cual teletransportarse"
 
@@ -332,273 +331,135 @@ msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$dm %2$ds"
 
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Partida nueva"
-
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
 msgid "Date"
 msgstr "Fecha"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "Mostrar la ayuda de este juego"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "Finalizar el juego actual"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "Activar pantalla completa"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "Obtener una pista para el siguiente movimiento"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "Abandonar pantalla completa"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "Iniciar una partida multijugador en red"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "Terminar la partida de red actual y volver al servidor de red"
-
-#: ../src/games-stock.c:48 ../src/menu.c:69
-msgid "Start a new game"
-msgstr "Iniciar un juego nuevo"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "Pausar el juego"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "Mostrar una lista de jugadores en la partida de red"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "Rehacer el movimiento deshecho"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "Reiniciar el juego"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "Reiniciar el juego pausado"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "Ver la puntuación"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "Anular el último movimiento"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "Acerca de este juego"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "Cerrar esta ventana"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "Configurar el juego"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "Salir de este juego"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "Índ_ice"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "_Pantalla completa"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "_Sugerencia"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "_Nuevo"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "_Rehacer movimiento"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "_Reiniciar"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "_Reiniciar"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "_Deshacer movimiento"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "R_epartir"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "Abandonar _pantalla completa"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "_Partida en red"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "_Dejar partida"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "_Lista de jugadores"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "_Pausa"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "C_ontinuar"
-
-#: ../src/games-stock.c:267
-msgid "_Scores"
-msgstr "_Puntuación"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "Finalizar el ju_ego"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s es software libre; puede redistribuirlo y/o modificarlo bajo los términos "
-"de la Licencia Pública General GNU tal como la publica la Free Software "
-"Foundation; ya sea en la versión %d de la Licencia, como (a su elección) "
-"cualquier otra versión posterior."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s se distribuye con el ánimo de que le será útil, pero SIN NINGUNA "
-"GARANTÍA; sin incluso la garantía implícita de MERCANTILIDAD o IDONEIDAD "
-"PARA UN PROPÓSITO DETERMINADO. Vea la Licencia Pública General de GNU para "
-"más detalles."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"Debería haber recibido una copia de la Licencia Pública General GNU junto "
-"con %s; si no, escriba a la Free Software Foundation, Inc., 51 Franklin "
-"Street, Fifth Floor, Boston, MA 02110-1301 EE. UU."
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"Debería haber recibido una copia de la Licencia Pública General GNU junto "
-"con este programa. De lo contrario, visite <http://www.gnu.org/licenses/>."
-
-#: ../src/gnobots.c:67
+#: ../src/gnome-robots.c:95
 msgid "Classic robots"
 msgstr "Robots clásicos"
 
-#: ../src/gnobots.c:68
+#: ../src/gnome-robots.c:96
 msgid "Classic robots with safe moves"
 msgstr "«Robots clásicos» con movimientos seguros"
 
-#: ../src/gnobots.c:69
+#: ../src/gnome-robots.c:97
 msgid "Classic robots with super-safe moves"
 msgstr "«Robots clásicos» con movimientos ultra seguros"
 
-#: ../src/gnobots.c:70
+#: ../src/gnome-robots.c:98
 msgid "Nightmare"
 msgstr "Pesadilla"
 
-#: ../src/gnobots.c:71
+#: ../src/gnome-robots.c:99
 msgid "Nightmare with safe moves"
 msgstr "«Pesadilla» con movimientos seguros"
 
-#: ../src/gnobots.c:72
+#: ../src/gnome-robots.c:100
 msgid "Nightmare with super-safe moves"
 msgstr "«Pesadilla» con movimientos ultra seguros"
 
-#: ../src/gnobots.c:73
+#: ../src/gnome-robots.c:101
 msgid "Robots2"
 msgstr "Robots2"
 
-#: ../src/gnobots.c:74
+#: ../src/gnome-robots.c:102
 msgid "Robots2 with safe moves"
 msgstr "«Robots2» con movimientos seguros"
 
-#: ../src/gnobots.c:75
+#: ../src/gnome-robots.c:103
 msgid "Robots2 with super-safe moves"
 msgstr "«Robots2» con movimientos ultra seguros"
 
-#: ../src/gnobots.c:76
+#: ../src/gnome-robots.c:104
 msgid "Robots2 easy"
 msgstr "Robots2 fácil"
 
-#: ../src/gnobots.c:77
+#: ../src/gnome-robots.c:105
 msgid "Robots2 easy with safe moves"
 msgstr "«Robots2 fácil» con movimientos seguros"
 
-#: ../src/gnobots.c:78
+#: ../src/gnome-robots.c:106
 msgid "Robots2 easy with super-safe moves"
 msgstr "«Robots2 fácil» con movimientos ultra seguros"
 
-#: ../src/gnobots.c:79
+#: ../src/gnome-robots.c:107
 msgid "Robots with safe teleport"
 msgstr "Robots con teletransportes seguros"
 
-#: ../src/gnobots.c:80
+#: ../src/gnome-robots.c:108
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robots con teletransportes y movimientos seguros"
 
-#: ../src/gnobots.c:81
+#: ../src/gnome-robots.c:109
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robots con teletransportes y movimientos ultra seguros"
 
-#: ../src/gnobots.c:229
+#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
+#: ../src/gnome-robots.c:144
+#, c-format
+#| msgid "Score: %d"
+msgid "Level: %d\tScore: %d"
+msgstr "Nivel: %d\tPuntuación: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: ../src/gnome-robots.c:155
+#, c-format
+#| msgid "Remaining:"
+msgid "(Remaining: %d)"
+msgstr "(Quedan: %d)"
+
+#. First line of safe teleports button label.
+#: ../src/gnome-robots.c:157
+#| msgid "Teleport randomly"
+msgid "Teleport _Safely"
+msgstr "Teletransportarse con _seguridad"
+
+#: ../src/gnome-robots.c:202
+msgid ""
+"Based on classic BSD Robots\n"
+"\n"
+"Robots is a part of GNOME Games."
+msgstr ""
+"Basado en el clásico de BSD «Robots»\n"
+"\n"
+"Robots es parte de los juegos de GNOME."
+
+#: ../src/gnome-robots.c:206
+msgid "translator-credits"
+msgstr ""
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2008-2012\n"
+"Jorge González <jorgegonz@svn.gnome.org>, 2008\n"
+"Lucas Vieites <lucas@asixinformatica.com>, 2002-2008\n"
+"Germán Poo Caamaño <gpoo@ubiobio.cl>\n"
+"Pablo Saratxaga <pablo@mandrakesoft.com>"
+
+#: ../src/gnome-robots.c:227
+#| msgid "Are you sure you want to quit?"
+msgid "Are you sure you want to discard the current game?"
+msgstr "¿Seguro que quiere descartar la partida actual?"
+
+#: ../src/gnome-robots.c:230
+#| msgid "Playing"
+msgid "Keep _Playing"
+msgstr "Seguir _jugando"
+
+#: ../src/gnome-robots.c:373
+#| msgid "Teleport randomly"
+msgid "Teleport _Randomly"
+msgstr "Teletransportarse al _azar"
+
+#: ../src/gnome-robots.c:392
+#| msgid "Wait for the robots"
+msgid "_Wait for Robots"
+msgstr "_Esperar a los robots"
+
+#: ../src/gnome-robots.c:420
 msgid "No game data could be found."
 msgstr "No se pudieron encontrar los datos del juego."
 
-#: ../src/gnobots.c:231
+#: ../src/gnome-robots.c:422
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -606,11 +467,11 @@ msgstr ""
 "El programa Robots no ha podido encontrar ningún archivo de configuración "
 "del juego válido. Compruebe que el programa esté instalado correctamente."
 
-#: ../src/gnobots.c:247
+#: ../src/gnome-robots.c:438
 msgid "Some graphics files are missing or corrupt."
 msgstr "Algunos archivo gráficos faltan o están corrompidos."
 
-#: ../src/gnobots.c:249
+#: ../src/gnome-robots.c:440
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -623,148 +484,268 @@ msgstr ""
 msgid "Could not find '%s' pixmap file\n"
 msgstr "No pude encontrar el archivo pixmap «%s».\n"
 
-#: ../src/menu.c:64
-msgid "_Game"
-msgstr "_Juego"
-
-#: ../src/menu.c:65
-msgid "_View"
-msgstr "_Ver"
-
-#: ../src/menu.c:66
-msgid "_Move"
-msgstr "_Mover"
-
-#: ../src/menu.c:67
-msgid "_Settings"
-msgstr "Aju_stes"
-
-#: ../src/menu.c:68
-msgid "_Help"
-msgstr "Ay_uda"
-
-#: ../src/menu.c:73
-msgid "_Teleport"
-msgstr "_Teletransportación"
-
-#: ../src/menu.c:74
-msgid "Teleport, safely if possible"
-msgstr "Teletransportarse, con seguridad si es posible"
-
-#: ../src/menu.c:75
-msgid "_Random"
-msgstr "Al aza_r"
-
-#: ../src/menu.c:76
-msgid "Teleport randomly"
-msgstr "Teletransportarse al azar"
-
-#: ../src/menu.c:77
-msgid "_Wait"
-msgstr "_Esperar"
-
-#: ../src/menu.c:77
-msgid "Wait for the robots"
-msgstr "Esperar a los robots"
-
-#: ../src/menu.c:88
-msgid "_Toolbar"
-msgstr "Barra de herramien_tas"
-
-#: ../src/menu.c:88
-msgid "Show or hide the toolbar"
-msgstr "Mostrar u ocultar la barra de herramientas"
-
-#: ../src/menu.c:266
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Basado en el clásico de BSD «Robots»\n"
-"\n"
-"Robots es parte de los juegos de GNOME."
-
-#: ../src/menu.c:270
-msgid "translator-credits"
-msgstr ""
-"Daniel Mustieles <daniel.mustieles@gmail.com>, 2008-2012\n"
-"Jorge González <jorgegonz@svn.gnome.org>, 2008\n"
-"Lucas Vieites <lucas@asixinformatica.com>, 2002-2008\n"
-"Germán Poo Caamaño <gpoo@ubiobio.cl>\n"
-"Pablo Saratxaga <pablo@mandrakesoft.com>"
-
-#: ../src/properties.c:395
-msgid "Preferences"
-msgstr "Preferencias"
-
-#: ../src/properties.c:419
+#: ../src/properties.c:418
 msgid "Game Type"
 msgstr "Tipo de juego"
 
-#: ../src/properties.c:429
+#: ../src/properties.c:428
 msgid "_Use safe moves"
 msgstr "_Usar movimientos seguros"
 
-#: ../src/properties.c:434
+#: ../src/properties.c:433
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Previene movimientos accidentales que resultan en muerte."
 
-#: ../src/properties.c:437
+#: ../src/properties.c:436
 msgid "U_se super safe moves"
 msgstr "U_sar movimientos superseguros"
 
-#: ../src/properties.c:444
+#: ../src/properties.c:443
 msgid "Prevents all moves that result in getting killed."
 msgstr "Previene todos los movimientos que resultan en muerte."
 
-#: ../src/properties.c:450
+#: ../src/properties.c:449
 msgid "_Enable sounds"
 msgstr "_Activar sonidos"
 
-#: ../src/properties.c:456
+#: ../src/properties.c:455
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Reproduce sonidos para eventos como la victoria o la muerte."
 
-#: ../src/properties.c:458
+#: ../src/properties.c:457
 msgid "Game"
 msgstr "Juego"
 
-#: ../src/properties.c:471
+#: ../src/properties.c:470
 msgid "_Image theme:"
 msgstr "Tema de _imagen:"
 
-#: ../src/properties.c:483
+#: ../src/properties.c:482
 msgid "_Background color:"
 msgstr "Color de _fondo:"
 
-#: ../src/properties.c:495
+#: ../src/properties.c:494
 msgid "Appearance"
 msgstr "Aspecto"
 
-#: ../src/properties.c:527
+#: ../src/properties.c:523
 msgid "_Restore Defaults"
 msgstr "_Restaurar valores predeterminados"
 
-#: ../src/properties.c:532
+#: ../src/properties.c:528
 msgid "Keyboard"
 msgstr "Teclado"
 
-#: ../src/statusbar.c:68
-msgid "Score:"
-msgstr "Puntuación:"
+#~ msgid "Key to teleport"
+#~ msgstr "Tecla para teletransportarse"
 
-#: ../src/statusbar.c:76
-msgid "Safe Teleports:"
-msgstr "Teletransportes seguros:"
+#~ msgid "The key used to teleport safely (if possible)."
+#~ msgstr ""
+#~ "La tecla usada para teletransportarse con seguridad (si es posible)."
 
-#: ../src/statusbar.c:85
-msgid "Level:"
-msgstr "Nivel:"
+#~ msgid "Key to teleport randomly"
+#~ msgstr "Tecla para teletransportarse al azar"
 
-#: ../src/statusbar.c:94
-msgid "Remaining:"
-msgstr "Quedan:"
+#~ msgid "The key used to teleport randomly."
+#~ msgstr "La tecla usada para teletransportarse al azar."
+
+#~ msgid "Key to wait"
+#~ msgstr "Tecla para esperar"
+
+#~ msgid "The key used to wait."
+#~ msgstr "La tecla usada para esperar."
+
+#~| msgid "true if the window is fullscren"
+#~ msgid "true if the window is fullscreen"
+#~ msgstr "cierto si la ventana está en pantalla completa"
+
+#~ msgid "View help for this game"
+#~ msgstr "Mostrar la ayuda de este juego"
+
+#~ msgid "End the current game"
+#~ msgstr "Finalizar el juego actual"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "Activar pantalla completa"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "Obtener una pista para el siguiente movimiento"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "Abandonar pantalla completa"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "Iniciar una partida multijugador en red"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr "Terminar la partida de red actual y volver al servidor de red"
+
+#~ msgid "Start a new game"
+#~ msgstr "Iniciar un juego nuevo"
+
+#~ msgid "Pause the game"
+#~ msgstr "Pausar el juego"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "Mostrar una lista de jugadores en la partida de red"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "Rehacer el movimiento deshecho"
+
+#~ msgid "Restart the game"
+#~ msgstr "Reiniciar el juego"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "Reiniciar el juego pausado"
+
+#~ msgid "View the scores"
+#~ msgstr "Ver la puntuación"
+
+#~ msgid "Undo the last move"
+#~ msgstr "Anular el último movimiento"
+
+#~ msgid "About this game"
+#~ msgstr "Acerca de este juego"
+
+#~ msgid "Close this window"
+#~ msgstr "Cerrar esta ventana"
+
+#~ msgid "Configure the game"
+#~ msgstr "Configurar el juego"
+
+#~ msgid "Quit this game"
+#~ msgstr "Salir de este juego"
+
+#~ msgid "_Contents"
+#~ msgstr "Índ_ice"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "_Pantalla completa"
+
+#~ msgid "_Hint"
+#~ msgstr "_Sugerencia"
+
+#~ msgid "_New"
+#~ msgstr "_Nuevo"
+
+#~ msgid "_Redo Move"
+#~ msgstr "_Rehacer movimiento"
+
+#~ msgid "_Reset"
+#~ msgstr "_Reiniciar"
+
+#~ msgid "_Restart"
+#~ msgstr "_Reiniciar"
+
+#~ msgid "_Undo Move"
+#~ msgstr "_Deshacer movimiento"
+
+#~ msgid "_Deal"
+#~ msgstr "R_epartir"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "Abandonar _pantalla completa"
+
+#~ msgid "Network _Game"
+#~ msgstr "_Partida en red"
+
+#~ msgid "L_eave Game"
+#~ msgstr "_Dejar partida"
+
+#~ msgid "Player _List"
+#~ msgstr "_Lista de jugadores"
+
+#~ msgid "_Pause"
+#~ msgstr "_Pausa"
+
+#~ msgid "Res_ume"
+#~ msgstr "C_ontinuar"
+
+#~ msgid "_Scores"
+#~ msgstr "_Puntuación"
+
+#~ msgid "_End Game"
+#~ msgstr "Finalizar el ju_ego"
+
+#~ msgid ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+#~ msgstr ""
+#~ "%s es software libre; puede redistribuirlo y/o modificarlo bajo los "
+#~ "términos de la Licencia Pública General GNU tal como la publica la Free "
+#~ "Software Foundation; ya sea en la versión %d de la Licencia, como (a su "
+#~ "elección) cualquier otra versión posterior."
+
+#~ msgid ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+#~ msgstr ""
+#~ "%s se distribuye con el ánimo de que le será útil, pero SIN NINGUNA "
+#~ "GARANTÍA; sin incluso la garantía implícita de MERCANTILIDAD o IDONEIDAD "
+#~ "PARA UN PROPÓSITO DETERMINADO. Vea la Licencia Pública General de GNU "
+#~ "para más detalles."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+#~ msgstr ""
+#~ "Debería haber recibido una copia de la Licencia Pública General GNU junto "
+#~ "con %s; si no, escriba a la Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA 02110-1301 EE. UU."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "Debería haber recibido una copia de la Licencia Pública General GNU junto "
+#~ "con este programa. De lo contrario, visite <http://www.gnu.org/licenses/>."
+
+#~ msgid "_Game"
+#~ msgstr "_Juego"
+
+#~ msgid "_View"
+#~ msgstr "_Ver"
+
+#~ msgid "_Move"
+#~ msgstr "_Mover"
+
+#~ msgid "_Settings"
+#~ msgstr "Aju_stes"
+
+#~ msgid "_Help"
+#~ msgstr "Ay_uda"
+
+#~ msgid "_Teleport"
+#~ msgstr "_Teletransportación"
+
+#~ msgid "Teleport, safely if possible"
+#~ msgstr "Teletransportarse, con seguridad si es posible"
+
+#~ msgid "_Random"
+#~ msgstr "Al aza_r"
+
+#~ msgid "_Wait"
+#~ msgstr "_Esperar"
+
+#~ msgid "_Toolbar"
+#~ msgstr "Barra de herramien_tas"
+
+#~ msgid "Show or hide the toolbar"
+#~ msgstr "Mostrar u ocultar la barra de herramientas"
+
+#~ msgid "Score:"
+#~ msgstr "Puntuación:"
+
+#~ msgid "Safe Teleports:"
+#~ msgstr "Teletransportes seguros:"
+
+#~ msgid "Level:"
+#~ msgstr "Nivel:"
 
 #~ msgctxt "score-dialog"
 #~ msgid "Name"
@@ -1420,9 +1401,6 @@ msgstr "Quedan:"
 #~ msgid "Five or more"
 #~ msgstr "Cinco o más"
 
-#~ msgid "Scores"
-#~ msgstr "Puntuación"
-
 #~ msgid "Next:"
 #~ msgstr "Siguiente:"
 
@@ -1996,9 +1974,6 @@ msgstr "Quedan:"
 
 #~ msgid "_About"
 #~ msgstr "_Acerca de"
-
-#~ msgid "_Quit"
-#~ msgstr "_Salir"
 
 #~ msgid "Hint"
 #~ msgstr "Sugerencia"
@@ -2802,9 +2777,6 @@ msgstr "Quedan:"
 
 #~ msgid "Already used! Where do you want to put that?"
 #~ msgstr "Ya está en uso. ¿Donde quiere ponerlo?"
-
-#~ msgid "Score: %d"
-#~ msgstr "Puntuación: %d"
 
 #~ msgid "Field used"
 #~ msgstr "Campo usado"
@@ -6568,9 +6540,6 @@ msgstr "Quedan:"
 #~ msgid "--> Table"
 #~ msgstr "--> Mesa"
 
-#~ msgid "Playing"
-#~ msgstr "Jugando"
-
 #~ msgid "<-- Table"
 #~ msgstr "<-- Mesa"
 
@@ -6867,9 +6836,6 @@ msgstr "Quedan:"
 #~ "Necesita lanzar el cliente GGZ directamente\n"
 #~ "para poder jugar a este juego."
 
-#~ msgid "About"
-#~ msgstr "Acerca de"
-
 #~ msgid "Message of the Day"
 #~ msgstr "Mensaje del día"
 
@@ -7072,9 +7038,6 @@ msgstr "Quedan:"
 #~ msgid "Launch"
 #~ msgstr "Lanzar"
 
-#~ msgid "Are you sure you want to quit?"
-#~ msgstr "¿Seguro que quiere salir?"
-
 #~ msgid "Quit?"
 #~ msgstr "¿Salir?"
 
@@ -7183,9 +7146,6 @@ msgstr "Quedan:"
 
 #~ msgid "MOTD"
 #~ msgstr "MDD"
-
-#~ msgid "Help"
-#~ msgstr "Ayuda"
 
 #~ msgid "Contents"
 #~ msgstr "Índice"

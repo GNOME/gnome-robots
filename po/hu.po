@@ -10,37 +10,51 @@
 # Szabolcs Varga <shirokuma at shirokuma dot hu>, 2005.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2014.
 # Balázs Úr <urbalazs at gmail dot com>, 2013.
+# Balázs Úr <urbalazs@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-17 14:01+0000\n"
-"PO-Revision-Date: 2014-03-20 01:24+0100\n"
-"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"POT-Creation-Date: 2014-07-01 07:21+0000\n"
+"PO-Revision-Date: 2014-07-01 19:04+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.2\n"
 
-#: ../data/gnobots2.desktop.in.h:1 ../src/gnobots.c:206 ../src/gnobots.c:219
-#: ../src/menu.c:262
-msgid "Robots"
-msgstr "Robotok"
+#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Új játék"
 
-#: ../data/gnobots2.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Kerülje el a robotokat és ütköztesse egymásnak őket"
+#: ../data/app-menu.ui.h:2 ../src/properties.c:394
+msgid "Preferences"
+msgstr "Beállítások"
 
-#: ../data/gnobots2.desktop.in.h:3
-msgid "game;arcade;teleport;"
-msgstr "játék;ügyességi;teleport;"
+#: ../data/app-menu.ui.h:3
+msgid "Scores"
+msgstr "Pontszámok"
+
+#: ../data/app-menu.ui.h:4
+#| msgid "_Help"
+msgid "Help"
+msgstr "Súgó"
+
+#: ../data/app-menu.ui.h:5
+#| msgid "_About"
+msgid "About"
+msgstr "Névjegy"
+
+#: ../data/app-menu.ui.h:6
+#| msgid "_Quit"
+msgid "Quit"
+msgstr "Kilépés"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
-#| msgid "Robots"
 msgid "GNOME Robots"
 msgstr "GNOME Robotok"
 
@@ -73,6 +87,19 @@ msgid ""
 msgstr ""
 "A biztonságos teleportok száma korlátozott, és ha elfogy, a teleportálás egy "
 "robot mellé röpítheti, aki megöli. Éljen túl, amíg csak lehet!"
+
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
+#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+msgid "Robots"
+msgstr "Robotok"
+
+#: ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Kerülje el a robotokat és ütköztesse egymásnak őket"
+
+#: ../data/gnome-robots.desktop.in.h:3
+msgid "game;arcade;teleport;"
+msgstr "játék;ügyességi;teleport;"
 
 #: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
@@ -142,7 +169,7 @@ msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Hang bekapcsolása. Hangok lejátszása különböző eseményekhez a játék alatt."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:500
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:506
 msgid "Key to move NW"
 msgstr "Billentyű az északnyugati irányba mozgáshoz"
 
@@ -150,7 +177,7 @@ msgstr "Billentyű az északnyugati irányba mozgáshoz"
 msgid "The key used to move north-west."
 msgstr "Billentyű az északnyugatra lépéshez."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:501
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:507
 msgid "Key to move N"
 msgstr "Billentyű az északi irányba mozgáshoz"
 
@@ -158,7 +185,7 @@ msgstr "Billentyű az északi irányba mozgáshoz"
 msgid "The key used to move north."
 msgstr "Billentyű az északra lépéshez."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:502
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:508
 msgid "Key to move NE"
 msgstr "Billentyű az északkeleti irányba mozgáshoz"
 
@@ -166,7 +193,7 @@ msgstr "Billentyű az északkeleti irányba mozgáshoz"
 msgid "The key used to move north-east."
 msgstr "Billentyű az északkeletre lépéshez."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:503
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:509
 msgid "Key to move W"
 msgstr "Billentyű a nyugati irányba mozgáshoz"
 
@@ -174,7 +201,7 @@ msgstr "Billentyű a nyugati irányba mozgáshoz"
 msgid "The key used to move west."
 msgstr "Billentyű a nyugatra lépéshez."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:510
 msgid "Key to hold"
 msgstr "Billentyű az állva maradáshoz"
 
@@ -182,7 +209,7 @@ msgstr "Billentyű az állva maradáshoz"
 msgid "The key used to hold still."
 msgstr "Az állva maradáshoz használandó billentyű."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:504
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:511
 msgid "Key to move E"
 msgstr "Billentyű a keleti irányba mozgáshoz"
 
@@ -190,7 +217,7 @@ msgstr "Billentyű a keleti irányba mozgáshoz"
 msgid "The key used to move east."
 msgstr "Billentyű a keletre lépéshez."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:512
 msgid "Key to move SW"
 msgstr "Billentyű a délnyugati irányba mozgáshoz"
 
@@ -198,7 +225,7 @@ msgstr "Billentyű a délnyugati irányba mozgáshoz"
 msgid "The key used to move south-west."
 msgstr "Billentyű a délnyugatra lépéshez."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:513
 msgid "Key to move S"
 msgstr "Billentyű a déli irányba mozgáshoz"
 
@@ -206,7 +233,7 @@ msgstr "Billentyű a déli irányba mozgáshoz"
 msgid "The key used to move south."
 msgstr "Billentyű a délre lépéshez."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:514
 msgid "Key to move SE"
 msgstr "Billentyű a délkeleti irányba mozgáshoz"
 
@@ -214,80 +241,55 @@ msgstr "Billentyű a délkeleti irányba mozgáshoz"
 msgid "The key used to move south-east."
 msgstr "Billentyű a délkeletre lépéshez."
 
-#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:509
-msgid "Key to teleport"
-msgstr "Billentyű a teleporthoz"
-
-#: ../data/org.gnome.robots.gschema.xml.h:34
-msgid "The key used to teleport safely (if possible)."
-msgstr "A biztonságos teleportáláshoz (ha lehet) használandó billentyű."
-
-#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:510
-msgid "Key to teleport randomly"
-msgstr "Billentyű a véletlenszerű teleportáláshoz"
-
-#: ../data/org.gnome.robots.gschema.xml.h:36
-msgid "The key used to teleport randomly."
-msgstr "A véletlenszerű teleportáláshoz használandó billentyű."
-
-#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:511
-msgid "Key to wait"
-msgstr "Billentyű a várakozáshoz"
-
-#: ../data/org.gnome.robots.gschema.xml.h:38
-msgid "The key used to wait."
-msgstr "A várakozáshoz használandó billentyű."
-
-#: ../data/org.gnome.robots.gschema.xml.h:39
+#: ../data/org.gnome.robots.gschema.xml.h:33
 msgid "Width of the window in pixels"
 msgstr "Az ablak szélessége képpontokban"
 
-#: ../data/org.gnome.robots.gschema.xml.h:40
+#: ../data/org.gnome.robots.gschema.xml.h:34
 msgid "Height of the window in pixels"
 msgstr "Az ablak magassága képpontokban"
 
-#: ../data/org.gnome.robots.gschema.xml.h:41
+#: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
 msgstr "Az ablak teljes méretű-e"
 
-#: ../data/org.gnome.robots.gschema.xml.h:42
-msgid "true if the window is fullscren"
-msgstr "Az ablak teljes képernyős-e"
-
-#: ../src/game.c:149
+#: ../src/game.c:148
 msgid "Game over!"
 msgstr "Vége a játéknak!"
 
-#: ../src/game.c:151
+#: ../src/game.c:150
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr "Remek munka, de a pontszáma sajnos nincs benne az első tízben."
 
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/game.c:153 ../src/games-stock.c:253
+#: ../src/game.c:151
+msgid "_Quit"
+msgstr "_Kilépés"
+
+#: ../src/game.c:152 ../src/gnome-robots.c:231
 msgid "_New Game"
 msgstr "Ú_j játék"
 
-#: ../src/game.c:166
+#: ../src/game.c:165
 msgid "Robots Scores"
 msgstr "Robotok pontszámok"
 
-#: ../src/game.c:169
+#: ../src/game.c:168
 msgid "Map:"
 msgstr "Térkép:"
 
-#: ../src/game.c:178
+#: ../src/game.c:177
 msgid "Congratulations!"
 msgstr "Gratulálok!"
 
-#: ../src/game.c:179
+#: ../src/game.c:178
 msgid "Your score is the best!"
 msgstr "Pontszáma a legjobb!"
 
-#: ../src/game.c:180
+#: ../src/game.c:179
 msgid "Your score has made the top ten."
 msgstr "Pontszáma benne van az első tízben."
 
-#: ../src/game.c:408 ../src/game.c:424
+#: ../src/game.c:406 ../src/game.c:422
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -296,11 +298,11 @@ msgstr ""
 "De meg tudja-e csinálni még egyszer?"
 
 #. This should never happen.
-#: ../src/game.c:1186
+#: ../src/game.c:1176
 msgid "There are no teleport locations left!!"
 msgstr "Nem maradt több teleport hely!"
 
-#: ../src/game.c:1214
+#: ../src/game.c:1204
 msgid "There are no safe locations to teleport to!!"
 msgstr "Nincs több biztonságos teleport hely!"
 
@@ -327,300 +329,136 @@ msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$dp %2$dmp"
 
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Új játék"
-
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
 msgid "Date"
 msgstr "Dátum"
 
-# aisleriot/menu.c:125
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "Súgó megjelenítése ehhez a játékhoz"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "A jelenlegi játék befejezése"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "Teljes képernyős üzemmód"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "Javaslat a következő lépéshez"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "Teljes képernyős mód elhagyása"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "Új többjátékosos hálózati játék indítása"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr ""
-"A jelenlegi hálózati játék befejezése és visszatérés a hálózati kiszolgálóhoz"
-
-#: ../src/games-stock.c:48 ../src/menu.c:69
-msgid "Start a new game"
-msgstr "Új játék indítása"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "A játék szüneteltetése"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "A játékosok listájának megjelenítése a hálózati játékban"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "A visszavont lépés végrehajtása mégis"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "A játék újraindítása"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "A szüneteltetett játék folytatása"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "A pontok megtekintése"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "Az utolsó lépés visszavonása"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "A játék névjegye"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "A jelenlegi ablak bezárása"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "A játék beállítása"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "Kilépés a játékból"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "_Tartalom"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "_Teljes képernyő"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "_Javaslat"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "Ú_j"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "_Mégis a lépést"
-
-# aisleriot/dialog.c:112
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "_Visszaállítás"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "Ú_jraindítás"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "Mozgatás _visszavonása"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "_Osztás"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "T_eljes képernyő elhagyása"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "_Hálózati játék"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "Játék _elhagyása"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "_Játékoslista"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "_Szünet"
-
-# aisleriot/dialog.c:112
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "_Folytatás"
-
-#: ../src/games-stock.c:267
-msgid "_Scores"
-msgstr "_Pontszámok"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "Játék be_fejezése"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"A(z) %s szabad szoftver, terjesztheti és/vagy módosíthatja a Free Software "
-"Foundation által kiadott GNU General Public License %d. (vagy bármely "
-"későbbi) változatában foglaltak alapján."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"A(z) %s programot abban a reményben terjesztjük, hogy hasznos lesz, de nem "
-"vállalunk SEMMIFÉLE GARANCIÁT, még olyan értelemben sem, hogy a program "
-"alkalmas-e a KÖZREADÁSRA vagy EGY BIZONYOS FELADAT ELVÉGZÉSÉRE. További "
-"részletekért tanulmányozza a GNU GPL licencet."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"A(z) %s programhoz a GNU General Public License egy példánya is jár, ha nem "
-"kapta meg, írjon a Free Software Foundation Inc.-nek. Levélcímük: 51 "
-"Franklin St, Fifth Floor, Boston, MA 02110-1301, USA"
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"A(z) %s programhoz a GNU General Public License egy példánya is jár, ha nem "
-"kapta meg, a <http://www.gnu.org/licenses/> oldalon elolvashatja."
-
-#: ../src/gnobots.c:79
-msgid "Set game scenario"
-msgstr "Játékszituáció beállítása"
-
-#: ../src/gnobots.c:79 ../src/gnobots.c:81
-msgid "NAME"
-msgstr "NÉV"
-
-#: ../src/gnobots.c:81
-msgid "Set game configuration"
-msgstr "A játék beállítása"
-
-#: ../src/gnobots.c:83 ../src/gnobots.c:85
-msgid "Initial window position"
-msgstr "Kezdeti ablakpozíció"
-
-#: ../src/gnobots.c:83
-msgid "X"
-msgstr "X"
-
-#: ../src/gnobots.c:85
-msgid "Y"
-msgstr "Y"
-
-#: ../src/gnobots.c:90
+#: ../src/gnome-robots.c:95
 msgid "Classic robots"
 msgstr "Klasszikus robotok"
 
-#: ../src/gnobots.c:91
+#: ../src/gnome-robots.c:96
 msgid "Classic robots with safe moves"
 msgstr "Klasszikus robotok biztonságos mozgásokkal"
 
-#: ../src/gnobots.c:92
+#: ../src/gnome-robots.c:97
 msgid "Classic robots with super-safe moves"
 msgstr "Klasszikus robotok tuti-biztos mozgásokkal"
 
-#: ../src/gnobots.c:93
+#: ../src/gnome-robots.c:98
 msgid "Nightmare"
 msgstr "Rémálom"
 
-#: ../src/gnobots.c:94
+#: ../src/gnome-robots.c:99
 msgid "Nightmare with safe moves"
 msgstr "Rémálom biztonságos mozgásokkal"
 
-#: ../src/gnobots.c:95
+#: ../src/gnome-robots.c:100
 msgid "Nightmare with super-safe moves"
 msgstr "Rémálom tuti-biztos mozgásokkal"
 
-#: ../src/gnobots.c:96
+#: ../src/gnome-robots.c:101
 msgid "Robots2"
 msgstr "Robotok 2"
 
-#: ../src/gnobots.c:97
+#: ../src/gnome-robots.c:102
 msgid "Robots2 with safe moves"
 msgstr "Robotok 2 biztonságos mozgásokkal"
 
-#: ../src/gnobots.c:98
+#: ../src/gnome-robots.c:103
 msgid "Robots2 with super-safe moves"
 msgstr "Robotok 2 tuti-biztos mozgásokkal"
 
-#: ../src/gnobots.c:99
+#: ../src/gnome-robots.c:104
 msgid "Robots2 easy"
 msgstr "Könnyű Robotok 2"
 
-#: ../src/gnobots.c:100
+#: ../src/gnome-robots.c:105
 msgid "Robots2 easy with safe moves"
 msgstr "Könnyű Robotok 2 biztonságos mozgásokkal"
 
-#: ../src/gnobots.c:101
+#: ../src/gnome-robots.c:106
 msgid "Robots2 easy with super-safe moves"
 msgstr "Könnyű Robotok 2 tuti-biztos mozgásokkal"
 
-#: ../src/gnobots.c:102
+#: ../src/gnome-robots.c:107
 msgid "Robots with safe teleport"
 msgstr "Robotok biztonságos teleporttal"
 
-#: ../src/gnobots.c:103
+#: ../src/gnome-robots.c:108
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robotok biztonságos teleporttal biztonságos mozgásokkal"
 
-#: ../src/gnobots.c:104
+#: ../src/gnome-robots.c:109
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robotok biztonságos teleporttal tuti-biztos mozgásokkal"
 
-#: ../src/gnobots.c:286
+#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
+#: ../src/gnome-robots.c:144
+#, c-format
+#| msgid "Score: %d"
+msgid "Level: %d\tScore: %d"
+msgstr "Szint: %d\tPontszám: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: ../src/gnome-robots.c:155
+#, c-format
+#| msgid "Remaining:"
+msgid "(Remaining: %d)"
+msgstr "(Hátra van: %d)"
+
+#. First line of safe teleports button label.
+#: ../src/gnome-robots.c:157
+#| msgid "Teleport randomly"
+msgid "Teleport _Safely"
+msgstr "Teleportálás _biztonságosan"
+
+#: ../src/gnome-robots.c:202
+msgid ""
+"Based on classic BSD Robots\n"
+"\n"
+"Robots is a part of GNOME Games."
+msgstr ""
+"A klasszikus BSD Robotok alapján\n"
+"\n"
+"A Robotok a GNOME játékok része."
+
+#: ../src/gnome-robots.c:206
+msgid "translator-credits"
+msgstr ""
+"Bán Szabolcs <shooby at gnome dot hu>\n"
+"Dvornik László <dvornik at gnome dot hu>\n"
+"Kelemen Gábor <kelemeng at gnome dot hu>\n"
+"Kovács Emese <emese at gnome dot hu>\n"
+"Nagy Gergely <greg at gnome dot hu>\n"
+"Tímár András <timar at gnome dot hu>\n"
+"Varga Szabolcs <shirokuma at shirokuma dot hu>"
+
+#: ../src/gnome-robots.c:227
+#| msgid "Do you want to start a new game?"
+msgid "Are you sure you want to discard the current game?"
+msgstr "Biztosan el szeretné dobni a jelenlegi játékot?"
+
+#: ../src/gnome-robots.c:230
+msgid "Keep _Playing"
+msgstr "Játék _folytatása"
+
+#: ../src/gnome-robots.c:373
+#| msgid "Teleport randomly"
+msgid "Teleport _Randomly"
+msgstr "Teleportálás _véletlenszerűen"
+
+#: ../src/gnome-robots.c:392
+#| msgid "Wait for the robots"
+msgid "_Wait for Robots"
+msgstr "_Várakozás a robotokra"
+
+#: ../src/gnome-robots.c:420
 msgid "No game data could be found."
 msgstr "A játékadatok nem találhatók meg."
 
-#: ../src/gnobots.c:288
+#: ../src/gnome-robots.c:422
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -628,11 +466,11 @@ msgstr ""
 "A Robotok program nem talált érvényes játékbeállítás-fájlt. Ellenőrizze, "
 "hogy a program megfelelően van-e telepítve."
 
-#: ../src/gnobots.c:304
+#: ../src/gnome-robots.c:438
 msgid "Some graphics files are missing or corrupt."
 msgstr "Néhány grafikus fájl hiányzik vagy sérült."
 
-#: ../src/gnobots.c:306
+#: ../src/gnome-robots.c:440
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -645,154 +483,288 @@ msgstr ""
 msgid "Could not find '%s' pixmap file\n"
 msgstr "A(z) „%s” pixmap fájl nem található\n"
 
-#: ../src/menu.c:64
-msgid "_Game"
-msgstr "_Játék"
-
-#: ../src/menu.c:65
-msgid "_View"
-msgstr "_Nézet"
-
-#: ../src/menu.c:66
-msgid "_Move"
-msgstr "_Mozgatás"
-
-#: ../src/menu.c:67
-msgid "_Settings"
-msgstr "_Beállítások"
-
-#: ../src/menu.c:68
-msgid "_Help"
-msgstr "_Súgó"
-
-#: ../src/menu.c:73
-msgid "_Teleport"
-msgstr "_Teleport"
-
-#: ../src/menu.c:74
-msgid "Teleport, safely if possible"
-msgstr "Teleportálás, ha lehet, biztonságosan"
-
-#: ../src/menu.c:75
-msgid "_Random"
-msgstr "_Véletlenszerű"
-
-#: ../src/menu.c:76
-msgid "Teleport randomly"
-msgstr "Teleportálás véletlenszerűen"
-
-#: ../src/menu.c:77
-msgid "_Wait"
-msgstr "Vá_rakozás"
-
-#: ../src/menu.c:77
-msgid "Wait for the robots"
-msgstr "Várakozás a robotokra"
-
-#: ../src/menu.c:88
-msgid "_Toolbar"
-msgstr "Eszköz_tár"
-
-#: ../src/menu.c:88
-msgid "Show or hide the toolbar"
-msgstr "Eszköztár megjelenítése vagy elrejtése"
-
-#: ../src/menu.c:266
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"A klasszikus BSD Robotok alapján\n"
-"\n"
-"A Robotok a GNOME játékok része."
-
-#: ../src/menu.c:270
-msgid "translator-credits"
-msgstr ""
-"Bán Szabolcs <shooby at gnome dot hu>\n"
-"Dvornik László <dvornik at gnome dot hu>\n"
-"Kelemen Gábor <kelemeng at gnome dot hu>\n"
-"Kovács Emese <emese at gnome dot hu>\n"
-"Nagy Gergely <greg at gnome dot hu>\n"
-"Tímár András <timar at gnome dot hu>\n"
-"Varga Szabolcs <shirokuma at shirokuma dot hu>"
-
-#: ../src/properties.c:391
-msgid "Robots Preferences"
-msgstr "A Robotok beállításai"
-
-#: ../src/properties.c:416
+#: ../src/properties.c:418
 msgid "Game Type"
 msgstr "Játéktípus"
 
-#: ../src/properties.c:425
+#: ../src/properties.c:428
 msgid "_Use safe moves"
 msgstr "_Biztonságos lépések használata"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:433
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Halálhoz vezető véletlen lépések megelőzése."
 
-#: ../src/properties.c:434
+#: ../src/properties.c:436
 msgid "U_se super safe moves"
 msgstr "_Tutibiztos lépések használata"
 
-#: ../src/properties.c:441
+#: ../src/properties.c:443
 msgid "Prevents all moves that result in getting killed."
 msgstr "Minden halálhoz vezető lépés megelőzése."
 
-#: ../src/properties.c:443
+#: ../src/properties.c:449
 msgid "_Enable sounds"
 msgstr "_Hangok bekapcsolása"
 
-#: ../src/properties.c:449
+#: ../src/properties.c:455
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Hangok lejátszása győzelem vagy halál esetén."
 
-#: ../src/properties.c:451
+#: ../src/properties.c:457
 msgid "Game"
 msgstr "Játék"
 
-#: ../src/properties.c:464
+#: ../src/properties.c:470
 msgid "_Image theme:"
 msgstr "_Képtéma:"
 
-#: ../src/properties.c:476
+#: ../src/properties.c:482
 msgid "_Background color:"
 msgstr "_Háttérszín:"
 
-#: ../src/properties.c:488
+#: ../src/properties.c:494
 msgid "Appearance"
 msgstr "Megjelenés"
 
-#: ../src/properties.c:520
+#: ../src/properties.c:523
 msgid "_Restore Defaults"
 msgstr "Alapértelmezések vissz_aállítása"
 
-#: ../src/properties.c:525
+#: ../src/properties.c:528
 msgid "Keyboard"
 msgstr "Billentyűzet"
 
-#: ../src/statusbar.c:68
-msgid "Score:"
-msgstr "Pont:"
+#~ msgid "Key to teleport"
+#~ msgstr "Billentyű a teleporthoz"
 
-#: ../src/statusbar.c:76
-msgid "Safe Teleports:"
-msgstr "Biztonságos teleportok:"
+#~ msgid "The key used to teleport safely (if possible)."
+#~ msgstr "A biztonságos teleportáláshoz (ha lehet) használandó billentyű."
 
-#: ../src/statusbar.c:85
-msgid "Level:"
-msgstr "Szint:"
+#~ msgid "Key to teleport randomly"
+#~ msgstr "Billentyű a véletlenszerű teleportáláshoz"
 
-#: ../src/statusbar.c:94
-msgid "Remaining:"
-msgstr "Hátra van:"
+#~ msgid "The key used to teleport randomly."
+#~ msgstr "A véletlenszerű teleportáláshoz használandó billentyű."
+
+#~ msgid "Key to wait"
+#~ msgstr "Billentyű a várakozáshoz"
+
+#~ msgid "The key used to wait."
+#~ msgstr "A várakozáshoz használandó billentyű."
+
+#~ msgid "true if the window is fullscren"
+#~ msgstr "Az ablak teljes képernyős-e"
+
+# aisleriot/menu.c:125
+#~ msgid "View help for this game"
+#~ msgstr "Súgó megjelenítése ehhez a játékhoz"
+
+#~ msgid "End the current game"
+#~ msgstr "A jelenlegi játék befejezése"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "Teljes képernyős üzemmód"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "Javaslat a következő lépéshez"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "Teljes képernyős mód elhagyása"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "Új többjátékosos hálózati játék indítása"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr ""
+#~ "A jelenlegi hálózati játék befejezése és visszatérés a hálózati "
+#~ "kiszolgálóhoz"
+
+#~ msgid "Start a new game"
+#~ msgstr "Új játék indítása"
+
+#~ msgid "Pause the game"
+#~ msgstr "A játék szüneteltetése"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "A játékosok listájának megjelenítése a hálózati játékban"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "A visszavont lépés végrehajtása mégis"
+
+#~ msgid "Restart the game"
+#~ msgstr "A játék újraindítása"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "A szüneteltetett játék folytatása"
+
+#~ msgid "View the scores"
+#~ msgstr "A pontok megtekintése"
+
+#~ msgid "Undo the last move"
+#~ msgstr "Az utolsó lépés visszavonása"
+
+#~ msgid "About this game"
+#~ msgstr "A játék névjegye"
+
+#~ msgid "Close this window"
+#~ msgstr "A jelenlegi ablak bezárása"
+
+#~ msgid "Configure the game"
+#~ msgstr "A játék beállítása"
+
+#~ msgid "Quit this game"
+#~ msgstr "Kilépés a játékból"
+
+#~ msgid "_Contents"
+#~ msgstr "_Tartalom"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "_Teljes képernyő"
+
+#~ msgid "_Hint"
+#~ msgstr "_Javaslat"
+
+#~ msgid "_New"
+#~ msgstr "Ú_j"
+
+#~ msgid "_Redo Move"
+#~ msgstr "_Mégis a lépést"
+
+# aisleriot/dialog.c:112
+#~ msgid "_Reset"
+#~ msgstr "_Visszaállítás"
+
+#~ msgid "_Restart"
+#~ msgstr "Ú_jraindítás"
+
+#~ msgid "_Undo Move"
+#~ msgstr "Mozgatás _visszavonása"
+
+#~ msgid "_Deal"
+#~ msgstr "_Osztás"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "T_eljes képernyő elhagyása"
+
+#~ msgid "Network _Game"
+#~ msgstr "_Hálózati játék"
+
+#~ msgid "L_eave Game"
+#~ msgstr "Játék _elhagyása"
+
+#~ msgid "Player _List"
+#~ msgstr "_Játékoslista"
+
+#~ msgid "_Pause"
+#~ msgstr "_Szünet"
+
+# aisleriot/dialog.c:112
+#~ msgid "Res_ume"
+#~ msgstr "_Folytatás"
+
+#~ msgid "_Scores"
+#~ msgstr "_Pontszámok"
+
+#~ msgid "_End Game"
+#~ msgstr "Játék be_fejezése"
+
+#~ msgid ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+#~ msgstr ""
+#~ "A(z) %s szabad szoftver, terjesztheti és/vagy módosíthatja a Free "
+#~ "Software Foundation által kiadott GNU General Public License %d. (vagy "
+#~ "bármely későbbi) változatában foglaltak alapján."
+
+#~ msgid ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+#~ msgstr ""
+#~ "A(z) %s programot abban a reményben terjesztjük, hogy hasznos lesz, de "
+#~ "nem vállalunk SEMMIFÉLE GARANCIÁT, még olyan értelemben sem, hogy a "
+#~ "program alkalmas-e a KÖZREADÁSRA vagy EGY BIZONYOS FELADAT ELVÉGZÉSÉRE. "
+#~ "További részletekért tanulmányozza a GNU GPL licencet."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+#~ msgstr ""
+#~ "A(z) %s programhoz a GNU General Public License egy példánya is jár, ha "
+#~ "nem kapta meg, írjon a Free Software Foundation Inc.-nek. Levélcímük: 51 "
+#~ "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "A(z) %s programhoz a GNU General Public License egy példánya is jár, ha "
+#~ "nem kapta meg, a <http://www.gnu.org/licenses/> oldalon elolvashatja."
+
+#~ msgid "Set game scenario"
+#~ msgstr "Játékszituáció beállítása"
+
+#~ msgid "NAME"
+#~ msgstr "NÉV"
+
+#~ msgid "Set game configuration"
+#~ msgstr "A játék beállítása"
+
+#~ msgid "Initial window position"
+#~ msgstr "Kezdeti ablakpozíció"
+
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "_Game"
+#~ msgstr "_Játék"
+
+#~ msgid "_View"
+#~ msgstr "_Nézet"
+
+#~ msgid "_Move"
+#~ msgstr "_Mozgatás"
+
+#~ msgid "_Settings"
+#~ msgstr "_Beállítások"
+
+#~ msgid "_Teleport"
+#~ msgstr "_Teleport"
+
+#~ msgid "Teleport, safely if possible"
+#~ msgstr "Teleportálás, ha lehet, biztonságosan"
+
+#~ msgid "_Random"
+#~ msgstr "_Véletlenszerű"
+
+#~ msgid "_Wait"
+#~ msgstr "Vá_rakozás"
+
+#~ msgid "_Toolbar"
+#~ msgstr "Eszköz_tár"
+
+#~ msgid "Show or hide the toolbar"
+#~ msgstr "Eszköztár megjelenítése vagy elrejtése"
+
+#~ msgid "Robots Preferences"
+#~ msgstr "A Robotok beállításai"
+
+#~ msgid "Score:"
+#~ msgstr "Pont:"
+
+#~ msgid "Safe Teleports:"
+#~ msgstr "Biztonságos teleportok:"
+
+#~ msgid "Level:"
+#~ msgstr "Szint:"
 
 #~ msgctxt "score-dialog"
 #~ msgid "Name"
@@ -910,9 +882,6 @@ msgstr "Hátra van:"
 
 #~ msgid "Difficulty of the opponent chess engine"
 #~ msgstr "Az ellenfél sakkmotor nehézsége"
-
-#~ msgid "Preferences"
-#~ msgstr "Beállítások"
 
 #~ msgid "Play as:"
 #~ msgstr "Játék mint:"
@@ -1421,9 +1390,6 @@ msgstr "Hátra van:"
 
 #~ msgid "Five or more"
 #~ msgstr "Öt vagy több"
-
-#~ msgid "Scores"
-#~ msgstr "Pontszámok"
 
 #~ msgid "Next:"
 #~ msgstr "Következő:"
@@ -1996,12 +1962,6 @@ msgstr "Hátra van:"
 #~ msgid "_Preferences"
 #~ msgstr "_Beállítások"
 
-#~ msgid "_About"
-#~ msgstr "_Névjegy"
-
-#~ msgid "_Quit"
-#~ msgstr "_Kilépés"
-
 #~ msgid "Hint"
 #~ msgstr "Javaslat"
 
@@ -2484,9 +2444,6 @@ msgstr "Hátra van:"
 #~ msgid "Size:"
 #~ msgstr "Méret:"
 
-#~ msgid "Do you want to start a new game?"
-#~ msgstr "Szeretne új játékot indítani?"
-
 #~ msgid "If you start a new game, your current progress will be lost."
 #~ msgstr "Ha új játékot indít, akkor a jelenlegi állás elvész."
 
@@ -2801,9 +2758,6 @@ msgstr "Hátra van:"
 
 #~ msgid "Already used! Where do you want to put that?"
 #~ msgstr "Már fel van használva. Hova szeretné tenni?"
-
-#~ msgid "Score: %d"
-#~ msgstr "Pontszám: %d"
 
 #~ msgid "Field used"
 #~ msgstr "Használt mező"

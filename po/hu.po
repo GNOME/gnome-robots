@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2014-07-01 07:21+0000\n"
-"PO-Revision-Date: 2014-07-01 19:04+0200\n"
+"PO-Revision-Date: 2014-07-01 19:10+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
@@ -447,7 +447,7 @@ msgstr "Játék _folytatása"
 #: ../src/gnome-robots.c:373
 #| msgid "Teleport randomly"
 msgid "Teleport _Randomly"
-msgstr "Teleportálás _véletlenszerűen"
+msgstr "Teleportálás vél_etlenszerűen"
 
 #: ../src/gnome-robots.c:392
 #| msgid "Wait for the robots"

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
-"POT-Creation-Date: 2014-05-20 07:16+0000\n"
-"PO-Revision-Date: 2014-05-20 19:52+0200\n"
+"POT-Creation-Date: 2014-07-03 07:19+0000\n"
+"PO-Revision-Date: 2014-07-03 12:53+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -25,13 +25,13 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/appearance.page:15 C/basics.page:15 C/controls-change.page:14
-#: C/controls-default.page:15 C/game-types.page:14 C/index.page:12
+#: C/controls-default.page:16 C/game-types.page:14 C/index.page:12
 #: C/moves.page:14 C/scores.page:14
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:19 C/basics.page:19 C/controls-default.page:19
+#: C/appearance.page:19 C/basics.page:19 C/controls-default.page:20
 msgid "Rachel Dunstan"
 msgstr "Rachel Dunstan"
 
@@ -126,10 +126,6 @@ msgstr "Nuevo"
 
 #. (itstool) path: section/p
 #: C/basics.page:31
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-#| "\">New</gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></"
-#| "keyseq> to start a new game."
 msgid ""
 "Select <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">New</"
 "gui></guiseq>, click the <_:media-1/> button on the toolbar, or press "
@@ -274,22 +270,22 @@ msgstr ""
 "<gui style=\"button\">Restaurar valores predeterminados</gui>."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:23
+#: C/controls-default.page:24
 msgid "How do I control the main character?"
 msgstr "¿Cómo se controla el personaje principal?"
 
 #. (itstool) path: page/title
-#: C/controls-default.page:26
+#: C/controls-default.page:27
 msgid "Mouse and keyboard controls for <app>Robots</app>"
 msgstr "Controles del teclado y del ratón para <app>Robots</app>"
 
 #. (itstool) path: section/title
-#: C/controls-default.page:29
+#: C/controls-default.page:30
 msgid "Keyboard controls"
 msgstr "Controles del teclado"
 
 #. (itstool) path: section/p
-#: C/controls-default.page:31
+#: C/controls-default.page:32
 msgid ""
 "Use the following keys from the numeric keypad on the far right of your "
 "keyboard, to move in <app>Robots</app>."
@@ -298,106 +294,113 @@ msgstr ""
 "teclado, para moverse en <app>Robots</app>."
 
 #. (itstool) path: td/p
-#: C/controls-default.page:37
+#: C/controls-default.page:38
 msgid "Possible moves"
 msgstr "Movimientos posibles"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:38
+#: C/controls-default.page:39
 msgid "Key"
 msgstr "Tecla"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:43
+#: C/controls-default.page:44
 msgid "North west"
 msgstr "Noroeste"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:44
-msgid "<key>Home</key>"
-msgstr "<key>Inicio</key>"
+#: C/controls-default.page:45
+#| msgid "<key>+</key>"
+msgid "<key>y</key>"
+msgstr "<key>y</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:47
+#: C/controls-default.page:48
 msgid "North"
 msgstr "Norte"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:48
-msgid "<key>↑</key>"
-msgstr "<key>↑</key>"
+#: C/controls-default.page:49
+#| msgid "<key>+</key>"
+msgid "<key>k</key>"
+msgstr "<key>k</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:51
+#: C/controls-default.page:52
 msgid "North east"
 msgstr "Noreste"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:52
-msgid "<key>PgUp</key>"
-msgstr "<key>Re Pág</key>"
+#: C/controls-default.page:53
+#| msgid "<key>+</key>"
+msgid "<key>u</key>"
+msgstr "<key>u</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:55
+#: C/controls-default.page:56
 msgid "West"
 msgstr "Oeste"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:56
-msgid "<key>→</key>"
-msgstr "<key>→</key>"
+#: C/controls-default.page:57
+#| msgid "<key>+</key>"
+msgid "<key>h</key>"
+msgstr "<key>h</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:59
+#: C/controls-default.page:60
 msgid "East"
 msgstr "Este"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:60
-msgid "<key>←</key>"
-msgstr "<key>←</key>"
+#: C/controls-default.page:61
+#| msgid "<key>+</key>"
+msgid "<key>l</key>"
+msgstr "<key>l</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:63
+#: C/controls-default.page:64
 msgid "South west"
 msgstr "Suroeste"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:64
-msgid "<key>End</key>"
-msgstr "<key>Fin</key>"
+#: C/controls-default.page:65
+#| msgid "<key>+</key>"
+msgid "<key>b</key>"
+msgstr "<key>b</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:67
+#: C/controls-default.page:68
 msgid "South"
 msgstr "Sur"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:68
-msgid "<key>↓</key>"
-msgstr "<key>↓</key>"
+#: C/controls-default.page:69
+#| msgid "<key>+</key>"
+msgid "<key>j</key>"
+msgstr "<key>j</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:71
+#: C/controls-default.page:72
 msgid "South east"
 msgstr "Sureste"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:72
-msgid "<key>PgDn</key>"
-msgstr "<key>Av Pág</key>"
-
-#. (itstool) path: td/p
-#. (itstool) path: item/title
-#: C/controls-default.page:75 C/controls-default.page:115
-msgid "Stay in the same position"
-msgstr "Quedarse en la misma posición"
+#: C/controls-default.page:73
+#| msgid "<key>End</key>"
+msgid "<key>n</key>"
+msgstr "<key>n</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:76
-msgid "<key>Begin</key> (marked only as <key>5</key> on some keypads)"
-msgstr ""
-"<key>Principio</key> (marcada sólo como <key>5</key> en algunos teclados)"
+#| msgid "Stay in the same position"
+msgid "Stay in the same position (one turn)"
+msgstr "Quedarse en la misma posición (un turno)"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:77
+msgid "Space"
+msgstr "Espacio"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:80
@@ -406,8 +409,8 @@ msgstr "Teletransportarse con seguridad"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:81
-msgid "<key>+</key>"
-msgstr "<key>+</key>"
+msgid "<keyseq><key>Alt</key><key>s</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>s</key></keyseq>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:84
@@ -416,8 +419,8 @@ msgstr "Teletransportarse al azar"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:85
-msgid "<key>*</key>"
-msgstr "<key>*</key>"
+msgid "<keyseq><key>Alt</key><key>r</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>r</key></keyseq>"
 
 #. (itstool) path: td/p
 #. (itstool) path: item/title
@@ -427,8 +430,8 @@ msgstr "Esperar a los robots"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:89
-msgid "<key>Enter</key>"
-msgstr "<key>Intro</key>"
+msgid "<keyseq><key>Alt</key><key>w</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>w</key></keyseq>"
 
 #. (itstool) path: note/p
 #: C/controls-default.page:95
@@ -465,6 +468,11 @@ msgstr ""
 "pequeña flecha negra apuntando hacia el norte. Al pulsar, el personaje se "
 "moverá un cuadrado hacia el norte."
 
+#. (itstool) path: item/title
+#: C/controls-default.page:115
+msgid "Stay in the same position"
+msgstr "Quedarse en la misma posición"
+
 #. (itstool) path: item/p
 #: C/controls-default.page:116
 msgid "Click on the main character to stay put in the same square."
@@ -478,10 +486,6 @@ msgstr "Esperar"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:120
-#| msgid ""
-#| "Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
-#| "\"menu\">Move</gui> <gui style=\"menuitem\">Wait</gui></guiseq> to wait "
-#| "for the enemy robots to finish making all their moves."
 msgid ""
 "Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
 "\"menu\">Move</gui><gui style=\"menuitem\">Wait</gui></guiseq> to wait for "
@@ -499,16 +503,11 @@ msgstr "Teletransportes seguros"
 
 #. (itstool) path: media/span
 #: C/controls-default.page:130
-#| msgid "Teleport safely"
 msgid "Teleport"
 msgstr "Teletransporte"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:128
-#| msgid ""
-#| "To safely teleport, click the <_:media-1/> button on the toolbar or "
-#| "select <guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem"
-#| "\">Teleport</gui></guiseq>."
 msgid ""
 "To safely teleport, click the <_:media-1/> button on the toolbar or select "
 "<guiseq><gui style=\"menu\">Move</gui><gui style=\"menuitem\">Teleport</"
@@ -525,16 +524,11 @@ msgstr "Teletransportes aleatorios"
 
 #. (itstool) path: media/span
 #: C/controls-default.page:138
-#| msgid "Random teleports"
 msgid "Random teleport"
 msgstr "Teletransporte aleatorio"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:136
-#| msgid ""
-#| "To teleport to a random spot, click the <_:media-1/> button on the "
-#| "toolbar or select <guiseq><gui style=\"menu\">Move</gui> <gui style="
-#| "\"menuitem\">Random</gui></guiseq>."
 msgid ""
 "To teleport to a random spot, click the <_:media-1/> button on the toolbar "
 "or select <guiseq><gui style=\"menu\">Move</gui><gui style=\"menuitem"
@@ -904,7 +898,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/scores.page:35
-#| msgid "<_:media-1/> Robots"
 msgid "Bats <_:media-1/>"
 msgstr "<_:media-1/> Murciélagos"
 
@@ -915,7 +908,6 @@ msgstr "<_:media-1/> Robots de alto riesgo"
 
 #. (itstool) path: item/p
 #: C/scores.page:44
-#| msgid "High-risk enemies"
 msgid "High-risk gnomes <_:media-1/>"
 msgstr "<_:media-1/> Gnomos de alto riesgo"
 
@@ -940,7 +932,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/scores.page:64
-#| msgid "<_:media-1/> Robots"
 msgid "Ghosts <_:media-1/>"
 msgstr "<_:media-1/> Fantasmas"
 
@@ -968,6 +959,37 @@ msgstr "Creative Commons de Atribución-Compartir Igual 3.0 sin soporte"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
+
+#~ msgid "<key>Home</key>"
+#~ msgstr "<key>Inicio</key>"
+
+#~ msgid "<key>↑</key>"
+#~ msgstr "<key>↑</key>"
+
+#~ msgid "<key>PgUp</key>"
+#~ msgstr "<key>Re Pág</key>"
+
+#~ msgid "<key>→</key>"
+#~ msgstr "<key>→</key>"
+
+#~ msgid "<key>←</key>"
+#~ msgstr "<key>←</key>"
+
+#~ msgid "<key>↓</key>"
+#~ msgstr "<key>↓</key>"
+
+#~ msgid "<key>PgDn</key>"
+#~ msgstr "<key>Av Pág</key>"
+
+#~ msgid "<key>Begin</key> (marked only as <key>5</key> on some keypads)"
+#~ msgstr ""
+#~ "<key>Principio</key> (marcada sólo como <key>5</key> en algunos teclados)"
+
+#~ msgid "<key>*</key>"
+#~ msgstr "<key>*</key>"
+
+#~ msgid "<key>Enter</key>"
+#~ msgstr "<key>Intro</key>"
 
 #~ msgid "<key>5</key>"
 #~ msgstr "<key>5</key>"

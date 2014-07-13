@@ -34,7 +34,6 @@
 #include "gbdefs.h"
 #include "keyboard.h"
 #include "game.h"
-#include "menu.h"
 #include "games-file-list.h"
 #include "games-controls.h"
 #include "games-scores.h"

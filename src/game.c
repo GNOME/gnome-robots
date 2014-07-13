@@ -34,7 +34,6 @@
 #include "gnome-robots.h"
 #include "sound.h"
 #include "properties.h"
-#include "menu.h"
 #include "graphics.h"
 #include "cursors.h"
 #include "games-scores.h"

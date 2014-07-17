@@ -10,7 +10,7 @@
 /**********************************************************************/
 extern GtkWidget *window;
 extern GtkWidget *game_area;
-extern GamesScores *highscores;
+extern GamesScoresContext *highscores;
 extern GSettings *settings;
 /**********************************************************************/
 

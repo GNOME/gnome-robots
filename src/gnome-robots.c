@@ -1,3 +1,4 @@
+
 /*
  * Gnome Robots II
  * written by Mark Rae <m.rae@inpharmatica.co.uk>
@@ -38,7 +39,6 @@
 #include "cursors.h"
 #include "games-gridframe.h"
 #include "games-scores.h"
-#include "games-scores-dialog.h"
 
 /* Minimum sizes. */
 #define MINIMUM_TILE_WIDTH   8
@@ -53,7 +53,7 @@ GtkWidget *window = NULL;
 static gint window_width = 0, window_height = 0;
 static gboolean window_is_maximized = FALSE;
 GtkWidget *game_area = NULL;
-GamesScores *highscores;
+GamesScoresContext *highscores;
 GSettings *settings;
 /**********************************************************************/
 
@@ -292,10 +292,7 @@ startup (GtkApplication *app, gpointer user_data)
 
   g_set_application_name (_("Robots"));
 
-  highscores = games_scores_new ("gnome-robots",
-                                 scorecats, G_N_ELEMENTS (scorecats),
-                                 NULL, NULL,
-                                 0 /* default category */,
+  highscores = games_scores_context_new ("gnome-robots",
                                  GAMES_SCORES_STYLE_PLAIN_DESCENDING);
 
   settings = g_settings_new ("org.gnome.robots");

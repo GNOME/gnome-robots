@@ -37,7 +37,6 @@
 #include "games-file-list.h"
 #include "games-controls.h"
 #include "games-scores.h"
-#include "games-scores-dialog.h"
 
 
 /**********************************************************************/

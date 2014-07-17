@@ -39,7 +39,6 @@
 #include "properties.h"
 #include "games-preimage.h"
 #include "games-scores.h"
-#include "games-scores-dialog.h"
 
 /**********************************************************************/
 

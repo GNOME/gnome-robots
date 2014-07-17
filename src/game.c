@@ -37,7 +37,6 @@
 #include "graphics.h"
 #include "cursors.h"
 #include "games-scores.h"
-#include "games-scores-dialog.h"
 
 /**********************************************************************/
 /* Exported Variables                                                 */
@@ -93,6 +92,7 @@ static gboolean random_teleport (void);
 static gboolean safe_teleport (void);
 /**********************************************************************/
 
+struct _GamesScoresCategory current_cat;
 
 /**********************************************************************/
 /* Function Definitions                                               */
@@ -128,7 +128,8 @@ message_box (gchar * msg)
 gint
 show_scores (gint pos, gboolean endofgame)
 {
-  gchar *message;
+  games_scores_context_print_scores (highscores);
+/*  gchar *message;
   static GtkWidget *scoresdialog = NULL;
   static GtkWidget *sorrydialog = NULL;
   GtkWidget *dialog;
@@ -195,9 +196,9 @@ show_scores (gint pos, gboolean endofgame)
   }
 
   result = gtk_dialog_run (GTK_DIALOG (dialog));
-  gtk_widget_hide (dialog);
+  gtk_widget_hide (dialog);*/
 
-  return result;
+  return 0;
 }
 
 /**
@@ -230,8 +231,10 @@ log_score (gint sc)
   }
 
   if (sc != 0) {
-    games_scores_set_category (highscores, sbuf);
-    pos = games_scores_add_plain_score (highscores, (guint32) sc);
+  //  games_scores_set_category (highscores, sbuf);
+    current_cat.key = sbuf;
+    current_cat.name = sbuf;
+    pos = games_scores_context_add_score (highscores, (guint32) sc, &current_cat);
   }
   g_free (sbuf);
 

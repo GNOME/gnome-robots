@@ -1,3 +1,9 @@
+GNOME Robots 3.13.4
+===================
+
+* Remove accidental dependency on system menu.h introduced in 3.13.3
+* Translation updates
+
 GNOME Robots 3.13.3
 ===================
 

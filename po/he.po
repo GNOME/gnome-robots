@@ -393,7 +393,7 @@ msgstr "רובוטים עם שיגור בטוח ומהלכים בטוחים מא
 #: ../src/gnome-robots.c:144
 #, c-format
 msgid "Level: %d\tScore: %d"
-msgstr "שלב: %s\tניקוד: %d"
+msgstr "שלב: %d\tניקוד: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
 #: ../src/gnome-robots.c:155

@@ -65,7 +65,7 @@
 /**********************************************************************/
 typedef struct _GnobotsProperties GnobotsProperties;
 
-#define N_KEYS 12
+#define N_KEYS 9
 
 struct _GnobotsProperties {
   gboolean safe_moves;
@@ -74,7 +74,7 @@ struct _GnobotsProperties {
   gboolean show_toolbar;
   GdkRGBA bgcolour;
   gint selected_config;
-  guint keys[N_KEYS];
+  gint keys[N_KEYS];
   const gchar *themename;
 };
 /**********************************************************************/
@@ -279,7 +279,7 @@ defkey_cb (GtkWidget * widget, gpointer data)
 {
   gint i;
 
-  for (i = 0; i < 12; ++i) {
+  for (i = 0; i < N_KEYS; ++i) {
     GVariant *variant;
     char buffer[64];
 
@@ -595,7 +595,7 @@ load_keys (void)
   gchar buffer[256];
   gint i;
 
-  for (i = 0; i < 12; i++) {
+  for (i = 0; i < N_KEYS; i++) {
     g_snprintf (buffer, sizeof (buffer), KEY_CONTROL_KEY, i);
     properties.keys[i] = g_settings_get_int (settings, buffer);
   }
@@ -673,7 +673,7 @@ save_properties (void)
   gint i;
   gchar *config;
 
-  for (i = 0; i < 12; i++) {
+  for (i = 0; i < N_KEYS; i++) {
     conf_set_control_key (i, properties.keys[i]);
   }
 

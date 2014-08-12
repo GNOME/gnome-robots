@@ -292,7 +292,7 @@ startup (GtkApplication *app, gpointer user_data)
 
   g_set_application_name (_("Robots"));
 
-  highscores = games_scores_context_new ("gnome-robots",
+  highscores = games_scores_context_new ("gnome-robots", "Games Type",/* window,*/
                                  GAMES_SCORES_STYLE_PLAIN_DESCENDING);
 
   settings = g_settings_new ("org.gnome.robots");

@@ -292,9 +292,6 @@ startup (GtkApplication *app, gpointer user_data)
 
   g_set_application_name (_("Robots"));
 
-  highscores = games_scores_context_new ("gnome-robots", "Games Type",/* window,*/
-                                 GAMES_SCORES_STYLE_PLAIN_DESCENDING);
-
   settings = g_settings_new ("org.gnome.robots");
 
   gtk_window_set_default_icon_name ("gnome-robots");
@@ -406,6 +403,9 @@ activate (GtkApplication *app, gpointer user_data)
 					  _
 					  ("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
     gtk_window_set_resizable (GTK_WINDOW (errordialog), FALSE);
+
+  highscores = games_scores_context_new ("gnome-robots", "Games Type", window,
+                                 GAMES_SCORES_STYLE_PLAIN_DESCENDING);
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
   }

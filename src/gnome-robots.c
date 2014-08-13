@@ -392,6 +392,12 @@ activate (GtkApplication *app, gpointer user_data)
 			       MINIMUM_TILE_WIDTH * GAME_WIDTH,
 			       MINIMUM_TILE_HEIGHT * GAME_HEIGHT);
 
+  highscores = games_scores_context_new ("gnome-robots",
+                                         /* Label on the scores dialog, next to map type dropdown */
+                                         _("Game Type"),
+                                         window,
+                                         GAMES_SCORES_STYLE_PLAIN_DESCENDING);
+
   gtk_widget_show_all (window);
 
   if (!load_game_configs ()) {
@@ -404,8 +410,6 @@ activate (GtkApplication *app, gpointer user_data)
 					  ("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
     gtk_window_set_resizable (GTK_WINDOW (errordialog), FALSE);
 
-  highscores = games_scores_context_new ("gnome-robots", "Games Type", window,
-                                 GAMES_SCORES_STYLE_PLAIN_DESCENDING);
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
   }

@@ -306,7 +306,7 @@ shutdown (GtkApplication *app, gpointer user_data)
   g_settings_set_boolean (settings, "window-is-maximized", window_is_maximized);
 }
 
-GamesScoresCategory *create_category_from_key (GamesScoresContext context, const char *key, gpointer user_data)
+GamesScoresCategory *create_category_from_key (GamesScoresContext *context, const char *key, gpointer user_data)
 {
   cat.key = key;
   cat.name = "whoa";
@@ -405,7 +405,7 @@ activate (GtkApplication *app, gpointer user_data)
                                          _("Game Type"),
                                          window,
                                          GAMES_SCORES_STYLE_PLAIN_DESCENDING);
-  g_signal_connect (GTK_WINDOW (highscores), "request-category", G_CALLBACK (create_category_from_key), NULL);
+  g_signal_connect (highscores, "request-category", G_CALLBACK (create_category_from_key), NULL);
   gtk_widget_show_all (window);
 
   if (!load_game_configs ()) {

@@ -306,9 +306,9 @@ shutdown (GtkApplication *app, gpointer user_data)
   g_settings_set_boolean (settings, "window-is-maximized", window_is_maximized);
 }
 
-GamesScoresCategory *create_category_from_key (GamesScoresContext *context, gpointer key)
+GamesScoresCategory *create_category_from_key (GamesScoresContext context, const char *key, gpointer user_data)
 {
-  cat.key = (gchar*) key;
+  cat.key = key;
   cat.name = "whoa";
   return &cat;
 }

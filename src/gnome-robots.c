@@ -55,6 +55,7 @@ static gboolean window_is_maximized = FALSE;
 GtkWidget *game_area = NULL;
 GamesScoresContext *highscores;
 GSettings *settings;
+GamesScoresCategory cat = {"",""};
 /**********************************************************************/
 
 /**********************************************************************/
@@ -305,6 +306,13 @@ shutdown (GtkApplication *app, gpointer user_data)
   g_settings_set_boolean (settings, "window-is-maximized", window_is_maximized);
 }
 
+GamesScoresCategory *create_category_from_key (GamesScoresContext *context, gpointer key)
+{
+  cat.key = (gchar*) key;
+  cat.name = "whoa";
+  return &cat;
+}
+
 static void
 activate (GtkApplication *app, gpointer user_data)
 {
@@ -397,7 +405,7 @@ activate (GtkApplication *app, gpointer user_data)
                                          _("Game Type"),
                                          window,
                                          GAMES_SCORES_STYLE_PLAIN_DESCENDING);
-
+  g_signal_connect (GTK_WINDOW (highscores), "request-category", G_CALLBACK (create_category_from_key), NULL);
   gtk_widget_show_all (window);
 
   if (!load_game_configs ()) {

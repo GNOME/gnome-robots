@@ -55,7 +55,6 @@ static gboolean window_is_maximized = FALSE;
 GtkWidget *game_area = NULL;
 GamesScoresContext *highscores;
 GSettings *settings;
-GamesScoresCategory cat = {"",""};
 /**********************************************************************/
 
 /**********************************************************************/
@@ -90,24 +89,6 @@ static const GActionEntry win_entries[] = {
   { "random-teleport", random_teleport_cb, NULL, NULL, NULL },
   { "safe-teleport", safe_teleport_cb, NULL, NULL, NULL },
   { "wait", wait_cb, NULL, NULL, NULL },
-};
-
-static const GamesScoresCategory scorecats[] = {
-  {"classic_robots", N_("Classic robots")},
-  {"classic_robots-safe", N_("Classic robots with safe moves")},
-  {"classic_robots-super-safe", N_("Classic robots with super-safe moves")},
-  {"nightmare", N_("Nightmare")},
-  {"nightmare-safe", N_("Nightmare with safe moves")},
-  {"nightmare-super-safe", N_("Nightmare with super-safe moves")},
-  {"robots2", N_("Robots2")},
-  {"robots2-safe", N_("Robots2 with safe moves")},
-  {"robots2-super-safe", N_("Robots2 with super-safe moves")},
-  {"robots2_easy", N_("Robots2 easy")},
-  {"robots2_easy-safe", N_("Robots2 easy with safe moves")},
-  {"robots2_easy-super-safe", N_("Robots2 easy with super-safe moves")},
-  {"robots_with_safe_teleport", N_("Robots with safe teleport")},
-  {"robots_with_safe_teleport-safe", N_("Robots with safe teleport with safe moves")},
-  {"robots_with_safe_teleport-super-safe", N_("Robots with safe teleport with super-safe moves")}
 };
 
 static gint safe_teleports = 0;
@@ -308,9 +289,7 @@ shutdown (GtkApplication *app, gpointer user_data)
 
 GamesScoresCategory *create_category_from_key (GamesScoresContext *context, const char *key, gpointer user_data)
 {
-  cat.key = key;
-  cat.name = "whoa";
-  return &cat;
+	return games_scores_category_new (key, key);
 }
 
 static void
@@ -402,7 +381,7 @@ activate (GtkApplication *app, gpointer user_data)
 
   highscores = games_scores_context_new ("gnome-robots",
                                          /* Label on the scores dialog, next to map type dropdown */
-                                         _("Game Type"),
+                                         _("Game Type :"),
                                          window,
                                          GAMES_SCORES_STYLE_PLAIN_DESCENDING);
   g_signal_connect (highscores, "request-category", G_CALLBACK (create_category_from_key), NULL);

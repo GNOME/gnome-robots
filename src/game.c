@@ -92,7 +92,7 @@ static gboolean random_teleport (void);
 static gboolean safe_teleport (void);
 /**********************************************************************/
 
-struct _GamesScoresCategory current_cat;
+struct GamesScoresCategory* current_cat;
 
 /**********************************************************************/
 /* Function Definitions                                               */
@@ -232,9 +232,8 @@ log_score (gint sc)
 
   if (sc != 0) {
   //  games_scores_set_category (highscores, sbuf);
-    current_cat.key = sbuf;
-    current_cat.name = sbuf;
-    pos = games_scores_context_add_score (highscores, (guint32) sc, &current_cat);
+    current_cat = games_scores_category_new (sbuf, sbuf);
+    pos = games_scores_context_add_score (highscores, (guint32) sc, current_cat);
   }
   g_free (sbuf);
 

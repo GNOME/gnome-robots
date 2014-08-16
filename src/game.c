@@ -128,7 +128,7 @@ message_box (gchar * msg)
 gint
 show_scores (gint pos, gboolean endofgame)
 {
-  games_scores_context_print_scores (highscores);
+  games_scores_context_run_dialog (highscores);
 /*  gchar *message;
   static GtkWidget *scoresdialog = NULL;
   static GtkWidget *sorrydialog = NULL;

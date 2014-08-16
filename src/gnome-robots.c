@@ -381,7 +381,7 @@ activate (GtkApplication *app, gpointer user_data)
 
   highscores = games_scores_context_new ("gnome-robots",
                                          /* Label on the scores dialog, next to map type dropdown */
-                                         _("Game Type :"),
+                                         _("Game Type:"),
                                          window,
                                          GAMES_SCORES_STYLE_PLAIN_DESCENDING);
   g_signal_connect (highscores, "request-category", G_CALLBACK (create_category_from_key), NULL);

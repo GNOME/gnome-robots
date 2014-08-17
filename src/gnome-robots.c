@@ -172,6 +172,19 @@ update_game_status (gint score, gint current_level, gint safes)
   g_free (button_text);
 }
 
+const gchar
+*category_name_from_key (const gchar* key)
+{
+  int i;
+  for (i = 0; i < no_categories; i++)
+  {
+    if (g_strcmp0 (scorecats[i].key, key) == 0)
+      return scorecats[i].name;
+  }
+  /*Return key as is if match not found*/
+  return NULL;
+}
+
 static void
 preferences_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
@@ -316,21 +329,10 @@ shutdown (GtkApplication *app, gpointer user_data)
   g_settings_set_boolean (settings, "window-is-maximized", window_is_maximized);
 }
 
-gchar* name_from_key (gchar* key)
+static GamesScoresCategory
+*create_category_from_key (GamesScoresContext *context, const char *key, gpointer user_data)
 {
-  int i;
-  for (i = 0; i < no_categories; i++)
-  {
-    if (g_strcmp0 (scorecats[i].key, key) == 0)
-      return scorecats[i].name;
-  }
-  /*Return key as is if match not found*/
-  return NULL;
-}
-
-GamesScoresCategory *create_category_from_key (GamesScoresContext *context, const char *key, gpointer user_data)
-{
-  gchar *name = name_from_key (key);
+  const gchar *name = category_name_from_key (key);
   if (name == NULL)
     return NULL;
   return games_scores_category_new (key, name);
@@ -426,7 +428,7 @@ activate (GtkApplication *app, gpointer user_data)
   highscores = games_scores_context_new ("gnome-robots",
                                          /* Label on the scores dialog, next to map type dropdown */
                                          _("Game Type:"),
-                                         window,
+                                         GTK_WINDOW (window),
                                          GAMES_SCORES_STYLE_PLAIN_DESCENDING);
   g_signal_connect (highscores, "request-category", G_CALLBACK (create_category_from_key), NULL);
   gtk_widget_show_all (window);

@@ -47,6 +47,16 @@
 #define KEY_GEOMETRY_GROUP "geometry"
 
 /**********************************************************************/
+/* Utility structs                                                    */
+/**********************************************************************/
+typedef struct
+{
+    gchar* key;
+    gchar* name;
+} key_value;
+/**********************************************************************/
+
+/**********************************************************************/
 /* Exported Variables                                                 */
 /**********************************************************************/
 GtkWidget *window = NULL;
@@ -90,6 +100,25 @@ static const GActionEntry win_entries[] = {
   { "safe-teleport", safe_teleport_cb, NULL, NULL, NULL },
   { "wait", wait_cb, NULL, NULL, NULL },
 };
+
+static const key_value scorecats[] = {
+	{"classic_robots", N_("Classic robots")},
+	{"classic_robots-safe", N_("Classic robots with safe moves")},
+	{"classic_robots-super-safe", N_("Classic robots with super-safe moves")},
+	{"nightmare", N_("Nightmare")},
+	{"nightmare-safe", N_("Nightmare with safe moves")},
+	{"nightmare-super-safe", N_("Nightmare with super-safe moves")},
+	{"robots2", N_("Robots2")},
+	{"robots2-safe", N_("Robots2 with safe moves")},
+	{"robots2-super-safe", N_("Robots2 with super-safe moves")},
+	{"robots2_easy", N_("Robots2 easy")},
+	{"robots2_easy-safe", N_("Robots2 easy with safe moves")},
+	{"robots2_easy-super-safe", N_("Robots2 easy with super-safe moves")},
+	{"robots_with_safe_teleport", N_("Robots with safe teleport")},
+	{"robots_with_safe_teleport-safe", N_("Robots with safe teleport with safe moves")},
+	{"robots_with_safe_teleport-super-safe", N_("Robots with safe teleport with super-safe moves")}
+};
+static gint no_categories = 15;
 
 static gint safe_teleports = 0;
 static GtkWidget *safe_teleports_label;
@@ -287,9 +316,22 @@ shutdown (GtkApplication *app, gpointer user_data)
   g_settings_set_boolean (settings, "window-is-maximized", window_is_maximized);
 }
 
+gchar* name_from_key (gchar* key)
+{
+  int i;
+  for (i = 0; i < no_categories; i++)
+  {
+    if (g_strcmp0 (scorecats[i].key, key) == 0)
+      return scorecats[i].name;
+  }
+  /*Return key as is if match not found*/
+  return key;
+}
+
 GamesScoresCategory *create_category_from_key (GamesScoresContext *context, const char *key, gpointer user_data)
 {
-	return games_scores_category_new (key, key);
+  gchar *name = name_from_key (key);
+  return games_scores_category_new (key, name);
 }
 
 static void

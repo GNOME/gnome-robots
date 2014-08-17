@@ -232,7 +232,7 @@ log_score (gint sc)
 
   if (sc != 0) {
   //  games_scores_set_category (highscores, sbuf);
-    current_cat = games_scores_category_new (sbuf, sbuf);
+    current_cat = games_scores_category_new (sbuf, name_from_key (sbuf));
     pos = games_scores_context_add_score (highscores, (guint32) sc, current_cat);
   }
   g_free (sbuf);

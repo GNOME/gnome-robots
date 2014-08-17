@@ -325,12 +325,14 @@ gchar* name_from_key (gchar* key)
       return scorecats[i].name;
   }
   /*Return key as is if match not found*/
-  return key;
+  return NULL;
 }
 
 GamesScoresCategory *create_category_from_key (GamesScoresContext *context, const char *key, gpointer user_data)
 {
   gchar *name = name_from_key (key);
+  if (name == NULL)
+    return NULL;
   return games_scores_category_new (key, name);
 }
 

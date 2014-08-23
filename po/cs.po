@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-05-14 07:15+0000\n"
-"PO-Revision-Date: 2014-05-14 14:48+0200\n"
+"POT-Creation-Date: 2014-08-23 07:25+0000\n"
+"PO-Revision-Date: 2014-08-23 12:31+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -34,6 +34,30 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Gtranslator 2.91.6\n"
 "X-Project-Style: gnome\n"
+
+#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Nová hra"
+
+#: ../data/app-menu.ui.h:2 ../src/properties.c:393
+msgid "Preferences"
+msgstr "Předvolby"
+
+#: ../data/app-menu.ui.h:3
+msgid "Scores"
+msgstr "Skóre"
+
+#: ../data/app-menu.ui.h:4
+msgid "Help"
+msgstr "Nápověda"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "O aplikaci"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Ukončit"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -71,8 +95,8 @@ msgstr ""
 "stát, že vás teleportace přenese přímo do cesty robota, který vás následně "
 "zabije. Snažte se přežít jak nejdéle to půjde."
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnobots.c:200
-#: ../src/gnobots.c:213 ../src/menu.c:262
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
+#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
 msgid "Robots"
 msgstr "Roboti"
 
@@ -151,7 +175,7 @@ msgstr "Povolit zvuky hry"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Povolit zvuky hry. Přehrávat zvuky pro různé události ve hře."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
 msgid "Key to move NW"
 msgstr "Klávesa pro pohyb SZ"
 
@@ -159,7 +183,7 @@ msgstr "Klávesa pro pohyb SZ"
 msgid "The key used to move north-west."
 msgstr "Klávesa sloužící pro přesun severozápadně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
 msgid "Key to move N"
 msgstr "Klávesa pro pohyb S"
 
@@ -167,7 +191,7 @@ msgstr "Klávesa pro pohyb S"
 msgid "The key used to move north."
 msgstr "Klávesa sloužící pro přesun severně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
 msgid "Key to move NE"
 msgstr "Klávesa pro pohyb SV"
 
@@ -175,7 +199,7 @@ msgstr "Klávesa pro pohyb SV"
 msgid "The key used to move north-east."
 msgstr "Klávesa sloužící pro přesun severovýchodně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
 msgid "Key to move W"
 msgstr "Klávesa pro pohyb Z"
 
@@ -183,7 +207,7 @@ msgstr "Klávesa pro pohyb Z"
 msgid "The key used to move west."
 msgstr "Klávesa sloužící pro přesun západně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:515
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
 msgid "Key to hold"
 msgstr "Klávesa pro stání"
 
@@ -191,7 +215,7 @@ msgstr "Klávesa pro stání"
 msgid "The key used to hold still."
 msgstr "Klávesa sloužící ke stání na místě."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
 msgid "Key to move E"
 msgstr "Klávesa pro pohyb V"
 
@@ -199,7 +223,7 @@ msgstr "Klávesa pro pohyb V"
 msgid "The key used to move east."
 msgstr "Klávesa sloužící pro přesun východně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
 msgid "Key to move SW"
 msgstr "Klávesa pro pohyb JZ"
 
@@ -207,7 +231,7 @@ msgstr "Klávesa pro pohyb JZ"
 msgid "The key used to move south-west."
 msgstr "Klávesa sloužící pro přesun jihozápadně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
 msgid "Key to move S"
 msgstr "Klávesa pro pohyb J"
 
@@ -215,7 +239,7 @@ msgstr "Klávesa pro pohyb J"
 msgid "The key used to move south."
 msgstr "Klávesa sloužící pro přesun jižně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:514
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
 msgid "Key to move SE"
 msgstr "Klávesa pro pohyb JV"
 
@@ -223,81 +247,56 @@ msgstr "Klávesa pro pohyb JV"
 msgid "The key used to move south-east."
 msgstr "Klávesa sloužící pro přesun jihovýchodně."
 
-#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:516
-msgid "Key to teleport"
-msgstr "Klávesa pro teleportaci"
-
-#: ../data/org.gnome.robots.gschema.xml.h:34
-msgid "The key used to teleport safely (if possible)."
-msgstr "Klávesa sloužící k bezpečné teleportaci (pokud je to možné)."
-
-#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:517
-msgid "Key to teleport randomly"
-msgstr "Klávesa pro náhodnou teleportaci"
-
-#: ../data/org.gnome.robots.gschema.xml.h:36
-msgid "The key used to teleport randomly."
-msgstr "Klávesa sloužící k náhodné teleportaci."
-
-#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:518
-msgid "Key to wait"
-msgstr "Klávesa pro čekání"
-
-#: ../data/org.gnome.robots.gschema.xml.h:38
-msgid "The key used to wait."
-msgstr "Klávesa sloužící k čekání."
-
-#: ../data/org.gnome.robots.gschema.xml.h:39
+#: ../data/org.gnome.robots.gschema.xml.h:33
 msgid "Width of the window in pixels"
 msgstr "Šířka okna v pixelech."
 
-#: ../data/org.gnome.robots.gschema.xml.h:40
+#: ../data/org.gnome.robots.gschema.xml.h:34
 msgid "Height of the window in pixels"
 msgstr "Výška okna v pixelech."
 
-#: ../data/org.gnome.robots.gschema.xml.h:41
+#: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
 msgstr "Zapnuto, pokud je okno maximalizováno"
 
-#: ../data/org.gnome.robots.gschema.xml.h:42
-msgid "true if the window is fullscreen"
-msgstr "Zapnuto, pokud je okno v režimu celé obrazovky"
-
-#: ../src/game.c:149
+#: ../src/game.c:147
 msgid "Game over!"
 msgstr "Konec hry!"
 
-#: ../src/game.c:151
+#: ../src/game.c:149
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr ""
 "Dobrá práce, ale vaše skóre se bohužel nedostalo mezi deset nejlepších."
 
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/game.c:153 ../src/games-stock.c:253
+#: ../src/game.c:150
+msgid "_Quit"
+msgstr "U_končit"
+
+#: ../src/game.c:151 ../src/gnome-robots.c:231
 msgid "_New Game"
 msgstr "_Nová hra"
 
-#: ../src/game.c:166
+#: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Skóre Robotů"
 
-#: ../src/game.c:169
+#: ../src/game.c:167
 msgid "Map:"
 msgstr "Mapa:"
 
-#: ../src/game.c:178
+#: ../src/game.c:176
 msgid "Congratulations!"
 msgstr "Blahopřejeme!"
 
-#: ../src/game.c:179
+#: ../src/game.c:177
 msgid "Your score is the best!"
 msgstr "Vaše skóre je nejlepší!"
 
-#: ../src/game.c:180
+#: ../src/game.c:178
 msgid "Your score has made the top ten."
 msgstr "Vaše skóre se dostalo mezi deset nejlepších."
 
-#: ../src/game.c:408 ../src/game.c:424
+#: ../src/game.c:405 ../src/game.c:421
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -306,11 +305,11 @@ msgstr ""
 "Povede se vám to znovu?"
 
 #. This should never happen.
-#: ../src/game.c:1186
+#: ../src/game.c:1175
 msgid "There are no teleport locations left!!"
 msgstr "Nezbývá žádné umístění teleportu!!"
 
-#: ../src/game.c:1214
+#: ../src/game.c:1203
 msgid "There are no safe locations to teleport to!!"
 msgstr "Neexistují bezpečná umístění, kam se teleportovat!!"
 
@@ -337,374 +336,89 @@ msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$d min %2$d sec"
 
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Nová hra"
-
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
 msgid "Date"
 msgstr "Datum"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "Zobrazit nápovědu k této hře"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "Ukončit aktuální hru"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "Přepnout režim celé obrazovky"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "Získat radu pro váš další tah"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "Opustit režim celé obrazovky"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "Začít novou síťovou hru pro více hráčů"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "Ukončit současnou síťovou hru"
-
-#: ../src/games-stock.c:48 ../src/menu.c:69
-msgid "Start a new game"
-msgstr "Začít novou hru"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "Pozastavit hru"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "Zobrazit seznam hráčů síťové hry"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "Zopakovat vrácený tah"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "Začít hru znovu"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "Pokračovat pozastavenou hru"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "Zobrazit skóre"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "Vrátit poslední tah"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "O této hře"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "Zavřít toto okno"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "Nastavit hru"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "Ukončit tuto hru"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "_Obsah"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "_Celá obrazovka"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "_Rada"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "_Nová"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "Tah zn_ovu"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "_Vynulovat"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "_Restartovat"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "Tah _zpět"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "_Rozdat"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "_Opustit celou obrazovku"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "Síťová _hra"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "O_pustit hru"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "Seznam _hráčů"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "_Pozastavit"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "_Pokračovat"
-
-#: ../src/games-stock.c:267
-msgid "_Scores"
-msgstr "_Skóre"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "U_končit hru"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s je svobodný software: Můžete jej dále šířit a/nebo upravovat za podmínek "
-"licence GNU General Public License v podobě, v jaké ji vydala Free Software "
-"Foundation, a to buď ve verzi %d této licence nebo (dle vaší volby) v "
-"libovolné novější verzi."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"Program %s je šířen ve víře, že bude užitečný, ale BEZ JAKÝCHKOLIV ZÁRUK, a "
-"to i bez předpokládané záruky na PRODEJNOST nebo VHODNOST PRO KONKRÉTNÍ "
-"ÚČEL. Více podrobností najdete přímo v licenci GNU General Public License."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"Spolu s programem %s byste měli obdržet kopii licence GNU General Public "
-"License. Pokud se tak nestalo, podívejte se na Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"Spolu s tímto programem byste měli obdržet kopii licence GNU General Public "
-"License. Pokud se tak nestalo, podívejte se na <http://www.gnu.org/licenses/"
-">."
-
-#: ../src/gnobots.c:79
-msgid "Set game scenario"
-msgstr "Nastavit scénář hry"
-
-#: ../src/gnobots.c:79 ../src/gnobots.c:81
-msgid "NAME"
-msgstr "NÁZEV"
-
-#: ../src/gnobots.c:81
-msgid "Set game configuration"
-msgstr "Nastavit hru"
-
-#: ../src/gnobots.c:83 ../src/gnobots.c:85
-msgid "Initial window position"
-msgstr "Počáteční poloha okna"
-
-#: ../src/gnobots.c:83
-msgid "X"
-msgstr "X"
-
-#: ../src/gnobots.c:85
-msgid "Y"
-msgstr "Y"
-
-#: ../src/gnobots.c:90
+#: ../src/gnome-robots.c:95
 msgid "Classic robots"
 msgstr "Klasičtí roboti"
 
-#: ../src/gnobots.c:91
+#: ../src/gnome-robots.c:96
 msgid "Classic robots with safe moves"
 msgstr "Klasičtí roboti s bezpečnými tahy"
 
-#: ../src/gnobots.c:92
+#: ../src/gnome-robots.c:97
 msgid "Classic robots with super-safe moves"
 msgstr "Klasičtí roboti se superbezpečnými tahy"
 
-#: ../src/gnobots.c:93
+#: ../src/gnome-robots.c:98
 msgid "Nightmare"
 msgstr "Noční můra"
 
-#: ../src/gnobots.c:94
+#: ../src/gnome-robots.c:99
 msgid "Nightmare with safe moves"
 msgstr "Noční můra s bezpečnými tahy"
 
-#: ../src/gnobots.c:95
+#: ../src/gnome-robots.c:100
 msgid "Nightmare with super-safe moves"
 msgstr "Noční můra se superbezpečnými tahy"
 
-#: ../src/gnobots.c:96
+#: ../src/gnome-robots.c:101
 msgid "Robots2"
 msgstr "Roboti 2"
 
-#: ../src/gnobots.c:97
+#: ../src/gnome-robots.c:102
 msgid "Robots2 with safe moves"
 msgstr "Roboti 2 s bezpečnými tahy"
 
-#: ../src/gnobots.c:98
+#: ../src/gnome-robots.c:103
 msgid "Robots2 with super-safe moves"
 msgstr "Roboti 2 se superbezpečnými tahy"
 
-#: ../src/gnobots.c:99
+#: ../src/gnome-robots.c:104
 msgid "Robots2 easy"
 msgstr "Roboti 2 snadní"
 
-#: ../src/gnobots.c:100
+#: ../src/gnome-robots.c:105
 msgid "Robots2 easy with safe moves"
 msgstr "Roboti 2 snadní s bezpečnými tahy"
 
-#: ../src/gnobots.c:101
+#: ../src/gnome-robots.c:106
 msgid "Robots2 easy with super-safe moves"
 msgstr "Roboti 2 snadní se superbezpečnými tahy"
 
-#: ../src/gnobots.c:102
+#: ../src/gnome-robots.c:107
 msgid "Robots with safe teleport"
 msgstr "Roboti s bezpečným teleportem"
 
-#: ../src/gnobots.c:103
+#: ../src/gnome-robots.c:108
 msgid "Robots with safe teleport with safe moves"
 msgstr "Roboti s bezpečným teleportem a bezpečnými tahy"
 
-#: ../src/gnobots.c:104
+#: ../src/gnome-robots.c:109
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Roboti s bezpečným teleportem se superbezpečnými tahy"
 
-#: ../src/gnobots.c:280
-msgid "No game data could be found."
-msgstr "Nebyla nalezena data hry."
-
-#: ../src/gnobots.c:282
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Program Roboti nemohl najít platné soubory nastavení hry. Zkontrolujte "
-"prosím, zda je program správně nainstalován."
-
-#: ../src/gnobots.c:298
-msgid "Some graphics files are missing or corrupt."
-msgstr "Některé soubory grafiky chybí nebo jsou poškozeny."
-
-#: ../src/gnobots.c:300
-msgid ""
-"The program Robots was unable to load all the necessary graphics files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Program Roboti nemohl načíst všechny potřebné soubory s grafikou. "
-"Zkontrolujte prosím, zda je program správně nainstalován."
-
-#: ../src/graphics.c:151
+#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
+#: ../src/gnome-robots.c:144
 #, c-format
-msgid "Could not find '%s' pixmap file\n"
-msgstr "Nelze nalézt soubor s bitmapou „%s“\n"
+msgid "Level: %d\tScore: %d"
+msgstr "Úroveň: %d\tSkóre: %d"
 
-#: ../src/menu.c:64
-msgid "_Game"
-msgstr "_Hra"
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: ../src/gnome-robots.c:155
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(zbývá: %d)"
 
-#: ../src/menu.c:65
-msgid "_View"
-msgstr "_Zobrazit"
+#. First line of safe teleports button label.
+#: ../src/gnome-robots.c:157
+msgid "Teleport _Safely"
+msgstr "Teleportovat _se bezpečně"
 
-#: ../src/menu.c:66
-msgid "_Move"
-msgstr "_Táhnout"
-
-#: ../src/menu.c:67
-msgid "_Settings"
-msgstr "Na_stavení"
-
-#: ../src/menu.c:68
-msgid "_Help"
-msgstr "_Nápověda"
-
-#: ../src/menu.c:73
-msgid "_Teleport"
-msgstr "_Teleportovat"
-
-#: ../src/menu.c:74
-msgid "Teleport, safely if possible"
-msgstr "Teleportovat se, pokud možno bezpečně"
-
-#: ../src/menu.c:75
-msgid "_Random"
-msgstr "_Náhodně"
-
-#: ../src/menu.c:76
-msgid "Teleport randomly"
-msgstr "Náhodně se teleportovat"
-
-#: ../src/menu.c:77
-msgid "_Wait"
-msgstr "Č_ekat"
-
-#: ../src/menu.c:77
-msgid "Wait for the robots"
-msgstr "Čekat na roboty"
-
-#: ../src/menu.c:88
-msgid "_Toolbar"
-msgstr "_Lišta nástrojů"
-
-#: ../src/menu.c:88
-msgid "Show or hide the toolbar"
-msgstr "Zobrazit nebo skrýt lištu nástrojů"
-
-#: ../src/menu.c:266
+#: ../src/gnome-robots.c:202
 msgid ""
 "Based on classic BSD Robots\n"
 "\n"
@@ -714,7 +428,7 @@ msgstr ""
 "\n"
 "Roboti jsou součástí her GNOME."
 
-#: ../src/menu.c:270
+#: ../src/gnome-robots.c:206
 msgid "translator-credits"
 msgstr ""
 "Jirka Lébl\n"
@@ -731,75 +445,99 @@ msgstr ""
 "Petr Pulc <petrpulc@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: ../src/properties.c:395
-#| msgid "Robots Preferences"
-msgid "Preferences"
-msgstr "Předvolby"
+#: ../src/gnome-robots.c:227
+msgid "Are you sure you want to discard the current game?"
+msgstr "Opravdu chcete zrušit současnou hru?"
 
-#: ../src/properties.c:419
+#: ../src/gnome-robots.c:230
+msgid "Keep _Playing"
+msgstr "_Pokračovat ve hře"
+
+#: ../src/gnome-robots.c:373
+msgid "Teleport _Randomly"
+msgstr "Telepo_rtovat se náhodně"
+
+#: ../src/gnome-robots.c:392
+msgid "_Wait for Robots"
+msgstr "Č_ekat na roboty"
+
+#: ../src/gnome-robots.c:420
+msgid "No game data could be found."
+msgstr "Nebyla nalezena data hry."
+
+#: ../src/gnome-robots.c:422
+msgid ""
+"The program Robots was unable to find any valid game configuration files. "
+"Please check that the program is installed correctly."
+msgstr ""
+"Program Roboti nemohl najít platné soubory nastavení hry. Zkontrolujte "
+"prosím, zda je program správně nainstalován."
+
+#: ../src/gnome-robots.c:438
+msgid "Some graphics files are missing or corrupt."
+msgstr "Některé soubory grafiky chybí nebo jsou poškozeny."
+
+#: ../src/gnome-robots.c:440
+msgid ""
+"The program Robots was unable to load all the necessary graphics files. "
+"Please check that the program is installed correctly."
+msgstr ""
+"Program Roboti nemohl načíst všechny potřebné soubory s grafikou. "
+"Zkontrolujte prosím, zda je program správně nainstalován."
+
+#: ../src/graphics.c:151
+#, c-format
+msgid "Could not find '%s' pixmap file\n"
+msgstr "Nelze nalézt soubor s bitmapou „%s“\n"
+
+#: ../src/properties.c:417
 msgid "Game Type"
 msgstr "Typ hry"
 
-#: ../src/properties.c:429
+#: ../src/properties.c:427
 msgid "_Use safe moves"
 msgstr "Používat _bezpečné tahy"
 
-#: ../src/properties.c:434
+#: ../src/properties.c:432
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Bránit náhodným tahům, které způsobí smrt."
 
-#: ../src/properties.c:437
+#: ../src/properties.c:435
 msgid "U_se super safe moves"
 msgstr "Používat _superbezpečné tahy"
 
-#: ../src/properties.c:444
+#: ../src/properties.c:442
 msgid "Prevents all moves that result in getting killed."
 msgstr "Bránit všem tahům, které způsobí smrt."
 
-#: ../src/properties.c:450
+#: ../src/properties.c:448
 msgid "_Enable sounds"
 msgstr "_Povolit zvuky"
 
-#: ../src/properties.c:456
+#: ../src/properties.c:454
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Přehrávat zvuky pro události jako výhra úrovně a smrt."
 
-#: ../src/properties.c:458
+#: ../src/properties.c:456
 msgid "Game"
 msgstr "Hra"
 
-#: ../src/properties.c:471
+#: ../src/properties.c:469
 msgid "_Image theme:"
 msgstr "Motiv _obrázků:"
 
-#: ../src/properties.c:483
+#: ../src/properties.c:481
 msgid "_Background color:"
 msgstr "Barva _pozadí:"
 
-#: ../src/properties.c:495
+#: ../src/properties.c:493
 msgid "Appearance"
 msgstr "Vzhled"
 
-#: ../src/properties.c:527
+#: ../src/properties.c:522
 msgid "_Restore Defaults"
 msgstr "_Obnovit výchozí"
 
-#: ../src/properties.c:532
+#: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Klávesnice"
-
-#: ../src/statusbar.c:68
-msgid "Score:"
-msgstr "Skóre:"
-
-#: ../src/statusbar.c:76
-msgid "Safe Teleports:"
-msgstr "Bezpečné teleporty:"
-
-#: ../src/statusbar.c:85
-msgid "Level:"
-msgstr "Úroveň:"
-
-#: ../src/statusbar.c:94
-msgid "Remaining:"
-msgstr "Zbývá:"

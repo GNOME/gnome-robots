@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games gnome-2-28\n"
-"POT-Creation-Date: 2014-04-23 07:32+0000\n"
-"PO-Revision-Date: 2014-04-23 11:05+0200\n"
+"POT-Creation-Date: 2014-08-25 19:23+0000\n"
+"PO-Revision-Date: 2014-08-26 08:07+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -27,13 +27,13 @@ msgstr "Marek Černocký <marek@manet.cz>, 2009, 2013, 2014"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:15 C/basics.page:15 C/controls-change.page:14
-#: C/controls-default.page:15 C/game-types.page:14 C/index.page:12
+#: C/controls-default.page:16 C/game-types.page:14 C/index.page:12
 #: C/moves.page:14 C/scores.page:14
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:19 C/basics.page:19 C/controls-default.page:19
+#: C/appearance.page:19 C/basics.page:19 C/controls-default.page:20
 msgid "Rachel Dunstan"
 msgstr "Rachel Dunstan"
 
@@ -266,22 +266,22 @@ msgstr ""
 "<gui style=\"button\">Obnovit výchozí</gui>."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:23
+#: C/controls-default.page:24
 msgid "How do I control the main character?"
 msgstr "Jak můžu ovládat hlavního hrdinu?"
 
 #. (itstool) path: page/title
-#: C/controls-default.page:26
+#: C/controls-default.page:27
 msgid "Mouse and keyboard controls for <app>Robots</app>"
 msgstr "Ovládání <app>Robotů</app> myší a klávesnicí"
 
 #. (itstool) path: section/title
-#: C/controls-default.page:29
+#: C/controls-default.page:30
 msgid "Keyboard controls"
 msgstr "Ovládání z klávesnice"
 
 #. (itstool) path: section/p
-#: C/controls-default.page:31
+#: C/controls-default.page:32
 msgid ""
 "Use the following keys from the numeric keypad on the far right of your "
 "keyboard, to move in <app>Robots</app>."
@@ -290,105 +290,104 @@ msgstr ""
 "bloku, který se nachází na vaší klávesnici úplně vpravo."
 
 #. (itstool) path: td/p
-#: C/controls-default.page:37
+#: C/controls-default.page:38
 msgid "Possible moves"
 msgstr "Tah"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:38
+#: C/controls-default.page:39
 msgid "Key"
 msgstr "Klávesa"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:43
+#: C/controls-default.page:44
 msgid "North west"
 msgstr "Na severozápad"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:44
-msgid "<key>Home</key>"
-msgstr "<key>Home</key>"
+#: C/controls-default.page:45
+msgid "<key>y</key>"
+msgstr "<key>y</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:47
+#: C/controls-default.page:48
 msgid "North"
 msgstr "Na sever"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:48
-msgid "<key>↑</key>"
-msgstr "<key>↑</key>"
+#: C/controls-default.page:49
+msgid "<key>k</key>"
+msgstr "<key>k</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:51
+#: C/controls-default.page:52
 msgid "North east"
 msgstr "Na severovýchod"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:52
-msgid "<key>PgUp</key>"
-msgstr "<key>Page Up</key>"
+#: C/controls-default.page:53
+msgid "<key>u</key>"
+msgstr "<key>u</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:55
+#: C/controls-default.page:56
 msgid "West"
 msgstr "Na západ"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:56
-msgid "<key>→</key>"
-msgstr "<key>→</key>"
+#: C/controls-default.page:57
+msgid "<key>h</key>"
+msgstr "<key>h</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:59
+#: C/controls-default.page:60
 msgid "East"
 msgstr "Na východ"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:60
-msgid "<key>←</key>"
-msgstr "<key>←</key>"
+#: C/controls-default.page:61
+msgid "<key>l</key>"
+msgstr "<key>l</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:63
+#: C/controls-default.page:64
 msgid "South west"
 msgstr "Na jihozápad"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:64
-msgid "<key>End</key>"
-msgstr "<key>End</key>"
+#: C/controls-default.page:65
+msgid "<key>b</key>"
+msgstr "<key>b</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:67
+#: C/controls-default.page:68
 msgid "South"
 msgstr "Na sever"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:68
-msgid "<key>↓</key>"
-msgstr "<key>↓</key>"
+#: C/controls-default.page:69
+msgid "<key>j</key>"
+msgstr "<key>j</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:71
+#: C/controls-default.page:72
 msgid "South east"
 msgstr "Na jihovýchod"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:72
-msgid "<key>PgDn</key>"
-msgstr "<key>Page Down</key>"
-
-#. (itstool) path: td/p
-#. (itstool) path: item/title
-#: C/controls-default.page:75 C/controls-default.page:115
-msgid "Stay in the same position"
-msgstr "Zůstat na stejném místě"
+#: C/controls-default.page:73
+msgid "<key>n</key>"
+msgstr "<key>n</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:76
-msgid "<key>Begin</key> (marked only as <key>5</key> on some keypads)"
-msgstr "<key>Begin</key> (na většině klávesnic označeno jen <key>5</key>)"
+msgid "Stay in the same position (one turn)"
+msgstr "Zůstat na stejném místě (jeden tah)"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:77
+msgid "Space"
+msgstr "mezerník"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:80
@@ -397,8 +396,8 @@ msgstr "Teleportovat se bezpečně"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:81
-msgid "<key>+</key>"
-msgstr "<key>+</key>"
+msgid "<keyseq><key>Alt</key><key>s</key></keyseq>"
+msgstr "<keyseq><key>Alt</key> <key>s</key></keyseq>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:84
@@ -407,8 +406,8 @@ msgstr "Teleportovat se náhodně"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:85
-msgid "<key>*</key>"
-msgstr "<key>*</key>"
+msgid "<keyseq><key>Alt</key><key>r</key></keyseq>"
+msgstr "<keyseq><key>Alt</key> <key>r</key></keyseq>"
 
 #. (itstool) path: td/p
 #. (itstool) path: item/title
@@ -418,8 +417,8 @@ msgstr "Čekat na roboty"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:89
-msgid "<key>Enter</key>"
-msgstr "<key>Enter</key>"
+msgid "<keyseq><key>Alt</key><key>w</key></keyseq>"
+msgstr "<keyseq><key>Alt</key> <key>w</key></keyseq>"
 
 #. (itstool) path: note/p
 #: C/controls-default.page:95
@@ -454,6 +453,11 @@ msgstr ""
 "například chcete přesunout na sever, najeďte ukazatelem myši do sloupce na "
 "hracím poli nad hlavním hrdinou a černá šipka bude ukazovat na sever. Po "
 "kliknutím se hlavní hrdina přesune o jedno políčko na sever."
+
+#. (itstool) path: item/title
+#: C/controls-default.page:115
+msgid "Stay in the same position"
+msgstr "Zůstat na stejném místě"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:116

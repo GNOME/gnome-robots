@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2014-04-24 07:12+0000\n"
-"PO-Revision-Date: 2014-04-24 13:33+0200\n"
+"POT-Creation-Date: 2014-07-20 07:20+0000\n"
+"PO-Revision-Date: 2014-08-31 01:26+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@lists.gnome.gr\n"
 "Language: el\n"
@@ -12,31 +12,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME <team@gnome.gr>, 2009-2014\n"
 "Δημήτρης Σπίγγος <dmtrs32@gmail.com>, 2013, 2014\n"
-"Μάριος Ζηντίλης <m.zindilis@dmajor.org>, 2009"
+"Μάριος Ζηντίλης <m.zindilis@dmajor.org>, 2009\n"
+"Mαρία Μαυρίδου <mavridou@gmail.com>, 2014"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:15 C/basics.page:15 C/controls-change.page:14
-#: C/controls-default.page:15 C/game-types.page:14 C/index.page:12
+#: C/controls-default.page:16 C/game-types.page:14 C/index.page:12
 #: C/moves.page:14 C/scores.page:14
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:19 C/basics.page:19 C/controls-default.page:19
+#: C/appearance.page:19 C/basics.page:19 C/controls-default.page:20
 msgid "Rachel Dunstan"
 msgstr "Rachel Dunstan"
 
 #. (itstool) path: info/desc
 #: C/appearance.page:23
 msgid "Use different game-themes in <app>Robots</app>."
-msgstr "Χρήση διαφορετικών θεμάτων παιχνιδιού στο <app>Ρομπότ</app>."
+msgstr "Χρησιμοποιήστε διαφορετικά θεμάτα παιχνιδιού στα <app>Ρομπότ</app>."
 
 #. (itstool) path: page/title
 #: C/appearance.page:26
@@ -49,7 +51,7 @@ msgid ""
 "You can change the <app>Robots</app> backdrop and the different robots that "
 "are present in a game by changing the game theme and background."
 msgstr ""
-"Μπορείτε να αλλάξετε το παρασκήνιο του <app>ρομπότ</app> και τα διαφορετικά "
+"Μπορείτε να αλλάξετε το παρασκήνιο του <app>Ρομπότ</app> και τα διαφορετικά "
 "ρομπότ που παρουσιάζονται στο παιχνίδι αλλάζοντας το θέμα του παιχνιδιού και "
 "του παρασκηνίου."
 
@@ -73,8 +75,8 @@ msgid ""
 "Select a theme from the drop-down menu available when you click the button "
 "next to <gui>Image theme</gui>."
 msgstr ""
-"Επιλέξτε ένα θέμα από το πτυσσόμενο διαθέσιμο μενού όταν πατήσετε το πλήκτρο "
-"δίπλα στο <gui>Θέμα εικόνας</gui>."
+"Επιλέξτε ένα διαθέσιμο θέμα από το πτυσσόμενο μενού όταν κάνετε κλικ στο "
+"κουμπί δίπλα στο <gui>Θέμα εικόνας</gui>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:43
@@ -83,9 +85,9 @@ msgid ""
 "color</gui>. Select a color from the available choices and click <gui style="
 "\"button\">Select</gui>."
 msgstr ""
-"Για να αλλάξετε το χρώμα του παρασκηνίου σας, πατήστε στο πλήκτρο δίπλα στο "
-"<gui>Χρώμα παρασκηνίου</gui>. Επιλέξτε ένα χρώμα από τις διαθέσιμες επιλογές "
-"και πατήστε <gui style=\"button\">Επιλογή</gui>."
+"Για να αλλάξετε το χρώμα του παρασκηνίου σας, κάντε κλικ στο κουμπί δίπλα "
+"στο <gui>Χρώμα παρασκηνίου</gui>. Επιλέξτε ένα χρώμα από τις διαθέσιμες "
+"επιλογές και πατήστε <gui style=\"button\">Επιλογή</gui>."
 
 #. (itstool) path: note/p
 #: C/appearance.page:50
@@ -104,7 +106,7 @@ msgstr ""
 #. (itstool) path: info/desc
 #: C/basics.page:23
 msgid "Start, quit and play <app>Robots</app> in fullscreen."
-msgstr "Έναρξη, έξοδος και αναπαραγωγή του <app>Ρομπότ</app> σε πλήρη οθόνη."
+msgstr "Έναρξη, έξοδος και παίξιμο του <app>Ρομπότ</app> σε πλήρη οθόνη."
 
 #. (itstool) path: page/title
 #: C/basics.page:26
@@ -114,7 +116,7 @@ msgstr "Βασικές οδηγίες"
 #. (itstool) path: section/title
 #: C/basics.page:29
 msgid "Start a new game"
-msgstr "Έναρξη ενός νέου παιχνιδιού"
+msgstr "Έναρξη νέου παιχνιδιού"
 
 #. (itstool) path: media/span
 #: C/basics.page:34
@@ -123,24 +125,20 @@ msgstr "Νέο"
 
 #. (itstool) path: section/p
 #: C/basics.page:31
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-#| "\">New</gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></"
-#| "keyseq> to start a new game."
 msgid ""
 "Select <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">New</"
 "gui></guiseq>, click the <_:media-1/> button on the toolbar, or press "
 "<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgstr ""
 "Επιλέξτε <guiseq><gui style=\"menu\">Παιχνίδι</gui><gui style=\"menuitem"
-"\">Νέο</gui></guiseq> ή πατήστε <_:media-1/> στην εργαλειοθήκη, ή πατήστε "
-"<keyseq><key>Ctrl</key><key>N</key></keyseq> για να ξεκινήσετε ένα νέο "
-"παιχνίδι."
+"\">Νέο</gui></guiseq>, κάντε κλικ στο κουμπί <_:media-1/> στην εργαλειοθήκη, "
+"ή πατήστε <keyseq><key>Ctrl</key><key>N</key></keyseq> για να ξεκινήσετε ένα "
+"νέο παιχνίδι."
 
 #. (itstool) path: section/title
 #: C/basics.page:40
 msgid "Play <app>Robots</app> in fullscreen mode"
-msgstr "Αναπαραγωγή του <app>Ρομπότ</app> σε κατάσταση πλήρους οθόνης"
+msgstr "Παίξτε το <app>Ρομπότ</app> σε λειτουργία πλήρους οθόνης"
 
 #. (itstool) path: section/p
 #: C/basics.page:42
@@ -152,8 +150,8 @@ msgid ""
 msgstr ""
 "Επιλέξτε <guiseq><gui style=\"menu\">Προβολή</gui> <gui style=\"menuitem"
 "\">Πλήρης οθόνη</gui></guiseq> ή πατήστε <key>F11</key> για να παίξετε το "
-"παιχνίδι σας σε κατάσταση πλήρους οθόνης. Μπορείτε να επιστρέψετε στο "
-"προεπιλεγμένο μέγεθος οθόνης πατώντας <key>F11</key> ξανά."
+"παιχνίδι σας σε λειτουργία πλήρους οθόνης. Μπορείτε να επιστρέψετε στο "
+"προεπιλεγμένο μέγεθος οθόνης πατώντας ξανά το <key>F11</key>."
 
 #. (itstool) path: section/title
 #: C/basics.page:50
@@ -185,12 +183,12 @@ msgid ""
 msgstr ""
 "Επιλέξτε <guiseq><gui style=\"menu\">Παιχνίδι</gui> <gui style=\"menuitem"
 "\">Έξοδος</gui></guiseq> ή πατήστε <keyseq><key>Ctrl</key><key>Q</key></"
-"keyseq> για έξοδο από το <app>Ρομπότ</app> οποτεδήποτε."
+"keyseq> για να κλείσετε το <app>Ρομπότ</app>."
 
 #. (itstool) path: info/desc
 #: C/controls-change.page:18
 msgid "Change the default keys in <app>Robots</app>."
-msgstr "Αλλαγή των προεπιλεγμένων πλήκτρων στο <app>Ρομπότ</app>."
+msgstr "Αλλάξτε τα προεπιλεγμένα πλήκτρα του <app>Ρομπότ</app>."
 
 #. (itstool) path: page/title
 #: C/controls-change.page:21
@@ -247,9 +245,10 @@ msgid ""
 "on <gui>New accelerator…</gui>, press <key>Esc</key> or click anywhere else "
 "inside the <gui>Robots Preferences</gui> box."
 msgstr ""
-"Για διατήρηση της παλιάς ρύθμισης πατήματος <gui>Νέος επιταχυντής…</gui> "
-"ξανά, δεξιοπατήστε στο <gui>Νέος επιταχυντής…</gui>, πατήστε <key>Esc</key> "
-"ή πατήστε οπουδήποτε αλλού μέσα στο πλαίσιο <gui>Προτιμήσεις Ρομπότ</gui>."
+"Για να διατηρήσετε τη παλιά ρύθμιση πατήστε ξανά στο <gui>Νέος επιταχυντής…</"
+"gui>, κάντε δεξί κλικ στο <gui>Νέος επιταχυντής…</gui>, πατήστε <key>Esc</"
+"key> ή πατήστε οπουδήποτε αλλού μέσα στο πλαίσιο <gui>Προτιμήσεις Ρομπότ</"
+"gui>."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:47
@@ -272,131 +271,128 @@ msgstr ""
 "στο πλήκτρο <gui style=\"button\">Επαναφορά προεπιλογών</gui>."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:23
+#: C/controls-default.page:24
 msgid "How do I control the main character?"
-msgstr "Πώς ελέγχω τον κυρίως χαρακτήρα;"
+msgstr "Πώς ελέγχω τον τον κύριο χαρακτήρα;"
 
 #. (itstool) path: page/title
-#: C/controls-default.page:26
+#: C/controls-default.page:27
 msgid "Mouse and keyboard controls for <app>Robots</app>"
 msgstr "Ποντίκι και στοιχεία ελέγχου πληκτρολογίου για το <app>Ρομπότ</app>"
 
 #. (itstool) path: section/title
-#: C/controls-default.page:29
+#: C/controls-default.page:30
 msgid "Keyboard controls"
 msgstr "Στοιχεία ελέγχου πληκτρολογίου"
 
 #. (itstool) path: section/p
-#: C/controls-default.page:31
+#: C/controls-default.page:32
 msgid ""
 "Use the following keys from the numeric keypad on the far right of your "
 "keyboard, to move in <app>Robots</app>."
 msgstr ""
-"Χρησιμοποιήστε τα παρακάτω πλήκτρα από το αριθμητικό υποπληκτρολόγιο στα "
-"πάνω δεξιά του πληκτρολογίου σας, για να μετακινηθείτε στα <app>Ρομπότ</app>."
+"Χρησιμοποιήστε τα παρακάτω πλήκτρα από το αριθμητικό πληκτρολόγιο στα πάνω "
+"δεξιά του πληκτρολογίου σας, για να μετακινηθείτε στα <app>Ρομπότ</app>."
 
 #. (itstool) path: td/p
-#: C/controls-default.page:37
+#: C/controls-default.page:38
 msgid "Possible moves"
 msgstr "Πιθανές κινήσεις"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:38
+#: C/controls-default.page:39
 msgid "Key"
 msgstr "Πλήκτρο"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:43
+#: C/controls-default.page:44
 msgid "North west"
 msgstr "Βορειοδυτικό"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:44
-msgid "<key>Home</key>"
-msgstr "<key>Home</key>"
+#: C/controls-default.page:45
+msgid "<key>y</key>"
+msgstr "<key>y</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:47
+#: C/controls-default.page:48
 msgid "North"
 msgstr "Βόρειο"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:48
-msgid "<key>↑</key>"
-msgstr "<key>↑</key>"
+#: C/controls-default.page:49
+msgid "<key>k</key>"
+msgstr "<key>k</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:51
+#: C/controls-default.page:52
 msgid "North east"
 msgstr "Νοτιοανατολικό"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:52
-msgid "<key>PgUp</key>"
-msgstr "<key>PgUp</key>"
+#: C/controls-default.page:53
+msgid "<key>u</key>"
+msgstr "<key>u</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:55
+#: C/controls-default.page:56
 msgid "West"
 msgstr "Δυτικά"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:56
-msgid "<key>→</key>"
-msgstr "<key>→</key>"
+#: C/controls-default.page:57
+msgid "<key>h</key>"
+msgstr "<key>h</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:59
+#: C/controls-default.page:60
 msgid "East"
 msgstr "Ανατολικά"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:60
-msgid "<key>←</key>"
-msgstr "<key>←</key>"
+#: C/controls-default.page:61
+msgid "<key>l</key>"
+msgstr "<key>l</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:63
+#: C/controls-default.page:64
 msgid "South west"
 msgstr "Νοτιοδυτικά"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:64
-msgid "<key>End</key>"
-msgstr "<key>End</key>"
+#: C/controls-default.page:65
+msgid "<key>b</key>"
+msgstr "<key>b</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:67
+#: C/controls-default.page:68
 msgid "South"
 msgstr "Νότια"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:68
-msgid "<key>↓</key>"
-msgstr "<key>↓</key>"
+#: C/controls-default.page:69
+msgid "<key>j</key>"
+msgstr "<key>j</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:71
+#: C/controls-default.page:72
 msgid "South east"
 msgstr "Νοτιοανατολικά"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:72
-msgid "<key>PgDn</key>"
-msgstr "<key>PgDn</key>"
-
-#. (itstool) path: td/p
-#. (itstool) path: item/title
-#: C/controls-default.page:75 C/controls-default.page:115
-msgid "Stay in the same position"
-msgstr "Παραμονή στην ίδια θέση"
+#: C/controls-default.page:73
+msgid "<key>n</key>"
+msgstr "<key>n</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:76
-msgid "<key>Begin</key> (marked only as <key>5</key> on some keypads)"
-msgstr ""
-"<key>Begin</key> (σε μερικά πληκτρολόγια είναι σημειωμένο στο πλήκτρο "
-"<key>5</key>)"
+msgid "Stay in the same position (one turn)"
+msgstr "Παραμονή στην ίδια θέση (μια στροφή)"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:77
+msgid "Space"
+msgstr "Διάστημα"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:80
@@ -405,8 +401,8 @@ msgstr "Ασφαλής τηλεμεταφορά"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:81
-msgid "<key>+</key>"
-msgstr "<key>+</key>"
+msgid "<keyseq><key>Alt</key><key>s</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>s</key></keyseq>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:84
@@ -415,8 +411,8 @@ msgstr "Τυχαία τηλεμεταφορά"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:85
-msgid "<key>*</key>"
-msgstr "<key>*</key>"
+msgid "<keyseq><key>Alt</key><key>r</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>r</key></keyseq>"
 
 #. (itstool) path: td/p
 #. (itstool) path: item/title
@@ -426,8 +422,8 @@ msgstr "Αναμονή για τα ρομπότ"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:89
-msgid "<key>Enter</key>"
-msgstr "<key>Enter</key>"
+msgid "<keyseq><key>Alt</key><key>w</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>w</key></keyseq>"
 
 #. (itstool) path: note/p
 #: C/controls-default.page:95
@@ -441,7 +437,7 @@ msgstr ""
 #. (itstool) path: section/title
 #: C/controls-default.page:102
 msgid "Use the mouse to move around"
-msgstr "Χρησιμοποιήστε το ποντίκι για να κινηθείτε ολόγυρα"
+msgstr "Χρησιμοποιήστε το ποντίκι για να κινηθείτε τριγύρω"
 
 #. (itstool) path: item/title
 #: C/controls-default.page:106
@@ -457,12 +453,17 @@ msgid ""
 "above the main character, a small black arrow will appear pointing "
 "northwards. On clicking, the character will move one square northwards."
 msgstr ""
-"Όταν κινείτε το ποντίκι σας ολόγυρα ο κύριος χαρακτήρας, θα εμφανιστεί ένα "
+"Όταν κινείτε το ποντίκι σας τριγύρω ο κύριος χαρακτήρας, θα εμφανιστεί ένα "
 "μικρό μαύρο βέλος που δείχνει προς την κατεύθυνση στην οποία ο χαρακτήρας θα "
-"κινηθεί αν πατήσετε. Για παράδειγμα, για να κινηθείτε βόρεια, κινήστε τον "
+"κινηθεί με το κλικ. Για παράδειγμα, για να κινηθείτε βόρεια, κινήστε τον "
 "δρομέα σας στη στήλη πάνω από τον κύριο χαρακτήρα, ένα μικρό μαύρο βέλος θα "
 "εμφανιστεί δείχνοντας προς τα βόρεια. Πατώντας, ο χαρακτήρας θα κινηθεί ένα "
 "τετράγωνο προς τα βόρεια."
+
+#. (itstool) path: item/title
+#: C/controls-default.page:115
+msgid "Stay in the same position"
+msgstr "Παραμονή στην ίδια θέση"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:116
@@ -478,19 +479,14 @@ msgstr "Αναμονή"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:120
-#| msgid ""
-#| "Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
-#| "\"menu\">Move</gui> <gui style=\"menuitem\">Wait</gui></guiseq> to wait "
-#| "for the enemy robots to finish making all their moves."
 msgid ""
 "Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
 "\"menu\">Move</gui><gui style=\"menuitem\">Wait</gui></guiseq> to wait for "
 "the enemy robots to finish making all their moves."
 msgstr ""
-"Πατήστε το πλήκτρο <_:media-1/> στην εργαλειοθήκη ή επιλέξτε <guiseq><gui "
+"Κάντε κλικ στο κουμπί <_:media-1/> στην εργαλειοθήκη ή επιλέξτε <guiseq><gui "
 "style=\"menu\">Κίνηση</gui><gui style=\"menuitem\">Αναμονή</gui></guiseq> "
-"για να περιμένετε για τα εχθρικά ρομπότ να τελειώσουν να κάνουν όλες τις "
-"κινήσεις τους."
+"για να περιμένετε για τα εχθρικά ρομπότ να τελειώσουν όλες τις κινήσεις τους."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:127 C/moves.page:84
@@ -499,24 +495,19 @@ msgstr "Ασφαλείς τηλεμεταφορές"
 
 #. (itstool) path: media/span
 #: C/controls-default.page:130
-#| msgid "Teleport safely"
 msgid "Teleport"
 msgstr "Τηλεμεταφορά"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:128
-#| msgid ""
-#| "To safely teleport, click the <_:media-1/> button on the toolbar or "
-#| "select <guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem"
-#| "\">Teleport</gui></guiseq>."
 msgid ""
 "To safely teleport, click the <_:media-1/> button on the toolbar or select "
 "<guiseq><gui style=\"menu\">Move</gui><gui style=\"menuitem\">Teleport</"
 "gui></guiseq>."
 msgstr ""
-"Για ασφαλή τηλεμεταφορά, πατήστε το πλήκτρο <_:media-1/> στην εργαλειοθήκη ή "
-"επιλέξτε <guiseq><gui style=\"menu\">Κίνηση</gui> <gui style=\"menuitem"
-"\">Τηλεμεταφορά</gui></guiseq>."
+"Για ασφαλή τηλεμεταφορά, κάντε κλικ στο κουμπί <_:media-1/> στην "
+"εργαλειοθήκη ή επιλέξτε <guiseq><gui style=\"menu\">Κίνηση</gui> <gui style="
+"\"menuitem\">Τηλεμεταφορά</gui></guiseq>."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:135 C/moves.page:90
@@ -525,24 +516,19 @@ msgstr "Τυχαίες τηλεμεταφορές"
 
 #. (itstool) path: media/span
 #: C/controls-default.page:138
-#| msgid "Random teleports"
 msgid "Random teleport"
 msgstr "Τυχαία τηλεμεταφορά"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:136
-#| msgid ""
-#| "To teleport to a random spot, click the <_:media-1/> button on the "
-#| "toolbar or select <guiseq><gui style=\"menu\">Move</gui> <gui style="
-#| "\"menuitem\">Random</gui></guiseq>."
 msgid ""
 "To teleport to a random spot, click the <_:media-1/> button on the toolbar "
 "or select <guiseq><gui style=\"menu\">Move</gui><gui style=\"menuitem"
 "\">Random</gui></guiseq>."
 msgstr ""
-"Για να τηλεμεταφέρετε ένα τυχαίο σημείο, πατήστε το πλήκτρο <_:media-1/> "
-"στην εργαλειοθήκη ή επιλέξτε <guiseq><gui style=\"menu\">Κίνηση</gui><gui "
-"style=\"menuitem\">Τυχαία</gui></guiseq>."
+"Για να τηλεμεταφερθείτε σε ένα τυχαίο σημείο, κάντε κλικ στο κουμπί <_:"
+"media-1/> στην εργαλειοθήκη ή επιλέξτε <guiseq><gui style=\"menu\">Κίνηση</"
+"gui><gui style=\"menuitem\">Τυχαία</gui></guiseq>."
 
 #. (itstool) path: info/desc
 #: C/game-types.page:18
@@ -699,7 +685,7 @@ msgid ""
 "You can always uncheck these if you find the game too easy."
 msgstr ""
 "Σημειώστε το <gui style=\"checkbox\">Χρήση ασφαλών κινήσεων</gui> και τα "
-"πλαίσια ελέγχου <gui style=\"checkbox\">Χρήση υπερασφαλών κινήσεων</gui> αν "
+"πλαίσια ελέγχου <gui style=\"checkbox\">Χρήση υπερ-ασφαλών κινήσεων</gui> αν "
 "θέλετε οι τυχαίες τηλεμεταφορές σας να είναι όσο το δυνατό πιο ασφαλείς. "
 "Αυτό μειώνει το επίπεδο της δυσκολίας. Μπορείτε πάντα να τα αποεπιλέξετε αν "
 "βρείτε το παιχνίδι υπερβολικά εύκολο."
@@ -730,7 +716,7 @@ msgstr ""
 #. (itstool) path: section/title
 #: C/index.page:30
 msgid "Game play"
-msgstr "Παίξιμο παιχνιδιού"
+msgstr "Οδηγίες παιχνιδιού"
 
 #. (itstool) path: section/title
 #: C/index.page:34
@@ -740,7 +726,7 @@ msgstr "Προτιμήσεις"
 #. (itstool) path: info/desc
 #: C/moves.page:18
 msgid "How can I move around in <app>Robots</app>?"
-msgstr "Πώς μπορώ να κινηθώ ολόγυρα στα <app>Ρομπότ</app>;"
+msgstr "Πώς μπορώ να κινηθώ τριγύρω στα <app>Ρομπότ</app>;"
 
 #. (itstool) path: page/title
 #: C/moves.page:21
@@ -827,9 +813,9 @@ msgid ""
 "This is not advisable unless there are very few robots and you are "
 "absolutely sure that they will all perish before reaching you."
 msgstr ""
-"Μπορείτε να μείνετε και να περιμένετε για τα ρομπότ να τελειώσουν τις "
-"κινήσεις τους. Αυτό δεν είναι φρόνιμο εκτός και υπάρχουν πολύ λίγα ρομπότ "
-"και είσαστε ολότελα βέβαιοι ότι όλα θα καταστραφούν πριν σας φτάσουν."
+"Μπορείτε να μείνετε και να περιμένετε ώστε τα ρομπότ να τελειώσουν τις "
+"κινήσεις τους. Αυτό δεν είναι ορθό εκτός και υπάρχουν πολύ λίγα ρομπότ και "
+"είσαστε ολότελα βέβαιοι ότι όλα θα καταστραφούν πριν σας φτάσουν."
 
 #. (itstool) path: section/title
 #: C/moves.page:76
@@ -844,8 +830,8 @@ msgid ""
 "types of teleports available."
 msgstr ""
 "Αν δεν υπάρχουν δυνατές κινήσεις ή αν θέλετε να κάνετε ένα άλμα γενικά αντί "
-"να μετακινείτε τετράγωνο ανά τετράγωνο, μπορείτε να τηλεμεταφέρετε. Υπάρχουν "
-"δύο τύποι διαθέσιμων τηλεμεταφορών."
+"να μετακινείτε τετράγωνο ανά τετράγωνο, μπορείτε να τηλεμεταφερθείτε. "
+"Υπάρχουν δύο τύποι διαθέσιμων τηλεμεταφορών."
 
 #. (itstool) path: item/p
 #: C/moves.page:85
@@ -886,7 +872,7 @@ msgid ""
 "points when they die and enemies that give you 20 points when they die."
 msgstr ""
 "Υπάρχουν δύο τύποι εχθρών στα <app>Ρομπότ</app>, εχθροί που σας δίνουν 10 "
-"σημεία όταν πεθαίνουν και εχθροί που σας δίνουν 20 σημεία όταν πεθαίνουν."
+"βαθμούς όταν πεθαίνουν και εχθροί που σας δίνουν 20 βαθμούς όταν πεθαίνουν."
 
 #. (itstool) path: section/title
 #: C/scores.page:28
@@ -900,11 +886,10 @@ msgid ""
 "are the enemies that give you 20 points when they die."
 msgstr ""
 "Ανάλογα με το <link xref=\"appearance\">θέμα παιχνιδιού</link>, οι παρακάτω "
-"είναι εχθροί που σας δίνουν 20 σημεία όταν πεθαίνουν."
+"είναι εχθροί που σας δίνουν 20 πόντους όταν πεθαίνουν."
 
 #. (itstool) path: item/p
 #: C/scores.page:35
-#| msgid "<_:media-1/> Robots"
 msgid "Bats <_:media-1/>"
 msgstr "Νυχτερίδες <_:media-1/>"
 
@@ -915,7 +900,6 @@ msgstr "Υψηλού κινδύνου ρομπότ <_:media-1/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:44
-#| msgid "High-risk enemies"
 msgid "High-risk gnomes <_:media-1/>"
 msgstr "Υψηλού κινδύνου νάνοι <_:media-1/>"
 
@@ -935,13 +919,12 @@ msgid ""
 "The following are the enemies that give you 10 points when they die. Again, "
 "it is your theme that determines which of these will appear in a game."
 msgstr ""
-"Οι παρακάτω είναι εχθροί που σας δίνουν 10 σημεία όταν πεθαίνετε. Πάλι, "
+"Οι παρακάτω είναι εχθροί που σας δίνουν 10 πόντους όταν πεθαίνετε. Πάλι, "
 "είναι το θέμα σας που καθορίζει ποιοι από αυτούς θα εμφανιστούν σε ένα "
 "παιχνίδι."
 
 #. (itstool) path: item/p
 #: C/scores.page:64
-#| msgid "<_:media-1/> Robots"
 msgid "Ghosts <_:media-1/>"
 msgstr "Φαντάσματα <_:media-1/>"
 
@@ -963,12 +946,44 @@ msgstr "Χαμηλού κινδύνου ούφο <_:media-1/>"
 #. (itstool) path: p/link
 #: C/legal.xml:4
 msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Άδεια Creative Commons Attribution-ShareAlike 3.0 Unported"
 
 #. (itstool) path: license/p
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
-msgstr "Αυτή η δουλειά αδειοδοτείται από <_:link-1/>."
+msgstr "Αυτό το έργο έχει αδειοδοτηθεί υπό την <_:link-1/>."
+
+#~ msgid "<key>Home</key>"
+#~ msgstr "<key>Home</key>"
+
+#~ msgid "<key>↑</key>"
+#~ msgstr "<key>↑</key>"
+
+#~ msgid "<key>PgUp</key>"
+#~ msgstr "<key>PgUp</key>"
+
+#~ msgid "<key>→</key>"
+#~ msgstr "<key>→</key>"
+
+#~ msgid "<key>←</key>"
+#~ msgstr "<key>←</key>"
+
+#~ msgid "<key>↓</key>"
+#~ msgstr "<key>↓</key>"
+
+#~ msgid "<key>PgDn</key>"
+#~ msgstr "<key>PgDn</key>"
+
+#~ msgid "<key>Begin</key> (marked only as <key>5</key> on some keypads)"
+#~ msgstr ""
+#~ "<key>Begin</key> (σε μερικά πληκτρολόγια είναι σημειωμένο στο πλήκτρο "
+#~ "<key>5</key>)"
+
+#~ msgid "<key>*</key>"
+#~ msgstr "<key>*</key>"
+
+#~ msgid "<key>Enter</key>"
+#~ msgstr "<key>Enter</key>"
 
 #~ msgid "<key>5</key>"
 #~ msgstr "<key>5</key>"

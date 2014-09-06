@@ -10,15 +10,19 @@
 #
 # Changwoo Ryu <cwryu@debian.org>, 2013-2014.
 #
-#
 # 새로 번역하신 분은 아래 "translator-credits"에 추가하세요.
+#
+# 용어
+#
+# - teleport: 순간 이동
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-17 14:01+0000\n"
-"PO-Revision-Date: 2014-03-08 04:36+0900\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"robots&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-09-06 07:23+0000\n"
+"PO-Revision-Date: 2014-09-06 19:52+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -27,18 +31,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/gnobots2.desktop.in.h:1 ../src/gnobots.c:206 ../src/gnobots.c:219
-#: ../src/menu.c:262
-msgid "Robots"
-msgstr "로봇"
+#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "새 게임"
 
-#: ../data/gnobots2.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "로봇을 피해 서로 부딪혀 부서지도록 합니다"
+#: ../data/app-menu.ui.h:2 ../src/properties.c:393
+msgid "Preferences"
+msgstr "기본 설정"
 
-#: ../data/gnobots2.desktop.in.h:3
-msgid "game;arcade;teleport;"
-msgstr "game;게임;arcade;아케이드;teleport;텔레포트;순간이동;"
+#: ../data/app-menu.ui.h:3
+msgid "Scores"
+msgstr "점수"
+
+#: ../data/app-menu.ui.h:4
+msgid "Help"
+msgstr "도움말"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "정보"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "끝내기"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -48,7 +63,9 @@ msgstr "그놈 로봇"
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
-msgstr "먼 미래 2000년의 이야기. 악당 로봇이 나를 죽이려 합니다. 로봇을 피하지 않으면 죽음을 맞게 됩니다."
+msgstr ""
+"먼 미래 2000년의 이야기. 악당 로봇이 나를 죽이려 합니다. 로봇을 피하지 않으"
+"면 죽음을 맞게 됩니다."
 
 #: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
@@ -57,14 +74,33 @@ msgid ""
 "destruction, or into the junk piles that result. You can defend yourself by "
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
-msgstr "다행히도 악당 로봇은 머리가 나빠서 직접 내 방향을 상대로 움직입니다. 로봇이 서로 부딪히도록 유도하면 부서지고, 쓰레기 더미에 부딪혀도 부서집니다. 쓰레기 더미를 옮겨서 보호할 수도 있고, 휴대용 순간이동 장치를 사용해 탈출할 수도 있습니다."
+msgstr ""
+"다행히도 악당 로봇은 머리가 나빠서 직접 내 방향을 상대로 움직입니다. 로봇이 "
+"서로 부딪히도록 유도하면 부서지고, 쓰레기 더미에 부딪혀도 부서집니다. 쓰레기 "
+"더미를 옮겨서 보호할 수도 있고, 휴대용 순간이동 장치를 사용해 탈출할 수도 있"
+"습니다."
 
 #: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
-msgstr "안전 순간이동 보급은 제한되어 있습니다. 다 떨어지면 로봇 바로 옆으로 순간이동할 수 있고 그러면 로봇에 죽임을 당합니다. 가능한 오래 살아남으십시오!"
+msgstr ""
+"안전 순간이동 보급은 제한되어 있습니다. 다 떨어지면 로봇 바로 옆으로 순간이동"
+"할 수 있고 그러면 로봇에 죽임을 당합니다. 가능한 오래 살아남으십시오!"
+
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
+#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+msgid "Robots"
+msgstr "로봇"
+
+#: ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "로봇을 피해 서로 부딪혀 부서지도록 합니다"
+
+#: ../data/gnome-robots.desktop.in.h:3
+msgid "game;arcade;teleport;"
+msgstr "game;게임;arcade;아케이드;teleport;텔레포트;순간이동;"
 
 #: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
@@ -119,9 +155,7 @@ msgstr "수퍼 안전한 움직임"
 msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
-msgstr ""
-"수퍼 안전한 움직임. 안전하게 움직이는 방법이 없고 텔레포트만 할 수 있는 경우"
-"에 플레이어에게 알려줍니다."
+msgstr "수퍼 안전한 움직임. 안전하게 움직이는 방법이 없고 순간이동만 할 수 있는 경우에 플레이어에게 알려줍니다."
 
 #: ../data/org.gnome.robots.gschema.xml.h:13
 msgid "Enable game sounds"
@@ -131,7 +165,7 @@ msgstr "게임 사운드 사용"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "게임 사운드 사용. 게임중에 여러가지 이벤트에 대한 소리를 냅니다."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:500
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
 msgid "Key to move NW"
 msgstr "북서쪽으로 이동하는 키"
 
@@ -139,7 +173,7 @@ msgstr "북서쪽으로 이동하는 키"
 msgid "The key used to move north-west."
 msgstr "북서쪽으로 이동할 때 사용할 키."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:501
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
 msgid "Key to move N"
 msgstr "북쪽으로 이동하는 키"
 
@@ -147,7 +181,7 @@ msgstr "북쪽으로 이동하는 키"
 msgid "The key used to move north."
 msgstr "북쪽으로 이동할 때 사용할 키."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:502
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
 msgid "Key to move NE"
 msgstr "북동쪽으로 이동하는 키"
 
@@ -155,7 +189,7 @@ msgstr "북동쪽으로 이동하는 키"
 msgid "The key used to move north-east."
 msgstr "북동쪽으로 이동할 때 사용할 키."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:503
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
 msgid "Key to move W"
 msgstr "서쪽으로 이동하는 키"
 
@@ -163,7 +197,7 @@ msgstr "서쪽으로 이동하는 키"
 msgid "The key used to move west."
 msgstr "서쪽으로 이동할 때 사용할 키."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
 msgid "Key to hold"
 msgstr "위치 유지하는 키"
 
@@ -171,7 +205,7 @@ msgstr "위치 유지하는 키"
 msgid "The key used to hold still."
 msgstr "위치를 유지할 때 사용할 키."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:504
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
 msgid "Key to move E"
 msgstr "동쪽으로 이동하는 키"
 
@@ -179,7 +213,7 @@ msgstr "동쪽으로 이동하는 키"
 msgid "The key used to move east."
 msgstr "동쪽으로 이동할 때 사용할 키."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
 msgid "Key to move SW"
 msgstr "남서쪽으로 이동하는 키"
 
@@ -187,7 +221,7 @@ msgstr "남서쪽으로 이동하는 키"
 msgid "The key used to move south-west."
 msgstr "남서쪽으로 이동할 때 사용할 키."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
 msgid "Key to move S"
 msgstr "남쪽으로 이동하는 키"
 
@@ -195,7 +229,7 @@ msgstr "남쪽으로 이동하는 키"
 msgid "The key used to move south."
 msgstr "남쪽으로 이동할 때 사용할 키."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
 msgid "Key to move SE"
 msgstr "남동쪽으로 이동하는 키"
 
@@ -203,80 +237,55 @@ msgstr "남동쪽으로 이동하는 키"
 msgid "The key used to move south-east."
 msgstr "남동쪽으로 이동할 때 사용할 키."
 
-#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:509
-msgid "Key to teleport"
-msgstr "텔레포트하는 키"
-
-#: ../data/org.gnome.robots.gschema.xml.h:34
-msgid "The key used to teleport safely (if possible)."
-msgstr "안전하게 텔레포트할 때(할 수 있는 경우) 사용할 키."
-
-#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:510
-msgid "Key to teleport randomly"
-msgstr "임의 위치로 텔레포트하는 키"
-
-#: ../data/org.gnome.robots.gschema.xml.h:36
-msgid "The key used to teleport randomly."
-msgstr "임의로 텔레포트할 때 사용할 키."
-
-#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:511
-msgid "Key to wait"
-msgstr "기다리는 키"
-
-#: ../data/org.gnome.robots.gschema.xml.h:38
-msgid "The key used to wait."
-msgstr "기다릴 때 사용할 키."
-
-#: ../data/org.gnome.robots.gschema.xml.h:39
+#: ../data/org.gnome.robots.gschema.xml.h:33
 msgid "Width of the window in pixels"
 msgstr "창의 너비, 픽셀 단위."
 
-#: ../data/org.gnome.robots.gschema.xml.h:40
+#: ../data/org.gnome.robots.gschema.xml.h:34
 msgid "Height of the window in pixels"
 msgstr "창의 높이, 픽셀 단위."
 
-#: ../data/org.gnome.robots.gschema.xml.h:41
+#: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
 msgstr "참이면 창을 최대화"
 
-#: ../data/org.gnome.robots.gschema.xml.h:42
-msgid "true if the window is fullscren"
-msgstr "참이면 창을 전체 화면"
-
-#: ../src/game.c:149
+#: ../src/game.c:147
 msgid "Game over!"
 msgstr "게임 끝!"
 
-#: ../src/game.c:151
+#: ../src/game.c:149
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr "잘 했지만 아쉽게도 점수가 10위 안에 들지 못했습니다."
 
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/game.c:153 ../src/games-stock.c:253
+#: ../src/game.c:150
+msgid "_Quit"
+msgstr "끝내기(_Q)"
+
+#: ../src/game.c:151 ../src/gnome-robots.c:231
 msgid "_New Game"
 msgstr "새 게임(_N)"
 
-#: ../src/game.c:166
+#: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "로봇 점수"
 
-#: ../src/game.c:169
+#: ../src/game.c:167
 msgid "Map:"
 msgstr "맵:"
 
-#: ../src/game.c:178
+#: ../src/game.c:176
 msgid "Congratulations!"
 msgstr "축하합니다!"
 
-#: ../src/game.c:179
+#: ../src/game.c:177
 msgid "Your score is the best!"
 msgstr "최고 점수입니다!"
 
-#: ../src/game.c:180
+#: ../src/game.c:178
 msgid "Your score has made the top ten."
 msgstr "점수가 10위 안에 들었습니다."
 
-#: ../src/game.c:408 ../src/game.c:424
+#: ../src/game.c:405 ../src/game.c:421
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -285,13 +294,13 @@ msgstr ""
 "다시 플레이하시겠습니까?"
 
 #. This should never happen.
-#: ../src/game.c:1186
+#: ../src/game.c:1175
 msgid "There are no teleport locations left!!"
-msgstr "텔레포트할 위치가 남아 있지 않습니다!!"
+msgstr "순간이동할 위치가 남아 있지 않습니다!!"
 
-#: ../src/game.c:1214
+#: ../src/game.c:1203
 msgid "There are no safe locations to teleport to!!"
-msgstr "텔레포트할 안전한 위치가 남아 있지 않습니다!!"
+msgstr "순간이동할 안전한 위치가 남아 있지 않습니다!!"
 
 #: ../src/games-controls.c:288
 msgid "Unknown Command"
@@ -316,297 +325,123 @@ msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$d분 %2$d초"
 
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "새 게임"
-
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
 msgid "Date"
 msgstr "시각"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "이 게임의 도움말을 봅니다"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "현재 게임을 끝냅니다"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "f전체 화면 모드를 토글합니다"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "다음 움직임에 대한 힌트를 얻습니다"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "전체 화면 모드를 나갑니다"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "새 멀티플레이어 네트워크 게임을 시작합니다"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "현재 네트워크 게임을 끝내고 네트워크 서버로 돌아갑니다"
-
-#: ../src/games-stock.c:48 ../src/menu.c:69
-msgid "Start a new game"
-msgstr "새 게임을 시작합니다"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "게임을 일시 중지합니다"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "네트워크 게임의 플레이어 목록을 표시합니다"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "마지막 움직임을 되돌립니다"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "게임을 다시 시작합니다"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "일시 중지한 게임을 다시 시작합니다"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "점수를 봅니다"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "마지막 움직임을 취소합니다"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "이 게임 정보"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "이 창을 닫습니다"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "게임을 설정합니다"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "이 게임을 끝냅니다"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "차례(_C)"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "전체 화면(_F)"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "힌트(_H)"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "새 게임(_N)"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "다시 이동(_R)"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "리셋(_R)"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "게임 다시(_R)"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "이동 취소(_U)"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "패 돌리기(_D)"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "전체 화면 나가기(_L)"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "네트워크 게임(_G)"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "게임 떠나기(_E)"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "플레이어 목록(_L)"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "일시 중지(_P)"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "다시 시작(_U)"
-
-#: ../src/games-stock.c:267
-msgid "_Scores"
-msgstr "점수(_S)"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "게임 끝내기(_E)"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-
-#: ../src/gnobots.c:79
-msgid "Set game scenario"
-msgstr "게임 시나리오 설정"
-
-#: ../src/gnobots.c:79 ../src/gnobots.c:81
-msgid "NAME"
-msgstr "<이름>"
-
-#: ../src/gnobots.c:81
-msgid "Set game configuration"
-msgstr "게임 설정"
-
-#: ../src/gnobots.c:83 ../src/gnobots.c:85
-msgid "Initial window position"
-msgstr "처음 창 위치"
-
-#: ../src/gnobots.c:83
-msgid "X"
-msgstr "X"
-
-#: ../src/gnobots.c:85
-msgid "Y"
-msgstr "Y"
-
-#: ../src/gnobots.c:90
+#: ../src/gnome-robots.c:95
 msgid "Classic robots"
 msgstr "전통적 로봇"
 
-#: ../src/gnobots.c:91
+#: ../src/gnome-robots.c:96
 msgid "Classic robots with safe moves"
 msgstr "전통적인 로봇, 안전한 움직임"
 
-#: ../src/gnobots.c:92
+#: ../src/gnome-robots.c:97
 msgid "Classic robots with super-safe moves"
 msgstr "전통적인 로봇, 수퍼 안전한 움직임"
 
-#: ../src/gnobots.c:93
+#: ../src/gnome-robots.c:98
 msgid "Nightmare"
 msgstr "악몽"
 
-#: ../src/gnobots.c:94
+#: ../src/gnome-robots.c:99
 msgid "Nightmare with safe moves"
 msgstr "악몽, 안전한 움직임"
 
-#: ../src/gnobots.c:95
+#: ../src/gnome-robots.c:100
 msgid "Nightmare with super-safe moves"
 msgstr "악몽, 수퍼 안전한 움직임"
 
-#: ../src/gnobots.c:96
+#: ../src/gnome-robots.c:101
 msgid "Robots2"
 msgstr "로봇2"
 
-#: ../src/gnobots.c:97
+#: ../src/gnome-robots.c:102
 msgid "Robots2 with safe moves"
 msgstr "로봇2, 안전한 움직임"
 
-#: ../src/gnobots.c:98
+#: ../src/gnome-robots.c:103
 msgid "Robots2 with super-safe moves"
 msgstr "로봇2, 수퍼 안전한 움직임"
 
-#: ../src/gnobots.c:99
+#: ../src/gnome-robots.c:104
 msgid "Robots2 easy"
 msgstr "로봇2 쉽게"
 
-#: ../src/gnobots.c:100
+#: ../src/gnome-robots.c:105
 msgid "Robots2 easy with safe moves"
 msgstr "안전한 움직임이 있는 로봇2 쉽게"
 
-#: ../src/gnobots.c:101
+#: ../src/gnome-robots.c:106
 msgid "Robots2 easy with super-safe moves"
 msgstr "수퍼 안전한 움직임이 있는 로봇2 쉽게"
 
-#: ../src/gnobots.c:102
+#: ../src/gnome-robots.c:107
 msgid "Robots with safe teleport"
-msgstr "로봇, 안전한 텔레포트"
+msgstr "로봇, 안전한 순간이동"
 
-#: ../src/gnobots.c:103
+#: ../src/gnome-robots.c:108
 msgid "Robots with safe teleport with safe moves"
-msgstr "로봇, 안전한 텔레포트 및 안전한 움직임"
+msgstr "로봇, 안전한 순간이동 및 안전한 움직임"
 
-#: ../src/gnobots.c:104
+#: ../src/gnome-robots.c:109
 msgid "Robots with safe teleport with super-safe moves"
-msgstr "로봇, 안전한 텔레포트 및 수퍼 안전한 움직임"
+msgstr "로봇, 안전한 순간이동 및 수퍼 안전한 움직임"
 
-#: ../src/gnobots.c:286
+#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
+#: ../src/gnome-robots.c:144
+#, c-format
+msgid "Level: %d\tScore: %d"
+msgstr "단계: %d\t점수: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: ../src/gnome-robots.c:155
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(남은 수: %d)"
+
+#. First line of safe teleports button label.
+#: ../src/gnome-robots.c:157
+msgid "Teleport _Safely"
+msgstr "안전하게 순간이동(_S)"
+
+#: ../src/gnome-robots.c:202
+msgid ""
+"Based on classic BSD Robots\n"
+"\n"
+"Robots is a part of GNOME Games."
+msgstr ""
+"전통적인 BSD 로봇 게임에 기반합니다.\n"
+"\n"
+"로봇은 그놈 게임의 일부입니다."
+
+#: ../src/gnome-robots.c:206
+msgid "translator-credits"
+msgstr "류창우 <cwryu@debian.org>"
+
+#: ../src/gnome-robots.c:227
+msgid "Are you sure you want to discard the current game?"
+msgstr "정말로 현재 게임을 포기하시겠습니까?"
+
+#: ../src/gnome-robots.c:230
+msgid "Keep _Playing"
+msgstr "계속 플레이(_P)"
+
+#: ../src/gnome-robots.c:373
+msgid "Teleport _Randomly"
+msgstr "임의 위치로 순간 이동(_R)"
+
+#: ../src/gnome-robots.c:392
+msgid "_Wait for Robots"
+msgstr "로봇 기다리기(_W)"
+
+#: ../src/gnome-robots.c:420
 msgid "No game data could be found."
 msgstr "게임 데이터를 찾을 수 없습니다."
 
-#: ../src/gnobots.c:288
+#: ../src/gnome-robots.c:422
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -614,11 +449,11 @@ msgstr ""
 "로봇 프로그램에서 올바른 게임 설정 파일을 찾지 못했습니다. 프로그램이 올바르"
 "게 설치되었는지 확인하십시오."
 
-#: ../src/gnobots.c:304
+#: ../src/gnome-robots.c:438
 msgid "Some graphics files are missing or corrupt."
 msgstr "그래픽 파일중에 없거나 망가진 파일이 있습니다."
 
-#: ../src/gnobots.c:306
+#: ../src/gnome-robots.c:440
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -631,81 +466,11 @@ msgstr ""
 msgid "Could not find '%s' pixmap file\n"
 msgstr "'%s' 픽스맵 파일을 찾을 수 없습니다\n"
 
-#: ../src/menu.c:64
-msgid "_Game"
-msgstr "게임(_G)"
-
-#: ../src/menu.c:65
-msgid "_View"
-msgstr "보기(_V)"
-
-#: ../src/menu.c:66
-msgid "_Move"
-msgstr "이동(_M)"
-
-#: ../src/menu.c:67
-msgid "_Settings"
-msgstr "설정(_S)"
-
-#: ../src/menu.c:68
-msgid "_Help"
-msgstr "도움말(_H)"
-
-#: ../src/menu.c:73
-msgid "_Teleport"
-msgstr "텔레포트(_T)"
-
-#: ../src/menu.c:74
-msgid "Teleport, safely if possible"
-msgstr "텔레포트, 할 수 있으면 안전하게"
-
-#: ../src/menu.c:75
-msgid "_Random"
-msgstr "임의(_R)"
-
-#: ../src/menu.c:76
-msgid "Teleport randomly"
-msgstr "임의 위치로 텔레포트"
-
-#: ../src/menu.c:77
-msgid "_Wait"
-msgstr "기다리기(_W)"
-
-#: ../src/menu.c:77
-msgid "Wait for the robots"
-msgstr "로봇을 기다립니다"
-
-#: ../src/menu.c:88
-msgid "_Toolbar"
-msgstr "도구 모음(_T)"
-
-#: ../src/menu.c:88
-msgid "Show or hide the toolbar"
-msgstr "도구 모음 보이기 혹은 감추기"
-
-#: ../src/menu.c:266
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"전통적인 BSD 로봇 게임에 기반합니다.\n"
-"\n"
-"로봇은 그놈 게임의 일부입니다."
-
-#: ../src/menu.c:270
-msgid "translator-credits"
-msgstr "류창우 <cwryu@debian.org>"
-
-#: ../src/properties.c:391
-msgid "Robots Preferences"
-msgstr "로봇 기본 설정"
-
-#: ../src/properties.c:416
+#: ../src/properties.c:417
 msgid "Game Type"
 msgstr "게임 종류"
 
-#: ../src/properties.c:425
+#: ../src/properties.c:427
 msgid "_Use safe moves"
 msgstr "안전한 움직임 사용(_U)"
 
@@ -713,58 +478,42 @@ msgstr "안전한 움직임 사용(_U)"
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "죽게 되는 움직임을 우연히 하지 못하도록 막습니다."
 
-#: ../src/properties.c:434
+#: ../src/properties.c:435
 msgid "U_se super safe moves"
 msgstr "수퍼 안전한 움직임 사용(_S)"
 
-#: ../src/properties.c:441
+#: ../src/properties.c:442
 msgid "Prevents all moves that result in getting killed."
 msgstr "죽게 되는 움직임을 무엇이든 하지 못하도록 막습니다."
 
-#: ../src/properties.c:443
+#: ../src/properties.c:448
 msgid "_Enable sounds"
 msgstr "사운드 사용(_E)"
 
-#: ../src/properties.c:449
+#: ../src/properties.c:454
 msgid "Play sounds for events like winning a level and dying."
 msgstr "레벨을 마쳤거나 죽을 때와 같은 이벤트에 대해 소리를 냅니다."
 
-#: ../src/properties.c:451
+#: ../src/properties.c:456
 msgid "Game"
 msgstr "게임"
 
-#: ../src/properties.c:464
+#: ../src/properties.c:469
 msgid "_Image theme:"
 msgstr "이미지 테마(_I):"
 
-#: ../src/properties.c:476
+#: ../src/properties.c:481
 msgid "_Background color:"
 msgstr "배경색(_B):"
 
-#: ../src/properties.c:488
+#: ../src/properties.c:493
 msgid "Appearance"
 msgstr "모양"
 
-#: ../src/properties.c:520
+#: ../src/properties.c:522
 msgid "_Restore Defaults"
 msgstr "기본값으로 되돌리기(_R)"
 
-#: ../src/properties.c:525
+#: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "키보드"
-
-#: ../src/statusbar.c:68
-msgid "Score:"
-msgstr "점수:"
-
-#: ../src/statusbar.c:76
-msgid "Safe Teleports:"
-msgstr "안전한 텔레포트:"
-
-#: ../src/statusbar.c:85
-msgid "Level:"
-msgstr "단계:"
-
-#: ../src/statusbar.c:94
-msgid "Remaining:"
-msgstr "남은 수:"

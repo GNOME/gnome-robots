@@ -2,879 +2,1888 @@
 # Florian Purucker <florian@purucker.net>, 2007.
 # Mario Blättermann <mariobl@gnome.org>, 2008, 2009, 2012, 2013.
 # Hendrik Richter <hendrikr@gnome.org>, 2008.
+# Benjamin Steinwender <b@stbe.at>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots manual master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-02 22:18+0000\n"
-"PO-Revision-Date: 2013-02-28 21:06+0100\n"
-"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
+"POT-Creation-Date: 2014-09-10 13:41+0000\n"
+"PO-Revision-Date: 2014-09-10 20:02+0100\n"
+"Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Florian Purucker <florian@purucker.net>, 2007\n"
-"Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2009, 2012, 2013"
+"Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2009, 2012, 2013\n"
+"Christian Kirbach <christian.kirbach@gmail.com>, 2014\n"
+"Benjamin Steinwender <b@stbe.at>, 2014"
 
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#.
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:255(imagedata)
-msgctxt "_"
+#. (itstool) path: credit/name
+#: C/appearance.page:15 C/basics.page:15 C/controls-change.page:14
+#: C/controls-default.page:16 C/game-types.page:14 C/index.page:12
+#: C/moves.page:14 C/scores.page:14
+msgid "Aruna Sankaranarayanan"
+msgstr "Aruna Sankaranarayanan"
+
+#. (itstool) path: credit/name
+#: C/appearance.page:19 C/basics.page:19 C/controls-default.page:20
+msgid "Rachel Dunstan"
+msgstr "Rachel Dunstan"
+
+#. (itstool) path: info/desc
+#: C/appearance.page:23
+msgid "Use different game-themes in <app>Robots</app>."
+msgstr "So verwenden Sie verschiedene Themen in <app>Robots</app>."
+
+#. (itstool) path: page/title
+#: C/appearance.page:26
+msgid "Change the default appearance of the game"
+msgstr "Das voreingestellte Erscheinungsbild des Spiels ändern"
+
+#. (itstool) path: page/p
+#: C/appearance.page:28
 msgid ""
-"external ref='figures/gnome-robots-main.png' "
-"md5='aade859d773abd55a6f903b51d92e4b9'"
-msgstr "translated"
+"You can change the <app>Robots</app> backdrop and the different robots that "
+"are present in a game by changing the game theme and background."
+msgstr ""
+"Ändern Sie den Hintergrund in <app>Robots</app> und das Erscheinungsbild "
+"verschiedener Roboter durch Ändern des Spielthemas und des Hintergrundes."
 
-#: C/index.docbook:26(articleinfo/title)
-msgid "<application>Robots</application> Manual"
-msgstr "<application>Robots</application>-Handbuch"
+#. (itstool) path: steps/title
+#: C/appearance.page:32
+msgid "To change the game theme and background:"
+msgstr "So ändern Sie das Thema des Spiels und das Hintergrundbild:"
 
-#: C/index.docbook:29(abstract/para)
+#. (itstool) path: item/p
+#: C/appearance.page:34
 msgid ""
-"Robots is a graphical version of the original text based robots game, which "
-"can be found on a number of UNIX systems. The player must outwit the robots "
-"chasing him/her by getting them to run into each other."
+"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"\">Preferences</gui> <gui style=\"menuitem\">Appearance</gui></guiseq>."
 msgstr ""
-"Robots ist eine grafische Version des ursprünglich textbasierten Robots-"
-"Spiels, welches für eine Reihe von UNIX-Systemen zur Verfügung steht. Der "
-"Spieler muss die Roboter überlisten, ihn/sie zu verfolgen, wobei die Roboter "
-"dann gegenseitig aufeinanderprallen."
+"Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui> <gui style="
+"\"menuitem\">Einstellungen</gui> <gui style=\"menuitem\">Erscheinungsbild</"
+"gui></guiseq>."
 
-#: C/index.docbook:37(articleinfo/copyright)
-msgid "<year>2001</year> <holder>Patanjali Somayaji, Mark Rae</holder>"
-msgstr "<year>2001</year> <holder>Patanjali Somayaji, Mark Rae</holder>"
-
-#: C/index.docbook:55(publisher/publishername)
-#: C/index.docbook:105(revdescription/para)
-#: C/index.docbook:115(revdescription/para)
-msgid "GNOME Documentation Project"
-msgstr "GNOME-Dokumentationsprojekt"
-
-#: C/index.docbook:2(legalnotice/para)
+#. (itstool) path: item/p
+#: C/appearance.page:39
 msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or in "
-"the file COPYING-DOCS distributed with this manual."
+"Select a theme from the drop-down menu available when you click the button "
+"next to <gui>Image theme</gui>."
 msgstr ""
-"Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free "
-"Documentation License (GFDL), Version 1.1 oder jeder späteren, von der Free "
-"Software Foundation veröffentlichten Version ohne unveränderbare Abschnitte "
-"sowie ohne Texte auf dem vorderen und hinteren Buchdeckel kopiert, verteilt "
-"und/oder modifiziert werden. Eine Kopie der GFDL finden Sie unter diesem "
-"<ulink type=\"help\" url=\"help:fdl\">Link</ulink> oder in der mit diesem "
-"Handbuch gelieferten Datei COPYING-DOCS."
+"Wählen Sie in der Auswahlliste das gewünschte Thema, indem Sie auf den Knopf "
+"neben <gui>Bildthema</gui> klicken."
 
-#: C/index.docbook:12(legalnotice/para) C/legal.xml:12(legalnotice/para)
+#. (itstool) path: item/p
+#: C/appearance.page:43
 msgid ""
-"This manual is part of a collection of GNOME manuals distributed under the "
-"GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in "
-"section 6 of the license."
+"To change your background color, click the button next to <gui>Background "
+"color</gui>. Select a color from the available choices and click <gui style="
+"\"button\">Select</gui>."
 msgstr ""
-"Dieses Handbuch ist Teil einer Sammlung von GNOME-Handbüchern, die unter der "
-"GFDL veröffentlicht werden. Wenn Sie dieses Handbuch getrennt von der "
-"Sammlung weiterverbreiten möchten, können Sie das tun indem Sie eine Kopie "
-"der Lizenz zum Handbuch hinzufügen wie es in Abschnitt 6 der Lizenz "
-"beschrieben ist."
+"Um die gewünschte Farbe zu wählen, klicken Sie auf den Knopf neben "
+"<gui>Hintergrundfarbe</gui>. Wählen Sie eine verfügbare Farbe und klicken "
+"Sie auf <gui style=\"button\">Wählen</gui>."
 
-#: C/index.docbook:19(legalnotice/para) C/legal.xml:19(legalnotice/para)
+#. (itstool) path: note/p
+#: C/appearance.page:50
 msgid ""
-"Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any GNOME "
-"documentation, and the members of the GNOME Documentation Project are made "
-"aware of those trademarks, then the names are in capital letters or initial "
-"capital letters."
+"You can hide the toolbar that contains buttons to start a new game, wait and "
+"teleport, by selecting <guiseq><gui style=\"menu\">View</gui> <gui style="
+"\"menuitem\">Toolbar</gui></guiseq>. The small tick mark next to "
+"<gui>Toolbar</gui> will disappear and the toolbar will be hidden."
 msgstr ""
-"Viele der Namen, die von Unternehmen verwendet werden um ihre Produkte und "
-"Dienstleistungen von anderen zu unterscheiden, sind eingetragene "
-"Warenzeichen. An den Stellen, an denen diese Namen in einer GNOME-"
-"Dokumentation erscheinen, werden die Namen in Großbuchstaben oder mit einem "
-"großen Anfangsbuchstaben geschrieben, wenn das GNOME Documentation Project "
-"auf diese Warenzeichen hingewiesen wird."
+"Sie können die Werkzeugleiste mit den Knöpfen für »Neues Spiel«, »Warten« "
+"und »Teleportieren« verstecken, in dem Sie <guiseq><gui style=\"menu"
+"\">Ansicht</gui> <gui style=\"menuitem\">Werkzeugleiste</gui></guiseq> "
+"wählen. Der kleine Hacken neben <gui>Werkzeugleiste</gui> wird abgewählt und "
+"die Werkzeugleiste wird ausgeblendet."
 
-#: C/index.docbook:35(listitem/para) C/legal.xml:35(listitem/para)
+#. (itstool) path: info/desc
+#: C/basics.page:23
+msgid "Start, quit and play <app>Robots</app> in fullscreen."
+msgstr "<app>Robots</app> starten, im Vollbildmodus spielen und beenden."
+
+#. (itstool) path: page/title
+#: C/basics.page:26
+msgid "Basic instructions"
+msgstr "Grundlegende Anleitung"
+
+#. (itstool) path: section/title
+#: C/basics.page:29
+msgid "Start a new game"
+msgstr "Ein neues Spiel starten"
+
+#. (itstool) path: media/span
+#: C/basics.page:34
+msgid "New"
+msgstr ""
+
+#. (itstool) path: section/p
+#: C/basics.page:31
+#, fuzzy
+#| msgid ""
+#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
+#| "\">New</gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></"
+#| "keyseq> to start a new game."
 msgid ""
-"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
-"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
-"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
-"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK "
-"AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR MODIFIED "
-"VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR MODIFIED VERSION "
-"PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY "
-"CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR "
-"CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS "
-"LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS "
-"AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+"Select <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">New</"
+"gui></guiseq>, click the <_:media-1/> button on the toolbar, or press "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"DIESES DOKUMENT WIRD »WIE VORLIEGEND« GELIEFERT, OHNE GARANTIEN IRGENDEINER "
-"ART, SOWOHL AUSDRÜCKLICH GENANNTE ALS AUCH ANGEDEUTETE. DIES BEZIEHT SICH "
-"AUCH OHNE EINSCHRÄNKUNG AUF GARANTIEN, DASS DIESES DOKUMENT ODER VERÄNDERTE "
-"FASSUNGEN DIESES DOKUMENTS FREI VON HANDELSDEFEKTEN, FÜR EINEN BESTIMMTEN "
-"ZWECK GEEIGNET IST ODER DASS ES KEINE RECHTE DRITTER VERLETZT. DAS VOLLE "
-"RISIKO WAS QUALITÄT, GENAUIGKEIT UND LEISTUNG DES DOKUMENTS ODER VERÄNDERTE "
-"FASSUNGEN DES DOKUMENTS LIEGT BEI IHNEN. SOLLTE EIN DOKUMENT ODER EINE "
-"VERÄNDERTE FASSUNG DAVON FEHLER IRGENDEINER ART BEINHALTEN, TRAGEN SIE (NICHT "
-"DER URSPRUNGSAUTOR, DER AUTOR ODER EIN MITWIRKENDER) DIE KOSTEN FÜR "
-"NOTWENDIGE DIENSTLEISTUNGEN, REPARATUREN ODER FEHLERKORREKTUREN. DIESER "
-"HAFTUNGSAUSSCHLUSS IST EIN ESSENZIELLER TEIL DIESER LIZENZ. DIE VERWENDUNG "
-"EINES DOKUMENTS ODER EINER VERÄNDERTEN VERSION DES DOKUMENTS IST NICHT "
-"GESTATTET AUßER UNTER BEACHTUNG DIESES HAFTUNGSAUSSCHLUSSES UND"
+"Wählen Sie <guiseq><gui style=\"menu\">Spiel</gui> <gui style=\"menuitem"
+"\">Neu</gui></guiseq> oder drücken Sie <keyseq><key>Strg</key><key>N</key></"
+"keyseq>, um ein neues Spiel zu starten."
 
-#: C/index.docbook:55(listitem/para) C/legal.xml:55(listitem/para)
+#. (itstool) path: section/title
+#: C/basics.page:40
+msgid "Play <app>Robots</app> in fullscreen mode"
+msgstr "<app>Robots</app> im Vollbildmodus spielen"
+
+#. (itstool) path: section/p
+#: C/basics.page:42
 msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
-"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
-"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
-"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR "
-"ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY "
-"CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK "
-"STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR "
-"LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
-"POSSIBILITY OF SUCH DAMAGES."
+"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+"\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
+"fullscreen mode. You can return to the default screen size by pressing "
+"<key>F11</key> again."
 msgstr ""
-"UNTER KEINEN UMSTÄNDEN UND AUF BASIS KEINER RECHTSGRUNDLAGE, EGAL OB DURCH "
-"UNERLAUBTEN HANDLUNGEN (EINSCHLIEßLICH FAHRLÄSSIGKEIT), VERTRAG ODER "
-"ANDERWEITIG KANN DER AUTOR, URSPRUNGSAUTOR, EIN MITWIRKENDER ODER EIN "
-"VERTRIEBSPARTNER DIESES DOKUMENTS ODER EINER VERÄNDERTEN FASSUNG DES "
-"DOKUMENTS ODER EIN ZULIEFERER EINER DIESER PARTEIEN, HAFTBAR GEMACHT WERDEN "
-"FÜR DIREKTE, INDIREKTE, SPEZIELLE, VERSEHENTLICHE ODER FOLGESCHÄDEN JEGLICHER "
-"ART, EINSCHLIEßLICH UND OHNE EINSCHRÄNKUNGEN SCHÄDEN DURCH VERLUST VON "
-"KULANZ, ARBEITSAUSFALL, COMPUTERVERSAGEN ODER COMPUTERFEHLFUNKTIONEN ODER "
-"ALLE ANDEREN SCHÄDEN ODER VERLUSTE, DIE SICH AUS ODER IN VERBINDUNG MIT DER "
-"VERWENDUNG DES DOKUMENTS UND VERÄNDERTER FASSUNGEN DES DOKUMENTS ERGEBEN, "
-"AUCH WENN DIE OBEN GENANNTEN PARTEIEN ÜBER DIE MÖGLICHKEIT SOLCHER SCHÄDEN "
-"INFORMIERT WAREN."
+"Wählen Sie <guiseq><gui style=\"menu\">Ansicht</gui> <gui style=\"menuitem"
+"\">Vollbild</gui></guiseq> oder drücken Sie <key>F11</key>, um das Spiel im "
+"Vollbildmodus zu spielen. Drücken Sie erneut <key>F11</key>, um auf die "
+"voreingestellte Bildgröße zurückzuschalten."
 
-#: C/index.docbook:28(legalnotice/para) C/legal.xml:28(legalnotice/para)
+#. (itstool) path: section/title
+#: C/basics.page:50
+msgid "Enable sounds"
+msgstr "Tonausgabe aktivieren"
+
+#. (itstool) path: section/p
+#: C/basics.page:51
 msgid ""
-"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
-"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <_:"
-"orderedlist-1/>"
+"Select <guiseq> <gui style=\"menu\">Settings</gui><gui>Preferences</gui> "
+"<gui>Game</gui></guiseq>. Check the <gui style=\"checkbox\">Enable sounds</"
+"gui> checkbox to enable sounds."
 msgstr ""
-"DAS DOKUMENT UND VERÄNDERTE FASSUNGEN DES DOKUMENTS WERDEN UNTER DEN "
-"BEDINGUNGEN DER GNU FREE DOCUMENTATION LICENSE ZUR VERFÜGUNG GESTELLT MIT DEM "
-"WEITERGEHENDEN VERSTÄNDNIS, DASS: <_:orderedlist-1/>"
+"Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</"
+"gui><gui>Einstellungen</gui><gui>Spiel</gui></guiseq>. Wählen Sie das "
+"Ankreuzfeld <gui style=\"checkbox\">Klang aktivieren</gui>, um Töne "
+"einzuschalten. "
 
-#: C/index.docbook:64(authorgroup/author)
+#. (itstool) path: section/title
+#: C/basics.page:59
+msgid "Quit <app>Robots</app>"
+msgstr "<app>Robots</app> beenden"
+
+#. (itstool) path: section/p
+#: C/basics.page:61
 msgid ""
-"<firstname>Patanjali</firstname> <surname>Somayaji</surname> <affiliation> "
-"<address> <email>patanjali@mindless.com</email> </address> </affiliation>"
+"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
+"gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
+"<app>Robots</app> at any time."
 msgstr ""
-"<firstname>Patanjali</firstname> <surname>Somayaji</surname> <affiliation> "
-"<address> <email>patanjali@mindless.com</email> </address> </affiliation>"
+"Wählen Sie <guiseq><gui style=\"menu\">Spiel</gui> <gui style=\"menuitem"
+"\">Beenden</gui></guiseq> oder drücken Sie jederzeit <keyseq><key>Strg</"
+"key><key>Q</key></keyseq>, um <app>Robots</app> zu beenden."
 
-#: C/index.docbook:71(authorgroup/author)
+#. (itstool) path: info/desc
+#: C/controls-change.page:18
+msgid "Change the default keys in <app>Robots</app>."
+msgstr "So ändern Sie die voreingestellten Tasten in <app>Robots</app>."
+
+#. (itstool) path: page/title
+#: C/controls-change.page:21
+msgid "Customize the keyboard controls"
+msgstr "Die Tastatursteuerung anpassen"
+
+#. (itstool) path: page/p
+#: C/controls-change.page:23
 msgid ""
-"<firstname>Mark</firstname> <surname>Rae</surname> <affiliation> <address> "
-"<email>m.rae@inpharmatica.co.uk</email> </address> </affiliation>"
+"The <link xref=\"controls-default\">default controls</link> can be changed "
+"in <app>Robots</app> to suit your preference."
 msgstr ""
-"<firstname>Mark</firstname> <surname>Rae</surname> <affiliation> <address> "
-"<email>m.rae@inpharmatica.co.uk</email> </address> </affiliation>"
+"So passen Sie die <link xref=\"controls-default\">voreingestellte Steuerung</"
+"link> in <app>Robots</app> nach Ihren Wünschen an."
 
-#: C/index.docbook:99(revdescription/para)
-msgid "Patanjali Somayaji <email>patanjali@mindless.com</email>"
-msgstr "Patanjali Somayaji <email>patanjali@mindless.com</email>"
+#. (itstool) path: steps/title
+#: C/controls-change.page:27
+msgid "To change the default keys:"
+msgstr "So ändern Sie die voreingestellten Tasten:"
 
-#: C/index.docbook:102(revdescription/para)
-msgid "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
-msgstr "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
-
-#: C/index.docbook:95(revhistory/revision)
+#. (itstool) path: item/p
+#: C/controls-change.page:29
 msgid ""
-"<revnumber>Robots Manual V2.8</revnumber> <date>September 2004</date> <_:"
-"revdescription-1/>"
+"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
+"\">Preferences</gui><gui>Keyboard</gui></guiseq>."
 msgstr ""
-"<revnumber>Robots-Handbuch V2.8</revnumber> <date>September 2004</date> <_:"
-"revdescription-1/>"
+"Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui> <gui style="
+"\"menuitem\">Einstellungen</gui><gui>Tastatur</gui></guiseq>."
 
-#: C/index.docbook:112(revdescription/para)
-msgid "Claude Paroz <email>claude@2xlibre.net</email>"
-msgstr "Claude Paroz <email>claude@2xlibre.net</email>"
-
-#: C/index.docbook:108(revhistory/revision)
+#. (itstool) path: item/p
+#: C/controls-change.page:33
 msgid ""
-"<revnumber>Robots Manual V2.9</revnumber> <date>August 2007</date> <_:"
-"revdescription-1/>"
+"In the <gui style=\"group\">Keyboard Controls</gui> list, select the line, "
+"then click on the control. This highlights the line and the words <gui>New "
+"accelerator…</gui> are now present in place of the old control."
 msgstr ""
-"<revnumber>Robots-Handbuch V2.9</revnumber> <date>August 2007</date> <_:"
-"revdescription-1/>"
+"Wählen Sie die Zeile in der Liste <gui style=\"group\">Tastatursteuerung</"
+"gui> und klicken Sie auf die Kombination. Die Zeile wird hervorgehoben und "
+"die Worte <gui>Neue Tastenkombination …</gui> erscheinen an Stelle der alten "
+"Kombination."
 
-#: C/index.docbook:120(articleinfo/releaseinfo)
-msgid "This manual describes version 2.18 of Robots."
-msgstr "Dieses Handbuch beschreibt Version 2.18 von Robots."
+#. (itstool) path: item/p
+#: C/controls-change.page:39
+msgid "Press the key you want to use instead of the default key."
+msgstr ""
+"Drücken Sie die Taste, die Sie anstelle der voreingestellten verwenden "
+"wollen."
 
-#: C/index.docbook:127(legalnotice/title)
-msgid "Feedback"
-msgstr "Rückmeldungen"
-
-#: C/index.docbook:128(legalnotice/para)
+#. (itstool) path: note/p
+#: C/controls-change.page:41
 msgid ""
-"To report a bug or make a suggestion regarding the <application>Robots</"
-"application> application or this manual, follow the directions in the <ulink "
-"url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME Feedback Page</"
-"ulink>."
+"To keep the old setting click <gui>New accelerator…</gui> again, right click "
+"on <gui>New accelerator…</gui>, press <key>Esc</key> or click anywhere else "
+"inside the <gui>Robots Preferences</gui> box."
 msgstr ""
-"Um Fehler zu melden oder einen Vorschlag zur Anwendung <application>Robots</"
-"application> oder zu diesem Handbuch zu machen, folgen Sie den Anweisungen "
-"auf der <ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME-"
-"Seite für Rückmeldungen</ulink>."
+"Um die alten Einstellungen zu behalten, klicken Sie erneut auf <gui>Neue "
+"Tastenkombination …</gui>, dann mit der rechten Maustaste auf <gui>Neue "
+"Tastenkombination …</gui> und drücken Sie anschließend <key>Esc</key>, oder "
+"auf eine beliebige Stelle innerhalb des Fensters <gui>Robots-Einstellungen</"
+"gui>."
 
-#: C/index.docbook:138(article/indexterm)
-msgid "<primary>GNOME Robots</primary>"
-msgstr "<primary>GNOME Robots</primary>"
+#. (itstool) path: item/p
+#: C/controls-change.page:47
+msgid "Repeat the above step to change the other default keys."
+msgstr ""
+"Wiederholen Sie die vorhergehenden Schritte, um andere voreingestellten "
+"Tasten zu ändern."
 
-#: C/index.docbook:146(sect1/title)
-msgid "Introduction"
-msgstr "Einführung"
+#. (itstool) path: item/p
+#: C/controls-change.page:50
+msgid "Click <gui style=\"button\">Close</gui>."
+msgstr "Klicken Sie auf <gui style=\"button\">Schließen</gui>."
 
-#: C/index.docbook:148(sect1/para)
+#. (itstool) path: note/p
+#: C/controls-change.page:55
 msgid ""
-"<application>GNOME Robots</application> is a game where you try and avoid a "
-"band of marauding robots which are, for no adequately explained reason, "
-"trying to kill you. It is based on the text-based robots game which can be "
-"found on a number of UNIX systems."
+"You can always reset the controls to the default controls by clicking the "
+"<gui style=\"button\">Restore Defaults</gui> button."
 msgstr ""
-"<application>Robots</application> ist ein Spiel, in dem Sie versuchen einer "
-"Gruppe plündernder Roboter zu entgehen, die aus keinem angemessen erklärbaren "
-"Grund versucht, Sie zu töten. Es baut auf dem textbasierten Roboterspiel auf, "
-"das auf einer Vielzahl von UNIX-Systemen vorhanden ist."
+"Sie können jederzeit den Knopf <gui style=\"button\">Vorgaben "
+"wiederherstellen</gui> drücken, um die Steuerung auf die ursprünglichen "
+"Einstellungen zurückzusetzen."
 
-#: C/index.docbook:155(sect1/para)
+#. (itstool) path: info/desc
+#: C/controls-default.page:24
+msgid "How do I control the main character?"
+msgstr "Wie wird die Hauptfigur gesteuert?"
+
+#. (itstool) path: page/title
+#: C/controls-default.page:27
+msgid "Mouse and keyboard controls for <app>Robots</app>"
+msgstr "Maus- und Tastatursteuerung in <app>Robots</app>"
+
+#. (itstool) path: section/title
+#: C/controls-default.page:30
+msgid "Keyboard controls"
+msgstr "Tastatursteuerung"
+
+#. (itstool) path: section/p
+#: C/controls-default.page:32
 msgid ""
-"This new version includes two types of robots, movable junkheaps, multiple "
-"game configurations, user definable keyboard layouts, and sound, as well as "
-"all of the features which were present in the original GNOME Robots game."
+"Use the following keys from the numeric keypad on the far right of your "
+"keyboard, to move in <app>Robots</app>."
 msgstr ""
-"Diese neue Version enthält zwei Arten von Robotern, bewegliche Schrotthaufen, "
-"mehrere Spieleinstellungen, benutzerdefinierte Tastaturbelegungen und Ton, "
-"sowie alle Funktionen, die im ursprünglichen Spiel Robots enthalten waren."
+"Verwenden Sie die folgenden Tasten des Nummernblocks ganz rechts auf Ihrer "
+"Tastatur, um in <app>Robots</app> zu steuern."
 
-#: C/index.docbook:162(sect1/para)
+#. (itstool) path: td/p
+#: C/controls-default.page:38
+msgid "Possible moves"
+msgstr "Mögliche Spielzüge"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:39
+msgid "Key"
+msgstr "Taste"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:44
+msgid "North west"
+msgstr "Nordwest"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:45
+#, fuzzy
+#| msgid "<key>5</key>"
+msgid "<key>y</key>"
+msgstr "<key>5</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:48
+msgid "North"
+msgstr "Nord"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:49
+#, fuzzy
+#| msgid "<key>5</key>"
+msgid "<key>k</key>"
+msgstr "<key>5</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:52
+msgid "North east"
+msgstr "Nordost"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:53
+#, fuzzy
+#| msgid "<key>5</key>"
+msgid "<key>u</key>"
+msgstr "<key>5</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:56
+msgid "West"
+msgstr "West"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:57
+#, fuzzy
+#| msgid "<key>5</key>"
+msgid "<key>h</key>"
+msgstr "<key>5</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:60
+msgid "East"
+msgstr "Ost"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:61
+#, fuzzy
+#| msgid "<key>5</key>"
+msgid "<key>l</key>"
+msgstr "<key>5</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:64
+msgid "South west"
+msgstr "Südwest"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:65
+#, fuzzy
+#| msgid "<key>5</key>"
+msgid "<key>b</key>"
+msgstr "<key>5</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:68
+msgid "South"
+msgstr "Süd"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:69
+#, fuzzy
+#| msgid "<key>5</key>"
+msgid "<key>j</key>"
+msgstr "<key>5</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:72
+msgid "South east"
+msgstr "Südost"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:73
+#, fuzzy
+#| msgid "<key>End</key>"
+msgid "<key>n</key>"
+msgstr "<key>Ende</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:76
+#, fuzzy
+#| msgid "Stay in the same position"
+msgid "Stay in the same position (one turn)"
+msgstr "Auf der aktuellen Position bleiben"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:77
+msgid "Space"
+msgstr ""
+
+#. (itstool) path: td/p
+#: C/controls-default.page:80
+msgid "Teleport safely"
+msgstr "Sicher teleportieren"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:81
+msgid "<keyseq><key>Alt</key><key>s</key></keyseq>"
+msgstr ""
+
+#. (itstool) path: td/p
+#: C/controls-default.page:84
+msgid "Teleport randomly"
+msgstr "Zufällig teleportieren"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:85
+msgid "<keyseq><key>Alt</key><key>r</key></keyseq>"
+msgstr ""
+
+#. (itstool) path: td/p
+#. (itstool) path: item/title
+#: C/controls-default.page:88 C/controls-default.page:119
+msgid "Wait for the robots"
+msgstr "Auf die Roboter warten"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:89
+msgid "<keyseq><key>Alt</key><key>w</key></keyseq>"
+msgstr ""
+
+#. (itstool) path: note/p
+#: C/controls-default.page:95
 msgid ""
-"To run <application>GNOME Robots</application>, select <menuchoice> "
-"<guisubmenu>Games</guisubmenu> <guimenuitem>Robots</guimenuitem> </"
-"menuchoice> from the <guimenu>Main Menu</guimenu>, or type <command>gnome-"
-"robots</command> on the command line."
+"You can <link xref=\"controls-change\">change</link> the default controls to "
+"suit your preference."
 msgstr ""
-"Um <application>Robots</application> zu starten, wählen Sie "
-"<menuchoice><guisubmenu>Spiele</guisubmenu><guimenuitem>Robots</guimenuitem></"
-"menuchoice> aus dem <guimenu>Hauptmenü</guimenu> oder geben Sie "
-"<command>gnome-robots</command> auf der Befehlszeile ein."
+"Sie können die voreingestellte Steuerung nach Ihren Wünschen <link xref="
+"\"controls-default\">ändern</link>."
 
-#: C/index.docbook:172(sect1/para)
+#. (itstool) path: section/title
+#: C/controls-default.page:102
+msgid "Use the mouse to move around"
+msgstr "Die Maus verwenden, um sich zu bewegen"
+
+#. (itstool) path: item/title
+#: C/controls-default.page:106
+msgid "Move in a particular direction"
+msgstr "Sich in eine bestimmte Richtung bewegen"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:107
 msgid ""
-"<application>GNOME Robots</application> is included in the <filename>gnome-"
-"games</filename> package, which is part of the GNOME desktop environment. "
-"This document describes version 2.18 of <application>GNOME Robots</"
-"application>."
+"When you move your mouse around the main character, a small black arrow will "
+"appear pointing towards the direction in which the character will move if "
+"you click. For example, to move north, if you move your cursor to the column "
+"above the main character, a small black arrow will appear pointing "
+"northwards. On clicking, the character will move one square northwards."
 msgstr ""
-"<application>Robots</application> ist Teil des Pakets <filename>gnome-games</"
-"filename>, das Teil der GNOME Desktopumgebung ist. Dieses Dokument beschreibt "
-"Version 2.18 von <application>Robots</application>."
+"Wenn Sie Ihre Maus um den Hauptdarsteller bewegen erscheint ein kleiner "
+"schwarzer Pfeil, der die Richtung andeutet, in der sich die Figur bei einem "
+"Mausklick hinbewegt. Um beispielsweise nach Norden zu steuern platzieren Sie "
+"den Mauszeiger in die Spalte über der Figur und ein kleiner Pfeil zeigt "
+"nordwärts. Bei einem Mausklick bewegt sich die Figur ein Feld nach Norden."
 
-#: C/index.docbook:181(sect1/title)
-msgid "GNOME Robots Objective"
-msgstr "Zielsetzung bei Robots"
+#. (itstool) path: item/title
+#: C/controls-default.page:115
+msgid "Stay in the same position"
+msgstr "Auf der aktuellen Position bleiben"
 
-#: C/index.docbook:182(sect1/para)
+#. (itstool) path: item/p
+#: C/controls-default.page:116
+msgid "Click on the main character to stay put in the same square."
+msgstr ""
+"Klicken Sie auf den Hauptdarsteller, um im gleichen Quadrat zu verbleiben."
+
+#. (itstool) path: media/span
+#. (itstool) path: section/title
+#: C/controls-default.page:121 C/moves.page:67
+msgid "Wait"
+msgstr "Warten"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:120
+#, fuzzy
+#| msgid ""
+#| "Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
+#| "\"menu\">Move</gui> <gui style=\"menuitem\">Wait</gui></guiseq> to wait "
+#| "for the enemy robots to finish making all their moves."
 msgid ""
-"The objective of GNOME Robots is quite simple. You are surrounded by a number "
-"of robots or other hostile adversaries. As you move about they will move "
-"directly towards you for every move that you make. Their goal is to kill you. "
-"Your goal is to kill all the robots on the board by taking advantage of their "
-"vulnerabilities."
+"Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
+"\"menu\">Move</gui><gui style=\"menuitem\">Wait</gui></guiseq> to wait for "
+"the enemy robots to finish making all their moves."
 msgstr ""
-"Das Ziel bei Robots ist recht einfach. Sie sind von zahlreichen Robotern oder "
-"anderen gefährlichen Gegnern umgeben. Während Sie sich herumbewegen, bewegen "
-"Ihre Gegner sich für jeden Schritt, den Sie machen direkt auf Sie zu. Deren "
-"Ziel ist es, Sie zu töten. Ihr Ziel ist es alle Roboter auf dem Spielfeld zu "
-"töten, indem Sie sich Ihre Schwächen zunutze machen."
+"Klicken Sie auf den Knopf <_:media-1/> in der Werkzeugleiste oder wählen Sie "
+"<guiseq><gui style=\"menu\">Bewegen</gui> <gui style=\"menuitem\">Warten</"
+"gui></guiseq>, um auf das Zugende aller gegnerischen Roboter zu warten."
 
-#: C/index.docbook:190(sect1/para)
+#. (itstool) path: item/title
+#: C/controls-default.page:127 C/moves.page:84
+msgid "Safe teleports"
+msgstr "Sicheres teleportieren"
+
+#. (itstool) path: media/span
+#: C/controls-default.page:130
+#, fuzzy
+#| msgid "Teleport safely"
+msgid "Teleport"
+msgstr "Sicher teleportieren"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:128
+#, fuzzy
+#| msgid ""
+#| "To safely teleport, click the <_:media-1/> button on the toolbar or "
+#| "select <guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem"
+#| "\">Teleport</gui></guiseq>."
 msgid ""
-"Robots are destroyed when they collide with each other, or when they collide "
-"with the debris of some previous collision. You die if a robot ends up right "
-"next to you."
+"To safely teleport, click the <_:media-1/> button on the toolbar or select "
+"<guiseq><gui style=\"menu\">Move</gui><gui style=\"menuitem\">Teleport</"
+"gui></guiseq>."
 msgstr ""
-"Roboter werden zerstört wenn Sie aufeinanderprallen oder wenn sie mit den "
-"Trümmern einer früheren Kollision zusammenstoßen. Sie sterben wenn ein "
-"Roboter es bis direkt neben Sie schafft."
+"Klicken Sie in der Werkzeugleiste auf den Knopf <_:media-1/>, um sicher zu "
+"teleportieren, oder wählen Sie <guiseq><gui style=\"menu\">Bewegen</gui> "
+"<gui style=\"menuitem\">Teleportieren</gui></guiseq>."
 
-#: C/index.docbook:196(sect1/para)
+#. (itstool) path: item/title
+#: C/controls-default.page:135 C/moves.page:90
+msgid "Random teleports"
+msgstr "Zufälliges teleportieren"
+
+#. (itstool) path: media/span
+#: C/controls-default.page:138
+#, fuzzy
+#| msgid "Random teleports"
+msgid "Random teleport"
+msgstr "Zufälliges teleportieren"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:136
+#, fuzzy
+#| msgid ""
+#| "To teleport to a random spot, click the <_:media-1/> button on the "
+#| "toolbar or select <guiseq><gui style=\"menu\">Move</gui> <gui style="
+#| "\"menuitem\">Random</gui></guiseq>."
 msgid ""
-"In some of the game configurations (you can choose from five different sets "
-"of rules), you can push the junkheaps around to form barricades to protect "
-"you. Also, if you are daring enough, you can Splat! the robots by pushing "
-"junkheaps on top of them for an additional bonus."
+"To teleport to a random spot, click the <_:media-1/> button on the toolbar "
+"or select <guiseq><gui style=\"menu\">Move</gui><gui style=\"menuitem"
+"\">Random</gui></guiseq>."
 msgstr ""
-"Bei einigen Spieleinstellungen (Sie können zwischen fünf verschiedenen "
-"Regelwerken wählen), können Sie die Schrotthaufen herumschieben um Barrikaden "
-"zu bilden, die Sie beschützen. Wenn Sie wagemutig genug sind, können Sie die "
-"Roboter zerstören und zusätzliche Punkte erhalten, indem Sie die "
-"Schrotthaufen auf sie schieben."
+"Klicken Sie in der Werkzeugleiste auf den Knopf <_:media-1/>, um zufällig zu "
+"teleportieren, oder wählen Sie <guiseq><gui style=\"menu\">Bewegen</gui> "
+"<gui style=\"menuitem\">Zufällig</gui></guiseq>."
 
-#: C/index.docbook:201(sect1/para)
+#. (itstool) path: info/desc
+#: C/game-types.page:18
+msgid "Change the level of difficulty in <app>Robots</app>."
+msgstr "So ändern Sie den Schwierigkeitsgrad in <app>Robots</app>."
+
+#. (itstool) path: page/title
+#: C/game-types.page:21
+msgid "Game type"
+msgstr "Spieltyp"
+
+#. (itstool) path: page/p
+#: C/game-types.page:23
 msgid ""
-"You can also save yourself by teleporting yourself to a random location. "
-"Unfortunately, randomly teleporting means that you might end up being right "
-"next to a robot, so they can kill you when they make their move. Luckily, "
-"there are also safe teleports which will place you out of immediate danger, "
-"but there are only a limited supply of them. You can earn more free teleports "
-"as you go along (how you gain them depends on the chosen game), but typically "
-"you get one for each robot that is destroyed while you are 'waiting', up to a "
-"maximum of 10. If you don't want to waste your saved-up safe teleports, you "
-"can choose to teleport randomly if you think it's safe enough."
+"You can play <app>Robots</app> in different ways by choosing a different "
+"game type. This changes the level of difficulty involved in playing "
+"<app>Robots</app>."
 msgstr ""
-"Sie können sich auch selbst retten, indem Sie sich zu einem zufälligen Ort "
-"teleportieren. Leider bedeutet zufällig, dass Sie direkt neben einem Roboter "
-"auftauchen könnten, so dass Sie getötet werden können wenn die Roboter am Zug "
-"sind. Glücklicherweise gibt es auch eine sichere Teleportation, die Sie aus "
-"unmittelbarer Gefahr bringt, aber es gibt nur eine begrenzte Anzahl davon. "
-"Sie können weitere Teleportationen erhalten wenn Sie weiterspielen (wie Sie "
-"sie erhalten, hängt von der gewählten Spielart ab), aber normalerweise "
-"bekommen Sie eine für jeden Roboter, der zerstört wird, während Sie 'warten', "
-"bis zu einer Höchstzahl von zehn. Wenn Sie Ihre aufgesparten sicheren "
-"Teleportationen nicht verschwenden wollen, können Sie die "
-"Zufallsteleportation wählen, wenn Sie glauben es ist sicher genug."
+"Man kann <app>Robots</app> auf verschiedene Weisen durch Wahl eines anderen "
+"Spieltyps spielen. Somit ändert sich auch der Schwierigkeitsgrad beim "
+"Spielen von <app>Robots</app>."
 
-#: C/index.docbook:215(sect1/para)
+#. (itstool) path: steps/title
+#: C/game-types.page:28
+msgid "To change the level of difficulty:"
+msgstr "So ändern Sie den Schwierigkeitsgrad:"
+
+#. (itstool) path: item/p
+#: C/game-types.page:30
 msgid ""
-"If you press the <guibutton>Wait</guibutton> button (see below) you will no "
-"longer be able to move until either all of the robots (which still move "
-"towards you) are gone, or you are killed. Doing this is risky, but may earn "
-"you extra safe teleports."
+"Select <guiseq> <gui style=\"menu\">Settings</gui> <gui>Preferences</"
+"gui><gui>Game</gui></guiseq>."
 msgstr ""
-"Wenn Sie den Knopf <guibutton>Warten</guibutton> (siehe unten) drücken, sind "
-"sie nicht mehr in der Lage sich zu bewegen bis alle Roboter (die sich immer "
-"noch auf Sie zubewegen) zerstört sind oder bis Sie getötet werden. Es ist "
-"riskant das zu tun, aber es kann Ihnen zusätzliche sichere Teleportationen "
-"bringen."
+"Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</"
+"gui><gui>Einstellungen</gui><gui>Spiel</gui></guiseq>."
 
-#: C/index.docbook:222(sect1/para)
+#. (itstool) path: item/p
+#: C/game-types.page:35
 msgid ""
-"If you manage to reach the point where more than half of the screen is "
-"occupied by robots, the number of robots will be reset to the starting "
-"amount, allowing you to continue."
+"From the drop down menu next to <gui>Game Type</gui>, choose your option."
 msgstr ""
-"Wenn Sie es schaffen, den Punkt zu erreichen, an dem mehr als die Hälfte des "
-"Bildschirms von Robotern besetzt ist, wird die Anzahl der Roboter auf die "
-"Anfangszahl zurückgesetzt, was es Ihnen erlaubt, das Spiel fortzusetzen."
+"Wählen Sie die gewünschte Option im Auswahlmenü neben <gui>Spieltyp</gui>."
 
-#: C/index.docbook:233(sect1/title)
-msgid "Using GNOME Robots"
-msgstr "Robots bedienen"
+#. (itstool) path: td/p
+#: C/game-types.page:39
+msgid "Game Type"
+msgstr "Spieltyp"
 
-#: C/index.docbook:234(sect1/para)
+#. (itstool) path: td/p
+#: C/game-types.page:40
+msgid "Initial safe <link xref=\"moves#teleport\">teleports</link>"
+msgstr "Anfangs sicheres <link xref=\"moves#teleport\">teleportieren</link> "
+
+#. (itstool) path: td/p
+#: C/game-types.page:42
+msgid "Initial <link xref=\"scores#low-risk\">low-risk enemy robots</link>"
+msgstr ""
+"Anfangs <link xref=\"scores#low-risk\">risikoarme feindliche Roboter</link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:44
+msgid "Initial <link xref=\"scores#high-risk\">high-risk enemy robots</link>"
+msgstr ""
+"Anfangs <link xref=\"scores#high-risk\">risikoreiche feindliche Roboter</"
+"link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:46
+msgid "Do safe teleports increase in successive levels?"
+msgstr "Erhöhen sich sichere Teleportierungen in folgenden Spielstufen?"
+
+#. (itstool) path: td/p
+#: C/game-types.page:49
+msgid "<gui>robots2 easy</gui>"
+msgstr "<gui>Robots 2 einfach</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:50
+msgid "3"
+msgstr "3"
+
+#. (itstool) path: td/p
+#: C/game-types.page:51 C/game-types.page:74 C/game-types.page:80
+msgid "8"
+msgstr "8"
+
+#. (itstool) path: td/p
+#: C/game-types.page:52 C/game-types.page:72 C/game-types.page:73
+#: C/game-types.page:81
+msgid "2"
+msgstr "2"
+
+#. (itstool) path: td/p
+#: C/game-types.page:53 C/game-types.page:75
+msgid "Yes"
+msgstr "Ja"
+
+#. (itstool) path: td/p
+#: C/game-types.page:56
+msgid "<gui>robots with safe teleport</gui>"
+msgstr "<gui>Robots mit sicherem Teleport</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:57 C/game-types.page:59 C/game-types.page:65
+#: C/game-types.page:67
+msgid "0"
+msgstr "0"
+
+#. (itstool) path: td/p
+#: C/game-types.page:58 C/game-types.page:66
+msgid "10"
+msgstr "10"
+
+#. (itstool) path: td/p
+#: C/game-types.page:60 C/game-types.page:82
 msgid ""
-"<application>GNOME Robots</application> is extremely simple to play. You can "
-"use either the mouse or the keyboard. This section describes basic usage of "
-"<application>GNOME Robots</application>."
+"Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
+"link>"
 msgstr ""
-"<application>Robots</application> ist sehr einfach zu spielen. Sie können "
-"entweder die Maus oder die Tastatur verwenden. Dieser Abschnitt beschreibt "
-"die Grundlagen beim Bedienen von <application>Robots</application>."
+"Ja, aber nur wenn Roboter beim <link xref=\"moves#wait\">Warten</link> "
+"getötet werden"
 
-#: C/index.docbook:243(sect2/title)
-msgid "Basic usage"
-msgstr "Bedienungsgrundlagen"
+#. (itstool) path: td/p
+#: C/game-types.page:64
+msgid "<gui>classic robots</gui>"
+msgstr "<gui>Klassisches Robots</gui>"
 
-#: C/index.docbook:251(figure/title)
-msgid "GNOME Robots Main Window"
-msgstr "Robots Hauptfenster"
+#. (itstool) path: td/p
+#: C/game-types.page:68
+msgid "No"
+msgstr "Nein"
 
-#: C/index.docbook:253(screenshot/mediaobject)
+#. (itstool) path: td/p
+#: C/game-types.page:71
+msgid "<gui>nightmare</gui>"
+msgstr "<gui>Albtraum</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:78
+msgid "<gui>robots2</gui>"
+msgstr "<gui>Robots 2</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:79
+msgid "1"
+msgstr "1"
+
+#. (itstool) path: item/p
+#: C/game-types.page:88
 msgid ""
-"<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
-"\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> <phrase>GNOME "
-"Robots Main Window.</phrase> </textobject>"
+"Check the <gui style=\"checkbox\">Use safe moves</gui> and <gui style="
+"\"checkbox\">Use super safe moves</gui> checkboxes if you want your random "
+"teleports to be as safe as possible. This reduces the level of difficulty. "
+"You can always uncheck these if you find the game too easy."
 msgstr ""
-"<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
-"\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> "
-"<phrase>Hauptfenster von GNOME Robots.</phrase> </textobject>"
+"Wählen Sie die Ankreuzfelder <gui style=\"checkbox\">Sichere Züge verwenden</"
+"gui> und <gui style=\"checkbox\">Extrem sichere Züge verwenden</gui>, wenn "
+"die zufälligen Teleportierungen so sicher wie möglich sein sollen. Damit "
+"wird der Schwierigkeitsgrad vermindert. Sie können diese Einstellungen "
+"jederzeit abwählen, wenn das Spiel für Sie zu einfach ist."
 
-#: C/index.docbook:244(sect2/para)
+#. (itstool) path: info/desc
+#: C/index.page:16
+msgid "Index"
+msgstr "Inhalt"
+
+#. (itstool) path: page/title
+#: C/index.page:19
+msgid "<_:media-1/> Robots"
+msgstr "<_:media-1/> Robots"
+
+#. (itstool) path: page/p
+#: C/index.page:24
 msgid ""
-"Starting <application>GNOME Robots</application> opens the <interface>Main "
-"window</interface>, shown in <xref linkend=\"mainwindow-fig\"/>. <_:figure-1/>"
+"<app>Robots</app> is based on the UNIX command-line game of the same name. "
+"The aim of the game is to destroy all the robots by getting them to crash "
+"into each other or into junk-heaps from previous collisions, while stopping "
+"them from crashing into you."
 msgstr ""
-"Wenn <application>Robots</application> gestartet wird, öffnet sich das "
-"<interface>Hauptfenster</interface>, wie es unter <xref linkend=\"mainwindow-"
-"fig\"/> zu sehen ist. <_:figure-1/>"
+"<app>Robots</app> basiert auf dem gleichnamigen Spiel der UNIX Befehlszeile. "
+"Ziel des Spiels ist es, alle Roboter zu zerstören, indem diese miteinander "
+"oder mit früheren Kollisionsresten kollidieren. Dabei müssen Sie diese davon "
+"abhalten mit Ihnen zusammenzustoßen."
 
-#: C/index.docbook:266(sect2/para)
+#. (itstool) path: section/title
+#: C/index.page:30
+msgid "Game play"
+msgstr "Spielverlauf"
+
+#. (itstool) path: section/title
+#: C/index.page:34
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#. (itstool) path: info/desc
+#: C/moves.page:18
+msgid "How can I move around in <app>Robots</app>?"
+msgstr "Wie bewege ich mich in <app>Robots</app>?"
+
+#. (itstool) path: page/title
+#: C/moves.page:21
+msgid "Different moves in <app>Robots</app>"
+msgstr "Verschiedene Bewegungen in <app>Robots</app>"
+
+#. (itstool) path: page/p
+#: C/moves.page:23
 msgid ""
-"To start a new game, choose <guimenuitem>New</guimenuitem> in the "
-"<guimenu>Game</guimenu> menu or click on the <guibutton>New</guibutton> "
-"button on the toolbar."
+"In <app>Robots</app> you can move in eight directions, wait for the robots, "
+"or teleport. The enemy robots and the main character take turns to make "
+"their move. So, after each of your moves, the enemy robots try to make a "
+"move that gets them closer to you."
 msgstr ""
-"Um ein neues Spiel zu beginnen, wählen Sie <guimenuitem>Neu</guimenuitem> im "
-"Menü <guimenu>Spiel</guimenu> oder klicken Sie auf den Knopf <guibutton>Neu</"
-"guibutton> in der Werkzeugleiste."
+"In <app>Robots</app> können Sie sich in 8 Richtungen bewegen, auf die "
+"Roboter warten oder teleportieren. Feindliche Roboter und die "
+"Hauptspielfigur spielen abwechselnd rundenbasiert. Nach jedem Ihrer Züge "
+"sind die feindlichen Roboter an der Reihe und versuchen, sich Ihnen zu "
+"nähern."
 
-#: C/index.docbook:272(sect2/para)
+#. (itstool) path: section/title
+#: C/moves.page:29
+msgid "Basic moves"
+msgstr "Grundlegende Spielzüge"
+
+#. (itstool) path: section/p
+#: C/moves.page:31
 msgid ""
-"To move, either click in the direction you want to move (the cursor will show "
-"you which way you will go) or press the appropriate key on the keyboard "
-"(keypad by default). Clicking on the little man will keep you still. To "
-"teleport (safely or unsafely), and to wait, use the buttons on the toolbar or "
-"use the items in the <guimenu>Move</guimenu> menu."
+"You can move in any of the following directions. Each move takes you one "
+"square forward in the direction of your choice."
 msgstr ""
-"Um sich zu bewegen müssen Sie entweder in die Richtung klicken, in die Sie "
-"sich bewegen möchten (der Mauszeiger zeigt an in welche Richtung Sie sich "
-"bewegen werden) oder Sie drücken die entsprechende Taste auf der Tastatur "
-"(standardmäßig im Ziffernblock). Wenn Sie auf das kleine Männchen klicken, "
-"bewegen Sie sich nicht. Um sich (sicher oder unsicher) zu teleportieren und "
-"um zu warten, verwenden Sie die Knöpfe in der Werkzeugleiste oder die "
-"Einträge im Menü <guimenu>Bewegen</guimenu>."
+"Sie können sich in jede der folgenden Richtungen bewegen. Jeder Spielzug "
+"rückt Sie um ein Spielfeld in die Richtung Ihrer Wahl."
 
-#: C/index.docbook:288(sect1/title)
-msgid "Menus"
-msgstr "Menüs"
+#. (itstool) path: item/p
+#: C/moves.page:36
+msgid "North west or up left"
+msgstr "Nordwest oder hoch links"
 
-#: C/index.docbook:289(sect1/para)
+#. (itstool) path: item/p
+#: C/moves.page:39
+msgid "North or up"
+msgstr "Nord oder hoch"
+
+#. (itstool) path: item/p
+#: C/moves.page:42
+msgid "North east or up right"
+msgstr "Nordost oder hoch rechts"
+
+#. (itstool) path: item/p
+#: C/moves.page:45
+msgid "East or right"
+msgstr "Osten oder rechts"
+
+#. (itstool) path: item/p
+#: C/moves.page:48
+msgid "South east or down right"
+msgstr "Südost oder unten rechts"
+
+#. (itstool) path: item/p
+#: C/moves.page:51
+msgid "South or down"
+msgstr "Süden oder unten"
+
+#. (itstool) path: item/p
+#: C/moves.page:54
+msgid "South west or down left"
+msgstr "Südwest oder unten links"
+
+#. (itstool) path: item/p
+#: C/moves.page:57
+msgid "West or left"
+msgstr "Westen oder links"
+
+#. (itstool) path: item/p
+#: C/moves.page:60
+msgid "Stay in the same square"
+msgstr "Im gleichen Quadrat bleiben"
+
+#. (itstool) path: section/p
+#: C/moves.page:69
 msgid ""
-"The menu bar, located at the top of the <interface>game board</interface>, "
-"contains the following menus:"
+"You can stay put and wait for the robots to finish making all their moves. "
+"This is not advisable unless there are very few robots and you are "
+"absolutely sure that they will all perish before reaching you."
 msgstr ""
-"Die Menüleiste, die über dem <interface>Spielfeld</interface> liegt, enthält "
-"folgende Menüs:"
+"Sie können auf der Stelle verbleiben und auf den Zug aller Roboter warten. "
+"Dies ist nicht ratsam, es sei denn es sind nur sehr wenige Roboter vorhanden "
+"und Sie sind sich absolut sicher, dass alle verenden werden, bevor diese Sie "
+"erreichen."
 
-#: C/index.docbook:297(varlistentry/term)
-msgid "<guimenu>Game</guimenu>"
-msgstr "<guimenu>Spiel</guimenu>"
+#. (itstool) path: section/title
+#: C/moves.page:76
+msgid "Teleport to a different location"
+msgstr "An einen anderen Ort teleportieren"
 
-#: C/index.docbook:303(listitem/para)
+#. (itstool) path: section/p
+#: C/moves.page:78
 msgid ""
-"<menuchoice> <shortcut><keysym>Ctrl-N</keysym></shortcut> <guimenuitem>New</"
-"guimenuitem> </menuchoice> — starts a new game of GNOME Robots."
+"If there are no moves possible or if you want to make a leap across the "
+"board instead of moving square by square, you can teleport. There are two "
+"types of teleports available."
 msgstr ""
-"<menuchoice><shortcut><keysym>Strg+N</keysym></shortcut><guimenuitem>Neu</"
-"guimenuitem></menuchoice> — beginnt ein neues Spiel von Robots."
+"Teleportieren Sie, wenn keine Züge möglich sind oder wenn Sie in einem "
+"Sprung große Teile des Spielfelds überspringen wollen. Es gibt zwei "
+"verschiedene Arten der Teleportierung."
 
-#: C/index.docbook:313(listitem/para)
+#. (itstool) path: item/p
+#: C/moves.page:85
 msgid ""
-"<menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> — shows the "
-"higher scores."
+"Safe teleports move the main character to a location that is safe from enemy "
+"robots. In each game only a few safe teleports are allowed."
 msgstr ""
-"<menuchoice><guimenuitem>Ergebnisse</guimenuitem></menuchoice> — zeigt die "
-"besten Ergebnisse."
+"Sichere Teleportierung bewegt die Hauptfigur an einen Ort, der sicher vor "
+"feindlichen Robotern ist. In jedem Spiel sind nur wenige sichere "
+"Teleportierungen möglich."
 
-#: C/index.docbook:321(listitem/para)
+#. (itstool) path: item/p
+#: C/moves.page:91
 msgid ""
-"<menuchoice> <shortcut><keysym>Ctrl-Q</keysym></shortcut> <guimenuitem>Quit</"
-"guimenuitem> </menuchoice>"
+"Use random teleports to teleport to a random location that may be safe or "
+"may not be safe. You can use as many random teleports as you want during a "
+"game."
 msgstr ""
-"<menuchoice> <shortcut><keysym>Strg-Q</keysym></shortcut> "
-"<guimenuitem>Beenden</guimenuitem> </menuchoice>"
+"Nutzern Sie zufällige Teleportierung, um an einen zufälligen Ort zu "
+"springen, der eventuell unsicher ist. Sie können beliebig viele zufällige "
+"Teleportierungen während eines Spiels einsetzen."
 
-#: C/index.docbook:299(listitem/para)
-msgid "This menu contains three items: <_:itemizedlist-1/>"
-msgstr "Dieses Menü enthält drei Einträge: <_:itemizedlist-1/>"
+#. (itstool) path: info/desc
+#: C/scores.page:18
+msgid "Scoring points in <app>Robots</app>"
+msgstr "Punkte in <app>Robots</app> erzielen"
 
-#: C/index.docbook:334(varlistentry/term)
-msgid "<guimenu>Move</guimenu>"
-msgstr "<guimenu>Bewegen</guimenu>"
+#. (itstool) path: page/title
+#: C/scores.page:21
+msgid "Scores"
+msgstr "Punkte"
 
-#: C/index.docbook:340(listitem/para)
-msgid "<guimenuitem>Teleport</guimenuitem>— teleports you in a safe location."
-msgstr ""
-"<guimenuitem>Teleport</guimenuitem>— teleportiert Sie an einen sicheren Ort."
-
-#: C/index.docbook:346(listitem/para)
-msgid "<guimenuitem>Random</guimenuitem>— teleports you in a random location."
-msgstr ""
-"<guimenuitem>Zufall</guimenuitem>— teleportiert Sie an einem zufälligen Ort."
-
-#: C/index.docbook:352(listitem/para)
-msgid "<guimenuitem>Wait</guimenuitem>— places you in wait mode."
-msgstr "<guimenuitem>Warten</guimenuitem>— bringt Sie in den Wartemodus."
-
-#: C/index.docbook:336(listitem/para) C/index.docbook:382(listitem/para)
-msgid "This menu contains: <_:itemizedlist-1/>"
-msgstr "Dieses Menü enthält: <_:itemizedlist-1/>"
-
-#: C/index.docbook:363(varlistentry/term)
-msgid "<guimenu>Settings</guimenu>"
-msgstr "<guimenu>Einstellungen</guimenu>"
-
-#: C/index.docbook:369(listitem/para)
+#. (itstool) path: page/p
+#: C/scores.page:23
 msgid ""
-"<guimenuitem>Preferences</guimenuitem> which brings up the preferences dialog "
-"box."
+"There are two type of enemies in <app>Robots</app>, enemies that give you 10 "
+"points when they die and enemies that give you 20 points when they die."
 msgstr ""
-"<guimenuitem>Einstellungen</guimenuitem>, das das Einstellungsmenü öffnet."
+"Es gibt zwei Arten von Gegnern in <app>Robots</app>. Die Einen ergeben 10 "
+"Punkte bei Zerstörung, und die Anderen ergeben 20 Punkte."
 
-#: C/index.docbook:365(listitem/para)
+#. (itstool) path: section/title
+#: C/scores.page:28
+msgid "High-risk enemies"
+msgstr "Sehr gefährliche Gegner"
+
+#. (itstool) path: section/p
+#: C/scores.page:30
 msgid ""
-"The <guimenu>Settings</guimenu> menu contains only one item: <_:"
-"itemizedlist-1/>"
+"Depending on your <link xref=\"appearance\">game theme</link>, the following "
+"are the enemies that give you 20 points when they die."
 msgstr ""
-"Das Menü <guimenu>Einstellungen</guimenu> enhält nur einen Eintrag: <_:"
-"itemizedlist-1/>"
+"Abhängig vom <link xref=\"appearance\">Spielthema</link> erzielt eine "
+"Zerstörung der folgenden Gegner 20 Punkte."
 
-#: C/index.docbook:380(varlistentry/term)
-msgid "<guimenu>Help</guimenu>"
-msgstr "<guimenu>Hilfe</guimenu>"
+#. (itstool) path: item/p
+#: C/scores.page:35
+#, fuzzy
+#| msgid "<_:media-1/> Robots"
+msgid "Bats <_:media-1/>"
+msgstr "<_:media-1/> Robots"
 
-#: C/index.docbook:386(listitem/para)
-msgid "<guimenuitem>Contents</guimenuitem>— shows this manual."
-msgstr "<guimenuitem>Inhalt</guimenuitem>— zeigt dieses Handbuch an."
+#. (itstool) path: item/p
+#: C/scores.page:39
+msgid "High-risk Robots <_:media-1/>"
+msgstr ""
 
-#: C/index.docbook:392(listitem/para)
+#. (itstool) path: item/p
+#: C/scores.page:44
+#, fuzzy
+#| msgid "High-risk enemies"
+msgid "High-risk gnomes <_:media-1/>"
+msgstr "Sehr gefährliche Gegner"
+
+#. (itstool) path: item/p
+#: C/scores.page:48
+msgid "High-risk UFOs <_:media-1/>"
+msgstr ""
+
+#. (itstool) path: section/title
+#: C/scores.page:56
+msgid "Low-risk enemies"
+msgstr "Weniger gefährliche Gegner"
+
+#. (itstool) path: section/p
+#: C/scores.page:58
 msgid ""
-"<guimenuitem>About</guimenuitem>— shows basic information about "
-"<application>GNOME Robots</application>, such as the author's name and the "
-"application version number."
+"The following are the enemies that give you 10 points when they die. Again, "
+"it is your theme that determines which of these will appear in a game."
 msgstr ""
-"<guimenuitem>Info</guimenuitem>— zeigt allgemeine Informationen über "
-"<application>Robots</application> an, so wie den Namen des Autoren und die "
-"Versionsnummer der Anwendung."
+"Die folgenden Gegner erzielen 10 Punkte bei ihrem Ableben. Ihr Thema "
+"bestimmt, welche davon in Ihrem Spiel erscheinen."
 
-#: C/index.docbook:411(sect1/title)
-msgid "Using the keyboard"
-msgstr "Die Tastatur verwenden"
+#. (itstool) path: item/p
+#: C/scores.page:64
+#, fuzzy
+#| msgid "<_:media-1/> Robots"
+msgid "Ghosts <_:media-1/>"
+msgstr "<_:media-1/> Robots"
 
-#: C/index.docbook:412(sect1/para)
-msgid ""
-"You can use the keyboard to control the little man. By default, the keys from "
-"the keypad are configured for the game. However you can customize the key "
-"mappings in the <guimenuitem>Keyboard</guimenuitem> tab in the "
-"<guimenuitem>Preferences</guimenuitem> dialog. To select a different key for "
-"a command, double-click on the line for that command and then press the key "
-"you want to use."
+#. (itstool) path: item/p
+#: C/scores.page:68
+msgid "Low-risk Robots <_:media-1/>"
 msgstr ""
-"Sie können die Tastatur verwenden um das kleine Männchen zu steuern. "
-"Standardmäßig sind die Tasten des Ziffernblocks für das Spiel konfiguriert. "
-"Sie können jedoch die Tastenbelegung im Reiter <guimenuitem>Tastatur</"
-"guimenuitem> im <guimenuitem>Einstellungsdialog</guimenuitem> anpassen. Um "
-"eine andere Taste für einen Befehl auszuwählen, machen Sie einen Doppelklick "
-"auf den Befehl und drücken Sie dann die Taste, die Sie verwenden möchten."
 
-#: C/index.docbook:422(sect2/title)
-msgid "Default Key Mappings"
-msgstr "Voreingestellte Tastaturbelegung"
-
-#: C/index.docbook:429(note/title)
-msgid "Switch off the NumLock Key"
-msgstr "Den NumLock ausschalten"
-
-#: C/index.docbook:430(note/para)
-msgid "You may need to switch off the NumLock to make these work."
+#. (itstool) path: item/p
+#: C/scores.page:72
+msgid "Low-risk gnomes <_:media-1/>"
 msgstr ""
-"Sie müssen eventuell den NumLock ausschalten, damit diese Anweisungen "
-"funktionieren."
 
-#: C/index.docbook:435(listitem/para)
-msgid "Up Left: <keycap>Home</keycap>"
-msgstr "Nach oben links: <keycap>Pos1</keycap>"
-
-#: C/index.docbook:438(listitem/para)
-msgid "Up: <keycap>Up</keycap>"
-msgstr "Nach oben: <keycap>Oben</keycap>"
-
-#: C/index.docbook:441(listitem/para)
-msgid "Up Right: <keycap>Page Up</keycap>"
-msgstr "Nach oben rechts: <keycap>Bild auf</keycap>"
-
-#: C/index.docbook:444(listitem/para)
-msgid "Left: <keycap>Left</keycap>"
-msgstr "Nach links: <keycap>Links</keycap>"
-
-#: C/index.docbook:447(listitem/para)
-msgid "Stand Still: <keycap>Begin</keycap>"
-msgstr "Stehenbleiben: <keycap>5</keycap>"
-
-#: C/index.docbook:450(listitem/para)
-msgid "Right: <keycap>Right</keycap>"
-msgstr "Nach rechts: <keycap>Rechts</keycap>"
-
-#: C/index.docbook:453(listitem/para)
-msgid "Down Left: <keycap>End</keycap>"
-msgstr "Nach unten links: <keycap>Ende</keycap>"
-
-#: C/index.docbook:456(listitem/para)
-msgid "Down: <keycap>Down</keycap>"
-msgstr "Nach unten: <keycap>Unten</keycap>"
-
-#: C/index.docbook:459(listitem/para)
-msgid "Down Right: <keycap>Page Down</keycap>"
-msgstr "Nach unten rechts: <keycap>Bild ab</keycap>"
-
-#: C/index.docbook:462(listitem/para)
-msgid "Teleport: <keycap>+</keycap>"
-msgstr "Teleportation: <keycap>+</keycap>"
-
-#: C/index.docbook:465(listitem/para)
-msgid "Randomly Teleport: <keycap>*</keycap>"
-msgstr "Zufällige Teleportation: <keycap>*</keycap>"
-
-#: C/index.docbook:468(listitem/para)
-msgid "Wait: <keycap>Enter</keycap>"
-msgstr "Warten: <keycap>Eingabe</keycap>"
-
-#: C/index.docbook:425(sect2/para)
-msgid ""
-"By default, you use the numeric keypad on the right-hand side of the keyboard "
-"(not the separate arrow keys). <_:note-1/> <_:orderedlist-2/>"
+#. (itstool) path: item/p
+#: C/scores.page:76
+msgid "Low-risk UFOs <_:media-1/>"
 msgstr ""
-"In der Voreinstellung verwenden Sie den Ziffernblock auf der rechten Seite "
-"der Tastatur (nicht die einzelnen Pfeiltasten). <_:note-1/> <_:orderedlist-2/>"
 
-#: C/index.docbook:482(sect1/title)
-msgid "Customizing GNOME Robots"
-msgstr "Robots anpassen"
-
-#: C/index.docbook:501(listitem/para)
-msgid ""
-"The safe moves option will help you to avoid being killed due to a mistake. "
-"If you try to make a move that would lead to your death when there is a safe "
-"move available, you will not be allowed to proceed. But be warned: if there "
-"was no safe move available, other than teleporting, the move will be allowed "
-"to proceed."
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 msgstr ""
-"Die Option »Sichere Züge verwenden« hilft Ihnen nicht getötet zu werden, wenn "
-"Sie einen Fehler machen. Wenn Sie versuchen einen Zug zu machen, der zu Ihrem "
-"Tod führen würde und es einen sicheren Zug gibt, wird verhindert, dass Sie "
-"den tödlichen Zug machen. Aber seien Sie gewarnt: Wenn es keinen sicheren Zug "
-"außer einer Teleportation gibt, können Sie den Zug durchführen."
+"Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 3.0 "
+"nicht angepasst"
 
-#: C/index.docbook:509(listitem/para)
-msgid ""
-"There is also a <quote>super safe mode</quote>. If you select this, you get "
-"beeped when there is no safe move and your only option is to teleport out."
-msgstr ""
-"Es gibt auch einen Modus namens »Extrem sichere Züge verwenden«. Wenn Sie "
-"diesen wählen, wird Ihnen durch ein Piepsen angezeigt wenn es keinen sicheren "
-"Zug gibt und Ihre einzige Möglichkeit zu entkommen ein Teleport ist."
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Dieses Werk wird unter folgender Lizenz verbreitet: <_:link-1/>."
 
-#: C/index.docbook:516(listitem/para)
-msgid ""
-"If you select the sound checkbox the game will play sounds for various events "
-"throughout the game."
-msgstr ""
-"Wenn Sie das Ankreuzfeld »Klang aktivieren« wählen, gibt das Spiel Geräusche "
-"für verschiedene Ereignisse während des Spiels aus."
+#~ msgid "<key>Home</key>"
+#~ msgstr "<key>Pos1</key>"
 
-#: C/index.docbook:522(listitem/para)
-msgid ""
-"The <quote>Splats</quote> checkbox selects whether you want the sound played "
-"and a small <quote>Splat!</quote> to appear on the screen."
-msgstr ""
-"Das Ankreuzfeld »Splats aktivieren« bestimmt ob das Geräusch abgespielt wird "
-"und ein kleines »Splat!« auf dem Bildschirm erscheint."
+#~ msgid "<key>↑</key>"
+#~ msgstr "<key>↑</key>"
 
-#: C/index.docbook:491(listitem/para)
-msgid ""
-"<guimenuitem>Game</guimenuitem> — This page allows you to choose the type of "
-"game you want to play. The drop-down box at the top of the page allows you to "
-"choose from a number of predefined games. You can't change these options in "
-"the middle of a game, so they will be disabled then. There are also several "
-"options at the bottom of the dialog: <_:orderedlist-1/>"
-msgstr ""
-"<guimenuitem>Spiel</guimenuitem> — Auf dieser Seite können Sie den Spieltyp "
-"wählen. Im Auswahlfeld oben können Sie aus einigen voreingestellten "
-"Spieltypen wählen. Sie können diese Optionen nicht während eines laufenden "
-"Spiels ändern, weshalb sie zu der Zeit nicht aktiv sind. Es gibt außerdem "
-"einige Optionen am unteren Rand des Dialogs: <_:orderedlist-1/>"
+#~ msgid "<key>PgUp</key>"
+#~ msgstr "<key>Bild↑</key>"
 
-#: C/index.docbook:533(listitem/para)
-msgid ""
-"<guimenuitem>Appearance</guimenuitem> — This page allows you to select the "
-"graphics used throughout the game from the list in the dropdown-box. You can "
-"also select the background colour from this tab."
-msgstr ""
-"<guimenuitem>Erscheinungsbild</guimenuitem> — Auf dieser Seite können Sie in "
-"einem Auswahlfeld die Grafiken wählen, die im Spiel verwendet werden. Sie "
-"können in diesem Reiter außerdem die Hintergrundfarbe ändern."
+#~ msgid "<key>→</key>"
+#~ msgstr "<key>→</key>"
 
-#: C/index.docbook:543(listitem/para)
-msgid ""
-"<guimenuitem>Keyboard</guimenuitem> — This screen allows you to define your "
-"own keyboard controls. To select a different key for a command, double-click "
-"on the button for that command and then press the key you want to use."
-msgstr ""
-"<guimenuitem>Tastatur</guimenuitem> — Auf dieser Seite können Sie Ihre eigene "
-"Tastaturbelegung einstellen. Um eine andere Taste für einen Befehl zu wählen, "
-"machen Sie einen Doppelklick auf den Befehl und drücken dann die Taste, die "
-"Sie verwenden möchten."
+#~ msgid "<key>←</key>"
+#~ msgstr "<key>←</key>"
 
-#: C/index.docbook:483(sect1/para)
-msgid ""
-"You can modify the behaviour and appearance of the game by selecting "
-"<guimenuitem> Preferences</guimenuitem> under the <guimenu>Settings</guimenu> "
-"menu. This brings up a dialog with three tabs: <_:itemizedlist-1/>"
-msgstr ""
-"Sie können das Spielverhalten und das Aussehen verändern, indem Sie "
-"<guimenuitem>Einstellungen</guimenuitem> im Menü <guimenu>Einstellungen</"
-"guimenu> wählen. Dies öffnet ein Fenster mit drei Reitern: <_:itemizedlist-1/>"
+#~ msgid "<key>↓</key>"
+#~ msgstr "<key>↓</key>"
 
-#: C/index.docbook:554(sect1/para)
-msgid ""
-"Any changes you make take effect immediately and are automatically saved."
-msgstr ""
-"Jede Änderung, die Sie durchführen, wird sofort umgesetzt und automatisch "
-"gespeichert."
+#~ msgid "<key>PgDn</key>"
+#~ msgstr "<key>Bild↓</key>"
 
-#: C/index.docbook:558(sect1/para)
-msgid ""
-"You can design your own graphics for the game if you want. The graphics files "
-"are found in <filename class=\"directory\"> $PREFIX/share/gnome-games/gnome-"
-"robots/pixmaps </filename>, where $PREFIX is the prefix into which GNOME was "
-"installed. This is usually either <filename class=\"directory\">/usr</"
-"filename> or <filename class=\"directory\">/usr/local</filename>."
-msgstr ""
-"Wenn Sie mögen, können Sie Ihre eigenen Grafiken für das Spiel entwerfen. Die "
-"Grafikdateien sind im Ordner <filename class=\"directory\"> $PREFIX/share/"
-"gnome-games/gnome-robots/pixmaps</filename> gespeichert, wobei $PREFIX der "
-"Ordner ist, in welchen GNOME installiert wurde. Das ist normalerweise "
-"entweder <filename class=\"directory\">/usr</filename> oder <filename class="
-"\"directory\">/usr/local</filename>."
+#~ msgid "<key>+</key>"
+#~ msgstr "<key>+</key>"
 
-#: C/index.docbook:569(sect1/para)
-msgid ""
-"Each character is 16x16 pixels and there are 14 of them arranged in a PNG "
-"file which is 224x16 pixels in size. You can look at the existing files to "
-"see the order in which they must be arranged to produce the correct animated "
-"sequences."
-msgstr ""
-"Jede Figur ist 16x16 Pixel groß und 14 sind zusammen in einer PNG-Datei "
-"gespeichert, die 224x16 Pixel groß ist. Sie können sich die vorhandenen "
-"Dateien ansehen, um zu sehen in welcher Reihenfolge die Bilder angeordnet "
-"sein müssen, um die gewünschte Abfolge bei der Animation zu erhalten."
+#~ msgid "<key>*</key>"
+#~ msgstr "<key>*</key>"
 
-#: C/index.docbook:575(sect1/para)
-msgid ""
-"Any graphics files which are placed in the directory are auto-detected, so "
-"you don't need to alter any configuration files. You can also define your own "
-"game configurations by creating extra <filename> .cfg </filename> files which "
-"are stored in the <filename class=\"directory\"> $PREFIX/share/gnome-games/"
-"gnome-robots/games </filename> directory."
-msgstr ""
-"Grafikdateien, die in diesem Ordner abgelegt werden, werden automatisch "
-"erkannt, also müssen Sie keine Konfigurationsdateien bearbeiten. Außerdem "
-"können Sie Ihre eigenen Spieleinstellungen erstellen, indem Sie zusätzliche "
-"<filename>.cfg</filename>-Dateien im Ordner <filename class=\"directory\">"
-"$PREFIX/share/gnome-games/gnome-robots/games</filename> ablegen."
+#~ msgid "<key>Enter</key>"
+#~ msgstr "<key>Eingabetaste</key>"
 
-#: C/index.docbook:607(sect1/title)
-msgid "Authors"
-msgstr "Autoren"
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/boo-high-risk.png' "
+#~ "md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
+#~ msgstr "original"
 
-#: C/index.docbook:608(sect1/para)
-msgid ""
-"<application>GNOME Robots</application> was written by Mark Rae (<email>m."
-"rae@inpharmatica.co.uk</email>). This manual was written by Patanjali "
-"Somayaji (<email>patanjali@mindless.com</email>), from the original HTML "
-"documentation by Mark Rae. To report a bug or make a suggestion regarding "
-"this application or this manual, follow the directions in this <ulink url="
-"\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
-msgstr ""
-"<application>Robots</application> wurde von Mark Rae (<email>m."
-"rae@inpharmatica.co.uk</email>) programmiert. Dieses Handbuch wurde von "
-"Patanjali Somayaji (<email>patanjali@mindless.com</email>) auf Grundlage der "
-"ursprünglichen HTML-Dokumentation von Mark Rae geschrieben. Um einen Fehler "
-"zu melden oder Vorschläge zu dieser Anwendungen oder zu diesem Handbuch zu "
-"machen, folgen Sie den Anweisungen in diesem <ulink url=\"ghelp:user-guide?"
-"feedback-bugs\" type=\"help\">Dokument</ulink>."
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/robots-high-risk.png' "
+#~ "md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
+#~ msgstr "original"
 
-#: C/index.docbook:635(sect1/title)
-msgid "License"
-msgstr "Lizenz"
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/gnome-high-risk.png' "
+#~ "md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
+#~ msgstr "original"
 
-#: C/index.docbook:636(sect1/para)
-msgid ""
-"This program is free software; you can redistribute it and/or modify it under "
-"the terms of the <ulink type=\"help\" url=\"help:gpl\"> <citetitle>GNU "
-"General Public License</citetitle></ulink> as published by the Free Software "
-"Foundation; either version 2 of the License, or (at your option) any later "
-"version."
-msgstr ""
-"Dieses Programm ist freie Software; Sie können es weiterverbreiten und/oder "
-"ändern unter den Bedingungen der <ulink type=\"help\" url=\"help:gpl"
-"\"><citetitle>GNU General Public License</citetitle></ulink> wie sie von der "
-"Free Software Foundation veröffentlicht wurde; entweder in Version 2 der "
-"Lizenz oder (nach Ihrer Wahl) jeder neueren Version."
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/ufo-high-risk.png' "
+#~ "md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
+#~ msgstr "original"
 
-#: C/index.docbook:644(sect1/para)
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE. See the <citetitle>GNU General Public License</"
-"citetitle> for more details."
-msgstr ""
-"Dieses Programm wird in der Hoffnung verbreitet, dass es nützlich ist, aber "
-"OHNE JEGLICHE GARANTIE; auch ohne eine GEBRAUCHSTAUGLICHKEITSGARANTIE oder "
-"eine Garantie über die TAUGLICHKEIT FÜR EINEN BESTIMMTEN ZWECK. Lesen Sie die "
-"<citetitle><ulink type=\"help\" url=\"help:gpl\">GNU General Public License</"
-"ulink></citetitle> für genauere Hinweise."
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/boo-low-risk.png' "
+#~ "md5='69c143d6283761adf553b170570e121d'"
+#~ msgstr "original"
 
-#: C/index.docbook:657(para/address)
-#, no-wrap
-msgid ""
-"\n"
-"        Free Software Foundation, Inc.\n"
-"        <street>51 Franklin Street, Fifth Floor</street>\n"
-"        <city>Boston</city>, <state>MA</state> <postcode>02110-1301</postcode>\n"
-"        <country>USA</country>\n"
-"      "
-msgstr ""
-"\n"
-"        Free Software Foundation, Inc.\n"
-"        <street>51 Franklin Street, Fifth Floor</street>\n"
-"        <city>Boston</city>, <state>MA</state> <postcode>02110-1301</postcode>\n"
-"        <country>USA</country>\n"
-"      "
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/robots-low-risk.png' "
+#~ "md5='55f455ea45fad3d7fb453f992f2aad94'"
+#~ msgstr "original"
 
-#: C/index.docbook:650(sect1/para)
-msgid ""
-"A copy of the <citetitle>GNU General Public License</citetitle> is included "
-"as an appendix to the <citetitle>GNOME Users Guide</citetitle>. You may also "
-"obtain a copy of the <citetitle>GNU General Public License</citetitle> from "
-"the Free Software Foundation by visiting <ulink type=\"http\" url=\"http://"
-"www.fsf.org\">their Web site</ulink> or by writing to <_:address-1/>"
-msgstr ""
-"Eine Kopie der <citetitle><ulink type=\"help\" url=\"help:gpl\">GNU General "
-"Public License</ulink></citetitle> ist im Anhang des <citetitle>GNOME "
-"Benutzerhandbuchs</citetitle> enthalten. Sie können außerdem eine Kopie der "
-"<citetitle><ulink type=\"help\" url=\"help:gpl\">GNU General Public License</"
-"ulink></citetitle> von der Free Software Foundation erhalten, indem Sie auf "
-"<ulink type=\"http\" url=\"http://www.fsf.org\">ihre Internetseite</ulink> "
-"gehen oder schreiben Sie an die <_:address-1/>"
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/gnome-low-risk.png' "
+#~ "md5='1195e6a49de2b6efdf2d9185e1e184e0'"
+#~ msgstr "original"
 
-#: C/legal.xml:9(para/ulink)
-msgid "link"
-msgstr "Link"
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/ufo-low-risk.png' "
+#~ "md5='183efc4bba58248fc97edf5528af5a9a'"
+#~ msgstr "original"
 
-#: C/legal.xml:2(legalnotice/para)
-msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed with "
-"this manual."
-msgstr ""
-"Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free "
-"Documentation License (GFDL), Version 1.1 oder jeder späteren, von der Free "
-"Software Foundation veröffentlichten Version ohne unveränderbare Abschnitte "
-"sowie ohne Texte auf dem vorderen und hinteren Buchdeckel kopiert, verteilt "
-"und/oder modifiziert werden. Eine Kopie der GFDL finden Sie unter diesem <_:"
-"ulink-1/> oder in der mit diesem Handbuch gelieferten Datei COPYING-DOCS."
+#~ msgid ""
+#~ "Bats <media type=\"image\" src=\"figures/boo-high-risk.png\" height="
+#~ "\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Fledermäuse <media type=\"image\" src=\"figures/boo-high-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "High-risk Robots <media type=\"image\" src=\"figures/robots-high-risk.png"
+#~ "\" height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Risikoreiche Roboter <media type=\"image\" src=\"figures/robots-high-risk."
+#~ "png\" height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "High-risk gnomes <media type=\"image\" src=\"figures/gnome-high-risk.png"
+#~ "\" height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Risikoreiche Zwerge <media type=\"image\" src=\"figures/gnome-high-risk."
+#~ "png\" height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "High-risk UFOs <media type=\"image\" src=\"figures/ufo-high-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Risikoreiche UFOs <media type=\"image\" src=\"figures/ufo-high-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "Ghosts <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
+#~ "\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Geister <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
+#~ "\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "Low-risk Robots <media type=\"image\" src=\"figures/robots-low-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Risikoarme Roboter <media type=\"image\" src=\"figures/robots-low-risk.png"
+#~ "\" height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "Low-risk gnomes <media type=\"image\" src=\"figures/gnome-low-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Risikoarme Zwerge <media type=\"image\" src=\"figures/gnome-low-risk.png"
+#~ "\" height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "Low-risk UFOs <media type=\"image\" src=\"figures/ufo-low-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Risikoarme UFOs <media type=\"image\" src=\"figures/ufo-low-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+
+#~ msgid "<application>Robots</application> Manual"
+#~ msgstr "<application>Robots</application>-Handbuch"
+
+#~ msgid ""
+#~ "Robots is a graphical version of the original text based robots game, "
+#~ "which can be found on a number of UNIX systems. The player must outwit "
+#~ "the robots chasing him/her by getting them to run into each other."
+#~ msgstr ""
+#~ "Robots ist eine grafische Version des ursprünglich textbasierten Robots-"
+#~ "Spiels, welches für eine Reihe von UNIX-Systemen zur Verfügung steht. Der "
+#~ "Spieler muss die Roboter überlisten, ihn/sie zu verfolgen, wobei die "
+#~ "Roboter dann gegenseitig aufeinanderprallen."
+
+#~ msgid "<year>2001</year> <holder>Patanjali Somayaji, Mark Rae</holder>"
+#~ msgstr "<year>2001</year> <holder>Patanjali Somayaji, Mark Rae</holder>"
+
+#~ msgid "GNOME Documentation Project"
+#~ msgstr "GNOME-Dokumentationsprojekt"
+
+#~ msgid ""
+#~ "Permission is granted to copy, distribute and/or modify this document "
+#~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#~ "or any later version published by the Free Software Foundation with no "
+#~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#~ "can find a copy of the GFDL at this <ulink type=\"help\" url=\"help:fdl"
+#~ "\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
+#~ msgstr ""
+#~ "Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free "
+#~ "Documentation License (GFDL), Version 1.1 oder jeder späteren, von der "
+#~ "Free Software Foundation veröffentlichten Version ohne unveränderbare "
+#~ "Abschnitte sowie ohne Texte auf dem vorderen und hinteren Buchdeckel "
+#~ "kopiert, verteilt und/oder modifiziert werden. Eine Kopie der GFDL finden "
+#~ "Sie unter diesem <ulink type=\"help\" url=\"help:fdl\">Link</ulink> oder "
+#~ "in der mit diesem Handbuch gelieferten Datei COPYING-DOCS."
+
+#~ msgid ""
+#~ "This manual is part of a collection of GNOME manuals distributed under "
+#~ "the GFDL. If you want to distribute this manual separately from the "
+#~ "collection, you can do so by adding a copy of the license to the manual, "
+#~ "as described in section 6 of the license."
+#~ msgstr ""
+#~ "Dieses Handbuch ist Teil einer Sammlung von GNOME-Handbüchern, die unter "
+#~ "der GFDL veröffentlicht werden. Wenn Sie dieses Handbuch getrennt von der "
+#~ "Sammlung weiterverbreiten möchten, können Sie das tun indem Sie eine "
+#~ "Kopie der Lizenz zum Handbuch hinzufügen wie es in Abschnitt 6 der Lizenz "
+#~ "beschrieben ist."
+
+#~ msgid ""
+#~ "Many of the names used by companies to distinguish their products and "
+#~ "services are claimed as trademarks. Where those names appear in any GNOME "
+#~ "documentation, and the members of the GNOME Documentation Project are "
+#~ "made aware of those trademarks, then the names are in capital letters or "
+#~ "initial capital letters."
+#~ msgstr ""
+#~ "Viele der Namen, die von Unternehmen verwendet werden um ihre Produkte "
+#~ "und Dienstleistungen von anderen zu unterscheiden, sind eingetragene "
+#~ "Warenzeichen. An den Stellen, an denen diese Namen in einer GNOME-"
+#~ "Dokumentation erscheinen, werden die Namen in Großbuchstaben oder mit "
+#~ "einem großen Anfangsbuchstaben geschrieben, wenn das GNOME Documentation "
+#~ "Project auf diese Warenzeichen hingewiesen wird."
+
+#~ msgid ""
+#~ "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+#~ "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES "
+#~ "THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+#~ "MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+#~ "RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+#~ "MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+#~ "MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+#~ "WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+#~ "SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES "
+#~ "AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED "
+#~ "VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS "
+#~ "DISCLAIMER; AND"
+#~ msgstr ""
+#~ "DIESES DOKUMENT WIRD »WIE VORLIEGEND« GELIEFERT, OHNE GARANTIEN "
+#~ "IRGENDEINER ART, SOWOHL AUSDRÜCKLICH GENANNTE ALS AUCH ANGEDEUTETE. DIES "
+#~ "BEZIEHT SICH AUCH OHNE EINSCHRÄNKUNG AUF GARANTIEN, DASS DIESES DOKUMENT "
+#~ "ODER VERÄNDERTE FASSUNGEN DIESES DOKUMENTS FREI VON HANDELSDEFEKTEN, FÜR "
+#~ "EINEN BESTIMMTEN ZWECK GEEIGNET IST ODER DASS ES KEINE RECHTE DRITTER "
+#~ "VERLETZT. DAS VOLLE RISIKO WAS QUALITÄT, GENAUIGKEIT UND LEISTUNG DES "
+#~ "DOKUMENTS ODER VERÄNDERTE FASSUNGEN DES DOKUMENTS LIEGT BEI IHNEN. SOLLTE "
+#~ "EIN DOKUMENT ODER EINE VERÄNDERTE FASSUNG DAVON FEHLER IRGENDEINER ART "
+#~ "BEINHALTEN, TRAGEN SIE (NICHT DER URSPRUNGSAUTOR, DER AUTOR ODER EIN "
+#~ "MITWIRKENDER) DIE KOSTEN FÜR NOTWENDIGE DIENSTLEISTUNGEN, REPARATUREN "
+#~ "ODER FEHLERKORREKTUREN. DIESER HAFTUNGSAUSSCHLUSS IST EIN ESSENZIELLER "
+#~ "TEIL DIESER LIZENZ. DIE VERWENDUNG EINES DOKUMENTS ODER EINER VERÄNDERTEN "
+#~ "VERSION DES DOKUMENTS IST NICHT GESTATTET AUßER UNTER BEACHTUNG DIESES "
+#~ "HAFTUNGSAUSSCHLUSSES UND"
+
+#~ msgid ""
+#~ "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT "
+#~ "(INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL "
+#~ "WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED "
+#~ "VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE "
+#~ "LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR "
+#~ "CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, "
+#~ "DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR "
+#~ "MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR "
+#~ "RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, "
+#~ "EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH "
+#~ "DAMAGES."
+#~ msgstr ""
+#~ "UNTER KEINEN UMSTÄNDEN UND AUF BASIS KEINER RECHTSGRUNDLAGE, EGAL OB "
+#~ "DURCH UNERLAUBTEN HANDLUNGEN (EINSCHLIEßLICH FAHRLÄSSIGKEIT), VERTRAG "
+#~ "ODER ANDERWEITIG KANN DER AUTOR, URSPRUNGSAUTOR, EIN MITWIRKENDER ODER "
+#~ "EIN VERTRIEBSPARTNER DIESES DOKUMENTS ODER EINER VERÄNDERTEN FASSUNG DES "
+#~ "DOKUMENTS ODER EIN ZULIEFERER EINER DIESER PARTEIEN, HAFTBAR GEMACHT "
+#~ "WERDEN FÜR DIREKTE, INDIREKTE, SPEZIELLE, VERSEHENTLICHE ODER "
+#~ "FOLGESCHÄDEN JEGLICHER ART, EINSCHLIEßLICH UND OHNE EINSCHRÄNKUNGEN "
+#~ "SCHÄDEN DURCH VERLUST VON KULANZ, ARBEITSAUSFALL, COMPUTERVERSAGEN ODER "
+#~ "COMPUTERFEHLFUNKTIONEN ODER ALLE ANDEREN SCHÄDEN ODER VERLUSTE, DIE SICH "
+#~ "AUS ODER IN VERBINDUNG MIT DER VERWENDUNG DES DOKUMENTS UND VERÄNDERTER "
+#~ "FASSUNGEN DES DOKUMENTS ERGEBEN, AUCH WENN DIE OBEN GENANNTEN PARTEIEN "
+#~ "ÜBER DIE MÖGLICHKEIT SOLCHER SCHÄDEN INFORMIERT WAREN."
+
+#~ msgid ""
+#~ "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE "
+#~ "TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER "
+#~ "UNDERSTANDING THAT: <_:orderedlist-1/>"
+#~ msgstr ""
+#~ "DAS DOKUMENT UND VERÄNDERTE FASSUNGEN DES DOKUMENTS WERDEN UNTER DEN "
+#~ "BEDINGUNGEN DER GNU FREE DOCUMENTATION LICENSE ZUR VERFÜGUNG GESTELLT MIT "
+#~ "DEM WEITERGEHENDEN VERSTÄNDNIS, DASS: <_:orderedlist-1/>"
+
+#~ msgid ""
+#~ "<firstname>Patanjali</firstname> <surname>Somayaji</surname> "
+#~ "<affiliation> <address> <email>patanjali@mindless.com</email> </address> "
+#~ "</affiliation>"
+#~ msgstr ""
+#~ "<firstname>Patanjali</firstname> <surname>Somayaji</surname> "
+#~ "<affiliation> <address> <email>patanjali@mindless.com</email> </address> "
+#~ "</affiliation>"
+
+#~ msgid ""
+#~ "<firstname>Mark</firstname> <surname>Rae</surname> <affiliation> "
+#~ "<address> <email>m.rae@inpharmatica.co.uk</email> </address> </"
+#~ "affiliation>"
+#~ msgstr ""
+#~ "<firstname>Mark</firstname> <surname>Rae</surname> <affiliation> "
+#~ "<address> <email>m.rae@inpharmatica.co.uk</email> </address> </"
+#~ "affiliation>"
+
+#~ msgid "Patanjali Somayaji <email>patanjali@mindless.com</email>"
+#~ msgstr "Patanjali Somayaji <email>patanjali@mindless.com</email>"
+
+#~ msgid "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
+#~ msgstr "Mark Rae <email>m.rae@inpharmatica.co.uk</email>"
+
+#~ msgid ""
+#~ "<revnumber>Robots Manual V2.8</revnumber> <date>September 2004</date> <_:"
+#~ "revdescription-1/>"
+#~ msgstr ""
+#~ "<revnumber>Robots-Handbuch V2.8</revnumber> <date>September 2004</date> "
+#~ "<_:revdescription-1/>"
+
+#~ msgid "Claude Paroz <email>claude@2xlibre.net</email>"
+#~ msgstr "Claude Paroz <email>claude@2xlibre.net</email>"
+
+#~ msgid ""
+#~ "<revnumber>Robots Manual V2.9</revnumber> <date>August 2007</date> <_:"
+#~ "revdescription-1/>"
+#~ msgstr ""
+#~ "<revnumber>Robots-Handbuch V2.9</revnumber> <date>August 2007</date> <_:"
+#~ "revdescription-1/>"
+
+#~ msgid "This manual describes version 2.18 of Robots."
+#~ msgstr "Dieses Handbuch beschreibt Version 2.18 von Robots."
+
+#~ msgid "Feedback"
+#~ msgstr "Rückmeldungen"
+
+#~ msgid ""
+#~ "To report a bug or make a suggestion regarding the <application>Robots</"
+#~ "application> application or this manual, follow the directions in the "
+#~ "<ulink url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">GNOME "
+#~ "Feedback Page</ulink>."
+#~ msgstr ""
+#~ "Um Fehler zu melden oder einen Vorschlag zur Anwendung "
+#~ "<application>Robots</application> oder zu diesem Handbuch zu machen, "
+#~ "folgen Sie den Anweisungen auf der <ulink url=\"ghelp:user-guide?feedback-"
+#~ "bugs\" type=\"help\">GNOME-Seite für Rückmeldungen</ulink>."
+
+#~ msgid "<primary>GNOME Robots</primary>"
+#~ msgstr "<primary>GNOME Robots</primary>"
+
+#~ msgid ""
+#~ "<application>GNOME Robots</application> is a game where you try and avoid "
+#~ "a band of marauding robots which are, for no adequately explained reason, "
+#~ "trying to kill you. It is based on the text-based robots game which can "
+#~ "be found on a number of UNIX systems."
+#~ msgstr ""
+#~ "<application>Robots</application> ist ein Spiel, in dem Sie versuchen "
+#~ "einer Gruppe plündernder Roboter zu entgehen, die aus keinem angemessen "
+#~ "erklärbaren Grund versucht, Sie zu töten. Es baut auf dem textbasierten "
+#~ "Roboterspiel auf, das auf einer Vielzahl von UNIX-Systemen vorhanden ist."
+
+#~ msgid ""
+#~ "This new version includes two types of robots, movable junkheaps, "
+#~ "multiple game configurations, user definable keyboard layouts, and sound, "
+#~ "as well as all of the features which were present in the original GNOME "
+#~ "Robots game."
+#~ msgstr ""
+#~ "Diese neue Version enthält zwei Arten von Robotern, bewegliche "
+#~ "Schrotthaufen, mehrere Spieleinstellungen, benutzerdefinierte "
+#~ "Tastaturbelegungen und Ton, sowie alle Funktionen, die im ursprünglichen "
+#~ "Spiel Robots enthalten waren."
+
+#~ msgid ""
+#~ "To run <application>GNOME Robots</application>, select <menuchoice> "
+#~ "<guisubmenu>Games</guisubmenu> <guimenuitem>Robots</guimenuitem> </"
+#~ "menuchoice> from the <guimenu>Main Menu</guimenu>, or type <command>gnome-"
+#~ "robots</command> on the command line."
+#~ msgstr ""
+#~ "Um <application>Robots</application> zu starten, wählen Sie "
+#~ "<menuchoice><guisubmenu>Spiele</guisubmenu><guimenuitem>Robots</"
+#~ "guimenuitem></menuchoice> aus dem <guimenu>Hauptmenü</guimenu> oder geben "
+#~ "Sie <command>gnome-robots</command> auf der Befehlszeile ein."
+
+#~ msgid ""
+#~ "<application>GNOME Robots</application> is included in the "
+#~ "<filename>gnome-games</filename> package, which is part of the GNOME "
+#~ "desktop environment. This document describes version 2.18 of "
+#~ "<application>GNOME Robots</application>."
+#~ msgstr ""
+#~ "<application>Robots</application> ist Teil des Pakets <filename>gnome-"
+#~ "games</filename>, das Teil der GNOME Desktopumgebung ist. Dieses Dokument "
+#~ "beschreibt Version 2.18 von <application>Robots</application>."
+
+#~ msgid "GNOME Robots Objective"
+#~ msgstr "Zielsetzung bei Robots"
+
+#~ msgid ""
+#~ "The objective of GNOME Robots is quite simple. You are surrounded by a "
+#~ "number of robots or other hostile adversaries. As you move about they "
+#~ "will move directly towards you for every move that you make. Their goal "
+#~ "is to kill you. Your goal is to kill all the robots on the board by "
+#~ "taking advantage of their vulnerabilities."
+#~ msgstr ""
+#~ "Das Ziel bei Robots ist recht einfach. Sie sind von zahlreichen Robotern "
+#~ "oder anderen gefährlichen Gegnern umgeben. Während Sie sich herumbewegen, "
+#~ "bewegen Ihre Gegner sich für jeden Schritt, den Sie machen direkt auf Sie "
+#~ "zu. Deren Ziel ist es, Sie zu töten. Ihr Ziel ist es alle Roboter auf dem "
+#~ "Spielfeld zu töten, indem Sie sich Ihre Schwächen zunutze machen."
+
+#~ msgid ""
+#~ "Robots are destroyed when they collide with each other, or when they "
+#~ "collide with the debris of some previous collision. You die if a robot "
+#~ "ends up right next to you."
+#~ msgstr ""
+#~ "Roboter werden zerstört wenn Sie aufeinanderprallen oder wenn sie mit den "
+#~ "Trümmern einer früheren Kollision zusammenstoßen. Sie sterben wenn ein "
+#~ "Roboter es bis direkt neben Sie schafft."
+
+#~ msgid ""
+#~ "In some of the game configurations (you can choose from five different "
+#~ "sets of rules), you can push the junkheaps around to form barricades to "
+#~ "protect you. Also, if you are daring enough, you can Splat! the robots by "
+#~ "pushing junkheaps on top of them for an additional bonus."
+#~ msgstr ""
+#~ "Bei einigen Spieleinstellungen (Sie können zwischen fünf verschiedenen "
+#~ "Regelwerken wählen), können Sie die Schrotthaufen herumschieben um "
+#~ "Barrikaden zu bilden, die Sie beschützen. Wenn Sie wagemutig genug sind, "
+#~ "können Sie die Roboter zerstören und zusätzliche Punkte erhalten, indem "
+#~ "Sie die Schrotthaufen auf sie schieben."
+
+#~ msgid ""
+#~ "You can also save yourself by teleporting yourself to a random location. "
+#~ "Unfortunately, randomly teleporting means that you might end up being "
+#~ "right next to a robot, so they can kill you when they make their move. "
+#~ "Luckily, there are also safe teleports which will place you out of "
+#~ "immediate danger, but there are only a limited supply of them. You can "
+#~ "earn more free teleports as you go along (how you gain them depends on "
+#~ "the chosen game), but typically you get one for each robot that is "
+#~ "destroyed while you are 'waiting', up to a maximum of 10. If you don't "
+#~ "want to waste your saved-up safe teleports, you can choose to teleport "
+#~ "randomly if you think it's safe enough."
+#~ msgstr ""
+#~ "Sie können sich auch selbst retten, indem Sie sich zu einem zufälligen "
+#~ "Ort teleportieren. Leider bedeutet zufällig, dass Sie direkt neben einem "
+#~ "Roboter auftauchen könnten, so dass Sie getötet werden können wenn die "
+#~ "Roboter am Zug sind. Glücklicherweise gibt es auch eine sichere "
+#~ "Teleportation, die Sie aus unmittelbarer Gefahr bringt, aber es gibt nur "
+#~ "eine begrenzte Anzahl davon. Sie können weitere Teleportationen erhalten "
+#~ "wenn Sie weiterspielen (wie Sie sie erhalten, hängt von der gewählten "
+#~ "Spielart ab), aber normalerweise bekommen Sie eine für jeden Roboter, der "
+#~ "zerstört wird, während Sie 'warten', bis zu einer Höchstzahl von zehn. "
+#~ "Wenn Sie Ihre aufgesparten sicheren Teleportationen nicht verschwenden "
+#~ "wollen, können Sie die Zufallsteleportation wählen, wenn Sie glauben es "
+#~ "ist sicher genug."
+
+#~ msgid ""
+#~ "If you press the <guibutton>Wait</guibutton> button (see below) you will "
+#~ "no longer be able to move until either all of the robots (which still "
+#~ "move towards you) are gone, or you are killed. Doing this is risky, but "
+#~ "may earn you extra safe teleports."
+#~ msgstr ""
+#~ "Wenn Sie den Knopf <guibutton>Warten</guibutton> (siehe unten) drücken, "
+#~ "sind sie nicht mehr in der Lage sich zu bewegen bis alle Roboter (die "
+#~ "sich immer noch auf Sie zubewegen) zerstört sind oder bis Sie getötet "
+#~ "werden. Es ist riskant das zu tun, aber es kann Ihnen zusätzliche sichere "
+#~ "Teleportationen bringen."
+
+#~ msgid ""
+#~ "If you manage to reach the point where more than half of the screen is "
+#~ "occupied by robots, the number of robots will be reset to the starting "
+#~ "amount, allowing you to continue."
+#~ msgstr ""
+#~ "Wenn Sie es schaffen, den Punkt zu erreichen, an dem mehr als die Hälfte "
+#~ "des Bildschirms von Robotern besetzt ist, wird die Anzahl der Roboter auf "
+#~ "die Anfangszahl zurückgesetzt, was es Ihnen erlaubt, das Spiel "
+#~ "fortzusetzen."
+
+#~ msgid "Using GNOME Robots"
+#~ msgstr "Robots bedienen"
+
+#~ msgid ""
+#~ "<application>GNOME Robots</application> is extremely simple to play. You "
+#~ "can use either the mouse or the keyboard. This section describes basic "
+#~ "usage of <application>GNOME Robots</application>."
+#~ msgstr ""
+#~ "<application>Robots</application> ist sehr einfach zu spielen. Sie können "
+#~ "entweder die Maus oder die Tastatur verwenden. Dieser Abschnitt "
+#~ "beschreibt die Grundlagen beim Bedienen von <application>Robots</"
+#~ "application>."
+
+#~ msgid "GNOME Robots Main Window"
+#~ msgstr "Robots Hauptfenster"
+
+#~ msgid ""
+#~ "<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
+#~ "\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> "
+#~ "<phrase>GNOME Robots Main Window.</phrase> </textobject>"
+#~ msgstr ""
+#~ "<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
+#~ "\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> "
+#~ "<phrase>Hauptfenster von GNOME Robots.</phrase> </textobject>"
+
+#~ msgid ""
+#~ "Starting <application>GNOME Robots</application> opens the "
+#~ "<interface>Main window</interface>, shown in <xref linkend=\"mainwindow-"
+#~ "fig\"/>. <_:figure-1/>"
+#~ msgstr ""
+#~ "Wenn <application>Robots</application> gestartet wird, öffnet sich das "
+#~ "<interface>Hauptfenster</interface>, wie es unter <xref linkend="
+#~ "\"mainwindow-fig\"/> zu sehen ist. <_:figure-1/>"
+
+#~ msgid ""
+#~ "To start a new game, choose <guimenuitem>New</guimenuitem> in the "
+#~ "<guimenu>Game</guimenu> menu or click on the <guibutton>New</guibutton> "
+#~ "button on the toolbar."
+#~ msgstr ""
+#~ "Um ein neues Spiel zu beginnen, wählen Sie <guimenuitem>Neu</guimenuitem> "
+#~ "im Menü <guimenu>Spiel</guimenu> oder klicken Sie auf den Knopf "
+#~ "<guibutton>Neu</guibutton> in der Werkzeugleiste."
+
+#~ msgid ""
+#~ "To move, either click in the direction you want to move (the cursor will "
+#~ "show you which way you will go) or press the appropriate key on the "
+#~ "keyboard (keypad by default). Clicking on the little man will keep you "
+#~ "still. To teleport (safely or unsafely), and to wait, use the buttons on "
+#~ "the toolbar or use the items in the <guimenu>Move</guimenu> menu."
+#~ msgstr ""
+#~ "Um sich zu bewegen müssen Sie entweder in die Richtung klicken, in die "
+#~ "Sie sich bewegen möchten (der Mauszeiger zeigt an in welche Richtung Sie "
+#~ "sich bewegen werden) oder Sie drücken die entsprechende Taste auf der "
+#~ "Tastatur (standardmäßig im Ziffernblock). Wenn Sie auf das kleine "
+#~ "Männchen klicken, bewegen Sie sich nicht. Um sich (sicher oder unsicher) "
+#~ "zu teleportieren und um zu warten, verwenden Sie die Knöpfe in der "
+#~ "Werkzeugleiste oder die Einträge im Menü <guimenu>Bewegen</guimenu>."
+
+#~ msgid "Menus"
+#~ msgstr "Menüs"
+
+#~ msgid ""
+#~ "The menu bar, located at the top of the <interface>game board</"
+#~ "interface>, contains the following menus:"
+#~ msgstr ""
+#~ "Die Menüleiste, die über dem <interface>Spielfeld</interface> liegt, "
+#~ "enthält folgende Menüs:"
+
+#~ msgid ""
+#~ "<menuchoice> <shortcut><keysym>Ctrl-N</keysym></shortcut> "
+#~ "<guimenuitem>New</guimenuitem> </menuchoice> — starts a new game of GNOME "
+#~ "Robots."
+#~ msgstr ""
+#~ "<menuchoice><shortcut><keysym>Strg+N</keysym></shortcut><guimenuitem>Neu</"
+#~ "guimenuitem></menuchoice> — beginnt ein neues Spiel von Robots."
+
+#~ msgid ""
+#~ "<menuchoice> <guimenuitem>Scores</guimenuitem> </menuchoice> — shows the "
+#~ "higher scores."
+#~ msgstr ""
+#~ "<menuchoice><guimenuitem>Ergebnisse</guimenuitem></menuchoice> — zeigt "
+#~ "die besten Ergebnisse."
+
+#~ msgid ""
+#~ "<menuchoice> <shortcut><keysym>Ctrl-Q</keysym></shortcut> "
+#~ "<guimenuitem>Quit</guimenuitem> </menuchoice>"
+#~ msgstr ""
+#~ "<menuchoice> <shortcut><keysym>Strg-Q</keysym></shortcut> "
+#~ "<guimenuitem>Beenden</guimenuitem> </menuchoice>"
+
+#~ msgid "This menu contains three items: <_:itemizedlist-1/>"
+#~ msgstr "Dieses Menü enthält drei Einträge: <_:itemizedlist-1/>"
+
+#~ msgid "<guimenu>Move</guimenu>"
+#~ msgstr "<guimenu>Bewegen</guimenu>"
+
+#~ msgid ""
+#~ "<guimenuitem>Teleport</guimenuitem>— teleports you in a safe location."
+#~ msgstr ""
+#~ "<guimenuitem>Teleport</guimenuitem>— teleportiert Sie an einen sicheren "
+#~ "Ort."
+
+#~ msgid ""
+#~ "<guimenuitem>Random</guimenuitem>— teleports you in a random location."
+#~ msgstr ""
+#~ "<guimenuitem>Zufall</guimenuitem>— teleportiert Sie an einem zufälligen "
+#~ "Ort."
+
+#~ msgid "<guimenuitem>Wait</guimenuitem>— places you in wait mode."
+#~ msgstr "<guimenuitem>Warten</guimenuitem>— bringt Sie in den Wartemodus."
+
+#~ msgid "This menu contains: <_:itemizedlist-1/>"
+#~ msgstr "Dieses Menü enthält: <_:itemizedlist-1/>"
+
+#~ msgid "<guimenu>Settings</guimenu>"
+#~ msgstr "<guimenu>Einstellungen</guimenu>"
+
+#~ msgid ""
+#~ "<guimenuitem>Preferences</guimenuitem> which brings up the preferences "
+#~ "dialog box."
+#~ msgstr ""
+#~ "<guimenuitem>Einstellungen</guimenuitem>, das das Einstellungsmenü öffnet."
+
+#~ msgid ""
+#~ "The <guimenu>Settings</guimenu> menu contains only one item: <_:"
+#~ "itemizedlist-1/>"
+#~ msgstr ""
+#~ "Das Menü <guimenu>Einstellungen</guimenu> enhält nur einen Eintrag: <_:"
+#~ "itemizedlist-1/>"
+
+#~ msgid "<guimenu>Help</guimenu>"
+#~ msgstr "<guimenu>Hilfe</guimenu>"
+
+#~ msgid "<guimenuitem>Contents</guimenuitem>— shows this manual."
+#~ msgstr "<guimenuitem>Inhalt</guimenuitem>— zeigt dieses Handbuch an."
+
+#~ msgid ""
+#~ "<guimenuitem>About</guimenuitem>— shows basic information about "
+#~ "<application>GNOME Robots</application>, such as the author's name and "
+#~ "the application version number."
+#~ msgstr ""
+#~ "<guimenuitem>Info</guimenuitem>— zeigt allgemeine Informationen über "
+#~ "<application>Robots</application> an, so wie den Namen des Autoren und "
+#~ "die Versionsnummer der Anwendung."
+
+#~ msgid ""
+#~ "You can use the keyboard to control the little man. By default, the keys "
+#~ "from the keypad are configured for the game. However you can customize "
+#~ "the key mappings in the <guimenuitem>Keyboard</guimenuitem> tab in the "
+#~ "<guimenuitem>Preferences</guimenuitem> dialog. To select a different key "
+#~ "for a command, double-click on the line for that command and then press "
+#~ "the key you want to use."
+#~ msgstr ""
+#~ "Sie können die Tastatur verwenden um das kleine Männchen zu steuern. "
+#~ "Standardmäßig sind die Tasten des Ziffernblocks für das Spiel "
+#~ "konfiguriert. Sie können jedoch die Tastenbelegung im Reiter "
+#~ "<guimenuitem>Tastatur</guimenuitem> im <guimenuitem>Einstellungsdialog</"
+#~ "guimenuitem> anpassen. Um eine andere Taste für einen Befehl auszuwählen, "
+#~ "machen Sie einen Doppelklick auf den Befehl und drücken Sie dann die "
+#~ "Taste, die Sie verwenden möchten."
+
+#~ msgid "Default Key Mappings"
+#~ msgstr "Voreingestellte Tastaturbelegung"
+
+#~ msgid "Switch off the NumLock Key"
+#~ msgstr "Den NumLock ausschalten"
+
+#~ msgid "You may need to switch off the NumLock to make these work."
+#~ msgstr ""
+#~ "Sie müssen eventuell den NumLock ausschalten, damit diese Anweisungen "
+#~ "funktionieren."
+
+#~ msgid "Up Right: <keycap>Page Up</keycap>"
+#~ msgstr "Nach oben rechts: <keycap>Bild auf</keycap>"
+
+#~ msgid "Left: <keycap>Left</keycap>"
+#~ msgstr "Nach links: <keycap>Links</keycap>"
+
+#~ msgid "Stand Still: <keycap>Begin</keycap>"
+#~ msgstr "Stehenbleiben: <keycap>5</keycap>"
+
+#~ msgid "Right: <keycap>Right</keycap>"
+#~ msgstr "Nach rechts: <keycap>Rechts</keycap>"
+
+#~ msgid "Down Right: <keycap>Page Down</keycap>"
+#~ msgstr "Nach unten rechts: <keycap>Bild ab</keycap>"
+
+#~ msgid "Teleport: <keycap>+</keycap>"
+#~ msgstr "Teleportation: <keycap>+</keycap>"
+
+#~ msgid "Randomly Teleport: <keycap>*</keycap>"
+#~ msgstr "Zufällige Teleportation: <keycap>*</keycap>"
+
+#~ msgid ""
+#~ "By default, you use the numeric keypad on the right-hand side of the "
+#~ "keyboard (not the separate arrow keys). <_:note-1/> <_:orderedlist-2/>"
+#~ msgstr ""
+#~ "In der Voreinstellung verwenden Sie den Ziffernblock auf der rechten "
+#~ "Seite der Tastatur (nicht die einzelnen Pfeiltasten). <_:note-1/> <_:"
+#~ "orderedlist-2/>"
+
+#~ msgid "Customizing GNOME Robots"
+#~ msgstr "Robots anpassen"
+
+#~ msgid ""
+#~ "The safe moves option will help you to avoid being killed due to a "
+#~ "mistake. If you try to make a move that would lead to your death when "
+#~ "there is a safe move available, you will not be allowed to proceed. But "
+#~ "be warned: if there was no safe move available, other than teleporting, "
+#~ "the move will be allowed to proceed."
+#~ msgstr ""
+#~ "Die Option »Sichere Züge verwenden« hilft Ihnen nicht getötet zu werden, "
+#~ "wenn Sie einen Fehler machen. Wenn Sie versuchen einen Zug zu machen, der "
+#~ "zu Ihrem Tod führen würde und es einen sicheren Zug gibt, wird "
+#~ "verhindert, dass Sie den tödlichen Zug machen. Aber seien Sie gewarnt: "
+#~ "Wenn es keinen sicheren Zug außer einer Teleportation gibt, können Sie "
+#~ "den Zug durchführen."
+
+#~ msgid ""
+#~ "There is also a <quote>super safe mode</quote>. If you select this, you "
+#~ "get beeped when there is no safe move and your only option is to teleport "
+#~ "out."
+#~ msgstr ""
+#~ "Es gibt auch einen Modus namens »Extrem sichere Züge verwenden«. Wenn Sie "
+#~ "diesen wählen, wird Ihnen durch ein Piepsen angezeigt wenn es keinen "
+#~ "sicheren Zug gibt und Ihre einzige Möglichkeit zu entkommen ein Teleport "
+#~ "ist."
+
+#~ msgid ""
+#~ "If you select the sound checkbox the game will play sounds for various "
+#~ "events throughout the game."
+#~ msgstr ""
+#~ "Wenn Sie das Ankreuzfeld »Klang aktivieren« wählen, gibt das Spiel "
+#~ "Geräusche für verschiedene Ereignisse während des Spiels aus."
+
+#~ msgid ""
+#~ "The <quote>Splats</quote> checkbox selects whether you want the sound "
+#~ "played and a small <quote>Splat!</quote> to appear on the screen."
+#~ msgstr ""
+#~ "Das Ankreuzfeld »Splats aktivieren« bestimmt ob das Geräusch abgespielt "
+#~ "wird und ein kleines »Splat!« auf dem Bildschirm erscheint."
+
+#~ msgid ""
+#~ "<guimenuitem>Game</guimenuitem> — This page allows you to choose the type "
+#~ "of game you want to play. The drop-down box at the top of the page allows "
+#~ "you to choose from a number of predefined games. You can't change these "
+#~ "options in the middle of a game, so they will be disabled then. There are "
+#~ "also several options at the bottom of the dialog: <_:orderedlist-1/>"
+#~ msgstr ""
+#~ "<guimenuitem>Spiel</guimenuitem> — Auf dieser Seite können Sie den "
+#~ "Spieltyp wählen. Im Auswahlfeld oben können Sie aus einigen "
+#~ "voreingestellten Spieltypen wählen. Sie können diese Optionen nicht "
+#~ "während eines laufenden Spiels ändern, weshalb sie zu der Zeit nicht "
+#~ "aktiv sind. Es gibt außerdem einige Optionen am unteren Rand des Dialogs: "
+#~ "<_:orderedlist-1/>"
+
+#~ msgid ""
+#~ "<guimenuitem>Appearance</guimenuitem> — This page allows you to select "
+#~ "the graphics used throughout the game from the list in the dropdown-box. "
+#~ "You can also select the background colour from this tab."
+#~ msgstr ""
+#~ "<guimenuitem>Erscheinungsbild</guimenuitem> — Auf dieser Seite können Sie "
+#~ "in einem Auswahlfeld die Grafiken wählen, die im Spiel verwendet werden. "
+#~ "Sie können in diesem Reiter außerdem die Hintergrundfarbe ändern."
+
+#~ msgid ""
+#~ "<guimenuitem>Keyboard</guimenuitem> — This screen allows you to define "
+#~ "your own keyboard controls. To select a different key for a command, "
+#~ "double-click on the button for that command and then press the key you "
+#~ "want to use."
+#~ msgstr ""
+#~ "<guimenuitem>Tastatur</guimenuitem> — Auf dieser Seite können Sie Ihre "
+#~ "eigene Tastaturbelegung einstellen. Um eine andere Taste für einen Befehl "
+#~ "zu wählen, machen Sie einen Doppelklick auf den Befehl und drücken dann "
+#~ "die Taste, die Sie verwenden möchten."
+
+#~ msgid ""
+#~ "You can modify the behaviour and appearance of the game by selecting "
+#~ "<guimenuitem> Preferences</guimenuitem> under the <guimenu>Settings</"
+#~ "guimenu> menu. This brings up a dialog with three tabs: <_:itemizedlist-1/"
+#~ ">"
+#~ msgstr ""
+#~ "Sie können das Spielverhalten und das Aussehen verändern, indem Sie "
+#~ "<guimenuitem>Einstellungen</guimenuitem> im Menü <guimenu>Einstellungen</"
+#~ "guimenu> wählen. Dies öffnet ein Fenster mit drei Reitern: <_:"
+#~ "itemizedlist-1/>"
+
+#~ msgid ""
+#~ "Any changes you make take effect immediately and are automatically saved."
+#~ msgstr ""
+#~ "Jede Änderung, die Sie durchführen, wird sofort umgesetzt und automatisch "
+#~ "gespeichert."
+
+#~ msgid ""
+#~ "You can design your own graphics for the game if you want. The graphics "
+#~ "files are found in <filename class=\"directory\"> $PREFIX/share/gnome-"
+#~ "games/gnome-robots/pixmaps </filename>, where $PREFIX is the prefix into "
+#~ "which GNOME was installed. This is usually either <filename class="
+#~ "\"directory\">/usr</filename> or <filename class=\"directory\">/usr/"
+#~ "local</filename>."
+#~ msgstr ""
+#~ "Wenn Sie mögen, können Sie Ihre eigenen Grafiken für das Spiel entwerfen. "
+#~ "Die Grafikdateien sind im Ordner <filename class=\"directory\"> $PREFIX/"
+#~ "share/gnome-games/gnome-robots/pixmaps</filename> gespeichert, wobei "
+#~ "$PREFIX der Ordner ist, in welchen GNOME installiert wurde. Das ist "
+#~ "normalerweise entweder <filename class=\"directory\">/usr</filename> oder "
+#~ "<filename class=\"directory\">/usr/local</filename>."
+
+#~ msgid ""
+#~ "Each character is 16x16 pixels and there are 14 of them arranged in a PNG "
+#~ "file which is 224x16 pixels in size. You can look at the existing files "
+#~ "to see the order in which they must be arranged to produce the correct "
+#~ "animated sequences."
+#~ msgstr ""
+#~ "Jede Figur ist 16x16 Pixel groß und 14 sind zusammen in einer PNG-Datei "
+#~ "gespeichert, die 224x16 Pixel groß ist. Sie können sich die vorhandenen "
+#~ "Dateien ansehen, um zu sehen in welcher Reihenfolge die Bilder angeordnet "
+#~ "sein müssen, um die gewünschte Abfolge bei der Animation zu erhalten."
+
+#~ msgid ""
+#~ "Any graphics files which are placed in the directory are auto-detected, "
+#~ "so you don't need to alter any configuration files. You can also define "
+#~ "your own game configurations by creating extra <filename> .cfg </"
+#~ "filename> files which are stored in the <filename class=\"directory\"> "
+#~ "$PREFIX/share/gnome-games/gnome-robots/games </filename> directory."
+#~ msgstr ""
+#~ "Grafikdateien, die in diesem Ordner abgelegt werden, werden automatisch "
+#~ "erkannt, also müssen Sie keine Konfigurationsdateien bearbeiten. Außerdem "
+#~ "können Sie Ihre eigenen Spieleinstellungen erstellen, indem Sie "
+#~ "zusätzliche <filename>.cfg</filename>-Dateien im Ordner <filename class="
+#~ "\"directory\">$PREFIX/share/gnome-games/gnome-robots/games</filename> "
+#~ "ablegen."
+
+#~ msgid "Authors"
+#~ msgstr "Autoren"
+
+#~ msgid ""
+#~ "<application>GNOME Robots</application> was written by Mark Rae (<email>m."
+#~ "rae@inpharmatica.co.uk</email>). This manual was written by Patanjali "
+#~ "Somayaji (<email>patanjali@mindless.com</email>), from the original HTML "
+#~ "documentation by Mark Rae. To report a bug or make a suggestion regarding "
+#~ "this application or this manual, follow the directions in this <ulink url="
+#~ "\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
+#~ msgstr ""
+#~ "<application>Robots</application> wurde von Mark Rae (<email>m."
+#~ "rae@inpharmatica.co.uk</email>) programmiert. Dieses Handbuch wurde von "
+#~ "Patanjali Somayaji (<email>patanjali@mindless.com</email>) auf Grundlage "
+#~ "der ursprünglichen HTML-Dokumentation von Mark Rae geschrieben. Um einen "
+#~ "Fehler zu melden oder Vorschläge zu dieser Anwendungen oder zu diesem "
+#~ "Handbuch zu machen, folgen Sie den Anweisungen in diesem <ulink url="
+#~ "\"ghelp:user-guide?feedback-bugs\" type=\"help\">Dokument</ulink>."
+
+#~ msgid "License"
+#~ msgstr "Lizenz"
+
+#~ msgid ""
+#~ "This program is free software; you can redistribute it and/or modify it "
+#~ "under the terms of the <ulink type=\"help\" url=\"help:gpl\"> "
+#~ "<citetitle>GNU General Public License</citetitle></ulink> as published by "
+#~ "the Free Software Foundation; either version 2 of the License, or (at "
+#~ "your option) any later version."
+#~ msgstr ""
+#~ "Dieses Programm ist freie Software; Sie können es weiterverbreiten und/"
+#~ "oder ändern unter den Bedingungen der <ulink type=\"help\" url=\"help:gpl"
+#~ "\"><citetitle>GNU General Public License</citetitle></ulink> wie sie von "
+#~ "der Free Software Foundation veröffentlicht wurde; entweder in Version 2 "
+#~ "der Lizenz oder (nach Ihrer Wahl) jeder neueren Version."
+
+#~ msgid ""
+#~ "This program is distributed in the hope that it will be useful, but "
+#~ "WITHOUT ANY WARRANTY; without even the implied warranty of "
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the "
+#~ "<citetitle>GNU General Public License</citetitle> for more details."
+#~ msgstr ""
+#~ "Dieses Programm wird in der Hoffnung verbreitet, dass es nützlich ist, "
+#~ "aber OHNE JEGLICHE GARANTIE; auch ohne eine "
+#~ "GEBRAUCHSTAUGLICHKEITSGARANTIE oder eine Garantie über die TAUGLICHKEIT "
+#~ "FÜR EINEN BESTIMMTEN ZWECK. Lesen Sie die <citetitle><ulink type=\"help\" "
+#~ "url=\"help:gpl\">GNU General Public License</ulink></citetitle> für "
+#~ "genauere Hinweise."
+
+#~ msgid ""
+#~ "\n"
+#~ "        Free Software Foundation, Inc.\n"
+#~ "        <street>51 Franklin Street, Fifth Floor</street>\n"
+#~ "        <city>Boston</city>, <state>MA</state> <postcode>02110-1301</"
+#~ "postcode>\n"
+#~ "        <country>USA</country>\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "        Free Software Foundation, Inc.\n"
+#~ "        <street>51 Franklin Street, Fifth Floor</street>\n"
+#~ "        <city>Boston</city>, <state>MA</state> <postcode>02110-1301</"
+#~ "postcode>\n"
+#~ "        <country>USA</country>\n"
+#~ "      "
+
+#~ msgid ""
+#~ "A copy of the <citetitle>GNU General Public License</citetitle> is "
+#~ "included as an appendix to the <citetitle>GNOME Users Guide</citetitle>. "
+#~ "You may also obtain a copy of the <citetitle>GNU General Public License</"
+#~ "citetitle> from the Free Software Foundation by visiting <ulink type="
+#~ "\"http\" url=\"http://www.fsf.org\">their Web site</ulink> or by writing "
+#~ "to <_:address-1/>"
+#~ msgstr ""
+#~ "Eine Kopie der <citetitle><ulink type=\"help\" url=\"help:gpl\">GNU "
+#~ "General Public License</ulink></citetitle> ist im Anhang des "
+#~ "<citetitle>GNOME Benutzerhandbuchs</citetitle> enthalten. Sie können "
+#~ "außerdem eine Kopie der <citetitle><ulink type=\"help\" url=\"help:gpl"
+#~ "\">GNU General Public License</ulink></citetitle> von der Free Software "
+#~ "Foundation erhalten, indem Sie auf <ulink type=\"http\" url=\"http://www."
+#~ "fsf.org\">ihre Internetseite</ulink> gehen oder schreiben Sie an die <_:"
+#~ "address-1/>"
+
+#~ msgid "link"
+#~ msgstr "Link"
+
+#~ msgid ""
+#~ "Permission is granted to copy, distribute and/or modify this document "
+#~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#~ "or any later version published by the Free Software Foundation with no "
+#~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#~ "can find a copy of the GFDL at this <_:ulink-1/> or in the file COPYING-"
+#~ "DOCS distributed with this manual."
+#~ msgstr ""
+#~ "Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free "
+#~ "Documentation License (GFDL), Version 1.1 oder jeder späteren, von der "
+#~ "Free Software Foundation veröffentlichten Version ohne unveränderbare "
+#~ "Abschnitte sowie ohne Texte auf dem vorderen und hinteren Buchdeckel "
+#~ "kopiert, verteilt und/oder modifiziert werden. Eine Kopie der GFDL finden "
+#~ "Sie unter diesem <_:ulink-1/> oder in der mit diesem Handbuch gelieferten "
+#~ "Datei COPYING-DOCS."

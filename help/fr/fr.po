@@ -173,7 +173,7 @@ msgstr ""
 #. (itstool) path: section/title
 #: C/basics.page:52
 msgid "Quit <app>Robots</app>"
-msgstr "Quitter <pp>Robots</app>"
+msgstr "Quitter <app>Robots</app>"
 
 #. (itstool) path: section/p
 #: C/basics.page:54

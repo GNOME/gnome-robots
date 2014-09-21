@@ -231,11 +231,16 @@ log_score (gint sc)
   }
 
   if (sc != 0) {
-  //  games_scores_set_category (highscores, sbuf);
     const gchar* key = sbuf;
     const gchar* name = category_name_from_key (key);
+    GError *error = NULL;
     current_cat = games_scores_category_new (key, name);
-    pos = games_scores_context_add_score (highscores, (guint32) sc, current_cat);
+    // FIXME returns a bool, not the position...
+    pos = games_scores_context_add_score (highscores, (guint32) sc, current_cat, &error);
+    if (error != NULL) {
+      g_warning ("Failed to add score: %s", error->message);
+      g_error_free (error);
+    }
   }
   g_free (sbuf);
 

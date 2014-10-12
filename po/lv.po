@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-17 14:01+0000\n"
-"PO-Revision-Date: 2014-03-07 22:33+0200\n"
+"POT-Creation-Date: 2014-10-10 01:44+0000\n"
+"PO-Revision-Date: 2014-10-12 17:04+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -25,21 +25,34 @@ msgstr ""
 "X-Poedit-Language: Latvian\n"
 "X-Poedit-Country: LATVIA\n"
 
-#: ../data/gnobots2.desktop.in.h:1 ../src/gnobots.c:206 ../src/gnobots.c:219
-#: ../src/menu.c:262
-msgid "Robots"
-msgstr "Roboti"
+#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Jauna spēle"
 
-#: ../data/gnobots2.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Izvairies no robotiem un lieciet viņiem saskrieties vienam ar otru"
+#: ../data/app-menu.ui.h:2 ../src/properties.c:393
+msgid "Preferences"
+msgstr "Iestatījumi"
 
-#: ../data/gnobots2.desktop.in.h:3
-msgid "game;arcade;teleport;"
-msgstr "spēle;arkāde;teleportācija;"
+#: ../data/app-menu.ui.h:3
+msgid "Scores"
+msgstr "Rezultāti"
+
+#: ../data/app-menu.ui.h:4
+#| msgid "_Help"
+msgid "Help"
+msgstr "Palīdzība"
+
+#: ../data/app-menu.ui.h:5
+#| msgid "_About"
+msgid "About"
+msgstr "Par"
+
+#: ../data/app-menu.ui.h:6
+#| msgid "_Quit"
+msgid "Quit"
+msgstr "Iziet"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
-#| msgid "Robots"
 msgid "GNOME Robots"
 msgstr "GNOME roboti"
 
@@ -59,11 +72,11 @@ msgid ""
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
 msgstr ""
-"Par laimi roboti ir ārkārtīgi stulbi un vienmēr ies tev tieši virsū. Ar viltu "
-"liec tiem saskrieties, kā rezultātā tie salūzīs, vai arī iemāni tos ieskriet "
-"lūžņu kaudzē, kas palikusi pēc iepriekšējās sadursmes. Tu vari aizsargāties, "
-"pārvietojot lūžņu kaudzes, vai izbēgt drošībā ar parocīgu teleportācijas "
-"ierīci."
+"Par laimi roboti ir ārkārtīgi stulbi un vienmēr ies tev tieši virsū. Ar "
+"viltu liec tiem saskrieties, kā rezultātā tie salūzīs, vai arī iemāni tos "
+"ieskriet lūžņu kaudzē, kas palikusi pēc iepriekšējās sadursmes. Tu vari "
+"aizsargāties, pārvietojot lūžņu kaudzes, vai izbēgt drošībā ar parocīgu "
+"teleportācijas ierīci."
 
 #: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
@@ -74,6 +87,19 @@ msgstr ""
 "Tev ir ierobežots drošo teleportācijas reižu skaits, un ja tās ir beigušās, "
 "pēc teleportācijas vari attapties blakus robotam, kas tevi nogalēs. Mēģini "
 "izdzīvot cik vien ilgi iespējams!"
+
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
+#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+msgid "Robots"
+msgstr "Roboti"
+
+#: ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Izvairies no robotiem un lieciet viņiem saskrieties vienam ar otru"
+
+#: ../data/gnome-robots.desktop.in.h:3
+msgid "game;arcade;teleport;"
+msgstr "spēle;arkāde;teleportācija;"
 
 #: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
@@ -142,7 +168,7 @@ msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Aktivēt spēles skaņas. Atskaņot skaņas dažādiem notikumiem spēles laikā."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:500
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
 msgid "Key to move NW"
 msgstr "ZR taustiņš"
 
@@ -150,7 +176,7 @@ msgstr "ZR taustiņš"
 msgid "The key used to move north-west."
 msgstr "Taustiņš gājienam ziemeļrietumu virzienā."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:501
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
 msgid "Key to move N"
 msgstr "Z taustiņš"
 
@@ -158,7 +184,7 @@ msgstr "Z taustiņš"
 msgid "The key used to move north."
 msgstr "Taustiņš gājienam ziemeļu virzienā."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:502
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
 msgid "Key to move NE"
 msgstr "ZA taustiņš"
 
@@ -166,7 +192,7 @@ msgstr "ZA taustiņš"
 msgid "The key used to move north-east."
 msgstr "Taustiņš gājienam ziemeļaustrumu virzienā."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:503
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
 msgid "Key to move W"
 msgstr "R taustiņš"
 
@@ -174,7 +200,7 @@ msgstr "R taustiņš"
 msgid "The key used to move west."
 msgstr "Taustiņš gājienam rietumu virzienā."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
 msgid "Key to hold"
 msgstr "Palikšanas taustiņš"
 
@@ -182,7 +208,7 @@ msgstr "Palikšanas taustiņš"
 msgid "The key used to hold still."
 msgstr "Taustiņš, ko spiest, lai šajā gājienā paliktu uz vietas."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:504
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
 msgid "Key to move E"
 msgstr "A taustiņš"
 
@@ -190,7 +216,7 @@ msgstr "A taustiņš"
 msgid "The key used to move east."
 msgstr "Taustiņš gājienam austrumu virzienā."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
 msgid "Key to move SW"
 msgstr "DR taustiņš"
 
@@ -198,7 +224,7 @@ msgstr "DR taustiņš"
 msgid "The key used to move south-west."
 msgstr "Taustiņš gājienam dienvidrietumu virzienā."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
 msgid "Key to move S"
 msgstr "D taustiņš"
 
@@ -206,7 +232,7 @@ msgstr "D taustiņš"
 msgid "The key used to move south."
 msgstr "Taustiņš gājienam dienvidu virzienā."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
 msgid "Key to move SE"
 msgstr "DA taustiņš"
 
@@ -214,81 +240,55 @@ msgstr "DA taustiņš"
 msgid "The key used to move south-east."
 msgstr "Taustiņš gājienam dienvidaustrumu virzienā."
 
-#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:509
-msgid "Key to teleport"
-msgstr "Teleporta taustiņš"
-
-#: ../data/org.gnome.robots.gschema.xml.h:34
-msgid "The key used to teleport safely (if possible)."
-msgstr "Taustiņš, lai droši teleportētos (ja iespējams)."
-
-#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:510
-msgid "Key to teleport randomly"
-msgstr "Nejaušā teleporta taustiņš"
-
-#: ../data/org.gnome.robots.gschema.xml.h:36
-msgid "The key used to teleport randomly."
-msgstr "Taustiņš, lai teleportētos nejauši."
-
-#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:511
-msgid "Key to wait"
-msgstr "Gaidīšanas taustiņš"
-
-#: ../data/org.gnome.robots.gschema.xml.h:38
-msgid "The key used to wait."
-msgstr ""
-"Taustiņš, lai gaidītu, kamēr roboti veic visus savus atlikušos gājienus."
-
-#: ../data/org.gnome.robots.gschema.xml.h:39
+#: ../data/org.gnome.robots.gschema.xml.h:33
 msgid "Width of the window in pixels"
 msgstr "Galvenā loga platums pikseļos"
 
-#: ../data/org.gnome.robots.gschema.xml.h:40
+#: ../data/org.gnome.robots.gschema.xml.h:34
 msgid "Height of the window in pixels"
 msgstr "Galvenā loga augstums pikseļos"
 
-#: ../data/org.gnome.robots.gschema.xml.h:41
+#: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
 msgstr "patiess, ja logs ir maksimizēts"
 
-#: ../data/org.gnome.robots.gschema.xml.h:42
-msgid "true if the window is fullscren"
-msgstr "patiess, ja logs ir pilnekrāna"
-
-#: ../src/game.c:149
+#: ../src/game.c:147
 msgid "Game over!"
 msgstr "Spēle beigusies!"
 
-#: ../src/game.c:151
+#: ../src/game.c:149
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr "Labs rezultāts, bet diemžēl tu neiekļuvi labāko desmitniekā."
 
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/game.c:153 ../src/games-stock.c:253
+#: ../src/game.c:150
+msgid "_Quit"
+msgstr "_Iziet"
+
+#: ../src/game.c:151 ../src/gnome-robots.c:231
 msgid "_New Game"
 msgstr "Jau_na spēle"
 
-#: ../src/game.c:166
+#: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Robots rezultāti"
 
-#: ../src/game.c:169
+#: ../src/game.c:167
 msgid "Map:"
 msgstr "Karte:"
 
-#: ../src/game.c:178
+#: ../src/game.c:176
 msgid "Congratulations!"
 msgstr "Apsveicam!"
 
-#: ../src/game.c:179
+#: ../src/game.c:177
 msgid "Your score is the best!"
 msgstr "Tavs rezultāts ir labākais!"
 
-#: ../src/game.c:180
+#: ../src/game.c:178
 msgid "Your score has made the top ten."
 msgstr "Tavs rezultāts ticis labāko desmitniekā."
 
-#: ../src/game.c:408 ../src/game.c:424
+#: ../src/game.c:405 ../src/game.c:421
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -297,11 +297,11 @@ msgstr ""
 "Bet vai vari izdarīt to vēlreiz?"
 
 #. This should never happen.
-#: ../src/game.c:1186
+#: ../src/game.c:1175
 msgid "There are no teleport locations left!!"
 msgstr "Nav vairāk vietu, kurp teleportēties!!"
 
-#: ../src/game.c:1214
+#: ../src/game.c:1203
 msgid "There are no safe locations to teleport to!!"
 msgstr "Nav drošu vietu, uz kurām teleportēties!!"
 
@@ -328,294 +328,132 @@ msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$dm %2$ds"
 
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Jauna spēle"
-
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
 msgid "Date"
 msgstr "Datums"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "Skatīt šīs spēles palīdzību"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "Pārtraukt šo spēli"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "Pārslēgt pilnekrāna režīmu"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "Saņem padomu par nākamo gājienu"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "Pamest pilnekrāna režīmu"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "Sākt jaunu tīkla spēli"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "Beigt pašreizējo tīkla spēli un atgriezties pie servera"
-
-#: ../src/games-stock.c:48 ../src/menu.c:69
-msgid "Start a new game"
-msgstr "Sākt jaunu spēli"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "Pauzēt spēli"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "Rādīt spēlētāju sarakstu tīkla spēlē"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "Atsaukt gājiena atsaukšanu"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "Pārstartēt spēli"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "Turpināt pauzēto spēli"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "Apskatīt rezultātus"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "Atsaukt pēdējo gājienu"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "Par šo spēli"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "Aizvērt šo logu"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "Konfigurēt spēli"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "Iziet no spēles"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "_Saturs"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "_Pilnekrāna"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "_Padoms"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "Jau_na"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "Atkā_rtot darbību"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "_Atstatīt"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "Pā_rstartēt"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "Atsa_ukt gājienu"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "_Dalīt"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "Pamest pi_lnekrāna režīmu"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "Tīkla _spēle"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "Pam_est spēli"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "Spē_lētāju saraksts"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "_Pauzēt"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "T_urpināt"
-
-#: ../src/games-stock.c:267
-msgid "_Scores"
-msgstr "Re_zultāti"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "B_eigt spēli"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s ir brīvā programmatūra; jūs varat izplatīt un/vai modificēt to saskaņā ar "
-"GNU Vispārējās Publiskās Licences %d vai kādas vēlākas versijas noteikumiem."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s tiek izplatīts ar cerību, ka tas būs noderīgs. Tas tiek izplatīts BEZ "
-"jebkādas garantijas vai iekļautas ražotāja atbildības par šo produktu. "
-"Sīkāku informāciju meklējiet GNU Vispārējās Publiskās Licences tekstā."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"GNU Vispārējās Publiskās Licence ir pieejama kopā ar %s instalāciju. Ja tā "
-"jums nav pieejama, jūs to varat iegūt no Free Software Foundation, Inc., 51 "
-"Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"Jums vajadzēja saņemt GNU Vispārējo Publisko Licenci ar šo programmu. Ja nē, "
-"skatiet <http://www.gnu.org/licenses/>."
-
-#: ../src/gnobots.c:79
-msgid "Set game scenario"
-msgstr "Iestatīt spēles scenāriju"
-
-#: ../src/gnobots.c:79 ../src/gnobots.c:81
-msgid "NAME"
-msgstr "VĀRDS"
-
-#: ../src/gnobots.c:81
-msgid "Set game configuration"
-msgstr "Iestatīt spēles konfigurāciju"
-
-#: ../src/gnobots.c:83 ../src/gnobots.c:85
-msgid "Initial window position"
-msgstr "Sākotnējais loga novietojums"
-
-#: ../src/gnobots.c:83
-msgid "X"
-msgstr "X"
-
-#: ../src/gnobots.c:85
-msgid "Y"
-msgstr "Y"
-
-#: ../src/gnobots.c:90
+#: ../src/gnome-robots.c:95
 msgid "Classic robots"
 msgstr "Klasiskie roboti"
 
-#: ../src/gnobots.c:91
+#: ../src/gnome-robots.c:96
 msgid "Classic robots with safe moves"
 msgstr "Klasiskie roboti ar drošiem gājieniem"
 
-#: ../src/gnobots.c:92
+#: ../src/gnome-robots.c:97
 msgid "Classic robots with super-safe moves"
 msgstr "Klasiskie roboti ar sevišķi drošiem gājieniem"
 
-#: ../src/gnobots.c:93
+#: ../src/gnome-robots.c:98
 msgid "Nightmare"
 msgstr "Murgs"
 
-#: ../src/gnobots.c:94
+#: ../src/gnome-robots.c:99
 msgid "Nightmare with safe moves"
 msgstr "Murgs ar drošiem gājieniem"
 
-#: ../src/gnobots.c:95
+#: ../src/gnome-robots.c:100
 msgid "Nightmare with super-safe moves"
 msgstr "Murgs ar sevišķi drošiem gājieniem"
 
-#: ../src/gnobots.c:96
+#: ../src/gnome-robots.c:101
 msgid "Robots2"
 msgstr "Roboti2"
 
-#: ../src/gnobots.c:97
+#: ../src/gnome-robots.c:102
 msgid "Robots2 with safe moves"
 msgstr "Roboti2 ar drošiem gājieniem"
 
-#: ../src/gnobots.c:98
+#: ../src/gnome-robots.c:103
 msgid "Robots2 with super-safe moves"
 msgstr "Roboti2 ar sevišķi drošiem gājieniem"
 
-#: ../src/gnobots.c:99
+#: ../src/gnome-robots.c:104
 msgid "Robots2 easy"
 msgstr "Roboti2 viegli"
 
-#: ../src/gnobots.c:100
+#: ../src/gnome-robots.c:105
 msgid "Robots2 easy with safe moves"
 msgstr "Roboti2 viegli ar drošiem gājieniem"
 
-#: ../src/gnobots.c:101
+#: ../src/gnome-robots.c:106
 msgid "Robots2 easy with super-safe moves"
 msgstr "Roboti2 viegli ar sevišķi drošiem gājieniem"
 
-#: ../src/gnobots.c:102
+#: ../src/gnome-robots.c:107
 msgid "Robots with safe teleport"
 msgstr "Roboti ar drošu teleportu"
 
-#: ../src/gnobots.c:103
+#: ../src/gnome-robots.c:108
 msgid "Robots with safe teleport with safe moves"
 msgstr "Roboti ar drošu teleportu un drošiem gājieniem"
 
-#: ../src/gnobots.c:104
+#: ../src/gnome-robots.c:109
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Roboti ar drošu teleportu un sevišķi drošiem gājieniem"
 
-#: ../src/gnobots.c:286
+#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
+#: ../src/gnome-robots.c:144
+#, c-format
+#| msgid "Score: %d"
+msgid "Level: %d\tScore: %d"
+msgstr "Līmenis: %d\tPunkti: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: ../src/gnome-robots.c:155
+#, c-format
+#| msgid "Remaining:"
+msgid "(Remaining: %d)"
+msgstr "(Atlicis: %d)"
+
+#. First line of safe teleports button label.
+#: ../src/gnome-robots.c:157
+#| msgid "Teleport randomly"
+msgid "Teleport _Safely"
+msgstr "Teleportēties droši"
+
+#: ../src/gnome-robots.c:202
+msgid ""
+"Based on classic BSD Robots\n"
+"\n"
+"Robots is a part of GNOME Games."
+msgstr ""
+"Balstīts uz klasiskajiem BSD Robots\n"
+"\n"
+"Robots ir daļa no GNOME spēlēm."
+
+#: ../src/gnome-robots.c:206
+msgid "translator-credits"
+msgstr ""
+"Raivis Dejus <orvils@gmail.com>\n"
+"Sandra Zabarovska <sandra.zabarovska@gmail.com>\n"
+"Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
+
+#: ../src/gnome-robots.c:227
+#| msgid "Do you want to start a new game?"
+msgid "Are you sure you want to discard the current game?"
+msgstr "Vai tiešām vēlaties atmest pašreizējo spēli?"
+
+#: ../src/gnome-robots.c:230
+msgid "Keep _Playing"
+msgstr "Tur_pināt spēlēt"
+
+#: ../src/gnome-robots.c:373
+#| msgid "Teleport randomly"
+msgid "Teleport _Randomly"
+msgstr "Telepo_rtēties nejauši"
+
+#: ../src/gnome-robots.c:392
+#| msgid "Wait for the robots"
+msgid "_Wait for Robots"
+msgstr "_Gaidīt robotus"
+
+#: ../src/gnome-robots.c:420
 msgid "No game data could be found."
 msgstr "Netika atrasti spēles dati."
 
-#: ../src/gnobots.c:288
+#: ../src/gnome-robots.c:422
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -623,11 +461,11 @@ msgstr ""
 "Programma Roboti nebija spējīga atrast derīgas spēles konfigurācijas datnes. "
 "Lūdzu, pārbaudiet, vai programma ir pareizi uzinstalēta."
 
-#: ../src/gnobots.c:304
+#: ../src/gnome-robots.c:438
 msgid "Some graphics files are missing or corrupt."
 msgstr "Dažas grafikas datnes ir pazudušas vai sabojātas."
 
-#: ../src/gnobots.c:306
+#: ../src/gnome-robots.c:440
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -640,88 +478,11 @@ msgstr ""
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Nevarēja atrast “%s” pikseļu kartes (pixmap) datni\n"
 
-#: ../src/menu.c:64
-msgid "_Game"
-msgstr "_Spēle"
-
-#: ../src/menu.c:65
-msgid "_View"
-msgstr "_Skats"
-
-#: ../src/menu.c:66
-msgid "_Move"
-msgstr "_Iet"
-
-#: ../src/menu.c:67
-msgid "_Settings"
-msgstr "Ie_statījumi"
-
-#: ../src/menu.c:68
-msgid "_Help"
-msgstr "_Palīdzība"
-
-#: ../src/menu.c:73
-msgid "_Teleport"
-msgstr "_Teleportēties"
-
-#: ../src/menu.c:74
-msgid "Teleport, safely if possible"
-msgstr "Teleportēties droši, ja iespējams"
-
-#: ../src/menu.c:75
-msgid "_Random"
-msgstr "_Nejauši"
-
-#: ../src/menu.c:76
-msgid "Teleport randomly"
-msgstr "Teleportēties nejauši"
-
-#: ../src/menu.c:77
-msgid "_Wait"
-msgstr "_Gaidīt"
-
-#: ../src/menu.c:77
-msgid "Wait for the robots"
-msgstr "Gaidīt robotus"
-
-#: ../src/menu.c:88
-msgid "_Toolbar"
-msgstr "_Rīkjosla"
-
-#: ../src/menu.c:88
-msgid "Show or hide the toolbar"
-msgstr "Rādīt vai slēpt rīkjoslu"
-
-#: ../src/menu.c:266
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Balstīts uz klasiskajiem BSD Robots\n"
-"\n"
-"Robots ir daļa no GNOME spēlēm."
-
-#: ../src/menu.c:270
-msgid "translator-credits"
-msgstr ""
-"Raivis Dejus <orvils@gmail.com>\n"
-"Sandra Zabarovska <sandra.zabarovska@gmail.com>\n"
-"Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
-
-#: ../src/properties.c:391
-msgid "Robots Preferences"
-msgstr "Robotu iestatījumi"
-
-#: ../src/properties.c:416
+#: ../src/properties.c:417
 msgid "Game Type"
 msgstr "Spēles veids"
 
-#: ../src/properties.c:425
+#: ../src/properties.c:427
 msgid "_Use safe moves"
 msgstr "Lietot droš_us gājienus"
 
@@ -729,61 +490,271 @@ msgstr "Lietot droš_us gājienus"
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Novērst nejaušus gājienus, kuru rezultātā var nosisties."
 
-#: ../src/properties.c:434
+#: ../src/properties.c:435
 msgid "U_se super safe moves"
 msgstr "Lietot īpaši drošo_s gājienus"
 
-#: ../src/properties.c:441
+#: ../src/properties.c:442
 msgid "Prevents all moves that result in getting killed."
 msgstr "Novērš visus gājienus, kuru rezultātā var nosisties."
 
-#: ../src/properties.c:443
+#: ../src/properties.c:448
 msgid "_Enable sounds"
 msgstr "_Aktivēt skaņu"
 
-#: ../src/properties.c:449
+#: ../src/properties.c:454
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Atskaņot skaņas tādos gadījumos kā līmeņa pabeigšana un nomiršana."
 
-#: ../src/properties.c:451
+#: ../src/properties.c:456
 msgid "Game"
 msgstr "Spēle"
 
-#: ../src/properties.c:464
+#: ../src/properties.c:469
 msgid "_Image theme:"
 msgstr "_Attēlu motīvs:"
 
-#: ../src/properties.c:476
+#: ../src/properties.c:481
 msgid "_Background color:"
 msgstr "_Fona krāsa:"
 
-#: ../src/properties.c:488
+#: ../src/properties.c:493
 msgid "Appearance"
 msgstr "Izskats"
 
-#: ../src/properties.c:520
+#: ../src/properties.c:522
 msgid "_Restore Defaults"
 msgstr "_Atjaunot noklusējuma vērtības"
 
-#: ../src/properties.c:525
+#: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Tastatūra"
 
-#: ../src/statusbar.c:68
-msgid "Score:"
-msgstr "Rezultāts:"
+#~ msgid "Key to teleport"
+#~ msgstr "Teleporta taustiņš"
 
-#: ../src/statusbar.c:76
-msgid "Safe Teleports:"
-msgstr "Drošie teleporti:"
+#~ msgid "The key used to teleport safely (if possible)."
+#~ msgstr "Taustiņš, lai droši teleportētos (ja iespējams)."
 
-#: ../src/statusbar.c:85
-msgid "Level:"
-msgstr "Līmenis:"
+#~ msgid "Key to teleport randomly"
+#~ msgstr "Nejaušā teleporta taustiņš"
 
-#: ../src/statusbar.c:94
-msgid "Remaining:"
-msgstr "Atlicis:"
+#~ msgid "The key used to teleport randomly."
+#~ msgstr "Taustiņš, lai teleportētos nejauši."
+
+#~ msgid "Key to wait"
+#~ msgstr "Gaidīšanas taustiņš"
+
+#~ msgid "The key used to wait."
+#~ msgstr ""
+#~ "Taustiņš, lai gaidītu, kamēr roboti veic visus savus atlikušos gājienus."
+
+#~ msgid "true if the window is fullscren"
+#~ msgstr "patiess, ja logs ir pilnekrāna"
+
+#~ msgid "View help for this game"
+#~ msgstr "Skatīt šīs spēles palīdzību"
+
+#~ msgid "End the current game"
+#~ msgstr "Pārtraukt šo spēli"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "Pārslēgt pilnekrāna režīmu"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "Saņem padomu par nākamo gājienu"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "Pamest pilnekrāna režīmu"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "Sākt jaunu tīkla spēli"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr "Beigt pašreizējo tīkla spēli un atgriezties pie servera"
+
+#~ msgid "Start a new game"
+#~ msgstr "Sākt jaunu spēli"
+
+#~ msgid "Pause the game"
+#~ msgstr "Pauzēt spēli"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "Rādīt spēlētāju sarakstu tīkla spēlē"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "Atsaukt gājiena atsaukšanu"
+
+#~ msgid "Restart the game"
+#~ msgstr "Pārstartēt spēli"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "Turpināt pauzēto spēli"
+
+#~ msgid "View the scores"
+#~ msgstr "Apskatīt rezultātus"
+
+#~ msgid "Undo the last move"
+#~ msgstr "Atsaukt pēdējo gājienu"
+
+#~ msgid "About this game"
+#~ msgstr "Par šo spēli"
+
+#~ msgid "Close this window"
+#~ msgstr "Aizvērt šo logu"
+
+#~ msgid "Configure the game"
+#~ msgstr "Konfigurēt spēli"
+
+#~ msgid "Quit this game"
+#~ msgstr "Iziet no spēles"
+
+#~ msgid "_Contents"
+#~ msgstr "_Saturs"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "_Pilnekrāna"
+
+#~ msgid "_Hint"
+#~ msgstr "_Padoms"
+
+#~ msgid "_New"
+#~ msgstr "Jau_na"
+
+#~ msgid "_Redo Move"
+#~ msgstr "Atkā_rtot darbību"
+
+#~ msgid "_Reset"
+#~ msgstr "_Atstatīt"
+
+#~ msgid "_Restart"
+#~ msgstr "Pā_rstartēt"
+
+#~ msgid "_Undo Move"
+#~ msgstr "Atsa_ukt gājienu"
+
+#~ msgid "_Deal"
+#~ msgstr "_Dalīt"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "Pamest pi_lnekrāna režīmu"
+
+#~ msgid "Network _Game"
+#~ msgstr "Tīkla _spēle"
+
+#~ msgid "L_eave Game"
+#~ msgstr "Pam_est spēli"
+
+#~ msgid "Player _List"
+#~ msgstr "Spē_lētāju saraksts"
+
+#~ msgid "_Pause"
+#~ msgstr "_Pauzēt"
+
+#~ msgid "Res_ume"
+#~ msgstr "T_urpināt"
+
+#~ msgid "_Scores"
+#~ msgstr "Re_zultāti"
+
+#~ msgid "_End Game"
+#~ msgstr "B_eigt spēli"
+
+#~ msgid ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+#~ msgstr ""
+#~ "%s ir brīvā programmatūra; jūs varat izplatīt un/vai modificēt to saskaņā "
+#~ "ar GNU Vispārējās Publiskās Licences %d vai kādas vēlākas versijas "
+#~ "noteikumiem."
+
+#~ msgid ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+#~ msgstr ""
+#~ "%s tiek izplatīts ar cerību, ka tas būs noderīgs. Tas tiek izplatīts BEZ "
+#~ "jebkādas garantijas vai iekļautas ražotāja atbildības par šo produktu. "
+#~ "Sīkāku informāciju meklējiet GNU Vispārējās Publiskās Licences tekstā."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+#~ msgstr ""
+#~ "GNU Vispārējās Publiskās Licence ir pieejama kopā ar %s instalāciju. Ja "
+#~ "tā jums nav pieejama, jūs to varat iegūt no Free Software Foundation, "
+#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "Jums vajadzēja saņemt GNU Vispārējo Publisko Licenci ar šo programmu. Ja "
+#~ "nē, skatiet <http://www.gnu.org/licenses/>."
+
+#~ msgid "Set game scenario"
+#~ msgstr "Iestatīt spēles scenāriju"
+
+#~ msgid "NAME"
+#~ msgstr "VĀRDS"
+
+#~ msgid "Set game configuration"
+#~ msgstr "Iestatīt spēles konfigurāciju"
+
+#~ msgid "Initial window position"
+#~ msgstr "Sākotnējais loga novietojums"
+
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "_Game"
+#~ msgstr "_Spēle"
+
+#~ msgid "_View"
+#~ msgstr "_Skats"
+
+#~ msgid "_Move"
+#~ msgstr "_Iet"
+
+#~ msgid "_Settings"
+#~ msgstr "Ie_statījumi"
+
+#~ msgid "_Teleport"
+#~ msgstr "_Teleportēties"
+
+#~ msgid "Teleport, safely if possible"
+#~ msgstr "Teleportēties droši, ja iespējams"
+
+#~ msgid "_Random"
+#~ msgstr "_Nejauši"
+
+#~ msgid "_Wait"
+#~ msgstr "_Gaidīt"
+
+#~ msgid "_Toolbar"
+#~ msgstr "_Rīkjosla"
+
+#~ msgid "Show or hide the toolbar"
+#~ msgstr "Rādīt vai slēpt rīkjoslu"
+
+#~ msgid "Robots Preferences"
+#~ msgstr "Robotu iestatījumi"
+
+#~ msgid "Score:"
+#~ msgstr "Rezultāts:"
+
+#~ msgid "Safe Teleports:"
+#~ msgstr "Drošie teleporti:"
+
+#~ msgid "Level:"
+#~ msgstr "Līmenis:"
 
 #~ msgctxt "score-dialog"
 #~ msgid "Name"
@@ -900,9 +871,6 @@ msgstr "Atlicis:"
 
 #~ msgid "Difficulty of the opponent chess engine"
 #~ msgstr "Grūtība pretinieka šaha dzinim"
-
-#~ msgid "Preferences"
-#~ msgstr "Iestatījumi"
 
 #~ msgid "Play as:"
 #~ msgstr "Spēlē kā:"
@@ -1419,9 +1387,6 @@ msgstr "Atlicis:"
 
 #~ msgid "Five or more"
 #~ msgstr "Vismaz pieci"
-
-#~ msgid "Scores"
-#~ msgstr "Rezultāti"
 
 #~ msgid "Next:"
 #~ msgstr "Nākamais:"
@@ -1992,12 +1957,6 @@ msgstr "Atlicis:"
 #~ msgid "_Preferences"
 #~ msgstr "_Iestatījumi"
 
-#~ msgid "_About"
-#~ msgstr "P_ar"
-
-#~ msgid "_Quit"
-#~ msgstr "_Iziet"
-
 #~ msgid "Hint"
 #~ msgstr "Padoms"
 
@@ -2489,9 +2448,6 @@ msgstr "Atlicis:"
 #~ msgid "Size:"
 #~ msgstr "Izmērs:"
 
-#~ msgid "Do you want to start a new game?"
-#~ msgstr "Vai vēlies sākt jaunu spēli?"
-
 #~ msgid "If you start a new game, your current progress will be lost."
 #~ msgstr "Ja sāksi jaunu spēli, pašreizējais progress tiks pazaudēts."
 
@@ -2806,9 +2762,6 @@ msgstr "Atlicis:"
 
 #~ msgid "Already used! Where do you want to put that?"
 #~ msgstr "Jau izlietots! Kur vēlies to novietot?"
-
-#~ msgid "Score: %d"
-#~ msgstr "Rezultāts: %d"
 
 #~ msgid "Field used"
 #~ msgstr "Izmantotais lauks"

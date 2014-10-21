@@ -306,7 +306,7 @@ void games_scores_dialog_set_category_description (GamesScoresDialog *self,
   lstr = g_strdup_printf ("<b>%s</b>", description);
   gtk_label_set_markup (GTK_LABEL (self->priv->label), lstr);
   gtk_label_set_use_underline (GTK_LABEL (self->priv->label), TRUE);
-  g_free(lstr);
+  g_free (lstr);
 }
 
 /**

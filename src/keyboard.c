@@ -88,10 +88,10 @@ keyboard_cb (GtkWidget * widget, GdkEventKey * event, gpointer data)
   if (event->state & (GDK_CONTROL_MASK | GDK_MOD1_MASK))
     return FALSE;
 
-  keyval = toupper(event->keyval);
+  keyval = toupper (event->keyval);
 
   for (i = 0; i < 12; ++i) {
-    if (keyval == toupper(control_keys[i])) {
+    if (keyval == toupper (control_keys[i])) {
       game_keypress (i);
       return TRUE;
     }

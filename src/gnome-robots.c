@@ -446,7 +446,7 @@ activate (GtkApplication *app, gpointer user_data)
 
   init_game ();
 
-  g_settings_sync();
+  g_settings_sync ();
 }
 
 /**

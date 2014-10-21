@@ -305,7 +305,7 @@ games_scores_backend_set_scores (GamesScoresBackend * self, GList * list)
       break;
     case GAMES_SCORES_STYLE_TIME_DESCENDING:
     case GAMES_SCORES_STYLE_TIME_ASCENDING:
-      rscore = games_score_get_value_as_time(d);
+      rscore = games_score_get_value_as_time (d);
       break;
     default:
       g_assert_not_reached ();

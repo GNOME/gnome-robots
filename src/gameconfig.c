@@ -91,7 +91,7 @@ load_config (gchar * fname)
   gcfg->description = g_string_new (bpstart2);
   g_free (bpstart2);
 
-  while (fgets (buffer, sizeof(buffer), fp) != NULL) {
+  while (fgets (buffer, sizeof (buffer), fp) != NULL) {
     if (strlen (buffer) < 3)
       continue;
 

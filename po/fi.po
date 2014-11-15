@@ -1,5 +1,5 @@
 # gnome-games Finnish Translation
-# Suomennos: http://www.gnome.fi/
+# Suomennos: https://l10n.gnome.org/teams/fi/
 # Copyright (C) 2002-2009 Free Software Foundation, Inc.
 #
 #
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-06 07:23+0000\n"
+"POT-Creation-Date: 2014-11-07 08:19+0000\n"
 "PO-Revision-Date: 2014-09-06 20:31+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -41,22 +41,18 @@ msgid "Scores"
 msgstr "Pisteet"
 
 #: ../data/app-menu.ui.h:4
-#| msgid "_Help"
 msgid "Help"
 msgstr "Ohje"
 
 #: ../data/app-menu.ui.h:5
-#| msgid "_About"
 msgid "About"
 msgstr "Tietoja"
 
 #: ../data/app-menu.ui.h:6
-#| msgid "_Quit"
 msgid "Quit"
 msgstr "Lopeta"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
-#| msgid "Robots"
 msgid "GNOME Robots"
 msgstr "Gnomen robotit"
 
@@ -401,28 +397,21 @@ msgstr ""
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
 #: ../src/gnome-robots.c:144
 #, c-format
-#| msgid "Score: %d"
 msgid "Level: %d\tScore: %d"
 msgstr "Taso: %d\tPisteet: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
 #: ../src/gnome-robots.c:155
 #, c-format
-#| msgid "Remaining:"
 msgid "(Remaining: %d)"
 msgstr "(Jäljellä: %d)"
 
 #. First line of safe teleports button label.
 #: ../src/gnome-robots.c:157
-#| msgid "Teleport randomly"
 msgid "Teleport _Safely"
 msgstr "Teleporttaa _turvallisesti"
 
 #: ../src/gnome-robots.c:202
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
 msgid ""
 "Based on classic BSD Robots\n"
 "\n"
@@ -439,7 +428,7 @@ msgstr ""
 "Ilkka Tuohela, 2006-2009\n"
 "Sami Pesonen, 2002-2005\n"
 "\n"
-"http://www.gnome.fi/\n"
+"https://l10n.gnome.org/teams/fi/\n"
 "\n"
 "Launchpad Contributions:\n"
 "  Heikki Kulhia https://launchpad.net/~hessuk\n"
@@ -453,7 +442,6 @@ msgstr ""
 "  eGetin https://launchpad.net/~egetin"
 
 #: ../src/gnome-robots.c:227
-#| msgid "Do you want to start a new game?"
 msgid "Are you sure you want to discard the current game?"
 msgstr "Haluatko varmasti hylätä nykyisen pelin?"
 
@@ -462,12 +450,10 @@ msgid "Keep _Playing"
 msgstr "Jatka _pelaamista"
 
 #: ../src/gnome-robots.c:373
-#| msgid "Teleport randomly"
 msgid "Teleport _Randomly"
 msgstr "Teleporttaa _satunnaiseen kohteeseen"
 
 #: ../src/gnome-robots.c:392
-#| msgid "Wait for the robots"
 msgid "_Wait for Robots"
 msgstr "_Odota robotteja"
 

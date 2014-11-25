@@ -5,6 +5,7 @@
  <metadata_license>CC0-1.0</metadata_license>
  <project_license>GPL-2.0+ and CC-BY-SA-3.0</project_license>
  <_name>GNOME Robots</_name>
+ <_summary>Avoid the robots and make them crash into each other</_summary>
  <description>
   <_p>
    It is the distant future – the year 2000. Evil robots are trying to kill you.

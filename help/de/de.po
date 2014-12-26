@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots manual master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-10 13:41+0000\n"
-"PO-Revision-Date: 2014-09-10 20:02+0100\n"
-"Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
+"POT-Creation-Date: 2014-11-11 08:16+0000\n"
+"PO-Revision-Date: 2014-12-15 12:25+0100\n"
+"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -125,11 +125,10 @@ msgstr "Ein neues Spiel starten"
 #. (itstool) path: media/span
 #: C/basics.page:34
 msgid "New"
-msgstr ""
+msgstr "Neu"
 
 #. (itstool) path: section/p
 #: C/basics.page:31
-#, fuzzy
 #| msgid ""
 #| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
 #| "\">New</gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></"
@@ -139,8 +138,9 @@ msgid ""
 "gui></guiseq>, click the <_:media-1/> button on the toolbar, or press "
 "<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"Wählen Sie <guiseq><gui style=\"menu\">Spiel</gui> <gui style=\"menuitem"
-"\">Neu</gui></guiseq> oder drücken Sie <keyseq><key>Strg</key><key>N</key></"
+"Wählen Sie <guiseq><gui style=\"menu\">Spiel</gui><gui style=\"menuitem"
+"\">Neu</gui></guiseq>, klicken Sie auf den Knopf <_:media-1/> in der "
+"Werkzeugleiste oder drücken Sie <keyseq><key>Strg</key><key>N</key></"
 "keyseq>, um ein neues Spiel zu starten."
 
 #. (itstool) path: section/title
@@ -322,10 +322,9 @@ msgstr "Nordwest"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:45
-#, fuzzy
 #| msgid "<key>5</key>"
 msgid "<key>y</key>"
-msgstr "<key>5</key>"
+msgstr "<key>y</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:48
@@ -334,10 +333,9 @@ msgstr "Nord"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:49
-#, fuzzy
 #| msgid "<key>5</key>"
 msgid "<key>k</key>"
-msgstr "<key>5</key>"
+msgstr "<key>k</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:52
@@ -346,10 +344,9 @@ msgstr "Nordost"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:53
-#, fuzzy
 #| msgid "<key>5</key>"
 msgid "<key>u</key>"
-msgstr "<key>5</key>"
+msgstr "<key>u</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:56
@@ -358,10 +355,9 @@ msgstr "West"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:57
-#, fuzzy
 #| msgid "<key>5</key>"
 msgid "<key>h</key>"
-msgstr "<key>5</key>"
+msgstr "<key>h</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:60
@@ -370,10 +366,9 @@ msgstr "Ost"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:61
-#, fuzzy
 #| msgid "<key>5</key>"
 msgid "<key>l</key>"
-msgstr "<key>5</key>"
+msgstr "<key>l</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:64
@@ -382,10 +377,9 @@ msgstr "Südwest"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:65
-#, fuzzy
 #| msgid "<key>5</key>"
 msgid "<key>b</key>"
-msgstr "<key>5</key>"
+msgstr "<key>b</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:68
@@ -394,10 +388,9 @@ msgstr "Süd"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:69
-#, fuzzy
 #| msgid "<key>5</key>"
 msgid "<key>j</key>"
-msgstr "<key>5</key>"
+msgstr "<key>j</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:72
@@ -406,22 +399,20 @@ msgstr "Südost"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:73
-#, fuzzy
 #| msgid "<key>End</key>"
 msgid "<key>n</key>"
-msgstr "<key>Ende</key>"
+msgstr "<key>n</key>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:76
-#, fuzzy
 #| msgid "Stay in the same position"
 msgid "Stay in the same position (one turn)"
-msgstr "Auf der aktuellen Position bleiben"
+msgstr "Auf der aktuellen Position bleiben (eine Runde)"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:77
 msgid "Space"
-msgstr ""
+msgstr "Leertaste"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:80
@@ -431,7 +422,7 @@ msgstr "Sicher teleportieren"
 #. (itstool) path: td/p
 #: C/controls-default.page:81
 msgid "<keyseq><key>Alt</key><key>s</key></keyseq>"
-msgstr ""
+msgstr "<keyseq><key>Alt</key><key>s</key></keyseq>"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:84
@@ -441,7 +432,7 @@ msgstr "Zufällig teleportieren"
 #. (itstool) path: td/p
 #: C/controls-default.page:85
 msgid "<keyseq><key>Alt</key><key>r</key></keyseq>"
-msgstr ""
+msgstr "<keyseq><key>Alt</key><key>r</key></keyseq>"
 
 #. (itstool) path: td/p
 #. (itstool) path: item/title
@@ -452,7 +443,7 @@ msgstr "Auf die Roboter warten"
 #. (itstool) path: td/p
 #: C/controls-default.page:89
 msgid "<keyseq><key>Alt</key><key>w</key></keyseq>"
-msgstr ""
+msgstr "<keyseq><key>Alt</key><key>w</key></keyseq>"
 
 #. (itstool) path: note/p
 #: C/controls-default.page:95
@@ -507,7 +498,6 @@ msgstr "Warten"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:120
-#, fuzzy
 #| msgid ""
 #| "Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
 #| "\"menu\">Move</gui> <gui style=\"menuitem\">Wait</gui></guiseq> to wait "
@@ -518,7 +508,7 @@ msgid ""
 "the enemy robots to finish making all their moves."
 msgstr ""
 "Klicken Sie auf den Knopf <_:media-1/> in der Werkzeugleiste oder wählen Sie "
-"<guiseq><gui style=\"menu\">Bewegen</gui> <gui style=\"menuitem\">Warten</"
+"<guiseq><gui style=\"menu\">Bewegen</gui><gui style=\"menuitem\">Warten</"
 "gui></guiseq>, um auf das Zugende aller gegnerischen Roboter zu warten."
 
 #. (itstool) path: item/title
@@ -528,14 +518,12 @@ msgstr "Sicheres teleportieren"
 
 #. (itstool) path: media/span
 #: C/controls-default.page:130
-#, fuzzy
 #| msgid "Teleport safely"
 msgid "Teleport"
-msgstr "Sicher teleportieren"
+msgstr "Teleportieren"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:128
-#, fuzzy
 #| msgid ""
 #| "To safely teleport, click the <_:media-1/> button on the toolbar or "
 #| "select <guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem"
@@ -546,8 +534,8 @@ msgid ""
 "gui></guiseq>."
 msgstr ""
 "Klicken Sie in der Werkzeugleiste auf den Knopf <_:media-1/>, um sicher zu "
-"teleportieren, oder wählen Sie <guiseq><gui style=\"menu\">Bewegen</gui> "
-"<gui style=\"menuitem\">Teleportieren</gui></guiseq>."
+"teleportieren, oder wählen Sie <guiseq><gui style=\"menu\">Bewegen</gui><gui "
+"style=\"menuitem\">Teleportieren</gui></guiseq>."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:135 C/moves.page:90
@@ -556,14 +544,12 @@ msgstr "Zufälliges teleportieren"
 
 #. (itstool) path: media/span
 #: C/controls-default.page:138
-#, fuzzy
 #| msgid "Random teleports"
 msgid "Random teleport"
 msgstr "Zufälliges teleportieren"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:136
-#, fuzzy
 #| msgid ""
 #| "To teleport to a random spot, click the <_:media-1/> button on the "
 #| "toolbar or select <guiseq><gui style=\"menu\">Move</gui> <gui style="
@@ -574,8 +560,8 @@ msgid ""
 "\">Random</gui></guiseq>."
 msgstr ""
 "Klicken Sie in der Werkzeugleiste auf den Knopf <_:media-1/>, um zufällig zu "
-"teleportieren, oder wählen Sie <guiseq><gui style=\"menu\">Bewegen</gui> "
-"<gui style=\"menuitem\">Zufällig</gui></guiseq>."
+"teleportieren, oder wählen Sie <guiseq><gui style=\"menu\">Bewegen</gui><gui "
+"style=\"menuitem\">Zufällig</gui></guiseq>."
 
 #. (itstool) path: info/desc
 #: C/game-types.page:18
@@ -937,27 +923,25 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/scores.page:35
-#, fuzzy
 #| msgid "<_:media-1/> Robots"
 msgid "Bats <_:media-1/>"
-msgstr "<_:media-1/> Robots"
+msgstr "Fledermäuse <_:media-1/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:39
 msgid "High-risk Robots <_:media-1/>"
-msgstr ""
+msgstr "Sehr gefährliche Roboter <_:media-1/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:44
-#, fuzzy
 #| msgid "High-risk enemies"
 msgid "High-risk gnomes <_:media-1/>"
-msgstr "Sehr gefährliche Gegner"
+msgstr "Sehr gefährliche Gnome <_:media-1/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:48
 msgid "High-risk UFOs <_:media-1/>"
-msgstr ""
+msgstr "Sehr gefährliche UFOs <_:media-1/>"
 
 #. (itstool) path: section/title
 #: C/scores.page:56
@@ -975,25 +959,24 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/scores.page:64
-#, fuzzy
 #| msgid "<_:media-1/> Robots"
 msgid "Ghosts <_:media-1/>"
-msgstr "<_:media-1/> Robots"
+msgstr "Geister <_:media-1/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:68
 msgid "Low-risk Robots <_:media-1/>"
-msgstr ""
+msgstr "Risikoarme Roboter <_:media-1/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:72
 msgid "Low-risk gnomes <_:media-1/>"
-msgstr ""
+msgstr "Risikoarme Gnome <_:media-1/>"
 
 #. (itstool) path: item/p
 #: C/scores.page:76
 msgid "Low-risk UFOs <_:media-1/>"
-msgstr ""
+msgstr "Risikoarme UFOs <_:media-1/>"
 
 #. (itstool) path: p/link
 #: C/legal.xml:4

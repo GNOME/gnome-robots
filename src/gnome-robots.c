@@ -199,7 +199,7 @@ about_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 			 "version", VERSION,
 			 "copyright", "Copyright © 1998–2008 Mark Rae\nCopyright © 2014 Michael Catanzaro",
 			 "license-type", GTK_LICENSE_GPL_2_0,
-			 "comments", _("Based on classic BSD Robots\n\nRobots is a part of GNOME Games."),
+			 "comments", _("Based on classic BSD Robots"),
 			 "authors", authors,
 			 "artists", artists,
 			 "documenters", documenters,

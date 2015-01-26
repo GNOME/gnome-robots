@@ -7,6 +7,8 @@
     <link type="guide" xref="index#play"/>
 
     <revision pkgversion="3.8" version="0.1" date="2013-05-21" status="draft"/>
+    <revision pkgversion="3.14" date="2015-01-25" status="review"/>
+
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -20,7 +22,7 @@
 
   <title>Different moves in <app>Robots</app></title>
 
-  <p>In <app>Robots</app> you can move in eight directions, wait for the
+  <p>In <app>Robots</app> you can move in one of eight directions, wait for the
   robots, or teleport. The enemy robots and the main character take turns to
   make their move. So, after each of your moves, the enemy robots try to make a
   move that gets them closer to you.</p>
@@ -28,38 +30,7 @@
 <section id="basic">
   <title>Basic moves</title>
 
-  <p>You can move in any of the following directions. Each move takes you one
-  square forward in the direction of your choice.</p>
-
-  <list>
-    <item>
-      <p>North west or up left</p>
-    </item>
-    <item>
-      <p>North or up</p>
-    </item>
-    <item>
-      <p>North east or up right</p>
-    </item>
-    <item>
-      <p>East or right</p>
-    </item>
-    <item>
-      <p>South east or down right</p>
-    </item>
-    <item>
-      <p>South or down</p>
-    </item>
-    <item>
-      <p>South west or down left</p>
-    </item>
-    <item>
-      <p>West or left</p>
-    </item>
-    <item>
-      <p>Stay in the same square</p>
-    </item>
-  </list>
+  <p>In one turn, you can move to any adjacent square. You may move diagonally.</p>
 
 </section>
 

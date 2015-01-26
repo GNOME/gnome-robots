@@ -8,6 +8,7 @@
 
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
     <revision pkgversion="3.11.90" date="2014-03-22" status="review"/>
+    <revision pkgversion="3.14" date="2015-01-25" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -31,8 +32,7 @@
   <steps>
   <title>To change the game theme and background:</title>
     <item>
-      <p>Select <guiseq><gui style="menu">Settings</gui>
-      <gui style="menuitem">Preferences</gui>
+      <p>Select <guiseq><gui style="menu">Preferences</gui>
       <gui style="menuitem">Appearance</gui></guiseq>.</p>
     </item>
     <item>
@@ -45,12 +45,5 @@
       and click <gui style="button">Select</gui>.</p>
     </item>
   </steps>
-
-  <note style="info">
-    <p>You can hide the toolbar that contains buttons to start a new game,
-    wait and teleport, by selecting <guiseq><gui style="menu">View</gui>
-    <gui style="menuitem">Toolbar</gui></guiseq>. The small tick mark next to
-    <gui>Toolbar</gui> will disappear and the toolbar will be hidden.</p>
-  </note>
 
 </page>

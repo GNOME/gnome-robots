@@ -7,6 +7,7 @@
     <link type="guide" xref="index#play"/>
 
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
+    <revision pkgversion="3.14" date="2015-01-25" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -26,8 +27,7 @@
   <steps>
   <title>To change the default keys:</title>
     <item>
-      <p>Select <guiseq><gui style="menu">Settings</gui>
-      <gui style="menuitem">Preferences</gui><gui>Keyboard</gui></guiseq>.</p>
+      <p>Select <guiseq><gui style="menu">Preferences</gui><gui style="menuitem">Keyboard</gui></guiseq>.</p>
     </item>
     <item>
       <p>In the <gui style="group">Keyboard Controls</gui> list, select the

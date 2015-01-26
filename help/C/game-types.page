@@ -7,6 +7,7 @@
     <link type="guide" xref="index#preferences"/>
     <revision pkgversion="3.8" version="0.1" date="2013-05-21" status="draft"/>
     <revision pkgversion="3.11.90" date="2014-03-26" status="review"/>
+    <revision pkgversion="3.14" date="2015-01-25" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -95,11 +96,13 @@
     </table>
     </item>
     <item>
-      <p>Check the <gui style="checkbox">Use safe moves</gui> and
-      <gui style="checkbox">Use super safe moves</gui> checkboxes if you want
-      your random teleports to be as safe as possible. This reduces the level
-      of difficulty. You can always uncheck these if you find the game too
-      easy.</p>
+      <p>If you check the <gui style="checkbox">Use safe moves</gui> checkbox,
+      the game will prevent you from moving if the move would cause a robot to
+      kill you, unless the only way to survive is to teleport. If you check the
+      <gui style="checkbox">Use super safe moves</gui> checkbox, the game will
+      prevent you from making any move in this case, so that you are forced to
+      teleport. This reduces the level of difficulty. You can always uncheck
+      these if you find the game too easy.</p>
     </item>
   </steps>
 

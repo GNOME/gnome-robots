@@ -15,20 +15,16 @@ HELP_MEDIA = \
 	figures/gnome-robots.png \
 	figures/mice-high-risk.png \
 	figures/mice-low-risk.png \
-	figures/new.png \
-	figures/random.png \
 	figures/robots-high-risk.png \
 	figures/robots-low-risk.png \
 	figures/spills-high-risk.png \
 	figures/spills-low-risk.png \
-	figures/teleport.png \
 	figures/stormclouds-high-risk.png \
 	figures/stormclouds-low-risk.png \
 	figures/toasters-high-risk.png \
 	figures/toasters-low-risk.png \
 	figures/ufo-high-risk.png \
-	figures/ufo-low-risk.png \
-	figures/wait.png
+	figures/ufo-low-risk.png
 
 
 HELP_FILES =\

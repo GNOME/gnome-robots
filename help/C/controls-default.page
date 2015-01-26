@@ -8,7 +8,7 @@
 
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
     <revision pkgversion="3.11.90" date="2014-03-25" status="review"/>
-    <revision pkgversion="3.13.3" date="2014-06-21" status="review"/>
+    <revision pkgversion="3.14" date="2015-01-25" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -117,27 +117,16 @@
     </item>
     <item>
     <title>Wait for the robots</title>
-      <p>Click the <media type="image" its:translate="no"
-      src="figures/wait.png"><span its:translate="yes">Wait</span></media>
-      button on the toolbar or select
-      <guiseq><gui style="menu">Move</gui><gui style="menuitem">Wait</gui></guiseq>
-      to wait for the enemy robots to finish making all their moves.</p>
+      <p>Click the <gui>Wait for Robots</gui>
+      button to wait for the enemy robots to finish making all their moves.</p>
     </item>
     <item>
     <title>Safe teleports</title>
-      <p>To safely teleport, click the <media type="image" its:translate="no"
-      src="figures/teleport.png"><span
-      its:translate="yes">Teleport</span></media> button on the toolbar or
-      select <guiseq><gui style="menu">Move</gui><gui
-      style="menuitem">Teleport</gui></guiseq>.</p>
+      <p>To safely teleport, click the <gui>Teleport Safely</gui> button.</p>
     </item>
     <item>
     <title>Random teleports</title>
-      <p>To teleport to a random spot, click the <media type="image"
-      its:translate="no" src="figures/random.png"><span
-      its:translate="yes">Random teleport</span></media> button on the toolbar
-      or select <guiseq><gui style="menu">Move</gui><gui
-      style="menuitem">Random</gui></guiseq>.</p>
+      <p>To teleport to a random spot, click the <gui>Teleport Randomly</gui> button.</p>
     </item>
   </terms>
 

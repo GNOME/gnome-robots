@@ -5,6 +5,7 @@
 
   <info>
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
+    <revision pkgversion="3.14" date="2015-01-25" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -23,8 +24,8 @@
 
   <p><app>Robots</app> is based on the UNIX command-line game of the same
   name. The aim of the game is to destroy all the robots by getting them to
-  crash into each other or into junk-heaps from previous collisions, while
-  stopping them from crashing into you.</p>
+  crash into each other or into junk heaps from previous collisions, without
+  them crashing into you.</p>
 
   <section id="play" style="2column">
     <title>Game play</title>

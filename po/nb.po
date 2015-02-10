@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of gnome-robots.
 # Copyright © 1998-2002 Free Software Foundation, Inc.
-# Kjartan Maraas <kmaraas@gnome.org>, 1998-2014.
+# Kjartan Maraas <kmaraas@gnome.org>, 1998-2015.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots 3.15.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-17 17:10+0100\n"
-"PO-Revision-Date: 2014-11-17 17:10+0100\n"
+"POT-Creation-Date: 2015-02-10 17:50+0100\n"
+"PO-Revision-Date: 2015-02-10 17:51+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -45,13 +45,17 @@ msgstr "Avslutt"
 msgid "GNOME Robots"
 msgstr "GNOME Roboter"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Unngå roboter og få dem til å krasje med hverandre"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
 msgstr ""
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -60,7 +64,7 @@ msgid ""
 "device."
 msgstr ""
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -71,10 +75,6 @@ msgstr ""
 #: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
 msgid "Robots"
 msgstr "Roboter"
-
-#: ../data/gnome-robots.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Unngå roboter og få dem til å krasje med hverandre"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
@@ -391,14 +391,8 @@ msgid "Teleport _Safely"
 msgstr "Teleporter _trygt"
 
 #: ../src/gnome-robots.c:202
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Basert på det klassiske spillet BSD Robots\n"
-"\n"
-"Robots er en del av GNOME-spill."
+msgid "Based on classic BSD Robots"
+msgstr "Basert på det klassiske spillet BSD Robots"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"

@@ -12,29 +12,30 @@
 # Valek Filippov <frob@df.ru> 2000-2002
 # Nickolay V. Shmyrev <nshmyrev@yandex.ru>
 # Yuri Myasoedov <omerta13@yandex.ru>, 2012, 2013.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games trunk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-06-28 07:18+0000\n"
-"PO-Revision-Date: 2014-06-28 18:21+0400\n"
-"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
+"POT-Creation-Date: 2015-02-12 20:28+0000\n"
+"PO-Revision-Date: 2015-02-11 11:41+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.6.5\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
 msgid "New Game"
 msgstr "Новая игра"
 
-#: ../data/app-menu.ui.h:2 ../src/properties.c:394
+#: ../data/app-menu.ui.h:2 ../src/properties.c:393
 msgid "Preferences"
 msgstr "Параметры"
 
@@ -43,7 +44,6 @@ msgid "Scores"
 msgstr "Результаты"
 
 #: ../data/app-menu.ui.h:4
-#| msgid "_Help"
 msgid "Help"
 msgstr "Справка"
 
@@ -59,7 +59,11 @@ msgstr "Закончить"
 msgid "GNOME Robots"
 msgstr "Роботы GNOME"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Убегайте от роботов, заставляя их сталкиваться друг с другом. "
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
@@ -67,7 +71,7 @@ msgstr ""
 "Отдалённое будущее — год 2000. Злые роботы пытаются вас убить. Избегайте "
 "роботов, иначе смерть вас настигнет."
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -80,7 +84,7 @@ msgstr ""
 "Вы можете защитить себя, перемещая мусорные кучи, или скрыться с помощью "
 "портативного устройства телепорта."
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -94,10 +98,6 @@ msgstr ""
 #: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
 msgid "Robots"
 msgstr "Роботы"
-
-#: ../data/gnome-robots.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Убегайте от роботов, заставляя их сталкиваться друг с другом. "
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
@@ -170,7 +170,7 @@ msgstr "Включить звуки игры"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Включить звуки игры. Воспроизводит звуки при разных событиях в игре."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
 msgid "Key to move NW"
 msgstr "Клавиша для перемещения влево и вверх."
 
@@ -178,7 +178,7 @@ msgstr "Клавиша для перемещения влево и вверх."
 msgid "The key used to move north-west."
 msgstr "Клавиша для перемещения влево и вверх по диагонали."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
 msgid "Key to move N"
 msgstr "Клавиша для перемещения вверх."
 
@@ -186,7 +186,7 @@ msgstr "Клавиша для перемещения вверх."
 msgid "The key used to move north."
 msgstr "Клавиша для перемещения вверх."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
 msgid "Key to move NE"
 msgstr "Клавиша для перемещения вправо и вверх."
 
@@ -194,7 +194,7 @@ msgstr "Клавиша для перемещения вправо и вверх.
 msgid "The key used to move north-east."
 msgstr "Клавиша для перемещения вправо и вверх по диагонали."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
 msgid "Key to move W"
 msgstr "Клавиша для перемещения влево."
 
@@ -202,7 +202,7 @@ msgstr "Клавиша для перемещения влево."
 msgid "The key used to move west."
 msgstr "Клавиша для перемещения влево."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
 msgid "Key to hold"
 msgstr "Клавиша, чтобы остаться на месте"
 
@@ -210,7 +210,7 @@ msgstr "Клавиша, чтобы остаться на месте"
 msgid "The key used to hold still."
 msgstr "Клавиша для того, чтобы остаться на месте."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
 msgid "Key to move E"
 msgstr "Клавиша для перемещения вправо."
 
@@ -218,7 +218,7 @@ msgstr "Клавиша для перемещения вправо."
 msgid "The key used to move east."
 msgstr "Клавиша для перемещения вправо."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
 msgid "Key to move SW"
 msgstr "Клавиша для перемещения влево и вниз."
 
@@ -226,7 +226,7 @@ msgstr "Клавиша для перемещения влево и вниз."
 msgid "The key used to move south-west."
 msgstr "Клавиша для перемещения влево и вниз по диагонали."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
 msgid "Key to move S"
 msgstr "Клавиша для перемещения вниз."
 
@@ -234,7 +234,7 @@ msgstr "Клавиша для перемещения вниз."
 msgid "The key used to move south."
 msgstr "Клавиша для перемещения вниз."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:514
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
 msgid "Key to move SE"
 msgstr "Клавиша для перемещения вправо и вниз."
 
@@ -254,44 +254,44 @@ msgstr "Высота окна в пикселах"
 msgid "true if the window is maximized"
 msgstr "истинно, если окно имеет максимальный размер"
 
-#: ../src/game.c:148
+#: ../src/game.c:147
 msgid "Game over!"
 msgstr "Игра закончена!"
 
-#: ../src/game.c:150
+#: ../src/game.c:149
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr ""
 "К сожалению, ваш результат недостаточен для попадания в десятку лучших."
 
-#: ../src/game.c:151
+#: ../src/game.c:150
 msgid "_Quit"
 msgstr "_Закончить"
 
-#: ../src/game.c:152 ../src/gnome-robots.c:231
+#: ../src/game.c:151 ../src/gnome-robots.c:231
 msgid "_New Game"
 msgstr "_Новая игра"
 
-#: ../src/game.c:165
+#: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Результаты игры Роботы"
 
-#: ../src/game.c:168
+#: ../src/game.c:167
 msgid "Map:"
 msgstr "Карта:"
 
-#: ../src/game.c:177
+#: ../src/game.c:176
 msgid "Congratulations!"
 msgstr "Поздравляем!"
 
-#: ../src/game.c:178
+#: ../src/game.c:177
 msgid "Your score is the best!"
 msgstr "Ваш результат - лучший!"
 
-#: ../src/game.c:179
+#: ../src/game.c:178
 msgid "Your score has made the top ten."
 msgstr "Ваш результат попал в десятку лучших."
 
-#: ../src/game.c:406 ../src/game.c:422
+#: ../src/game.c:405 ../src/game.c:421
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -300,11 +300,11 @@ msgstr ""
 "Но удастся ли вам это ещё раз?"
 
 #. This should never happen.
-#: ../src/game.c:1176
+#: ../src/game.c:1175
 msgid "There are no teleport locations left!!"
 msgstr "Нет больше мест для телепортации!!"
 
-#: ../src/game.c:1204
+#: ../src/game.c:1203
 msgid "There are no safe locations to teleport to!!"
 msgstr "Нет безопасных мест для телепортации!!"
 
@@ -405,25 +405,17 @@ msgstr "Уровень: %d\tСчёт: %d"
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
 #: ../src/gnome-robots.c:155
 #, c-format
-#| msgid "Remaining:"
 msgid "(Remaining: %d)"
 msgstr "(Осталось: %d)"
 
 #. First line of safe teleports button label.
 #: ../src/gnome-robots.c:157
-#| msgid "Teleport randomly"
 msgid "Teleport _Safely"
 msgstr "_Безопасная телепортация"
 
 #: ../src/gnome-robots.c:202
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Основано на классических роботах из BSD\n"
-"\n"
-"Роботы являются частью пакета GNOME Games."
+msgid "Based on classic BSD Robots"
+msgstr "Основано на классических роботах из BSD"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"
@@ -443,12 +435,10 @@ msgid "Keep _Playing"
 msgstr "Вернуться к _игре"
 
 #: ../src/gnome-robots.c:373
-#| msgid "Teleport randomly"
 msgid "Teleport _Randomly"
 msgstr "_Случайная телепортация"
 
 #: ../src/gnome-robots.c:392
-#| msgid "Wait for the robots"
 msgid "_Wait for Robots"
 msgstr "_Подождать роботов"
 
@@ -481,55 +471,55 @@ msgstr ""
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Не удалось найти файл изображения «%s»\n"
 
-#: ../src/properties.c:418
+#: ../src/properties.c:417
 msgid "Game Type"
 msgstr "Тип игры"
 
-#: ../src/properties.c:428
+#: ../src/properties.c:427
 msgid "_Use safe moves"
 msgstr "Использовать _безопасные ходы"
 
-#: ../src/properties.c:433
+#: ../src/properties.c:432
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Предотвращать случайные ходы, которые закончатся смертью."
 
-#: ../src/properties.c:436
+#: ../src/properties.c:435
 msgid "U_se super safe moves"
 msgstr "Использовать _особо безопасные ходы"
 
-#: ../src/properties.c:443
+#: ../src/properties.c:442
 msgid "Prevents all moves that result in getting killed."
 msgstr "Предотвращать все ходы, которые закончатся смертью."
 
-#: ../src/properties.c:449
+#: ../src/properties.c:448
 msgid "_Enable sounds"
 msgstr "Включить _звуки"
 
-#: ../src/properties.c:455
+#: ../src/properties.c:454
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Проигрывать звук для событий победы и смерти."
 
-#: ../src/properties.c:457
+#: ../src/properties.c:456
 msgid "Game"
 msgstr "Игра"
 
-#: ../src/properties.c:470
+#: ../src/properties.c:469
 msgid "_Image theme:"
 msgstr "_Тема роботов:"
 
-#: ../src/properties.c:482
+#: ../src/properties.c:481
 msgid "_Background color:"
 msgstr "_Цвет фона:"
 
-#: ../src/properties.c:494
+#: ../src/properties.c:493
 msgid "Appearance"
 msgstr "Внешний вид"
 
-#: ../src/properties.c:523
+#: ../src/properties.c:522
 msgid "_Restore Defaults"
 msgstr "_Восстановить параметры по умолчанию"
 
-#: ../src/properties.c:528
+#: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Клавиатура"
 

@@ -5,15 +5,15 @@
 # Matej Erman <matej.erman@guest.arnes.si>, 2002.
 # Tadej Janež <tadej_janez@email.si>, 2003.
 # Matic Žgur <mr.zgur@gmail.com>, 2006-2007.
-# Matej Urbančič <mateju@svn.gnome.org>, 2007-2014.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007-2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-12-26 16:12+0000\n"
-"PO-Revision-Date: 2014-12-26 18:53+0100\n"
+"POT-Creation-Date: 2015-02-15 08:25+0000\n"
+"PO-Revision-Date: 2015-02-15 21:01+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -54,14 +54,18 @@ msgstr "Končaj"
 msgid "GNOME Robots"
 msgstr "GNOME Roboti"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Izogibajte se robotom in poskrbite, da se zaletijo en v drugega"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
 msgstr ""
 "V daljni prihodnosti – letu 3000. Zlobni roboti poskušajo uničiti življenje."
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -74,7 +78,7 @@ msgstr ""
 "tudi nepopravljivo poškodujejo. Mogoče je tudi premikati nekatere ovire ali "
 "pa se premakniti na drugo mesto na polju s teleporterjem."
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -88,10 +92,6 @@ msgstr ""
 #: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
 msgid "Robots"
 msgstr "Roboti"
-
-#: ../data/gnome-robots.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Izogibajte se robotom in poskrbite, da se zaletijo en v drugega"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
@@ -407,14 +407,8 @@ msgid "Teleport _Safely"
 msgstr "Teleportiraj _varno"
 
 #: ../src/gnome-robots.c:202
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Igra je zasnovana po znani igri BSD Roboti.\n"
-"\n"
-"Igra roboti je del iger GNOME."
+msgid "Based on classic BSD Robots"
+msgstr "Igra je zasnovana po znani igri BSD Roboti."
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"

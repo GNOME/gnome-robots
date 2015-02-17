@@ -1,19 +1,19 @@
 # Swedish messages for gnome-games.
-# Copyright © 1999-2014 Free Software Foundation, Inc.
+# Copyright © 1999-2015 Free Software Foundation, Inc.
 # Andreas Persenius <ndap@swipnet.se>, 1999.
 # Andreas Hyden <a.hyden@cyberpoint.se>
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 2000.
 # Christian Rose <menthos@menthos.com>, 2000, 2001, 2002, 2003, 2004, 2005.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-07-24 07:22+0000\n"
-"PO-Revision-Date: 2014-07-28 21:49+0100\n"
+"POT-Creation-Date: 2015-01-27 08:22+0000\n"
+"PO-Revision-Date: 2015-01-27 11:34+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -21,24 +21,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.7.3\n"
 
 #: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
 msgid "New Game"
 msgstr "Nytt spel"
 
 #: ../data/app-menu.ui.h:2 ../src/properties.c:393
-#| msgid "Robots Preferences"
 msgid "Preferences"
 msgstr "Inställningar"
 
 #: ../data/app-menu.ui.h:3
-#| msgid "_Scores"
 msgid "Scores"
 msgstr "Poänglista"
 
 #: ../data/app-menu.ui.h:4
-#| msgid "_Help"
 msgid "Help"
 msgstr "Hjälp"
 
@@ -54,46 +51,44 @@ msgstr "Avsluta"
 msgid "GNOME Robots"
 msgstr "GNOME Robotar"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Undvik robotarna och få dem att krocka med varandra"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
-"It is the distant future – the year 2000. Evil robots are trying to kill "
-"you. Avoid the robots or face certain death."
+"It is the distant future – the year 2000. Evil robots are trying to kill you. "
+"Avoid the robots or face certain death."
 msgstr ""
 "Det är den avlägsna framtiden – år 2000. Onda robotar försöker att döda dig. "
 "Undvik robotarna eller möt en säker död."
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
 "destruction, or into the junk piles that result. You can defend yourself by "
-"moving the junk piles, or escape to safety with your handy teleportation "
-"device."
+"moving the junk piles, or escape to safety with your handy teleportation device."
 msgstr ""
-"Som tur är så är robotarna extremt dumma och kommer alltid att röra sig "
-"direkt mot dig. Lura dem att kollidera med varandra, vilket leder till deras "
-"förstörelse, eller de resulterande skrothögarna. Du kan försvara dig genom "
-"att flytta skrothögarna, eller fly till säkerhet med din praktiska "
-"teleportör."
+"Som tur är så är robotarna extremt dumma och kommer alltid att röra sig direkt "
+"mot dig. Lura dem att kollidera med varandra, vilket leder till deras "
+"förstörelse, eller de resulterande skrothögarna. Du kan försvara dig genom att "
+"flytta skrothögarna, eller fly till säkerhet med din praktiska teleportör."
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
-"Your supply of safe teleports is limited, and once you run out, "
-"teleportation could land you right next to a robot, who will kill you. "
-"Survive for as long as possible!"
+"Your supply of safe teleports is limited, and once you run out, teleportation "
+"could land you right next to a robot, who will kill you. Survive for as long as "
+"possible!"
 msgstr ""
 "Ditt lager av säkra teleporter är begränsad, och när dessa är slut kan "
-"teleportering placera dig intill en robot som kommer att döda dig. Överlev "
-"så länge som möjligt!"
+"teleportering placera dig intill en robot som kommer att döda dig. Överlev så "
+"länge som möjligt!"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
 #: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
 msgid "Robots"
 msgstr "Robotar"
-
-#: ../data/gnome-robots.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Undvik robotarna och få dem att krocka med varandra"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
@@ -137,14 +132,14 @@ msgstr "Använd säkra förflyttningar"
 
 #: ../data/org.gnome.robots.gschema.xml.h:10
 msgid ""
-"Use safe moves. The safe moves option will help you to avoid being killed "
-"due to a mistake. If you try to make a move that would lead to your death "
-"when there is a safe move available you will not be allowed to proceed."
+"Use safe moves. The safe moves option will help you to avoid being killed due to "
+"a mistake. If you try to make a move that would lead to your death when there is "
+"a safe move available you will not be allowed to proceed."
 msgstr ""
-"Använd säkra förflyttningar. Alternativet säkra förflyttningar hjälper dig "
-"att undvika att dödas av misstag. Om du försöker att göra en förflyttning "
-"som skulle leda till att du dör och det finns en säker förflyttning "
-"tillgänglig kommer du inte att tillåtas att fortsätta."
+"Använd säkra förflyttningar. Alternativet säkra förflyttningar hjälper dig att "
+"undvika att dödas av misstag. Om du försöker att göra en förflyttning som skulle "
+"leda till att du dör och det finns en säker förflyttning tillgänglig kommer du "
+"inte att tillåtas att fortsätta."
 
 #: ../data/org.gnome.robots.gschema.xml.h:11
 msgid "Use super safe moves"
@@ -152,11 +147,11 @@ msgstr "Använd supersäkra förflyttningar"
 
 #: ../data/org.gnome.robots.gschema.xml.h:12
 msgid ""
-"Use super safe moves. The player is alerted when there is no safe move and "
-"the only option is to teleport out."
+"Use super safe moves. The player is alerted when there is no safe move and the "
+"only option is to teleport out."
 msgstr ""
-"Använd supersäkra förflyttningar. Spelaren varnas då det inte finns något "
-"säkert drag och det enda alternativet är att teleportera ut."
+"Använd supersäkra förflyttningar. Spelaren varnas då det inte finns något säkert "
+"drag och det enda alternativet är att teleportera ut."
 
 #: ../data/org.gnome.robots.gschema.xml.h:13
 msgid "Enable game sounds"
@@ -164,8 +159,7 @@ msgstr "Aktivera spelljud"
 
 #: ../data/org.gnome.robots.gschema.xml.h:14
 msgid "Enable game sounds. Play sounds for various events throughout the game."
-msgstr ""
-"Aktivera spelljud. Spela ljud för diverse händelser under spelets gång."
+msgstr "Aktivera spelljud. Spela ljud för diverse händelser under spelets gång."
 
 #: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
 msgid "Key to move NW"
@@ -257,8 +251,7 @@ msgstr "Spelet är över!"
 
 #: ../src/game.c:149
 msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr ""
-"Bra jobbat, men tyvärr hamnade inte ditt poängresultat bland de tio bästa."
+msgstr "Bra jobbat, men tyvärr hamnade inte ditt poängresultat bland de tio bästa."
 
 #: ../src/game.c:150
 msgid "_Quit"
@@ -402,25 +395,17 @@ msgstr "Nivå: %d\tPoäng: %d"
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
 #: ../src/gnome-robots.c:155
 #, c-format
-#| msgid "Remaining:"
 msgid "(Remaining: %d)"
 msgstr "(Kvarvarande: %d)"
 
 #. First line of safe teleports button label.
 #: ../src/gnome-robots.c:157
-#| msgid "Teleport randomly"
 msgid "Teleport _Safely"
 msgstr "Teleportera _säkert"
 
 #: ../src/gnome-robots.c:202
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Baserad på klassiska BSD-robotar\n"
-"\n"
-"Robotar är en del av GNOME Games."
+msgid "Based on classic BSD Robots"
+msgstr "Baserad på klassiska BSD-robotar"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"
@@ -443,12 +428,10 @@ msgid "Keep _Playing"
 msgstr "Fortsätt s_pela"
 
 #: ../src/gnome-robots.c:373
-#| msgid "Teleport randomly"
 msgid "Teleport _Randomly"
 msgstr "Teleporte_ra slumpmässigt"
 
 #: ../src/gnome-robots.c:392
-#| msgid "Wait for the robots"
 msgid "_Wait for Robots"
 msgstr "_Vänta på robotarna"
 
@@ -458,8 +441,8 @@ msgstr "Inga speldata kunde hittas."
 
 #: ../src/gnome-robots.c:422
 msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
+"The program Robots was unable to find any valid game configuration files. Please "
+"check that the program is installed correctly."
 msgstr ""
 "Programmet Robotar kunde inte hitta några giltiga spelkonfigurationsfiler. "
 "Kontrollera att programmet installerats korrekt."
@@ -470,8 +453,8 @@ msgstr "En del grafikfiler saknas eller är skadade."
 
 #: ../src/gnome-robots.c:440
 msgid ""
-"The program Robots was unable to load all the necessary graphics files. "
-"Please check that the program is installed correctly."
+"The program Robots was unable to load all the necessary graphics files. Please "
+"check that the program is installed correctly."
 msgstr ""
 "Programmet Robotar kunde inte läsa in alla de grafikfiler som behövs. "
 "Kontrollera att programmet installerats korrekt."
@@ -532,21 +515,3 @@ msgstr "_Återställ standardalternativen"
 #: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Tangentbord"
-
-#~ msgid "Key to teleport"
-#~ msgstr "Tangent för att teleportera"
-
-#~ msgid "The key used to teleport safely (if possible)."
-#~ msgstr "Tangenten för att teleportera säkert (om möjligt)."
-
-#~ msgid "Key to teleport randomly"
-#~ msgstr "Tangent för att teleportera slumpmässigt"
-
-#~ msgid "The key used to teleport randomly."
-#~ msgstr "Tangenten för att teleportera slumpmässigt."
-
-#~ msgid "Key to wait"
-#~ msgstr "Tangent för att vänta"
-
-#~ msgid "The key used to wait."
-#~ msgstr "Tangenten för att vänta."

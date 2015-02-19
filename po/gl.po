@@ -10,13 +10,13 @@
 # Antón Méixome <meixome@mancomun.org>, 2009.
 # Fran Diéguez <frandieguez@gnome.org>, 2009, 2010, 2011.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2011, 2012, 2013, 2014.
+# Fran Dieguez <frandieguez@gnome.org>, 2011, 2012, 2013, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games-master-po-gl-54590\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-25 22:25+0200\n"
-"PO-Revision-Date: 2014-08-25 22:26+0200\n"
+"POT-Creation-Date: 2015-02-19 10:47+0100\n"
+"PO-Revision-Date: 2015-02-19 10:48+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -55,7 +55,11 @@ msgstr "Saír"
 msgid "GNOME Robots"
 msgstr "Robots de GNOME"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Evitar os robots e facer que choquen entre eles"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
@@ -63,7 +67,7 @@ msgstr ""
 "É un futuro distante - o ano 2000. Os robots demoníacos están tentando "
 "matarte. Evita os robots ou verás a morte."
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -76,7 +80,7 @@ msgstr ""
 "ou, ou nas pilas de lixo ou escapa de forma segura co teu dispositivo de "
 "teletransporte."
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -90,10 +94,6 @@ msgstr ""
 #: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
 msgid "Robots"
 msgstr "Robots"
-
-#: ../data/gnome-robots.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Evitar os robots e facer que choquen entre eles"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
@@ -414,24 +414,18 @@ msgid "Teleport _Safely"
 msgstr "Teleportarse de forma _segura"
 
 #: ../src/gnome-robots.c:202
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Beaseado no clásico BSD Robots\n"
-"\n"
-"O Robots forma parte do GNOME Games."
+msgid "Based on classic BSD Robots"
+msgstr "Baseado no clásico xogo Robots de BSD"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"
 msgstr ""
+"Fran Dieguez <frandieguez@gnome.org>, 2009-2015;\n"
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.\n"
-"Fran Diéguez <frandieguez@ubuntu.com>, 2009, 2010, 2011, 2012;\n"
 "Antón Méixome <meixome@mancomun.org>, 2009.\n"
 "Suso Baleato <suso.baleato@xunta.es>, 2009.\n"
-"Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun."
-"org>, 2009.\n"
+"Mancomún - Centro de Referencia e Servizos de Software Libre "
+"<g11n@mancomun.org>, 2009.\n"
 "Ignacio Casal Quinteiro <icq@svn.gnome.org>, 2008.\n"
 "Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2005, 2006.\n"
 "Jesús Bravo Álvarez <jba@pobox.com>, 2000.\n"
@@ -535,6 +529,15 @@ msgstr "_Restaurar as predefinicións"
 #: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Teclado"
+
+#~ msgid ""
+#~ "Based on classic BSD Robots\n"
+#~ "\n"
+#~ "Robots is a part of GNOME Games."
+#~ msgstr ""
+#~ "Beaseado no clásico BSD Robots\n"
+#~ "\n"
+#~ "O Robots forma parte do GNOME Games."
 
 #~ msgid "Key to teleport"
 #~ msgstr "Tecla para teleportarse"
@@ -3344,9 +3347,6 @@ msgstr "Teclado"
 
 #~ msgid "points"
 #~ msgstr "puntos"
-
-#~ msgid "classic robots"
-#~ msgstr "robots clásicos"
 
 #~ msgid "robots2"
 #~ msgstr "robots2"

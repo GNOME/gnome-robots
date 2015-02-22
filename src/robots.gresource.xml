@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <!-- <gresource prefix="/org/gnome/robots/ui">
+    <file preprocess="xml-stripblanks" alias="robots.ui">../data/robots.ui</file>
+    <file alias="robots.css">../data/robots.css</file>
+  </gresource> -->
+  <gresource prefix="/org/gnome/robots/gtk">
+    <file preprocess="xml-stripblanks" alias="menus.ui">../data/app-menu.ui</file>
+  </gresource>
+</gresources>

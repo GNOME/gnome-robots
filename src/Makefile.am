@@ -44,7 +44,13 @@ gnome_robots_SOURCES = \
 	cursor-right.h \
 	cursor-up.h \
 	cursor-up-left.h \
-	cursor-up-right.h
+	cursor-up-right.h \
+	$(BUILT_SOURCES)
+
+BUILT_SOURCES = robots-resources.c
+
+robots-resources.c: $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies robots.gresource.xml)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source robots.gresource.xml
 
 gnome_robots_CPPFLAGS = \
 	-I$(top_srcdir) \
@@ -60,5 +66,9 @@ gnome_robots_CFLAGS = \
 gnome_robots_LDADD = \
 	$(ROBOTS_LIBS) \
 	-lm
+
+MAINTAINERCLEANFILES = robots-resources.c
+
+EXTRA_DIST = robots.gresource.xml
 
 -include $(top_srcdir)/git.mk

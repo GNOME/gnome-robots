@@ -324,8 +324,6 @@ activate (GtkApplication *app, gpointer user_data)
   GtkWidget *errordialog, *vbox, *hbox, *label, *button, *gridframe;
   GtkSizeGroup *size_group;
   GtkStyleContext *style_context;
-  GtkBuilder *builder;
-  GMenuModel *appmenu;
 
   headerbar = gtk_header_bar_new ();
   gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Robots"));
@@ -341,11 +339,6 @@ activate (GtkApplication *app, gpointer user_data)
 
   g_action_map_add_action_entries (G_ACTION_MAP (app), app_entries, G_N_ELEMENTS (app_entries), app);
   g_action_map_add_action_entries (G_ACTION_MAP (window), win_entries, G_N_ELEMENTS (win_entries), app);
-
-  builder = gtk_builder_new_from_file (g_build_filename (DATA_DIRECTORY, "app-menu.ui", NULL));
-  appmenu = G_MENU_MODEL (gtk_builder_get_object (builder, "appmenu"));
-  gtk_application_set_app_menu (app, appmenu);
-  g_object_unref (builder);
 
   make_cursors ();
 

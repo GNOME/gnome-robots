@@ -1,5 +1,8 @@
 SUBDIRS = icons
 
+dist_noinst_DATA = \
+	app-menu.ui
+
 gsettings_SCHEMAS = org.gnome.robots.gschema.xml
 @GSETTINGS_RULES@
 
@@ -59,18 +62,15 @@ appstream_XML = $(appstream_in_files:.xml.in=.xml)
 @APPSTREAM_XML_RULES@
 @INTLTOOL_XML_RULE@
 
-pkgdata_DATA = app-menu.ui
-
 EXTRA_DIST = $(cursor_files) \
-	     $(appstream_in_files) \
+             $(appstream_in_files) \
              $(pixmap_DATA) \
              $(sounds_DATA) \
              $(theme_DATA) \
              $(desktop_in_files) \
              $(config_DATA) \
              $(gsettings_SCHEMAS) \
-             $(man_MANS) \
-             $(pkgdata_DATA)
+             $(man_MANS)
 
 CLEANFILES = \
 	$(appstream_XML) \

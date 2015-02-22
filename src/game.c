@@ -24,6 +24,7 @@
 #include <stdlib.h>
 #include <math.h>
 
+#include <games-support.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
@@ -36,7 +37,6 @@
 #include "properties.h"
 #include "graphics.h"
 #include "cursors.h"
-#include "games-scores.h"
 
 /**********************************************************************/
 /* Exported Variables                                                 */

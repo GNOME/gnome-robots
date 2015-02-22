@@ -23,6 +23,7 @@
 
 #include <string.h>
 
+#include <games-support.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
@@ -36,7 +37,6 @@
 #include "game.h"
 #include "games-file-list.h"
 #include "games-controls.h"
-#include "games-scores.h"
 
 
 /**********************************************************************/

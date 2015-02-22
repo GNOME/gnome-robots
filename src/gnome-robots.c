@@ -22,6 +22,8 @@
 
 #include <config.h>
 
+#include "gnome-robots.h"
+
 #include <sys/time.h>
 #include <string.h>
 #include <stdlib.h>
@@ -38,7 +40,6 @@
 #include "game.h"
 #include "cursors.h"
 #include "games-gridframe.h"
-#include "games-scores.h"
 
 /* Minimum sizes. */
 #define MINIMUM_TILE_WIDTH   8
@@ -172,8 +173,8 @@ update_game_status (gint score, gint current_level, gint safes)
   g_free (button_text);
 }
 
-const gchar
-*category_name_from_key (const gchar* key)
+const gchar *
+category_name_from_key (const gchar* key)
 {
   int i;
   for (i = 0; i < no_categories; i++)

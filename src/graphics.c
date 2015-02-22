@@ -21,6 +21,7 @@
 
 #include <config.h>
 
+#include <games-support.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
@@ -38,7 +39,6 @@
 #include "gnome-robots.h"
 #include "properties.h"
 #include "games-preimage.h"
-#include "games-scores.h"
 
 /**********************************************************************/
 

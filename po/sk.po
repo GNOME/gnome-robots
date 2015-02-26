@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-21 08:39+0000\n"
-"PO-Revision-Date: 2015-02-21 18:31+0100\n"
+"POT-Creation-Date: 2015-02-26 08:32+0000\n"
+"PO-Revision-Date: 2015-02-26 12:37+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -21,29 +21,29 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 "X-Generator: Poedit 1.7.4\n"
 
-#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Nová hra"
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "_Nová hra"
 
-#: ../data/app-menu.ui.h:2 ../src/properties.c:393
-msgid "Preferences"
-msgstr "Nastavenia"
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Nastavenia"
 
 #: ../data/app-menu.ui.h:3
-msgid "Scores"
-msgstr "Skóre"
+msgid "_Scores"
+msgstr "_Skóre"
 
 #: ../data/app-menu.ui.h:4
-msgid "Help"
-msgstr "Pomocník"
+msgid "_Help"
+msgstr "_Pomocník"
 
 #: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "O programe"
+msgid "_About"
+msgstr "_O programe"
 
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Ukončiť"
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "_Ukončiť"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -72,7 +72,7 @@ msgid ""
 msgstr ""
 "Používanie bezpečných teleportov je obmedzené, a ak ho použijete,  teleportácia Vás môže umiestniť vedľa robota, ktorý Vás zabije. Prežite čo najdlhšie!"
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198 ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198 ../src/gnome-robots.c:300 ../src/gnome-robots.c:329
 msgid "Robots"
 msgstr "Roboti"
 
@@ -232,14 +232,6 @@ msgstr "Koniec hry!"
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr "Dobrá práca, ale bohužiaľ vaše skóre nie je v prvej desiatke."
 
-#: ../src/game.c:150
-msgid "_Quit"
-msgstr "_Ukončiť"
-
-#: ../src/game.c:151 ../src/gnome-robots.c:231
-msgid "_New Game"
-msgstr "_Nová hra"
-
 #: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Najlepší v hre Roboti"
@@ -299,6 +291,10 @@ msgstr "Skóre"
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$dm %2$ds"
+
+#: ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Nová hra"
 
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
@@ -406,27 +402,27 @@ msgstr "Naozaj chcete zahodiť aktuálnu hru?"
 msgid "Keep _Playing"
 msgstr "Pokračovať v _hraní"
 
-#: ../src/gnome-robots.c:373
+#: ../src/gnome-robots.c:366
 msgid "Teleport _Randomly"
 msgstr "Teleportovať na _náhodné miesto"
 
-#: ../src/gnome-robots.c:392
+#: ../src/gnome-robots.c:385
 msgid "_Wait for Robots"
 msgstr "Čakať na _robotov"
 
-#: ../src/gnome-robots.c:420
+#: ../src/gnome-robots.c:413
 msgid "No game data could be found."
 msgstr "Nepodarilo sa nájsť údaje hry."
 
-#: ../src/gnome-robots.c:422
+#: ../src/gnome-robots.c:415
 msgid "The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."
 msgstr "Program Roboti nebol schopný nájsť platné konfiguračné súbory hry. Skontrolujte, prosím, či je program správne nainštalovaný."
 
-#: ../src/gnome-robots.c:438
+#: ../src/gnome-robots.c:431
 msgid "Some graphics files are missing or corrupt."
 msgstr "Niektoré grafické súbory chýbajú alebo sú poškodené."
 
-#: ../src/gnome-robots.c:440
+#: ../src/gnome-robots.c:433
 msgid "The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."
 msgstr "Program Roboti nebol schopný načítať všetky potrebné grafické súbory. Skontrolujte, prosím, či je program správne nainštalovaný."
 
@@ -434,6 +430,10 @@ msgstr "Program Roboti nebol schopný načítať všetky potrebné grafické sú
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Nepodarilo sa nájsť súbor s obrázkom '%s'\n"
+
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "Nastavenia"
 
 #: ../src/properties.c:417
 msgid "Game Type"
@@ -486,6 +486,9 @@ msgstr "_Obnoviť predvolené"
 #: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Klávesnica"
+
+#~ msgid "Quit"
+#~ msgstr "Ukončiť"
 
 #~ msgid "Key to teleport"
 #~ msgstr "Kláves pre teleport"

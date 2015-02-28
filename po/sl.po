@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-15 08:25+0000\n"
-"PO-Revision-Date: 2015-02-15 21:01+0100\n"
+"POT-Creation-Date: 2015-02-28 08:29+0000\n"
+"PO-Revision-Date: 2015-02-28 21:17+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -26,29 +26,29 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,-1,-1,-1,-1,-1,81\n"
 
-#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Nova igra"
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "_Nova Igra"
 
-#: ../data/app-menu.ui.h:2 ../src/properties.c:393
-msgid "Preferences"
-msgstr "Možnosti"
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Možnosti"
 
 #: ../data/app-menu.ui.h:3
-msgid "Scores"
-msgstr "Rezultati"
+msgid "_Scores"
+msgstr "_Točke"
 
 #: ../data/app-menu.ui.h:4
-msgid "Help"
-msgstr "Pomoč"
+msgid "_Help"
+msgstr "Pomo_č"
 
 #: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "O programu"
+msgid "_About"
+msgstr "_O programu"
 
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Končaj"
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "_Končaj"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -89,7 +89,7 @@ msgstr ""
 "svetu."
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:329
 msgid "Robots"
 msgstr "Roboti"
 
@@ -256,14 +256,6 @@ msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr ""
 "Dobro delo, ampak na žalost se vaš rezultat ne uvršča med najboljših deset."
 
-#: ../src/game.c:150
-msgid "_Quit"
-msgstr "_Končaj"
-
-#: ../src/game.c:151 ../src/gnome-robots.c:231
-msgid "_New Game"
-msgstr "_Nova Igra"
-
 #: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Točke robotov"
@@ -323,6 +315,10 @@ msgstr "Rezultat"
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$dm %2$ds"
+
+#: ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Nova igra"
 
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
@@ -426,19 +422,19 @@ msgstr "Ali ste prepričani, da želite končati trenutno igro?"
 msgid "Keep _Playing"
 msgstr "Nadaljuj z _igranjem"
 
-#: ../src/gnome-robots.c:373
+#: ../src/gnome-robots.c:366
 msgid "Teleport _Randomly"
 msgstr "Teleportiraj _naključno"
 
-#: ../src/gnome-robots.c:392
+#: ../src/gnome-robots.c:385
 msgid "_Wait for Robots"
 msgstr "_Počakaj na robote"
 
-#: ../src/gnome-robots.c:420
+#: ../src/gnome-robots.c:413
 msgid "No game data could be found."
 msgstr "Ni mogoče najti igralnih podatkov."
 
-#: ../src/gnome-robots.c:422
+#: ../src/gnome-robots.c:415
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -446,11 +442,11 @@ msgstr ""
 "Ni mogoče najti datotek z veljavnimi nastavitvami za igro za program Roboti. "
 "Preverite, če je program pravilno nameščen."
 
-#: ../src/gnome-robots.c:438
+#: ../src/gnome-robots.c:431
 msgid "Some graphics files are missing or corrupt."
 msgstr "Nekatere grafične datoteke manjkajo ali pa so pokvarjene."
 
-#: ../src/gnome-robots.c:440
+#: ../src/gnome-robots.c:433
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -462,6 +458,10 @@ msgstr ""
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Ni mogoče najti datoteke s sliko '%s'\n"
+
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "Možnosti"
 
 #: ../src/properties.c:417
 msgid "Game Type"
@@ -514,6 +514,9 @@ msgstr "_Obnovi privzeto"
 #: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Tipkovnica"
+
+#~ msgid "Quit"
+#~ msgstr "Končaj"
 
 #~ msgid "Key to teleport"
 #~ msgstr "Tipka za teleportiranje"

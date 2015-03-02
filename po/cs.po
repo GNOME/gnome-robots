@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-03 08:29+0000\n"
-"PO-Revision-Date: 2015-02-03 10:47+0100\n"
+"POT-Creation-Date: 2015-03-02 20:41+0000\n"
+"PO-Revision-Date: 2015-03-02 21:57+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -35,29 +35,29 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Nová hra"
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "_Nová hra"
 
-#: ../data/app-menu.ui.h:2 ../src/properties.c:393
-msgid "Preferences"
-msgstr "Předvolby"
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Předvolby"
 
 #: ../data/app-menu.ui.h:3
-msgid "Scores"
-msgstr "Skóre"
+msgid "_Scores"
+msgstr "_Skóre"
 
 #: ../data/app-menu.ui.h:4
-msgid "Help"
-msgstr "Nápověda"
+msgid "_Help"
+msgstr "_Nápověda"
 
 #: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "O aplikaci"
+msgid "_About"
+msgstr "O _aplikaci"
 
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Ukončit"
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "U_končit"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -100,7 +100,7 @@ msgstr ""
 "zabije. Snažte se přežít jak nejdéle to půjde."
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
 msgid "Robots"
 msgstr "Roboti"
 
@@ -268,14 +268,6 @@ msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr ""
 "Dobrá práce, ale vaše skóre se bohužel nedostalo mezi deset nejlepších."
 
-#: ../src/game.c:150
-msgid "_Quit"
-msgstr "U_končit"
-
-#: ../src/game.c:151 ../src/gnome-robots.c:231
-msgid "_New Game"
-msgstr "_Nová hra"
-
 #: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Skóre Robotů"
@@ -335,6 +327,10 @@ msgstr "Skóre"
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$d min %2$d sec"
+
+#: ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Nová hra"
 
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
@@ -447,19 +443,19 @@ msgstr "Opravdu chcete zrušit současnou hru?"
 msgid "Keep _Playing"
 msgstr "_Pokračovat ve hře"
 
-#: ../src/gnome-robots.c:373
+#: ../src/gnome-robots.c:361
 msgid "Teleport _Randomly"
 msgstr "Telepo_rtovat se náhodně"
 
-#: ../src/gnome-robots.c:392
+#: ../src/gnome-robots.c:380
 msgid "_Wait for Robots"
 msgstr "Č_ekat na roboty"
 
-#: ../src/gnome-robots.c:420
+#: ../src/gnome-robots.c:408
 msgid "No game data could be found."
 msgstr "Nebyla nalezena data hry."
 
-#: ../src/gnome-robots.c:422
+#: ../src/gnome-robots.c:410
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -467,11 +463,11 @@ msgstr ""
 "Program Roboti nemohl najít platné soubory nastavení hry. Zkontrolujte "
 "prosím, zda je program správně nainstalován."
 
-#: ../src/gnome-robots.c:438
+#: ../src/gnome-robots.c:426
 msgid "Some graphics files are missing or corrupt."
 msgstr "Některé soubory grafiky chybí nebo jsou poškozeny."
 
-#: ../src/gnome-robots.c:440
+#: ../src/gnome-robots.c:428
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -483,6 +479,10 @@ msgstr ""
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Nelze nalézt soubor s bitmapou „%s“\n"
+
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "Předvolby"
 
 #: ../src/properties.c:417
 msgid "Game Type"

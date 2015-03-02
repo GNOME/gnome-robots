@@ -1,3 +1,11 @@
+3.15.91 - March 2, 2015
+=======================
+
+Dependencies: GTK+ 3.15
+
+* Use gresource, other code improvements (Arnaud Bonatti)
+* Updated translations
+
 3.15.90 - February 16, 2015
 ===========================
 

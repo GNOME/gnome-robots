@@ -287,11 +287,6 @@ startup (GtkApplication *app, gpointer user_data)
 {
   struct timeval tv;
 
-  setlocale (LC_ALL, "");
-  bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
-  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-  textdomain (GETTEXT_PACKAGE);
-
   games_scores_startup ();
 
   gettimeofday (&tv, NULL);
@@ -456,6 +451,11 @@ activate (GtkApplication *app, gpointer user_data)
 int
 main (int argc, char *argv[])
 {
+  setlocale (LC_ALL, "");
+  bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+  bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+  textdomain (GETTEXT_PACKAGE);
+
   GtkApplication *app;
 
   app = gtk_application_new ("org.gnome.robots", G_APPLICATION_FLAGS_NONE);

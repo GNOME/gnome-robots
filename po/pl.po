@@ -15,14 +15,14 @@
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008.
 # Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010.
 # Wojciech Kapusta <wkapusta@aviary.pl>, 2009.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2014.
-# Aviary.pl <gnomepl@aviary.pl>, 2007-2014.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2015.
+# Aviary.pl <gnomepl@aviary.pl>, 2007-2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-07 04:31+0200\n"
-"PO-Revision-Date: 2014-09-07 04:32+0200\n"
+"POT-Creation-Date: 2015-03-04 23:44+0100\n"
+"PO-Revision-Date: 2015-03-04 23:45+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -34,35 +34,39 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Nowa gra"
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "_Nowa gra"
 
-#: ../data/app-menu.ui.h:2 ../src/properties.c:393
-msgid "Preferences"
-msgstr "Preferencje"
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Preferencje"
 
 #: ../data/app-menu.ui.h:3
-msgid "Scores"
-msgstr "Wyniki"
+msgid "_Scores"
+msgstr "_Wyniki"
 
 #: ../data/app-menu.ui.h:4
-msgid "Help"
-msgstr "Pomoc"
+msgid "_Help"
+msgstr "Pomo_c"
 
 #: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "O grze"
+msgid "_About"
+msgstr "_O grze"
 
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Zakończ"
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "Za_kończ"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
 msgstr "Roboty GNOME"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Unikanie robotów i sprawianie, że zderzają się między sobą"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
@@ -70,7 +74,7 @@ msgstr ""
 "Daleka przyszłość – rok 2000. Złe roboty próbują cię zabić. Unikaj robotów "
 "lub stań twarzą w twarz z pewną śmiercią."
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -83,7 +87,7 @@ msgstr ""
 "szczątki. Można się bronić przez przesuwanie szczątków lub uciekać dzięki "
 "podręcznemu urządzeniu do teleportacji."
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -94,13 +98,9 @@ msgstr ""
 "tak długo, jak możesz!"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
 msgid "Robots"
 msgstr "Roboty"
-
-#: ../data/gnome-robots.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Unikanie robotów i sprawianie, że zderzają się między sobą"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
@@ -265,14 +265,6 @@ msgstr "Koniec gry!"
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr "Niestety ten wynik nie kwalifikuje się do pierwszej dziesiątki."
 
-#: ../src/game.c:150
-msgid "_Quit"
-msgstr "Za_kończ"
-
-#: ../src/game.c:151 ../src/gnome-robots.c:231
-msgid "_New Game"
-msgstr "_Nowa gra"
-
 #: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Wyniki gry"
@@ -332,6 +324,10 @@ msgstr "Wynik"
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$dm %2$ds"
+
+#: ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Nowa gra"
 
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
@@ -416,14 +412,8 @@ msgid "Teleport _Safely"
 msgstr "Teleportuj _bezpiecznie"
 
 #: ../src/gnome-robots.c:202
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Oparte na klasycznej grze BSD Robots.\n"
-"\n"
-"Gra Roboty jest częścią gier GNOME."
+msgid "Based on classic BSD Robots"
+msgstr "Oparte na klasycznej grze BSD Robots"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"
@@ -439,8 +429,8 @@ msgstr ""
 "Tomasz Dominikowski <dominikowski@gmail.com>, 2008\n"
 "Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010\n"
 "Wojciech Kapusta <wkapusta@aviary.pl>, 2009\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2010-2014\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2007-2014"
+"Piotr Drąg <piotrdrag@gmail.com>, 2010-2015\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2007-2015"
 
 #: ../src/gnome-robots.c:227
 msgid "Are you sure you want to discard the current game?"
@@ -450,19 +440,19 @@ msgstr "Na pewno odrzucić obecną grę?"
 msgid "Keep _Playing"
 msgstr "_Graj dalej"
 
-#: ../src/gnome-robots.c:373
+#: ../src/gnome-robots.c:361
 msgid "Teleport _Randomly"
 msgstr "Teleportuj l_osowo"
 
-#: ../src/gnome-robots.c:392
+#: ../src/gnome-robots.c:380
 msgid "_Wait for Robots"
 msgstr "_Czekaj na roboty"
 
-#: ../src/gnome-robots.c:420
+#: ../src/gnome-robots.c:408
 msgid "No game data could be found."
 msgstr "Nie można odnaleźć danych gry."
 
-#: ../src/gnome-robots.c:422
+#: ../src/gnome-robots.c:410
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -470,11 +460,11 @@ msgstr ""
 "Nie można odnaleźć żadnych poprawnych plików konfiguracyjnych gry. Proszę "
 "sprawdzić, czy gra jest prawidłowo zainstalowana."
 
-#: ../src/gnome-robots.c:438
+#: ../src/gnome-robots.c:426
 msgid "Some graphics files are missing or corrupt."
 msgstr "Brakuje niektórych plików graficznych lub są uszkodzone."
 
-#: ../src/gnome-robots.c:440
+#: ../src/gnome-robots.c:428
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -486,6 +476,10 @@ msgstr ""
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Nie można odnaleźć pliku z mapą pikseli \"%s\"\n"
+
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "Preferencje"
 
 #: ../src/properties.c:417
 msgid "Game Type"
@@ -534,7 +528,7 @@ msgstr "Wygląd"
 
 #: ../src/properties.c:522
 msgid "_Restore Defaults"
-msgstr "_Ustaw domyślne"
+msgstr "Przywróć _domyślne"
 
 #: ../src/properties.c:527
 msgid "Keyboard"

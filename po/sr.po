@@ -1,19 +1,18 @@
 # Serbian translation of gnome-games
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2014.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2015.
 # This file is distributed under the same license as the gnome-games package.
-# Maintainer: Душан Марјановић <madafaka@bsd.org.yu>
-# Reviewed on 2005-08-03 by: Игор Несторовић <igor@prevod.org>
-# Translated by: Милош Поповић <gpopac@gmail.com>
-# Translated on 2010-08-25 by: Бранко Кокановић <branko.kokanovic@gmail.com>
-# Милош Поповић <gpopac@gmai, 2010.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2014.
+# Душан Марјановић <madafaka@bsd.org.yu>
+# Игор Несторовић <igor@prevod.org>, 2005.
+# Милош Поповић <gpopac@gmail.com>, 2010.
+# Бранко Кокановић <branko.kokanovic@gmail.com>, 2010
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: Гномове игре\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-17 14:01+0000\n"
-"PO-Revision-Date: 2014-03-22 10:48+0200\n"
+"POT-Creation-Date: 2015-03-04 08:30+0000\n"
+"PO-Revision-Date: 2015-03-05 21:55+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -24,25 +23,40 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/gnobots2.desktop.in.h:1 ../src/gnobots.c:206 ../src/gnobots.c:219
-#: ../src/menu.c:262
-msgid "Robots"
-msgstr "Роботи"
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "_Нова игра"
 
-#: ../data/gnobots2.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Избегавајте роботе и потрудите се да се сударе"
+#: ../data/app-menu.ui.h:2
+#| msgid "Robots Preferences"
+msgid "_Preferences"
+msgstr "_Поставке"
 
-#: ../data/gnobots2.desktop.in.h:3
-msgid "game;arcade;teleport;"
-msgstr "роботи;игра;аркадна;телепортовање;пренос на даљину;"
+#: ../data/app-menu.ui.h:3
+msgid "_Scores"
+msgstr "_Резултати"
+
+#: ../data/app-menu.ui.h:4
+msgid "_Help"
+msgstr "По_моћ"
+
+#: ../data/app-menu.ui.h:5
+msgid "_About"
+msgstr "_О програму"
+
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "_Изађи"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
-#| msgid "Robots"
 msgid "GNOME Robots"
 msgstr "Гномови роботи"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Избегавајте роботе и потрудите се да се сударе"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
@@ -50,7 +64,7 @@ msgstr ""
 "Далека будућност — година 2000. Зли роботи покушавају да вам дођу главе. "
 "Избегавајте их или се суочите са сигурном погибијом."
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -63,7 +77,7 @@ msgstr ""
 "смећа. Можете да се заштитите премештајући гомиле смећа, или да побегнете на "
 "сигурно помоћу вашег пригодног уређаја за телепортовање."
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -73,6 +87,15 @@ msgstr ""
 "без обзира, није речено да вас телепортовање неће приземљити одмах поред "
 "неког робота, који ће вас у тили час умлатити. Преживите што дуже можете, "
 "ако можете (сами против њих)!"
+
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
+#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
+msgid "Robots"
+msgstr "Роботи"
+
+#: ../data/gnome-robots.desktop.in.h:3
+msgid "game;arcade;teleport;"
+msgstr "роботи;игра;аркадна;телепортовање;пренос на даљину;"
 
 #: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
@@ -140,7 +163,7 @@ msgstr "Укључи звукове игре"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Укључи звукове игре. Пусти звукове за разне догађаје током игре."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:500
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
 msgid "Key to move NW"
 msgstr "Тастер за кретање на северозапад"
 
@@ -148,7 +171,7 @@ msgstr "Тастер за кретање на северозапад"
 msgid "The key used to move north-west."
 msgstr "Тастер коришћен за кретање на северозапад."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:501
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
 msgid "Key to move N"
 msgstr "Тастер за кретање на север"
 
@@ -156,7 +179,7 @@ msgstr "Тастер за кретање на север"
 msgid "The key used to move north."
 msgstr "Тастер коришћен за кретање на север."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:502
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
 msgid "Key to move NE"
 msgstr "Тастер за кретање на североисток"
 
@@ -164,7 +187,7 @@ msgstr "Тастер за кретање на североисток"
 msgid "The key used to move north-east."
 msgstr "Тастер коришћен за кретање на североисток."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:503
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
 msgid "Key to move W"
 msgstr "Тастер за кретање на запад"
 
@@ -172,7 +195,7 @@ msgstr "Тастер за кретање на запад"
 msgid "The key used to move west."
 msgstr "Тастер коришћен за кретање на запад."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
 msgid "Key to hold"
 msgstr "Тастер за држање"
 
@@ -180,7 +203,7 @@ msgstr "Тастер за држање"
 msgid "The key used to hold still."
 msgstr "Тастер коришћен за држање непокретним."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:504
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
 msgid "Key to move E"
 msgstr "Тастер за кретање на исток"
 
@@ -188,7 +211,7 @@ msgstr "Тастер за кретање на исток"
 msgid "The key used to move east."
 msgstr "Тастер коришћен за кретање на исток."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
 msgid "Key to move SW"
 msgstr "Тастер за кретање на југозапад"
 
@@ -196,7 +219,7 @@ msgstr "Тастер за кретање на југозапад"
 msgid "The key used to move south-west."
 msgstr "Тастер коришћен за кретање на југозапад."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
 msgid "Key to move S"
 msgstr "Тастер за кретање на југ"
 
@@ -204,7 +227,7 @@ msgstr "Тастер за кретање на југ"
 msgid "The key used to move south."
 msgstr "Тастер коришћен за кретање на југ."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
 msgid "Key to move SE"
 msgstr "Тастер за кретање на југоисток"
 
@@ -212,80 +235,47 @@ msgstr "Тастер за кретање на југоисток"
 msgid "The key used to move south-east."
 msgstr "Тастер коришћен за кретање на југоисток."
 
-#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:509
-msgid "Key to teleport"
-msgstr "Тастер за пренос на даљину"
-
-#: ../data/org.gnome.robots.gschema.xml.h:34
-msgid "The key used to teleport safely (if possible)."
-msgstr "Тастер коришћен за безбедно преношење на даљину (ако је могуће)."
-
-#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:510
-msgid "Key to teleport randomly"
-msgstr "Тастер за случајни пренос на даљину"
-
-#: ../data/org.gnome.robots.gschema.xml.h:36
-msgid "The key used to teleport randomly."
-msgstr "Тастер коришћен за случајно преношење на даљину."
-
-#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:511
-msgid "Key to wait"
-msgstr "Тастер за чекање"
-
-#: ../data/org.gnome.robots.gschema.xml.h:38
-msgid "The key used to wait."
-msgstr "Тастер коришћен за чекање."
-
-#: ../data/org.gnome.robots.gschema.xml.h:39
+#: ../data/org.gnome.robots.gschema.xml.h:33
 msgid "Width of the window in pixels"
 msgstr "Ширина прозора у тачкама"
 
-#: ../data/org.gnome.robots.gschema.xml.h:40
+#: ../data/org.gnome.robots.gschema.xml.h:34
 msgid "Height of the window in pixels"
 msgstr "Висина прозора у тачкама"
 
-#: ../data/org.gnome.robots.gschema.xml.h:41
+#: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
 msgstr "изабрано ако је прозор увећан"
 
-#: ../data/org.gnome.robots.gschema.xml.h:42
-msgid "true if the window is fullscren"
-msgstr "изабрано ако је прозор преко целог екрана"
-
-#: ../src/game.c:149
+#: ../src/game.c:147
 msgid "Game over!"
 msgstr "Игра завршена!"
 
-#: ../src/game.c:151
+#: ../src/game.c:149
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr "На жалост, ваш резултат није ушао у најбољих 10."
 
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/game.c:153 ../src/games-stock.c:253
-msgid "_New Game"
-msgstr "_Нова игра"
-
-#: ../src/game.c:166
+#: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Резултати за Роботе"
 
-#: ../src/game.c:169
+#: ../src/game.c:167
 msgid "Map:"
 msgstr "Мапа:"
 
-#: ../src/game.c:178
+#: ../src/game.c:176
 msgid "Congratulations!"
 msgstr "Честитамо!"
 
-#: ../src/game.c:179
+#: ../src/game.c:177
 msgid "Your score is the best!"
 msgstr "Ваш резултат је најбољи!"
 
-#: ../src/game.c:180
+#: ../src/game.c:178
 msgid "Your score has made the top ten."
 msgstr "Ваш резултат је ушао у најбољих 10."
 
-#: ../src/game.c:408 ../src/game.c:424
+#: ../src/game.c:405 ../src/game.c:421
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -294,11 +284,11 @@ msgstr ""
 "Али да ли можете опет?"
 
 #. This should never happen.
-#: ../src/game.c:1186
+#: ../src/game.c:1175
 msgid "There are no teleport locations left!!"
 msgstr "Нема више места за пренос на даљину!!"
 
-#: ../src/game.c:1214
+#: ../src/game.c:1203
 msgid "There are no safe locations to teleport to!!"
 msgstr "Нема више безбедних места за пренос на даљину!!"
 
@@ -334,286 +324,125 @@ msgstr "Нова игра"
 msgid "Date"
 msgstr "Датум"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "Прикажи помоћ за ову игру"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "Заврши игру у току"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "Искључује/укључује приказ преко целог екрана"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "Потражите савет за следећи потез"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "Напустите режим преко целог екрана"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "Започни нову игру са више играча у мрежи"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "Заврши тренутну мрежну игру и врати се на мрежни сервер"
-
-#: ../src/games-stock.c:48 ../src/menu.c:69
-msgid "Start a new game"
-msgstr "Започните нову игру"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "Паузирај игру"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "Прикажи списак играча у мрежној игри"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "Поновите опозван потез"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "Поново покрените игру"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "Настави паузирану игру"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "Прегледај резултате"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "Опозовите последњи потез"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "О овој игри"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "Затворите овај прозор"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "Подеси игру"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "Изађи из ове игре"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "_Садржај"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "_Цео екран"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "_Савет"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "_Нова"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "_Понови потез"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "_Поново покрени"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "_Поново покрени"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "_Опозови потез"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "_Дели"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "_Напусти цео екран"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "_Мрежна игра"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "_Напусти игру"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "Списак _играча"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "_Пауза"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "На_стави"
-
-#: ../src/games-stock.c:267
-msgid "_Scores"
-msgstr "_Резултати"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "_Заврши игру"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s је слободан софтвер; можете га прослеђивати и/или мењати под условима ГНУ "
-"Опште јавне лиценце коју је објавила Задужбина слободног софтвера; било "
-"верзије %d лиценце или (по вашем избору) било које новије верзије."
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s се расподељује у нади да ће бити користан, али БЕЗ ИКАКВЕ ГАРАНЦИЈЕ; чак "
-"и без примењене гаранције ТРЖИШНЕ ВРЕДНОСТИ или ПРИЛАГОЂЕНОСТИ ОДРЕЂЕНОЈ "
-"НАМЕНИ.  Погледајте ГНУ Општу јавну лиценцу за више детаља."
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"Требали сте да примите примерак ГНУ Опште јавне лиценце уз %s; ако нисте, "
-"пишите Задужбини слободног софтва на адресу: „Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA“"
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"Требали сте да примите примерак Гнуове опште јавне лиценце уз овај програм.  "
-"Ако нисте, погледајте <http://www.gnu.org/licenses/>."
-
-#: ../src/gnobots.c:79
-msgid "Set game scenario"
-msgstr "Изабери сценарио игре"
-
-#: ../src/gnobots.c:79 ../src/gnobots.c:81
-msgid "NAME"
-msgstr "НАЗИВ"
-
-#: ../src/gnobots.c:81
-msgid "Set game configuration"
-msgstr "Изабери подешавања игре"
-
-#: ../src/gnobots.c:83 ../src/gnobots.c:85
-msgid "Initial window position"
-msgstr "Почетна позиција прозора"
-
-#: ../src/gnobots.c:83
-msgid "X"
-msgstr "X"
-
-#: ../src/gnobots.c:85
-msgid "Y"
-msgstr "Y"
-
-#: ../src/gnobots.c:90
+#: ../src/gnome-robots.c:95
 msgid "Classic robots"
 msgstr "Класични роботи"
 
-#: ../src/gnobots.c:91
+#: ../src/gnome-robots.c:96
 msgid "Classic robots with safe moves"
 msgstr "Класични роботи са сигурним потезима"
 
-#: ../src/gnobots.c:92
+#: ../src/gnome-robots.c:97
 msgid "Classic robots with super-safe moves"
 msgstr "Класични роботи са супер-сигурним потезима"
 
-#: ../src/gnobots.c:93
+#: ../src/gnome-robots.c:98
 msgid "Nightmare"
 msgstr "Ноћна мора"
 
-#: ../src/gnobots.c:94
+#: ../src/gnome-robots.c:99
 msgid "Nightmare with safe moves"
 msgstr "Ноћна мора са безбедним потезима"
 
-#: ../src/gnobots.c:95
+#: ../src/gnome-robots.c:100
 msgid "Nightmare with super-safe moves"
 msgstr "Ноћна мора са супер-безбедним потезима"
 
-#: ../src/gnobots.c:96
+#: ../src/gnome-robots.c:101
 msgid "Robots2"
 msgstr "Роботи2"
 
-#: ../src/gnobots.c:97
+#: ../src/gnome-robots.c:102
 msgid "Robots2 with safe moves"
 msgstr "Роботи2 са безбедним потезима"
 
-#: ../src/gnobots.c:98
+#: ../src/gnome-robots.c:103
 msgid "Robots2 with super-safe moves"
 msgstr "Роботи2 са супер-безбедним потезима"
 
-#: ../src/gnobots.c:99
+#: ../src/gnome-robots.c:104
 msgid "Robots2 easy"
 msgstr "Роботи2 лаки"
 
-#: ../src/gnobots.c:100
+#: ../src/gnome-robots.c:105
 msgid "Robots2 easy with safe moves"
 msgstr "Роботи2 лаки са безбедним потезима"
 
-#: ../src/gnobots.c:101
+#: ../src/gnome-robots.c:106
 msgid "Robots2 easy with super-safe moves"
 msgstr "Роботи2 лаки са супер-безбедним потезима"
 
-#: ../src/gnobots.c:102
+#: ../src/gnome-robots.c:107
 msgid "Robots with safe teleport"
 msgstr "Роботи са безбедним телепортима"
 
-#: ../src/gnobots.c:103
+#: ../src/gnome-robots.c:108
 msgid "Robots with safe teleport with safe moves"
 msgstr "Роботи са безбедним телепортима"
 
-#: ../src/gnobots.c:104
+#: ../src/gnome-robots.c:109
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Роботи са супер-безбедним телепортима"
 
-#: ../src/gnobots.c:286
+#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
+#: ../src/gnome-robots.c:144
+#, c-format
+msgid "Level: %d\tScore: %d"
+msgstr "Ниво: %d\tРезултат: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: ../src/gnome-robots.c:155
+#, c-format
+#| msgid "Remaining:"
+msgid "(Remaining: %d)"
+msgstr "(Преосталих: %d)"
+
+#. First line of safe teleports button label.
+#: ../src/gnome-robots.c:157
+#| msgid "Teleport randomly"
+msgid "Teleport _Safely"
+msgstr "_Безбедно телепортуј"
+
+#: ../src/gnome-robots.c:202
+#| msgid ""
+#| "Based on classic BSD Robots\n"
+#| "\n"
+#| "Robots is a part of GNOME Games."
+msgid "Based on classic BSD Robots"
+msgstr "Засновано на класичним БСД Роботима"
+
+#: ../src/gnome-robots.c:206
+msgid "translator-credits"
+msgstr ""
+"Душан Марјановић <madafaka@root.co.yu>\n"
+"Милош Поповић <gpopac@gmail.com>\n"
+"Бранко Кокановић <branko.kokanovic@gmail.com>\n"
+"\n"
+"http://prevod.org — превод на српски језик"
+
+#: ../src/gnome-robots.c:227
+msgid "Are you sure you want to discard the current game?"
+msgstr "Да ли сигурно желите да одбаците текућу игру?"
+
+#: ../src/gnome-robots.c:230
+msgid "Keep _Playing"
+msgstr "_Настави игру"
+
+#: ../src/gnome-robots.c:361
+#| msgid "Teleport randomly"
+msgid "Teleport _Randomly"
+msgstr "_Случајно телепортуј"
+
+#: ../src/gnome-robots.c:380
+#| msgid "Wait for the robots"
+msgid "_Wait for Robots"
+msgstr "Чекај _роботе"
+
+#: ../src/gnome-robots.c:408
 msgid "No game data could be found."
 msgstr "Не може да пронађе податке о игри."
 
-#: ../src/gnobots.c:288
+#: ../src/gnome-robots.c:410
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -621,11 +450,11 @@ msgstr ""
 "Програм Роботи није успео да пронађе ниједну датотеку са исправним "
 "подешавањима игре. Проверите да ли је програм исправно инсталиран."
 
-#: ../src/gnobots.c:304
+#: ../src/gnome-robots.c:426
 msgid "Some graphics files are missing or corrupt."
 msgstr "Неке датотеке са графиком недостају или су оштећене."
 
-#: ../src/gnobots.c:306
+#: ../src/gnome-robots.c:428
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -638,90 +467,16 @@ msgstr ""
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Слика „%s“ није пронађена\n"
 
-#: ../src/menu.c:64
-msgid "_Game"
-msgstr "_Игра"
+#: ../src/properties.c:393
+#| msgid "Robots Preferences"
+msgid "Preferences"
+msgstr "Поставке"
 
-#: ../src/menu.c:65
-msgid "_View"
-msgstr "П_реглед"
-
-#: ../src/menu.c:66
-msgid "_Move"
-msgstr "_Помери"
-
-#: ../src/menu.c:67
-msgid "_Settings"
-msgstr "_Подешавања"
-
-#: ../src/menu.c:68
-msgid "_Help"
-msgstr "По_моћ"
-
-#: ../src/menu.c:73
-msgid "_Teleport"
-msgstr "_Телепортуј"
-
-#: ../src/menu.c:74
-msgid "Teleport, safely if possible"
-msgstr "Телепортуј, безбедно ако је могуће"
-
-#: ../src/menu.c:75
-msgid "_Random"
-msgstr "_Случајно"
-
-#: ../src/menu.c:76
-msgid "Teleport randomly"
-msgstr "Случајно телепортуј"
-
-#: ../src/menu.c:77
-msgid "_Wait"
-msgstr "_Чекај"
-
-#: ../src/menu.c:77
-msgid "Wait for the robots"
-msgstr "Чекај роботе"
-
-#: ../src/menu.c:88
-msgid "_Toolbar"
-msgstr "_Палета алата"
-
-#: ../src/menu.c:88
-msgid "Show or hide the toolbar"
-msgstr "Прикажите или сакријте палету алата"
-
-#: ../src/menu.c:266
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Засновано на класичним БСД Роботима\n"
-"\n"
-"Роботи су део Гномових игара."
-
-#: ../src/menu.c:270
-msgid "translator-credits"
-msgstr ""
-"Душан Марјановић <madafaka@root.co.yu>\n"
-"Милош Поповић <gpopac@gmail.com>\n"
-"Бранко Кокановић <branko.kokanovic@gmail.com>\n"
-"\n"
-"http://prevod.org — превод на српски језик"
-
-#: ../src/properties.c:391
-msgid "Robots Preferences"
-msgstr "Поставке Робота"
-
-#: ../src/properties.c:416
+#: ../src/properties.c:417
 msgid "Game Type"
 msgstr "Врста игара"
 
-#: ../src/properties.c:425
+#: ../src/properties.c:427
 msgid "_Use safe moves"
 msgstr "_Користи безбедне потезе"
 
@@ -729,61 +484,264 @@ msgstr "_Користи безбедне потезе"
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Спречи ненамерне потезе који могу довести до погибије."
 
-#: ../src/properties.c:434
+#: ../src/properties.c:435
 msgid "U_se super safe moves"
 msgstr "Кори_сти супер безбедне потезе"
 
-#: ../src/properties.c:441
+#: ../src/properties.c:442
 msgid "Prevents all moves that result in getting killed."
 msgstr "Спречава све потезе који могу довести до погибије."
 
-#: ../src/properties.c:443
+#: ../src/properties.c:448
 msgid "_Enable sounds"
 msgstr "_Укључи звукове"
 
-#: ../src/properties.c:449
+#: ../src/properties.c:454
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Пушта звуке за догађаје као што је освајање нивоа или погибија."
 
-#: ../src/properties.c:451
+#: ../src/properties.c:456
 msgid "Game"
 msgstr "Игра"
 
-#: ../src/properties.c:464
+#: ../src/properties.c:469
 msgid "_Image theme:"
 msgstr "Тема за _слике:"
 
-#: ../src/properties.c:476
+#: ../src/properties.c:481
 msgid "_Background color:"
 msgstr "Боја _позадине:"
 
-#: ../src/properties.c:488
+#: ../src/properties.c:493
 msgid "Appearance"
 msgstr "Изглед"
 
-#: ../src/properties.c:520
+#: ../src/properties.c:522
 msgid "_Restore Defaults"
 msgstr "_Поврати подразумевано"
 
-#: ../src/properties.c:525
+#: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Тастатура"
 
-#: ../src/statusbar.c:68
-msgid "Score:"
-msgstr "Разултат:"
+#~ msgid "Key to teleport"
+#~ msgstr "Тастер за пренос на даљину"
 
-#: ../src/statusbar.c:76
-msgid "Safe Teleports:"
-msgstr "Безбедна телепортација:"
+#~ msgid "The key used to teleport safely (if possible)."
+#~ msgstr "Тастер коришћен за безбедно преношење на даљину (ако је могуће)."
 
-#: ../src/statusbar.c:85
-msgid "Level:"
-msgstr "Ниво:"
+#~ msgid "Key to teleport randomly"
+#~ msgstr "Тастер за случајни пренос на даљину"
 
-#: ../src/statusbar.c:94
-msgid "Remaining:"
-msgstr "Преостало:"
+#~ msgid "The key used to teleport randomly."
+#~ msgstr "Тастер коришћен за случајно преношење на даљину."
+
+#~ msgid "Key to wait"
+#~ msgstr "Тастер за чекање"
+
+#~ msgid "The key used to wait."
+#~ msgstr "Тастер коришћен за чекање."
+
+#~ msgid "true if the window is fullscren"
+#~ msgstr "изабрано ако је прозор преко целог екрана"
+
+#~ msgid "View help for this game"
+#~ msgstr "Прикажи помоћ за ову игру"
+
+#~ msgid "End the current game"
+#~ msgstr "Заврши игру у току"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "Искључује/укључује приказ преко целог екрана"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "Потражите савет за следећи потез"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "Напустите режим преко целог екрана"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "Започни нову игру са више играча у мрежи"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr "Заврши тренутну мрежну игру и врати се на мрежни сервер"
+
+#~ msgid "Start a new game"
+#~ msgstr "Започните нову игру"
+
+#~ msgid "Pause the game"
+#~ msgstr "Паузирај игру"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "Прикажи списак играча у мрежној игри"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "Поновите опозван потез"
+
+#~ msgid "Restart the game"
+#~ msgstr "Поново покрените игру"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "Настави паузирану игру"
+
+#~ msgid "View the scores"
+#~ msgstr "Прегледај резултате"
+
+#~ msgid "Undo the last move"
+#~ msgstr "Опозовите последњи потез"
+
+#~ msgid "About this game"
+#~ msgstr "О овој игри"
+
+#~ msgid "Close this window"
+#~ msgstr "Затворите овај прозор"
+
+#~ msgid "Configure the game"
+#~ msgstr "Подеси игру"
+
+#~ msgid "Quit this game"
+#~ msgstr "Изађи из ове игре"
+
+#~ msgid "_Contents"
+#~ msgstr "_Садржај"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "_Цео екран"
+
+#~ msgid "_Hint"
+#~ msgstr "_Савет"
+
+#~ msgid "_New"
+#~ msgstr "_Нова"
+
+#~ msgid "_Redo Move"
+#~ msgstr "_Понови потез"
+
+#~ msgid "_Reset"
+#~ msgstr "_Поново покрени"
+
+#~ msgid "_Restart"
+#~ msgstr "_Поново покрени"
+
+#~ msgid "_Undo Move"
+#~ msgstr "_Опозови потез"
+
+#~ msgid "_Deal"
+#~ msgstr "_Дели"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "_Напусти цео екран"
+
+#~ msgid "Network _Game"
+#~ msgstr "_Мрежна игра"
+
+#~ msgid "L_eave Game"
+#~ msgstr "_Напусти игру"
+
+#~ msgid "Player _List"
+#~ msgstr "Списак _играча"
+
+#~ msgid "_Pause"
+#~ msgstr "_Пауза"
+
+#~ msgid "Res_ume"
+#~ msgstr "На_стави"
+
+#~ msgid "_End Game"
+#~ msgstr "_Заврши игру"
+
+#~ msgid ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+#~ msgstr ""
+#~ "%s је слободан софтвер; можете га прослеђивати и/или мењати под условима "
+#~ "ГНУ Опште јавне лиценце коју је објавила Задужбина слободног софтвера; "
+#~ "било верзије %d лиценце или (по вашем избору) било које новије верзије."
+
+#~ msgid ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+#~ msgstr ""
+#~ "%s се расподељује у нади да ће бити користан, али БЕЗ ИКАКВЕ ГАРАНЦИЈЕ; "
+#~ "чак и без примењене гаранције ТРЖИШНЕ ВРЕДНОСТИ или ПРИЛАГОЂЕНОСТИ "
+#~ "ОДРЕЂЕНОЈ НАМЕНИ.  Погледајте ГНУ Општу јавну лиценцу за више детаља."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+#~ msgstr ""
+#~ "Требали сте да примите примерак ГНУ Опште јавне лиценце уз %s; ако нисте, "
+#~ "пишите Задужбини слободног софтва на адресу: „Free Software Foundation, "
+#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA“"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "Требали сте да примите примерак Гнуове опште јавне лиценце уз овај "
+#~ "програм.  Ако нисте, погледајте <http://www.gnu.org/licenses/>."
+
+#~ msgid "Set game scenario"
+#~ msgstr "Изабери сценарио игре"
+
+#~ msgid "NAME"
+#~ msgstr "НАЗИВ"
+
+#~ msgid "Set game configuration"
+#~ msgstr "Изабери подешавања игре"
+
+#~ msgid "Initial window position"
+#~ msgstr "Почетна позиција прозора"
+
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "_Game"
+#~ msgstr "_Игра"
+
+#~ msgid "_View"
+#~ msgstr "П_реглед"
+
+#~ msgid "_Move"
+#~ msgstr "_Помери"
+
+#~ msgid "_Settings"
+#~ msgstr "_Подешавања"
+
+#~ msgid "_Teleport"
+#~ msgstr "_Телепортуј"
+
+#~ msgid "Teleport, safely if possible"
+#~ msgstr "Телепортуј, безбедно ако је могуће"
+
+#~ msgid "_Random"
+#~ msgstr "_Случајно"
+
+#~ msgid "_Wait"
+#~ msgstr "_Чекај"
+
+#~ msgid "_Toolbar"
+#~ msgstr "_Палета алата"
+
+#~ msgid "Show or hide the toolbar"
+#~ msgstr "Прикажите или сакријте палету алата"
+
+#~ msgid "Score:"
+#~ msgstr "Разултат:"
+
+#~ msgid "Safe Teleports:"
+#~ msgstr "Безбедна телепортација:"
+
+#~ msgid "Level:"
+#~ msgstr "Ниво:"
 
 #~ msgctxt "score-dialog"
 #~ msgid "Name"

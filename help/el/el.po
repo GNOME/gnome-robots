@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2015-02-26 11:40+0000\n"
-"PO-Revision-Date: 2015-03-02 13:19+0200\n"
+"POT-Creation-Date: 2015-03-02 11:22+0000\n"
+"PO-Revision-Date: 2015-03-02 13:28+0200\n"
 "Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
 "Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
@@ -96,7 +96,7 @@ msgstr ""
 #. (itstool) path: info/desc
 #: C/basics.page:24
 msgid "Start, quit, and enable sounds."
-msgstr ""
+msgstr "Έναρξη, τερματισμός και ενεργοποίηση ήχων."
 
 #. (itstool) path: page/title
 #: C/basics.page:27
@@ -996,6 +996,11 @@ msgid ""
 "to <gui>Map</gui> to view scores for a particular game type and safe move "
 "option combination."
 msgstr ""
+"Οι βαθμολογίες καταγράφονται διαφορετικά για κάθε συνδυασμό <link xref="
+"\"game-types\">τύπου παιχνιδιού και επιλογής ασφαλούς κίνησης</link>. "
+"Χρησιμοποιείστε το αναδυόμενο μενού δίπλα στον <gui>Χάρτη</gui> για προβολή "
+"βαθμολογιών για έναν συνδυασμό τύπου παιχνιδιού και επιλογής ασφαλούς "
+"κίνησης."
 
 #. (itstool) path: p/link
 #: C/legal.xml:4

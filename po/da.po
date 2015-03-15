@@ -1,5 +1,5 @@
 # Danish translation of gnome-games.
-# Copyright (C) 1998-2014 Free Software Foundation, Inc.
+# Copyright (C) 1998-2015 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-games package.
 # Anders Wegge Jakobsen <wegge@wegge.dk>, 1998.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1998-2001
@@ -7,35 +7,19 @@
 # Ole Laursen <olau@hardworking.dk>, 2001, 02, 03, 04.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004, 05.
 # flemming christensen <fc@stromata.dk>, 2011.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007-2014.
-#
-# RETMIG: en eller anden med forstand på kabaler skal have oversat
-# navnene på spillene. Der er en kommentar til hver af dem der
-# foreløbigt vist nok kan gå.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007-2015.
 #
 # Konventioner:
 #
-#   AisleRiot -> Kabale
-#   cave -> grotte
-#   hint -> fif
 #   GNOME Robots -> Robotter
-#   Same Gnome (parodi på Same Game i KDE) -> Samspil
-#   Gnibbles, Nibbles -> Orme
-#   score slot -> pointfelt
-#   tracker (gnome-sudoku) -> spor
-#   gtali/tali -> Yatzy
 #
-# Generelt er de fleste spilnavne oversat nådesløst til dansk.
 # Husk at tilføje dig i credit-listen (besked id "translator-credits")
-#
-# Der er en række strenge hvor der står f.eks. "glines|Medium". Så vidt jeg ved kommer der problemer når man oversætter teksten til venstre for |, så lad dette blive stående.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-20 17:05+0200\n"
-"PO-Revision-Date: 2014-09-19 19:06+0200\n"
+"POT-Creation-Date: 2015-03-15 16:11+0100\n"
+"PO-Revision-Date: 2015-03-15 15:57+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -44,35 +28,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Nyt spil"
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "_Nyt spil"
 
-#: ../data/app-menu.ui.h:2 ../src/properties.c:393
-msgid "Preferences"
-msgstr "Indstillinger"
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Indstillinger"
 
 #: ../data/app-menu.ui.h:3
-msgid "Scores"
-msgstr "Resultater"
+msgid "_Scores"
+msgstr "_Resultater"
 
 #: ../data/app-menu.ui.h:4
-msgid "Help"
-msgstr "Hjælp"
+msgid "_Help"
+msgstr "_Hjælp"
 
 #: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "Om"
+msgid "_About"
+msgstr "_Om"
 
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Afslut"
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "_Afslut"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
 msgstr "GNOME Robotter"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Undgå robotterne og få dem til at støde ind i hinanden"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
@@ -80,7 +68,7 @@ msgstr ""
 "Vi befinder os i den fjerne fremtid – år 2000! Ondskabsfulde robotter "
 "forsøger at dræbe dig. Undvig robotterne eller du står foran den sikre død."
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -94,7 +82,7 @@ msgstr ""
 "forvredne metaldele opstået herved. Du kan forsvare dig ved at flytte "
 "bunkerne, eller undslippe til sikkerhed med din smarte teleporteringsenhed."
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -105,13 +93,9 @@ msgstr ""
 "som vil dræbe dig. Overlev så længe som muligt!"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
 msgid "Robots"
 msgstr "Robotter"
-
-#: ../data/gnome-robots.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Undgå robotterne og få dem til at støde ind i hinanden"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
@@ -276,14 +260,6 @@ msgstr "Spillet er slut!"
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr "Godt arbejde, men desværre kom dit resultat ikke på top ti."
 
-#: ../src/game.c:150
-msgid "_Quit"
-msgstr "_Afslut"
-
-#: ../src/game.c:151 ../src/gnome-robots.c:231
-msgid "_New Game"
-msgstr "_Nyt spil"
-
 #: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Resultater for Robotter"
@@ -343,6 +319,10 @@ msgstr "Resultat"
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$dm %2$ds"
+
+#: ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Nyt spil"
 
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
@@ -427,14 +407,8 @@ msgid "Teleport _Safely"
 msgstr "Teleportér _sikkert"
 
 #: ../src/gnome-robots.c:202
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Baseret på det klassiske BSD-spil Robotter\n"
-"\n"
-"Robotter er en del af GNOME Games."
+msgid "Based on classic BSD Robots"
+msgstr "Baseret på det klassiske BSD-spil Robotter"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"
@@ -457,19 +431,19 @@ msgstr "Er du sikker på at du vil afslutte det nuværende spil?"
 msgid "Keep _Playing"
 msgstr "Fortsæt _spillet"
 
-#: ../src/gnome-robots.c:373
+#: ../src/gnome-robots.c:361
 msgid "Teleport _Randomly"
 msgstr "Teleportér _tilfældigt"
 
-#: ../src/gnome-robots.c:392
+#: ../src/gnome-robots.c:380
 msgid "_Wait for Robots"
 msgstr "_Vent på robotter"
 
-#: ../src/gnome-robots.c:420
+#: ../src/gnome-robots.c:408
 msgid "No game data could be found."
 msgstr "Ingen spildata fundet."
 
-#: ../src/gnome-robots.c:422
+#: ../src/gnome-robots.c:410
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -477,11 +451,11 @@ msgstr ""
 "Robotprogrammet kunne ikke finde nogen gyldig spilkonfigurationsfiler. "
 "Kontrollér at programmet er installeret korrekt."
 
-#: ../src/gnome-robots.c:438
+#: ../src/gnome-robots.c:426
 msgid "Some graphics files are missing or corrupt."
 msgstr "Nogle grafik-filer mangler eller er skadet."
 
-#: ../src/gnome-robots.c:440
+#: ../src/gnome-robots.c:428
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -493,6 +467,10 @@ msgstr ""
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Kunne ikke finde billedfilen \"%s\"\n"
+
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "Indstillinger"
 
 #: ../src/properties.c:417
 msgid "Game Type"
@@ -547,3 +525,6 @@ msgstr "_Genskab forvalg"
 #: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Tastatur"
+
+#~ msgid "Quit"
+#~ msgstr "Afslut"

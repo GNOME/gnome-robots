@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gnome-games 3.3.91\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-20 20:29+0000\n"
-"PO-Revision-Date: 2015-02-21 15:49+0800\n"
+"POT-Creation-Date: 2015-03-17 08:27+0000\n"
+"PO-Revision-Date: 2015-03-17 20:56+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (traditional)\n"
 "Language: zh_TW\n"
@@ -22,29 +22,29 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.7.4\n"
 
-#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "開新局"
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "開新局(_N)"
 
-#: ../data/app-menu.ui.h:2 ../src/properties.c:393
-msgid "Preferences"
-msgstr "偏好設定"
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "偏好設定(_P)"
 
 #: ../data/app-menu.ui.h:3
-msgid "Scores"
-msgstr "分數"
+msgid "_Scores"
+msgstr "分數(_S)"
 
 #: ../data/app-menu.ui.h:4
-msgid "Help"
-msgstr "求助"
+msgid "_Help"
+msgstr "求助(_H)"
 
 #: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "關於"
+msgid "_About"
+msgstr "關於(_A)"
 
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "結束"
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "結束(_Q)"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -83,7 +83,7 @@ msgstr ""
 "因此讓您送命。儘可能活久一點！"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
 msgid "Robots"
 msgstr "機器人"
 
@@ -249,14 +249,6 @@ msgstr "玩完了！"
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr "不幸地，您的分數不能進入頭十名。"
 
-#: ../src/game.c:150
-msgid "_Quit"
-msgstr "結束(_Q)"
-
-#: ../src/game.c:151 ../src/gnome-robots.c:231
-msgid "_New Game"
-msgstr "開新局(_N)"
-
 #: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "機器人積分"
@@ -316,6 +308,10 @@ msgstr "分數"
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$d 分 %2$d 秒"
+
+#: ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "開新局"
 
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
@@ -421,29 +417,29 @@ msgstr "您確定要放棄目前的遊戲？"
 msgid "Keep _Playing"
 msgstr "繼續玩(_P)"
 
-#: ../src/gnome-robots.c:373
+#: ../src/gnome-robots.c:361
 msgid "Teleport _Randomly"
 msgstr "隨機瞬間移動(_R)"
 
-#: ../src/gnome-robots.c:392
+#: ../src/gnome-robots.c:380
 msgid "_Wait for Robots"
 msgstr "等待機器人(_W)"
 
-#: ../src/gnome-robots.c:420
+#: ../src/gnome-robots.c:408
 msgid "No game data could be found."
 msgstr "找不到遊戲資料。"
 
-#: ../src/gnome-robots.c:422
+#: ../src/gnome-robots.c:410
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
 msgstr "GNOME 機器人找不到有效的設定檔。請檢查程式是否已正確安裝。"
 
-#: ../src/gnome-robots.c:438
+#: ../src/gnome-robots.c:426
 msgid "Some graphics files are missing or corrupt."
 msgstr "某些圖片檔案找不到或者已經損壞。"
 
-#: ../src/gnome-robots.c:440
+#: ../src/gnome-robots.c:428
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -453,6 +449,10 @@ msgstr "GNOME 機器人無法載入所有需要的圖片檔。請檢查程式是
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "找不到 pixmap 檔‘%s’\n"
+
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "偏好設定"
 
 #: ../src/properties.c:417
 msgid "Game Type"
@@ -505,6 +505,12 @@ msgstr "使用預設值(_R)"
 #: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "鍵盤"
+
+#~ msgid "Scores"
+#~ msgstr "分數"
+
+#~ msgid "Quit"
+#~ msgstr "結束"
 
 #~ msgid "Key to teleport"
 #~ msgstr "代表空間轉移的按鍵"
@@ -628,9 +634,6 @@ msgstr "鍵盤"
 
 #~ msgid "Res_ume"
 #~ msgstr "繼續(_U)"
-
-#~ msgid "_Scores"
-#~ msgstr "分數(_S)"
 
 #~ msgid "_End Game"
 #~ msgstr "結束遊戲(_E)"

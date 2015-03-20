@@ -8,15 +8,15 @@
 # Sami Pesonen <sampeson@iki.fi>, 2002-2005.
 # Ilkka Tuohela <hile@iki.fi>, 2005-2009.
 # Timo Jyrinki <timo.jyrinki@iki.fi>, 2008.
-# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2012, 2013, 2014.
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2012, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-06 07:23+0000\n"
-"PO-Revision-Date: 2014-09-06 20:31+0300\n"
+"POT-Creation-Date: 2015-03-13 08:31+0000\n"
+"PO-Revision-Date: 2015-03-13 20:08+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -28,39 +28,41 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 "X-POT-Import-Date: 2012-03-05 14:46:29+0000\n"
 
-#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Uusi peli"
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "_Uusi peli"
 
-#: ../data/app-menu.ui.h:2 ../src/properties.c:393
-msgid "Preferences"
-msgstr "Asetukset"
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Asetukset"
 
 #: ../data/app-menu.ui.h:3
-msgid "Scores"
-msgstr "Pisteet"
+msgid "_Scores"
+msgstr "_Pisteet"
 
 #: ../data/app-menu.ui.h:4
-#| msgid "_Help"
-msgid "Help"
-msgstr "Ohje"
+#| msgid "Help"
+msgid "_Help"
+msgstr "_Ohje"
 
 #: ../data/app-menu.ui.h:5
-#| msgid "_About"
-msgid "About"
-msgstr "Tietoja"
+#| msgid "About"
+msgid "_About"
+msgstr "_Tietoja"
 
-#: ../data/app-menu.ui.h:6
-#| msgid "_Quit"
-msgid "Quit"
-msgstr "Lopeta"
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "_Lopeta"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
-#| msgid "Robots"
 msgid "GNOME Robots"
 msgstr "Gnomen robotit"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Välttele robotteja ja ohjaa ne tuhoutumaan toisiinsa"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
@@ -68,7 +70,7 @@ msgstr ""
 "Kaukaisessa tulevaisuudessa - vuodessa 2000. Ilkeät robotit koettavat tappaa "
 "sinut. Vältä robotteja tai kohtaa varma kuolema."
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -81,7 +83,7 @@ msgstr ""
 "tuloksena syntyviin romukasoihin. Voit puolustaa itseäsi liikuttamalla "
 "romukasoja tai paeta turvaan kätevällä teleporttilaitteella."
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -92,13 +94,9 @@ msgstr ""
 "jolloin olet kuoleman oma. Selviä niin kauan kuin pystyt!"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
 msgid "Robots"
 msgstr "Robotit"
-
-#: ../data/gnome-robots.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Välttele robotteja ja ohjaa ne tuhoutumaan toisiinsa"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
@@ -264,14 +262,6 @@ msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr ""
 "Hyvin pelattu, mutta valitettavasti tuloksesi ei päässyt top-10 listalle."
 
-#: ../src/game.c:150
-msgid "_Quit"
-msgstr "_Lopeta"
-
-#: ../src/game.c:151 ../src/gnome-robots.c:231
-msgid "_New Game"
-msgstr "_Uusi peli"
-
 #: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Robottien pisteet"
@@ -331,6 +321,10 @@ msgstr "Pisteet"
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%d min %d s"
+
+#: ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Uusi peli"
 
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
@@ -401,40 +395,29 @@ msgstr ""
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
 #: ../src/gnome-robots.c:144
 #, c-format
-#| msgid "Score: %d"
 msgid "Level: %d\tScore: %d"
 msgstr "Taso: %d\tPisteet: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
 #: ../src/gnome-robots.c:155
 #, c-format
-#| msgid "Remaining:"
 msgid "(Remaining: %d)"
 msgstr "(Jäljellä: %d)"
 
 #. First line of safe teleports button label.
 #: ../src/gnome-robots.c:157
-#| msgid "Teleport randomly"
 msgid "Teleport _Safely"
 msgstr "Teleporttaa _turvallisesti"
 
 #: ../src/gnome-robots.c:202
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Pohjautuu klassikkoon BSD Robots.\n"
-"\n"
-"Robotit on osa Gnomen pelejä."
+#| msgid "classic robots"
+msgid "Based on classic BSD Robots"
+msgstr "Pohjautuu klassiseen BSD Robots -peliin"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"
 msgstr ""
+"Jiri Grönroos, 2014-2015\n"
 "Timo Jyrinki, 2008\n"
 "Ilkka Tuohela, 2006-2009\n"
 "Sami Pesonen, 2002-2005\n"
@@ -453,7 +436,6 @@ msgstr ""
 "  eGetin https://launchpad.net/~egetin"
 
 #: ../src/gnome-robots.c:227
-#| msgid "Do you want to start a new game?"
 msgid "Are you sure you want to discard the current game?"
 msgstr "Haluatko varmasti hylätä nykyisen pelin?"
 
@@ -461,21 +443,19 @@ msgstr "Haluatko varmasti hylätä nykyisen pelin?"
 msgid "Keep _Playing"
 msgstr "Jatka _pelaamista"
 
-#: ../src/gnome-robots.c:373
-#| msgid "Teleport randomly"
+#: ../src/gnome-robots.c:361
 msgid "Teleport _Randomly"
 msgstr "Teleporttaa _satunnaiseen kohteeseen"
 
-#: ../src/gnome-robots.c:392
-#| msgid "Wait for the robots"
+#: ../src/gnome-robots.c:380
 msgid "_Wait for Robots"
 msgstr "_Odota robotteja"
 
-#: ../src/gnome-robots.c:420
+#: ../src/gnome-robots.c:408
 msgid "No game data could be found."
 msgstr "Pelidataa ei löytynyt."
 
-#: ../src/gnome-robots.c:422
+#: ../src/gnome-robots.c:410
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -483,11 +463,11 @@ msgstr ""
 "Gnome-robotit ei löytänyt toimivia pelin asetustiedostoja. Tarkista, että "
 "ohjelma on oikein asennettu."
 
-#: ../src/gnome-robots.c:438
+#: ../src/gnome-robots.c:426
 msgid "Some graphics files are missing or corrupt."
 msgstr "Osa graafisista tiedostoista puuttuu tai ovat korruptoituneet."
 
-#: ../src/gnome-robots.c:440
+#: ../src/gnome-robots.c:428
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -499,6 +479,10 @@ msgstr ""
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Kuvatiedostoa \"%s\" ei löytynyt\n"
+
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "Asetukset"
 
 #: ../src/properties.c:417
 msgid "Game Type"
@@ -551,6 +535,26 @@ msgstr "Palauta oletukset"
 #: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Näppäimistö"
+
+#~ msgid "Scores"
+#~ msgstr "Pisteet"
+
+#~| msgid "_Quit"
+#~ msgid "Quit"
+#~ msgstr "Lopeta"
+
+#~| msgid ""
+#~| "Based on classic BSD Robots.\n"
+#~| "\n"
+#~| "Robots is a part of GNOME Games."
+#~ msgid ""
+#~ "Based on classic BSD Robots\n"
+#~ "\n"
+#~ "Robots is a part of GNOME Games."
+#~ msgstr ""
+#~ "Pohjautuu klassikkoon BSD Robots.\n"
+#~ "\n"
+#~ "Robotit on osa Gnomen pelejä."
 
 #~ msgid "Key to teleport"
 #~ msgstr "Näppäin teleporttaukseen"
@@ -675,9 +679,6 @@ msgstr "Näppäimistö"
 
 #~ msgid "Res_ume"
 #~ msgstr "_Jatka"
-
-#~ msgid "_Scores"
-#~ msgstr "_Pisteet"
 
 #~ msgid "_End Game"
 #~ msgstr "_Lopeta peli"
@@ -1981,9 +1982,6 @@ msgstr "Näppäimistö"
 #~ msgid "_Restart Game"
 #~ msgstr "_Käynnistä peli uudelleen"
 
-#~ msgid "_Preferences"
-#~ msgstr "_Asetukset"
-
 #~| msgid "_Hint"
 #~ msgid "Hint"
 #~ msgstr "Vinkki"
@@ -3265,9 +3263,6 @@ msgstr "Näppäimistö"
 #~| msgid "Copyright  2009 Tim Horton"
 #~ msgid "Copyright © 2009 Tim Horton"
 #~ msgstr "Tekijänoikeus © 2009 Tim Horton"
-
-#~ msgid "classic robots"
-#~ msgstr "Klassiset Robotit"
 
 #~ msgid "robots2"
 #~ msgstr "Robotit II"

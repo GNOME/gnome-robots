@@ -10,17 +10,17 @@
 # Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
 # Hakan Bekdas <hakanbekdas@yahoo.com>, 2006.
 # Baris Cicek <baris@teamforce.name.tr>, 2004, 2005, 2008, 2009.
-# Muhammet Kara <muhammetk@gmail.com>, 2011, 2014.
+# Muhammet Kara <muhammetk@gmail.com>, 2011, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-12-06 08:19+0000\n"
-"PO-Revision-Date: 2014-12-06 22:29+0200\n"
+"POT-Creation-Date: 2015-03-22 08:25+0000\n"
+"PO-Revision-Date: 2015-03-22 18:13+0200\n"
 "Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
-"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,29 +28,30 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
-#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Yeni Oyun"
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "Yeni _Oyun"
 
-#: ../data/app-menu.ui.h:2 ../src/properties.c:393
-msgid "Preferences"
-msgstr "Tercihler"
+#: ../data/app-menu.ui.h:2
+#| msgid "Preferences"
+msgid "_Preferences"
+msgstr "_Tercihler"
 
 #: ../data/app-menu.ui.h:3
-msgid "Scores"
-msgstr "Puanlar"
+msgid "_Scores"
+msgstr "_Puanlar"
 
 #: ../data/app-menu.ui.h:4
-msgid "Help"
-msgstr "Yardım"
+msgid "_Help"
+msgstr "_Yardım"
 
 #: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "Hakkında"
+msgid "_About"
+msgstr "H_akkında"
 
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Çık"
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "_Çıkış"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -76,6 +77,11 @@ msgid ""
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
 msgstr ""
+"Neyse ki, robotlar aşırı derecede aptaldır ve her zaman doğrudan size doğru "
+"hareket edeceklerdir. Birbirlerine çarparak yok olmaları ya da bu "
+"çarpışmaların sonucunda oluşan çöp yığınlarına çarpmaları için robotları "
+"kanndırın. Çöp yığınlarını hareket ettirerek kendinizi savunabilir ya da "
+"elinizdeki ışınlanma cihazını kullanarak güvenli bir yere kaçabilirsiniz."
 
 #: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
@@ -83,9 +89,12 @@ msgid ""
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
 msgstr ""
+"Güvenli ışınlanma hakkınız sınırlıdır ve bittiğinde, ışınlanma sizi bir "
+"robotun yanına götürebilir, ki bu da ölümünüze sebep olacaktır. "
+"Olabildiğince uzun süre hayatta kalın!"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
 msgid "Robots"
 msgstr "Robotlar"
 
@@ -164,7 +173,6 @@ msgid "Key to move NW"
 msgstr "KB için tuş"
 
 #: ../data/org.gnome.robots.gschema.xml.h:16
-#| msgid "Key press to move right."
 msgid "The key used to move north-west."
 msgstr "Kuzeybatıya hareket etmek için kullanılan tuş."
 
@@ -173,7 +181,6 @@ msgid "Key to move N"
 msgstr "K için tuş"
 
 #: ../data/org.gnome.robots.gschema.xml.h:18
-#| msgid "Key press to move right."
 msgid "The key used to move north."
 msgstr "Kuzeye hareket etmek için kullanılan tuş."
 
@@ -182,7 +189,6 @@ msgid "Key to move NE"
 msgstr "KD için tuş"
 
 #: ../data/org.gnome.robots.gschema.xml.h:20
-#| msgid "Key press to move right."
 msgid "The key used to move north-east."
 msgstr "Kuzeydoğuya hareket etmek için kullanılan tuş."
 
@@ -191,7 +197,6 @@ msgid "Key to move W"
 msgstr "B için tuş"
 
 #: ../data/org.gnome.robots.gschema.xml.h:22
-#| msgid "Key press to move left."
 msgid "The key used to move west."
 msgstr "Batıya hareket etmek için kullanılan tuş."
 
@@ -208,7 +213,6 @@ msgid "Key to move E"
 msgstr "D için tuş"
 
 #: ../data/org.gnome.robots.gschema.xml.h:26
-#| msgid "Key press to move left."
 msgid "The key used to move east."
 msgstr "Doğuya hareket etmek için kullanılan tuş."
 
@@ -217,7 +221,6 @@ msgid "Key to move SW"
 msgstr "GB için tuş"
 
 #: ../data/org.gnome.robots.gschema.xml.h:28
-#| msgid "There are no more moves."
 msgid "The key used to move south-west."
 msgstr "Güzeybatıya hareket etmek için kullanılan tuş."
 
@@ -226,7 +229,6 @@ msgid "Key to move S"
 msgstr "G için tuş"
 
 #: ../data/org.gnome.robots.gschema.xml.h:30
-#| msgid "Key press to move left."
 msgid "The key used to move south."
 msgstr "Güneye hareket etmek için kullanılan tuş."
 
@@ -235,7 +237,6 @@ msgid "Key to move SE"
 msgstr "GD için tuş"
 
 #: ../data/org.gnome.robots.gschema.xml.h:32
-#| msgid "There are no more moves."
 msgid "The key used to move south-east."
 msgstr "Güneydoğuya hareket etmek için kullanılan tuş."
 
@@ -259,14 +260,6 @@ msgstr "Oyun bitti!"
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr ""
 "Çok iyi iş çıkardınız, ancak puanınız en iyi on listesine yer bulamadı."
-
-#: ../src/game.c:150
-msgid "_Quit"
-msgstr "_Çıkış"
-
-#: ../src/game.c:151 ../src/gnome-robots.c:231
-msgid "_New Game"
-msgstr "Yeni _Oyun"
 
 #: ../src/game.c:164
 msgid "Robots Scores"
@@ -327,6 +320,10 @@ msgstr "Puan"
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$ddak %2$dsn"
+
+#: ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Yeni Oyun"
 
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
@@ -407,23 +404,13 @@ msgstr "(Kalan: %d)"
 
 #. First line of safe teleports button label.
 #: ../src/gnome-robots.c:157
-#| msgid "Teleport randomly"
 msgid "Teleport _Safely"
 msgstr "G_üvenle Işınlan"
 
 #: ../src/gnome-robots.c:202
-#| msgid ""
-#| "Based on classic BSD Robots.\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"Klasik BSD Robotlar oyununa dayanır\n"
-"\n"
-"Robotlar, GNOME Oyunları'nın bir parçasıdır."
+#| msgid "classic robots"
+msgid "Based on classic BSD Robots"
+msgstr "Klasik BSD Robotlar Örnek Alınmıştır"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"
@@ -432,31 +419,27 @@ msgstr ""
 "Muhammet Kara <muhammetk@gmail.com>"
 
 #: ../src/gnome-robots.c:227
-#| msgid "Are you sure you want to quit?"
 msgid "Are you sure you want to discard the current game?"
 msgstr ""
 "Mevcut oyunu bırakarak ilerlemenizi kaybetmek istediğinizden emin misiniz?"
 
 #: ../src/gnome-robots.c:230
-#| msgid "Playing"
 msgid "Keep _Playing"
 msgstr "_Oynamaya Devam Et"
 
-#: ../src/gnome-robots.c:373
-#| msgid "Teleport randomly"
+#: ../src/gnome-robots.c:361
 msgid "Teleport _Randomly"
 msgstr "_Rastgele Işınlan"
 
-#: ../src/gnome-robots.c:392
-#| msgid "Wait for the robots"
+#: ../src/gnome-robots.c:380
 msgid "_Wait for Robots"
 msgstr "Robotları _Bekle"
 
-#: ../src/gnome-robots.c:420
+#: ../src/gnome-robots.c:408
 msgid "No game data could be found."
 msgstr "Oyun verisi bulunamadı."
 
-#: ../src/gnome-robots.c:422
+#: ../src/gnome-robots.c:410
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -464,11 +447,11 @@ msgstr ""
 "Robotlar uygulaması geçerli bir yapılandırma dosyası bulamadı. Lütfen bu "
 "programın kurulumunu gözden geçirin."
 
-#: ../src/gnome-robots.c:438
+#: ../src/gnome-robots.c:426
 msgid "Some graphics files are missing or corrupt."
 msgstr "Kimi grafik dosyaları eksik ya da bozuk."
 
-#: ../src/gnome-robots.c:440
+#: ../src/gnome-robots.c:428
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -480,6 +463,10 @@ msgstr ""
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "'%s' benekeşlem dosyası bulunamadı\n"
+
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "Tercihler"
 
 #: ../src/properties.c:417
 msgid "Game Type"
@@ -533,6 +520,31 @@ msgstr "Ö_ntanımlılara Dön"
 msgid "Keyboard"
 msgstr "Klavye"
 
+#~ msgid "Scores"
+#~ msgstr "Puanlar"
+
+#~ msgid "Help"
+#~ msgstr "Yardım"
+
+#~ msgid "About"
+#~ msgstr "Hakkında"
+
+#~ msgid "Quit"
+#~ msgstr "Çık"
+
+#~| msgid ""
+#~| "Based on classic BSD Robots.\n"
+#~| "\n"
+#~| "Robots is a part of GNOME Games."
+#~ msgid ""
+#~ "Based on classic BSD Robots\n"
+#~ "\n"
+#~ "Robots is a part of GNOME Games."
+#~ msgstr ""
+#~ "Klasik BSD Robotlar oyununa dayanır\n"
+#~ "\n"
+#~ "Robotlar, GNOME Oyunları'nın bir parçasıdır."
+
 #~ msgid "Chess"
 #~ msgstr "Satranç"
 
@@ -568,9 +580,6 @@ msgstr "Klavye"
 
 #~ msgid "_Game"
 #~ msgstr "_Oyun"
-
-#~ msgid "_Help"
-#~ msgstr "_Yardım"
 
 #~ msgid "_Resign"
 #~ msgstr "Ç_ekil"
@@ -1787,9 +1796,6 @@ msgstr "Klavye"
 #~ msgid "Show or hide the toolbar"
 #~ msgstr "Araç çubuğunu göster veya gizle"
 
-#~ msgid "classic robots"
-#~ msgstr "klasik robotlar"
-
 #~ msgid "robots2"
 #~ msgstr "robotlar2"
 
@@ -2894,9 +2900,6 @@ msgstr "Klavye"
 
 #~ msgid "Res_ume"
 #~ msgstr "_Devam et"
-
-#~ msgid "_Scores"
-#~ msgstr "_Puanlar"
 
 #~ msgid "_End Game"
 #~ msgstr "_Oyunu Bitir"
@@ -6782,9 +6785,6 @@ msgstr "Klavye"
 
 #~ msgid "Could not show link"
 #~ msgstr "Bağlantı gösterilemedi"
-
-#~ msgid "_About"
-#~ msgstr "H_akkında"
 
 #~ msgid "_Cancel"
 #~ msgstr "İptal _et"

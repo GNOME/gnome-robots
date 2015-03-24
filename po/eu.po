@@ -2,15 +2,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008, 2009, 2010, 2011, 2012, 2013.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-07 12:17+0200\n"
-"PO-Revision-Date: 2014-07-29 19:36+0200\n"
+"POT-Creation-Date: 2015-03-24 14:50+0100\n"
+"PO-Revision-Date: 2015-03-24 14:51+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "Language: eu\n"
@@ -18,37 +19,41 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 
-#: ../data/app-menu.ui.h:1 ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Joko berria"
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "_Joko berria"
 
-#: ../data/app-menu.ui.h:2 ../src/properties.c:393
-msgid "Preferences"
-msgstr "Hobespenak"
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Hobespenak"
 
 #: ../data/app-menu.ui.h:3
-msgid "Scores"
-msgstr "Puntuazioa"
+msgid "_Scores"
+msgstr "_Puntuazioak"
 
 #: ../data/app-menu.ui.h:4
-msgid "Help"
-msgstr "Laguntza"
+msgid "_Help"
+msgstr "_Laguntza"
 
 #: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "Honi buruz"
+msgid "_About"
+msgstr "Honi _buruz"
 
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Irten"
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "_Irten"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
 msgstr "GNOME Robotak"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "Saihestu robotak, eta robotei elkarrekin talka eginarazi"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
@@ -56,7 +61,7 @@ msgstr ""
 "Etorkizun urrun bat da, 2000. urtea. Robot gaiztoak zu hiltzen saiatzen ari "
 "dira. Saihestu robotak edo besarkatu heriotza."
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -70,7 +75,7 @@ msgstr ""
 "zakarrak lekuz alda ditzakezu, edo segurtasunez ihes egin telegarraiatzailea "
 "erabiliz."
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -81,13 +86,9 @@ msgstr ""
 "honek bertan hilko zaitu. Iraun bizirik ahalik eta denbora gehien."
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:331
+#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
 msgid "Robots"
 msgstr "Robotak"
-
-#: ../data/gnome-robots.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "Saihestu robotak, eta robotei elkarrekin talka eginarazi"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
@@ -255,14 +256,6 @@ msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr ""
 "Lan bikaina egin duzu, baina zure puntuazioa ez dago lehen hamarren artean."
 
-#: ../src/game.c:150
-msgid "_Quit"
-msgstr "_Irten"
-
-#: ../src/game.c:151 ../src/gnome-robots.c:231
-msgid "_New Game"
-msgstr "_Joko berria"
-
 #: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "Robotak jokoko puntuazioak"
@@ -322,6 +315,10 @@ msgstr "Puntuazioa"
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%dm %ds"
+
+#: ../src/games-scores-dialog.c:385
+msgid "New Game"
+msgstr "Joko berria"
 
 #. Score dialog column header for the date the score was recorded
 #: ../src/games-scores-dialog.c:478
@@ -406,14 +403,8 @@ msgid "Teleport _Safely"
 msgstr "Aldendu _babesera"
 
 #: ../src/gnome-robots.c:202
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"DSD Robots klasikoan oinarritua dago.\n"
-"\n"
-"GNOME Games-ekoa da GNOME Robotak."
+msgid "Based on classic BSD Robots"
+msgstr "BSD robot klasikoan oinarritua"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"
@@ -427,19 +418,19 @@ msgstr "Ziur zaude uneko jokoa baztertzea nahi duzula?"
 msgid "Keep _Playing"
 msgstr "Jarraitu _jokatzen"
 
-#: ../src/gnome-robots.c:373
+#: ../src/gnome-robots.c:361
 msgid "Teleport _Randomly"
 msgstr "Aldendu _ausaz"
 
-#: ../src/gnome-robots.c:392
+#: ../src/gnome-robots.c:380
 msgid "_Wait for Robots"
 msgstr "_Itxaron robotei"
 
-#: ../src/gnome-robots.c:420
+#: ../src/gnome-robots.c:408
 msgid "No game data could be found."
 msgstr "Ezin izan da jokoaren daturik aurkitu."
 
-#: ../src/gnome-robots.c:422
+#: ../src/gnome-robots.c:410
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -447,11 +438,11 @@ msgstr ""
 "Robotak programak ezin izan du jokoaren konfigurazio-fitxategi baliozkorik "
 "aurkitu. Begiratu programa ondo instalatuta dagoen."
 
-#: ../src/gnome-robots.c:438
+#: ../src/gnome-robots.c:426
 msgid "Some graphics files are missing or corrupt."
 msgstr "Grafiko batzuk falta dira edo hondatuak daude"
 
-#: ../src/gnome-robots.c:440
+#: ../src/gnome-robots.c:428
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -463,6 +454,10 @@ msgstr ""
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Ezin izan da '%s' pixmap fitxategia aurkitu\n"
+
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "Hobespenak"
 
 #: ../src/properties.c:417
 msgid "Game Type"
@@ -515,6 +510,21 @@ msgstr "Be_rrezarri lehenespenak"
 #: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "Teklatua"
+
+#~ msgid "Scores"
+#~ msgstr "Puntuazioa"
+
+#~ msgid "Quit"
+#~ msgstr "Irten"
+
+#~ msgid ""
+#~ "Based on classic BSD Robots\n"
+#~ "\n"
+#~ "Robots is a part of GNOME Games."
+#~ msgstr ""
+#~ "DSD Robots klasikoan oinarritua dago.\n"
+#~ "\n"
+#~ "GNOME Games-ekoa da GNOME Robotak."
 
 #~ msgid "Key to teleport"
 #~ msgstr "Aldentzeko tekla"
@@ -638,9 +648,6 @@ msgstr "Teklatua"
 
 #~ msgid "Res_ume"
 #~ msgstr "_Berrekin"
-
-#~ msgid "_Scores"
-#~ msgstr "_Puntuazioak"
 
 #~ msgid "_End Game"
 #~ msgstr "_Amaitu jokoa"
@@ -1891,9 +1898,6 @@ msgstr "Teklatua"
 #~ msgid "Worm %d:"
 #~ msgstr "%d harra:"
 
-#~ msgid "classic robots"
-#~ msgstr "robot klasikoak"
-
 #~ msgid "robots2"
 #~ msgstr "robotak2"
 
@@ -2243,9 +2247,6 @@ msgstr "Teklatua"
 
 #~ msgid "Clear hidden mines from a minefield"
 #~ msgstr "Zedarritu mina-eremuko minak"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Hobespenak"
 
 #~ msgid "Use the unknown flag"
 #~ msgstr "Erabili bandera ezezaguna"

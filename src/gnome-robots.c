@@ -187,7 +187,7 @@ help_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 static void
 about_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
-  const gchar *authors[] = { "Mark Rae <m.rae@inpharmatica.co.uk>", NULL };
+  const gchar *authors[] = { "Mark Rae <m.rae@inpharmatica.co.uk>", "Rasoul M.P. Aghdam (player death sound)", NULL };
 
   const gchar *artists[] = { "Kirstie Opstad <K.Opstad@ed.ac.uk>", NULL };
 

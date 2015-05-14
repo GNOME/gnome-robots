@@ -42,7 +42,7 @@
  * Animation
  */
 #define ANIMATION_DELAY       100
-#define DEAD_DELAY            20
+#define DEAD_DELAY            30
 #define CHANGE_DELAY          20
 #define WAITING_DELAY         1
 

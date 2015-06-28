@@ -30,7 +30,7 @@ PKG_CHECK_MODULES(ROBOTS, [
   gio-2.0 >= $GLIB_REQUIRED
   librsvg-2.0 >= $RSVG_REQUIRED
   libcanberra-gtk3 >= $CANBERRA_GTK_REQUIRED
-  libgames-support
+  libgames-support-1.0
 ])
 
 AC_PATH_PROG([DESKTOP_FILE_VALIDATE], [desktop-file-validate], [/bin/true])

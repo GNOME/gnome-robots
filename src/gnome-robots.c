@@ -195,7 +195,7 @@ preferences_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 static void
 scores_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
-  show_scores (0, FALSE);
+  show_scores ();
 }
 
 static void

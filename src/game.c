@@ -70,7 +70,7 @@ static gint temp_arena[GAME_WIDTH][GAME_HEIGHT];
 /* Function Prototypes                                                */
 /**********************************************************************/
 static void message_box (gchar * msg);
-static guint log_score (gint sc);
+static void log_score (gint sc);
 static void add_kill (gint type);
 static void clear_arena (void);
 static gint check_location (gint x, gint y);
@@ -118,15 +118,13 @@ message_box (gchar * msg)
 
 /**
  * show_scores
- * @pos: score-table position
- * @endofgame: game state
  *
  * Description:
  * Displays the high-score table
  **/
 
-gint
-show_scores (gint pos, gboolean endofgame)
+void
+show_scores (void)
 {
   GError *error = NULL;
   games_scores_context_run_dialog (highscores, &error);
@@ -135,76 +133,6 @@ show_scores (gint pos, gboolean endofgame)
     g_warning ("Failed to run scores dialog: %s", error->message);
     g_error_free (error);
   }
-/*  gchar *message;
-  static GtkWidget *scoresdialog = NULL;
-  static GtkWidget *sorrydialog = NULL;
-  GtkWidget *dialog;
-  gint result;
-
-  if (endofgame && (pos <= 0)) {
-    if (sorrydialog != NULL) {
-      gtk_window_present (GTK_WINDOW (sorrydialog));
-    } else {
-      sorrydialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (window),
-                                                        GTK_DIALOG_DESTROY_WITH_PARENT,
-                                                        GTK_MESSAGE_INFO,
-                                                        GTK_BUTTONS_NONE,
-                                                        "<b>%s</b>\n%s",
-                                                        _
-                                                        ("Game over!"),
-                                                        _
-                                                        ("Great work, but unfortunately your score did not make the top ten."));
-      gtk_dialog_add_buttons (GTK_DIALOG (sorrydialog), _("_Quit"),
-                              GTK_RESPONSE_REJECT, _("_New Game"),
-                              GTK_RESPONSE_ACCEPT, NULL);
-      gtk_dialog_set_default_response (GTK_DIALOG (sorrydialog),
-                                       GTK_RESPONSE_ACCEPT);
-      gtk_window_set_title (GTK_WINDOW (sorrydialog), "");
-    }
-    dialog = sorrydialog;
-  } else {
-
-    if (scoresdialog != NULL) {
-      gtk_window_present (GTK_WINDOW (scoresdialog));
-    } else {
-      scoresdialog = games_scores_dialog_new (GTK_WINDOW (window),
-                                        highscores, _("Robots Scores"));
-      games_scores_dialog_set_category_description (GAMES_SCORES_DIALOG
-                                                    (scoresdialog),
-                                                    _("Map:"));
-    }
-
-    if (pos > 0) {
-      play_sound (SOUND_VICTORY);
-
-      games_scores_dialog_set_hilight (GAMES_SCORES_DIALOG (scoresdialog),
-                                       pos);
-      message = g_strdup_printf ("<b>%s</b>\n\n%s",
-                                 _("Congratulations!"),
-                                 pos == 1 ? _("Your score is the best!") :
-                                 _("Your score has made the top ten."));
-      games_scores_dialog_set_message (GAMES_SCORES_DIALOG (scoresdialog),
-                                       message);
-      g_free (message);
-    } else {
-      games_scores_dialog_set_message (GAMES_SCORES_DIALOG (scoresdialog),
-                                       NULL);
-    }
-
-    if (endofgame) {
-      games_scores_dialog_set_buttons (GAMES_SCORES_DIALOG (scoresdialog),
-                                       GAMES_SCORES_QUIT_BUTTON |
-                                       GAMES_SCORES_NEW_GAME_BUTTON);
-    } else {
-      games_scores_dialog_set_buttons (GAMES_SCORES_DIALOG (scoresdialog), 0);
-    }
-    dialog = scoresdialog;
-  }
-
-  result = gtk_dialog_run (GTK_DIALOG (dialog));
-  gtk_widget_hide (dialog);*/
-
-  return 0;
 }
 
 /**
@@ -213,14 +141,10 @@ show_scores (gint pos, gboolean endofgame)
  *
  * Description:
  * Enters a score in the high-score table
- *
- * Returns:
- * the position in the high-score table
  **/
-static guint
+static void
 log_score (gint sc)
 {
-  guint pos = 0;
   gchar *sbuf = NULL;
 
   if (properties_super_safe_moves ()) {
@@ -241,16 +165,13 @@ log_score (gint sc)
     const gchar* name = category_name_from_key (key);
     GError *error = NULL;
     current_cat = games_scores_category_new (key, name);
-    // FIXME returns a bool, not the position...
-    pos = games_scores_context_add_score (highscores, (guint32) sc, current_cat, &error);
+    games_scores_context_add_score (highscores, (guint32) sc, current_cat, &error);
     if (error != NULL) {
       g_warning ("Failed to add score: %s", error->message);
       g_error_free (error);
     }
   }
   g_free (sbuf);
-
-  return pos;
 }
 
 /**
@@ -579,10 +500,8 @@ timeout_cb (void *data)
     ++endlev_counter;
     if (endlev_counter >= DEAD_DELAY) {
       if (score > 0) {
-        sp = log_score (score);
-        if (show_scores (sp, TRUE) == GTK_RESPONSE_REJECT) {
-          quit_game ();
-        }
+        log_score (score);
+        show_scores ();
       }
       start_new_game ();
     }

@@ -128,7 +128,13 @@ message_box (gchar * msg)
 gint
 show_scores (gint pos, gboolean endofgame)
 {
-  games_scores_context_run_dialog (highscores);
+  GError *error = NULL;
+  games_scores_context_run_dialog (highscores, &error);
+
+  if (error) {
+    g_warning ("Failed to run scores dialog: %s", error->message);
+    g_error_free (error);
+  }
 /*  gchar *message;
   static GtkWidget *scoresdialog = NULL;
   static GtkWidget *sorrydialog = NULL;

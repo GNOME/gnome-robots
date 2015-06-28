@@ -431,7 +431,7 @@ activate (GtkApplication *app, gpointer user_data)
                                          _("Game Type:"),
                                          GTK_WINDOW (window),
                                          GAMES_SCORES_STYLE_PLAIN_DESCENDING);
-  g_signal_connect (highscores, "request-category", G_CALLBACK (create_category_from_key), NULL);
+  g_signal_connect (highscores, "category-request", G_CALLBACK (create_category_from_key), NULL);
   gtk_widget_show_all (window);
 
   if (!load_game_configs ()) {

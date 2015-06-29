@@ -24,9 +24,9 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include <games-support.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
+#include <libgames-support.h>
 
 #include "gbdefs.h"
 #include "gameconfig.h"

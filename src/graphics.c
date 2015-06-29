@@ -21,10 +21,10 @@
 
 #include <config.h>
 
-#include <games-support.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
+#include <libgames-support.h>
 
 #include <sys/types.h>
 #include <string.h>

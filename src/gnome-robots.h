@@ -1,8 +1,8 @@
 #ifndef GNOBOTS_H
 #define GNOBOTS_H
 
-#include <games-support.h>
 #include <gtk/gtk.h>
+#include <libgames-support.h>
 
 /**********************************************************************/
 /* Exported Variables                                                 */

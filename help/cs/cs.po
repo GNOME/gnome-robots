@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games gnome-2-28\n"
-"POT-Creation-Date: 2015-02-05 20:25+0000\n"
-"PO-Revision-Date: 2015-02-06 09:04+0100\n"
+"POT-Creation-Date: 2015-07-18 07:53+0000\n"
+"PO-Revision-Date: 2015-07-18 16:10+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -811,7 +811,7 @@ msgid "High-risk anthill"
 msgstr "Vysoce nebezpečné mraveniště"
 
 #. (itstool) path: media/span
-#: C/scores.page:53 C/scores.page:145
+#: C/scores.page:53
 msgid "Low-risk anthill"
 msgstr "Málo nebezpečné mraveniště"
 
@@ -959,6 +959,11 @@ msgstr "ufa"
 #: C/scores.page:142
 msgid "High-risk UFO"
 msgstr "Vysoce nebezpečné ufo"
+
+#. (itstool) path: media/span
+#: C/scores.page:145
+msgid "Low-risk UFO"
+msgstr "Málo nebezpečné ufo"
 
 #. (itstool) path: section/title
 #: C/scores.page:153

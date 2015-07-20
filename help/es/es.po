@@ -5,10 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
-"POT-Creation-Date: 2015-02-04 08:25+0000\n"
-"PO-Revision-Date: 2015-02-09 20:06+0100\n"
+"POT-Creation-Date: 2015-07-20 07:53+0000\n"
+"PO-Revision-Date: 2015-07-20 \n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: Spanish <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,9 +62,6 @@ msgstr "Para cambiar el tema y el fondo:"
 
 #. (itstool) path: item/p
 #: C/appearance.page:35
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#| "\">Preferences</gui> <gui style=\"menuitem\">Appearance</gui></guiseq>."
 msgid ""
 "Select <guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
 "\">Appearance</gui></guiseq>."
@@ -109,10 +106,6 @@ msgstr "Iniciar un juego nuevo"
 
 #. (itstool) path: section/p
 #: C/basics.page:32
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">New</"
-#| "gui></guiseq>, click the <_:media-1/> button on the toolbar, or press "
-#| "<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgid ""
 "Select <gui style=\"menuitem\">New Game</gui> from the menu or press "
 "<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
@@ -127,10 +120,6 @@ msgstr "Activar sonidos"
 
 #. (itstool) path: section/p
 #: C/basics.page:39
-#| msgid ""
-#| "Select <guiseq> <gui style=\"menu\">Settings</gui><gui>Preferences</gui> "
-#| "<gui>Game</gui></guiseq>. Check the <gui style=\"checkbox\">Enable "
-#| "sounds</gui> checkbox to enable sounds."
 msgid ""
 "Select <guiseq><gui style=\"menu\">Preferences</gui><gui style=\"menuitem"
 "\">Game</gui></guiseq>. Check the <gui style=\"checkbox\">Enable sounds</"
@@ -183,9 +172,6 @@ msgstr "Para cambiar las teclas predeterminadas:"
 
 #. (itstool) path: item/p
 #: C/controls-change.page:30
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#| "\">Preferences</gui><gui>Keyboard</gui></guiseq>."
 msgid ""
 "Select <guiseq><gui style=\"menu\">Preferences</gui><gui style=\"menuitem"
 "\">Keyboard</gui></guiseq>."
@@ -443,10 +429,6 @@ msgstr "Pulse sobre el personaje principal para quedarse en el mismo cuadrado."
 
 #. (itstool) path: item/p
 #: C/controls-default.page:120
-#| msgid ""
-#| "Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
-#| "\"menu\">Move</gui><gui style=\"menuitem\">Wait</gui></guiseq> to wait "
-#| "for the enemy robots to finish making all their moves."
 msgid ""
 "Click the <gui>Wait for Robots</gui> button to wait for the enemy robots to "
 "finish making all their moves."
@@ -509,9 +491,6 @@ msgstr "Para cambiar el nivel de dificultad:"
 
 #. (itstool) path: item/p
 #: C/game-types.page:35
-#| msgid ""
-#| "Select <guiseq> <gui style=\"menu\">Settings</gui> <gui>Preferences</"
-#| "gui><gui>Game</gui></guiseq>."
 msgid ""
 "Select <guiseq> <gui style=\"menu\">Settings</gui><gui>Preferences</"
 "gui><gui>Game</gui> </guiseq>."
@@ -539,7 +518,6 @@ msgstr "<link xref=\"moves#teleport\">Teletransportes</link> seguros iniciales"
 
 #. (itstool) path: td/p
 #: C/game-types.page:48
-#| msgid "Initial <link xref=\"scores#low-risk\">low-risk enemy robots</link>"
 msgid ""
 "Initial <link xref=\"scores#high-low-risk\">low-risk enemy robots</link>"
 msgstr ""
@@ -548,8 +526,6 @@ msgstr ""
 
 #. (itstool) path: td/p
 #: C/game-types.page:51
-#| msgid ""
-#| "Initial <link xref=\"scores#high-risk\">high-risk enemy robots</link>"
 msgid ""
 "Initial <link xref=\"scores#high-low-risk\">high-risk enemy robots</link>"
 msgstr ""
@@ -639,11 +615,6 @@ msgstr "No"
 
 #. (itstool) path: item/p
 #: C/game-types.page:99
-#| msgid ""
-#| "Check the <gui style=\"checkbox\">Use safe moves</gui> and <gui style="
-#| "\"checkbox\">Use super safe moves</gui> checkboxes if you want your "
-#| "random teleports to be as safe as possible. This reduces the level of "
-#| "difficulty. You can always uncheck these if you find the game too easy."
 msgid ""
 "If you check the <gui style=\"checkbox\">Use safe moves</gui> checkbox, the "
 "game will prevent you from moving if the move would cause a robot to kill "
@@ -673,11 +644,6 @@ msgstr "<_:media-1/> Robots"
 
 #. (itstool) path: page/p
 #: C/index.page:25
-#| msgid ""
-#| "<app>Robots</app> is based on the UNIX command-line game of the same "
-#| "name. The aim of the game is to destroy all the robots by getting them to "
-#| "crash into each other or into junk-heaps from previous collisions, while "
-#| "stopping them from crashing into you."
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
@@ -711,11 +677,6 @@ msgstr "diferentes movimientos en <app>Robots</app>"
 
 #. (itstool) path: page/p
 #: C/moves.page:25
-#| msgid ""
-#| "In <app>Robots</app> you can move in eight directions, wait for the "
-#| "robots, or teleport. The enemy robots and the main character take turns "
-#| "to make their move. So, after each of your moves, the enemy robots try to "
-#| "make a move that gets them closer to you."
 msgid ""
 "In <app>Robots</app> you can move in one of eight directions, wait for the "
 "robots, or teleport. The enemy robots and the main character take turns to "
@@ -805,9 +766,6 @@ msgstr "Puntuación"
 
 #. (itstool) path: page/p
 #: C/scores.page:28
-#| msgid ""
-#| "There are two type of enemies in <app>Robots</app>, enemies that give you "
-#| "10 points when they die and enemies that give you 20 points when they die."
 msgid ""
 "There are two type of enemies in <app>Robots</app>: high-risk enemies which "
 "give you 20 points when they die and low-risk enemies which give you 10 "
@@ -818,7 +776,6 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/scores.page:33
-#| msgid "High-risk enemies"
 msgid "High and low risk enemies by theme"
 msgstr "Enemigos de alto y bajo riesgo por tema"
 
@@ -833,19 +790,16 @@ msgstr ""
 
 #. (itstool) path: td/p
 #: C/scores.page:41
-#| msgid "Game type"
 msgid "Game theme"
 msgstr "Tema del juego"
 
 #. (itstool) path: td/p
 #: C/scores.page:42
-#| msgid "High-risk enemies"
 msgid "High-risk enemy (20 points)"
 msgstr "Enemigos de alto riesgo (20 puntos)"
 
 #. (itstool) path: td/p
 #: C/scores.page:43
-#| msgid "Low-risk enemies"
 msgid "Low-risk enemy (10 points)"
 msgstr "Enemigos de riesgo bajo(10 puntos)"
 
@@ -856,13 +810,11 @@ msgstr "hormigueros"
 
 #. (itstool) path: media/span
 #: C/scores.page:50
-#| msgid "High-risk enemies"
 msgid "High-risk anthill"
 msgstr "Hormiguero de alto riesgo"
 
 #. (itstool) path: media/span
-#: C/scores.page:53 C/scores.page:145
-#| msgid "Low-risk enemies"
+#: C/scores.page:53
 msgid "Low-risk anthill"
 msgstr "Hormiguero de riesgo bajo"
 
@@ -873,13 +825,11 @@ msgstr "boo"
 
 #. (itstool) path: media/span
 #: C/scores.page:59
-#| msgid "High-risk enemies"
 msgid "High-risk bat"
 msgstr "Murciélago de alto riesgo"
 
 #. (itstool) path: media/span
 #: C/scores.page:62
-#| msgid "Low-risk enemies"
 msgid "Low-risk ghost"
 msgstr "Fantasma de riesgo bajo"
 
@@ -890,13 +840,11 @@ msgstr "vacas"
 
 #. (itstool) path: media/span
 #: C/scores.page:68
-#| msgid "High-risk enemies"
 msgid "High-risk cow"
 msgstr "Vaca de alto riesgo"
 
 #. (itstool) path: media/span
 #: C/scores.page:71
-#| msgid "Low-risk enemies"
 msgid "Low-risk cow"
 msgstr "Vaca de riesgo bajo"
 
@@ -907,13 +855,11 @@ msgstr "huevos"
 
 #. (itstool) path: media/span
 #: C/scores.page:78
-#| msgid "High-risk enemies"
 msgid "High-risk egg"
 msgstr "Huevo de alto riesgo"
 
 #. (itstool) path: media/span
 #: C/scores.page:82
-#| msgid "Low-risk enemies"
 msgid "Low-risk egg"
 msgstr "Huevo de riesgo bajo"
 
@@ -924,13 +870,11 @@ msgstr "gnomos"
 
 #. (itstool) path: media/span
 #: C/scores.page:88
-#| msgid "High-risk enemies"
 msgid "High-risk gnome"
 msgstr "Gnomo de alto riesgo"
 
 #. (itstool) path: media/span
 #: C/scores.page:91
-#| msgid "Low-risk enemies"
 msgid "Low-risk gnome"
 msgstr "Gnomo de riesgo bajo"
 
@@ -941,13 +885,11 @@ msgstr "ratones"
 
 #. (itstool) path: media/span
 #: C/scores.page:97
-#| msgid "High-risk enemies"
 msgid "High-risk mouse"
 msgstr "Ratón de alto riesgo"
 
 #. (itstool) path: media/span
 #: C/scores.page:100
-#| msgid "Low-risk enemies"
 msgid "Low-risk mouse"
 msgstr "Ratón de riesgo bajo"
 
@@ -958,13 +900,11 @@ msgstr "robots"
 
 #. (itstool) path: media/span
 #: C/scores.page:106
-#| msgid "High-risk Robots <_:media-1/>"
 msgid "High-risk robot"
 msgstr "Robot de alto riesgo"
 
 #. (itstool) path: media/span
 #: C/scores.page:109
-#| msgid "Low-risk Robots <_:media-1/>"
 msgid "Low-risk robot"
 msgstr "Robot de riesgo bajo"
 
@@ -975,13 +915,11 @@ msgstr "vertidos"
 
 #. (itstool) path: media/span
 #: C/scores.page:115
-#| msgid "High-risk enemies"
 msgid "High-risk spill"
 msgstr "Vertido de alto riesgo"
 
 #. (itstool) path: media/span
 #: C/scores.page:118
-#| msgid "Low-risk enemies"
 msgid "Low-risk spill"
 msgstr "Vertido de riesgo bajo"
 
@@ -1007,13 +945,11 @@ msgstr "tostadoras"
 
 #. (itstool) path: media/span
 #: C/scores.page:133
-#| msgid "High-risk enemies"
 msgid "High-risk toaster"
 msgstr "Tostadora de alto riesgo"
 
 #. (itstool) path: media/span
 #: C/scores.page:136
-#| msgid "Low-risk enemies"
 msgid "Low-risk toaster"
 msgstr "Tostadora de riesgo bajo"
 
@@ -1024,9 +960,14 @@ msgstr "ovni"
 
 #. (itstool) path: media/span
 #: C/scores.page:142
-#| msgid "High-risk enemies"
 msgid "High-risk UFO"
 msgstr "OVNI de alto riesgo"
+
+#. (itstool) path: media/span
+#: C/scores.page:145
+#| msgid "Low-risk cow"
+msgid "Low-risk UFO"
+msgstr "OVNI de riesgo bajo"
 
 #. (itstool) path: section/title
 #: C/scores.page:153
@@ -1035,9 +976,6 @@ msgstr "Puntuación más alta"
 
 #. (itstool) path: section/p
 #: C/scores.page:155
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-#| "\">Preferences</gui><gui>Keyboard</gui></guiseq>."
 msgid ""
 "Select <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">Scores</"
 "gui></guiseq> to view the high scores."
@@ -1292,8 +1230,8 @@ msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
 #~ "md5='183efc4bba58248fc97edf5528af5a9a'"
 
 #~ msgid ""
-#~ "Bats <media type=\"image\" src=\"figures/boo-high-risk.png\" height="
-#~ "\"20\" width=\"20\"/>"
+#~ "Bats <media type=\"image\" src=\"figures/boo-high-risk.png\" height=\"20"
+#~ "\" width=\"20\"/>"
 #~ msgstr ""
 #~ "Murciélagos <media type=\"image\" src=\"figures/boo-high-risk.png\" "
 #~ "height=\"20\" width=\"20\"/>"
@@ -1320,8 +1258,8 @@ msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
 #~ "\" height=\"20\" width=\"20\"/>"
 
 #~ msgid ""
-#~ "Ghosts <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
-#~ "\"20\" width=\"20\"/>"
+#~ "Ghosts <media type=\"image\" src=\"figures/boo-low-risk.png\" height=\"20"
+#~ "\" width=\"20\"/>"
 #~ msgstr ""
 #~ "Fantasmas <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
 #~ "\"20\" width=\"20\"/>"
@@ -1637,10 +1575,10 @@ msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
 #~ "transportarán fuera del peligro inmediato, pero sólo dispone de una "
 #~ "cantidad limitada. Puede obtener más teletransportes a medida que avanza "
 #~ "en el juego (cómo los obtiene depende del juego elegido), pero "
-#~ "generalmente obtiene uno por cada robot que se destruye mientras "
-#~ "«espera», hasta un máximo de 10. Si no quiere gastar sus teletransportes "
-#~ "seguros, puede elegir teletransportarse al azar si cree que es "
-#~ "suficientemente seguro."
+#~ "generalmente obtiene uno por cada robot que se destruye mientras «espera», "
+#~ "hasta un máximo de 10. Si no quiere gastar sus teletransportes seguros, "
+#~ "puede elegir teletransportarse al azar si cree que es suficientemente "
+#~ "seguro."
 
 #~ msgid ""
 #~ "If you press the <guibutton>Wait</guibutton> button (see below) you will "

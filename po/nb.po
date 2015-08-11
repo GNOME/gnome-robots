@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots 3.17.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-14 16:30+0200\n"
-"PO-Revision-Date: 2015-05-14 16:32+0200\n"
+"POT-Creation-Date: 2015-08-11 19:04+0200\n"
+"PO-Revision-Date: 2015-08-11 19:06+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -53,7 +53,9 @@ msgstr "Unngå roboter og få dem til å krasje med hverandre"
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
-msgstr "I den fjerne fremtiden – i året 2000. Onde roboter prøver å drepe deg. Unngå robotene eller møt den visse død."
+msgstr ""
+"I den fjerne fremtiden – i året 2000. Onde roboter prøver å drepe deg. Unngå "
+"robotene eller møt den visse død."
 
 #: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
@@ -62,14 +64,14 @@ msgid ""
 "destruction, or into the junk piles that result. You can defend yourself by "
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
-msgstr ""
+msgstr "Heldigvis er robotene ekstremt dumme og vil alltid bevege seg rett mot deg. Lur dem til å kollidere med hverandre så de blir ødelagt, eller til å treffe hauger med søppel etter kollisjoner. Du kan forsvare deg ved å flytte søppelhaugene, eller flykte til en trygg plass med teleportenheten du har."
 
 #: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
-msgstr ""
+msgstr "Antall trygge teleporter er begrenset, og når du går tom vil teleportering kunne medføre at du lander ved siden av en robot som vil drepe deg. Prøv å overleve så lenge som mulig."
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
 #: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324

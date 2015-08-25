@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-04 23:44+0100\n"
-"PO-Revision-Date: 2015-03-04 23:45+0100\n"
+"POT-Creation-Date: 2015-08-25 14:14+0200\n"
+"PO-Revision-Date: 2015-08-25 14:15+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -255,7 +255,7 @@ msgstr "Wysokość okna w pikselach"
 
 #: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
-msgstr "Wartość \"true\" oznacza, że okno jest zmaksymalizowane"
+msgstr "Wartość „true” oznacza, że okno jest zmaksymalizowane"
 
 #: ../src/game.c:147
 msgid "Game over!"
@@ -263,7 +263,7 @@ msgstr "Koniec gry!"
 
 #: ../src/game.c:149
 msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr "Niestety ten wynik nie kwalifikuje się do pierwszej dziesiątki."
+msgstr "Niestety, ale ten wynik nie kwalifikuje się do pierwszej dziesiątki."
 
 #: ../src/game.c:164
 msgid "Robots Scores"
@@ -323,7 +323,7 @@ msgstr "Wynik"
 #, c-format
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
-msgstr "%1$dm %2$ds"
+msgstr "%1$d m %2$d s"
 
 #: ../src/games-scores-dialog.c:385
 msgid "New Game"
@@ -475,7 +475,7 @@ msgstr ""
 #: ../src/graphics.c:151
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
-msgstr "Nie można odnaleźć pliku z mapą pikseli \"%s\"\n"
+msgstr "Nie można odnaleźć pliku z mapą pikseli „%s”\n"
 
 #: ../src/properties.c:393
 msgid "Preferences"

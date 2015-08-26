@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: gnome-games 3.3.91\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-17 08:27+0000\n"
+"POT-Creation-Date: 2015-07-21 19:51+0000\n"
 "PO-Revision-Date: 2015-03-17 20:56+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (traditional)\n"
@@ -437,13 +437,13 @@ msgstr "GNOME 機器人找不到有效的設定檔。請檢查程式是否已正
 
 #: ../src/gnome-robots.c:426
 msgid "Some graphics files are missing or corrupt."
-msgstr "某些圖片檔案找不到或者已經損壞。"
+msgstr "某些影像檔案找不到或者已經損壞。"
 
 #: ../src/gnome-robots.c:428
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
-msgstr "GNOME 機器人無法載入所有需要的圖片檔。請檢查程式是否已正確安裝。"
+msgstr "GNOME 機器人無法載入所有需要的影像檔。請檢查程式是否已正確安裝。"
 
 #: ../src/graphics.c:151
 #, c-format
@@ -1370,7 +1370,7 @@ msgstr "鍵盤"
 #~ msgstr "棋子款式"
 
 #~ msgid "Ball style. The filename of the images to use for the balls."
-#~ msgstr "棋子款式。設定值為棋子的圖片檔名。"
+#~ msgstr "棋子款式。設定值為棋子的影像檔名。"
 
 #~ msgid "Time between moves"
 #~ msgstr "移動棋子延遲時間"
@@ -1514,7 +1514,7 @@ msgstr "鍵盤"
 #~ "Unable to load image:\n"
 #~ "%s"
 #~ msgstr ""
-#~ "無法載入圖片:\n"
+#~ "無法載入影像:\n"
 #~ "%s"
 
 #~ msgid "It's a draw!"

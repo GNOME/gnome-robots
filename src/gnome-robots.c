@@ -338,7 +338,7 @@ activate (GtkApplication *app, gpointer user_data)
   make_cursors ();
 
   game_area = gtk_drawing_area_new ();
-  gtk_widget_add_events (game_area, GDK_BUTTON_PRESS_MASK |
+  gtk_widget_add_events (game_area, GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
 			 GDK_POINTER_MOTION_MASK);
   g_signal_connect (G_OBJECT (game_area), "button-press-event",
 		    G_CALLBACK (mouse_cb), NULL);

@@ -360,6 +360,8 @@ activate (GtkApplication *app, gpointer user_data)
 		    G_CALLBACK (resize_cb), NULL);
   g_signal_connect (G_OBJECT (game_area), "draw",
 		    G_CALLBACK (draw_cb), NULL);
+  g_signal_connect (G_OBJECT (game_area), "destroy",
+                    G_CALLBACK (gtk_widget_destroyed), &game_area);
 
   gridframe = games_grid_frame_new (GAME_WIDTH, GAME_HEIGHT);
   gtk_container_add (GTK_CONTAINER (gridframe), game_area);

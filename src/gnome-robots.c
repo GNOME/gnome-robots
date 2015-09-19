@@ -330,8 +330,8 @@ shutdown (GtkApplication *app, gpointer user_data)
   g_settings_set_boolean (settings, "window-is-maximized", window_is_maximized);
 }
 
-static GamesScoresCategory
-*create_category_from_key (GamesScoresContext *context, const char *key, gpointer user_data)
+static GamesScoresCategory *
+create_category_from_key (const char *key, gpointer user_data)
 {
   const gchar *name = category_name_from_key (key);
   if (name == NULL)
@@ -430,8 +430,9 @@ activate (GtkApplication *app, gpointer user_data)
                                          /* Label on the scores dialog, next to map type dropdown */
                                          _("Game Type:"),
                                          GTK_WINDOW (window),
+                                         create_category_from_key,
+                                         NULL,
                                          GAMES_SCORES_STYLE_PLAIN_DESCENDING);
-  g_signal_connect (highscores, "category-request", G_CALLBACK (create_category_from_key), NULL);
   gtk_widget_show_all (window);
 
   if (!load_game_configs ()) {

@@ -504,7 +504,6 @@ timeout_cb (void *data)
     if (endlev_counter >= DEAD_DELAY) {
       if (score > 0) {
         log_score (score);
-        show_scores ();
       }
       start_new_game ();
     }

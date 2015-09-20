@@ -129,6 +129,20 @@ show_scores (void)
   games_scores_context_run_dialog (highscores);
 }
 
+static void
+add_score_cb (GObject *source_object, GAsyncResult *res, gpointer user_data)
+{
+  GamesScoresContext *context = GAMES_SCORES_CONTEXT (source_object);
+  GError *error = NULL;
+
+  games_scores_context_add_score_finish (context, res, &error);
+
+  if (error != NULL) {
+    g_warning ("Failed to add score: %s", error->message);
+    g_error_free (error);
+  }
+}
+
 /**
  * log_score
  * @sc: score
@@ -157,13 +171,8 @@ log_score (gint sc)
   if (sc != 0) {
     const gchar* key = sbuf;
     const gchar* name = category_name_from_key (key);
-    GError *error = NULL;
     current_cat = games_scores_category_new (key, name);
-    games_scores_context_add_score (highscores, (guint32) sc, current_cat, &error);
-    if (error != NULL) {
-      g_warning ("Failed to add score: %s", error->message);
-      g_error_free (error);
-    }
+    games_scores_context_add_score (highscores, (guint32) sc, current_cat, add_score_cb, NULL);
   }
   g_free (sbuf);
 }

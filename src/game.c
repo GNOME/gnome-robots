@@ -172,7 +172,7 @@ log_score (gint sc)
     const gchar* key = sbuf;
     const gchar* name = category_name_from_key (key);
     current_cat = games_scores_category_new (key, name);
-    games_scores_context_add_score (highscores, (guint32) sc, current_cat, add_score_cb, NULL);
+    games_scores_context_add_score (highscores, (guint32) sc, current_cat, NULL, add_score_cb, NULL);
   }
   g_free (sbuf);
 }

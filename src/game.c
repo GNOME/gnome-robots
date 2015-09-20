@@ -126,13 +126,7 @@ message_box (gchar * msg)
 void
 show_scores (void)
 {
-  GError *error = NULL;
-  games_scores_context_run_dialog (highscores, &error);
-
-  if (error) {
-    g_warning ("Failed to run scores dialog: %s", error->message);
-    g_error_free (error);
-  }
+  games_scores_context_run_dialog (highscores);
 }
 
 /**

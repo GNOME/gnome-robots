@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots manual master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-11 20:30+0000\n"
-"PO-Revision-Date: 2015-03-13 23:41+0100\n"
+"POT-Creation-Date: 2015-11-03 21:56+0000\n"
+"PO-Revision-Date: 2015-11-04 11:19+0100\n"
 "Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.5\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -825,7 +825,7 @@ msgid "High-risk anthill"
 msgstr "Sehr gefährliche Ameisenhügel"
 
 #. (itstool) path: media/span
-#: C/scores.page:53 C/scores.page:145
+#: C/scores.page:53
 msgid "Low-risk anthill"
 msgstr "Bedrohliche Ameisenhügel"
 
@@ -974,6 +974,11 @@ msgstr "UFOs"
 #: C/scores.page:142
 msgid "High-risk UFO"
 msgstr "Sehr gefährliche UFOs"
+
+#. (itstool) path: media/span
+#: C/scores.page:145
+msgid "Low-risk UFO"
+msgstr "Bedrohliche UFOs"
 
 #. (itstool) path: section/title
 #: C/scores.page:153

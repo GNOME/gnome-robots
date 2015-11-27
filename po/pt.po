@@ -4,8 +4,7 @@
 # Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1998.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
 # Tiago S. <almosthumane@portugalmail.pt>, 2014.
-# Pedro Albuquerque <palbuquerque73@openmailbox.com>, 2015.
-#
+# Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
@@ -29,7 +28,7 @@ msgstr "_Novo jogo"
 #: ../data/app-menu.ui.h:2
 #| msgid "Robots Preferences"
 msgid "_Preferences"
-msgstr "Preferências do Robôs"
+msgstr "_Preferências"
 
 #: ../data/app-menu.ui.h:3
 msgid "_Scores"
@@ -416,8 +415,7 @@ msgstr "Baseado no clássico BSD Robots"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"
-msgstr ""
-"Duarte Loreto <happyguy_pt@hotmail.com>\n"
+msgstr "Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Pedro Albuquerque <palbuquerque73@gmail.com>"
 
 #: ../src/gnome-robots.c:227
@@ -431,12 +429,12 @@ msgstr "Continuar a _Jogar"
 #: ../src/gnome-robots.c:361
 #| msgid "Teleport randomly"
 msgid "Teleport _Randomly"
-msgstr "Teletransportar aleatoriamente"
+msgstr "Teletransportar _Aleatoriamente"
 
 #: ../src/gnome-robots.c:380
 #| msgid "Wait for the robots"
 msgid "_Wait for Robots"
-msgstr "Esperar pelos robôs"
+msgstr "_Esperar pelos robôs"
 
 #: ../src/gnome-robots.c:408
 msgid "No game data could be found."
@@ -447,7 +445,7 @@ msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
 msgstr ""
-"A aplicação Robots não pôde encontrar quaisquer ficheiros de configuração de "
+"A aplicação Robôs não pôde encontrar quaisquer ficheiros de configuração de "
 "jogo válidos. Por favor confirme que o jogo está corretamente instalado."
 
 #: ../src/gnome-robots.c:426
@@ -459,7 +457,7 @@ msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
 msgstr ""
-"A aplicação Robots não pôde ler a totalidade dos ficheiros de gráficos "
+"A aplicação Robôs não pôde ler a totalidade dos ficheiros de gráficos "
 "necessários. Por favor, confirme que o jogo está corretamente instalado."
 
 #: ../src/graphics.c:151
@@ -478,7 +476,7 @@ msgstr "Tipo de jogo"
 
 #: ../src/properties.c:427
 msgid "_Use safe moves"
-msgstr "_Utilizar jogadas seguras"
+msgstr "_Usar jogadas seguras"
 
 #: ../src/properties.c:432
 msgid "Prevent accidental moves that result in getting killed."
@@ -486,7 +484,7 @@ msgstr "Impedir movimentos acidentais que resultam em morte."
 
 #: ../src/properties.c:435
 msgid "U_se super safe moves"
-msgstr "Utilizar jogadas _Super seguras"
+msgstr "Usar jogadas _Super seguras"
 
 #: ../src/properties.c:442
 msgid "Prevents all moves that result in getting killed."

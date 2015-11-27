@@ -4,14 +4,13 @@
 # Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1998.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
 # Tiago S. <almosthumane@portugalmail.pt>, 2014.
-# Pedro Albuquerque <palbuquerque73@openmailbox.com>, 2015.
-#
+# Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-06-07 19:50+0000\n"
+"POT-Creation-Date: 2015-11-02 21:54+0000\n"
 "PO-Revision-Date: 2015-06-27 06:16+0100\n"
 "Last-Translator: Pedro Albuquerque <palbuquerque73@openmailbox.com>\n"
 "Language-Team: Português <palbuquerque73@openmailbox.com>\n"
@@ -27,9 +26,8 @@ msgid "_New Game"
 msgstr "_Novo jogo"
 
 #: ../data/app-menu.ui.h:2
-#| msgid "Robots Preferences"
 msgid "_Preferences"
-msgstr "Preferências do Robôs"
+msgstr "_Preferências"
 
 #: ../data/app-menu.ui.h:3
 msgid "_Scores"
@@ -396,28 +394,21 @@ msgstr "Nível: %d\tPontuação: %d"
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
 #: ../src/gnome-robots.c:155
 #, c-format
-#| msgid "Remaining:"
 msgid "(Remaining: %d)"
 msgstr "(restantes: %d)"
 
 #. First line of safe teleports button label.
 #: ../src/gnome-robots.c:157
-#| msgid "Teleport randomly"
 msgid "Teleport _Safely"
 msgstr "Teletransportar com _Segurança"
 
 #: ../src/gnome-robots.c:202
-#| msgid ""
-#| "Based on classic BSD Robots\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
 msgid "Based on classic BSD Robots"
 msgstr "Baseado no clássico BSD Robots"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"
-msgstr ""
-"Duarte Loreto <happyguy_pt@hotmail.com>\n"
+msgstr "Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Pedro Albuquerque <palbuquerque73@gmail.com>"
 
 #: ../src/gnome-robots.c:227
@@ -428,38 +419,36 @@ msgstr "Tem a certeza que quer descartar o jogo atual?"
 msgid "Keep _Playing"
 msgstr "Continuar a _Jogar"
 
-#: ../src/gnome-robots.c:361
-#| msgid "Teleport randomly"
+#: ../src/gnome-robots.c:363
 msgid "Teleport _Randomly"
-msgstr "Teletransportar aleatoriamente"
+msgstr "Teletransportar _Aleatoriamente"
 
-#: ../src/gnome-robots.c:380
-#| msgid "Wait for the robots"
+#: ../src/gnome-robots.c:382
 msgid "_Wait for Robots"
-msgstr "Esperar pelos robôs"
+msgstr "_Esperar pelos robôs"
 
-#: ../src/gnome-robots.c:408
+#: ../src/gnome-robots.c:410
 msgid "No game data could be found."
 msgstr "Não foram encontrados quaisquer dados de jogo."
 
-#: ../src/gnome-robots.c:410
+#: ../src/gnome-robots.c:412
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
 msgstr ""
-"A aplicação Robots não pôde encontrar quaisquer ficheiros de configuração de "
+"A aplicação Robôs não pôde encontrar quaisquer ficheiros de configuração de "
 "jogo válidos. Por favor confirme que o jogo está corretamente instalado."
 
-#: ../src/gnome-robots.c:426
+#: ../src/gnome-robots.c:428
 msgid "Some graphics files are missing or corrupt."
 msgstr "Alguns ficheiros de gráficos estão corrompidos ou em falta."
 
-#: ../src/gnome-robots.c:428
+#: ../src/gnome-robots.c:430
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
 msgstr ""
-"A aplicação Robots não pôde ler a totalidade dos ficheiros de gráficos "
+"A aplicação Robôs não pôde ler a totalidade dos ficheiros de gráficos "
 "necessários. Por favor, confirme que o jogo está corretamente instalado."
 
 #: ../src/graphics.c:151
@@ -468,7 +457,6 @@ msgid "Could not find '%s' pixmap file\n"
 msgstr "Impossível encontrar ficheiro de imagem \"%s\"\n"
 
 #: ../src/properties.c:393
-#| msgid "Robots Preferences"
 msgid "Preferences"
 msgstr "Preferências"
 
@@ -478,7 +466,7 @@ msgstr "Tipo de jogo"
 
 #: ../src/properties.c:427
 msgid "_Use safe moves"
-msgstr "_Utilizar jogadas seguras"
+msgstr "_Usar jogadas seguras"
 
 #: ../src/properties.c:432
 msgid "Prevent accidental moves that result in getting killed."
@@ -486,7 +474,7 @@ msgstr "Impedir movimentos acidentais que resultam em morte."
 
 #: ../src/properties.c:435
 msgid "U_se super safe moves"
-msgstr "Utilizar jogadas _Super seguras"
+msgstr "Usar jogadas _Super seguras"
 
 #: ../src/properties.c:442
 msgid "Prevents all moves that result in getting killed."

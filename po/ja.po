@@ -8,14 +8,15 @@
 # KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003.
 # Satoru SATOH <ss@gnome.gr.jp>, 2006.
 # Shushi KUROSE <md81bird@hitaki.net>, 2012.
-# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013.
+# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-17 11:47+0000\n"
-"PO-Revision-Date: 2013-09-16 13:01+0900\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"robots&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-12-31 21:59+0000\n"
+"PO-Revision-Date: 2016-01-16 12:43+0900\n"
 "Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -24,221 +25,258 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/gnobots2.desktop.in.in.h:1 ../src/gnobots.c:200
-#: ../src/gnobots.c:213 ../src/menu.c:261 ../src/menu.c:264
-msgid "Robots"
-msgstr "Robots"
-
-#: ../data/gnobots2.desktop.in.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "ロボットを避けながらロボット同士を破壊してください"
-
-#: ../data/gnobots2.desktop.in.in.h:3
-msgid "game;arcade;teleport;"
-msgstr "game;arcade;teleport;ゲーム;アーケード;テレポーテーション;puzzle;パズル;"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:1
-msgid "Show toolbar"
-msgstr "ツールバーを表示します"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:2
-msgid "Show toolbar. A standard option for toolbars."
-msgstr "ツールバーを表示します (ツールバーの標準オプションです)。"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:3
-msgid "Robot image theme"
-msgstr "ロボットのテーマ"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:4
-msgid "Robot image theme. The theme of the images to use for the robots."
-msgstr "ロボットのテーマ画像です。ロボットに使用する画像になります。"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:5
-msgid "Background color"
-msgstr "背景色"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:6
-msgid "Background color. The hex specification of the background color."
-msgstr "背景色 (16進表記)"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:7
-msgid "Game type"
-msgstr "ゲームの種類"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:8
-msgid "Game type. The name of the game variation to use."
-msgstr "ゲームの種類です。プレイするいろいろなゲームの名前になります。"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:9
-msgid "Use safe moves"
-msgstr "安全モードを使う"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:10
-msgid "Use safe moves. The safe moves option will help you to avoid being killed due to a mistake. If you try to make a move that would lead to your death when there is a safe move available you will not be allowed to proceed."
-msgstr "安全に移動します。このオプションは、誤ってプレイヤーを死なせることがありません。安全な移動が有効な場合、危険を目前に迫っている場所に移動させようとしても、それ以上進むことができなくなります。"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:11
-msgid "Use super safe moves"
-msgstr "超安全モードを使う"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:12
-msgid "Use super safe moves. The player is alerted when there is no safe move and the only option is to teleport out."
-msgstr "超安全に移動します。プレイヤーが安全ではない方向に移動する際に警告を発します。このオプションはテレポートした後のみ有効になります。"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:13
-msgid "Enable game sounds"
-msgstr "ゲームサウンドを有効にする"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:14
-msgid "Enable game sounds. Play sounds for various events throughout the game."
-msgstr "ゲームサウンドを有効にします。ゲーム中の色々なイベントで演奏します。"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:15 ../src/properties.c:500
-msgid "Key to move NW"
-msgstr "\"NW (北西) へ移動\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:16
-msgid "The key used to move north-west."
-msgstr "北西に移動するキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:17 ../src/properties.c:501
-msgid "Key to move N"
-msgstr "\"N (北) へ移動\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:18
-msgid "The key used to move north."
-msgstr "北に移動するキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:19 ../src/properties.c:502
-msgid "Key to move NE"
-msgstr "\"NE (北東) へ移動\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:20
-msgid "The key used to move north-east."
-msgstr "北東に移動するキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:21 ../src/properties.c:503
-msgid "Key to move W"
-msgstr "\"W (西) へ移動\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:22
-msgid "The key used to move west."
-msgstr "西に移動するキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:23 ../src/properties.c:508
-msgid "Key to hold"
-msgstr "\"保留\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:24
-msgid "The key used to hold still."
-msgstr "そのまま保留しておくキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:25 ../src/properties.c:504
-msgid "Key to move E"
-msgstr "\"E (東) へ移動\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:26
-msgid "The key used to move east."
-msgstr "東に移動するキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:27 ../src/properties.c:505
-msgid "Key to move SW"
-msgstr "\"SW (南西) へ移動\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:28
-msgid "The key used to move south-west."
-msgstr "南西に移動するキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:29 ../src/properties.c:506
-msgid "Key to move S"
-msgstr "\"S (南) へ移動\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:30
-msgid "The key used to move south."
-msgstr "南に移動するキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:31 ../src/properties.c:507
-msgid "Key to move SE"
-msgstr "\"SE (南東) へ移動\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:32
-msgid "The key used to move south-east."
-msgstr "南東に移動するキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:33 ../src/properties.c:509
-msgid "Key to teleport"
-msgstr "\"テレポート\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:34
-msgid "The key used to teleport safely (if possible)."
-msgstr "テレポートします (可能ならば安全に移動します)"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:35 ../src/properties.c:510
-msgid "Key to teleport randomly"
-msgstr "\"ランダムなテレポート\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:36
-msgid "The key used to teleport randomly."
-msgstr "\"ランダムなテレポート\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:37 ../src/properties.c:511
-msgid "Key to wait"
-msgstr "\"待機\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:38
-msgid "The key used to wait."
-msgstr "\"待機\" のキー"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:39
-msgid "Width of the window in pixels"
-msgstr "ウィンドウの幅 (ピクセル単位) です。"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:40
-msgid "Height of the window in pixels"
-msgstr "ウィンドウの高さ (ピクセル単位) です。"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:41
-msgid "true if the window is maximized"
-msgstr "ウィンドウが最小化されている場合は TRUE"
-
-#: ../data/org.gnome.robots.gschema.xml.in.h:42
-msgid "true if the window is fullscren"
-msgstr "ウィンドウがフルスクリーンの場合は TRUE"
-
-#: ../src/game.c:149
-msgid "Game over!"
-msgstr "ゲームオーバー!"
-
-#: ../src/game.c:151
-msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr "素晴らしい活躍ですが、残念ながらトップ 10 入りできませんでした。"
-
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/game.c:153 ../src/games-stock.c:253
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
 msgid "_New Game"
 msgstr "新しいゲーム(_N)"
 
-#: ../src/game.c:166
-msgid "Robots Scores"
-msgstr "ロボットの得点"
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "設定(_P)"
 
-#: ../src/game.c:169
+#: ../data/app-menu.ui.h:3
+msgid "_Scores"
+msgstr "スコア(_S)"
+
+#: ../data/app-menu.ui.h:4
+msgid "_Help"
+msgstr "ヘルプ(_H)"
+
+#: ../data/app-menu.ui.h:5
+msgid "_About"
+msgstr "このアプリケーションについて(_A)"
+
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "終了(_Q)"
+
+#: ../data/gnome-robots.appdata.xml.in.h:1
+msgid "GNOME Robots"
+msgstr "GNOME ロボット"
+
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "ロボットをうまくかわしてロボット同士をぶつけよう"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
+msgid ""
+"It is the distant future – the year 2000. Evil robots are trying to kill "
+"you. Avoid the robots or face certain death."
+msgstr ""
+"遥か未来、2000年のこと。悪のロボットたちがあなたを殺そうと迫ってくる。ロボットをうまくかわして、絶体絶命の危機を切り抜けよう。"
+
+#: ../data/gnome-robots.appdata.xml.in.h:4
+msgid ""
+"Fortunately, the robots are extremely stupid and will always move directly "
+"towards you. Trick them into colliding into each other, resulting in their "
+"destruction, or into the junk piles that result. You can defend yourself by "
+"moving the junk piles, or escape to safety with your handy teleportation "
+"device."
+msgstr ""
+"幸いなことに、ロボットはひどく間抜けだ。あなたに向かって直進することしかできない。"
+"ロボットを巧みに欺いてロボット同士をぶつけよう。それがヤツらを破壊する方法だ。"
+"ロボットの残骸にヤツらを衝突させて破壊することもできる。"
+"残骸をうまく動かしてロボットから身を守ろう。"
+"また、携帯するテレポーテーション装置を使えば安全な場所に一時避難することもできる。"
+
+#: ../data/gnome-robots.appdata.xml.in.h:5
+msgid ""
+"Your supply of safe teleports is limited, and once you run out, "
+"teleportation could land you right next to a robot, who will kill you. "
+"Survive for as long as possible!"
+msgstr ""
+"ただし、安全にテレポートできる回数は限られている。"
+"使い果たしてしまえば、テレポートしたその先はロボットのすぐ隣かもしれない。そう即死だ。"
+"さあ、できるだけ長く生き延びよう!"
+
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
+#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
+msgid "Robots"
+msgstr "ロボット"
+
+#: ../data/gnome-robots.desktop.in.h:3
+msgid "game;arcade;teleport;"
+msgstr ""
+"game;arcade;teleport;ゲーム;アーケード;テレポート;テレポーテーション;puzzle;パズル;"
+
+#: ../data/org.gnome.robots.gschema.xml.h:1
+msgid "Show toolbar"
+msgstr "ツールバーを表示します"
+
+#: ../data/org.gnome.robots.gschema.xml.h:2
+msgid "Show toolbar. A standard option for toolbars."
+msgstr "ツールバーを表示します (ツールバーの標準オプションです)。"
+
+#: ../data/org.gnome.robots.gschema.xml.h:3
+msgid "Robot image theme"
+msgstr "ロボットのテーマ"
+
+#: ../data/org.gnome.robots.gschema.xml.h:4
+msgid "Robot image theme. The theme of the images to use for the robots."
+msgstr "ロボットのテーマ画像です。ロボットに使用する画像になります。"
+
+#: ../data/org.gnome.robots.gschema.xml.h:5
+msgid "Background color"
+msgstr "背景色"
+
+#: ../data/org.gnome.robots.gschema.xml.h:6
+msgid "Background color. The hex specification of the background color."
+msgstr "背景色 (16進表記)"
+
+#: ../data/org.gnome.robots.gschema.xml.h:7
+msgid "Game type"
+msgstr "ゲームの種類"
+
+#: ../data/org.gnome.robots.gschema.xml.h:8
+msgid "Game type. The name of the game variation to use."
+msgstr "ゲームの種類です。プレイするいろいろなゲームの名前になります。"
+
+#: ../data/org.gnome.robots.gschema.xml.h:9
+msgid "Use safe moves"
+msgstr "安全モードを使う"
+
+#: ../data/org.gnome.robots.gschema.xml.h:10
+msgid ""
+"Use safe moves. The safe moves option will help you to avoid being killed "
+"due to a mistake. If you try to make a move that would lead to your death "
+"when there is a safe move available you will not be allowed to proceed."
+msgstr ""
+"安全に移動します。このオプションは、誤ってプレイヤーを死なせることがありませ"
+"ん。安全な移動が有効な場合、危険を目前に迫っている場所に移動させようとして"
+"も、それ以上進むことができなくなります。"
+
+#: ../data/org.gnome.robots.gschema.xml.h:11
+msgid "Use super safe moves"
+msgstr "超安全モードを使う"
+
+#: ../data/org.gnome.robots.gschema.xml.h:12
+msgid ""
+"Use super safe moves. The player is alerted when there is no safe move and "
+"the only option is to teleport out."
+msgstr ""
+"超安全に移動します。プレイヤーが安全ではない方向に移動する際に警告を発しま"
+"す。このオプションはテレポートした後のみ有効になります。"
+
+#: ../data/org.gnome.robots.gschema.xml.h:13
+msgid "Enable game sounds"
+msgstr "ゲームサウンドを有効にする"
+
+#: ../data/org.gnome.robots.gschema.xml.h:14
+msgid "Enable game sounds. Play sounds for various events throughout the game."
+msgstr "ゲームサウンドを有効にします。ゲーム中の色々なイベントで演奏します。"
+
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
+msgid "Key to move NW"
+msgstr "\"NW (北西) へ移動\" のキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:16
+msgid "The key used to move north-west."
+msgstr "北西に移動するキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
+msgid "Key to move N"
+msgstr "\"N (北) へ移動\" のキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:18
+msgid "The key used to move north."
+msgstr "北に移動するキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
+msgid "Key to move NE"
+msgstr "\"NE (北東) へ移動\" のキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:20
+msgid "The key used to move north-east."
+msgstr "北東に移動するキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
+msgid "Key to move W"
+msgstr "\"W (西) へ移動\" のキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:22
+msgid "The key used to move west."
+msgstr "西に移動するキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
+msgid "Key to hold"
+msgstr "\"保留\" のキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:24
+msgid "The key used to hold still."
+msgstr "そのまま保留しておくキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
+msgid "Key to move E"
+msgstr "\"E (東) へ移動\" のキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:26
+msgid "The key used to move east."
+msgstr "東に移動するキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
+msgid "Key to move SW"
+msgstr "\"SW (南西) へ移動\" のキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:28
+msgid "The key used to move south-west."
+msgstr "南西に移動するキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
+msgid "Key to move S"
+msgstr "\"S (南) へ移動\" のキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:30
+msgid "The key used to move south."
+msgstr "南に移動するキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
+msgid "Key to move SE"
+msgstr "\"SE (南東) へ移動\" のキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:32
+msgid "The key used to move south-east."
+msgstr "南東に移動するキー"
+
+#: ../data/org.gnome.robots.gschema.xml.h:33
+msgid "Width of the window in pixels"
+msgstr "ウィンドウの幅 (ピクセル単位) です。"
+
+#: ../data/org.gnome.robots.gschema.xml.h:34
+msgid "Height of the window in pixels"
+msgstr "ウィンドウの高さ (ピクセル単位) です。"
+
+#: ../data/org.gnome.robots.gschema.xml.h:35
+msgid "true if the window is maximized"
+msgstr "ウィンドウが最小化されている場合は TRUE"
+
+#: ../src/game.c:147
+msgid "Game over!"
+msgstr "ゲームオーバー!"
+
+#: ../src/game.c:149
+msgid "Great work, but unfortunately your score did not make the top ten."
+msgstr "素晴らしい活躍ですが、残念ながらトップ 10 入りできませんでした。"
+
+#: ../src/game.c:164
+msgid "Robots Scores"
+msgstr "ロボットのスコア"
+
+#: ../src/game.c:167
 msgid "Map:"
 msgstr "マップ:"
 
-#: ../src/game.c:178
+#: ../src/game.c:176
 msgid "Congratulations!"
 msgstr "おめでとうございます!"
 
-#: ../src/game.c:179
+#: ../src/game.c:177
 msgid "Your score is the best!"
 msgstr "あなたがトップです!"
 
-#: ../src/game.c:180
+#: ../src/game.c:178
 msgid "Your score has made the top ten."
 msgstr "トップ 10 に入りました。"
 
-#: ../src/game.c:408 ../src/game.c:424
+#: ../src/game.c:405 ../src/game.c:421
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -247,11 +285,11 @@ msgstr ""
 "でも、もう一度やっつけることができるかな?"
 
 #. This should never happen.
-#: ../src/game.c:1186
+#: ../src/game.c:1175
 msgid "There are no teleport locations left!!"
 msgstr "残っているテレポート可能な場所がありません!!"
 
-#: ../src/game.c:1214
+#: ../src/game.c:1203
 msgid "There are no safe locations to teleport to!!"
 msgstr "安全にテレポートできる場所がありません!"
 
@@ -260,378 +298,116 @@ msgid "Unknown Command"
 msgstr "不明なコマンド"
 
 #. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:136
+#: ../src/games-scores-dialog.c:132
 msgctxt "score-dialog"
 msgid "Time"
 msgstr "タイム"
 
 #. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:142
+#: ../src/games-scores-dialog.c:138
 msgctxt "score-dialog"
 msgid "Score"
-msgstr "得点"
+msgstr "スコア"
 
 #. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:307
+#: ../src/games-scores-dialog.c:225
 #, c-format
 msgctxt "score-dialog"
 msgid "%1$dm %2$ds"
 msgstr "%1$d分 %2$d秒"
 
-#: ../src/games-scores-dialog.c:470
+#: ../src/games-scores-dialog.c:385
 msgid "New Game"
 msgstr "新しいゲーム"
 
-#. Score dialog column header for the name of the player who recorded the score
-#: ../src/games-scores-dialog.c:571
-msgctxt "score-dialog"
-msgid "Name"
-msgstr "名前"
-
-#. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:580
+#. dialog Score column header for the date the score was recorded
+#: ../src/games-scores-dialog.c:478
 msgid "Date"
 msgstr "日付"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "このゲームのヘルプを表示します"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "このゲームを終了します"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "フルスクリーンモードを切り替えます"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "次の操作のヒントを得ます"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "フルスクリーンモードを解除します"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "新しいネットワーク対戦ゲームを開始します"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "現在のネットワーク対戦を終了してネットワークサーバーに戻ります"
-
-#: ../src/games-stock.c:48 ../src/menu.c:69
-msgid "Start a new game"
-msgstr "新しいゲームを開始します"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "ゲームを一時停止します"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "ネットワーク対戦しているプレイヤーの一覧を表示します"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "直前の操作を取り消します"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "ゲームをやり直します"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "一時停止していたゲームを再開します"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "得点を表示します"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "直前の操作を取り消します"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "このゲームの情報を表示します"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "このウィンドウを閉じます"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "このゲームを設定します"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "このゲームを終了します"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "目次(_C)"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "フルスクリーン(_F)"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "ヒント(_H)"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "新しいゲーム(_N)"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "移動をやり直す(_R)"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "リセット(_R)"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "やり直す(_R)"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "移動を元に戻す(_U)"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "カードを引く(_D)"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "フルスクリーンの解除(_L)"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "ネットワーク対戦(_G)"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "ゲームから抜ける(_E)"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "プレイヤーの一覧(_L)"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "一時停止(_P)"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "再開(_U)"
-
-#: ../src/games-stock.c:267
-msgid "_Scores"
-msgstr "得点(_S)"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "ゲームの終了(_E)"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid "%s is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version %d of the License, or (at your option) any later version."
-msgstr "%s はフリーソフトウェアです。フリーソフトウェア財団が提供する GNU 一般公衆利用許諾契約書の第%d版、あるいはそれ以降の版が定める条項の下で本プログラムを再頒布または変更することができます。"
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid "%s is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details."
-msgstr "%s は有用とは思いますが、その頒布にあたっては市場性及び特定の目的、その適合性についての暗黙の保証を含めて、いかなる保証も行ないません。詳細については GNU 一般公衆利用許諾契約書をご覧ください。"
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid "You should have received a copy of the GNU General Public License along with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr "あなたは %s と一緒に GNU 一般公衆利用許諾契約書の写しを受け取っているはずです。そうでない場合は、Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA へ手紙を書いてください。"
-
-#: ../src/games-stock.c:331
-msgid "You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr "あなたは %s と一緒に GNU 一般公衆利用許諾契約書の写しを受け取っているはずです。そうでない場合は、<http://www.gnu.org/licenses/> を参照してください。"
-
-#: ../src/gnobots.c:79
-msgid "Set game scenario"
-msgstr "シナリオをセットする"
-
-#: ../src/gnobots.c:79 ../src/gnobots.c:81
-msgid "NAME"
-msgstr "NAME"
-
-#: ../src/gnobots.c:81
-msgid "Set game configuration"
-msgstr "ゲームを設定する"
-
-#: ../src/gnobots.c:83 ../src/gnobots.c:85
-msgid "Initial window position"
-msgstr "ウィンドウの位置を初期化する"
-
-#: ../src/gnobots.c:83
-msgid "X"
-msgstr "X"
-
-#: ../src/gnobots.c:85
-msgid "Y"
-msgstr "Y"
-
-#: ../src/gnobots.c:90
+#: ../src/gnome-robots.c:95
 msgid "Classic robots"
 msgstr "旧式のロボット"
 
-#: ../src/gnobots.c:91
+#: ../src/gnome-robots.c:96
 msgid "Classic robots with safe moves"
 msgstr "旧式のロボット (安全モードで移動)"
 
-#: ../src/gnobots.c:92
+#: ../src/gnome-robots.c:97
 msgid "Classic robots with super-safe moves"
 msgstr "旧式のロボット (超安全モードで移動)"
 
-#: ../src/gnobots.c:93
+#: ../src/gnome-robots.c:98
 msgid "Nightmare"
 msgstr "悪夢"
 
-#: ../src/gnobots.c:94
+#: ../src/gnome-robots.c:99
 msgid "Nightmare with safe moves"
 msgstr "悪夢 (安全モードで移動)"
 
-#: ../src/gnobots.c:95
+#: ../src/gnome-robots.c:100
 msgid "Nightmare with super-safe moves"
 msgstr "悪夢 (超安全モードで移動)"
 
-#: ../src/gnobots.c:96
+#: ../src/gnome-robots.c:101
 msgid "Robots2"
 msgstr "ロボット2"
 
-#: ../src/gnobots.c:97
+#: ../src/gnome-robots.c:102
 msgid "Robots2 with safe moves"
 msgstr "ロボット2 (安全モードで移動)"
 
-#: ../src/gnobots.c:98
+#: ../src/gnome-robots.c:103
 msgid "Robots2 with super-safe moves"
 msgstr "ロボット2 (超安全モードで移動)"
 
-#: ../src/gnobots.c:99
+#: ../src/gnome-robots.c:104
 msgid "Robots2 easy"
 msgstr "ロボット2 (簡単)"
 
-#: ../src/gnobots.c:100
+#: ../src/gnome-robots.c:105
 msgid "Robots2 easy with safe moves"
 msgstr "ロボット2 (安全モードで移動)"
 
-#: ../src/gnobots.c:101
+#: ../src/gnome-robots.c:106
 msgid "Robots2 easy with super-safe moves"
 msgstr "ロボット2 (超安全モードで移動)"
 
-#: ../src/gnobots.c:102
+#: ../src/gnome-robots.c:107
 msgid "Robots with safe teleport"
 msgstr "安全なテレポート付きロボット"
 
-#: ../src/gnobots.c:103
+#: ../src/gnome-robots.c:108
 msgid "Robots with safe teleport with safe moves"
 msgstr "安全なテレポート付きロボット (安全モードで移動)"
 
-#: ../src/gnobots.c:104
+#: ../src/gnome-robots.c:109
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "安全なテレポート付きロボット (超安全モードで移動)"
 
-#: ../src/gnobots.c:280
-msgid "No game data could be found."
-msgstr "ゲーム用データが見つかりませんでした。"
-
-#: ../src/gnobots.c:282
-msgid "The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."
-msgstr "\"GNOME Robots\" は適切なゲーム用の設定ファイルを見つけることができませんでした。このプログラムが正しくインストールされたか確認してください。"
-
-#: ../src/gnobots.c:298
-msgid "Some graphics files are missing or corrupt."
-msgstr "いくつかの画像ファイルが存在しないか壊れています。"
-
-#: ../src/gnobots.c:300
-msgid "The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."
-msgstr "\"GNOME Robots\" は必要な画像ファイルを読み込めませんでした。このプログラムが正しくインストールされたか確認してください。"
-
-#: ../src/graphics.c:151
+#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
+#: ../src/gnome-robots.c:144
 #, c-format
-msgid "Could not find '%s' pixmap file\n"
-msgstr "'%s' の画像ファイルを見つけられませんでした。\n"
+msgid "Level: %d\tScore: %d"
+msgstr "レベル: %d\tスコア: %d"
 
-#: ../src/menu.c:64
-msgid "_Game"
-msgstr "ゲーム(_G)"
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: ../src/gnome-robots.c:155
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(残り: %d)"
 
-#: ../src/menu.c:65
-msgid "_View"
-msgstr "表示(_V)"
+#. First line of safe teleports button label.
+#: ../src/gnome-robots.c:157
+msgid "Teleport _Safely"
+msgstr "安全にテレポート(_S)"
 
-#: ../src/menu.c:66
-msgid "_Move"
-msgstr "移動(_M)"
-
-#: ../src/menu.c:67
-msgid "_Settings"
-msgstr "設定(_S)"
-
-#: ../src/menu.c:68
-msgid "_Help"
-msgstr "ヘルプ(_H)"
-
-#: ../src/menu.c:73
-msgid "_Teleport"
-msgstr "テレポート(_T)"
-
-#: ../src/menu.c:74
-msgid "Teleport, safely if possible"
-msgstr "テレポートします (可能ならば安全に移動します)"
-
-#: ../src/menu.c:75
-msgid "_Random"
-msgstr "ランダム(_R)"
-
-#: ../src/menu.c:76
-msgid "Teleport randomly"
-msgstr "ランダムな場所にテレポートします"
-
-#: ../src/menu.c:77
-msgid "_Wait"
-msgstr "待機(_W)"
-
-#: ../src/menu.c:77
-msgid "Wait for the robots"
-msgstr "その場に待機します"
-
-#: ../src/menu.c:88
-msgid "_Toolbar"
-msgstr "ツールバー(_T)"
-
-#: ../src/menu.c:88
-msgid "Show or hide the toolbar"
-msgstr "ツールバーの表示/非表示を切り替えます"
-
-#: ../src/menu.c:268
-msgid "GNOME Games web site"
-msgstr "GNOME ゲーム集のウェブサイト"
-
-#: ../src/menu.c:269
-msgid ""
-"Based on classic BSD Robots.\n"
-"\n"
-"Robots is a part of GNOME Games."
+#: ../src/gnome-robots.c:202
+msgid "Based on classic BSD Robots"
 msgstr ""
-"BSD の古典的なロボットゲームです。\n"
-"\n"
-"GNOMEロボットは GNOME ゲーム集の一部です。"
+"BSD の古典的なロボットゲームをベースとしています。"
 
-#: ../src/menu.c:273
+#: ../src/gnome-robots.c:206
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
@@ -641,17 +417,63 @@ msgstr ""
 "Yuusuke Tahara <tahara@gnome.gr.jp>\n"
 "Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>\n"
 "Yukihiro Nakai <Nakai@technologist.com>\n"
+"松澤 二郎 <jmatsuzawa@gnome.org>\n"
 "日本GNOMEユーザー会 <http://www.gnome.gr.jp>"
 
-#: ../src/properties.c:391
-msgid "Robots Preferences"
-msgstr "GNOME ロボットの設定"
+#: ../src/gnome-robots.c:227
+msgid "Are you sure you want to discard the current game?"
+msgstr "現在のゲームを終了してもよろしいですか?"
 
-#: ../src/properties.c:416
+#: ../src/gnome-robots.c:230
+msgid "Keep _Playing"
+msgstr "続ける(_P)"
+
+#: ../src/gnome-robots.c:363
+msgid "Teleport _Randomly"
+msgstr "ランダムにテレポート(_R)"
+
+#: ../src/gnome-robots.c:382
+msgid "_Wait for Robots"
+msgstr "待機(_W)"
+
+#: ../src/gnome-robots.c:410
+msgid "No game data could be found."
+msgstr "ゲーム用データが見つかりませんでした。"
+
+#: ../src/gnome-robots.c:412
+msgid ""
+"The program Robots was unable to find any valid game configuration files. "
+"Please check that the program is installed correctly."
+msgstr ""
+"\"GNOME Robots\" は適切なゲーム用の設定ファイルを見つけることができませんでし"
+"た。このプログラムが正しくインストールされたか確認してください。"
+
+#: ../src/gnome-robots.c:428
+msgid "Some graphics files are missing or corrupt."
+msgstr "いくつかの画像ファイルが存在しないか壊れています。"
+
+#: ../src/gnome-robots.c:430
+msgid ""
+"The program Robots was unable to load all the necessary graphics files. "
+"Please check that the program is installed correctly."
+msgstr ""
+"\"GNOME Robots\" は必要な画像ファイルを読み込めませんでした。このプログラムが"
+"正しくインストールされたか確認してください。"
+
+#: ../src/graphics.c:151
+#, c-format
+msgid "Could not find '%s' pixmap file\n"
+msgstr "'%s' の画像ファイルを見つけられませんでした。\n"
+
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "設定"
+
+#: ../src/properties.c:417
 msgid "Game Type"
 msgstr "ゲームの種類"
 
-#: ../src/properties.c:425
+#: ../src/properties.c:427
 msgid "_Use safe moves"
 msgstr "安全モードを使う(_U)"
 
@@ -659,58 +481,42 @@ msgstr "安全モードを使う(_U)"
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "お亡くなりになった後の思いがけない移動を避けます。"
 
-#: ../src/properties.c:434
+#: ../src/properties.c:435
 msgid "U_se super safe moves"
 msgstr "超安全モードを使う(_S)"
 
-#: ../src/properties.c:441
+#: ../src/properties.c:442
 msgid "Prevents all moves that result in getting killed."
 msgstr "お亡くなりになった後の思いがけないすべての移動を避けます。"
 
-#: ../src/properties.c:443
+#: ../src/properties.c:448
 msgid "_Enable sounds"
 msgstr "サウンドを有効にする(_E)"
 
-#: ../src/properties.c:449
+#: ../src/properties.c:454
 msgid "Play sounds for events like winning a level and dying."
 msgstr "勝利レベルとお亡くなりになった時のイベントのサウンドを演奏します。"
 
-#: ../src/properties.c:451
+#: ../src/properties.c:456
 msgid "Game"
 msgstr "ゲーム"
 
-#: ../src/properties.c:464
+#: ../src/properties.c:469
 msgid "_Image theme:"
 msgstr "画像のテーマ(_I):"
 
-#: ../src/properties.c:476
+#: ../src/properties.c:481
 msgid "_Background color:"
 msgstr "背景色(_B):"
 
-#: ../src/properties.c:488
+#: ../src/properties.c:493
 msgid "Appearance"
 msgstr "外観"
 
-#: ../src/properties.c:520
+#: ../src/properties.c:522
 msgid "_Restore Defaults"
 msgstr "デフォルトにする(_R)"
 
-#: ../src/properties.c:525
+#: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "キーボード"
-
-#: ../src/statusbar.c:68
-msgid "Score:"
-msgstr "得点:"
-
-#: ../src/statusbar.c:76
-msgid "Safe Teleports:"
-msgstr "安全なテレポートの数:"
-
-#: ../src/statusbar.c:85
-msgid "Level:"
-msgstr "レベル:"
-
-#: ../src/statusbar.c:94
-msgid "Remaining:"
-msgstr "残り:"

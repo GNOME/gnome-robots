@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-08 08:31+0000\n"
-"PO-Revision-Date: 2015-03-08 19:51+0200\n"
+"POT-Creation-Date: 2016-01-06 09:55+0000\n"
+"PO-Revision-Date: 2016-01-06 21:14+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -25,29 +25,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
 msgid "_New Game"
 msgstr "_Naujas žaidimas"
 
 #: ../data/app-menu.ui.h:2
-#| msgid "Preferences"
 msgid "_Preferences"
-msgstr "_Nustatymai"
+msgstr "_Nuostatos"
 
 #: ../data/app-menu.ui.h:3
-#| msgid "Scores"
 msgid "_Scores"
 msgstr "_Taškai"
 
 #: ../data/app-menu.ui.h:4
-#| msgid "Help"
 msgid "_Help"
 msgstr "_Žinynas"
 
 #: ../data/app-menu.ui.h:5
-#| msgid "About"
 msgid "_About"
 msgstr "_Apie"
 
@@ -109,7 +105,7 @@ msgstr "Rodyti įrankių juostą"
 
 #: ../data/org.gnome.robots.gschema.xml.h:2
 msgid "Show toolbar. A standard option for toolbars."
-msgstr "Rodyti įrankių juostą. Standartinis nustatymas įrankių juostoms."
+msgstr "Rodyti įrankių juostą. Standartinis parametras įrankių juostoms."
 
 #: ../data/org.gnome.robots.gschema.xml.h:3
 msgid "Robot image theme"
@@ -146,8 +142,8 @@ msgid ""
 "due to a mistake. If you try to make a move that would lead to your death "
 "when there is a safe move available you will not be allowed to proceed."
 msgstr ""
-"Naudoti saugius ėjimus. Saugių ėjimų veiksena padės jums išvengti žūties dėl "
-"atsitiktinių judėjimo klaidų. Jei bandysite žengti žingsnį, kuris Jus "
+"Naudoti saugius ėjimus. Saugių ėjimų parametras padės jums išvengti žūties "
+"dėl atsitiktinių judėjimo klaidų. Jei bandysite žengti žingsnį, kuris Jus "
 "pražudytų, nors yra galimas ir nemirtinas žingsnis, sistema neleis žengti to "
 "žingsnio."
 
@@ -412,10 +408,6 @@ msgid "Teleport _Safely"
 msgstr "Teleportuotis _saugiai"
 
 #: ../src/gnome-robots.c:202
-#| msgid ""
-#| "Based on classic BSD Robots\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
 msgid "Based on classic BSD Robots"
 msgstr "Sukurtas pagal klasikinį BSD Robots."
 
@@ -439,19 +431,19 @@ msgstr "Ar tikrai norite nutraukti dabartinį žaidimą?"
 msgid "Keep _Playing"
 msgstr "Tęsti _žaidimą"
 
-#: ../src/gnome-robots.c:361
+#: ../src/gnome-robots.c:363
 msgid "Teleport _Randomly"
 msgstr "Teleportuotis _atsitiktinai"
 
-#: ../src/gnome-robots.c:380
+#: ../src/gnome-robots.c:382
 msgid "_Wait for Robots"
 msgstr "_Laukti robotų"
 
-#: ../src/gnome-robots.c:408
+#: ../src/gnome-robots.c:410
 msgid "No game data could be found."
 msgstr "Nepavyko rasti žaidimo duomenų."
 
-#: ../src/gnome-robots.c:410
+#: ../src/gnome-robots.c:412
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -459,11 +451,11 @@ msgstr ""
 "Robots programai nepavyko rasti tinkamų žaidimo nustatymų failų. "
 "Patikrinkite, ar programa yra įdiegta teisingai."
 
-#: ../src/gnome-robots.c:426
+#: ../src/gnome-robots.c:428
 msgid "Some graphics files are missing or corrupt."
 msgstr "Trūksta kai kurių grafikos failų arba jos yra sugadintos."
 
-#: ../src/gnome-robots.c:428
+#: ../src/gnome-robots.c:430
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -478,7 +470,7 @@ msgstr "Nepavyko rasti „%s“ paveikslėlio failo\n"
 
 #: ../src/properties.c:393
 msgid "Preferences"
-msgstr "Nustatymai"
+msgstr "Nuostatos"
 
 #: ../src/properties.c:417
 msgid "Game Type"

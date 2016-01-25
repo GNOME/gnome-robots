@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 Michael Catanzaro -->
-<application>
- <id type="desktop">gnome-robots.desktop</id>
- <metadata_license>CC0-1.0</metadata_license>
- <project_license>GPL-2.0+ and CC-BY-SA-3.0</project_license>
- <_name>GNOME Robots</_name>
- <_summary>Avoid the robots and make them crash into each other</_summary>
- <description>
-  <_p>
-   It is the distant future – the year 2000. Evil robots are trying to kill you.
-   Avoid the robots or face certain death.
-  </_p>
-  <_p>
-   Fortunately, the robots are extremely stupid and will always move directly
-   towards you. Trick them into colliding into each other, resulting in their
-   destruction, or into the junk piles that result. You can defend yourself by
-   moving the junk piles, or escape to safety with your handy teleportation
-   device.
-  </_p>
-  <_p>
-   Your supply of safe teleports is limited, and once you run out, teleportation
-   could land you right next to a robot, who will kill you. Survive for as long
-   as possible!
-  </_p>
- </description>
- <screenshots>
-  <screenshot type="default" width="1148" height="623">https://people.gnome.org/~mcatanzaro/gnome-robots.png</screenshot>
- </screenshots>
- <url type="homepage">https://wiki.gnome.org/Apps/Robots</url>
- <updatecontact>mcatanzaro_at_gnome.org</updatecontact>
- <project_group>GNOME</project_group>
- <kudos>
-   <kudo>AppMenu</kudo>
-   <kudo>HiDpiIcon</kudo>
-   <kudo>ModernToolkit</kudo>
-   <kudo>UserDocs</kudo>
- </kudos>
-</application>
+<component type="desktop">
+  <id>gnome-robots.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+ and CC-BY-SA-3.0</project_license>
+  <_name>GNOME Robots</_name>
+  <_summary>Avoid the robots and make them crash into each other</_summary>
+  <description>
+    <_p>
+      It is the distant future – the year 2000. Evil robots are trying to kill you.
+      Avoid the robots or face certain death.
+    </_p>
+    <_p>
+      Fortunately, the robots are extremely stupid and will always move directly
+      towards you. Trick them into colliding into each other, resulting in their
+      destruction, or into the junk piles that result. You can defend yourself by
+      moving the junk piles, or escape to safety with your handy teleportation
+      device.
+    </_p>
+    <_p>
+      Your supply of safe teleports is limited, and once you run out, teleportation
+      could land you right next to a robot, who will kill you. Survive for as long
+      as possible!
+    </_p>
+  </description>
+  <screenshots>
+    <screenshot type="default" width="1148" height="623">
+      <image>https://people.gnome.org/~mcatanzaro/gnome-robots.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://wiki.gnome.org/Apps/Robots</url>
+  <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-robots</url>
+  <url type="donation">http://www.gnome.org/friends/</url>
+  <url type="help">https://help.gnome.org/users/gnome-robots/stable/</url>
+  <update_contact>mcatanzaro_at_gnome.org</update_contact>
+  <project_group>GNOME</project_group>
+  <kudos>
+    <kudo>AppMenu</kudo>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+    <kudo>UserDocs</kudo>
+  </kudos>
+  <translation type="gettext">gnome-robots</translation>
+</component>

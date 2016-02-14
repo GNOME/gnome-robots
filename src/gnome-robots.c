@@ -345,6 +345,7 @@ activate (GtkApplication *app, gpointer user_data)
   GtkWidget *errordialog, *vbox, *hbox, *label, *button, *gridframe;
   GtkSizeGroup *size_group;
   GtkStyleContext *style_context;
+  GamesScoresDirectoryImporter *importer;
 
   headerbar = gtk_header_bar_new ();
   gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Robots"));
@@ -426,13 +427,17 @@ activate (GtkApplication *app, gpointer user_data)
 			       MINIMUM_TILE_WIDTH * GAME_WIDTH,
 			       MINIMUM_TILE_HEIGHT * GAME_HEIGHT);
 
-  highscores = games_scores_context_new ("gnome-robots",
-                                         /* Label on the scores dialog, next to map type dropdown */
-                                         _("Game Type:"),
-                                         GTK_WINDOW (window),
-                                         create_category_from_key,
-                                         NULL,
-                                         GAMES_SCORES_STYLE_PLAIN_DESCENDING);
+  importer = games_scores_directory_importer_new ();
+  highscores = games_scores_context_new_with_importer ("gnome-robots",
+                                                       /* Label on the scores dialog, next to map type dropdown */
+                                                       _("Game Type:"),
+                                                       GTK_WINDOW (window),
+                                                       create_category_from_key,
+                                                       NULL,
+                                                       GAMES_SCORES_STYLE_PLAIN_DESCENDING,
+                                                       GAMES_SCORES_IMPORTER (importer));
+  g_object_unref (importer);
+
   gtk_widget_show_all (window);
 
   if (!load_game_configs ()) {

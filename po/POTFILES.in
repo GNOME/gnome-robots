@@ -7,7 +7,6 @@ data/gnome-robots.desktop.in
 data/org.gnome.robots.gschema.xml
 src/game.c
 src/games-controls.c
-src/games-scores-dialog.c
 src/gnome-robots.c
 src/graphics.c
 src/properties.c

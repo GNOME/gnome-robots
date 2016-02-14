@@ -431,7 +431,7 @@ activate (GtkApplication *app, gpointer user_data)
                                                        GTK_WINDOW (window),
                                                        create_category_from_key,
                                                        NULL,
-                                                       GAMES_SCORES_STYLE_PLAIN_DESCENDING,
+                                                       GAMES_SCORES_STYLE_POINTS_GREATER_IS_BETTER,
                                                        GAMES_SCORES_IMPORTER (importer));
   g_object_unref (importer);
 

@@ -285,10 +285,7 @@ static gboolean
 window_configure_event_cb (GtkWidget *widget, GdkEventConfigure *event)
 {
   if (!window_is_maximized)
-  {
-    window_width = event->width;
-    window_height = event->height;
-  }
+    gtk_window_get_size (GTK_WINDOW (window), &window_width, &window_height);
 
   return FALSE;
 }

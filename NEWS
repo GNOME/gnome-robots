@@ -1,3 +1,16 @@
+3.19.90 - February 15, 2016
+===========================
+
+*** License change: now licensed as GPLv3+ ***
+* New dependency: libgames-support
+* New scores dialog via libgames-support
+* Updated translations
+
+3.18.0 - September 21, 2015
+===========================
+
+* Updated translations
+
 3.17.92 - September 13, 2015
 ============================
 

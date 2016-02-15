@@ -1,19 +1,19 @@
 # Swedish messages for gnome-games.
-# Copyright © 1999-2015 Free Software Foundation, Inc.
+# Copyright © 1999-2016 Free Software Foundation, Inc.
 # Andreas Persenius <ndap@swipnet.se>, 1999.
 # Andreas Hyden <a.hyden@cyberpoint.se>
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 2000.
 # Christian Rose <menthos@menthos.com>, 2000, 2001, 2002, 2003, 2004, 2005.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-27 08:31+0000\n"
-"PO-Revision-Date: 2015-02-26 23:07+0100\n"
+"POT-Creation-Date: 2016-02-15 09:59+0000\n"
+"PO-Revision-Date: 2016-02-15 18:25+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -21,9 +21,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.8.7\n"
 
-#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+#: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Nytt spel"
 
@@ -43,7 +43,7 @@ msgstr "_Hjälp"
 msgid "_About"
 msgstr "_Om"
 
-#: ../data/app-menu.ui.h:6 ../src/game.c:150
+#: ../data/app-menu.ui.h:6
 msgid "_Quit"
 msgstr "A_vsluta"
 
@@ -87,8 +87,8 @@ msgstr ""
 "teleportering placera dig intill en robot som kommer att döda dig. Överlev "
 "så länge som möjligt!"
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:329
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
 msgid "Robots"
 msgstr "Robotar"
 
@@ -164,7 +164,7 @@ msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Aktivera spelljud. Spela ljud för diverse händelser under spelets gång."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
 msgid "Key to move NW"
 msgstr "Tangent för att flytta åt nordväst"
 
@@ -172,7 +172,7 @@ msgstr "Tangent för att flytta åt nordväst"
 msgid "The key used to move north-west."
 msgstr "Tangenten för att flytta till nordväst."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
 msgid "Key to move N"
 msgstr "Tangent för att flytta åt norr"
 
@@ -180,7 +180,7 @@ msgstr "Tangent för att flytta åt norr"
 msgid "The key used to move north."
 msgstr "Tangenten för att flytta till nord."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
 msgid "Key to move NE"
 msgstr "Tangent för att flytta åt nordöst"
 
@@ -188,7 +188,7 @@ msgstr "Tangent för att flytta åt nordöst"
 msgid "The key used to move north-east."
 msgstr "Tangenten för att flytta till nordöst."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
 msgid "Key to move W"
 msgstr "Tangent för att flytta åt väster"
 
@@ -196,7 +196,7 @@ msgstr "Tangent för att flytta åt väster"
 msgid "The key used to move west."
 msgstr "Tangenten för att flytta till väst."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
 msgid "Key to hold"
 msgstr "Tangent att hålla intryckt"
 
@@ -204,7 +204,7 @@ msgstr "Tangent att hålla intryckt"
 msgid "The key used to hold still."
 msgstr "Tangenten för att stå still."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
 msgid "Key to move E"
 msgstr "Tangent för att flytta åt öster"
 
@@ -212,7 +212,7 @@ msgstr "Tangent för att flytta åt öster"
 msgid "The key used to move east."
 msgstr "Tangenten för att flytta till öst."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
 msgid "Key to move SW"
 msgstr "Tangent för att flytta åt sydväst"
 
@@ -220,7 +220,7 @@ msgstr "Tangent för att flytta åt sydväst"
 msgid "The key used to move south-west."
 msgstr "Tangenten för att flytta till sydväst."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
 msgid "Key to move S"
 msgstr "Tangent för att flytta åt söder"
 
@@ -228,7 +228,7 @@ msgstr "Tangent för att flytta åt söder"
 msgid "The key used to move south."
 msgstr "Tangenten för att flytta till syd."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
 msgid "Key to move SE"
 msgstr "Tangent för att flytta åt sydöst"
 
@@ -248,36 +248,7 @@ msgstr "Höjden på fönstret i bildpunkter"
 msgid "true if the window is maximized"
 msgstr "sant om fönstret är maximerat"
 
-#: ../src/game.c:147
-msgid "Game over!"
-msgstr "Spelet är över!"
-
-#: ../src/game.c:149
-msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr ""
-"Bra jobbat, men tyvärr hamnade inte ditt poängresultat bland de tio bästa."
-
-#: ../src/game.c:164
-msgid "Robots Scores"
-msgstr "Poänglistan för Robotar"
-
-#: ../src/game.c:167
-msgid "Map:"
-msgstr "Bana:"
-
-#: ../src/game.c:176
-msgid "Congratulations!"
-msgstr "Gratulerar!"
-
-#: ../src/game.c:177
-msgid "Your score is the best!"
-msgstr "Ditt poängresultat är det bästa!"
-
-#: ../src/game.c:178
-msgid "Your score has made the top ten."
-msgstr "Ditt poängresultat har hamnat bland de tio bästa."
-
-#: ../src/game.c:405 ../src/game.c:421
+#: ../src/game.c:343 ../src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -286,128 +257,100 @@ msgstr ""
 "Men kan du göra om det?"
 
 #. This should never happen.
-#: ../src/game.c:1175
+#: ../src/game.c:1110
 msgid "There are no teleport locations left!!"
 msgstr "Det finns inte några teleportplatser kvar!!"
 
-#: ../src/game.c:1203
+#: ../src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
 msgstr "Det inte några säkra teleportplatser kvar!!"
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:286
 msgid "Unknown Command"
 msgstr "Okänt kommando"
 
-#. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:132
-msgctxt "score-dialog"
-msgid "Time"
-msgstr "Tid"
-
-#. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:138
-msgctxt "score-dialog"
-msgid "Score"
-msgstr "Poäng"
-
-#. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:225
-#, c-format
-msgctxt "score-dialog"
-msgid "%1$dm %2$ds"
-msgstr "%1$dm %2$ds"
-
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Nytt spel"
-
-#. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:478
-msgid "Date"
-msgstr "Datum"
-
-#: ../src/gnome-robots.c:95
+#: ../src/gnome-robots.c:106
 msgid "Classic robots"
 msgstr "Klassiska robotar"
 
-#: ../src/gnome-robots.c:96
+#: ../src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
 msgstr "Klassiska robotar med säkra förflyttningar"
 
-#: ../src/gnome-robots.c:97
+#: ../src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
 msgstr "Klassiska robotar med supersäkra förflyttningar"
 
-#: ../src/gnome-robots.c:98
+#: ../src/gnome-robots.c:109
 msgid "Nightmare"
 msgstr "Mardröm"
 
-#: ../src/gnome-robots.c:99
+#: ../src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
 msgstr "Mardröm med säkra förflyttningar"
 
-#: ../src/gnome-robots.c:100
+#: ../src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
 msgstr "Mardröm med supersäkra förflyttningar"
 
-#: ../src/gnome-robots.c:101
+#: ../src/gnome-robots.c:112
 msgid "Robots2"
 msgstr "Robotar2"
 
-#: ../src/gnome-robots.c:102
+#: ../src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
 msgstr "Robotar2 med säkra förflyttningar"
 
-#: ../src/gnome-robots.c:103
+#: ../src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
 msgstr "Robotar2 med supersäkra förflyttningar"
 
-#: ../src/gnome-robots.c:104
+#: ../src/gnome-robots.c:115
 msgid "Robots2 easy"
 msgstr "Robotar2 lätt"
 
-#: ../src/gnome-robots.c:105
+#: ../src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
 msgstr "Robotar2 med säkra förflyttningar"
 
-#: ../src/gnome-robots.c:106
+#: ../src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
 msgstr "Robotar2 med supersäkra förflyttningar"
 
-#: ../src/gnome-robots.c:107
+#: ../src/gnome-robots.c:118
 msgid "Robots with safe teleport"
 msgstr "Robotar med säker teleport"
 
-#: ../src/gnome-robots.c:108
+#: ../src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robotar med säker teleport och säkra förflyttningar"
 
-#: ../src/gnome-robots.c:109
+#: ../src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robotar med säker teleport och supersäkra förflyttningar"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: ../src/gnome-robots.c:144
+#: ../src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Nivå: %d\tPoäng: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: ../src/gnome-robots.c:155
+#: ../src/gnome-robots.c:167
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Kvarvarande: %d)"
 
 #. First line of safe teleports button label.
-#: ../src/gnome-robots.c:157
+#: ../src/gnome-robots.c:169
 msgid "Teleport _Safely"
 msgstr "Teleportera _säkert"
 
-#: ../src/gnome-robots.c:202
+#: ../src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
 msgstr "Baserad på klassiska BSD-robotar"
 
-#: ../src/gnome-robots.c:206
+#: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -419,27 +362,32 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: ../src/gnome-robots.c:227
+#: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
 msgstr "Är du säker att du vill kassera aktuellt spel?"
 
-#: ../src/gnome-robots.c:230
+#: ../src/gnome-robots.c:255
 msgid "Keep _Playing"
 msgstr "Fortsätt s_pela"
 
-#: ../src/gnome-robots.c:366
+#: ../src/gnome-robots.c:387
 msgid "Teleport _Randomly"
 msgstr "Teleporte_ra slumpmässigt"
 
-#: ../src/gnome-robots.c:385
+#: ../src/gnome-robots.c:406
 msgid "_Wait for Robots"
 msgstr "_Vänta på robotarna"
 
-#: ../src/gnome-robots.c:413
+#. Label on the scores dialog, next to map type dropdown
+#: ../src/gnome-robots.c:430
+msgid "Game Type:"
+msgstr "Speltyp:"
+
+#: ../src/gnome-robots.c:445
 msgid "No game data could be found."
 msgstr "Inga speldata kunde hittas."
 
-#: ../src/gnome-robots.c:415
+#: ../src/gnome-robots.c:447
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -447,11 +395,11 @@ msgstr ""
 "Programmet Robotar kunde inte hitta några giltiga spelkonfigurationsfiler. "
 "Kontrollera att programmet installerats korrekt."
 
-#: ../src/gnome-robots.c:431
+#: ../src/gnome-robots.c:464
 msgid "Some graphics files are missing or corrupt."
 msgstr "En del grafikfiler saknas eller är skadade."
 
-#: ../src/gnome-robots.c:433
+#: ../src/gnome-robots.c:466
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -459,66 +407,106 @@ msgstr ""
 "Programmet Robotar kunde inte läsa in alla de grafikfiler som behövs. "
 "Kontrollera att programmet installerats korrekt."
 
-#: ../src/graphics.c:151
+#: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Kunde inte hitta pixmapfilen \"%s\"\n"
 
-#: ../src/properties.c:393
+#: ../src/properties.c:391
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: ../src/properties.c:417
+#: ../src/properties.c:415
 msgid "Game Type"
 msgstr "Speltyp"
 
-#: ../src/properties.c:427
+#: ../src/properties.c:425
 msgid "_Use safe moves"
 msgstr "_Använd säkra förflyttningar"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Förhindra olyckliga drag som kan resultera i död."
 
-#: ../src/properties.c:435
+#: ../src/properties.c:433
 msgid "U_se super safe moves"
 msgstr "A_nvänd supersäkra förflyttningar"
 
-#: ../src/properties.c:442
+#: ../src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr "Förhindrar alla drag som kan resultera i död."
 
-#: ../src/properties.c:448
+#: ../src/properties.c:446
 msgid "_Enable sounds"
 msgstr "A_ktivera ljud"
 
-#: ../src/properties.c:454
+#: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Spela ljud för händelser som exempelvis att vinna en nivå och att dö."
 
-#: ../src/properties.c:456
+#: ../src/properties.c:454
 msgid "Game"
 msgstr "Spel"
 
-#: ../src/properties.c:469
+#: ../src/properties.c:467
 msgid "_Image theme:"
 msgstr "_Bildtema:"
 
-#: ../src/properties.c:481
+#: ../src/properties.c:479
 msgid "_Background color:"
 msgstr "_Bakgrundsfärg:"
 
-#: ../src/properties.c:493
+#: ../src/properties.c:491
 msgid "Appearance"
 msgstr "Utseende"
 
-#: ../src/properties.c:522
+#: ../src/properties.c:520
 msgid "_Restore Defaults"
 msgstr "_Återställ standardalternativen"
 
-#: ../src/properties.c:527
+#: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Tangentbord"
+
+#~ msgid "Game over!"
+#~ msgstr "Spelet är över!"
+
+#~ msgid "Great work, but unfortunately your score did not make the top ten."
+#~ msgstr ""
+#~ "Bra jobbat, men tyvärr hamnade inte ditt poängresultat bland de tio bästa."
+
+#~ msgid "Robots Scores"
+#~ msgstr "Poänglistan för Robotar"
+
+#~ msgid "Map:"
+#~ msgstr "Bana:"
+
+#~ msgid "Congratulations!"
+#~ msgstr "Gratulerar!"
+
+#~ msgid "Your score is the best!"
+#~ msgstr "Ditt poängresultat är det bästa!"
+
+#~ msgid "Your score has made the top ten."
+#~ msgstr "Ditt poängresultat har hamnat bland de tio bästa."
+
+#~ msgctxt "score-dialog"
+#~ msgid "Time"
+#~ msgstr "Tid"
+
+#~ msgctxt "score-dialog"
+#~ msgid "Score"
+#~ msgstr "Poäng"
+
+#~ msgctxt "score-dialog"
+#~ msgid "%1$dm %2$ds"
+#~ msgstr "%1$dm %2$ds"
+
+#~ msgid "New Game"
+#~ msgstr "Nytt spel"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
 
 #~ msgid "Quit"
 #~ msgstr "Avsluta"

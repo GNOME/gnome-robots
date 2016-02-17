@@ -1,18 +1,18 @@
 # Serbian translation of gnome-games
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2015.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2016.
 # This file is distributed under the same license as the gnome-games package.
 # Dušan Marjanović <madafaka@bsd.org.yu>
 # Igor Nestorović <igor@prevod.org>, 2005.
 # Miloš Popović <gpopac@gmail.com>, 2010.
 # Branko Kokanović <branko.kokanovic@gmail.com>, 2010
-# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011—2015.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011—2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gnomove igre\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-04 08:30+0000\n"
-"PO-Revision-Date: 2015-03-05 21:55+0200\n"
+"POT-Creation-Date: 2016-02-17 10:00+0000\n"
+"PO-Revision-Date: 2016-02-17 21:18+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -23,12 +23,11 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+#: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Nova igra"
 
 #: ../data/app-menu.ui.h:2
-#| msgid "Robots Preferences"
 msgid "_Preferences"
 msgstr "_Postavke"
 
@@ -44,7 +43,7 @@ msgstr "Po_moć"
 msgid "_About"
 msgstr "_O programu"
 
-#: ../data/app-menu.ui.h:6 ../src/game.c:150
+#: ../data/app-menu.ui.h:6
 msgid "_Quit"
 msgstr "_Izađi"
 
@@ -88,8 +87,8 @@ msgstr ""
 "nekog robota, koji će vas u tili čas umlatiti. Preživite što duže možete, "
 "ako možete (sami protiv njih)!"
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
 msgid "Robots"
 msgstr "Roboti"
 
@@ -163,7 +162,7 @@ msgstr "Uključi zvukove igre"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Uključi zvukove igre. Pusti zvukove za razne događaje tokom igre."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
 msgid "Key to move NW"
 msgstr "Taster za kretanje na severozapad"
 
@@ -171,7 +170,7 @@ msgstr "Taster za kretanje na severozapad"
 msgid "The key used to move north-west."
 msgstr "Taster korišćen za kretanje na severozapad."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
 msgid "Key to move N"
 msgstr "Taster za kretanje na sever"
 
@@ -179,7 +178,7 @@ msgstr "Taster za kretanje na sever"
 msgid "The key used to move north."
 msgstr "Taster korišćen za kretanje na sever."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
 msgid "Key to move NE"
 msgstr "Taster za kretanje na severoistok"
 
@@ -187,7 +186,7 @@ msgstr "Taster za kretanje na severoistok"
 msgid "The key used to move north-east."
 msgstr "Taster korišćen za kretanje na severoistok."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
 msgid "Key to move W"
 msgstr "Taster za kretanje na zapad"
 
@@ -195,7 +194,7 @@ msgstr "Taster za kretanje na zapad"
 msgid "The key used to move west."
 msgstr "Taster korišćen za kretanje na zapad."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
 msgid "Key to hold"
 msgstr "Taster za držanje"
 
@@ -203,7 +202,7 @@ msgstr "Taster za držanje"
 msgid "The key used to hold still."
 msgstr "Taster korišćen za držanje nepokretnim."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
 msgid "Key to move E"
 msgstr "Taster za kretanje na istok"
 
@@ -211,7 +210,7 @@ msgstr "Taster za kretanje na istok"
 msgid "The key used to move east."
 msgstr "Taster korišćen za kretanje na istok."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
 msgid "Key to move SW"
 msgstr "Taster za kretanje na jugozapad"
 
@@ -219,7 +218,7 @@ msgstr "Taster za kretanje na jugozapad"
 msgid "The key used to move south-west."
 msgstr "Taster korišćen za kretanje na jugozapad."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
 msgid "Key to move S"
 msgstr "Taster za kretanje na jug"
 
@@ -227,7 +226,7 @@ msgstr "Taster za kretanje na jug"
 msgid "The key used to move south."
 msgstr "Taster korišćen za kretanje na jug."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
 msgid "Key to move SE"
 msgstr "Taster za kretanje na jugoistok"
 
@@ -247,35 +246,7 @@ msgstr "Visina prozora u tačkama"
 msgid "true if the window is maximized"
 msgstr "izabrano ako je prozor uvećan"
 
-#: ../src/game.c:147
-msgid "Game over!"
-msgstr "Igra završena!"
-
-#: ../src/game.c:149
-msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr "Na žalost, vaš rezultat nije ušao u najboljih 10."
-
-#: ../src/game.c:164
-msgid "Robots Scores"
-msgstr "Rezultati za Robote"
-
-#: ../src/game.c:167
-msgid "Map:"
-msgstr "Mapa:"
-
-#: ../src/game.c:176
-msgid "Congratulations!"
-msgstr "Čestitamo!"
-
-#: ../src/game.c:177
-msgid "Your score is the best!"
-msgstr "Vaš rezultat je najbolji!"
-
-#: ../src/game.c:178
-msgid "Your score has made the top ten."
-msgstr "Vaš rezultat je ušao u najboljih 10."
-
-#: ../src/game.c:405 ../src/game.c:421
+#: ../src/game.c:343 ../src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -284,134 +255,100 @@ msgstr ""
 "Ali da li možete opet?"
 
 #. This should never happen.
-#: ../src/game.c:1175
+#: ../src/game.c:1110
 msgid "There are no teleport locations left!!"
 msgstr "Nema više mesta za prenos na daljinu!!"
 
-#: ../src/game.c:1203
+#: ../src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
 msgstr "Nema više bezbednih mesta za prenos na daljinu!!"
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:286
 msgid "Unknown Command"
 msgstr "Nepoznata naredba"
 
-#. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:132
-msgctxt "score-dialog"
-msgid "Time"
-msgstr "Vreme"
-
-#. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:138
-msgctxt "score-dialog"
-msgid "Score"
-msgstr "Rezultat"
-
-#. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:225
-#, c-format
-msgctxt "score-dialog"
-msgid "%1$dm %2$ds"
-msgstr "%dm %ds"
-
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Nova igra"
-
-#. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:478
-msgid "Date"
-msgstr "Datum"
-
-#: ../src/gnome-robots.c:95
+#: ../src/gnome-robots.c:106
 msgid "Classic robots"
 msgstr "Klasični roboti"
 
-#: ../src/gnome-robots.c:96
+#: ../src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
 msgstr "Klasični roboti sa sigurnim potezima"
 
-#: ../src/gnome-robots.c:97
+#: ../src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
 msgstr "Klasični roboti sa super-sigurnim potezima"
 
-#: ../src/gnome-robots.c:98
+#: ../src/gnome-robots.c:109
 msgid "Nightmare"
 msgstr "Noćna mora"
 
-#: ../src/gnome-robots.c:99
+#: ../src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
 msgstr "Noćna mora sa bezbednim potezima"
 
-#: ../src/gnome-robots.c:100
+#: ../src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
 msgstr "Noćna mora sa super-bezbednim potezima"
 
-#: ../src/gnome-robots.c:101
+#: ../src/gnome-robots.c:112
 msgid "Robots2"
 msgstr "Roboti2"
 
-#: ../src/gnome-robots.c:102
+#: ../src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
 msgstr "Roboti2 sa bezbednim potezima"
 
-#: ../src/gnome-robots.c:103
+#: ../src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
 msgstr "Roboti2 sa super-bezbednim potezima"
 
-#: ../src/gnome-robots.c:104
+#: ../src/gnome-robots.c:115
 msgid "Robots2 easy"
 msgstr "Roboti2 laki"
 
-#: ../src/gnome-robots.c:105
+#: ../src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
 msgstr "Roboti2 laki sa bezbednim potezima"
 
-#: ../src/gnome-robots.c:106
+#: ../src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
 msgstr "Roboti2 laki sa super-bezbednim potezima"
 
-#: ../src/gnome-robots.c:107
+#: ../src/gnome-robots.c:118
 msgid "Robots with safe teleport"
 msgstr "Roboti sa bezbednim teleportima"
 
-#: ../src/gnome-robots.c:108
+#: ../src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
 msgstr "Roboti sa bezbednim teleportima"
 
-#: ../src/gnome-robots.c:109
+#: ../src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Roboti sa super-bezbednim teleportima"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: ../src/gnome-robots.c:144
+#: ../src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Nivo: %d\tRezultat: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: ../src/gnome-robots.c:155
+#: ../src/gnome-robots.c:167
 #, c-format
-#| msgid "Remaining:"
 msgid "(Remaining: %d)"
 msgstr "(Preostalih: %d)"
 
 #. First line of safe teleports button label.
-#: ../src/gnome-robots.c:157
-#| msgid "Teleport randomly"
+#: ../src/gnome-robots.c:169
 msgid "Teleport _Safely"
 msgstr "_Bezbedno teleportuj"
 
-#: ../src/gnome-robots.c:202
-#| msgid ""
-#| "Based on classic BSD Robots\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
+#: ../src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
 msgstr "Zasnovano na klasičnim BSD Robotima"
 
-#: ../src/gnome-robots.c:206
+#: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
 "Dušan Marjanović <madafaka@root.co.yu>\n"
@@ -420,29 +357,33 @@ msgstr ""
 "\n"
 "http://prevod.org — prevod na srpski jezik"
 
-#: ../src/gnome-robots.c:227
+#: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
 msgstr "Da li sigurno želite da odbacite tekuću igru?"
 
-#: ../src/gnome-robots.c:230
+#: ../src/gnome-robots.c:255
 msgid "Keep _Playing"
 msgstr "_Nastavi igru"
 
-#: ../src/gnome-robots.c:361
-#| msgid "Teleport randomly"
+#: ../src/gnome-robots.c:387
 msgid "Teleport _Randomly"
 msgstr "_Slučajno teleportuj"
 
-#: ../src/gnome-robots.c:380
-#| msgid "Wait for the robots"
+#: ../src/gnome-robots.c:406
 msgid "_Wait for Robots"
 msgstr "Čekaj _robote"
 
-#: ../src/gnome-robots.c:408
+#. Label on the scores dialog, next to map type dropdown
+#: ../src/gnome-robots.c:430
+#| msgid "Game Type"
+msgid "Game Type:"
+msgstr "Vrsta igre:"
+
+#: ../src/gnome-robots.c:445
 msgid "No game data could be found."
 msgstr "Ne može da pronađe podatke o igri."
 
-#: ../src/gnome-robots.c:410
+#: ../src/gnome-robots.c:447
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -450,11 +391,11 @@ msgstr ""
 "Program Roboti nije uspeo da pronađe nijednu datoteku sa ispravnim "
 "podešavanjima igre. Proverite da li je program ispravno instaliran."
 
-#: ../src/gnome-robots.c:426
+#: ../src/gnome-robots.c:464
 msgid "Some graphics files are missing or corrupt."
 msgstr "Neke datoteke sa grafikom nedostaju ili su oštećene."
 
-#: ../src/gnome-robots.c:428
+#: ../src/gnome-robots.c:466
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -462,67 +403,105 @@ msgstr ""
 "Program Roboti nije uspeo da učita sve neophodne grafičke datoteke. "
 "Proverite da li je program ispravno instaliran."
 
-#: ../src/graphics.c:151
+#: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Slika „%s“ nije pronađena\n"
 
-#: ../src/properties.c:393
-#| msgid "Robots Preferences"
+#: ../src/properties.c:391
 msgid "Preferences"
 msgstr "Postavke"
 
-#: ../src/properties.c:417
+#: ../src/properties.c:415
 msgid "Game Type"
 msgstr "Vrsta igara"
 
-#: ../src/properties.c:427
+#: ../src/properties.c:425
 msgid "_Use safe moves"
 msgstr "_Koristi bezbedne poteze"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Spreči nenamerne poteze koji mogu dovesti do pogibije."
 
-#: ../src/properties.c:435
+#: ../src/properties.c:433
 msgid "U_se super safe moves"
 msgstr "Kori_sti super bezbedne poteze"
 
-#: ../src/properties.c:442
+#: ../src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr "Sprečava sve poteze koji mogu dovesti do pogibije."
 
-#: ../src/properties.c:448
+#: ../src/properties.c:446
 msgid "_Enable sounds"
 msgstr "_Uključi zvukove"
 
-#: ../src/properties.c:454
+#: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Pušta zvuke za događaje kao što je osvajanje nivoa ili pogibija."
 
-#: ../src/properties.c:456
+#: ../src/properties.c:454
 msgid "Game"
 msgstr "Igra"
 
-#: ../src/properties.c:469
+#: ../src/properties.c:467
 msgid "_Image theme:"
 msgstr "Tema za _slike:"
 
-#: ../src/properties.c:481
+#: ../src/properties.c:479
 msgid "_Background color:"
 msgstr "Boja _pozadine:"
 
-#: ../src/properties.c:493
+#: ../src/properties.c:491
 msgid "Appearance"
 msgstr "Izgled"
 
-#: ../src/properties.c:522
+#: ../src/properties.c:520
 msgid "_Restore Defaults"
 msgstr "_Povrati podrazumevano"
 
-#: ../src/properties.c:527
+#: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Tastatura"
+
+#~ msgid "Game over!"
+#~ msgstr "Igra završena!"
+
+#~ msgid "Great work, but unfortunately your score did not make the top ten."
+#~ msgstr "Na žalost, vaš rezultat nije ušao u najboljih 10."
+
+#~ msgid "Robots Scores"
+#~ msgstr "Rezultati za Robote"
+
+#~ msgid "Map:"
+#~ msgstr "Mapa:"
+
+#~ msgid "Congratulations!"
+#~ msgstr "Čestitamo!"
+
+#~ msgid "Your score is the best!"
+#~ msgstr "Vaš rezultat je najbolji!"
+
+#~ msgid "Your score has made the top ten."
+#~ msgstr "Vaš rezultat je ušao u najboljih 10."
+
+#~ msgctxt "score-dialog"
+#~ msgid "Time"
+#~ msgstr "Vreme"
+
+#~ msgctxt "score-dialog"
+#~ msgid "Score"
+#~ msgstr "Rezultat"
+
+#~ msgctxt "score-dialog"
+#~ msgid "%1$dm %2$ds"
+#~ msgstr "%dm %ds"
+
+#~ msgid "New Game"
+#~ msgstr "Nova igra"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
 
 #~ msgid "Key to teleport"
 #~ msgstr "Taster za prenos na daljinu"

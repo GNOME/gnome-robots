@@ -30,15 +30,15 @@
 # Michael Kotsarinis <mk73628@hotmail.com>, 2010.
 # George Stefanakis <george.stefanakis@gmail.com>, 2011.
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013, 2014.
-# Efstathios Iosifidis <iosifidis@opensuse.org>, 2015.
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.el\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-02-22 21:16+0000\n"
-"PO-Revision-Date: 2015-02-23 01:37+0200\n"
+"POT-Creation-Date: 2016-03-01 22:03+0000\n"
+"PO-Revision-Date: 2016-03-02 01:28+0200\n"
 "Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
 "Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
@@ -46,15 +46,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+#: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Νέο παιχνίδι"
 
 #: ../data/app-menu.ui.h:2
-#| msgid "Preferences"
 msgid "_Preferences"
 msgstr "_Προτιμήσεις"
 
@@ -63,16 +62,14 @@ msgid "_Scores"
 msgstr "_Βαθμολογίες"
 
 #: ../data/app-menu.ui.h:4
-#| msgid "Help"
 msgid "_Help"
 msgstr "_Βοήθεια"
 
 #: ../data/app-menu.ui.h:5
-#| msgid "About"
 msgid "_About"
 msgstr "_Περί"
 
-#: ../data/app-menu.ui.h:6 ../src/game.c:150
+#: ../data/app-menu.ui.h:6
 msgid "_Quit"
 msgstr "Έ_ξοδος"
 
@@ -116,8 +113,8 @@ msgstr ""
 "τηλεμεταφορά μπορεί να σας προσγειώσει ακριβώς δίπλα σε ένα ρομπότ, που θα "
 "σας σκοτώσει. Επιβιώστε όσο μπορείτε περισσότερο!"
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:300 ../src/gnome-robots.c:329
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
 msgid "Robots"
 msgstr "Ρομπότ"
 
@@ -196,7 +193,7 @@ msgstr ""
 "Ενεργοποίηση ήχων παιχνιδιού. Αναπαραγωγή ήχων για διάφορα γεγονότα μέσα στο "
 "παιχνίδι."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
 msgid "Key to move NW"
 msgstr "Πλήκτρο για μετακίνηση βορειοδυτικά"
 
@@ -204,7 +201,7 @@ msgstr "Πλήκτρο για μετακίνηση βορειοδυτικά"
 msgid "The key used to move north-west."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε βόρειο-δυτικά."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
 msgid "Key to move N"
 msgstr "Πλήκτρο για μετακίνηση βόρεια"
 
@@ -212,7 +209,7 @@ msgstr "Πλήκτρο για μετακίνηση βόρεια"
 msgid "The key used to move north."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε βόρεια."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
 msgid "Key to move NE"
 msgstr "Πλήκτρο για μετακίνηση βορειοανατολικά"
 
@@ -220,7 +217,7 @@ msgstr "Πλήκτρο για μετακίνηση βορειοανατολικ�
 msgid "The key used to move north-east."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε βόρειο-ανατολικά."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
 msgid "Key to move W"
 msgstr "Πλήκτρο για μετακίνηση δυτικά"
 
@@ -228,7 +225,7 @@ msgstr "Πλήκτρο για μετακίνηση δυτικά"
 msgid "The key used to move west."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε δυτικά."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
 msgid "Key to hold"
 msgstr "Πλήκτρο για κράτημα"
 
@@ -236,7 +233,7 @@ msgstr "Πλήκτρο για κράτημα"
 msgid "The key used to hold still."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μείνετε ακίνητος."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
 msgid "Key to move E"
 msgstr "Πλήκτρο για μετακίνηση ανατολικά"
 
@@ -244,7 +241,7 @@ msgstr "Πλήκτρο για μετακίνηση ανατολικά"
 msgid "The key used to move east."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε ανατολικά."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
 msgid "Key to move SW"
 msgstr "Πλήκτρο για μετακίνηση νοτιοδυτικά"
 
@@ -252,7 +249,7 @@ msgstr "Πλήκτρο για μετακίνηση νοτιοδυτικά"
 msgid "The key used to move south-west."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε νότιο-δυτικά."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
 msgid "Key to move S"
 msgstr "Πλήκτρο για μετακίνηση νότια"
 
@@ -260,7 +257,7 @@ msgstr "Πλήκτρο για μετακίνηση νότια"
 msgid "The key used to move south."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε νότια."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
 msgid "Key to move SE"
 msgstr "Πλήκτρο για μετακίνηση νοτιοανατολικά"
 
@@ -280,35 +277,7 @@ msgstr "Το ύψος του παραθύρου σε εικονοστοιχεί�
 msgid "true if the window is maximized"
 msgstr "αληθής αν το παράθυρο είναι μεγιστοποιημένο"
 
-#: ../src/game.c:147
-msgid "Game over!"
-msgstr "Τέλος παιχνιδιού!"
-
-#: ../src/game.c:149
-msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr "Δυστυχώς, η βαθμολογία σας δεν είναι μεταξύ των 10 πρώτων."
-
-#: ../src/game.c:164
-msgid "Robots Scores"
-msgstr "Βαθμολογία Ρομπότ"
-
-#: ../src/game.c:167
-msgid "Map:"
-msgstr "Χάρτης:"
-
-#: ../src/game.c:176
-msgid "Congratulations!"
-msgstr "Συγχαρητήρια!"
-
-#: ../src/game.c:177
-msgid "Your score is the best!"
-msgstr "Είστε ο καλύτερος!"
-
-#: ../src/game.c:178
-msgid "Your score has made the top ten."
-msgstr "Είστε στην πρώτη δεκάδα."
-
-#: ../src/game.c:405 ../src/game.c:421
+#: ../src/game.c:343 ../src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -317,132 +286,100 @@ msgstr ""
 "Όμως, μπορείτε να το ξανακάνετε;"
 
 #. This should never happen.
-#: ../src/game.c:1175
+#: ../src/game.c:1110
 msgid "There are no teleport locations left!!"
 msgstr "Δεν έχουν απομείνει θέσεις τηλεμεταφοράς!!"
 
-#: ../src/game.c:1203
+#: ../src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
 msgstr "Δεν έχουν απομείνει ασφαλείς προορισμοί τηλεμεταφοράς!!"
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:286
 msgid "Unknown Command"
 msgstr "Άγνωστη εντολή"
 
-#. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:132
-msgctxt "score-dialog"
-msgid "Time"
-msgstr "Χρόνος"
-
-#. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:138
-msgctxt "score-dialog"
-msgid "Score"
-msgstr "Βαθμολογία"
-
-#. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:225
-#, c-format
-msgctxt "score-dialog"
-msgid "%1$dm %2$ds"
-msgstr "%1$dm %2$ds"
-
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Νέο Παιχνίδι"
-
-#. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:478
-msgid "Date"
-msgstr "Ημερομηνία"
-
-#: ../src/gnome-robots.c:95
+#: ../src/gnome-robots.c:106
 msgid "Classic robots"
 msgstr "Κλασσικά ρομπότ"
 
-#: ../src/gnome-robots.c:96
+#: ../src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
 msgstr "Κλασσικά ρομπότ με ασφαλείς κινήσεις"
 
-#: ../src/gnome-robots.c:97
+#: ../src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
 msgstr "Κλασσικά ρομπότ με υπερ-ασφαλείς κινήσεις"
 
-#: ../src/gnome-robots.c:98
+#: ../src/gnome-robots.c:109
 msgid "Nightmare"
 msgstr "Εφιάλτης"
 
-#: ../src/gnome-robots.c:99
+#: ../src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
 msgstr "Εφιάλτης με ασφαλείς κινήσεις"
 
-#: ../src/gnome-robots.c:100
+#: ../src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
 msgstr "Εφιάλτης με υπερ-ασφαλείς κινήσεις"
 
-#: ../src/gnome-robots.c:101
+#: ../src/gnome-robots.c:112
 msgid "Robots2"
 msgstr "Ρομπότ2"
 
-#: ../src/gnome-robots.c:102
+#: ../src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
 msgstr "Ρομπότ2 με ασφαλείς κινήσεις"
 
-#: ../src/gnome-robots.c:103
+#: ../src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
 msgstr "Ρομπότ2 με υπερ-ασφαλείς κινήσεις"
 
-#: ../src/gnome-robots.c:104
+#: ../src/gnome-robots.c:115
 msgid "Robots2 easy"
 msgstr "Ρομπότ2 εύκολο"
 
-#: ../src/gnome-robots.c:105
+#: ../src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
 msgstr "Ρομπότ2 εύκολο με ασφαλείς κινήσεις"
 
-#: ../src/gnome-robots.c:106
+#: ../src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
 msgstr "Ρομπότ2 εύκολο με υπερ-ασφαλείς κινήσεις"
 
-#: ../src/gnome-robots.c:107
+#: ../src/gnome-robots.c:118
 msgid "Robots with safe teleport"
 msgstr "Ρομπότ με ασφαλή τηλεμεταφορά"
 
-#: ../src/gnome-robots.c:108
+#: ../src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
 msgstr "Ρομπότ με ασφαλή τηλεμεταφορά με ασφαλείς κινήσεις"
 
-#: ../src/gnome-robots.c:109
+#: ../src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Ρομπότ με ασφαλή τηλεμεταφορά με υπερ-ασφαλείς κινήσεις"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: ../src/gnome-robots.c:144
+#: ../src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Επίπεδο: %d\tΒαθμολογία: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: ../src/gnome-robots.c:155
+#: ../src/gnome-robots.c:167
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Απομένουν: %d)"
 
 #. First line of safe teleports button label.
-#: ../src/gnome-robots.c:157
+#: ../src/gnome-robots.c:169
 msgid "Teleport _Safely"
 msgstr "Α_σφαλής τηλεμεταφορά"
 
-#: ../src/gnome-robots.c:202
-#| msgid ""
-#| "Based on classic BSD Robots\n"
-#| "\n"
-#| "Robots is a part of GNOME Games."
+#: ../src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
 msgstr "Βασίζεται στο κλασικό BSD Ρομπότ."
 
-#: ../src/gnome-robots.c:206
+#: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -454,27 +391,33 @@ msgstr ""
 " Μαρία Μαυρίδου <mavridou@gmail.com>\n"
 "Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://gnome.gr/"
 
-#: ../src/gnome-robots.c:227
+#: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
 msgstr "Είστε σίγουροι ότι θέλετε να απορρίψετε το τρέχον παιχνίδι;"
 
-#: ../src/gnome-robots.c:230
+#: ../src/gnome-robots.c:255
 msgid "Keep _Playing"
 msgstr "Συνέχεια _παιχνιδιού"
 
-#: ../src/gnome-robots.c:366
+#: ../src/gnome-robots.c:387
 msgid "Teleport _Randomly"
 msgstr "Τυχαία τηλεμεταφο_ρά"
 
-#: ../src/gnome-robots.c:385
+#: ../src/gnome-robots.c:406
 msgid "_Wait for Robots"
 msgstr "_Αναμονή για ρομπότ"
 
-#: ../src/gnome-robots.c:413
+#. Label on the scores dialog, next to map type dropdown
+#: ../src/gnome-robots.c:430
+#| msgid "Game Type"
+msgid "Game Type:"
+msgstr "Είδος παιχνιδιού:"
+
+#: ../src/gnome-robots.c:445
 msgid "No game data could be found."
 msgstr "Δεν βρέθηκαν δεδομένα παιχνιδιού."
 
-#: ../src/gnome-robots.c:415
+#: ../src/gnome-robots.c:447
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -482,11 +425,11 @@ msgstr ""
 "Το Ρομπότ δεν βρήκε κάποια έγκυρη ρύθμιση παιχνιδιού. Ελέγξτε αν το "
 "πρόγραμμα έχει εγκατασταθεί σωστά."
 
-#: ../src/gnome-robots.c:431
+#: ../src/gnome-robots.c:464
 msgid "Some graphics files are missing or corrupt."
 msgstr "Μερικά αρχεία γραφικών λείπουν ή είναι κατεστραμμένα."
 
-#: ../src/gnome-robots.c:433
+#: ../src/gnome-robots.c:466
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -494,66 +437,105 @@ msgstr ""
 "Το Ρομπότ δεν μπόρεσε να φορτώσει όλα τα απαραίτητα αρχεία γραφικών. Ελέγξτε "
 "αν το πρόγραμμα έχει εγκατασταθεί σωστά."
 
-#: ../src/graphics.c:151
+#: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Δεν βρέθηκε το αρχείο pixmap '%s'\n"
 
-#: ../src/properties.c:393
+#: ../src/properties.c:391
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: ../src/properties.c:417
+#: ../src/properties.c:415
 msgid "Game Type"
 msgstr "Είδος παιχνιδιού"
 
-#: ../src/properties.c:427
+#: ../src/properties.c:425
 msgid "_Use safe moves"
 msgstr "_Χρήση ασφαλών κινήσεων"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Αποτροπή τυχαίων κινήσεων που οδηγούν σε θάνατο."
 
-#: ../src/properties.c:435
+#: ../src/properties.c:433
 msgid "U_se super safe moves"
 msgstr "Χρήση _υπερ-ασφαλών κινήσεων"
 
-#: ../src/properties.c:442
+#: ../src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr "Αποτροπή όλων των κινήσεων που οδηγούν σε θάνατο."
 
-#: ../src/properties.c:448
+#: ../src/properties.c:446
 msgid "_Enable sounds"
 msgstr "_Ενεργοποίηση ήχων"
 
-#: ../src/properties.c:454
+#: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Αναπαραγωγή ήχων για γεγονότα όπως η νίκη σε ένα επίπεδο ή ο θάνατος."
 
-#: ../src/properties.c:456
+#: ../src/properties.c:454
 msgid "Game"
 msgstr "Παιχνίδι"
 
-#: ../src/properties.c:469
+#: ../src/properties.c:467
 msgid "_Image theme:"
 msgstr "_Θέμα εικόνας:"
 
-#: ../src/properties.c:481
+#: ../src/properties.c:479
 msgid "_Background color:"
 msgstr "_Χρώμα παρασκηνίου:"
 
-#: ../src/properties.c:493
+#: ../src/properties.c:491
 msgid "Appearance"
 msgstr "Εμφάνιση"
 
-#: ../src/properties.c:522
+#: ../src/properties.c:520
 msgid "_Restore Defaults"
 msgstr "_Επαναφορά προεπιλογών"
 
-#: ../src/properties.c:527
+#: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Πληκτρολόγιο"
+
+#~ msgid "Game over!"
+#~ msgstr "Τέλος παιχνιδιού!"
+
+#~ msgid "Great work, but unfortunately your score did not make the top ten."
+#~ msgstr "Δυστυχώς, η βαθμολογία σας δεν είναι μεταξύ των 10 πρώτων."
+
+#~ msgid "Robots Scores"
+#~ msgstr "Βαθμολογία Ρομπότ"
+
+#~ msgid "Map:"
+#~ msgstr "Χάρτης:"
+
+#~ msgid "Congratulations!"
+#~ msgstr "Συγχαρητήρια!"
+
+#~ msgid "Your score is the best!"
+#~ msgstr "Είστε ο καλύτερος!"
+
+#~ msgid "Your score has made the top ten."
+#~ msgstr "Είστε στην πρώτη δεκάδα."
+
+#~ msgctxt "score-dialog"
+#~ msgid "Time"
+#~ msgstr "Χρόνος"
+
+#~ msgctxt "score-dialog"
+#~ msgid "Score"
+#~ msgstr "Βαθμολογία"
+
+#~ msgctxt "score-dialog"
+#~ msgid "%1$dm %2$ds"
+#~ msgstr "%1$dm %2$ds"
+
+#~ msgid "New Game"
+#~ msgstr "Νέο Παιχνίδι"
+
+#~ msgid "Date"
+#~ msgstr "Ημερομηνία"
 
 #~ msgid "Scores"
 #~ msgstr "Βαθμολογία"

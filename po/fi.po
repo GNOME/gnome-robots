@@ -8,15 +8,15 @@
 # Sami Pesonen <sampeson@iki.fi>, 2002-2005.
 # Ilkka Tuohela <hile@iki.fi>, 2005-2009.
 # Timo Jyrinki <timo.jyrinki@iki.fi>, 2008.
-# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2012, 2013, 2014, 2015.
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2012, 2013, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-13 08:31+0000\n"
-"PO-Revision-Date: 2015-03-13 20:08+0200\n"
+"POT-Creation-Date: 2016-03-05 10:02+0000\n"
+"PO-Revision-Date: 2016-03-05 19:32+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -25,10 +25,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Launchpad-Export-Date: 2010-09-13 15:09+0000\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-POT-Import-Date: 2012-03-05 14:46:29+0000\n"
 
-#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+#: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Uusi peli"
 
@@ -41,16 +41,14 @@ msgid "_Scores"
 msgstr "_Pisteet"
 
 #: ../data/app-menu.ui.h:4
-#| msgid "Help"
 msgid "_Help"
 msgstr "_Ohje"
 
 #: ../data/app-menu.ui.h:5
-#| msgid "About"
 msgid "_About"
 msgstr "_Tietoja"
 
-#: ../data/app-menu.ui.h:6 ../src/game.c:150
+#: ../data/app-menu.ui.h:6
 msgid "_Quit"
 msgstr "_Lopeta"
 
@@ -93,8 +91,8 @@ msgstr ""
 "tulee vastaan, teleporttaus saattaa asettaa sinut suoraan robotin viereen, "
 "jolloin olet kuoleman oma. Selviä niin kauan kuin pystyt!"
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
 msgid "Robots"
 msgstr "Robotit"
 
@@ -169,7 +167,7 @@ msgstr "Peliäänet päälle"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Peliäänet päälle. Soittaa ääniä erilaisissa tapahtumissa pelin aikana."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
 msgid "Key to move NW"
 msgstr "Näppäin vasemmalle ylös siirtämiseen."
 
@@ -177,7 +175,7 @@ msgstr "Näppäin vasemmalle ylös siirtämiseen."
 msgid "The key used to move north-west."
 msgstr "Näppäin luoteeseen siirtämiseen."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
 msgid "Key to move N"
 msgstr "Näppäin ylöspäin siirtämiseen."
 
@@ -185,7 +183,7 @@ msgstr "Näppäin ylöspäin siirtämiseen."
 msgid "The key used to move north."
 msgstr "Näppäin pohjoiseen siirtämiseen."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
 msgid "Key to move NE"
 msgstr "Näppäin oikealle ylös siirtämiseen."
 
@@ -193,7 +191,7 @@ msgstr "Näppäin oikealle ylös siirtämiseen."
 msgid "The key used to move north-east."
 msgstr "Näppäin koilliseen siirtämiseen."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
 msgid "Key to move W"
 msgstr "Näppäin vasemmalle siirtämiseen."
 
@@ -201,7 +199,7 @@ msgstr "Näppäin vasemmalle siirtämiseen."
 msgid "The key used to move west."
 msgstr "Näppäin länteen siirtämiseen."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
 msgid "Key to hold"
 msgstr "Painettava näppäin"
 
@@ -209,7 +207,7 @@ msgstr "Painettava näppäin"
 msgid "The key used to hold still."
 msgstr "Näppäin paikallaan pysymiseen."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
 msgid "Key to move E"
 msgstr "Näppäin oikealle siirtämiseen."
 
@@ -217,7 +215,7 @@ msgstr "Näppäin oikealle siirtämiseen."
 msgid "The key used to move east."
 msgstr "Näppäin itään siirtämiseen."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
 msgid "Key to move SW"
 msgstr "Näppäin vasemmalle alas siirtämiseen."
 
@@ -225,7 +223,7 @@ msgstr "Näppäin vasemmalle alas siirtämiseen."
 msgid "The key used to move south-west."
 msgstr "Näppäin lounaaseen siirtämiseen."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
 msgid "Key to move S"
 msgstr "Näppäin alas siirtämiseen."
 
@@ -233,7 +231,7 @@ msgstr "Näppäin alas siirtämiseen."
 msgid "The key used to move south."
 msgstr "Näppäin etelään siirtämiseen."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
 msgid "Key to move SE"
 msgstr "Näppäin oikealle alas siirtämiseen."
 
@@ -253,36 +251,7 @@ msgstr "Ikkunan korkeus kuvapisteinä"
 msgid "true if the window is maximized"
 msgstr "tosi jos ikkuna on suurennettu"
 
-#: ../src/game.c:147
-msgid "Game over!"
-msgstr "Peli päättyi!"
-
-#: ../src/game.c:149
-msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr ""
-"Hyvin pelattu, mutta valitettavasti tuloksesi ei päässyt top-10 listalle."
-
-#: ../src/game.c:164
-msgid "Robots Scores"
-msgstr "Robottien pisteet"
-
-#: ../src/game.c:167
-msgid "Map:"
-msgstr "Kartta:"
-
-#: ../src/game.c:176
-msgid "Congratulations!"
-msgstr "Onnittelut!"
-
-#: ../src/game.c:177
-msgid "Your score is the best!"
-msgstr "Teit parhaan tuloksen!"
-
-#: ../src/game.c:178
-msgid "Your score has made the top ten."
-msgstr "Tuloksesi pääsi top-10 listalle."
-
-#: ../src/game.c:405 ../src/game.c:421
+#: ../src/game.c:343 ../src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -291,133 +260,104 @@ msgstr ""
 "Mutta onnistutko siinä uudestaan?"
 
 #. This should never happen.
-#: ../src/game.c:1175
+#: ../src/game.c:1110
 msgid "There are no teleport locations left!!"
 msgstr "Ei paikkaa, joihin teleportata!"
 
-#: ../src/game.c:1203
+#: ../src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
 msgstr "Ei paikkaa, joihin teleportata turvallisesti!"
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:286
 msgid "Unknown Command"
 msgstr "Tuntematon komento"
 
-#. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:132
-msgctxt "score-dialog"
-msgid "Time"
-msgstr "Aika"
-
-#. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:138
-msgctxt "score-dialog"
-msgid "Score"
-msgstr "Pisteet"
-
-#. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:225
-#, c-format
-msgctxt "score-dialog"
-msgid "%1$dm %2$ds"
-msgstr "%d min %d s"
-
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Uusi peli"
-
-#. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:478
-msgid "Date"
-msgstr "Päiväys"
-
-#: ../src/gnome-robots.c:95
+#: ../src/gnome-robots.c:106
 msgid "Classic robots"
 msgstr "Klassiset robotit"
 
-#: ../src/gnome-robots.c:96
+#: ../src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
 msgstr "Klassiset robotit turvallisilla siirroilla"
 
-#: ../src/gnome-robots.c:97
+#: ../src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
 msgstr "Klassiset robotit erittäin turvallisilla siirroilla"
 
-#: ../src/gnome-robots.c:98
+#: ../src/gnome-robots.c:109
 msgid "Nightmare"
 msgstr "Painajainen"
 
-#: ../src/gnome-robots.c:99
+#: ../src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
 msgstr "Painajainen turvallisilla siirroilla"
 
-#: ../src/gnome-robots.c:100
+#: ../src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
 msgstr "Painajainen erittäin turvallisilla siirroilla"
 
-#: ../src/gnome-robots.c:101
+#: ../src/gnome-robots.c:112
 msgid "Robots2"
 msgstr "Robotit II"
 
-#: ../src/gnome-robots.c:102
+#: ../src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
 msgstr "Robotit II - turvallisilla siirroilla"
 
-#: ../src/gnome-robots.c:103
+#: ../src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
 msgstr "Robotit II - erittäin turvallisilla siirroilla"
 
-#: ../src/gnome-robots.c:104
+#: ../src/gnome-robots.c:115
 msgid "Robots2 easy"
 msgstr "Robotit II - helppo"
 
-#: ../src/gnome-robots.c:105
+#: ../src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
 msgstr "Robotit II - helppo turvallisilla siirroilla"
 
-#: ../src/gnome-robots.c:106
+#: ../src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
 msgstr "Robotit II - helppo erittäin turvallisilla siirroilla"
 
-#: ../src/gnome-robots.c:107
+#: ../src/gnome-robots.c:118
 msgid "Robots with safe teleport"
 msgstr "Robotit turvallisella teleportilla"
 
-#: ../src/gnome-robots.c:108
+#: ../src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robotit turvallisella teleportilla ja siirroilla"
 
-#: ../src/gnome-robots.c:109
+#: ../src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
 msgstr ""
 "Robotit turvallisella teleportilla ja erittäin turvallisilla siirroilla"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: ../src/gnome-robots.c:144
+#: ../src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Taso: %d\tPisteet: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: ../src/gnome-robots.c:155
+#: ../src/gnome-robots.c:167
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Jäljellä: %d)"
 
 #. First line of safe teleports button label.
-#: ../src/gnome-robots.c:157
+#: ../src/gnome-robots.c:169
 msgid "Teleport _Safely"
 msgstr "Teleporttaa _turvallisesti"
 
-#: ../src/gnome-robots.c:202
-#| msgid "classic robots"
+#: ../src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
 msgstr "Pohjautuu klassiseen BSD Robots -peliin"
 
-#: ../src/gnome-robots.c:206
+#: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
-"Jiri Grönroos, 2014-2015\n"
+"Jiri Grönroos, 2014-2016\n"
 "Timo Jyrinki, 2008\n"
 "Ilkka Tuohela, 2006-2009\n"
 "Sami Pesonen, 2002-2005\n"
@@ -435,27 +375,33 @@ msgstr ""
 "  Timo Jyrinki https://launchpad.net/~timo-jyrinki\n"
 "  eGetin https://launchpad.net/~egetin"
 
-#: ../src/gnome-robots.c:227
+#: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
 msgstr "Haluatko varmasti hylätä nykyisen pelin?"
 
-#: ../src/gnome-robots.c:230
+#: ../src/gnome-robots.c:255
 msgid "Keep _Playing"
 msgstr "Jatka _pelaamista"
 
-#: ../src/gnome-robots.c:361
+#: ../src/gnome-robots.c:387
 msgid "Teleport _Randomly"
 msgstr "Teleporttaa _satunnaiseen kohteeseen"
 
-#: ../src/gnome-robots.c:380
+#: ../src/gnome-robots.c:406
 msgid "_Wait for Robots"
 msgstr "_Odota robotteja"
 
-#: ../src/gnome-robots.c:408
+#. Label on the scores dialog, next to map type dropdown
+#: ../src/gnome-robots.c:430
+#| msgid "Game Type"
+msgid "Game Type:"
+msgstr "Pelin tyyppi:"
+
+#: ../src/gnome-robots.c:445
 msgid "No game data could be found."
 msgstr "Pelidataa ei löytynyt."
 
-#: ../src/gnome-robots.c:410
+#: ../src/gnome-robots.c:447
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -463,11 +409,11 @@ msgstr ""
 "Gnome-robotit ei löytänyt toimivia pelin asetustiedostoja. Tarkista, että "
 "ohjelma on oikein asennettu."
 
-#: ../src/gnome-robots.c:426
+#: ../src/gnome-robots.c:464
 msgid "Some graphics files are missing or corrupt."
 msgstr "Osa graafisista tiedostoista puuttuu tai ovat korruptoituneet."
 
-#: ../src/gnome-robots.c:428
+#: ../src/gnome-robots.c:466
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -475,66 +421,106 @@ msgstr ""
 "Gnome-robotit ei löytänyt kaikkia tarvittavia pelin grafiikkatiedostoja. "
 "Tarkista, että ohjelma on oikein asennettu."
 
-#: ../src/graphics.c:151
+#: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Kuvatiedostoa \"%s\" ei löytynyt\n"
 
-#: ../src/properties.c:393
+#: ../src/properties.c:391
 msgid "Preferences"
 msgstr "Asetukset"
 
-#: ../src/properties.c:417
+#: ../src/properties.c:415
 msgid "Game Type"
 msgstr "Pelin tyyppi"
 
-#: ../src/properties.c:427
+#: ../src/properties.c:425
 msgid "_Use safe moves"
 msgstr "Käytä _turvallisia liikkeitä"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Estä kuolemaan johtavat varomattomat siirrot."
 
-#: ../src/properties.c:435
+#: ../src/properties.c:433
 msgid "U_se super safe moves"
 msgstr "Käytä _superturvallisia liikkeitä"
 
-#: ../src/properties.c:442
+#: ../src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr "Estä kaikki kuolemaan johtavat siirrot."
 
-#: ../src/properties.c:448
+#: ../src/properties.c:446
 msgid "_Enable sounds"
 msgstr "Ää_net päälle"
 
-#: ../src/properties.c:454
+#: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Soita äänet tapahtumiin kuten tason läpäisy tai kuoleminen."
 
-#: ../src/properties.c:456
+#: ../src/properties.c:454
 msgid "Game"
 msgstr "Peli"
 
-#: ../src/properties.c:469
+#: ../src/properties.c:467
 msgid "_Image theme:"
 msgstr "_Kuvateema:"
 
-#: ../src/properties.c:481
+#: ../src/properties.c:479
 msgid "_Background color:"
 msgstr "_Taustaväri:"
 
-#: ../src/properties.c:493
+#: ../src/properties.c:491
 msgid "Appearance"
 msgstr "Ulkonäkö"
 
-#: ../src/properties.c:522
+#: ../src/properties.c:520
 msgid "_Restore Defaults"
 msgstr "Palauta oletukset"
 
-#: ../src/properties.c:527
+#: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Näppäimistö"
+
+#~ msgid "Game over!"
+#~ msgstr "Peli päättyi!"
+
+#~ msgid "Great work, but unfortunately your score did not make the top ten."
+#~ msgstr ""
+#~ "Hyvin pelattu, mutta valitettavasti tuloksesi ei päässyt top-10 listalle."
+
+#~ msgid "Robots Scores"
+#~ msgstr "Robottien pisteet"
+
+#~ msgid "Map:"
+#~ msgstr "Kartta:"
+
+#~ msgid "Congratulations!"
+#~ msgstr "Onnittelut!"
+
+#~ msgid "Your score is the best!"
+#~ msgstr "Teit parhaan tuloksen!"
+
+#~ msgid "Your score has made the top ten."
+#~ msgstr "Tuloksesi pääsi top-10 listalle."
+
+#~ msgctxt "score-dialog"
+#~ msgid "Time"
+#~ msgstr "Aika"
+
+#~ msgctxt "score-dialog"
+#~ msgid "Score"
+#~ msgstr "Pisteet"
+
+#~ msgctxt "score-dialog"
+#~ msgid "%1$dm %2$ds"
+#~ msgstr "%d min %d s"
+
+#~ msgid "New Game"
+#~ msgstr "Uusi peli"
+
+#~ msgid "Date"
+#~ msgstr "Päiväys"
 
 #~ msgid "Scores"
 #~ msgstr "Pisteet"

@@ -3,23 +3,23 @@
 # This file is distributed under the same license as the gnobots documentation package.
 #
 #
+#
 # Claude Paroz <claude@2xlibre.net>, 2007-2008.
 # Bruno Brouard <annoa.b@gmail.com>, 2009, 2012.
-# Julien Hardelin <jhardlin@orange.fr>, 2014.
-#
+# Julien Hardelin <jhardlin@orange.fr>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnobots2.HEAD\n"
-"POT-Creation-Date: 2014-03-24 08:29+0000\n"
-"PO-Revision-Date: 2014-03-21 19:35+0100\n"
+"POT-Creation-Date: 2015-03-16 20:22+0000\n"
+"PO-Revision-Date: 2015-03-16 20:42+0100\n"
 "Last-Translator: Julien Hardelin <jhardlin@orange.fr>\n"
-"Language-Team: français <GNOME French Team <gnomefr@traduc.org>>\n"
-"Language: \n"
+"Language-Team: French <GNOME French Team <gnomefr@traduc.org>>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Lokalize 1.5\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -30,29 +30,30 @@ msgstr ""
 "Julien Hardelin <jhardlin@orange.fr>, 2014"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:15 C/basics.page:13 C/controls-change.page:14
-#: C/controls-default.page:14 C/game-types.page:14 C/index.page:12
-#: C/moves.page:14 C/scores.page:13
+#: C/appearance.page:16 C/basics.page:16 C/controls-change.page:15
+#: C/controls-default.page:16 C/game-types.page:15 C/index.page:13
+#: C/moves.page:16 C/scores.page:15
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:19
+#: C/appearance.page:20 C/basics.page:20 C/controls-default.page:20
+#: C/game-types.page:19 C/scores.page:19
 msgid "Rachel Dunstan"
 msgstr "Rachel Dunstan"
 
 #. (itstool) path: info/desc
-#: C/appearance.page:23
+#: C/appearance.page:24
 msgid "Use different game-themes in <app>Robots</app>."
 msgstr "Utiliser les différentes thèmes de jeu de <app>Robots</app>."
 
 #. (itstool) path: page/title
-#: C/appearance.page:26
+#: C/appearance.page:27
 msgid "Change the default appearance of the game"
 msgstr "Changement de l'apparence par défaut du jeu"
 
 #. (itstool) path: page/p
-#: C/appearance.page:28
+#: C/appearance.page:29
 msgid ""
 "You can change the <app>Robots</app> backdrop and the different robots that "
 "are present in a game by changing the game theme and background."
@@ -62,19 +63,18 @@ msgstr ""
 "l'arrière-plan."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:32
+#: C/appearance.page:33
 msgid "To change the game theme and background:"
 msgstr "Changement de thème de jeu et d'arrière-plan"
 
 #. (itstool) path: item/p
-#: C/appearance.page:34
+#: C/appearance.page:35
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"menuitem\">Appearance</gui></guiseq>."
+"Select <guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
+"\">Appearance</gui></guiseq>."
 msgstr ""
-"Sélectionnez <guiseq><gui style=\"menu\">Paramètres</gui> <gui style="
-"\"menuitem\">Préférences</gui> <gui style=\"menuitem\">Apparence</gui></"
-"guiseq>."
+"Sélectionnez <guiseq><gui style=\"menu\">Préférences</gui> <gui style="
+"\"menuitem\">Apparence</gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:39
@@ -96,87 +96,52 @@ msgstr ""
 "<gui>Couleur d'arrière-plan</gui>. Sélectionnez une couleur parmi les "
 "options disponibles et cliquez sur <gui style=\"button\">Sélectionner</gui>."
 
-#. (itstool) path: note/p
-#: C/appearance.page:50
-msgid ""
-"You can hide the toolbar that contains buttons to start a new game, wait and "
-"teleport, by selecting <guiseq><gui style=\"menu\">View</gui> <gui style="
-"\"menuitem\">Toolbar</gui></guiseq>. The small tick mark next to "
-"<gui>Toolbar</gui> will disappear and the toolbar will be hidden."
-msgstr ""
-"Vous pouvez masquer la barre d'outils contenant les boutons pour démarrer "
-"une nouvelle partie, faire une pause et téléporter, en sélectionnant "
-"<guiseq><gui style=\"menu\">Affichage</gui> <gui style=\"menuitem\">Barre "
-"d'outils</gui></guiseq>. La petite marque près de <gui>Barre d'outils</gui> "
-"disparaît et la barre d'outils devient invisible."
-
 #. (itstool) path: info/desc
-#: C/basics.page:17
-msgid "Start, quit and play <app>Robots</app> in fullscreen."
-msgstr "Démarrer, quitter et jouer à <app>Robots</app> en mode plein écran."
+#: C/basics.page:24
+msgid "Start, quit, and enable sounds."
+msgstr "Démarrer, quitter et activer les sons."
 
 #. (itstool) path: page/title
-#: C/basics.page:20
+#: C/basics.page:27
 msgid "Basic instructions"
 msgstr "Instructions de base"
 
 #. (itstool) path: section/title
-#: C/basics.page:23
+#: C/basics.page:30
 msgid "Start a new game"
 msgstr "Démarrage d'une nouvelle partie"
 
 #. (itstool) path: section/p
-#: C/basics.page:25
+#: C/basics.page:32
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">New</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start "
-"a new game."
+"Select <gui style=\"menuitem\">New Game</gui> from the menu or press "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"Sélectionnez <guiseq><gui style=\"menu\">Jeu</gui> <gui style=\"menuitem"
-"\">Nouveau</gui></guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>N</"
-"key></keyseq> pour démarrer une nouvelle partie."
+"Sélectionnez <gui style=\"menuitem\">Nouvelle partie</gui> dans le menu ou appuyez sur <keyseq><key>Ctrl</key><key>N</key></keyseq> pour démarrer une nouvelle partie."
 
 #. (itstool) path: section/title
-#: C/basics.page:33
-msgid "Play <app>Robots</app> in fullscreen mode"
-msgstr "Jouer à <app>Robots</app> en mode plein écran"
-
-#. (itstool) path: section/p
-#: C/basics.page:35
-msgid ""
-"Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
-"\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
-"fullscreen mode. You can return to the default screen size by pressing "
-"<key>F11</key> again."
-msgstr ""
-"Sélectionnez <guiseq><gui style=\"menu\">Affichage</gui> <gui style="
-"\"menuitem\">Plein écran</gui></guiseq> ou appuyez sur <key>F11</key>. Vous "
-"pouvez revenir à la taille d'écran par défaut en appuyant à nouveau sur "
-"<key>F11</key>."
-
-#. (itstool) path: section/title
-#: C/basics.page:43
+#: C/basics.page:38
 msgid "Enable sounds"
 msgstr "Activation des sons"
 
 #. (itstool) path: section/p
-#: C/basics.page:44
+#: C/basics.page:39
 msgid ""
-"Select <guiseq> <gui style=\"menu\">Settings</gui><gui>Preferences</gui> "
-"<gui>Game</gui></guiseq>. Check the <gui style=\"checkbox\">Enable sounds</"
+"Select <guiseq><gui style=\"menu\">Preferences</gui><gui style=\"menuitem"
+"\">Game</gui></guiseq>. Check the <gui style=\"checkbox\">Enable sounds</"
 "gui> checkbox to enable sounds."
 msgstr ""
-"Sélectionnez <guiseq> <gui style=\"menu\">Paramètres</gui><gui>Préférences</"
-"gui> <gui>Jeu</gui></guiseq>. Cochez la case <gui style=\"checkbox\">Activer "
-"les sons</gui>."
+"Sélectionnez <guiseq><gui style=\"menu\">Préférences</gui><gui style="
+"\"menuitem\">Jeu</gui></guiseq>. Cochez la case <gui style=\"checkbox"
+"\">Activer les sons</gui>."
 
 #. (itstool) path: section/title
-#: C/basics.page:52
+#: C/basics.page:45
 msgid "Quit <app>Robots</app>"
 msgstr "Quitter <app>Robots</app>"
 
 #. (itstool) path: section/p
-#: C/basics.page:54
+#: C/basics.page:47
 msgid ""
 "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
 "gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
@@ -187,17 +152,17 @@ msgstr ""
 "key></keyseq> pour quitter <app>Robots</app> quand bon vous semble."
 
 #. (itstool) path: info/desc
-#: C/controls-change.page:18
+#: C/controls-change.page:19
 msgid "Change the default keys in <app>Robots</app>."
 msgstr "Changer les touches par défaut dans <app>Robots</app>."
 
 #. (itstool) path: page/title
-#: C/controls-change.page:21
+#: C/controls-change.page:22
 msgid "Customize the keyboard controls"
 msgstr "Personnalisation des touches de commande"
 
 #. (itstool) path: page/p
-#: C/controls-change.page:23
+#: C/controls-change.page:24
 msgid ""
 "The <link xref=\"controls-default\">default controls</link> can be changed "
 "in <app>Robots</app> to suit your preference."
@@ -207,18 +172,18 @@ msgstr ""
 "préférences."
 
 #. (itstool) path: steps/title
-#: C/controls-change.page:27
+#: C/controls-change.page:28
 msgid "To change the default keys:"
 msgstr "Modification des touches par défaut :"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:29
+#: C/controls-change.page:30
 msgid ""
-"Select <guiseq><gui style=\"menu\">Settings</gui> <gui style=\"menuitem"
-"\">Preferences</gui><gui>Keyboard</gui></guiseq>."
+"Select <guiseq><gui style=\"menu\">Preferences</gui><gui style=\"menuitem"
+"\">Keyboard</gui></guiseq>."
 msgstr ""
-"Sélectionnez <guiseq><gui style=\"menu\">Paramètres</gui> <gui style="
-"\"menuitem\">Préférences</gui><gui>Clavier</gui></guiseq>."
+"Sélectionnez <guiseq><gui style=\"menu\">Préférences</gui><gui style="
+"\"menuitem\">Clavier</gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:33
@@ -272,22 +237,22 @@ msgstr ""
 "bouton <gui style=\"button\">Paramètres par défaut</gui>."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:18
+#: C/controls-default.page:24
 msgid "How do I control the main character?"
 msgstr "Comment contrôler la figure principale ?"
 
 #. (itstool) path: page/title
-#: C/controls-default.page:21
+#: C/controls-default.page:27
 msgid "Mouse and keyboard controls for <app>Robots</app>"
 msgstr "Commandes à la souris et au clavier de <app>Robots</app>"
 
 #. (itstool) path: section/title
-#: C/controls-default.page:24
+#: C/controls-default.page:30
 msgid "Keyboard controls"
 msgstr "Commandes au clavier"
 
 #. (itstool) path: section/p
-#: C/controls-default.page:26
+#: C/controls-default.page:32
 msgid ""
 "Use the following keys from the numeric keypad on the far right of your "
 "keyboard, to move in <app>Robots</app>."
@@ -296,139 +261,138 @@ msgstr ""
 "pour vous déplacer dans <app>Robots</app>."
 
 #. (itstool) path: td/p
-#: C/controls-default.page:31
+#: C/controls-default.page:38
 msgid "Possible moves"
 msgstr "Mouvements possibles"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:32
+#: C/controls-default.page:39
 msgid "Key"
 msgstr "Touche"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:35
+#: C/controls-default.page:44
 msgid "North west"
 msgstr "Nord-ouest"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:36
-msgid "<key>Home</key>"
-msgstr "<key>Origine</key>"
+#: C/controls-default.page:45
+msgid "<key>y</key>"
+msgstr "<key>y</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:39
+#: C/controls-default.page:48
 msgid "North"
 msgstr "Nord"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:40
-msgid "<key>↑</key>"
-msgstr "<key>↑</key>"
+#: C/controls-default.page:49
+msgid "<key>k</key>"
+msgstr "<key>k</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:43
+#: C/controls-default.page:52
 msgid "North east"
 msgstr "Nord-est"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:44
-msgid "<key>PgUp</key>"
-msgstr "<key>Page haut</key>"
+#: C/controls-default.page:53
+msgid "<key>u</key>"
+msgstr "<key>u</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:47
+#: C/controls-default.page:56
 msgid "West"
 msgstr "Ouest"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:48
-msgid "<key>→</key>"
-msgstr "<key>→</key>"
+#: C/controls-default.page:57
+msgid "<key>h</key>"
+msgstr "<key>h</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:51
+#: C/controls-default.page:60
 msgid "East"
 msgstr "Est"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:52
-msgid "<key>←</key>"
-msgstr "<key>←</key>"
+#: C/controls-default.page:61
+msgid "<key>l</key>"
+msgstr "<key>l</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:55
+#: C/controls-default.page:64
 msgid "South west"
 msgstr "Sud-ouest"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:56
-msgid "<key>End</key>"
-msgstr "<key>Fin</key>"
+#: C/controls-default.page:65
+msgid "<key>b</key>"
+msgstr "<key>b</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:59
+#: C/controls-default.page:68
 msgid "South"
 msgstr "Sud"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:60
-msgid "<key>↓</key>"
-msgstr "<key>↓</key>"
+#: C/controls-default.page:69
+msgid "<key>j</key>"
+msgstr "<key>j</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:63
+#: C/controls-default.page:72
 msgid "South east"
 msgstr "Sud-est"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:64
-msgid "<key>PgDn</key>"
-msgstr "<key>Page bas</key>"
+#: C/controls-default.page:73
+msgid "<key>n</key>"
+msgstr "<key>n</key>"
 
 #. (itstool) path: td/p
-#. (itstool) path: item/title
-#: C/controls-default.page:67 C/controls-default.page:105
-msgid "Stay in the same position"
-msgstr "Demeurer dans la même position"
+#: C/controls-default.page:76
+msgid "Stay in the same position (one turn)"
+msgstr "Demeurer dans la même position (un tour)"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:68
-msgid "<key>5</key>"
-msgstr "<key>5</key>"
+#: C/controls-default.page:77
+msgid "Space"
+msgstr "Espace"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:71
+#: C/controls-default.page:80
 msgid "Teleport safely"
 msgstr "Se téléporter sans danger"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:72
-msgid "<key>+</key>"
-msgstr "<key>+</key>"
+#: C/controls-default.page:81
+msgid "<keyseq><key>Alt</key><key>s</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>s</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:75
+#: C/controls-default.page:84
 msgid "Teleport randomly"
 msgstr "Se téléporter au hasard"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:76
-msgid "<key>*</key>"
-msgstr "<key>*</key>"
+#: C/controls-default.page:85
+msgid "<keyseq><key>Alt</key><key>r</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>r</key></keyseq>"
 
 #. (itstool) path: td/p
 #. (itstool) path: item/title
-#: C/controls-default.page:79 C/controls-default.page:109
+#: C/controls-default.page:88 C/controls-default.page:119
 msgid "Wait for the robots"
 msgstr "Mise en attente des robots"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:80
-msgid "<key>Enter</key>"
-msgstr "<key>Entrée</key>"
+#: C/controls-default.page:89
+msgid "<keyseq><key>Alt</key><key>w</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>w</key></keyseq>"
 
 #. (itstool) path: note/p
-#: C/controls-default.page:85
+#: C/controls-default.page:95
 msgid ""
 "You can <link xref=\"controls-change\">change</link> the default controls to "
 "suit your preference."
@@ -437,17 +401,17 @@ msgstr ""
 "défaut pour les adapter à vos préférences."
 
 #. (itstool) path: section/title
-#: C/controls-default.page:92
+#: C/controls-default.page:102
 msgid "Use the mouse to move around"
 msgstr "Utilisation de la souris pour se déplacer"
 
 #. (itstool) path: item/title
-#: C/controls-default.page:96
+#: C/controls-default.page:106
 msgid "Move in a particular direction"
 msgstr "Déplacement dans une direction particulière"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:97
+#: C/controls-default.page:107
 msgid ""
 "When you move your mouse around the main character, a small black arrow will "
 "appear pointing towards the direction in which the character will move if "
@@ -462,67 +426,62 @@ msgstr ""
 "une petite flèche noire apparaît, pointant vers le nord. Si vous cliquez, la "
 "figure se déplace d'un carré vers le nord."
 
+#. (itstool) path: item/title
+#: C/controls-default.page:115
+msgid "Stay in the same position"
+msgstr "Demeurer dans la même position"
+
 #. (itstool) path: item/p
-#: C/controls-default.page:106
+#: C/controls-default.page:116
 msgid "Click on the main character to stay put in the same square."
 msgstr "Cliquez sur la figure principale pour stationner sur le même carré."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:110
+#: C/controls-default.page:120
 msgid ""
-"Click the <_:media-1/> button on the toolbar or select <guiseq><gui style="
-"\"menu\">Move</gui> <gui style=\"menuitem\">Wait</gui></guiseq> to wait for "
-"the enemy robots to finish making all their moves."
+"Click the <gui>Wait for Robots</gui> button to wait for the enemy robots to "
+"finish making all their moves."
 msgstr ""
-"Cliquez sur le bouton <_:media-1/> dans la barre d'outils ou sélectionnez "
-"<guiseq><gui style=\"menu\">Déplacement</gui> <gui style=\"menuitem"
-"\">Attente</gui></guiseq> pour attendre que les robots ennemis aient terminé "
-"leurs déplacements."
+"Cliquez sur le bouton <gui>Attendre les robots</gui> pour attendre que les "
+"robots ennemis aient terminé leurs déplacements."
 
 #. (itstool) path: item/title
-#: C/controls-default.page:118 C/moves.page:84
+#: C/controls-default.page:124 C/moves.page:55
 msgid "Safe teleports"
 msgstr "Téléportations sans danger"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:119
-msgid ""
-"To safely teleport, click the <_:media-1/> button on the toolbar or select "
-"<guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem\">Teleport</"
-"gui></guiseq>."
+#: C/controls-default.page:125
+msgid "To safely teleport, click the <gui>Teleport Safely</gui> button."
 msgstr ""
-"Pour vous téléporter sans danger, cliquez sur le bouton <_:media-1/> dans la "
-"barre d'outils ou sélectionnez <guiseq><gui style=\"menu\">Déplacement</"
-"gui><gui style=\"menuitem\">Se téléporter</gui></guiseq>."
+"Pour vous téléporter en sécurité, cliquez sur le bouton <gui>Se téléporter "
+"sans danger</gui>."
 
 #. (itstool) path: item/title
-#: C/controls-default.page:125 C/moves.page:90
+#: C/controls-default.page:128 C/moves.page:61
 msgid "Random teleports"
 msgstr "Téléportations aléatoires"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:126
+#: C/controls-default.page:129
 msgid ""
-"To teleport to a random spot, click the <_:media-1/> button on the toolbar "
-"or select <guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem"
-"\">Random</gui></guiseq>."
+"To teleport to a random spot, click the <gui>Teleport Randomly</gui> button."
 msgstr ""
-"Pour vous téléporter à un endroit aléatoire, cliquez sur le bouton <_:"
-"media-1/> dans la barre d'outils ou sélectionnez <guiseq><gui style=\"menu"
-"\">Déplacement</gui><gui style=\"menuitem\">Aléatoirement</gui></guiseq>."
+"Pour vous transporter à un endroit aléatoire, cliquez sur le bouton <gui>Se "
+"téléporter aléatoirement</gui>."
 
 #. (itstool) path: info/desc
-#: C/game-types.page:18
+#: C/game-types.page:23
 msgid "Change the level of difficulty in <app>Robots</app>."
 msgstr "Modifier le niveau de difficulté dans <app>Robots</app>."
 
 #. (itstool) path: page/title
-#: C/game-types.page:21
+#: C/game-types.page:26
 msgid "Game type"
 msgstr "Type de jeu"
 
 #. (itstool) path: page/p
-#: C/game-types.page:23
+#: C/game-types.page:28
 msgid ""
 "You can play <app>Robots</app> in different ways by choosing a different "
 "game type. This changes the level of difficulty involved in playing "
@@ -532,21 +491,20 @@ msgstr ""
 "choisissant un autre type de jeu. Cela change le niveau de difficulté du jeu."
 
 #. (itstool) path: steps/title
-#: C/game-types.page:28
+#: C/game-types.page:33
 msgid "To change the level of difficulty:"
 msgstr "Modification du niveau de difficulté"
 
 #. (itstool) path: item/p
-#: C/game-types.page:30
+#: C/game-types.page:35
 msgid ""
-"Select <guiseq> <gui style=\"menu\">Settings</gui> <gui>Preferences</"
-"gui><gui>Game</gui></guiseq>."
+"Select <guiseq> <gui style=\"menu\">Settings</gui><gui>Preferences</"
+"gui><gui>Game</gui> </guiseq>."
 msgstr ""
-"Sélectionnez <guiseq> <gui style=\"menu\">Paramètres</gui> <gui>Préférences</"
-"gui><gui>Jeu</gui></guiseq>."
+"Sélectionnez <guiseq> <gui style=\"menu\">Paramètres</gui><gui>Préférences</gui><gui>Jeu</gui> </guiseq>."
 
 #. (itstool) path: item/p
-#: C/game-types.page:35
+#: C/game-types.page:40
 msgid ""
 "From the drop down menu next to <gui>Game Type</gui>, choose your option."
 msgstr ""
@@ -554,79 +512,76 @@ msgstr ""
 "voulue."
 
 #. (itstool) path: td/p
-#: C/game-types.page:39
+#: C/game-types.page:45
 msgid "Game Type"
 msgstr "Type de jeu"
 
 #. (itstool) path: td/p
-#: C/game-types.page:40
+#: C/game-types.page:46
 msgid "Initial safe <link xref=\"moves#teleport\">teleports</link>"
 msgstr ""
 "<link xref=\"moves#teleport\">Téléportations</link> sans danger initiales"
 
 #. (itstool) path: td/p
-#: C/game-types.page:42
-msgid "Initial <link xref=\"scores#low-risk\">low-risk enemy robots</link>"
+#: C/game-types.page:48
+msgid ""
+"Initial <link xref=\"scores#high-low-risk\">low-risk enemy robots</link>"
 msgstr ""
-"<link xref=\"scores#low-risk\">Robots ennemis de faible risque</link> "
+"<link xref=\"scores#high-low-risk\">Robots ennemis de faible risque</link> "
 "initiaux."
 
 #. (itstool) path: td/p
-#: C/game-types.page:44
-msgid "Initial <link xref=\"scores#high-risk\">high-risk enemy robots</link>"
+#: C/game-types.page:51
+msgid ""
+"Initial <link xref=\"scores#high-low-risk\">high-risk enemy robots</link>"
 msgstr ""
-"<link xref=\"scores#high-risk\">Robots ennemis de haut risque</link> "
+"<link xref=\"scores#high-low-risk\">Robots ennemis de haut risque</link> "
 "initiaux."
 
 #. (itstool) path: td/p
-#: C/game-types.page:46
+#: C/game-types.page:54
 msgid "Do safe teleports increase in successive levels?"
 msgstr "Augmenter les téléportations sans danger dans les niveaux successifs ?"
 
 #. (itstool) path: td/p
-#: C/game-types.page:49
-msgid "<gui>robots2 easy</gui>"
-msgstr "<gui>robots2 facile</gui>"
+#: C/game-types.page:59
+msgid "<gui>nightmare</gui>"
+msgstr "<gui>cauchemar</gui>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:50
-msgid "3"
-msgstr "3"
-
-#. (itstool) path: td/p
-#: C/game-types.page:51 C/game-types.page:74 C/game-types.page:80
-msgid "8"
-msgstr "8"
-
-#. (itstool) path: td/p
-#: C/game-types.page:52 C/game-types.page:72 C/game-types.page:73
-#: C/game-types.page:81
+#: C/game-types.page:60 C/game-types.page:61 C/game-types.page:77
+#: C/game-types.page:85
 msgid "2"
 msgstr "2"
 
 #. (itstool) path: td/p
-#: C/game-types.page:53 C/game-types.page:75
+#: C/game-types.page:62 C/game-types.page:76 C/game-types.page:84
+msgid "8"
+msgstr "8"
+
+#. (itstool) path: td/p
+#: C/game-types.page:63 C/game-types.page:86
 msgid "Yes"
 msgstr "Oui"
 
 #. (itstool) path: td/p
-#: C/game-types.page:56
+#: C/game-types.page:66
 msgid "<gui>robots with safe teleport</gui>"
 msgstr "<gui>robots avec téléportation sans danger</gui>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:57 C/game-types.page:59 C/game-types.page:65
-#: C/game-types.page:67
+#: C/game-types.page:67 C/game-types.page:69 C/game-types.page:90
+#: C/game-types.page:92
 msgid "0"
 msgstr "0"
 
 #. (itstool) path: td/p
-#: C/game-types.page:58 C/game-types.page:66
+#: C/game-types.page:68 C/game-types.page:91
 msgid "10"
 msgstr "10"
 
 #. (itstool) path: td/p
-#: C/game-types.page:60 C/game-types.page:82
+#: C/game-types.page:70 C/game-types.page:78
 msgid ""
 "Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
 "link>"
@@ -635,61 +590,65 @@ msgstr ""
 "\">attente</link>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:64
-msgid "<gui>classic robots</gui>"
-msgstr "<gui>robots classiques</gui>"
-
-#. (itstool) path: td/p
-#: C/game-types.page:68
-msgid "No"
-msgstr "Non"
-
-#. (itstool) path: td/p
-#: C/game-types.page:71
-msgid "<gui>nightmare</gui>"
-msgstr "<gui>cauchemar</gui>"
-
-#. (itstool) path: td/p
-#: C/game-types.page:78
+#: C/game-types.page:74
 msgid "<gui>robots2</gui>"
 msgstr "<gui>robots2</gui>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:79
+#: C/game-types.page:75
 msgid "1"
 msgstr "1"
 
+#. (itstool) path: td/p
+#: C/game-types.page:82
+msgid "<gui>robots2 easy</gui>"
+msgstr "<gui>robots2 facile</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:83
+msgid "3"
+msgstr "3"
+
+#. (itstool) path: td/p
+#: C/game-types.page:89
+msgid "<gui>classic robots</gui>"
+msgstr "<gui>robots classiques</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:93
+msgid "No"
+msgstr "Non"
+
 #. (itstool) path: item/p
-#: C/game-types.page:88
+#: C/game-types.page:99
 msgid ""
-"Check the <gui style=\"checkbox\">Use safe moves</gui> and <gui style="
-"\"checkbox\">Use super safe moves</gui> checkboxes if you want your random "
-"teleports to be as safe as possible. This reduces the level of difficulty. "
-"You can always uncheck these if you find the game too easy."
+"If you check the <gui style=\"checkbox\">Use safe moves</gui> checkbox, the "
+"game will prevent you from moving if the move would cause a robot to kill "
+"you, unless the only way to survive is to teleport. If you check the <gui "
+"style=\"checkbox\">Use super safe moves</gui> checkbox, the game will "
+"prevent you from making any move in this case, so that you are forced to "
+"teleport. This reduces the level of difficulty. You can always uncheck these "
+"if you find the game too easy."
 msgstr ""
-"Cochez les cases <gui style=\"checkbox\">Utiliser des mouvements sans "
-"danger</gui> et <gui style=\"checkbox\">Utiliser des mouvements vraiment "
-"sans danger</gui> si vous voulez que vos déplacements soient aussi sûrs que "
-"possible. Cela diminue le niveau de difficulté. Vous aurez toujours la "
-"possibilité de les dé-cocher si vous trouvez que le jeu est trop facile."
+"Si vous cochez la case <gui style=\"checkbox\">Utiliser des mouvements sans danger</gui>, le jeu vous empêche de vous déplacer si cela vous conduisait à être tué par un robot, à moins vous ayez la possibilité de vous téléporter pour survivre. Si vous cochez la case <gui style=\"checkbox\">Utiliser des mouvements vraiment sans danger</gui>, le jeu vous empêche tout déplacement, de telle sorte que vous soyez obligé de vous téléporter. Ces options diminuent le niveau de difficulté. Vous avez toujours la possibilité de les décocher si vous trouvez que le jeu est trop facile."
 
 #. (itstool) path: info/desc
-#: C/index.page:16
+#: C/index.page:17
 msgid "Index"
 msgstr "Index"
 
 #. (itstool) path: page/title
-#: C/index.page:19
+#: C/index.page:20
 msgid "<_:media-1/> Robots"
 msgstr "<_:media-1/> Robots"
 
 #. (itstool) path: page/p
-#: C/index.page:24
+#: C/index.page:25
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
-"into each other or into junk-heaps from previous collisions, while stopping "
-"them from crashing into you."
+"into each other or into junk heaps from previous collisions, without them "
+"crashing into you."
 msgstr ""
 "<app>Robots</app> est basé sur le jeu en ligne de commande UNIX du même nom. "
 "Son but est la destruction de tous les robots en les faisant s'écraser les "
@@ -697,104 +656,58 @@ msgstr ""
 "antérieures, tout en évitant qu'ils ne s'écrasent sur vous."
 
 #. (itstool) path: section/title
-#: C/index.page:30
+#: C/index.page:31
 msgid "Game play"
 msgstr "Le jeu"
 
 #. (itstool) path: section/title
-#: C/index.page:34
+#: C/index.page:35
 msgid "Preferences"
 msgstr "Préférences"
 
 #. (itstool) path: info/desc
-#: C/moves.page:18
+#: C/moves.page:20
 msgid "How can I move around in <app>Robots</app>?"
 msgstr "Comment se déplacer dans <app>Robots</app> ?"
 
 #. (itstool) path: page/title
-#: C/moves.page:21
+#: C/moves.page:23
 msgid "Different moves in <app>Robots</app>"
 msgstr "Différents déplacements dans <app>Robots</app>"
 
 #. (itstool) path: page/p
-#: C/moves.page:23
+#: C/moves.page:25
 msgid ""
-"In <app>Robots</app> you can move in eight directions, wait for the robots, "
-"or teleport. The enemy robots and the main character take turns to make "
-"their move. So, after each of your moves, the enemy robots try to make a "
-"move that gets them closer to you."
+"In <app>Robots</app> you can move in one of eight directions, wait for the "
+"robots, or teleport. The enemy robots and the main character take turns to "
+"make their move. So, after each of your moves, the enemy robots try to make "
+"a move that gets them closer to you."
 msgstr ""
-"Dans <app>Robots</app>, vous pouvez vous déplacer dans huit directions, "
-"attendre les robots, ou vous téléporter. Les robots ennemis et la figure "
-"principale se déplacent chacun à leur tour. Aussi, après chacun de vos "
-"déplacements, les robots ennemis tentent de se rapprocher de vous."
+"Dans <app>Robots</app>, vous pouvez vous déplacer dans l'une des huit "
+"directions, attendre les robots, ou vous téléporter. Les robots ennemis et "
+"la figure principale se déplacent chacun à leur tour. Aussi, après chacun de "
+"vos déplacements, les robots ennemis tentent de se rapprocher de vous."
 
 #. (itstool) path: section/title
-#: C/moves.page:29
+#: C/moves.page:31
 msgid "Basic moves"
 msgstr "Déplacements de base"
 
 #. (itstool) path: section/p
-#: C/moves.page:31
+#: C/moves.page:33
 msgid ""
-"You can move in any of the following directions. Each move takes you one "
-"square forward in the direction of your choice."
+"In one turn, you can move to any adjacent square. You may move diagonally."
 msgstr ""
-"Vous pouvez vous déplacer dans l'une des directions suivantes. Chaque "
-"mouvement vous emmène un carré dans la direction de votre choix."
-
-#. (itstool) path: item/p
-#: C/moves.page:36
-msgid "North west or up left"
-msgstr "Nord-ouest ou en haut à gauche"
-
-#. (itstool) path: item/p
-#: C/moves.page:39
-msgid "North or up"
-msgstr "Nord ou en haut"
-
-#. (itstool) path: item/p
-#: C/moves.page:42
-msgid "North east or up right"
-msgstr "Nord-est ou en haut à droite"
-
-#. (itstool) path: item/p
-#: C/moves.page:45
-msgid "East or right"
-msgstr "Est ou à droite"
-
-#. (itstool) path: item/p
-#: C/moves.page:48
-msgid "South east or down right"
-msgstr "Sud-est ou en bas à droite"
-
-#. (itstool) path: item/p
-#: C/moves.page:51
-msgid "South or down"
-msgstr "Sud ou en bas"
-
-#. (itstool) path: item/p
-#: C/moves.page:54
-msgid "South west or down left"
-msgstr "Sud-ouest ou en bas à gauche"
-
-#. (itstool) path: item/p
-#: C/moves.page:57
-msgid "West or left"
-msgstr "Ouest ou à gauche"
-
-#. (itstool) path: item/p
-#: C/moves.page:60
-msgid "Stay in the same square"
-msgstr "Demeurer dans le même carré"
+"Dans un tour, vous pouvez vous déplacer dans un des carrés adjacents. Vous "
+"avez la possibilité d'aller en diagonale."
 
 #. (itstool) path: section/title
-#: C/moves.page:67
+#: C/moves.page:38
 msgid "Wait"
 msgstr "Attente"
 
 #. (itstool) path: section/p
-#: C/moves.page:69
+#: C/moves.page:40
 msgid ""
 "You can stay put and wait for the robots to finish making all their moves. "
 "This is not advisable unless there are very few robots and you are "
@@ -805,12 +718,12 @@ msgstr ""
 "et que vous êtes absolument sûr qu'ils périront tous avant de vous atteindre."
 
 #. (itstool) path: section/title
-#: C/moves.page:76
+#: C/moves.page:47
 msgid "Teleport to a different location"
 msgstr "Téléportation vers un autre endroit"
 
 #. (itstool) path: section/p
-#: C/moves.page:78
+#: C/moves.page:49
 msgid ""
 "If there are no moves possible or if you want to make a leap across the "
 "board instead of moving square by square, you can teleport. There are two "
@@ -821,7 +734,7 @@ msgstr ""
 "téléporter. Vous disposez de deux types de téléportation."
 
 #. (itstool) path: item/p
-#: C/moves.page:85
+#: C/moves.page:56
 msgid ""
 "Safe teleports move the main character to a location that is safe from enemy "
 "robots. In each game only a few safe teleports are allowed."
@@ -831,7 +744,7 @@ msgstr ""
 "limité de téléportations sans danger est autorisé."
 
 #. (itstool) path: item/p
-#: C/moves.page:91
+#: C/moves.page:62
 msgid ""
 "Use random teleports to teleport to a random location that may be safe or "
 "may not be safe. You can use as many random teleports as you want during a "
@@ -841,247 +754,243 @@ msgstr ""
 "qui peut être sans danger, ou dangereux. Vous pouvez vous téléporter "
 "aléatoirement autant de fois que vous le souhaitez au cours d'une partie."
 
-# Pas besoin de traduction
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:35
-msgctxt "_"
-msgid ""
-"external ref='figures/boo-high-risk.png' "
-"md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
-msgstr ""
-"external ref='figures/boo-high-risk.png' "
-"md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
-
-# Pas besoin de traduction
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:40
-msgctxt "_"
-msgid ""
-"external ref='figures/robots-high-risk.png' "
-"md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
-msgstr ""
-"external ref='figures/robots-high-risk.png' "
-"md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
-
-# Pas besoin de traduction
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:44
-msgctxt "_"
-msgid ""
-"external ref='figures/gnome-high-risk.png' "
-"md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
-msgstr ""
-"external ref='figures/gnome-high-risk.png' "
-"md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
-
-# Pas besoin de traduction
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:48
-msgctxt "_"
-msgid ""
-"external ref='figures/ufo-high-risk.png' "
-"md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
-msgstr ""
-"external ref='figures/ufo-high-risk.png' "
-"md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
-
-# Pas besoin de traduction
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:64
-msgctxt "_"
-msgid ""
-"external ref='figures/boo-low-risk.png' "
-"md5='69c143d6283761adf553b170570e121d'"
-msgstr ""
-"external ref='figures/boo-low-risk.png' "
-"md5='69c143d6283761adf553b170570e121d'"
-
-# Pas besoin de traduction
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:68
-msgctxt "_"
-msgid ""
-"external ref='figures/robots-low-risk.png' "
-"md5='55f455ea45fad3d7fb453f992f2aad94'"
-msgstr ""
-"external ref='figures/robots-low-risk.png' "
-"md5='55f455ea45fad3d7fb453f992f2aad94'"
-
-# Pas besoin de traduction
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:72
-msgctxt "_"
-msgid ""
-"external ref='figures/gnome-low-risk.png' "
-"md5='1195e6a49de2b6efdf2d9185e1e184e0'"
-msgstr ""
-"external ref='figures/gnome-low-risk.png' "
-"md5='1195e6a49de2b6efdf2d9185e1e184e0'"
-
-# Pas besoin de traduction
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/scores.page:76
-msgctxt "_"
-msgid ""
-"external ref='figures/ufo-low-risk.png' "
-"md5='183efc4bba58248fc97edf5528af5a9a'"
-msgstr ""
-"external ref='figures/ufo-low-risk.png' "
-"md5='183efc4bba58248fc97edf5528af5a9a'"
-
 #. (itstool) path: info/desc
-#: C/scores.page:17
+#: C/scores.page:23
 msgid "Scoring points in <app>Robots</app>"
 msgstr "Manière de marquer des points dans <app>Robots</app>"
 
 #. (itstool) path: page/title
-#: C/scores.page:20
+#: C/scores.page:26
 msgid "Scores"
 msgstr "Scores"
 
 #. (itstool) path: page/p
-#: C/scores.page:22
+#: C/scores.page:28
 msgid ""
-"There are two type of enemies in <app>Robots</app>, enemies that give you 10 "
-"points when they die and enemies that give you 20 points when they die."
+"There are two type of enemies in <app>Robots</app>: high-risk enemies which "
+"give you 20 points when they die and low-risk enemies which give you 10 "
+"points when they die."
 msgstr ""
-"Il existe deux types d'ennemis dans <app>Robots></app>, les ennemis qui vous "
-"donnent 10 points quand ils meurent et le ennemis qui vous donnent 20 points "
-"quand ils meurent."
+"Il existe deux types d'ennemis dans <app>Robots></app>, les ennemis à haut-"
+"risque qui vous donnent 20 points quand ils meurent, et les ennemis à faible "
+"risque qui vous donnent 10 points quand ils meurent."
 
 #. (itstool) path: section/title
-#: C/scores.page:27
-msgid "High-risk enemies"
-msgstr "Ennemis à haut-risque"
+#: C/scores.page:33
+msgid "High and low risk enemies by theme"
+msgstr "Ennemis à haut-risque et ennemis à risque faible par thème"
 
 #. (itstool) path: section/p
-#: C/scores.page:29
+#: C/scores.page:35
 msgid ""
-"Depending on your <link xref=\"appearance\">game theme</link>, the following "
-"are the enemies that give you 20 points when they die."
+"The enemies in a game depend on the <link xref=\"appearance\">game theme</"
+"link> chosen."
 msgstr ""
-"Les ennemis qui suivent sont ceux qui vous donnent 20 points quand ils "
-"meurent. Celui qui apparaîtra dans une partie dépend du <link xref="
-"\"appearance\">thème de jeu</link> que vous avez choisi"
+"Les ennemis  dans un jeu dépendent du <link xref=\"appearance\">thème de "
+"jeu</link> choisi."
 
-#. (itstool) path: item/p
-#: C/scores.page:34
-msgid ""
-"Bats <media type=\"image\" src=\"figures/boo-high-risk.png\" height=\"20\" "
-"width=\"20\"/>"
-msgstr ""
-"Chauve-souris <media type=\"image\" src=\"figures/boo-high-risk.png\" height="
-"\"20\" width=\"20\"/>"
+#. (itstool) path: td/p
+#: C/scores.page:41
+msgid "Game theme"
+msgstr "Thème de jeu"
 
-#. (itstool) path: item/p
-#: C/scores.page:38
-msgid ""
-"High-risk Robots <media type=\"image\" src=\"figures/robots-high-risk.png\" "
-"height=\"20\" width=\"20\"/>"
-msgstr ""
-"Robots à haut-risque<media type=\"image\" src=\"figures/robots-high-risk.png"
-"\" height=\"20\" width=\"20\"/>"
+#. (itstool) path: td/p
+#: C/scores.page:42
+msgid "High-risk enemy (20 points)"
+msgstr "Ennemis à haut-risque (20 points)"
 
-#. (itstool) path: item/p
+#. (itstool) path: td/p
 #: C/scores.page:43
-msgid ""
-"High-risk gnomes <media type=\"image\" src=\"figures/gnome-high-risk.png\" "
-"height=\"20\" width=\"20\"/>"
-msgstr ""
-"Gnomes à haut-risque <media type=\"image\" src=\"figures/gnome-high-risk.png"
-"\" height=\"20\" width=\"20\"/>"
+msgid "Low-risk enemy (10 points)"
+msgstr "Ennemis à risque faible (10 points)"
 
-#. (itstool) path: item/p
+#. (itstool) path: td/p
 #: C/scores.page:47
-msgid ""
-"High-risk UFOs <media type=\"image\" src=\"figures/ufo-high-risk.png\" "
-"height=\"20\" width=\"20\"/>"
-msgstr ""
-"OVNI à haut-risque <media type=\"image\" src=\"figures/ufo-high-risk.png\" "
-"height=\"20\" width=\"20\"/>"
+msgid "anthills"
+msgstr "Fourmilières"
+
+#. (itstool) path: media/span
+#: C/scores.page:50
+msgid "High-risk anthill"
+msgstr "Fourmlière à haut-risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:53 C/scores.page:145
+msgid "Low-risk anthill"
+msgstr "Fourmilière à risque faible"
+
+#. (itstool) path: td/p
+#: C/scores.page:56
+msgid "boo"
+msgstr "bouh"
+
+#. (itstool) path: media/span
+#: C/scores.page:59
+msgid "High-risk bat"
+msgstr "Chauve-souris à haut-risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:62
+msgid "Low-risk ghost"
+msgstr "Fantôme à risque faible"
+
+#. (itstool) path: td/p
+#: C/scores.page:65
+msgid "cows"
+msgstr "vaches"
+
+#. (itstool) path: media/span
+#: C/scores.page:68
+msgid "High-risk cow"
+msgstr "Chauve-souris à haut-risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:71
+msgid "Low-risk cow"
+msgstr "Vache à risque faible"
+
+#. (itstool) path: td/p
+#: C/scores.page:74
+msgid "eggs"
+msgstr "œufs"
+
+#. (itstool) path: media/span
+#: C/scores.page:78
+msgid "High-risk egg"
+msgstr "Œuf à haut-risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:82
+msgid "Low-risk egg"
+msgstr "Œuf à risque faible"
+
+#. (itstool) path: td/p
+#: C/scores.page:85
+msgid "gnomes"
+msgstr "gnomes"
+
+#. (itstool) path: media/span
+#: C/scores.page:88
+msgid "High-risk gnome"
+msgstr "Gnome à haut-risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:91
+msgid "Low-risk gnome"
+msgstr "Gnome à risque faible"
+
+#. (itstool) path: td/p
+#: C/scores.page:94
+msgid "mice"
+msgstr "souris"
+
+#. (itstool) path: media/span
+#: C/scores.page:97
+msgid "High-risk mouse"
+msgstr "Souris à haut-risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:100
+msgid "Low-risk mouse"
+msgstr "Souris à risque faible"
+
+#. (itstool) path: td/p
+#: C/scores.page:103
+msgid "robots"
+msgstr "robots"
+
+#. (itstool) path: media/span
+#: C/scores.page:106
+msgid "High-risk robot"
+msgstr "Robot à haut-risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:109
+msgid "Low-risk robot"
+msgstr "Robot à risque faible"
+
+#. (itstool) path: td/p
+#: C/scores.page:111
+msgid "spills"
+msgstr "renversements"
+
+#. (itstool) path: media/span
+#: C/scores.page:115
+msgid "High-risk spill"
+msgstr "Renversement à haut-risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:118
+msgid "Low-risk spill"
+msgstr "Culbute à risque faible"
+
+#. (itstool) path: td/p
+#: C/scores.page:121
+msgid "stormclouds"
+msgstr "nuages d'orage"
+
+#. (itstool) path: media/span
+#: C/scores.page:124
+msgid "High-risk stormcloud"
+msgstr "Nuage d'orage à haut risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:127
+msgid "Low-risk stormcloud"
+msgstr "Nuages d'orage à risque faible"
+
+#. (itstool) path: td/p
+#: C/scores.page:130
+msgid "toasters"
+msgstr "grilles-pain"
+
+#. (itstool) path: media/span
+#: C/scores.page:133
+msgid "High-risk toaster"
+msgstr "Grille-pain à haut-risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:136
+msgid "Low-risk toaster"
+msgstr "Grille-pain à risque faible"
+
+#. (itstool) path: td/p
+#: C/scores.page:139
+msgid "ufo"
+msgstr "ovni"
+
+#. (itstool) path: media/span
+#: C/scores.page:142
+msgid "High-risk UFO"
+msgstr "OVNI à haut-risque"
 
 #. (itstool) path: section/title
-#: C/scores.page:55
-msgid "Low-risk enemies"
-msgstr "Ennemis de risque faible"
+#: C/scores.page:153
+msgid "High scores"
+msgstr "Bons scores"
 
 #. (itstool) path: section/p
-#: C/scores.page:57
+#: C/scores.page:155
 msgid ""
-"The following are the enemies that give you 10 points when they die. Again, "
-"it is your theme that determines which of these will appear in a game."
+"Select <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">Scores</"
+"gui></guiseq> to view the high scores."
 msgstr ""
-"Les ennemis qui suivent vous donnent 10 points quand ils meurent. C'est "
-"encore votre thème qui détermine lequel d'entre eux apparaîtra dans une "
-"partie."
+"Sélectionnez <guiseq><gui style=\"menu\">Jeu</gui><gui style=\"menuitem"
+"\">Scores</gui></guiseq> pour visualiser les bons scores."
 
-#. (itstool) path: item/p
-#: C/scores.page:63
+#. (itstool) path: section/p
+#: C/scores.page:158
 msgid ""
-"Ghosts <media type=\"image\" src=\"figures/boo-low-risk.png\" height=\"20\" "
-"width=\"20\"/>"
+"Scores are recorded separately for each combination of <link xref=\"game-"
+"types\">game type and safe move option</link>. Use the drop-down menu next "
+"to <gui>Map</gui> to view scores for a particular game type and safe move "
+"option combination."
 msgstr ""
-"Fantômes <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
-"\"20\" width=\"20\"/>"
-
-#. (itstool) path: item/p
-#: C/scores.page:67
-msgid ""
-"Low-risk Robots <media type=\"image\" src=\"figures/robots-low-risk.png\" "
-"height=\"20\" width=\"20\"/>"
-msgstr ""
-"Robots de faible risque <media type=\"image\" src=\"figures/robots-low-risk."
-"png\" height=\"20\" width=\"20\"/>"
-
-#. (itstool) path: item/p
-#: C/scores.page:71
-msgid ""
-"Low-risk gnomes <media type=\"image\" src=\"figures/gnome-low-risk.png\" "
-"height=\"20\" width=\"20\"/>"
-msgstr ""
-"Gnomes de faible risque <media type=\"image\" src=\"figures/gnome-low-risk."
-"png\" height=\"20\" width=\"20\"/>"
-
-#. (itstool) path: item/p
-#: C/scores.page:75
-msgid ""
-"Low-risk UFOs <media type=\"image\" src=\"figures/ufo-low-risk.png\" height="
-"\"20\" width=\"20\"/>"
-msgstr ""
-"OVNI de faible risque <media type=\"image\" src=\"figures/ufo-low-risk.png\" "
-"height=\"20\" width=\"20\"/>"
+"Les scores sont enregistrés séparément pour chaque combinaison de <link xref="
+"\"game-types\">type de jeu et d'option de déplacement sans danger</link>. "
+"Utilisez le menu déroulant proche de <gui>Carte</gui> pour visualiser les "
+"scores pour une combinaison particulière de type de jeu et d'option de "
+"déplacement sans danger."
 
 #. (itstool) path: p/link
 #: C/legal.xml:4
@@ -1095,17 +1004,261 @@ msgstr ""
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Ce travail est sous licence <_:link-1/>."
 
+#~ msgid ""
+#~ "You can hide the toolbar that contains buttons to start a new game, wait "
+#~ "and teleport, by selecting <guiseq><gui style=\"menu\">View</gui> <gui "
+#~ "style=\"menuitem\">Toolbar</gui></guiseq>. The small tick mark next to "
+#~ "<gui>Toolbar</gui> will disappear and the toolbar will be hidden."
+#~ msgstr ""
+#~ "Vous pouvez masquer la barre d'outils contenant les boutons pour démarrer "
+#~ "une nouvelle partie, faire une pause et téléporter, en sélectionnant "
+#~ "<guiseq><gui style=\"menu\">Affichage</gui> <gui style=\"menuitem\">Barre "
+#~ "d'outils</gui></guiseq>. La petite marque près de <gui>Barre d'outils</"
+#~ "gui> disparaît et la barre d'outils devient invisible."
+
+#~ msgid "Start, quit and play <app>Robots</app> in fullscreen."
+#~ msgstr "Démarrer, quitter et jouer à <app>Robots</app> en mode plein écran."
+
+#~ msgid "Play <app>Robots</app> in fullscreen mode"
+#~ msgstr "Jouer à <app>Robots</app> en mode plein écran"
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
+#~ "\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
+#~ "fullscreen mode. You can return to the default screen size by pressing "
+#~ "<key>F11</key> again."
+#~ msgstr ""
+#~ "Sélectionnez <guiseq><gui style=\"menu\">Affichage</gui> <gui style="
+#~ "\"menuitem\">Plein écran</gui></guiseq> ou appuyez sur <key>F11</key>. "
+#~ "Vous pouvez revenir à la taille d'écran par défaut en appuyant à nouveau "
+#~ "sur <key>F11</key>."
+
+#~ msgid "<key>Home</key>"
+#~ msgstr "<key>Origine</key>"
+
+#~ msgid "<key>↑</key>"
+#~ msgstr "<key>↑</key>"
+
+#~ msgid "<key>PgUp</key>"
+#~ msgstr "<key>Page haut</key>"
+
+#~ msgid "<key>→</key>"
+#~ msgstr "<key>→</key>"
+
+#~ msgid "<key>←</key>"
+#~ msgstr "<key>←</key>"
+
+#~ msgid "<key>↓</key>"
+#~ msgstr "<key>↓</key>"
+
+#~ msgid "<key>PgDn</key>"
+#~ msgstr "<key>Page bas</key>"
+
+#~ msgid "<key>+</key>"
+#~ msgstr "<key>+</key>"
+
+#~ msgid "<key>*</key>"
+#~ msgstr "<key>*</key>"
+
+#~ msgid "<key>Enter</key>"
+#~ msgstr "<key>Entrée</key>"
+
+#~ msgid ""
+#~ "To safely teleport, click the <_:media-1/> button on the toolbar or "
+#~ "select <guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem"
+#~ "\">Teleport</gui></guiseq>."
+#~ msgstr ""
+#~ "Pour vous téléporter sans danger, cliquez sur le bouton <_:media-1/> dans "
+#~ "la barre d'outils ou sélectionnez <guiseq><gui style=\"menu"
+#~ "\">Déplacement</gui><gui style=\"menuitem\">Se téléporter</gui></guiseq>."
+
+#~ msgid ""
+#~ "To teleport to a random spot, click the <_:media-1/> button on the "
+#~ "toolbar or select <guiseq><gui style=\"menu\">Move</gui> <gui style="
+#~ "\"menuitem\">Random</gui></guiseq>."
+#~ msgstr ""
+#~ "Pour vous téléporter à un endroit aléatoire, cliquez sur le bouton <_:"
+#~ "media-1/> dans la barre d'outils ou sélectionnez <guiseq><gui style=\"menu"
+#~ "\">Déplacement</gui><gui style=\"menuitem\">Aléatoirement</gui></guiseq>."
+
+#~ msgid ""
+#~ "You can move in any of the following directions. Each move takes you one "
+#~ "square forward in the direction of your choice."
+#~ msgstr ""
+#~ "Vous pouvez vous déplacer dans l'une des directions suivantes. Chaque "
+#~ "mouvement vous emmène un carré dans la direction de votre choix."
+
+#~ msgid "North west or up left"
+#~ msgstr "Nord-ouest ou en haut à gauche"
+
+#~ msgid "North or up"
+#~ msgstr "Nord ou en haut"
+
+#~ msgid "North east or up right"
+#~ msgstr "Nord-est ou en haut à droite"
+
+#~ msgid "East or right"
+#~ msgstr "Est ou à droite"
+
+#~ msgid "South east or down right"
+#~ msgstr "Sud-est ou en bas à droite"
+
+#~ msgid "South or down"
+#~ msgstr "Sud ou en bas"
+
+#~ msgid "South west or down left"
+#~ msgstr "Sud-ouest ou en bas à gauche"
+
+#~ msgid "West or left"
+#~ msgstr "Ouest ou à gauche"
+
+#~ msgid "Stay in the same square"
+#~ msgstr "Demeurer dans le même carré"
+
+# Pas besoin de traduction
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/boo-high-risk.png' "
+#~ "md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
+#~ msgstr ""
+#~ "external ref='figures/boo-high-risk.png' "
+#~ "md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
+
+# Pas besoin de traduction
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/robots-high-risk.png' "
+#~ "md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
+#~ msgstr ""
+#~ "external ref='figures/robots-high-risk.png' "
+#~ "md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
+
+# Pas besoin de traduction
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/gnome-high-risk.png' "
+#~ "md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
+#~ msgstr ""
+#~ "external ref='figures/gnome-high-risk.png' "
+#~ "md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
+
+# Pas besoin de traduction
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/ufo-high-risk.png' "
+#~ "md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
+#~ msgstr ""
+#~ "external ref='figures/ufo-high-risk.png' "
+#~ "md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
+
+# Pas besoin de traduction
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/boo-low-risk.png' "
+#~ "md5='69c143d6283761adf553b170570e121d'"
+#~ msgstr ""
+#~ "external ref='figures/boo-low-risk.png' "
+#~ "md5='69c143d6283761adf553b170570e121d'"
+
+# Pas besoin de traduction
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/robots-low-risk.png' "
+#~ "md5='55f455ea45fad3d7fb453f992f2aad94'"
+#~ msgstr ""
+#~ "external ref='figures/robots-low-risk.png' "
+#~ "md5='55f455ea45fad3d7fb453f992f2aad94'"
+
+# Pas besoin de traduction
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/gnome-low-risk.png' "
+#~ "md5='1195e6a49de2b6efdf2d9185e1e184e0'"
+#~ msgstr ""
+#~ "external ref='figures/gnome-low-risk.png' "
+#~ "md5='1195e6a49de2b6efdf2d9185e1e184e0'"
+
+# Pas besoin de traduction
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/ufo-low-risk.png' "
+#~ "md5='183efc4bba58248fc97edf5528af5a9a'"
+#~ msgstr ""
+#~ "external ref='figures/ufo-low-risk.png' "
+#~ "md5='183efc4bba58248fc97edf5528af5a9a'"
+
+#~ msgid ""
+#~ "Depending on your <link xref=\"appearance\">game theme</link>, the "
+#~ "following are the enemies that give you 20 points when they die."
+#~ msgstr ""
+#~ "Les ennemis qui suivent sont ceux qui vous donnent 20 points quand ils "
+#~ "meurent. Celui qui apparaîtra dans une partie dépend du <link xref="
+#~ "\"appearance\">thème de jeu</link> que vous avez choisi"
+
+#~ msgid ""
+#~ "Bats <media type=\"image\" src=\"figures/boo-high-risk.png\" height="
+#~ "\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Chauve-souris <media type=\"image\" src=\"figures/boo-high-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "High-risk Robots <media type=\"image\" src=\"figures/robots-high-risk.png"
+#~ "\" height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Robots à haut-risque<media type=\"image\" src=\"figures/robots-high-risk."
+#~ "png\" height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "High-risk gnomes <media type=\"image\" src=\"figures/gnome-high-risk.png"
+#~ "\" height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Gnomes à haut-risque <media type=\"image\" src=\"figures/gnome-high-risk."
+#~ "png\" height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "High-risk UFOs <media type=\"image\" src=\"figures/ufo-high-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "OVNI à haut-risque <media type=\"image\" src=\"figures/ufo-high-risk.png"
+#~ "\" height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "The following are the enemies that give you 10 points when they die. "
+#~ "Again, it is your theme that determines which of these will appear in a "
+#~ "game."
+#~ msgstr ""
+#~ "Les ennemis qui suivent vous donnent 10 points quand ils meurent. C'est "
+#~ "encore votre thème qui détermine lequel d'entre eux apparaîtra dans une "
+#~ "partie."
+
+#~ msgid ""
+#~ "Ghosts <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
+#~ "\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Fantômes <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
+#~ "\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "Low-risk Robots <media type=\"image\" src=\"figures/robots-low-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Robots de faible risque <media type=\"image\" src=\"figures/robots-low-"
+#~ "risk.png\" height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "Low-risk gnomes <media type=\"image\" src=\"figures/gnome-low-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "Gnomes de faible risque <media type=\"image\" src=\"figures/gnome-low-"
+#~ "risk.png\" height=\"20\" width=\"20\"/>"
+
+#~ msgid ""
+#~ "Low-risk UFOs <media type=\"image\" src=\"figures/ufo-low-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
+#~ msgstr ""
+#~ "OVNI de faible risque <media type=\"image\" src=\"figures/ufo-low-risk.png"
+#~ "\" height=\"20\" width=\"20\"/>"
+
 #~ msgid "Available themes:"
 #~ msgstr "Thèmes disponibles :"
-
-#~ msgid "boo"
-#~ msgstr "bouh"
-
-#~ msgid "gnomes"
-#~ msgstr "gnomes"
-
-#~ msgid "robots"
-#~ msgstr "robots"
-
-#~ msgid "ufo"
-#~ msgstr "ovni"

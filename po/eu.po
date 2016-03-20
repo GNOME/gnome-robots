@@ -2,26 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008, 2009, 2010, 2011, 2012, 2013.
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014, 2015.
 #
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008, 2009, 2010, 2011, 2012, 2013.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-24 14:50+0100\n"
-"PO-Revision-Date: 2015-03-24 14:51+0100\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-20 19:54+0100\n"
+"PO-Revision-Date: 2016-03-20 19:55+0100\n"
+"Last-Translator: dooteo <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 2.0\n"
 
-#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+#: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Joko berria"
 
@@ -41,7 +40,7 @@ msgstr "_Laguntza"
 msgid "_About"
 msgstr "Honi _buruz"
 
-#: ../data/app-menu.ui.h:6 ../src/game.c:150
+#: ../data/app-menu.ui.h:6
 msgid "_Quit"
 msgstr "_Irten"
 
@@ -85,8 +84,8 @@ msgstr ""
 "sartutakoan, batek daki non agertuko zaren. Agian, robot baten alboan eta "
 "honek bertan hilko zaitu. Iraun bizirik ahalik eta denbora gehien."
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
 msgid "Robots"
 msgstr "Robotak"
 
@@ -163,7 +162,7 @@ msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Gaitu jokoaren soinuak. Erreproduzitu soinuak jokoko hainbat gertaeretan."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
 msgid "Key to move NW"
 msgstr "Ipar-mendebalderantz mugitzeko tekla"
 
@@ -171,7 +170,7 @@ msgstr "Ipar-mendebalderantz mugitzeko tekla"
 msgid "The key used to move north-west."
 msgstr "Erabilitako tekla ipar-mendebaldera mugitzeko"
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
 msgid "Key to move N"
 msgstr "Iparralderantz mugitzeko tekla"
 
@@ -179,7 +178,7 @@ msgstr "Iparralderantz mugitzeko tekla"
 msgid "The key used to move north."
 msgstr "Erabilitako tekla iparraldera mugitzeko"
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
 msgid "Key to move NE"
 msgstr "Ipar-ekialderantz mugitzeko tekla"
 
@@ -187,7 +186,7 @@ msgstr "Ipar-ekialderantz mugitzeko tekla"
 msgid "The key used to move north-east."
 msgstr "Erabilitako tekla ipar-ekialdera mugitzeko"
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
 msgid "Key to move W"
 msgstr "Mendebalderantz mugitzeko tekla"
 
@@ -195,7 +194,7 @@ msgstr "Mendebalderantz mugitzeko tekla"
 msgid "The key used to move west."
 msgstr "Erabilitako tekla mendebaldera mugitzeko"
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
 msgid "Key to hold"
 msgstr "Gelditzeko tekla"
 
@@ -203,7 +202,7 @@ msgstr "Gelditzeko tekla"
 msgid "The key used to hold still."
 msgstr "Erabilitako tekla geldik egoteko."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
 msgid "Key to move E"
 msgstr "Ekialderantz mugitzeko tekla"
 
@@ -211,7 +210,7 @@ msgstr "Ekialderantz mugitzeko tekla"
 msgid "The key used to move east."
 msgstr "Erabilitako tekla ekialdera mugitzeko"
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
 msgid "Key to move SW"
 msgstr "Hego-mendebalderantz mugitzeko tekla"
 
@@ -219,7 +218,7 @@ msgstr "Hego-mendebalderantz mugitzeko tekla"
 msgid "The key used to move south-west."
 msgstr "Erabilitako tekla hego-mendebaldera mugitzeko"
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
 msgid "Key to move S"
 msgstr "Hegoalderantz mugitzeko tekla"
 
@@ -227,7 +226,7 @@ msgstr "Hegoalderantz mugitzeko tekla"
 msgid "The key used to move south."
 msgstr "Erabilitako tekla hegoaldera mugitzeko"
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
 msgid "Key to move SE"
 msgstr "Hego-ekialderantz mugitzeko tekla"
 
@@ -247,36 +246,7 @@ msgstr "Leihoaren altuera (pixeletan)"
 msgid "true if the window is maximized"
 msgstr "'true' (egia) leihoa maximizatuta badago"
 
-#: ../src/game.c:147
-msgid "Game over!"
-msgstr "Jokoa amaitu da!"
-
-#: ../src/game.c:149
-msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr ""
-"Lan bikaina egin duzu, baina zure puntuazioa ez dago lehen hamarren artean."
-
-#: ../src/game.c:164
-msgid "Robots Scores"
-msgstr "Robotak jokoko puntuazioak"
-
-#: ../src/game.c:167
-msgid "Map:"
-msgstr "Mapa:"
-
-#: ../src/game.c:176
-msgid "Congratulations!"
-msgstr "Zorionak!"
-
-#: ../src/game.c:177
-msgid "Your score is the best!"
-msgstr "Zure puntuazioa onena da!"
-
-#: ../src/game.c:178
-msgid "Your score has made the top ten."
-msgstr "Zure puntuazioa hamar onenen artean dago."
-
-#: ../src/game.c:405 ../src/game.c:421
+#: ../src/game.c:343 ../src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -285,152 +255,129 @@ msgstr ""
 "Robotak berriro menderatzeko gauza zara?"
 
 #. This should never happen.
-#: ../src/game.c:1175
+#: ../src/game.c:1110
 msgid "There are no teleport locations left!!"
 msgstr "Ez dago aldentzeko leku gehiago!!"
 
-#: ../src/game.c:1203
+#: ../src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
 msgstr "Ez dago aldentze segururako leku gehiago!!"
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:286
 msgid "Unknown Command"
 msgstr "Komando ezezaguna"
 
-#. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:132
-msgctxt "score-dialog"
-msgid "Time"
-msgstr "Denbora"
-
-#. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:138
-msgctxt "score-dialog"
-msgid "Score"
-msgstr "Puntuazioa"
-
-#. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:225
-#, c-format
-msgctxt "score-dialog"
-msgid "%1$dm %2$ds"
-msgstr "%dm %ds"
-
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Joko berria"
-
-#. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:478
-msgid "Date"
-msgstr "Data"
-
-#: ../src/gnome-robots.c:95
+#: ../src/gnome-robots.c:106
 msgid "Classic robots"
 msgstr "Robot klasikoak"
 
-#: ../src/gnome-robots.c:96
+#: ../src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
 msgstr "Robot klasikoak eta mugimendu seguruak"
 
-#: ../src/gnome-robots.c:97
+#: ../src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
 msgstr "Robot klasikoak eta mugimendu seguru-seguruak"
 
-#: ../src/gnome-robots.c:98
+#: ../src/gnome-robots.c:109
 msgid "Nightmare"
 msgstr "Amesgaiztoa"
 
-#: ../src/gnome-robots.c:99
+#: ../src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
 msgstr "Amesgaiztoa eta mugimendu seguruak"
 
-#: ../src/gnome-robots.c:100
+#: ../src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
 msgstr "Amesgaiztoa eta mugimendu seguru-seguruak"
 
-#: ../src/gnome-robots.c:101
+#: ../src/gnome-robots.c:112
 msgid "Robots2"
 msgstr "Robotak2"
 
-#: ../src/gnome-robots.c:102
+#: ../src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
 msgstr "Robotak2 eta mugimendu seguruak"
 
-#: ../src/gnome-robots.c:103
+#: ../src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
 msgstr "Robotak2 eta mugimendu seguru-seguruak"
 
-#: ../src/gnome-robots.c:104
+#: ../src/gnome-robots.c:115
 msgid "Robots2 easy"
 msgstr "Robotak2 erraza"
 
-#: ../src/gnome-robots.c:105
+#: ../src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
 msgstr "Robotak2 erraza eta mugimendu seguruak"
 
-#: ../src/gnome-robots.c:106
+#: ../src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
 msgstr "Robotak2 erraza eta mugimendu seguru-seguruak"
 
-#: ../src/gnome-robots.c:107
+#: ../src/gnome-robots.c:118
 msgid "Robots with safe teleport"
 msgstr "Robotak eta aldentze segurua"
 
-#: ../src/gnome-robots.c:108
+#: ../src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robotak, aldentze segurua eta mugimendu seguruak"
 
-#: ../src/gnome-robots.c:109
+#: ../src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robotak, aldentze segurua eta mugimendu seguru-seguruak"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: ../src/gnome-robots.c:144
+#: ../src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Maila: %d\tPuntuazioa: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: ../src/gnome-robots.c:155
+#: ../src/gnome-robots.c:167
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(falta: %d)"
 
 #. First line of safe teleports button label.
-#: ../src/gnome-robots.c:157
+#: ../src/gnome-robots.c:169
 msgid "Teleport _Safely"
 msgstr "Aldendu _babesera"
 
-#: ../src/gnome-robots.c:202
+#: ../src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
 msgstr "BSD robot klasikoan oinarritua"
 
-#: ../src/gnome-robots.c:206
+#: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr "Hizkuntza Politikarako Sailburuordetza <hizkpol@ej-gv.es>"
 
-#: ../src/gnome-robots.c:227
+#: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
 msgstr "Ziur zaude uneko jokoa baztertzea nahi duzula?"
 
-#: ../src/gnome-robots.c:230
+#: ../src/gnome-robots.c:255
 msgid "Keep _Playing"
 msgstr "Jarraitu _jokatzen"
 
-#: ../src/gnome-robots.c:361
+#: ../src/gnome-robots.c:387
 msgid "Teleport _Randomly"
 msgstr "Aldendu _ausaz"
 
-#: ../src/gnome-robots.c:380
+#: ../src/gnome-robots.c:406
 msgid "_Wait for Robots"
 msgstr "_Itxaron robotei"
 
-#: ../src/gnome-robots.c:408
+#. Label on the scores dialog, next to map type dropdown
+#: ../src/gnome-robots.c:430
+msgid "Game Type:"
+msgstr "Joko mota:"
+
+#: ../src/gnome-robots.c:445
 msgid "No game data could be found."
 msgstr "Ezin izan da jokoaren daturik aurkitu."
 
-#: ../src/gnome-robots.c:410
+#: ../src/gnome-robots.c:447
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -438,11 +385,11 @@ msgstr ""
 "Robotak programak ezin izan du jokoaren konfigurazio-fitxategi baliozkorik "
 "aurkitu. Begiratu programa ondo instalatuta dagoen."
 
-#: ../src/gnome-robots.c:426
+#: ../src/gnome-robots.c:464
 msgid "Some graphics files are missing or corrupt."
 msgstr "Grafiko batzuk falta dira edo hondatuak daude"
 
-#: ../src/gnome-robots.c:428
+#: ../src/gnome-robots.c:466
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -450,66 +397,107 @@ msgstr ""
 "Robotak programak ezin izan ditu kargatu beharrezko grafiko-fitxategi "
 "guztiak. Begiratu programa ondo instalatuta dagoen."
 
-#: ../src/graphics.c:151
+#: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Ezin izan da '%s' pixmap fitxategia aurkitu\n"
 
-#: ../src/properties.c:393
+#: ../src/properties.c:391
 msgid "Preferences"
 msgstr "Hobespenak"
 
-#: ../src/properties.c:417
+#: ../src/properties.c:415
 msgid "Game Type"
 msgstr "Joko mota"
 
-#: ../src/properties.c:427
+#: ../src/properties.c:425
 msgid "_Use safe moves"
 msgstr "_Erabili mugimendu seguruak"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Heriotzara eramaten duten ezusteko mugimenduak saihesten ditu."
 
-#: ../src/properties.c:435
+#: ../src/properties.c:433
 msgid "U_se super safe moves"
 msgstr "Erabili mugimendu seguru-seguruak"
 
-#: ../src/properties.c:442
+#: ../src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr "Heriotzara eramaten duten mugimendu guztiak saihesten ditu."
 
-#: ../src/properties.c:448
+#: ../src/properties.c:446
 msgid "_Enable sounds"
 msgstr "_Gaitu soinuak"
 
-#: ../src/properties.c:454
+#: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Maila bat irabaztean edo hiltzean hotsak erreproduzitzen ditu."
 
-#: ../src/properties.c:456
+#: ../src/properties.c:454
 msgid "Game"
 msgstr "Jokoa"
 
-#: ../src/properties.c:469
+#: ../src/properties.c:467
 msgid "_Image theme:"
 msgstr "_Irudiaren gaia:"
 
-#: ../src/properties.c:481
+#: ../src/properties.c:479
 msgid "_Background color:"
 msgstr "Atzeko pla_noaren kolorea:"
 
-#: ../src/properties.c:493
+#: ../src/properties.c:491
 msgid "Appearance"
 msgstr "Itxura"
 
-#: ../src/properties.c:522
+#: ../src/properties.c:520
 msgid "_Restore Defaults"
 msgstr "Be_rrezarri lehenespenak"
 
-#: ../src/properties.c:527
+#: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Teklatua"
+
+#~ msgid "Game over!"
+#~ msgstr "Jokoa amaitu da!"
+
+#~ msgid "Great work, but unfortunately your score did not make the top ten."
+#~ msgstr ""
+#~ "Lan bikaina egin duzu, baina zure puntuazioa ez dago lehen hamarren "
+#~ "artean."
+
+#~ msgid "Robots Scores"
+#~ msgstr "Robotak jokoko puntuazioak"
+
+#~ msgid "Map:"
+#~ msgstr "Mapa:"
+
+#~ msgid "Congratulations!"
+#~ msgstr "Zorionak!"
+
+#~ msgid "Your score is the best!"
+#~ msgstr "Zure puntuazioa onena da!"
+
+#~ msgid "Your score has made the top ten."
+#~ msgstr "Zure puntuazioa hamar onenen artean dago."
+
+#~ msgctxt "score-dialog"
+#~ msgid "Time"
+#~ msgstr "Denbora"
+
+#~ msgctxt "score-dialog"
+#~ msgid "Score"
+#~ msgstr "Puntuazioa"
+
+#~ msgctxt "score-dialog"
+#~ msgid "%1$dm %2$ds"
+#~ msgstr "%dm %ds"
+
+#~ msgid "New Game"
+#~ msgstr "Joko berria"
+
+#~ msgid "Date"
+#~ msgstr "Data"
 
 #~ msgid "Scores"
 #~ msgstr "Puntuazioa"

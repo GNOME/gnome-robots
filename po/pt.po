@@ -5,23 +5,25 @@
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
 # Tiago S. <almosthumane@portugalmail.pt>, 2014.
 # Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
+# Sérgio Cardeira <cardeira dot sergio at gmail dot com>, 2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-11-02 21:54+0000\n"
-"PO-Revision-Date: 2015-06-27 06:16+0100\n"
-"Last-Translator: Pedro Albuquerque <palbuquerque73@openmailbox.com>\n"
-"Language-Team: Português <palbuquerque73@openmailbox.com>\n"
+"POT-Creation-Date: 2016-02-20 10:00+0000\n"
+"PO-Revision-Date: 2016-02-20 14:50-0100\n"
+"Last-Translator: Sérgio Cardeira <cardeira dot sergio at gmail dot com>\n"
+"Language-Team: Português <>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
-#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+#: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Novo jogo"
 
@@ -35,13 +37,13 @@ msgstr "_Pontuações"
 
 #: ../data/app-menu.ui.h:4
 msgid "_Help"
-msgstr "A_Juda"
+msgstr "A_juda"
 
 #: ../data/app-menu.ui.h:5
 msgid "_About"
 msgstr "_Sobre"
 
-#: ../data/app-menu.ui.h:6 ../src/game.c:150
+#: ../data/app-menu.ui.h:6
 msgid "_Quit"
 msgstr "_Sair"
 
@@ -85,8 +87,8 @@ msgstr ""
 "teletransportes poderão colocá-lo mesmo ao lado de um robô, que o irá matar. "
 "Sobreviva o máximo de tempo possível!"
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
 msgid "Robots"
 msgstr "Robôs"
 
@@ -162,7 +164,7 @@ msgstr "Ativar sons de jogo"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Ativar sons de jogo. Reproduz sons para vários eventos no jogo."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
 msgid "Key to move NW"
 msgstr "Tecla para mover para NO"
 
@@ -170,7 +172,7 @@ msgstr "Tecla para mover para NO"
 msgid "The key used to move north-west."
 msgstr "A tecla utilizada para mover para noroeste."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
 msgid "Key to move N"
 msgstr "Tecla para mover para N"
 
@@ -178,7 +180,7 @@ msgstr "Tecla para mover para N"
 msgid "The key used to move north."
 msgstr "A tecla utilizada para mover para norte."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
 msgid "Key to move NE"
 msgstr "Tecla para mover para NE"
 
@@ -186,7 +188,7 @@ msgstr "Tecla para mover para NE"
 msgid "The key used to move north-east."
 msgstr "A tecla utilizada para mover para nordeste."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
 msgid "Key to move W"
 msgstr "Tecla para mover para O"
 
@@ -194,7 +196,7 @@ msgstr "Tecla para mover para O"
 msgid "The key used to move west."
 msgstr "A tecla utilizada para mover para oeste."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
 msgid "Key to hold"
 msgstr "Tecla a manter premida"
 
@@ -202,7 +204,7 @@ msgstr "Tecla a manter premida"
 msgid "The key used to hold still."
 msgstr "A tecla utilizada para ficar parado."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
 msgid "Key to move E"
 msgstr "Tecla para mover para E"
 
@@ -210,7 +212,7 @@ msgstr "Tecla para mover para E"
 msgid "The key used to move east."
 msgstr "A tecla utilizada para mover para este."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
 msgid "Key to move SW"
 msgstr "Tecla para mover para SO"
 
@@ -218,7 +220,7 @@ msgstr "Tecla para mover para SO"
 msgid "The key used to move south-west."
 msgstr "A tecla utilizada para mover para sudoeste."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
 msgid "Key to move S"
 msgstr "Tecla para mover para S"
 
@@ -226,7 +228,7 @@ msgstr "Tecla para mover para S"
 msgid "The key used to move south."
 msgstr "A tecla utilizada para mover para sul."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
 msgid "Key to move SE"
 msgstr "Tecla para mover para SE"
 
@@ -246,37 +248,7 @@ msgstr "Altura da janela em pixels"
 msgid "true if the window is maximized"
 msgstr "verdadeiro se a janela estiver maximizada"
 
-#: ../src/game.c:147
-msgid "Game over!"
-msgstr "Jogo terminado!"
-
-#: ../src/game.c:149
-msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr ""
-"Excelente trabalho mas infelizmente a sua pontuação não entrou nas dez "
-"melhores."
-
-#: ../src/game.c:164
-msgid "Robots Scores"
-msgstr "Pontuações do Robots"
-
-#: ../src/game.c:167
-msgid "Map:"
-msgstr "Mapa:"
-
-#: ../src/game.c:176
-msgid "Congratulations!"
-msgstr "Parabéns!"
-
-#: ../src/game.c:177
-msgid "Your score is the best!"
-msgstr "A sua pontuação é a melhor!"
-
-#: ../src/game.c:178
-msgid "Your score has made the top ten."
-msgstr "A sua pontuação entrou para as 10 melhores."
-
-#: ../src/game.c:405 ../src/game.c:421
+#: ../src/game.c:343 ../src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -285,153 +257,132 @@ msgstr ""
 "Mas consegue fazê-lo novamente?"
 
 #. This should never happen.
-#: ../src/game.c:1175
+#: ../src/game.c:1110
 msgid "There are no teleport locations left!!"
 msgstr "Não restam locais de teletransporte!!"
 
-#: ../src/game.c:1203
+#: ../src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
 msgstr "Não restam locais seguros para onde se teletransportar!!"
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:286
 msgid "Unknown Command"
 msgstr "Comando desconhecido"
 
-#. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:132
-msgctxt "score-dialog"
-msgid "Time"
-msgstr "Duração"
-
-#. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:138
-msgctxt "score-dialog"
-msgid "Score"
-msgstr "Pontuação"
-
-#. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:225
-#, c-format
-msgctxt "score-dialog"
-msgid "%1$dm %2$ds"
-msgstr "%1$dm %2$ds"
-
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Novo jogo"
-
-#. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:478
-msgid "Date"
-msgstr "Data"
-
-#: ../src/gnome-robots.c:95
+#: ../src/gnome-robots.c:106
 msgid "Classic robots"
 msgstr "Robots clássico"
 
-#: ../src/gnome-robots.c:96
+#: ../src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
 msgstr "Robots clássico com jogadas seguras"
 
-#: ../src/gnome-robots.c:97
+#: ../src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
 msgstr "Robots clássico com jogadas superseguras"
 
-#: ../src/gnome-robots.c:98
+#: ../src/gnome-robots.c:109
 msgid "Nightmare"
 msgstr "Pesadelo"
 
-#: ../src/gnome-robots.c:99
+#: ../src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
 msgstr "Pesadelo com jogadas seguras"
 
-#: ../src/gnome-robots.c:100
+#: ../src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
 msgstr "Pesadelo com jogadas superseguras"
 
-#: ../src/gnome-robots.c:101
+#: ../src/gnome-robots.c:112
 msgid "Robots2"
 msgstr "Robots2"
 
-#: ../src/gnome-robots.c:102
+#: ../src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
 msgstr "Robots2 com jogadas seguras"
 
-#: ../src/gnome-robots.c:103
+#: ../src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
 msgstr "Robots2 com jogadas superseguras"
 
-#: ../src/gnome-robots.c:104
+#: ../src/gnome-robots.c:115
 msgid "Robots2 easy"
 msgstr "Robots2 fácil"
 
-#: ../src/gnome-robots.c:105
+#: ../src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
 msgstr "Robots2 fácil com jogadas seguras"
 
-#: ../src/gnome-robots.c:106
+#: ../src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
 msgstr "Robots2 fácil com jogadas superseguras"
 
-#: ../src/gnome-robots.c:107
+#: ../src/gnome-robots.c:118
 msgid "Robots with safe teleport"
 msgstr "Robots com teletransporte seguro"
 
-#: ../src/gnome-robots.c:108
+#: ../src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robots com teletransporte seguro com jogadas seguras"
 
-#: ../src/gnome-robots.c:109
+#: ../src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robots com teletransporte seguro com jogadas superseguras"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: ../src/gnome-robots.c:144
+#: ../src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Nível: %d\tPontuação: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: ../src/gnome-robots.c:155
+#: ../src/gnome-robots.c:167
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(restantes: %d)"
 
 #. First line of safe teleports button label.
-#: ../src/gnome-robots.c:157
+#: ../src/gnome-robots.c:169
 msgid "Teleport _Safely"
-msgstr "Teletransportar com _Segurança"
+msgstr "Teletransportar com _segurança"
 
-#: ../src/gnome-robots.c:202
+#: ../src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
 msgstr "Baseado no clássico BSD Robots"
 
-#: ../src/gnome-robots.c:206
+#: ../src/gnome-robots.c:231
 msgid "translator-credits"
-msgstr "Duarte Loreto <happyguy_pt@hotmail.com>\n"
+msgstr ""
+"Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Pedro Albuquerque <palbuquerque73@gmail.com>"
 
-#: ../src/gnome-robots.c:227
+#: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
 msgstr "Tem a certeza que quer descartar o jogo atual?"
 
-#: ../src/gnome-robots.c:230
+#: ../src/gnome-robots.c:255
 msgid "Keep _Playing"
-msgstr "Continuar a _Jogar"
+msgstr "Continuar a _jogar"
 
-#: ../src/gnome-robots.c:363
+#: ../src/gnome-robots.c:387
 msgid "Teleport _Randomly"
-msgstr "Teletransportar _Aleatoriamente"
+msgstr "Teletransportar _aleatoriamente"
 
-#: ../src/gnome-robots.c:382
+#: ../src/gnome-robots.c:406
 msgid "_Wait for Robots"
 msgstr "_Esperar pelos robôs"
 
-#: ../src/gnome-robots.c:410
+#. Label on the scores dialog, next to map type dropdown
+#: ../src/gnome-robots.c:430
+#| msgid "Game Type"
+msgid "Game Type:"
+msgstr "Tipo de jogo:"
+
+#: ../src/gnome-robots.c:445
 msgid "No game data could be found."
 msgstr "Não foram encontrados quaisquer dados de jogo."
 
-#: ../src/gnome-robots.c:412
+#: ../src/gnome-robots.c:447
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -439,11 +390,11 @@ msgstr ""
 "A aplicação Robôs não pôde encontrar quaisquer ficheiros de configuração de "
 "jogo válidos. Por favor confirme que o jogo está corretamente instalado."
 
-#: ../src/gnome-robots.c:428
+#: ../src/gnome-robots.c:464
 msgid "Some graphics files are missing or corrupt."
 msgstr "Alguns ficheiros de gráficos estão corrompidos ou em falta."
 
-#: ../src/gnome-robots.c:430
+#: ../src/gnome-robots.c:466
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -451,66 +402,107 @@ msgstr ""
 "A aplicação Robôs não pôde ler a totalidade dos ficheiros de gráficos "
 "necessários. Por favor, confirme que o jogo está corretamente instalado."
 
-#: ../src/graphics.c:151
+#: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Impossível encontrar ficheiro de imagem \"%s\"\n"
 
-#: ../src/properties.c:393
+#: ../src/properties.c:391
 msgid "Preferences"
 msgstr "Preferências"
 
-#: ../src/properties.c:417
+#: ../src/properties.c:415
 msgid "Game Type"
 msgstr "Tipo de jogo"
 
-#: ../src/properties.c:427
+#: ../src/properties.c:425
 msgid "_Use safe moves"
 msgstr "_Usar jogadas seguras"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Impedir movimentos acidentais que resultam em morte."
 
-#: ../src/properties.c:435
+#: ../src/properties.c:433
 msgid "U_se super safe moves"
-msgstr "Usar jogadas _Super seguras"
+msgstr "Usar jogadas _super seguras"
 
-#: ../src/properties.c:442
+#: ../src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr "Impedir todos os movimentos que resultam em morte."
 
-#: ../src/properties.c:448
+#: ../src/properties.c:446
 msgid "_Enable sounds"
 msgstr "_Ativar sons"
 
-#: ../src/properties.c:454
+#: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Reproduzir sons para os eventos tais como vencer um nível e morrer."
 
-#: ../src/properties.c:456
+#: ../src/properties.c:454
 msgid "Game"
 msgstr "Jogo"
 
-#: ../src/properties.c:469
+#: ../src/properties.c:467
 msgid "_Image theme:"
-msgstr "Tema de _Imagem:"
+msgstr "Tema de _imagem:"
 
-#: ../src/properties.c:481
+#: ../src/properties.c:479
 msgid "_Background color:"
 msgstr "_Cor de fundo:"
 
-#: ../src/properties.c:493
+#: ../src/properties.c:491
 msgid "Appearance"
 msgstr "Aparência"
 
-#: ../src/properties.c:522
+#: ../src/properties.c:520
 msgid "_Restore Defaults"
 msgstr "_Repor predefinições"
 
-#: ../src/properties.c:527
+#: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Teclado"
+
+#~ msgid "Game over!"
+#~ msgstr "Jogo terminado!"
+
+#~ msgid "Great work, but unfortunately your score did not make the top ten."
+#~ msgstr ""
+#~ "Excelente trabalho mas infelizmente a sua pontuação não entrou nas dez "
+#~ "melhores."
+
+#~ msgid "Robots Scores"
+#~ msgstr "Pontuações do Robots"
+
+#~ msgid "Map:"
+#~ msgstr "Mapa:"
+
+#~ msgid "Congratulations!"
+#~ msgstr "Parabéns!"
+
+#~ msgid "Your score is the best!"
+#~ msgstr "A sua pontuação é a melhor!"
+
+#~ msgid "Your score has made the top ten."
+#~ msgstr "A sua pontuação entrou para as 10 melhores."
+
+#~ msgctxt "score-dialog"
+#~ msgid "Time"
+#~ msgstr "Duração"
+
+#~ msgctxt "score-dialog"
+#~ msgid "Score"
+#~ msgstr "Pontuação"
+
+#~ msgctxt "score-dialog"
+#~ msgid "%1$dm %2$ds"
+#~ msgstr "%1$dm %2$ds"
+
+#~ msgid "New Game"
+#~ msgstr "Novo jogo"
+
+#~ msgid "Date"
+#~ msgstr "Data"
 
 #~ msgid "Key to teleport"
 #~ msgstr "Tecla para teletransportar"

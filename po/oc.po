@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-14 15:45+0000\n"
+"POT-Creation-Date: 2016-04-29 09:28+0000\n"
 "PO-Revision-Date: 2016-03-03 19:44+0200\n"
 "Last-Translator: Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>\n"
 "Language-Team: Tot En Òc\n"
@@ -25,7 +25,6 @@ msgid "_New Game"
 msgstr "Partida _novèla"
 
 #: ../data/app-menu.ui.h:2
-#| msgid "Preferences"
 msgid "_Preferences"
 msgstr "_Preferéncias"
 
@@ -42,7 +41,6 @@ msgid "_About"
 msgstr "_A prepaus"
 
 #: ../data/app-menu.ui.h:6
-#| msgid "Quit"
 msgid "_Quit"
 msgstr "_Quitar"
 
@@ -87,7 +85,7 @@ msgstr ""
 "Subrevivètz tan longtemps coma possible !"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
-#: ../src/gnome-robots.c:318 ../src/gnome-robots.c:351
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
 msgid "Robots"
 msgstr "Robòts"
 
@@ -164,7 +162,7 @@ msgstr "Activar los sons del jòc"
 #: ../data/org.gnome.robots.gschema.xml.h:14
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
-"Activer los sons del jòc. Jòga de sons pels diferents eveniments long de la "
+"Activar los sons del jòc. Jòga de sons pels diferents eveniments long de la "
 "partida."
 
 #: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
@@ -172,7 +170,6 @@ msgid "Key to move NW"
 msgstr "Tòca per se desplaçar cap al nòrd-oèst"
 
 #: ../data/org.gnome.robots.gschema.xml.h:16
-#| msgid "There are no more moves."
 msgid "The key used to move north-west."
 msgstr "La tòca utilizada per se desplaçar cap al nòrd-oèst."
 
@@ -189,7 +186,6 @@ msgid "Key to move NE"
 msgstr "Tòca per se desplaçar cap al nòrd-est"
 
 #: ../data/org.gnome.robots.gschema.xml.h:20
-#| msgid "There are no more moves."
 msgid "The key used to move north-east."
 msgstr "La tòca utilizada per se desplaçar cap al nòrd-est."
 
@@ -198,7 +194,6 @@ msgid "Key to move W"
 msgstr "Tòca per se desplaçar cap a l'oèst"
 
 #: ../data/org.gnome.robots.gschema.xml.h:22
-#| msgid "There are no more moves."
 msgid "The key used to move west."
 msgstr "La tòca utilizada per se desplaçar cap a l'oèst."
 
@@ -215,7 +210,6 @@ msgid "Key to move E"
 msgstr "Tòca per se desplaçar cap a l'èst"
 
 #: ../data/org.gnome.robots.gschema.xml.h:26
-#| msgid "There are no more moves."
 msgid "The key used to move east."
 msgstr "La tòca utilizada per se desplaçar cap a l'èst."
 
@@ -224,7 +218,6 @@ msgid "Key to move SW"
 msgstr "Tòca per se desplaçar cap al sud-oèst"
 
 #: ../data/org.gnome.robots.gschema.xml.h:28
-#| msgid "There are no more moves."
 msgid "The key used to move south-west."
 msgstr "La tòca utilizada per se desplaçar cap al sud-oèst."
 
@@ -241,17 +234,14 @@ msgid "Key to move SE"
 msgstr "Tòca per se desplaçar cap al sud-est"
 
 #: ../data/org.gnome.robots.gschema.xml.h:32
-#| msgid "There are no more moves."
 msgid "The key used to move south-east."
 msgstr "La tòca utilizada per se desplaçar cap al sud-est."
 
 #: ../data/org.gnome.robots.gschema.xml.h:33
-#| msgid "The width of the window"
 msgid "Width of the window in pixels"
 msgstr "Largor de la fenèstra en pixèls"
 
 #: ../data/org.gnome.robots.gschema.xml.h:34
-#| msgid "The width of the window"
 msgid "Height of the window in pixels"
 msgstr "Nautor de la fenèstra en pixèls"
 
@@ -342,8 +332,7 @@ msgstr "Robòts amb teleportacion e movements *vertadièrament* sens dangièr"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
 #: ../src/gnome-robots.c:156
-#, c-format, c-format
-#| msgid "Score: %d"
+#, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Nivèl : %d\tMarca : %d"
 
@@ -367,33 +356,31 @@ msgid "translator-credits"
 msgstr "Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>"
 
 #: ../src/gnome-robots.c:252
-#| msgid "Are you sure you want to quit?"
 msgid "Are you sure you want to discard the current game?"
 msgstr "Sètz segur que volètz abandonar lo jòc en cors ?"
 
 #: ../src/gnome-robots.c:255
-#| msgid "Playing"
 msgid "Keep _Playing"
 msgstr "_Contunhar de jogar"
 
-#: ../src/gnome-robots.c:390
+#: ../src/gnome-robots.c:387
 msgid "Teleport _Randomly"
 msgstr "Se teleportar _aléatoirement"
 
-#: ../src/gnome-robots.c:409
+#: ../src/gnome-robots.c:406
 msgid "_Wait for Robots"
 msgstr "E_sperar los robòts"
 
 #. Label on the scores dialog, next to map type dropdown
-#: ../src/gnome-robots.c:433
+#: ../src/gnome-robots.c:430
 msgid "Game Type:"
 msgstr "Tipe de jòc :"
 
-#: ../src/gnome-robots.c:448
+#: ../src/gnome-robots.c:445
 msgid "No game data could be found."
 msgstr "Cap de donada de jòc pòt pas èsser trobada."
 
-#: ../src/gnome-robots.c:450
+#: ../src/gnome-robots.c:447
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -402,11 +389,11 @@ msgstr ""
 "configuracion de jòc valid. Verificatz que lo programa es corrèctament "
 "installat."
 
-#: ../src/gnome-robots.c:467
+#: ../src/gnome-robots.c:464
 msgid "Some graphics files are missing or corrupt."
-msgstr "Certans fichièrs graphiques sont manquants o corrompus."
+msgstr "Certans fichièrs graphiques son manquants o corrompus."
 
-#: ../src/gnome-robots.c:469
+#: ../src/gnome-robots.c:466
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -449,7 +436,8 @@ msgstr "_Activar los sons"
 
 #: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
-msgstr "Jòga de sons pels eveniments tels que la reüssida d'un nivèl o la mòrt."
+msgstr ""
+"Jòga de sons pels eveniments tals coma la reüssida d'un nivèl o la mòrt."
 
 #: ../src/properties.c:454
 msgid "Game"
@@ -490,8 +478,7 @@ msgstr "Clavièr"
 #~ msgid ""
 #~ "Select whether to drag the cards or to click on the source then the "
 #~ "destination."
-#~ msgstr ""
-#~ "Causir se volètz rossegar las cartas o clicar la font puèi la tòca."
+#~ msgstr "Causir se volètz retalhar las cartas o clicar la font puèi la tòca."
 
 #~ msgid "Sound"
 #~ msgstr "Son"
@@ -530,7 +517,7 @@ msgstr "Clavièr"
 #~ msgstr "NOM"
 
 #~ msgid "NUMBER"
-#~ msgstr "NUMERÒ"
+#~ msgstr "NUMÈRO"
 
 #~ msgid "AisleRiot"
 #~ msgstr "AisleRiot"
@@ -557,7 +544,7 @@ msgstr "Clavièr"
 #~ msgstr "caires"
 
 #~ msgid "eight"
-#~ msgstr "uèch"
+#~ msgstr "uèit"
 
 #~ msgid "five"
 #~ msgstr "cinc"
@@ -608,16 +595,16 @@ msgstr "Clavièr"
 #~ msgstr "l'as de picas"
 
 #~ msgid "the eight of clubs"
-#~ msgstr "l'uèch de flor"
+#~ msgstr "l'uèit de flor"
 
 #~ msgid "the eight of diamonds"
-#~ msgstr "l'uèch de caire"
+#~ msgstr "l'uèit de caire"
 
 #~ msgid "the eight of hearts"
-#~ msgstr "l'uèch de còr"
+#~ msgstr "l'uèit de còr"
 
 #~ msgid "the eight of spades"
-#~ msgstr "l'uèch de picas"
+#~ msgstr "l'uèit de picas"
 
 #~ msgid "the five of clubs"
 #~ msgstr "lo cinc de flor"
@@ -797,7 +784,7 @@ msgstr "Clavièr"
 #~ msgstr "Anhès"
 
 #~ msgid "Athena"
-#~ msgstr "Atenà"
+#~ msgstr "Atèna"
 
 #~ msgid "Auld Lang Syne"
 #~ msgstr "Auld Lang Syne"
@@ -1028,7 +1015,7 @@ msgstr "Clavièr"
 #~ msgstr "Victòria"
 
 #~ msgid "Lose"
-#~ msgstr "Desfacha"
+#~ msgstr "Desfaita"
 
 #~ msgid "Hit"
 #~ msgstr "Tocat"
@@ -1037,7 +1024,7 @@ msgstr "Clavièr"
 #~ msgstr "Doble"
 
 #~ msgid "Split"
-#~ msgstr "Dividir"
+#~ msgstr "Devesir"
 
 #~ msgid "New password"
 #~ msgstr "Senhal novèl"
@@ -1193,7 +1180,7 @@ msgstr "Clavièr"
 #~ msgstr "Visualizacion"
 
 #~ msgid "Player List"
-#~ msgstr "Tièra de jogaires"
+#~ msgstr "Lista de jogaires"
 
 #~ msgid "Help"
 #~ msgstr "Ajuda"
@@ -1442,7 +1429,7 @@ msgstr "Clavièr"
 #~ msgstr "Desplaçar cap a esquèrra"
 
 #~ msgid "Move right"
-#~ msgstr "Desplaçar cap a drecha"
+#~ msgstr "Desplaçar cap a dreita"
 
 #~ msgid ""
 #~ "Unable to load image:\n"
@@ -1673,7 +1660,7 @@ msgstr "Clavièr"
 #~ msgstr "Jòc novèl"
 
 #~ msgid "_Tools"
-#~ msgstr "_Espleches"
+#~ msgstr "_Aisinas"
 
 #~ msgid "_Hint"
 #~ msgstr "_Astúcia"
@@ -1854,7 +1841,7 @@ msgstr "Clavièr"
 #~ msgstr "Iagno"
 
 #~ msgid "_Player list"
-#~ msgstr "Tièra de _jogaires"
+#~ msgstr "Lista de _jogaires"
 
 #~ msgid "Dark:"
 #~ msgstr "Negres :"
@@ -1929,7 +1916,7 @@ msgstr "Clavièr"
 #~ msgstr "Ecran complet"
 
 #~ msgid "Player _List"
-#~ msgstr "_Tièra de jogaires"
+#~ msgstr "_Lista de jogaires"
 
 #~ msgid "Res_ume"
 #~ msgstr "_Contunhar"

@@ -39,8 +39,8 @@ gnome_robots_SOURCES = \
 
 BUILT_SOURCES = robots-resources.c
 
-robots-resources.c: $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies robots.gresource.xml)
-	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source robots.gresource.xml
+robots-resources.c: $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies ${srcdir}/robots.gresource.xml)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $(srcdir)/robots.gresource.xml
 
 gnome_robots_CPPFLAGS = \
 	-I$(top_srcdir) \

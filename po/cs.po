@@ -23,16 +23,16 @@ msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-24 22:05+0000\n"
-"PO-Revision-Date: 2016-02-25 10:40+0100\n"
+"POT-Creation-Date: 2016-08-11 20:17+0000\n"
+"PO-Revision-Date: 2016-08-12 17:13+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
-"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language-Team: čeština <gnome-cs-list@gnome.org>>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
@@ -98,6 +98,10 @@ msgstr ""
 "Použití bezpečných teleportací je ale omezeno a jakmile vám dojdou, může se "
 "stát, že vás teleportace přenese přímo do cesty robota, který vás následně "
 "zabije. Snažte se přežít jak nejdéle to půjde."
+
+#: ../data/gnome-robots.appdata.xml.in.h:6
+msgid "The GNOME Project"
+msgstr "Projekt GNOME"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
 #: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348

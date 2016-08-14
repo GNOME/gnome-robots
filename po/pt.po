@@ -3,7 +3,7 @@
 # Distributed under the same licence as the gnome-games package
 # Nuno Ferreira <nmrf@rnl.ist.utl.pt>, 1998.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
-# Tiago S. <almosthumane@portugalmail.pt>, 2014.
+# Tiago Santos <tiagofsantos81@sapo.pt>, 2014 - 2016.
 # Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
 # Sérgio Cardeira <cardeira dot sergio at gmail dot com>, 2016.
 #
@@ -12,16 +12,16 @@ msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-20 10:00+0000\n"
-"PO-Revision-Date: 2016-02-20 14:50-0100\n"
-"Last-Translator: Sérgio Cardeira <cardeira dot sergio at gmail dot com>\n"
+"POT-Creation-Date: 2016-08-14 13:53+0000\n"
+"PO-Revision-Date: 2016-08-14 21:28+0100\n"
+"Last-Translator: Tiago Santos <iagofsantos81@sapo.pt>\n"
 "Language-Team: Português <>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
@@ -86,6 +86,10 @@ msgstr ""
 "Tem um número limitado de teletransportes seguros e, uma vez que se esgotem, "
 "teletransportes poderão colocá-lo mesmo ao lado de um robô, que o irá matar. "
 "Sobreviva o máximo de tempo possível!"
+
+#: ../data/gnome-robots.appdata.xml.in.h:6
+msgid "The GNOME Project"
+msgstr "O Projeto GNOME"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
 #: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
@@ -354,7 +358,8 @@ msgstr "Baseado no clássico BSD Robots"
 msgid "translator-credits"
 msgstr ""
 "Duarte Loreto <happyguy_pt@hotmail.com>\n"
-"Pedro Albuquerque <palbuquerque73@gmail.com>"
+"Pedro Albuquerque <palbuquerque73@gmail.com>\n"
+"Tiago Santos <iagofsantos81@sapo.pt>"
 
 #: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
@@ -374,7 +379,6 @@ msgstr "_Esperar pelos robôs"
 
 #. Label on the scores dialog, next to map type dropdown
 #: ../src/gnome-robots.c:430
-#| msgid "Game Type"
 msgid "Game Type:"
 msgstr "Tipo de jogo:"
 

@@ -2,7 +2,7 @@
 #define GNOBOTS_H
 
 #include <gtk/gtk.h>
-#include <libgames-support.h>
+#include <libgnome-games-support.h>
 
 /**********************************************************************/
 /* Exported Variables                                                 */

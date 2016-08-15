@@ -25,7 +25,7 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#include <libgames-support.h>
+#include <libgnome-games-support.h>
 
 #include "properties.h"
 #include "gameconfig.h"

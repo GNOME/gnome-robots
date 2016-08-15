@@ -31,7 +31,7 @@
 
 #include <glib/gi18n.h>
 #include <glib.h>
-#include <libgames-support.h>
+#include <libgnome-games-support.h>
 
 #include "gbdefs.h"
 #include "gameconfig.h"

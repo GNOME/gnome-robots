@@ -1,9 +1,6 @@
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Aviary.pl
-# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
-# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
-# gnomepl@aviary.pl
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Polish translation for gnome-robots.
+# Copyright © 1998-2016 the gnome-robots authors.
+# This file is distributed under the same license as the gnome-robots package.
 # Zbigniew Chyla <chyla@alice.ci.pwr.wroc.pl>, 1998-2002.
 # Marcin Gorycki <mgo@olicom.dk>, 1999.
 # Tomasz Kłoczko <kloczek@rudy.mif.pg.gda.pl>, 2000.
@@ -16,23 +13,22 @@
 # Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010.
 # Wojciech Kapusta <wkapusta@aviary.pl>, 2009.
 # Piotr Drąg <piotrdrag@gmail.com>, 2010-2016.
-# Aviary.pl <gnomepl@aviary.pl>, 2007-2016.
+# Aviary.pl <community-poland@mozilla.org>, 2007-2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-14 17:47+0100\n"
-"PO-Revision-Date: 2016-02-14 17:48+0100\n"
+"POT-Creation-Date: 2016-08-16 10:54+0200\n"
+"PO-Revision-Date: 2016-08-16 10:55+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Polish\n"
-"X-Poedit-Country: Poland\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
@@ -52,7 +48,7 @@ msgstr "Pomo_c"
 
 #: ../data/app-menu.ui.h:5
 msgid "_About"
-msgstr "_O grze"
+msgstr "_O grze"
 
 #: ../data/app-menu.ui.h:6
 msgid "_Quit"
@@ -72,7 +68,7 @@ msgid ""
 "you. Avoid the robots or face certain death."
 msgstr ""
 "Daleka przyszłość – rok 2000. Złe roboty próbują cię zabić. Unikaj robotów "
-"lub stań twarzą w twarz z pewną śmiercią."
+"lub stań twarzą w twarz z pewną śmiercią."
 
 #: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
@@ -82,7 +78,7 @@ msgid ""
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
 msgstr ""
-"Na szczęście roboty są niezwykle głupie i zawsze przesuwają się w twoim "
+"Na szczęście roboty są niezwykle głupie i zawsze przesuwają się w twoim "
 "kierunku. Spraw, żeby wpadły na siebie i wybuchły, lub wpadły na swoje "
 "szczątki. Można się bronić przez przesuwanie szczątków lub uciekać dzięki "
 "podręcznemu urządzeniu do teleportacji."
@@ -97,8 +93,12 @@ msgstr ""
 "teleportacja może przenieść cię zaraz obok robota, który cię zabije. Przeżyj "
 "tak długo, jak możesz!"
 
+#: ../data/gnome-robots.appdata.xml.in.h:6
+msgid "The GNOME Project"
+msgstr "Projekt GNOME"
+
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
-#: ../src/gnome-robots.c:318 ../src/gnome-robots.c:351
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
 msgid "Robots"
 msgstr "Roboty"
 
@@ -207,11 +207,11 @@ msgstr "Klawisz używany do przesunięcia na zachód."
 
 #: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
 msgid "Key to hold"
-msgstr "Klawisz do stania w miejscu"
+msgstr "Klawisz do stania w miejscu"
 
 #: ../data/org.gnome.robots.gschema.xml.h:24
 msgid "The key used to hold still."
-msgstr "Klawisz używany do stania w miejscu."
+msgstr "Klawisz używany do stania w miejscu."
 
 #: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
 msgid "Key to move E"
@@ -247,11 +247,11 @@ msgstr "Klawisz używany do przesunięcia na południowy wschód."
 
 #: ../data/org.gnome.robots.gschema.xml.h:33
 msgid "Width of the window in pixels"
-msgstr "Szerokość okna w pikselach"
+msgstr "Szerokość okna w pikselach"
 
 #: ../data/org.gnome.robots.gschema.xml.h:34
 msgid "Height of the window in pixels"
-msgstr "Wysokość okna w pikselach"
+msgstr "Wysokość okna w pikselach"
 
 #: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
@@ -284,11 +284,11 @@ msgstr "Klasyczne roboty"
 
 #: ../src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
-msgstr "Klasyczne roboty z bezpiecznymi ruchami"
+msgstr "Klasyczne roboty z bezpiecznymi ruchami"
 
 #: ../src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
-msgstr "Klasyczne roboty z bardzo bezpiecznymi ruchami"
+msgstr "Klasyczne roboty z bardzo bezpiecznymi ruchami"
 
 #: ../src/gnome-robots.c:109
 msgid "Nightmare"
@@ -296,11 +296,11 @@ msgstr "Koszmar"
 
 #: ../src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
-msgstr "Koszmar z bezpiecznymi ruchami"
+msgstr "Koszmar z bezpiecznymi ruchami"
 
 #: ../src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
-msgstr "Koszmar z bardzo bezpiecznymi ruchami"
+msgstr "Koszmar z bardzo bezpiecznymi ruchami"
 
 #: ../src/gnome-robots.c:112
 msgid "Robots2"
@@ -308,11 +308,11 @@ msgstr "Roboty 2"
 
 #: ../src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
-msgstr "Roboty 2 z bezpiecznymi ruchami"
+msgstr "Roboty 2 z bezpiecznymi ruchami"
 
 #: ../src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
-msgstr "Roboty 2 z bardzo bezpiecznymi ruchami"
+msgstr "Roboty 2 z bardzo bezpiecznymi ruchami"
 
 #: ../src/gnome-robots.c:115
 msgid "Robots2 easy"
@@ -320,23 +320,23 @@ msgstr "Łatwe Roboty 2"
 
 #: ../src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
-msgstr "Łatwe Roboty 2 z bezpiecznymi ruchami"
+msgstr "Łatwe Roboty 2 z bezpiecznymi ruchami"
 
 #: ../src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
-msgstr "Łatwe Roboty 2 z bardzo bezpiecznymi ruchami"
+msgstr "Łatwe Roboty 2 z bardzo bezpiecznymi ruchami"
 
 #: ../src/gnome-robots.c:118
 msgid "Robots with safe teleport"
-msgstr "Roboty z bezpiecznym teleportem"
+msgstr "Roboty z bezpiecznym teleportem"
 
 #: ../src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
-msgstr "Roboty z bezpiecznym teleportem i ruchami"
+msgstr "Roboty z bezpiecznym teleportem i ruchami"
 
 #: ../src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
-msgstr "Roboty z bezpiecznym teleportem i bardzo bezpiecznymi ruchami"
+msgstr "Roboty z bezpiecznym teleportem i bardzo bezpiecznymi ruchami"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
 #: ../src/gnome-robots.c:156
@@ -374,7 +374,7 @@ msgstr ""
 "Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010\n"
 "Wojciech Kapusta <wkapusta@aviary.pl>, 2009\n"
 "Piotr Drąg <piotrdrag@gmail.com>, 2010-2016\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2007-2016"
+"Aviary.pl <community-poland@mozilla.org>, 2007-2016"
 
 #: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
@@ -384,24 +384,24 @@ msgstr "Na pewno odrzucić obecną grę?"
 msgid "Keep _Playing"
 msgstr "_Graj dalej"
 
-#: ../src/gnome-robots.c:390
+#: ../src/gnome-robots.c:387
 msgid "Teleport _Randomly"
 msgstr "Teleportuj l_osowo"
 
-#: ../src/gnome-robots.c:409
+#: ../src/gnome-robots.c:406
 msgid "_Wait for Robots"
 msgstr "_Czekaj na roboty"
 
 #. Label on the scores dialog, next to map type dropdown
-#: ../src/gnome-robots.c:433
+#: ../src/gnome-robots.c:430
 msgid "Game Type:"
 msgstr "Typ gry:"
 
-#: ../src/gnome-robots.c:448
+#: ../src/gnome-robots.c:445
 msgid "No game data could be found."
 msgstr "Nie można odnaleźć danych gry."
 
-#: ../src/gnome-robots.c:450
+#: ../src/gnome-robots.c:447
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -409,11 +409,11 @@ msgstr ""
 "Nie można odnaleźć żadnych poprawnych plików konfiguracyjnych gry. Proszę "
 "sprawdzić, czy gra jest prawidłowo zainstalowana."
 
-#: ../src/gnome-robots.c:467
+#: ../src/gnome-robots.c:464
 msgid "Some graphics files are missing or corrupt."
 msgstr "Brakuje niektórych plików graficznych lub są uszkodzone."
 
-#: ../src/gnome-robots.c:469
+#: ../src/gnome-robots.c:466
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -424,7 +424,7 @@ msgstr ""
 #: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
-msgstr "Nie można odnaleźć pliku z mapą pikseli „%s”\n"
+msgstr "Nie można odnaleźć pliku z mapą pikseli „%s”\n"
 
 #: ../src/properties.c:391
 msgid "Preferences"
@@ -440,7 +440,7 @@ msgstr "B_ezpieczne ruchy"
 
 #: ../src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
-msgstr "Zapobieganie niebezpiecznym ruchom, w wyniku których można zginąć."
+msgstr "Zapobieganie niebezpiecznym ruchom, w wyniku których można zginąć."
 
 #: ../src/properties.c:433
 msgid "U_se super safe moves"
@@ -449,7 +449,7 @@ msgstr "_Bardzo bezpieczne ruchy"
 #: ../src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr ""
-"Zapobieganie wszystkim niebezpiecznym ruchom, w wyniku których można zginąć."
+"Zapobieganie wszystkim niebezpiecznym ruchom, w wyniku których można zginąć."
 
 #: ../src/properties.c:446
 msgid "_Enable sounds"

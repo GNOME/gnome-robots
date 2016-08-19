@@ -1,6 +1,6 @@
-# Hungarian translation of gnome-games.
-# Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-games package.
+# Hungarian translation for gnome-robots.
+# Copyright (C) 1999-2016 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-robots package.
 #
 # Szabolcs Ban <shooby at gnome dot hu>, 1999, 2000, 2001.
 # Gergely Nagy <greg at gnome dot hu>, 2001.
@@ -9,22 +9,22 @@
 # Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
 # Szabolcs Varga <shirokuma at shirokuma dot hu>, 2005.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2014, 2016.
-# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014, 2015.
+# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014, 2015, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-games master\n"
+"Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-04 10:02+0000\n"
-"PO-Revision-Date: 2016-03-04 20:29+0100\n"
-"Last-Translator: Gabor Kelemen <kelemeng at ubuntu dot com>\n"
+"POT-Creation-Date: 2016-08-14 13:53+0000\n"
+"PO-Revision-Date: 2016-08-19 23:28+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at googlegroups dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 1.2\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
@@ -87,6 +87,10 @@ msgid ""
 msgstr ""
 "A biztonságos teleportok száma korlátozott, és ha elfogy, a teleportálás egy "
 "robot mellé röpítheti, aki megöli. Éljen túl, amíg csak lehet!"
+
+#: ../data/gnome-robots.appdata.xml.in.h:6
+msgid "The GNOME Project"
+msgstr "A GNOME projekt"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
 #: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
@@ -380,7 +384,6 @@ msgstr "_Várakozás a robotokra"
 
 #. Label on the scores dialog, next to map type dropdown
 #: ../src/gnome-robots.c:430
-#| msgid "Game Type"
 msgid "Game Type:"
 msgstr "Játéktípus:"
 

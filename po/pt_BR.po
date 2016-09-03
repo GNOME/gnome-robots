@@ -1,5 +1,5 @@
 # Brazilian Portuguese translation of gnome-robots.
-# Copyright (C) 1999-2015 Free Software Foundation, Inc.
+# Copyright (C) 1999-2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-robots package.
 # Sandro Nunes Henrique <sandro@conectiva.com.br>, 1999.
 # Cândida Nunes da Silva <candida@zaz.com.br>, 2000-2001.
@@ -22,7 +22,7 @@
 # Flamarion Jorge <jorge.flamarion@gmail.com>, 2011.
 # Djavan Fagundes <djavan@comum.org>, 2012.
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2013, 2014.
-# Enrico Nicoletto <liverig@gmail.com>, 2014, 2015.
+# Enrico Nicoletto <liverig@gmail.com>, 2014, 2015, 2016.
 # Ricardo Barbosa <barbosa.cisco@gmail.com>, 2014.
 # Artur de Aquino Morais <artur.morais93@outlook.com>, 2016.
 #
@@ -31,16 +31,16 @@ msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-19 12:16+0000\n"
-"PO-Revision-Date: 2016-02-19 13:35-0300\n"
-"Last-Translator: Artur de Aquino Morais <artur.morais93@outlook.com>\n"
+"POT-Creation-Date: 2016-08-14 13:53+0000\n"
+"PO-Revision-Date: 2016-09-02 21:45-0300\n"
+"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
@@ -106,6 +106,10 @@ msgstr ""
 "Sua carga de teletransporte seguro é limitado e, assim que você ficar sem, "
 "teleportação poderia fazer você aparecer do lado de um robô, que vai matá-"
 "lo. Sobreviva o máximo que puder!"
+
+#: ../data/gnome-robots.appdata.xml.in.h:6
+msgid "The GNOME Project"
+msgstr "O projeto GNOME"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
 #: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348

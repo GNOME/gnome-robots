@@ -10,16 +10,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnobots2.HEAD\n"
-"POT-Creation-Date: 2015-03-16 20:22+0000\n"
-"PO-Revision-Date: 2015-03-16 20:42+0100\n"
-"Last-Translator: Julien Hardelin <jhardlin@orange.fr>\n"
+"POT-Creation-Date: 2016-08-14 13:54+0000\n"
+"PO-Revision-Date: 2016-09-05 07:29+0200\n"
+"Last-Translator: Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>\n"
 "Language-Team: French <GNOME French Team <gnomefr@traduc.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -117,7 +117,9 @@ msgid ""
 "Select <gui style=\"menuitem\">New Game</gui> from the menu or press "
 "<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"Sélectionnez <gui style=\"menuitem\">Nouvelle partie</gui> dans le menu ou appuyez sur <keyseq><key>Ctrl</key><key>N</key></keyseq> pour démarrer une nouvelle partie."
+"Sélectionnez <gui style=\"menuitem\">Nouvelle partie</gui> dans le menu ou "
+"appuyez sur <keyseq><key>Ctrl</key><key>N</key></keyseq> pour démarrer une "
+"nouvelle partie."
 
 #. (itstool) path: section/title
 #: C/basics.page:38
@@ -501,7 +503,8 @@ msgid ""
 "Select <guiseq> <gui style=\"menu\">Settings</gui><gui>Preferences</"
 "gui><gui>Game</gui> </guiseq>."
 msgstr ""
-"Sélectionnez <guiseq> <gui style=\"menu\">Paramètres</gui><gui>Préférences</gui><gui>Jeu</gui> </guiseq>."
+"Sélectionnez <guiseq> <gui style=\"menu\">Paramètres</gui><gui>Préférences</"
+"gui><gui>Jeu</gui> </guiseq>."
 
 #. (itstool) path: item/p
 #: C/game-types.page:40
@@ -630,7 +633,14 @@ msgid ""
 "teleport. This reduces the level of difficulty. You can always uncheck these "
 "if you find the game too easy."
 msgstr ""
-"Si vous cochez la case <gui style=\"checkbox\">Utiliser des mouvements sans danger</gui>, le jeu vous empêche de vous déplacer si cela vous conduisait à être tué par un robot, à moins vous ayez la possibilité de vous téléporter pour survivre. Si vous cochez la case <gui style=\"checkbox\">Utiliser des mouvements vraiment sans danger</gui>, le jeu vous empêche tout déplacement, de telle sorte que vous soyez obligé de vous téléporter. Ces options diminuent le niveau de difficulté. Vous avez toujours la possibilité de les décocher si vous trouvez que le jeu est trop facile."
+"Si vous cochez la case <gui style=\"checkbox\">Utiliser des mouvements sans "
+"danger</gui>, le jeu vous empêche de vous déplacer si cela vous conduisait à "
+"être tué par un robot, à moins vous ayez la possibilité de vous téléporter "
+"pour survivre. Si vous cochez la case <gui style=\"checkbox\">Utiliser des "
+"mouvements vraiment sans danger</gui>, le jeu vous empêche tout déplacement, "
+"de telle sorte que vous soyez obligé de vous téléporter. Ces options "
+"diminuent le niveau de difficulté. Vous avez toujours la possibilité de les "
+"décocher si vous trouvez que le jeu est trop facile."
 
 #. (itstool) path: info/desc
 #: C/index.page:17
@@ -815,7 +825,7 @@ msgid "High-risk anthill"
 msgstr "Fourmlière à haut-risque"
 
 #. (itstool) path: media/span
-#: C/scores.page:53 C/scores.page:145
+#: C/scores.page:53
 msgid "Low-risk anthill"
 msgstr "Fourmilière à risque faible"
 
@@ -963,6 +973,11 @@ msgstr "ovni"
 #: C/scores.page:142
 msgid "High-risk UFO"
 msgstr "OVNI à haut-risque"
+
+#. (itstool) path: media/span
+#: C/scores.page:145
+msgid "Low-risk UFO"
+msgstr "Ovni à faible risque"
 
 #. (itstool) path: section/title
 #: C/scores.page:153

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 23:33+0100\n"
+"POT-Creation-Date: 2016-09-12 02:10+0200\n"
 "PO-Revision-Date: 2016-03-20 03:30+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -91,6 +91,10 @@ msgstr ""
 "Din forsyning af sikre teleporteringer er begrænset, og når du først er "
 "løbet tør, kan teleportering få dig til at lande lige ved siden af en robot "
 "som vil dræbe dig. Overlev så længe som muligt!"
+
+#: ../data/gnome-robots.appdata.xml.in.h:6
+msgid "The GNOME Project"
+msgstr "GNOME-projektet"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
 #: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348

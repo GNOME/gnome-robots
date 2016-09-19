@@ -1,5 +1,5 @@
 AC_PREREQ([2.63])
-AC_INIT([GNOME Robots], [3.21.91], [https://bugzilla.gnome.org/],
+AC_INIT([GNOME Robots], [3.22.0], [https://bugzilla.gnome.org/],
         [gnome-robots], [https://wiki.gnome.org/Apps/Robots])
 AC_CONFIG_MACRO_DIR([m4])
 

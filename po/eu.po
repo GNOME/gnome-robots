@@ -8,9 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 19:54+0100\n"
-"PO-Revision-Date: 2016-03-20 19:55+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-ro"
+"bots&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-08-14 13:53+0000\n"
+"PO-Revision-Date: 2016-09-20 12:14+0100\n"
 "Last-Translator: dooteo <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "Language: eu\n"
@@ -83,6 +84,10 @@ msgstr ""
 "Telegarraiatzaileak eskaintzen duen babesa mugatua da. Behin gailu horretan "
 "sartutakoan, batek daki non agertuko zaren. Agian, robot baten alboan eta "
 "honek bertan hilko zaitu. Iraun bizirik ahalik eta denbora gehien."
+
+#: ../data/gnome-robots.appdata.xml.in.h:6
+msgid "The GNOME Project"
+msgstr "GNOME proiektua"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
 #: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348

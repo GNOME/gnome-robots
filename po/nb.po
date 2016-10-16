@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of gnome-robots.
 # Copyright © 1998-2002 Free Software Foundation, Inc.
-# Kjartan Maraas <kmaraas@gnome.org>, 1998-2015.
+# Kjartan Maraas <kmaraas@gnome.org>, 1998-2016.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-robots 3.17.x\n"
+"Project-Id-Version: gnome-robots 3.22.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-11 19:04+0200\n"
-"PO-Revision-Date: 2015-08-11 19:06+0200\n"
+"POT-Creation-Date: 2016-10-16 12:25+0200\n"
+"PO-Revision-Date: 2016-10-16 12:26+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+#: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Nytt spill"
 
@@ -37,7 +37,7 @@ msgstr "_Hjelp"
 msgid "_About"
 msgstr "_Om"
 
-#: ../data/app-menu.ui.h:6 ../src/game.c:150
+#: ../data/app-menu.ui.h:6
 msgid "_Quit"
 msgstr "A_vslutt"
 
@@ -64,17 +64,28 @@ msgid ""
 "destruction, or into the junk piles that result. You can defend yourself by "
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
-msgstr "Heldigvis er robotene ekstremt dumme og vil alltid bevege seg rett mot deg. Lur dem til å kollidere med hverandre så de blir ødelagt, eller til å treffe hauger med søppel etter kollisjoner. Du kan forsvare deg ved å flytte søppelhaugene, eller flykte til en trygg plass med teleportenheten du har."
+msgstr ""
+"Heldigvis er robotene ekstremt dumme og vil alltid bevege seg rett mot deg. "
+"Lur dem til å kollidere med hverandre så de blir ødelagt, eller til å treffe "
+"hauger med søppel etter kollisjoner. Du kan forsvare deg ved å flytte "
+"søppelhaugene, eller flykte til en trygg plass med teleportenheten du har."
 
 #: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
-msgstr "Antall trygge teleporter er begrenset, og når du går tom vil teleportering kunne medføre at du lander ved siden av en robot som vil drepe deg. Prøv å overleve så lenge som mulig."
+msgstr ""
+"Antall trygge teleporter er begrenset, og når du går tom vil teleportering "
+"kunne medføre at du lander ved siden av en robot som vil drepe deg. Prøv å "
+"overleve så lenge som mulig."
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
+#: ../data/gnome-robots.appdata.xml.in.h:6
+msgid "The GNOME Project"
+msgstr "GNOME prosjektet"
+
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
 msgid "Robots"
 msgstr "Roboter"
 
@@ -150,7 +161,7 @@ msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Aktiver lyder i spillet. Spill av lyder for forskjellige hendelser i spillet."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
 msgid "Key to move NW"
 msgstr "Tast for å flytte mot nordvest"
 
@@ -158,7 +169,7 @@ msgstr "Tast for å flytte mot nordvest"
 msgid "The key used to move north-west."
 msgstr "Tast som brukes til å gå mot nordvest."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
 msgid "Key to move N"
 msgstr "Tast for å flytte mot nord"
 
@@ -166,7 +177,7 @@ msgstr "Tast for å flytte mot nord"
 msgid "The key used to move north."
 msgstr "Tast som brukes til å gå mot nord."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
 msgid "Key to move NE"
 msgstr "Tast for å flytte nordøst"
 
@@ -174,7 +185,7 @@ msgstr "Tast for å flytte nordøst"
 msgid "The key used to move north-east."
 msgstr "Tast som brukes til å gå mot nordøst."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
 msgid "Key to move W"
 msgstr "Tast for å flytte vest"
 
@@ -182,7 +193,7 @@ msgstr "Tast for å flytte vest"
 msgid "The key used to move west."
 msgstr "Tast som brukes til å gå mot vest."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
 msgid "Key to hold"
 msgstr "Tast for å holde"
 
@@ -190,7 +201,7 @@ msgstr "Tast for å holde"
 msgid "The key used to hold still."
 msgstr "Tast som brukes til å stå i ro."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
 msgid "Key to move E"
 msgstr "Tast for å flytte Øst"
 
@@ -198,7 +209,7 @@ msgstr "Tast for å flytte Øst"
 msgid "The key used to move east."
 msgstr "Tast som brukes for å gå mot øst."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
 msgid "Key to move SW"
 msgstr "Tast for å flytte sørvest"
 
@@ -206,7 +217,7 @@ msgstr "Tast for å flytte sørvest"
 msgid "The key used to move south-west."
 msgstr "Tast som brukes for å gå sørvest."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
 msgid "Key to move S"
 msgstr "Tast for å flytte sør"
 
@@ -214,7 +225,7 @@ msgstr "Tast for å flytte sør"
 msgid "The key used to move south."
 msgstr "Tast som brukes for å gå mot sør."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
 msgid "Key to move SE"
 msgstr "Tast for å flytte sørøst"
 
@@ -234,35 +245,7 @@ msgstr "Høyden på vinduet i piksler"
 msgid "true if the window is maximized"
 msgstr "«true» hvis vinduet er maksimert"
 
-#: ../src/game.c:147
-msgid "Game over!"
-msgstr "Spillet over!"
-
-#: ../src/game.c:149
-msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr "Bra jobba, men din poengsum ble desverre ikke med blant de ti beste."
-
-#: ../src/game.c:164
-msgid "Robots Scores"
-msgstr "Poeng for roboter"
-
-#: ../src/game.c:167
-msgid "Map:"
-msgstr "Kart:"
-
-#: ../src/game.c:176
-msgid "Congratulations!"
-msgstr "Gratulerer!"
-
-#: ../src/game.c:177
-msgid "Your score is the best!"
-msgstr "Din poengsum er den beste!"
-
-#: ../src/game.c:178
-msgid "Your score has made the top ten."
-msgstr "Din poengsum er blant de ti beste."
-
-#: ../src/game.c:405 ../src/game.c:421
+#: ../src/game.c:343 ../src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -271,155 +254,132 @@ msgstr ""
 "Men kan du klare det igjen?"
 
 #. This should never happen.
-#: ../src/game.c:1175
+#: ../src/game.c:1110
 msgid "There are no teleport locations left!!"
 msgstr "Ingen steder igjen å teleportere til!!"
 
-#: ../src/game.c:1203
+#: ../src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
 msgstr "Ingen trygge steder å teleportere til!!"
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:286
 msgid "Unknown Command"
 msgstr "Ukjent kommando"
 
-#. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:132
-msgctxt "score-dialog"
-msgid "Time"
-msgstr "Tid"
-
-#. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:138
-msgctxt "score-dialog"
-msgid "Score"
-msgstr "Poeng"
-
-#. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:225
-#, c-format
-msgctxt "score-dialog"
-msgid "%1$dm %2$ds"
-msgstr "%1$dm %2$ds"
-
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Nytt spill"
-
-#. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:478
-msgid "Date"
-msgstr "Dato"
-
-#: ../src/gnome-robots.c:95
+#: ../src/gnome-robots.c:106
 msgid "Classic robots"
 msgstr "Klassiske roboter"
 
-#: ../src/gnome-robots.c:96
+#: ../src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
 msgstr "Klassisk spill med trygge trekk"
 
-#: ../src/gnome-robots.c:97
+#: ../src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
 msgstr "Klassisk spill med super-trygge trekk"
 
-#: ../src/gnome-robots.c:98
+#: ../src/gnome-robots.c:109
 msgid "Nightmare"
 msgstr "Mareritt"
 
-#: ../src/gnome-robots.c:99
+#: ../src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
 msgstr "Mareritt med trygge trekk"
 
-#: ../src/gnome-robots.c:100
+#: ../src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
 msgstr "Mareritt med super-trygge trekk"
 
-#: ../src/gnome-robots.c:101
+#: ../src/gnome-robots.c:112
 msgid "Robots2"
 msgstr "Roboter2"
 
-#: ../src/gnome-robots.c:102
+#: ../src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
 msgstr "Robots2 med trygge trekk"
 
-#: ../src/gnome-robots.c:103
+#: ../src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
 msgstr "Robots2 med super-trygge trekk"
 
-#: ../src/gnome-robots.c:104
+#: ../src/gnome-robots.c:115
 msgid "Robots2 easy"
 msgstr "Robots2 lett"
 
-#: ../src/gnome-robots.c:105
+#: ../src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
 msgstr "Robots2 lett med trygge trekk"
 
-#: ../src/gnome-robots.c:106
+#: ../src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
 msgstr "Robots2 lett med super-trygge trekk"
 
-#: ../src/gnome-robots.c:107
+#: ../src/gnome-robots.c:118
 msgid "Robots with safe teleport"
 msgstr "Roboter med trygg teleportering"
 
-#: ../src/gnome-robots.c:108
+#: ../src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
 msgstr "Roboter med trygg teleportering og trygge trekk"
 
-#: ../src/gnome-robots.c:109
+#: ../src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Roboter med trygg teleportering og supertrygge trekk"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: ../src/gnome-robots.c:144
+#: ../src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Nivå:%d\tPoeng: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: ../src/gnome-robots.c:155
+#: ../src/gnome-robots.c:167
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Gjenstår: %d)"
 
 #. First line of safe teleports button label.
-#: ../src/gnome-robots.c:157
+#: ../src/gnome-robots.c:169
 msgid "Teleport _Safely"
 msgstr "Teleporter _trygt"
 
-#: ../src/gnome-robots.c:202
+#: ../src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
 msgstr "Basert på det klassiske spillet BSD Robots"
 
-#: ../src/gnome-robots.c:206
+#: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
 "Kjartan Maraas <kmaraas@gnome.org>\n"
 "Espen Stefansen <espens@svn.gnome.org>\n"
 "Torstein Adolf Winterseth <kvikende@fsfe.org>"
 
-#: ../src/gnome-robots.c:227
+#: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
 msgstr "Er du sikker på at du vil forkaste aktivt spill?"
 
-#: ../src/gnome-robots.c:230
+#: ../src/gnome-robots.c:255
 msgid "Keep _Playing"
 msgstr "Fortsett s_pillet"
 
-#: ../src/gnome-robots.c:361
+#: ../src/gnome-robots.c:387
 msgid "Teleport _Randomly"
 msgstr "Teleporte_r tilfeldig"
 
-#: ../src/gnome-robots.c:380
+#: ../src/gnome-robots.c:406
 msgid "_Wait for Robots"
 msgstr "_Vent på robotene"
 
-#: ../src/gnome-robots.c:408
+#. Label on the scores dialog, next to map type dropdown
+#: ../src/gnome-robots.c:430
+msgid "Game Type:"
+msgstr "Spilltype:"
+
+#: ../src/gnome-robots.c:445
 msgid "No game data could be found."
 msgstr "Spilldata kunne ikke finnes."
 
-#: ../src/gnome-robots.c:410
+#: ../src/gnome-robots.c:447
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -427,11 +387,11 @@ msgstr ""
 "GNOME Robots kunne ikke finne gyldige spillkonfigurasjonsfiler. Vennligst "
 "sjekk at programmet er installert korrekt."
 
-#: ../src/gnome-robots.c:426
+#: ../src/gnome-robots.c:464
 msgid "Some graphics files are missing or corrupt."
 msgstr "Noen grafikkfiler mangler eller er korrupt."
 
-#: ../src/gnome-robots.c:428
+#: ../src/gnome-robots.c:466
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -439,63 +399,63 @@ msgstr ""
 "GNOME Robots kunne ikke laste alle de nødvendige grafikkfilene. Sjekk at "
 "programmet er installert riktig."
 
-#: ../src/graphics.c:151
+#: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Kunne ikke finne bildefilen «%s»\n"
 
-#: ../src/properties.c:393
+#: ../src/properties.c:391
 msgid "Preferences"
 msgstr "Brukervalg"
 
-#: ../src/properties.c:417
+#: ../src/properties.c:415
 msgid "Game Type"
 msgstr "Spilltype"
 
-#: ../src/properties.c:427
+#: ../src/properties.c:425
 msgid "_Use safe moves"
 msgstr "Br_uk trygge trekk"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Forhindre uheldige trekk som resulterer i at spiller blir drept."
 
-#: ../src/properties.c:435
+#: ../src/properties.c:433
 msgid "U_se super safe moves"
 msgstr "Br_uk super-trygge trekk"
 
-#: ../src/properties.c:442
+#: ../src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr "Forhindre alle trekk som resulterer i at spiller blir drept."
 
-#: ../src/properties.c:448
+#: ../src/properties.c:446
 msgid "_Enable sounds"
 msgstr "A_ktiver lyder"
 
-#: ../src/properties.c:454
+#: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Spill av lyder for hendelser som vunnet nivå og at spiller blir drept."
 
-#: ../src/properties.c:456
+#: ../src/properties.c:454
 msgid "Game"
 msgstr "Spill"
 
-#: ../src/properties.c:469
+#: ../src/properties.c:467
 msgid "_Image theme:"
 msgstr "B_ildetema:"
 
-#: ../src/properties.c:481
+#: ../src/properties.c:479
 msgid "_Background color:"
 msgstr "_Bakgrunnsfarge:"
 
-#: ../src/properties.c:493
+#: ../src/properties.c:491
 msgid "Appearance"
 msgstr "Utseende"
 
-#: ../src/properties.c:522
+#: ../src/properties.c:520
 msgid "_Restore Defaults"
 msgstr "Gjenopp_rett forvalg"
 
-#: ../src/properties.c:527
+#: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Tastatur"

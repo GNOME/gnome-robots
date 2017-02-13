@@ -8,52 +8,80 @@ msgstr ""
 "Project-Id-Version: gnome-games master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-08 08:19+0000\n"
-"PO-Revision-Date: 2012-03-23 17:59+0800\n"
-"Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
+"POT-Creation-Date: 2015-11-10 21:54+0000\n"
+"PO-Revision-Date: 2017-02-13 16:34+0800\n"
+"Last-Translator: Mandy Wang <wangmychn@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+msgid "_New Game"
+msgstr "新建游戏(_N)"
+
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "首选项(_P)"
+
+#: ../data/app-menu.ui.h:3
+msgid "_Scores"
+msgstr "得分(_S)"
+
+#: ../data/app-menu.ui.h:4
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: ../data/app-menu.ui.h:5
+msgid "_About"
+msgstr "关于(_A)"
+
+#: ../data/app-menu.ui.h:6 ../src/game.c:150
+msgid "_Quit"
+msgstr "退出(_Q)"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
 msgstr "GNOME 机器人"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2
+#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+msgid "Avoid the robots and make them crash into each other"
+msgstr "避免碰到机器人并让它们撞在一起"
+
+#: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
-msgstr "在遥远的未来 - 3000年。邪恶的机器人想要杀掉你。避开它们，否则必死无疑。"
+msgstr ""
+"在遥远的未来 - 3000年。邪恶的机器人想要杀掉你。避开它们，否则必死无疑。"
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
 "destruction, or into the junk piles that result. You can defend yourself by "
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
-msgstr "幸运的是，机器人智力很低，只会朝你直线接近。引导它们相撞来销毁它们，撞进垃圾堆也行。"
-"你可以移动垃圾堆保护自己，或用你手头的心灵传送设备逃到安全的地方。"
+msgstr ""
+"幸运的是，机器人智力很低，只会朝你直线接近。引导它们相撞来销毁它们，撞进垃圾"
+"堆也行。你可以移动垃圾堆保护自己，或用你手头的心灵传送设备逃到安全的地方。"
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
-msgstr "你手里的安全传送是有限的，一旦用完，游戏可能会把你正好传送到机器人跟前，那你就挂了。"
-"想方设法活下去！"
+msgstr ""
+"你手里的安全传送是有限的，一旦用完，游戏可能会把你正好传送到机器人跟前，那你"
+"就挂了。想方设法活下去！"
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnobots.c:200
-#: ../src/gnobots.c:213 ../src/menu.c:262
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
+#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
 msgid "Robots"
 msgstr "机器人"
-
-#: ../data/gnome-robots.desktop.in.h:2
-msgid "Avoid the robots and make them crash into each other"
-msgstr "避免碰到机器人并让它们撞在一起"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
@@ -124,7 +152,7 @@ msgstr "启用游戏音效"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "启用游戏音效。在玩游戏的过程中的各种事件可播放声音。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:501
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
 msgid "Key to move NW"
 msgstr "左上移键"
 
@@ -132,7 +160,7 @@ msgstr "左上移键"
 msgid "The key used to move north-west."
 msgstr "左上移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:502
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
 msgid "Key to move N"
 msgstr "上移键"
 
@@ -140,7 +168,7 @@ msgstr "上移键"
 msgid "The key used to move north."
 msgstr "上移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:503
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
 msgid "Key to move NE"
 msgstr "右上移键"
 
@@ -148,7 +176,7 @@ msgstr "右上移键"
 msgid "The key used to move north-east."
 msgstr "右上移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:504
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
 msgid "Key to move W"
 msgstr "左移键"
 
@@ -164,7 +192,7 @@ msgstr "停住键"
 msgid "The key used to hold still."
 msgstr "用于停住的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
 msgid "Key to move E"
 msgstr "右移键"
 
@@ -172,7 +200,7 @@ msgstr "右移键"
 msgid "The key used to move east."
 msgstr "右移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
 msgid "Key to move SW"
 msgstr "左下移键"
 
@@ -180,7 +208,7 @@ msgstr "左下移键"
 msgid "The key used to move south-west."
 msgstr "左下移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
 msgid "Key to move S"
 msgstr "下移键"
 
@@ -188,7 +216,7 @@ msgstr "下移键"
 msgid "The key used to move south."
 msgstr "下移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
 msgid "Key to move SE"
 msgstr "右下移键"
 
@@ -196,80 +224,47 @@ msgstr "右下移键"
 msgid "The key used to move south-east."
 msgstr "右下移的按键。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:33 ../src/properties.c:510
-msgid "Key to teleport"
-msgstr "传送键"
-
-#: ../data/org.gnome.robots.gschema.xml.h:34
-msgid "The key used to teleport safely (if possible)."
-msgstr "尽可能安全传送的键。"
-
-#: ../data/org.gnome.robots.gschema.xml.h:35 ../src/properties.c:511
-msgid "Key to teleport randomly"
-msgstr "随机传送键"
-
-#: ../data/org.gnome.robots.gschema.xml.h:36
-msgid "The key used to teleport randomly."
-msgstr "随机传送键。"
-
-#: ../data/org.gnome.robots.gschema.xml.h:37 ../src/properties.c:512
-msgid "Key to wait"
-msgstr "等候键"
-
-#: ../data/org.gnome.robots.gschema.xml.h:38
-msgid "The key used to wait."
-msgstr "用于等候的按键"
-
-#: ../data/org.gnome.robots.gschema.xml.h:39
+#: ../data/org.gnome.robots.gschema.xml.h:33
 msgid "Width of the window in pixels"
 msgstr "主窗口的宽度(像素)"
 
-#: ../data/org.gnome.robots.gschema.xml.h:40
+#: ../data/org.gnome.robots.gschema.xml.h:34
 msgid "Height of the window in pixels"
 msgstr "主窗口的高度(像素)"
 
-#: ../data/org.gnome.robots.gschema.xml.h:41
+#: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
 msgstr "若窗口已最大化则为 true"
 
-#: ../data/org.gnome.robots.gschema.xml.h:42
-msgid "true if the window is fullscren"
-msgstr "若窗口已全屏则为 true"
-
-#: ../src/game.c:149
+#: ../src/game.c:147
 msgid "Game over!"
 msgstr "游戏结束！"
 
-#: ../src/game.c:151
+#: ../src/game.c:149
 msgid "Great work, but unfortunately your score did not make the top ten."
 msgstr "干得不错，但您还没有入围前十名。"
 
-#. Translators: This "_New Game" is for the game-over dialogue
-#: ../src/game.c:153 ../src/games-stock.c:253
-msgid "_New Game"
-msgstr "新建游戏(_N)"
-
-#: ../src/game.c:166
+#: ../src/game.c:164
 msgid "Robots Scores"
 msgstr "机器人得分"
 
-#: ../src/game.c:169
+#: ../src/game.c:167
 msgid "Map:"
 msgstr "地图："
 
-#: ../src/game.c:178
+#: ../src/game.c:176
 msgid "Congratulations!"
 msgstr "恭喜！"
 
-#: ../src/game.c:179
+#: ../src/game.c:177
 msgid "Your score is the best!"
 msgstr "您取得了最好成绩！"
 
-#: ../src/game.c:180
+#: ../src/game.c:178
 msgid "Your score has made the top ten."
 msgstr "您已经进入了前十名。"
 
-#: ../src/game.c:408 ../src/game.c:424
+#: ../src/game.c:405 ../src/game.c:421
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -278,11 +273,11 @@ msgstr ""
 "但您能再次击败它吗？"
 
 #. This should never happen.
-#: ../src/game.c:1186
+#: ../src/game.c:1175
 msgid "There are no teleport locations left!!"
 msgstr "没有剩下传送点了！"
 
-#: ../src/game.c:1214
+#: ../src/game.c:1203
 msgid "There are no safe locations to teleport to!!"
 msgstr "没有可传送到的安全的位置了！"
 
@@ -318,295 +313,127 @@ msgstr "新游戏"
 msgid "Date"
 msgstr "日期"
 
-#: ../src/games-stock.c:41
-msgid "View help for this game"
-msgstr "查看此游戏的帮助"
-
-#: ../src/games-stock.c:42
-msgid "End the current game"
-msgstr "结束当前游戏"
-
-#: ../src/games-stock.c:43
-msgid "Toggle fullscreen mode"
-msgstr "全屏模式切换"
-
-#: ../src/games-stock.c:44
-msgid "Get a hint for your next move"
-msgstr "获取您的下一步的提示"
-
-#: ../src/games-stock.c:45
-msgid "Leave fullscreen mode"
-msgstr "离开全屏模式"
-
-#: ../src/games-stock.c:46
-msgid "Start a new multiplayer network game"
-msgstr "开始多人网络游戏"
-
-#: ../src/games-stock.c:47
-msgid "End the current network game and return to network server"
-msgstr "结束当前网络游戏并回到服务器"
-
-#: ../src/games-stock.c:48 ../src/menu.c:69
-msgid "Start a new game"
-msgstr "开始新游戏"
-
-#: ../src/games-stock.c:49
-msgid "Pause the game"
-msgstr "暂停游戏"
-
-#: ../src/games-stock.c:50
-msgid "Show a list of players in the network game"
-msgstr "显示网络游戏中的玩家列表"
-
-#: ../src/games-stock.c:51
-msgid "Redo the undone move"
-msgstr "重做撤消的一着"
-
-#: ../src/games-stock.c:52
-msgid "Restart the game"
-msgstr "重新开始游戏"
-
-#: ../src/games-stock.c:53
-msgid "Resume the paused game"
-msgstr "恢复暂停的游戏"
-
-#: ../src/games-stock.c:54
-msgid "View the scores"
-msgstr "查看得分"
-
-#: ../src/games-stock.c:55
-msgid "Undo the last move"
-msgstr "撤消最后一着"
-
-#: ../src/games-stock.c:56
-msgid "About this game"
-msgstr "关于此游戏"
-
-#: ../src/games-stock.c:57
-msgid "Close this window"
-msgstr "关闭此窗口"
-
-#: ../src/games-stock.c:58
-msgid "Configure the game"
-msgstr "配置游戏"
-
-#: ../src/games-stock.c:59
-msgid "Quit this game"
-msgstr "退出此游戏"
-
-#: ../src/games-stock.c:247
-msgid "_Contents"
-msgstr "目录(_C)"
-
-#: ../src/games-stock.c:248
-msgid "_Fullscreen"
-msgstr "全屏(_F)"
-
-#: ../src/games-stock.c:249
-msgid "_Hint"
-msgstr "提示(_H)"
-
-#. Translators: This "_New" is for the menu item 'Game->New', implies "New Game"
-#: ../src/games-stock.c:251
-msgid "_New"
-msgstr "新建(_N)"
-
-#: ../src/games-stock.c:254
-msgid "_Redo Move"
-msgstr "重做移动(_R)"
-
-#. Translators: this is the "Reset" scores button in a scores dialogue
-#: ../src/games-stock.c:256
-msgid "_Reset"
-msgstr "重置(_R)"
-
-#. Translators: "_Restart" is the menu item 'Game->Restart', implies "Restart Game"
-#: ../src/games-stock.c:258
-msgid "_Restart"
-msgstr "重新开始(_R)"
-
-#: ../src/games-stock.c:259
-msgid "_Undo Move"
-msgstr "撤消移动(_U)"
-
-#: ../src/games-stock.c:260
-msgid "_Deal"
-msgstr "发牌(_D)"
-
-#: ../src/games-stock.c:261
-msgid "_Leave Fullscreen"
-msgstr "离开全屏(_L)"
-
-#: ../src/games-stock.c:262
-msgid "Network _Game"
-msgstr "网络游戏(_G)"
-
-#: ../src/games-stock.c:263
-msgid "L_eave Game"
-msgstr "离开游戏(_E)"
-
-#: ../src/games-stock.c:264
-msgid "Player _List"
-msgstr "玩家列表(_L)"
-
-#: ../src/games-stock.c:265
-msgid "_Pause"
-msgstr "暂停(_P)"
-
-#: ../src/games-stock.c:266
-msgid "Res_ume"
-msgstr "继续(_U)"
-
-#: ../src/games-stock.c:267
-msgid "_Scores"
-msgstr "得分(_S)"
-
-#: ../src/games-stock.c:268
-msgid "_End Game"
-msgstr "结束游戏(_E)"
-
-#. %s is replaced with the name of the game in gnome-games.
-#: ../src/games-stock.c:317
-#, c-format
-msgid ""
-"%s is free software; you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation; either version %d of the License, or (at your option) any later "
-"version."
-msgstr ""
-"%s 是自由软件；您可以按照自由软件基金会所发表的 GNU GPL 协议自由发放和/或修改"
-"它；采用协议的第 %d 版，或者(根据您的选择)任何更高版本。"
-
-#: ../src/games-stock.c:322
-#, c-format
-msgid ""
-"%s is distributed in the hope that it will be useful, but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
-"details."
-msgstr ""
-"%s 发表的目的是希望它能够对您有用，但我们没有任何保证；对于以任何用途使用它所"
-"造成的任何直接或间接后果都不承担任何责任。请参看 GNU GPL 协议中的细节。"
-
-#: ../src/games-stock.c:327
-#, c-format
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"%s; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, "
-"Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-"您应该在收到 %s 的同时收到了 GNU GPL 协议的副本；如果您没有收到的话，请给自由"
-"软件基金会写信，地址是 51 Franklin Street, Fifth Floor, Boston, MA  "
-"02110-1301  USA"
-
-#: ../src/games-stock.c:331
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program.  If not, see <http://www.gnu.org/licenses/>."
-msgstr ""
-"您应该在收到该程序的同时收到了 GNU GPL 协议的副本。如果没有的话，请参见"
-"<http://www.gnu.org/licenses/>。"
-
-#: ../src/gnobots.c:79
-msgid "Set game scenario"
-msgstr "设定游戏情节"
-
-#: ../src/gnobots.c:79 ../src/gnobots.c:81
-msgid "NAME"
-msgstr "名称"
-
-#: ../src/gnobots.c:81
-msgid "Set game configuration"
-msgstr "设定游戏配置"
-
-#: ../src/gnobots.c:83 ../src/gnobots.c:85
-msgid "Initial window position"
-msgstr "初始窗口位置"
-
-#: ../src/gnobots.c:83
-msgid "X"
-msgstr "X"
-
-#: ../src/gnobots.c:85
-msgid "Y"
-msgstr "Y"
-
-#: ../src/gnobots.c:90
+#: ../src/gnome-robots.c:95
 msgid "Classic robots"
 msgstr "经典机器人"
 
-#: ../src/gnobots.c:91
+#: ../src/gnome-robots.c:96
 msgid "Classic robots with safe moves"
 msgstr "带安全移动的经典机器人"
 
-#: ../src/gnobots.c:92
+#: ../src/gnome-robots.c:97
 msgid "Classic robots with super-safe moves"
 msgstr "带超级安全移动的经典机器人"
 
-#: ../src/gnobots.c:93
+#: ../src/gnome-robots.c:98
 msgid "Nightmare"
 msgstr "噩梦"
 
-#: ../src/gnobots.c:94
+#: ../src/gnome-robots.c:99
 msgid "Nightmare with safe moves"
 msgstr "带安全移动的噩梦"
 
-#: ../src/gnobots.c:95
+#: ../src/gnome-robots.c:100
 msgid "Nightmare with super-safe moves"
 msgstr "带超级安全移动的噩梦"
 
-#: ../src/gnobots.c:96
+#: ../src/gnome-robots.c:101
 msgid "Robots2"
 msgstr "机器人2"
 
-#: ../src/gnobots.c:97
+#: ../src/gnome-robots.c:102
 msgid "Robots2 with safe moves"
 msgstr "带安全移动的机器人2"
 
-#: ../src/gnobots.c:98
+#: ../src/gnome-robots.c:103
 msgid "Robots2 with super-safe moves"
 msgstr "带超级安全移动的机器人2"
 
-#: ../src/gnobots.c:99
+#: ../src/gnome-robots.c:104
 msgid "Robots2 easy"
 msgstr "机器人2简单"
 
-#: ../src/gnobots.c:100
+#: ../src/gnome-robots.c:105
 msgid "Robots2 easy with safe moves"
 msgstr "带安全移动的机器人2 简单"
 
-#: ../src/gnobots.c:101
+#: ../src/gnome-robots.c:106
 msgid "Robots2 easy with super-safe moves"
 msgstr "带超级安全移动的机器人2 简单"
 
-#: ../src/gnobots.c:102
+#: ../src/gnome-robots.c:107
 msgid "Robots with safe teleport"
 msgstr "带有安全传送点的机器人"
 
-#: ../src/gnobots.c:103
+#: ../src/gnome-robots.c:108
 msgid "Robots with safe teleport with safe moves"
 msgstr "带有安全传送点的机器人"
 
-#: ../src/gnobots.c:104
+#: ../src/gnome-robots.c:109
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "带有安全传送点的机器人"
 
-#: ../src/gnobots.c:280
+#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
+#: ../src/gnome-robots.c:144
+#, c-format
+msgid "Level: %d\tScore: %d"
+msgstr "关数：%d关\t得分：%d分"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: ../src/gnome-robots.c:155
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(剩下: %d 个)"
+
+#. First line of safe teleports button label.
+#: ../src/gnome-robots.c:157
+msgid "Teleport _Safely"
+msgstr "安全瞬移(_S)"
+
+#: ../src/gnome-robots.c:202
+msgid "Based on classic BSD Robots"
+msgstr "基于经典的 BSD 机器人"
+
+#: ../src/gnome-robots.c:206
+msgid "translator-credits"
+msgstr ""
+"Yang Zhang <zyangmath@gmail.com>, 2007\n"
+"Ping Z <zpsigma@gmail.com>, 2007\n"
+"Xhacker Liu <liu.dongyuan@gmail.com>, 2010\n"
+"Mandy Wang <wangmychn@gmail.com>, 2016"
+
+#: ../src/gnome-robots.c:227
+msgid "Are you sure you want to discard the current game?"
+msgstr "您确定要放弃当前游戏吗？"
+
+#: ../src/gnome-robots.c:230
+msgid "Keep _Playing"
+msgstr "继续玩(_P)"
+
+#: ../src/gnome-robots.c:363
+msgid "Teleport _Randomly"
+msgstr "随机瞬移(_R)"
+
+#: ../src/gnome-robots.c:382
+msgid "_Wait for Robots"
+msgstr "等候机器人(_W)"
+
+#: ../src/gnome-robots.c:410
 msgid "No game data could be found."
 msgstr "没有找到游戏数据。"
 
-#: ../src/gnobots.c:282
+#: ../src/gnome-robots.c:412
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
 msgstr ""
 "GNOME 机器人程序无法找到任何可用的游戏配置文件。请检查程序是否正确安装。"
 
-#: ../src/gnobots.c:298
+#: ../src/gnome-robots.c:428
 msgid "Some graphics files are missing or corrupt."
 msgstr "某些图像文件缺少或损坏。"
 
-#: ../src/gnobots.c:300
+#: ../src/gnome-robots.c:430
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -617,88 +444,19 @@ msgstr "GNOME 机器人程序无法载入必需的图像文件。请检查程序
 msgid "Could not find '%s' pixmap file\n"
 msgstr "无法找到“%s”位图文件\n"
 
-#: ../src/menu.c:64
-msgid "_Game"
-msgstr "游戏(_G)"
+#: ../src/properties.c:393
+msgid "Preferences"
+msgstr "首选项"
 
-#: ../src/menu.c:65
-msgid "_View"
-msgstr "查看(_V)"
-
-#: ../src/menu.c:66
-msgid "_Move"
-msgstr "移动(_M)"
-
-#: ../src/menu.c:67
-msgid "_Settings"
-msgstr "设置(_S)"
-
-#: ../src/menu.c:68
-msgid "_Help"
-msgstr "帮助(_H)"
-
-#: ../src/menu.c:73
-msgid "_Teleport"
-msgstr "传送点(_T)"
-
-#: ../src/menu.c:74
-msgid "Teleport, safely if possible"
-msgstr "传送点，尽可能安全"
-
-#: ../src/menu.c:75
-msgid "_Random"
-msgstr "随机(_R)"
-
-#: ../src/menu.c:76
-msgid "Teleport randomly"
-msgstr "随机传送"
-
-#: ../src/menu.c:77
-msgid "_Wait"
-msgstr "等待(_W)"
-
-#: ../src/menu.c:77
-msgid "Wait for the robots"
-msgstr "等候机器人"
-
-#: ../src/menu.c:88
-msgid "_Toolbar"
-msgstr "工具栏(_T)"
-
-#: ../src/menu.c:88
-msgid "Show or hide the toolbar"
-msgstr "显示或隐藏工具栏"
-
-#: ../src/menu.c:266
-msgid ""
-"Based on classic BSD Robots\n"
-"\n"
-"Robots is a part of GNOME Games."
-msgstr ""
-"基于经典的 BSD 机器人。\n"
-"\n"
-"机器人是 GNOME 游戏的一部分。"
-
-#: ../src/menu.c:270
-msgid "translator-credits"
-msgstr ""
-"Yang Zhang <zyangmath@gmail.com>, 2007\n"
-"Ping Z <zpsigma@gmail.com>, 2007\n"
-"Xhacker Liu <liu.dongyuan@gmail.com>, 2010"
-
-#: ../src/properties.c:391
-msgid "Robots Preferences"
-msgstr "机器人首选项"
-
-#: ../src/properties.c:416
+#: ../src/properties.c:417
 msgid "Game Type"
 msgstr "游戏类型"
 
-#: ../src/properties.c:426
+#: ../src/properties.c:427
 msgid "_Use safe moves"
 msgstr "使用安全移动(_U)"
 
-#: ../src/properties.c:433
+#: ../src/properties.c:432
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "阻止会导致死亡的意外移动。"
 
@@ -710,53 +468,279 @@ msgstr "使用超级安全移动(_S)"
 msgid "Prevents all moves that result in getting killed."
 msgstr "避免将导致丢命的全部移动。"
 
-#: ../src/properties.c:444
+#: ../src/properties.c:448
 msgid "_Enable sounds"
 msgstr "启用声音(_E)"
 
-#: ../src/properties.c:450
+#: ../src/properties.c:454
 msgid "Play sounds for events like winning a level and dying."
 msgstr "对通关或死亡等事件使用声音通知。"
 
-#: ../src/properties.c:452
+#: ../src/properties.c:456
 msgid "Game"
 msgstr "游戏"
 
-#: ../src/properties.c:465
+#: ../src/properties.c:469
 msgid "_Image theme:"
 msgstr "图像主题(_I)："
 
-#: ../src/properties.c:477
+#: ../src/properties.c:481
 msgid "_Background color:"
 msgstr "背景颜色(_B)："
 
-#: ../src/properties.c:489
+#: ../src/properties.c:493
 msgid "Appearance"
 msgstr "外观"
 
-#: ../src/properties.c:521
+#: ../src/properties.c:522
 msgid "_Restore Defaults"
 msgstr "恢复默认值(_R)"
 
-#: ../src/properties.c:526
+#: ../src/properties.c:527
 msgid "Keyboard"
 msgstr "键盘"
 
-#: ../src/statusbar.c:68
-msgid "Score:"
-msgstr "得分:"
+#~ msgid "Scores"
+#~ msgstr "得分"
 
-#: ../src/statusbar.c:76
-msgid "Safe Teleports:"
-msgstr "安全传送点:"
+#~ msgid "Help"
+#~ msgstr "帮助"
 
-#: ../src/statusbar.c:85
-msgid "Level:"
-msgstr "级别:"
+#~ msgid "About"
+#~ msgstr "关于"
 
-#: ../src/statusbar.c:94
-msgid "Remaining:"
-msgstr "剩下:"
+#~ msgid "Quit"
+#~ msgstr "退出"
+
+#~ msgid ""
+#~ "Based on classic BSD Robots\n"
+#~ "\n"
+#~ "Robots is a part of GNOME Games."
+#~ msgstr ""
+#~ "基于经典的 BSD 机器人。\n"
+#~ "\n"
+#~ "机器人是 GNOME 游戏的一部分。"
+
+#~ msgid "Key to teleport"
+#~ msgstr "传送键"
+
+#~ msgid "The key used to teleport safely (if possible)."
+#~ msgstr "尽可能安全传送的键。"
+
+#~ msgid "Key to teleport randomly"
+#~ msgstr "随机传送键"
+
+#~ msgid "The key used to teleport randomly."
+#~ msgstr "随机传送键。"
+
+#~ msgid "Key to wait"
+#~ msgstr "等候键"
+
+#~ msgid "The key used to wait."
+#~ msgstr "用于等候的按键"
+
+#~ msgid "true if the window is fullscren"
+#~ msgstr "若窗口已全屏则为 true"
+
+#~ msgid "View help for this game"
+#~ msgstr "查看此游戏的帮助"
+
+#~ msgid "End the current game"
+#~ msgstr "结束当前游戏"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "全屏模式切换"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "获取您的下一步的提示"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "离开全屏模式"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "开始多人网络游戏"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr "结束当前网络游戏并回到服务器"
+
+#~ msgid "Start a new game"
+#~ msgstr "开始新游戏"
+
+#~ msgid "Pause the game"
+#~ msgstr "暂停游戏"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "显示网络游戏中的玩家列表"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "重做撤消的一着"
+
+#~ msgid "Restart the game"
+#~ msgstr "重新开始游戏"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "恢复暂停的游戏"
+
+#~ msgid "View the scores"
+#~ msgstr "查看得分"
+
+#~ msgid "Undo the last move"
+#~ msgstr "撤消最后一着"
+
+#~ msgid "About this game"
+#~ msgstr "关于此游戏"
+
+#~ msgid "Close this window"
+#~ msgstr "关闭此窗口"
+
+#~ msgid "Configure the game"
+#~ msgstr "配置游戏"
+
+#~ msgid "Quit this game"
+#~ msgstr "退出此游戏"
+
+#~ msgid "_Contents"
+#~ msgstr "目录(_C)"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "全屏(_F)"
+
+#~ msgid "_Hint"
+#~ msgstr "提示(_H)"
+
+#~ msgid "_New"
+#~ msgstr "新建(_N)"
+
+#~ msgid "_Redo Move"
+#~ msgstr "重做移动(_R)"
+
+#~ msgid "_Reset"
+#~ msgstr "重置(_R)"
+
+#~ msgid "_Restart"
+#~ msgstr "重新开始(_R)"
+
+#~ msgid "_Undo Move"
+#~ msgstr "撤消移动(_U)"
+
+#~ msgid "_Deal"
+#~ msgstr "发牌(_D)"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "离开全屏(_L)"
+
+#~ msgid "Network _Game"
+#~ msgstr "网络游戏(_G)"
+
+#~ msgid "L_eave Game"
+#~ msgstr "离开游戏(_E)"
+
+#~ msgid "Player _List"
+#~ msgstr "玩家列表(_L)"
+
+#~ msgid "_Pause"
+#~ msgstr "暂停(_P)"
+
+#~ msgid "Res_ume"
+#~ msgstr "继续(_U)"
+
+#~ msgid "_End Game"
+#~ msgstr "结束游戏(_E)"
+
+#~ msgid ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+#~ msgstr ""
+#~ "%s 是自由软件；您可以按照自由软件基金会所发表的 GNU GPL 协议自由发放和/或"
+#~ "修改它；采用协议的第 %d 版，或者(根据您的选择)任何更高版本。"
+
+#~ msgid ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+#~ msgstr ""
+#~ "%s 发表的目的是希望它能够对您有用，但我们没有任何保证；对于以任何用途使用"
+#~ "它所造成的任何直接或间接后果都不承担任何责任。请参看 GNU GPL 协议中的细"
+#~ "节。"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+#~ msgstr ""
+#~ "您应该在收到 %s 的同时收到了 GNU GPL 协议的副本；如果您没有收到的话，请给"
+#~ "自由软件基金会写信，地址是 51 Franklin Street, Fifth Floor, Boston, MA  "
+#~ "02110-1301  USA"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "您应该在收到该程序的同时收到了 GNU GPL 协议的副本。如果没有的话，请参见"
+#~ "<http://www.gnu.org/licenses/>。"
+
+#~ msgid "Set game scenario"
+#~ msgstr "设定游戏情节"
+
+#~ msgid "NAME"
+#~ msgstr "名称"
+
+#~ msgid "Set game configuration"
+#~ msgstr "设定游戏配置"
+
+#~ msgid "Initial window position"
+#~ msgstr "初始窗口位置"
+
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "_Game"
+#~ msgstr "游戏(_G)"
+
+#~ msgid "_View"
+#~ msgstr "查看(_V)"
+
+#~ msgid "_Move"
+#~ msgstr "移动(_M)"
+
+#~ msgid "_Settings"
+#~ msgstr "设置(_S)"
+
+#~ msgid "_Teleport"
+#~ msgstr "传送点(_T)"
+
+#~ msgid "Teleport, safely if possible"
+#~ msgstr "传送点，尽可能安全"
+
+#~ msgid "_Random"
+#~ msgstr "随机(_R)"
+
+#~ msgid "_Wait"
+#~ msgstr "等待(_W)"
+
+#~ msgid "_Toolbar"
+#~ msgstr "工具栏(_T)"
+
+#~ msgid "Show or hide the toolbar"
+#~ msgstr "显示或隐藏工具栏"
+
+#~ msgid "Robots Preferences"
+#~ msgstr "机器人首选项"
+
+#~ msgid "Score:"
+#~ msgstr "得分:"
+
+#~ msgid "Safe Teleports:"
+#~ msgstr "安全传送点:"
+
+#~ msgid "Level:"
+#~ msgstr "级别:"
 
 #~ msgctxt "score-dialog"
 #~ msgid "Name"
@@ -865,9 +849,6 @@ msgstr "剩下:"
 
 #~ msgid "Difficulty of the opponent chess engine"
 #~ msgstr "与之对战的国际象棋引擎的难度"
-
-#~ msgid "Preferences"
-#~ msgstr "首选项"
 
 #~ msgid "Play as:"
 #~ msgstr "玩家身份："
@@ -1568,9 +1549,6 @@ msgstr "剩下:"
 #~ msgid "Me:"
 #~ msgstr "我："
 
-#~ msgid "Scores"
-#~ msgstr "得分"
-
 #~ msgid "Drawn:"
 #~ msgstr "平局："
 
@@ -1894,9 +1872,6 @@ msgstr "剩下:"
 
 #~ msgid "Worm %d:"
 #~ msgstr "小蛇%d:"
-
-#~ msgid "classic robots"
-#~ msgstr "经典机器人"
 
 #~ msgid "robots2"
 #~ msgstr "机器人 2"
@@ -2233,15 +2208,6 @@ msgstr "剩下:"
 
 #~ msgid "Clear hidden mines from a minefield"
 #~ msgstr "扫除雷区里的隐藏的地雷"
-
-#~ msgid "_Preferences"
-#~ msgstr "首选项(_P)"
-
-#~ msgid "_About"
-#~ msgstr "关于(_A)"
-
-#~ msgid "_Quit"
-#~ msgstr "退出(_Q)"
 
 #~ msgid "Use the unknown flag"
 #~ msgstr "使用未知旗标"
@@ -2642,9 +2608,6 @@ msgstr "剩下:"
 
 #~ msgid "Already used! Where do you want to put that?"
 #~ msgstr "已经在用了！您要把它摆在哪里？"
-
-#~ msgid "Score: %d"
-#~ msgstr "得分:%d"
 
 #~ msgid "Field used"
 #~ msgstr "使用的场地大小"
@@ -6282,9 +6245,6 @@ msgstr "剩下:"
 #~ msgid "--> Table"
 #~ msgstr "--> 游戏桌"
 
-#~ msgid "Playing"
-#~ msgstr "游戏中"
-
 #~ msgid "<-- Table"
 #~ msgstr "<--游戏桌"
 
@@ -6559,9 +6519,6 @@ msgstr "剩下:"
 #~ "to be able to play this game."
 #~ msgstr "您需要直接启动 GGZ 客户端才能玩此游戏。"
 
-#~ msgid "About"
-#~ msgstr "关于"
-
 #~ msgid "Message of the Day"
 #~ msgstr "每日消息"
 
@@ -6748,9 +6705,6 @@ msgstr "剩下:"
 #~ msgid "Launch"
 #~ msgstr "启动"
 
-#~ msgid "Are you sure you want to quit?"
-#~ msgstr "您确定想要退出吗？"
-
 #~ msgid "Quit?"
 #~ msgstr "退出吗？"
 
@@ -6854,9 +6808,6 @@ msgstr "剩下:"
 
 #~ msgid "MOTD"
 #~ msgstr "MOTD"
-
-#~ msgid "Help"
-#~ msgstr "帮助"
 
 #~ msgid "Contents"
 #~ msgstr "目录"
@@ -7950,3 +7901,6 @@ msgstr "剩下:"
 
 #~ msgid "The window width"
 #~ msgstr "窗口宽度"
+
+#~ msgid "The GNOME Project"
+#~ msgstr "GNOME 项目"

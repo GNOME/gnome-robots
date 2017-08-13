@@ -10,30 +10,29 @@
 # Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
 # Hakan Bekdas <hakanbekdas@yahoo.com>, 2006.
 # Baris Cicek <baris@teamforce.name.tr>, 2004, 2005, 2008, 2009.
-# Muhammet Kara <muhammetk@gmail.com>, 2011, 2014, 2015.
+# Muhammet Kara <muhammetk@gmail.com>, 2011, 2014, 2015, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-22 08:25+0000\n"
-"PO-Revision-Date: 2015-03-22 18:13+0200\n"
+"POT-Creation-Date: 2017-02-28 07:02+0000\n"
+"PO-Revision-Date: 2017-08-13 18:09+0300\n"
 "Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"Language-Team: Turkish <gnometurk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
-#: ../data/app-menu.ui.h:1 ../src/game.c:151 ../src/gnome-robots.c:231
+#: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "Yeni _Oyun"
 
 #: ../data/app-menu.ui.h:2
-#| msgid "Preferences"
 msgid "_Preferences"
 msgstr "_Tercihler"
 
@@ -49,7 +48,7 @@ msgstr "_Yardım"
 msgid "_About"
 msgstr "H_akkında"
 
-#: ../data/app-menu.ui.h:6 ../src/game.c:150
+#: ../data/app-menu.ui.h:6
 msgid "_Quit"
 msgstr "_Çıkış"
 
@@ -93,8 +92,12 @@ msgstr ""
 "robotun yanına götürebilir, ki bu da ölümünüze sebep olacaktır. "
 "Olabildiğince uzun süre hayatta kalın!"
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
-#: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
+#: ../data/gnome-robots.appdata.xml.in.h:6
+msgid "The GNOME Project"
+msgstr "GNOME Projesi"
+
+#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
 msgid "Robots"
 msgstr "Robotlar"
 
@@ -168,7 +171,7 @@ msgstr "Oyun seslerini etkinleştir"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Oyun seslerini etkinleştirir. Oyundaki bir çok olay için ses çalar."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:505
+#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
 msgid "Key to move NW"
 msgstr "KB için tuş"
 
@@ -176,7 +179,7 @@ msgstr "KB için tuş"
 msgid "The key used to move north-west."
 msgstr "Kuzeybatıya hareket etmek için kullanılan tuş."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:506
+#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
 msgid "Key to move N"
 msgstr "K için tuş"
 
@@ -184,7 +187,7 @@ msgstr "K için tuş"
 msgid "The key used to move north."
 msgstr "Kuzeye hareket etmek için kullanılan tuş."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:507
+#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
 msgid "Key to move NE"
 msgstr "KD için tuş"
 
@@ -192,7 +195,7 @@ msgstr "KD için tuş"
 msgid "The key used to move north-east."
 msgstr "Kuzeydoğuya hareket etmek için kullanılan tuş."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:508
+#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
 msgid "Key to move W"
 msgstr "B için tuş"
 
@@ -200,7 +203,7 @@ msgstr "B için tuş"
 msgid "The key used to move west."
 msgstr "Batıya hareket etmek için kullanılan tuş."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:509
+#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
 msgid "Key to hold"
 msgstr "Saklamak için tuş"
 
@@ -208,7 +211,7 @@ msgstr "Saklamak için tuş"
 msgid "The key used to hold still."
 msgstr "Yerinde durmak için kullanılan tuş."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:510
+#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
 msgid "Key to move E"
 msgstr "D için tuş"
 
@@ -216,7 +219,7 @@ msgstr "D için tuş"
 msgid "The key used to move east."
 msgstr "Doğuya hareket etmek için kullanılan tuş."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:511
+#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
 msgid "Key to move SW"
 msgstr "GB için tuş"
 
@@ -224,7 +227,7 @@ msgstr "GB için tuş"
 msgid "The key used to move south-west."
 msgstr "Güzeybatıya hareket etmek için kullanılan tuş."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:512
+#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
 msgid "Key to move S"
 msgstr "G için tuş"
 
@@ -232,7 +235,7 @@ msgstr "G için tuş"
 msgid "The key used to move south."
 msgstr "Güneye hareket etmek için kullanılan tuş."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:513
+#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
 msgid "Key to move SE"
 msgstr "GD için tuş"
 
@@ -252,36 +255,7 @@ msgstr "Pencerenin piksel olarak yüksekliği"
 msgid "true if the window is maximized"
 msgstr "pencere büyütülmüşse bunun değeri doğrudur"
 
-#: ../src/game.c:147
-msgid "Game over!"
-msgstr "Oyun bitti!"
-
-#: ../src/game.c:149
-msgid "Great work, but unfortunately your score did not make the top ten."
-msgstr ""
-"Çok iyi iş çıkardınız, ancak puanınız en iyi on listesine yer bulamadı."
-
-#: ../src/game.c:164
-msgid "Robots Scores"
-msgstr "Robots Puanları"
-
-#: ../src/game.c:167
-msgid "Map:"
-msgstr "Harita:"
-
-#: ../src/game.c:176
-msgid "Congratulations!"
-msgstr "Tebrikler!"
-
-#: ../src/game.c:177
-msgid "Your score is the best!"
-msgstr "En iyi skor sizinki!"
-
-#: ../src/game.c:178
-msgid "Your score has made the top ten."
-msgstr "Puanınız en iyi on listesine girdi."
-
-#: ../src/game.c:405 ../src/game.c:421
+#: ../src/game.c:343 ../src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -290,156 +264,132 @@ msgstr ""
 "Peki,Tekrar Yapabilir misiniz?"
 
 #. This should never happen.
-#: ../src/game.c:1175
+#: ../src/game.c:1110
 msgid "There are no teleport locations left!!"
 msgstr "Geriye hiç ışınlanma bölgesi kalmadı!!"
 
-#: ../src/game.c:1203
+#: ../src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
 msgstr "Işınlanma ile gidilebilecek güvenli bölge kalmadı!!"
 
-#: ../src/games-controls.c:288
+#: ../src/games-controls.c:286
 msgid "Unknown Command"
 msgstr "Bilinmeyen Komut"
 
-#. Score dialog column header for the score time (e.g. 1 minute)
-#: ../src/games-scores-dialog.c:132
-msgctxt "score-dialog"
-msgid "Time"
-msgstr "Süre"
-
-#. Score dialog column header for the score value (e.g. 30 moves)
-#: ../src/games-scores-dialog.c:138
-msgctxt "score-dialog"
-msgid "Score"
-msgstr "Puan"
-
-#. Score format for time based scores.  %1$d is the time in minutes, %2$d is the time in seconds
-#: ../src/games-scores-dialog.c:225
-#, c-format
-msgctxt "score-dialog"
-msgid "%1$dm %2$ds"
-msgstr "%1$ddak %2$dsn"
-
-#: ../src/games-scores-dialog.c:385
-msgid "New Game"
-msgstr "Yeni Oyun"
-
-#. Score dialog column header for the date the score was recorded
-#: ../src/games-scores-dialog.c:478
-msgid "Date"
-msgstr "Tarih"
-
-#: ../src/gnome-robots.c:95
+#: ../src/gnome-robots.c:106
 msgid "Classic robots"
 msgstr "Klasik robotlar"
 
-#: ../src/gnome-robots.c:96
+#: ../src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
 msgstr "Klasik robotlar güvenli hareketler ile"
 
-#: ../src/gnome-robots.c:97
+#: ../src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
 msgstr "Klasik robotlar süper güvenli hareketler ile"
 
-#: ../src/gnome-robots.c:98
+#: ../src/gnome-robots.c:109
 msgid "Nightmare"
 msgstr "Kabus"
 
-#: ../src/gnome-robots.c:99
+#: ../src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
 msgstr "Kabus güvenli hareketler ile"
 
-#: ../src/gnome-robots.c:100
+#: ../src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
 msgstr "Kabus süper güvenli hareketler ile"
 
-#: ../src/gnome-robots.c:101
+#: ../src/gnome-robots.c:112
 msgid "Robots2"
 msgstr "Robotlar2"
 
-#: ../src/gnome-robots.c:102
+#: ../src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
 msgstr "Robotlar2 güvenli hareketler ile"
 
-#: ../src/gnome-robots.c:103
+#: ../src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
 msgstr "Robotlar2 süper güvenli hareketler ile"
 
-#: ../src/gnome-robots.c:104
+#: ../src/gnome-robots.c:115
 msgid "Robots2 easy"
 msgstr "Robotlar2 kolay"
 
-#: ../src/gnome-robots.c:105
+#: ../src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
 msgstr "Robotlar2 kolay güvenli hareketler ile"
 
-#: ../src/gnome-robots.c:106
+#: ../src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
 msgstr "Robotlar2 kolay süper güvenli hareketler ile"
 
-#: ../src/gnome-robots.c:107
+#: ../src/gnome-robots.c:118
 msgid "Robots with safe teleport"
 msgstr "Robotlar güvenli ışınlama ile"
 
-#: ../src/gnome-robots.c:108
+#: ../src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robotlar güvenli ışınlama ve güvenli hareketler ile"
 
-#: ../src/gnome-robots.c:109
+#: ../src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robotlar güvenli ışınlama ve süper güvenli hareketler ile"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: ../src/gnome-robots.c:144
+#: ../src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Seviye: %d\tPuan: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: ../src/gnome-robots.c:155
+#: ../src/gnome-robots.c:167
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Kalan: %d)"
 
 #. First line of safe teleports button label.
-#: ../src/gnome-robots.c:157
+#: ../src/gnome-robots.c:169
 msgid "Teleport _Safely"
 msgstr "G_üvenle Işınlan"
 
-#: ../src/gnome-robots.c:202
-#| msgid "classic robots"
+#: ../src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
 msgstr "Klasik BSD Robotlar Örnek Alınmıştır"
 
-#: ../src/gnome-robots.c:206
+#: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
 "Barış Çiçek <baris@teamforce.name.tr> \n"
 "Muhammet Kara <muhammetk@gmail.com>"
 
-#: ../src/gnome-robots.c:227
+#: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
 msgstr ""
 "Mevcut oyunu bırakarak ilerlemenizi kaybetmek istediğinizden emin misiniz?"
 
-#: ../src/gnome-robots.c:230
+#: ../src/gnome-robots.c:255
 msgid "Keep _Playing"
 msgstr "_Oynamaya Devam Et"
 
-#: ../src/gnome-robots.c:361
+#: ../src/gnome-robots.c:387
 msgid "Teleport _Randomly"
 msgstr "_Rastgele Işınlan"
 
-#: ../src/gnome-robots.c:380
+#: ../src/gnome-robots.c:406
 msgid "_Wait for Robots"
 msgstr "Robotları _Bekle"
 
-#: ../src/gnome-robots.c:408
+#. Label on the scores dialog, next to map type dropdown
+#: ../src/gnome-robots.c:430
+msgid "Game Type:"
+msgstr "Oyun Türü:"
+
+#: ../src/gnome-robots.c:445
 msgid "No game data could be found."
 msgstr "Oyun verisi bulunamadı."
 
-#: ../src/gnome-robots.c:410
+#: ../src/gnome-robots.c:447
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -447,11 +397,11 @@ msgstr ""
 "Robotlar uygulaması geçerli bir yapılandırma dosyası bulamadı. Lütfen bu "
 "programın kurulumunu gözden geçirin."
 
-#: ../src/gnome-robots.c:426
+#: ../src/gnome-robots.c:464
 msgid "Some graphics files are missing or corrupt."
 msgstr "Kimi grafik dosyaları eksik ya da bozuk."
 
-#: ../src/gnome-robots.c:428
+#: ../src/gnome-robots.c:466
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -459,66 +409,106 @@ msgstr ""
 "Robotlar uygulaması gerekli olan tüm grafik dosyalarını yükleyemedi. Lütfen "
 "bu programın kurulumunu gözden geçirin."
 
-#: ../src/graphics.c:151
+#: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "'%s' benekeşlem dosyası bulunamadı\n"
 
-#: ../src/properties.c:393
+#: ../src/properties.c:391
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: ../src/properties.c:417
+#: ../src/properties.c:415
 msgid "Game Type"
 msgstr "Oyun Türü"
 
-#: ../src/properties.c:427
+#: ../src/properties.c:425
 msgid "_Use safe moves"
 msgstr "_Güvenli hareketleri kullan"
 
-#: ../src/properties.c:432
+#: ../src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Ölüm ile sonuçlanabilecek kazalı hamleleri önle."
 
-#: ../src/properties.c:435
+#: ../src/properties.c:433
 msgid "U_se super safe moves"
 msgstr "_Süper güvenli harekeri kullan"
 
-#: ../src/properties.c:442
+#: ../src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr "Ölüm ile sonuçlanan tüm hamleleri önle."
 
-#: ../src/properties.c:448
+#: ../src/properties.c:446
 msgid "_Enable sounds"
 msgstr "_Sesleri etkinleştir"
 
-#: ../src/properties.c:454
+#: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Seviyeyi geçme ve ölme gibi olaylar için ses çal."
 
-#: ../src/properties.c:456
+#: ../src/properties.c:454
 msgid "Game"
 msgstr "Oyun"
 
-#: ../src/properties.c:469
+#: ../src/properties.c:467
 msgid "_Image theme:"
 msgstr "_Resim teması:"
 
-#: ../src/properties.c:481
+#: ../src/properties.c:479
 msgid "_Background color:"
 msgstr "_Arkaplan rengi:"
 
-#: ../src/properties.c:493
+#: ../src/properties.c:491
 msgid "Appearance"
 msgstr "Görünüm"
 
-#: ../src/properties.c:522
+#: ../src/properties.c:520
 msgid "_Restore Defaults"
 msgstr "Ö_ntanımlılara Dön"
 
-#: ../src/properties.c:527
+#: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Klavye"
+
+#~ msgid "Game over!"
+#~ msgstr "Oyun bitti!"
+
+#~ msgid "Great work, but unfortunately your score did not make the top ten."
+#~ msgstr ""
+#~ "Çok iyi iş çıkardınız, ancak puanınız en iyi on listesine yer bulamadı."
+
+#~ msgid "Robots Scores"
+#~ msgstr "Robots Puanları"
+
+#~ msgid "Map:"
+#~ msgstr "Harita:"
+
+#~ msgid "Congratulations!"
+#~ msgstr "Tebrikler!"
+
+#~ msgid "Your score is the best!"
+#~ msgstr "En iyi skor sizinki!"
+
+#~ msgid "Your score has made the top ten."
+#~ msgstr "Puanınız en iyi on listesine girdi."
+
+#~ msgctxt "score-dialog"
+#~ msgid "Time"
+#~ msgstr "Süre"
+
+#~ msgctxt "score-dialog"
+#~ msgid "Score"
+#~ msgstr "Puan"
+
+#~ msgctxt "score-dialog"
+#~ msgid "%1$dm %2$ds"
+#~ msgstr "%1$ddak %2$dsn"
+
+#~ msgid "New Game"
+#~ msgstr "Yeni Oyun"
+
+#~ msgid "Date"
+#~ msgstr "Tarih"
 
 #~ msgid "Scores"
 #~ msgstr "Puanlar"
@@ -5454,9 +5444,6 @@ msgstr "Klavye"
 
 #~ msgid "Seat Assignments"
 #~ msgstr "Koltuk Dağılımı"
-
-#~ msgid "Game Type:"
-#~ msgstr "Oyun Türü:"
 
 #~ msgid "Number of seats"
 #~ msgstr "Koltuk sayısı"

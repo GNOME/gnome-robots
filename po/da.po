@@ -17,8 +17,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-12 02:10+0200\n"
+"Report-Msgid-Bugs-To: "
+"https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-robots&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-02-28 07:02+0000\n"
 "PO-Revision-Date: 2016-03-20 03:30+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -119,7 +120,8 @@ msgstr "Robotbilledtema"
 
 #: ../data/org.gnome.robots.gschema.xml.h:4
 msgid "Robot image theme. The theme of the images to use for the robots."
-msgstr "Robotbilledtema. Det tema for billeder der skal bruges til robotterne."
+msgstr ""
+"Robotbilledtema. Det tema for billeder der skal bruges til robotterne."
 
 #: ../data/org.gnome.robots.gschema.xml.h:5
 msgid "Background color"
@@ -169,7 +171,8 @@ msgid "Enable game sounds"
 msgstr "Aktivér spillyde"
 
 #: ../data/org.gnome.robots.gschema.xml.h:14
-msgid "Enable game sounds. Play sounds for various events throughout the game."
+msgid ""
+"Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Aktivér spillyde. Afspil lyde for forskellige hændelser i spillet."
 
 #: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
@@ -419,7 +422,7 @@ msgstr ""
 #: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
-msgstr "Kunne ikke finde billedfilen \"%s\"\n"
+msgstr "Kunne ikke finde billedfilen “%s”\n"
 
 #: ../src/properties.c:391
 msgid "Preferences"
@@ -520,3 +523,5 @@ msgstr "Tastatur"
 
 #~ msgid "Quit"
 #~ msgstr "Afslut"
+
+

@@ -8,13 +8,14 @@
 # Josep Puigdemont i Casamajó <josep.puigdemont@gmail.com>, 2007.
 # Gil Forcada <gilforcada@guifi.net>, 2008, 2010, 2011, 2012, 2014.
 # Carles Ferrando <carles.ferrando@gmail.com>, 2010.
-# Jordi Serratosa <jordis@softcatala.cat>, 2012.
+# Jordi Serratosa <jordis@softcatala.cat>, 2012, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-12 09:22+0100\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"robots&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-03-12 08:23+0000\n"
 "PO-Revision-Date: 2017-03-12 09:22+0100\n"
 "Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -86,7 +87,7 @@ msgid ""
 "Survive for as long as possible!"
 msgstr ""
 "El nombre de teletransportadors segurs és limitat, i una vegada que no us en "
-"quedeu, el teletransportadors us podria deixar just al costat d'un robot, "
+"quedeu, el teletransportador us podria deixar just al costat d'un robot, "
 "que us mataria. Sobreviviu el màxim de temps possible!"
 
 #: ../data/gnome-robots.appdata.xml.in.h:6

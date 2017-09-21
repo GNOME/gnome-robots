@@ -1,5 +1,5 @@
 # Polish translation for gnome-robots.
-# Copyright © 1998-2016 the gnome-robots authors.
+# Copyright © 1998-2017 the gnome-robots authors.
 # This file is distributed under the same license as the gnome-robots package.
 # Zbigniew Chyla <chyla@alice.ci.pwr.wroc.pl>, 1998-2002.
 # Marcin Gorycki <mgo@olicom.dk>, 1999.
@@ -12,15 +12,15 @@
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008.
 # Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010.
 # Wojciech Kapusta <wkapusta@aviary.pl>, 2009.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2016.
-# Aviary.pl <community-poland@mozilla.org>, 2007-2016.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2017.
+# Aviary.pl <community-poland@mozilla.org>, 2007-2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-16 10:54+0200\n"
-"PO-Revision-Date: 2016-08-16 10:55+0200\n"
+"POT-Creation-Date: 2017-09-21 04:28+0200\n"
+"PO-Revision-Date: 2017-09-21 04:32+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -60,7 +60,7 @@ msgstr "Roboty GNOME"
 
 #: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
 msgid "Avoid the robots and make them crash into each other"
-msgstr "Unikanie robotów i sprawianie, że zderzają się między sobą"
+msgstr "Unikanie robotów i sprawianie, że zderzają się między sobą"
 
 #: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
@@ -78,8 +78,8 @@ msgid ""
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
 msgstr ""
-"Na szczęście roboty są niezwykle głupie i zawsze przesuwają się w twoim "
-"kierunku. Spraw, żeby wpadły na siebie i wybuchły, lub wpadły na swoje "
+"Na szczęście roboty są niezwykle głupie i zawsze przesuwają się w twoim "
+"kierunku. Spraw, żeby wpadły na siebie i wybuchły, lub wpadły na swoje "
 "szczątki. Można się bronić przez przesuwanie szczątków lub uciekać dzięki "
 "podręcznemu urządzeniu do teleportacji."
 
@@ -133,11 +133,11 @@ msgstr "Kolor tła. Szesnastkowy zapis koloru tła."
 
 #: ../data/org.gnome.robots.gschema.xml.h:7
 msgid "Game type"
-msgstr "Rodzaj gry"
+msgstr "Typ gry"
 
 #: ../data/org.gnome.robots.gschema.xml.h:8
 msgid "Game type. The name of the game variation to use."
-msgstr "Rodzaj gry. Nazwa użytej odmiany gry."
+msgstr "Typ gry. Nazwa używanej odmiany gry."
 
 #: ../data/org.gnome.robots.gschema.xml.h:9
 msgid "Use safe moves"
@@ -163,7 +163,7 @@ msgid ""
 "the only option is to teleport out."
 msgstr ""
 "Gracz zostanie ostrzeżony, kiedy nie będzie można wykonać bezpiecznego ruchu "
-"i jedyną opcją jest teleportacja."
+"i jedyną możliwością jest teleportacja."
 
 #: ../data/org.gnome.robots.gschema.xml.h:13
 msgid "Enable game sounds"
@@ -268,11 +268,11 @@ msgstr ""
 #. This should never happen.
 #: ../src/game.c:1110
 msgid "There are no teleport locations left!!"
-msgstr "Brak lokacji na teleportację!"
+msgstr "Brak miejsc na teleportację!"
 
 #: ../src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
-msgstr "Nie ma bezpiecznych lokacji na teleportację!"
+msgstr "Nie ma bezpiecznych miejsc na teleportację!"
 
 #: ../src/games-controls.c:286
 msgid "Unknown Command"
@@ -332,11 +332,11 @@ msgstr "Roboty z bezpiecznym teleportem"
 
 #: ../src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
-msgstr "Roboty z bezpiecznym teleportem i ruchami"
+msgstr "Roboty z bezpiecznym teleportem i ruchami"
 
 #: ../src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
-msgstr "Roboty z bezpiecznym teleportem i bardzo bezpiecznymi ruchami"
+msgstr "Roboty z bezpiecznym teleportem i bardzo bezpiecznymi ruchami"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
 #: ../src/gnome-robots.c:156
@@ -357,7 +357,7 @@ msgstr "Teleportuj _bezpiecznie"
 
 #: ../src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
-msgstr "Oparte na klasycznej grze BSD Robots"
+msgstr "Na podstawie klasycznej gry Robots systemów BSD"
 
 #: ../src/gnome-robots.c:231
 msgid "translator-credits"
@@ -373,8 +373,8 @@ msgstr ""
 "Tomasz Dominikowski <dominikowski@gmail.com>, 2008\n"
 "Joanna Mazgaj <jmazgaj@aviary.pl>, 2009-2010\n"
 "Wojciech Kapusta <wkapusta@aviary.pl>, 2009\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2010-2016\n"
-"Aviary.pl <community-poland@mozilla.org>, 2007-2016"
+"Piotr Drąg <piotrdrag@gmail.com>, 2010-2017\n"
+"Aviary.pl <community-poland@mozilla.org>, 2007-2017"
 
 #: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
@@ -457,7 +457,7 @@ msgstr "_Dźwięki"
 
 #: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
-msgstr "Odtwarzanie dźwięków dla zdarzeń typu wygrana i śmierć."
+msgstr "Odtwarzanie dźwięków dla zdarzeń typu wygrana i śmierć."
 
 #: ../src/properties.c:454
 msgid "Game"

@@ -528,7 +528,7 @@ msgstr "Αρχικά ασφαλείς <link xref=\"moves#teleport\">τηλεμε
 msgid ""
 "Initial <link xref=\"scores#high-low-risk\">low-risk enemy robots</link>"
 msgstr ""
-"Αρχικά <link xref=\"scores#high-low-risk\"χαμηλού κινδύνου εχθρικά ρομπότ</"
+"Αρχικά <link xref=\"scores#high-low-risk\">χαμηλού κινδύνου εχθρικά ρομπότ</"
 "link>"
 
 #. (itstool) path: td/p

@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../data/gnobots2.desktop.in.in.h:1 ../src/gnobots.c:200
-#: ../src/gnobots.c:213 ../src/menu.c:261 ../src/menu.c:264
+#: ../data/gnobots2.desktop.in.in.h:1 ../src/gnobots.c:200 ../src/gnobots.c:213
+#: ../src/menu.c:261 ../src/menu.c:264
 msgid "Robots"
 msgstr "Роботҳо"
 

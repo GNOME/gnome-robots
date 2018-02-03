@@ -497,9 +497,3 @@ msgstr "_Paramètres par défaut"
 #: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Clavier"
-
-#~ msgid "Map:"
-#~ msgstr "Carte :"
-
-#~ msgid "New Game"
-#~ msgstr "Nouvelle partie"

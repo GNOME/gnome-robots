@@ -87,8 +87,8 @@ msgid ""
 "Survive for as long as possible!"
 msgstr ""
 "El nombre de teletransportadors segurs és limitat, i una vegada que no us en "
-"quedeu, el teletransportador us podria deixar just al costat d'un robot, "
-"que us mataria. Sobreviviu el màxim de temps possible!"
+"quedeu, el teletransportador us podria deixar just al costat d'un robot, que "
+"us mataria. Sobreviviu el màxim de temps possible!"
 
 #: ../data/gnome-robots.appdata.xml.in.h:6
 msgid "The GNOME Project"
@@ -474,47 +474,3 @@ msgstr "Restaura els pre_determinats"
 #: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Teclat"
-
-#~ msgid "New Game"
-#~ msgstr "Partida nova"
-
-#~ msgid "Quit"
-#~ msgstr "Surt"
-
-#~ msgid "Game over!"
-#~ msgstr "Final de la partida!"
-
-#~ msgid "Great work, but unfortunately your score did not make the top ten."
-#~ msgstr ""
-#~ "Ben fet, però malauradament la vostra puntuació no és entre les deu "
-#~ "primeres."
-
-#~ msgid "Robots Scores"
-#~ msgstr "Puntuacions del Robots"
-
-#~ msgid "Map:"
-#~ msgstr "Mapa:"
-
-#~ msgid "Congratulations!"
-#~ msgstr "Felicitats!"
-
-#~ msgid "Your score is the best!"
-#~ msgstr "Heu fet la millor puntuació!"
-
-#~ msgid "Your score has made the top ten."
-#~ msgstr "La vostra puntuació és entre les deu primeres."
-
-#~ msgctxt "score-dialog"
-#~ msgid "Time"
-#~ msgstr "Temps"
-
-#~ msgctxt "score-dialog"
-#~ msgid "Score"
-#~ msgstr "Puntuació"
-
-#~ msgctxt "score-dialog"
-#~ msgid "%1$dm %2$ds"
-#~ msgstr "%1$d m %2$d s"
-
-#~ msgid "Date"
-#~ msgstr "Data"

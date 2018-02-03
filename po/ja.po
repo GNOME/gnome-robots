@@ -62,7 +62,8 @@ msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
 msgstr ""
-"遥か未来、2000年のこと。悪のロボットたちがあなたを殺そうと迫ってくる。ロボットをうまくかわして、絶体絶命の危機を切り抜けよう。"
+"遥か未来、2000年のこと。悪のロボットたちがあなたを殺そうと迫ってくる。ロボッ"
+"トをうまくかわして、絶体絶命の危機を切り抜けよう。"
 
 #: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
@@ -72,11 +73,11 @@ msgid ""
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
 msgstr ""
-"幸いなことに、ロボットはひどく間抜けだ。あなたに向かって直進することしかできない。"
-"ロボットを巧みに欺いてロボット同士をぶつけよう。それがヤツらを破壊する方法だ。"
-"ロボットの残骸にヤツらを衝突させて破壊することもできる。"
-"残骸をうまく動かしてロボットから身を守ろう。"
-"また、携帯するテレポーテーション装置を使えば安全な場所に一時避難することもできる。"
+"幸いなことに、ロボットはひどく間抜けだ。あなたに向かって直進することしかでき"
+"ない。ロボットを巧みに欺いてロボット同士をぶつけよう。それがヤツらを破壊する"
+"方法だ。ロボットの残骸にヤツらを衝突させて破壊することもできる。残骸をうまく"
+"動かしてロボットから身を守ろう。また、携帯するテレポーテーション装置を使えば"
+"安全な場所に一時避難することもできる。"
 
 #: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
@@ -84,9 +85,9 @@ msgid ""
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
 msgstr ""
-"ただし、安全にテレポートできる回数は限られている。"
-"使い果たしてしまえば、テレポートしたその先はロボットのすぐ隣かもしれない。そう即死だ。"
-"さあ、できるだけ長く生き延びよう!"
+"ただし、安全にテレポートできる回数は限られている。使い果たしてしまえば、テレ"
+"ポートしたその先はロボットのすぐ隣かもしれない。そう即死だ。さあ、できるだけ"
+"長く生き延びよう!"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:198
 #: ../src/gnome-robots.c:295 ../src/gnome-robots.c:324
@@ -96,7 +97,8 @@ msgstr "ロボット"
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
 msgstr ""
-"game;arcade;teleport;ゲーム;アーケード;テレポート;テレポーテーション;puzzle;パズル;"
+"game;arcade;teleport;ゲーム;アーケード;テレポート;テレポーテーション;puzzle;"
+"パズル;"
 
 #: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
@@ -404,8 +406,7 @@ msgstr "安全にテレポート(_S)"
 
 #: ../src/gnome-robots.c:202
 msgid "Based on classic BSD Robots"
-msgstr ""
-"BSD の古典的なロボットゲームをベースとしています。"
+msgstr "BSD の古典的なロボットゲームをベースとしています。"
 
 #: ../src/gnome-robots.c:206
 msgid "translator-credits"

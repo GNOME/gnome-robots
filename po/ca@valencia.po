@@ -86,9 +86,9 @@ msgid ""
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
 msgstr ""
-"El nombre de teletransportadors segurs és limitat, i una vegada que no vos en "
-"quedeu, el teletransportador vos podria deixar just al costat d'un robot, que "
-"vos mataria. Sobreviviu el màxim de temps possible!"
+"El nombre de teletransportadors segurs és limitat, i una vegada que no vos "
+"en quedeu, el teletransportador vos podria deixar just al costat d'un robot, "
+"que vos mataria. Sobreviviu el màxim de temps possible!"
 
 #: ../data/gnome-robots.appdata.xml.in.h:6
 msgid "The GNOME Project"
@@ -146,9 +146,9 @@ msgid ""
 "when there is a safe move available you will not be allowed to proceed."
 msgstr ""
 "Utilitza moviments segurs. Els moviments segurs vos ajuden a evitar que vos "
-"matin per haver comés un error. Si intenteu fer un moviment que vos conduïsca "
-"a la mort quan hi ha un moviment segur disponible, no se vos permetrà "
-"continuar."
+"matin per haver comés un error. Si intenteu fer un moviment que vos "
+"conduïsca a la mort quan hi ha un moviment segur disponible, no se vos "
+"permetrà continuar."
 
 #: ../data/org.gnome.robots.gschema.xml.h:11
 msgid "Use super safe moves"
@@ -474,47 +474,3 @@ msgstr "Restaura els pre_determinats"
 #: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Teclat"
-
-#~ msgid "New Game"
-#~ msgstr "Partida nova"
-
-#~ msgid "Quit"
-#~ msgstr "Surt"
-
-#~ msgid "Game over!"
-#~ msgstr "Final de la partida!"
-
-#~ msgid "Great work, but unfortunately your score did not make the top ten."
-#~ msgstr ""
-#~ "Ben fet, però malauradament la vostra puntuació no és entre les deu "
-#~ "primeres."
-
-#~ msgid "Robots Scores"
-#~ msgstr "Puntuacions del Robots"
-
-#~ msgid "Map:"
-#~ msgstr "Mapa:"
-
-#~ msgid "Congratulations!"
-#~ msgstr "Felicitats!"
-
-#~ msgid "Your score is the best!"
-#~ msgstr "Heu fet la millor puntuació!"
-
-#~ msgid "Your score has made the top ten."
-#~ msgstr "La vostra puntuació és entre les deu primeres."
-
-#~ msgctxt "score-dialog"
-#~ msgid "Time"
-#~ msgstr "Temps"
-
-#~ msgctxt "score-dialog"
-#~ msgid "Score"
-#~ msgstr "Puntuació"
-
-#~ msgctxt "score-dialog"
-#~ msgid "%1$dm %2$ds"
-#~ msgstr "%1$d m %2$d s"
-
-#~ msgid "Date"
-#~ msgstr "Data"

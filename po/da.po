@@ -17,8 +17,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: "
-"https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-robots&keywords=I18N+L10N&component=general\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"robots&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2017-02-28 07:02+0000\n"
 "PO-Revision-Date: 2016-03-20 03:30+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
@@ -120,8 +120,7 @@ msgstr "Robotbilledtema"
 
 #: ../data/org.gnome.robots.gschema.xml.h:4
 msgid "Robot image theme. The theme of the images to use for the robots."
-msgstr ""
-"Robotbilledtema. Det tema for billeder der skal bruges til robotterne."
+msgstr "Robotbilledtema. Det tema for billeder der skal bruges til robotterne."
 
 #: ../data/org.gnome.robots.gschema.xml.h:5
 msgid "Background color"
@@ -171,8 +170,7 @@ msgid "Enable game sounds"
 msgstr "Aktivér spillyde"
 
 #: ../data/org.gnome.robots.gschema.xml.h:14
-msgid ""
-"Enable game sounds. Play sounds for various events throughout the game."
+msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Aktivér spillyde. Afspil lyde for forskellige hændelser i spillet."
 
 #: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
@@ -481,47 +479,3 @@ msgstr "_Genskab forvalg"
 #: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Tastatur"
-
-#~ msgid "Game over!"
-#~ msgstr "Spillet er slut!"
-
-#~ msgid "Great work, but unfortunately your score did not make the top ten."
-#~ msgstr "Godt arbejde, men desværre kom dit resultat ikke på top ti."
-
-#~ msgid "Robots Scores"
-#~ msgstr "Resultater for Robotter"
-
-#~ msgid "Map:"
-#~ msgstr "Kort:"
-
-#~ msgid "Congratulations!"
-#~ msgstr "Tillykke!"
-
-#~ msgid "Your score is the best!"
-#~ msgstr "Du har opnået det bedste resultat!"
-
-#~ msgid "Your score has made the top ten."
-#~ msgstr "Dit resultat kom på top ti."
-
-#~ msgctxt "score-dialog"
-#~ msgid "Time"
-#~ msgstr "Tid"
-
-#~ msgctxt "score-dialog"
-#~ msgid "Score"
-#~ msgstr "Resultat"
-
-#~ msgctxt "score-dialog"
-#~ msgid "%1$dm %2$ds"
-#~ msgstr "%1$dm %2$ds"
-
-#~ msgid "New Game"
-#~ msgstr "Nyt spil"
-
-#~ msgid "Date"
-#~ msgstr "Dato"
-
-#~ msgid "Quit"
-#~ msgstr "Afslut"
-
-

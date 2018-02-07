@@ -1,13 +1,13 @@
 # Polish translation for gnome-robots help.
 # Copyright © 2017 the gnome-robots authors.
-# This file is distributed under the same license as the gnome-robots package.
+# This file is distributed under the same license as the gnome-robots help.
 # Piotr Drąg <piotrdrag@gmail.com>, 2017.
 # Aviary.pl <community-poland@mozilla.org>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots-help\n"
-"POT-Creation-Date: 2017-09-10 06:35+0000\n"
+"POT-Creation-Date: 2018-02-03 23:23+0000\n"
 "PO-Revision-Date: 2017-09-21 04:28+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"

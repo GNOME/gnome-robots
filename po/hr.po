@@ -7,7 +7,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "robots&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2018-02-03 23:23+0000\n"
-"PO-Revision-Date: 2018-03-13 23:39+0100\n"
+"PO-Revision-Date: 2018-03-14 13:49+0100\n"
 "Last-Translator: Launchpad Translations Administrators <rosetta@launchpad."
 "net>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
@@ -57,7 +57,7 @@ msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
 msgstr ""
-"Daleka budućnost je – godina 2000. Zli roboti vas pokušavaju ubiti. "
+"Daleka je budućnost – godina 2000. Zli roboti vas pokušavaju ubiti. "
 "Izbjegnite robote ili se suočite sa sigurnom smrću."
 
 #: ../data/gnome-robots.appdata.xml.in.h:4
@@ -80,8 +80,8 @@ msgid ""
 "Survive for as long as possible!"
 msgstr ""
 "Vaša zaliha sigurne teleportacije je ograničena, jednom kada ju potrošite "
-"teleportacija će vas telepotirati pokraj robota koji će vas ubiti. Preživite "
-"što je duže moguće!"
+"teleportacija će vas teleportirati pokraj robota koji će vas ubiti. "
+"Preživite što je duže moguće!"
 
 #: ../data/gnome-robots.appdata.xml.in.h:6
 msgid "The GNOME Project"
@@ -110,7 +110,7 @@ msgstr "Tema slike robota"
 
 #: ../data/org.gnome.robots.gschema.xml.h:4
 msgid "Robot image theme. The theme of the images to use for the robots."
-msgstr "Tema slike robota. Tema slika koja se koristi za robote teme"
+msgstr "Tema slike robota. Tema slika koja se koristi za robote."
 
 #: ../data/org.gnome.robots.gschema.xml.h:5
 msgid "Background color"
@@ -198,7 +198,7 @@ msgstr "Tipka za kretanje prema zapadu."
 
 #: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
 msgid "Key to hold"
-msgstr "Tipku za zaustavljanje"
+msgstr "Tipka za zaustavljanje"
 
 #: ../data/org.gnome.robots.gschema.xml.h:24
 msgid "The key used to hold still."
@@ -353,29 +353,8 @@ msgstr "Temeljeno na klasičnim BSD robotima"
 #: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
-"lokalizacija@linux.hr\n"
-"  Antun Krasic <butch@gawab.com>\n"
-"  Automatski Prijevod <>\n"
-"  Danijel Studen <dstuden@vuka.hr>\n"
-"  Davorin Vlahovic <aburn@fly.srk.fer.hr>\n"
-"  Denis Lackovic <delacko@linux.hr>\n"
-"  Ivan Knežević <kn3z@lycos.com>\n"
-"  Mato Kutlić <mate@iskraemeco.hr>\n"
-"  Nikola Planinac <>\n"
-"  Robert Sedak <robert.sedak@sk.t-com.hr>\n"
-"  Sasa Poznanovic <sasa.poznanovic@vuka.hr>\n"
-"  Tomislav Cavrag <tcavrag@vuka.hr>\n"
-"  Vedran Vyroubal <vedran.vyroubal@inet.hr>\n"
-"\n"
 "Launchpad Contributions:\n"
-"  Ante Karamatić https://launchpad.net/~ivoks\n"
-"  Božidar Paun https://launchpad.net/~neuntoeter\n"
-"  Danijel Šnajder https://launchpad.net/~phantomlord\n"
-"  Edgar Buršić https://launchpad.net/~edgar\n"
-"  Launchpad Translations Administrators https://launchpad.net/~rosetta-"
-"admins\n"
-"  Tomislav Medak https://launchpad.net/~to-me\n"
-"  majstor https://launchpad.net/~lcosic"
+"  gogo https://launchpad.net/~trebelnik-stefina"
 
 #: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"

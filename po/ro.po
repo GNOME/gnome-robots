@@ -10,10 +10,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.ro\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-04 00:10+0100\n"
-"PO-Revision-Date: 2011-03-16 17:36+0200\n"
-"Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"robots&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2018-02-03 23:23+0000\n"
+"PO-Revision-Date: 2018-04-02 20:54+0300\n"
+"Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);;\n"
-"X-Generator: Virtaal 0.6.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Launchpad-Export-Date: 2009-11-27 09:12+0000\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
@@ -29,9 +30,8 @@ msgid "_New Game"
 msgstr "Joc _nou"
 
 #: ../data/app-menu.ui.h:2
-#, fuzzy
 msgid "_Preferences"
-msgstr "Preferințe"
+msgstr "_Preferințe"
 
 #: ../data/app-menu.ui.h:3
 msgid "_Scores"
@@ -46,24 +46,24 @@ msgid "_About"
 msgstr "_Despre"
 
 #: ../data/app-menu.ui.h:6
-#, fuzzy
 msgid "_Quit"
-msgstr "Ieșire"
+msgstr "_Ieșire"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
-#, fuzzy
 msgid "GNOME Robots"
-msgstr "Roboți"
+msgstr "Roboți GNOME"
 
 #: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
 msgid "Avoid the robots and make them crash into each other"
-msgstr "Evitați roboții și determinații să intre în coliziune unii cu alții"
+msgstr "Evitați roboții și determinați-i să intre în coliziune unii cu alții"
 
 #: ../data/gnome-robots.appdata.xml.in.h:3
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
 msgstr ""
+"Suntem în viitorul îndepărtat – anul 2000. Roboți răuvoitori încearcă să vă "
+"omoare. Evitați roboții sau vă confruntați cu moarte sigură."
 
 #: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
@@ -73,6 +73,11 @@ msgid ""
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
 msgstr ""
+"Din fericire, roboții sunt extrem de idioți și se vor mișca întotdeauna "
+"direct spre tine. Păcălește-i să intre în coliziune unii cu alții, rezultând "
+"în distrugerea lor, sau în mormane de deșeuri. Puteți să vă apărați prin "
+"mutarea mormanelor de gunoi, sau să scăpați în siguranță cu dispozitivul de "
+"teleportare la îndemână."
 
 #: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
@@ -80,10 +85,13 @@ msgid ""
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
 msgstr ""
+"Stocul de teleportări în siguranță este limitat, și odată ce este epuizat, "
+"teleportarea poate să vă trimită exact lângă un robot, care vă va omorî. "
+"Supraviețuiți cât mai mult timp posibil!"
 
 #: ../data/gnome-robots.appdata.xml.in.h:6
 msgid "The GNOME Project"
-msgstr ""
+msgstr "Proiectul GNOME"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
 #: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
@@ -92,7 +100,7 @@ msgstr "Roboți"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
-msgstr ""
+msgstr "game;arcade;teleport;joc;arcadă;teleportare;"
 
 #: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
@@ -168,34 +176,30 @@ msgid "Key to move NW"
 msgstr "Tasta pentru mișcare la NV"
 
 #: ../data/org.gnome.robots.gschema.xml.h:16
-#, fuzzy
 msgid "The key used to move north-west."
-msgstr "Tasta pentru mișcare la dreapta."
+msgstr "Tasta pentru mișcare la stânga-sus."
 
 #: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
 msgid "Key to move N"
 msgstr "Tasta pentru mișcare la N"
 
 #: ../data/org.gnome.robots.gschema.xml.h:18
-#, fuzzy
 msgid "The key used to move north."
-msgstr "Tasta pentru mișcare la dreapta."
+msgstr "Tasta pentru mișcare în sus."
 
 #: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
 msgid "Key to move NE"
 msgstr "Tasta pentru mișcare la NE"
 
 #: ../data/org.gnome.robots.gschema.xml.h:20
-#, fuzzy
 msgid "The key used to move north-east."
-msgstr "Tasta pentru mișcare la dreapta."
+msgstr "Tasta pentru mișcare la dreapta-sus."
 
 #: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
 msgid "Key to move W"
 msgstr "Tasta pentru mișcare la V"
 
 #: ../data/org.gnome.robots.gschema.xml.h:22
-#, fuzzy
 msgid "The key used to move west."
 msgstr "Tasta pentru mișcare la stânga."
 
@@ -205,57 +209,51 @@ msgstr "Tasta pentru menținere"
 
 #: ../data/org.gnome.robots.gschema.xml.h:24
 msgid "The key used to hold still."
-msgstr ""
+msgstr "Tasta utilizată pentru a sta nemișcat."
 
 #: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
 msgid "Key to move E"
 msgstr "Tasta pentru mișcare la E"
 
 #: ../data/org.gnome.robots.gschema.xml.h:26
-#, fuzzy
 msgid "The key used to move east."
-msgstr "Tasta pentru mișcare la stânga."
+msgstr "Tasta pentru mișcare la dreapta."
 
 #: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
 msgid "Key to move SW"
 msgstr "Tasta pentru mișcare la SV"
 
 #: ../data/org.gnome.robots.gschema.xml.h:28
-#, fuzzy
 msgid "The key used to move south-west."
-msgstr "Nu mai sunt mutări valide."
+msgstr "Tasta pentru mișcare la stânga-jos."
 
 #: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
 msgid "Key to move S"
 msgstr "Tasta pentru mișcare la S"
 
 #: ../data/org.gnome.robots.gschema.xml.h:30
-#, fuzzy
 msgid "The key used to move south."
-msgstr "Tasta pentru mișcare la stânga."
+msgstr "Tasta pentru mișcare în jos."
 
 #: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
 msgid "Key to move SE"
 msgstr "Tasta pentru mișcare la SE"
 
 #: ../data/org.gnome.robots.gschema.xml.h:32
-#, fuzzy
 msgid "The key used to move south-east."
-msgstr "Nu mai sunt mutări valide."
+msgstr "Tasta pentru mișcare la dreapta-jos."
 
 #: ../data/org.gnome.robots.gschema.xml.h:33
-#, fuzzy
 msgid "Width of the window in pixels"
-msgstr "Mărimea în pixeli a ferestrei principale."
+msgstr "Dimensiunea ferestrei în pixeli"
 
 #: ../data/org.gnome.robots.gschema.xml.h:34
-#, fuzzy
 msgid "Height of the window in pixels"
-msgstr "Înălțimea în pixeli a ferestrei principale."
+msgstr "Înălțimea ferestrei în pixeli"
 
 #: ../data/org.gnome.robots.gschema.xml.h:35
 msgid "true if the window is maximized"
-msgstr ""
+msgstr "adevărat dacă fereastra este maximizată"
 
 #: ../src/game.c:343 ../src/game.c:359
 msgid ""
@@ -340,32 +338,31 @@ msgstr "Roboți cu teleportări sigure cu mișcări foarte sigure"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
 #: ../src/gnome-robots.c:156
-#, fuzzy, c-format
+#, c-format
 msgid "Level: %d\tScore: %d"
-msgstr "Scor: %d"
+msgstr "Nivel: %d\tScor: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
 #: ../src/gnome-robots.c:167
-#, fuzzy, c-format
+#, c-format
 msgid "(Remaining: %d)"
-msgstr "Mai rămân:"
+msgstr "(Rămas: %d)"
 
 #. First line of safe teleports button label.
 #: ../src/gnome-robots.c:169
-#, fuzzy
 msgid "Teleport _Safely"
-msgstr "Teleportare aleatoare"
+msgstr "Teleportare _sigură"
 
 #: ../src/gnome-robots.c:227
-#, fuzzy
 msgid "Based on classic BSD Robots"
-msgstr "roboți clasic"
+msgstr "Bazat pe roboți clasici BSD"
 
 #: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
 "Mugurel Tudor <mugurelu@gnome.ro>\n"
 "Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
+"Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "\n"
 "Launchpad Contributions:\n"
 "  Adi Roiban https://launchpad.net/~adiroiban\n"
@@ -384,29 +381,25 @@ msgstr ""
 "  leandrud https://launchpad.net/~leandrud"
 
 #: ../src/gnome-robots.c:252
-#, fuzzy
 msgid "Are you sure you want to discard the current game?"
-msgstr "Doriți să ieșiți?"
+msgstr "Sigur doriți să renunțați la jocul curent?"
 
 #: ../src/gnome-robots.c:255
-#, fuzzy
 msgid "Keep _Playing"
-msgstr "Desfășurarea jocului"
+msgstr "_Continuă jocul"
 
 #: ../src/gnome-robots.c:387
-#, fuzzy
 msgid "Teleport _Randomly"
-msgstr "Teleportare aleatoare"
+msgstr "Teleportare aleatoa_re"
 
 #: ../src/gnome-robots.c:406
-#, fuzzy
 msgid "_Wait for Robots"
-msgstr "Așteaptă roboții"
+msgstr "Așteaptă _roboții"
 
 #. Label on the scores dialog, next to map type dropdown
 #: ../src/gnome-robots.c:430
 msgid "Game Type:"
-msgstr "Tipul jocului"
+msgstr "Tipul jocului:"
 
 #: ../src/gnome-robots.c:445
 msgid "No game data could be found."
@@ -488,7 +481,7 @@ msgstr "Aspect"
 
 #: ../src/properties.c:520
 msgid "_Restore Defaults"
-msgstr "_Restaurează setările implicite rămasă:"
+msgstr "_Restaurează implicite"
 
 #: ../src/properties.c:525
 msgid "Keyboard"

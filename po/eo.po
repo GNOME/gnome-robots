@@ -1,37 +1,24 @@
-# Esperanto translation for gnome-games.
-# Copyright (c) 2005 Canonical Ltd, and Rosetta Contributors 2005
-# This file is distributed under the same license as the gnome-games package.
-#
-# FIRST AUTHOR < >, 2005.
-# Billy HAND < >, 2008.
-# Sergio ĤLUTĈIN < >, 2009.
-# Arturo < >, 2009.
-# Benno SCHULENBERG < >, 2010.
-# Robert BOGENSCHNEIDER < >, 2010.
-# Alekso42 < >, 2010.
-# Miguel PÉREZ < >, 2010.
-# Michael MORONI < >, 2011.
-# Serge LEBLANC < >, 2011.
-# Miĥa-Johano WALTER < >, 2011.
-# Tiffany Antopolski <tiffany.antopolski@gmail.com>, 2011, 2012.
-# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010, 2011, 2012.
-#
+# Esperanto translation for gnome-mahjongg.
+# Copyright (C) 2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-mahjongg package.
+# Tiffany ANTOPOLSKI <tiffany.antopolski@gmail.com>, 2011, 2012.
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2011, 2012, 2018.
+# Carmen Bianca BAKKER <carmen@carmenbianca.eu>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-03 23:57+0100\n"
-"PO-Revision-Date: 2012-03-09 22:20+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
+"POT-Creation-Date: 2018-06-10 15:06+0000\n"
+"PO-Revision-Date: 2018-11-22 16:16+0200\n"
 "Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
-"Language-Team: Esperanto <gnome-l10n-eo@lists.launchpad.net>\n"
+"Language-Team: Esperanto <gnome-eo-list@gnome.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Virtaal 0.7.1-rc1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-DamnedLies-Scope: partial\n"
-"X-Launchpad-Export-Date: 2012-01-11 17:32+0000\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
@@ -40,7 +27,7 @@ msgstr "_Nova ludo"
 
 #: ../data/app-menu.ui.h:2
 msgid "_Preferences"
-msgstr "_Preferoj"
+msgstr "_Agordoj"
 
 #: ../data/app-menu.ui.h:3
 msgid "_Scores"
@@ -56,12 +43,11 @@ msgstr "_Pri"
 
 #: ../data/app-menu.ui.h:6
 msgid "_Quit"
-msgstr "_Fini"
+msgstr "Ĉ_esi"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
-#, fuzzy
 msgid "GNOME Robots"
-msgstr "Robotoj"
+msgstr "GNOME Robotoj"
 
 #: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
 msgid "Avoid the robots and make them crash into each other"
@@ -72,6 +58,8 @@ msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
 msgstr ""
+"Ĝi estas la fora estonteco — la jaro 2000. Pekaj robotoj klopodas vin "
+"mortigi. Evitu la robotojn, aŭ certe mortu."
 
 #: ../data/gnome-robots.appdata.xml.in.h:4
 msgid ""
@@ -81,6 +69,10 @@ msgid ""
 "moving the junk piles, or escape to safety with your handy teleportation "
 "device."
 msgstr ""
+"Feliĉe, la robotoj estas ege stultaj kaj ĉiam movos rekte al vi. Trompi ilin "
+"por ke ili kolozii unu la alian aŭ la rubstakojn, rezulte detrui ilin. Vi "
+"povas defendi vin mem per movi la rubstakoj, aŭ sekure eskapi per via utila "
+"teleporta aparato."
 
 #: ../data/gnome-robots.appdata.xml.in.h:5
 msgid ""
@@ -88,10 +80,13 @@ msgid ""
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
 msgstr ""
+"Via provizo de sekuraj teleportoj estas limigita, kaj kiam vi senhaviĝas, "
+"teleportado povos alterigi vin apud roboto, kiu vin mortigos. Postvivu kiel "
+"eble plej longe!"
 
 #: ../data/gnome-robots.appdata.xml.in.h:6
 msgid "The GNOME Project"
-msgstr ""
+msgstr "La GNOME Projekto"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
 #: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
@@ -100,7 +95,7 @@ msgstr "Robotoj"
 
 #: ../data/gnome-robots.desktop.in.h:3
 msgid "game;arcade;teleport;"
-msgstr ""
+msgstr "ludo;arkado;teleporti;"
 
 #: ../data/org.gnome.robots.gschema.xml.h:1
 msgid "Show toolbar"
@@ -146,7 +141,7 @@ msgid ""
 msgstr ""
 "Sekure move. Ĉi tiu opcio helpas vin eviti esti murdigita pro eraro. Se via "
 "movo kondukas vin al la morto kaj sekura movo disponeblas por vi, vi ne "
-"permesas  daŭrigi."
+"permesas daŭrigi."
 
 #: ../data/org.gnome.robots.gschema.xml.h:11
 msgid "Use super safe moves"
@@ -162,11 +157,11 @@ msgstr ""
 
 #: ../data/org.gnome.robots.gschema.xml.h:13
 msgid "Enable game sounds"
-msgstr "Enŝalti ludsonojn"
+msgstr "Ŝalti ludsonojn"
 
 #: ../data/org.gnome.robots.gschema.xml.h:14
 msgid "Enable game sounds. Play sounds for various events throughout the game."
-msgstr "Enŝalti ludsonojn. Ludi sonojn por pluraj eventoj tra la ludo."
+msgstr "Ŝalti ludsonojn. Ludi sonojn por pluraj eventoj tra la ludo."
 
 #: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
 msgid "Key to move NW"
@@ -241,18 +236,12 @@ msgid "The key used to move south-east."
 msgstr "La klavo uzita por movi sudorienten."
 
 #: ../data/org.gnome.robots.gschema.xml.h:33
-#, fuzzy
 msgid "Width of the window in pixels"
-msgstr "La larĝo de la ĉefa fenestro per rastrumeroj."
+msgstr "Larĝo de la fenestro en bilderoj"
 
 #: ../data/org.gnome.robots.gschema.xml.h:34
-#, fuzzy
 msgid "Height of the window in pixels"
-msgstr "La alto de la ĉefa fenestro per rastrumeroj."
-
-#: ../data/org.gnome.robots.gschema.xml.h:35
-msgid "true if the window is maximized"
-msgstr ""
+msgstr "Alto de la fenestro en bilderoj"
 
 #: ../src/game.c:343 ../src/game.c:359
 msgid ""
@@ -337,75 +326,56 @@ msgstr "Robotoj kun sekura teleporto kun plisekuraj movoj"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
 #: ../src/gnome-robots.c:156
-#, fuzzy, c-format
+#, c-format
 msgid "Level: %d\tScore: %d"
-msgstr "Poentoj: %d"
+msgstr "Nivelo: %d\tPoentoj: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
 #: ../src/gnome-robots.c:167
-#, fuzzy, c-format
+#, c-format
 msgid "(Remaining: %d)"
-msgstr "Restanta:"
+msgstr "(Restas: %d)"
 
 #. First line of safe teleports button label.
 #: ../src/gnome-robots.c:169
-#, fuzzy
 msgid "Teleport _Safely"
-msgstr "Teleporti hazarde"
+msgstr "Teleporti _sekure"
 
 #: ../src/gnome-robots.c:227
-#, fuzzy
 msgid "Based on classic BSD Robots"
-msgstr "klasikaj robotoj"
+msgstr "Bazita je BSD Robotoj"
 
 #: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
-"Launchpad Contributions:\n"
-"  Alekso42 https://launchpad.net/~alekso42\n"
-"  Arturo https://launchpad.net/~asly-esperanto\n"
-"  Benno Schulenberg https://launchpad.net/~bennoschulenberg\n"
-"  Billy Hand https://launchpad.net/~billythethird\n"
-"  Johano https://launchpad.net/~johanohepton\n"
-"  Kristjan SCHMIDT https://launchpad.net/~kristjan-eo\n"
-"  Marek Blahuš https://launchpad.net/~s-launchpad-blahus-cz\n"
-"  Michael Moroni https://launchpad.net/~airon90\n"
-"  Miguel Pérez https://launchpad.net/~rraton-esperanto\n"
-"  Robert BOGENSCHNEIDER https://launchpad.net/~robog\n"
-"  Serge Leblanc https://launchpad.net/~serge-leblanc\n"
-"  Sergio Ĥlutĉin https://launchpad.net/~sergej-hlutchin\n"
-"  Thomas Heinis https://launchpad.net/~th-sitrino\n"
-"\n"
-"GNOME Contributions:\n"
-"  Tiffany Antopolski"
+"Kristjan SCHMIDT\n"
+"Tiffany ANTOPOLSKI\n"
+"Carmen Bianca BAKKER <carmen@carmenbianca.eu>"
 
 #: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
-msgstr ""
+msgstr "Ĉu vi vere volas forĵeti la aktualan ludon?"
 
 #: ../src/gnome-robots.c:255
 msgid "Keep _Playing"
-msgstr ""
+msgstr "Daŭrigi _ludon"
 
 #: ../src/gnome-robots.c:387
-#, fuzzy
 msgid "Teleport _Randomly"
-msgstr "Teleporti hazarde"
+msgstr "Teleporti _hazarde"
 
 #: ../src/gnome-robots.c:406
-#, fuzzy
 msgid "_Wait for Robots"
-msgstr "Atendi la robotojn"
+msgstr "_Atendi la robotojn"
 
 #. Label on the scores dialog, next to map type dropdown
 #: ../src/gnome-robots.c:430
-#, fuzzy
 msgid "Game Type:"
-msgstr "Ludtipo"
+msgstr "Ludtipo:"
 
 #: ../src/gnome-robots.c:445
 msgid "No game data could be found."
-msgstr "Neniu luddatumo troveblas"
+msgstr "Neniu luddatumoj troveblas."
 
 #: ../src/gnome-robots.c:447
 msgid ""
@@ -430,7 +400,7 @@ msgstr ""
 #: ../src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
-msgstr "Pixmap-dosiero “%s” ne troveblis\n"
+msgstr "Pixmap-dosiero '%s' ne troveblis\n"
 
 #: ../src/properties.c:391
 msgid "Preferences"
@@ -458,7 +428,7 @@ msgstr "Eviti ĉiujn movojn kiuj kondukas vin al morto."
 
 #: ../src/properties.c:446
 msgid "_Enable sounds"
-msgstr "_Enŝalti sonojn"
+msgstr "Ŝ_alti sonojn"
 
 #: ../src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
@@ -482,7 +452,7 @@ msgstr "Aspekto"
 
 #: ../src/properties.c:520
 msgid "_Restore Defaults"
-msgstr "_Restaŭri defaŭltojn"
+msgstr "_Restaŭri implicitojn"
 
 #: ../src/properties.c:525
 msgid "Keyboard"

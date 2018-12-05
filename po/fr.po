@@ -22,21 +22,22 @@
 # Pierre Lemaire <pierre.lemaire@kamick.org>, 2008.
 # Laurent Coudeur <laurentc@iol.ie>, 2009.
 # Bruno Brouard <annoa.b@gmail.com>, 2012
+# Charles Monzat <charles.monzat@numericable.fr>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-02-28 07:02+0000\n"
-"PO-Revision-Date: 2017-09-08 19:25+0200\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
-"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
+"POT-Creation-Date: 2018-06-10 15:06+0000\n"
+"PO-Revision-Date: 2018-11-19 20:45+0100\n"
+"Last-Translator: Charles Monzat <charles.monzat@numericable.fr>\n"
+"Language-Team: français <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 3.30.0\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
@@ -391,7 +392,7 @@ msgstr ""
 
 #: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
-msgstr "Êtes-vous sûr de vouloir abandonner le jeu en cours ?"
+msgstr "Voulez-vous vraiment abandonner le jeu en cours ?"
 
 #: ../src/gnome-robots.c:255
 msgid "Keep _Playing"
@@ -432,7 +433,7 @@ msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
 msgstr ""
-"Le programme Robots n’a pas été capable de charger tout les fichiers "
+"Le programme Robots n’a pas été capable de charger tous les fichiers "
 "graphiques. Vérifiez que le programme est correctement installé."
 
 #: ../src/graphics.c:149

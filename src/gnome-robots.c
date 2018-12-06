@@ -339,7 +339,9 @@ create_category_from_key (const char *key, gpointer user_data)
 static void
 activate (GtkApplication *app, gpointer user_data)
 {
-  GtkWidget *errordialog, *vbox, *hbox, *label, *button, *gridframe;
+  GtkWidget *errordialog, *vbox, *hbox, *label, *button, *gridframe, *icon;
+  GtkBuilder *builder;
+  GMenuModel *appmenu;
   GtkSizeGroup *size_group;
   GtkStyleContext *style_context;
   GamesScoresDirectoryImporter *importer;
@@ -347,6 +349,16 @@ activate (GtkApplication *app, gpointer user_data)
   headerbar = gtk_header_bar_new ();
   gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Robots"));
   gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);
+
+  builder = gtk_builder_new_from_resource ("/org/gnome/robots/ui/menus.ui");
+  appmenu = (GMenuModel *) gtk_builder_get_object (builder, "app-menu");
+
+  button = gtk_menu_button_new();
+  icon = gtk_image_new_from_icon_name ("open-menu-symbolic", GTK_ICON_SIZE_BUTTON);
+  gtk_button_set_image (GTK_BUTTON (button), icon);
+  gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (button), appmenu);
+  gtk_widget_show (button);
+  gtk_header_bar_pack_end (GTK_HEADER_BAR (headerbar), button);
 
   window = gtk_application_window_new (app);
   gtk_window_set_titlebar (GTK_WINDOW (window), headerbar);

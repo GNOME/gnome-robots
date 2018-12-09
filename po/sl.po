@@ -4,16 +4,15 @@
 #
 # Matej Erman <matej.erman@guest.arnes.si>, 2002.
 # Tadej Janež <tadej_janez@email.si>, 2003.
-# Matic Žgur <mr.zgur@gmail.com>, 2006-2007.
-# Matej Urbančič <mateju@svn.gnome.org>, 2007-2016.
+# Matic Žgur <mr.zgur@gmail.com>, 2006–2007.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007–2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-18 22:35+0200\n"
-"PO-Revision-Date: 2016-08-18 22:35+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
+"POT-Creation-Date: 2018-12-07 19:41+0000\n"
+"PO-Revision-Date: 2018-12-09 21:41+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -23,32 +22,28 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,-1,-1,-1,-1,-1,81\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
-msgstr "_Nova Igra"
+msgstr "_Nova igra"
 
 #: ../data/app-menu.ui.h:2
-msgid "_Preferences"
-msgstr "_Možnosti"
-
-#: ../data/app-menu.ui.h:3
 msgid "_Scores"
 msgstr "_Točke"
+
+#: ../data/app-menu.ui.h:3
+msgid "_Preferences"
+msgstr "_Možnosti"
 
 #: ../data/app-menu.ui.h:4
 msgid "_Help"
 msgstr "Pomo_č"
 
 #: ../data/app-menu.ui.h:5
-msgid "_About"
-msgstr "_O programu"
-
-#: ../data/app-menu.ui.h:6
-msgid "_Quit"
-msgstr "_Končaj"
+msgid "_About Robots"
+msgstr "_O igri"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -86,14 +81,14 @@ msgid ""
 msgstr ""
 "Možnosti teleportiranja so omejene. Ko jih ni več, se lahko zgodi, da poti "
 "vodijo prav pred oči robotov. Cilj igre je preživeti čim dlje v tem okrutnem "
-"svetu."
+"svetu!"
 
 #: ../data/gnome-robots.appdata.xml.in.h:6
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
-#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:349
 msgid "Robots"
 msgstr "Roboti"
 
@@ -351,15 +346,15 @@ msgstr "Teleportiraj _varno"
 
 #: ../src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
-msgstr "Igra je zasnovana po znani igri BSD Roboti."
+msgstr "Igra je zasnovana po znani BSD igri Roboti."
 
 #: ../src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
-"Matic Žgur <mr.zgur@gmail.com>\n"
-"Matej Erman <matej.erman@guest.arnes.si>\n"
-"Tadej Janež <tadej_janez@email.si>\n"
-"Matej Urbančič <mateju@svn.gnome.org>"
+"Matej Urbančič <mateju@svn.gnome.org>\n"
+"Matic Žgur\n"
+"Matej Erman\n"
+"Tadej Janež"
 
 #: ../src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
@@ -369,24 +364,24 @@ msgstr "Ali ste prepričani, da želite končati trenutno igro?"
 msgid "Keep _Playing"
 msgstr "Nadaljuj z _igranjem"
 
-#: ../src/gnome-robots.c:387
+#: ../src/gnome-robots.c:396
 msgid "Teleport _Randomly"
 msgstr "Teleportiraj _naključno"
 
-#: ../src/gnome-robots.c:406
+#: ../src/gnome-robots.c:415
 msgid "_Wait for Robots"
 msgstr "_Počakaj na robote"
 
 #. Label on the scores dialog, next to map type dropdown
-#: ../src/gnome-robots.c:430
+#: ../src/gnome-robots.c:439
 msgid "Game Type:"
 msgstr "Vrsta igre:"
 
-#: ../src/gnome-robots.c:445
+#: ../src/gnome-robots.c:454
 msgid "No game data could be found."
 msgstr "Ni mogoče najti igralnih podatkov."
 
-#: ../src/gnome-robots.c:447
+#: ../src/gnome-robots.c:456
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -394,11 +389,11 @@ msgstr ""
 "Ni mogoče najti datotek z veljavnimi nastavitvami za igro za program Roboti. "
 "Preverite, če je program pravilno nameščen."
 
-#: ../src/gnome-robots.c:464
+#: ../src/gnome-robots.c:473
 msgid "Some graphics files are missing or corrupt."
 msgstr "Nekatere grafične datoteke manjkajo ali pa so pokvarjene."
 
-#: ../src/gnome-robots.c:466
+#: ../src/gnome-robots.c:475
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -466,3 +461,279 @@ msgstr "_Obnovi privzeto"
 #: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Tipkovnica"
+
+#~ msgid "_Quit"
+#~ msgstr "_Končaj"
+
+#~ msgid "Game over!"
+#~ msgstr "Igra je končana!"
+
+#~ msgid "Great work, but unfortunately your score did not make the top ten."
+#~ msgstr ""
+#~ "Dobro delo, ampak na žalost se vaš rezultat ne uvršča med najboljših "
+#~ "deset."
+
+#~ msgid "Robots Scores"
+#~ msgstr "Točke robotov"
+
+#~ msgid "Map:"
+#~ msgstr "Zemljevid:"
+
+#~ msgid "Congratulations!"
+#~ msgstr "Čestitke!"
+
+#~ msgid "Your score is the best!"
+#~ msgstr "Vaše rezultat je najboljši!"
+
+#~ msgid "Your score has made the top ten."
+#~ msgstr "Vaš rezultat se uvršča med najboljših deset."
+
+#~ msgctxt "score-dialog"
+#~ msgid "Time"
+#~ msgstr "Čas"
+
+#~ msgctxt "score-dialog"
+#~ msgid "Score"
+#~ msgstr "Rezultat"
+
+#~ msgctxt "score-dialog"
+#~ msgid "%1$dm %2$ds"
+#~ msgstr "%1$dm %2$ds"
+
+#~ msgid "New Game"
+#~ msgstr "Nova igra"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "Quit"
+#~ msgstr "Končaj"
+
+#~ msgid "Key to teleport"
+#~ msgstr "Tipka za teleportiranje"
+
+#~ msgid "The key used to teleport safely (if possible)."
+#~ msgstr "Tipka za vartno teleportiranje, če je to mogoče."
+
+#~ msgid "Key to teleport randomly"
+#~ msgstr "Tipka za naključno teleportiranje"
+
+#~ msgid "The key used to teleport randomly."
+#~ msgstr "Tipka za naključeno teleportiranje."
+
+#~ msgid "Key to wait"
+#~ msgstr "Tipka za čakanje"
+
+#~ msgid "The key used to wait."
+#~ msgstr "Tipka za čakanje."
+
+#~ msgid "true if the window is fullscren"
+#~ msgstr "prav, če je okno razpeto čez celoten zaslon"
+
+#~ msgid "View help for this game"
+#~ msgstr "Poglejte pomoč za to igro"
+
+#~ msgid "End the current game"
+#~ msgstr "Končaj trenutno igro"
+
+#~ msgid "Toggle fullscreen mode"
+#~ msgstr "Preklopi celozaslonski način"
+
+#~ msgid "Get a hint for your next move"
+#~ msgstr "Namig za vašo naslednjo potezo"
+
+#~ msgid "Leave fullscreen mode"
+#~ msgstr "Zapusti celozaslonski način"
+
+#~ msgid "Start a new multiplayer network game"
+#~ msgstr "Začni novo omrežno igro"
+
+#~ msgid "End the current network game and return to network server"
+#~ msgstr "Zaključi trenutno omrežno igro in se vrni na omrežni strežnik"
+
+#~ msgid "Start a new game"
+#~ msgstr "Začni novo igro"
+
+#~ msgid "Pause the game"
+#~ msgstr "Premor igranja"
+
+#~ msgid "Show a list of players in the network game"
+#~ msgstr "Pokaži seznam igralcev v omrežni igri"
+
+#~ msgid "Redo the undone move"
+#~ msgstr "Obnovi razveljavljeno potezo"
+
+#~ msgid "Restart the game"
+#~ msgstr "Znova začni igro"
+
+#~ msgid "Resume the paused game"
+#~ msgstr "Nadaljevanje prekinjene igre"
+
+#~ msgid "View the scores"
+#~ msgstr "Pokaže rezultate"
+
+#~ msgid "Undo the last move"
+#~ msgstr "Razveljavi zadnjo potezo"
+
+#~ msgid "About this game"
+#~ msgstr "O tej igri"
+
+#~ msgid "Close this window"
+#~ msgstr "Zapri trenutno okno"
+
+#~ msgid "Configure the game"
+#~ msgstr "Nastavi igro"
+
+#~ msgid "Quit this game"
+#~ msgstr "Končaj igro"
+
+#~ msgid "_Contents"
+#~ msgstr "_Vsebina"
+
+#~ msgid "_Fullscreen"
+#~ msgstr "_Celozaslonski način"
+
+#~ msgid "_Hint"
+#~ msgstr "_Namig"
+
+#~ msgid "_New"
+#~ msgstr "_Nova"
+
+#~ msgid "_Redo Move"
+#~ msgstr "_Obnovi potezo"
+
+#~ msgid "_Reset"
+#~ msgstr "_Ponastavi"
+
+#~ msgid "_Restart"
+#~ msgstr "_Ponoven zagon"
+
+#~ msgid "_Undo Move"
+#~ msgstr "_Razveljavi potezo"
+
+#~ msgid "_Deal"
+#~ msgstr "Razd_eli"
+
+#~ msgid "_Leave Fullscreen"
+#~ msgstr "_Zapusti celozaslonski način"
+
+#~ msgid "Network _Game"
+#~ msgstr "_Omrežna igra"
+
+#~ msgid "L_eave Game"
+#~ msgstr "_Zapusti igro"
+
+#~ msgid "Player _List"
+#~ msgstr "_Seznam igralcev"
+
+#~ msgid "_Pause"
+#~ msgstr "_Premor"
+
+#~ msgid "Res_ume"
+#~ msgstr "Na_daljuj"
+
+#~ msgid "_End Game"
+#~ msgstr "_Končaj igro"
+
+#~ msgid ""
+#~ "%s is free software; you can redistribute it and/or modify it under the "
+#~ "terms of the GNU General Public License as published by the Free Software "
+#~ "Foundation; either version %d of the License, or (at your option) any "
+#~ "later version."
+#~ msgstr ""
+#~ "%s je prosta programska oprema; lahko jo razširjate in spreminjate pod "
+#~ "pogoji Splošnega Javnega dovoljenja GNU, kot je to objavljeno preko Free "
+#~ "Software Foundation; različice %d ali katerekoli kasnejše."
+
+#~ msgid ""
+#~ "%s is distributed in the hope that it will be useful, but WITHOUT ANY "
+#~ "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+#~ "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+#~ "details."
+#~ msgstr ""
+#~ "%s se razširja v upanju, da bo uporabljen, vendar BREZ VSAKRŠNEGA "
+#~ "JAMSTVA; tudi brez posredne zagotovitve CENOVNE VREDNOSTI ali PRIMERNOSTI "
+#~ "ZA DOLOČEN NAMEN.  Za podrobnosti glejte besedilo Splošnega Javnega "
+#~ "dovoljenja GNU."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with %s; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA  02110-1301  USA"
+#~ msgstr ""
+#~ "Skupaj s tem programom %s bi morali prejeti izvod Splošnega javnega "
+#~ "dovoljenja GNU (GNU General Public License); v kolikor ga niste, pišite "
+#~ "na Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, "
+#~ "Boston, MA  02110-1301  USA"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License along "
+#~ "with this program.  If not, see <http://www.gnu.org/licenses/>."
+#~ msgstr ""
+#~ "Skupaj s programom bi morali prejeti tudi kopijo Splošnega Javnega "
+#~ "dovoljenja GNU. V kolikor je niste, si oglejte <http://www.gnu.org/"
+#~ "licenses/>."
+
+#~ msgid "Set game scenario"
+#~ msgstr "Nastavi igralni scenarij"
+
+#~ msgid "NAME"
+#~ msgstr "IME"
+
+#~ msgid "Set game configuration"
+#~ msgstr "Prikroji igralne nastavitve"
+
+#~ msgid "Initial window position"
+#~ msgstr "Začetna lega okna"
+
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "_Game"
+#~ msgstr "_Igra"
+
+#~ msgid "_View"
+#~ msgstr "P_ogled"
+
+#~ msgid "_Move"
+#~ msgstr "_Premakni"
+
+#~ msgid "_Settings"
+#~ msgstr "_Nastavitve"
+
+#~ msgid "_Teleport"
+#~ msgstr "_Teleportiraj"
+
+#~ msgid "Teleport, safely if possible"
+#~ msgstr "Teleportiraj. Varno, če je mogoče"
+
+#~ msgid "_Random"
+#~ msgstr "_Naključno"
+
+#~ msgid "_Wait"
+#~ msgstr "_Počakaj"
+
+#~ msgid "_Toolbar"
+#~ msgstr "_Orodna vrstica"
+
+#~ msgid "Show or hide the toolbar"
+#~ msgstr "Pokaži ali skrij orodno vrstico"
+
+#~ msgid "Score:"
+#~ msgstr "Rezultat:"
+
+#~ msgid "Safe Teleports:"
+#~ msgstr "Varni teleporti:"
+
+#~ msgid "Level:"
+#~ msgstr "Raven:"
+
+#~ msgctxt "score-dialog"
+#~ msgid "Name"
+#~ msgstr "Ime"
+
+#~ msgid "GNOME Games web site"
+#~ msgstr "Spletna stran iger GNOME"

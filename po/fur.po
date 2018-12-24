@@ -6,41 +6,36 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-14 13:53+0000\n"
-"PO-Revision-Date: 2016-08-22 22:51+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
+"POT-Creation-Date: 2018-12-07 19:41+0000\n"
+"PO-Revision-Date: 2018-12-24 18:27+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.2\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Gnove partide"
 
 #: ../data/app-menu.ui.h:2
-msgid "_Preferences"
-msgstr "_Preferencis"
-
-#: ../data/app-menu.ui.h:3
 msgid "_Scores"
 msgstr "_Risultâts"
+
+#: ../data/app-menu.ui.h:3
+msgid "_Preferences"
+msgstr "_Preferencis"
 
 #: ../data/app-menu.ui.h:4
 msgid "_Help"
 msgstr "_Jutori"
 
 #: ../data/app-menu.ui.h:5
-msgid "_About"
-msgstr "_Informazions su"
-
-#: ../data/app-menu.ui.h:6
-msgid "_Quit"
-msgstr "_Jes"
+msgid "_About Robots"
+msgstr "_Informazions su Robots"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -86,7 +81,7 @@ msgid "The GNOME Project"
 msgstr "Il progjet GNOME"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
-#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:349
 msgid "Robots"
 msgstr "Robots"
 
@@ -361,24 +356,24 @@ msgstr "Sigûrs di butâ vie cheste partide?"
 msgid "Keep _Playing"
 msgstr "_Continue a zuiâ"
 
-#: ../src/gnome-robots.c:387
+#: ../src/gnome-robots.c:396
 msgid "Teleport _Randomly"
 msgstr "Teletraspuarte a _câs"
 
-#: ../src/gnome-robots.c:406
+#: ../src/gnome-robots.c:415
 msgid "_Wait for Robots"
 msgstr "_Spiete i Robots"
 
 #. Label on the scores dialog, next to map type dropdown
-#: ../src/gnome-robots.c:430
+#: ../src/gnome-robots.c:439
 msgid "Game Type:"
 msgstr "Gjenar di zûc:"
 
-#: ../src/gnome-robots.c:445
+#: ../src/gnome-robots.c:454
 msgid "No game data could be found."
 msgstr "Impussibil cjatâ i dâts dal zûc."
 
-#: ../src/gnome-robots.c:447
+#: ../src/gnome-robots.c:456
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -386,11 +381,11 @@ msgstr ""
 "Il program Robots nol è rivât a cjatâ nissun valit file di configurazion di "
 "zûc. Controle che il program al sedi instalât ben."
 
-#: ../src/gnome-robots.c:464
+#: ../src/gnome-robots.c:473
 msgid "Some graphics files are missing or corrupt."
 msgstr "Cualchi file grafic al mancje o al è ruvinât."
 
-#: ../src/gnome-robots.c:466
+#: ../src/gnome-robots.c:475
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -458,3 +453,6 @@ msgstr "_Ripristine predefinîts"
 #: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Tastiere"
+
+#~ msgid "_Quit"
+#~ msgstr "_Jes"

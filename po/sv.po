@@ -1,19 +1,18 @@
 # Swedish messages for gnome-games.
-# Copyright © 1999-2016 Free Software Foundation, Inc.
+# Copyright © 1999-2018 Free Software Foundation, Inc.
 # Andreas Persenius <ndap@swipnet.se>, 1999.
 # Andreas Hyden <a.hyden@cyberpoint.se>
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 2000.
 # Christian Rose <menthos@menthos.com>, 2000, 2001, 2002, 2003, 2004, 2005.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-14 13:53+0000\n"
-"PO-Revision-Date: 2016-08-20 22:59+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
+"POT-Creation-Date: 2018-12-07 19:41+0000\n"
+"PO-Revision-Date: 2018-12-28 11:44+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -21,31 +20,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.2\n"
 
 #: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Nytt spel"
 
 #: ../data/app-menu.ui.h:2
-msgid "_Preferences"
-msgstr "_Inställningar"
-
-#: ../data/app-menu.ui.h:3
 msgid "_Scores"
 msgstr "_Poänglista"
+
+#: ../data/app-menu.ui.h:3
+msgid "_Preferences"
+msgstr "_Inställningar"
 
 #: ../data/app-menu.ui.h:4
 msgid "_Help"
 msgstr "_Hjälp"
 
 #: ../data/app-menu.ui.h:5
-msgid "_About"
-msgstr "_Om"
-
-#: ../data/app-menu.ui.h:6
-msgid "_Quit"
-msgstr "A_vsluta"
+msgid "_About Robots"
+msgstr "_Om Robotar"
 
 #: ../data/gnome-robots.appdata.xml.in.h:1
 msgid "GNOME Robots"
@@ -92,7 +87,7 @@ msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
 #: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
-#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
+#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:349
 msgid "Robots"
 msgstr "Robotar"
 
@@ -374,24 +369,24 @@ msgstr "Är du säker att du vill kassera aktuellt spel?"
 msgid "Keep _Playing"
 msgstr "Fortsätt s_pela"
 
-#: ../src/gnome-robots.c:387
+#: ../src/gnome-robots.c:396
 msgid "Teleport _Randomly"
 msgstr "Teleporte_ra slumpmässigt"
 
-#: ../src/gnome-robots.c:406
+#: ../src/gnome-robots.c:415
 msgid "_Wait for Robots"
 msgstr "_Vänta på robotarna"
 
 #. Label on the scores dialog, next to map type dropdown
-#: ../src/gnome-robots.c:430
+#: ../src/gnome-robots.c:439
 msgid "Game Type:"
 msgstr "Speltyp:"
 
-#: ../src/gnome-robots.c:445
+#: ../src/gnome-robots.c:454
 msgid "No game data could be found."
 msgstr "Inga speldata kunde hittas."
 
-#: ../src/gnome-robots.c:447
+#: ../src/gnome-robots.c:456
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -399,11 +394,11 @@ msgstr ""
 "Programmet Robotar kunde inte hitta några giltiga spelkonfigurationsfiler. "
 "Kontrollera att programmet installerats korrekt."
 
-#: ../src/gnome-robots.c:464
+#: ../src/gnome-robots.c:473
 msgid "Some graphics files are missing or corrupt."
 msgstr "En del grafikfiler saknas eller är skadade."
 
-#: ../src/gnome-robots.c:466
+#: ../src/gnome-robots.c:475
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -471,3 +466,6 @@ msgstr "_Återställ standardalternativen"
 #: ../src/properties.c:525
 msgid "Keyboard"
 msgstr "Tangentbord"
+
+#~ msgid "_Quit"
+#~ msgstr "A_vsluta"

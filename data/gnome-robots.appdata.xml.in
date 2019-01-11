@@ -4,25 +4,25 @@
   <id>gnome-robots.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
-  <_name>GNOME Robots</_name>
-  <_summary>Avoid the robots and make them crash into each other</_summary>
+  <name>GNOME Robots</name>
+  <summary>Avoid the robots and make them crash into each other</summary>
   <description>
-    <_p>
+    <p>
       It is the distant future – the year 2000. Evil robots are trying to kill you.
       Avoid the robots or face certain death.
-    </_p>
-    <_p>
+    </p>
+    <p>
       Fortunately, the robots are extremely stupid and will always move directly
       towards you. Trick them into colliding into each other, resulting in their
       destruction, or into the junk piles that result. You can defend yourself by
       moving the junk piles, or escape to safety with your handy teleportation
       device.
-    </_p>
-    <_p>
+    </p>
+    <p>
       Your supply of safe teleports is limited, and once you run out, teleportation
       could land you right next to a robot, who will kill you. Survive for as long
       as possible!
-    </_p>
+    </p>
   </description>
   <screenshots>
     <screenshot type="default" width="1148" height="623">
@@ -43,7 +43,7 @@
     <kudo>UserDocs</kudo>
   </kudos>
   <translation type="gettext">gnome-robots</translation>
-  <_developer_name>The GNOME Project</_developer_name>
+  <developer_name>The GNOME Project</developer_name>
   <content_rating type="oars-1.0">
     <content_attribute id="violence-cartoon">mild</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>

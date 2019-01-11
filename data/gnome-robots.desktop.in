@@ -1,8 +1,10 @@
 [Desktop Entry]
-_Name=Robots
-_Comment=Avoid the robots and make them crash into each other
-_Keywords=game;arcade;teleport;
+Name=Robots
+Comment=Avoid the robots and make them crash into each other
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=game;arcade;teleport;
 Exec=gnome-robots
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=gnome-robots
 Terminal=false
 Type=Application

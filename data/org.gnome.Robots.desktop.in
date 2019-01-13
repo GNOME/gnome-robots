@@ -5,7 +5,7 @@ Comment=Avoid the robots and make them crash into each other
 Keywords=game;arcade;teleport;
 Exec=gnome-robots
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-Icon=gnome-robots
+Icon=org.gnome.Robots
 Terminal=false
 Type=Application
 Categories=GNOME;GTK;Game;ArcadeGame;

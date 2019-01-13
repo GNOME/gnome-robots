@@ -57,7 +57,7 @@ install_data(
         'games/robots2_easy.cfg',
         'games/robots_with_safe_teleport.cfg'
     ],
-    install_dir: join_paths(datadir, 'games') 
+    install_dir: join_paths(pkgdatadir, 'games') 
 )
 
 install_data(
@@ -66,7 +66,7 @@ install_data(
         'pixmaps/splat.png',
         'pixmaps/yahoo.png'
     ],
-    install_dir: join_paths(datadir, 'pixmaps')
+    install_dir: join_paths(pkgdatadir, 'pixmaps')
 )
 
 install_data(
@@ -77,7 +77,7 @@ install_data(
         'sounds/victory.ogg',
         'sounds/yahoo.ogg'
     ],
-    install_dir: join_paths(datadir, 'sounds')
+    install_dir: join_paths(pkgdatadir, 'sounds')
 )
 
 install_data(
@@ -94,5 +94,6 @@ install_data(
         'themes/toasters.png',
         'themes/ufo.svg'
     ],
-    install_dir: join_paths(datadir, 'themes')
+    install_dir: join_paths(pkgdatadir, 'themes')
 )
+subdir('icons')

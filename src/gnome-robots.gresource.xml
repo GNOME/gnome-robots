@@ -4,7 +4,7 @@
     <file preprocess="xml-stripblanks" alias="robots.ui">../data/robots.ui</file>
     <file alias="robots.css">../data/robots.css</file>
   </gresource> -->
-  <gresource prefix="/org/gnome/robots/gtk">
+  <gresource prefix="/org/gnome/Robots/gtk">
     <file preprocess="xml-stripblanks" alias="menus.ui">../data/app-menu.ui</file>
   </gresource>
 </gresources>

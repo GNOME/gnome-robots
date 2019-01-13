@@ -1,0 +1,40 @@
+project('gnome-robots', 'c',
+    version: '3.31.3')
+
+python3 = import('python3')
+gnome = import('gnome')
+i18n = import('i18n')
+
+application_id = 'org.gnome.Robots'
+
+gtk_dependency = dependency('gtk+-3.0', version: '>= 3.15.0')
+glib_dependency = dependency('glib-2.0', version: '>= 2.32')
+gio_dependency = dependency('gio-2.0', version: '>= 2.32')
+rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.36.2')
+gnome_games_dependency = dependency('libgnome-games-support-1')
+canberra_gtk3_dependency = dependency('libcanberra-gtk3', version: '>= 0.26')
+
+datadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
+
+config_h = configuration_data()
+config_h.set_quoted('PACKAGE', meson.project_name())
+config_h.set_quoted('PACKAGE_NAME', 'Robots')
+config_h.set_quoted('PACKAGE_TARNAME', meson.project_name())
+config_h.set_quoted('PACKAGE_STRING', 'Robots @0@'.format(meson.project_version()))
+config_h.set_quoted('PACKAGE_VERSION', meson.project_version())
+config_h.set_quoted('PACKAGE_BUGREPORT', 'https://gitlab.gnome.org/GNOME/gnome-robots/issues')
+config_h.set_quoted('PACKAGE_URL', 'https://wiki.gnome.org/Apps/Robots')
+config_h.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+config_h.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
+config_h.set_quoted('VERSION', meson.project_version())
+config_h.set_quoted('DATA_DIRECTORY', datadir)
+
+
+subdir('data')
+subdir('help')
+subdir('po')
+subdir('src')
+
+meson.add_install_script(python3.find_python().path(), join_paths(meson.source_root(), 
+                                                                  'build-aux', 
+                                                                  'meson_post_install.py'))

@@ -23,7 +23,7 @@ pixmapdir = $(datadir)/gnome-robots/pixmaps
 pixmap_DATA = yahoo.png \
               aieee.png \
               splat.png
-
+    
 soundsdir = $(datadir)/gnome-robots/sounds
 sounds_DATA = \
 	die.ogg \

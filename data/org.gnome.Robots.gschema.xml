@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id="org.gnome.robots" path="/org/gnome/robots/" gettext-domain="gnome-robots">
+  <schema id="org.gnome.Robots" path="/org/gnome/Robots/" gettext-domain="gnome-robots">
     <key name="show-toolbar" type="b">
       <default>true</default>
       <summary>Show toolbar</summary>

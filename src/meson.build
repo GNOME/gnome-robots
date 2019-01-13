@@ -9,7 +9,8 @@ sources = files(
     'gnome-robots.c',
     'graphics.c',
     'keyboard.c',
-    'properties.c'
+    'properties.c',
+    'sound.c'
 )
 resources = gnome.compile_resources(
     'resources', 

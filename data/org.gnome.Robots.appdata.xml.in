@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 Michael Catanzaro -->
-<component type="desktop">
-  <id>gnome-robots.desktop</id>
+<component type="desktop-application">
+  <id>org.gnome.Robots</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>GNOME Robots</name>
@@ -29,8 +29,12 @@
       <image>https://people.gnome.org/~mcatanzaro/gnome-robots.png</image>
     </screenshot>
   </screenshots>
+  <provides>
+    <id>gnome-robots.desktop</id>
+  </provides>
+  <launchable type="desktop-id">org.gnome.Robots.desktop</launchable>
   <url type="homepage">https://wiki.gnome.org/Apps/Robots</url>
-  <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-robots</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-robots/issues</url>
   <url type="donation">http://www.gnome.org/friends/</url>
   <url type="help">https://help.gnome.org/users/gnome-robots/stable/</url>
   <url type="translate">https://wiki.gnome.org/TranslationProject</url>

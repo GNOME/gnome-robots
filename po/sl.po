@@ -5,14 +5,14 @@
 # Matej Erman <matej.erman@guest.arnes.si>, 2002.
 # Tadej Janež <tadej_janez@email.si>, 2003.
 # Matic Žgur <mr.zgur@gmail.com>, 2006–2007.
-# Matej Urbančič <mateju@svn.gnome.org>, 2007–2018.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007–2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2018-12-07 19:41+0000\n"
-"PO-Revision-Date: 2018-12-09 21:41+0100\n"
+"POT-Creation-Date: 2019-01-25 13:13+0000\n"
+"PO-Revision-Date: 2019-01-25 18:24+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -22,45 +22,45 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,-1,-1,-1,-1,-1,81\n"
 
-#: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
+#: data/app-menu.ui:7 src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Nova igra"
 
-#: ../data/app-menu.ui.h:2
+#: data/app-menu.ui:12
 msgid "_Scores"
 msgstr "_Točke"
 
-#: ../data/app-menu.ui.h:3
+#: data/app-menu.ui:18
 msgid "_Preferences"
 msgstr "_Možnosti"
 
-#: ../data/app-menu.ui.h:4
+#: data/app-menu.ui:22
 msgid "_Help"
 msgstr "Pomo_č"
 
-#: ../data/app-menu.ui.h:5
+#: data/app-menu.ui:27
 msgid "_About Robots"
 msgstr "_O igri"
 
-#: ../data/gnome-robots.appdata.xml.in.h:1
+#: data/gnome-robots.appdata.xml.in:7
 msgid "GNOME Robots"
 msgstr "GNOME Roboti"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+#: data/gnome-robots.appdata.xml.in:8 data/gnome-robots.desktop.in:4
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Izogibajte se robotom in poskrbite, da se zaletijo en v drugega"
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: data/gnome-robots.appdata.xml.in:10
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
 msgstr ""
 "V daljni prihodnosti – letu 3000. Zlobni roboti poskušajo uničiti življenje."
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: data/gnome-robots.appdata.xml.in:14
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -73,7 +73,7 @@ msgstr ""
 "tudi nepopravljivo poškodujejo. Mogoče je tudi premikati nekatere ovire ali "
 "pa se premakniti na drugo mesto na polju s teleporterjem."
 
-#: ../data/gnome-robots.appdata.xml.in.h:5
+#: data/gnome-robots.appdata.xml.in:21
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -83,56 +83,62 @@ msgstr ""
 "vodijo prav pred oči robotov. Cilj igre je preživeti čim dlje v tem okrutnem "
 "svetu!"
 
-#: ../data/gnome-robots.appdata.xml.in.h:6
+#: data/gnome-robots.appdata.xml.in:46
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
-#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:349
+#: data/gnome-robots.desktop.in:3 src/gnome-robots.c:223 src/gnome-robots.c:315
+#: src/gnome-robots.c:349
 msgid "Robots"
 msgstr "Roboti"
 
-#: ../data/gnome-robots.desktop.in.h:3
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/gnome-robots.desktop.in:6
 msgid "game;arcade;teleport;"
 msgstr "igra;arkadna;teleportiranje;"
 
-#: ../data/org.gnome.robots.gschema.xml.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/gnome-robots.desktop.in:9
+msgid "gnome-robots"
+msgstr "gnome-robots"
+
+#: data/org.gnome.robots.gschema.xml:5
 msgid "Show toolbar"
 msgstr "Pokaži orodno vrstico"
 
-#: ../data/org.gnome.robots.gschema.xml.h:2
+#: data/org.gnome.robots.gschema.xml:6
 msgid "Show toolbar. A standard option for toolbars."
 msgstr "Pokaži orodno vrstico. Standardna možnost za orodne vrstice."
 
-#: ../data/org.gnome.robots.gschema.xml.h:3
+#: data/org.gnome.robots.gschema.xml:10
 msgid "Robot image theme"
 msgstr "Slikovna tema robotov"
 
-#: ../data/org.gnome.robots.gschema.xml.h:4
+#: data/org.gnome.robots.gschema.xml:11
 msgid "Robot image theme. The theme of the images to use for the robots."
 msgstr "Slikovna tema robotov. Tema s slikami, ki naj se uporabijo za robote."
 
-#: ../data/org.gnome.robots.gschema.xml.h:5
+#: data/org.gnome.robots.gschema.xml:15
 msgid "Background color"
 msgstr "Barva ozadja"
 
-#: ../data/org.gnome.robots.gschema.xml.h:6
+#: data/org.gnome.robots.gschema.xml:16
 msgid "Background color. The hex specification of the background color."
 msgstr "Barva ozadja. Vrednost je določena v osmiškem zapisu."
 
-#: ../data/org.gnome.robots.gschema.xml.h:7
+#: data/org.gnome.robots.gschema.xml:20
 msgid "Game type"
 msgstr "Vrsta igre"
 
-#: ../data/org.gnome.robots.gschema.xml.h:8
+#: data/org.gnome.robots.gschema.xml:21
 msgid "Game type. The name of the game variation to use."
 msgstr "Vrsta igre. Ime variacije igre, ki naj se uporabi."
 
-#: ../data/org.gnome.robots.gschema.xml.h:9
+#: data/org.gnome.robots.gschema.xml:25
 msgid "Use safe moves"
 msgstr "Uporabi varne premike"
 
-#: ../data/org.gnome.robots.gschema.xml.h:10
+#: data/org.gnome.robots.gschema.xml:26
 msgid ""
 "Use safe moves. The safe moves option will help you to avoid being killed "
 "due to a mistake. If you try to make a move that would lead to your death "
@@ -142,11 +148,11 @@ msgstr ""
 "smrti zaradi napake. Če boste poskušali izvesti premik, ki vas bi vodil v "
 "smrt, vam ne bo dovoljeno nadaljevati, če je na voljo varni premik."
 
-#: ../data/org.gnome.robots.gschema.xml.h:11
+#: data/org.gnome.robots.gschema.xml:30
 msgid "Use super safe moves"
 msgstr "Uporabi zelo varne premike"
 
-#: ../data/org.gnome.robots.gschema.xml.h:12
+#: data/org.gnome.robots.gschema.xml:31
 msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
@@ -154,99 +160,99 @@ msgstr ""
 "Uporabi zelo varne premike. Igralec je opozorjen, ko ni več na voljo varnih "
 "premikov in ko je edina možnost teleportiranje."
 
-#: ../data/org.gnome.robots.gschema.xml.h:13
+#: data/org.gnome.robots.gschema.xml:35
 msgid "Enable game sounds"
 msgstr "Omogoči zvok igre"
 
-#: ../data/org.gnome.robots.gschema.xml.h:14
+#: data/org.gnome.robots.gschema.xml:36
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Omogoči zvok igre. Predvajaj zvok ob raznih dogodkih skozi igro."
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
+#: data/org.gnome.robots.gschema.xml:40 src/properties.c:503
 msgid "Key to move NW"
 msgstr "Tipka za premik SZ"
 
-#: ../data/org.gnome.robots.gschema.xml.h:16
+#: data/org.gnome.robots.gschema.xml:41
 msgid "The key used to move north-west."
 msgstr "Tipka za premik navzgor - levo."
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
+#: data/org.gnome.robots.gschema.xml:45 src/properties.c:504
 msgid "Key to move N"
 msgstr "Tipka za premik severno"
 
-#: ../data/org.gnome.robots.gschema.xml.h:18
+#: data/org.gnome.robots.gschema.xml:46
 msgid "The key used to move north."
 msgstr "Tipka za premik navzgor."
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
+#: data/org.gnome.robots.gschema.xml:50 src/properties.c:505
 msgid "Key to move NE"
 msgstr "Tipka za premik SV"
 
-#: ../data/org.gnome.robots.gschema.xml.h:20
+#: data/org.gnome.robots.gschema.xml:51
 msgid "The key used to move north-east."
 msgstr "Tipka za premik navzgor - desno."
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
+#: data/org.gnome.robots.gschema.xml:56 src/properties.c:506
 msgid "Key to move W"
 msgstr "Tipka za premik zahodno"
 
-#: ../data/org.gnome.robots.gschema.xml.h:22
+#: data/org.gnome.robots.gschema.xml:57
 msgid "The key used to move west."
 msgstr "Tipka za premik levo."
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
+#: data/org.gnome.robots.gschema.xml:61 src/properties.c:507
 msgid "Key to hold"
 msgstr "Tipka za obstati"
 
-#: ../data/org.gnome.robots.gschema.xml.h:24
+#: data/org.gnome.robots.gschema.xml:62
 msgid "The key used to hold still."
 msgstr "Tipka za stanje na miru."
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
+#: data/org.gnome.robots.gschema.xml:66 src/properties.c:508
 msgid "Key to move E"
 msgstr "Tipka za premik vzhodno"
 
-#: ../data/org.gnome.robots.gschema.xml.h:26
+#: data/org.gnome.robots.gschema.xml:67
 msgid "The key used to move east."
 msgstr "Tipka za premik desno."
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
+#: data/org.gnome.robots.gschema.xml:71 src/properties.c:509
 msgid "Key to move SW"
 msgstr "Tipka za premik JZ"
 
-#: ../data/org.gnome.robots.gschema.xml.h:28
+#: data/org.gnome.robots.gschema.xml:72
 msgid "The key used to move south-west."
 msgstr "Tipka za premik navzdol - levo."
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
+#: data/org.gnome.robots.gschema.xml:76 src/properties.c:510
 msgid "Key to move S"
 msgstr "Tipka za premik južno"
 
-#: ../data/org.gnome.robots.gschema.xml.h:30
+#: data/org.gnome.robots.gschema.xml:77
 msgid "The key used to move south."
 msgstr "Tipka za premik navzdol."
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
+#: data/org.gnome.robots.gschema.xml:81 src/properties.c:511
 msgid "Key to move SE"
 msgstr "Tipka za premik JV"
 
-#: ../data/org.gnome.robots.gschema.xml.h:32
+#: data/org.gnome.robots.gschema.xml:82
 msgid "The key used to move south-east."
 msgstr "Tipka za premik navzdol - desno."
 
-#: ../data/org.gnome.robots.gschema.xml.h:33
+#: data/org.gnome.robots.gschema.xml:86
 msgid "Width of the window in pixels"
 msgstr "Širina okna v točkah"
 
-#: ../data/org.gnome.robots.gschema.xml.h:34
+#: data/org.gnome.robots.gschema.xml:90
 msgid "Height of the window in pixels"
 msgstr "Višina okna v točkah"
 
-#: ../data/org.gnome.robots.gschema.xml.h:35
+#: data/org.gnome.robots.gschema.xml:94
 msgid "true if the window is maximized"
 msgstr "prav, če je okno razpeto."
 
-#: ../src/game.c:343 ../src/game.c:359
+#: src/game.c:343 src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -255,100 +261,100 @@ msgstr ""
 "Toda ali jih lahko premagate znova?"
 
 #. This should never happen.
-#: ../src/game.c:1110
+#: src/game.c:1110
 msgid "There are no teleport locations left!!"
 msgstr "Ostalo ni nič več mest za prežarčenje!!"
 
-#: ../src/game.c:1138
+#: src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
 msgstr "Ni več varnih mest za prežarčenje!!"
 
-#: ../src/games-controls.c:286
+#: src/games-controls.c:286
 msgid "Unknown Command"
 msgstr "Neznan ukaz"
 
-#: ../src/gnome-robots.c:106
+#: src/gnome-robots.c:106
 msgid "Classic robots"
 msgstr "Običajni roboti"
 
-#: ../src/gnome-robots.c:107
+#: src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
 msgstr "Običajni roboti z varnimi premiki"
 
-#: ../src/gnome-robots.c:108
+#: src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
 msgstr "Običajni roboti z zelo varnimi premiki"
 
-#: ../src/gnome-robots.c:109
+#: src/gnome-robots.c:109
 msgid "Nightmare"
 msgstr "Nočna mora"
 
-#: ../src/gnome-robots.c:110
+#: src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
 msgstr "Nočna mora z varnimi premiki"
 
-#: ../src/gnome-robots.c:111
+#: src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
 msgstr "Nočna mora z zelo varnimi premiki"
 
-#: ../src/gnome-robots.c:112
+#: src/gnome-robots.c:112
 msgid "Robots2"
 msgstr "Roboti2"
 
-#: ../src/gnome-robots.c:113
+#: src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
 msgstr "Roboti2 z varnimi premiki"
 
-#: ../src/gnome-robots.c:114
+#: src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
 msgstr "Roboti2 z zelo varnimi premiki"
 
-#: ../src/gnome-robots.c:115
+#: src/gnome-robots.c:115
 msgid "Robots2 easy"
 msgstr "Enostavni Roboti2"
 
-#: ../src/gnome-robots.c:116
+#: src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
 msgstr "Enostavni Roboti2 z varnimi premiki"
 
-#: ../src/gnome-robots.c:117
+#: src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
 msgstr "Enostavni Roboti2 z zelo varnimi premiki"
 
-#: ../src/gnome-robots.c:118
+#: src/gnome-robots.c:118
 msgid "Robots with safe teleport"
 msgstr "Roboti z varnim teleportiranjem"
 
-#: ../src/gnome-robots.c:119
+#: src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
 msgstr "Roboti z varnim teleportiranjem in varnimi premiki"
 
-#: ../src/gnome-robots.c:120
+#: src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Roboti z varnim teleportiranjem in zelo varnimi premiki"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: ../src/gnome-robots.c:156
+#: src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Raven: %d\tRezultat: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: ../src/gnome-robots.c:167
+#: src/gnome-robots.c:167
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Še: %d)"
 
 #. First line of safe teleports button label.
-#: ../src/gnome-robots.c:169
+#: src/gnome-robots.c:169
 msgid "Teleport _Safely"
 msgstr "Teleportiraj _varno"
 
-#: ../src/gnome-robots.c:227
+#: src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
 msgstr "Igra je zasnovana po znani BSD igri Roboti."
 
-#: ../src/gnome-robots.c:231
+#: src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
 "Matej Urbančič <mateju@svn.gnome.org>\n"
@@ -356,32 +362,32 @@ msgstr ""
 "Matej Erman\n"
 "Tadej Janež"
 
-#: ../src/gnome-robots.c:252
+#: src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
 msgstr "Ali ste prepričani, da želite končati trenutno igro?"
 
-#: ../src/gnome-robots.c:255
+#: src/gnome-robots.c:255
 msgid "Keep _Playing"
 msgstr "Nadaljuj z _igranjem"
 
-#: ../src/gnome-robots.c:396
+#: src/gnome-robots.c:396
 msgid "Teleport _Randomly"
 msgstr "Teleportiraj _naključno"
 
-#: ../src/gnome-robots.c:415
+#: src/gnome-robots.c:415
 msgid "_Wait for Robots"
 msgstr "_Počakaj na robote"
 
 #. Label on the scores dialog, next to map type dropdown
-#: ../src/gnome-robots.c:439
+#: src/gnome-robots.c:439
 msgid "Game Type:"
 msgstr "Vrsta igre:"
 
-#: ../src/gnome-robots.c:454
+#: src/gnome-robots.c:454
 msgid "No game data could be found."
 msgstr "Ni mogoče najti igralnih podatkov."
 
-#: ../src/gnome-robots.c:456
+#: src/gnome-robots.c:456
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -389,11 +395,11 @@ msgstr ""
 "Ni mogoče najti datotek z veljavnimi nastavitvami za igro za program Roboti. "
 "Preverite, če je program pravilno nameščen."
 
-#: ../src/gnome-robots.c:473
+#: src/gnome-robots.c:473
 msgid "Some graphics files are missing or corrupt."
 msgstr "Nekatere grafične datoteke manjkajo ali pa so pokvarjene."
 
-#: ../src/gnome-robots.c:475
+#: src/gnome-robots.c:475
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -401,64 +407,64 @@ msgstr ""
 "Ni mogoče naložiti vseh grafičnih datotek za program Roboti. Preverite, da "
 "je program pravilno nameščen."
 
-#: ../src/graphics.c:149
+#: src/graphics.c:149
 #, c-format
 msgid "Could not find '%s' pixmap file\n"
 msgstr "Ni mogoče najti datoteke s sliko '%s'\n"
 
-#: ../src/properties.c:391
+#: src/properties.c:391
 msgid "Preferences"
 msgstr "Možnosti"
 
-#: ../src/properties.c:415
+#: src/properties.c:415
 msgid "Game Type"
 msgstr "Vrsta igre"
 
-#: ../src/properties.c:425
+#: src/properties.c:425
 msgid "_Use safe moves"
 msgstr "_Uporabi varne premike"
 
-#: ../src/properties.c:430
+#: src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Prepreči ponesrečene poteze, katerih posledica je smrt."
 
-#: ../src/properties.c:433
+#: src/properties.c:433
 msgid "U_se super safe moves"
 msgstr "U_porabi zelo varne premike"
 
-#: ../src/properties.c:440
+#: src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr "Prepreči vse poteze, katerih posledica je smrt."
 
-#: ../src/properties.c:446
+#: src/properties.c:446
 msgid "_Enable sounds"
 msgstr "_Omogoči zvoke"
 
-#: ../src/properties.c:452
+#: src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Predvajanje zvoka ob dogodkih, kot so končanje ravni in umiranje."
 
-#: ../src/properties.c:454
+#: src/properties.c:454
 msgid "Game"
 msgstr "Igra"
 
-#: ../src/properties.c:467
+#: src/properties.c:467
 msgid "_Image theme:"
 msgstr "_Slikovna tema:"
 
-#: ../src/properties.c:479
+#: src/properties.c:479
 msgid "_Background color:"
 msgstr "Barva _ozadja:"
 
-#: ../src/properties.c:491
+#: src/properties.c:491
 msgid "Appearance"
 msgstr "Videz"
 
-#: ../src/properties.c:520
+#: src/properties.c:520
 msgid "_Restore Defaults"
 msgstr "_Obnovi privzeto"
 
-#: ../src/properties.c:525
+#: src/properties.c:525
 msgid "Keyboard"
 msgstr "Tipkovnica"
 

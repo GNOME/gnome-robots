@@ -229,7 +229,7 @@ about_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 			 "artists", artists,
 			 "documenters", documenters,
 			 "translator-credits", _("translator-credits"),
-			 "logo-icon-name", "gnome-robots",
+			 "logo-icon-name", "org.gnome.Robots",
 			 "website",
 			 "https://wiki.gnome.org/Apps/Robots",
 			 NULL);
@@ -314,9 +314,9 @@ startup (GtkApplication *app, gpointer user_data)
 
   g_set_application_name (_("Robots"));
 
-  settings = g_settings_new ("org.gnome.robots");
+  settings = g_settings_new ("org.gnome.Robots");
 
-  gtk_window_set_default_icon_name ("gnome-robots");
+  gtk_window_set_default_icon_name ("org.gnome.Robots");
 }
 
 static void
@@ -505,7 +505,7 @@ main (int argc, char *argv[])
 
   GtkApplication *app;
 
-  app = gtk_application_new ("org.gnome.robots", G_APPLICATION_FLAGS_NONE);
+  app = gtk_application_new ("org.gnome.Robots", G_APPLICATION_FLAGS_NONE);
 
   g_signal_connect (app, "startup", G_CALLBACK (startup), NULL);
   g_signal_connect (app, "shutdown", G_CALLBACK (shutdown), NULL);

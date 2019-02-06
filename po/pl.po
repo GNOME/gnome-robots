@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-01-27 16:20+0000\n"
-"PO-Revision-Date: 2019-02-03 18:09+0100\n"
+"POT-Creation-Date: 2019-02-06 19:33+0000\n"
+"PO-Revision-Date: 2019-02-06 22:08+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -425,7 +425,7 @@ msgstr ""
 
 #: src/graphics.c:149
 #, c-format
-msgid "Could not find '%s' pixmap file\n"
+msgid "Could not find “%s” pixmap file\n"
 msgstr "Nie można odnaleźć pliku z mapą pikseli „%s”\n"
 
 #: src/properties.c:391

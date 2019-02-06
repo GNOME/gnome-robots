@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-01-27 16:20+0000\n"
-"PO-Revision-Date: 2019-01-27 18:03+0100\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"POT-Creation-Date: 2019-02-06 19:33+0000\n"
+"PO-Revision-Date: 2019-02-06 23:04+0100\n"
+"Last-Translator: Balázs Úr <ur.balazs@fsf.hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -414,7 +414,7 @@ msgstr ""
 
 #: src/graphics.c:149
 #, c-format
-msgid "Could not find '%s' pixmap file\n"
+msgid "Could not find “%s” pixmap file\n"
 msgstr "A(z) „%s” pixmap fájl nem található\n"
 
 #: src/properties.c:391

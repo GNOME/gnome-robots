@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-01-27 16:20+0000\n"
-"PO-Revision-Date: 2019-02-05 21:35+0200\n"
+"POT-Creation-Date: 2019-02-06 19:33+0000\n"
+"PO-Revision-Date: 2019-02-07 22:44+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -427,8 +427,8 @@ msgstr ""
 
 #: src/graphics.c:149
 #, c-format
-msgid "Could not find '%s' pixmap file\n"
-msgstr "Kuvatiedostoa \"%s\" ei löytynyt\n"
+msgid "Could not find “%s” pixmap file\n"
+msgstr "Pixmap-kuvatiedostoa \"%s\" ei löytynyt\n"
 
 #: src/properties.c:391
 msgid "Preferences"

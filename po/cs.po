@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-01-27 16:20+0000\n"
-"PO-Revision-Date: 2019-02-06 15:18+0100\n"
+"POT-Creation-Date: 2019-02-06 19:33+0000\n"
+"PO-Revision-Date: 2019-02-08 10:04+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -430,7 +430,7 @@ msgstr ""
 
 #: src/graphics.c:149
 #, c-format
-msgid "Could not find '%s' pixmap file\n"
+msgid "Could not find “%s” pixmap file\n"
 msgstr "Nelze nalézt soubor s bitmapou „%s“\n"
 
 #: src/properties.c:391
@@ -488,6 +488,3 @@ msgstr "_Obnovit výchozí"
 #: src/properties.c:525
 msgid "Keyboard"
 msgstr "Klávesnice"
-
-#~ msgid "_Quit"
-#~ msgstr "U_končit"

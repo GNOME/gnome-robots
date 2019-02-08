@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots gnome-3-8\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-01-27 16:20+0000\n"
-"PO-Revision-Date: 2019-02-01 16:01+0700\n"
+"POT-Creation-Date: 2019-02-06 19:33+0000\n"
+"PO-Revision-Date: 2019-02-08 23:02+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -393,8 +393,8 @@ msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
 msgstr ""
-"Program Robots tidak dapat menemukan berkas konfigurasi yang benar. Silahkan "
-"periksa apakah program telah terinstal dengan benar"
+"Program Robots tidak dapat menemukan berkas konfigurasi yang benar. Silakan "
+"periksa apakah program telah terpasang dengan benar."
 
 #: src/gnome-robots.c:473
 msgid "Some graphics files are missing or corrupt."
@@ -410,8 +410,8 @@ msgstr ""
 
 #: src/graphics.c:149
 #, c-format
-msgid "Could not find '%s' pixmap file\n"
-msgstr "Tidak bisa menemukan '%s' berkas pixmap\n"
+msgid "Could not find “%s” pixmap file\n"
+msgstr "Tidak bisa menemukan \"%s\" berkas pixmap\n"
 
 #: src/properties.c:391
 msgid "Preferences"

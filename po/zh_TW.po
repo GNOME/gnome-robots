@@ -1,67 +1,63 @@
 # Chinese (Taiwan) translation of gnome-games.
 # Copyright (C) 1999-2006 Free Software Foundation, Inc.
 # (http://vegas.wcn.com.tw/21.shtml for blackjack terms)
+#
 # Fernando <bv1al@journalist.com.tw>, 1999.
 # Abel Cheung <abel@oaka.org>, 2001-2006.
 # Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2010.
 # Wei-Lun Chao <chaoweilun@gmail.com>, 2010.
-#
+# pan93412 <pan93412@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games 3.3.91\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"robots&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-14 13:53+0000\n"
-"PO-Revision-Date: 2017-02-28 13:52+0800\n"
-"Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
-"Language-Team: Chinese (traditional)\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
+"POT-Creation-Date: 2019-02-06 19:33+0000\n"
+"PO-Revision-Date: 2019-02-17 23:19+0800\n"
+"Last-Translator: pan93412 <pan93412@gmail.com>\n"
+"Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Lokalize 18.12.2\n"
 
-#: ../data/app-menu.ui.h:1 ../src/gnome-robots.c:256
+#: data/app-menu.ui:7 src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "開新局(_N)"
 
-#: ../data/app-menu.ui.h:2
-msgid "_Preferences"
-msgstr "偏好設定(_P)"
-
-#: ../data/app-menu.ui.h:3
+#: data/app-menu.ui:12
 msgid "_Scores"
 msgstr "分數(_S)"
 
-#: ../data/app-menu.ui.h:4
+#: data/app-menu.ui:18
+msgid "_Preferences"
+msgstr "偏好設定(_P)"
+
+#: data/app-menu.ui:22
 msgid "_Help"
 msgstr "求助(_H)"
 
-#: ../data/app-menu.ui.h:5
-msgid "_About"
-msgstr "關於(_A)"
+#: data/app-menu.ui:27
+#| msgid "_About"
+msgid "_About Robots"
+msgstr "關於機器人(_A)"
 
-#: ../data/app-menu.ui.h:6
-msgid "_Quit"
-msgstr "結束(_Q)"
-
-#: ../data/gnome-robots.appdata.xml.in.h:1
+#: data/org.gnome.Robots.appdata.xml.in:7
 msgid "GNOME Robots"
 msgstr "GNOME 機器人"
 
-#: ../data/gnome-robots.appdata.xml.in.h:2 ../data/gnome-robots.desktop.in.h:2
+#: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
 msgid "Avoid the robots and make them crash into each other"
 msgstr "避開機器人，並引導它們互相碰撞"
 
-#: ../data/gnome-robots.appdata.xml.in.h:3
+#: data/org.gnome.Robots.appdata.xml.in:10
 msgid ""
 "It is the distant future – the year 2000. Evil robots are trying to kill "
 "you. Avoid the robots or face certain death."
-msgstr ""
-"那是遙遠的未來─西元 2000 年。邪惡的機器人正嘗試殺了您。避開機器人或面對死亡。"
+msgstr "那是遙遠的未來─西元 2000 年。邪惡的機器人正嘗試殺了您。避開機器人或面對死亡。"
 
-#: ../data/gnome-robots.appdata.xml.in.h:4
+#: data/org.gnome.Robots.appdata.xml.in:14
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -73,7 +69,7 @@ msgstr ""
 "他們撞毀，或是讓他們撞向垃圾堆也可以。您可以移動到垃圾堆以保護自己，或是使用"
 "您的手持傳送裝置安全的逃走。"
 
-#: ../data/gnome-robots.appdata.xml.in.h:5
+#: data/org.gnome.Robots.appdata.xml.in:21
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -82,57 +78,63 @@ msgstr ""
 "您的安全傳送支援是有限制的，而且一旦您逃脫，傳送會將您送到機器人旁邊，可能會"
 "因此讓您送命。儘可能活久一點！"
 
-#: ../data/gnome-robots.appdata.xml.in.h:6
+#: data/org.gnome.Robots.appdata.xml.in:50
 msgid "The GNOME Project"
 msgstr "GNOME 計畫"
 
-#: ../data/gnome-robots.desktop.in.h:1 ../src/gnome-robots.c:223
-#: ../src/gnome-robots.c:315 ../src/gnome-robots.c:348
+#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
+#: src/gnome-robots.c:315 src/gnome-robots.c:349
 msgid "Robots"
 msgstr "機器人"
 
-#: ../data/gnome-robots.desktop.in.h:3
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Robots.desktop.in:6
 msgid "game;arcade;teleport;"
 msgstr "game;arcade;teleport;遊戲;瞬間移動;"
 
-#: ../data/org.gnome.robots.gschema.xml.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Robots.desktop.in:9
+msgid "org.gnome.Robots"
+msgstr "org.gnome.Robots"
+
+#: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
 msgstr "顯示工具列"
 
 # FIXME: (Abel) ????
-#: ../data/org.gnome.robots.gschema.xml.h:2
+#: data/org.gnome.Robots.gschema.xml:6
 msgid "Show toolbar. A standard option for toolbars."
 msgstr "顯示工具列。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:3
+#: data/org.gnome.Robots.gschema.xml:10
 msgid "Robot image theme"
 msgstr "機器人圖案佈景"
 
-#: ../data/org.gnome.robots.gschema.xml.h:4
+#: data/org.gnome.Robots.gschema.xml:11
 msgid "Robot image theme. The theme of the images to use for the robots."
 msgstr "機器人圖案佈景，即是使用不同的圖案代表機器人。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:5
+#: data/org.gnome.Robots.gschema.xml:15
 msgid "Background color"
 msgstr "背景顏色"
 
-#: ../data/org.gnome.robots.gschema.xml.h:6
+#: data/org.gnome.Robots.gschema.xml:16
 msgid "Background color. The hex specification of the background color."
 msgstr "背景顏色，以 16 進制數字表示。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:7
+#: data/org.gnome.Robots.gschema.xml:20
 msgid "Game type"
 msgstr "遊戲形式"
 
-#: ../data/org.gnome.robots.gschema.xml.h:8
+#: data/org.gnome.Robots.gschema.xml:21
 msgid "Game type. The name of the game variation to use."
 msgstr "遊戲形式，即是使用不同的遊戲規則"
 
-#: ../data/org.gnome.robots.gschema.xml.h:9
+#: data/org.gnome.Robots.gschema.xml:25
 msgid "Use safe moves"
 msgstr "可使用安全移動"
 
-#: ../data/org.gnome.robots.gschema.xml.h:10
+#: data/org.gnome.Robots.gschema.xml:26
 msgid ""
 "Use safe moves. The safe moves option will help you to avoid being killed "
 "due to a mistake. If you try to make a move that would lead to your death "
@@ -141,11 +143,11 @@ msgstr ""
 "可使用「安全移動」。「安全移動」選項可防止您因為疏忽而輸掉。如果您選擇的一步"
 "可損失生命，但另有一步可以防止這種情況出現，則不可以走會輸的那一步。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:11
+#: data/org.gnome.Robots.gschema.xml:30
 msgid "Use super safe moves"
 msgstr "可使用超級安全移動"
 
-#: ../data/org.gnome.robots.gschema.xml.h:12
+#: data/org.gnome.Robots.gschema.xml:31
 msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
@@ -153,99 +155,99 @@ msgstr ""
 "可使用「超級安全移動」。當沒有任何一步安全，而且唯一可行的選擇是使用空間轉移"
 "時，會提示玩家。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:13
+#: data/org.gnome.Robots.gschema.xml:35
 msgid "Enable game sounds"
 msgstr "開啟遊戲音效"
 
-#: ../data/org.gnome.robots.gschema.xml.h:14
+#: data/org.gnome.Robots.gschema.xml:36
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "開啟遊戲音效。在遊戲進行時播放不同的音效。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:15 ../src/properties.c:503
+#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:503
 msgid "Key to move NW"
 msgstr "向左上移的按鍵"
 
-#: ../data/org.gnome.robots.gschema.xml.h:16
+#: data/org.gnome.Robots.gschema.xml:41
 msgid "The key used to move north-west."
 msgstr "向西北移所使用的按鍵。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:17 ../src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:504
 msgid "Key to move N"
 msgstr "向上移的按鍵"
 
-#: ../data/org.gnome.robots.gschema.xml.h:18
+#: data/org.gnome.Robots.gschema.xml:46
 msgid "The key used to move north."
 msgstr "向北移所使用的按鍵。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:19 ../src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:505
 msgid "Key to move NE"
 msgstr "向右上移的按鍵"
 
-#: ../data/org.gnome.robots.gschema.xml.h:20
+#: data/org.gnome.Robots.gschema.xml:51
 msgid "The key used to move north-east."
 msgstr "向東北移所使用的按鍵。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:21 ../src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:506
 msgid "Key to move W"
 msgstr "向左移的按鍵"
 
-#: ../data/org.gnome.robots.gschema.xml.h:22
+#: data/org.gnome.Robots.gschema.xml:57
 msgid "The key used to move west."
 msgstr "向西移所使用的按鍵。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:23 ../src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:507
 msgid "Key to hold"
 msgstr "原地不動的按鍵"
 
-#: ../data/org.gnome.robots.gschema.xml.h:24
+#: data/org.gnome.Robots.gschema.xml:62
 msgid "The key used to hold still."
 msgstr "用來原地不動的按鍵。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:25 ../src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:508
 msgid "Key to move E"
 msgstr "向右移的按鍵"
 
-#: ../data/org.gnome.robots.gschema.xml.h:26
+#: data/org.gnome.Robots.gschema.xml:67
 msgid "The key used to move east."
 msgstr "向東移所使用的按鍵。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:27 ../src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:509
 msgid "Key to move SW"
 msgstr "向左下移的按鍵"
 
-#: ../data/org.gnome.robots.gschema.xml.h:28
+#: data/org.gnome.Robots.gschema.xml:72
 msgid "The key used to move south-west."
 msgstr "向西南移所使用的按鍵。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:29 ../src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:510
 msgid "Key to move S"
 msgstr "向下移的按鍵"
 
-#: ../data/org.gnome.robots.gschema.xml.h:30
+#: data/org.gnome.Robots.gschema.xml:77
 msgid "The key used to move south."
 msgstr "向南移所使用的按鍵。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:31 ../src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:511
 msgid "Key to move SE"
 msgstr "向右下移的按鍵"
 
-#: ../data/org.gnome.robots.gschema.xml.h:32
+#: data/org.gnome.Robots.gschema.xml:82
 msgid "The key used to move south-east."
 msgstr "向東南移所使用的按鍵。"
 
-#: ../data/org.gnome.robots.gschema.xml.h:33
+#: data/org.gnome.Robots.gschema.xml:86
 msgid "Width of the window in pixels"
 msgstr "視窗的寬度 (像素)"
 
-#: ../data/org.gnome.robots.gschema.xml.h:34
+#: data/org.gnome.Robots.gschema.xml:90
 msgid "Height of the window in pixels"
 msgstr "視窗的高度 (像素)"
 
-#: ../data/org.gnome.robots.gschema.xml.h:35
+#: data/org.gnome.Robots.gschema.xml:94
 msgid "true if the window is maximized"
 msgstr "如果視窗為最大化則設定為‘TRUE’"
 
-#: ../src/game.c:343 ../src/game.c:359
+#: src/game.c:343 src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -254,100 +256,100 @@ msgstr ""
 "但您有辦法再贏一次嗎？"
 
 #. This should never happen.
-#: ../src/game.c:1110
+#: src/game.c:1110
 msgid "There are no teleport locations left!!"
 msgstr "已經沒有位置可讓您進行空間轉移了!!"
 
-#: ../src/game.c:1138
+#: src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
 msgstr "已經沒有安全位置可讓您進行空間轉移了!!"
 
-#: ../src/games-controls.c:286
+#: src/games-controls.c:286
 msgid "Unknown Command"
 msgstr "不明指令"
 
-#: ../src/gnome-robots.c:106
+#: src/gnome-robots.c:106
 msgid "Classic robots"
 msgstr "傳統機器人"
 
-#: ../src/gnome-robots.c:107
+#: src/gnome-robots.c:107
 msgid "Classic robots with safe moves"
 msgstr "傳統機器人加上安全移動"
 
-#: ../src/gnome-robots.c:108
+#: src/gnome-robots.c:108
 msgid "Classic robots with super-safe moves"
 msgstr "傳統機器人加上超級安全移動"
 
-#: ../src/gnome-robots.c:109
+#: src/gnome-robots.c:109
 msgid "Nightmare"
 msgstr "惡夢"
 
-#: ../src/gnome-robots.c:110
+#: src/gnome-robots.c:110
 msgid "Nightmare with safe moves"
 msgstr "惡夢加上安全移動"
 
-#: ../src/gnome-robots.c:111
+#: src/gnome-robots.c:111
 msgid "Nightmare with super-safe moves"
 msgstr "惡夢加上超級安全移動"
 
-#: ../src/gnome-robots.c:112
+#: src/gnome-robots.c:112
 msgid "Robots2"
 msgstr "二代機器人"
 
-#: ../src/gnome-robots.c:113
+#: src/gnome-robots.c:113
 msgid "Robots2 with safe moves"
 msgstr "二代機器人加上安全移動"
 
-#: ../src/gnome-robots.c:114
+#: src/gnome-robots.c:114
 msgid "Robots2 with super-safe moves"
 msgstr "二代機器人加上超級安全移動"
 
-#: ../src/gnome-robots.c:115
+#: src/gnome-robots.c:115
 msgid "Robots2 easy"
 msgstr "二代機器人(容易)"
 
-#: ../src/gnome-robots.c:116
+#: src/gnome-robots.c:116
 msgid "Robots2 easy with safe moves"
 msgstr "二代機器人(容易)加上安全移動"
 
-#: ../src/gnome-robots.c:117
+#: src/gnome-robots.c:117
 msgid "Robots2 easy with super-safe moves"
 msgstr "二代機器人(容易)加上超級安全移動"
 
-#: ../src/gnome-robots.c:118
+#: src/gnome-robots.c:118
 msgid "Robots with safe teleport"
 msgstr "可使用安全空間轉移的機器人"
 
-#: ../src/gnome-robots.c:119
+#: src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
 msgstr "可使用安全空間轉移與安全移動的機器人"
 
-#: ../src/gnome-robots.c:120
+#: src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "可使用安全空間轉移與超級安全移動的機器人"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: ../src/gnome-robots.c:156
+#: src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "關卡：%d\t分數：%d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: ../src/gnome-robots.c:167
+#: src/gnome-robots.c:167
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(剩餘：%d)"
 
 #. First line of safe teleports button label.
-#: ../src/gnome-robots.c:169
+#: src/gnome-robots.c:169
 msgid "Teleport _Safely"
 msgstr "安全瞬間移動(_S)"
 
-#: ../src/gnome-robots.c:227
+#: src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
 msgstr "以傳統 BSD 機器人遊戲為基礎"
 
-#: ../src/gnome-robots.c:231
+#: src/gnome-robots.c:231
 msgid "translator-credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -357,104 +359,108 @@ msgstr ""
 "Abel Cheung <abel@oaka.org>, 2001-07\n"
 "Fernando <bv1al@journalist.com.tw>, 1999"
 
-#: ../src/gnome-robots.c:252
+#: src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
 msgstr "您確定要放棄目前的遊戲？"
 
-#: ../src/gnome-robots.c:255
+#: src/gnome-robots.c:255
 msgid "Keep _Playing"
 msgstr "繼續玩(_P)"
 
-#: ../src/gnome-robots.c:387
+#: src/gnome-robots.c:396
 msgid "Teleport _Randomly"
 msgstr "隨機瞬間移動(_R)"
 
-#: ../src/gnome-robots.c:406
+#: src/gnome-robots.c:415
 msgid "_Wait for Robots"
 msgstr "等待機器人(_W)"
 
 #. Label on the scores dialog, next to map type dropdown
-#: ../src/gnome-robots.c:430
+#: src/gnome-robots.c:439
 msgid "Game Type:"
 msgstr "遊戲類型︰"
 
-#: ../src/gnome-robots.c:445
+#: src/gnome-robots.c:454
 msgid "No game data could be found."
 msgstr "找不到遊戲資料。"
 
-#: ../src/gnome-robots.c:447
+#: src/gnome-robots.c:456
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
 msgstr "GNOME 機器人找不到有效的設定檔。請檢查程式是否已正確安裝。"
 
-#: ../src/gnome-robots.c:464
+#: src/gnome-robots.c:473
 msgid "Some graphics files are missing or corrupt."
 msgstr "某些影像檔案找不到或者已經損壞。"
 
-#: ../src/gnome-robots.c:466
+#: src/gnome-robots.c:475
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
 msgstr "GNOME 機器人無法載入所有需要的影像檔。請檢查程式是否已正確安裝。"
 
-#: ../src/graphics.c:149
+#: src/graphics.c:149
 #, c-format
-msgid "Could not find '%s' pixmap file\n"
-msgstr "找不到 pixmap 檔‘%s’\n"
+#| msgid "Could not find '%s' pixmap file\n"
+msgid "Could not find “%s” pixmap file\n"
+msgstr "找不到 pixmap 檔「%s」\n"
 
-#: ../src/properties.c:391
+#: src/properties.c:391
 msgid "Preferences"
 msgstr "偏好設定"
 
-#: ../src/properties.c:415
+#: src/properties.c:415
 msgid "Game Type"
 msgstr "遊戲形式"
 
-#: ../src/properties.c:425
+#: src/properties.c:425
 msgid "_Use safe moves"
 msgstr "可使用安全移動(_U)"
 
-#: ../src/properties.c:430
+#: src/properties.c:430
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "防止一時錯手而引致損失生命的行動。"
 
-#: ../src/properties.c:433
+#: src/properties.c:433
 msgid "U_se super safe moves"
 msgstr "可使用超級安全移動(_S)"
 
-#: ../src/properties.c:440
+#: src/properties.c:440
 msgid "Prevents all moves that result in getting killed."
 msgstr "禁止任何會引致損失生命的行動。"
 
-#: ../src/properties.c:446
+#: src/properties.c:446
 msgid "_Enable sounds"
 msgstr "開啟音效(_E)"
 
-#: ../src/properties.c:452
+#: src/properties.c:452
 msgid "Play sounds for events like winning a level and dying."
 msgstr "會在例如過關或者損失生命等重要事件時發出音響。"
 
-#: ../src/properties.c:454
+#: src/properties.c:454
 msgid "Game"
 msgstr "遊戲"
 
-#: ../src/properties.c:467
+#: src/properties.c:467
 msgid "_Image theme:"
 msgstr "圖案佈景(_I)："
 
-#: ../src/properties.c:479
+#: src/properties.c:479
 msgid "_Background color:"
 msgstr "背景顏色(_B)："
 
-#: ../src/properties.c:491
+#: src/properties.c:491
 msgid "Appearance"
 msgstr "外觀"
 
-#: ../src/properties.c:520
+#: src/properties.c:520
 msgid "_Restore Defaults"
 msgstr "使用預設值(_R)"
 
-#: ../src/properties.c:525
+#: src/properties.c:525
 msgid "Keyboard"
 msgstr "鍵盤"
+
+#~ msgid "_Quit"
+#~ msgstr "結束(_Q)"

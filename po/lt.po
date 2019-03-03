@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-02-06 19:33+0000\n"
-"PO-Revision-Date: 2019-02-24 17:12+0200\n"
+"POT-Creation-Date: 2019-02-24 15:13+0000\n"
+"PO-Revision-Date: 2019-03-03 18:58+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -43,7 +43,6 @@ msgid "_Help"
 msgstr "_Žinynas"
 
 #: data/app-menu.ui:27
-#| msgid "_About"
 msgid "_About Robots"
 msgstr "_Apie robotus"
 
@@ -417,7 +416,7 @@ msgstr ""
 "Patikrinkite, ar programa yra įdiegta teisingai."
 
 #: src/graphics.c:149
-#, fuzzy, c-format
+#, c-format
 #| msgid "Could not find '%s' pixmap file\n"
 msgid "Could not find “%s” pixmap file\n"
 msgstr "Nepavyko rasti „%s“ paveikslėlio failo\n"

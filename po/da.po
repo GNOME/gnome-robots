@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-02-06 19:33+0000\n"
+"POT-Creation-Date: 2019-03-26 18:02+0000\n"
 "PO-Revision-Date: 2019-02-13 00:17+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -102,11 +102,6 @@ msgstr "Robotter"
 msgid "game;arcade;teleport;"
 msgstr "spil;arcade;teleportere;teleport;teleportation;"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Robots.desktop.in:9
-msgid "org.gnome.Robots"
-msgstr "org.gnome.Robots"
-
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
 msgstr "Vis værktøjslinje"
@@ -121,7 +116,8 @@ msgstr "Robotbilledtema"
 
 #: data/org.gnome.Robots.gschema.xml:11
 msgid "Robot image theme. The theme of the images to use for the robots."
-msgstr "Robotbilledtema. Det tema for billeder der skal bruges til robotterne."
+msgstr ""
+"Robotbilledtema. Det tema for billeder der skal bruges til robotterne."
 
 #: data/org.gnome.Robots.gschema.xml:15
 msgid "Background color"
@@ -171,7 +167,8 @@ msgid "Enable game sounds"
 msgstr "Aktivér spillyde"
 
 #: data/org.gnome.Robots.gschema.xml:36
-msgid "Enable game sounds. Play sounds for various events throughout the game."
+msgid ""
+"Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Aktivér spillyde. Afspil lyde for forskellige hændelser i spillet."
 
 #: data/org.gnome.Robots.gschema.xml:40 src/properties.c:503
@@ -370,8 +367,9 @@ msgstr ""
 "Ole Laursen\n"
 "Ask Hjorth Larsen\n"
 "\n"
-"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-"Mere info: http://www.dansk-gruppen.dk"
+"Dansk-gruppen\n"
+"Websted <http://dansk-gruppen.dk>\n"
+"E-mail <dansk@dansk-gruppen.dk>"
 
 #: src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
@@ -481,5 +479,9 @@ msgstr "_Genskab forvalg"
 msgid "Keyboard"
 msgstr "Tastatur"
 
+#~ msgid "org.gnome.Robots"
+#~ msgstr "org.gnome.Robots"
+
 #~ msgid "_Quit"
 #~ msgstr "_Afslut"
+

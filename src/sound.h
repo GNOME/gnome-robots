@@ -19,7 +19,7 @@
 /* Exported functions                                                 */
 /**********************************************************************/
 gboolean init_sound (void);
-gboolean play_sound (gint);
+void     play_sound (gint);
 /**********************************************************************/
 
 #endif /* SOUND_H */

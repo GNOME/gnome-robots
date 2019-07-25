@@ -21,7 +21,7 @@
 #include <config.h>
 
 #include <gdk/gdk.h>
-#include <canberra-gtk.h>
+#include <gsound.h>
 
 #include "gbdefs.h"
 #include "sound.h"
@@ -54,16 +54,13 @@ init_sound (void)
  *
  * Description:
  * Plays a game sound
- *
- * Returns:
- * TRUE on success FALSE otherwise
  **/
-gboolean
+void
 play_sound (gint sno)
 {
 
   if ((sno < 0) || (sno >= NUM_SOUNDS)) {
-    return FALSE;
+    return;
   }
 
   if (properties_sound ()) {
@@ -93,20 +90,34 @@ play_sound (gint sno)
     if (name)
     {
       gchar *filename, *path;
+      GSoundContext *ctx;
+      GError *error = NULL;
+
+      ctx = gsound_context_new (NULL, &error);
+      if (error != NULL) {
+        g_warning ("Failed to create gsound context: %s", error->message);
+        g_error_free (error);
+        return;
+      }
 
       filename = g_strdup_printf ("%s.ogg", name);
       path = g_build_filename (SOUND_DIRECTORY, filename, NULL);
       g_free (filename);
 
-      ca_context_play (ca_gtk_context_get_for_screen (gdk_screen_get_default ()),
-                      0,
-                      CA_PROP_MEDIA_NAME, name,
-                      CA_PROP_MEDIA_FILENAME, path, NULL);
+      gsound_context_play_simple (ctx, NULL, &error,
+                                  GSOUND_ATTR_MEDIA_NAME, name,
+                                  GSOUND_ATTR_MEDIA_FILENAME, path,
+                                  NULL);
+
+      if (error != NULL) {
+        g_warning ("Failed to play sound \"%s\": %s", name, error->message);
+        g_error_free (error);
+      }
+
+      g_object_unref (ctx);
       g_free (path);
     }
   }
-
-  return TRUE;
 }
 
 /**********************************************************************/

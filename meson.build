@@ -7,12 +7,12 @@ i18n = import('i18n')
 
 application_id = 'org.gnome.Robots'
 
-gtk_dependency = dependency('gtk+-3.0', version: '>= 3.15.0')
-glib_dependency = dependency('glib-2.0', version: '>= 2.32')
 gio_dependency = dependency('gio-2.0', version: '>= 2.32')
-rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.36.2')
+glib_dependency = dependency('glib-2.0', version: '>= 2.32')
 gnome_games_dependency = dependency('libgnome-games-support-1')
-canberra_gtk3_dependency = dependency('libcanberra-gtk3', version: '>= 0.26')
+gsound_dependency = dependency('gsound', version: '>= 1.0.2')
+gtk_dependency = dependency('gtk+-3.0', version: '>= 3.15.0')
+rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.36.2')
 
 pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
 

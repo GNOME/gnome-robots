@@ -93,7 +93,7 @@ play_sound (gint sno)
       GSoundContext *ctx;
       GError *error = NULL;
 
-      ctx = gsound_context_new(NULL, &error);
+      ctx = gsound_context_new (NULL, &error);
       if (error != NULL) {
         g_warning ("Failed to create gsound context: %s", error->message);
         g_error_free (error);
@@ -104,10 +104,10 @@ play_sound (gint sno)
       path = g_build_filename (SOUND_DIRECTORY, filename, NULL);
       g_free (filename);
 
-      gsound_context_play_simple(ctx, NULL, &error,
-                                 GSOUND_ATTR_MEDIA_NAME, name,
-                                 GSOUND_ATTR_MEDIA_FILENAME, path,
-                                 NULL);
+      gsound_context_play_simple (ctx, NULL, &error,
+                                  GSOUND_ATTR_MEDIA_NAME, name,
+                                  GSOUND_ATTR_MEDIA_FILENAME, path,
+                                  NULL);
 
       if (error != NULL) {
         g_warning ("Failed to play sound \"%s\": %s", name, error->message);

@@ -28,12 +28,12 @@ executable(
     sources + resources,
     config_header,
     dependencies: [
-        gtk_dependency,
-        glib_dependency,
         gio_dependency,
-        rsvg_dependency,
+        glib_dependency,
         gnome_games_dependency,
-        canberra_gtk3_dependency
+        gsound_dependency,
+        gtk_dependency,
+        rsvg_dependency
     ],
     c_args: [
         '-DHAVE_CONFIG_H',

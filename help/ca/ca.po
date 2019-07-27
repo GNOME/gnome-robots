@@ -160,7 +160,7 @@ msgid ""
 "The <link xref=\"controls-default\">default controls</link> can be changed "
 "in <app>Robots</app> to suit your preference."
 msgstr ""
-"Els <link xref=\"controls-default\">controls pedeterminats</link> es poden "
+"Els <link xref=\"controls-default\">controls predeterminats</link> es poden "
 "canviar a <app>Robots</app> per ajustar-se a les vostres preferències."
 
 #. (itstool) path: steps/title
@@ -186,7 +186,7 @@ msgid ""
 msgstr ""
 "A la llista de <gui style=\"group\">Controls de teclat</gui>, seleccioneu la"
 " línia, aleshores feu clic al control. Així es destaca la línia i les "
-"paraules <gui>Nou accelerador…</gui> es mostren enlloc del control antic."
+"paraules <gui>Nou accelerador…</gui> es mostren en comptes del control antic."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:39
@@ -425,7 +425,7 @@ msgstr "Quedar-se a la mateixa posició"
 #: C/controls-default.page:116
 msgid "Click on the main character to stay put in the same square."
 msgstr ""
-"Feu clic al personatge principal per a que es quedi a la mateixa posició."
+"Feu clic al personatge principal perquè es quedi a la mateixa posició."
 
 #. (itstool) path: item/p
 #: C/controls-default.page:120
@@ -433,7 +433,7 @@ msgid ""
 "Click the <gui>Wait for Robots</gui> button to wait for the enemy robots to "
 "finish making all their moves."
 msgstr ""
-"Feu clic al botó <gui>Esperar als Robots</gui> per esperar a que els robots "
+"Feu clic al botó <gui>Esperar als Robots</gui> per esperar que els robots "
 "enemics acabin els seus moviments."
 
 #. (itstool) path: item/title
@@ -625,7 +625,7 @@ msgstr ""
 "un robot us mati, tret que l'única manera de sobreviure sigui tele-"
 "transportar-se. Si marqueu el quadre de selecció <gui "
 "style=\"checkbox\">Utilitzar moviments super segurs</gui>, el joc no us "
-"permetrà fer cap moviment, de manera que se'l obligarà a tele-transportar. "
+"permetrà fer cap moviment, de manera que se l'obligarà a tele-transportar. "
 "Això en redueix el nivell de dificultat. Sempre podeu desmarcar-lo si trobeu"
 " el joc massa fàcil."
 
@@ -647,7 +647,7 @@ msgid ""
 "into each other or into junk heaps from previous collisions, without them "
 "crashing into you."
 msgstr ""
-"<app>Robots</app> es basa en el joc de línia de comandes UNIX del mateix nom."
+"<app>Robots</app> es basa en el joc de línia d'ordres UNIX del mateix nom."
 " L'objectiu del joc és destruir tots els robots fent que es xoquin entre si "
 "o bé en acumulacions d'escombraries fruit de col·lisions anteriors, sense "
 "que xoquin contra tu."
@@ -670,7 +670,7 @@ msgstr "Com puc moure'm a <app>Robots</app>?"
 #. (itstool) path: page/title
 #: C/moves.page:23
 msgid "Different moves in <app>Robots</app>"
-msgstr "Diferent moviments a <app>Robots</app>"
+msgstr "Diferents moviments a <app>Robots</app>"
 
 #. (itstool) path: page/p
 #: C/moves.page:25
@@ -750,7 +750,7 @@ msgid ""
 msgstr ""
 "Utilitzeu els aleatoris per tele-transportar-vos a una ubicació aleatòria "
 "que pot ser segura o no. Podeu utilitzar tants tele-transports aleatoris com"
-" vulgueu durant un joc"
+" vulgueu durant un joc."
 
 #. (itstool) path: info/desc
 #: C/scores.page:23

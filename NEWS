@@ -1,3 +1,8 @@
+3.34.0 - September 8, 2019
+==========================
+
+- Updated translations
+
 3.33.90 - August 5, 2019
 ========================
 - Switch from libcanberra-gtk to gsound (Arnaud B)

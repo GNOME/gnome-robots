@@ -1,22 +1,23 @@
 # gnome-games ja.po.
-# Copyright (C) 1998-2010 Free Software Foundation, Inc.
+# Copyright (C) 1998-2019 Free Software Foundation, Inc.
 # Yukihiro Nakai <Nakai@technologist.com>, 1998.
 # Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>, 1999.
 # Yuusuke Tahara <tahara@gnome.gr.jp>, 2000.
-# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2002, 2010.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2001-2009.
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2002, 2010.
 # KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>, 2003.
 # Satoru SATOH <ss@gnome.gr.jp>, 2006.
 # Shushi KUROSE <md81bird@hitaki.net>, 2012.
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013, 2016.
+# sicklylife <translation@sicklylife.jp>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
 "POT-Creation-Date: 2019-03-26 18:02+0000\n"
-"PO-Revision-Date: 2016-01-16 12:43+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
+"PO-Revision-Date: 2019-09-08 12:43+0900\n"
+"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -41,10 +42,8 @@ msgid "_Help"
 msgstr "ヘルプ(_H)"
 
 #: data/app-menu.ui:27
-#, fuzzy
-#| msgid "_About"
 msgid "_About Robots"
-msgstr "このアプリケーションについて(_A)"
+msgstr "GNOME ロボットについて(_A)"
 
 #: data/org.gnome.Robots.appdata.xml.in:7
 msgid "GNOME Robots"
@@ -88,7 +87,7 @@ msgstr ""
 
 #: data/org.gnome.Robots.appdata.xml.in:50
 msgid "The GNOME Project"
-msgstr ""
+msgstr "The GNOME Project"
 
 #: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
 #: src/gnome-robots.c:315 src/gnome-robots.c:349
@@ -358,14 +357,16 @@ msgstr "BSD の古典的なロボットゲームをベースとしています�
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
-"佐藤 暁 <ss@gnome.gr.jp>\n"
-"KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
 "草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n"
-"Yuusuke Tahara <tahara@gnome.gr.jp>\n"
-"Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>\n"
-"Yukihiro Nakai <Nakai@technologist.com>\n"
+"佐藤 暁 <ss@gnome.gr.jp>\n"
+"日本 GNOME ユーザー会 <http://www.gnome.gr.jp>\n"
 "松澤 二郎 <jmatsuzawa@gnome.org>\n"
-"日本GNOMEユーザー会 <http://www.gnome.gr.jp>"
+"Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>\n"
+"KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
+"Shushi KUROSE <md81bird@hitaki.net>\n"
+"sicklylife <translation@sicklylife.jp>\n"
+"Yukihiro Nakai <Nakai@technologist.com>\n"
+"Yuusuke Tahara <tahara@gnome.gr.jp>"
 
 #: src/gnome-robots.c:252
 msgid "Are you sure you want to discard the current game?"
@@ -385,10 +386,8 @@ msgstr "待機(_W)"
 
 #. Label on the scores dialog, next to map type dropdown
 #: src/gnome-robots.c:439
-#, fuzzy
-#| msgid "Game Type"
 msgid "Game Type:"
-msgstr "ゲームの種類"
+msgstr "ゲームの種類:"
 
 #: src/gnome-robots.c:454
 msgid "No game data could be found."
@@ -415,10 +414,9 @@ msgstr ""
 "正しくインストールされたか確認してください。"
 
 #: src/graphics.c:149
-#, fuzzy, c-format
-#| msgid "Could not find '%s' pixmap file\n"
+#, c-format
 msgid "Could not find “%s” pixmap file\n"
-msgstr "'%s' の画像ファイルを見つけられませんでした。\n"
+msgstr "“%s”の画像ファイルを見つけられませんでした。\n"
 
 #: src/properties.c:391
 msgid "Preferences"

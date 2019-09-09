@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
 "POT-Creation-Date: 2019-03-26 18:02+0000\n"
-"PO-Revision-Date: 2019-09-08 12:43+0900\n"
+"PO-Revision-Date: 2019-09-09 18:00+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -31,7 +31,7 @@ msgstr "新しいゲーム(_N)"
 
 #: data/app-menu.ui:12
 msgid "_Scores"
-msgstr "スコア(_S)"
+msgstr "得点(_S)"
 
 #: data/app-menu.ui:18
 msgid "_Preferences"
@@ -336,7 +336,7 @@ msgstr "安全なテレポート付きロボット (超安全モードで移動)
 #: src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
-msgstr "レベル: %d\tスコア: %d"
+msgstr "レベル: %d\t得点: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
 #: src/gnome-robots.c:167

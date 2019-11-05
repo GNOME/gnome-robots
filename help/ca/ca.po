@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2018-12-28 10:45+0000\n"
 "PO-Revision-Date: 2019-01-02 09:51+0000\n"
-"Last-Translator: Jaume Jorba. Correu particular <jaume.jorba@gmail.com>, 2019\n"
+"Last-Translator: Jaume Jorba <jaume.jorba@gmail.com>, 2019\n"
 "Language-Team: Catalan (https://www.transifex.com/softcatala/teams/62837/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +18,7 @@ msgstr ""
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "translator-credits"
+msgstr "Jaume Jorba <jaume.jorba@gmail.com>, 2019"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:16 C/basics.page:16 C/controls-change.page:15
@@ -123,13 +123,13 @@ msgid ""
 "style=\"checkbox\">Enable sounds</gui> checkbox to enable sounds."
 msgstr ""
 "Seleccioneu <guiseq><gui style=\"menu\">Preferències</gui><gui "
-"style=\"menuitem\">Partida</gui></guiseq>. Marqueu la casella de verificació"
-" <gui style=\"checkbox\">Activar sons</gui> per activar els sons."
+"style=\"menuitem\">Partida</gui></guiseq>. Marqueu la casella de selecció"
+" <gui style=\"checkbox\">Habilita el so</gui> per activar els sons."
 
 #. (itstool) path: section/title
 #: C/basics.page:45
 msgid "Quit <app>Robots</app>"
-msgstr "Sortir de<app>Robots</app>"
+msgstr "Sortir de <app>Robots</app>"
 
 #. (itstool) path: section/p
 #: C/basics.page:47
@@ -224,7 +224,7 @@ msgid ""
 "<gui style=\"button\">Restore Defaults</gui> button."
 msgstr ""
 "Sempre es poden restaurar els controls al seu comportament predeterminat "
-"fent clic al botó<gui style=\"button\">Restaurar predeterminats</gui>."
+"fent clic al botó <gui style=\"button\">Restaura els predeterminats</gui>."
 
 #. (itstool) path: info/desc
 #: C/controls-default.page:24
@@ -620,11 +620,11 @@ msgid ""
 "teleport. This reduces the level of difficulty. You can always uncheck these"
 " if you find the game too easy."
 msgstr ""
-"Si marqueu el quadre de selecció <gui style=\"checkbox\">Utilitzar moviments"
+"Si marqueu la casella de selecció <gui style=\"checkbox\">Utilitza moviments"
 " segurs</gui> el joc no us permetrà moure's si el desplaçament provoca que "
 "un robot us mati, tret que l'única manera de sobreviure sigui tele-"
-"transportar-se. Si marqueu el quadre de selecció <gui "
-"style=\"checkbox\">Utilitzar moviments super segurs</gui>, el joc no us "
+"transportar-se. Si marqueu la casella de selecció <gui "
+"style=\"checkbox\">Utilitza moviments super segurs</gui>, el joc no us "
 "permetrà fer cap moviment, de manera que se l'obligarà a tele-transportar. "
 "Això en redueix el nivell de dificultat. Sempre podeu desmarcar-lo si trobeu"
 " el joc massa fàcil."
@@ -989,7 +989,7 @@ msgid ""
 "to <gui>Map</gui> to view scores for a particular game type and safe move "
 "option combination."
 msgstr ""
-"Ñes puntuacions es desen de forma separada per cada combinació de <link xref"
+"Les puntuacions es desen de forma separada per cada combinació de <link xref"
 "=\"game-types\">tipus de joc i opció de moviment segur</link>. Utilitzeu el "
 "menú desplegable <gui>Mapa</gui> per veure les puntuacions d'un tipus de joc"
 " en particular i les combinacions de les opcions de moviment segur."

@@ -30,16 +30,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-02-06 19:33+0000\n"
-"PO-Revision-Date: 2019-02-27 09:46-0300\n"
+"POT-Creation-Date: 2019-09-27 15:47+0000\n"
+"PO-Revision-Date: 2019-12-14 14:26-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
-"Language-Team: Portuguese - Brazil <gnome-pt_br-list@gnome.org>\n"
+"Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 3.31.90\n"
+"X-Generator: Gtranslator 3.32.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/app-menu.ui:7 src/gnome-robots.c:256
@@ -59,7 +59,6 @@ msgid "_Help"
 msgstr "A_juda"
 
 #: data/app-menu.ui:27
-#| msgid "_About"
 msgid "_About Robots"
 msgstr "_Sobre o Robôs"
 
@@ -91,7 +90,7 @@ msgstr ""
 "direção. Engane-os fazendo um colidir com o outro, resultando na destruição "
 "deles ou em uma pilha de lixo resultante. Você pode se defender movendo as "
 "pilhas de lixo ou escapando com segurança com seu dispositivo portátil de "
-"teletransporte."
+"teleporte."
 
 #: data/org.gnome.Robots.appdata.xml.in:21
 msgid ""
@@ -99,11 +98,11 @@ msgid ""
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
 msgstr ""
-"Sua carga de teletransporte seguro é limitado e, assim que você ficar sem, "
+"Sua carga de teleporte seguro é limitado e, assim que você ficar sem, "
 "teleportação poderia fazer você aparecer do lado de um robô, que vai matá-"
 "lo. Sobreviva o máximo que puder!"
 
-#: data/org.gnome.Robots.appdata.xml.in:50
+#: data/org.gnome.Robots.appdata.xml.in:53
 msgid "The GNOME Project"
 msgstr "O projeto GNOME"
 
@@ -115,12 +114,7 @@ msgstr "Robôs"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
 msgid "game;arcade;teleport;"
-msgstr "game;jogo;jogos;arcade;teletransporte;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Robots.desktop.in:9
-msgid "org.gnome.Robots"
-msgstr "org.gnome.Robots"
+msgstr "game;jogo;jogos;arcade;teleporte;"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
@@ -180,7 +174,7 @@ msgid ""
 "the only option is to teleport out."
 msgstr ""
 "Usar movimentos super seguros. O jogador é alertado quando não há movimento "
-"seguro e a única opção é o teletransporte."
+"seguro e a única opção é o teleporte."
 
 #: data/org.gnome.Robots.gschema.xml:35
 msgid "Enable game sounds"
@@ -286,11 +280,11 @@ msgstr ""
 #. This should never happen.
 #: src/game.c:1110
 msgid "There are no teleport locations left!!"
-msgstr "Não há locais de teletransporte disponíveis!!!"
+msgstr "Não há locais de teleporte disponíveis!!!"
 
 #: src/game.c:1138
 msgid "There are no safe locations to teleport to!!"
-msgstr "Não há locais seguros para o teletransporte!!"
+msgstr "Não há locais seguros para o teleporte!!"
 
 #: src/games-controls.c:286
 msgid "Unknown Command"
@@ -346,15 +340,15 @@ msgstr "Robôs2 fácil com movimentos super seguros"
 
 #: src/gnome-robots.c:118
 msgid "Robots with safe teleport"
-msgstr "Robôs com teletransporte seguro"
+msgstr "Robôs com teleporte seguro"
 
 #: src/gnome-robots.c:119
 msgid "Robots with safe teleport with safe moves"
-msgstr "Robôs com teletransporte seguro e movimentos seguros"
+msgstr "Robôs com teleporte seguro e movimentos seguros"
 
 #: src/gnome-robots.c:120
 msgid "Robots with safe teleport with super-safe moves"
-msgstr "Robôs com teletransporte seguro e movimentos super seguros"
+msgstr "Robôs com teleporte seguro e movimentos super seguros"
 
 #. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
 #: src/gnome-robots.c:156
@@ -371,7 +365,7 @@ msgstr "(Restantes: %d)"
 #. First line of safe teleports button label.
 #: src/gnome-robots.c:169
 msgid "Teleport _Safely"
-msgstr "Teletransportar _com segurança"
+msgstr "Teleportar com _segurança"
 
 #: src/gnome-robots.c:227
 msgid "Based on classic BSD Robots"
@@ -404,15 +398,15 @@ msgstr "Você tem certeza de que deseja descartar o jogo atual?"
 
 #: src/gnome-robots.c:255
 msgid "Keep _Playing"
-msgstr "Continuar _jogando"
+msgstr "_Continuar jogando"
 
 #: src/gnome-robots.c:396
 msgid "Teleport _Randomly"
-msgstr "Teleportar _aleatoriamente"
+msgstr "_Teleportar aleatoriamente"
 
 #: src/gnome-robots.c:415
 msgid "_Wait for Robots"
-msgstr "_Esperar pelos robôs"
+msgstr "_Aguardar pelos robôs"
 
 #. Label on the scores dialog, next to map type dropdown
 #: src/gnome-robots.c:439
@@ -446,7 +440,6 @@ msgstr ""
 
 #: src/graphics.c:149
 #, c-format
-#| msgid "Could not find '%s' pixmap file\n"
 msgid "Could not find “%s” pixmap file\n"
 msgstr "Não foi possível localizar o arquivo de pixmap “%s”\n"
 
@@ -505,6 +498,9 @@ msgstr "_Restaurar padrões"
 #: src/properties.c:525
 msgid "Keyboard"
 msgstr "Teclado"
+
+#~ msgid "org.gnome.Robots"
+#~ msgstr "org.gnome.Robots"
 
 #~ msgid "_Quit"
 #~ msgstr "Sai_r"

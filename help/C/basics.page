@@ -9,6 +9,7 @@
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
     <revision pkgversion="3.11.90" date="2014-03-25" status="review"/>
     <revision pkgversion="3.14" date="2015-01-25" status="review"/>
+    <revision pkgversion="3.34" date="2020-01-03" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -29,23 +30,22 @@
 <section id="start">
   <title>Start a new game</title>
 
-  <p>Select <gui style="menuitem">New Game</gui> from the menu or press
-  <keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game.</p>
+  <p>Press the menu button in the top-right corner of the window and select <gui style="menuitem">New Game</gui>,
+  or press <keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game.</p>
 
 </section>
 
 <section id="sounds">
   <title>Enable sounds</title>
-  <p>Select <guiseq><gui style="menu">Preferences</gui><gui style="menuitem">Game</gui></guiseq>.
-  Check the <gui style="checkbox">Enable sounds</gui> checkbox to enable sounds.</p>
+  <p>Press the menu button in the top-right corner of the window and select <gui style="menuitem">Preferences</gui>.</p>
+  <p>Then select the <gui>Game</gui> tab and check <gui style="checkbox">Enable sounds</gui>.</p>
 
 </section>
 
 <section id="quit">
   <title>Quit <app>Robots</app></title>
 
-  <p>Select <guiseq><gui style="menu">Game</gui>
-  <gui style="menuitem">Quit</gui></guiseq> or press
+  <p>Press the close button in the title bar, or press
   <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Robots</app>
   at any time.</p>
 

@@ -8,6 +8,7 @@
 
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
     <revision pkgversion="3.11.90" date="2014-03-22" status="review"/>
+    <revision pkgversion="3.34" date="2020-01-03" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -152,8 +153,8 @@
 <section id="high-scores">
   <title>High scores</title>
 
-  <p>Select <guiseq><gui style="menu">Game</gui><gui style="menuitem">Scores</gui></guiseq>
-  to view the high scores.</p>
+  <p>Press the menu button in the top-right corner of the window and select
+  <gui style="menuitem">Scores</gui> to view the high scores.</p>
 
   <p>Scores are recorded separately for each combination of
   <link xref="game-types">game type and safe move option</link>. Use the

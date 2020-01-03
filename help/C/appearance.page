@@ -9,6 +9,7 @@
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
     <revision pkgversion="3.11.90" date="2014-03-22" status="review"/>
     <revision pkgversion="3.14" date="2015-01-25" status="review"/>
+    <revision pkgversion="3.34" date="2020-01-03" status="review"/>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
 
@@ -32,12 +33,13 @@
   <steps>
   <title>To change the game theme and background:</title>
     <item>
-      <p>Select <guiseq><gui style="menu">Preferences</gui>
-      <gui style="menuitem">Appearance</gui></guiseq>.</p>
+      <p>Press the menu button in the top-right corner of the window and select <gui style="menuitem">Preferences</gui>.</p>
     </item>
     <item>
-      <p>Select a theme from the drop-down menu available when you click the
-      button next to <gui>Image theme</gui>.</p>
+      <p>Select the <gui>Appearance</gui> tab.</p>
+    </item>
+    <item>
+      <p>Select a theme from the <gui>Image theme</gui> drop-down menu.</p>
     </item>
     <item>
       <p>To change your background color, click the button next to

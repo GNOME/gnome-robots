@@ -344,6 +344,9 @@ activate (GtkApplication *app, gpointer user_data)
   GtkSizeGroup *size_group;
   GtkStyleContext *style_context;
   GamesScoresDirectoryImporter *importer;
+  const gchar *new_game_accels[] = { "<Primary>n", NULL };
+  const gchar *help_accels[] = { "F1", NULL };
+  const gchar *quit_accels[] = { "<Primary>q", NULL };
 
   headerbar = gtk_header_bar_new ();
   gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Robots"));
@@ -367,6 +370,10 @@ activate (GtkApplication *app, gpointer user_data)
 
   g_action_map_add_action_entries (G_ACTION_MAP (app), app_entries, G_N_ELEMENTS (app_entries), app);
   g_action_map_add_action_entries (G_ACTION_MAP (window), win_entries, G_N_ELEMENTS (win_entries), app);
+
+  gtk_application_set_accels_for_action (app, "app.new-game", new_game_accels);
+  gtk_application_set_accels_for_action (app, "app.help", help_accels);
+  gtk_application_set_accels_for_action (app, "app.quit", quit_accels);
 
   make_cursors ();
 

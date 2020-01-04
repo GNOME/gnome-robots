@@ -26,6 +26,7 @@
     ],
     "modules": [{
             "name": "libgnome-games-support",
+            "buildsystem": "meson",
             "modules": [{
                     "name": "libgee",
                     "config-opts": ["--enable-introspection=no"],

@@ -6,7 +6,6 @@
       <item>
         <attribute name="label" translatable="yes">_New Game</attribute>
         <attribute name="action">app.new-game</attribute>
-        <attribute name="accel">&lt;Primary&gt;n</attribute>
       </item>
       <item>
         <attribute name="label" translatable="yes">_Scores</attribute>
@@ -21,7 +20,6 @@
       <item>
         <attribute name="label" translatable="yes">_Help</attribute>
         <attribute name="action">app.help</attribute>
-        <attribute name="accel">F1</attribute>
       </item>
       <item>
         <attribute name="label" translatable="yes">_About Robots</attribute>

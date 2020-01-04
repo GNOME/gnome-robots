@@ -1,3 +1,11 @@
+3.35.3 - January 3, 2020
+========================
+
+- Fix various keyboard shortcuts
+- Properly handle multiple activations
+- Fix non-modal preferences dialog
+- Update user help (Andre Klapper)
+
 3.34.0 - September 8, 2019
 ==========================
 

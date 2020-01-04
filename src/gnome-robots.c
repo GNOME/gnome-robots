@@ -308,6 +308,9 @@ static void
 startup (GtkApplication *app, gpointer user_data)
 {
   struct timeval tv;
+  const gchar *new_game_accels[] = { "<Primary>n", NULL };
+  const gchar *help_accels[] = { "F1", NULL };
+  const gchar *quit_accels[] = { "<Primary>q", NULL };
 
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);
@@ -317,6 +320,12 @@ startup (GtkApplication *app, gpointer user_data)
   settings = g_settings_new ("org.gnome.Robots");
 
   gtk_window_set_default_icon_name ("org.gnome.Robots");
+
+  g_action_map_add_action_entries (G_ACTION_MAP (app), app_entries, G_N_ELEMENTS (app_entries), app);
+
+  gtk_application_set_accels_for_action (app, "app.new-game", new_game_accels);
+  gtk_application_set_accels_for_action (app, "app.help", help_accels);
+  gtk_application_set_accels_for_action (app, "app.quit", quit_accels);
 }
 
 static void
@@ -344,9 +353,6 @@ activate (GtkApplication *app, gpointer user_data)
   GtkSizeGroup *size_group;
   GtkStyleContext *style_context;
   GamesScoresDirectoryImporter *importer;
-  const gchar *new_game_accels[] = { "<Primary>n", NULL };
-  const gchar *help_accels[] = { "F1", NULL };
-  const gchar *quit_accels[] = { "<Primary>q", NULL };
 
   headerbar = gtk_header_bar_new ();
   gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Robots"));
@@ -368,12 +374,7 @@ activate (GtkApplication *app, gpointer user_data)
   if (g_settings_get_boolean (settings, "window-is-maximized"))
     gtk_window_maximize (GTK_WINDOW (window));
 
-  g_action_map_add_action_entries (G_ACTION_MAP (app), app_entries, G_N_ELEMENTS (app_entries), app);
   g_action_map_add_action_entries (G_ACTION_MAP (window), win_entries, G_N_ELEMENTS (win_entries), app);
-
-  gtk_application_set_accels_for_action (app, "app.new-game", new_game_accels);
-  gtk_application_set_accels_for_action (app, "app.help", help_accels);
-  gtk_application_set_accels_for_action (app, "app.quit", quit_accels);
 
   make_cursors ();
 

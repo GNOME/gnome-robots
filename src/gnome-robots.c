@@ -354,6 +354,12 @@ activate (GtkApplication *app, gpointer user_data)
   GtkStyleContext *style_context;
   GamesScoresDirectoryImporter *importer;
 
+  if (window != NULL)
+  {
+    gtk_window_present_with_time (GTK_WINDOW (window), gtk_get_current_event_time ());
+    return;
+  }
+
   headerbar = gtk_header_bar_new ();
   gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Robots"));
   gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);

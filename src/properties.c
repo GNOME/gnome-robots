@@ -390,7 +390,7 @@ show_properties_dialog (void)
 
   propbox = gtk_dialog_new_with_buttons (_("Preferences"),
 					 GTK_WINDOW (window),
-					 GTK_DIALOG_USE_HEADER_BAR,
+					 GTK_DIALOG_USE_HEADER_BAR | GTK_DIALOG_MODAL,
 					 NULL,
                                         NULL);
   gtk_container_set_border_width (GTK_CONTAINER (propbox), 5);

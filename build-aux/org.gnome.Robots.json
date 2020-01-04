@@ -26,7 +26,6 @@
     ],
     "modules": [{
             "name": "libgnome-games-support",
-            "buildsystem": "meson",
             "modules": [{
                     "name": "libgee",
                     "config-opts": ["--enable-introspection=no"],
@@ -37,6 +36,7 @@
                 },
                 {
                     "name": "games-support",
+                    "buildsystem": "meson",
                     "sources": [{
                         "type": "git",
                         "url": "https://gitlab.gnome.org/GNOME/libgnome-games-support.git"

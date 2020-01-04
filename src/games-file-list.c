@@ -31,23 +31,24 @@
 
 #include "games-file-list.h"
 
-G_DEFINE_TYPE (GamesFileList, games_file_list, G_TYPE_OBJECT)
-
 struct GamesFileListPrivate
 {
   GList *list;
 };
 
+G_DEFINE_TYPE_WITH_PRIVATE (GamesFileList, games_file_list, G_TYPE_OBJECT)
+
 /* Remove duplicate names form the list */
 static void
 games_file_list_remove_duplicates (GamesFileList * filelist)
 {
+  GamesFileListPrivate *priv = games_file_list_get_instance_private (filelist);
   GList *l;
 
   if (filelist == NULL)
     return;
 
-  l = filelist->priv->list;
+  l = priv->list;
 
   if ((l == NULL) || (l->next == NULL))
     return;
@@ -110,16 +111,17 @@ GamesFileList *
 games_file_list_new (const gchar * glob, ...)
 {
   GamesFileList *filelist;
+  GamesFileListPrivate *priv;
   va_list paths;
 
   filelist = g_object_new (GAMES_FILE_LIST_TYPE, NULL);
+  priv = games_file_list_get_instance_private (filelist);
 
   va_start (paths, glob);
-  filelist->priv->list = games_file_list_new_internal (glob, paths);
+  priv->list = games_file_list_new_internal (glob, paths);
   va_end (paths);
 
-  filelist->priv->list =
-    g_list_sort (filelist->priv->list, (GCompareFunc) g_utf8_collate);
+  priv->list = g_list_sort (priv->list, (GCompareFunc) g_utf8_collate);
   games_file_list_remove_duplicates (filelist);
 
   return filelist;
@@ -129,7 +131,8 @@ games_file_list_new (const gchar * glob, ...)
 void
 games_file_list_transform_basename (GamesFileList * filelist)
 {
-  GList *current = filelist->priv->list;
+  GamesFileListPrivate *priv = games_file_list_get_instance_private (filelist);
+  GList *current = priv->list;
   gchar *shortname;
 
   while (current) {
@@ -243,21 +246,22 @@ GamesFileList *
 games_file_list_new_images (const gchar * path1, ...)
 {
   GamesFileList *filelist;
+  GamesFileListPrivate *priv;
   gchar *pathentry;
   va_list paths;
 
   filelist = g_object_new (GAMES_FILE_LIST_TYPE, NULL);
+  priv = games_file_list_get_instance_private (filelist);
 
-  filelist->priv->list = games_file_list_new_images_single (path1);
+  priv->list = games_file_list_new_images_single (path1);
   va_start (paths, path1);
   while ((pathentry = va_arg (paths, gchar *)) != NULL) {
-    filelist->priv->list = g_list_concat (filelist->priv->list,
+    priv->list = g_list_concat (priv->list,
 			  games_file_list_new_images_single (pathentry));
   }
   va_end (paths);
 
-  filelist->priv->list =
-    g_list_sort (filelist->priv->list, (GCompareFunc) g_utf8_collate);
+  priv->list = g_list_sort (priv->list, (GCompareFunc) g_utf8_collate);
   games_file_list_remove_duplicates (filelist);
 
   return filelist;
@@ -282,10 +286,11 @@ GtkWidget *
 games_file_list_create_widget (GamesFileList * filelist,
 			       const gchar * selection, guint flags)
 {
+  GamesFileListPrivate *priv = games_file_list_get_instance_private (filelist);
   gint itemno;
   GtkComboBox *widget;
   gchar *visible, *string;
-  GList *iter = filelist->priv->list;
+  GList *iter = priv->list;
   gboolean found = FALSE;
 
   widget = GTK_COMBO_BOX (gtk_combo_box_text_new ());
@@ -340,7 +345,9 @@ games_file_list_create_widget (GamesFileList * filelist,
 gsize
 games_file_list_length (GamesFileList * filelist)
 {
-    return g_list_length (filelist->priv->list);
+  GamesFileListPrivate *priv = games_file_list_get_instance_private (filelist);
+
+  return g_list_length (priv->list);
 }
 
 /**
@@ -358,7 +365,9 @@ void
 games_file_list_for_each (GamesFileList * filelist, GFunc function,
                           gpointer userdata)
 {
-  g_list_foreach (filelist->priv->list, function, userdata);
+  GamesFileListPrivate *priv = games_file_list_get_instance_private (filelist);
+
+  g_list_foreach (priv->list, function, userdata);
 }
 
 /**
@@ -380,9 +389,10 @@ gchar *
 games_file_list_find (GamesFileList * filelist, GCompareFunc function,
 		      gpointer userdata)
 {
+  GamesFileListPrivate *priv = games_file_list_get_instance_private (filelist);
   GList *element;
 
-  element = g_list_find_custom (filelist->priv->list, userdata, function);
+  element = g_list_find_custom (priv->list, userdata, function);
 
   return element ? g_strdup ((gchar *) element->data) : NULL;
 }
@@ -400,19 +410,22 @@ games_file_list_find (GamesFileList * filelist, GCompareFunc function,
 const gchar *
 games_file_list_get_nth (GamesFileList * filelist, gint n)
 {
-  return (const gchar *) g_list_nth_data (filelist->priv->list, n);
+  GamesFileListPrivate *priv = games_file_list_get_instance_private (filelist);
+
+  return (const gchar *) g_list_nth_data (priv->list, n);
 }
 
 static void
 games_file_list_finalize (GObject * object)
 {
   GamesFileList *filelist = GAMES_FILE_LIST (object);
+  GamesFileListPrivate *priv = games_file_list_get_instance_private (filelist);
 
   /* For simplicity we haven't used the dispose method since we can
    * guarantee that everything this references doesn't reference itself. */
 
-  g_list_foreach (filelist->priv->list, (GFunc) g_free, NULL);
-  g_list_free (filelist->priv->list);
+  g_list_foreach (priv->list, (GFunc) g_free, NULL);
+  g_list_free (priv->list);
 
   G_OBJECT_CLASS (games_file_list_parent_class)->finalize (object);
 }
@@ -423,12 +436,9 @@ games_file_list_class_init (GamesFileListClass * class)
   GObjectClass *oclass = G_OBJECT_CLASS (class);
 
   oclass->finalize = games_file_list_finalize;
-
-  g_type_class_add_private (oclass, sizeof (GamesFileListPrivate));
 }
 
 static void
 games_file_list_init (GamesFileList * filelist)
 {
-  filelist->priv = G_TYPE_INSTANCE_GET_PRIVATE (filelist, GAMES_FILE_LIST_TYPE, GamesFileListPrivate);
 }

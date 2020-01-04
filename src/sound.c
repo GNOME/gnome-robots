@@ -80,7 +80,7 @@ play_sound (gint sno)
       name = "splat";
       break;
     case SOUND_BAD:
-      gdk_beep ();
+      gdk_display_beep (gdk_display_get_default ());
       break;
     case SOUND_YAHOO:
       name = "yahoo";

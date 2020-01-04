@@ -469,8 +469,6 @@ update_arena (void)
 static gint
 timeout_cb (void *data)
 {
-  gint sp;
-
   animate_game_graphics ();
 
   clear_game_area ();

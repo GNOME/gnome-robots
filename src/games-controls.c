@@ -37,8 +37,6 @@ enum {
 
 /* Class implementation */
 
-G_DEFINE_TYPE (GamesControlsList, games_controls_list, GTK_TYPE_SCROLLED_WINDOW)
-
 struct GamesControlsListPrivate {
   GtkTreeModel *model;
   GtkListStore *store;
@@ -48,6 +46,8 @@ struct GamesControlsListPrivate {
   gulong notify_handler_id;
 };
 
+G_DEFINE_TYPE_WITH_PRIVATE (GamesControlsList, games_controls_list, GTK_TYPE_SCROLLED_WINDOW)
+
 static void
 accel_edited_cb (GtkCellRendererAccel *cell,
                  char *path_string,
@@ -56,6 +56,7 @@ accel_edited_cb (GtkCellRendererAccel *cell,
                  guint hardware_keycode,
                  GamesControlsList *list)
 {
+  GamesControlsListPrivate *priv = games_controls_list_get_instance_private (list);
   GtkTreePath *path;
   GtkTreeIter iter;
   char *conf_key = NULL;
@@ -64,13 +65,13 @@ accel_edited_cb (GtkCellRendererAccel *cell,
   if (!path)
     return;
 
-  if (!gtk_tree_model_get_iter (list->priv->model, &iter, path)) {
+  if (!gtk_tree_model_get_iter (priv->model, &iter, path)) {
     gtk_tree_path_free (path);
     return;
   }
   gtk_tree_path_free (path);
 
-  gtk_tree_model_get (list->priv->model, &iter,
+  gtk_tree_model_get (priv->model, &iter,
                       CONFKEY_COLUMN, &conf_key,
                       -1);
   if (!conf_key)
@@ -78,7 +79,7 @@ accel_edited_cb (GtkCellRendererAccel *cell,
 
   /* Note: the model is updated in the conf notification callback */
   /* FIXME: what to do with the modifiers? */
-  g_settings_set_int (list->priv->settings, conf_key, keyval);
+  g_settings_set_int (priv->settings, conf_key, keyval);
   g_free (conf_key);
 }
 
@@ -87,6 +88,7 @@ accel_cleared_cb (GtkCellRendererAccel *cell,
                   char *path_string,
                   GamesControlsList *list)
 {
+  GamesControlsListPrivate *priv = games_controls_list_get_instance_private (list);
   GtkTreePath *path;
   GtkTreeIter iter;
   char *conf_key = NULL;
@@ -96,13 +98,13 @@ accel_cleared_cb (GtkCellRendererAccel *cell,
   if (!path)
     return;
 
-  if (!gtk_tree_model_get_iter (list->priv->model, &iter, path)) {
+  if (!gtk_tree_model_get_iter (priv->model, &iter, path)) {
     gtk_tree_path_free (path);
     return;
   }
   gtk_tree_path_free (path);
 
-  gtk_tree_model_get (list->priv->model, &iter,
+  gtk_tree_model_get (priv->model, &iter,
                       CONFKEY_COLUMN, &conf_key,
                       DEFAULT_KEYCODE_COLUMN, &default_keyval,
                       -1);
@@ -111,35 +113,36 @@ accel_cleared_cb (GtkCellRendererAccel *cell,
 
   /* Note: the model is updated in the conf notification callback */
   /* FIXME: what to do with the modifiers? */
-  g_settings_set_int (list->priv->settings, conf_key, default_keyval);
+  g_settings_set_int (priv->settings, conf_key, default_keyval);
   g_free (conf_key);
 }
 
 static void
 settings_changed_cb (GSettings *settings, const gchar *key, GamesControlsList *list)
 {
+  GamesControlsListPrivate *priv = games_controls_list_get_instance_private (list);
   GtkTreeIter iter;
   gboolean valid;
 
   /* find our gconf key in the list store and update it */
-  valid = gtk_tree_model_get_iter_first (list->priv->model, &iter);
+  valid = gtk_tree_model_get_iter_first (priv->model, &iter);
   while (valid) {
     char *conf_key;
 
-    gtk_tree_model_get (list->priv->model, &iter,
+    gtk_tree_model_get (priv->model, &iter,
                         CONFKEY_COLUMN, &conf_key,
                         -1);
 
     if (strcmp (key, conf_key) == 0) {
       guint keyval, default_keyval;
 
-      gtk_tree_model_get (list->priv->model, &iter,
+      gtk_tree_model_get (priv->model, &iter,
                           DEFAULT_KEYCODE_COLUMN, &default_keyval,
                           -1);
 
-      keyval = g_settings_get_int (list->priv->settings, key);
+      keyval = g_settings_get_int (priv->settings, key);
 
-      gtk_list_store_set (list->priv->store, &iter,
+      gtk_list_store_set (priv->store, &iter,
                           KEYCODE_COLUMN, keyval,
                           KEYMODS_COLUMN, 0 /* FIXME? */,
                           -1);
@@ -149,14 +152,13 @@ settings_changed_cb (GSettings *settings, const gchar *key, GamesControlsList *l
     }
 
     g_free (conf_key);
-    valid = gtk_tree_model_iter_next (GTK_TREE_MODEL (list->priv->store), &iter);
+    valid = gtk_tree_model_iter_next (GTK_TREE_MODEL (priv->store), &iter);
   }
 }
 
 static void
 games_controls_list_init (GamesControlsList *list)
 {
-  list->priv = G_TYPE_INSTANCE_GET_PRIVATE (list, GAMES_TYPE_CONTROLS_LIST, GamesControlsListPrivate);
 }
 
 static GObject *
@@ -164,6 +166,7 @@ games_controls_list_constructor (GType type,
                                  guint n_construct_properties,
                                  GObjectConstructParam *construct_params)
 {
+  GamesControlsListPrivate *priv;
   GObject *object;
   GamesControlsList *list;
   GtkScrolledWindow *scrolled_window;
@@ -175,6 +178,7 @@ games_controls_list_constructor (GType type,
              (type, n_construct_properties, construct_params);
 
   list = GAMES_CONTROLS_LIST (object);
+  priv = games_controls_list_get_instance_private (list);
   scrolled_window = GTK_SCROLLED_WINDOW (object);
 
   store = gtk_list_store_new (N_COLUMNS,
@@ -184,14 +188,14 @@ games_controls_list_constructor (GType type,
                               G_TYPE_UINT,
                               G_TYPE_UINT,
                               G_TYPE_UINT);
-  list->priv->store = store;
-  list->priv->model = GTK_TREE_MODEL (store);
+  priv->store = store;
+  priv->model = GTK_TREE_MODEL (store);
 
-  list->priv->view = gtk_tree_view_new_with_model (list->priv->model);
+  priv->view = gtk_tree_view_new_with_model (priv->model);
   g_object_unref (store);
 
-  gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (list->priv->view), FALSE);
-  gtk_tree_view_set_enable_search (GTK_TREE_VIEW (list->priv->view), FALSE);
+  gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (priv->view), FALSE);
+  gtk_tree_view_set_enable_search (GTK_TREE_VIEW (priv->view), FALSE);
 
   /* label column */
   label_renderer = gtk_cell_renderer_text_new ();
@@ -199,7 +203,7 @@ games_controls_list_constructor (GType type,
 						     label_renderer,
 						     "text", LABEL_COLUMN,
 						     NULL);
-  gtk_tree_view_append_column (GTK_TREE_VIEW (list->priv->view), column);
+  gtk_tree_view_append_column (GTK_TREE_VIEW (priv->view), column);
 
   /* key column */
   key_renderer = gtk_cell_renderer_accel_new ();
@@ -217,9 +221,9 @@ games_controls_list_constructor (GType type,
                                                      "accel-key", KEYCODE_COLUMN,
                                                      "accel-mods", KEYMODS_COLUMN,
 						     NULL);
-  gtk_tree_view_append_column (GTK_TREE_VIEW (list->priv->view), column);
+  gtk_tree_view_append_column (GTK_TREE_VIEW (priv->view), column);
 
-  gtk_container_add (GTK_CONTAINER (scrolled_window), list->priv->view);
+  gtk_container_add (GTK_CONTAINER (scrolled_window), priv->view);
 
   return object;
 }
@@ -228,11 +232,12 @@ static void
 games_controls_list_finalize (GObject *object)
 {
   GamesControlsList *list = GAMES_CONTROLS_LIST (object);
+  GamesControlsListPrivate *priv = games_controls_list_get_instance_private (list);
 
-  g_signal_handler_disconnect (list->priv->settings, list->priv->notify_handler_id);
+  g_signal_handler_disconnect (priv->settings, priv->notify_handler_id);
 
-  if (list->priv->settings)
-      g_object_unref (list->priv->settings);
+  if (priv->settings)
+      g_object_unref (priv->settings);
 
   G_OBJECT_CLASS (games_controls_list_parent_class)->finalize (object);
 }
@@ -244,8 +249,6 @@ games_controls_list_class_init (GamesControlsListClass *klass)
 
   gobject_class->constructor = games_controls_list_constructor;
   gobject_class->finalize = games_controls_list_finalize;
-
-  g_type_class_add_private (gobject_class, sizeof (GamesControlsListPrivate));
 }
 
 /* Public API */
@@ -254,18 +257,20 @@ GtkWidget *
 games_controls_list_new (GSettings *settings)
 {
   GamesControlsList *list;
+  GamesControlsListPrivate *priv;
 
   list = g_object_new (GAMES_TYPE_CONTROLS_LIST,
                        "hscrollbar-policy", GTK_POLICY_NEVER,
                        "vscrollbar-policy", GTK_POLICY_AUTOMATIC,
                        "shadow-type", GTK_SHADOW_IN,
                        NULL);
+  priv = games_controls_list_get_instance_private (list);
 
-  list->priv->settings = g_object_ref (settings);
-  list->priv->notify_handler_id = g_signal_connect (list->priv->settings,
-                                                    "changed",
-                                                    G_CALLBACK (settings_changed_cb),
-                                                    list);
+  priv->settings = g_object_ref (settings);
+  priv->notify_handler_id = g_signal_connect (priv->settings,
+                                              "changed",
+                                              G_CALLBACK (settings_changed_cb),
+                                              list);
 
   return GTK_WIDGET (list);
 }
@@ -276,6 +281,7 @@ games_controls_list_add_control (GamesControlsList *list,
                                  const char *label,
                                  guint default_keyval)
 {
+  GamesControlsListPrivate *priv = games_controls_list_get_instance_private (list);
   GtkTreeIter iter;
   guint keyval;
 
@@ -285,9 +291,9 @@ games_controls_list_add_control (GamesControlsList *list,
   if (!label)
     label = _("Unknown Command");
 
-  keyval = g_settings_get_int (list->priv->settings, conf_key);
+  keyval = g_settings_get_int (priv->settings, conf_key);
 
-  gtk_list_store_insert_with_values (list->priv->store, &iter, -1,
+  gtk_list_store_insert_with_values (priv->store, &iter, -1,
                                      CONFKEY_COLUMN, conf_key,
                                      LABEL_COLUMN, label,
                                      KEYCODE_COLUMN, keyval,

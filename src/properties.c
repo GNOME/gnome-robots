@@ -72,7 +72,7 @@ struct _GnobotsProperties {
   gboolean show_toolbar;
   GdkRGBA bgcolour;
   gint selected_config;
-  gint keys[N_KEYS];
+  guint keys[N_KEYS];
   const gchar *themename;
 };
 /**********************************************************************/
@@ -275,7 +275,7 @@ sound_cb (GtkWidget * widget, gpointer data)
 static void
 defkey_cb (GtkWidget * widget, gpointer data)
 {
-  gint i;
+  guint i;
 
   for (i = 0; i < N_KEYS; ++i) {
     GVariant *variant;
@@ -284,7 +284,7 @@ defkey_cb (GtkWidget * widget, gpointer data)
     g_snprintf (buffer, sizeof (buffer), KEY_CONTROL_KEY, i);
     g_settings_reset (settings, buffer);
     variant = g_settings_get_default_value (settings, buffer);
-    properties.keys[i] = g_variant_get_int32 (variant);
+    properties.keys[i] = g_variant_get_uint32 (variant);
     g_variant_unref (variant);
   }
 
@@ -391,7 +391,8 @@ show_properties_dialog (void)
   propbox = gtk_dialog_new_with_buttons (_("Preferences"),
 					 GTK_WINDOW (window),
 					 GTK_DIALOG_USE_HEADER_BAR,
-					 NULL);
+					 NULL,
+                                        NULL);
   gtk_container_set_border_width (GTK_CONTAINER (propbox), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))), 2);
   /* Set up notebook and add it to hbox of the gtk_dialog */

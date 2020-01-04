@@ -203,7 +203,7 @@ help_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
   GError *error = NULL;
 
-  gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (window)), "help:gnome-robots", gtk_get_current_event_time (), &error);
+  gtk_show_uri_on_window (GTK_WINDOW (window), "help:gnome-robots", gtk_get_current_event_time (), &error);
   if (error)
     g_warning ("Failed to show help: %s", error->message);
   g_clear_error (&error);

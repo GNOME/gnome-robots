@@ -27,8 +27,6 @@ typedef struct GamesFileListPrivate GamesFileListPrivate;
 
 typedef struct {
   GObject parent;
-  /*< private >*/
-  GamesFileListPrivate *priv;
 } GamesFileList;
 
 typedef struct {

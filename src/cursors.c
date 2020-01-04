@@ -68,11 +68,14 @@ make_cursors (void)
   int i;
   cursor_props *c;
 
-  default_cursor = gdk_cursor_new (GDK_LEFT_PTR);
+  default_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
+                                               GDK_LEFT_PTR);
 
   c = cursor_list;
   for (i = 0; i < G_N_ELEMENTS (cursor_list); ++i) {
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
     pixbuf = gdk_pixbuf_new_from_inline (c->data_len, c->data, FALSE, NULL);
+G_GNUC_END_IGNORE_DEPRECATIONS
     c->cursor = gdk_cursor_new_from_pixbuf (gdk_display_get_default (),
                                             pixbuf,
                                             c->hsx, c->hsy);

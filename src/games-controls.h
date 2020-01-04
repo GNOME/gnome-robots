@@ -23,8 +23,6 @@ typedef struct GamesControlsListPrivate GamesControlsListPrivate;
 
 typedef struct {
   GtkScrolledWindow parent_instance;
-  /*< private >*/
-  GamesControlsListPrivate *priv;
 } GamesControlsList;
 
 typedef struct {

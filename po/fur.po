@@ -7,33 +7,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-02-06 19:33+0000\n"
-"PO-Revision-Date: 2019-03-01 16:05+0100\n"
+"POT-Creation-Date: 2020-01-04 15:09+0000\n"
+"PO-Revision-Date: 2020-01-26 20:20+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: data/app-menu.ui:7 src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Gnove partide"
 
-#: data/app-menu.ui:12
+#: data/app-menu.ui:11
 msgid "_Scores"
 msgstr "_Risultâts"
 
-#: data/app-menu.ui:18
+#: data/app-menu.ui:17
 msgid "_Preferences"
 msgstr "_Preferencis"
 
-#: data/app-menu.ui:22
+#: data/app-menu.ui:21
 msgid "_Help"
 msgstr "_Jutori"
 
-#: data/app-menu.ui:27
+#: data/app-menu.ui:25
 msgid "_About Robots"
 msgstr "_Informazions su Robots"
 
@@ -47,10 +47,10 @@ msgstr "Scjampe dai robots e fâsiju trussâ l'un cul altri"
 
 #: data/org.gnome.Robots.appdata.xml.in:10
 msgid ""
-"It is the distant future – the year 2000. Evil robots are trying to kill "
-"you. Avoid the robots or face certain death."
+"It is the distant future: the year 2000. Evil robots are trying to kill you. "
+"Avoid the robots or face certain death."
 msgstr ""
-"O sin intun futûr distant – l'an 2000. Robots triscj a stan cirint di "
+"O sin intun futûr distant: l'an 2000. I robots triscj a stan cirint di "
 "copâti. Scjampe o mûr."
 
 #: data/org.gnome.Robots.appdata.xml.in:14
@@ -76,12 +76,12 @@ msgstr ""
 "finidis, il teletraspuart al podarès puartâti propit dongje un robot che ti "
 "coparà. Sorevîf il plui a dilunc pussibil!"
 
-#: data/org.gnome.Robots.appdata.xml.in:50
+#: data/org.gnome.Robots.appdata.xml.in:54
 msgid "The GNOME Project"
 msgstr "Il progjet GNOME"
 
 #: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:315 src/gnome-robots.c:349
+#: src/gnome-robots.c:318 src/gnome-robots.c:364
 msgid "Robots"
 msgstr "Robots"
 
@@ -89,11 +89,6 @@ msgstr "Robots"
 #: data/org.gnome.Robots.desktop.in:6
 msgid "game;arcade;teleport;"
 msgstr "zûc;arcade;teletraspuart;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Robots.desktop.in:9
-msgid "org.gnome.Robots"
-msgstr "org.gnome.Robots"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
@@ -164,7 +159,7 @@ msgstr "Abilite i suns di zûc"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Abilite suns di zûc. Sune sunôrs pai varis events dilunc il zûc."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:503
+#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
 msgid "Key to move NW"
 msgstr "Tast par movi a NO"
 
@@ -172,7 +167,7 @@ msgstr "Tast par movi a NO"
 msgid "The key used to move north-west."
 msgstr "Il tast doprât par spostâsi a nordovest."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
 msgid "Key to move N"
 msgstr "Tast par movi a N"
 
@@ -180,7 +175,7 @@ msgstr "Tast par movi a N"
 msgid "The key used to move north."
 msgstr "Il tast doprât par spostâsi a nord."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
 msgid "Key to move NE"
 msgstr "Tast par movi a NE"
 
@@ -188,7 +183,7 @@ msgstr "Tast par movi a NE"
 msgid "The key used to move north-east."
 msgstr "Il tast doprât par spostâsi a nordest."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
 msgid "Key to move W"
 msgstr "Tast par movi a O"
 
@@ -196,7 +191,7 @@ msgstr "Tast par movi a O"
 msgid "The key used to move west."
 msgstr "Il tast doprât par spostâsi a ovest."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
 msgid "Key to hold"
 msgstr "Tast par stâ"
 
@@ -204,7 +199,7 @@ msgstr "Tast par stâ"
 msgid "The key used to hold still."
 msgstr "Il tast doprât par stâ fers."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
 msgid "Key to move E"
 msgstr "Tast par movi a E"
 
@@ -212,7 +207,7 @@ msgstr "Tast par movi a E"
 msgid "The key used to move east."
 msgstr "Il tast doprât par spostâsi a est."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
 msgid "Key to move SW"
 msgstr "Tast par movi a SO"
 
@@ -220,7 +215,7 @@ msgstr "Tast par movi a SO"
 msgid "The key used to move south-west."
 msgstr "Il tast doprât par spostâsi a sudovest."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
 msgid "Key to move S"
 msgstr "Tast par movi a S"
 
@@ -228,7 +223,7 @@ msgstr "Tast par movi a S"
 msgid "The key used to move south."
 msgstr "Il tast doprât par spostâsi a sud."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
 msgid "Key to move SE"
 msgstr "Tast par movi a SE"
 
@@ -257,15 +252,15 @@ msgstr ""
 "Ma rivaressitu a tornâ a fâlu?"
 
 #. This should never happen.
-#: src/game.c:1110
+#: src/game.c:1108
 msgid "There are no teleport locations left!!"
 msgstr "Nol è restât nissun puest dulà teletrasportâsi!!"
 
-#: src/game.c:1138
+#: src/game.c:1136
 msgid "There are no safe locations to teleport to!!"
 msgstr "Nol è restât nissun puest sigûr dulà teletrasportâsi!!"
 
-#: src/games-controls.c:286
+#: src/games-controls.c:292
 msgid "Unknown Command"
 msgstr "Comant no cognossût"
 
@@ -362,24 +357,24 @@ msgstr "Sigûrs di butâ vie cheste partide?"
 msgid "Keep _Playing"
 msgstr "_Continue a zuiâ"
 
-#: src/gnome-robots.c:396
+#: src/gnome-robots.c:410
 msgid "Teleport _Randomly"
 msgstr "Teletraspuarte a _câs"
 
-#: src/gnome-robots.c:415
+#: src/gnome-robots.c:429
 msgid "_Wait for Robots"
 msgstr "_Spiete i Robots"
 
 #. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:439
+#: src/gnome-robots.c:453
 msgid "Game Type:"
 msgstr "Gjenar di zûc:"
 
-#: src/gnome-robots.c:454
+#: src/gnome-robots.c:468
 msgid "No game data could be found."
 msgstr "Impussibil cjatâ i dâts dal zûc."
 
-#: src/gnome-robots.c:456
+#: src/gnome-robots.c:470
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -387,11 +382,11 @@ msgstr ""
 "Il program Robots nol è rivât a cjatâ nissun valit file di configurazion di "
 "zûc. Controle che il program al sedi instalât ben."
 
-#: src/gnome-robots.c:473
+#: src/gnome-robots.c:487
 msgid "Some graphics files are missing or corrupt."
 msgstr "Cualchi file grafic al mancje o al è ruvinât."
 
-#: src/gnome-robots.c:475
+#: src/gnome-robots.c:489
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -408,57 +403,60 @@ msgstr "Impussibil cjatâ file pixmap “%s”\n"
 msgid "Preferences"
 msgstr "Preferencis"
 
-#: src/properties.c:415
+#: src/properties.c:416
 msgid "Game Type"
 msgstr "Gjenar di zûc"
 
-#: src/properties.c:425
+#: src/properties.c:426
 msgid "_Use safe moves"
 msgstr "_Dopre mossis siguris"
 
-#: src/properties.c:430
+#: src/properties.c:431
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Prevignìs lis mossis acidentâi che a risultin intal jessi copâts."
 
-#: src/properties.c:433
+#: src/properties.c:434
 msgid "U_se super safe moves"
 msgstr "Dopre mossis _super siguris"
 
-#: src/properties.c:440
+#: src/properties.c:441
 msgid "Prevents all moves that result in getting killed."
 msgstr "Prevignìs dutis lis mossis che a risultin intal jessi copâts."
 
-#: src/properties.c:446
+#: src/properties.c:447
 msgid "_Enable sounds"
 msgstr "_Abilite suns"
 
-#: src/properties.c:452
+#: src/properties.c:453
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Riprodûs suns par events come vinci un nivel e murî."
 
-#: src/properties.c:454
+#: src/properties.c:455
 msgid "Game"
 msgstr "Zûc"
 
-#: src/properties.c:467
+#: src/properties.c:468
 msgid "_Image theme:"
 msgstr "Teme _imagjins:"
 
-#: src/properties.c:479
+#: src/properties.c:480
 msgid "_Background color:"
 msgstr "Colôr di _sfont:"
 
-#: src/properties.c:491
+#: src/properties.c:492
 msgid "Appearance"
 msgstr "Aspiet"
 
-#: src/properties.c:520
+#: src/properties.c:521
 msgid "_Restore Defaults"
 msgstr "_Ripristine predefinîts"
 
-#: src/properties.c:525
+#: src/properties.c:526
 msgid "Keyboard"
 msgstr "Tastiere"
+
+#~ msgid "org.gnome.Robots"
+#~ msgstr "org.gnome.Robots"
 
 #~ msgid "_Quit"
 #~ msgstr "_Jes"

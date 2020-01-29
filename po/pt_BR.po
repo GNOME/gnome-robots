@@ -1,5 +1,5 @@
 # Brazilian Portuguese translation of gnome-robots.
-# Copyright (C) 1999-2019 gnome-robots's COPYRIGHT HOLDERS
+# Copyright (C) 2020 gnome-robots's COPYRIGHT HOLDERS
 # This file is distributed under the same license as the gnome-robots package.
 # Sandro Nunes Henrique <sandro@conectiva.com.br>, 1999.
 # Cândida Nunes da Silva <candida@zaz.com.br>, 2000-2001.
@@ -24,14 +24,14 @@
 # Enrico Nicoletto <liverig@gmail.com>, 2014, 2015, 2016.
 # Ricardo Barbosa <barbosa.cisco@gmail.com>, 2014.
 # Artur de Aquino Morais <artur.morais93@outlook.com>, 2016.
-# Rafael Fontenelle <rafaelff@gnome.org>, 2013-2019.
+# Rafael Fontenelle <rafaelff@gnome.org>, 2013-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-09-27 15:47+0000\n"
-"PO-Revision-Date: 2019-12-14 14:26-0300\n"
+"POT-Creation-Date: 2020-01-04 15:09+0000\n"
+"PO-Revision-Date: 2020-01-29 06:54-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -46,19 +46,19 @@ msgstr ""
 msgid "_New Game"
 msgstr "_Novo jogo"
 
-#: data/app-menu.ui:12
+#: data/app-menu.ui:11
 msgid "_Scores"
 msgstr "_Pontuações"
 
-#: data/app-menu.ui:18
+#: data/app-menu.ui:17
 msgid "_Preferences"
 msgstr "_Preferências"
 
-#: data/app-menu.ui:22
+#: data/app-menu.ui:21
 msgid "_Help"
 msgstr "A_juda"
 
-#: data/app-menu.ui:27
+#: data/app-menu.ui:25
 msgid "_About Robots"
 msgstr "_Sobre o Robôs"
 
@@ -71,12 +71,15 @@ msgid "Avoid the robots and make them crash into each other"
 msgstr "Evite os robôs e faça eles colidirem uns nos outros"
 
 #: data/org.gnome.Robots.appdata.xml.in:10
+#| msgid ""
+#| "It is the distant future – the year 2000. Evil robots are trying to kill "
+#| "you. Avoid the robots or face certain death."
 msgid ""
-"It is the distant future – the year 2000. Evil robots are trying to kill "
-"you. Avoid the robots or face certain death."
+"It is the distant future: the year 2000. Evil robots are trying to kill you. "
+"Avoid the robots or face certain death."
 msgstr ""
-"Se passa em um futuro distante – no ano 2000. Robôs maus estão tentando "
-"matar você. Evite os robôs ou enfrente uma morte certa."
+"Se passa em um futuro distante: no ano 2000. Robôs maus estão tentando matar "
+"você. Evite os robôs ou enfrente uma morte certa."
 
 #: data/org.gnome.Robots.appdata.xml.in:14
 msgid ""
@@ -102,12 +105,12 @@ msgstr ""
 "teleportação poderia fazer você aparecer do lado de um robô, que vai matá-"
 "lo. Sobreviva o máximo que puder!"
 
-#: data/org.gnome.Robots.appdata.xml.in:53
+#: data/org.gnome.Robots.appdata.xml.in:54
 msgid "The GNOME Project"
 msgstr "O projeto GNOME"
 
 #: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:315 src/gnome-robots.c:349
+#: src/gnome-robots.c:318 src/gnome-robots.c:364
 msgid "Robots"
 msgstr "Robôs"
 
@@ -185,7 +188,7 @@ msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Habilitar sons do jogo. Reproduz sons para vários eventos durante o jogo."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:503
+#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
 msgid "Key to move NW"
 msgstr "Tecla para mover à esquerda e para cima"
 
@@ -193,7 +196,7 @@ msgstr "Tecla para mover à esquerda e para cima"
 msgid "The key used to move north-west."
 msgstr "A tecla usada para mover à noroeste."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
 msgid "Key to move N"
 msgstr "Tecla para mover para cima"
 
@@ -201,7 +204,7 @@ msgstr "Tecla para mover para cima"
 msgid "The key used to move north."
 msgstr "Tecla para mover ao norte."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
 msgid "Key to move NE"
 msgstr "Tecla para mover à direita e para cima"
 
@@ -209,7 +212,7 @@ msgstr "Tecla para mover à direita e para cima"
 msgid "The key used to move north-east."
 msgstr "Tecla para mover à nordeste."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
 msgid "Key to move W"
 msgstr "Tecla para mover à esquerda"
 
@@ -217,7 +220,7 @@ msgstr "Tecla para mover à esquerda"
 msgid "The key used to move west."
 msgstr "Tecla usada para mover oeste."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
 msgid "Key to hold"
 msgstr "Tecla para ficar parado"
 
@@ -225,7 +228,7 @@ msgstr "Tecla para ficar parado"
 msgid "The key used to hold still."
 msgstr "A tecla usada para ficar parado (congelado)."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
 msgid "Key to move E"
 msgstr "Tecla para mover à direita"
 
@@ -233,7 +236,7 @@ msgstr "Tecla para mover à direita"
 msgid "The key used to move east."
 msgstr "Tecla para mover à leste."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
 msgid "Key to move SW"
 msgstr "Tecla para mover à esquerda e para baixo"
 
@@ -241,7 +244,7 @@ msgstr "Tecla para mover à esquerda e para baixo"
 msgid "The key used to move south-west."
 msgstr "Tecla usada para mover ao sudoeste."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
 msgid "Key to move S"
 msgstr "Tecla para mover para baixo"
 
@@ -249,7 +252,7 @@ msgstr "Tecla para mover para baixo"
 msgid "The key used to move south."
 msgstr "Tecla usada para mover ao sul."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
 msgid "Key to move SE"
 msgstr "Tecla para mover à direita e para baixo"
 
@@ -278,15 +281,15 @@ msgstr ""
 "Mas é capaz de fazê-lo novamente?"
 
 #. This should never happen.
-#: src/game.c:1110
+#: src/game.c:1108
 msgid "There are no teleport locations left!!"
 msgstr "Não há locais de teleporte disponíveis!!!"
 
-#: src/game.c:1138
+#: src/game.c:1136
 msgid "There are no safe locations to teleport to!!"
 msgstr "Não há locais seguros para o teleporte!!"
 
-#: src/games-controls.c:286
+#: src/games-controls.c:292
 msgid "Unknown Command"
 msgstr "Comando desconhecido"
 
@@ -400,24 +403,24 @@ msgstr "Você tem certeza de que deseja descartar o jogo atual?"
 msgid "Keep _Playing"
 msgstr "_Continuar jogando"
 
-#: src/gnome-robots.c:396
+#: src/gnome-robots.c:410
 msgid "Teleport _Randomly"
 msgstr "_Teleportar aleatoriamente"
 
-#: src/gnome-robots.c:415
+#: src/gnome-robots.c:429
 msgid "_Wait for Robots"
 msgstr "_Aguardar pelos robôs"
 
 #. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:439
+#: src/gnome-robots.c:453
 msgid "Game Type:"
 msgstr "Tipo de jogo:"
 
-#: src/gnome-robots.c:454
+#: src/gnome-robots.c:468
 msgid "No game data could be found."
 msgstr "Nenhum dado de jogo pôde ser localizado."
 
-#: src/gnome-robots.c:456
+#: src/gnome-robots.c:470
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -426,11 +429,11 @@ msgstr ""
 "de jogo válido. Por favor, verifique se o programa está instalado "
 "corretamente."
 
-#: src/gnome-robots.c:473
+#: src/gnome-robots.c:487
 msgid "Some graphics files are missing or corrupt."
 msgstr "Alguns arquivos de gráficos estão faltando ou corrompidos."
 
-#: src/gnome-robots.c:475
+#: src/gnome-robots.c:489
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -447,55 +450,55 @@ msgstr "Não foi possível localizar o arquivo de pixmap “%s”\n"
 msgid "Preferences"
 msgstr "Preferências"
 
-#: src/properties.c:415
+#: src/properties.c:416
 msgid "Game Type"
 msgstr "Tipo de jogo"
 
-#: src/properties.c:425
+#: src/properties.c:426
 msgid "_Use safe moves"
 msgstr "_Usar movimentos seguros"
 
-#: src/properties.c:430
+#: src/properties.c:431
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Evita movimentos acidentais que resultem em morte."
 
-#: src/properties.c:433
+#: src/properties.c:434
 msgid "U_se super safe moves"
 msgstr "U_sar movimentos super seguros"
 
-#: src/properties.c:440
+#: src/properties.c:441
 msgid "Prevents all moves that result in getting killed."
 msgstr "Evita todos os movimentos que resultem em morte."
 
-#: src/properties.c:446
+#: src/properties.c:447
 msgid "_Enable sounds"
 msgstr "_Habilitar sons"
 
-#: src/properties.c:452
+#: src/properties.c:453
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Reproduz sons para eventos como vencer um nível e morrer."
 
-#: src/properties.c:454
+#: src/properties.c:455
 msgid "Game"
 msgstr "Jogo"
 
-#: src/properties.c:467
+#: src/properties.c:468
 msgid "_Image theme:"
 msgstr "Tema de _imagem:"
 
-#: src/properties.c:479
+#: src/properties.c:480
 msgid "_Background color:"
 msgstr "Cor de _fundo:"
 
-#: src/properties.c:491
+#: src/properties.c:492
 msgid "Appearance"
 msgstr "Aparência"
 
-#: src/properties.c:520
+#: src/properties.c:521
 msgid "_Restore Defaults"
 msgstr "_Restaurar padrões"
 
-#: src/properties.c:525
+#: src/properties.c:526
 msgid "Keyboard"
 msgstr "Teclado"
 

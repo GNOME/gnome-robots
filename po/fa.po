@@ -5,15 +5,15 @@
 # Elnaz Sarbar <elnaz@farsiweb.info>, 2005, 2006.
 # Meelad Zakaria <meelad@farsiweb.info>, 2005.
 # Farzaneh Sarafraz <farzaneh@farsiweb.info>, 2006.
-# Danial Behzadi <dani.behzi@gmail.com>, 2012, 2014, 2015, 2016, 2017, 2018, 2019.
+# Danial Behzadi <dani.behzi@gmail.com>, 2012, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
 # Arash Mousavi <mousavi.arash@gmail.com>, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-03-26 18:02+0000\n"
-"PO-Revision-Date: 2019-09-25 16:43+0330\n"
+"POT-Creation-Date: 2020-01-04 15:09+0000\n"
+"PO-Revision-Date: 2020-02-07 14:25+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
@@ -22,25 +22,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: data/app-menu.ui:7 src/gnome-robots.c:256
 msgid "_New Game"
-msgstr "بازی _جدید"
+msgstr "_بازی جدید"
 
-#: data/app-menu.ui:12
+#: data/app-menu.ui:11
 msgid "_Scores"
-msgstr "امتیا_زها"
+msgstr "_امتیازها"
 
-#: data/app-menu.ui:18
+#: data/app-menu.ui:17
 msgid "_Preferences"
 msgstr "_ترجیحات"
 
-#: data/app-menu.ui:22
+#: data/app-menu.ui:21
 msgid "_Help"
 msgstr "_راهنما"
 
-#: data/app-menu.ui:27
+#: data/app-menu.ui:25
 msgid "_About Robots"
 msgstr "_دربارهٔ روبات‌ها"
 
@@ -54,41 +54,40 @@ msgstr "از روبات‌ها دوری کرده و کاری کنید که با 
 
 #: data/org.gnome.Robots.appdata.xml.in:10
 msgid ""
-"It is the distant future – the year 2000. Evil robots are trying to kill you. "
+"It is the distant future: the year 2000. Evil robots are trying to kill you. "
 "Avoid the robots or face certain death."
 msgstr ""
-"آینده‌ای دور است - سال ۲۰۰۰. روبات‌های جانی سعی دارند تا شما را از بین ببرند. "
-"از روبات‌ها برای اجتناب از مرگ مسلم دوری کنید."
+"آینده‌ای دور است: سال ۲۰۰۰. روبات‌های جانی سعی دارند تا شما را از بین ببرند. از "
+"روبات‌ها برای اجتناب از مرگ مسلّم دوری کنید."
 
 #: data/org.gnome.Robots.appdata.xml.in:14
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
 "destruction, or into the junk piles that result. You can defend yourself by "
-"moving the junk piles, or escape to safety with your handy teleportation "
-"device."
+"moving the junk piles, or escape to safety with your handy teleportation device."
 msgstr ""
-"خوشبختانه، روبات‌ها خیلی احمق هستند و همیشه به سمت شما حرکت می‌کنند. گولشان "
-"بزنید تا به همدیگر برخورد کنند تا نابود بشوند یا تبدیل به توده‌های زباله شوند. "
-"شما می‌توانید با جابه‌جا کردن توده‌های زباله از خود محافظت کنید، یک با دستگاه "
-"دوربری خود به یک جای ایمن بروید."
+"خوشبختانه، روبات‌ها خیلی احمق هستند و همیشه به سمت شما حرکت می‌کنند. گولشان بزنید "
+"تا به همدیگر برخورد کنند تا نابود بشوند یا تبدیل به توده‌های زباله شوند. شما "
+"می‌توانید با جابه‌جا کردن توده‌های زباله از خود محافظت کنید، یک با دستگاه دوربری خود "
+"به یک جای ایمن بروید."
 
 #: data/org.gnome.Robots.appdata.xml.in:21
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, teleportation "
-"could land you right next to a robot, who will kill you. Survive for as long "
-"as possible!"
+"could land you right next to a robot, who will kill you. Survive for as long as "
+"possible!"
 msgstr ""
-"ذخایر و امکان دوربری امن شما محدود است، و زمانی که تمام شوند، دوربری ممکن است "
-"شما را دقیقا در کنار یک روبات پیاده کند، که شما را خواهد کشت. تا زمانی که "
-"می‌توانید زنده بمانید!"
+"ذخایر و امکان دوربری امن شما محدود است، و زمانی که تمام شوند، دوربری ممکن است شما "
+"را دقیقا در کنار یک روبات پیاده کند، که شما را خواهد کشت. تا زمانی که می‌توانید "
+"زنده بمانید!"
 
-#: data/org.gnome.Robots.appdata.xml.in:50
+#: data/org.gnome.Robots.appdata.xml.in:54
 msgid "The GNOME Project"
 msgstr "پروژه گنوم"
 
-#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:315 src/gnome-robots.c:349
+#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223 src/gnome-robots.c:318
+#: src/gnome-robots.c:364
 msgid "Robots"
 msgstr "روبات‌ها"
 
@@ -107,7 +106,7 @@ msgstr "نمایش نوار ابزار. یک گزینهٔ استاندارد ب�
 
 #: data/org.gnome.Robots.gschema.xml:10
 msgid "Robot image theme"
-msgstr "تم تصویری روبات"
+msgstr "زمینهٔ تصویری روبات"
 
 #: data/org.gnome.Robots.gschema.xml:11
 msgid "Robot image theme. The theme of the images to use for the robots."
@@ -135,14 +134,14 @@ msgstr "استفاده از حرکت‌های امن"
 
 #: data/org.gnome.Robots.gschema.xml:26
 msgid ""
-"Use safe moves. The safe moves option will help you to avoid being killed due "
-"to a mistake. If you try to make a move that would lead to your death when "
-"there is a safe move available you will not be allowed to proceed."
+"Use safe moves. The safe moves option will help you to avoid being killed due to "
+"a mistake. If you try to make a move that would lead to your death when there is "
+"a safe move available you will not be allowed to proceed."
 msgstr ""
 "استفاده از حرکت‌های امن. گزینهٔ حرکت‌های امن به شما کمک خواهد کرد از کشته شدن به "
 "خاطر اشتباه جلوگیری کنید. اگر زمانی که جابه‌جایی امنی وجود دارد سعی کنید "
-"جابه‌جایی‌ای انجام دهید که به مرگ شما منجر شود، اجازهٔ ادامه دادن به شما داده "
-"نخواهد شد."
+"جابه‌جایی‌ای انجام دهید که به مرگ شما منجر شود، اجازهٔ ادامه دادن به شما داده نخواهد "
+"شد."
 
 #: data/org.gnome.Robots.gschema.xml:30
 msgid "Use super safe moves"
@@ -150,11 +149,11 @@ msgstr "استفاده از حرکت‌های کاملاً امن"
 
 #: data/org.gnome.Robots.gschema.xml:31
 msgid ""
-"Use super safe moves. The player is alerted when there is no safe move and "
-"the only option is to teleport out."
+"Use super safe moves. The player is alerted when there is no safe move and the "
+"only option is to teleport out."
 msgstr ""
-"استفاده از حرکت‌های کاملاً امن. زمانی که هیچ جابه‌جایی امنی وجود ندارد و تنها "
-"گزینه دوربری به بیرون است به بازیکن اخطار داده می‌شود."
+"استفاده از حرکت‌های کاملاً امن. زمانی که هیچ جابه‌جایی امنی وجود ندارد و تنها گزینه "
+"دوربری به بیرون است به بازیکن اخطار داده می‌شود."
 
 #: data/org.gnome.Robots.gschema.xml:35
 msgid "Enable game sounds"
@@ -164,7 +163,7 @@ msgstr "به کار انداختن صداهای بازی"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "به کار انداختن صداهای بازی. پخش صدا برای رویدادهای مختلف در طول بازی."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:503
+#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
 msgid "Key to move NW"
 msgstr "کلید جابه‌جایی به شمال غربی"
 
@@ -172,7 +171,7 @@ msgstr "کلید جابه‌جایی به شمال غربی"
 msgid "The key used to move north-west."
 msgstr "کلیدی که برای حرکت به شمال غربی به کار می‌رود."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
 msgid "Key to move N"
 msgstr "کلید جابه‌جایی به شمال"
 
@@ -180,7 +179,7 @@ msgstr "کلید جابه‌جایی به شمال"
 msgid "The key used to move north."
 msgstr "کلیدی که برای حرکت به شمال به کار می‌رود."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
 msgid "Key to move NE"
 msgstr "کلید جابه‌جایی شمال شرقی"
 
@@ -188,7 +187,7 @@ msgstr "کلید جابه‌جایی شمال شرقی"
 msgid "The key used to move north-east."
 msgstr "کلیدی که برای حرکت به شمال شرقی به کار می‌رود."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
 msgid "Key to move W"
 msgstr "کلید جابه‌جایی به غرب"
 
@@ -196,7 +195,7 @@ msgstr "کلید جابه‌جایی به غرب"
 msgid "The key used to move west."
 msgstr "کلیدی که برای حرکت به غرب به کار می‌رود."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
 msgid "Key to hold"
 msgstr "کلید نگه داشتن"
 
@@ -204,7 +203,7 @@ msgstr "کلید نگه داشتن"
 msgid "The key used to hold still."
 msgstr "کلیدی که برای نگه داشتن به کار می‌رود."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
 msgid "Key to move E"
 msgstr "کلید جابه‌جایی به شرق"
 
@@ -212,7 +211,7 @@ msgstr "کلید جابه‌جایی به شرق"
 msgid "The key used to move east."
 msgstr "کلیدی که برای حرکت به شرق به کار می‌رود."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
 msgid "Key to move SW"
 msgstr "کلید جابه‌جایی به جنوب غربی"
 
@@ -220,7 +219,7 @@ msgstr "کلید جابه‌جایی به جنوب غربی"
 msgid "The key used to move south-west."
 msgstr "کلیدی که برای حرکت به جنوب غربی به کار می‌رود."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
 msgid "Key to move S"
 msgstr "کلید جابه‌جایی به جنوب"
 
@@ -228,7 +227,7 @@ msgstr "کلید جابه‌جایی به جنوب"
 msgid "The key used to move south."
 msgstr "کلیدی که برای حرکت به جنوب به کار می‌رود."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
 msgid "Key to move SE"
 msgstr "کلید جابه‌جایی به جنوب شرقی"
 
@@ -257,15 +256,15 @@ msgstr ""
 "اما می‌توانید دوباره این کار را انجام دهید؟"
 
 #. This should never happen.
-#: src/game.c:1110
+#: src/game.c:1108
 msgid "There are no teleport locations left!!"
 msgstr "هیچ مکانی برای دوربری نیست!!"
 
-#: src/game.c:1138
+#: src/game.c:1136
 msgid "There are no safe locations to teleport to!!"
 msgstr "هیچ مکان امنی برای دوربری به آنجا نیست!!"
 
-#: src/games-controls.c:286
+#: src/games-controls.c:292
 msgid "Unknown Command"
 msgstr "فرمان نامعلوم"
 
@@ -364,42 +363,42 @@ msgstr "مطمئنید که می‌خواهید بازی کنونی را ترک 
 msgid "Keep _Playing"
 msgstr "_ادامهٔ بازی"
 
-#: src/gnome-robots.c:396
+#: src/gnome-robots.c:410
 msgid "Teleport _Randomly"
 msgstr "دوربری _تصادفی"
 
-#: src/gnome-robots.c:415
+#: src/gnome-robots.c:429
 msgid "_Wait for Robots"
 msgstr "_وایستادن برای روبات‌ها"
 
 #. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:439
+#: src/gnome-robots.c:453
 msgid "Game Type:"
 msgstr "گونهٔ بازی:"
 
-#: src/gnome-robots.c:454
+#: src/gnome-robots.c:468
 msgid "No game data could be found."
 msgstr "هیچ دادهٔ بازی‌ای پیدا نشد."
 
-#: src/gnome-robots.c:456
+#: src/gnome-robots.c:470
 msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
+"The program Robots was unable to find any valid game configuration files. Please "
+"check that the program is installed correctly."
 msgstr ""
-"برنامه‌ روبات‌ها نتوانست پروندهٔ پیکربندی معتبریبرای بازی  پیدا کند. لطفاً بررسی "
-"کنید که برنامه درست نصب شده باشد."
+"برنامه‌ روبات‌ها نتوانست پروندهٔ پیکربندی معتبریبرای بازی  پیدا کند. لطفاً بررسی کنید "
+"که برنامه درست نصب شده باشد."
 
-#: src/gnome-robots.c:473
+#: src/gnome-robots.c:487
 msgid "Some graphics files are missing or corrupt."
 msgstr "بعضی از پرونده‌های گرافیکی گم‌شده‌اند یا مخدوشند."
 
-#: src/gnome-robots.c:475
+#: src/gnome-robots.c:489
 msgid ""
-"The program Robots was unable to load all the necessary graphics files. "
-"Please check that the program is installed correctly."
+"The program Robots was unable to load all the necessary graphics files. Please "
+"check that the program is installed correctly."
 msgstr ""
-"برنامه‌ روبات‌ها نتوانست همهٔ پرونده‌های گرافیکی لازم را بارکند. لطفاً بررسی کنید "
-"که برنامه درست نصب شده باشد."
+"برنامه‌ روبات‌ها نتوانست همهٔ پرونده‌های گرافیکی لازم را بارکند. لطفاً بررسی کنید که "
+"برنامه درست نصب شده باشد."
 
 #: src/graphics.c:149
 #, c-format
@@ -410,55 +409,55 @@ msgstr "پروندهٔ pixmap «%s» پیدا نشد\n"
 msgid "Preferences"
 msgstr "ترجیحات"
 
-#: src/properties.c:415
+#: src/properties.c:416
 msgid "Game Type"
 msgstr "گونهٔ بازی"
 
-#: src/properties.c:425
+#: src/properties.c:426
 msgid "_Use safe moves"
 msgstr "_استفاده از حرکت‌های امن"
 
-#: src/properties.c:430
+#: src/properties.c:431
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "جلوگیری از حرکت‌های تصادفی که منجر به کشته شدن می‌شود."
 
-#: src/properties.c:433
+#: src/properties.c:434
 msgid "U_se super safe moves"
 msgstr "ا_ستفاده از حرکت‌های کاملاً امن"
 
-#: src/properties.c:440
+#: src/properties.c:441
 msgid "Prevents all moves that result in getting killed."
 msgstr "از تمام حرکت‌هایی که منجر به کشته شدن می‌شود جلوگیری می‌کند."
 
-#: src/properties.c:446
+#: src/properties.c:447
 msgid "_Enable sounds"
 msgstr "_به کار انداختن صدا‌ها"
 
-#: src/properties.c:452
+#: src/properties.c:453
 msgid "Play sounds for events like winning a level and dying."
 msgstr "پخش صدا برای رویدادهایی مثل بردن یک مرحله یا کشته شدن."
 
-#: src/properties.c:454
+#: src/properties.c:455
 msgid "Game"
 msgstr "بازی"
 
-#: src/properties.c:467
+#: src/properties.c:468
 msgid "_Image theme:"
 msgstr "_زمینهٔ تصویر:"
 
-#: src/properties.c:479
+#: src/properties.c:480
 msgid "_Background color:"
 msgstr "_رنگ پس‌زمینه:"
 
-#: src/properties.c:491
+#: src/properties.c:492
 msgid "Appearance"
 msgstr "ظاهر"
 
-#: src/properties.c:520
+#: src/properties.c:521
 msgid "_Restore Defaults"
 msgstr "_بازیابی پیش‌گزیده‌ها"
 
-#: src/properties.c:525
+#: src/properties.c:526
 msgid "Keyboard"
 msgstr "صفحه‌کلید"
 

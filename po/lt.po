@@ -8,14 +8,14 @@
 # Vytautas Povilaitis <punktyras@nkm.lt>, 2007.
 # Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008, 2010.
 # Algimantas Margevičius <gymka@mail.ru>, 2011.
-# Aurimas Černius <aurisc4@gmail.com>, 2010-2019.
+# Aurimas Černius <aurisc4@gmail.com>, 2010-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-02-24 15:13+0000\n"
-"PO-Revision-Date: 2019-03-03 18:58+0200\n"
+"POT-Creation-Date: 2020-01-04 15:09+0000\n"
+"PO-Revision-Date: 2020-02-08 14:40+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -24,25 +24,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 3.30.1\n"
+"X-Generator: Gtranslator 3.34.0\n"
 
 #: data/app-menu.ui:7 src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "_Naujas žaidimas"
 
-#: data/app-menu.ui:12
+#: data/app-menu.ui:11
 msgid "_Scores"
 msgstr "_Taškai"
 
-#: data/app-menu.ui:18
+#: data/app-menu.ui:17
 msgid "_Preferences"
 msgstr "_Nuostatos"
 
-#: data/app-menu.ui:22
+#: data/app-menu.ui:21
 msgid "_Help"
 msgstr "_Žinynas"
 
-#: data/app-menu.ui:27
+#: data/app-menu.ui:25
 msgid "_About Robots"
 msgstr "_Apie robotus"
 
@@ -55,11 +55,14 @@ msgid "Avoid the robots and make them crash into each other"
 msgstr "Išvenkite robotų ir sudaužykite juos vieną su kitu"
 
 #: data/org.gnome.Robots.appdata.xml.in:10
+#| msgid ""
+#| "It is the distant future – the year 2000. Evil robots are trying to kill "
+#| "you. Avoid the robots or face certain death."
 msgid ""
-"It is the distant future – the year 2000. Evil robots are trying to kill "
-"you. Avoid the robots or face certain death."
+"It is the distant future: the year 2000. Evil robots are trying to kill you. "
+"Avoid the robots or face certain death."
 msgstr ""
-"Tai yra tolima ateitis – 2000 metai. Blogieji robotai bando tave nužudyti. "
+"Tai yra tolima ateitis: 2000 metai. Blogieji robotai bando tave nužudyti. "
 "Išvenk robotų arba mirk."
 
 #: data/org.gnome.Robots.appdata.xml.in:14
@@ -85,12 +88,12 @@ msgstr ""
 "tave nukelti tiesiai šalia roboto, kuris tave nužudys. Išgyvenk kiek galima "
 "ilgiau!"
 
-#: data/org.gnome.Robots.appdata.xml.in:50
+#: data/org.gnome.Robots.appdata.xml.in:54
 msgid "The GNOME Project"
 msgstr "GNOME projektas"
 
 #: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:315 src/gnome-robots.c:349
+#: src/gnome-robots.c:318 src/gnome-robots.c:364
 msgid "Robots"
 msgstr "Robotai"
 
@@ -98,11 +101,6 @@ msgstr "Robotai"
 #: data/org.gnome.Robots.desktop.in:6
 msgid "game;arcade;teleport;"
 msgstr "žaidimas;arkada;teleportacija;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Robots.desktop.in:9
-msgid "org.gnome.Robots"
-msgstr "org.gnome.Robots"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
@@ -172,7 +170,7 @@ msgstr "Įjungti garsus"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Įjungia garsus. Skleisti garsus atsitikus įvairiems žaidimo įvykiams."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:503
+#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
 msgid "Key to move NW"
 msgstr "Judėjimo į Šiaurės Vakarus klavišas."
 
@@ -180,7 +178,7 @@ msgstr "Judėjimo į Šiaurės Vakarus klavišas."
 msgid "The key used to move north-west."
 msgstr "Judėjimo į šiaurės vakarus klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
 msgid "Key to move N"
 msgstr "Judėjimo į Šiaurę klavišas."
 
@@ -188,7 +186,7 @@ msgstr "Judėjimo į Šiaurę klavišas."
 msgid "The key used to move north."
 msgstr "Judėjimo į šiaurę klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
 msgid "Key to move NE"
 msgstr "Judėjimo į Šiaurės Rytus klavišas."
 
@@ -196,7 +194,7 @@ msgstr "Judėjimo į Šiaurės Rytus klavišas."
 msgid "The key used to move north-east."
 msgstr "Judėjimo į šiaurės rytus klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
 msgid "Key to move W"
 msgstr "Judėjimo į Vakarus klavišas."
 
@@ -204,7 +202,7 @@ msgstr "Judėjimo į Vakarus klavišas."
 msgid "The key used to move west."
 msgstr "Judėjimo į vakarus klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
 msgid "Key to hold"
 msgstr "Laikymo klavišas"
 
@@ -212,7 +210,7 @@ msgstr "Laikymo klavišas"
 msgid "The key used to hold still."
 msgstr "Klavišas, naudojamas laikymui."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
 msgid "Key to move E"
 msgstr "Judėjimo į Rytus klavišas"
 
@@ -220,7 +218,7 @@ msgstr "Judėjimo į Rytus klavišas"
 msgid "The key used to move east."
 msgstr "Judėjimo į rytus klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
 msgid "Key to move SW"
 msgstr "Judėjimo į Pietvakarius klavišas."
 
@@ -228,7 +226,7 @@ msgstr "Judėjimo į Pietvakarius klavišas."
 msgid "The key used to move south-west."
 msgstr "Judėjimo į pietvakarius klavišas"
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
 msgid "Key to move S"
 msgstr "Judėjimo į Pietus klavišas."
 
@@ -236,7 +234,7 @@ msgstr "Judėjimo į Pietus klavišas."
 msgid "The key used to move south."
 msgstr "Judėjimo į pietus klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
 msgid "Key to move SE"
 msgstr "Judėjimo į Pietryčius klavišas."
 
@@ -265,15 +263,15 @@ msgstr ""
 "Bet ar sugebėsite tai padaryti dar kartą?"
 
 #. This should never happen.
-#: src/game.c:1110
+#: src/game.c:1108
 msgid "There are no teleport locations left!!"
 msgstr "Neliko nei vienos vietos teleportuotis!!"
 
-#: src/game.c:1138
+#: src/game.c:1136
 msgid "There are no safe locations to teleport to!!"
 msgstr "Nėra saugios vietos, kur teleportuotis!!"
 
-#: src/games-controls.c:286
+#: src/games-controls.c:292
 msgid "Unknown Command"
 msgstr "Nežinoma komanda"
 
@@ -378,24 +376,24 @@ msgstr "Ar tikrai norite nutraukti dabartinį žaidimą?"
 msgid "Keep _Playing"
 msgstr "Tęsti _žaidimą"
 
-#: src/gnome-robots.c:396
+#: src/gnome-robots.c:410
 msgid "Teleport _Randomly"
 msgstr "Teleportuotis _atsitiktinai"
 
-#: src/gnome-robots.c:415
+#: src/gnome-robots.c:429
 msgid "_Wait for Robots"
 msgstr "_Laukti robotų"
 
 #. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:439
+#: src/gnome-robots.c:453
 msgid "Game Type:"
 msgstr "Žaidimo tipas:"
 
-#: src/gnome-robots.c:454
+#: src/gnome-robots.c:468
 msgid "No game data could be found."
 msgstr "Nepavyko rasti žaidimo duomenų."
 
-#: src/gnome-robots.c:456
+#: src/gnome-robots.c:470
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -403,11 +401,11 @@ msgstr ""
 "Robots programai nepavyko rasti tinkamų žaidimo nustatymų failų. "
 "Patikrinkite, ar programa yra įdiegta teisingai."
 
-#: src/gnome-robots.c:473
+#: src/gnome-robots.c:487
 msgid "Some graphics files are missing or corrupt."
 msgstr "Trūksta kai kurių grafikos failų arba jos yra sugadintos."
 
-#: src/gnome-robots.c:475
+#: src/gnome-robots.c:489
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -417,7 +415,6 @@ msgstr ""
 
 #: src/graphics.c:149
 #, c-format
-#| msgid "Could not find '%s' pixmap file\n"
 msgid "Could not find “%s” pixmap file\n"
 msgstr "Nepavyko rasti „%s“ paveikslėlio failo\n"
 
@@ -425,57 +422,60 @@ msgstr "Nepavyko rasti „%s“ paveikslėlio failo\n"
 msgid "Preferences"
 msgstr "Nuostatos"
 
-#: src/properties.c:415
+#: src/properties.c:416
 msgid "Game Type"
 msgstr "Žaidimo tipas"
 
-#: src/properties.c:425
+#: src/properties.c:426
 msgid "_Use safe moves"
 msgstr "_Naudoti saugius ėjimus"
 
-#: src/properties.c:430
+#: src/properties.c:431
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Drausti atsitiktinius ėjimus, kurie baigiasi žuvimu."
 
-#: src/properties.c:433
+#: src/properties.c:434
 msgid "U_se super safe moves"
 msgstr "N_audoti ypač saugius ėjimus"
 
-#: src/properties.c:440
+#: src/properties.c:441
 msgid "Prevents all moves that result in getting killed."
 msgstr "Neleidžia atlikti ėjimu, kurie baigiasi žuvimu."
 
-#: src/properties.c:446
+#: src/properties.c:447
 msgid "_Enable sounds"
 msgstr "Įj_ungti garsus"
 
-#: src/properties.c:452
+#: src/properties.c:453
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Groti garsus tokiems įvykiams kaip lygio perėjimas ir mirimas."
 
-#: src/properties.c:454
+#: src/properties.c:455
 msgid "Game"
 msgstr "Žaidimas"
 
-#: src/properties.c:467
+#: src/properties.c:468
 msgid "_Image theme:"
 msgstr "_Paveikslėlių tema:"
 
-#: src/properties.c:479
+#: src/properties.c:480
 msgid "_Background color:"
 msgstr "_Fono spalva:"
 
-#: src/properties.c:491
+#: src/properties.c:492
 msgid "Appearance"
 msgstr "Išvaizda"
 
-#: src/properties.c:520
+#: src/properties.c:521
 msgid "_Restore Defaults"
 msgstr "_Atstatyti numatytuosius"
 
-#: src/properties.c:525
+#: src/properties.c:526
 msgid "Keyboard"
 msgstr "Klaviatūra"
+
+#~ msgid "org.gnome.Robots"
+#~ msgstr "org.gnome.Robots"
 
 #~ msgid "_Quit"
 #~ msgstr "_Išeiti"

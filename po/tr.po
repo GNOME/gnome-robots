@@ -17,34 +17,34 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-02-06 19:33+0000\n"
-"PO-Revision-Date: 2019-02-09 15:52+0300\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"POT-Creation-Date: 2020-01-09 03:06+0000\n"
+"PO-Revision-Date: 2020-02-04 19:16+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 3.30.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: data/app-menu.ui:7 src/gnome-robots.c:256
 msgid "_New Game"
 msgstr "Yeni _Oyun"
 
-#: data/app-menu.ui:12
+#: data/app-menu.ui:11
 msgid "_Scores"
 msgstr "_Puanlar"
 
-#: data/app-menu.ui:18
+#: data/app-menu.ui:17
 msgid "_Preferences"
 msgstr "_Tercihler"
 
-#: data/app-menu.ui:22
+#: data/app-menu.ui:21
 msgid "_Help"
 msgstr "_Yardım"
 
-#: data/app-menu.ui:27
+#: data/app-menu.ui:25
 msgid "_About Robots"
 msgstr "Robotlar _Hakkında"
 
@@ -58,10 +58,10 @@ msgstr "Robotlardan kaçın ve onların birbirlerine çarpmalarını sağlayın"
 
 #: data/org.gnome.Robots.appdata.xml.in:10
 msgid ""
-"It is the distant future – the year 2000. Evil robots are trying to kill "
-"you. Avoid the robots or face certain death."
+"It is the distant future: the year 2000. Evil robots are trying to kill you. "
+"Avoid the robots or face certain death."
 msgstr ""
-"Uzak bir gelecekte – 2000 yılındasınız ve şeytani robotlar sizi öldürmeye "
+"Uzak bir gelecekte, 2000 yılındasınız ve şeytani robotlar sizi öldürmeye "
 "çalışıyor. Robotlardan saklanın ya da kesin bir ölümle yüzleşin."
 
 #: data/org.gnome.Robots.appdata.xml.in:14
@@ -88,12 +88,12 @@ msgstr ""
 "robotun yanına götürebilir, ki bu da ölümünüze sebep olacaktır. "
 "Olabildiğince uzun süre hayatta kalın!"
 
-#: data/org.gnome.Robots.appdata.xml.in:50
+#: data/org.gnome.Robots.appdata.xml.in:54
 msgid "The GNOME Project"
 msgstr "GNOME Projesi"
 
 #: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:315 src/gnome-robots.c:349
+#: src/gnome-robots.c:318 src/gnome-robots.c:364
 msgid "Robots"
 msgstr "Robotlar"
 
@@ -101,12 +101,6 @@ msgstr "Robotlar"
 #: data/org.gnome.Robots.desktop.in:6
 msgid "game;arcade;teleport;"
 msgstr "oyun;arcade;teleport;ışınlanma;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Robots.desktop.in:9
-#| msgid "gnome-robots"
-msgid "org.gnome.Robots"
-msgstr "org.gnome.Robots"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
@@ -174,7 +168,7 @@ msgstr "Oyun seslerini etkinleştir"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Oyun seslerini etkinleştirir. Oyundaki bir çok olay için ses çalar."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:503
+#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
 msgid "Key to move NW"
 msgstr "KB için tuş"
 
@@ -182,7 +176,7 @@ msgstr "KB için tuş"
 msgid "The key used to move north-west."
 msgstr "Kuzeybatıya hareket etmek için kullanılan tuş."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
 msgid "Key to move N"
 msgstr "K için tuş"
 
@@ -190,7 +184,7 @@ msgstr "K için tuş"
 msgid "The key used to move north."
 msgstr "Kuzeye hareket etmek için kullanılan tuş."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
 msgid "Key to move NE"
 msgstr "KD için tuş"
 
@@ -198,7 +192,7 @@ msgstr "KD için tuş"
 msgid "The key used to move north-east."
 msgstr "Kuzeydoğuya hareket etmek için kullanılan tuş."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
 msgid "Key to move W"
 msgstr "B için tuş"
 
@@ -206,7 +200,7 @@ msgstr "B için tuş"
 msgid "The key used to move west."
 msgstr "Batıya hareket etmek için kullanılan tuş."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
 msgid "Key to hold"
 msgstr "Saklamak için tuş"
 
@@ -214,7 +208,7 @@ msgstr "Saklamak için tuş"
 msgid "The key used to hold still."
 msgstr "Yerinde durmak için kullanılan tuş."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
 msgid "Key to move E"
 msgstr "D için tuş"
 
@@ -222,7 +216,7 @@ msgstr "D için tuş"
 msgid "The key used to move east."
 msgstr "Doğuya hareket etmek için kullanılan tuş."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
 msgid "Key to move SW"
 msgstr "GB için tuş"
 
@@ -230,7 +224,7 @@ msgstr "GB için tuş"
 msgid "The key used to move south-west."
 msgstr "Güzeybatıya hareket etmek için kullanılan tuş."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
 msgid "Key to move S"
 msgstr "G için tuş"
 
@@ -238,7 +232,7 @@ msgstr "G için tuş"
 msgid "The key used to move south."
 msgstr "Güneye hareket etmek için kullanılan tuş."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
 msgid "Key to move SE"
 msgstr "GD için tuş"
 
@@ -267,15 +261,15 @@ msgstr ""
 "Peki,Tekrar Yapabilir misiniz?"
 
 #. This should never happen.
-#: src/game.c:1110
+#: src/game.c:1108
 msgid "There are no teleport locations left!!"
 msgstr "Geriye hiç ışınlanma bölgesi kalmadı!!"
 
-#: src/game.c:1138
+#: src/game.c:1136
 msgid "There are no safe locations to teleport to!!"
 msgstr "Işınlanma ile gidilebilecek güvenli bölge kalmadı!!"
 
-#: src/games-controls.c:286
+#: src/games-controls.c:292
 msgid "Unknown Command"
 msgstr "Bilinmeyen Komut"
 
@@ -375,24 +369,24 @@ msgstr ""
 msgid "Keep _Playing"
 msgstr "_Oynamaya Devam Et"
 
-#: src/gnome-robots.c:396
+#: src/gnome-robots.c:410
 msgid "Teleport _Randomly"
 msgstr "_Rastgele Işınlan"
 
-#: src/gnome-robots.c:415
+#: src/gnome-robots.c:429
 msgid "_Wait for Robots"
 msgstr "Robotları _Bekle"
 
 #. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:439
+#: src/gnome-robots.c:453
 msgid "Game Type:"
 msgstr "Oyun Türü:"
 
-#: src/gnome-robots.c:454
+#: src/gnome-robots.c:468
 msgid "No game data could be found."
 msgstr "Oyun verisi bulunamadı."
 
-#: src/gnome-robots.c:456
+#: src/gnome-robots.c:470
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -400,11 +394,11 @@ msgstr ""
 "Robotlar uygulaması geçerli bir yapılandırma dosyası bulamadı. Lütfen bu "
 "programın kurulumunu gözden geçirin."
 
-#: src/gnome-robots.c:473
+#: src/gnome-robots.c:487
 msgid "Some graphics files are missing or corrupt."
 msgstr "Kimi grafik dosyaları eksik ya da bozuk."
 
-#: src/gnome-robots.c:475
+#: src/gnome-robots.c:489
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -414,7 +408,6 @@ msgstr ""
 
 #: src/graphics.c:149
 #, c-format
-#| msgid "Could not find '%s' pixmap file\n"
 msgid "Could not find “%s” pixmap file\n"
 msgstr "“%s” benekeşlem dosyası bulunamadı\n"
 
@@ -422,57 +415,61 @@ msgstr "“%s” benekeşlem dosyası bulunamadı\n"
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: src/properties.c:415
+#: src/properties.c:416
 msgid "Game Type"
 msgstr "Oyun Türü"
 
-#: src/properties.c:425
+#: src/properties.c:426
 msgid "_Use safe moves"
 msgstr "_Güvenli hareketleri kullan"
 
-#: src/properties.c:430
+#: src/properties.c:431
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Ölüm ile sonuçlanabilecek kazalı hamleleri önle."
 
-#: src/properties.c:433
+#: src/properties.c:434
 msgid "U_se super safe moves"
 msgstr "_Süper güvenli harekeri kullan"
 
-#: src/properties.c:440
+#: src/properties.c:441
 msgid "Prevents all moves that result in getting killed."
 msgstr "Ölüm ile sonuçlanan tüm hamleleri önle."
 
-#: src/properties.c:446
+#: src/properties.c:447
 msgid "_Enable sounds"
 msgstr "_Sesleri etkinleştir"
 
-#: src/properties.c:452
+#: src/properties.c:453
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Düzeyi geçme ve ölme gibi olaylar için ses çal."
 
-#: src/properties.c:454
+#: src/properties.c:455
 msgid "Game"
 msgstr "Oyun"
 
-#: src/properties.c:467
+#: src/properties.c:468
 msgid "_Image theme:"
 msgstr "_Resim teması:"
 
-#: src/properties.c:479
+#: src/properties.c:480
 msgid "_Background color:"
 msgstr "_Arka plan rengi:"
 
-#: src/properties.c:491
+#: src/properties.c:492
 msgid "Appearance"
 msgstr "Görünüm"
 
-#: src/properties.c:520
+#: src/properties.c:521
 msgid "_Restore Defaults"
 msgstr "Ö_ntanımlılara Dön"
 
-#: src/properties.c:525
+#: src/properties.c:526
 msgid "Keyboard"
 msgstr "Klavye"
+
+#~| msgid "gnome-robots"
+#~ msgid "org.gnome.Robots"
+#~ msgstr "org.gnome.Robots"
 
 #~ msgid "_Quit"
 #~ msgstr "_Çıkış"

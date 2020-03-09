@@ -118,12 +118,13 @@ msgstr "Zobrazovat lištu nástrojů. Standardní volba pro lištu nástrojů."
 
 #: data/org.gnome.Robots.gschema.xml:10
 msgid "Robot image theme"
-msgstr "Motiv obrázků robotů"
+msgstr "Obrázkový motiv robotů"
 
 #: data/org.gnome.Robots.gschema.xml:11
 msgid "Robot image theme. The theme of the images to use for the robots."
 msgstr ""
-"Motiv obrázku robotů. Motiv obrázků, které se mají používat pro roboty."
+"Obrázkový motiv robotů. Motiv obrázků, které se mají používat pro zobrazení "
+"robotů."
 
 #: data/org.gnome.Robots.gschema.xml:15
 msgid "Background color"
@@ -466,7 +467,7 @@ msgstr "Hra"
 
 #: src/properties.c:468
 msgid "_Image theme:"
-msgstr "Motiv _obrázků:"
+msgstr "_Obrázkový motiv:"
 
 #: src/properties.c:480
 msgid "_Background color:"

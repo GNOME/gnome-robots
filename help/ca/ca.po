@@ -41,7 +41,7 @@ msgstr "Utilitza diferents temes de joc a <app>Robots</app>."
 #. (itstool) path: page/title
 #: C/appearance.page:27
 msgid "Change the default appearance of the game"
-msgstr "Canvia l'aparença predeterminada del joc"
+msgstr "Canviar l'aparença predeterminada del joc"
 
 #. (itstool) path: page/p
 #: C/appearance.page:29
@@ -55,7 +55,7 @@ msgstr ""
 #. (itstool) path: steps/title
 #: C/appearance.page:33
 msgid "To change the game theme and background:"
-msgstr "Per canviar el tema i el fons del joc:"
+msgstr "Per a canviar el tema i el fons del joc:"
 
 #. (itstool) path: item/p
 #: C/appearance.page:35
@@ -82,7 +82,7 @@ msgid ""
 "color</gui>. Select a color from the available choices and click <gui "
 "style=\"button\">Select</gui>."
 msgstr ""
-"Per canviar el color de fons, fes clic al botó del costat de <gui>Color de "
+"Per a canviar el color de fons, fes clic al botó del costat de <gui>Color de "
 "fons</gui>. Selecciona un color entre les opcions disponibles i fes clic a "
 "<gui style=\"button\">Selecciona</gui>."
 
@@ -152,7 +152,7 @@ msgstr "Canvieu les tecles predeterminades a <app>Robots</app>."
 #. (itstool) path: page/title
 #: C/controls-change.page:22
 msgid "Customize the keyboard controls"
-msgstr "Personalitzeu els controls de teclat"
+msgstr "Personalitzar els controls de teclat"
 
 #. (itstool) path: page/p
 #: C/controls-change.page:24
@@ -161,7 +161,7 @@ msgid ""
 "in <app>Robots</app> to suit your preference."
 msgstr ""
 "Els <link xref=\"controls-default\">controls predeterminats</link> es poden "
-"canviar a <app>Robots</app> per ajustar-se a les vostres preferències."
+"canviar a <app>Robots</app> per a ajustar-se a les vostres preferències."
 
 #. (itstool) path: steps/title
 #: C/controls-change.page:28
@@ -210,7 +210,7 @@ msgstr ""
 #: C/controls-change.page:47
 msgid "Repeat the above step to change the other default keys."
 msgstr ""
-"Repeteixi els passos de dalt per canviar les altres tecles predefinides."
+"Repeteixi els passos de dalt per a canviar les altres tecles predefinides."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:50
@@ -393,7 +393,7 @@ msgstr ""
 #. (itstool) path: section/title
 #: C/controls-default.page:102
 msgid "Use the mouse to move around"
-msgstr "Utilitzeu el ratolí per moure's"
+msgstr "Utilitzar el ratolí per a moure's"
 
 #. (itstool) path: item/title
 #: C/controls-default.page:106
@@ -411,7 +411,7 @@ msgid ""
 msgstr ""
 "Quan moveu el ratolí al voltant del personatge principal, apareixerà una "
 "petita fletxa negra apuntant cap a la direcció en què el personatge es mourà"
-" si feu clic. Per exemple, per moure't cap al nord, si moveu el cursor fins "
+" si feu clic. Per exemple, per a moure't cap al nord, si moveu el cursor fins "
 "a la columna que hi ha a sobre del protagonista, apareixerà una petita "
 "fletxa negra que apunta cap al nord. En fer clic, el protagonista es mourà "
 "un quadrat cap al nord."
@@ -433,7 +433,7 @@ msgid ""
 "Click the <gui>Wait for Robots</gui> button to wait for the enemy robots to "
 "finish making all their moves."
 msgstr ""
-"Feu clic al botó <gui>Esperar als Robots</gui> per esperar que els robots "
+"Feu clic al botó <gui>Espera els robots</gui> per a esperar que els robots "
 "enemics acabin els seus moviments."
 
 #. (itstool) path: item/title
@@ -484,7 +484,7 @@ msgstr ""
 #. (itstool) path: steps/title
 #: C/game-types.page:33
 msgid "To change the level of difficulty:"
-msgstr "Per canviar el nivell de dificultat:"
+msgstr "Per a canviar el nivell de dificultat:"
 
 #. (itstool) path: item/p
 #: C/game-types.page:35
@@ -682,7 +682,7 @@ msgid ""
 msgstr ""
 "A <app>Robots</app> us podeu moure en una de les vuit direccions, esperar "
 "els robots o tele-transportar-vos. Els robots enemics i el personatge "
-"principal es tornen per fer el seu moviment. Així, després de cadascun dels "
+"principal es tornen per a fer el seu moviment. Així, després de cadascun dels "
 "teus moviments, els robots enemics intenten fer un moviment que els acosti "
 "cap a tu."
 

@@ -180,7 +180,7 @@ category_name_from_key (const gchar* key)
   for (i = 0; i < no_categories; i++)
   {
     if (g_strcmp0 (scorecats[i].key, key) == 0)
-      return scorecats[i].name;
+      return _(scorecats[i].name);
   }
   /*Return key as is if match not found*/
   return NULL;

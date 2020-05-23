@@ -28,11 +28,11 @@ void quit_game (void);
 void game_keypress (gint);
 void show_scores (void);
 void start_new_game (void);
-void mouse_cb (GtkGestureMultiPress *gesture,
-               gint                  n_press,
-               gdouble               x,
-               gdouble               y,
-               gpointer              user_data);
+void mouse_cb (GtkGestureClick *gesture,
+               gint             n_press,
+               gdouble          x,
+               gdouble          y,
+               gpointer         user_data);
 void move_cb (GtkEventControllerMotion *controller,
               gdouble                   x,
               gdouble                   y,

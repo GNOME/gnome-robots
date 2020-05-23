@@ -391,11 +391,13 @@ activate (GtkApplication *app, gpointer user_data)
   g_signal_connect (G_OBJECT (game_area), "draw",                   G_CALLBACK (draw_cb),   NULL);
   g_signal_connect (G_OBJECT (game_area), "destroy",                G_CALLBACK (gtk_widget_destroyed), &game_area);
 
-  click_controller = gtk_gesture_multi_press_new (game_area);
+  click_controller = gtk_gesture_click_new ();
   g_signal_connect (G_OBJECT (click_controller), "pressed", G_CALLBACK (mouse_cb), NULL);
+  gtk_widget_add_controller (game_area, GTK_EVENT_CONTROLLER (click_controller));
 
-  motion_controller = gtk_event_controller_motion_new (game_area);
+  motion_controller = gtk_event_controller_motion_new ();
   g_signal_connect (G_OBJECT (motion_controller), "motion", G_CALLBACK (move_cb), NULL);
+  gtk_widget_add_controller (game_area, motion_controller);
 
   gridframe = GTK_WIDGET (games_grid_frame_new (GAME_WIDTH, GAME_HEIGHT));
   gtk_container_add (GTK_CONTAINER (gridframe), game_area);

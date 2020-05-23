@@ -554,10 +554,12 @@ init_keyboard (void)
 {
   GtkEventController *key_controller;
 
-  key_controller = gtk_event_controller_key_new (window);
+  key_controller = gtk_event_controller_key_new ();
 
   g_signal_connect (G_OBJECT (key_controller), "key-pressed",
                     G_CALLBACK (keyboard_cb), 0);
+
+  gtk_widget_add_controller (window, key_controller);
 }
 
 
@@ -1322,11 +1324,11 @@ get_dir (int ix, int iy, int *odx, int *ody)
 }
 
 void
-mouse_cb (GtkGestureMultiPress *gesture,
-          gint                  n_press,
-          gdouble               x,
-          gdouble               y,
-          gpointer              user_data)
+mouse_cb (GtkGestureClick *gesture,
+          gint             n_press,
+          gdouble          x,
+          gdouble          y,
+          gpointer         user_data)
 {
   int dx, dy;
 

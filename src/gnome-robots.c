@@ -353,6 +353,7 @@ activate (GtkApplication *app, gpointer user_data)
   GtkStyleContext *style_context;
   GamesScoresDirectoryImporter *importer;
   GtkGesture *click_controller;
+  GtkEventController *motion_controller;
 
   if (window != NULL)
   {
@@ -386,13 +387,15 @@ activate (GtkApplication *app, gpointer user_data)
 
   game_area = gtk_drawing_area_new ();
   gtk_widget_add_events (game_area, GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_POINTER_MOTION_MASK);
-  g_signal_connect (G_OBJECT (game_area), "motion-notify-event",    G_CALLBACK (move_cb),   NULL);
   g_signal_connect (G_OBJECT (game_area), "configure-event",        G_CALLBACK (resize_cb), NULL);
   g_signal_connect (G_OBJECT (game_area), "draw",                   G_CALLBACK (draw_cb),   NULL);
   g_signal_connect (G_OBJECT (game_area), "destroy",                G_CALLBACK (gtk_widget_destroyed), &game_area);
 
   click_controller = gtk_gesture_multi_press_new (game_area);
   g_signal_connect (G_OBJECT (click_controller), "pressed", G_CALLBACK (mouse_cb), NULL);
+
+  motion_controller = gtk_event_controller_motion_new (game_area);
+  g_signal_connect (G_OBJECT (motion_controller), "motion", G_CALLBACK (move_cb), NULL);
 
   gridframe = GTK_WIDGET (games_grid_frame_new (GAME_WIDTH, GAME_HEIGHT));
   gtk_container_add (GTK_CONTAINER (gridframe), game_area);

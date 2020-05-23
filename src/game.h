@@ -33,7 +33,10 @@ void mouse_cb (GtkGestureMultiPress *gesture,
                gdouble               x,
                gdouble               y,
                gpointer              user_data);
-gboolean move_cb (GtkWidget * widget, GdkEventMotion * e, gpointer data);
+void move_cb (GtkEventControllerMotion *controller,
+              gdouble                   x,
+              gdouble                   y,
+              gpointer                  user_data);
 /**********************************************************************/
 
 

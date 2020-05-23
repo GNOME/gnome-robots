@@ -1342,16 +1342,19 @@ mouse_cb (GtkGestureMultiPress *gesture,
   return;
 }
 
-gboolean
-move_cb (GtkWidget * widget, GdkEventMotion * e, gpointer data)
+void
+move_cb (GtkEventControllerMotion *controller,
+         gdouble                   x,
+         gdouble                   y,
+         gpointer                  user_data)
 {
   int dx, dy;
 
-  get_dir (e->x, e->y, &dx, &dy);
+  get_dir ((int)x, (int)y, &dx, &dy);
 
-  set_cursor_by_direction (gtk_widget_get_window (widget), dx, dy);
+  set_cursor_by_direction (gtk_widget_get_window (game_area), dx, dy);
 
-  return TRUE;
+  return;
 }
 
 /**********************************************************************/

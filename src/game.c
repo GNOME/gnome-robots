@@ -164,7 +164,8 @@ log_score (gint sc)
                        game_config_filename (current_game_config ()));
   } else {
     sbuf =
-      g_strdup_printf ("%s", game_config_filename (current_game_config ()));
+      g_strdup_printf ("%s",
+                       game_config_filename (current_game_config ()));
   }
 
   if (sc != 0) {
@@ -272,7 +273,7 @@ clear_arena (void)
  * load_temp_arena
  *
  * Description:
- * Set up the temporary arena for processing speculative moves. 
+ * Set up the temporary arena for processing speculative moves.
  *
  **/
 static void
@@ -339,8 +340,7 @@ generate_level (void)
   if (num_robots1 > MAX_ROBOTS) {
     current_level = 0;
     num_robots1 = game_config ()->initial_type1;
-    message_box (_
-                 ("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
+    message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
     play_sound (SOUND_VICTORY);
   }
 
@@ -355,8 +355,7 @@ generate_level (void)
     current_level = 0;
     num_robots1 = game_config ()->initial_type1;
     num_robots2 = game_config ()->initial_type2;
-    message_box (_
-                 ("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
+    message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
     play_sound (SOUND_VICTORY);
   }
 
@@ -554,7 +553,7 @@ init_game (void)
 {
   create_game_timer ();
 
-  g_signal_connect (GTK_WIDGET (window), "key_press_event",
+  g_signal_connect (GTK_WIDGET (window), "key-press-event",
                     G_CALLBACK (keyboard_cb), 0);
 
   start_new_game ();
@@ -1296,7 +1295,7 @@ get_dir (int ix, int iy, int *odx, int *ody)
 
   angle = atan2 (dy, dx);
 
-  /* Note the adjustment we have to make (+9, not +8) because atan2's idea 
+  /* Note the adjustment we have to make (+9, not +8) because atan2's idea
    * of octants and the ones we want are shifted by PI/8. */
   octant = (((int) floor (8.0 * angle / M_PI) + 9) / 2) % 8;
 

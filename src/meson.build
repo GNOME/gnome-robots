@@ -13,7 +13,7 @@ sources = files(
     'sound.c'
 )
 resources = gnome.compile_resources(
-    'resources', 
+    'resources',
     '@0@.gresource.xml'.format(meson.project_name()),
     source_dir: '../'
 )

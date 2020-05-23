@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright © 2004 Paolo Borelli
  * Copyright © 2007, 2009 Christian Persch
  *
@@ -200,9 +200,9 @@ games_controls_list_constructor (GType type,
   /* label column */
   label_renderer = gtk_cell_renderer_text_new ();
   column = gtk_tree_view_column_new_with_attributes ("Control",
-						     label_renderer,
-						     "text", LABEL_COLUMN,
-						     NULL);
+                                                     label_renderer,
+                                                     "text", LABEL_COLUMN,
+                                                     NULL);
   gtk_tree_view_append_column (GTK_TREE_VIEW (priv->view), column);
 
   /* key column */
@@ -217,10 +217,10 @@ games_controls_list_constructor (GType type,
                     G_CALLBACK (accel_cleared_cb), list);
 
   column = gtk_tree_view_column_new_with_attributes ("Key",
-						     key_renderer,
+                                                     key_renderer,
                                                      "accel-key", KEYCODE_COLUMN,
                                                      "accel-mods", KEYMODS_COLUMN,
-						     NULL);
+                                                     NULL);
   gtk_tree_view_append_column (GTK_TREE_VIEW (priv->view), column);
 
   gtk_container_add (GTK_CONTAINER (scrolled_window), priv->view);
@@ -331,7 +331,7 @@ games_controls_list_add_controls (GamesControlsList *list,
   va_end (args);
 }
 
-#if 0				/* possible TODO stuff */
+#if 0             /* possible TODO stuff */
 
 -add a "Reset to default" button which resets each command to the defaut key
   (the default can be obtained with gconf_client_get_default_from_schema)

@@ -339,16 +339,16 @@ make_theme_menu (void)
    * getting tid of the bubble pixmaps. */
 
   return games_file_list_create_widget (theme_list,
-					properties.themename,
-					GAMES_FILE_LIST_REMOVE_EXTENSION |
-					GAMES_FILE_LIST_REPLACE_UNDERSCORES);
+                                        properties.themename,
+                                        GAMES_FILE_LIST_REMOVE_EXTENSION |
+                                        GAMES_FILE_LIST_REPLACE_UNDERSCORES);
 }
 
 static void
 bg_color_callback (GtkWidget * widget, gpointer data)
 {
   gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (widget),
-			      &properties.bgcolour);
+                              &properties.bgcolour);
   set_background_color (properties.bgcolour);
   clear_game_area ();
   conf_set_background_color (&properties.bgcolour);
@@ -389,15 +389,15 @@ show_properties_dialog (void)
     return;
 
   propbox = gtk_dialog_new_with_buttons (_("Preferences"),
-					 GTK_WINDOW (window),
-					 GTK_DIALOG_USE_HEADER_BAR | GTK_DIALOG_MODAL,
-					 NULL,
-                                        NULL);
+                                         GTK_WINDOW (window),
+                                         GTK_DIALOG_USE_HEADER_BAR | GTK_DIALOG_MODAL,
+                                         NULL,
+                                         NULL);
   gtk_container_set_border_width (GTK_CONTAINER (propbox), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))), 2);
   /* Set up notebook and add it to hbox of the gtk_dialog */
   g_signal_connect (G_OBJECT (propbox), "destroy",
-		    G_CALLBACK (gtk_widget_destroyed), &propbox);
+                    G_CALLBACK (gtk_widget_destroyed), &propbox);
 
   notebook = gtk_notebook_new ();
   gtk_container_set_border_width (GTK_CONTAINER (notebook), 5);
@@ -421,11 +421,11 @@ show_properties_dialog (void)
   gtk_grid_attach (GTK_GRID (grid), typemenu, 1, 0, 1, 1);
 
   g_signal_connect (G_OBJECT (typemenu), "changed",
-		    G_CALLBACK (type_selection), NULL);
+                    G_CALLBACK (type_selection), NULL);
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Use safe moves"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),
-				properties.safe_moves);
+                                properties.safe_moves);
   gtk_grid_attach (GTK_GRID (grid), chkbox, 0, 1, 2, 1);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Prevent accidental moves that result in getting killed."));
@@ -433,21 +433,21 @@ show_properties_dialog (void)
 
   chkbox = gtk_check_button_new_with_mnemonic (_("U_se super safe moves"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),
-				properties.super_safe_moves);
+                                properties.super_safe_moves);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
-		    (GCallback) super_safe_cb, NULL);
+                    (GCallback) super_safe_cb, NULL);
   gtk_grid_attach (GTK_GRID (grid), chkbox, 0, 2, 2, 1);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Prevents all moves that result in getting killed."));
   gtk_widget_set_sensitive (chkbox, properties.safe_moves);
 
   g_signal_connect (G_OBJECT (safe_chkbox), "clicked",
-		    (GCallback) safe_cb, (gpointer) chkbox);
+                    (GCallback) safe_cb, (gpointer) chkbox);
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Enable sounds"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox), properties.sound);
   g_signal_connect (G_OBJECT (chkbox), "clicked",
-		    (GCallback) sound_cb, NULL);
+                    (GCallback) sound_cb, NULL);
   gtk_grid_attach (GTK_GRID (grid), chkbox, 0, 3, 2, 1);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Play sounds for events like winning a level and dying."));
@@ -472,7 +472,7 @@ show_properties_dialog (void)
 
   pmapmenu = make_theme_menu ();
   g_signal_connect (G_OBJECT (pmapmenu), "changed",
-		    G_CALLBACK (pmap_selection), NULL);
+                    G_CALLBACK (pmap_selection), NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), pmapmenu);
 
   gtk_grid_attach (GTK_GRID (grid), pmapmenu, 1, 0, 1, 1);
@@ -483,8 +483,8 @@ show_properties_dialog (void)
 
   w = gtk_color_button_new ();
   gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (w), &properties.bgcolour);
-  g_signal_connect (G_OBJECT (w), "color_set",
-		    G_CALLBACK (bg_color_callback), NULL);
+  g_signal_connect (G_OBJECT (w), "color-set",
+                    G_CALLBACK (bg_color_callback), NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), w);
 
   gtk_grid_attach (GTK_GRID (grid), w, 1, 1, 1, 1);
@@ -501,15 +501,15 @@ show_properties_dialog (void)
 
   controls_list = games_controls_list_new (settings);
   games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),
-				    "key00", _("Key to move NW"), g_settings_get_default_value (settings, "key00"),
-				    "key01", _("Key to move N"), g_settings_get_default_value (settings, "key01"),
-				    "key02", _("Key to move NE"), g_settings_get_default_value (settings, "key02"),
-				    "key03", _("Key to move W"), g_settings_get_default_value (settings, "key03"),
-				    "key04", _("Key to hold"), g_settings_get_default_value (settings, "key04"),
-				    "key05", _("Key to move E"), g_settings_get_default_value (settings, "key05"),
-				    "key06", _("Key to move SW"), g_settings_get_default_value (settings, "key06"),
-				    "key07", _("Key to move S"), g_settings_get_default_value (settings, "key07"),
-				    "key08", _("Key to move SE"), g_settings_get_default_value (settings, "key08"),
+                                    "key00", _("Key to move NW"), g_settings_get_default_value (settings, "key00"),
+                                    "key01", _("Key to move N"), g_settings_get_default_value (settings, "key01"),
+                                    "key02", _("Key to move NE"), g_settings_get_default_value (settings, "key02"),
+                                    "key03", _("Key to move W"), g_settings_get_default_value (settings, "key03"),
+                                    "key04", _("Key to hold"), g_settings_get_default_value (settings, "key04"),
+                                    "key05", _("Key to move E"), g_settings_get_default_value (settings, "key05"),
+                                    "key06", _("Key to move SW"), g_settings_get_default_value (settings, "key06"),
+                                    "key07", _("Key to move S"), g_settings_get_default_value (settings, "key07"),
+                                    "key08", _("Key to move SE"), g_settings_get_default_value (settings, "key08"),
                                     NULL);
 
   gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, 0);
@@ -520,17 +520,17 @@ show_properties_dialog (void)
 
   dbut = gtk_button_new_with_mnemonic (_("_Restore Defaults"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
-		    G_CALLBACK (defkey_cb), NULL);
+                    G_CALLBACK (defkey_cb), NULL);
   gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, FALSE, 0);
 
   label = gtk_label_new_with_mnemonic (_("Keyboard"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), kpage, label);
 
 
-  g_signal_connect (G_OBJECT (propbox), "delete_event",
-		    G_CALLBACK (delete_cb), NULL);
+  g_signal_connect (G_OBJECT (propbox), "delete-event",
+                    G_CALLBACK (delete_cb), NULL);
   g_signal_connect (G_OBJECT (propbox), "response",
-		    G_CALLBACK (apply_cb), NULL);
+                    G_CALLBACK (apply_cb), NULL);
 
   gtk_widget_show_all (propbox);
 }
@@ -573,14 +573,10 @@ load_properties (void)
   }
   g_free (cname);
 
-  properties.safe_moves = g_settings_get_boolean (settings,
-						  KEY_SAFE_MOVES);
-  properties.super_safe_moves = g_settings_get_boolean (settings,
-						        KEY_SUPER_SAFE_MOVES);
-  properties.sound = g_settings_get_boolean (settings,
-                                             KEY_ENABLE_SOUND);
-  properties.show_toolbar = g_settings_get_boolean (settings,
-                                                    KEY_SHOW_TOOLBAR);
+  properties.safe_moves       = g_settings_get_boolean (settings, KEY_SAFE_MOVES);
+  properties.super_safe_moves = g_settings_get_boolean (settings, KEY_SUPER_SAFE_MOVES);
+  properties.sound            = g_settings_get_boolean (settings, KEY_ENABLE_SOUND);
+  properties.show_toolbar     = g_settings_get_boolean (settings, KEY_SHOW_TOOLBAR);
 
   load_game_graphics ();
   set_game_config (properties.selected_config);

@@ -3,7 +3,7 @@
    Copyright 2006 Callum McKenzie
 
    This library is free software; you can redistribute it and'or modify
-   it under the terms of the GNU Library General Public License as published 
+   it under the terms of the GNU Library General Public License as published
    by the Free Software Foundation; either version 3, or (at your option)
    any later version.
 

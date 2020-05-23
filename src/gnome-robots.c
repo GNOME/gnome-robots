@@ -88,36 +88,36 @@ static void wait_cb (GSimpleAction *action, GVariant *parameter, gpointer user_d
 /**********************************************************************/
 
 static const GActionEntry app_entries[] = {
-  { "new-game", new_game_cb, NULL, NULL, NULL },
-  { "preferences", preferences_cb, NULL, NULL, NULL },
-  { "scores", scores_cb, NULL, NULL, NULL },
-  { "help", help_cb, NULL, NULL, NULL },
-  { "about", about_cb, NULL, NULL, NULL },
-  { "quit", quit_cb, NULL, NULL, NULL },
+  { "new-game",         new_game_cb,        NULL, NULL, NULL },
+  { "preferences",      preferences_cb,     NULL, NULL, NULL },
+  { "scores",           scores_cb,          NULL, NULL, NULL },
+  { "help",             help_cb,            NULL, NULL, NULL },
+  { "about",            about_cb,           NULL, NULL, NULL },
+  { "quit",             quit_cb,            NULL, NULL, NULL },
 };
 
 static const GActionEntry win_entries[] = {
-  { "random-teleport", random_teleport_cb, NULL, NULL, NULL },
-  { "safe-teleport", safe_teleport_cb, NULL, NULL, NULL },
-  { "wait", wait_cb, NULL, NULL, NULL },
+  { "random-teleport",  random_teleport_cb, NULL, NULL, NULL },
+  { "safe-teleport",    safe_teleport_cb,   NULL, NULL, NULL },
+  { "wait",             wait_cb,            NULL, NULL, NULL },
 };
 
 static const key_value scorecats[] = {
-	{"classic_robots", N_("Classic robots")},
-	{"classic_robots-safe", N_("Classic robots with safe moves")},
-	{"classic_robots-super-safe", N_("Classic robots with super-safe moves")},
-	{"nightmare", N_("Nightmare")},
-	{"nightmare-safe", N_("Nightmare with safe moves")},
-	{"nightmare-super-safe", N_("Nightmare with super-safe moves")},
-	{"robots2", N_("Robots2")},
-	{"robots2-safe", N_("Robots2 with safe moves")},
-	{"robots2-super-safe", N_("Robots2 with super-safe moves")},
-	{"robots2_easy", N_("Robots2 easy")},
-	{"robots2_easy-safe", N_("Robots2 easy with safe moves")},
-	{"robots2_easy-super-safe", N_("Robots2 easy with super-safe moves")},
-	{"robots_with_safe_teleport", N_("Robots with safe teleport")},
-	{"robots_with_safe_teleport-safe", N_("Robots with safe teleport with safe moves")},
-	{"robots_with_safe_teleport-super-safe", N_("Robots with safe teleport with super-safe moves")}
+  { "classic_robots",                       N_("Classic robots")},
+  { "classic_robots-safe",                  N_("Classic robots with safe moves")},
+  { "classic_robots-super-safe",            N_("Classic robots with super-safe moves")},
+  { "nightmare",                            N_("Nightmare")},
+  { "nightmare-safe",                       N_("Nightmare with safe moves")},
+  { "nightmare-super-safe",                 N_("Nightmare with super-safe moves")},
+  { "robots2",                              N_("Robots2")},
+  { "robots2-safe",                         N_("Robots2 with safe moves")},
+  { "robots2-super-safe",                   N_("Robots2 with super-safe moves")},
+  { "robots2_easy",                         N_("Robots2 easy")},
+  { "robots2_easy-safe",                    N_("Robots2 easy with safe moves")},
+  { "robots2_easy-super-safe",              N_("Robots2 easy with super-safe moves")},
+  { "robots_with_safe_teleport",            N_("Robots with safe teleport")},
+  { "robots_with_safe_teleport-safe",       N_("Robots with safe teleport with safe moves")},
+  { "robots_with_safe_teleport-super-safe", N_("Robots with safe teleport with super-safe moves")}
 };
 static gint no_categories = 15;
 
@@ -216,23 +216,22 @@ about_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 
   const gchar *artists[] = { "Kirstie Opstad <K.Opstad@ed.ac.uk>", "Rasoul M.P. Aghdam (player death sound)", NULL };
 
-  const gchar *documenters[] =
-    { "Aruna Sankaranarayanan", NULL };
+  const gchar *documenters[] = { "Aruna Sankaranarayanan", NULL };
 
   gtk_show_about_dialog (GTK_WINDOW (window),
-			 "name", _("Robots"),
-			 "version", VERSION,
-			 "copyright", "Copyright © 1998–2008 Mark Rae\nCopyright © 2014–2016 Michael Catanzaro",
-			 "license-type", GTK_LICENSE_GPL_3_0,
-			 "comments", _("Based on classic BSD Robots"),
-			 "authors", authors,
-			 "artists", artists,
-			 "documenters", documenters,
-			 "translator-credits", _("translator-credits"),
-			 "logo-icon-name", "org.gnome.Robots",
-			 "website",
-			 "https://wiki.gnome.org/Apps/Robots",
-			 NULL);
+                         "name", _("Robots"),
+                         "version", VERSION,
+                         "copyright", "Copyright © 1998–2008 Mark Rae\nCopyright © 2014–2016 Michael Catanzaro",
+                         "license-type", GTK_LICENSE_GPL_3_0,
+                         "comments", _("Based on classic BSD Robots"),
+                         "authors", authors,
+                         "artists", artists,
+                         "documenters", documenters,
+                         "translator-credits", _("translator-credits"),
+                         "logo-icon-name", "org.gnome.Robots",
+                         "website",
+                         "https://wiki.gnome.org/Apps/Robots",
+                         NULL);
 }
 
 static void
@@ -385,18 +384,12 @@ activate (GtkApplication *app, gpointer user_data)
   make_cursors ();
 
   game_area = gtk_drawing_area_new ();
-  gtk_widget_add_events (game_area, GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK |
-			 GDK_POINTER_MOTION_MASK);
-  g_signal_connect (G_OBJECT (game_area), "button-press-event",
-		    G_CALLBACK (mouse_cb), NULL);
-  g_signal_connect (G_OBJECT (game_area), "motion-notify-event",
-		    G_CALLBACK (move_cb), NULL);
-  g_signal_connect (G_OBJECT (game_area), "configure-event",
-		    G_CALLBACK (resize_cb), NULL);
-  g_signal_connect (G_OBJECT (game_area), "draw",
-		    G_CALLBACK (draw_cb), NULL);
-  g_signal_connect (G_OBJECT (game_area), "destroy",
-                    G_CALLBACK (gtk_widget_destroyed), &game_area);
+  gtk_widget_add_events (game_area, GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_POINTER_MOTION_MASK);
+  g_signal_connect (G_OBJECT (game_area), "button-press-event",     G_CALLBACK (mouse_cb),  NULL);
+  g_signal_connect (G_OBJECT (game_area), "motion-notify-event",    G_CALLBACK (move_cb),   NULL);
+  g_signal_connect (G_OBJECT (game_area), "configure-event",        G_CALLBACK (resize_cb), NULL);
+  g_signal_connect (G_OBJECT (game_area), "draw",                   G_CALLBACK (draw_cb),   NULL);
+  g_signal_connect (G_OBJECT (game_area), "destroy",                G_CALLBACK (gtk_widget_destroyed), &game_area);
 
   gridframe = GTK_WIDGET (games_grid_frame_new (GAME_WIDTH, GAME_HEIGHT));
   gtk_container_add (GTK_CONTAINER (gridframe), game_area);
@@ -444,8 +437,8 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_container_add (GTK_CONTAINER (window), vbox);
 
   gtk_widget_set_size_request (GTK_WIDGET (game_area),
-			       MINIMUM_TILE_WIDTH * GAME_WIDTH,
-			       MINIMUM_TILE_HEIGHT * GAME_HEIGHT);
+                               MINIMUM_TILE_WIDTH * GAME_WIDTH,
+                               MINIMUM_TILE_HEIGHT * GAME_HEIGHT);
 
   importer = games_scores_directory_importer_new ();
   highscores = games_scores_context_new_with_importer ("gnome-robots",
@@ -463,11 +456,10 @@ activate (GtkApplication *app, gpointer user_data)
   if (!load_game_configs ()) {
     /* Oops, no configs, we probably haven't been installed properly. */
     errordialog = gtk_message_dialog_new_with_markup (NULL, 0, GTK_MESSAGE_ERROR,
-					  GTK_BUTTONS_OK,
-					  "<b>%s</b>\n\n%s",
-					  _("No game data could be found."),
-					  _
-					  ("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
+                                                      GTK_BUTTONS_OK,
+                                                      "<b>%s</b>\n\n%s",
+                                                      _("No game data could be found."),
+                                                      _("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
     gtk_window_set_resizable (GTK_WINDOW (errordialog), FALSE);
 
     gtk_dialog_run (GTK_DIALOG (errordialog));
@@ -479,14 +471,12 @@ activate (GtkApplication *app, gpointer user_data)
   if (!load_game_graphics ()) {
     /* Oops, no graphics, we probably haven't been installed properly. */
     errordialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (window),
-					  GTK_DIALOG_MODAL,
-					  GTK_MESSAGE_ERROR,
-					  GTK_BUTTONS_OK,
-					  "<b>%s</b>\n\n%s",
-					  _
-					  ("Some graphics files are missing or corrupt."),
-					  _
-					  ("The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."));
+                                                      GTK_DIALOG_MODAL,
+                                                      GTK_MESSAGE_ERROR,
+                                                      GTK_BUTTONS_OK,
+                                                      "<b>%s</b>\n\n%s",
+                                                      _("Some graphics files are missing or corrupt."),
+                                                      _("The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."));
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
   }

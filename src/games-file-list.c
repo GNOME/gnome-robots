@@ -2,7 +2,7 @@
    Copyright © 2003 Callum McKenzie
 
    This library is free software; you can redistribute it and'or modify
-   it under the terms of the GNU Library General Public License as published 
+   it under the terms of the GNU Library General Public License as published
    by the Free Software Foundation; either version 3, or (at your option)
    any later version.
 
@@ -76,13 +76,13 @@ games_file_list_new_internal (const gchar * glob, va_list path)
     dir = g_dir_open (pathelement, 0, NULL);
     if (dir != NULL) {
       while ((filename = g_dir_read_name (dir)) != NULL) {
-	if (g_pattern_match_string (filespec, filename)) {
-	  fullname = g_build_filename (pathelement, filename, NULL);
-	  if (g_file_test (fullname, G_FILE_TEST_IS_REGULAR)) {
-	    list = g_list_append (list, fullname);
-	  } else
-	    g_free (fullname);
-	}
+        if (g_pattern_match_string (filespec, filename)) {
+          fullname = g_build_filename (pathelement, filename, NULL);
+          if (g_file_test (fullname, G_FILE_TEST_IS_REGULAR)) {
+            list = g_list_append (list, fullname);
+          } else
+            g_free (fullname);
+        }
       }
       g_dir_close (dir);
     }
@@ -95,16 +95,16 @@ games_file_list_new_internal (const gchar * glob, va_list path)
 
 /**
  * games_file_list_new:
- * @glob: A pattern to match files against. See g_pattern_spec_new () for 
+ * @glob: A pattern to match files against. See g_pattern_spec_new () for
  * details.
- * @varargs: A NULL terminated list of strings containing directory names to 
+ * @varargs: A NULL terminated list of strings containing directory names to
  * be searched for files.
- * 
- * This function takes a glob and a NULL terminated list of directories 
- * and constructs a list of all files in the directories that match the glob. 
+ *
+ * This function takes a glob and a NULL terminated list of directories
+ * and constructs a list of all files in the directories that match the glob.
  * Only regular files are returned.
- * 
- * Return value: A pointer to a new GamesFileList containing files 
+ *
+ * Return value: A pointer to a new GamesFileList containing files
  * matching the glob in the path.
  **/
 GamesFileList *
@@ -179,8 +179,7 @@ games_image_suffix_list_init (void)
 
     suffix = suffices;
     while (*suffix) {
-      image_suffix_list =
-	g_slist_append (image_suffix_list, g_strdup_printf (".%s", *suffix));
+      image_suffix_list = g_slist_append (image_suffix_list, g_strdup_printf (".%s", *suffix));
       suffix++;
     }
 
@@ -213,12 +212,12 @@ games_file_list_new_images_single (const gchar * directory)
     suffix = image_suffix_list;
     while (suffix) {
       if (g_str_has_suffix (filename, suffix->data)) {
-	fullname = g_build_filename (directory, filename, NULL);
-	if (g_file_test (fullname, G_FILE_TEST_IS_REGULAR)) {
-	  list = g_list_append (list, fullname);
-	} else
-	  g_free (fullname);
-	break;
+        fullname = g_build_filename (directory, filename, NULL);
+        if (g_file_test (fullname, G_FILE_TEST_IS_REGULAR)) {
+          list = g_list_append (list, fullname);
+        } else
+          g_free (fullname);
+        break;
       }
       suffix = g_slist_next (suffix);
     }
@@ -231,15 +230,15 @@ games_file_list_new_images_single (const gchar * directory)
 
 /**
  * games_file_list_new_images:
- * @path1: A NULL-terminated list of strings containing directories to be 
+ * @path1: A NULL-terminated list of strings containing directories to be
  * searched.
- * 
+ *
  * A convenience function which constructs a list of filenames which
  * are images that can be loaded via gdk-pixbuf. Whether a file is an
  * image or not is determined by its extension. The list of possible
  * extensions is determined by querying the gdk-pixbuf library the
  * first time this function is called.
- * 
+ *
  * Return value: A new GamesFileList containing the list of image files.
  **/
 GamesFileList *
@@ -257,7 +256,7 @@ games_file_list_new_images (const gchar * path1, ...)
   va_start (paths, path1);
   while ((pathentry = va_arg (paths, gchar *)) != NULL) {
     priv->list = g_list_concat (priv->list,
-			  games_file_list_new_images_single (pathentry));
+                                games_file_list_new_images_single (pathentry));
   }
   va_end (paths);
 
@@ -271,20 +270,20 @@ games_file_list_new_images (const gchar * path1, ...)
  * games_file_list_create_widget:
  * @filelist: The list of files to use.
  * @selection: The name to select as the default. NULL means no default.
- * @flags: A set of flags to specify how the names are displayed. 
- * 
- * Create a combo box with the given list of strings as the entries. If 
- * selection is non-NULL the matching file name is selected by default. 
- * Otherwise nothing is selected. The flags affect how the names are 
- * displayed. The valid flags are GAMES_FILE_LIST_REMOVE_EXTENSION, which 
+ * @flags: A set of flags to specify how the names are displayed.
+ *
+ * Create a combo box with the given list of strings as the entries. If
+ * selection is non-NULL the matching file name is selected by default.
+ * Otherwise nothing is selected. The flags affect how the names are
+ * displayed. The valid flags are GAMES_FILE_LIST_REMOVE_EXTENSION, which
  * removes extensions, and GAMES_FILE_LIST_REPLACE_UNDERSCORES with replaces
  * underscores with spaces.
- * 
+ *
  * Return value: (transfer full): A widget with the list of names.
  **/
 GtkWidget *
 games_file_list_create_widget (GamesFileList * filelist,
-			       const gchar * selection, guint flags)
+                               const gchar * selection, guint flags)
 {
   GamesFileListPrivate *priv = games_file_list_get_instance_private (filelist);
   gint itemno;
@@ -308,14 +307,14 @@ games_file_list_create_widget (GamesFileList * filelist,
     if (flags & GAMES_FILE_LIST_REMOVE_EXTENSION) {
       s = g_strrstr (visible, ".");
       if (s)
-	*s = '\0';
+        *s = '\0';
     }
     if (flags & GAMES_FILE_LIST_REPLACE_UNDERSCORES) {
       s = visible;
       while (*s) {
-	if (*s == '_')
-	  *s = ' ';
-	s++;
+        if (*s == '_')
+          *s = ' ';
+        s++;
       }
     }
 
@@ -339,7 +338,7 @@ games_file_list_create_widget (GamesFileList * filelist,
 /**
  * games_file_list_length:
  * @filelist: The list of files to use.
- * 
+ *
  * Get the number of elements in the file list.
  **/
 gsize
@@ -353,12 +352,12 @@ games_file_list_length (GamesFileList * filelist)
 /**
  * games_file_list_for_each:
  * @filelist: The file list to iterate over.
- * @function: (scope call): The function to call on each item. It gets called with two 
- * arguments: the file name and the pointer supplied to this function in 
+ * @function: (scope call): The function to call on each item. It gets called with two
+ * arguments: the file name and the pointer supplied to this function in
  * the userdata argument.
  * @userdata: (closure): An arbitrary pointer that gets passed as the second argument
  * to each call of function.
- * 
+ *
  * Apply a function to each file name in the list.
  **/
 void
@@ -373,12 +372,12 @@ games_file_list_for_each (GamesFileList * filelist, GFunc function,
 /**
  * games_file_list_find:
  * @filelist: The file list to iterate over.
- * @function: (scope call): The function to call on each item. It gets called with two 
- * arguments: the file name and the pointer supplied to this function in 
+ * @function: (scope call): The function to call on each item. It gets called with two
+ * arguments: the file name and the pointer supplied to this function in
  * the userdata argument.
  * @userdata: (closure): An arbitrary pointer that gets passed as the second argument
  * to each call of function.
- * 
+ *
  * Find a file name by iterating through a list until the given function
  * returns 0.
  *
@@ -387,7 +386,7 @@ games_file_list_for_each (GamesFileList * filelist, GFunc function,
  **/
 gchar *
 games_file_list_find (GamesFileList * filelist, GCompareFunc function,
-		      gpointer userdata)
+                      gpointer userdata)
 {
   GamesFileListPrivate *priv = games_file_list_get_instance_private (filelist);
   GList *element;
@@ -401,10 +400,10 @@ games_file_list_find (GamesFileList * filelist, GCompareFunc function,
  * games_file_list_get_nth:
  * @filelist: The list of file names to select from.
  * @n: The 0-based index into the list.
- * 
+ *
  * Obtain the (n+1)th file name from the list.
- * 
- * Return value: 
+ *
+ * Return value:
  **/
 /* Return the nth filename in the list. */
 const gchar *

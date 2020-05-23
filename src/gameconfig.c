@@ -98,9 +98,9 @@ load_config (gchar * fname)
     vptr = NULL;
     while (*bptr) {
       if (*bptr == '=') {
-	*bptr = 0;
-	vptr = ++bptr;
-	break;
+        *bptr = 0;
+        vptr = ++bptr;
+        break;
       }
       bptr++;
     }

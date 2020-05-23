@@ -4,9 +4,9 @@
 #pragma align 4 (cursor_hold)
 #endif
 #ifdef __GNUC__
-static const guint8 cursor_hold[] __attribute__ ((__aligned__ (4))) = 
+static const guint8 cursor_hold[] __attribute__ ((__aligned__ (4))) =
 #else
-static const guint8 cursor_hold[] = 
+static const guint8 cursor_hold[] =
 #endif
 { ""
   /* Pixbuf magic (0x47646b50) */

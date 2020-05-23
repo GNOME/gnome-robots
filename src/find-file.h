@@ -3,7 +3,7 @@
    Copyright 2006 Callum McKenzie
 
    This library is free software; you can redistribute it and'or modify
-   it under the terms of the GNU Library General Public License as published 
+   it under the terms of the GNU Library General Public License as published
    by the Free Software Foundation; either version 3, or (at your option)
    any later version.
 
@@ -25,7 +25,7 @@
 
 G_BEGIN_DECLS
   gchar * games_find_similar_file (const gchar * target,
-				   const gchar * directory);
+                                   const gchar * directory);
 
 G_END_DECLS
 #endif

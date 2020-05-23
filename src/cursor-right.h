@@ -4,9 +4,9 @@
 #pragma align 4 (cursor_right)
 #endif
 #ifdef __GNUC__
-static const guint8 cursor_right[] __attribute__ ((__aligned__ (4))) = 
+static const guint8 cursor_right[] __attribute__ ((__aligned__ (4))) =
 #else
-static const guint8 cursor_right[] = 
+static const guint8 cursor_right[] =
 #endif
 { ""
   /* Pixbuf magic (0x47646b50) */

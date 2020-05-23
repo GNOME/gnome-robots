@@ -1,5 +1,5 @@
 /*
- * games-controls.h: keyboard controls utility functions. 
+ * games-controls.h: keyboard controls utility functions.
  *
  * Copyright © 2004 Paolo Borelli
  *

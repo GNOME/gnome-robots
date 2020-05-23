@@ -334,7 +334,7 @@ draw_tile_pixmap (gint tileno, gint x, gint y, cairo_t * cr)
 
   x *= tile_width;
   y *= tile_height;
-  
+
   cairo_rectangle (cr, x, y, tile_width, tile_height);
   cairo_fill (cr);
 
@@ -353,8 +353,8 @@ draw_tile_pixmap (gint tileno, gint x, gint y, cairo_t * cr)
 
 /**
  * draw_object
- * @x: x position 
- * @y: y position 
+ * @x: x position
+ * @y: y position
  * @type: object type
  * @cr: context to draw on
  *
@@ -504,8 +504,8 @@ draw_bubble (cairo_t * cr)
 
 /**
  * add_bubble
- * @x: x position 
- * @y: y position 
+ * @x: x position
+ * @y: y position
  *
  * Description:
  * adds a bubble at @x,@y
@@ -568,8 +568,8 @@ remove_splat_bubble (void)
 
 /**
  * add_yahoo_bubble
- * @x: x position 
- * @y: y position 
+ * @x: x position
+ * @y: y position
  *
  * Description:
  * adds and "Yahoo" bubble at @x,@y
@@ -583,8 +583,8 @@ add_yahoo_bubble (gint x, gint y)
 
 /**
  * add_aieee_bubble
- * @x: x position 
- * @y: y position 
+ * @x: x position
+ * @y: y position
  *
  * Description:
  * adds and "Aieee" bubble at @x,@y
@@ -597,8 +597,8 @@ add_aieee_bubble (gint x, gint y)
 
 /**
  * add_splat_bubble
- * @x: x position 
- * @y: y position 
+ * @x: x position
+ * @y: y position
  *
  * Description:
  * adds a "Splat" speech bubble at @x,@y

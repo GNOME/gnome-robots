@@ -6,7 +6,11 @@
 /* Exported functions                                                 */
 /**********************************************************************/
 void keyboard_set (guint *);
-gint keyboard_cb (GtkWidget *, GdkEventKey *, gpointer);
+gboolean keyboard_cb (GtkEventControllerKey *controller,
+                      guint                  keyval,
+                      guint                  keycode,
+                      GdkModifierType        state,
+                      gpointer               user_data);
 /**********************************************************************/
 
 

@@ -78,6 +78,7 @@ static void update_arena (void);
 static gint timeout_cb (void *data);
 static void destroy_game_timer (void);
 static void create_game_timer (void);
+void init_keyboard (void);
 static void move_all_robots (void);
 static void move_type2_robots (void);
 static void move_robots (void);
@@ -543,6 +544,24 @@ create_game_timer (void)
 
 
 /**
+ * init_keyboard
+ *
+ * Description:
+ * Initialises the keyboard actions when the game first starts up
+ **/
+void
+init_keyboard (void)
+{
+  GtkEventController *key_controller;
+
+  key_controller = gtk_event_controller_key_new (window);
+
+  g_signal_connect (G_OBJECT (key_controller), "key-pressed",
+                    G_CALLBACK (keyboard_cb), 0);
+}
+
+
+/**
  * init_game
  *
  * Description:
@@ -553,8 +572,7 @@ init_game (void)
 {
   create_game_timer ();
 
-  g_signal_connect (GTK_WIDGET (window), "key-press-event",
-                    G_CALLBACK (keyboard_cb), 0);
+  init_keyboard ();
 
   start_new_game ();
 }

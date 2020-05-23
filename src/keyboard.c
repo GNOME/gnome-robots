@@ -65,9 +65,11 @@ keyboard_set (guint * keys)
 
 /**
  * keyboard_cb
- * @widget: widget
- * @event: event
- * @data: callback data
+ * @controller: key controller
+ * @keyval: pressed key value
+ * @keycode: pressed key code
+ * @state: modifiers state
+ * @user_data: callback data
  *
  * Description:
  * handles keyboard events
@@ -75,19 +77,23 @@ keyboard_set (guint * keys)
  * Returns:
  * TRUE if the event is handled
  **/
-gint
-keyboard_cb (GtkWidget * widget, GdkEventKey * event, gpointer data)
+gboolean
+keyboard_cb (GtkEventControllerKey *controller,
+             guint                  keyval,
+             guint                  keycode,
+             GdkModifierType        state,
+             gpointer               user_data)
 {
-  gint i, keyval;
+  gint i;
 
   /* This is a bit of a kludge to let through accelerator keys, otherwise
    * if N is used as a key, then Ctrl-N is never picked up. The cleaner
    * option, making the signal a connect_after signal skims the arrow keys
    * before we can get to them which is a bigger problem. */
-  if (event->state & (GDK_CONTROL_MASK | GDK_MOD1_MASK))
+  if (state & (GDK_CONTROL_MASK | GDK_MOD1_MASK))
     return FALSE;
 
-  keyval = toupper (event->keyval);
+  keyval = toupper (keyval);
 
   for (i = 0; i < 12; ++i) {
     if (keyval == toupper (control_keys[i])) {

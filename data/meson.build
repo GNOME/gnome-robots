@@ -43,6 +43,20 @@ endif
 # Install man page
 install_man('@0@.6'.format(meson.project_name()))
 
+# Make D-Bus activatable
+service_conf = configuration_data()
+service_conf.set('bindir', bindir)
+
+service = 'org.gnome.Robots.service'
+
+configure_file(
+  input: service + '.in',
+  output: service,
+  install: true,
+  install_dir: join_paths(datadir, 'dbus-1', 'services'),
+  configuration: service_conf
+)
+
 # Install GSchema file
 install_data(
   '@0@.gschema.xml'.format(application_id),

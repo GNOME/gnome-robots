@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.gnome.Robots
+Exec=@bindir@/gnome-robots --gapplication-service

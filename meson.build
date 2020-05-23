@@ -14,8 +14,9 @@ gsound_dependency = dependency('gsound', version: '>= 1.0.2')
 gtk_dependency = dependency('gtk+-3.0', version: '>= 3.24.0')
 rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.36.2')
 
-pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
-
+bindir      = join_paths(get_option('prefix'), get_option('bindir'))
+datadir     = join_paths(get_option('prefix'), get_option('datadir'))
+pkgdatadir  = join_paths(datadir, meson.project_name())
 
 config_h = configuration_data()
 config_h.set_quoted('PACKAGE', meson.project_name())

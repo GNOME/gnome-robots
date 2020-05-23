@@ -28,7 +28,11 @@ void quit_game (void);
 void game_keypress (gint);
 void show_scores (void);
 void start_new_game (void);
-gboolean mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data);
+void mouse_cb (GtkGestureMultiPress *gesture,
+               gint                  n_press,
+               gdouble               x,
+               gdouble               y,
+               gpointer              user_data);
 gboolean move_cb (GtkWidget * widget, GdkEventMotion * e, gpointer data);
 /**********************************************************************/
 

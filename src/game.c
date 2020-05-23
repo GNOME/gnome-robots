@@ -1321,21 +1321,25 @@ get_dir (int ix, int iy, int *odx, int *ody)
   *ody = movetable[octant][1];
 }
 
-gboolean
-mouse_cb (GtkWidget * widget, GdkEventButton * e, gpointer data)
+void
+mouse_cb (GtkGestureMultiPress *gesture,
+          gint                  n_press,
+          gdouble               x,
+          gdouble               y,
+          gpointer              user_data)
 {
   int dx, dy;
 
   if (game_state != STATE_PLAYING)
-    return TRUE;
+    return;
 
-  get_dir (e->x, e->y, &dx, &dy);
+  get_dir ((int)x, (int)y, &dx, &dy);
 
   if (player_move (dx, dy)) {
     move_robots ();
   }
 
-  return TRUE;
+  return;
 }
 
 gboolean

@@ -275,13 +275,14 @@ wait_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
   game_keypress (KBD_WAIT);
 }
 
-static gboolean
-window_configure_event_cb (GtkWidget *widget, GdkEventConfigure *event)
+static void
+on_window_size_changed (GdkSurface *surface, int width, int height, gpointer user_data)
 {
-  if (!window_is_maximized)
-    gtk_window_get_size (GTK_WINDOW (window), &window_width, &window_height);
+  if (window_is_maximized)
+    return;
 
-  return FALSE;
+  window_width = width;
+  window_height = height;
 }
 
 static void
@@ -300,6 +301,7 @@ map_cb (GtkWidget *widget, gpointer user_data)
   surface = gtk_native_get_surface (native);
 
   g_signal_connect (G_OBJECT (surface), "notify::state", G_CALLBACK (on_window_state_event), NULL);
+  g_signal_connect (G_OBJECT (surface), "size-changed", G_CALLBACK (on_window_size_changed), NULL);
 }
 
 void
@@ -378,7 +380,6 @@ activate (GtkApplication *app, gpointer user_data)
   window = gtk_application_window_new (app);
   gtk_window_set_title (GTK_WINDOW (window), _("Robots"));
   gtk_window_set_titlebar (GTK_WINDOW (window), headerbar);
-  g_signal_connect (GTK_WINDOW (window), "configure-event", G_CALLBACK (window_configure_event_cb), NULL);
   g_signal_connect (G_OBJECT (window), "map", G_CALLBACK (map_cb), NULL);
   gtk_window_set_default_size (GTK_WINDOW (window), g_settings_get_int (settings, "window-width"), g_settings_get_int (settings, "window-height"));
   if (g_settings_get_boolean (settings, "window-is-maximized"))

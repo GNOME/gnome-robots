@@ -262,7 +262,7 @@ games_controls_list_new (GSettings *settings)
   list = g_object_new (GAMES_TYPE_CONTROLS_LIST,
                        "hscrollbar-policy", GTK_POLICY_NEVER,
                        "vscrollbar-policy", GTK_POLICY_AUTOMATIC,
-                       "shadow-type", GTK_SHADOW_IN,
+                       "has-frame", TRUE,
                        NULL);
   priv = games_controls_list_get_instance_private (list);
 

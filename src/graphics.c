@@ -95,28 +95,32 @@ render_graphics (void)
   rerender_needed = FALSE;
 }
 
-gboolean
-resize_cb (GtkWidget * w, GdkEventConfigure * e, gpointer data)
+void
+resize_if_needed (int width, int height)
 {
   gint trial_width;
   gint trial_height;
 
-  trial_width = e->width / GAME_WIDTH;
-  trial_height = e->height / GAME_HEIGHT;
+  trial_width = width / GAME_WIDTH;
+  trial_height = height / GAME_HEIGHT;
 
   if ((trial_width != tile_width) || (trial_height != tile_height)) {
     tile_width = trial_width;
     tile_height = trial_height;
     rerender_needed = TRUE;
   }
-
-  return FALSE;
 }
 
-gboolean
-draw_cb (GtkWidget * w, cairo_t * cr, gpointer data)
+void
+draw_cb (GtkDrawingArea   *drawing_area,
+         cairo_t          *cr,
+         int               width,
+         int               height,
+         gpointer          user_data)
 {
   int i, j;
+
+  resize_if_needed (width, height);
 
   for (j = 0; j < GAME_HEIGHT; j++) {
     for (i = 0; i < GAME_WIDTH; i++) {
@@ -125,8 +129,6 @@ draw_cb (GtkWidget * w, cairo_t * cr, gpointer data)
   }
 
   draw_bubble (cr);
-
-  return TRUE;
 }
 
 /**

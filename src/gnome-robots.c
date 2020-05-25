@@ -390,9 +390,7 @@ activate (GtkApplication *app, gpointer user_data)
   make_cursors ();
 
   game_area = gtk_drawing_area_new ();
-  g_signal_connect (G_OBJECT (game_area), "configure-event",        G_CALLBACK (resize_cb), NULL);
-  g_signal_connect (G_OBJECT (game_area), "draw",                   G_CALLBACK (draw_cb),   NULL);
-  g_signal_connect (G_OBJECT (game_area), "destroy",                G_CALLBACK (gtk_widget_destroyed), &game_area);
+  gtk_drawing_area_set_draw_func (GTK_DRAWING_AREA (game_area), draw_cb, NULL, NULL);
 
   click_controller = gtk_gesture_click_new ();
   g_signal_connect (G_OBJECT (click_controller), "pressed", G_CALLBACK (mouse_cb), NULL);

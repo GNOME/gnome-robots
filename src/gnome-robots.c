@@ -284,12 +284,22 @@ window_configure_event_cb (GtkWidget *widget, GdkEventConfigure *event)
   return FALSE;
 }
 
-static gboolean
-window_state_event_cb (GtkWidget *widget, GdkEventWindowState *event)
+static void
+on_window_state_event (GObject *object, GParamSpec param)
 {
-  if ((event->changed_mask & GDK_WINDOW_STATE_MAXIMIZED) != 0)
-    window_is_maximized = (event->new_window_state & GDK_WINDOW_STATE_MAXIMIZED) != 0;
-  return FALSE;
+  window_is_maximized = (gdk_toplevel_get_state (GDK_TOPLEVEL (object)) & GDK_TOPLEVEL_STATE_MAXIMIZED) != 0;
+}
+
+static void
+map_cb (GtkWidget *widget, gpointer user_data)
+{
+  GtkNative *native;
+  GdkSurface *surface;
+
+  native = gtk_widget_get_native (widget);
+  surface = gtk_native_get_surface (native);
+
+  g_signal_connect (G_OBJECT (surface), "notify::state", G_CALLBACK (on_window_state_event), NULL);
 }
 
 void
@@ -369,7 +379,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_window_set_title (GTK_WINDOW (window), _("Robots"));
   gtk_window_set_titlebar (GTK_WINDOW (window), headerbar);
   g_signal_connect (GTK_WINDOW (window), "configure-event", G_CALLBACK (window_configure_event_cb), NULL);
-  g_signal_connect (GTK_WINDOW (window), "window-state-event", G_CALLBACK (window_state_event_cb), NULL);
+  g_signal_connect (G_OBJECT (window), "map", G_CALLBACK (map_cb), NULL);
   gtk_window_set_default_size (GTK_WINDOW (window), g_settings_get_int (settings, "window-width"), g_settings_get_int (settings, "window-height"));
   if (g_settings_get_boolean (settings, "window-is-maximized"))
     gtk_window_maximize (GTK_WINDOW (window));

@@ -352,7 +352,7 @@ activate (GtkApplication *app, gpointer user_data)
 
   if (window != NULL)
   {
-    gtk_window_present_with_time (GTK_WINDOW (window), gtk_get_current_event_time ());
+    gtk_window_present (GTK_WINDOW (window));
     return;
   }
 

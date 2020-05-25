@@ -23,7 +23,7 @@
 #define CURSORS_H
 
 void make_cursors (void);
-void set_cursor_default (GdkWindow * window);
-void set_cursor_by_direction (GdkWindow * window, int dx, int dy);
+void set_cursor_default (GdkSurface * surface);
+void set_cursor_by_direction (GdkSurface * surface, int dx, int dy);
 
 #endif

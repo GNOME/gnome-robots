@@ -1350,11 +1350,14 @@ move_cb (GtkEventControllerMotion *controller,
          gdouble                   y,
          gpointer                  user_data)
 {
+  GtkNative* native;
   int dx, dy;
 
   get_dir ((int)x, (int)y, &dx, &dy);
 
-  set_cursor_by_direction (gtk_widget_get_window (game_area), dx, dy);
+  native = gtk_widget_get_native (game_area);
+
+  set_cursor_by_direction (gtk_native_get_surface (native), dx, dy);
 
   return;
 }

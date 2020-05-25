@@ -86,22 +86,22 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 void
-set_cursor_default (GdkWindow * window)
+set_cursor_default (GdkSurface * surface)
 {
-  gdk_window_set_cursor (window, default_cursor);
+  gdk_surface_set_cursor (surface, default_cursor);
 }
 
 void
-set_cursor_by_direction (GdkWindow * window, int dx, int dy)
+set_cursor_by_direction (GdkSurface * surface, int dx, int dy)
 {
   int index;
 
   if (game_state != STATE_PLAYING) {
-    set_cursor_default (window);
+    set_cursor_default (surface);
     return;
   }
 
   index = 3 * dy + dx + 4;
 
-  gdk_window_set_cursor (window, cursor_list[index].cursor);
+  gdk_surface_set_cursor (surface, cursor_list[index].cursor);
 }

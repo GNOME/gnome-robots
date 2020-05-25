@@ -391,19 +391,21 @@ show_properties_dialog (void)
                                          GTK_DIALOG_USE_HEADER_BAR | GTK_DIALOG_MODAL,
                                          NULL,
                                          NULL);
-/*  gtk_container_set_border_width (GTK_CONTAINER (propbox), 5);*/
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))), 2);
   /* Set up notebook and add it to hbox of the gtk_dialog */
   g_signal_connect (G_OBJECT (propbox), "destroy",
                     G_CALLBACK (gtk_window_destroy), &propbox);
 
   notebook = gtk_notebook_new ();
-/*  gtk_container_set_border_width (GTK_CONTAINER (notebook), 5);*/
   gtk_box_append (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))), notebook);
 
   /* The configuration page */
   cpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
-/*  gtk_container_set_border_width (GTK_CONTAINER (cpage), 12);*/
+  gtk_widget_set_vexpand (GTK_WIDGET (cpage), TRUE);
+  gtk_widget_set_margin_start (GTK_WIDGET (cpage), 22);
+  gtk_widget_set_margin_end (GTK_WIDGET (cpage), 22);
+  gtk_widget_set_margin_top (GTK_WIDGET (cpage), 18);
+  gtk_widget_set_margin_bottom (GTK_WIDGET (cpage), 18);
 
   grid = gtk_grid_new ();
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
@@ -455,7 +457,11 @@ show_properties_dialog (void)
 
   /* The graphics page */
   gpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
-/*  gtk_container_set_border_width (GTK_CONTAINER (gpage), 12);*/
+  gtk_widget_set_vexpand (GTK_WIDGET (gpage), TRUE);
+  gtk_widget_set_margin_start (GTK_WIDGET (gpage), 22);
+  gtk_widget_set_margin_end (GTK_WIDGET (gpage), 22);
+  gtk_widget_set_margin_top (GTK_WIDGET (gpage), 18);
+  gtk_widget_set_margin_bottom (GTK_WIDGET (gpage), 18);
 
   grid = gtk_grid_new ();
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
@@ -491,7 +497,11 @@ show_properties_dialog (void)
 
   /* The keyboard page */
   kpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
-/*  gtk_container_set_border_width (GTK_CONTAINER (kpage), 12);*/
+  gtk_widget_set_vexpand (GTK_WIDGET (kpage), TRUE);
+  gtk_widget_set_margin_start (GTK_WIDGET (kpage), 22);
+  gtk_widget_set_margin_end (GTK_WIDGET (kpage), 22);
+  gtk_widget_set_margin_top (GTK_WIDGET (kpage), 18);
+  gtk_widget_set_margin_bottom (GTK_WIDGET (kpage), 18);
 
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_append (GTK_BOX (kpage), vbox);
@@ -509,9 +519,11 @@ show_properties_dialog (void)
                                     "key08", _("Key to move SE"), g_settings_get_default_value (settings, "key08"),
                                     NULL);
 
+  gtk_widget_set_vexpand (GTK_WIDGET (controls_list), TRUE);
   gtk_box_append (GTK_BOX (vbox), controls_list);
 
   dbut = gtk_button_new_with_mnemonic (_("_Restore Defaults"));
+  gtk_widget_set_halign (dbut, GTK_ALIGN_START);
   g_signal_connect (G_OBJECT (dbut), "clicked",
                     G_CALLBACK (defkey_cb), NULL);
   gtk_box_append (GTK_BOX (vbox), dbut);

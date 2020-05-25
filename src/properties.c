@@ -374,7 +374,6 @@ show_properties_dialog (void)
   GtkWidget *gpage;
   GtkWidget *kpage;
   GtkWidget *label;
-  GtkWidget *hbox;
   GtkWidget *vbox;
   GtkWidget *typemenu;
   GtkWidget *pmapmenu;
@@ -513,14 +512,10 @@ show_properties_dialog (void)
 
   gtk_box_append (GTK_BOX (vbox), controls_list);
 
-  hbox = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
-  gtk_button_box_set_layout (GTK_BUTTON_BOX (hbox), GTK_BUTTONBOX_START);
-  gtk_box_append (GTK_BOX (vbox), hbox);
-
   dbut = gtk_button_new_with_mnemonic (_("_Restore Defaults"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
                     G_CALLBACK (defkey_cb), NULL);
-  gtk_box_append (GTK_BOX (hbox), dbut);
+  gtk_box_append (GTK_BOX (vbox), dbut);
 
   label = gtk_label_new_with_mnemonic (_("Keyboard"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), kpage, label);

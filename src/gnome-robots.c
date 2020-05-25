@@ -357,7 +357,6 @@ activate (GtkApplication *app, gpointer user_data)
   }
 
   headerbar = gtk_header_bar_new ();
-  gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Robots"));
   gtk_header_bar_set_show_title_buttons (GTK_HEADER_BAR (headerbar), TRUE);
 
   appmenu = gtk_application_get_menu_by_id (app, "primary-menu");
@@ -367,6 +366,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_header_bar_pack_end (GTK_HEADER_BAR (headerbar), button);
 
   window = gtk_application_window_new (app);
+  gtk_window_set_title (GTK_WINDOW (window), _("Robots"));
   gtk_window_set_titlebar (GTK_WINDOW (window), headerbar);
   g_signal_connect (GTK_WINDOW (window), "configure-event", G_CALLBACK (window_configure_event_cb), NULL);
   g_signal_connect (GTK_WINDOW (window), "window-state-event", G_CALLBACK (window_state_event_cb), NULL);

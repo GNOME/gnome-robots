@@ -393,19 +393,19 @@ show_properties_dialog (void)
                                          GTK_DIALOG_USE_HEADER_BAR | GTK_DIALOG_MODAL,
                                          NULL,
                                          NULL);
-  gtk_container_set_border_width (GTK_CONTAINER (propbox), 5);
+/*  gtk_container_set_border_width (GTK_CONTAINER (propbox), 5);*/
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))), 2);
   /* Set up notebook and add it to hbox of the gtk_dialog */
   g_signal_connect (G_OBJECT (propbox), "destroy",
                     G_CALLBACK (gtk_widget_destroyed), &propbox);
 
   notebook = gtk_notebook_new ();
-  gtk_container_set_border_width (GTK_CONTAINER (notebook), 5);
+/*  gtk_container_set_border_width (GTK_CONTAINER (notebook), 5);*/
   gtk_box_append (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))), notebook);
 
   /* The configuration page */
   cpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
-  gtk_container_set_border_width (GTK_CONTAINER (cpage), 12);
+/*  gtk_container_set_border_width (GTK_CONTAINER (cpage), 12);*/
 
   grid = gtk_grid_new ();
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
@@ -457,7 +457,7 @@ show_properties_dialog (void)
 
   /* The graphics page */
   gpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
-  gtk_container_set_border_width (GTK_CONTAINER (gpage), 12);
+/*  gtk_container_set_border_width (GTK_CONTAINER (gpage), 12);*/
 
   grid = gtk_grid_new ();
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
@@ -493,7 +493,7 @@ show_properties_dialog (void)
 
   /* The keyboard page */
   kpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
-  gtk_container_set_border_width (GTK_CONTAINER (kpage), 12);
+/*  gtk_container_set_border_width (GTK_CONTAINER (kpage), 12);*/
 
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_append (GTK_BOX (kpage), vbox);

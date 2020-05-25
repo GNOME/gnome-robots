@@ -4,6 +4,17 @@
     <file preprocess="xml-stripblanks" alias="robots.ui">../data/robots.ui</file>
     <file alias="robots.css">../data/robots.css</file>
   </gresource> -->
+  <gresource prefix="/org/gnome/Robots/cursors">
+    <file preprocess="to-pixdata" alias="cursor-hold.png"       >../data/cursors/cursor-hold.png</file>
+    <file preprocess="to-pixdata" alias="cursor-up.png"         >../data/cursors/cursor-up.png</file>
+    <file preprocess="to-pixdata" alias="cursor-up-right.png"   >../data/cursors/cursor-up-right.png</file>
+    <file preprocess="to-pixdata" alias="cursor-right.png"      >../data/cursors/cursor-right.png</file>
+    <file preprocess="to-pixdata" alias="cursor-down-right.png" >../data/cursors/cursor-down-right.png</file>
+    <file preprocess="to-pixdata" alias="cursor-down.png"       >../data/cursors/cursor-down.png</file>
+    <file preprocess="to-pixdata" alias="cursor-down-left.png"  >../data/cursors/cursor-down-left.png</file>
+    <file preprocess="to-pixdata" alias="cursor-left.png"       >../data/cursors/cursor-left.png</file>
+    <file preprocess="to-pixdata" alias="cursor-up-left.png"    >../data/cursors/cursor-up-left.png</file>
+  </gresource>
   <gresource prefix="/org/gnome/Robots/gtk">
     <file preprocess="xml-stripblanks" alias="menus.ui">../data/app-menu.ui</file>
   </gresource>

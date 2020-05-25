@@ -26,37 +26,25 @@
 #include "game.h"
 #include "gbdefs.h"
 
-#include "cursor-down.h"
-#include "cursor-down-left.h"
-#include "cursor-down-right.h"
-#include "cursor-hold.h"
-#include "cursor-left.h"
-#include "cursor-right.h"
 #include "cursors.h"
-#include "cursor-up.h"
-#include "cursor-up-left.h"
-#include "cursor-up-right.h"
 
 typedef struct {
-  const guint8 *data;
-  gsize data_len;
-  int hsx;
-  int hsy;
+  gchar *small_name;
+  int hotspot_x;
+  int hotspot_y;
   GdkCursor *cursor;
 } cursor_props;
 
-#define CURSOR_ENTRY(d,hx,hy) { cursor_##d, sizeof (cursor_##d), hx, hy, NULL }
-
-cursor_props cursor_list[] = {
-  CURSOR_ENTRY (up_left, 3, 3),
-  CURSOR_ENTRY (up, 10, 3),
-  CURSOR_ENTRY (up_right, 17, 3),
-  CURSOR_ENTRY (left, 3, 10),
-  CURSOR_ENTRY (hold, 10, 10),
-  CURSOR_ENTRY (right, 17, 10),
-  CURSOR_ENTRY (down_left, 3, 17),
-  CURSOR_ENTRY (down, 10, 17),
-  CURSOR_ENTRY (down_right, 17, 17)
+cursor_props cursor_list[] = { /* cursors are 17x17 */
+  { "up-left",     1,  1, NULL },
+  { "up",          8,  1, NULL },
+  { "up-right",   15,  1, NULL },
+  { "left",        1,  8, NULL },
+  { "hold",        8,  8, NULL },
+  { "right",      15,  8, NULL },
+  { "down-left",   1, 15, NULL },
+  { "down",        8, 15, NULL },
+  { "down-right", 15, 15, NULL }
 };
 
 GdkCursor *default_cursor;
@@ -64,22 +52,22 @@ GdkCursor *default_cursor;
 void
 make_cursors (void)
 {
-  GdkPixbuf *pixbuf;
+  GdkTexture *texture;
   int i;
+  gchar *resource;
   cursor_props *c;
 
-  default_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
-                                               GDK_LEFT_PTR);
+  default_cursor = gdk_cursor_new_from_name ("default", /* fallback */ NULL);
 
   c = cursor_list;
   for (i = 0; i < G_N_ELEMENTS (cursor_list); ++i) {
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-    pixbuf = gdk_pixbuf_new_from_inline (c->data_len, c->data, FALSE, NULL);
-G_GNUC_END_IGNORE_DEPRECATIONS
-    c->cursor = gdk_cursor_new_from_pixbuf (gdk_display_get_default (),
-                                            pixbuf,
-                                            c->hsx, c->hsy);
-    g_object_unref (pixbuf);
+    resource = g_strconcat ("/org/gnome/Robots/cursors/cursor-", c->small_name, ".png", NULL);
+    texture = gdk_texture_new_from_resource (resource);
+
+    c->cursor = gdk_cursor_new_from_texture (texture, c->hotspot_x, c->hotspot_y, /* fallback */ NULL);
+
+    g_object_unref (texture);
+    g_free (resource);
 
     c++;
   }

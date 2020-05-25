@@ -39,6 +39,7 @@
                     "buildsystem": "meson",
                     "sources": [{
                         "type": "git",
+                        "branch": "arnaudb/wip/gtk4",
                         "url": "https://gitlab.gnome.org/GNOME/libgnome-games-support.git"
                     }]
                 }
@@ -70,6 +71,7 @@
             "buildsystem": "meson",
             "sources": [{
                 "type": "git",
+                "branch": "arnaudb/wip/gtk4",
                 "url": "https://gitlab.gnome.org/GNOME/gnome-robots.git"
             }]
         }

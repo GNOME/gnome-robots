@@ -201,12 +201,7 @@ scores_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 static void
 help_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
-  GError *error = NULL;
-
-  gtk_show_uri_on_window (GTK_WINDOW (window), "help:gnome-robots", gtk_get_current_event_time (), &error);
-  if (error)
-    g_warning ("Failed to show help: %s", error->message);
-  g_clear_error (&error);
+  gtk_show_uri (GTK_WINDOW (window), "help:gnome-robots", GDK_CURRENT_TIME);
 }
 
 static void

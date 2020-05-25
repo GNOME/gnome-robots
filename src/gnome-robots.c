@@ -342,7 +342,7 @@ create_category_from_key (const char *key, gpointer user_data)
 static void
 activate (GtkApplication *app, gpointer user_data)
 {
-  GtkWidget *errordialog, *vbox, *hbox, *label, *button, *gridframe, *icon;
+  GtkWidget *errordialog, *vbox, *hbox, *label, *button, *gridframe;
   GMenu *appmenu;
   GtkSizeGroup *size_group;
   GtkStyleContext *style_context;
@@ -362,8 +362,7 @@ activate (GtkApplication *app, gpointer user_data)
 
   appmenu = gtk_application_get_menu_by_id (app, "primary-menu");
   button = gtk_menu_button_new ();
-  icon = gtk_image_new_from_icon_name ("open-menu-symbolic", GTK_ICON_SIZE_BUTTON);
-  gtk_button_set_image (GTK_BUTTON (button), icon);
+  gtk_menu_button_set_icon_name (GTK_MENU_BUTTON (button), "open-menu-symbolic");
   gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (button), (GMenuModel *) appmenu);
   gtk_widget_show (button);
   gtk_header_bar_pack_end (GTK_HEADER_BAR (headerbar), button);

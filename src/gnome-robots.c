@@ -407,7 +407,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_container_add (GTK_CONTAINER (button), label);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.random-teleport");
   gtk_size_group_add_widget (size_group, button);
-  gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
+  gtk_box_append (GTK_BOX (hbox), button);
 
   safe_teleports_label = gtk_label_new (NULL);
   gtk_label_set_justify (GTK_LABEL (safe_teleports_label), GTK_JUSTIFY_CENTER);
@@ -417,7 +417,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_container_add (GTK_CONTAINER (button), safe_teleports_label);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.safe-teleport");
   gtk_size_group_add_widget (size_group, button);
-  gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
+  gtk_box_append (GTK_BOX (hbox), button);
 
   label = gtk_label_new_with_mnemonic (_("_Wait for Robots"));
   gtk_widget_set_margin_top (label, 15);
@@ -426,13 +426,13 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_container_add (GTK_CONTAINER (button), label);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.wait");
   gtk_size_group_add_widget (size_group, button);
-  gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
+  gtk_box_append (GTK_BOX (hbox), button);
 
   g_object_unref (size_group);
 
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), gridframe, TRUE, TRUE, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+  gtk_box_append (GTK_BOX (vbox), gridframe);
+  gtk_box_append (GTK_BOX (vbox), hbox);
 
   gtk_container_add (GTK_CONTAINER (window), vbox);
 

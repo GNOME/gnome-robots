@@ -401,8 +401,7 @@ show_properties_dialog (void)
 
   notebook = gtk_notebook_new ();
   gtk_container_set_border_width (GTK_CONTAINER (notebook), 5);
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))),
-              notebook, TRUE, TRUE, 0);
+  gtk_box_append (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))), notebook);
 
   /* The configuration page */
   cpage = gtk_box_new (GTK_ORIENTATION_VERTICAL, 18);
@@ -411,7 +410,7 @@ show_properties_dialog (void)
   grid = gtk_grid_new ();
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
   gtk_grid_set_column_spacing (GTK_GRID (grid), 12);
-  gtk_box_pack_start (GTK_BOX (cpage), grid, FALSE, FALSE, 0);
+  gtk_box_append (GTK_BOX (cpage), grid);
 
   label = gtk_label_new (_("Game Type"));
   gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
@@ -463,7 +462,7 @@ show_properties_dialog (void)
   grid = gtk_grid_new ();
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
   gtk_grid_set_column_spacing (GTK_GRID (grid), 12);
-  gtk_box_pack_start (GTK_BOX (gpage), grid, FALSE, FALSE, 0);
+  gtk_box_append (GTK_BOX (gpage), grid);
 
   label = gtk_label_new_with_mnemonic (_("_Image theme:"));
   gtk_widget_set_hexpand (label, TRUE);
@@ -497,7 +496,7 @@ show_properties_dialog (void)
   gtk_container_set_border_width (GTK_CONTAINER (kpage), 12);
 
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_box_pack_start (GTK_BOX (kpage), vbox, TRUE, TRUE, 0);
+  gtk_box_append (GTK_BOX (kpage), vbox);
 
   controls_list = games_controls_list_new (settings);
   games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),
@@ -512,16 +511,16 @@ show_properties_dialog (void)
                                     "key08", _("Key to move SE"), g_settings_get_default_value (settings, "key08"),
                                     NULL);
 
-  gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, 0);
+  gtk_box_append (GTK_BOX (vbox), controls_list);
 
   hbox = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
   gtk_button_box_set_layout (GTK_BUTTON_BOX (hbox), GTK_BUTTONBOX_START);
-  gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+  gtk_box_append (GTK_BOX (vbox), hbox);
 
   dbut = gtk_button_new_with_mnemonic (_("_Restore Defaults"));
   g_signal_connect (G_OBJECT (dbut), "clicked",
                     G_CALLBACK (defkey_cb), NULL);
-  gtk_box_pack_start (GTK_BOX (hbox), dbut, FALSE, FALSE, 0);
+  gtk_box_append (GTK_BOX (hbox), dbut);
 
   label = gtk_label_new_with_mnemonic (_("Keyboard"));
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), kpage, label);

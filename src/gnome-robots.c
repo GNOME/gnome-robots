@@ -154,7 +154,7 @@ update_game_status (gint score, gint current_level, gint safes)
 
   /* Window subtitle. The first %d is the level, the second is the score. \t creates a tab. */
   subtitle = g_strdup_printf (_("Level: %d\tScore: %d"), current_level, score);
-  gtk_header_bar_set_subtitle (GTK_HEADER_BAR (headerbar), subtitle);
+/*  gtk_header_bar_set_subtitle (GTK_HEADER_BAR (headerbar), subtitle);*/
   g_free (subtitle);
 
   safe_teleports = safes;

@@ -391,8 +391,9 @@ activate (GtkApplication *app, gpointer user_data)
   g_signal_connect (G_OBJECT (motion_controller), "motion", G_CALLBACK (move_cb), NULL);
   gtk_widget_add_controller (game_area, motion_controller);
 
-  gridframe = GTK_WIDGET (games_grid_frame_new (GAME_WIDTH, GAME_HEIGHT));
-  gtk_container_add (GTK_CONTAINER (gridframe), game_area);
+/*  gridframe = GTK_WIDGET (games_grid_frame_new (GAME_WIDTH, GAME_HEIGHT)); TODO */
+  gridframe = gtk_aspect_frame_new (/* xalign */ 0.5f, /* yalign */ 0.5f, /* ratio, ignored */ 1.0f, /* obey child */ TRUE);
+  gtk_aspect_frame_set_child (GTK_ASPECT_FRAME (gridframe), game_area);
 
   hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
   size_group = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
@@ -404,7 +405,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_widget_set_margin_top (label, 15);
   gtk_widget_set_margin_bottom (label, 15);
   button = gtk_button_new ();
-  gtk_container_add (GTK_CONTAINER (button), label);
+  gtk_button_set_child (GTK_BUTTON (button), label);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.random-teleport");
   gtk_size_group_add_widget (size_group, button);
   gtk_box_append (GTK_BOX (hbox), button);
@@ -414,7 +415,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_widget_set_margin_top (label, 15);
   gtk_widget_set_margin_bottom (label, 15);
   button = gtk_button_new ();
-  gtk_container_add (GTK_CONTAINER (button), safe_teleports_label);
+  gtk_button_set_child (GTK_BUTTON (button), safe_teleports_label);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.safe-teleport");
   gtk_size_group_add_widget (size_group, button);
   gtk_box_append (GTK_BOX (hbox), button);
@@ -423,7 +424,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_widget_set_margin_top (label, 15);
   gtk_widget_set_margin_bottom (label, 15);
   button = gtk_button_new ();
-  gtk_container_add (GTK_CONTAINER (button), label);
+  gtk_button_set_child (GTK_BUTTON (button), label);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.wait");
   gtk_size_group_add_widget (size_group, button);
   gtk_box_append (GTK_BOX (hbox), button);
@@ -434,7 +435,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_box_append (GTK_BOX (vbox), gridframe);
   gtk_box_append (GTK_BOX (vbox), hbox);
 
-  gtk_container_add (GTK_CONTAINER (window), vbox);
+  gtk_window_set_child (GTK_WINDOW (window), vbox);
 
   gtk_widget_set_size_request (GTK_WIDGET (game_area),
                                MINIMUM_TILE_WIDTH * GAME_WIDTH,

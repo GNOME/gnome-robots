@@ -495,6 +495,8 @@ activate (GtkApplication *app, gpointer user_data)
   init_game ();
 
   g_settings_sync ();
+
+  gtk_window_present (GTK_WINDOW (window));
 }
 
 /**

@@ -112,8 +112,12 @@ message_box (gchar * msg)
 
   box = gtk_message_dialog_new (GTK_WINDOW (window), GTK_DIALOG_MODAL,
                                 GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "%s", msg);
-  gtk_dialog_run (GTK_DIALOG (box));
-  gtk_widget_destroy (box);
+
+  g_signal_connect_swapped (box,
+                            "response",
+                            G_CALLBACK (gtk_window_destroy),
+                            box);
+  gtk_widget_show (box);
 }
 
 /**

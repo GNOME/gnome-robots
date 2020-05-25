@@ -96,7 +96,7 @@ static GnobotsProperties properties;
 static void load_keys (void);
 static void apply_changes (void);
 static void apply_cb (GtkWidget *, gpointer);
-static gboolean delete_cb (GtkWidget *, gpointer);
+static void destroy_cb (GtkWidget *, gpointer);
 static void pmap_selection (GtkWidget *, gpointer);
 static void type_selection (GtkWidget *, gpointer);
 static void safe_cb (GtkWidget *, gpointer);
@@ -127,7 +127,7 @@ apply_changes (void)
 
 /**
  * apply_cb
- * @w: widget
+ * @widget: widget
  * @data: callback data
  *
  * Description:
@@ -137,29 +137,28 @@ apply_changes (void)
  * TRUE if the event was handled
  **/
 static void
-apply_cb (GtkWidget * w, gpointer data)
+apply_cb (GtkWidget * widget, gpointer data)
 {
   apply_changes ();
 
-  gtk_widget_destroy (propbox);
+  gtk_window_destroy (GTK_WINDOW (propbox));
   propbox = NULL;
 }
 
 
 /**
  * destroy_cb
- * @w: widget
+ * @widget: widget
  * @data: callback data
  *
  * Description:
  * handles property-box destruction messages
  **/
-static gboolean
-delete_cb (GtkWidget * w, gpointer data)
+static void
+destroy_cb (GtkWidget * widget, gpointer data)
 {
+  gtk_window_destroy (GTK_WINDOW (propbox));
   propbox = NULL;
-
-  return FALSE;
 }
 
 /**
@@ -396,7 +395,7 @@ show_properties_dialog (void)
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (propbox))), 2);
   /* Set up notebook and add it to hbox of the gtk_dialog */
   g_signal_connect (G_OBJECT (propbox), "destroy",
-                    G_CALLBACK (gtk_widget_destroyed), &propbox);
+                    G_CALLBACK (gtk_window_destroy), &propbox);
 
   notebook = gtk_notebook_new ();
 /*  gtk_container_set_border_width (GTK_CONTAINER (notebook), 5);*/
@@ -521,10 +520,12 @@ show_properties_dialog (void)
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), kpage, label);
 
 
-  g_signal_connect (G_OBJECT (propbox), "delete-event",
-                    G_CALLBACK (delete_cb), NULL);
+  g_signal_connect (G_OBJECT (propbox), "destroy",
+                    G_CALLBACK (destroy_cb), NULL);
   g_signal_connect (G_OBJECT (propbox), "response",
                     G_CALLBACK (apply_cb), NULL);
+
+  gtk_widget_show (propbox);
 }
 
 /**

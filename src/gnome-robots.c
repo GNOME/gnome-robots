@@ -236,10 +236,18 @@ quit_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 }
 
 static void
+confirmation_dialog_response_cb (GtkDialog *dialog, gint response_id, gpointer user_data)
+{
+  gtk_window_destroy (GTK_WINDOW (dialog));
+
+  if (response_id == GTK_RESPONSE_ACCEPT)
+    start_new_game ();
+}
+
+static void
 new_game_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
   GtkWidget *dialog;
-  int ret;
 
   dialog = gtk_message_dialog_new (GTK_WINDOW (window), GTK_DIALOG_MODAL,
                                    GTK_MESSAGE_QUESTION, GTK_BUTTONS_NONE,
@@ -250,11 +258,12 @@ new_game_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
                           _("_New Game"), GTK_RESPONSE_ACCEPT,
                           NULL);
 
-  ret = gtk_dialog_run (GTK_DIALOG (dialog));
-  gtk_widget_destroy (dialog);
+  g_signal_connect_swapped (dialog,
+                            "response",
+                            G_CALLBACK (confirmation_dialog_response_cb),
+                            dialog);
 
-  if (ret == GTK_RESPONSE_ACCEPT)
-    start_new_game ();
+  gtk_widget_show (dialog);
 }
 
 static void
@@ -349,6 +358,13 @@ create_category_from_key (const char *key, gpointer user_data)
   if (name == NULL)
     return NULL;
   return games_scores_category_new (key, name);
+}
+
+static void
+error_dialog_response_cb (GtkDialog *dialog, gint response_id, gpointer user_data)
+{
+  gtk_window_destroy (GTK_WINDOW (dialog));
+  exit (1);
 }
 
 static void
@@ -469,10 +485,16 @@ activate (GtkApplication *app, gpointer user_data)
                                                       "<b>%s</b>\n\n%s",
                                                       _("No game data could be found."),
                                                       _("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
+
     gtk_window_set_resizable (GTK_WINDOW (errordialog), FALSE);
 
-    gtk_dialog_run (GTK_DIALOG (errordialog));
-    exit (1);
+    g_signal_connect_swapped (errordialog,
+                              "response",
+                              G_CALLBACK (error_dialog_response_cb),
+                              errordialog);
+
+    gtk_widget_show (errordialog);
+    return;
   }
 
   load_properties ();
@@ -486,8 +508,14 @@ activate (GtkApplication *app, gpointer user_data)
                                                       "<b>%s</b>\n\n%s",
                                                       _("Some graphics files are missing or corrupt."),
                                                       _("The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."));
-    gtk_dialog_run (GTK_DIALOG (errordialog));
-    exit (1);
+
+    g_signal_connect_swapped (errordialog,
+                              "response",
+                              G_CALLBACK (error_dialog_response_cb),
+                              errordialog);
+
+    gtk_widget_show (errordialog);
+    return;
   }
 
   init_sound ();

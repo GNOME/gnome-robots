@@ -364,7 +364,6 @@ activate (GtkApplication *app, gpointer user_data)
   button = gtk_menu_button_new ();
   gtk_menu_button_set_icon_name (GTK_MENU_BUTTON (button), "open-menu-symbolic");
   gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (button), (GMenuModel *) appmenu);
-  gtk_widget_show (button);
   gtk_header_bar_pack_end (GTK_HEADER_BAR (headerbar), button);
 
   window = gtk_application_window_new (app);
@@ -453,8 +452,6 @@ activate (GtkApplication *app, gpointer user_data)
                                                                      GAMES_SCORES_IMPORTER (importer),
                                                                      "org.gnome.Robots");
   g_object_unref (importer);
-
-  gtk_widget_show_all (window);
 
   if (!load_game_configs ()) {
     /* Oops, no configs, we probably haven't been installed properly. */

@@ -531,8 +531,6 @@ show_properties_dialog (void)
                     G_CALLBACK (delete_cb), NULL);
   g_signal_connect (G_OBJECT (propbox), "response",
                     G_CALLBACK (apply_cb), NULL);
-
-  gtk_widget_show_all (propbox);
 }
 
 /**

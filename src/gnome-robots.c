@@ -358,7 +358,7 @@ activate (GtkApplication *app, gpointer user_data)
 
   headerbar = gtk_header_bar_new ();
   gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), _("Robots"));
-  gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);
+  gtk_header_bar_set_show_title_buttons (GTK_HEADER_BAR (headerbar), TRUE);
 
   appmenu = gtk_application_get_menu_by_id (app, "primary-menu");
   button = gtk_menu_button_new ();

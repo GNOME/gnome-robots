@@ -406,6 +406,8 @@ activate (GtkApplication *app, gpointer user_data)
   make_cursors ();
 
   game_area = gtk_drawing_area_new ();
+  gtk_widget_set_hexpand (GTK_WIDGET (game_area), TRUE);
+  gtk_widget_set_vexpand (GTK_WIDGET (game_area), TRUE);
   gtk_drawing_area_set_draw_func (GTK_DRAWING_AREA (game_area), draw_cb, NULL, NULL);
 
   click_controller = gtk_gesture_click_new ();
@@ -421,6 +423,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_aspect_frame_set_child (GTK_ASPECT_FRAME (gridframe), game_area);
 
   hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+  gtk_box_set_homogeneous (GTK_BOX (hbox), TRUE);
   size_group = gtk_size_group_new (GTK_SIZE_GROUP_BOTH);
 
   style_context = gtk_widget_get_style_context (hbox);
@@ -430,6 +433,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_widget_set_margin_top (label, 15);
   gtk_widget_set_margin_bottom (label, 15);
   button = gtk_button_new ();
+  gtk_widget_set_hexpand (GTK_WIDGET (button), TRUE);
   gtk_button_set_child (GTK_BUTTON (button), label);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.random-teleport");
   gtk_size_group_add_widget (size_group, button);
@@ -440,6 +444,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_widget_set_margin_top (label, 15);
   gtk_widget_set_margin_bottom (label, 15);
   button = gtk_button_new ();
+  gtk_widget_set_hexpand (GTK_WIDGET (button), TRUE);
   gtk_button_set_child (GTK_BUTTON (button), safe_teleports_label);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.safe-teleport");
   gtk_size_group_add_widget (size_group, button);
@@ -449,6 +454,7 @@ activate (GtkApplication *app, gpointer user_data)
   gtk_widget_set_margin_top (label, 15);
   gtk_widget_set_margin_bottom (label, 15);
   button = gtk_button_new ();
+  gtk_widget_set_hexpand (GTK_WIDGET (button), TRUE);
   gtk_button_set_child (GTK_BUTTON (button), label);
   gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.wait");
   gtk_size_group_add_widget (size_group, button);

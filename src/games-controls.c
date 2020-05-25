@@ -40,13 +40,12 @@ enum {
 struct GamesControlsListPrivate {
   GtkTreeModel *model;
   GtkListStore *store;
-  GtkWidget *view;
 
   GSettings *settings;
   gulong notify_handler_id;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GamesControlsList, games_controls_list, GTK_TYPE_SCROLLED_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (GamesControlsList, games_controls_list, GTK_TYPE_WIDGET)
 
 static void
 accel_edited_cb (GtkCellRendererAccel *cell,
@@ -169,17 +168,27 @@ games_controls_list_constructor (GType type,
   GamesControlsListPrivate *priv;
   GObject *object;
   GamesControlsList *list;
-  GtkScrolledWindow *scrolled_window;
   GtkTreeViewColumn *column;
   GtkCellRenderer *label_renderer, *key_renderer;
   GtkListStore *store;
+  GtkLayoutManager *layout;
+  GtkWidget *scrolled_window;
+  GtkWidget *view;
 
   object = G_OBJECT_CLASS (games_controls_list_parent_class)->constructor
              (type, n_construct_properties, construct_params);
 
   list = GAMES_CONTROLS_LIST (object);
   priv = games_controls_list_get_instance_private (list);
-  scrolled_window = GTK_SCROLLED_WINDOW (object);
+
+  layout = gtk_bin_layout_new ();
+  gtk_widget_set_layout_manager (GTK_WIDGET (list), layout);
+
+  scrolled_window = gtk_scrolled_window_new (/* create hadjustment */ NULL, /* create vadjustment */ NULL);
+  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window), /* hscrollbar-policy */ GTK_POLICY_NEVER,
+                                                                         /* vscrollbar-policy */ GTK_POLICY_AUTOMATIC);
+  gtk_scrolled_window_set_has_frame (GTK_SCROLLED_WINDOW (scrolled_window), TRUE);
+  gtk_widget_insert_after (scrolled_window, GTK_WIDGET (list), /* insert first */ NULL);
 
   store = gtk_list_store_new (N_COLUMNS,
                               G_TYPE_STRING,
@@ -191,11 +200,11 @@ games_controls_list_constructor (GType type,
   priv->store = store;
   priv->model = GTK_TREE_MODEL (store);
 
-  priv->view = gtk_tree_view_new_with_model (priv->model);
+  view = gtk_tree_view_new_with_model (priv->model);
   g_object_unref (store);
 
-  gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (priv->view), FALSE);
-  gtk_tree_view_set_enable_search (GTK_TREE_VIEW (priv->view), FALSE);
+  gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (view), FALSE);
+  gtk_tree_view_set_enable_search (GTK_TREE_VIEW (view), FALSE);
 
   /* label column */
   label_renderer = gtk_cell_renderer_text_new ();
@@ -203,7 +212,7 @@ games_controls_list_constructor (GType type,
                                                      label_renderer,
                                                      "text", LABEL_COLUMN,
                                                      NULL);
-  gtk_tree_view_append_column (GTK_TREE_VIEW (priv->view), column);
+  gtk_tree_view_append_column (GTK_TREE_VIEW (view), column);
 
   /* key column */
   key_renderer = gtk_cell_renderer_accel_new ();
@@ -221,9 +230,9 @@ games_controls_list_constructor (GType type,
                                                      "accel-key", KEYCODE_COLUMN,
                                                      "accel-mods", KEYMODS_COLUMN,
                                                      NULL);
-  gtk_tree_view_append_column (GTK_TREE_VIEW (priv->view), column);
+  gtk_tree_view_append_column (GTK_TREE_VIEW (view), column);
 
-  gtk_container_add (GTK_CONTAINER (scrolled_window), priv->view);
+  gtk_scrolled_window_set_child (GTK_SCROLLED_WINDOW (scrolled_window), view);
 
   return object;
 }
@@ -260,10 +269,8 @@ games_controls_list_new (GSettings *settings)
   GamesControlsListPrivate *priv;
 
   list = g_object_new (GAMES_TYPE_CONTROLS_LIST,
-                       "hscrollbar-policy", GTK_POLICY_NEVER,
-                       "vscrollbar-policy", GTK_POLICY_AUTOMATIC,
-                       "has-frame", TRUE,
                        NULL);
+
   priv = games_controls_list_get_instance_private (list);
 
   priv->settings = g_object_ref (settings);

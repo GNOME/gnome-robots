@@ -22,11 +22,11 @@ G_BEGIN_DECLS
 typedef struct GamesControlsListPrivate GamesControlsListPrivate;
 
 typedef struct {
-  GtkScrolledWindow parent_instance;
+  GtkWidget parent_instance;
 } GamesControlsList;
 
 typedef struct {
-  GtkScrolledWindowClass parent_class;
+  GtkWidgetClass parent_class;
 } GamesControlsListClass;
 
 GType      games_controls_list_get_type     (void);

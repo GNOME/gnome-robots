@@ -1,5 +1,5 @@
 project('gnome-robots', 'c',
-    version: '3.36.1')
+    version: '3.37.2')
 
 python3 = import('python3')
 gnome = import('gnome')

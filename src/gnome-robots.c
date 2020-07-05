@@ -447,14 +447,15 @@ activate (GtkApplication *app, gpointer user_data)
                                MINIMUM_TILE_HEIGHT * GAME_HEIGHT);
 
   importer = games_scores_directory_importer_new ();
-  highscores = games_scores_context_new_with_importer ("gnome-robots",
-                                                       /* Label on the scores dialog, next to map type dropdown */
-                                                       _("Game Type:"),
-                                                       GTK_WINDOW (window),
-                                                       create_category_from_key,
-                                                       NULL,
-                                                       GAMES_SCORES_STYLE_POINTS_GREATER_IS_BETTER,
-                                                       GAMES_SCORES_IMPORTER (importer));
+  highscores = games_scores_context_new_with_importer_and_icon_name ("gnome-robots",
+                                                                     /* Label on the scores dialog, next to map type dropdown */
+                                                                     _("Game Type:"),
+                                                                     GTK_WINDOW (window),
+                                                                     create_category_from_key,
+                                                                     NULL,
+                                                                     GAMES_SCORES_STYLE_POINTS_GREATER_IS_BETTER,
+                                                                     GAMES_SCORES_IMPORTER (importer),
+                                                                     "org.gnome.Robots");
   g_object_unref (importer);
 
   gtk_widget_show_all (window);

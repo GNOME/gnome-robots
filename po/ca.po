@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2019-02-06 19:33+0000\n"
+"POT-Creation-Date: 2020-05-28 23:21+0000\n"
 "PO-Revision-Date: 2017-03-12 09:22+0100\n"
 "Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -25,23 +25,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.8.9\n"
 
-#: data/app-menu.ui:7 src/gnome-robots.c:256
+#: data/app-menu.ui:7 src/gnome-robots.c:255
 msgid "_New Game"
 msgstr "Partida _nova"
 
-#: data/app-menu.ui:12
+#: data/app-menu.ui:11
 msgid "_Scores"
 msgstr "_Puntuacions"
 
-#: data/app-menu.ui:18
+#: data/app-menu.ui:17
 msgid "_Preferences"
 msgstr "_Preferències"
 
-#: data/app-menu.ui:22
+#: data/app-menu.ui:21
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: data/app-menu.ui:27
+#: data/app-menu.ui:25
 msgid "_About Robots"
 msgstr "_Quant al Robots"
 
@@ -53,15 +53,16 @@ msgstr "GNOME Robots"
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Eviteu els robots i feu que xoquin entre ells"
 
-#: data/org.gnome.Robots.appdata.xml.in:10
+#. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
+#: data/org.gnome.Robots.appdata.xml.in:11
 msgid ""
-"It is the distant future – the year 2000. Evil robots are trying to kill "
-"you. Avoid the robots or face certain death."
+"It is the distant future: the year 2000. Evil robots are trying to kill you. "
+"Avoid the robots or face certain death."
 msgstr ""
-"Sou en un futur llunyà – l'any 2000. Els robots malèvols intenten matar-vos. "
+"Sou en un futur llunyà: l'any 2000. Els robots malèvols intenten matar-vos. "
 "Eviteu els robots o tindreu una mort segura."
 
-#: data/org.gnome.Robots.appdata.xml.in:14
+#: data/org.gnome.Robots.appdata.xml.in:15
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -75,7 +76,7 @@ msgstr ""
 "movent les piles d'escombraries, o escapar a un lloc segur amb el dispositiu "
 "de teletransport de mà."
 
-#: data/org.gnome.Robots.appdata.xml.in:21
+#: data/org.gnome.Robots.appdata.xml.in:22
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -85,12 +86,12 @@ msgstr ""
 "quedeu, el teletransportador us podria deixar just al costat d'un robot, que "
 "us mataria. Sobreviviu el màxim de temps possible!"
 
-#: data/org.gnome.Robots.appdata.xml.in:50
+#: data/org.gnome.Robots.appdata.xml.in:58
 msgid "The GNOME Project"
 msgstr "El projecte GNOME"
 
-#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:315 src/gnome-robots.c:349
+#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:222
+#: src/gnome-robots.c:317 src/gnome-robots.c:365
 msgid "Robots"
 msgstr "Robots"
 
@@ -98,11 +99,6 @@ msgstr "Robots"
 #: data/org.gnome.Robots.desktop.in:6
 msgid "game;arcade;teleport;"
 msgstr "joc;arcade;teleportació;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Robots.desktop.in:9
-msgid "org.gnome.Robots"
-msgstr "org.gnome.Robots"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
@@ -173,7 +169,7 @@ msgstr ""
 "Habilita els sons del joc. Reprodueix sons per a diferents esdeveniments "
 "durant el joc."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:503
+#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
 msgid "Key to move NW"
 msgstr "Tecla per moure al nord-oest"
 
@@ -181,7 +177,7 @@ msgstr "Tecla per moure al nord-oest"
 msgid "The key used to move north-west."
 msgstr "La tecla que s'utilitza per moure's cap al nord-oest."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
 msgid "Key to move N"
 msgstr "Tecla per moure al nord"
 
@@ -189,7 +185,7 @@ msgstr "Tecla per moure al nord"
 msgid "The key used to move north."
 msgstr "La tecla que s'utilitza per moure's cap al nord."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
 msgid "Key to move NE"
 msgstr "Tecla per moure al nord-est"
 
@@ -197,7 +193,7 @@ msgstr "Tecla per moure al nord-est"
 msgid "The key used to move north-east."
 msgstr "La tecla que s'utilitza per moure's cap al nord-est."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
 msgid "Key to move W"
 msgstr "Tecla per moure a l'oest"
 
@@ -205,7 +201,7 @@ msgstr "Tecla per moure a l'oest"
 msgid "The key used to move west."
 msgstr "La tecla que s'utilitza per moure's cap a l'oest."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
 msgid "Key to hold"
 msgstr "Tecla a prémer"
 
@@ -213,7 +209,7 @@ msgstr "Tecla a prémer"
 msgid "The key used to hold still."
 msgstr "La tecla que s'utilitza per mantenir-se quiet."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
 msgid "Key to move E"
 msgstr "Tecla per moure a l'est"
 
@@ -221,7 +217,7 @@ msgstr "Tecla per moure a l'est"
 msgid "The key used to move east."
 msgstr "La tecla que s'utilitza per moure's cap a l'est."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
 msgid "Key to move SW"
 msgstr "Tecla per moure al sud-oest"
 
@@ -229,7 +225,7 @@ msgstr "Tecla per moure al sud-oest"
 msgid "The key used to move south-west."
 msgstr "La tecla que s'utilitza per moure's cap al sud-oest."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
 msgid "Key to move S"
 msgstr "Tecla per moure al sud"
 
@@ -237,7 +233,7 @@ msgstr "Tecla per moure al sud"
 msgid "The key used to move south."
 msgstr "La tecla que s'utilitza per moure's cap al sud."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
 msgid "Key to move SE"
 msgstr "Tecla per moure al sud-est"
 
@@ -257,7 +253,7 @@ msgstr "L'alçada, en píxels, de la finestra"
 msgid "true if the window is maximized"
 msgstr "«true» (cert) si la finestra està maximitzada"
 
-#: src/game.c:343 src/game.c:359
+#: src/game.c:344 src/game.c:359
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -266,15 +262,15 @@ msgstr ""
 "Però podreu repetir-ho??"
 
 #. This should never happen.
-#: src/game.c:1110
+#: src/game.c:1125
 msgid "There are no teleport locations left!!"
 msgstr "No queda cap emplaçament per a les teleportacions!"
 
-#: src/game.c:1138
+#: src/game.c:1153
 msgid "There are no safe locations to teleport to!!"
 msgstr "No queda cap emplaçament on teleportar-s'hi!"
 
-#: src/games-controls.c:286
+#: src/games-controls.c:292
 msgid "Unknown Command"
 msgstr "Ordre desconeguda"
 
@@ -355,11 +351,11 @@ msgstr "(Restants: %d)"
 msgid "Teleport _Safely"
 msgstr "Teleportació _segura"
 
-#: src/gnome-robots.c:227
+#: src/gnome-robots.c:226
 msgid "Based on classic BSD Robots"
 msgstr "Basat en el Robots clàssic de BSD"
 
-#: src/gnome-robots.c:231
+#: src/gnome-robots.c:230
 msgid "translator-credits"
 msgstr ""
 "Jordi Vila <gnome@softcatala.net>\n"
@@ -369,32 +365,32 @@ msgstr ""
 "Josep Puigdemont <josep.puigdemont@gmail.com>\n"
 "David Planella <david.planella@gmail.com>"
 
-#: src/gnome-robots.c:252
+#: src/gnome-robots.c:251
 msgid "Are you sure you want to discard the current game?"
 msgstr "Segur que voleu descartar la partida actual?"
 
-#: src/gnome-robots.c:255
+#: src/gnome-robots.c:254
 msgid "Keep _Playing"
 msgstr "Continua _jugant"
 
-#: src/gnome-robots.c:396
+#: src/gnome-robots.c:409
 msgid "Teleport _Randomly"
 msgstr "Teleportació _aleatòria"
 
-#: src/gnome-robots.c:415
+#: src/gnome-robots.c:428
 msgid "_Wait for Robots"
 msgstr "_Espera els robots"
 
 #. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:439
+#: src/gnome-robots.c:452
 msgid "Game Type:"
 msgstr "Tipus de joc:"
 
-#: src/gnome-robots.c:454
+#: src/gnome-robots.c:467
 msgid "No game data could be found."
 msgstr "No s'han trobat les dades del joc."
 
-#: src/gnome-robots.c:456
+#: src/gnome-robots.c:468
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -402,11 +398,11 @@ msgstr ""
 "El Robots no ha pogut trobar fitxers de configuració de joc vàlids. "
 "Comproveu que el programa està correctament instal·lat."
 
-#: src/gnome-robots.c:473
+#: src/gnome-robots.c:484
 msgid "Some graphics files are missing or corrupt."
 msgstr "Falten alguns fitxers de gràfics, o estan malmesos."
 
-#: src/gnome-robots.c:475
+#: src/gnome-robots.c:485
 msgid ""
 "The program Robots was unable to load all the necessary graphics files. "
 "Please check that the program is installed correctly."
@@ -416,7 +412,6 @@ msgstr ""
 
 #: src/graphics.c:149
 #, c-format
-#| msgid "Could not find '%s' pixmap file\n"
 msgid "Could not find “%s” pixmap file\n"
 msgstr "No s'ha pogut trobar el fitxer de mapa de píxels «%s»\n"
 
@@ -424,58 +419,56 @@ msgstr "No s'ha pogut trobar el fitxer de mapa de píxels «%s»\n"
 msgid "Preferences"
 msgstr "Preferències"
 
-#: src/properties.c:415
+#: src/properties.c:416
 msgid "Game Type"
 msgstr "Tipus de joc"
 
-#: src/properties.c:425
+#: src/properties.c:426
 msgid "_Use safe moves"
 msgstr "_Utilitza moviments segurs"
 
-#: src/properties.c:430
+#: src/properties.c:431
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Evita els moviments accidentals que provoquin la mort."
 
-#: src/properties.c:433
+#: src/properties.c:434
 msgid "U_se super safe moves"
 msgstr "Utilitza moviments _supersegurs"
 
-#: src/properties.c:440
+#: src/properties.c:441
 msgid "Prevents all moves that result in getting killed."
 msgstr "Evita tots els moviments perillosos que provoquin la mort."
 
-#: src/properties.c:446
+#: src/properties.c:447
 msgid "_Enable sounds"
 msgstr "Habilita _el so"
 
-#: src/properties.c:452
+#: src/properties.c:453
 msgid "Play sounds for events like winning a level and dying."
 msgstr ""
 "Reprodueix sons per als esdeveniments com ara guanyar un nivell o morir."
 
-#: src/properties.c:454
+#: src/properties.c:455
 msgid "Game"
 msgstr "Partida"
 
-#: src/properties.c:467
+#: src/properties.c:468
 msgid "_Image theme:"
 msgstr "_Tema de les imatges:"
 
-#: src/properties.c:479
+#: src/properties.c:480
 msgid "_Background color:"
 msgstr "_Color de fons:"
 
-#: src/properties.c:491
+#: src/properties.c:492
 msgid "Appearance"
 msgstr "Aparença"
 
-#: src/properties.c:520
+#: src/properties.c:521
 msgid "_Restore Defaults"
 msgstr "Restaura els pre_determinats"
 
-#: src/properties.c:525
+#: src/properties.c:526
 msgid "Keyboard"
 msgstr "Teclat"
 
-#~ msgid "_Quit"
-#~ msgstr "_Surt"

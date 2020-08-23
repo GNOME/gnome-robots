@@ -30,6 +30,7 @@
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
 #include "games-file-list.h"
+#include "riiv.h"
 
 struct GamesFileListPrivate
 {
@@ -145,54 +146,6 @@ games_file_list_transform_basename (GamesFileList * filelist)
   games_file_list_remove_duplicates (filelist);
 }
 
-static GSList *image_suffix_list = NULL;
-static GMutex image_suffix_mutex;
-
-/* We only want to initilise the list of suffixes once, this is
- * the function that does it. It might even be thread safe, not that
- * this has been tested ... */
-static void
-games_image_suffix_list_init (void)
-{
-  GSList *pixbuf_formats;
-  GSList *element;
-  GdkPixbufFormat *formats;
-  gchar **suffices;
-  gchar **suffix;
-
-  g_mutex_lock (&image_suffix_mutex);
-
-  /* This check needs to be inside the lock to make sure that another
-   * thread haasn't half-completed the list. */
-  if (image_suffix_list) {
-    g_mutex_unlock (&image_suffix_mutex);
-    return;
-  }
-
-  pixbuf_formats = gdk_pixbuf_get_formats ();
-
-  /* Search through the list of formats for the suffices. */
-  element = pixbuf_formats;
-  while (element) {
-    formats = element->data;
-    suffices = gdk_pixbuf_format_get_extensions (formats);
-
-    suffix = suffices;
-    while (*suffix) {
-      image_suffix_list = g_slist_append (image_suffix_list, g_strdup_printf (".%s", *suffix));
-      suffix++;
-    }
-
-    g_strfreev (suffices);
-
-    element = g_slist_next (element);
-  }
-
-  g_slist_free (pixbuf_formats);
-
-  g_mutex_unlock (&image_suffix_mutex);
-}
-
 static GList *
 games_file_list_new_images_single (const gchar * directory)
 {
@@ -206,10 +159,8 @@ games_file_list_new_images_single (const gchar * directory)
   if (!dir)
     return NULL;
 
-  games_image_suffix_list_init ();
-
   while ((filename = g_dir_read_name (dir)) != NULL) {
-    suffix = image_suffix_list;
+    suffix = image_suffix_list_get ();
     while (suffix) {
       if (g_str_has_suffix (filename, suffix->data)) {
         fullname = g_build_filename (directory, filename, NULL);

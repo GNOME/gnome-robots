@@ -1,3 +1,25 @@
+vala_sources = files(
+    'image-suffix-list.vala'
+)
+
+vala_lib = static_library('riiv',
+    vala_sources,
+    dependencies: [
+        gee_dependency,
+        gio_dependency,
+        glib_dependency,
+        gnome_games_dependency,
+        gsound_dependency,
+        gtk_dependency,
+        gdk_dependency,
+        rsvg_dependency
+    ]
+)
+
+riiv_dependency = declare_dependency(
+    link_with: vala_lib,
+)
+
 sources = files(
     'cursors.c',
     'find-file.c',
@@ -28,11 +50,14 @@ executable(
     sources + resources,
     config_header,
     dependencies: [
+        riiv_dependency,
+        gee_dependency,
         gio_dependency,
         glib_dependency,
         gnome_games_dependency,
         gsound_dependency,
         gtk_dependency,
+        gdk_dependency,
         rsvg_dependency
     ],
     c_args: [

@@ -1,6 +1,7 @@
 vala_sources = files(
     'image-suffix-list.vala',
     'file-list.vala',
+    'find-file.vala',
 )
 
 vala_lib = static_library('riiv',
@@ -23,7 +24,6 @@ riiv_dependency = declare_dependency(
 
 sources = files(
     'cursors.c',
-    'find-file.c',
     'game.c',
     'gameconfig.c',
     'games-controls.c',

@@ -31,7 +31,7 @@
 #include <time.h>
 #include <dirent.h>
 
-#include "find-file.h"
+#include "riiv.h"
 #include "graphics.h"
 #include "gbdefs.h"
 #include "game.h"

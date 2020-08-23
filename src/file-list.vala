@@ -93,19 +93,6 @@ public class GamesFileList {
      * @userdata: (closure): An arbitrary pointer that gets passed as the second argument
      * to each call of function.
      *
-     * Apply a function to each file name in the list.
-     **/
-    //public void @foreach (Func<string> func) {
-    //    files.@foreach (func);
-    //}
-
-    /**
-     * @function: (scope call): The function to call on each item. It gets called with two
-     * arguments: the file name and the pointer supplied to this function in
-     * the userdata argument.
-     * @userdata: (closure): An arbitrary pointer that gets passed as the second argument
-     * to each call of function.
-     *
      * Find a file name by iterating through a list until the given function
      * returns 0.
      *
@@ -134,7 +121,7 @@ public class GamesFileList {
              * library in glib. There are probably some ways these could
              * seriously mangle unicode strings. */
             if (Flags.REMOVE_EXTENSION in flags) {
-                var s = visible.last_index_of (".");
+                var s = visible.last_index_of_char ('.');
                 if (s >= 0)
                     visible = visible.substring (0, s);
             }

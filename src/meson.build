@@ -3,6 +3,7 @@ vala_sources = files(
     'file-list.vala',
     'find-file.vala',
     'preimage.vala',
+    'controls.vala',
 )
 
 vala_lib = static_library('riiv',
@@ -27,7 +28,6 @@ sources = files(
     'cursors.c',
     'game.c',
     'gameconfig.c',
-    'games-controls.c',
     'gnome-robots.c',
     'graphics.c',
     'keyboard.c',

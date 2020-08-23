@@ -35,7 +35,6 @@
 #include "keyboard.h"
 #include "game.h"
 #include "riiv.h"
-#include "games-controls.h"
 
 
 /**********************************************************************/
@@ -505,18 +504,16 @@ show_properties_dialog (void)
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_pack_start (GTK_BOX (kpage), vbox, TRUE, TRUE, 0);
 
-  controls_list = games_controls_list_new (settings);
-  games_controls_list_add_controls (GAMES_CONTROLS_LIST (controls_list),
-                                    "key00", _("Key to move NW"), g_settings_get_default_value (settings, "key00"),
-                                    "key01", _("Key to move N"), g_settings_get_default_value (settings, "key01"),
-                                    "key02", _("Key to move NE"), g_settings_get_default_value (settings, "key02"),
-                                    "key03", _("Key to move W"), g_settings_get_default_value (settings, "key03"),
-                                    "key04", _("Key to hold"), g_settings_get_default_value (settings, "key04"),
-                                    "key05", _("Key to move E"), g_settings_get_default_value (settings, "key05"),
-                                    "key06", _("Key to move SW"), g_settings_get_default_value (settings, "key06"),
-                                    "key07", _("Key to move S"), g_settings_get_default_value (settings, "key07"),
-                                    "key08", _("Key to move SE"), g_settings_get_default_value (settings, "key08"),
-                                    NULL);
+  controls_list = GTK_WIDGET (games_controls_list_new (settings));
+  games_controls_list_add_control (GAMES_CONTROLS_LIST (controls_list), "key00", _("Key to move NW"), g_variant_get_uint32 (g_settings_get_default_value (settings, "key00")));
+  games_controls_list_add_control (GAMES_CONTROLS_LIST (controls_list), "key01", _("Key to move N"),  g_variant_get_uint32 (g_settings_get_default_value (settings, "key01")));
+  games_controls_list_add_control (GAMES_CONTROLS_LIST (controls_list), "key02", _("Key to move NE"), g_variant_get_uint32 (g_settings_get_default_value (settings, "key02")));
+  games_controls_list_add_control (GAMES_CONTROLS_LIST (controls_list), "key03", _("Key to move W"),  g_variant_get_uint32 (g_settings_get_default_value (settings, "key03")));
+  games_controls_list_add_control (GAMES_CONTROLS_LIST (controls_list), "key04", _("Key to hold"),    g_variant_get_uint32 (g_settings_get_default_value (settings, "key04")));
+  games_controls_list_add_control (GAMES_CONTROLS_LIST (controls_list), "key05", _("Key to move E"),  g_variant_get_uint32 (g_settings_get_default_value (settings, "key05")));
+  games_controls_list_add_control (GAMES_CONTROLS_LIST (controls_list), "key06", _("Key to move SW"), g_variant_get_uint32 (g_settings_get_default_value (settings, "key06")));
+  games_controls_list_add_control (GAMES_CONTROLS_LIST (controls_list), "key07", _("Key to move S"),  g_variant_get_uint32 (g_settings_get_default_value (settings, "key07")));
+  games_controls_list_add_control (GAMES_CONTROLS_LIST (controls_list), "key08", _("Key to move SE"), g_variant_get_uint32 (g_settings_get_default_value (settings, "key08")));
 
   gtk_box_pack_start (GTK_BOX (vbox), controls_list, TRUE, TRUE, 0);
 

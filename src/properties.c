@@ -34,7 +34,7 @@
 #include "gbdefs.h"
 #include "keyboard.h"
 #include "game.h"
-#include "games-file-list.h"
+#include "riiv.h"
 #include "games-controls.h"
 
 
@@ -173,17 +173,23 @@ delete_cb (GtkWidget * w, gpointer data)
 static void
 pmap_selection (GtkWidget * widget, gpointer data)
 {
-  gint n;
+  GtkTreeIter iter;
 
-  n = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
+  if (gtk_combo_box_get_active_iter (GTK_COMBO_BOX (widget), &iter)) {
+    GtkTreeModel *model;
+    GValue value = G_VALUE_INIT;
 
-  /* FIXME: Should be de-suffixed. */
-  properties.themename = games_file_list_get_nth (theme_list, n);
+    model = gtk_combo_box_get_model (GTK_COMBO_BOX (widget));
+    gtk_tree_model_get_value (model, &iter, 1, &value);
 
-  conf_set_theme (properties.themename);
+    /* FIXME: Should be de-suffixed. */
+    properties.themename = g_value_get_string (&value);
 
-  load_game_graphics ();
-  clear_game_area ();
+    conf_set_theme (properties.themename);
+
+    load_game_graphics ();
+    clear_game_area ();
+  }
 }
 
 
@@ -340,8 +346,8 @@ make_theme_menu (void)
 
   return games_file_list_create_widget (theme_list,
                                         properties.themename,
-                                        GAMES_FILE_LIST_REMOVE_EXTENSION |
-                                        GAMES_FILE_LIST_REPLACE_UNDERSCORES);
+                                        GAMES_FILE_LIST_FLAGS_REMOVE_EXTENSION |
+                                        GAMES_FILE_LIST_FLAGS_REPLACE_UNDERSCORES);
 }
 
 static void

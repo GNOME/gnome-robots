@@ -1,5 +1,6 @@
 vala_sources = files(
-    'image-suffix-list.vala'
+    'image-suffix-list.vala',
+    'file-list.vala',
 )
 
 vala_lib = static_library('riiv',
@@ -26,7 +27,6 @@ sources = files(
     'game.c',
     'gameconfig.c',
     'games-controls.c',
-    'games-file-list.c',
     'games-preimage.c',
     'gnome-robots.c',
     'graphics.c',

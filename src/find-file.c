@@ -23,7 +23,7 @@
 #include <glib.h>
 
 #include "find-file.h"
-#include "games-file-list.h"
+#include "riiv.h"
 
 static gchar *
 make_canonical_name (const gchar * name)

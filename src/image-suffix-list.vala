@@ -15,24 +15,24 @@
     You should have received a copy of the GNU Library General Public License
     along with this library; if not, see <http://www.gnu.org/licenses/>.  */
 
+using Gee;
 using Gdk;
 
 namespace ImageSuffixList
 {
-    private static SList<string> list = null;
+    private static ArrayList<string> list = null;
     private static Mutex mutex;
 
-    public unowned SList<string> get()
-    {
+    public unowned ArrayList<string> get() {
         mutex.lock ();
 
-        if (list == null)
-        {
+        if (list == null) {
+            list = new ArrayList<string> ();
             Pixbuf.get_formats ().@foreach ((formats) => {
                 var suffices = formats.get_extensions ();
 
                 foreach (var suffix in suffices) {
-                    list.append (".%s".printf (suffix));
+                    list.add (".%s".printf (suffix));
                 }
             });
         }
@@ -40,5 +40,9 @@ namespace ImageSuffixList
         mutex.unlock ();
 
         return list;
+    }
+
+    public bool has_image_suffix (string filename) {
+        return get ().any_match ((suffix) => filename.has_suffix (suffix));
     }
 }

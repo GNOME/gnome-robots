@@ -36,7 +36,6 @@
 #include "gbdefs.h"
 #include "riiv.h"
 #include "graphics.h"
-#include "sound.h"
 #include "properties.h"
 #include "game.h"
 #include "cursors.h"
@@ -488,8 +487,6 @@ activate (GtkApplication *app, gpointer user_data)
     gtk_dialog_run (GTK_DIALOG (errordialog));
     exit (1);
   }
-
-  init_sound ();
 
   init_game ();
 

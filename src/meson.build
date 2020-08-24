@@ -6,22 +6,22 @@ config_header = configure_file(
     configuration: config_h
 )
 
-vapi_sources = files(
-    'config.vapi',
-)
-
 vala_sources = files(
+    'config.vapi',
+    'main.vapi',
+
     'image-suffix-list.vala',
     'file-list.vala',
     'find-file.vala',
     'preimage.vala',
     'controls.vala',
     'game-config.vala',
+    'sound.vala',
 )
 
 vala_lib = static_library('riiv',
     config_header,
-    vapi_sources + vala_sources,
+    vala_sources,
     dependencies: [
         gee_dependency,
         gio_dependency,
@@ -45,7 +45,6 @@ sources = files(
     'graphics.c',
     'keyboard.c',
     'properties.c',
-    'sound.c'
 )
 resources = gnome.compile_resources(
     'resources',

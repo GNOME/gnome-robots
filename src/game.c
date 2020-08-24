@@ -32,7 +32,6 @@
 #include "keyboard.h"
 #include "game.h"
 #include "gnome-robots.h"
-#include "sound.h"
 #include "properties.h"
 #include "graphics.h"
 #include "cursors.h"

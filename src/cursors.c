@@ -50,7 +50,7 @@ typedef struct {
 
 cursor_props cursor_list[] = {
   CURSOR_ENTRY (1, up_left, 3, 3),
-  CURSOR_ENTRY (0, up, 10, 3),
+  CURSOR_ENTRY (1, up, 10, 3),
   CURSOR_ENTRY (1, up_right, 17, 3),
   CURSOR_ENTRY (0, left, 3, 10),
   CURSOR_ENTRY (0, hold, 10, 10),

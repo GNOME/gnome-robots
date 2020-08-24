@@ -19,7 +19,7 @@ glib_dependency = dependency('glib-2.0', version: '>= 2.32')
 gnome_games_dependency = dependency('libgnome-games-support-1', version: '>= 1.7.1')
 gsound_dependency = dependency('gsound', version: '>= 1.0.2')
 gtk_dependency = dependency('gtk+-3.0', version: '>= 3.24.0')
-gdk_dependency = dependency('gdk-3.0')
+gdk_dependency = dependency('gdk-3.0', version: '>= 3.24.0')
 rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.36.2')
 
 bindir      = join_paths(get_option('prefix'), get_option('bindir'))

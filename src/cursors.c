@@ -38,6 +38,7 @@
 #include "cursor-up-right.h"
 
 typedef struct {
+  int is_xpm;
   const guint8 *data;
   gsize data_len;
   int hsx;
@@ -45,18 +46,18 @@ typedef struct {
   GdkCursor *cursor;
 } cursor_props;
 
-#define CURSOR_ENTRY(d,hx,hy) { cursor_##d, sizeof (cursor_##d), hx, hy, NULL }
+#define CURSOR_ENTRY(is_xpm, d,hx,hy) { is_xpm, cursor_##d, sizeof (cursor_##d), hx, hy, NULL }
 
 cursor_props cursor_list[] = {
-  CURSOR_ENTRY (up_left, 3, 3),
-  CURSOR_ENTRY (up, 10, 3),
-  CURSOR_ENTRY (up_right, 17, 3),
-  CURSOR_ENTRY (left, 3, 10),
-  CURSOR_ENTRY (hold, 10, 10),
-  CURSOR_ENTRY (right, 17, 10),
-  CURSOR_ENTRY (down_left, 3, 17),
-  CURSOR_ENTRY (down, 10, 17),
-  CURSOR_ENTRY (down_right, 17, 17)
+  CURSOR_ENTRY (1, up_left, 3, 3),
+  CURSOR_ENTRY (0, up, 10, 3),
+  CURSOR_ENTRY (1, up_right, 17, 3),
+  CURSOR_ENTRY (0, left, 3, 10),
+  CURSOR_ENTRY (0, hold, 10, 10),
+  CURSOR_ENTRY (0, right, 17, 10),
+  CURSOR_ENTRY (0, down_left, 3, 17),
+  CURSOR_ENTRY (0, down, 10, 17),
+  CURSOR_ENTRY (0, down_right, 17, 17)
 };
 
 GdkCursor *default_cursor;
@@ -73,9 +74,13 @@ make_cursors (void)
 
   c = cursor_list;
   for (i = 0; i < G_N_ELEMENTS (cursor_list); ++i) {
+    if (c->is_xpm) {
+      pixbuf = gdk_pixbuf_new_from_xpm_data ((const char**) c->data);
+    } else {
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-    pixbuf = gdk_pixbuf_new_from_inline (c->data_len, c->data, FALSE, NULL);
+      pixbuf = gdk_pixbuf_new_from_inline (c->data_len, c->data, FALSE, NULL);
 G_GNUC_END_IGNORE_DEPRECATIONS
+    }
     c->cursor = gdk_cursor_new_from_pixbuf (gdk_display_get_default (),
                                             pixbuf,
                                             c->hsx, c->hsy);

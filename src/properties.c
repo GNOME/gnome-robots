@@ -28,13 +28,15 @@
 #include <libgnome-games-support.h>
 
 #include "properties.h"
-#include "gameconfig.h"
 #include "gnome-robots.h"
 #include "graphics.h"
 #include "gbdefs.h"
 #include "keyboard.h"
 #include "game.h"
 #include "riiv.h"
+
+
+GameConfigs* game_configs;
 
 
 /**********************************************************************/
@@ -203,16 +205,19 @@ pmap_selection (GtkWidget * widget, gpointer data)
 static void
 type_selection (GtkWidget * widget, gpointer data)
 {
-  gchar *config;
+  GameConfig *config;
+  gchar *config_name;
   gint num = gtk_combo_box_get_active (GTK_COMBO_BOX (widget));
 
   properties.selected_config = num;
 
-  config = game_config_name (properties.selected_config);
-  conf_set_configuration (config);
-  g_free (config);
+  config = game_configs_get (game_configs, (guint)properties.selected_config);
 
-  set_game_config (properties.selected_config);
+  config_name = game_config_name (config);
+  conf_set_configuration (config_name);
+  g_free (config_name);
+
+  game_configs_set_current_index (game_configs, (guint)properties.selected_config);
 
   start_new_game ();
 }
@@ -310,8 +315,8 @@ fill_typemenu (GtkWidget * menu)
   gint i;
   gchar *config;
 
-  for (i = 0; i < num_game_configs (); ++i) {
-    config = game_config_name (i);
+  for (i = 0; i < game_configs_count (game_configs); ++i) {
+    config = game_configs_get_name (game_configs, (guint)i);
     gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (menu), _(config));
     g_free (config);
   }
@@ -565,8 +570,8 @@ load_properties (void)
   cname = g_settings_get_string (settings, KEY_CONFIGURATION);
 
   properties.selected_config = 0;
-  for (i = 0; i < num_game_configs (); ++i) {
-    config = game_config_name (i);
+  for (i = 0; i < game_configs_count (game_configs); ++i) {
+    config = game_configs_get_name (game_configs, (guint)i);
     if (!strcmp (cname, config)) {
       g_free (config);
       properties.selected_config = i;
@@ -582,7 +587,7 @@ load_properties (void)
   properties.show_toolbar     = g_settings_get_boolean (settings, KEY_SHOW_TOOLBAR);
 
   load_game_graphics ();
-  set_game_config (properties.selected_config);
+  game_configs_set_current_index (game_configs, (guint)properties.selected_config);
   keyboard_set (properties.keys);
   return TRUE;
 }
@@ -677,7 +682,7 @@ save_properties (void)
 
   conf_set_theme (properties.themename);
 
-  config = game_config_name (properties.selected_config);
+  config = game_configs_get_name (game_configs, (guint)properties.selected_config);
   conf_set_configuration (config);
   g_free (config);
 
@@ -766,9 +771,10 @@ properties_show_toolbar (void)
 gboolean
 properties_set_config (gint n)
 {
-  if (!set_game_config (n))
+  if (n >= game_configs_count (game_configs))
     return FALSE;
 
+  game_configs_set_current_index (game_configs, (guint)n);
   properties.selected_config = n;
 
   return TRUE;

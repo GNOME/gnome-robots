@@ -28,7 +28,7 @@
 #include <libgnome-games-support.h>
 
 #include "gbdefs.h"
-#include "gameconfig.h"
+#include "riiv.h"
 #include "keyboard.h"
 #include "game.h"
 #include "gnome-robots.h"
@@ -154,19 +154,16 @@ static void
 log_score (gint sc)
 {
   gchar *sbuf = NULL;
+  GameConfig game_config;
+
+  game_configs_get_current (game_configs, &game_config);
 
   if (properties_super_safe_moves ()) {
-    sbuf =
-      g_strdup_printf ("%s-super-safe",
-                       game_config_filename (current_game_config ()));
+    sbuf = g_strdup_printf ("%s-super-safe", game_config.description);
   } else if (properties_safe_moves ()) {
-    sbuf =
-      g_strdup_printf ("%s-safe",
-                       game_config_filename (current_game_config ()));
+    sbuf = g_strdup_printf ("%s-safe", game_config.description);
   } else {
-    sbuf =
-      g_strdup_printf ("%s",
-                       game_config_filename (current_game_config ()));
+    sbuf = g_strdup_printf ("%s", game_config.description);
   }
 
   if (sc != 0) {
@@ -207,42 +204,45 @@ static void
 add_kill (gint type)
 {
   gint si;
+  GameConfig game_config;
+
+  game_configs_get_current (game_configs, &game_config);
 
   if ((game_state == STATE_WAITING) || (game_state == STATE_WTYPE2)) {
     if (type == OBJECT_ROBOT1) {
-      si = game_config ()->score_type1_waiting;
+      si = game_config.score_type1_waiting;
       kills += 1;
     } else {
-      si = game_config ()->score_type2_waiting;
+      si = game_config.score_type2_waiting;
       kills += 2;
     }
   } else {
     if (type == OBJECT_ROBOT1) {
-      si = game_config ()->score_type1;
+      si = game_config.score_type1;
     } else {
-      si = game_config ()->score_type2;
+      si = game_config.score_type2;
     }
   }
 
   score += si;
   score_step += si;
 
-  if (game_config ()->safe_score_boundary > 0) {
-    while (score_step >= game_config ()->safe_score_boundary) {
+  if (game_config.safe_score_boundary > 0) {
+    while (score_step >= game_config.safe_score_boundary) {
       safe_teleports += 1;
-      score_step -= game_config ()->safe_score_boundary;
+      score_step -= game_config.safe_score_boundary;
     }
   }
 
-  if (game_config ()->num_robots_per_safe > 0) {
-    while (kills >= game_config ()->num_robots_per_safe) {
+  if (game_config.num_robots_per_safe > 0) {
+    while (kills >= game_config.num_robots_per_safe) {
       safe_teleports += 1;
-      kills -= game_config ()->num_robots_per_safe;
+      kills -= game_config.num_robots_per_safe;
     }
   }
 
-  if (safe_teleports > game_config ()->max_safe_teleports) {
-    safe_teleports = game_config ()->max_safe_teleports;
+  if (safe_teleports > game_config.max_safe_teleports) {
+    safe_teleports = game_config.max_safe_teleports;
   }
 
   update_game_status (score, current_level + 1, safe_teleports);
@@ -325,6 +325,9 @@ generate_level (void)
 {
   gint i;
   gint xp, yp;
+  GameConfig game_config;
+
+  game_configs_get_current (game_configs, &game_config);
 
   clear_arena ();
 
@@ -332,38 +335,38 @@ generate_level (void)
   player_xpos = PLAYER_DEF_XPOS;
   player_ypos = PLAYER_DEF_YPOS;
 
-  num_robots1 = game_config ()->initial_type1 +
-    game_config ()->increment_type1 * current_level;
+  num_robots1 = game_config.initial_type1 +
+    game_config.increment_type1 * current_level;
 
-  if (num_robots1 > game_config ()->maximum_type1) {
-    num_robots1 = game_config ()->maximum_type1;
+  if (num_robots1 > game_config.maximum_type1) {
+    num_robots1 = game_config.maximum_type1;
   }
   if (num_robots1 > MAX_ROBOTS) {
     current_level = 0;
-    num_robots1 = game_config ()->initial_type1;
+    num_robots1 = game_config.initial_type1;
     message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
     play_sound (SOUND_VICTORY);
   }
 
-  num_robots2 = game_config ()->initial_type2 +
-    game_config ()->increment_type2 * current_level;
+  num_robots2 = game_config.initial_type2 +
+    game_config.increment_type2 * current_level;
 
-  if (num_robots2 > game_config ()->maximum_type2) {
-    num_robots2 = game_config ()->maximum_type2;
+  if (num_robots2 > game_config.maximum_type2) {
+    num_robots2 = game_config.maximum_type2;
   }
 
   if ((num_robots1 + num_robots2) > MAX_ROBOTS) {
     current_level = 0;
-    num_robots1 = game_config ()->initial_type1;
-    num_robots2 = game_config ()->initial_type2;
+    num_robots1 = game_config.initial_type1;
+    num_robots2 = game_config.initial_type2;
     message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
     play_sound (SOUND_VICTORY);
   }
 
-  safe_teleports += game_config ()->free_safe_teleports;
+  safe_teleports += game_config.free_safe_teleports;
 
-  if (safe_teleports > game_config ()->max_safe_teleports) {
-    safe_teleports = game_config ()->max_safe_teleports;
+  if (safe_teleports > game_config.max_safe_teleports) {
+    safe_teleports = game_config.max_safe_teleports;
   }
 
   update_game_status (score, current_level, safe_teleports);
@@ -405,6 +408,9 @@ static void
 update_arena (void)
 {
   gint i, j;
+  GameConfig game_config;
+
+  game_configs_get_current (game_configs, &game_config);
 
   num_robots1 = 0;
   num_robots2 = 0;
@@ -419,13 +425,13 @@ update_arena (void)
           add_splat_bubble (i, j);
           play_sound (SOUND_SPLAT);
           push_xpos = push_ypos = -1;
-          score += game_config ()->score_type1_splatted;
+          score += game_config.score_type1_splatted;
         }
         if (arena[i][j] == OBJECT_ROBOT2) {
           add_splat_bubble (i, j);
           play_sound (SOUND_SPLAT);
           push_xpos = push_ypos = -1;
-          score += game_config ()->score_type2_splatted;
+          score += game_config.score_type2_splatted;
         }
       }
 
@@ -587,7 +593,7 @@ init_game (void)
 void
 start_new_game (void)
 {
-  GameConfig *conf;
+  GameConfig game_config;
   current_level = 0;
   score = 0;
   kills = 0;
@@ -596,10 +602,10 @@ start_new_game (void)
   if (game_state == STATE_PLAYING)
     log_score (score);
 
-  conf = game_config ();
-  g_return_if_fail (conf != NULL);
+  game_configs_get_current (game_configs, &game_config);
+  // g_return_if_fail (game_config != NULL);
 
-  safe_teleports = conf->initial_safe_teleports;
+  safe_teleports = game_config.initial_safe_teleports;
 
   remove_bubble ();
   reset_player_animation ();
@@ -901,6 +907,9 @@ static gboolean
 try_player_move (gint dx, gint dy)
 {
   gint nx, ny;
+  GameConfig game_config;
+
+  game_configs_get_current (game_configs, &game_config);
 
   nx = player_xpos + dx;
   ny = player_ypos + dy;
@@ -912,7 +921,7 @@ try_player_move (gint dx, gint dy)
   load_temp_arena ();
 
   if (temp_arena[nx][ny] == OBJECT_HEAP) {
-    if (game_config ()->moveable_heaps) {
+    if (game_config.moveable_heaps) {
       if (!push_heap (nx, ny, dx, dy)) {
         push_xpos = push_ypos = -1;
         return FALSE;

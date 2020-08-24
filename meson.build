@@ -7,6 +7,12 @@ i18n = import('i18n')
 
 application_id = 'org.gnome.Robots'
 
+add_project_arguments([
+    '-include', 'config.h'
+  ],
+  language: 'c'
+)
+
 gee_dependency = dependency('gee-0.8')
 gio_dependency = dependency('gio-2.0', version: '>= 2.32')
 glib_dependency = dependency('glib-2.0', version: '>= 2.32')

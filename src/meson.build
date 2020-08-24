@@ -1,13 +1,27 @@
+add_project_arguments(['--vapidir', meson.current_source_dir()], language: 'vala')
+
+
+config_header = configure_file(
+    output: 'config.h',
+    configuration: config_h
+)
+
+vapi_sources = files(
+    'config.vapi',
+)
+
 vala_sources = files(
     'image-suffix-list.vala',
     'file-list.vala',
     'find-file.vala',
     'preimage.vala',
     'controls.vala',
+    'game-config.vala',
 )
 
 vala_lib = static_library('riiv',
-    vala_sources,
+    config_header,
+    vapi_sources + vala_sources,
     dependencies: [
         gee_dependency,
         gio_dependency,
@@ -27,7 +41,6 @@ riiv_dependency = declare_dependency(
 sources = files(
     'cursors.c',
     'game.c',
-    'gameconfig.c',
     'gnome-robots.c',
     'graphics.c',
     'keyboard.c',
@@ -38,11 +51,6 @@ resources = gnome.compile_resources(
     'resources',
     '@0@.gresource.xml'.format(meson.project_name()),
     source_dir: '../'
-)
-
-config_header = configure_file(
-    output: 'config.h',
-    configuration: config_h
 )
 
 executable(

@@ -34,7 +34,7 @@
 #include <libgnome-games-support.h>
 
 #include "gbdefs.h"
-#include "gameconfig.h"
+#include "riiv.h"
 #include "graphics.h"
 #include "sound.h"
 #include "properties.h"
@@ -460,7 +460,8 @@ activate (GtkApplication *app, gpointer user_data)
 
   gtk_widget_show_all (window);
 
-  if (!load_game_configs ()) {
+  game_configs = game_configs_new_load (NULL);
+  if (!game_configs) {
     /* Oops, no configs, we probably haven't been installed properly. */
     errordialog = gtk_message_dialog_new_with_markup (NULL, 0, GTK_MESSAGE_ERROR,
                                                       GTK_BUTTONS_OK,

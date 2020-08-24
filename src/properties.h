@@ -1,6 +1,10 @@
 #ifndef PROPERTIES_H
 #define PROPERTIES_H
 
+#include "riiv.h"
+
+extern GameConfigs* game_configs;
+
 /**********************************************************************/
 /* Exported functions                                                 */
 /**********************************************************************/

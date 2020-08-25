@@ -34,7 +34,6 @@
 #include "gnome-robots.h"
 #include "properties.h"
 #include "graphics.h"
-#include "cursors.h"
 
 /**********************************************************************/
 /* Exported Variables                                                 */
@@ -1357,10 +1356,15 @@ move_cb (GtkEventControllerMotion *controller,
          gpointer                  user_data)
 {
   int dx, dy;
+  GdkWindow *window;
 
-  get_dir ((int)x, (int)y, &dx, &dy);
-
-  set_cursor_by_direction (gtk_widget_get_window (game_area), dx, dy);
+  window = gtk_widget_get_window (game_area);
+  if (game_state != STATE_PLAYING) {
+    set_cursor_default (window);
+  } else {
+    get_dir ((int)x, (int)y, &dx, &dy);
+    set_cursor_by_direction (window, dx, dy);
+  }
 
   return;
 }

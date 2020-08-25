@@ -38,7 +38,6 @@
 #include "graphics.h"
 #include "properties.h"
 #include "game.h"
-#include "cursors.h"
 
 /* Minimum sizes. */
 #define MINIMUM_TILE_WIDTH   8

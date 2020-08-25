@@ -35,7 +35,6 @@
 
 #include "gbdefs.h"
 #include "riiv.h"
-#include "graphics.h"
 #include "game.h"
 
 /* Minimum sizes. */
@@ -168,6 +167,22 @@ update_game_status (gint score, gint current_level, gint safes)
 
   g_free (remaining_teleports_text);
   g_free (button_text);
+}
+
+static gboolean
+draw_cb (GtkWidget * w, cairo_t * cr, gpointer data)
+{
+  gint i, j;
+
+  for (j = 0; j < GAME_HEIGHT; j++) {
+    for (i = 0; i < GAME_WIDTH; i++) {
+      draw_object (i, j, arena[i][j], cr);
+    }
+  }
+
+  draw_bubble (cr);
+
+  return TRUE;
 }
 
 const gchar *
@@ -473,7 +488,10 @@ activate (GtkApplication *app, gpointer user_data)
 
   load_properties ();
 
-  if (!load_game_graphics ()) {
+  GError *load_game_graphics_error = NULL;
+  load_game_graphics (&load_game_graphics_error);
+  if (load_game_graphics_error) {
+    g_error ("%s", load_game_graphics_error->message);
     /* Oops, no graphics, we probably haven't been installed properly. */
     errordialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (window),
                                                       GTK_DIALOG_MODAL,

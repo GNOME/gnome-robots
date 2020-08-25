@@ -19,6 +19,7 @@ vala_sources = files(
     'sound.vala',
     'cursors.vala',
     'properties.vala',
+    'graphics.vala',
 )
 
 vala_lib = static_library('riiv',
@@ -43,7 +44,6 @@ riiv_dependency = declare_dependency(
 sources = files(
     'game.c',
     'gnome-robots.c',
-    'graphics.c',
     'keyboard.c',
 )
 resources = gnome.compile_resources(

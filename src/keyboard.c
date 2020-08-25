@@ -26,6 +26,7 @@
 #include <gdk/gdkkeysyms.h>
 
 #include "keyboard.h"
+#include "riiv.h"
 #include "game.h"
 
 /**********************************************************************/

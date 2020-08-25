@@ -91,7 +91,11 @@ void pmap_selection (ComboBox combo) {
 
         conf_set_theme (properties.themename);
 
-        load_game_graphics ();
+        try {
+            load_game_graphics ();
+        } catch (Error e) {
+            // TODO
+        }
         clear_game_area ();
     }
 }

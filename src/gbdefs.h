@@ -5,38 +5,10 @@
 #define GBDEFS_H
 
 /*
- * Bubble Sizes
- */
-#define BUBBLE_WIDTH   86
-#define BUBBLE_HEIGHT  34
-#define BUBBLE_XOFFSET 8
-#define BUBBLE_YOFFSET 4
-
-/*
- * Size of the game playing area
- */
-#define GAME_WIDTH   45
-#define GAME_HEIGHT  30
-
-/*
  * Initial player position
  */
 #define PLAYER_DEF_XPOS (GAME_WIDTH/2)
 #define PLAYER_DEF_YPOS (GAME_HEIGHT/2)
-
-/*
- * Scenario pixmaps
- */
-#define SCENARIO_PIXMAP_WIDTH 14
-#define SCENARIO_PLAYER_START 0
-#define SCENARIO_ROBOT1_START 5
-#define SCENARIO_ROBOT2_START 9
-#define SCENARIO_HEAP_POS     13
-
-#define NUM_ROBOT_ANIMATIONS  4
-#define NUM_PLAYER_ANIMATIONS 4
-#define PLAYER_WAVE_WAIT      20
-#define PLAYER_NUM_WAVES      2
 
 /*
  * Animation
@@ -51,24 +23,6 @@
  */
 #define MAX_ROBOTS ((GAME_WIDTH*GAME_HEIGHT)/2)
 #define MAX_HEAPS  (MAX_ROBOTS/2)
-
-/*
- * Game object types
- */
-#define OBJECT_PLAYER 0
-#define OBJECT_HEAP   1
-#define OBJECT_ROBOT1 2
-#define OBJECT_ROBOT2 3
-#define OBJECT_NONE   99
-#define OBJECT_FOO    666
-
-/*
- * Bubble Types
- */
-#define BUBBLE_NONE  0
-#define BUBBLE_YAHOO 1
-#define BUBBLE_AIEEE 2
-#define BUBBLE_SPLAT 3
 
 /*
  * Game states

@@ -32,7 +32,6 @@
 #include "keyboard.h"
 #include "game.h"
 #include "gnome-robots.h"
-#include "graphics.h"
 
 /**********************************************************************/
 /* Exported Variables                                                 */
@@ -183,7 +182,7 @@ kill_player (void)
 {
   game_state = STATE_DEAD;
   play_sound (SOUND_DIE);
-  arena[player_xpos][player_ypos] = OBJECT_PLAYER;
+  arena[player_xpos][player_ypos] = OBJECT_TYPE_PLAYER;
   endlev_counter = 0;
   add_aieee_bubble (player_xpos, player_ypos);
   player_animation_dead ();
@@ -206,7 +205,7 @@ add_kill (gint type)
   game_configs_get_current (game_configs, &game_config);
 
   if ((game_state == STATE_WAITING) || (game_state == STATE_WTYPE2)) {
-    if (type == OBJECT_ROBOT1) {
+    if (type == OBJECT_TYPE_ROBOT1) {
       si = game_config.score_type1_waiting;
       kills += 1;
     } else {
@@ -214,7 +213,7 @@ add_kill (gint type)
       kills += 2;
     }
   } else {
-    if (type == OBJECT_ROBOT1) {
+    if (type == OBJECT_TYPE_ROBOT1) {
       si = game_config.score_type1;
     } else {
       si = game_config.score_type2;
@@ -259,7 +258,7 @@ clear_arena (void)
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      arena[i][j] = OBJECT_NONE;
+      arena[i][j] = OBJECT_TYPE_NONE;
     }
   }
 
@@ -281,10 +280,10 @@ load_temp_arena (void)
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if (arena[i][j] != OBJECT_PLAYER) {
+      if (arena[i][j] != OBJECT_TYPE_PLAYER) {
         temp_arena[i][j] = arena[i][j];
       } else {
-        temp_arena[i][j] = OBJECT_NONE;
+        temp_arena[i][j] = OBJECT_TYPE_NONE;
       }
     }
   }
@@ -299,13 +298,13 @@ load_temp_arena (void)
  * checks for an object at a given location
  *
  * Returns:
- * type of object if present or OBJECT_NONE
+ * type of object if present or OBJECT_TYPE_NONE
  **/
 static gint
 check_location (gint x, gint y)
 {
   if ((x < 0) || (y < 0) || (x >= GAME_WIDTH) || (y >= GAME_HEIGHT)) {
-    return OBJECT_NONE;
+    return OBJECT_TYPE_NONE;
   }
 
   return arena[x][y];
@@ -328,7 +327,7 @@ generate_level (void)
 
   clear_arena ();
 
-  arena[PLAYER_DEF_XPOS][PLAYER_DEF_YPOS] = OBJECT_PLAYER;
+  arena[PLAYER_DEF_XPOS][PLAYER_DEF_YPOS] = OBJECT_TYPE_PLAYER;
   player_xpos = PLAYER_DEF_XPOS;
   player_ypos = PLAYER_DEF_YPOS;
 
@@ -373,8 +372,8 @@ generate_level (void)
       xp = rand () % GAME_WIDTH;
       yp = rand () % GAME_HEIGHT;
 
-      if (check_location (xp, yp) == OBJECT_NONE) {
-        arena[xp][yp] = OBJECT_ROBOT1;
+      if (check_location (xp, yp) == OBJECT_TYPE_NONE) {
+        arena[xp][yp] = OBJECT_TYPE_ROBOT1;
         break;
       }
     }
@@ -386,8 +385,8 @@ generate_level (void)
       xp = rand () % GAME_WIDTH;
       yp = rand () % GAME_HEIGHT;
 
-      if (check_location (xp, yp) == OBJECT_NONE) {
-        arena[xp][yp] = OBJECT_ROBOT2;
+      if (check_location (xp, yp) == OBJECT_TYPE_NONE) {
+        arena[xp][yp] = OBJECT_TYPE_ROBOT2;
         break;
       }
     }
@@ -416,15 +415,15 @@ update_arena (void)
     for (j = 0; j < GAME_HEIGHT; ++j) {
 
 
-      if ((temp_arena[i][j] == OBJECT_HEAP) &&
+      if ((temp_arena[i][j] == OBJECT_TYPE_HEAP) &&
           (push_xpos == i) && (push_ypos == j)) {
-        if (arena[i][j] == OBJECT_ROBOT1) {
+        if (arena[i][j] == OBJECT_TYPE_ROBOT1) {
           add_splat_bubble (i, j);
           play_sound (SOUND_SPLAT);
           push_xpos = push_ypos = -1;
           score += game_config.score_type1_splatted;
         }
-        if (arena[i][j] == OBJECT_ROBOT2) {
+        if (arena[i][j] == OBJECT_TYPE_ROBOT2) {
           add_splat_bubble (i, j);
           play_sound (SOUND_SPLAT);
           push_xpos = push_ypos = -1;
@@ -434,15 +433,15 @@ update_arena (void)
 
 
       arena[i][j] = temp_arena[i][j];
-      if (arena[i][j] == OBJECT_ROBOT1) {
+      if (arena[i][j] == OBJECT_TYPE_ROBOT1) {
         num_robots1 += 1;
-      } else if (arena[i][j] == OBJECT_ROBOT2) {
+      } else if (arena[i][j] == OBJECT_TYPE_ROBOT2) {
         num_robots2 += 1;
       }
     }
   }
 
-  if (arena[player_xpos][player_ypos] != OBJECT_PLAYER) {
+  if (arena[player_xpos][player_ypos] != OBJECT_TYPE_PLAYER) {
     kill_player ();
   } else {
     /* This is in the else statement to catch the case where the last
@@ -630,17 +629,17 @@ move_all_robots (void)
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if ((arena[i][j] == OBJECT_PLAYER) || (arena[i][j] == OBJECT_HEAP)) {
+      if ((arena[i][j] == OBJECT_TYPE_PLAYER) || (arena[i][j] == OBJECT_TYPE_HEAP)) {
         temp_arena[i][j] = arena[i][j];
       } else {
-        temp_arena[i][j] = OBJECT_NONE;
+        temp_arena[i][j] = OBJECT_TYPE_NONE;
       }
     }
   }
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if ((arena[i][j] == OBJECT_ROBOT1) || (arena[i][j] == OBJECT_ROBOT2)) {
+      if ((arena[i][j] == OBJECT_TYPE_ROBOT1) || (arena[i][j] == OBJECT_TYPE_ROBOT2)) {
         nx = i;
         ny = j;
         if (player_xpos < nx)
@@ -652,13 +651,13 @@ move_all_robots (void)
         if (player_ypos > ny)
           ny += 1;
 
-        if (temp_arena[nx][ny] == OBJECT_HEAP) {
+        if (temp_arena[nx][ny] == OBJECT_TYPE_HEAP) {
           add_kill (arena[i][j]);
-        } else if ((temp_arena[nx][ny] == OBJECT_ROBOT1) ||
-                   (temp_arena[nx][ny] == OBJECT_ROBOT2)) {
+        } else if ((temp_arena[nx][ny] == OBJECT_TYPE_ROBOT1) ||
+                   (temp_arena[nx][ny] == OBJECT_TYPE_ROBOT2)) {
           add_kill (arena[i][j]);
           add_kill (temp_arena[nx][ny]);
-          temp_arena[nx][ny] = OBJECT_HEAP;
+          temp_arena[nx][ny] = OBJECT_TYPE_HEAP;
         } else {
           temp_arena[nx][ny] = arena[i][j];
         }
@@ -683,18 +682,18 @@ move_type2_robots (void)
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if ((arena[i][j] == OBJECT_PLAYER) ||
-          (arena[i][j] == OBJECT_ROBOT1) || (arena[i][j] == OBJECT_HEAP)) {
+      if ((arena[i][j] == OBJECT_TYPE_PLAYER) ||
+          (arena[i][j] == OBJECT_TYPE_ROBOT1) || (arena[i][j] == OBJECT_TYPE_HEAP)) {
         temp_arena[i][j] = arena[i][j];
       } else {
-        temp_arena[i][j] = OBJECT_NONE;
+        temp_arena[i][j] = OBJECT_TYPE_NONE;
       }
     }
   }
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if (arena[i][j] == OBJECT_ROBOT2) {
+      if (arena[i][j] == OBJECT_TYPE_ROBOT2) {
         nx = i;
         ny = j;
         if (player_xpos < nx)
@@ -706,13 +705,13 @@ move_type2_robots (void)
         if (player_ypos > ny)
           ny += 1;
 
-        if (temp_arena[nx][ny] == OBJECT_HEAP) {
+        if (temp_arena[nx][ny] == OBJECT_TYPE_HEAP) {
           add_kill (arena[i][j]);
-        } else if ((temp_arena[nx][ny] == OBJECT_ROBOT1) ||
-                   (temp_arena[nx][ny] == OBJECT_ROBOT2)) {
+        } else if ((temp_arena[nx][ny] == OBJECT_TYPE_ROBOT1) ||
+                   (temp_arena[nx][ny] == OBJECT_TYPE_ROBOT2)) {
           add_kill (arena[i][j]);
           add_kill (temp_arena[nx][ny]);
-          temp_arena[nx][ny] = OBJECT_HEAP;
+          temp_arena[nx][ny] = OBJECT_TYPE_HEAP;
         } else {
           temp_arena[nx][ny] = arena[i][j];
         }
@@ -765,24 +764,24 @@ check_safe (gint x, gint y)
   gint i, j;
   gint nx, ny;
 
-  if (temp_arena[x][y] != OBJECT_NONE)
+  if (temp_arena[x][y] != OBJECT_TYPE_NONE)
     return FALSE;
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if ((temp_arena[i][j] == OBJECT_PLAYER) ||
-          (temp_arena[i][j] == OBJECT_HEAP)) {
+      if ((temp_arena[i][j] == OBJECT_TYPE_PLAYER) ||
+          (temp_arena[i][j] == OBJECT_TYPE_HEAP)) {
         temp2_arena[i][j] = temp_arena[i][j];
       } else {
-        temp2_arena[i][j] = OBJECT_NONE;
+        temp2_arena[i][j] = OBJECT_TYPE_NONE;
       }
     }
   }
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if ((temp_arena[i][j] == OBJECT_ROBOT1) ||
-          (temp_arena[i][j] == OBJECT_ROBOT2)) {
+      if ((temp_arena[i][j] == OBJECT_TYPE_ROBOT1) ||
+          (temp_arena[i][j] == OBJECT_TYPE_ROBOT2)) {
         nx = i;
         ny = j;
         if (x < nx)
@@ -794,10 +793,10 @@ check_safe (gint x, gint y)
         if (y > ny)
           ny += 1;
 
-        if ((temp2_arena[nx][ny] == OBJECT_ROBOT1) ||
-            (temp2_arena[nx][ny] == OBJECT_ROBOT2) ||
-            (temp2_arena[nx][ny] == OBJECT_HEAP)) {
-          temp2_arena[nx][ny] = OBJECT_HEAP;
+        if ((temp2_arena[nx][ny] == OBJECT_TYPE_ROBOT1) ||
+            (temp2_arena[nx][ny] == OBJECT_TYPE_ROBOT2) ||
+            (temp2_arena[nx][ny] == OBJECT_TYPE_HEAP)) {
+          temp2_arena[nx][ny] = OBJECT_TYPE_HEAP;
         } else {
           temp2_arena[nx][ny] = temp_arena[i][j];
         }
@@ -805,23 +804,23 @@ check_safe (gint x, gint y)
     }
   }
 
-  if (temp2_arena[x][y] != OBJECT_NONE)
+  if (temp2_arena[x][y] != OBJECT_TYPE_NONE)
     return FALSE;
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if ((temp2_arena[i][j] == OBJECT_PLAYER) ||
-          (temp2_arena[i][j] == OBJECT_HEAP)) {
+      if ((temp2_arena[i][j] == OBJECT_TYPE_PLAYER) ||
+          (temp2_arena[i][j] == OBJECT_TYPE_HEAP)) {
         temp3_arena[i][j] = temp2_arena[i][j];
       } else {
-        temp3_arena[i][j] = OBJECT_NONE;
+        temp3_arena[i][j] = OBJECT_TYPE_NONE;
       }
     }
   }
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if (temp2_arena[i][j] == OBJECT_ROBOT2) {
+      if (temp2_arena[i][j] == OBJECT_TYPE_ROBOT2) {
         nx = i;
         ny = j;
         if (x < nx)
@@ -833,10 +832,10 @@ check_safe (gint x, gint y)
         if (y > ny)
           ny += 1;
 
-        if ((temp3_arena[nx][ny] == OBJECT_ROBOT1) ||
-            (temp3_arena[nx][ny] == OBJECT_ROBOT2) ||
-            (temp3_arena[nx][ny] == OBJECT_HEAP)) {
-          temp3_arena[nx][ny] = OBJECT_HEAP;
+        if ((temp3_arena[nx][ny] == OBJECT_TYPE_ROBOT1) ||
+            (temp3_arena[nx][ny] == OBJECT_TYPE_ROBOT2) ||
+            (temp3_arena[nx][ny] == OBJECT_TYPE_HEAP)) {
+          temp3_arena[nx][ny] = OBJECT_TYPE_HEAP;
         } else {
           temp3_arena[nx][ny] = temp2_arena[i][j];
         }
@@ -844,7 +843,7 @@ check_safe (gint x, gint y)
     }
   }
 
-  if (temp3_arena[x][y] != OBJECT_NONE)
+  if (temp3_arena[x][y] != OBJECT_TYPE_NONE)
     return FALSE;
 
   return TRUE;
@@ -869,21 +868,21 @@ push_heap (gint x, gint y, gint dx, gint dy)
   gint nx = x + dx;
   gint ny = y + dy;
 
-  if (temp_arena[x][y] != OBJECT_HEAP)
+  if (temp_arena[x][y] != OBJECT_TYPE_HEAP)
     return FALSE;
 
   if ((nx < 0) || (nx >= GAME_WIDTH) || (ny < 0) || (ny >= GAME_HEIGHT)) {
     return FALSE;
   }
 
-  if (temp_arena[nx][ny] == OBJECT_HEAP)
+  if (temp_arena[nx][ny] == OBJECT_TYPE_HEAP)
     return FALSE;
 
   push_xpos = nx;
   push_ypos = ny;
 
-  temp_arena[nx][ny] = OBJECT_HEAP;
-  temp_arena[x][y] = OBJECT_NONE;
+  temp_arena[nx][ny] = OBJECT_TYPE_HEAP;
+  temp_arena[x][y] = OBJECT_TYPE_NONE;
 
   return TRUE;
 }
@@ -917,7 +916,7 @@ try_player_move (gint dx, gint dy)
 
   load_temp_arena ();
 
-  if (temp_arena[nx][ny] == OBJECT_HEAP) {
+  if (temp_arena[nx][ny] == OBJECT_TYPE_HEAP) {
     if (game_config.moveable_heaps) {
       if (!push_heap (nx, ny, dx, dy)) {
         push_xpos = push_ypos = -1;
@@ -1062,8 +1061,8 @@ player_move (gint dx, gint dy)
   player_xpos = nx;
   player_ypos = ny;
 
-  if (temp_arena[player_xpos][player_ypos] == OBJECT_NONE) {
-    temp_arena[player_xpos][player_ypos] = OBJECT_PLAYER;
+  if (temp_arena[player_xpos][player_ypos] == OBJECT_TYPE_NONE) {
+    temp_arena[player_xpos][player_ypos] = OBJECT_TYPE_PLAYER;
   }
 
   reset_player_animation ();
@@ -1093,10 +1092,10 @@ random_teleport (void)
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if (arena[i][j] != OBJECT_PLAYER) {
+      if (arena[i][j] != OBJECT_TYPE_PLAYER) {
         temp_arena[i][j] = arena[i][j];
       } else {
-        temp_arena[i][j] = OBJECT_NONE;
+        temp_arena[i][j] = OBJECT_TYPE_NONE;
       }
     }
   }
@@ -1106,10 +1105,10 @@ random_teleport (void)
   iyp = yp = rand () % GAME_HEIGHT;
 
   while (1) {
-    if (temp_arena[xp][yp] == OBJECT_NONE) {
+    if (temp_arena[xp][yp] == OBJECT_TYPE_NONE) {
       player_xpos = xp;
       player_ypos = yp;
-      temp_arena[player_xpos][player_ypos] = OBJECT_PLAYER;
+      temp_arena[player_xpos][player_ypos] = OBJECT_TYPE_PLAYER;
 
       reset_player_animation ();
 
@@ -1166,10 +1165,10 @@ safe_teleport (void)
 
   for (i = 0; i < GAME_WIDTH; ++i) {
     for (j = 0; j < GAME_HEIGHT; ++j) {
-      if (arena[i][j] != OBJECT_PLAYER) {
+      if (arena[i][j] != OBJECT_TYPE_PLAYER) {
         temp_arena[i][j] = arena[i][j];
       } else {
-        temp_arena[i][j] = OBJECT_NONE;
+        temp_arena[i][j] = OBJECT_TYPE_NONE;
       }
     }
   }
@@ -1179,10 +1178,10 @@ safe_teleport (void)
 
   while (1) {
 
-    if ((temp_arena[xp][yp] == OBJECT_NONE) && check_safe (xp, yp)) {
+    if ((temp_arena[xp][yp] == OBJECT_TYPE_NONE) && check_safe (xp, yp)) {
       player_xpos = xp;
       player_ypos = yp;
-      temp_arena[player_xpos][player_ypos] = OBJECT_PLAYER;
+      temp_arena[player_xpos][player_ypos] = OBJECT_TYPE_PLAYER;
 
       reset_player_animation ();
 

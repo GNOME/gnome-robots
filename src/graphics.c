@@ -36,7 +36,6 @@
 #include "gbdefs.h"
 #include "game.h"
 #include "gnome-robots.h"
-#include "properties.h"
 
 /**********************************************************************/
 
@@ -264,7 +263,7 @@ free_game_graphics (void)
 }
 
 void
-set_background_color (GdkRGBA color)
+set_background_color (GdkRGBA * color)
 {
   gdouble brightness;
 
@@ -274,16 +273,16 @@ set_background_color (GdkRGBA color)
   /* While the two colours are labelled "light" and "dark" which one is
    * which actually depends on how light or dark the base colour is. */
 
-  brightness = color.red + color.green + color.blue;
+  brightness = color->red + color->green + color->blue;
   if (brightness > (1.0 / 1.1)) {
     /* Darken light colours. */
-    light_background.red = 0.9 * color.red;
-    light_background.green = 0.9 * color.green;
-    light_background.blue = 0.9 * color.blue;
+    light_background.red = 0.9 * color->red;
+    light_background.green = 0.9 * color->green;
+    light_background.blue = 0.9 * color->blue;
   } else if (brightness > 0.04) {        /* Lighten darker colours. */
-    light_background.red = 1.1 * color.red;
-    light_background.green = 1.1 * color.green;
-    light_background.blue = 1.1 * color.blue;
+    light_background.red = 1.1 * color->red;
+    light_background.green = 1.1 * color->green;
+    light_background.blue = 1.1 * color->blue;
   } else {                        /* Very dark colours, add rather than multiply. */
     light_background.red += 0.04;
     light_background.green += 0.04;
@@ -291,7 +290,7 @@ set_background_color (GdkRGBA color)
   }
   light_background.alpha = 1.0;
 
-  dark_background = color;
+  dark_background = *color;
 
   clear_game_area ();
 }
@@ -307,7 +306,7 @@ set_background_color_from_name (gchar * name)
   if (!gdk_rgba_parse (&color, name)) {
     gdk_rgba_parse (&color, "#7590AE");
   }
-  set_background_color (color);
+  set_background_color (&color);
 }
 
 /**

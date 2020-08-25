@@ -36,7 +36,6 @@
 #include "gbdefs.h"
 #include "riiv.h"
 #include "graphics.h"
-#include "properties.h"
 #include "game.h"
 
 /* Minimum sizes. */

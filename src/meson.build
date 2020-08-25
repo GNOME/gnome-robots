@@ -18,6 +18,7 @@ vala_sources = files(
     'game-config.vala',
     'sound.vala',
     'cursors.vala',
+    'properties.vala',
 )
 
 vala_lib = static_library('riiv',
@@ -44,7 +45,6 @@ sources = files(
     'gnome-robots.c',
     'graphics.c',
     'keyboard.c',
-    'properties.c',
 )
 resources = gnome.compile_resources(
     'resources',

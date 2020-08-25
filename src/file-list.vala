@@ -151,7 +151,7 @@ public class GamesFileList {
      *
      * Return value: A widget with the list of names.
      **/
-    public Widget create_widget (string? selection, Flags flags) {
+    public ComboBox create_widget (string? selection, Flags flags) {
         var model = create_model (flags);
         var widget = new ComboBox.with_model (model);
         var renderer = new CellRendererText ();

@@ -52,12 +52,12 @@ cursor_props cursor_list[] = {
   CURSOR_ENTRY (1, up_left, 3, 3),
   CURSOR_ENTRY (1, up, 10, 3),
   CURSOR_ENTRY (1, up_right, 17, 3),
-  CURSOR_ENTRY (0, left, 3, 10),
-  CURSOR_ENTRY (0, hold, 10, 10),
-  CURSOR_ENTRY (0, right, 17, 10),
-  CURSOR_ENTRY (0, down_left, 3, 17),
-  CURSOR_ENTRY (0, down, 10, 17),
-  CURSOR_ENTRY (0, down_right, 17, 17)
+  CURSOR_ENTRY (1, left, 3, 10),
+  CURSOR_ENTRY (1, hold, 10, 10),
+  CURSOR_ENTRY (1, right, 17, 10),
+  CURSOR_ENTRY (1, down_left, 3, 17),
+  CURSOR_ENTRY (1, down, 10, 17),
+  CURSOR_ENTRY (1, down_right, 17, 17)
 };
 
 GdkCursor *default_cursor;

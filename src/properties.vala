@@ -112,7 +112,7 @@ void type_selection (int num) {
 
     game_configs.set_current_index ((uint)properties.selected_config);
 
-    start_new_game ();
+    game.start_new_game ();
 }
 
 /**
@@ -317,7 +317,7 @@ public void show_properties_dialog () {
 /**
  * loads the game properties from a file
  **/
-public void load_properties () {
+public void load_properties () throws Error {
     load_keys ();
 
     var bgcolour = settings.get_string (KEY_BACKGROUND_COLOR);

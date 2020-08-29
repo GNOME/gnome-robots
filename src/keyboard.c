@@ -27,7 +27,6 @@
 
 #include "keyboard.h"
 #include "riiv.h"
-#include "game.h"
 
 /**********************************************************************/
 /* File Static Variables                                              */
@@ -98,7 +97,7 @@ keyboard_cb (GtkEventControllerKey *controller,
 
   for (i = 0; i < 12; ++i) {
     if (keyval == toupper (control_keys[i])) {
-      game_keypress (i);
+      game_keypress (game, (GameKeyboardControl)i);
       return TRUE;
     }
   }

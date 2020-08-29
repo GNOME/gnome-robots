@@ -54,15 +54,6 @@ public const int NUM_PLAYER_ANIMATIONS = 4;
 public const int PLAYER_WAVE_WAIT      = 20;
 public const int PLAYER_NUM_WAVES      = 2;
 
-public enum ObjectType {
-    PLAYER = 0,
-    HEAP = 1,
-    ROBOT1 = 2,
-    ROBOT2 = 3,
-    NONE = 99,
-    FOO = 666,
-}
-
 public int tile_width = 0;
 public int tile_height = 0;
 

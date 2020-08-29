@@ -33,9 +33,8 @@
 #include <glib.h>
 #include <libgnome-games-support.h>
 
-#include "gbdefs.h"
 #include "riiv.h"
-#include "game.h"
+#include "keyboard.h"
 
 /* Minimum sizes. */
 #define MINIMUM_TILE_WIDTH   8
@@ -176,7 +175,7 @@ draw_cb (GtkWidget * w, cairo_t * cr, gpointer data)
 
   for (j = 0; j < GAME_HEIGHT; j++) {
     for (i = 0; i < GAME_WIDTH; i++) {
-      draw_object (i, j, arena[i][j], cr);
+      draw_object (i, j, game_check_location (game, i, j), cr);
     }
   }
 
@@ -207,7 +206,7 @@ preferences_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 static void
 scores_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
-  show_scores ();
+  game_show_scores (game);
 }
 
 static void
@@ -271,25 +270,25 @@ new_game_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
   gtk_widget_destroy (dialog);
 
   if (ret == GTK_RESPONSE_ACCEPT)
-    start_new_game ();
+    game_start_new_game (game);
 }
 
 static void
 random_teleport_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
-  game_keypress (KBD_RTEL);
+  game_keypress (game, GAME_KEYBOARD_CONTROL_RTEL);
 }
 
 static void
 safe_teleport_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
-  game_keypress (KBD_TELE);
+  game_keypress (game, GAME_KEYBOARD_CONTROL_TELE);
 }
 
 static void
 wait_cb (GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
-  game_keypress (KBD_WAIT);
+  game_keypress (game, GAME_KEYBOARD_CONTROL_WAIT);
 }
 
 static gboolean
@@ -357,6 +356,61 @@ create_category_from_key (const char *key, gpointer user_data)
 }
 
 static void
+mouse_cb (GtkGestureMultiPress *gesture,
+          gint                  n_press,
+          gdouble               x,
+          gdouble               y,
+          gpointer              data)
+{
+  int dx, dy;
+
+  if (game_get_state(game) != GAME_STATE_PLAYING)
+    return;
+
+  game_get_dir (game, (int)x, (int)y, &dx, &dy);
+
+  if (game_player_move (game, dx, dy)) {
+    game_move_robots (game);
+  }
+
+  return;
+}
+
+static void
+move_cb (GtkEventControllerMotion *controller,
+         gdouble                   x,
+         gdouble                   y,
+         gpointer                  data)
+{
+  int dx, dy;
+  GdkWindow * window;
+
+  window = gtk_widget_get_window (game_area);
+  if (game_get_state (game) != GAME_STATE_PLAYING) {
+    set_cursor_default (window);
+  } else {
+    game_get_dir (game, (int)x, (int)y, &dx, &dy);
+    set_cursor_by_direction (window, dx, dy);
+  }
+
+  return;
+}
+
+/**
+ * Initialises the keyboard actions when the game first starts up
+ **/
+static void
+init_keyboard (void)
+{
+  GtkEventController *key_controller;
+
+  key_controller = gtk_event_controller_key_new (window);
+
+  g_signal_connect (G_OBJECT (key_controller), "key-pressed",
+                    G_CALLBACK (keyboard_cb), 0);
+}
+
+static void
 activate (GtkApplication *app, gpointer user_data)
 {
   GtkWidget *errordialog, *vbox, *hbox, *label, *button, *gridframe, *icon;
@@ -366,6 +420,8 @@ activate (GtkApplication *app, gpointer user_data)
   GamesScoresDirectoryImporter *importer;
   GtkGesture *click_controller;
   GtkEventController *motion_controller;
+
+  game = game_new ();
 
   if (window != NULL)
   {
@@ -486,7 +542,8 @@ activate (GtkApplication *app, gpointer user_data)
     exit (1);
   }
 
-  load_properties ();
+  GError *load_properties_error = NULL;
+  load_properties (&load_properties_error);
 
   GError *load_game_graphics_error = NULL;
   load_game_graphics (&load_game_graphics_error);
@@ -504,7 +561,8 @@ activate (GtkApplication *app, gpointer user_data)
     exit (1);
   }
 
-  init_game ();
+  init_keyboard ();
+  game_init_game (game);
 
   g_settings_sync ();
 }

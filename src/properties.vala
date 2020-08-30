@@ -282,15 +282,15 @@ public void show_properties_dialog () {
     kpage.pack_start (vbox, true, true, 0);
 
     var controls_list = new GamesControlsList (settings);
-    controls_list.add_control ("key00", _("Key to move NW"), settings.get_default_value ("key00").get_uint32 ());
-    controls_list.add_control ("key01", _("Key to move N"),  settings.get_default_value ("key01").get_uint32 ());
-    controls_list.add_control ("key02", _("Key to move NE"), settings.get_default_value ("key02").get_uint32 ());
-    controls_list.add_control ("key03", _("Key to move W"),  settings.get_default_value ("key03").get_uint32 ());
-    controls_list.add_control ("key04", _("Key to hold"),    settings.get_default_value ("key04").get_uint32 ());
-    controls_list.add_control ("key05", _("Key to move E"),  settings.get_default_value ("key05").get_uint32 ());
-    controls_list.add_control ("key06", _("Key to move SW"), settings.get_default_value ("key06").get_uint32 ());
-    controls_list.add_control ("key07", _("Key to move S"),  settings.get_default_value ("key07").get_uint32 ());
-    controls_list.add_control ("key08", _("Key to move SE"), settings.get_default_value ("key08").get_uint32 ());
+    controls_list.add_control ("key00", _("Key to move NW"), settings.get_default_value ("key00").get_int32 ());
+    controls_list.add_control ("key01", _("Key to move N"),  settings.get_default_value ("key01").get_int32 ());
+    controls_list.add_control ("key02", _("Key to move NE"), settings.get_default_value ("key02").get_int32 ());
+    controls_list.add_control ("key03", _("Key to move W"),  settings.get_default_value ("key03").get_int32 ());
+    controls_list.add_control ("key04", _("Key to hold"),    settings.get_default_value ("key04").get_int32 ());
+    controls_list.add_control ("key05", _("Key to move E"),  settings.get_default_value ("key05").get_int32 ());
+    controls_list.add_control ("key06", _("Key to move SW"), settings.get_default_value ("key06").get_int32 ());
+    controls_list.add_control ("key07", _("Key to move S"),  settings.get_default_value ("key07").get_int32 ());
+    controls_list.add_control ("key08", _("Key to move SE"), settings.get_default_value ("key08").get_int32 ());
 
     vbox.pack_start (controls_list, true, true, 0);
 

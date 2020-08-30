@@ -1,6 +1,5 @@
 /*
- * Gnome Robots II
- * written by Mark Rae <m.rae@inpharmatica.co.uk>
+ * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

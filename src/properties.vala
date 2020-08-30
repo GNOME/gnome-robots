@@ -49,7 +49,6 @@ struct Properties {
 }
 
 Dialog propbox = null;
-GamesFileList theme_list = null;
 Properties properties;
 
 /**
@@ -79,19 +78,19 @@ void apply_cb () {
 void pmap_selection (ComboBox combo) {
     TreeIter iter;
     if (combo.get_active_iter (out iter)) {
-        TreeModel model;
-        Value val;
+        Themes model = combo.get_model () as Themes;
 
-        model = combo.get_model ();
-        model.get_value (iter, 1, out val);
+        string theme_name;
+        string theme_path;
+        model.get_values (iter, out theme_name, out theme_path);
 
         /* FIXME: Should be de-suffixed. */
-        properties.themename = val.get_string ();
+        properties.themename = theme_name;
 
         conf_set_theme (properties.themename);
 
         try {
-            load_game_graphics ();
+            load_game_graphics (theme_path);
         } catch (Error e) {
             // TODO
         }
@@ -139,20 +138,20 @@ void fill_typemenu (ComboBoxText menu) {
     menu.set_active (properties.selected_config);
 }
 
+ComboBox create_theme_picker (Themes themes, string current_theme) {
+    var widget = new ComboBox.with_model (themes);
+    var renderer = new CellRendererText ();
+    widget.pack_start (renderer, true);
+    widget.add_attribute (renderer, "text", 0);
 
-/**
- * fills the listbox with pixmap names
- **/
-ComboBox make_theme_menu () {
-    var dir = Path.build_filename (DATA_DIRECTORY, "themes");
-    theme_list = new GamesFileList.images (dir);
-    theme_list.transform_basename ();
+    TreeIter? iter = themes.find_iter_by_name (current_theme);
+    if (iter != null) {
+        widget.set_active_iter (iter);
+    } else {
+        widget.set_active (0);
+    }
 
-    /* FIXME: Get rid of the bubbles images from the list (preferably by
-    * getting tid of the bubble pixmaps. */
-
-    return theme_list.create_widget (properties.themename,
-                                     GamesFileList.Flags.REMOVE_EXTENSION | GamesFileList.Flags.REPLACE_UNDERSCORES);
+    return widget;
 }
 
 void bg_color_callback (ColorChooser color_chooser) {
@@ -173,6 +172,8 @@ public string properties_theme_name () {
  * displays the properties dialog
  **/
 public void show_properties_dialog () {
+    var themes = get_themes ();
+
     if (propbox != null)
         return;
 
@@ -255,8 +256,8 @@ public void show_properties_dialog () {
     label.set_halign (Align.START);
     grid.attach (label, 0, 0, 1, 1);
 
-    var pmapmenu = make_theme_menu ();
-    pmapmenu.changed.connect ((combo) => pmap_selection(combo));
+    var pmapmenu = create_theme_picker (themes, properties.themename);
+    pmapmenu.changed.connect ((combo) => pmap_selection (combo));
     label.set_mnemonic_widget (pmapmenu);
     grid.attach (pmapmenu, 1, 0, 1, 1);
 
@@ -343,7 +344,14 @@ public void load_properties () throws Error {
     properties.sound            = settings.get_boolean (KEY_ENABLE_SOUND);
     properties.show_toolbar     = settings.get_boolean (KEY_SHOW_TOOLBAR);
 
-    load_game_graphics ();
+    var themes = get_themes ();
+    var iter = themes.find_best_match (properties.themename);
+
+    string theme_path;
+    themes.get_values (iter, out properties.themename, out theme_path);
+
+    load_game_graphics (theme_path);
+
     game_configs.set_current_index ((uint)properties.selected_config);
     keyboard_set (properties.keys);
 }

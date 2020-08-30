@@ -106,20 +106,12 @@ void load_bubble_graphics () throws Error {
  * Returns:
  * TRUE on success FALSE otherwise
  **/
-public void load_game_graphics () throws Error {
+public void load_game_graphics (string theme_path) throws Error {
     if (theme_preimage != null) {
         free_game_graphics ();
     }
 
-    var themedir = GLib.Path.build_filename (DATA_DIRECTORY, "themes");
-    var filename = games_find_similar_file (properties_theme_name (), themedir);
-
-    try {
-        theme_preimage = new GamesPreimage.from_file (filename);
-    } catch (Error e) {
-        filename = games_find_similar_file ("robots", themedir);
-        theme_preimage = new GamesPreimage.from_file (filename);
-    }
+    theme_preimage = new GamesPreimage.from_file (theme_path);
 
     load_bubble_graphics ();
 

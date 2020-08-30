@@ -388,22 +388,6 @@ void activate (Gtk.Application app) {
         app.quit ();
     }
 
-    try {
-        load_game_graphics ();
-    } catch (Error e) {
-        error ("%s", e.message);
-        /* Oops, no graphics, we probably haven't been installed properly. */
-        var errordialog = new MessageDialog.with_markup (window,
-                                                         DialogFlags.MODAL,
-                                                         MessageType.ERROR,
-                                                         ButtonsType.OK,
-                                                         "<b>%s</b>\n\n%s",
-                                                         _("Some graphics files are missing or corrupt."),
-                                                         _("The program Robots was unable to load all the necessary graphics files. Please check that the program is installed correctly."));
-        errordialog.run ();
-        app.quit ();
-    }
-
     init_keyboard ();
     game.init_game ();
 

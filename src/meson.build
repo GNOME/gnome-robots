@@ -12,8 +12,7 @@ sources = files(
     'config.vapi',
 
     'image-suffix-list.vala',
-    'file-list.vala',
-    'find-file.vala',
+    'themes.vala',
     'preimage.vala',
     'controls.vala',
     'game-config.vala',

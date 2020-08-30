@@ -8,7 +8,6 @@ config_header = configure_file(
 
 vala_sources = files(
     'config.vapi',
-    'main.vapi',
 
     'image-suffix-list.vala',
     'file-list.vala',
@@ -22,6 +21,8 @@ vala_sources = files(
     'graphics.vala',
     'arena.vala',
     'game.vala',
+    'game-area.vala',
+    'robots.vala',
 )
 
 vala_lib = static_library('riiv',
@@ -43,10 +44,6 @@ riiv_dependency = declare_dependency(
     link_with: vala_lib,
 )
 
-sources = files(
-    'gnome-robots.c',
-    'keyboard.c',
-)
 resources = gnome.compile_resources(
     'resources',
     '@0@.gresource.xml'.format(meson.project_name()),
@@ -55,7 +52,7 @@ resources = gnome.compile_resources(
 
 executable(
     meson.project_name(),
-    sources + resources,
+    resources,
     config_header,
     dependencies: [
         riiv_dependency,

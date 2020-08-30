@@ -15,7 +15,7 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  *
  * For more details see the file COPYING.
-*/
+ */
 
 using Games;
 
@@ -216,7 +216,7 @@ public class Game {
      * Returns:
      * type of object if present or ObjectType.NONE
      **/
-    public int check_location (int x, int y) {
+    public ObjectType check_location (int x, int y) {
         return arena.@get (x, y);
     }
 

@@ -85,22 +85,6 @@ void render_graphics () {
     rerender_needed = false;
 }
 
-public bool resize_cb (Widget w, EventConfigure e) {
-  int trial_width;
-  int trial_height;
-
-  trial_width = e.width / GAME_WIDTH;
-  trial_height = e.height / GAME_HEIGHT;
-
-  if ((trial_width != tile_width) || (trial_height != tile_height)) {
-    tile_width = trial_width;
-    tile_height = trial_height;
-    rerender_needed = true;
-  }
-
-  return false;
-}
-
 /**
  * Loads all of the 'speech bubble' graphics
  **/

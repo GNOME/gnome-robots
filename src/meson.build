@@ -1,12 +1,14 @@
-add_project_arguments(['--vapidir', meson.current_source_dir()], language: 'vala')
-
+add_project_arguments(
+    ['--vapidir', meson.current_source_dir()],
+    language: 'vala',
+)
 
 config_header = configure_file(
     output: 'config.h',
     configuration: config_h
 )
 
-vala_sources = files(
+sources = files(
     'config.vapi',
 
     'image-suffix-list.vala',
@@ -25,25 +27,6 @@ vala_sources = files(
     'robots.vala',
 )
 
-vala_lib = static_library('riiv',
-    config_header,
-    vala_sources,
-    dependencies: [
-        gee_dependency,
-        gio_dependency,
-        glib_dependency,
-        gnome_games_dependency,
-        gsound_dependency,
-        gtk_dependency,
-        gdk_dependency,
-        rsvg_dependency
-    ]
-)
-
-riiv_dependency = declare_dependency(
-    link_with: vala_lib,
-)
-
 resources = gnome.compile_resources(
     'resources',
     '@0@.gresource.xml'.format(meson.project_name()),
@@ -52,10 +35,9 @@ resources = gnome.compile_resources(
 
 executable(
     meson.project_name(),
-    resources,
+    sources + resources,
     config_header,
     dependencies: [
-        riiv_dependency,
         gee_dependency,
         gio_dependency,
         glib_dependency,
@@ -64,10 +46,6 @@ executable(
         gtk_dependency,
         gdk_dependency,
         rsvg_dependency
-    ],
-    c_args: [
-        '-DHAVE_CONFIG_H',
-        '-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name())
     ],
     install_dir: get_option('bindir'),
     install: true

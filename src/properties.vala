@@ -43,7 +43,7 @@ struct Properties {
     bool sound;
     bool show_toolbar;
     Gdk.RGBA bgcolour;
-    int selected_config;
+    string selected_config;
     uint keys[9];
     string themename;
 }
@@ -51,22 +51,8 @@ struct Properties {
 Dialog propbox = null;
 Properties properties;
 
-/**
- * Applies the changes made by the user
- **/
-void apply_changes () {
-    load_keys ();
-    keyboard_set (properties.keys);
-}
-
-/**
- * handles apply button events
- *
- * Returns:
- * TRUE if the event was handled
- **/
 void apply_cb () {
-    apply_changes ();
+    keyboard_set (properties.keys);
 
     propbox.destroy ();
     propbox = null;
@@ -101,14 +87,11 @@ void pmap_selection (ComboBox combo) {
 /**
  * handles configuration selection messages
  **/
-void type_selection (int num) {
-    properties.selected_config = num;
-
-    var config = game_configs.@get ((uint)properties.selected_config);
-    var config_name = config.name ();
+void type_selection (string config_name) {
+    properties.selected_config = config_name;
     conf_set_configuration (config_name);
 
-    game.config = game_configs.@get ((uint)properties.selected_config);
+    game.config = game_configs.find_by_name (config_name);
     game.start_new_game ();
 }
 
@@ -125,16 +108,22 @@ void defkey_cb () {
     keyboard_set (properties.keys);
 }
 
-
 /**
  * fills the listbox with configuration names
  **/
 void fill_typemenu (ComboBoxText menu) {
+    int active_index = 0;
     for (int i = 0; i < game_configs.count (); ++i) {
-        var config = game_configs.get_name ((uint)i);
-        menu.append_text (config);
+        var config = game_configs.@get ((uint)i);
+
+        var config_name = config.name ();
+        menu.append_text (config_name);
+
+        if (config_name == properties.selected_config) {
+            active_index = i;
+        }
     }
-    menu.set_active (properties.selected_config);
+    menu.set_active (active_index);
 }
 
 ComboBox create_theme_picker (Themes themes, string current_theme) {
@@ -203,8 +192,8 @@ public void show_properties_dialog () {
 
     var typemenu = new ComboBoxText ();
     fill_typemenu (typemenu);
-    typemenu.changed.connect ((combo) => {
-        type_selection(combo.active);
+    typemenu.changed.connect (() => {
+        type_selection(typemenu.get_active_text ());
     });
     grid.attach (typemenu, 1, 0, 1, 1);
 
@@ -313,35 +302,22 @@ public void show_properties_dialog () {
     propbox.show_all ();
 }
 
-/**
- * loads the game properties from a file
- **/
-public void load_properties () throws Error {
-    load_keys ();
-
-    var bgcolour = settings.get_string (KEY_BACKGROUND_COLOR);
-    RGBA colour = RGBA ();
-    colour.parse (bgcolour);
-    properties.bgcolour = colour;
-    set_background_color (properties.bgcolour);
-
-    properties.themename = settings.get_string (KEY_THEME);
-
-    var cname = settings.get_string (KEY_CONFIGURATION);
-
-    properties.selected_config = 0;
-    for (int i = 0; i < game_configs.count (); ++i) {
-        var config = game_configs.get_name ((uint)i);
-        if (cname == config) {
-            properties.selected_config = i;
-            break;
-        }
+public void load_properties () {
+    for (int i = 0; i < N_KEYS; i++) {
+        var key = "key%02d".printf (i);
+        properties.keys[i] = settings.get_int (key);
     }
-
+    properties.bgcolour         = string_to_rgba (settings.get_string (KEY_BACKGROUND_COLOR));
+    properties.themename        = settings.get_string (KEY_THEME);
+    properties.selected_config  = settings.get_string (KEY_CONFIGURATION);
     properties.safe_moves       = settings.get_boolean (KEY_SAFE_MOVES);
     properties.super_safe_moves = settings.get_boolean (KEY_SUPER_SAFE_MOVES);
     properties.sound            = settings.get_boolean (KEY_ENABLE_SOUND);
     properties.show_toolbar     = settings.get_boolean (KEY_SHOW_TOOLBAR);
+}
+
+public void apply_properties () throws Error {
+    set_background_color (properties.bgcolour);
 
     var themes = get_themes ();
     var iter = themes.find_best_match (properties.themename);
@@ -354,11 +330,17 @@ public void load_properties () throws Error {
     keyboard_set (properties.keys);
 }
 
-public void load_keys () {
-    for (int i = 0; i < N_KEYS; i++) {
-        var key = "key%02d".printf (i);
-        properties.keys[i] = settings.get_int (key);
-    }
+RGBA string_to_rgba (string color) {
+    RGBA rgba = RGBA ();
+    rgba.parse (color);
+    return rgba;
+}
+
+string rgba_to_string (RGBA color) {
+    return "#%04x%04x%04x".printf (
+        (int) (color.red * 65535 + 0.5),
+        (int) (color.green * 65535 + 0.5),
+        (int) (color.blue * 65535 + 0.5));
 }
 
 public void conf_set_theme (string val) {
@@ -366,7 +348,7 @@ public void conf_set_theme (string val) {
 }
 
 void conf_set_background_color (RGBA c) {
-    var colour = "#%04x%04x%04x".printf ((int) (c.red * 65535 + 0.5), (int) (c.green * 65535 + 0.5), (int) (c.blue * 65535 + 0.5));
+    var colour = rgba_to_string (c);
     settings.set_string (KEY_BACKGROUND_COLOR, colour);
 }
 
@@ -385,35 +367,6 @@ public void conf_set_use_super_safe_moves (bool val) {
 public void conf_set_enable_sound (bool val) {
     settings.set_boolean (KEY_ENABLE_SOUND, val);
 }
-
-public void conf_set_show_toolbar (bool val) {
-    settings.set_boolean (KEY_SHOW_TOOLBAR, val);
-}
-
-public void conf_set_control_key (int i, uint keyval) {
-    var key = "key%02d".printf (i);
-    var keyval_name = keyval_name (keyval);
-    settings.set_string (key, keyval_name);
-}
-
-/**
- * saves the game properties to a file
- **/
-public void save_properties () {
-    for (int i = 0; i < N_KEYS; i++) {
-        conf_set_control_key (i, properties.keys[i]);
-    }
-
-    conf_set_theme (properties.themename);
-
-    var config = game_configs.get_name ((uint)properties.selected_config);
-    conf_set_configuration (config);
-
-    conf_set_use_safe_moves (properties.safe_moves);
-    conf_set_use_super_safe_moves (properties.super_safe_moves);
-    conf_set_enable_sound (properties.sound);
-}
-
 
 /**
  * properties_safe_moves

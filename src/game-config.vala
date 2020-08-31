@@ -191,5 +191,14 @@ public class GameConfigs {
         else
             return null;
     }
+
+    public GameConfig? find_by_name (string name) {
+        for (var i = 0; i < game_configs.size; ++i) {
+            if (game_configs[i].name () == name) {
+                return game_configs[i];
+            }
+        }
+        return null;
+    }
 }
 

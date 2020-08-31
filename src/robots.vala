@@ -380,8 +380,10 @@ void activate (Gtk.Application app) {
         app.quit ();
     }
 
+    load_properties ();
+
     try {
-        load_properties ();
+        apply_properties ();
     } catch (Error e) {
         // error ("%s", e.message);
         // TODO message box
@@ -390,7 +392,7 @@ void activate (Gtk.Application app) {
 
     init_keyboard ();
 
-    game.config = game_configs.@get ((uint)properties.selected_config);
+    game.config = game_configs.find_by_name (properties.selected_config);
     game.init_game ();
 
     GLib.Settings.sync ();

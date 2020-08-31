@@ -389,6 +389,8 @@ void activate (Gtk.Application app) {
     }
 
     init_keyboard ();
+
+    game.config = game_configs.@get ((uint)properties.selected_config);
     game.init_game ();
 
     GLib.Settings.sync ();

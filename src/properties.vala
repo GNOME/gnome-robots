@@ -108,8 +108,7 @@ void type_selection (int num) {
     var config_name = config.name ();
     conf_set_configuration (config_name);
 
-    game_configs.set_current_index ((uint)properties.selected_config);
-
+    game.config = game_configs.@get ((uint)properties.selected_config);
     game.start_new_game ();
 }
 
@@ -352,7 +351,6 @@ public void load_properties () throws Error {
 
     load_game_graphics (theme_path);
 
-    game_configs.set_current_index ((uint)properties.selected_config);
     keyboard_set (properties.keys);
 }
 

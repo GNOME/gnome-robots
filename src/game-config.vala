@@ -150,7 +150,6 @@ public struct GameConfig {
 
 public class GameConfigs {
     private Gee.ArrayList<GameConfig?> game_configs;
-    private uint current_config;
 
     public GameConfigs.load () throws Error {
         var dname = Path.build_filename (DATA_DIRECTORY, "games");
@@ -170,9 +169,7 @@ public class GameConfigs {
             }
         }
 
-        if (game_configs.size >= 0) {
-            current_config = 0;
-        } else {
+        if (game_configs.size == 0) {
             throw new FileError.NOENT ("No game config was found.");
         }
     }
@@ -193,19 +190,6 @@ public class GameConfigs {
             return game_configs[(int)n].description.replace ("_", " ");
         else
             return null;
-    }
-
-    public GameConfig get_current () {
-        return game_configs[(int)current_config];
-    }
-
-    public uint get_current_index () {
-        return current_config;
-    }
-
-    public void set_current_index (uint n) {
-        if (n < game_configs.size)
-            current_config = n;
     }
 }
 

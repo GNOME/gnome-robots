@@ -56,6 +56,7 @@ public class Game {
     Rand rand;
     public State state = State.PLAYING;
     public Arena arena;
+    public GameConfig config { get; set; }
 
     int num_robots1 = 0;
     int num_robots2 = 0;
@@ -94,15 +95,13 @@ public class Game {
      * Enters a score in the high-score table
      **/
     void log_score (int sc) {
-        var game_config = game_configs.get_current ();
-
         string key;
         if (properties_super_safe_moves ()) {
-            key = game_config.description + "-super-safe";
+            key = config.description + "-super-safe";
         } else if (properties_safe_moves ()) {
-            key = game_config.description + "-safe";
+            key = config.description + "-safe";
         } else {
-            key = game_config.description;
+            key = config.description;
         }
 
         if (sc != 0) {
@@ -139,44 +138,42 @@ public class Game {
      * registers a robot kill and updates the score
      **/
     void add_kill (ObjectType type) {
-        var game_config = game_configs.get_current ();
-
         int si;
         if ((state == State.WAITING) || (state == State.WTYPE2)) {
             if (type == ObjectType.ROBOT1) {
-                si = game_config.score_type1_waiting;
+                si = config.score_type1_waiting;
                 kills += 1;
             } else {
-                si = game_config.score_type2_waiting;
+                si = config.score_type2_waiting;
                 kills += 2;
             }
         } else {
             if (type == ObjectType.ROBOT1) {
-                si = game_config.score_type1;
+                si = config.score_type1;
             } else {
-                si = game_config.score_type2;
+                si = config.score_type2;
             }
         }
 
         score += si;
         score_step += si;
 
-        if (game_config.safe_score_boundary > 0) {
-            while (score_step >= game_config.safe_score_boundary) {
+        if (config.safe_score_boundary > 0) {
+            while (score_step >= config.safe_score_boundary) {
                 safe_teleports += 1;
-                score_step -= game_config.safe_score_boundary;
+                score_step -= config.safe_score_boundary;
             }
         }
 
-        if (game_config.num_robots_per_safe > 0) {
-            while (kills >= game_config.num_robots_per_safe) {
+        if (config.num_robots_per_safe > 0) {
+            while (kills >= config.num_robots_per_safe) {
                 safe_teleports += 1;
-                kills -= game_config.num_robots_per_safe;
+                kills -= config.num_robots_per_safe;
             }
         }
 
-        if (safe_teleports > game_config.max_safe_teleports) {
-            safe_teleports = game_config.max_safe_teleports;
+        if (safe_teleports > config.max_safe_teleports) {
+            safe_teleports = config.max_safe_teleports;
         }
 
         update_game_status (score, current_level + 1, safe_teleports);
@@ -231,44 +228,42 @@ public class Game {
      * Creates a new level and populates it with robots
      **/
     void generate_level () {
-        var game_config = game_configs.get_current ();
-
         clear_arena ();
 
         player_xpos = arena.width / 2;
         player_ypos = arena.height / 2;
         arena.@set(player_xpos, player_ypos, ObjectType.PLAYER);
 
-        num_robots1 = game_config.initial_type1 + game_config.increment_type1 * current_level;
+        num_robots1 = config.initial_type1 + config.increment_type1 * current_level;
 
-        if (num_robots1 > game_config.maximum_type1) {
-            num_robots1 = game_config.maximum_type1;
+        if (num_robots1 > config.maximum_type1) {
+            num_robots1 = config.maximum_type1;
         }
         if (num_robots1 > max_robots ()) {
             current_level = 0;
-            num_robots1 = game_config.initial_type1;
+            num_robots1 = config.initial_type1;
             message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
             play_sound (Sound.VICTORY);
         }
 
-        num_robots2 = game_config.initial_type2 + game_config.increment_type2 * current_level;
+        num_robots2 = config.initial_type2 + config.increment_type2 * current_level;
 
-        if (num_robots2 > game_config.maximum_type2) {
-            num_robots2 = game_config.maximum_type2;
+        if (num_robots2 > config.maximum_type2) {
+            num_robots2 = config.maximum_type2;
         }
 
         if ((num_robots1 + num_robots2) > max_robots ()) {
             current_level = 0;
-            num_robots1 = game_config.initial_type1;
-            num_robots2 = game_config.initial_type2;
+            num_robots1 = config.initial_type1;
+            num_robots2 = config.initial_type2;
             message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
             play_sound (Sound.VICTORY);
         }
 
-        safe_teleports += game_config.free_safe_teleports;
+        safe_teleports += config.free_safe_teleports;
 
-        if (safe_teleports > game_config.max_safe_teleports) {
-            safe_teleports = game_config.max_safe_teleports;
+        if (safe_teleports > config.max_safe_teleports) {
+            safe_teleports = config.max_safe_teleports;
         }
 
         update_game_status (score, current_level, safe_teleports);
@@ -306,8 +301,6 @@ public class Game {
      * Copies the temporary arena into the main game arena
      **/
     void update_arena () {
-        var game_config = game_configs.get_current ();
-
         num_robots1 = 0;
         num_robots2 = 0;
 
@@ -320,13 +313,13 @@ public class Game {
                         add_splat_bubble (i, j);
                         play_sound (Sound.SPLAT);
                         push_xpos = push_ypos = -1;
-                        score += game_config.score_type1_splatted;
+                        score += config.score_type1_splatted;
                     }
                     if (arena[i, j] == ObjectType.ROBOT2) {
                         add_splat_bubble (i, j);
                         play_sound (Sound.SPLAT);
                         push_xpos = push_ypos = -1;
-                        score += game_config.score_type2_splatted;
+                        score += config.score_type2_splatted;
                     }
                 }
 
@@ -456,10 +449,7 @@ public class Game {
         if (state == State.PLAYING)
             log_score (score);
 
-        var game_config = game_configs.get_current ();
-        // g_return_if_fail (game_config != NULL);
-
-        safe_teleports = game_config.initial_safe_teleports;
+        safe_teleports = config.initial_safe_teleports;
 
         remove_bubble ();
         reset_player_animation ();
@@ -471,7 +461,6 @@ public class Game {
         update_game_status (score, current_level + 1, safe_teleports);
         set_move_action_sensitivity (true);
     }
-
 
     /**
      * move_all_robots
@@ -519,7 +508,6 @@ public class Game {
       }
 
     }
-
 
     /**
      * move_type2_robots
@@ -737,8 +725,6 @@ public class Game {
      * TRUE if the player can move, FALSE otherwise
      **/
     bool try_player_move (int dx, int dy) {
-        var game_config = game_configs.get_current ();
-
         int nx = player_xpos + dx;
         int ny = player_ypos + dy;
 
@@ -749,7 +735,7 @@ public class Game {
         load_temp_arena ();
 
         if (temp_arena.@get (nx, ny) == ObjectType.HEAP) {
-            if (game_config.moveable_heaps) {
+            if (config.moveable_heaps) {
                 if (!push_heap (nx, ny, dx, dy)) {
                     push_xpos = push_ypos = -1;
                     return false;

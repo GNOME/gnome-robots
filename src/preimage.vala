@@ -26,7 +26,6 @@ public class GamesPreimage {
     private int height = 0;
 
     private Handle? rsvg_handle = null;
-    private FontOptions? font_options;
 
     /* raster pixbuf data */
     private Pixbuf? pixbuf;
@@ -61,13 +60,6 @@ public class GamesPreimage {
             width = pixbuf.get_width ();
             height = pixbuf.get_height ();
         }
-    }
-
-    /**
-     * Turns on antialising of preimage, if it contains an SVG image.
-     */
-    public void set_font_options (owned FontOptions? font_options) {
-        this.font_options = (owned) font_options;
     }
 
     /**
@@ -174,11 +166,6 @@ public class GamesPreimage {
                                   double yzoom) {
         if (!scalable)
             return;
-
-        if (font_options != null) {
-            cr.set_antialias (font_options.get_antialias ());
-            cr.set_font_options (font_options);
-        }
 
         Cairo.Matrix matrix = Cairo.Matrix.identity ();
         matrix.scale (xzoom, yzoom);

@@ -458,37 +458,3 @@ public bool properties_sound () {
     return properties.sound;
 }
 
-
-/**
- * properties_show_toolbar
- *
- * Description:
- * returns toolbar setting
- *
- * Returns:
- * TRUE if splats are selected
- **/
-public bool properties_show_toolbar () {
-    return properties.show_toolbar;
-}
-
-/**
- * properties_set_config
- * @n: config number
- *
- * Description:
- * sets the current configuration
- *
- * Returns:
- * TRUE if successful, FALSE otherwise
- **/
-public bool properties_set_config (int n) {
-    if (n >= game_configs.count ())
-        return false;
-
-    game_configs.set_current_index ((uint)n);
-    properties.selected_config = n;
-
-    return true;
-}
-

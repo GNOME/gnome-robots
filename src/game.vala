@@ -73,8 +73,6 @@ public class Game {
     uint game_timer_id = -1;
     Arena temp_arena = null;
 
-    Scores.Category current_cat;
-
     public Game () {
         arena = new Arena (GAME_WIDTH, GAME_HEIGHT);
         rand = new Rand ();
@@ -106,8 +104,8 @@ public class Game {
 
         if (sc != 0) {
             string name = category_name_from_key (key);
-            current_cat = new Scores.Category (key, name);
-            highscores.add_score.begin (sc, current_cat, null, (ctx, res) => {
+            var category = new Scores.Category (key, name);
+            highscores.add_score.begin (sc, category, null, (ctx, res) => {
                 try {
                     highscores.add_score.end (res);
                 } catch (Error error) {

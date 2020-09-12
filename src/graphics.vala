@@ -42,9 +42,6 @@ public const int BUBBLE_YOFFSET = 4;
 public int tile_width = 0;
 public int tile_height = 0;
 
-RGBA light_background;
-RGBA dark_background;
-
 Pixbuf aieee_pixbuf = null;
 Pixbuf yahoo_pixbuf = null;
 Pixbuf splat_pixbuf = null;
@@ -64,42 +61,30 @@ public void load_game_graphics () throws Error {
         GLib.Path.build_filename (DATA_DIRECTORY, "pixmaps", "splat.png"));
 }
 
-public void set_background_color (RGBA color) {
-    if (game_area == null)
-        return;
-
+public RGBA calculate_light_color (RGBA color) {
     /* While the two colours are labelled "light" and "dark" which one is
      * which actually depends on how light or dark the base colour is. */
 
+    RGBA light = RGBA ();
     double brightness = color.red + color.green + color.blue;
     if (brightness > (1.0 / 1.1)) {
         /* Darken light colours. */
-        light_background.red = 0.9 * color.red;
-        light_background.green = 0.9 * color.green;
-        light_background.blue = 0.9 * color.blue;
+        light.red = 0.9 * color.red;
+        light.green = 0.9 * color.green;
+        light.blue = 0.9 * color.blue;
     } else if (brightness > 0.04) {
         /* Lighten darker colours. */
-        light_background.red = 1.1 * color.red;
-        light_background.green = 1.1 * color.green;
-        light_background.blue = 1.1 * color.blue;
+        light.red = 1.1 * color.red;
+        light.green = 1.1 * color.green;
+        light.blue = 1.1 * color.blue;
     } else {
         /* Very dark colours, add rather than multiply. */
-        light_background.red += 0.04;
-        light_background.green += 0.04;
-        light_background.blue += 0.04;
+        light.red = 0.04 + color.red;
+        light.green = 0.04 + color.green;
+        light.blue = 0.04 + color.blue;
     }
-    light_background.alpha = 1.0;
-    dark_background = color;
-
-    clear_game_area ();
-}
-
-public void set_background_color_from_name (string name) {
-    RGBA color = RGBA ();
-    if (!color.parse (name)) {
-        color.parse ("#7590AE");
-    }
-    set_background_color (color);
+    light.alpha = 1.0;
+    return light;
 }
 
 /**

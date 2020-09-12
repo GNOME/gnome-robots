@@ -30,6 +30,8 @@ public class GameArea : DrawingArea {
     private EventControllerMotion motion_controller;
     private Game game;
     private Theme _theme;
+    private RGBA light_background;
+    private RGBA dark_background;
 
     private Animated player_animation;
     private Animated player_dead_animation;
@@ -46,9 +48,31 @@ public class GameArea : DrawingArea {
         }
     }
 
+    public RGBA background_color {
+        get { return dark_background; }
+        set {
+            dark_background = value;
+            light_background = calculate_light_color (value);
+            queue_draw ();
+        }
+    }
+
+    public string background_color_name {
+        owned get {
+            return rgba_to_string (dark_background);
+        }
+        set {
+            RGBA color = RGBA ();
+            if (color.parse (name)) {
+                background_color = color;
+            }
+        }
+    }
+
     public GameArea (Game game, Theme theme) {
         this.game = game;
         this.theme = theme;
+        this.background_color_name = "#7590AE";
 
         add_events (Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
         configure_event.connect (event => resize_cb (event));

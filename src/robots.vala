@@ -392,7 +392,7 @@ void activate (Gtk.Application app) {
     }
 
     try {
-        set_background_color (properties.bgcolour);
+        game_area.background_color = properties.bgcolour;
 
         load_game_graphics ();
 

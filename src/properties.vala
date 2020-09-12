@@ -145,7 +145,7 @@ ComboBox create_theme_picker (Themes themes, string current_theme) {
 
 void bg_color_callback (ColorChooser color_chooser) {
     properties.bgcolour = color_chooser.get_rgba ();
-    set_background_color (properties.bgcolour);
+    game_area.background_color = properties.bgcolour;
     clear_game_area ();
     conf_set_background_color (properties.bgcolour);
 }
@@ -333,7 +333,7 @@ RGBA string_to_rgba (string color) {
     return rgba;
 }
 
-string rgba_to_string (RGBA color) {
+public string rgba_to_string (RGBA color) {
     return "#%04x%04x%04x".printf (
         (int) (color.red * 65535 + 0.5),
         (int) (color.green * 65535 + 0.5),

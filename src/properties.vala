@@ -76,7 +76,8 @@ void pmap_selection (ComboBox combo) {
         conf_set_theme (properties.themename);
 
         try {
-            load_game_graphics (theme_path);
+            game_area.theme = new Theme.from_file (theme_path);
+            load_game_graphics ();
         } catch (Error e) {
             // TODO
         }
@@ -316,18 +317,14 @@ public void load_properties () {
     properties.show_toolbar     = settings.get_boolean (KEY_SHOW_TOOLBAR);
 }
 
-public void apply_properties () throws Error {
-    set_background_color (properties.bgcolour);
-
+public Theme get_theme_from_properties () throws Error {
     var themes = get_themes ();
     var iter = themes.find_best_match (properties.themename);
 
     string theme_path;
     themes.get_values (iter, out properties.themename, out theme_path);
 
-    load_game_graphics (theme_path);
-
-    keyboard_set (properties.keys);
+    return new Theme.from_file (theme_path);
 }
 
 RGBA string_to_rgba (string color) {

@@ -42,8 +42,6 @@ public const int BUBBLE_YOFFSET = 4;
 public int tile_width = 0;
 public int tile_height = 0;
 
-Theme theme = null;
-
 RGBA light_background;
 RGBA dark_background;
 
@@ -57,32 +55,13 @@ int bubble_xo = 0;
 int bubble_yo = 0;
 BubbleType bubble_type = BubbleType.NONE;
 
-/**
- * Loads all of the 'speech bubble' graphics
- **/
-void load_bubble_graphics () throws Error {
+public void load_game_graphics () throws Error {
     yahoo_pixbuf = new Pixbuf.from_file (
         GLib.Path.build_filename (DATA_DIRECTORY, "pixmaps", "yahoo.png"));
     aieee_pixbuf = new Pixbuf.from_file (
         GLib.Path.build_filename (DATA_DIRECTORY, "pixmaps", "aieee.png"));
     splat_pixbuf = new Pixbuf.from_file (
         GLib.Path.build_filename (DATA_DIRECTORY, "pixmaps", "splat.png"));
-}
-
-
-/**
- * load_game_graphics
- *
- * Description:
- * Loads all of the game graphics
- *
- * Returns:
- * TRUE on success FALSE otherwise
- **/
-public void load_game_graphics (string theme_path) throws Error {
-    theme = new Theme.from_file (theme_path);
-
-    load_bubble_graphics ();
 }
 
 public void set_background_color (RGBA color) {

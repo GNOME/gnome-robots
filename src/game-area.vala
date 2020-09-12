@@ -29,14 +29,26 @@ public class GameArea : DrawingArea {
     private GestureMultiPress click_controller;
     private EventControllerMotion motion_controller;
     private Game game;
+    private Theme _theme;
 
     private Animated player_animation;
     private Animated player_dead_animation;
     private Animated robot1_animation;
     private Animated robot2_animation;
 
-    public GameArea (Game game) {
+    public Theme theme {
+        get {
+            return _theme;
+        }
+        set {
+            _theme = value;
+            queue_draw ();
+        }
+    }
+
+    public GameArea (Game game, Theme theme) {
         this.game = game;
+        this.theme = theme;
 
         add_events (Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
         configure_event.connect (event => resize_cb (event));

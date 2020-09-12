@@ -270,6 +270,8 @@ bool keyboard_cb (EventControllerKey controller, uint keyval, uint keycode, Gdk.
 }
 
 void activate (Gtk.Application app) {
+    load_properties ();
+
     if (window != null) {
         window.present_with_time (get_current_event_time ());
         return;
@@ -300,7 +302,16 @@ void activate (Gtk.Application app) {
 
     window.add_action_entries (win_entries, app);
 
-    game_area = new GameArea (game);
+    Theme theme = null;
+    try {
+        theme = get_theme_from_properties ();
+    } catch (Error e) {
+        // error ("%s", e.message);
+        // TODO message box
+        app.quit ();
+    }
+
+    game_area = new GameArea (game, theme);
     game_area.destroy.connect (() => game_area = null);
 
     var gridframe = new Games.GridFrame (GAME_WIDTH, GAME_HEIGHT);
@@ -380,10 +391,12 @@ void activate (Gtk.Application app) {
         app.quit ();
     }
 
-    load_properties ();
-
     try {
-        apply_properties ();
+        set_background_color (properties.bgcolour);
+
+        load_game_graphics ();
+
+        keyboard_set (properties.keys);
     } catch (Error e) {
         // error ("%s", e.message);
         // TODO message box

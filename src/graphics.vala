@@ -39,9 +39,6 @@ public const int BUBBLE_HEIGHT = 34;
 public const int BUBBLE_XOFFSET = 8;
 public const int BUBBLE_YOFFSET = 4;
 
-public const int PLAYER_WAVE_WAIT      = 20;
-public const int PLAYER_NUM_WAVES      = 2;
-
 public int tile_width = 0;
 public int tile_height = 0;
 
@@ -53,12 +50,6 @@ RGBA dark_background;
 Pixbuf aieee_pixbuf = null;
 Pixbuf yahoo_pixbuf = null;
 Pixbuf splat_pixbuf = null;
-
-int robot_animation = 0;
-int player_animation = 0;
-int player_num_waves = 0;
-int player_wave_wait = 0;
-int player_wave_dir = 1;
 
 int bubble_xpos = 0;
 int bubble_ypos = 0;
@@ -133,57 +124,6 @@ public void set_background_color_from_name (string name) {
 }
 
 /**
- * draw_object
- * @x: x position
- * @y: y position
- * @type: object type
- * @cr: context to draw on
- *
- * Description:
- * Draws graphics for an object at specified location
- **/
-public void draw_object (int x, int y, ObjectType type, Context cr) {
-    if (game_area == null)
-        return;
-
-    if ((x + y) % 2 != 0) {
-        cairo_set_source_rgba (cr, dark_background);
-    } else {
-        cairo_set_source_rgba (cr, light_background);
-    }
-
-    x *= tile_width;
-    y *= tile_height;
-
-    cr.rectangle (x, y, tile_width, tile_height);
-    cr.fill ();
-
-    int animation = 0;
-    switch (type) {
-    case ObjectType.PLAYER:
-        animation = player_animation;
-        break;
-    case ObjectType.ROBOT1:
-        animation = robot_animation;
-        break;
-    case ObjectType.ROBOT2:
-        animation = robot_animation;
-        break;
-    case ObjectType.HEAP:
-        animation = 0;
-        break;
-    case ObjectType.NONE:
-        break;
-    }
-
-    cr.save ();
-    cr.translate (x, y);
-    theme.draw_object (type, animation, cr, tile_width, tile_height);
-    cr.restore ();
-}
-
-
-/**
  * clears the whole of the game area
  **/
 public void clear_game_area () {
@@ -191,68 +131,6 @@ public void clear_game_area () {
         return;
 
     game_area.queue_draw ();
-}
-
-
-/**
- * reset_player_animation
- *
- * Description:
- * resets player animation to standing position
- **/
-public void reset_player_animation () {
-    player_wave_wait = 0;
-    player_num_waves = 0;
-    player_wave_dir = 1;
-    player_animation = 0;
-}
-
-
-/**
- * player_animation_dead
- *
- * Description:
- * sets player animation to be dead
- **/
-public void player_animation_dead () {
-    player_wave_wait = 0;
-    player_num_waves = 0;
-    player_wave_dir = 1;
-    player_animation = Theme.Frames.NUM_PLAYER_ANIMATIONS;
-}
-
-
-/**
- * animate_game_graphics
- *
- * Description:
- * updates animation for object graphics
- **/
-public void animate_game_graphics () {
-  ++robot_animation;
-  if (robot_animation >= Theme.Frames.NUM_ROBOT1_ANIMATIONS) {
-    robot_animation = 0;
-  }
-
-  if (player_animation == Theme.Frames.NUM_PLAYER_ANIMATIONS) {
-    /* do nothing */
-  } else if (player_wave_wait < PLAYER_WAVE_WAIT) {
-    ++player_wave_wait;
-    player_animation = 0;
-  } else {
-    player_animation += player_wave_dir;
-    if (player_animation >= Theme.Frames.NUM_PLAYER_ANIMATIONS) {
-      player_wave_dir = -1;
-      player_animation -= 2;
-    } else if (player_animation < 0) {
-      player_wave_dir = 1;
-      player_animation = 1;
-      ++player_num_waves;
-      if (player_num_waves >= PLAYER_NUM_WAVES) {
-        reset_player_animation ();
-      }
-    }
-  }
 }
 
 /**

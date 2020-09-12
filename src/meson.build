@@ -15,6 +15,7 @@ sources = files(
     'themes.vala',
     'theme.vala',
     'preimage.vala',
+    'animation.vala',
     'controls.vala',
     'game-config.vala',
     'sound.vala',

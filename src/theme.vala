@@ -24,12 +24,15 @@ public class Theme {
 
     public enum Frames {
         PLAYER_START = 0,
+        PLAYER_DEAD = 4,
         ROBOT1_START = 5,
         ROBOT2_START = 9,
         HEAP_START = 13,
         COUNT = 14,
 
-        NUM_PLAYER_ANIMATIONS = ROBOT1_START - PLAYER_START,
+        NUM_PLAYER_ANIMATIONS = PLAYER_DEAD - PLAYER_START,
+        NUM_PLAYER_DEAD_ANIMATIONS = ROBOT1_START - PLAYER_DEAD,
+        NUM_PLAYER_TILES = ROBOT1_START - PLAYER_START,
         NUM_ROBOT1_ANIMATIONS = ROBOT2_START - ROBOT1_START,
         NUM_ROBOT2_ANIMATIONS = HEAP_START - ROBOT2_START,
         NUM_HEAP_ANIMATIONS = COUNT - HEAP_START,
@@ -54,7 +57,7 @@ public class Theme {
         int tile_no = -1;
         switch (type) {
         case ObjectType.PLAYER:
-            tile_no = Frames.PLAYER_START + frame_no % Frames.NUM_PLAYER_ANIMATIONS;
+            tile_no = Frames.PLAYER_START + frame_no % Frames.NUM_PLAYER_TILES;
             break;
         case ObjectType.ROBOT1:
             tile_no = Frames.ROBOT1_START + frame_no % Frames.NUM_ROBOT1_ANIMATIONS;

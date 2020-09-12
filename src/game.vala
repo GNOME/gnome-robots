@@ -124,7 +124,6 @@ public class Game {
         arena[player_xpos, player_ypos] = ObjectType.PLAYER;
         endlev_counter = 0;
         add_aieee_bubble (player_xpos, player_ypos);
-        player_animation_dead ();
         set_move_action_sensitivity (false);
     }
 
@@ -341,7 +340,6 @@ public class Game {
                 play_sound (Sound.YAHOO);
                 endlev_counter = 0;
                 add_yahoo_bubble (player_xpos, player_ypos);
-                reset_player_animation ();
                 set_move_action_sensitivity (false);
             }
         }
@@ -358,7 +356,7 @@ public class Game {
      * Game timer callback function
      **/
     bool timeout_cb () {
-        animate_game_graphics ();
+        game_area.tick ();
 
         clear_game_area ();
 
@@ -378,7 +376,6 @@ public class Game {
             if (endlev_counter >= CHANGE_DELAY) {
                 ++current_level;
                 remove_bubble ();
-                reset_player_animation ();
                 clear_game_area ();
                 generate_level ();
                 state = State.PLAYING;
@@ -450,7 +447,6 @@ public class Game {
         safe_teleports = config.initial_safe_teleports;
 
         remove_bubble ();
-        reset_player_animation ();
         generate_level ();
         clear_game_area ();
 
@@ -869,8 +865,6 @@ public class Game {
             temp_arena.@set (player_xpos, player_ypos, ObjectType.PLAYER);
         }
 
-        reset_player_animation ();
-
         remove_splat_bubble ();
 
         update_arena ();
@@ -904,7 +898,6 @@ public class Game {
             player_ypos = yp;
             temp_arena.@set (player_xpos, player_ypos, ObjectType.PLAYER);
 
-            reset_player_animation ();
             update_arena ();
             remove_splat_bubble ();
             play_sound (Sound.TELEPORT);
@@ -951,8 +944,6 @@ public class Game {
             player_xpos = xp;
             player_ypos = yp;
             temp_arena.@set (player_xpos, player_ypos, ObjectType.PLAYER);
-
-            reset_player_animation ();
 
             safe_teleports -= 1;
             update_game_status (score, current_level, safe_teleports);

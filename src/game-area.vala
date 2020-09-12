@@ -18,6 +18,7 @@
  */
 
 using Gtk;
+using Gdk;
 using Cairo;
 
 public class GameArea : DrawingArea {
@@ -28,6 +29,11 @@ public class GameArea : DrawingArea {
     private GestureMultiPress click_controller;
     private EventControllerMotion motion_controller;
     private Game game;
+
+    private Animated player_animation;
+    private Animated player_dead_animation;
+    private Animated robot1_animation;
+    private Animated robot2_animation;
 
     public GameArea (Game game) {
         this.game = game;
@@ -44,6 +50,30 @@ public class GameArea : DrawingArea {
 
         set_size_request (MINIMUM_TILE_WIDTH * game.arena.width,
                           MINIMUM_TILE_HEIGHT * game.arena.height);
+
+        player_animation = Animated
+            .sequence (Theme.Frames.PLAYER_START, 0)
+            .limit (20)
+            .then (
+                Animated
+                    .bounce (Theme.Frames.PLAYER_START, Theme.Frames.NUM_PLAYER_ANIMATIONS)
+                    .repeat (2)
+            )
+            .forever ();
+
+        player_dead_animation = Animated
+            .bounce (Theme.Frames.PLAYER_DEAD, Theme.Frames.NUM_PLAYER_DEAD_ANIMATIONS)
+            .forever ();
+
+        robot1_animation = Animated
+            .sequence (Theme.Frames.ROBOT1_START)
+            .limit (Theme.Frames.NUM_ROBOT1_ANIMATIONS)
+            .forever ();
+
+        robot2_animation = Animated
+            .sequence (Theme.Frames.ROBOT2_START)
+            .limit (Theme.Frames.NUM_ROBOT2_ANIMATIONS)
+            .forever ();
     }
 
     private bool resize_cb (Gdk.EventConfigure e) {
@@ -68,6 +98,54 @@ public class GameArea : DrawingArea {
         draw_bubble (cr);
 
         return true;
+    }
+
+    private void draw_object (int x, int y, ObjectType type, Context cr) {
+        if ((x + y) % 2 != 0) {
+            cairo_set_source_rgba (cr, dark_background);
+        } else {
+            cairo_set_source_rgba (cr, light_background);
+        }
+
+        x *= tile_width;
+        y *= tile_height;
+
+        cr.rectangle (x, y, tile_width, tile_height);
+        cr.fill ();
+
+        int animation = 0;
+        switch (type) {
+        case ObjectType.PLAYER:
+            if (game.get_state () != Game.State.DEAD) {
+                animation = player_animation.frame;
+            } else {
+                animation = player_dead_animation.frame;
+            }
+            break;
+        case ObjectType.ROBOT1:
+            animation = robot1_animation.frame;
+            break;
+        case ObjectType.ROBOT2:
+            animation = robot2_animation.frame;
+            break;
+        case ObjectType.HEAP:
+            animation = 0;
+            break;
+        case ObjectType.NONE:
+            break;
+        }
+
+        cr.save ();
+        cr.translate (x, y);
+        theme.draw_object (type, animation, cr, tile_width, tile_height);
+        cr.restore ();
+    }
+
+    public void tick () {
+        player_animation.tick ();
+        player_dead_animation.tick ();
+        robot1_animation.tick ();
+        robot2_animation.tick ();
     }
 
     private void mouse_cb (int n_press, double x, double y) {

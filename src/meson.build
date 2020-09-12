@@ -13,6 +13,7 @@ sources = files(
 
     'image-suffix-list.vala',
     'themes.vala',
+    'theme.vala',
     'preimage.vala',
     'controls.vala',
     'game-config.vala',

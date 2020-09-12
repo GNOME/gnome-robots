@@ -53,7 +53,6 @@ public class GameArea : DrawingArea {
         if (trial_width != tile_width || trial_height != tile_height) {
             tile_width = trial_width;
             tile_height = trial_height;
-            rerender_needed = true;
         }
 
         return false;

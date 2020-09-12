@@ -39,26 +39,13 @@ public const int BUBBLE_HEIGHT = 34;
 public const int BUBBLE_XOFFSET = 8;
 public const int BUBBLE_YOFFSET = 4;
 
-/*
- * Scenario pixmaps
- */
-public const int SCENARIO_PIXMAP_WIDTH = 14;
-public const int SCENARIO_PLAYER_START = 0;
-public const int SCENARIO_ROBOT1_START = 5;
-public const int SCENARIO_ROBOT2_START = 9;
-public const int SCENARIO_HEAP_POS     = 13;
-
-public const int NUM_ROBOT_ANIMATIONS  = 4;
-public const int NUM_PLAYER_ANIMATIONS = 4;
 public const int PLAYER_WAVE_WAIT      = 20;
 public const int PLAYER_NUM_WAVES      = 2;
 
 public int tile_width = 0;
 public int tile_height = 0;
 
-GamesPreimage theme_preimage = null;
-Pixbuf theme_pixbuf = null;
-bool rerender_needed = true;
+Theme theme = null;
 
 RGBA light_background;
 RGBA dark_background;
@@ -78,11 +65,6 @@ int bubble_ypos = 0;
 int bubble_xo = 0;
 int bubble_yo = 0;
 BubbleType bubble_type = BubbleType.NONE;
-
-void render_graphics () {
-    theme_pixbuf = theme_preimage.render (14 * tile_width, tile_height);
-    rerender_needed = false;
-}
 
 /**
  * Loads all of the 'speech bubble' graphics
@@ -107,26 +89,9 @@ void load_bubble_graphics () throws Error {
  * TRUE on success FALSE otherwise
  **/
 public void load_game_graphics (string theme_path) throws Error {
-    if (theme_preimage != null) {
-        free_game_graphics ();
-    }
-
-    theme_preimage = new GamesPreimage.from_file (theme_path);
+    theme = new Theme.from_file (theme_path);
 
     load_bubble_graphics ();
-
-    rerender_needed = true;
-}
-
-/**
- * Frees all of the resources used by the game graphics
- **/
-public void free_game_graphics () {
-    theme_preimage = null;
-    theme_pixbuf = null;
-    aieee_pixbuf = null;
-    yahoo_pixbuf = null;
-    splat_pixbuf = null;
 }
 
 public void set_background_color (RGBA color) {
@@ -168,44 +133,6 @@ public void set_background_color_from_name (string name) {
 }
 
 /**
- * draw_tile_pixmap
- * @tileno: Graphics tile number
- * @pno: Number of graphics set
- * @x: x position in grid squares
- * @y: y position in grid squares
- * @cr: context to draw on
- *
- * Description:
- * Draws tile pixmap @tileno from graphics set @pno at (@x, @y) in
- * a widget @area
- **/
-void draw_tile_pixmap (int tileno, int x, int y, Context cr) {
-    if ((x + y) % 2 != 0) {
-        cairo_set_source_rgba (cr, dark_background);
-    } else {
-        cairo_set_source_rgba (cr, light_background);
-    }
-
-    x *= tile_width;
-    y *= tile_height;
-
-    cr.rectangle (x, y, tile_width, tile_height);
-    cr.fill ();
-
-    if (rerender_needed)
-        render_graphics ();
-
-    if ((tileno < 0) || (tileno >= SCENARIO_PIXMAP_WIDTH)) {
-        /* nothing */
-    } else {
-        cairo_set_source_pixbuf (cr, theme_pixbuf, x - tileno * tile_width, y);
-        cr.rectangle (x, y, tile_width, tile_height);
-        cr.fill ();
-    }
-}
-
-
-/**
  * draw_object
  * @x: x position
  * @y: y position
@@ -219,23 +146,40 @@ public void draw_object (int x, int y, ObjectType type, Context cr) {
     if (game_area == null)
         return;
 
+    if ((x + y) % 2 != 0) {
+        cairo_set_source_rgba (cr, dark_background);
+    } else {
+        cairo_set_source_rgba (cr, light_background);
+    }
+
+    x *= tile_width;
+    y *= tile_height;
+
+    cr.rectangle (x, y, tile_width, tile_height);
+    cr.fill ();
+
+    int animation = 0;
     switch (type) {
     case ObjectType.PLAYER:
-        draw_tile_pixmap (SCENARIO_PLAYER_START + player_animation, x, y, cr);
+        animation = player_animation;
         break;
     case ObjectType.ROBOT1:
-        draw_tile_pixmap (SCENARIO_ROBOT1_START + robot_animation, x, y, cr);
+        animation = robot_animation;
         break;
     case ObjectType.ROBOT2:
-        draw_tile_pixmap (SCENARIO_ROBOT2_START + robot_animation, x, y, cr);
+        animation = robot_animation;
         break;
     case ObjectType.HEAP:
-        draw_tile_pixmap (SCENARIO_HEAP_POS, x, y, cr);
+        animation = 0;
         break;
     case ObjectType.NONE:
-        draw_tile_pixmap (-1, x, y, cr);
         break;
     }
+
+    cr.save ();
+    cr.translate (x, y);
+    theme.draw_object (type, animation, cr, tile_width, tile_height);
+    cr.restore ();
 }
 
 
@@ -274,7 +218,7 @@ public void player_animation_dead () {
     player_wave_wait = 0;
     player_num_waves = 0;
     player_wave_dir = 1;
-    player_animation = NUM_PLAYER_ANIMATIONS;
+    player_animation = Theme.Frames.NUM_PLAYER_ANIMATIONS;
 }
 
 
@@ -286,18 +230,18 @@ public void player_animation_dead () {
  **/
 public void animate_game_graphics () {
   ++robot_animation;
-  if (robot_animation >= NUM_ROBOT_ANIMATIONS) {
+  if (robot_animation >= Theme.Frames.NUM_ROBOT1_ANIMATIONS) {
     robot_animation = 0;
   }
 
-  if (player_animation == NUM_PLAYER_ANIMATIONS) {
+  if (player_animation == Theme.Frames.NUM_PLAYER_ANIMATIONS) {
     /* do nothing */
   } else if (player_wave_wait < PLAYER_WAVE_WAIT) {
     ++player_wave_wait;
     player_animation = 0;
   } else {
     player_animation += player_wave_dir;
-    if (player_animation >= NUM_PLAYER_ANIMATIONS) {
+    if (player_animation >= Theme.Frames.NUM_PLAYER_ANIMATIONS) {
       player_wave_dir = -1;
       player_animation -= 2;
     } else if (player_animation < 0) {

@@ -131,7 +131,26 @@ public class GameArea : DrawingArea {
             }
         }
 
-        draw_bubble (cr);
+        if (game.splat != null) {
+            splat_bubble.draw (cr,
+                               game.splat.x * tile_width + 8,
+                               game.splat.y * tile_height + 8);
+        }
+
+        switch (game.get_state ()) {
+        case Game.State.DEAD:
+            aieee_bubble.draw (cr,
+                               game.player.x * tile_width + 8,
+                               game.player.y * tile_height + 4);
+            break;
+        case Game.State.COMPLETE:
+            yahoo_bubble.draw (cr,
+                               game.player.x * tile_width + 8,
+                               game.player.y * tile_height + 4);
+            break;
+        default:
+            break;
+        }
 
         return true;
     }

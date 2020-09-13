@@ -57,6 +57,8 @@ public class Game {
     public State state = State.PLAYING;
     public Arena arena;
     public GameConfig config { get; set; }
+    public Arena.Coords player { get; private set; }
+    public Arena.Coords? splat { get; private set; }
 
     int num_robots1 = 0;
     int num_robots2 = 0;
@@ -66,8 +68,6 @@ public class Game {
     int kills = 0;
     int score_step = 0;
     int safe_teleports = 0;
-    int player_xpos = 0;
-    int player_ypos = 0;
     int push_xpos = -1;
     int push_ypos = -1;
     uint game_timer_id = -1;
@@ -121,10 +121,10 @@ public class Game {
     void kill_player () {
         state = State.DEAD;
         play_sound (Sound.DIE);
-        arena[player_xpos, player_ypos] = ObjectType.PLAYER;
+        arena[player.x, player.y] = ObjectType.PLAYER;
         endlev_counter = 0;
-        add_aieee_bubble (player_xpos, player_ypos);
         set_move_action_sensitivity (false);
+        game_area.queue_draw ();
     }
 
     /**
@@ -227,9 +227,11 @@ public class Game {
     void generate_level () {
         clear_arena ();
 
-        player_xpos = arena.width / 2;
-        player_ypos = arena.height / 2;
-        arena.@set(player_xpos, player_ypos, ObjectType.PLAYER);
+        player = Arena.Coords () {
+            x = arena.width / 2,
+            y = arena.height / 2
+        };
+        arena.@set(player.x, player.y, ObjectType.PLAYER);
 
         num_robots1 = config.initial_type1 + config.increment_type1 * current_level;
 
@@ -307,13 +309,13 @@ public class Game {
                     push_xpos == i && push_ypos == j
                 ) {
                     if (arena[i, j] == ObjectType.ROBOT1) {
-                        add_splat_bubble (i, j);
+                        splat = Arena.Coords () { x = i, y = j };
                         play_sound (Sound.SPLAT);
                         push_xpos = push_ypos = -1;
                         score += config.score_type1_splatted;
                     }
                     if (arena[i, j] == ObjectType.ROBOT2) {
-                        add_splat_bubble (i, j);
+                        splat = Arena.Coords () { x = i, y = j };
                         play_sound (Sound.SPLAT);
                         push_xpos = push_ypos = -1;
                         score += config.score_type2_splatted;
@@ -329,7 +331,7 @@ public class Game {
             }
         }
 
-        if (arena[player_xpos, player_ypos] != ObjectType.PLAYER) {
+        if (arena[player.x, player.y] != ObjectType.PLAYER) {
             kill_player ();
         } else {
             /* This is in the else statement to catch the case where the last
@@ -339,7 +341,6 @@ public class Game {
                 state = State.COMPLETE;
                 play_sound (Sound.YAHOO);
                 endlev_counter = 0;
-                add_yahoo_bubble (player_xpos, player_ypos);
                 set_move_action_sensitivity (false);
             }
         }
@@ -369,18 +370,20 @@ public class Game {
                 state = State.WAITING;
             }
         } else if (state == State.WAITING) {
-            remove_splat_bubble ();
+            splat = null;
+            game_area.queue_draw ();
             move_robots ();
         } else if (state == State.COMPLETE) {
             ++endlev_counter;
             if (endlev_counter >= CHANGE_DELAY) {
                 ++current_level;
-                remove_bubble ();
                 clear_game_area ();
                 generate_level ();
                 state = State.PLAYING;
                 set_move_action_sensitivity (true);
                 update_game_status (score, current_level + 1, safe_teleports);
+                splat = null;
+                game_area.queue_draw ();
             }
         } else if (state == State.DEAD) {
             ++endlev_counter;
@@ -446,7 +449,8 @@ public class Game {
 
         safe_teleports = config.initial_safe_teleports;
 
-        remove_bubble ();
+        splat = null;
+        game_area.queue_draw ();
         generate_level ();
         clear_game_area ();
 
@@ -478,13 +482,13 @@ public class Game {
           if ((arena.@get (i, j) == ObjectType.ROBOT1) || (arena.@get (i, j) == ObjectType.ROBOT2)) {
             nx = i;
             ny = j;
-            if (player_xpos < nx)
+            if (player.x < nx)
               nx -= 1;
-            if (player_xpos > nx)
+            if (player.x > nx)
               nx += 1;
-            if (player_ypos < ny)
+            if (player.y < ny)
               ny -= 1;
-            if (player_ypos > ny)
+            if (player.y > ny)
               ny += 1;
 
             if (temp_arena.@get (nx, ny) == ObjectType.HEAP) {
@@ -526,13 +530,13 @@ public class Game {
           if (arena.@get (i, j) == ObjectType.ROBOT2) {
                 nx = i;
                 ny = j;
-                if (player_xpos < nx)
+                if (player.x < nx)
                   nx -= 1;
-                if (player_xpos > nx)
+                if (player.x > nx)
                   nx += 1;
-                if (player_ypos < ny)
+                if (player.y < ny)
                   ny -= 1;
-                if (player_ypos > ny)
+                if (player.y > ny)
                     ny += 1;
 
             if (temp_arena.@get (nx, ny) == ObjectType.HEAP) {
@@ -719,8 +723,8 @@ public class Game {
      * TRUE if the player can move, FALSE otherwise
      **/
     bool try_player_move (int dx, int dy) {
-        int nx = player_xpos + dx;
-        int ny = player_ypos + dy;
+        int nx = player.x + dx;
+        int ny = player.y + dy;
 
         if ((nx < 0) || (nx >= arena.width) || (ny < 0) || (ny >= arena.height)) {
             return false;
@@ -753,47 +757,47 @@ public class Game {
      **/
     bool safe_move_available () {
         if (try_player_move (-1, -1)) {
-            if (check_safe (player_xpos - 1, player_ypos - 1)) {
+            if (check_safe (player.x - 1, player.y - 1)) {
                 return true;
             }
         }
         if (try_player_move (0, -1)) {
-            if (check_safe (player_xpos, player_ypos - 1)) {
+            if (check_safe (player.x, player.y - 1)) {
                 return true;
             }
         }
         if (try_player_move (1, -1)) {
-            if (check_safe (player_xpos + 1, player_ypos - 1)) {
+            if (check_safe (player.x + 1, player.y - 1)) {
                 return true;
             }
         }
         if (try_player_move (-1, 0)) {
-            if (check_safe (player_xpos - 1, player_ypos)) {
+            if (check_safe (player.x - 1, player.y)) {
                 return true;
             }
         }
         if (try_player_move (0, 0)) {
-            if (check_safe (player_xpos, player_ypos)) {
+            if (check_safe (player.x, player.y)) {
                 return true;
             }
         }
         if (try_player_move (1, 0)) {
-            if (check_safe (player_xpos + 1, player_ypos)) {
+            if (check_safe (player.x + 1, player.y)) {
                 return true;
             }
         }
         if (try_player_move (-1, 1)) {
-            if (check_safe (player_xpos - 1, player_ypos + 1)) {
+            if (check_safe (player.x - 1, player.y + 1)) {
                 return true;
             }
         }
         if (try_player_move (0, 1)) {
-            if (check_safe (player_xpos, player_ypos + 1)) {
+            if (check_safe (player.x, player.y + 1)) {
                 return true;
             }
         }
         if (try_player_move (1, 1)) {
-            if (check_safe (player_xpos + 1, player_ypos + 1)) {
+            if (check_safe (player.x + 1, player.y + 1)) {
                 return true;
             }
         }
@@ -836,8 +840,8 @@ public class Game {
      **/
     public bool player_move (int dx, int dy) {
 
-        int nx = player_xpos + dx;
-        int ny = player_ypos + dy;
+        int nx = player.x + dx;
+        int ny = player.y + dy;
 
         if (properties_safe_moves ()) {
             if (!try_player_move (dx, dy)) {
@@ -858,14 +862,17 @@ public class Game {
             }
         }
 
-        player_xpos = nx;
-        player_ypos = ny;
+        player = Arena.Coords () {
+            x = nx,
+            y = ny
+        };
 
-        if (temp_arena.@get (player_xpos, player_ypos) == ObjectType.NONE) {
-            temp_arena.@set (player_xpos, player_ypos, ObjectType.PLAYER);
+        if (temp_arena.@get (player.x, player.y) == ObjectType.NONE) {
+            temp_arena.@set (player.x, player.y, ObjectType.PLAYER);
         }
 
-        remove_splat_bubble ();
+        splat = null;
+        game_area.queue_draw ();
 
         update_arena ();
 
@@ -894,12 +901,15 @@ public class Game {
         int xp;
         int yp;
         if (random_position ((x, y) => temp_arena.@get(x, y) == ObjectType.NONE, out xp, out yp)) {
-            player_xpos = xp;
-            player_ypos = yp;
-            temp_arena.@set (player_xpos, player_ypos, ObjectType.PLAYER);
+            player = Arena.Coords () {
+                x = xp,
+                y = yp
+            };
+            temp_arena.@set (player.x, player.y, ObjectType.PLAYER);
 
             update_arena ();
-            remove_splat_bubble ();
+            splat = null;
+            game_area.queue_draw ();
             play_sound (Sound.TELEPORT);
 
             return true;
@@ -941,15 +951,18 @@ public class Game {
         int xp;
         int yp;
         if (random_position ((x, y) => temp_arena.@get(x, y) == ObjectType.NONE && check_safe (x, y), out xp, out yp)) {
-            player_xpos = xp;
-            player_ypos = yp;
-            temp_arena.@set (player_xpos, player_ypos, ObjectType.PLAYER);
+            player = Arena.Coords () {
+                x = xp,
+                y = yp
+            };
+            temp_arena.@set (player.x, player.y, ObjectType.PLAYER);
 
             safe_teleports -= 1;
             update_game_status (score, current_level, safe_teleports);
 
             update_arena ();
-            remove_splat_bubble ();
+            splat = null;
+            game_area.queue_draw ();
             play_sound (Sound.TELEPORT);
 
             return true;
@@ -1066,15 +1079,15 @@ public class Game {
         int y = (iy / tile_height).clamp (0, arena.height);
 
         /* If we click on our man then we assume we hold. */
-        if ((x == player_xpos) && (y == player_ypos)) {
+        if ((x == player.x) && (y == player.y)) {
             odx = 0;
             ody = 0;
             return;
         }
 
         /* If the square clicked on is a valid move, go there. */
-        int idx = x - player_xpos;
-        int idy = y - player_ypos;
+        int idx = x - player.x;
+        int idy = y - player.y;
         if (idx.abs () < 2 && idy.abs () < 2) {
             odx = idx;
             ody = idy;
@@ -1082,8 +1095,8 @@ public class Game {
         }
 
         /* Otherwise go in the general direction of the mouse click. */
-        double dx = ix - (player_xpos + 0.5) * tile_width;
-        double dy = iy - (player_ypos + 0.5) * tile_height;
+        double dx = ix - (player.x + 0.5) * tile_width;
+        double dy = iy - (player.y + 0.5) * tile_height;
 
         double angle = Math.atan2 (dy, dx);
 

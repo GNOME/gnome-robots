@@ -29,6 +29,11 @@ public delegate ObjectType ArenaMapper (ObjectType obj);
 
 public class Arena {
 
+    public struct Coords {
+        public int x;
+        public int y;
+    }
+
     private int _width;
     private int _height;
     private ObjectType[] arena;

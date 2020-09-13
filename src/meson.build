@@ -25,6 +25,7 @@ sources = files(
     'arena.vala',
     'game.vala',
     'game-area.vala',
+    'bubble.vala',
     'robots.vala',
 )
 

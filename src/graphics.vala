@@ -42,23 +42,18 @@ public const int BUBBLE_YOFFSET = 4;
 public int tile_width = 0;
 public int tile_height = 0;
 
-Pixbuf aieee_pixbuf = null;
-Pixbuf yahoo_pixbuf = null;
-Pixbuf splat_pixbuf = null;
+Bubble aieee_bubble = null;
+Bubble yahoo_bubble = null;
+Bubble splat_bubble = null;
 
 int bubble_xpos = 0;
 int bubble_ypos = 0;
-int bubble_xo = 0;
-int bubble_yo = 0;
 BubbleType bubble_type = BubbleType.NONE;
 
 public void load_game_graphics () throws Error {
-    yahoo_pixbuf = new Pixbuf.from_file (
-        GLib.Path.build_filename (DATA_DIRECTORY, "pixmaps", "yahoo.png"));
-    aieee_pixbuf = new Pixbuf.from_file (
-        GLib.Path.build_filename (DATA_DIRECTORY, "pixmaps", "aieee.png"));
-    splat_pixbuf = new Pixbuf.from_file (
-        GLib.Path.build_filename (DATA_DIRECTORY, "pixmaps", "splat.png"));
+    yahoo_bubble = new Bubble.from_data_file ("yahoo.png");
+    aieee_bubble = new Bubble.from_data_file ("aieee.png");
+    splat_bubble = new Bubble.from_data_file ("splat.png");
 }
 
 public RGBA calculate_light_color (RGBA color) {
@@ -104,45 +99,16 @@ public void draw_bubble (Context cr) {
     if (bubble_type == BubbleType.NONE)
         return;
 
-    Pixbuf pmap;
+    Bubble bubble;
     if (bubble_type == BubbleType.YAHOO) {
-        pmap = yahoo_pixbuf;
+        bubble = yahoo_bubble;
     } else if (bubble_type == BubbleType.AIEEE) {
-        pmap = aieee_pixbuf;
+        bubble = aieee_bubble;
     } else {
-        pmap = splat_pixbuf;
+        bubble = splat_bubble;
     }
 
-    cairo_set_source_pixbuf (cr, pmap, bubble_xpos - bubble_xo, bubble_ypos - bubble_yo);
-    cr.rectangle (bubble_xpos, bubble_ypos, BUBBLE_WIDTH, BUBBLE_HEIGHT);
-    cr.fill ();
-}
-
-/**
- * add_bubble
- * @x: x position
- * @y: y position
- *
- * Description:
- * adds a bubble at @x,@y
- **/
-void add_bubble (BubbleType type, int x, int y) {
-    bubble_type = type;
-    bubble_xpos = x * tile_width - BUBBLE_WIDTH + BUBBLE_XOFFSET;
-    bubble_ypos = y * tile_height - BUBBLE_HEIGHT + BUBBLE_YOFFSET;
-
-    bubble_xo = 0;
-    bubble_yo = 0;
-
-    if (bubble_ypos < 0) {
-        bubble_yo = BUBBLE_HEIGHT;
-        bubble_ypos += BUBBLE_HEIGHT;
-    }
-    if (bubble_xpos < 0) {
-        bubble_xo = BUBBLE_WIDTH;
-        bubble_xpos += BUBBLE_WIDTH;
-    }
-    game_area.queue_draw ();
+    bubble.draw (cr, bubble_xpos, bubble_ypos);
 }
 
 /**
@@ -180,7 +146,11 @@ public void remove_splat_bubble () {
  * adds and "Yahoo" bubble at @x,@y
  **/
 public void add_yahoo_bubble (int x, int y) {
-    add_bubble (BubbleType.YAHOO, x, y);
+    bubble_type = BubbleType.YAHOO;
+    bubble_xpos = x * tile_width + BUBBLE_XOFFSET;
+    bubble_ypos = y * tile_height + BUBBLE_YOFFSET;
+
+    game_area.queue_draw ();
 }
 
 
@@ -193,7 +163,11 @@ public void add_yahoo_bubble (int x, int y) {
  * adds and "Aieee" bubble at @x,@y
  **/
 public void add_aieee_bubble (int x, int y) {
-    add_bubble (BubbleType.AIEEE, x, y);
+    bubble_type = BubbleType.AIEEE;
+    bubble_xpos = x * tile_width + BUBBLE_XOFFSET;
+    bubble_ypos = y * tile_height + BUBBLE_YOFFSET;
+
+    game_area.queue_draw ();
 }
 
 /**
@@ -205,7 +179,10 @@ public void add_aieee_bubble (int x, int y) {
  * adds a "Splat" speech bubble at @x,@y
  **/
 public void add_splat_bubble (int x, int y) {
-    add_bubble (BubbleType.SPLAT, x, y);
-    bubble_ypos += BUBBLE_YOFFSET;
+    bubble_type = BubbleType.SPLAT;
+    bubble_xpos = x * tile_width + BUBBLE_XOFFSET;
+    bubble_ypos = y * tile_height + 2 * BUBBLE_YOFFSET;
+
+    game_area.queue_draw ();
 }
 

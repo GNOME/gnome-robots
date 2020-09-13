@@ -77,7 +77,6 @@ void pmap_selection (ComboBox combo) {
 
         try {
             game_area.theme = new Theme.from_file (theme_path);
-            load_game_graphics ();
         } catch (Error e) {
             // TODO
         }

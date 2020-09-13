@@ -30,16 +30,6 @@ public const int GAME_HEIGHT = 30;
 public int tile_width = 0;
 public int tile_height = 0;
 
-Bubble aieee_bubble = null;
-Bubble yahoo_bubble = null;
-Bubble splat_bubble = null;
-
-public void load_game_graphics () throws Error {
-    yahoo_bubble = new Bubble.from_data_file ("yahoo.png");
-    aieee_bubble = new Bubble.from_data_file ("aieee.png");
-    splat_bubble = new Bubble.from_data_file ("splat.png");
-}
-
 public RGBA calculate_light_color (RGBA color) {
     /* While the two colours are labelled "light" and "dark" which one is
      * which actually depends on how light or dark the base colour is. */

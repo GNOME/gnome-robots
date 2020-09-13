@@ -32,6 +32,9 @@ public class GameArea : DrawingArea {
     private Theme _theme;
     private RGBA light_background;
     private RGBA dark_background;
+    private Bubble aieee_bubble;
+    private Bubble yahoo_bubble;
+    private Bubble splat_bubble;
 
     private Animated player_animation;
     private Animated player_dead_animation;
@@ -69,10 +72,18 @@ public class GameArea : DrawingArea {
         }
     }
 
-    public GameArea (Game game, Theme theme) {
+    public GameArea (Game game,
+                     Theme theme,
+                     Bubble aieee_bubble,
+                     Bubble yahoo_bubble,
+                     Bubble splat_bubble
+    ) {
         this.game = game;
         this.theme = theme;
         this.background_color_name = "#7590AE";
+        this.aieee_bubble = aieee_bubble;
+        this.yahoo_bubble = yahoo_bubble;
+        this.splat_bubble = splat_bubble;
 
         add_events (Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
         configure_event.connect (event => resize_cb (event));

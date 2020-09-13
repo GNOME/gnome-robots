@@ -303,15 +303,25 @@ void activate (Gtk.Application app) {
     window.add_action_entries (win_entries, app);
 
     Theme theme = null;
+    Bubble aieee_bubble = null;
+    Bubble yahoo_bubble = null;
+    Bubble splat_bubble = null;
     try {
         theme = get_theme_from_properties ();
+        yahoo_bubble = new Bubble.from_data_file ("yahoo.png");
+        aieee_bubble = new Bubble.from_data_file ("aieee.png");
+        splat_bubble = new Bubble.from_data_file ("splat.png");
     } catch (Error e) {
-        // error ("%s", e.message);
+        critical ("%s", e.message);
         // TODO message box
         app.quit ();
     }
 
-    game_area = new GameArea (game, theme);
+    game_area = new GameArea (game,
+                              theme,
+                              aieee_bubble,
+                              yahoo_bubble,
+                              splat_bubble);
     game_area.destroy.connect (() => game_area = null);
 
     var gridframe = new Games.GridFrame (GAME_WIDTH, GAME_HEIGHT);
@@ -391,18 +401,9 @@ void activate (Gtk.Application app) {
         app.quit ();
     }
 
-    try {
-        game_area.background_color = properties.bgcolour;
+    game_area.background_color = properties.bgcolour;
 
-        load_game_graphics ();
-
-        keyboard_set (properties.keys);
-    } catch (Error e) {
-        // error ("%s", e.message);
-        // TODO message box
-        app.quit ();
-    }
-
+    keyboard_set (properties.keys);
     init_keyboard ();
 
     game.config = game_configs.find_by_name (properties.selected_config);

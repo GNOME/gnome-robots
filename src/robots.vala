@@ -324,7 +324,7 @@ void activate (Gtk.Application app) {
                               splat_bubble);
     game_area.destroy.connect (() => game_area = null);
 
-    var gridframe = new Games.GridFrame (GAME_WIDTH, GAME_HEIGHT);
+    var gridframe = new Games.GridFrame (game.width, game.height);
     gridframe.add (game_area);
 
     var hbox = new Box (Orientation.HORIZONTAL, 0);

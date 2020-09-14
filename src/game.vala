@@ -28,6 +28,12 @@ public Game game = null;
 
 public class Game {
 
+    /*
+     * Size of the game playing area
+     */
+    public const int GAME_WIDTH = 45;
+    public const int GAME_HEIGHT = 30;
+
     public enum State {
         PLAYING = 1,
         WAITING,
@@ -57,6 +63,12 @@ public class Game {
     public State state = State.PLAYING;
     public Arena arena;
     public GameConfig config { get; set; }
+    public int width {
+        get { return arena.width; }
+    }
+    public int height {
+        get { return arena.height; }
+    }
     public Arena.Coords player { get; private set; }
     public Arena.Coords? splat { get; private set; }
 
@@ -1068,44 +1080,6 @@ public class Game {
             state = State.WAITING;
             break;
         }
-    }
-
-    public void get_dir (int ix, int iy, out int odx, out int ody) {
-        const int[,] MOVE_TABLE = {
-            {-1, 0}, {-1, -1}, {0, -1}, {1, -1},
-            {1, 0}, {1, 1}, {0, 1}, {-1, 1}
-        };
-        int x = (ix / tile_width).clamp (0, arena.width);
-        int y = (iy / tile_height).clamp (0, arena.height);
-
-        /* If we click on our man then we assume we hold. */
-        if ((x == player.x) && (y == player.y)) {
-            odx = 0;
-            ody = 0;
-            return;
-        }
-
-        /* If the square clicked on is a valid move, go there. */
-        int idx = x - player.x;
-        int idy = y - player.y;
-        if (idx.abs () < 2 && idy.abs () < 2) {
-            odx = idx;
-            ody = idy;
-            return;
-        }
-
-        /* Otherwise go in the general direction of the mouse click. */
-        double dx = ix - (player.x + 0.5) * tile_width;
-        double dy = iy - (player.y + 0.5) * tile_height;
-
-        double angle = Math.atan2 (dy, dx);
-
-        /* Note the adjustment we have to make (+9, not +8) because atan2's idea
-         * of octants and the ones we want are shifted by PI/8. */
-        int octant = (((int) Math.floor (8.0 * angle / Math.PI) + 9) / 2) % 8;
-
-        odx = MOVE_TABLE[octant, 0];
-        ody = MOVE_TABLE[octant, 1];
     }
 }
 

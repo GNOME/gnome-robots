@@ -21,15 +21,6 @@ using Gtk;
 using Gdk;
 using Cairo;
 
-/*
- * Size of the game playing area
- */
-public const int GAME_WIDTH = 45;
-public const int GAME_HEIGHT = 30;
-
-public int tile_width = 0;
-public int tile_height = 0;
-
 public RGBA calculate_light_color (RGBA color) {
     /* While the two colours are labelled "light" and "dark" which one is
      * which actually depends on how light or dark the base colour is. */

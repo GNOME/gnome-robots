@@ -26,6 +26,9 @@ public class GameArea : DrawingArea {
     const int MINIMUM_TILE_WIDTH = 8;
     const int MINIMUM_TILE_HEIGHT = 8;
 
+    private int tile_width = 0;
+    private int tile_height = 0;
+
     private GestureMultiPress click_controller;
     private EventControllerMotion motion_controller;
     private Game game;
@@ -220,7 +223,7 @@ public class GameArea : DrawingArea {
         }
 
         int dx, dy;
-        game.get_dir ((int)x, (int)y, out dx, out dy);
+        get_dir (x, y, out dx, out dy);
 
         if (game.player_move (dx, dy)) {
             game.move_robots ();
@@ -233,9 +236,47 @@ public class GameArea : DrawingArea {
             set_cursor_default (window);
         } else {
             int dx, dy;
-            game.get_dir ((int)x, (int)y, out dx, out dy);
+            get_dir (x, y, out dx, out dy);
             set_cursor_by_direction (window, dx, dy);
         }
+    }
+
+    private void get_dir (double ix, double iy, out int odx, out int ody) {
+        const int[,] MOVE_TABLE = {
+            {-1, 0}, {-1, -1}, {0, -1}, {1, -1},
+            {1, 0}, {1, 1}, {0, 1}, {-1, 1}
+        };
+        int x = ((int) (ix / tile_width)).clamp (0, game.arena.width);
+        int y = ((int) (iy / tile_height)).clamp (0, game.arena.height);
+
+        /* If we click on our man then we assume we hold. */
+        if ((x == game.player.x) && (y == game.player.y)) {
+            odx = 0;
+            ody = 0;
+            return;
+        }
+
+        /* If the square clicked on is a valid move, go there. */
+        int idx = x - game.player.x;
+        int idy = y - game.player.y;
+        if (idx.abs () < 2 && idy.abs () < 2) {
+            odx = idx;
+            ody = idy;
+            return;
+        }
+
+        /* Otherwise go in the general direction of the mouse click. */
+        double dx = ix - (game.player.x + 0.5) * tile_width;
+        double dy = iy - (game.player.y + 0.5) * tile_height;
+
+        double angle = Math.atan2 (dy, dx);
+
+        /* Note the adjustment we have to make (+9, not +8) because atan2's idea
+         * of octants and the ones we want are shifted by PI/8. */
+        int octant = (((int) Math.floor (8.0 * angle / Math.PI) + 9) / 2) % 8;
+
+        odx = MOVE_TABLE[octant, 0];
+        ody = MOVE_TABLE[octant, 1];
     }
 }
 

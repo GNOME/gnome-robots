@@ -184,7 +184,7 @@ games_controls_list_constructor (GType type,
   layout = gtk_bin_layout_new ();
   gtk_widget_set_layout_manager (GTK_WIDGET (list), layout);
 
-  scrolled_window = gtk_scrolled_window_new (/* create hadjustment */ NULL, /* create vadjustment */ NULL);
+  scrolled_window = gtk_scrolled_window_new ();
   gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_window), /* hscrollbar-policy */ GTK_POLICY_NEVER,
                                                                          /* vscrollbar-policy */ GTK_POLICY_AUTOMATIC);
   gtk_scrolled_window_set_has_frame (GTK_SCROLLED_WINDOW (scrolled_window), TRUE);

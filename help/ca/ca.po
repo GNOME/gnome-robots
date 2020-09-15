@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gnome-robots-help\n"
 "POT-Creation-Date: 2020-05-28 23:22+0000\n"
 "PO-Revision-Date: 2019-01-02 09:51+0000\n"
 "Last-Translator: Jaume Jorba <jaume.jorba@gmail.com>, 2019\n"
@@ -222,7 +222,7 @@ msgstr "Per mantenir la configuració antiga premeu <key>Esc</key>."
 #: C/controls-change.page:51
 msgid "Repeat the above steps to change any other default keys."
 msgstr ""
-"Repeteiu els passos de dalt per a canviar les altres tecles predefinides."
+"Repetiu els passos de dalt per a canviar les altres tecles predefinides."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:54
@@ -582,7 +582,7 @@ msgstr ""
 #. (itstool) path: td/p
 #: C/game-types.page:76
 msgid "<gui>robots with safe teleport</gui>"
-msgstr "<gui>robots amb tele-transport segur</gui>"
+msgstr "<gui>Robots amb teleportació segura</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:77 C/game-types.page:79 C/game-types.page:85

@@ -259,7 +259,7 @@ msgid ""
 "But Can You do it Again?"
 msgstr ""
 "Felicitats, heu derrotat els Robots!! \n"
-"Però podreu repetir-ho??"
+"Però podreu repetir-ho?"
 
 #. This should never happen.
 #: src/game.c:1125

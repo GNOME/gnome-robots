@@ -225,7 +225,7 @@ safe_cb (GtkWidget * widget, gpointer data)
 {
   GtkWidget *super_safe_chkbox;
   super_safe_chkbox = GTK_WIDGET (data);
-  properties.safe_moves = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+  properties.safe_moves = gtk_check_button_get_active (GTK_CHECK_BUTTON (widget));
   conf_set_use_safe_moves (properties.safe_moves);
   gtk_widget_set_sensitive (super_safe_chkbox, properties.safe_moves);
 }
@@ -242,7 +242,7 @@ safe_cb (GtkWidget * widget, gpointer data)
 static void
 super_safe_cb (GtkWidget * widget, gpointer data)
 {
-  properties.super_safe_moves = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+  properties.super_safe_moves = gtk_check_button_get_active (GTK_CHECK_BUTTON (widget));
   conf_set_use_super_safe_moves (properties.super_safe_moves);
 }
 
@@ -258,7 +258,7 @@ super_safe_cb (GtkWidget * widget, gpointer data)
 static void
 sound_cb (GtkWidget * widget, gpointer data)
 {
-  properties.sound = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+  properties.sound = gtk_check_button_get_active (GTK_CHECK_BUTTON (widget));
   conf_set_enable_sound (properties.sound);
 }
 
@@ -423,29 +423,30 @@ show_properties_dialog (void)
                     G_CALLBACK (type_selection), NULL);
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Use safe moves"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),
-                                properties.safe_moves);
+  gtk_check_button_set_active (GTK_CHECK_BUTTON (chkbox),
+                               properties.safe_moves);
   gtk_grid_attach (GTK_GRID (grid), chkbox, 0, 1, 2, 1);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Prevent accidental moves that result in getting killed."));
   safe_chkbox = chkbox;
 
   chkbox = gtk_check_button_new_with_mnemonic (_("U_se super safe moves"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox),
-                                properties.super_safe_moves);
-  g_signal_connect (G_OBJECT (chkbox), "clicked",
+  gtk_check_button_set_active (GTK_CHECK_BUTTON (chkbox),
+                               properties.super_safe_moves);
+  g_signal_connect (G_OBJECT (chkbox), "toggled",
                     (GCallback) super_safe_cb, NULL);
   gtk_grid_attach (GTK_GRID (grid), chkbox, 0, 2, 2, 1);
   gtk_widget_set_tooltip_text (chkbox,
                                _("Prevents all moves that result in getting killed."));
   gtk_widget_set_sensitive (chkbox, properties.safe_moves);
 
-  g_signal_connect (G_OBJECT (safe_chkbox), "clicked",
+  g_signal_connect (G_OBJECT (safe_chkbox), "toggled",
                     (GCallback) safe_cb, (gpointer) chkbox);
 
   chkbox = gtk_check_button_new_with_mnemonic (_("_Enable sounds"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (chkbox), properties.sound);
-  g_signal_connect (G_OBJECT (chkbox), "clicked",
+  gtk_check_button_set_active (GTK_CHECK_BUTTON (chkbox),
+                               properties.sound);
+  g_signal_connect (G_OBJECT (chkbox), "toggled",
                     (GCallback) sound_cb, NULL);
   gtk_grid_attach (GTK_GRID (grid), chkbox, 0, 3, 2, 1);
   gtk_widget_set_tooltip_text (chkbox,

@@ -17,9 +17,21 @@
  * For more details see the file COPYING.
  */
 
-using Gtk;
 using Gdk;
 using Cairo;
+
+public RGBA string_to_rgba (string color) {
+    RGBA rgba = RGBA ();
+    rgba.parse (color);
+    return rgba;
+}
+
+public string rgba_to_string (RGBA color) {
+    return "#%04x%04x%04x".printf (
+        (int) (color.red * 65535 + 0.5),
+        (int) (color.green * 65535 + 0.5),
+        (int) (color.blue * 65535 + 0.5));
+}
 
 public RGBA calculate_light_color (RGBA color) {
     /* While the two colours are labelled "light" and "dark" which one is
@@ -45,15 +57,5 @@ public RGBA calculate_light_color (RGBA color) {
     }
     light.alpha = 1.0;
     return light;
-}
-
-/**
- * clears the whole of the game area
- **/
-public void clear_game_area () {
-    if (game_area == null)
-        return;
-
-    game_area.queue_draw ();
 }
 

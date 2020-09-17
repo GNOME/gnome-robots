@@ -371,7 +371,7 @@ public class Game {
     bool timeout_cb () {
         game_area.tick ();
 
-        clear_game_area ();
+        game_area.queue_draw ();
 
         if ((state == State.TYPE2) || (state == State.WTYPE2)) {
             move_type2_robots ();
@@ -389,7 +389,6 @@ public class Game {
             ++endlev_counter;
             if (endlev_counter >= CHANGE_DELAY) {
                 ++current_level;
-                clear_game_area ();
                 generate_level ();
                 state = State.PLAYING;
                 set_move_action_sensitivity (true);
@@ -462,9 +461,8 @@ public class Game {
         safe_teleports = config.initial_safe_teleports;
 
         splat = null;
-        game_area.queue_draw ();
         generate_level ();
-        clear_game_area ();
+        game_area.queue_draw ();
 
         state = State.PLAYING;
 

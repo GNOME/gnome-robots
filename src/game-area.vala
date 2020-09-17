@@ -141,7 +141,7 @@ public class GameArea : DrawingArea {
     private bool draw_cb (Context cr) {
         for (int j = 0; j < game.arena.height; j++) {
             for (int i = 0; i < game.arena.width; i++) {
-                draw_object (i, j, game.check_location (i, j), cr);
+                draw_object (i, j, game.arena[i, j], cr);
             }
         }
 

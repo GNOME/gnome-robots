@@ -211,21 +211,6 @@ public class Game {
         });
     }
 
-    /**
-     * check_location
-     * @x: x position
-     * @y: y position
-     *
-     * Description:
-     * checks for an object at a given location
-     *
-     * Returns:
-     * type of object if present or ObjectType.NONE
-     **/
-    public ObjectType check_location (int x, int y) {
-        return arena.@get (x, y);
-    }
-
     private int max_robots () {
         return arena.width * arena.height / 2;
     }
@@ -280,29 +265,16 @@ public class Game {
         update_game_status (score, current_level, safe_teleports);
 
         for (int i = 0; i < num_robots1; ++i) {
-            while (true) {
-                int xp = rand.int_range (0, arena.width);
-                int yp = rand.int_range (0, arena.height);
-
-                if (check_location (xp, yp) == ObjectType.NONE) {
-                    arena[xp, yp] = ObjectType.ROBOT1;
-                    break;
-                }
-            }
+            var p = random_position ((x, y) => arena[x, y] == ObjectType.NONE);
+            assert (p != null);
+            arena[p.x, p.y] = ObjectType.ROBOT1;
         }
 
         for (int i = 0; i < num_robots2; ++i) {
-            while (true) {
-                int xp = rand.int_range (0, arena.width);
-                int yp = rand.int_range (0, arena.height);
-
-                if (check_location (xp, yp) == ObjectType.NONE) {
-                    arena[xp, yp] = ObjectType.ROBOT2;
-                    break;
-                }
-            }
+            var p = random_position ((x, y) => arena[x, y] == ObjectType.NONE);
+            assert (p != null);
+            arena[p.x, p.y] = ObjectType.ROBOT2;
         }
-
     }
 
     /**
@@ -908,14 +880,10 @@ public class Game {
             }
         });
 
-        int xp;
-        int yp;
-        if (random_position ((x, y) => temp_arena.@get(x, y) == ObjectType.NONE, out xp, out yp)) {
-            player = Arena.Coords () {
-                x = xp,
-                y = yp
-            };
-            temp_arena.@set (player.x, player.y, ObjectType.PLAYER);
+        var p = random_position ((x, y) => temp_arena[x, y] == ObjectType.NONE);
+        if (p != null) {
+            temp_arena[p.x, p.y] = ObjectType.PLAYER;
+            player = p;
 
             update_arena ();
             splat = null;
@@ -958,14 +926,10 @@ public class Game {
             }
         });
 
-        int xp;
-        int yp;
-        if (random_position ((x, y) => temp_arena.@get(x, y) == ObjectType.NONE && check_safe (x, y), out xp, out yp)) {
-            player = Arena.Coords () {
-                x = xp,
-                y = yp
-            };
-            temp_arena.@set (player.x, player.y, ObjectType.PLAYER);
+        var p = random_position ((x, y) => temp_arena[x, y] == ObjectType.NONE && check_safe (x, y));
+        if (p != null) {
+            temp_arena[p.x, p.y] = ObjectType.PLAYER;
+            player = p;
 
             safe_teleports -= 1;
             update_game_status (score, current_level, safe_teleports);
@@ -985,15 +949,18 @@ public class Game {
 
     delegate bool PositionPredicate(int x, int y);
 
-    private bool random_position (PositionPredicate predicate, out int xp, out int yp) {
+    private Arena.Coords? random_position (PositionPredicate predicate) {
         int ixp = rand.int_range (0, arena.width);
         int iyp = rand.int_range (0, arena.height);
 
-        xp = ixp;
-        yp = iyp;
+        int xp = ixp;
+        int yp = iyp;
         while (true) {
             if (predicate(xp, yp)) {
-                return true;
+                return Arena.Coords() {
+                    x = xp,
+                    y = yp
+                };
             }
 
             ++xp;
@@ -1006,7 +973,7 @@ public class Game {
             }
 
             if (xp == ixp && yp == iyp) {
-                return false;
+                return null;
             }
         }
     }

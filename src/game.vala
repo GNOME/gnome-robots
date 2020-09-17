@@ -449,44 +449,12 @@ public class Game {
      * Moves all of the robots and checks for collisions
      **/
     void move_all_robots () {
-        temp_arena = arena.map ((obj) => {
-            if (obj == ObjectType.PLAYER || obj == ObjectType.HEAP) {
-                return obj;
-            } else {
-                return ObjectType.NONE;
-            }
-        });
-
-        int i, j;
-        int nx, ny;
-      for (i = 0; i < GAME_WIDTH; ++i) {
-        for (j = 0; j < GAME_HEIGHT; ++j) {
-          if ((arena.@get (i, j) == ObjectType.ROBOT1) || (arena.@get (i, j) == ObjectType.ROBOT2)) {
-            nx = i;
-            ny = j;
-            if (player.x < nx)
-              nx -= 1;
-            if (player.x > nx)
-              nx += 1;
-            if (player.y < ny)
-              ny -= 1;
-            if (player.y > ny)
-              ny += 1;
-
-            if (temp_arena.@get (nx, ny) == ObjectType.HEAP) {
-              add_kill (arena.@get (i, j));
-            } else if ((temp_arena.@get (nx, ny) == ObjectType.ROBOT1) ||
-                       (temp_arena.@get (nx, ny) == ObjectType.ROBOT2)) {
-              add_kill (arena.@get (i, j));
-              add_kill (temp_arena.@get (nx, ny));
-              temp_arena.@set (nx, ny, ObjectType.HEAP);
-            } else {
-              temp_arena.@set (nx, ny, arena.@get (i, j));
-            }
-          }
-        }
-      }
-
+        temp_arena = chase (arena,
+                            obj => obj == ObjectType.ROBOT1
+                                || obj == ObjectType.ROBOT2,
+                            player.x,
+                            player.y,
+                            victim => add_kill (victim));
     }
 
     /**
@@ -496,44 +464,11 @@ public class Game {
      * Makes the extra move for all of the type2 robots
      **/
     void move_type2_robots () {
-        int i, j;
-        int nx, ny;
-
-        temp_arena = arena.map ((obj) => {
-            if (obj == ObjectType.PLAYER || obj == ObjectType.ROBOT1 || obj == ObjectType.HEAP) {
-                return obj;
-            } else {
-                return ObjectType.NONE;
-            }
-        });
-
-      for (i = 0; i < arena.width; ++i) {
-        for (j = 0; j < arena.height; ++j) {
-          if (arena.@get (i, j) == ObjectType.ROBOT2) {
-                nx = i;
-                ny = j;
-                if (player.x < nx)
-                  nx -= 1;
-                if (player.x > nx)
-                  nx += 1;
-                if (player.y < ny)
-                  ny -= 1;
-                if (player.y > ny)
-                    ny += 1;
-
-            if (temp_arena.@get (nx, ny) == ObjectType.HEAP) {
-              add_kill (arena.@get (i, j));
-            } else if ((temp_arena.@get (nx, ny) == ObjectType.ROBOT1) ||
-                       (temp_arena.@get (nx, ny) == ObjectType.ROBOT2)) {
-              add_kill (arena.@get (i, j));
-              add_kill (temp_arena.@get (nx, ny));
-              temp_arena.@set (nx, ny, ObjectType.HEAP);
-            } else {
-              temp_arena.@set (nx, ny, arena.@get (i, j));
-            }
-          }
-        }
-      }
+        temp_arena = chase (arena,
+                            obj => obj == ObjectType.ROBOT2,
+                            player.x,
+                            player.y,
+                            victim => add_kill (victim));
     }
 
     /**
@@ -553,18 +488,20 @@ public class Game {
         update_arena ();
     }
 
-    private static Arena chase (Arena arena, Gee.Predicate<ObjectType> is_chaser, int x, int y) {
+    delegate void KillTracker(ObjectType victim);
+
+    private static Arena chase (Arena arena, Gee.Predicate<ObjectType> is_chaser, int x, int y, KillTracker? track_kill) {
         var new_arena = arena.map ((obj) => {
-            if (obj == ObjectType.PLAYER || obj == ObjectType.HEAP) {
-                return obj;
-            } else {
+            if (is_chaser (obj)) {
                 return ObjectType.NONE;
+            } else {
+                return obj;
             }
         });
 
         for (int i = 0; i < arena.width; ++i) {
             for (int j = 0; j < arena.height; ++j) {
-                var who = arena.@get (i, j);
+                var who = arena[i, j];
                 if (is_chaser (who)) {
                     int nx = i;
                     int ny = j;
@@ -578,10 +515,17 @@ public class Game {
                         ny += 1;
 
                     var destination = new_arena[nx, ny];
-                    if (destination == ObjectType.ROBOT1 ||
-                        destination == ObjectType.ROBOT2 ||
-                        destination == ObjectType.HEAP
+                    if (destination == ObjectType.HEAP) {
+                        if (track_kill != null) {
+                            track_kill (who);
+                        }
+                    } else if (destination == ObjectType.ROBOT1 ||
+                               destination == ObjectType.ROBOT2
                     ) {
+                        if (track_kill != null) {
+                            track_kill (who);
+                            track_kill (destination);
+                        }
                         new_arena[nx, ny] = ObjectType.HEAP;
                     } else {
                         new_arena[nx, ny] = who;
@@ -609,13 +553,13 @@ public class Game {
             return false;
         }
 
-        var temp2_arena = chase (temp_arena, obj => obj == ObjectType.ROBOT1 || obj == ObjectType.ROBOT2, x, y);
+        var temp2_arena = chase (temp_arena, obj => obj == ObjectType.ROBOT1 || obj == ObjectType.ROBOT2, x, y, null);
 
         if (temp2_arena[x, y] != ObjectType.NONE) {
             return false;
         }
 
-        var temp3_arena = chase (temp2_arena, (obj) => obj == ObjectType.ROBOT2, x, y);
+        var temp3_arena = chase (temp2_arena, (obj) => obj == ObjectType.ROBOT2, x, y, null);
 
         if (temp3_arena[x, y] != ObjectType.NONE) {
             return false;

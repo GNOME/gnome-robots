@@ -577,14 +577,14 @@ public class Game {
                     if (y > ny)
                         ny += 1;
 
-                    var destination = new_arena.@get (nx, ny);
+                    var destination = new_arena[nx, ny];
                     if (destination == ObjectType.ROBOT1 ||
                         destination == ObjectType.ROBOT2 ||
                         destination == ObjectType.HEAP
                     ) {
-                        new_arena.@set (nx, ny, ObjectType.HEAP);
+                        new_arena[nx, ny] = ObjectType.HEAP;
                     } else {
-                        new_arena.@set (nx, ny, who);
+                        new_arena[nx, ny] = who;
                     }
                 }
             }
@@ -604,45 +604,12 @@ public class Game {
      * Returns:
      * TRUE if location is safe, FALSE otherwise
      **/
-    bool check_safe (int x, int y) {
-        if (temp_arena.@get (x, y) != ObjectType.NONE) {
+    bool check_safe (Arena temp_arena, int x, int y) {
+        if (temp_arena[x, y] != ObjectType.NONE) {
             return false;
         }
 
-        var temp2_arena = temp_arena.map ((obj) => {
-            if (obj == ObjectType.PLAYER || obj == ObjectType.HEAP) {
-                return obj;
-            } else {
-                return ObjectType.NONE;
-            }
-        });
-
-        for (int i = 0; i < GAME_WIDTH; ++i) {
-            for (int j = 0; j < GAME_HEIGHT; ++j) {
-                if (temp_arena[i, j] == ObjectType.ROBOT1 ||
-                    temp_arena[i, j] == ObjectType.ROBOT2) {
-
-                    int nx = i;
-                    int ny = j;
-                    if (x < nx)
-                        nx -= 1;
-                    if (x > nx)
-                        nx += 1;
-                    if (y < ny)
-                        ny -= 1;
-                    if (y > ny)
-                        ny += 1;
-
-                    if (temp2_arena[nx, ny] == ObjectType.ROBOT1 ||
-                        temp2_arena[nx, ny] == ObjectType.ROBOT2 ||
-                        temp2_arena[nx, ny] == ObjectType.HEAP) {
-                        temp2_arena[nx, ny] = ObjectType.HEAP;
-                    } else {
-                        temp2_arena[nx, ny] = temp_arena[i, j];
-                    }
-                }
-            }
-        }
+        var temp2_arena = chase (temp_arena, obj => obj == ObjectType.ROBOT1 || obj == ObjectType.ROBOT2, x, y);
 
         if (temp2_arena[x, y] != ObjectType.NONE) {
             return false;
@@ -650,7 +617,7 @@ public class Game {
 
         var temp3_arena = chase (temp2_arena, (obj) => obj == ObjectType.ROBOT2, x, y);
 
-        if (temp3_arena.@get (x, y) != ObjectType.NONE) {
+        if (temp3_arena[x, y] != ObjectType.NONE) {
             return false;
         }
 
@@ -714,7 +681,7 @@ public class Game {
 
         load_temp_arena ();
 
-        if (temp_arena.@get (nx, ny) == ObjectType.HEAP) {
+        if (arena[nx, ny] == ObjectType.HEAP) {
             if (config.moveable_heaps) {
                 if (!push_heap (nx, ny, dx, dy)) {
                     push_xpos = push_ypos = -1;
@@ -739,47 +706,47 @@ public class Game {
      **/
     bool safe_move_available () {
         if (try_player_move (-1, -1)) {
-            if (check_safe (player.x - 1, player.y - 1)) {
+            if (check_safe (temp_arena, player.x - 1, player.y - 1)) {
                 return true;
             }
         }
         if (try_player_move (0, -1)) {
-            if (check_safe (player.x, player.y - 1)) {
+            if (check_safe (temp_arena, player.x, player.y - 1)) {
                 return true;
             }
         }
         if (try_player_move (1, -1)) {
-            if (check_safe (player.x + 1, player.y - 1)) {
+            if (check_safe (temp_arena, player.x + 1, player.y - 1)) {
                 return true;
             }
         }
         if (try_player_move (-1, 0)) {
-            if (check_safe (player.x - 1, player.y)) {
+            if (check_safe (temp_arena, player.x - 1, player.y)) {
                 return true;
             }
         }
         if (try_player_move (0, 0)) {
-            if (check_safe (player.x, player.y)) {
+            if (check_safe (temp_arena, player.x, player.y)) {
                 return true;
             }
         }
         if (try_player_move (1, 0)) {
-            if (check_safe (player.x + 1, player.y)) {
+            if (check_safe (temp_arena, player.x + 1, player.y)) {
                 return true;
             }
         }
         if (try_player_move (-1, 1)) {
-            if (check_safe (player.x - 1, player.y + 1)) {
+            if (check_safe (temp_arena, player.x - 1, player.y + 1)) {
                 return true;
             }
         }
         if (try_player_move (0, 1)) {
-            if (check_safe (player.x, player.y + 1)) {
+            if (check_safe (temp_arena, player.x, player.y + 1)) {
                 return true;
             }
         }
         if (try_player_move (1, 1)) {
-            if (check_safe (player.x + 1, player.y + 1)) {
+            if (check_safe (temp_arena, player.x + 1, player.y + 1)) {
                 return true;
             }
         }
@@ -801,7 +768,7 @@ public class Game {
 
         for (int x = 0; x < GAME_WIDTH; x++) {
             for (int y = 0; y < GAME_HEIGHT; y++) {
-                if (check_safe (x, y))
+                if (check_safe (temp_arena, x, y))
                     return true;
             }
         }
@@ -830,7 +797,7 @@ public class Game {
                 play_sound (Sound.BAD);
                 return false;
             } else {
-                if (!check_safe (nx, ny)) {
+                if (!check_safe (temp_arena, nx, ny)) {
                     if (properties_super_safe_moves () || safe_move_available ()) {
                         play_sound (Sound.BAD);
                         return false;
@@ -926,7 +893,7 @@ public class Game {
             }
         });
 
-        var p = random_position ((x, y) => temp_arena[x, y] == ObjectType.NONE && check_safe (x, y));
+        var p = random_position ((x, y) => temp_arena[x, y] == ObjectType.NONE && check_safe (temp_arena, x, y));
         if (p != null) {
             temp_arena[p.x, p.y] = ObjectType.PLAYER;
             player = p;

@@ -332,6 +332,11 @@ void activate (Gtk.Application app) {
                               yahoo_bubble,
                               splat_bubble);
     game_area.destroy.connect (() => game_area = null);
+    game_area.updated.connect (game => {
+        var status = game.status;
+        update_game_status (status.score, status.current_level, status.safe_teleports);
+        set_move_action_sensitivity (game.state != Game.State.COMPLETE && game.state != Game.State.DEAD);
+    });
 
     var gridframe = new Games.GridFrame (game.width, game.height);
     gridframe.add (game_area);

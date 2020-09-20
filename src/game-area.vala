@@ -77,6 +77,8 @@ public class GameArea : DrawingArea {
         }
     }
 
+    public signal void updated (Game game);
+
     public GameArea (Game game,
                      Theme theme,
                      Bubble aieee_bubble,
@@ -225,6 +227,8 @@ public class GameArea : DrawingArea {
         robot2_animation.tick ();
 
         game.tick ();
+
+        updated (game);
 
         queue_draw ();
         return true;

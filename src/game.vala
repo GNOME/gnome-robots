@@ -32,6 +32,12 @@ public class Game {
     public const int DEAD_DELAY = 30;
     public const int CHANGE_DELAY = 20;
 
+    public struct Status {
+        public int score;
+        public int current_level;
+        public int safe_teleports;
+    }
+
     public enum State {
         PLAYING = 1,
         WAITING,
@@ -75,6 +81,16 @@ public class Game {
     private int kills = 0;
     private int score_step = 0;
     private int safe_teleports = 0;
+
+    public Status status {
+        get {
+            return Status () {
+                score = score,
+                current_level = current_level + 1,
+                safe_teleports = safe_teleports
+            };
+        }
+    }
 
     struct ArenaChange {
         Arena arena;
@@ -131,7 +147,6 @@ public class Game {
         play_sound (Sound.DIE);
         arena[player.x, player.y] = ObjectType.PLAYER;
         endlev_counter = 0;
-        set_move_action_sensitivity (false);
     }
 
     /**
@@ -179,8 +194,6 @@ public class Game {
         if (safe_teleports > config.max_safe_teleports) {
             safe_teleports = config.max_safe_teleports;
         }
-
-        update_game_status (score, current_level + 1, safe_teleports);
     }
 
     private int max_robots () {
@@ -234,8 +247,6 @@ public class Game {
             safe_teleports = config.max_safe_teleports;
         }
 
-        update_game_status (score, current_level, safe_teleports);
-
         for (int i = 0; i < num_robots1; ++i) {
             place_randomly (ObjectType.ROBOT1);
         }
@@ -287,11 +298,8 @@ public class Game {
                 state = State.COMPLETE;
                 play_sound (Sound.YAHOO);
                 endlev_counter = 0;
-                set_move_action_sensitivity (false);
             }
         }
-
-        update_game_status (score, current_level + 1, safe_teleports);
     }
 
     public void tick () {
@@ -317,8 +325,6 @@ public class Game {
                 ++current_level;
                 generate_level ();
                 state = State.PLAYING;
-                set_move_action_sensitivity (true);
-                update_game_status (score, current_level + 1, safe_teleports);
                 splat = null;
             }
         } else if (state == State.DEAD) {
@@ -350,9 +356,6 @@ public class Game {
         generate_level ();
 
         state = State.PLAYING;
-
-        update_game_status (score, current_level + 1, safe_teleports);
-        set_move_action_sensitivity (true);
     }
 
     /**
@@ -668,7 +671,6 @@ public class Game {
             }
 
             safe_teleports -= 1;
-            update_game_status (score, current_level, safe_teleports);
 
             update_arena (change);
             splat = null;

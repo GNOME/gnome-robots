@@ -25,6 +25,7 @@ public class GameArea : DrawingArea {
 
     const int MINIMUM_TILE_WIDTH = 8;
     const int MINIMUM_TILE_HEIGHT = 8;
+    const int ANIMATION_DELAY = 100;
 
     private int tile_width = 0;
     private int tile_height = 0;
@@ -39,6 +40,7 @@ public class GameArea : DrawingArea {
     private Bubble yahoo_bubble;
     private Bubble splat_bubble;
 
+    private uint timer_id;
     private Animated player_animation;
     private Animated player_dead_animation;
     private Animated robot1_animation;
@@ -124,6 +126,12 @@ public class GameArea : DrawingArea {
             .sequence (Theme.Frames.ROBOT2_START)
             .limit (Theme.Frames.NUM_ROBOT2_ANIMATIONS)
             .forever ();
+
+        timer_id = Timeout.add (ANIMATION_DELAY, timer_cb);
+    }
+
+    ~GameArea () {
+        Source.remove (timer_id);
     }
 
     private bool resize_cb (Gdk.EventConfigure e) {
@@ -151,7 +159,7 @@ public class GameArea : DrawingArea {
                                game.splat.y * tile_height + 8);
         }
 
-        switch (game.get_state ()) {
+        switch (game.state) {
         case Game.State.DEAD:
             aieee_bubble.draw (cr,
                                game.player.x * tile_width + 8,
@@ -185,7 +193,7 @@ public class GameArea : DrawingArea {
         int animation = 0;
         switch (type) {
         case ObjectType.PLAYER:
-            if (game.get_state () != Game.State.DEAD) {
+            if (game.state != Game.State.DEAD) {
                 animation = player_animation.frame;
             } else {
                 animation = player_dead_animation.frame;
@@ -210,29 +218,36 @@ public class GameArea : DrawingArea {
         cr.restore ();
     }
 
-    public void tick () {
+    private bool timer_cb () {
         player_animation.tick ();
         player_dead_animation.tick ();
         robot1_animation.tick ();
         robot2_animation.tick ();
+
+        game.tick ();
+
+        queue_draw ();
+        return true;
     }
 
     private void mouse_cb (int n_press, double x, double y) {
-        if (game.get_state () != Game.State.PLAYING) {
+        if (game.state != Game.State.PLAYING) {
             return;
         }
 
         int dx, dy;
         get_dir (x, y, out dx, out dy);
 
+        // TODO: replace by player_command
         if (game.player_move (dx, dy)) {
             game.move_robots ();
+            queue_draw ();
         }
     }
 
     private void move_cb (double x, double y) {
         var window = get_window ();
-        if (game.get_state () != Game.State.PLAYING) {
+        if (game.state != Game.State.PLAYING) {
             set_cursor_default (window);
         } else {
             int dx, dy;

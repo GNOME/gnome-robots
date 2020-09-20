@@ -93,6 +93,7 @@ void type_selection (string config_name) {
 
     game.config = game_configs.find_by_name (config_name);
     game.start_new_game ();
+    game_area.queue_draw ();
 }
 
 /**

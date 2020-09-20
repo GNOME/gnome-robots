@@ -19,11 +19,6 @@
 
 using Games;
 
-public const int ANIMATION_DELAY = 100;
-public const int DEAD_DELAY = 30;
-public const int CHANGE_DELAY = 20;
-public const int WAITING_DELAY = 1;
-
 public Game game = null;
 
 public class Game {
@@ -34,17 +29,19 @@ public class Game {
     public const int GAME_WIDTH = 45;
     public const int GAME_HEIGHT = 30;
 
+    public const int DEAD_DELAY = 30;
+    public const int CHANGE_DELAY = 20;
+
     public enum State {
         PLAYING = 1,
         WAITING,
         COMPLETE,
         DEAD,
-        ROBOT,
         TYPE2,
-        WTYPE2,
+        WAITING_TYPE2,
     }
 
-    public enum KeyboardControl {
+    public enum PlayerCommand {
         NW = 0,
         N,
         NE,
@@ -54,14 +51,14 @@ public class Game {
         SW,
         S,
         SE,
-        TELE,
-        RTEL,
+        SAFE_TELEPORT,
+        RANDOM_TELEPORT,
         WAIT,
     }
 
     Rand rand;
-    public State state = State.PLAYING;
-    public Arena arena;
+    public State state { get; private set; }
+    public Arena arena { get; private set; }
     public GameConfig config { get; set; }
     public int width {
         get { return arena.width; }
@@ -72,13 +69,12 @@ public class Game {
     public Arena.Coords player { get; private set; }
     public Arena.Coords? splat { get; private set; }
 
-    int endlev_counter = 0;
-    int current_level = 0;
-    int score = 0;
-    int kills = 0;
-    int score_step = 0;
-    int safe_teleports = 0;
-    uint game_timer_id = -1;
+    private int endlev_counter = 0;
+    private int current_level = 0;
+    private int score = 0;
+    private int kills = 0;
+    private int score_step = 0;
+    private int safe_teleports = 0;
 
     struct ArenaChange {
         Arena arena;
@@ -89,10 +85,7 @@ public class Game {
     public Game () {
         arena = new Arena (GAME_WIDTH, GAME_HEIGHT);
         rand = new Rand ();
-    }
-
-    public State get_state () {
-        return state;
+        state = State.PLAYING;
     }
 
     /**
@@ -106,6 +99,10 @@ public class Game {
      * Enters a score in the high-score table
      **/
     void log_score (int sc) {
+        if (sc <= 0) {
+            return;
+        }
+
         string key;
         if (properties_super_safe_moves ()) {
             key = config.description + "-super-safe";
@@ -115,17 +112,15 @@ public class Game {
             key = config.description;
         }
 
-        if (sc != 0) {
-            string name = category_name_from_key (key);
-            var category = new Scores.Category (key, name);
-            highscores.add_score.begin (sc, category, null, (ctx, res) => {
-                try {
-                    highscores.add_score.end (res);
-                } catch (Error error) {
-                    warning ("Failed to add score: %s", error.message);
-                }
-            });
-        }
+        string name = category_name_from_key (key);
+        var category = new Scores.Category (key, name);
+        highscores.add_score.begin (sc, category, null, (ctx, res) => {
+            try {
+                highscores.add_score.end (res);
+            } catch (Error error) {
+                warning ("Failed to add score: %s", error.message);
+            }
+        });
     }
 
     /**
@@ -137,7 +132,6 @@ public class Game {
         arena[player.x, player.y] = ObjectType.PLAYER;
         endlev_counter = 0;
         set_move_action_sensitivity (false);
-        game_area.queue_draw ();
     }
 
     /**
@@ -149,7 +143,7 @@ public class Game {
      **/
     void add_kill (ObjectType type) {
         int si;
-        if ((state == State.WAITING) || (state == State.WTYPE2)) {
+        if ((state == State.WAITING) || (state == State.WAITING_TYPE2)) {
             if (type == ObjectType.ROBOT1) {
                 si = config.score_type1_waiting;
                 kills += 1;
@@ -300,20 +294,8 @@ public class Game {
         update_game_status (score, current_level + 1, safe_teleports);
     }
 
-
-    /**
-     * timeout_cb
-     * @data: callback data
-     *
-     * Description:
-     * Game timer callback function
-     **/
-    bool timeout_cb () {
-        game_area.tick ();
-
-        game_area.queue_draw ();
-
-        if ((state == State.TYPE2) || (state == State.WTYPE2)) {
+    public void tick () {
+        if ((state == State.TYPE2) || (state == State.WAITING_TYPE2)) {
             var new_arena = move_type2_robots ();
             var change = ArenaChange () {
                 arena = new_arena,
@@ -323,12 +305,11 @@ public class Game {
             update_arena (change);
             if (state == State.TYPE2) {
                 state = State.PLAYING;
-            } else if (state == State.WTYPE2) {
+            } else if (state == State.WAITING_TYPE2) {
                 state = State.WAITING;
             }
         } else if (state == State.WAITING) {
             splat = null;
-            game_area.queue_draw ();
             move_robots ();
         } else if (state == State.COMPLETE) {
             ++endlev_counter;
@@ -339,7 +320,6 @@ public class Game {
                 set_move_action_sensitivity (true);
                 update_game_status (score, current_level + 1, safe_teleports);
                 splat = null;
-                game_area.queue_draw ();
             }
         } else if (state == State.DEAD) {
             ++endlev_counter;
@@ -350,47 +330,9 @@ public class Game {
                 start_new_game ();
             }
         }
-
-        return true;
     }
 
     /**
-     * Destroys the game timer
-     **/
-    void destroy_game_timer () {
-        if (game_timer_id != -1) {
-            Source.remove (game_timer_id);
-            game_timer_id = -1;
-        }
-    }
-
-
-    /**
-     * create_game_timer
-     *
-     * Description:
-     * Creates the game timer
-     **/
-    void create_game_timer () {
-        if (game_timer_id != -1) {
-            destroy_game_timer ();
-        }
-
-        game_timer_id = Timeout.add (ANIMATION_DELAY, timeout_cb);
-    }
-
-    /**
-     * Initialises everything when game first starts up
-     **/
-    public void init_game () {
-        create_game_timer ();
-        start_new_game ();
-    }
-
-    /**
-     * start_new_game
-     *
-     * Description:
      * Initialises everything needed to start a new game
      **/
     public void start_new_game () {
@@ -406,7 +348,6 @@ public class Game {
 
         splat = null;
         generate_level ();
-        game_area.queue_draw ();
 
         state = State.PLAYING;
 
@@ -443,10 +384,10 @@ public class Game {
     public void move_robots () {
         var new_arena = move_all_robots ();
 
-        var num_robots2 = arena.count (obj => obj == ObjectType.ROBOT2);
+        var num_robots2 = new_arena.count (obj => obj == ObjectType.ROBOT2);
         if (num_robots2 > 0) {
             if (state == State.WAITING) {
-                state = State.WTYPE2;
+                state = State.WAITING_TYPE2;
             } else if (state == State.PLAYING) {
                 state = State.TYPE2;
             }
@@ -665,7 +606,6 @@ public class Game {
 
         splat = null;
         update_arena (change);
-        game_area.queue_draw ();
 
         return true;
     }
@@ -691,7 +631,6 @@ public class Game {
 
             update_arena (change);
             splat = null;
-            game_area.queue_draw ();
             play_sound (Sound.TELEPORT);
 
             return true;
@@ -733,7 +672,6 @@ public class Game {
 
             update_arena (change);
             splat = null;
-            game_area.queue_draw ();
             play_sound (Sound.TELEPORT);
 
             return true;
@@ -747,69 +685,81 @@ public class Game {
     /**
      * handles keyboard commands
      **/
-    public void keypress (KeyboardControl key) {
+    public bool player_command (PlayerCommand key) {
         if (state != State.PLAYING)
-            return;
+            return false;
 
         switch (key) {
-        case KeyboardControl.NW:
+        case PlayerCommand.NW:
             if (player_move (-1, -1)) {
                 move_robots ();
+                return true;
             }
-            break;
-        case KeyboardControl.N:
+            return false;
+        case PlayerCommand.N:
             if (player_move (0, -1)) {
                 move_robots ();
+                return true;
             }
-            break;
-        case KeyboardControl.NE:
+            return false;
+        case PlayerCommand.NE:
             if (player_move (1, -1)) {
                 move_robots ();
+                return true;
             }
-            break;
-        case KeyboardControl.W:
+            return false;
+        case PlayerCommand.W:
             if (player_move (-1, 0)) {
                 move_robots ();
+                return true;
             }
-            break;
-        case KeyboardControl.STAY:
+            return false;
+        case PlayerCommand.STAY:
             if (player_move (0, 0)) {
                 move_robots ();
+                return true;
             }
-            break;
-        case KeyboardControl.E:
+            return false;
+        case PlayerCommand.E:
             if (player_move (1, 0)) {
                 move_robots ();
+                return true;
             }
-            break;
-        case KeyboardControl.SW:
+            return false;
+        case PlayerCommand.SW:
             if (player_move (-1, 1)) {
                 move_robots ();
+                return true;
             }
-            break;
-        case KeyboardControl.S:
+            return false;
+        case PlayerCommand.S:
             if (player_move (0, 1)) {
                 move_robots ();
+                return true;
             }
-            break;
-        case KeyboardControl.SE:
+            return false;
+        case PlayerCommand.SE:
             if (player_move (1, 1)) {
                 move_robots ();
+                return true;
             }
-            break;
-        case KeyboardControl.TELE:
+            return false;
+        case PlayerCommand.SAFE_TELEPORT:
             if (safe_teleport ()) {
                 move_robots ();
             }
-            break;
-        case KeyboardControl.RTEL:
+            return true;
+        case PlayerCommand.RANDOM_TELEPORT:
             if (random_teleport ()) {
                 move_robots ();
+                return true;
             }
-            break;
-        case KeyboardControl.WAIT:
+            return false;
+        case PlayerCommand.WAIT:
             state = State.WAITING;
-            break;
+            return true;
+        default:
+            return false;
         }
     }
 }

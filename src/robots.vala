@@ -174,19 +174,26 @@ void new_game_cb () {
 
     if (ret == ResponseType.ACCEPT) {
         game.start_new_game ();
+        game_area.queue_draw ();
     }
 }
 
 void random_teleport_cb () {
-    game.keypress (Game.KeyboardControl.RTEL);
+    if (game.player_command (Game.PlayerCommand.RANDOM_TELEPORT)) {
+        game_area.queue_draw ();
+    }
 }
 
 void safe_teleport_cb () {
-    game.keypress (Game.KeyboardControl.TELE);
+    if (game.player_command (Game.PlayerCommand.SAFE_TELEPORT)) {
+        game_area.queue_draw ();
+    }
 }
 
 void wait_cb () {
-    game.keypress (Game.KeyboardControl.WAIT);
+    if (game.player_command (Game.PlayerCommand.WAIT)) {
+        game_area.queue_draw ();
+    }
 }
 
 bool window_configure_event_cb () {
@@ -261,7 +268,9 @@ bool keyboard_cb (EventControllerKey controller, uint keyval, uint keycode, Gdk.
 
     for (var i = 0; i < control_keys.length; ++i) {
         if (pressed == ((char)control_keys[i]).toupper ()) {
-            game.keypress ((Game.KeyboardControl)i);
+            if (game.player_command ((Game.PlayerCommand)i)) {
+                game_area.queue_draw ();
+            }
             return true;
         }
     }
@@ -407,7 +416,8 @@ void activate (Gtk.Application app) {
     init_keyboard ();
 
     game.config = game_configs.find_by_name (properties.selected_config);
-    game.init_game ();
+    game.start_new_game ();
+    game_area.queue_draw ();
 
     GLib.Settings.sync ();
 }

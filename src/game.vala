@@ -243,15 +243,22 @@ public class Game {
         update_game_status (score, current_level, safe_teleports);
 
         for (int i = 0; i < num_robots1; ++i) {
-            var p = random_position ((x, y) => arena[x, y] == ObjectType.NONE);
-            assert (p != null);
-            arena[p.x, p.y] = ObjectType.ROBOT1;
+            place_randomly (ObjectType.ROBOT1);
         }
 
         for (int i = 0; i < num_robots2; ++i) {
-            var p = random_position ((x, y) => arena[x, y] == ObjectType.NONE);
-            assert (p != null);
-            arena[p.x, p.y] = ObjectType.ROBOT2;
+            place_randomly (ObjectType.ROBOT2);
+        }
+    }
+
+    private void place_randomly (ObjectType obj) {
+        int rand_x = rand.int_range (0, arena.width);
+        int rand_y = rand.int_range (0, arena.height);
+        foreach (var p in arena.iterate_from (rand_x, rand_y)) {
+            if (arena[p.x, p.y] == ObjectType.NONE) {
+                arena[p.x, p.y] = obj;
+                return;
+            }
         }
     }
 
@@ -628,32 +635,7 @@ public class Game {
         return false;
     }
 
-    /**
-     * safe_teleport_available
-     *
-     * Description:
-     * Check for a safe teleport.
-     *
-     * Returns:
-     * TRUE is a safe teleport is possible, FALSE otherwise.
-     *
-     */
-    bool safe_teleport_available () {
-        for (int x = 0; x < arena.width; x++) {
-            for (int y = 0; y < arena.height; y++) {
-                if (arena[x, y] == ObjectType.NONE) {
-                    var change = teleport_to (x, y);
-                    if (check_safe (change)) {
-                        return true;
-                    }
-                }
-            }
-        }
-
-        return false;
-    }
-
-    private ArenaChange teleport_to (int x, int y) {
+    private ArenaChange teleport_to (Arena.Coords coords) {
         var new_arena = arena.map ((obj) => {
             if (obj != ObjectType.PLAYER) {
                 return obj;
@@ -661,10 +643,10 @@ public class Game {
                 return ObjectType.NONE;
             }
         });
-        new_arena[x, y] = ObjectType.PLAYER;
+        new_arena[coords.x, coords.y] = ObjectType.PLAYER;
         return ArenaChange () {
             arena = new_arena,
-            player = Arena.Coords () { x = x, y = y },
+            player = coords,
             push = null
         };
     }
@@ -714,23 +696,14 @@ public class Game {
      * TRUE if the player can be teleported, FALSE otherwise
      **/
     bool random_teleport () {
-        var temp_arena = arena.map ((obj) => {
-            if (obj != ObjectType.PLAYER) {
-                return obj;
-            } else {
-                return ObjectType.NONE;
+        int rand_x = rand.int_range (0, arena.width);
+        int rand_y = rand.int_range (0, arena.height);
+        foreach (var p in arena.iterate_from (rand_x, rand_y)) {
+            if (arena[p.x, p.y] != ObjectType.NONE) {
+                continue;
             }
-        });
 
-        var p = random_position ((x, y) => temp_arena[x, y] == ObjectType.NONE);
-        if (p != null) {
-            temp_arena[p.x, p.y] = ObjectType.PLAYER;
-
-            var change = ArenaChange () {
-                arena = temp_arena,
-                player = p,
-                push = null
-            };
+            var change = teleport_to (p);
 
             update_arena (change);
             splat = null;
@@ -738,13 +711,12 @@ public class Game {
             play_sound (Sound.TELEPORT);
 
             return true;
-        } else {
-            /* This should never happen. */
-            message_box (_("There are no teleport locations left!!"));
-            return false;
         }
-    }
 
+        /* This should never happen. */
+        message_box (_("There are no teleport locations left!!"));
+        return false;
+    }
 
     /**
      * safe_teleport
@@ -756,45 +728,24 @@ public class Game {
      * TRUE if player can be teleported, FALSE otherwise
      **/
     bool safe_teleport () {
-        if (!safe_teleport_available ()) {
-            message_box (_("There are no safe locations to teleport to!!"));
-            kill_player ();
+        if (safe_teleports <= 0) {
             return false;
         }
 
-        if (safe_teleports <= 0)
-            return false;
-
-        var temp_arena = arena.map ((obj) => {
-            if (obj != ObjectType.PLAYER) {
-                return obj;
-            } else {
-                return ObjectType.NONE;
+        int rand_x = rand.int_range (0, arena.width);
+        int rand_y = rand.int_range (0, arena.height);
+        foreach (var p in arena.iterate_from (rand_x, rand_y)) {
+            if (arena[p.x, p.y] != ObjectType.NONE) {
+                continue;
             }
-        });
 
-        var p = random_position ((x, y) => {
-            if (temp_arena[x, y] != ObjectType.NONE) {
-                return false;
+            var change = teleport_to (p);
+            if (!check_safe (change)) {
+                continue;
             }
-            var try_change = ArenaChange () {
-                arena = temp_arena,
-                player = Arena.Coords() { x = x, y = y },
-                push = null
-            };
-            return check_safe (try_change);
-        });
-        if (p != null) {
-            temp_arena[p.x, p.y] = ObjectType.PLAYER;
 
             safe_teleports -= 1;
             update_game_status (score, current_level, safe_teleports);
-
-            var change = ArenaChange () {
-                arena = temp_arena,
-                player = p,
-                push = null
-            };
 
             update_arena (change);
             splat = null;
@@ -802,42 +753,11 @@ public class Game {
             play_sound (Sound.TELEPORT);
 
             return true;
-        } else {
-            /* This should never happen. */
-            message_box (_("There are no teleport locations left!!"));
-            return false;
         }
-    }
 
-    delegate bool PositionPredicate(int x, int y);
-
-    private Arena.Coords? random_position (PositionPredicate predicate) {
-        int ixp = rand.int_range (0, arena.width);
-        int iyp = rand.int_range (0, arena.height);
-
-        int xp = ixp;
-        int yp = iyp;
-        while (true) {
-            if (predicate(xp, yp)) {
-                return Arena.Coords() {
-                    x = xp,
-                    y = yp
-                };
-            }
-
-            ++xp;
-            if (xp >= arena.width) {
-                xp = 0;
-                ++yp;
-                if (yp >= arena.height) {
-                    yp = 0;
-                }
-            }
-
-            if (xp == ixp && yp == iyp) {
-                return null;
-            }
-        }
+        message_box (_("There are no safe locations to teleport to!!"));
+        kill_player ();
+        return false;
     }
 
     /**

@@ -98,5 +98,53 @@ public class Arena {
         }
         return result;
     }
+
+    public ArenaIterable iterate_from (int x, int y) {
+        return new ArenaIterable (this, x, y);
+    }
+}
+
+public class ArenaIterable {
+    private Arena arena;
+    private int initial_x;
+    private int initial_y;
+
+    public ArenaIterable (Arena arena, int initial_x, int initial_y) {
+        this.arena = arena;
+        this.initial_x = initial_x;
+        this.initial_y = initial_y;
+    }
+
+    public Iterator iterator() {
+        return new Iterator(this);
+    }
+
+    public class Iterator {
+        private int initial_position;
+        private int width;
+        private int size;
+        private int i;
+
+        public Iterator (ArenaIterable iterable) {
+            this.initial_position =
+                iterable.initial_x + iterable.arena.width * iterable.initial_y;
+            this.width = iterable.arena.width;
+            this.size = iterable.arena.width * iterable.arena.height;
+            this.i = 0;
+        }
+
+        public Arena.Coords? next_value() {
+            if (i >= size) {
+                return null;
+            }
+            var position = (initial_position + i) % size;
+            var result = Arena.Coords () {
+                x = position % width,
+                y = position / width
+            };
+            i += 1;
+            return result;
+        }
+    }
 }
 

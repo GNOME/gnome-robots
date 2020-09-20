@@ -542,73 +542,55 @@ public class Game {
         return true;
     }
 
-    private bool can_push_heap (Arena arena, int x, int y, int dx, int dy) {
-        if (arena[x, y] != ObjectType.HEAP) {
-            return false;
+    private ArenaChange? try_push_heap (int dx, int dy) {
+        if (!config.moveable_heaps) {
+            return null;
         }
 
-        int nx = x + dx;
-        int ny = y + dy;
-
-        if (nx < 0 || nx >= arena.width || ny < 0 || ny >= arena.height) {
-            return false;
+        var coords = player.move (dx, dy);
+        if (!arena.are_coords_valid(coords)
+            || arena[coords.x, coords.y] != ObjectType.HEAP
+        ) {
+            return null;
         }
 
-        return arena[nx, ny] != ObjectType.HEAP;
+        var push_to = coords.move (dx, dy);
+        if (!arena.are_coords_valid(push_to)
+            || arena[push_to.x, push_to.y] == ObjectType.HEAP
+        ) {
+            return null;
+        }
+
+        var new_arena = arena.map ((obj) => {
+            if (obj != ObjectType.PLAYER) {
+                return obj;
+            } else {
+                return ObjectType.NONE;
+            }
+        });
+        new_arena[coords.x, coords.y] = ObjectType.PLAYER;
+        new_arena[push_to.x, push_to.y] = ObjectType.HEAP;
+        return ArenaChange () {
+            arena = new_arena,
+            player = coords,
+            push = push_to
+        };
     }
 
     /**
      * tries to move the player in a given direction
      **/
     private ArenaChange? try_player_move (int dx, int dy) {
-        int nx = player.x + dx;
-        int ny = player.y + dy;
+        var coords = player.move (dx, dy);
 
-        if (nx < 0 || nx >= arena.width || ny < 0 || ny >= arena.height) {
+        if (!arena.are_coords_valid(coords)) {
             return null;
         }
 
-        if (arena[nx, ny] == ObjectType.HEAP) {
-            // try to push a heap
-            if (!config.moveable_heaps) {
-                return null;
-            }
-            if (!can_push_heap (arena, nx, ny, dx, dy)) {
-                return null;
-            }
-
-            var push = Arena.Coords () { x = nx + dx, y = ny + dy };
-            var new_arena = arena.map ((obj) => {
-                if (obj != ObjectType.PLAYER) {
-                    return obj;
-                } else {
-                    return ObjectType.NONE;
-                }
-            });
-            new_arena[push.x, push.y] = ObjectType.HEAP;
-            new_arena[nx, ny] = ObjectType.PLAYER;
-
-            return ArenaChange () {
-                arena = new_arena,
-                player = Arena.Coords () { x = nx, y = ny },
-                push = push
-            };
+        if (arena[coords.x, coords.y] == ObjectType.HEAP) {
+            return try_push_heap (dx, dy);
         } else {
-            var new_arena = arena.map ((obj) => {
-                if (obj != ObjectType.PLAYER) {
-                    return obj;
-                } else {
-                    return ObjectType.NONE;
-                }
-            });
-            if (new_arena[nx, ny] == ObjectType.NONE) {
-                new_arena[nx, ny] = ObjectType.PLAYER;
-            }
-            return ArenaChange () {
-                arena = new_arena,
-                player = Arena.Coords () { x = nx, y = ny },
-                push = null
-            };
+            return move_player_to (coords);
         }
     }
 
@@ -635,7 +617,7 @@ public class Game {
         return false;
     }
 
-    private ArenaChange teleport_to (Arena.Coords coords) {
+    private ArenaChange move_player_to (Arena.Coords coords) {
         var new_arena = arena.map ((obj) => {
             if (obj != ObjectType.PLAYER) {
                 return obj;
@@ -643,7 +625,9 @@ public class Game {
                 return ObjectType.NONE;
             }
         });
-        new_arena[coords.x, coords.y] = ObjectType.PLAYER;
+        if (new_arena[coords.x, coords.y] == ObjectType.NONE) {
+            new_arena[coords.x, coords.y] = ObjectType.PLAYER;
+        }
         return ArenaChange () {
             arena = new_arena,
             player = coords,
@@ -703,7 +687,7 @@ public class Game {
                 continue;
             }
 
-            var change = teleport_to (p);
+            var change = move_player_to (p);
 
             update_arena (change);
             splat = null;
@@ -739,7 +723,7 @@ public class Game {
                 continue;
             }
 
-            var change = teleport_to (p);
+            var change = move_player_to (p);
             if (!check_safe (change)) {
                 continue;
             }

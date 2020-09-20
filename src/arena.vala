@@ -32,6 +32,13 @@ public class Arena {
     public struct Coords {
         public int x;
         public int y;
+
+        public Coords move (int dx, int dy) {
+            return Coords () {
+                x = x + dx,
+                y = y + dy
+            };
+        }
     }
 
     private int _width;
@@ -59,6 +66,13 @@ public class Arena {
                 this.arena[i + j * _width] = ObjectType.NONE;
             }
         }
+    }
+
+    public bool are_coords_valid (Coords coords) {
+        return coords.x >= 0
+            && coords.y >= 0
+            && coords.x < _width
+            && coords.y < _height;
     }
 
     public ObjectType @get (int x, int y) {

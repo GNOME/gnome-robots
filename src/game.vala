@@ -72,18 +72,19 @@ public class Game {
     public Arena.Coords player { get; private set; }
     public Arena.Coords? splat { get; private set; }
 
-    int num_robots1 = 0;
-    int num_robots2 = 0;
     int endlev_counter = 0;
     int current_level = 0;
     int score = 0;
     int kills = 0;
     int score_step = 0;
     int safe_teleports = 0;
-    int push_xpos = -1;
-    int push_ypos = -1;
     uint game_timer_id = -1;
-    Arena temp_arena = null;
+
+    struct ArenaChange {
+        Arena arena;
+        Arena.Coords player;
+        Arena.Coords? push;
+    }
 
     public Game () {
         arena = new Arena (GAME_WIDTH, GAME_HEIGHT);
@@ -188,29 +189,6 @@ public class Game {
         update_game_status (score, current_level + 1, safe_teleports);
     }
 
-    /**
-     * clears the arena
-     **/
-    void clear_arena () {
-        arena.clear ();
-        num_robots1 = 0;
-        num_robots2 = 0;
-    }
-
-    /**
-     * Set up the temporary arena for processing speculative moves.
-     *
-     **/
-    void load_temp_arena () {
-        temp_arena = arena.map ((obj) => {
-            if (obj != ObjectType.PLAYER) {
-                return obj;
-            } else {
-                return ObjectType.NONE;
-            }
-        });
-    }
-
     private int max_robots () {
         return arena.width * arena.height / 2;
     }
@@ -222,15 +200,15 @@ public class Game {
      * Creates a new level and populates it with robots
      **/
     void generate_level () {
-        clear_arena ();
+        arena.clear ();
 
         player = Arena.Coords () {
             x = arena.width / 2,
             y = arena.height / 2
         };
-        arena.@set(player.x, player.y, ObjectType.PLAYER);
+        arena[player.x, player.y] = ObjectType.PLAYER;
 
-        num_robots1 = config.initial_type1 + config.increment_type1 * current_level;
+        var num_robots1 = config.initial_type1 + config.increment_type1 * current_level;
 
         if (num_robots1 > config.maximum_type1) {
             num_robots1 = config.maximum_type1;
@@ -242,7 +220,7 @@ public class Game {
             play_sound (Sound.VICTORY);
         }
 
-        num_robots2 = config.initial_type2 + config.increment_type2 * current_level;
+        var num_robots2 = config.initial_type2 + config.increment_type2 * current_level;
 
         if (num_robots2 > config.maximum_type2) {
             num_robots2 = config.maximum_type2;
@@ -277,43 +255,26 @@ public class Game {
         }
     }
 
-    /**
-     * update_arena
-     *
-     * Description:
-     * Copies the temporary arena into the main game arena
-     **/
-    void update_arena () {
-        num_robots1 = 0;
-        num_robots2 = 0;
-
-        for (int i = 0; i < GAME_WIDTH; ++i) {
-            for (int j = 0; j < GAME_HEIGHT; ++j) {
-                if (temp_arena[i, j] == ObjectType.HEAP &&
-                    push_xpos == i && push_ypos == j
-                ) {
-                    if (arena[i, j] == ObjectType.ROBOT1) {
-                        splat = Arena.Coords () { x = i, y = j };
-                        play_sound (Sound.SPLAT);
-                        push_xpos = push_ypos = -1;
-                        score += config.score_type1_splatted;
-                    }
-                    if (arena[i, j] == ObjectType.ROBOT2) {
-                        splat = Arena.Coords () { x = i, y = j };
-                        play_sound (Sound.SPLAT);
-                        push_xpos = push_ypos = -1;
-                        score += config.score_type2_splatted;
-                    }
-                }
-
-                arena[i, j] = temp_arena[i, j];
-                if (arena[i, j] == ObjectType.ROBOT1) {
-                    num_robots1 += 1;
-                } else if (arena[i, j] == ObjectType.ROBOT2) {
-                    num_robots2 += 1;
-                }
+    void update_arena (ArenaChange change) {
+        if (change.push != null) {
+            switch (arena[change.push.x, change.push.y]) {
+            case ObjectType.ROBOT1:
+                splat = change.push;
+                play_sound (Sound.SPLAT);
+                score += config.score_type1_splatted;
+                break;
+            case ObjectType.ROBOT2:
+                splat = change.push;
+                play_sound (Sound.SPLAT);
+                score += config.score_type2_splatted;
+                break;
+            default:
+                break;
             }
         }
+
+        this.player = change.player;
+        this.arena = change.arena;
 
         if (arena[player.x, player.y] != ObjectType.PLAYER) {
             kill_player ();
@@ -321,7 +282,7 @@ public class Game {
             /* This is in the else statement to catch the case where the last
              * two robots collide on top of the human. Without the "else" this
              * leads to the player being ressurected and winning. */
-            if ((num_robots1 + num_robots2) <= 0) {
+            if (arena.count (obj => obj == ObjectType.ROBOT1 || obj == ObjectType.ROBOT2) <= 0) {
                 state = State.COMPLETE;
                 play_sound (Sound.YAHOO);
                 endlev_counter = 0;
@@ -346,8 +307,13 @@ public class Game {
         game_area.queue_draw ();
 
         if ((state == State.TYPE2) || (state == State.WTYPE2)) {
-            move_type2_robots ();
-            update_arena ();
+            var new_arena = move_type2_robots ();
+            var change = ArenaChange () {
+                arena = new_arena,
+                player = this.player,
+                push = null
+            };
+            update_arena (change);
             if (state == State.TYPE2) {
                 state = State.PLAYING;
             } else if (state == State.WTYPE2) {
@@ -380,7 +346,6 @@ public class Game {
 
         return true;
     }
-
 
     /**
      * Destroys the game timer
@@ -443,40 +408,35 @@ public class Game {
     }
 
     /**
-     * move_all_robots
-     *
-     * Description:
      * Moves all of the robots and checks for collisions
      **/
-    void move_all_robots () {
-        temp_arena = chase (arena,
-                            obj => obj == ObjectType.ROBOT1
-                                || obj == ObjectType.ROBOT2,
-                            player.x,
-                            player.y,
-                            victim => add_kill (victim));
+    private Arena move_all_robots () {
+        return chase (arena,
+                      obj => obj == ObjectType.ROBOT1
+                          || obj == ObjectType.ROBOT2,
+                      player.x,
+                      player.y,
+                      victim => add_kill (victim));
     }
 
     /**
-     * move_type2_robots
-     *
-     * Description:
      * Makes the extra move for all of the type2 robots
      **/
-    void move_type2_robots () {
-        temp_arena = chase (arena,
-                            obj => obj == ObjectType.ROBOT2,
-                            player.x,
-                            player.y,
-                            victim => add_kill (victim));
+    private Arena move_type2_robots () {
+        return chase (arena,
+                      obj => obj == ObjectType.ROBOT2,
+                      player.x,
+                      player.y,
+                      victim => add_kill (victim));
     }
 
     /**
      * Starts the process of moving robots
      **/
     public void move_robots () {
-        move_all_robots ();
+        var new_arena = move_all_robots ();
 
+        var num_robots2 = arena.count (obj => obj == ObjectType.ROBOT2);
         if (num_robots2 > 0) {
             if (state == State.WAITING) {
                 state = State.WTYPE2;
@@ -485,14 +445,20 @@ public class Game {
             }
         }
 
-        update_arena ();
+        var change = ArenaChange () {
+            arena = new_arena,
+            player = this.player,
+            push = null
+        };
+
+        update_arena (change);
     }
 
     delegate void KillTracker(ObjectType victim);
 
     private static Arena chase (Arena arena, Gee.Predicate<ObjectType> is_chaser, int x, int y, KillTracker? track_kill) {
         var new_arena = arena.map ((obj) => {
-            if (is_chaser (obj)) {
+            if (obj == ObjectType.PLAYER || is_chaser (obj)) {
                 return ObjectType.NONE;
             } else {
                 return obj;
@@ -534,109 +500,109 @@ public class Game {
             }
         }
 
+        if (new_arena[x, y] == ObjectType.NONE) {
+            new_arena[x, y] = ObjectType.PLAYER;
+        }
+
         return new_arena;
     }
 
     /**
-     * check_safe
-     * @x: x position
-     * @y: y position
-     *
-     * Description:
      * checks whether a given location is safe
-     *
-     * Returns:
-     * TRUE if location is safe, FALSE otherwise
      **/
-    bool check_safe (Arena temp_arena, int x, int y) {
-        if (temp_arena[x, y] != ObjectType.NONE) {
+    private bool check_safe (ArenaChange change) {
+        var temp2_arena = chase (change.arena,
+                                 obj => obj == ObjectType.ROBOT1
+                                     || obj == ObjectType.ROBOT2,
+                                 change.player.x,
+                                 change.player.y,
+                                 null);
+
+        if (temp2_arena[change.player.x, change.player.y] != ObjectType.PLAYER) {
             return false;
         }
 
-        var temp2_arena = chase (temp_arena, obj => obj == ObjectType.ROBOT1 || obj == ObjectType.ROBOT2, x, y, null);
+        var temp3_arena = chase (temp2_arena,
+                                 obj => obj == ObjectType.ROBOT2,
+                                 change.player.x,
+                                 change.player.y,
+                                 null);
 
-        if (temp2_arena[x, y] != ObjectType.NONE) {
-            return false;
-        }
-
-        var temp3_arena = chase (temp2_arena, (obj) => obj == ObjectType.ROBOT2, x, y, null);
-
-        if (temp3_arena[x, y] != ObjectType.NONE) {
+        if (temp3_arena[change.player.x, change.player.y] != ObjectType.PLAYER) {
             return false;
         }
 
         return true;
     }
 
-    /**
-     * push_heap
-     * @x: x position
-     * @y: y position
-     * @dx: x direction
-     * @dy: y direction
-     *
-     * Description:
-     * pushes a heap in a given direction
-     *
-     * Returns:
-     * TRUE if heap can be pushed, FALSE otherwise
-     **/
-    bool push_heap (int x, int y, int dx, int dy) {
+    private bool can_push_heap (Arena arena, int x, int y, int dx, int dy) {
+        if (arena[x, y] != ObjectType.HEAP) {
+            return false;
+        }
+
         int nx = x + dx;
         int ny = y + dy;
-
-        if (temp_arena.@get (x, y) != ObjectType.HEAP)
-            return false;
 
         if (nx < 0 || nx >= arena.width || ny < 0 || ny >= arena.height) {
             return false;
         }
 
-        if (temp_arena.@get (nx, ny) == ObjectType.HEAP)
-            return false;
-
-        push_xpos = nx;
-        push_ypos = ny;
-
-        temp_arena.@set (nx, ny, ObjectType.HEAP);
-        temp_arena.@set (x, y, ObjectType.NONE);
-
-        return true;
+        return arena[nx, ny] != ObjectType.HEAP;
     }
 
     /**
-     * try_player_move
-     * @dx: x direction
-     * @dy: y direction
-     *
-     * Description:
      * tries to move the player in a given direction
-     *
-     * Returns:
-     * TRUE if the player can move, FALSE otherwise
      **/
-    bool try_player_move (int dx, int dy) {
+    private ArenaChange? try_player_move (int dx, int dy) {
         int nx = player.x + dx;
         int ny = player.y + dy;
 
-        if ((nx < 0) || (nx >= arena.width) || (ny < 0) || (ny >= arena.height)) {
-            return false;
+        if (nx < 0 || nx >= arena.width || ny < 0 || ny >= arena.height) {
+            return null;
         }
-
-        load_temp_arena ();
 
         if (arena[nx, ny] == ObjectType.HEAP) {
-            if (config.moveable_heaps) {
-                if (!push_heap (nx, ny, dx, dy)) {
-                    push_xpos = push_ypos = -1;
-                    return false;
-                }
-            } else {
-                return false;
+            // try to push a heap
+            if (!config.moveable_heaps) {
+                return null;
             }
-        }
+            if (!can_push_heap (arena, nx, ny, dx, dy)) {
+                return null;
+            }
 
-        return true;
+            var push = Arena.Coords () { x = nx + dx, y = ny + dy };
+            var new_arena = arena.map ((obj) => {
+                if (obj != ObjectType.PLAYER) {
+                    return obj;
+                } else {
+                    return ObjectType.NONE;
+                }
+            });
+            new_arena[push.x, push.y] = ObjectType.HEAP;
+            new_arena[nx, ny] = ObjectType.PLAYER;
+
+            return ArenaChange () {
+                arena = new_arena,
+                player = Arena.Coords () { x = nx, y = ny },
+                push = push
+            };
+        } else {
+            var new_arena = arena.map ((obj) => {
+                if (obj != ObjectType.PLAYER) {
+                    return obj;
+                } else {
+                    return ObjectType.NONE;
+                }
+            });
+            if (new_arena[nx, ny] == ObjectType.NONE) {
+                new_arena[nx, ny] = ObjectType.PLAYER;
+            }
+            return ArenaChange () {
+                arena = new_arena,
+                player = Arena.Coords () { x = nx, y = ny },
+                push = null
+            };
+        }
     }
 
     /**
@@ -649,49 +615,14 @@ public class Game {
      * TRUE if there is a possible safe move, FALSE otherwise
      **/
     bool safe_move_available () {
-        if (try_player_move (-1, -1)) {
-            if (check_safe (temp_arena, player.x - 1, player.y - 1)) {
-                return true;
-            }
-        }
-        if (try_player_move (0, -1)) {
-            if (check_safe (temp_arena, player.x, player.y - 1)) {
-                return true;
-            }
-        }
-        if (try_player_move (1, -1)) {
-            if (check_safe (temp_arena, player.x + 1, player.y - 1)) {
-                return true;
-            }
-        }
-        if (try_player_move (-1, 0)) {
-            if (check_safe (temp_arena, player.x - 1, player.y)) {
-                return true;
-            }
-        }
-        if (try_player_move (0, 0)) {
-            if (check_safe (temp_arena, player.x, player.y)) {
-                return true;
-            }
-        }
-        if (try_player_move (1, 0)) {
-            if (check_safe (temp_arena, player.x + 1, player.y)) {
-                return true;
-            }
-        }
-        if (try_player_move (-1, 1)) {
-            if (check_safe (temp_arena, player.x - 1, player.y + 1)) {
-                return true;
-            }
-        }
-        if (try_player_move (0, 1)) {
-            if (check_safe (temp_arena, player.x, player.y + 1)) {
-                return true;
-            }
-        }
-        if (try_player_move (1, 1)) {
-            if (check_safe (temp_arena, player.x + 1, player.y + 1)) {
-                return true;
+        for (int dx = -1; dx <= 1; ++dx) {
+            for (int dy = -1; dy <= 1; ++dy) {
+                var change = try_player_move (dx, dy);
+                if (change != null) {
+                    if (check_safe (change)) {
+                        return true;
+                    }
+                }
             }
         }
         return false;
@@ -708,16 +639,34 @@ public class Game {
      *
      */
     bool safe_teleport_available () {
-        load_temp_arena ();
-
-        for (int x = 0; x < GAME_WIDTH; x++) {
-            for (int y = 0; y < GAME_HEIGHT; y++) {
-                if (check_safe (temp_arena, x, y))
-                    return true;
+        for (int x = 0; x < arena.width; x++) {
+            for (int y = 0; y < arena.height; y++) {
+                if (arena[x, y] == ObjectType.NONE) {
+                    var change = teleport_to (x, y);
+                    if (check_safe (change)) {
+                        return true;
+                    }
+                }
             }
         }
 
         return false;
+    }
+
+    private ArenaChange teleport_to (int x, int y) {
+        var new_arena = arena.map ((obj) => {
+            if (obj != ObjectType.PLAYER) {
+                return obj;
+            } else {
+                return ObjectType.NONE;
+            }
+        });
+        new_arena[x, y] = ObjectType.PLAYER;
+        return ArenaChange () {
+            arena = new_arena,
+            player = Arena.Coords () { x = x, y = y },
+            push = null
+        };
     }
 
     /**
@@ -732,46 +681,28 @@ public class Game {
      * TRUE if the player can move, FALSE otherwise
      **/
     public bool player_move (int dx, int dy) {
+        var change = try_player_move (dx, dy);
 
-        int nx = player.x + dx;
-        int ny = player.y + dy;
-
-        if (properties_safe_moves ()) {
-            if (!try_player_move (dx, dy)) {
-                play_sound (Sound.BAD);
-                return false;
-            } else {
-                if (!check_safe (temp_arena, nx, ny)) {
-                    if (properties_super_safe_moves () || safe_move_available ()) {
-                        play_sound (Sound.BAD);
-                        return false;
-                    }
-                }
-            }
-        } else {
-            if (!try_player_move (dx, dy)) {
-                play_sound (Sound.BAD);
-                return false;
-            }
+        if (change == null) {
+            play_sound (Sound.BAD);
+            return false;
         }
 
-        player = Arena.Coords () {
-            x = nx,
-            y = ny
-        };
-
-        if (temp_arena.@get (player.x, player.y) == ObjectType.NONE) {
-            temp_arena.@set (player.x, player.y, ObjectType.PLAYER);
+        if (properties_safe_moves ()) {
+            if (!check_safe (change)) {
+                if (properties_super_safe_moves () || safe_move_available ()) {
+                    play_sound (Sound.BAD);
+                    return false;
+                }
+            }
         }
 
         splat = null;
+        update_arena (change);
         game_area.queue_draw ();
-
-        update_arena ();
 
         return true;
     }
-
 
     /**
      * random_teleport
@@ -783,7 +714,7 @@ public class Game {
      * TRUE if the player can be teleported, FALSE otherwise
      **/
     bool random_teleport () {
-        temp_arena = arena.map ((obj) => {
+        var temp_arena = arena.map ((obj) => {
             if (obj != ObjectType.PLAYER) {
                 return obj;
             } else {
@@ -794,9 +725,14 @@ public class Game {
         var p = random_position ((x, y) => temp_arena[x, y] == ObjectType.NONE);
         if (p != null) {
             temp_arena[p.x, p.y] = ObjectType.PLAYER;
-            player = p;
 
-            update_arena ();
+            var change = ArenaChange () {
+                arena = temp_arena,
+                player = p,
+                push = null
+            };
+
+            update_arena (change);
             splat = null;
             game_area.queue_draw ();
             play_sound (Sound.TELEPORT);
@@ -829,7 +765,7 @@ public class Game {
         if (safe_teleports <= 0)
             return false;
 
-        temp_arena = arena.map ((obj) => {
+        var temp_arena = arena.map ((obj) => {
             if (obj != ObjectType.PLAYER) {
                 return obj;
             } else {
@@ -837,15 +773,30 @@ public class Game {
             }
         });
 
-        var p = random_position ((x, y) => temp_arena[x, y] == ObjectType.NONE && check_safe (temp_arena, x, y));
+        var p = random_position ((x, y) => {
+            if (temp_arena[x, y] != ObjectType.NONE) {
+                return false;
+            }
+            var try_change = ArenaChange () {
+                arena = temp_arena,
+                player = Arena.Coords() { x = x, y = y },
+                push = null
+            };
+            return check_safe (try_change);
+        });
         if (p != null) {
             temp_arena[p.x, p.y] = ObjectType.PLAYER;
-            player = p;
 
             safe_teleports -= 1;
             update_game_status (score, current_level, safe_teleports);
 
-            update_arena ();
+            var change = ArenaChange () {
+                arena = temp_arena,
+                player = p,
+                push = null
+            };
+
+            update_arena (change);
             splat = null;
             game_area.queue_draw ();
             play_sound (Sound.TELEPORT);

@@ -86,5 +86,17 @@ public class Arena {
 
         return new_arena;
     }
+
+    public int count (Gee.Predicate<ObjectType> predicate) {
+        int result = 0;
+        for (int i = 0; i < _width; ++i) {
+            for (int j = 0; j < _height; ++j) {
+                if (predicate (this.arena[i + j * _width])) {
+                    result += 1;
+                }
+            }
+        }
+        return result;
+    }
 }
 

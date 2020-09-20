@@ -22,9 +22,6 @@ using Gdk;
 
 public GameConfigs game_configs;
 
-const int KB_TEXT_WIDTH = 60;
-const int KB_TEXT_HEIGHT = 32;
-
 const string KEY_PREFERENCES_GROUP = "preferences";
 const string KEY_BACKGROUND_COLOR  = "background-color";
 const string KEY_CONFIGURATION     = "configuration";
@@ -48,15 +45,7 @@ struct Properties {
     string themename;
 }
 
-Dialog propbox = null;
 Properties properties;
-
-void apply_cb () {
-    keyboard_set (properties.keys);
-
-    propbox.destroy ();
-    propbox = null;
-}
 
 /**
  * handles pixmap selection messages
@@ -154,6 +143,139 @@ public string properties_theme_name () {
     return properties.themename;
 }
 
+public class PropertiesDialog : Dialog {
+
+    public PropertiesDialog (Gtk.Window parent, Themes themes) {
+        Object (use_header_bar: 1,
+                title: _("Preferences"),
+                transient_for: parent,
+                modal: true,
+                border_width: 5);
+
+        get_content_area ().set_spacing (2);
+
+        /* Set up notebook and add it to hbox of the gtk_dialog */
+        var notebook = new Notebook ();
+        notebook.border_width = 5;
+        get_content_area ().pack_start (notebook, true, true, 0);
+
+        /* The configuration page */
+        var cpage = new Box (Orientation.VERTICAL, 18);
+        cpage.border_width = 12;
+
+        var grid = new Grid ();
+        grid.set_row_spacing (6);
+        grid.set_column_spacing (12);
+        cpage.pack_start (grid, false, false, 0);
+
+        var label = new Label (_("Game Type"));
+        grid.attach (label, 0, 0, 1, 1);
+
+        var typemenu = new ComboBoxText ();
+        fill_typemenu (typemenu);
+        typemenu.changed.connect (() => {
+            type_selection(typemenu.get_active_text ());
+        });
+        grid.attach (typemenu, 1, 0, 1, 1);
+
+        var safe_chkbox = new CheckButton.with_mnemonic (_("_Use safe moves"));
+        safe_chkbox.set_active (properties.safe_moves);
+        safe_chkbox.set_tooltip_text (_("Prevent accidental moves that result in getting killed."));
+        grid.attach (safe_chkbox, 0, 1, 2, 1);
+
+        var super_safe_chkbox = new CheckButton.with_mnemonic (_("U_se super safe moves"));
+        super_safe_chkbox.set_active (properties.super_safe_moves);
+        super_safe_chkbox.set_tooltip_text (_("Prevents all moves that result in getting killed."));
+        super_safe_chkbox.set_sensitive (properties.safe_moves);
+        grid.attach (super_safe_chkbox, 0, 2, 2, 1);
+
+        safe_chkbox.toggled.connect ((toggle) => {
+            properties.safe_moves = toggle.active;
+            conf_set_use_safe_moves (properties.safe_moves);
+            super_safe_chkbox.set_sensitive (properties.safe_moves);
+        });
+        super_safe_chkbox.toggled.connect ((toggle) => {
+            properties.super_safe_moves = toggle.get_active ();
+            conf_set_use_super_safe_moves (properties.super_safe_moves);
+        });
+
+        var sound_chkbox = new CheckButton.with_mnemonic (_("_Enable sounds"));
+        sound_chkbox.set_active (properties.sound);
+        sound_chkbox.toggled.connect ((toggle) => {
+            properties.sound = toggle.active;
+            conf_set_enable_sound (properties.sound);
+        });
+        sound_chkbox.set_tooltip_text (_("Play sounds for events like winning a level and dying."));
+        grid.attach (sound_chkbox, 0, 3, 2, 1);
+
+        label = new Label.with_mnemonic (_("Game"));
+        notebook.append_page (cpage, label);
+
+        /* The graphics page */
+        var gpage = new Box (Orientation.VERTICAL, 18);
+        gpage.set_border_width (12);
+
+        grid = new Grid ();
+        grid.set_row_spacing (6);
+        grid.set_column_spacing (12);
+        gpage.pack_start (grid, false, false, 0);
+
+        label = new Label.with_mnemonic (_("_Image theme:"));
+        label.set_hexpand (true);
+        label.set_halign (Align.START);
+        grid.attach (label, 0, 0, 1, 1);
+
+        var pmapmenu = create_theme_picker (themes, properties.themename);
+        pmapmenu.changed.connect ((combo) => pmap_selection (combo));
+        label.set_mnemonic_widget (pmapmenu);
+        grid.attach (pmapmenu, 1, 0, 1, 1);
+
+        label = new Label.with_mnemonic (_("_Background color:"));
+        label.set_halign (Align.START);
+        grid.attach (label, 0, 1, 1, 1);
+
+        var w = new ColorButton ();
+        w.set_rgba (properties.bgcolour);
+        w.color_set.connect((color) => bg_color_callback(color));
+        label.set_mnemonic_widget (w);
+        grid.attach (w, 1, 1, 1, 1);
+
+        label = new Label.with_mnemonic (_("Appearance"));
+        notebook.append_page (gpage, label);
+
+        /* The keyboard page */
+        var kpage = new Box (Orientation.VERTICAL, 18);
+        kpage.set_border_width (12);
+
+        var vbox = new Box (Orientation.VERTICAL, 6);
+        kpage.pack_start (vbox, true, true, 0);
+
+        var controls_list = new GamesControlsList (settings);
+        controls_list.add_control ("key00", _("Key to move NW"), settings.get_default_value ("key00").get_int32 ());
+        controls_list.add_control ("key01", _("Key to move N"),  settings.get_default_value ("key01").get_int32 ());
+        controls_list.add_control ("key02", _("Key to move NE"), settings.get_default_value ("key02").get_int32 ());
+        controls_list.add_control ("key03", _("Key to move W"),  settings.get_default_value ("key03").get_int32 ());
+        controls_list.add_control ("key04", _("Key to hold"),    settings.get_default_value ("key04").get_int32 ());
+        controls_list.add_control ("key05", _("Key to move E"),  settings.get_default_value ("key05").get_int32 ());
+        controls_list.add_control ("key06", _("Key to move SW"), settings.get_default_value ("key06").get_int32 ());
+        controls_list.add_control ("key07", _("Key to move S"),  settings.get_default_value ("key07").get_int32 ());
+        controls_list.add_control ("key08", _("Key to move SE"), settings.get_default_value ("key08").get_int32 ());
+
+        vbox.pack_start (controls_list, true, true, 0);
+
+        var hbox = new ButtonBox (Orientation.HORIZONTAL);
+        hbox.set_layout (ButtonBoxStyle.START);
+        vbox.pack_start (hbox, false, false, 0);
+
+        var dbut = new Button.with_mnemonic (_("_Restore Defaults"));
+        dbut.clicked.connect (() => defkey_cb());
+        hbox.pack_start (dbut, false, false, 0);
+
+        label = new Label.with_mnemonic (_("Keyboard"));
+        notebook.append_page (kpage, label);
+    }
+}
+
 /**
  * show_properties_dialog
  *
@@ -163,144 +285,12 @@ public string properties_theme_name () {
 public void show_properties_dialog () {
     var themes = get_themes ();
 
-    if (propbox != null)
-        return;
-
-    propbox = new Dialog.with_buttons (_("Preferences"),
-                                       window,
-                                       DialogFlags.USE_HEADER_BAR | DialogFlags.MODAL);
-
-    propbox.border_width = 5;
-    propbox.get_content_area ().set_spacing (2);
-    propbox.destroy.connect (() => propbox = null);
-
-    /* Set up notebook and add it to hbox of the gtk_dialog */
-    var notebook = new Notebook ();
-    notebook.border_width = 5;
-    propbox.get_content_area ().pack_start (notebook, true, true, 0);
-
-    /* The configuration page */
-    var cpage = new Box (Orientation.VERTICAL, 18);
-    cpage.border_width = 12;
-
-    var grid = new Grid ();
-    grid.set_row_spacing (6);
-    grid.set_column_spacing (12);
-    cpage.pack_start (grid, false, false, 0);
-
-    var label = new Label (_("Game Type"));
-    grid.attach (label, 0, 0, 1, 1);
-
-    var typemenu = new ComboBoxText ();
-    fill_typemenu (typemenu);
-    typemenu.changed.connect (() => {
-        type_selection(typemenu.get_active_text ());
-    });
-    grid.attach (typemenu, 1, 0, 1, 1);
-
-    var safe_chkbox = new CheckButton.with_mnemonic (_("_Use safe moves"));
-    safe_chkbox.set_active (properties.safe_moves);
-    safe_chkbox.set_tooltip_text (_("Prevent accidental moves that result in getting killed."));
-    grid.attach (safe_chkbox, 0, 1, 2, 1);
-
-    var super_safe_chkbox = new CheckButton.with_mnemonic (_("U_se super safe moves"));
-    super_safe_chkbox.set_active (properties.super_safe_moves);
-    super_safe_chkbox.set_tooltip_text (_("Prevents all moves that result in getting killed."));
-    super_safe_chkbox.set_sensitive (properties.safe_moves);
-    grid.attach (super_safe_chkbox, 0, 2, 2, 1);
-
-    safe_chkbox.toggled.connect ((toggle) => {
-        properties.safe_moves = toggle.active;
-        conf_set_use_safe_moves (properties.safe_moves);
-        super_safe_chkbox.set_sensitive (properties.safe_moves);
-    });
-    super_safe_chkbox.toggled.connect ((toggle) => {
-        properties.super_safe_moves = toggle.get_active ();
-        conf_set_use_super_safe_moves (properties.super_safe_moves);
-    });
-
-    var sound_chkbox = new CheckButton.with_mnemonic (_("_Enable sounds"));
-    sound_chkbox.set_active (properties.sound);
-    sound_chkbox.toggled.connect ((toggle) => {
-        properties.sound = toggle.active;
-        conf_set_enable_sound (properties.sound);
-    });
-    sound_chkbox.set_tooltip_text (_("Play sounds for events like winning a level and dying."));
-    grid.attach (sound_chkbox, 0, 3, 2, 1);
-
-    label = new Label.with_mnemonic (_("Game"));
-    notebook.append_page (cpage, label);
-
-    /* The graphics page */
-    var gpage = new Box (Orientation.VERTICAL, 18);
-    gpage.set_border_width (12);
-
-    grid = new Grid ();
-    grid.set_row_spacing (6);
-    grid.set_column_spacing (12);
-    gpage.pack_start (grid, false, false, 0);
-
-    label = new Label.with_mnemonic (_("_Image theme:"));
-    label.set_hexpand (true);
-    label.set_halign (Align.START);
-    grid.attach (label, 0, 0, 1, 1);
-
-    var pmapmenu = create_theme_picker (themes, properties.themename);
-    pmapmenu.changed.connect ((combo) => pmap_selection (combo));
-    label.set_mnemonic_widget (pmapmenu);
-    grid.attach (pmapmenu, 1, 0, 1, 1);
-
-    label = new Label.with_mnemonic (_("_Background color:"));
-    label.set_halign (Align.START);
-    grid.attach (label, 0, 1, 1, 1);
-
-    var w = new ColorButton ();
-    w.set_rgba (properties.bgcolour);
-    w.color_set.connect((color) => bg_color_callback(color));
-    label.set_mnemonic_widget (w);
-    grid.attach (w, 1, 1, 1, 1);
-
-    label = new Label.with_mnemonic (_("Appearance"));
-    notebook.append_page (gpage, label);
-
-    /* The keyboard page */
-    var kpage = new Box (Orientation.VERTICAL, 18);
-    kpage.set_border_width (12);
-
-    var vbox = new Box (Orientation.VERTICAL, 6);
-    kpage.pack_start (vbox, true, true, 0);
-
-    var controls_list = new GamesControlsList (settings);
-    controls_list.add_control ("key00", _("Key to move NW"), settings.get_default_value ("key00").get_int32 ());
-    controls_list.add_control ("key01", _("Key to move N"),  settings.get_default_value ("key01").get_int32 ());
-    controls_list.add_control ("key02", _("Key to move NE"), settings.get_default_value ("key02").get_int32 ());
-    controls_list.add_control ("key03", _("Key to move W"),  settings.get_default_value ("key03").get_int32 ());
-    controls_list.add_control ("key04", _("Key to hold"),    settings.get_default_value ("key04").get_int32 ());
-    controls_list.add_control ("key05", _("Key to move E"),  settings.get_default_value ("key05").get_int32 ());
-    controls_list.add_control ("key06", _("Key to move SW"), settings.get_default_value ("key06").get_int32 ());
-    controls_list.add_control ("key07", _("Key to move S"),  settings.get_default_value ("key07").get_int32 ());
-    controls_list.add_control ("key08", _("Key to move SE"), settings.get_default_value ("key08").get_int32 ());
-
-    vbox.pack_start (controls_list, true, true, 0);
-
-    var hbox = new ButtonBox (Orientation.HORIZONTAL);
-    hbox.set_layout (ButtonBoxStyle.START);
-    vbox.pack_start (hbox, false, false, 0);
-
-    var dbut = new Button.with_mnemonic (_("_Restore Defaults"));
-    dbut.clicked.connect (() => defkey_cb());
-    hbox.pack_start (dbut, false, false, 0);
-
-    label = new Label.with_mnemonic (_("Keyboard"));
-    notebook.append_page (kpage, label);
-
-    propbox.delete_event.connect (() => {
-        propbox = null;
-        return false;
-    });
-    propbox.response.connect (() => apply_cb());
-
+    var propbox = new PropertiesDialog (window, themes);
     propbox.show_all ();
+    propbox.run ();
+    propbox.destroy ();
+
+    keyboard_set (properties.keys);
 }
 
 public void load_properties () {

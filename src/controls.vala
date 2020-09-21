@@ -93,10 +93,9 @@ public class GamesControlsList : ScrolledWindow {
         settings.disconnect (notify_handler_id);
     }
 
-    public void add_control (string conf_key,
-                             string label,
-                             uint default_keyval) {
+    public void add_control (string conf_key, string label) {
         var keyval = settings.get_int (conf_key);
+        uint default_keyval = settings.get_default_value (conf_key).get_int32 ();
 
         TreeIter iter;
         store.append (out iter);

@@ -42,10 +42,14 @@ public class Theme {
     private Pixbuf pixbuf;
     private int tile_width;
     private int tile_height;
+    public string path { get; private set; }
+    public string name { get; private set; }
 
-    public Theme.from_file (string path) throws Error {
+    public Theme.from_file (string path, string name) throws Error {
         preimage = new GamesPreimage.from_file (path);
         pixbuf = null;
+        this.path = path;
+        this.name = name;
     }
 
     public void draw_object (ObjectType type,

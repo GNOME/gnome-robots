@@ -22,7 +22,6 @@ using Gdk;
 
 public GameConfigs game_configs;
 
-const string KEY_PREFERENCES_GROUP = "preferences";
 const string KEY_BACKGROUND_COLOR  = "background-color";
 const string KEY_CONFIGURATION     = "configuration";
 const string KEY_ENABLE_SOUND      = "enable-sound";
@@ -48,32 +47,6 @@ struct Properties {
 Properties properties;
 
 /**
- * handles pixmap selection messages
- **/
-void pmap_selection (ComboBox combo) {
-    TreeIter iter;
-    if (combo.get_active_iter (out iter)) {
-        Themes model = combo.get_model () as Themes;
-
-        string theme_name;
-        string theme_path;
-        model.get_values (iter, out theme_name, out theme_path);
-
-        /* FIXME: Should be de-suffixed. */
-        properties.themename = theme_name;
-
-        conf_set_theme (properties.themename);
-
-        try {
-            game_area.theme = new Theme.from_file (theme_path);
-        } catch (Error e) {
-            // TODO
-        }
-        game_area.queue_draw ();
-    }
-}
-
-/**
  * handles configuration selection messages
  **/
 void type_selection (string config_name) {
@@ -92,7 +65,7 @@ void defkey_cb () {
     for (int i = 0; i < N_KEYS; ++i) {
         string key = "key%02d".printf (i);
         settings.reset (key);
-        properties.keys[i] = settings.get_default_value (key).get_uint32 ();
+        properties.keys[i] = settings.get_default_value (key).get_int32 ();
     }
 
     keyboard_set (properties.keys);
@@ -116,31 +89,48 @@ void fill_typemenu (ComboBoxText menu) {
     menu.set_active (active_index);
 }
 
-ComboBox create_theme_picker (Themes themes, string current_theme) {
-    var widget = new ComboBox.with_model (themes);
-    var renderer = new CellRendererText ();
-    widget.pack_start (renderer, true);
-    widget.add_attribute (renderer, "text", 0);
+class ThemePicker : ComboBox {
 
-    TreeIter? iter = themes.find_iter_by_name (current_theme);
-    if (iter != null) {
-        widget.set_active_iter (iter);
-    } else {
-        widget.set_active (0);
+    private Themes themes;
+
+    public ThemePicker (Themes themes, string current_theme) {
+        Object (model: themes);
+        this.themes = themes;
+
+        var renderer = new CellRendererText ();
+        pack_start (renderer, true);
+        add_attribute (renderer, "text", 0);
+
+        TreeIter? iter = themes.find_iter_by_name (current_theme);
+        if (iter != null) {
+            set_active_iter (iter);
+        } else {
+            set_active (0);
+        }
+
+        changed.connect (theme_changed_cb);
     }
 
-    return widget;
-}
+    public signal void theme_changed (Theme theme);
 
-void bg_color_callback (ColorChooser color_chooser) {
-    properties.bgcolour = color_chooser.get_rgba ();
-    game_area.background_color = properties.bgcolour;
-    conf_set_background_color (properties.bgcolour);
-    game_area.queue_draw ();
-}
+    private void theme_changed_cb () {
+        TreeIter iter;
+        if (get_active_iter (out iter)) {
+            string theme_name;
+            string theme_path;
+            themes.get_values (iter, out theme_name, out theme_path);
 
-public string properties_theme_name () {
-    return properties.themename;
+            try {
+                var theme = new Theme.from_file (theme_path, theme_name);
+                theme_changed (theme);
+            } catch (Error e) {
+                warning ("Cannot change theme to %s (placed at %s): %s",
+                    theme_name,
+                    theme_path,
+                    e.message);
+            }
+        }
+    }
 }
 
 public class PropertiesDialog : Dialog {
@@ -191,12 +181,12 @@ public class PropertiesDialog : Dialog {
 
         safe_chkbox.toggled.connect ((toggle) => {
             properties.safe_moves = toggle.active;
-            conf_set_use_safe_moves (properties.safe_moves);
+            settings.set_boolean (KEY_SAFE_MOVES, properties.safe_moves);
             super_safe_chkbox.set_sensitive (properties.safe_moves);
         });
         super_safe_chkbox.toggled.connect ((toggle) => {
             properties.super_safe_moves = toggle.get_active ();
-            conf_set_use_super_safe_moves (properties.super_safe_moves);
+            settings.set_boolean (KEY_SUPER_SAFE_MOVES, properties.super_safe_moves);
         });
 
         var sound_chkbox = new CheckButton.with_mnemonic (_("_Enable sounds"));
@@ -225,10 +215,10 @@ public class PropertiesDialog : Dialog {
         label.set_halign (Align.START);
         grid.attach (label, 0, 0, 1, 1);
 
-        var pmapmenu = create_theme_picker (themes, properties.themename);
-        pmapmenu.changed.connect ((combo) => pmap_selection (combo));
-        label.set_mnemonic_widget (pmapmenu);
-        grid.attach (pmapmenu, 1, 0, 1, 1);
+        var theme_picker = new ThemePicker (themes, properties.themename);
+        theme_picker.theme_changed.connect (theme_changed);
+        label.set_mnemonic_widget (theme_picker);
+        grid.attach (theme_picker, 1, 0, 1, 1);
 
         label = new Label.with_mnemonic (_("_Background color:"));
         label.set_halign (Align.START);
@@ -236,7 +226,7 @@ public class PropertiesDialog : Dialog {
 
         var w = new ColorButton ();
         w.set_rgba (properties.bgcolour);
-        w.color_set.connect((color) => bg_color_callback(color));
+        w.color_set.connect((color) => bg_color_changed(color));
         label.set_mnemonic_widget (w);
         grid.attach (w, 1, 1, 1, 1);
 
@@ -251,15 +241,15 @@ public class PropertiesDialog : Dialog {
         kpage.pack_start (vbox, true, true, 0);
 
         var controls_list = new GamesControlsList (settings);
-        controls_list.add_control ("key00", _("Key to move NW"), settings.get_default_value ("key00").get_int32 ());
-        controls_list.add_control ("key01", _("Key to move N"),  settings.get_default_value ("key01").get_int32 ());
-        controls_list.add_control ("key02", _("Key to move NE"), settings.get_default_value ("key02").get_int32 ());
-        controls_list.add_control ("key03", _("Key to move W"),  settings.get_default_value ("key03").get_int32 ());
-        controls_list.add_control ("key04", _("Key to hold"),    settings.get_default_value ("key04").get_int32 ());
-        controls_list.add_control ("key05", _("Key to move E"),  settings.get_default_value ("key05").get_int32 ());
-        controls_list.add_control ("key06", _("Key to move SW"), settings.get_default_value ("key06").get_int32 ());
-        controls_list.add_control ("key07", _("Key to move S"),  settings.get_default_value ("key07").get_int32 ());
-        controls_list.add_control ("key08", _("Key to move SE"), settings.get_default_value ("key08").get_int32 ());
+        controls_list.add_control ("key00", _("Key to move NW"));
+        controls_list.add_control ("key01", _("Key to move N"));
+        controls_list.add_control ("key02", _("Key to move NE"));
+        controls_list.add_control ("key03", _("Key to move W"));
+        controls_list.add_control ("key04", _("Key to hold"));
+        controls_list.add_control ("key05", _("Key to move E"));
+        controls_list.add_control ("key06", _("Key to move SW"));
+        controls_list.add_control ("key07", _("Key to move S"));
+        controls_list.add_control ("key08", _("Key to move SE"));
 
         vbox.pack_start (controls_list, true, true, 0);
 
@@ -274,6 +264,26 @@ public class PropertiesDialog : Dialog {
         label = new Label.with_mnemonic (_("Keyboard"));
         notebook.append_page (kpage, label);
     }
+
+    private void theme_changed (Theme theme) {
+        /* FIXME: Should be de-suffixed. */
+        properties.themename = theme.name;
+        settings.set_string (KEY_THEME, theme.name);
+
+        game_area.theme = theme;
+        game_area.queue_draw ();
+    }
+
+    private void bg_color_changed (ColorChooser color_chooser) {
+        properties.bgcolour = color_chooser.get_rgba ();
+
+        var colour = rgba_to_string (properties.bgcolour);
+        settings.set_string (KEY_BACKGROUND_COLOR, colour);
+
+        game_area.background_color = properties.bgcolour;
+        game_area.queue_draw ();
+    }
+
 }
 
 /**
@@ -314,28 +324,11 @@ public Theme get_theme_from_properties () throws Error {
     string theme_path;
     themes.get_values (iter, out properties.themename, out theme_path);
 
-    return new Theme.from_file (theme_path);
-}
-
-public void conf_set_theme (string val) {
-    settings.set_string (KEY_THEME, val);
-}
-
-void conf_set_background_color (RGBA c) {
-    var colour = rgba_to_string (c);
-    settings.set_string (KEY_BACKGROUND_COLOR, colour);
+    return new Theme.from_file (theme_path, properties.themename);
 }
 
 public void conf_set_configuration (string val) {
     settings.set_string (KEY_CONFIGURATION, val);
-}
-
-public void conf_set_use_safe_moves (bool val) {
-    settings.set_boolean (KEY_SAFE_MOVES, val);
-}
-
-public void conf_set_use_super_safe_moves (bool val) {
-    settings.set_boolean (KEY_SUPER_SAFE_MOVES, val);
 }
 
 public void conf_set_enable_sound (bool val) {

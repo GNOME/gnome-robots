@@ -241,9 +241,6 @@ public class Game {
     }
 
     /**
-     * generate_level
-     *
-     * Description:
      * Creates a new level and populates it with robots
      **/
     void generate_level () {
@@ -255,28 +252,20 @@ public class Game {
         };
         arena[player.x, player.y] = ObjectType.PLAYER;
 
-        var num_robots1 = config.initial_type1 + config.increment_type1 * current_level;
-
-        if (num_robots1 > config.maximum_type1) {
-            num_robots1 = config.maximum_type1;
-        }
-        if (num_robots1 > max_robots ()) {
-            current_level = 0;
-            num_robots1 = config.initial_type1;
-            message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
-            play_sound (Sound.VICTORY);
-        }
-
-        var num_robots2 = config.initial_type2 + config.increment_type2 * current_level;
-
-        if (num_robots2 > config.maximum_type2) {
-            num_robots2 = config.maximum_type2;
-        }
+        var num_robots1 = int.min(
+            config.initial_type1 + config.increment_type1 * current_level,
+            config.maximum_type1
+        );
+        var num_robots2 = int.min(
+            config.initial_type2 + config.increment_type2 * current_level,
+            config.maximum_type2
+        );
 
         if ((num_robots1 + num_robots2) > max_robots ()) {
             current_level = 0;
             num_robots1 = config.initial_type1;
             num_robots2 = config.initial_type2;
+
             message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
             play_sound (Sound.VICTORY);
         }

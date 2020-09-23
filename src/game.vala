@@ -21,6 +21,61 @@ using Games;
 
 public Game game = null;
 
+public enum PlayerCommand {
+    NW = 0,
+    N,
+    NE,
+    W,
+    STAY,
+    E,
+    SW,
+    S,
+    SE,
+    SAFE_TELEPORT,
+    RANDOM_TELEPORT,
+    WAIT;
+
+    public static PlayerCommand from_direction (int dx, int dy) {
+        foreach (var direction in directions) {
+            if (direction.dx == dx && direction.dy == dy) {
+                return direction.cmd;
+            }
+        }
+        return PlayerCommand.STAY;
+    }
+
+    public bool to_direction (out int dx, out int dy) {
+        foreach (var direction in directions) {
+            if (direction.cmd == this) {
+                dx = direction.dx;
+                dy = direction.dy;
+                return true;
+            }
+        }
+        dx = 0;
+        dy = 0;
+        return false;
+    }
+}
+
+struct Direction {
+    PlayerCommand cmd;
+    int dx;
+    int dy;
+}
+
+const Direction[] directions = {
+    { PlayerCommand.NW,    -1, -1 },
+    { PlayerCommand.N,      0, -1 },
+    { PlayerCommand.NE,     1, -1 },
+    { PlayerCommand.W,     -1,  0 },
+    { PlayerCommand.STAY,   0,  0 },
+    { PlayerCommand.E,      1,  0 },
+    { PlayerCommand.SW,    -1,  1 },
+    { PlayerCommand.S,      0,  1 },
+    { PlayerCommand.SE,     1,  1 }
+};
+
 public class Game {
 
     /*
@@ -45,21 +100,6 @@ public class Game {
         DEAD,
         TYPE2,
         WAITING_TYPE2,
-    }
-
-    public enum PlayerCommand {
-        NW = 0,
-        N,
-        NE,
-        W,
-        STAY,
-        E,
-        SW,
-        S,
-        SE,
-        SAFE_TELEPORT,
-        RANDOM_TELEPORT,
-        WAIT,
     }
 
     Rand rand;
@@ -590,7 +630,7 @@ public class Game {
      * Returns:
      * TRUE if the player can move, FALSE otherwise
      **/
-    public bool player_move (int dx, int dy) {
+    private bool player_move (int dx, int dy) {
         var change = try_player_move (dx, dy);
 
         if (change == null) {
@@ -693,55 +733,17 @@ public class Game {
 
         switch (key) {
         case PlayerCommand.NW:
-            if (player_move (-1, -1)) {
-                move_robots ();
-                return true;
-            }
-            return false;
         case PlayerCommand.N:
-            if (player_move (0, -1)) {
-                move_robots ();
-                return true;
-            }
-            return false;
         case PlayerCommand.NE:
-            if (player_move (1, -1)) {
-                move_robots ();
-                return true;
-            }
-            return false;
         case PlayerCommand.W:
-            if (player_move (-1, 0)) {
-                move_robots ();
-                return true;
-            }
-            return false;
         case PlayerCommand.STAY:
-            if (player_move (0, 0)) {
-                move_robots ();
-                return true;
-            }
-            return false;
         case PlayerCommand.E:
-            if (player_move (1, 0)) {
-                move_robots ();
-                return true;
-            }
-            return false;
         case PlayerCommand.SW:
-            if (player_move (-1, 1)) {
-                move_robots ();
-                return true;
-            }
-            return false;
         case PlayerCommand.S:
-            if (player_move (0, 1)) {
-                move_robots ();
-                return true;
-            }
-            return false;
         case PlayerCommand.SE:
-            if (player_move (1, 1)) {
+            int dx, dy;
+            assert (key.to_direction (out dx, out dy));
+            if (player_move (dx, dy)) {
                 move_robots ();
                 return true;
             }

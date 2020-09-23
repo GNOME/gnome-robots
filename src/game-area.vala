@@ -242,9 +242,8 @@ public class GameArea : DrawingArea {
         int dx, dy;
         get_dir (x, y, out dx, out dy);
 
-        // TODO: replace by player_command
-        if (game.player_move (dx, dy)) {
-            game.move_robots ();
+        var cmd = PlayerCommand.from_direction (dx, dy);
+        if (game.player_command (cmd)) {
             queue_draw ();
         }
     }

@@ -151,19 +151,19 @@ public class RobotsWindow : ApplicationWindow {
     }
 
     private void random_teleport_cb () {
-        if (game.player_command (Game.PlayerCommand.RANDOM_TELEPORT)) {
+        if (game.player_command (PlayerCommand.RANDOM_TELEPORT)) {
             game_area.queue_draw ();
         }
     }
 
     private void safe_teleport_cb () {
-        if (game.player_command (Game.PlayerCommand.SAFE_TELEPORT)) {
+        if (game.player_command (PlayerCommand.SAFE_TELEPORT)) {
             game_area.queue_draw ();
         }
     }
 
     private void wait_cb () {
-        if (game.player_command (Game.PlayerCommand.WAIT)) {
+        if (game.player_command (PlayerCommand.WAIT)) {
             game_area.queue_draw ();
         }
     }
@@ -181,7 +181,7 @@ public class RobotsWindow : ApplicationWindow {
 
         for (var i = 0; i < control_keys.length; ++i) {
             if (pressed == ((char)control_keys[i]).toupper ()) {
-                if (game.player_command ((Game.PlayerCommand)i)) {
+                if (game.player_command ((PlayerCommand)i)) {
                     game_area.queue_draw ();
                 }
                 return true;

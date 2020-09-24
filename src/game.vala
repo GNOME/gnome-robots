@@ -102,7 +102,6 @@ public class Game {
         WAITING_TYPE2,
     }
 
-    Rand rand;
     public State state { get; private set; }
     public Arena arena { get; private set; }
     public GameConfig config { get; set; }
@@ -115,6 +114,7 @@ public class Game {
     public Arena.Coords player { get; private set; }
     public Arena.Coords? splat { get; private set; }
 
+    private Rand rand;
     private int endlev_counter = 0;
     private int current_level = 0;
     private int score = 0;
@@ -132,7 +132,7 @@ public class Game {
         }
     }
 
-    struct ArenaChange {
+    private struct ArenaChange {
         Arena arena;
         Arena.Coords player;
         Arena.Coords? push;
@@ -154,7 +154,7 @@ public class Game {
     /**
      * Enters a score in the high-score table
      **/
-    void log_score (int sc) {
+    private void log_score (int sc) {
         if (sc <= 0) {
             return;
         }
@@ -182,7 +182,7 @@ public class Game {
     /**
      * Ends the current game.
      **/
-    void kill_player () {
+    private void kill_player () {
         state = State.DEAD;
         play_sound (Sound.DIE);
         arena[player.x, player.y] = ObjectType.PLAYER;
@@ -196,7 +196,7 @@ public class Game {
      * Description:
      * registers a robot kill and updates the score
      **/
-    void add_kill (ObjectType type) {
+    private void add_kill (ObjectType type) {
         int si;
         if ((state == State.WAITING) || (state == State.WAITING_TYPE2)) {
             if (type == ObjectType.ROBOT1) {
@@ -243,7 +243,7 @@ public class Game {
     /**
      * Creates a new level and populates it with robots
      **/
-    void generate_level () {
+    private void generate_level () {
         arena.clear ();
 
         player = Arena.Coords () {
@@ -296,7 +296,7 @@ public class Game {
         }
     }
 
-    void update_arena (ArenaChange change) {
+    private void update_arena (ArenaChange change) {
         if (change.push != null) {
             switch (arena[change.push.x, change.push.y]) {
             case ObjectType.ROBOT1:
@@ -413,7 +413,7 @@ public class Game {
     /**
      * Starts the process of moving robots
      **/
-    public void move_robots () {
+    private void move_robots () {
         var new_arena = move_all_robots ();
 
         var num_robots2 = new_arena.count (obj => obj == ObjectType.ROBOT2);
@@ -434,7 +434,7 @@ public class Game {
         update_arena (change);
     }
 
-    delegate void KillTracker(ObjectType victim);
+    private delegate void KillTracker(ObjectType victim);
 
     private static Arena chase (Arena arena, Gee.Predicate<ObjectType> is_chaser, int x, int y, KillTracker? track_kill) {
         var new_arena = arena.map ((obj) => {
@@ -576,7 +576,7 @@ public class Game {
      * Returns:
      * TRUE if there is a possible safe move, FALSE otherwise
      **/
-    bool safe_move_available () {
+    private bool safe_move_available () {
         for (int dx = -1; dx <= 1; ++dx) {
             for (int dy = -1; dy <= 1; ++dy) {
                 var change = try_player_move (dx, dy);
@@ -651,7 +651,7 @@ public class Game {
      * Returns:
      * TRUE if the player can be teleported, FALSE otherwise
      **/
-    bool random_teleport () {
+    private bool random_teleport () {
         int rand_x = rand.int_range (0, arena.width);
         int rand_y = rand.int_range (0, arena.height);
         foreach (var p in arena.iterate_from (rand_x, rand_y)) {
@@ -682,7 +682,7 @@ public class Game {
      * Returns:
      * TRUE if player can be teleported, FALSE otherwise
      **/
-    bool safe_teleport () {
+    private bool safe_teleport () {
         if (safe_teleports <= 0) {
             return false;
         }

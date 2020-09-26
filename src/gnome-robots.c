@@ -323,9 +323,9 @@ static void
 startup (GtkApplication *app, gpointer user_data)
 {
   struct timeval tv;
-  const gchar *new_game_accels[] = { "<Primary>n", NULL };
+  const gchar *new_game_accels[] = { "<Control>n", NULL };
   const gchar *help_accels[] = { "F1", NULL };
-  const gchar *quit_accels[] = { "<Primary>q", NULL };
+  const gchar *quit_accels[] = { "<Control>q", NULL };
 
   gettimeofday (&tv, NULL);
   srand (tv.tv_usec);

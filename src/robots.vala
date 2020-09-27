@@ -21,12 +21,7 @@ using Gtk;
 using Cairo;
 using Games;
 
-int window_width = 0;
-int window_height = 0;
-bool window_is_maximized = false;
-
 Games.Scores.Context highscores;
-GLib.Settings settings;
 uint control_keys[12];
 
 public class RobotsWindow : ApplicationWindow {
@@ -46,6 +41,7 @@ public class RobotsWindow : ApplicationWindow {
                          SoundPlayer sound_player
     ) throws Error {
         Object (application: app);
+        remember_window_size (this, new WindowSizeSettings ("org.gnome.Robots"));
 
         headerbar = new HeaderBar ();
         headerbar.set_title (_("Robots"));
@@ -59,13 +55,6 @@ public class RobotsWindow : ApplicationWindow {
         menu_button.set_menu_model (appmenu);
         menu_button.show ();
         headerbar.pack_end (menu_button);
-
-        configure_event.connect (window_configure_event_cb);
-        window_state_event.connect (window_state_event_cb);
-        set_default_size (settings.get_int ("window-width"), settings.get_int ("window-height"));
-        if (settings.get_boolean ("window-is-maximized")) {
-            maximize ();
-        }
 
         GLib.ActionEntry[] win_entries = {
             { "random-teleport",  random_teleport_cb },
@@ -221,18 +210,6 @@ public class RobotsWindow : ApplicationWindow {
         return false;
     }
 
-    private bool window_configure_event_cb () {
-        if (!window_is_maximized)
-            get_size (out window_width, out window_height);
-        return false;
-    }
-
-    private bool window_state_event_cb (Gdk.EventWindowState event) {
-        if ((event.changed_mask & Gdk.WindowState.MAXIMIZED) != 0)
-            window_is_maximized = (event.new_window_state & Gdk.WindowState.MAXIMIZED) != 0;
-        return false;
-    }
-
     public void start_new_game () {
         game_area.start_new_game ();
     }
@@ -310,7 +287,7 @@ class RobotsApplication : Gtk.Application {
 
         Environment.set_application_name (_("Robots"));
 
-        settings = new GLib.Settings ("org.gnome.Robots");
+        var settings = new GLib.Settings ("org.gnome.Robots");
         properties = new Properties (settings);
 
         Window.set_default_icon_name ("org.gnome.Robots");
@@ -355,13 +332,6 @@ class RobotsApplication : Gtk.Application {
         }
     }
 
-    protected override void shutdown () {
-        base.shutdown ();
-        settings.set_int ("window-width", window_width);
-        settings.set_int ("window-height", window_height);
-        settings.set_boolean ("window-is-maximized", window_is_maximized);
-    }
-
     protected override void activate () {
         var window = get_active_window () as RobotsWindow;
         if (window != null) {
@@ -395,8 +365,6 @@ class RobotsApplication : Gtk.Application {
                                                                            "org.gnome.Robots");
 
         window.show_all ();
-
-        GLib.Settings.sync ();
     }
 
     private void new_game_cb () {

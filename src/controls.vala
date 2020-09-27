@@ -23,26 +23,20 @@ public class GamesControlsList : ScrolledWindow {
 
     private Gtk.ListStore store;
     private TreeView view;
-
-    private GLib.Settings settings;
-    private ulong notify_handler_id;
+    private Properties properties;
 
     private enum Column {
-        CONFKEY = 0,
-        LABEL,
+        LABEL = 0,
+        INDEX,
         KEYCODE,
         KEYMODS,
-        DEFAULT_KEYCODE,
-        DEFAULT_KEYMODS,
         COUNT
     }
 
-    public GamesControlsList(GLib.Settings settings) {
+    public GamesControlsList(Properties properties) {
         store = new Gtk.ListStore (Column.COUNT,
                                    Type.STRING,
-                                   Type.STRING,
-                                   Type.UINT,
-                                   Type.UINT,
+                                   Type.INT,
                                    Type.UINT,
                                    Type.UINT);
 
@@ -63,7 +57,7 @@ public class GamesControlsList : ScrolledWindow {
         var key_renderer = new CellRendererAccel ();
         key_renderer.editable = true;
         key_renderer.accel_mode = CellRendererAccelMode.OTHER;
-        key_renderer.accel_edited.connect ((_cell, path, keyval, _mask, _keycode) => {
+        key_renderer.accel_edited.connect ((_cell, path, keyval, _mods, _keycode) => {
             accel_edited_cb (path, keyval);
         });
         key_renderer.accel_cleared.connect ((_cell, path) => {
@@ -83,28 +77,36 @@ public class GamesControlsList : ScrolledWindow {
         shadow_type = ShadowType.IN;
         add (view);
 
-        this.settings = settings;
-        notify_handler_id = settings.changed.connect ((_settings, key) => {
-            settings_changed_cb(key);
-        });
+        this.properties = properties;
+        properties.changed.connect (properties_changed_cb);
+
+        var key_labels = new string[] {
+            _("Key to move NW"),
+            _("Key to move N"),
+            _("Key to move NE"),
+            _("Key to move W"),
+            _("Key to hold"),
+            _("Key to move E"),
+            _("Key to move SW"),
+            _("Key to move S"),
+            _("Key to move SE")
+        };
+        for (var i = 0; i < key_labels.length; ++i) {
+            add_control (i, key_labels[i]);
+        }
     }
 
     ~GamesControlsList () {
-        settings.disconnect (notify_handler_id);
+        properties.changed.disconnect (properties_changed_cb);
     }
 
-    public void add_control (string conf_key, string label) {
-        var keyval = settings.get_int (conf_key);
-        uint default_keyval = settings.get_default_value (conf_key).get_int32 ();
-
+    private void add_control (int index, string label) {
         TreeIter iter;
         store.append (out iter);
-        store.set_value (iter, Column.CONFKEY, conf_key);
         store.set_value (iter, Column.LABEL, label);
-        store.set_value (iter, Column.KEYCODE, keyval);
+        store.set_value (iter, Column.INDEX, index);
+        store.set_value (iter, Column.KEYCODE, properties.keys[index]);
         store.set_value (iter, Column.KEYMODS, 0);
-        store.set_value (iter, Column.DEFAULT_KEYCODE, default_keyval);
-        store.set_value (iter, Column.DEFAULT_KEYMODS, 0);
     }
 
     private void accel_edited_cb (string path_string, uint keyval) {
@@ -117,12 +119,13 @@ public class GamesControlsList : ScrolledWindow {
             return;
         }
 
-        Value conf_key;
-        store.get_value (iter, Column.CONFKEY, out conf_key);
+        Value key_index_value;
+        store.get_value (iter, Column.INDEX, out key_index_value);
+        int key_index = key_index_value.get_int();
 
-        /* Note: the model is updated in the conf notification callback */
         /* FIXME: what to do with the modifiers? */
-        settings.set_int (conf_key.get_string(), (int) keyval);
+        properties.keys[key_index] = keyval;
+        store.set_value (iter, Column.KEYCODE, keyval);
     }
 
     private void accel_cleared_cb (string path_string) {
@@ -134,32 +137,26 @@ public class GamesControlsList : ScrolledWindow {
         if (!store.get_iter (out iter, path))
             return;
 
-        Value conf_key;
-        store.get_value (iter, Column.CONFKEY, out conf_key);
+        Value key_index_value;
+        store.get_value (iter, Column.INDEX, out key_index_value);
+        int key_index = key_index_value.get_int();
 
-        Value default_keyval;
-        store.get_value (iter, Column.DEFAULT_KEYCODE, out default_keyval);
-
-        /* Note: the model is updated in the conf notification callback */
         /* FIXME: what to do with the modifiers? */
-        settings.set_int (conf_key.get_string(), (int) default_keyval.get_uint());
+        var keyval = properties.default_keys[key_index];
+        properties.keys[key_index] = keyval;
+        store.set_value (iter, Column.KEYCODE, keyval);
     }
 
-    private void settings_changed_cb (string key) {
-        var keyval = settings.get_int (key);
-
-        /* find our gconf key in the list store and update it */
+    private void properties_changed_cb () {
         TreeIter iter;
         if (store.get_iter_first (out iter)) {
             do {
-                Value conf_key;
-                store.get_value (iter, Column.CONFKEY, out conf_key);
+                Value key_index_value;
+                store.get_value (iter, Column.INDEX, out key_index_value);
+                int key_index = key_index_value.get_int();
 
-                if (key == conf_key.get_string()) {
-                    store.set_value (iter, Column.KEYCODE, keyval);
-                    store.set_value (iter, Column.KEYMODS, 0); // FIXME?
-                    break;
-                }
+                store.set_value (iter, Column.KEYCODE, properties.keys[key_index]);
+                store.set_value (iter, Column.KEYMODS, 0); // FIXME?
             } while (store.iter_next(ref iter));
         }
     }

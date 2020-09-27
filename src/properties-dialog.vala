@@ -191,16 +191,7 @@ public class PropertiesDialog : Dialog {
         var vbox = new Box (Orientation.VERTICAL, 6);
         kpage.pack_start (vbox, true, true, 0);
 
-        var controls_list = new GamesControlsList (settings);
-        controls_list.add_control ("key00", _("Key to move NW"));
-        controls_list.add_control ("key01", _("Key to move N"));
-        controls_list.add_control ("key02", _("Key to move NE"));
-        controls_list.add_control ("key03", _("Key to move W"));
-        controls_list.add_control ("key04", _("Key to hold"));
-        controls_list.add_control ("key05", _("Key to move E"));
-        controls_list.add_control ("key06", _("Key to move SW"));
-        controls_list.add_control ("key07", _("Key to move S"));
-        controls_list.add_control ("key08", _("Key to move SE"));
+        var controls_list = new GamesControlsList (properties);
 
         vbox.pack_start (controls_list, true, true, 0);
 

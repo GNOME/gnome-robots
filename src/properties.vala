@@ -98,6 +98,18 @@ public class Properties {
         }
     }
 
+    public uint[] default_keys {
+        get {
+            uint result[9];
+            for (int i = 0; i < N_KEYS; i++) {
+                result[i] = (uint) settings
+                    .get_default_value ("key%02d".printf (i))
+                    .get_int32 ();
+            }
+            return result;
+        }
+    }
+
     public string theme {
         owned get {
             return settings.get_string (KEY_THEME);

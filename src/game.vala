@@ -17,8 +17,6 @@
  * For more details see the file COPYING.
  */
 
-public Game game = null;
-
 public enum PlayerCommand {
     NW = 0,
     N,

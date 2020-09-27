@@ -33,6 +33,7 @@ public class GameArea : DrawingArea {
     private GestureMultiPress click_controller;
     private EventControllerMotion motion_controller;
     private Game game;
+    private GameConfigs game_configs;
     private Theme _theme;
     private RGBA light_background;
     private RGBA dark_background;
@@ -84,6 +85,7 @@ public class GameArea : DrawingArea {
     public signal void add_score (string game_type, int score);
 
     public GameArea (Game game,
+                     GameConfigs game_configs,
                      Theme theme,
                      Bubble aieee_bubble,
                      Bubble yahoo_bubble,
@@ -92,6 +94,7 @@ public class GameArea : DrawingArea {
                      Properties properties
     ) {
         this.game = game;
+        this.game_configs = game_configs;
         this.theme = theme;
         this.background_color_name = "#7590AE";
         this.aieee_bubble = aieee_bubble;
@@ -140,6 +143,8 @@ public class GameArea : DrawingArea {
         timer_id = Timeout.add (ANIMATION_DELAY, timer_cb);
 
         game.game_event.connect (on_game_event);
+
+        properties.changed.connect (properties_changed_cb);
     }
 
     ~GameArea () {
@@ -303,6 +308,36 @@ public class GameArea : DrawingArea {
 
         odx = MOVE_TABLE[octant, 0];
         ody = MOVE_TABLE[octant, 1];
+    }
+
+    private void properties_changed_cb () {
+        if (game.config.name () != properties.selected_config) {
+            game.config = game_configs.find_by_name (properties.selected_config);
+            start_new_game ();
+        }
+
+        if (theme.name != properties.theme) {
+            try {
+                theme = themes.find_best_match (properties.theme);
+            } catch (Error e) {
+                warning ("Cannot change theme to %s: %s",
+                    properties.theme,
+                    e.message);
+            }
+        }
+
+        background_color = properties.bgcolour;
+        queue_draw ();
+    }
+
+    public void start_new_game () {
+        game.start_new_game ();
+        queue_draw ();
+    }
+
+    public void set_game_config (GameConfig game_config) {
+        game.config = game_config;
+        start_new_game ();
     }
 
     public void player_command (PlayerCommand cmd) {

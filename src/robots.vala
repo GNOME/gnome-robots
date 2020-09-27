@@ -21,26 +21,31 @@ using Gtk;
 using Cairo;
 using Games;
 
-RobotsWindow window = null;
 int window_width = 0;
 int window_height = 0;
 bool window_is_maximized = false;
-GameArea game_area = null;
+
 Games.Scores.Context highscores;
 GLib.Settings settings;
 uint control_keys[12];
-GameConfigs game_configs;
 
 public class RobotsWindow : ApplicationWindow {
 
     private HeaderBar headerbar;
     private Label safe_teleports_label;
-    // private GameArea game_area;
+    private GameArea game_area;
     private EventControllerKey key_controller;
 
-    public RobotsWindow (Gtk.Application app, GameArea game_area) {
+    public RobotsWindow (Gtk.Application app,
+                         Properties properties,
+                         GameConfigs game_configs,
+                         Themes themes,
+                         Bubble yahoo_bubble,
+                         Bubble aieee_bubble,
+                         Bubble splat_bubble,
+                         SoundPlayer sound_player
+    ) throws Error {
         Object (application: app);
-        // this.game_area = game_area;
 
         headerbar = new HeaderBar ();
         headerbar.set_title (_("Robots"));
@@ -69,6 +74,18 @@ public class RobotsWindow : ApplicationWindow {
         };
         add_action_entries (win_entries, this);
 
+        Theme theme = themes.find_best_match (properties.theme);
+        properties.theme = theme.name;
+
+        var game = new Game ();
+        game_area = new GameArea (game,
+                                  game_configs,
+                                  theme,
+                                  aieee_bubble,
+                                  yahoo_bubble,
+                                  splat_bubble,
+                                  sound_player,
+                                  properties);
         game_area.updated.connect (game => update_game_status (game));
 
         var gridframe = new Games.GridFrame (game.width, game.height);
@@ -84,6 +101,25 @@ public class RobotsWindow : ApplicationWindow {
 
         key_controller = new EventControllerKey (this);
         key_controller.key_pressed.connect (keyboard_cb);
+
+        game_area.add_score.connect ((game_type, score) => {
+            string name = category_name_from_key (game_type);
+            var category = new Scores.Category (game_type, name);
+            highscores.add_score.begin (score, category, null, (ctx, res) => {
+                try {
+                    highscores.add_score.end (res);
+                } catch (Error error) {
+                    warning ("Failed to add score: %s", error.message);
+                }
+            });
+        });
+
+        game_area.background_color = properties.bgcolour;
+
+        keyboard_set (properties.keys);
+
+        var game_config = game_configs.find_by_name (properties.selected_config);
+        game_area.set_game_config (game_config);
     }
 
     private Box button_box () {
@@ -142,13 +178,13 @@ public class RobotsWindow : ApplicationWindow {
 
         var is_playing = game.state != Game.State.COMPLETE && game.state != Game.State.DEAD;
 
-        var action1 = (SimpleAction) window.lookup_action ("random-teleport");
+        var action1 = (SimpleAction) lookup_action ("random-teleport");
         action1.set_enabled (is_playing);
 
-        var action2 = (SimpleAction) window.lookup_action ("safe-teleport");
+        var action2 = (SimpleAction) lookup_action ("safe-teleport");
         action2.set_enabled (is_playing && game.status.safe_teleports > 0);
 
-        var action3 = (SimpleAction) window.lookup_action ("wait");
+        var action3 = (SimpleAction) lookup_action ("wait");
         action3.set_enabled (is_playing);
     }
 
@@ -187,7 +223,7 @@ public class RobotsWindow : ApplicationWindow {
 
     private bool window_configure_event_cb () {
         if (!window_is_maximized)
-            window.get_size (out window_width, out window_height);
+            get_size (out window_width, out window_height);
         return false;
     }
 
@@ -195,6 +231,10 @@ public class RobotsWindow : ApplicationWindow {
         if ((event.changed_mask & Gdk.WindowState.MAXIMIZED) != 0)
             window_is_maximized = (event.new_window_state & Gdk.WindowState.MAXIMIZED) != 0;
         return false;
+    }
+
+    public void start_new_game () {
+        game_area.start_new_game ();
     }
 }
 
@@ -252,6 +292,13 @@ class RobotsApplication : Gtk.Application {
 
     private Properties properties;
 
+    private GameConfigs game_configs;
+    private Themes themes;
+    private Bubble yahoo_bubble;
+    private Bubble aieee_bubble;
+    private Bubble splat_bubble;
+    private SoundPlayer sound_player;
+
     public RobotsApplication () {
         Object (
             application_id: "org.gnome.Robots",
@@ -283,6 +330,29 @@ class RobotsApplication : Gtk.Application {
         set_accels_for_action ("app.quit", { "<Primary>q" });
 
         make_cursors ();
+
+        try {
+            game_configs = new GameConfigs.load ();
+            themes = get_themes ();
+            yahoo_bubble = new Bubble.from_data_file ("yahoo.png");
+            aieee_bubble = new Bubble.from_data_file ("aieee.png");
+            splat_bubble = new Bubble.from_data_file ("splat.png");
+            sound_player = new SoundPlayer ();
+        } catch (Error e) {
+            critical ("%s", e.message);
+
+            var errordialog = new MessageDialog.with_markup (get_active_window (), // is it null?
+                                                             DialogFlags.MODAL,
+                                                             MessageType.ERROR,
+                                                             ButtonsType.OK,
+                                                             "<b>%s</b>\n\n%s",
+                                                             _("No game data could be found."),
+                                                             _("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
+            errordialog.set_resizable (false);
+            errordialog.run ();
+
+            quit ();
+        }
     }
 
     protected override void shutdown () {
@@ -293,13 +363,26 @@ class RobotsApplication : Gtk.Application {
     }
 
     protected override void activate () {
+        var window = get_active_window () as RobotsWindow;
         if (window != null) {
             window.present_with_time (get_current_event_time ());
             return;
         }
 
-        game_area = create_game_area (properties);
-        window = new RobotsWindow (this, game_area);
+        try {
+            window = new RobotsWindow (this,
+                                       properties,
+                                       game_configs,
+                                       themes,
+                                       yahoo_bubble,
+                                       aieee_bubble,
+                                       splat_bubble,
+                                       sound_player);
+        } catch (Error e) {
+            critical ("%s", e.message);
+            // TODO message box
+            quit ();
+        }
 
         var importer = new Games.Scores.DirectoryImporter ();
         highscores = new Games.Scores.Context.with_importer_and_icon_name ("gnome-robots",
@@ -313,93 +396,37 @@ class RobotsApplication : Gtk.Application {
 
         window.show_all ();
 
-        try {
-            game_configs = new GameConfigs.load ();
-        } catch (Error e) {
-            /* Oops, no configs, we probably haven't been installed properly. */
-            var errordialog = new MessageDialog.with_markup (window,
-                                                             DialogFlags.MODAL,
-                                                             MessageType.ERROR,
-                                                             ButtonsType.OK,
-                                                             "<b>%s</b>\n\n%s",
-                                                             _("No game data could be found."),
-                                                             _("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
-            errordialog.set_resizable (false);
-            errordialog.run ();
-            quit ();
-        }
-
-        game_area.add_score.connect ((game_type, score) => {
-            string name = category_name_from_key (game_type);
-            var category = new Scores.Category (game_type, name);
-            highscores.add_score.begin (score, category, null, (ctx, res) => {
-                try {
-                    highscores.add_score.end (res);
-                } catch (Error error) {
-                    warning ("Failed to add score: %s", error.message);
-                }
-            });
-        });
-
-        game_area.background_color = properties.bgcolour;
-
-        keyboard_set (properties.keys);
-
-        game.config = game_configs.find_by_name (properties.selected_config);
-        game.start_new_game ();
-        game_area.queue_draw ();
-
         GLib.Settings.sync ();
     }
 
-    private GameArea? create_game_area (Properties properties) {
-        try {
-            Themes themes = get_themes ();
-            Theme theme = themes.find_best_match (properties.theme);
-
-            properties.theme = theme.name;
-
-            game = new Game ();
-            Bubble yahoo_bubble = new Bubble.from_data_file ("yahoo.png");
-            Bubble aieee_bubble = new Bubble.from_data_file ("aieee.png");
-            Bubble splat_bubble = new Bubble.from_data_file ("splat.png");
-            SoundPlayer sound_player = new SoundPlayer ();
-            return new GameArea (game,
-                                 theme,
-                                 aieee_bubble,
-                                 yahoo_bubble,
-                                 splat_bubble,
-                                 sound_player,
-                                 properties);
-        } catch (Error e) {
-            critical ("%s", e.message);
-            // TODO message box
-            quit ();
-            return null; // this line should be unreachable
-        }
-    }
-
     private void new_game_cb () {
-        var dialog = new MessageDialog (get_active_window (),
-                                        DialogFlags.MODAL,
-                                        MessageType.QUESTION,
-                                        ButtonsType.NONE,
-                                        _("Are you sure you want to discard the current game?"));
+        var window = get_active_window () as RobotsWindow;
+        if (window != null) {
+            var dialog = new MessageDialog (get_active_window (),
+                                            DialogFlags.MODAL,
+                                            MessageType.QUESTION,
+                                            ButtonsType.NONE,
+                                            _("Are you sure you want to discard the current game?"));
 
-        dialog.add_button (_("Keep _Playing"), ResponseType.REJECT);
-        dialog.add_button (_("_New Game"), ResponseType.ACCEPT);
+            dialog.add_button (_("Keep _Playing"), ResponseType.REJECT);
+            dialog.add_button (_("_New Game"), ResponseType.ACCEPT);
 
-        var ret = dialog.run ();
-        dialog.destroy ();
+            var ret = dialog.run ();
+            dialog.destroy ();
 
-        if (ret == ResponseType.ACCEPT) {
-            game.start_new_game ();
-            game_area.queue_draw ();
+            if (ret == ResponseType.ACCEPT) {
+                window.start_new_game ();
+            }
+        } else {
+            activate ();
         }
     }
 
     private void preferences_cb () {
-        PropertiesDialog.show_dialog (window, game_configs, themes, properties);
+        PropertiesDialog.show_dialog (get_active_window (),
+                                      game_configs,
+                                      themes,
+                                      properties);
     }
 
     private void scores_cb () {
@@ -408,7 +435,9 @@ class RobotsApplication : Gtk.Application {
 
     private void help_cb () {
         try {
-            show_uri_on_window (window, "help:gnome-robots", get_current_event_time ());
+            show_uri_on_window (get_active_window (),
+                                "help:gnome-robots",
+                                get_current_event_time ());
         } catch (Error error) {
             warning ("Failed to show help: %s", error.message);
         }

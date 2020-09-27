@@ -73,7 +73,7 @@ class ThemePicker : ComboBox {
         changed.connect (theme_changed_cb);
     }
 
-    public signal void theme_changed (Theme theme);
+    public signal void theme_changed (string theme_name);
 
     private void theme_changed_cb () {
         TreeIter iter;
@@ -81,16 +81,7 @@ class ThemePicker : ComboBox {
             string theme_name;
             string theme_path;
             themes.get_values (iter, out theme_name, out theme_path);
-
-            try {
-                var theme = new Theme.from_file (theme_path, theme_name);
-                theme_changed (theme);
-            } catch (Error e) {
-                warning ("Cannot change theme to %s (placed at %s): %s",
-                    theme_name,
-                    theme_path,
-                    e.message);
-            }
+            theme_changed (theme_name);
         }
     }
 }
@@ -221,25 +212,15 @@ public class PropertiesDialog : Dialog {
 
     private void game_config_changed (GameConfig game_config) {
         properties.selected_config = game_config.name ();
-
-        game.config = game_config;
-        game.start_new_game ();
-        game_area.queue_draw ();
     }
 
-    private void theme_changed (Theme theme) {
+    private void theme_changed (string theme_name) {
         /* FIXME: Should be de-suffixed. */
-        properties.theme = theme.name;
-
-        game_area.theme = theme;
-        game_area.queue_draw ();
+        properties.theme = theme_name;
     }
 
     private void bg_color_changed (ColorChooser color_chooser) {
         properties.bgcolour = color_chooser.get_rgba ();
-
-        game_area.background_color = properties.bgcolour;
-        game_area.queue_draw ();
     }
 
     private void reset_keys () {
@@ -252,7 +233,10 @@ public class PropertiesDialog : Dialog {
                                     Themes themes,
                                     Properties properties
     ) {
-        var dlg = new PropertiesDialog (window, game_configs, themes, properties);
+        var dlg = new PropertiesDialog (parent_window,
+                                        game_configs,
+                                        themes,
+                                        properties);
         dlg.show_all ();
         dlg.run ();
         dlg.destroy ();

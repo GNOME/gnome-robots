@@ -122,13 +122,11 @@ public class Properties {
     private GLib.Settings settings;
     private ulong notify_handler_id;
 
-    public signal void changed (Properties properties);
+    public signal void changed ();
 
     public Properties (GLib.Settings settings) {
         this.settings = settings;
-        notify_handler_id = settings.changed.connect (() => {
-            changed(this);
-        });
+        notify_handler_id = settings.changed.connect (() => changed ());
     }
 
     ~Properties () {

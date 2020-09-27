@@ -121,7 +121,7 @@ public class Themes : Gtk.ListStore {
             return iter;
         }
 
-        if (themes.get_iter_first (out iter)) {
+        if (get_iter_first (out iter)) {
             return iter;
         } else {
             throw new FileError.NOENT ("No theme was found.");
@@ -133,7 +133,7 @@ public class Themes : Gtk.ListStore {
 
         string theme_name;
         string theme_path;
-        themes.get_values (iter, out theme_name, out theme_path);
+        get_values (iter, out theme_name, out theme_path);
 
         return new Theme.from_file (theme_path, theme_name);
     }

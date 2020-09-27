@@ -20,21 +20,35 @@
 using Gtk;
 using Gdk;
 
-public GameConfigs game_configs;
+class GameConfigPicker : ComboBoxText {
 
-void fill_typemenu (ComboBoxText menu, string selected_config) {
-    int active_index = 0;
-    for (int i = 0; i < game_configs.count (); ++i) {
-        var config = game_configs.@get ((uint)i);
+    private GameConfigs game_configs;
 
-        var config_name = config.name ();
-        menu.append_text (config_name);
+    public signal void game_config_changed (GameConfig game_config);
 
-        if (config_name == selected_config) {
-            active_index = i;
+    public GameConfigPicker (GameConfigs game_configs, string current_config) {
+        Object ();
+        this.game_configs = game_configs;
+
+        int active_index = 0;
+        for (int i = 0; i < game_configs.count (); ++i) {
+            var config = game_configs[(uint)i];
+
+            var config_name = config.name ();
+            append_text (config_name);
+
+            if (config_name == current_config) {
+                active_index = i;
+            }
         }
+        set_active (active_index);
+
+        changed.connect (() => {
+            var config_name = get_active_text ();
+            var game_config = game_configs.find_by_name (config_name);
+            game_config_changed(game_config);
+        });
     }
-    menu.set_active (active_index);
 }
 
 class ThemePicker : ComboBox {
@@ -86,6 +100,7 @@ public class PropertiesDialog : Dialog {
     private Properties properties;
 
     public PropertiesDialog (Gtk.Window parent,
+                             GameConfigs game_configs,
                              Themes themes,
                              Properties properties
     ) {
@@ -115,11 +130,8 @@ public class PropertiesDialog : Dialog {
         var label = new Label (_("Game Type"));
         grid.attach (label, 0, 0, 1, 1);
 
-        var typemenu = new ComboBoxText ();
-        fill_typemenu (typemenu, properties.selected_config);
-        typemenu.changed.connect (() => {
-            game_config_changed(typemenu.get_active_text ());
-        });
+        var typemenu = new GameConfigPicker (game_configs, properties.selected_config);
+        typemenu.game_config_changed.connect (game_config_changed);
         grid.attach (typemenu, 1, 0, 1, 1);
 
         var safe_chkbox = new CheckButton.with_mnemonic (_("_Use safe moves"));
@@ -207,10 +219,10 @@ public class PropertiesDialog : Dialog {
         notebook.append_page (kpage, label);
     }
 
-    private void game_config_changed (string config_name) {
-        properties.selected_config = config_name;
+    private void game_config_changed (GameConfig game_config) {
+        properties.selected_config = game_config.name ();
 
-        game.config = game_configs.find_by_name (config_name);
+        game.config = game_config;
         game.start_new_game ();
         game_area.queue_draw ();
     }
@@ -234,22 +246,18 @@ public class PropertiesDialog : Dialog {
         properties.reset_keys ();
         keyboard_set (properties.keys);
     }
-}
 
-/**
- * show_properties_dialog
- *
- * Description:
- * displays the properties dialog
- **/
-public void show_properties_dialog (Properties properties) {
-    var themes = get_themes ();
+    public static void show_dialog (Gtk.Window parent_window,
+                                    GameConfigs game_configs,
+                                    Themes themes,
+                                    Properties properties
+    ) {
+        var dlg = new PropertiesDialog (window, game_configs, themes, properties);
+        dlg.show_all ();
+        dlg.run ();
+        dlg.destroy ();
 
-    var propbox = new PropertiesDialog (window, themes, properties);
-    propbox.show_all ();
-    propbox.run ();
-    propbox.destroy ();
-
-    keyboard_set (properties.keys);
+        keyboard_set (properties.keys);
+    }
 }
 

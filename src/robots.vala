@@ -28,6 +28,7 @@ GameArea game_area = null;
 Games.Scores.Context highscores;
 GLib.Settings settings;
 uint control_keys[12];
+GameConfigs game_configs;
 
 public class RobotsWindow : ApplicationWindow {
 
@@ -385,7 +386,7 @@ class RobotsApplication : Gtk.Application {
     }
 
     private void preferences_cb () {
-        show_properties_dialog (properties);
+        PropertiesDialog.show_dialog (window, game_configs, themes, properties);
     }
 
     private void scores_cb () {

@@ -85,7 +85,7 @@ public class Properties {
 
     public uint[] keys {
         get {
-            uint result[9];
+            uint result[N_KEYS];
             for (int i = 0; i < N_KEYS; i++) {
                 result[i] = (uint) settings.get_int ("key%02d".printf (i));
             }
@@ -100,7 +100,7 @@ public class Properties {
 
     public uint[] default_keys {
         get {
-            uint result[9];
+            uint result[N_KEYS];
             for (int i = 0; i < N_KEYS; i++) {
                 result[i] = (uint) settings
                     .get_default_value ("key%02d".printf (i))

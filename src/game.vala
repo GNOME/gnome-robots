@@ -156,13 +156,6 @@ public class Game {
     public signal void game_event (Event event, int param = 0);
 
     /**
-     * Displays the high-score table
-     **/
-    public void show_scores () {
-        highscores.run_dialog ();
-    }
-
-    /**
      * Ends the current game.
      **/
     private void kill_player () {

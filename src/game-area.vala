@@ -20,7 +20,6 @@
 using Gtk;
 using Gdk;
 using Cairo;
-using Games;
 
 public class GameArea : DrawingArea {
 
@@ -82,6 +81,7 @@ public class GameArea : DrawingArea {
     private Properties properties;
 
     public signal void updated (Game game);
+    public signal void add_score (string game_type, int score);
 
     public GameArea (Game game,
                      Theme theme,
@@ -352,29 +352,21 @@ public class GameArea : DrawingArea {
     /**
      * Enters a score in the high-score table
      **/
-    private void log_score (int sc) {
-        if (sc <= 0) {
+    private void log_score (int score) {
+        if (score <= 0) {
             return;
         }
 
-        string key;
+        string game_type;
         if (properties.super_safe_moves) {
-            key = game.config.description + "-super-safe";
+            game_type = game.config.description + "-super-safe";
         } else if (properties.safe_moves) {
-            key = game.config.description + "-safe";
+            game_type = game.config.description + "-safe";
         } else {
-            key = game.config.description;
+            game_type = game.config.description;
         }
 
-        string name = category_name_from_key (key);
-        var category = new Scores.Category (key, name);
-        highscores.add_score.begin (sc, category, null, (ctx, res) => {
-            try {
-                highscores.add_score.end (res);
-            } catch (Error error) {
-                warning ("Failed to add score: %s", error.message);
-            }
-        });
+        add_score (game_type, score);
     }
 
     private void play_sound (Sound sound) {

@@ -19,6 +19,7 @@
 
 using Gtk;
 using Cairo;
+using Games;
 
 RobotsWindow window = null;
 int window_width = 0;
@@ -328,6 +329,18 @@ class RobotsApplication : Gtk.Application {
             quit ();
         }
 
+        game_area.add_score.connect ((game_type, score) => {
+            string name = category_name_from_key (game_type);
+            var category = new Scores.Category (game_type, name);
+            highscores.add_score.begin (score, category, null, (ctx, res) => {
+                try {
+                    highscores.add_score.end (res);
+                } catch (Error error) {
+                    warning ("Failed to add score: %s", error.message);
+                }
+            });
+        });
+
         game_area.background_color = properties.bgcolour;
 
         keyboard_set (properties.keys);
@@ -390,7 +403,7 @@ class RobotsApplication : Gtk.Application {
     }
 
     private void scores_cb () {
-        game.show_scores ();
+        highscores.run_dialog ();
     }
 
     private void help_cb () {

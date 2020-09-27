@@ -343,11 +343,13 @@ class RobotsApplication : Gtk.Application {
             Bubble yahoo_bubble = new Bubble.from_data_file ("yahoo.png");
             Bubble aieee_bubble = new Bubble.from_data_file ("aieee.png");
             Bubble splat_bubble = new Bubble.from_data_file ("splat.png");
+            SoundPlayer sound_player = new SoundPlayer ();
             return new GameArea (game,
                                  theme,
                                  aieee_bubble,
                                  yahoo_bubble,
-                                 splat_bubble);
+                                 splat_bubble,
+                                 sound_player);
         } catch (Error e) {
             critical ("%s", e.message);
             // TODO message box

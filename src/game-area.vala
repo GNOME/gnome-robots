@@ -77,13 +77,16 @@ public class GameArea : DrawingArea {
         }
     }
 
+    private SoundPlayer sound_player;
+
     public signal void updated (Game game);
 
     public GameArea (Game game,
                      Theme theme,
                      Bubble aieee_bubble,
                      Bubble yahoo_bubble,
-                     Bubble splat_bubble
+                     Bubble splat_bubble,
+                     SoundPlayer sound_player
     ) {
         this.game = game;
         this.theme = theme;
@@ -91,6 +94,7 @@ public class GameArea : DrawingArea {
         this.aieee_bubble = aieee_bubble;
         this.yahoo_bubble = yahoo_bubble;
         this.splat_bubble = splat_bubble;
+        this.sound_player = sound_player;
 
         add_events (Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
         configure_event.connect (event => resize_cb (event));
@@ -330,6 +334,13 @@ public class GameArea : DrawingArea {
             break;
         default:
             break;
+        }
+    }
+
+
+    private void play_sound (Sound sound) {
+        if (properties_sound ()) {
+            sound_player.play (sound);
         }
     }
 

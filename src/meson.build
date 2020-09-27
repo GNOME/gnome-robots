@@ -18,7 +18,7 @@ sources = files(
     'animation.vala',
     'controls.vala',
     'game-config.vala',
-    'sound.vala',
+    'sound-player.vala',
     'cursors.vala',
     'properties.vala',
     'graphics.vala',

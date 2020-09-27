@@ -144,6 +144,18 @@ public class Game {
         state = State.PLAYING;
     }
 
+    public enum Event {
+        TELEPORTED,
+        SPLAT,
+        LEVEL_COMPLETE,
+        DEATH,
+        VICTORY,
+        NO_TELEPORT_LOCATIONS,
+        NO_SAFE_TELEPORT_LOCATIONS,
+    }
+
+    public signal void game_event (Event event);
+
     /**
      * Displays the high-score table
      **/
@@ -184,9 +196,9 @@ public class Game {
      **/
     private void kill_player () {
         state = State.DEAD;
-        play_sound (Sound.DIE);
         arena[player.x, player.y] = ObjectType.PLAYER;
         endlev_counter = 0;
+        game_event (Event.DEATH);
     }
 
     /**
@@ -266,8 +278,7 @@ public class Game {
             num_robots1 = config.initial_type1;
             num_robots2 = config.initial_type2;
 
-            message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
-            play_sound (Sound.VICTORY);
+            game_event (Event.VICTORY);
         }
 
         safe_teleports += config.free_safe_teleports;
@@ -301,12 +312,12 @@ public class Game {
             switch (arena[change.push.x, change.push.y]) {
             case ObjectType.ROBOT1:
                 splat = change.push;
-                play_sound (Sound.SPLAT);
+                game_event (Event.SPLAT);
                 score += config.score_type1_splatted;
                 break;
             case ObjectType.ROBOT2:
                 splat = change.push;
-                play_sound (Sound.SPLAT);
+                game_event (Event.SPLAT);
                 score += config.score_type2_splatted;
                 break;
             default:
@@ -325,7 +336,7 @@ public class Game {
              * leads to the player being ressurected and winning. */
             if (arena.count (obj => obj == ObjectType.ROBOT1 || obj == ObjectType.ROBOT2) <= 0) {
                 state = State.COMPLETE;
-                play_sound (Sound.YAHOO);
+                game_event (Event.LEVEL_COMPLETE);
                 endlev_counter = 0;
             }
         }
@@ -623,14 +634,12 @@ public class Game {
         var change = try_player_move (dx, dy);
 
         if (change == null) {
-            play_sound (Sound.BAD);
             return false;
         }
 
         if (properties_safe_moves ()) {
             if (!check_safe (change)) {
                 if (properties_super_safe_moves () || safe_move_available ()) {
-                    play_sound (Sound.BAD);
                     return false;
                 }
             }
@@ -663,13 +672,12 @@ public class Game {
 
             update_arena (change);
             splat = null;
-            play_sound (Sound.TELEPORT);
-
+            game_event (Event.TELEPORTED);
             return true;
         }
 
         /* This should never happen. */
-        message_box (_("There are no teleport locations left!!"));
+        game_event (Event.NO_TELEPORT_LOCATIONS);
         return false;
     }
 
@@ -703,24 +711,24 @@ public class Game {
 
             update_arena (change);
             splat = null;
-            play_sound (Sound.TELEPORT);
+            game_event (Event.TELEPORTED);
 
             return true;
         }
 
-        message_box (_("There are no safe locations to teleport to!!"));
+        game_event (Event.NO_SAFE_TELEPORT_LOCATIONS);
         kill_player ();
         return false;
     }
 
     /**
-     * handles keyboard commands
+     * handles player's commands
      **/
-    public bool player_command (PlayerCommand key) {
+    public bool player_command (PlayerCommand cmd) {
         if (state != State.PLAYING)
             return false;
 
-        switch (key) {
+        switch (cmd) {
         case PlayerCommand.NW:
         case PlayerCommand.N:
         case PlayerCommand.NE:
@@ -731,12 +739,13 @@ public class Game {
         case PlayerCommand.S:
         case PlayerCommand.SE:
             int dx, dy;
-            assert (key.to_direction (out dx, out dy));
+            assert (cmd.to_direction (out dx, out dy));
             if (player_move (dx, dy)) {
                 move_robots ();
                 return true;
+            } else {
+                return false;
             }
-            return false;
         case PlayerCommand.SAFE_TELEPORT:
             if (safe_teleport ()) {
                 move_robots ();
@@ -745,9 +754,8 @@ public class Game {
         case PlayerCommand.RANDOM_TELEPORT:
             if (random_teleport ()) {
                 move_robots ();
-                return true;
             }
-            return false;
+            return true;
         case PlayerCommand.WAIT:
             state = State.WAITING;
             return true;
@@ -757,15 +765,3 @@ public class Game {
     }
 }
 
-/**
- * Displays a modal dialog box with a given message
- **/
-void message_box (string msg) {
-    var box = new Gtk.MessageDialog (window,
-                                     Gtk.DialogFlags.MODAL,
-                                     Gtk.MessageType.INFO,
-                                     Gtk.ButtonsType.OK,
-                                     "%s", msg);
-    box.run ();
-    box.destroy ();
-}

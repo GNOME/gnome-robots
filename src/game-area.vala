@@ -130,6 +130,8 @@ public class GameArea : DrawingArea {
             .forever ();
 
         timer_id = Timeout.add (ANIMATION_DELAY, timer_cb);
+
+        game.game_event.connect (on_game_event);
     }
 
     ~GameArea () {
@@ -243,9 +245,7 @@ public class GameArea : DrawingArea {
         get_dir (x, y, out dx, out dy);
 
         var cmd = PlayerCommand.from_direction (dx, dy);
-        if (game.player_command (cmd)) {
-            queue_draw ();
-        }
+        player_command (cmd);
     }
 
     private void move_cb (double x, double y) {
@@ -295,6 +295,61 @@ public class GameArea : DrawingArea {
 
         odx = MOVE_TABLE[octant, 0];
         ody = MOVE_TABLE[octant, 1];
+    }
+
+    public void player_command (PlayerCommand cmd) {
+        if (game.player_command (cmd)) {
+            queue_draw ();
+        } else {
+            play_sound (Sound.BAD);
+        }
+    }
+
+    private void on_game_event (Game.Event event) {
+        switch (event) {
+        case Game.Event.TELEPORTED:
+            play_sound (Sound.TELEPORT);
+            break;
+        case Game.Event.SPLAT:
+            play_sound (Sound.SPLAT);
+            break;
+        case Game.Event.LEVEL_COMPLETE:
+            play_sound (Sound.YAHOO);
+            break;
+        case Game.Event.DEATH:
+            play_sound (Sound.DIE);
+            break;
+        case Game.Event.VICTORY:
+            message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
+            play_sound (Sound.VICTORY);
+            break;
+        case Game.Event.NO_TELEPORT_LOCATIONS:
+            message_box (_("There are no teleport locations left!!"));
+            break;
+        case Game.Event.NO_SAFE_TELEPORT_LOCATIONS:
+            break;
+        default:
+            break;
+        }
+    }
+
+    /**
+     * Displays a modal dialog box with a given message
+     **/
+    private void message_box (string msg) {
+        var window = get_toplevel () as Gtk.Window;
+        if (window != null) {
+            var box = new Gtk.MessageDialog (window,
+                                             Gtk.DialogFlags.MODAL,
+                                             Gtk.MessageType.INFO,
+                                             Gtk.ButtonsType.OK,
+                                             "%s", msg);
+            box.run ();
+            box.destroy ();
+        } else {
+            warning ("There is no top level window.");
+            info ("%s", msg);
+        }
     }
 }
 

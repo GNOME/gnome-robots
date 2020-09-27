@@ -151,21 +151,15 @@ public class RobotsWindow : ApplicationWindow {
     }
 
     private void random_teleport_cb () {
-        if (game.player_command (PlayerCommand.RANDOM_TELEPORT)) {
-            game_area.queue_draw ();
-        }
+        game_area.player_command (PlayerCommand.RANDOM_TELEPORT);
     }
 
     private void safe_teleport_cb () {
-        if (game.player_command (PlayerCommand.SAFE_TELEPORT)) {
-            game_area.queue_draw ();
-        }
+        game_area.player_command (PlayerCommand.SAFE_TELEPORT);
     }
 
     private void wait_cb () {
-        if (game.player_command (PlayerCommand.WAIT)) {
-            game_area.queue_draw ();
-        }
+        game_area.player_command (PlayerCommand.WAIT);
     }
 
     private bool keyboard_cb (uint keyval, uint keycode, Gdk.ModifierType state) {
@@ -181,9 +175,7 @@ public class RobotsWindow : ApplicationWindow {
 
         for (var i = 0; i < control_keys.length; ++i) {
             if (pressed == ((char)control_keys[i]).toupper ()) {
-                if (game.player_command ((PlayerCommand)i)) {
-                    game_area.queue_draw ();
-                }
+                game_area.player_command ((PlayerCommand)i);
                 return true;
             }
         }

@@ -17,8 +17,6 @@
  * For more details see the file COPYING.
  */
 
-using Games;
-
 public Game game = null;
 
 public enum PlayerCommand {
@@ -149,46 +147,19 @@ public class Game {
         SPLAT,
         LEVEL_COMPLETE,
         DEATH,
+        SCORED,
         VICTORY,
         NO_TELEPORT_LOCATIONS,
         NO_SAFE_TELEPORT_LOCATIONS,
     }
 
-    public signal void game_event (Event event);
+    public signal void game_event (Event event, int param = 0);
 
     /**
      * Displays the high-score table
      **/
     public void show_scores () {
         highscores.run_dialog ();
-    }
-
-    /**
-     * Enters a score in the high-score table
-     **/
-    private void log_score (int sc) {
-        if (sc <= 0) {
-            return;
-        }
-
-        string key;
-        if (properties_super_safe_moves ()) {
-            key = config.description + "-super-safe";
-        } else if (properties_safe_moves ()) {
-            key = config.description + "-safe";
-        } else {
-            key = config.description;
-        }
-
-        string name = category_name_from_key (key);
-        var category = new Scores.Category (key, name);
-        highscores.add_score.begin (sc, category, null, (ctx, res) => {
-            try {
-                highscores.add_score.end (res);
-            } catch (Error error) {
-                warning ("Failed to add score: %s", error.message);
-            }
-        });
     }
 
     /**
@@ -371,7 +342,7 @@ public class Game {
             ++endlev_counter;
             if (endlev_counter >= DEAD_DELAY) {
                 if (score > 0) {
-                    log_score (score);
+                    game_event (Event.SCORED, score);
                 }
                 start_new_game ();
             }
@@ -386,9 +357,6 @@ public class Game {
         score = 0;
         kills = 0;
         score_step = 0;
-
-        if (state == State.PLAYING)
-            log_score (score);
 
         safe_teleports = config.initial_safe_teleports;
 
@@ -619,6 +587,12 @@ public class Game {
         };
     }
 
+    public enum MoveSafety {
+        UNSAFE,
+        SAFE,
+        SUPER_SAFE,
+    }
+
     /**
      * player_move
      * @dx: x direction
@@ -630,16 +604,16 @@ public class Game {
      * Returns:
      * TRUE if the player can move, FALSE otherwise
      **/
-    private bool player_move (int dx, int dy) {
+    private bool player_move (int dx, int dy, MoveSafety safety) {
         var change = try_player_move (dx, dy);
 
         if (change == null) {
             return false;
         }
 
-        if (properties_safe_moves ()) {
+        if (safety != MoveSafety.UNSAFE) {
             if (!check_safe (change)) {
-                if (properties_super_safe_moves () || safe_move_available ()) {
+                if (safety == MoveSafety.SUPER_SAFE || safe_move_available ()) {
                     return false;
                 }
             }
@@ -724,7 +698,9 @@ public class Game {
     /**
      * handles player's commands
      **/
-    public bool player_command (PlayerCommand cmd) {
+    public bool player_command (PlayerCommand cmd,
+                                MoveSafety safety = MoveSafety.UNSAFE
+    ) {
         if (state != State.PLAYING)
             return false;
 
@@ -740,7 +716,7 @@ public class Game {
         case PlayerCommand.SE:
             int dx, dy;
             assert (cmd.to_direction (out dx, out dy));
-            if (player_move (dx, dy)) {
+            if (player_move (dx, dy, safety)) {
                 move_robots ();
                 return true;
             } else {

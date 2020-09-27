@@ -20,6 +20,7 @@
 using Gtk;
 using Gdk;
 using Cairo;
+using Games;
 
 public class GameArea : DrawingArea {
 
@@ -302,14 +303,19 @@ public class GameArea : DrawingArea {
     }
 
     public void player_command (PlayerCommand cmd) {
-        if (game.player_command (cmd)) {
+        var safety =
+            !properties_safe_moves () ? Game.MoveSafety.UNSAFE :
+            properties_super_safe_moves () ? Game.MoveSafety.SUPER_SAFE :
+            Game.MoveSafety.SAFE;
+
+        if (game.player_command (cmd, safety)) {
             queue_draw ();
         } else {
             play_sound (Sound.BAD);
         }
     }
 
-    private void on_game_event (Game.Event event) {
+    private void on_game_event (Game.Event event, int param) {
         switch (event) {
         case Game.Event.TELEPORTED:
             play_sound (Sound.TELEPORT);
@@ -322,6 +328,9 @@ public class GameArea : DrawingArea {
             break;
         case Game.Event.DEATH:
             play_sound (Sound.DIE);
+            break;
+        case Game.Event.SCORED:
+            log_score (param);
             break;
         case Game.Event.VICTORY:
             message_box (_("Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?"));
@@ -337,6 +346,33 @@ public class GameArea : DrawingArea {
         }
     }
 
+    /**
+     * Enters a score in the high-score table
+     **/
+    private void log_score (int sc) {
+        if (sc <= 0) {
+            return;
+        }
+
+        string key;
+        if (properties_super_safe_moves ()) {
+            key = game.config.description + "-super-safe";
+        } else if (properties_safe_moves ()) {
+            key = game.config.description + "-safe";
+        } else {
+            key = game.config.description;
+        }
+
+        string name = category_name_from_key (key);
+        var category = new Scores.Category (key, name);
+        highscores.add_score.begin (sc, category, null, (ctx, res) => {
+            try {
+                highscores.add_score.end (res);
+            } catch (Error error) {
+                warning ("Failed to add score: %s", error.message);
+            }
+        });
+    }
 
     private void play_sound (Sound sound) {
         if (properties_sound ()) {

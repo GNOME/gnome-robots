@@ -340,8 +340,12 @@ class RobotsApplication : Gtk.Application {
 
     private GameArea? create_game_area (Properties properties) {
         try {
+            Themes themes = get_themes ();
+            Theme theme = themes.find_best_match (properties.theme);
+
+            properties.theme = theme.name;
+
             game = new Game ();
-            Theme theme = get_theme_from_properties (properties);
             Bubble yahoo_bubble = new Bubble.from_data_file ("yahoo.png");
             Bubble aieee_bubble = new Bubble.from_data_file ("aieee.png");
             Bubble splat_bubble = new Bubble.from_data_file ("splat.png");

@@ -108,7 +108,7 @@ public class Themes : Gtk.ListStore {
         path = path_value.get_string ();
     }
 
-    public Gtk.TreeIter find_best_match (string name) throws Error {
+    public Gtk.TreeIter find_best_match_iter (string name) throws Error {
         const string DEFAULT_THEME = "robots.svg";
 
         var iter = find_iter_by_name (name);
@@ -126,6 +126,16 @@ public class Themes : Gtk.ListStore {
         } else {
             throw new FileError.NOENT ("No theme was found.");
         }
+    }
+
+    public Theme find_best_match (string name) throws Error {
+        var iter = find_best_match_iter (name);
+
+        string theme_name;
+        string theme_path;
+        themes.get_values (iter, out theme_name, out theme_path);
+
+        return new Theme.from_file (theme_path, theme_name);
     }
 }
 

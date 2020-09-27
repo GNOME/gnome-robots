@@ -253,16 +253,3 @@ public void show_properties_dialog (Properties properties) {
     keyboard_set (properties.keys);
 }
 
-public Theme get_theme_from_properties (Properties properties) throws Error {
-    var themes = get_themes ();
-    var iter = themes.find_best_match (properties.theme);
-
-    string theme_name;
-    string theme_path;
-    themes.get_values (iter, out theme_name, out theme_path);
-
-    properties.theme = theme_name;
-
-    return new Theme.from_file (theme_path, theme_name);
-}
-

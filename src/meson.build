@@ -21,6 +21,7 @@ sources = files(
     'sound-player.vala',
     'cursors.vala',
     'properties.vala',
+    'properties-dialog.vala',
     'graphics.vala',
     'arena.vala',
     'game.vala',

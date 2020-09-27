@@ -79,6 +79,7 @@ public class GameArea : DrawingArea {
     }
 
     private SoundPlayer sound_player;
+    private Properties properties;
 
     public signal void updated (Game game);
 
@@ -87,7 +88,8 @@ public class GameArea : DrawingArea {
                      Bubble aieee_bubble,
                      Bubble yahoo_bubble,
                      Bubble splat_bubble,
-                     SoundPlayer sound_player
+                     SoundPlayer sound_player,
+                     Properties properties
     ) {
         this.game = game;
         this.theme = theme;
@@ -96,6 +98,7 @@ public class GameArea : DrawingArea {
         this.yahoo_bubble = yahoo_bubble;
         this.splat_bubble = splat_bubble;
         this.sound_player = sound_player;
+        this.properties = properties;
 
         add_events (Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
         configure_event.connect (event => resize_cb (event));
@@ -304,8 +307,8 @@ public class GameArea : DrawingArea {
 
     public void player_command (PlayerCommand cmd) {
         var safety =
-            !properties_safe_moves () ? Game.MoveSafety.UNSAFE :
-            properties_super_safe_moves () ? Game.MoveSafety.SUPER_SAFE :
+            !properties.safe_moves ? Game.MoveSafety.UNSAFE :
+            properties.super_safe_moves ? Game.MoveSafety.SUPER_SAFE :
             Game.MoveSafety.SAFE;
 
         if (game.player_command (cmd, safety)) {
@@ -355,9 +358,9 @@ public class GameArea : DrawingArea {
         }
 
         string key;
-        if (properties_super_safe_moves ()) {
+        if (properties.super_safe_moves) {
             key = game.config.description + "-super-safe";
-        } else if (properties_safe_moves ()) {
+        } else if (properties.safe_moves) {
             key = game.config.description + "-safe";
         } else {
             key = game.config.description;
@@ -375,7 +378,7 @@ public class GameArea : DrawingArea {
     }
 
     private void play_sound (Sound sound) {
-        if (properties_sound ()) {
+        if (properties.sound) {
             sound_player.play (sound);
         }
     }

@@ -247,6 +247,9 @@ void keyboard_set (uint[] keys) {
 }
 
 class RobotsApplication : Gtk.Application {
+
+    private Properties properties;
+
     public RobotsApplication () {
         Object (
             application_id: "org.gnome.Robots",
@@ -259,6 +262,7 @@ class RobotsApplication : Gtk.Application {
         Environment.set_application_name (_("Robots"));
 
         settings = new GLib.Settings ("org.gnome.Robots");
+        properties = new Properties (settings);
 
         Window.set_default_icon_name ("org.gnome.Robots");
 
@@ -287,14 +291,12 @@ class RobotsApplication : Gtk.Application {
     }
 
     protected override void activate () {
-        load_properties ();
-
         if (window != null) {
             window.present_with_time (get_current_event_time ());
             return;
         }
 
-        game_area = create_game_area ();
+        game_area = create_game_area (properties);
         window = new RobotsWindow (this, game_area);
 
         var importer = new Games.Scores.DirectoryImporter ();
@@ -336,10 +338,10 @@ class RobotsApplication : Gtk.Application {
         GLib.Settings.sync ();
     }
 
-    private GameArea? create_game_area () {
+    private GameArea? create_game_area (Properties properties) {
         try {
             game = new Game ();
-            Theme theme = get_theme_from_properties ();
+            Theme theme = get_theme_from_properties (properties);
             Bubble yahoo_bubble = new Bubble.from_data_file ("yahoo.png");
             Bubble aieee_bubble = new Bubble.from_data_file ("aieee.png");
             Bubble splat_bubble = new Bubble.from_data_file ("splat.png");
@@ -349,7 +351,8 @@ class RobotsApplication : Gtk.Application {
                                  aieee_bubble,
                                  yahoo_bubble,
                                  splat_bubble,
-                                 sound_player);
+                                 sound_player,
+                                 properties);
         } catch (Error e) {
             critical ("%s", e.message);
             // TODO message box
@@ -378,7 +381,7 @@ class RobotsApplication : Gtk.Application {
     }
 
     private void preferences_cb () {
-        show_properties_dialog ();
+        show_properties_dialog (properties);
     }
 
     private void scores_cb () {
@@ -420,8 +423,7 @@ class RobotsApplication : Gtk.Application {
                            "documenters", documenters,
                            "translator-credits", _("translator-credits"),
                            "logo-icon-name", "org.gnome.Robots",
-                           "website",
-                           "https://wiki.gnome.org/Apps/Robots");
+                           "website", "https://wiki.gnome.org/Apps/Robots");
     }
 }
 

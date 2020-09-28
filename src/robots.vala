@@ -34,10 +34,7 @@ public class RobotsWindow : ApplicationWindow {
     public RobotsWindow (Gtk.Application app,
                          Properties properties,
                          GameConfigs game_configs,
-                         Themes themes,
-                         Bubble yahoo_bubble,
-                         Bubble aieee_bubble,
-                         Bubble splat_bubble,
+                         Assets assets,
                          SoundPlayer sound_player
     ) throws Error {
         Object (application: app);
@@ -63,16 +60,10 @@ public class RobotsWindow : ApplicationWindow {
         };
         add_action_entries (win_entries, this);
 
-        Theme theme = themes.find_best_match (properties.theme);
-        properties.theme = theme.name;
-
         var game = new Game ();
         game_area = new GameArea (game,
                                   game_configs,
-                                  theme,
-                                  aieee_bubble,
-                                  yahoo_bubble,
-                                  splat_bubble,
+                                  assets,
                                   sound_player,
                                   properties);
         game_area.updated.connect (game => update_game_status (game));
@@ -103,12 +94,7 @@ public class RobotsWindow : ApplicationWindow {
             });
         });
 
-        game_area.background_color = properties.bgcolour;
-
         keyboard_set (properties.keys);
-
-        var game_config = game_configs.find_by_name (properties.selected_config);
-        game_area.set_game_config (game_config);
     }
 
     private Box button_box () {
@@ -270,10 +256,7 @@ class RobotsApplication : Gtk.Application {
     private Properties properties;
 
     private GameConfigs game_configs;
-    private Themes themes;
-    private Bubble yahoo_bubble;
-    private Bubble aieee_bubble;
-    private Bubble splat_bubble;
+    private Assets assets;
     private SoundPlayer sound_player;
 
     public RobotsApplication () {
@@ -286,10 +269,6 @@ class RobotsApplication : Gtk.Application {
         base.startup ();
 
         Environment.set_application_name (_("Robots"));
-
-        var settings = new GLib.Settings ("org.gnome.Robots");
-        properties = new Properties (settings);
-
         Window.set_default_icon_name ("org.gnome.Robots");
 
         GLib.ActionEntry[] app_entries = {
@@ -309,11 +288,8 @@ class RobotsApplication : Gtk.Application {
         make_cursors ();
 
         try {
+            assets = new DirectoryAssets.from_directory (DATA_DIRECTORY);
             game_configs = new GameConfigs.load ();
-            themes = get_themes ();
-            yahoo_bubble = new Bubble.from_data_file ("yahoo.png");
-            aieee_bubble = new Bubble.from_data_file ("aieee.png");
-            splat_bubble = new Bubble.from_data_file ("splat.png");
             sound_player = new SoundPlayer ();
         } catch (Error e) {
             critical ("%s", e.message);
@@ -330,6 +306,9 @@ class RobotsApplication : Gtk.Application {
 
             quit ();
         }
+
+        var settings = new GLib.Settings ("org.gnome.Robots");
+        properties = new Properties (settings);
     }
 
     protected override void activate () {
@@ -343,10 +322,7 @@ class RobotsApplication : Gtk.Application {
             window = new RobotsWindow (this,
                                        properties,
                                        game_configs,
-                                       themes,
-                                       yahoo_bubble,
-                                       aieee_bubble,
-                                       splat_bubble,
+                                       assets,
                                        sound_player);
         } catch (Error e) {
             critical ("%s", e.message);
@@ -393,7 +369,7 @@ class RobotsApplication : Gtk.Application {
     private void preferences_cb () {
         PropertiesDialog.show_dialog (get_active_window (),
                                       game_configs,
-                                      themes,
+                                      assets.themes,
                                       properties);
     }
 

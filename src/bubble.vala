@@ -36,12 +36,6 @@ public class Bubble {
         pixbuf = new Pixbuf.from_file (filename);
     }
 
-    public Bubble.from_data_file (string filename) throws Error {
-        this.from_file (
-            GLib.Path.build_filename (DATA_DIRECTORY, "pixmaps", filename)
-        );
-    }
-
     public void draw (Context cr, int x, int y) {
         int clip_x = x < width ? x : x - width;
         int clip_y = y < height ? y : y - height;

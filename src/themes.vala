@@ -17,15 +17,6 @@
  * For more details see the file COPYING.
  */
 
-public Themes themes = null;
-
-public Themes get_themes () {
-    if (themes == null) {
-        themes = Themes.from_data_directory ();
-    }
-    return themes;
-}
-
 public class Themes : Gtk.ListStore {
 
     public enum Column {
@@ -67,11 +58,6 @@ public class Themes : Gtk.ListStore {
             warning ("Themes.from_data_dir: %s.", e.message);
         }
         return themes;
-    }
-
-    public static Themes from_data_directory () {
-        var directory = GLib.Path.build_filename (DATA_DIRECTORY, "themes");
-        return from_directory (directory);
     }
 
     public Gtk.TreeIter? find_iter_by_name (string name) {

@@ -25,6 +25,7 @@ sources = files(
     'graphics.vala',
     'arena.vala',
     'game.vala',
+    'assets.vala',
     'game-area.vala',
     'bubble.vala',
     'window-size.vala',

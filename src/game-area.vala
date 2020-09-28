@@ -34,12 +34,10 @@ public class GameArea : DrawingArea {
     private EventControllerMotion motion_controller;
     private Game game;
     private GameConfigs game_configs;
+    private Assets assets;
     private Theme _theme;
     private RGBA light_background;
     private RGBA dark_background;
-    private Bubble aieee_bubble;
-    private Bubble yahoo_bubble;
-    private Bubble splat_bubble;
 
     private uint timer_id;
     private Animated player_animation;
@@ -86,22 +84,19 @@ public class GameArea : DrawingArea {
 
     public GameArea (Game game,
                      GameConfigs game_configs,
-                     Theme theme,
-                     Bubble aieee_bubble,
-                     Bubble yahoo_bubble,
-                     Bubble splat_bubble,
+                     Assets assets,
                      SoundPlayer sound_player,
                      Properties properties
-    ) {
+    ) throws Error {
         this.game = game;
         this.game_configs = game_configs;
-        this.theme = theme;
-        this.background_color_name = "#7590AE";
-        this.aieee_bubble = aieee_bubble;
-        this.yahoo_bubble = yahoo_bubble;
-        this.splat_bubble = splat_bubble;
+        this.assets = assets;
+        this.background_color = properties.bgcolour;
+        this._theme = assets.themes.find_best_match (properties.theme);
         this.sound_player = sound_player;
         this.properties = properties;
+
+        game.config = game_configs.find_by_name (properties.selected_config);
 
         add_events (Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
         configure_event.connect (event => resize_cb (event));
@@ -145,6 +140,8 @@ public class GameArea : DrawingArea {
         game.game_event.connect (on_game_event);
 
         properties.changed.connect (properties_changed_cb);
+
+        start_new_game ();
     }
 
     ~GameArea () {
@@ -171,21 +168,21 @@ public class GameArea : DrawingArea {
         }
 
         if (game.splat != null) {
-            splat_bubble.draw (cr,
-                               game.splat.x * tile_width + 8,
-                               game.splat.y * tile_height + 8);
+            assets.splat_bubble.draw (cr,
+                                      game.splat.x * tile_width + 8,
+                                      game.splat.y * tile_height + 8);
         }
 
         switch (game.state) {
         case Game.State.DEAD:
-            aieee_bubble.draw (cr,
-                               game.player.x * tile_width + 8,
-                               game.player.y * tile_height + 4);
+            assets.aieee_bubble.draw (cr,
+                                      game.player.x * tile_width + 8,
+                                      game.player.y * tile_height + 4);
             break;
         case Game.State.COMPLETE:
-            yahoo_bubble.draw (cr,
-                               game.player.x * tile_width + 8,
-                               game.player.y * tile_height + 4);
+            assets.yahoo_bubble.draw (cr,
+                                      game.player.x * tile_width + 8,
+                                      game.player.y * tile_height + 4);
             break;
         default:
             break;
@@ -318,11 +315,11 @@ public class GameArea : DrawingArea {
 
         if (theme.name != properties.theme) {
             try {
-                theme = themes.find_best_match (properties.theme);
+                theme = assets.themes.find_best_match (properties.theme);
             } catch (Error e) {
                 warning ("Cannot change theme to %s: %s",
-                    properties.theme,
-                    e.message);
+                         properties.theme,
+                         e.message);
             }
         }
 

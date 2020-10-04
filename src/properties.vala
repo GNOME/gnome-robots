@@ -25,9 +25,55 @@ public class Properties {
     const string KEY_SHOW_TOOLBAR      = "show-toolbar";
     const string KEY_SUPER_SAFE_MOVES  = "use-super-safe-moves";
     const string KEY_THEME             = "theme";
-    const string KEY_CONTROL_KEY       = "key%02d";
 
-    const int N_KEYS = 9;
+    public class Keys {
+        private GLib.Settings settings;
+
+        internal Keys (GLib.Settings settings) {
+            this.settings = settings;
+        }
+
+        public int size {
+            get { return 9; }
+        }
+
+        public uint get (uint index) {
+            if (index < size) {
+                return (uint) settings.get_int ("key%02u".printf (index));
+            } else {
+                return 0;
+            }
+        }
+
+        public void set (uint index, uint keyval) {
+            if (index < size) {
+                settings.set_int ("key%02u".printf (index), (int) keyval);
+            }
+        }
+
+        public uint get_default (uint index) {
+            if (index < size) {
+                return (uint) settings
+                    .get_default_value ("key%02u".printf (index))
+                    .get_int32 ();
+            } else {
+                return 0;
+            }
+        }
+
+        public void reset (uint index) {
+            if (index < size) {
+                string key = "key%02u".printf (index);
+                settings.reset (key);
+            }
+        }
+
+        public void reset_all () {
+            for (var index = 0; index < size; ++index) {
+                reset (index);
+            }
+        }
+    }
 
     public bool safe_moves {
         get {
@@ -83,30 +129,9 @@ public class Properties {
         }
     }
 
-    public uint[] keys {
+    public Keys keys {
         get {
-            uint result[N_KEYS];
-            for (int i = 0; i < N_KEYS; i++) {
-                result[i] = (uint) settings.get_int ("key%02d".printf (i));
-            }
-            return result;
-        }
-        set {
-            for (int i = 0; i < N_KEYS; i++) {
-                settings.set_int ("key%02d".printf (i), (int) value[i]);
-            }
-        }
-    }
-
-    public uint[] default_keys {
-        get {
-            uint result[N_KEYS];
-            for (int i = 0; i < N_KEYS; i++) {
-                result[i] = (uint) settings
-                    .get_default_value ("key%02d".printf (i))
-                    .get_int32 ();
-            }
-            return result;
+            return _keys;
         }
     }
 
@@ -120,24 +145,19 @@ public class Properties {
     }
 
     private GLib.Settings settings;
+    private Keys _keys;
     private ulong notify_handler_id;
 
     public signal void changed ();
 
     public Properties (GLib.Settings settings) {
         this.settings = settings;
+        this._keys = new Keys (settings);
         notify_handler_id = settings.changed.connect (() => changed ());
     }
 
     ~Properties () {
         settings.disconnect (notify_handler_id);
-    }
-
-    public void reset_keys () {
-        for (int i = 0; i < N_KEYS; ++i) {
-            string key = "key%02d".printf (i);
-            settings.reset (key);
-        }
     }
 }
 

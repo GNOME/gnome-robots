@@ -224,7 +224,7 @@ public class PropertiesDialog : Dialog {
     }
 
     private void reset_keys () {
-        properties.reset_keys ();
+        properties.keys.reset_all ();
     }
 
     public static void show_dialog (Gtk.Window parent_window,

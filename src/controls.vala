@@ -142,8 +142,8 @@ public class GamesControlsList : ScrolledWindow {
         int key_index = key_index_value.get_int();
 
         /* FIXME: what to do with the modifiers? */
-        var keyval = properties.default_keys[key_index];
-        properties.keys[key_index] = keyval;
+        properties.keys.reset (key_index);
+        var keyval = properties.keys[key_index];
         store.set_value (iter, Column.KEYCODE, keyval);
     }
 

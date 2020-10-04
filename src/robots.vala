@@ -185,7 +185,7 @@ public class RobotsWindow : ApplicationWindow {
 
         char pressed = ((char) keyval).toupper ();
 
-        for (var i = 0; i < properties.keys.length; ++i) {
+        for (var i = 0; i < properties.keys.size; ++i) {
             if (pressed == ((char)properties.keys[i]).toupper ()) {
                 game_area.player_command ((PlayerCommand)i);
                 return true;

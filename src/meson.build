@@ -30,6 +30,8 @@ sources = files(
     'bubble.vala',
     'window-size.vala',
     'scores.vala',
+    'application.vala',
+    'window.vala',
     'robots.vala',
 )
 

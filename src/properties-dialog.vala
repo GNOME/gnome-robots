@@ -225,7 +225,6 @@ public class PropertiesDialog : Dialog {
 
     private void reset_keys () {
         properties.reset_keys ();
-        keyboard_set (properties.keys);
     }
 
     public static void show_dialog (Gtk.Window parent_window,
@@ -240,8 +239,6 @@ public class PropertiesDialog : Dialog {
         dlg.show_all ();
         dlg.run ();
         dlg.destroy ();
-
-        keyboard_set (properties.keys);
     }
 }
 

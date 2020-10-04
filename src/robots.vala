@@ -22,7 +22,6 @@ using Cairo;
 using Games;
 
 Games.Scores.Context highscores;
-uint control_keys[12];
 
 public class RobotsWindow : ApplicationWindow {
 
@@ -30,6 +29,7 @@ public class RobotsWindow : ApplicationWindow {
     private Label safe_teleports_label;
     private GameArea game_area;
     private EventControllerKey key_controller;
+    private Properties properties;
 
     public RobotsWindow (Gtk.Application app,
                          Properties properties,
@@ -39,6 +39,7 @@ public class RobotsWindow : ApplicationWindow {
     ) throws Error {
         Object (application: app);
         remember_window_size (this, new WindowSizeSettings ("org.gnome.Robots"));
+        this.properties = properties;
 
         headerbar = new HeaderBar ();
         headerbar.set_title (_("Robots"));
@@ -93,8 +94,6 @@ public class RobotsWindow : ApplicationWindow {
                 }
             });
         });
-
-        keyboard_set (properties.keys);
     }
 
     private Box button_box () {
@@ -186,8 +185,8 @@ public class RobotsWindow : ApplicationWindow {
 
         char pressed = ((char) keyval).toupper ();
 
-        for (var i = 0; i < control_keys.length; ++i) {
-            if (pressed == ((char)control_keys[i]).toupper ()) {
+        for (var i = 0; i < properties.keys.length; ++i) {
+            if (pressed == ((char)properties.keys[i]).toupper ()) {
                 game_area.player_command ((PlayerCommand)i);
                 return true;
             }
@@ -243,12 +242,6 @@ Games.Scores.Category? create_category_from_key (string key) {
     if (name == null)
         return null;
     return new Games.Scores.Category (key, name);
-}
-
-void keyboard_set (uint[] keys) {
-    for (int i = 0; i < 12; ++i) {
-        control_keys[i] = keys[i];
-    }
 }
 
 class RobotsApplication : Gtk.Application {

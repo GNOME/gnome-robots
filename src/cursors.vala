@@ -202,8 +202,7 @@ const string cursor_down[] = {
   "........................................"
 };
 
-const string cursor_down_left[] =
-{
+const string cursor_down_left[] = {
   /* width height num_colors chars_per_pixel */
   " 20 20 3 2",
   /* colors */

@@ -53,8 +53,6 @@ class RobotsApplication : Gtk.Application {
         set_accels_for_action ("app.help", { "F1" });
         set_accels_for_action ("app.quit", { "<Primary>q" });
 
-        make_cursors ();
-
         try {
             assets = new DirectoryAssets.from_directory (DATA_DIRECTORY);
             game_configs = new GameConfigs.load ();

@@ -22,6 +22,7 @@ public interface Assets : Object {
     public abstract Bubble aieee_bubble { get; }
     public abstract Bubble yahoo_bubble { get; }
     public abstract Bubble splat_bubble { get; }
+    public abstract Array<Gdk.Cursor> cursors { get; }
 }
 
 public class DirectoryAssets : Object, Assets {
@@ -37,15 +38,22 @@ public class DirectoryAssets : Object, Assets {
     private Bubble _splat_bubble;
     public override Bubble splat_bubble { get { return _splat_bubble; } }
 
+    private Array<Gdk.Cursor> _cursors;
+    public override Array<Gdk.Cursor> cursors { get { return _cursors; } }
+
     public DirectoryAssets.from_directory (string directory) throws Error {
         _themes = Themes.from_directory (
             Path.build_filename (directory, "themes"));
+
         _yahoo_bubble = new Bubble.from_file (
             Path.build_filename (directory, "pixmaps", "yahoo.png"));
         _aieee_bubble = new Bubble.from_file (
             Path.build_filename (directory, "pixmaps", "aieee.png"));
         _splat_bubble = new Bubble.from_file (
             Path.build_filename (directory, "pixmaps", "splat.png"));
+
+        var display = Gdk.Display.get_default ();
+        _cursors = make_cursors_for_display (display);
     }
 }
 

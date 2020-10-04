@@ -261,11 +261,14 @@ public class GameArea : DrawingArea {
     private void move_cb (double x, double y) {
         var window = get_window ();
         if (game.state != Game.State.PLAYING) {
-            set_cursor_default (window);
+            window.set_cursor (null);
         } else {
             int dx, dy;
             get_dir (x, y, out dx, out dy);
-            set_cursor_by_direction (window, dx, dy);
+
+            var cursor_index = 3 * dy + dx + 4;
+            var cursor = assets.cursors.index(cursor_index);
+            window.set_cursor (cursor);
         }
     }
 

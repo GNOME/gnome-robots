@@ -19,9 +19,6 @@
 
 using Gtk;
 using Cairo;
-using Games;
-
-Games.Scores.Context highscores;
 
 public class RobotsWindow : ApplicationWindow {
 
@@ -30,6 +27,7 @@ public class RobotsWindow : ApplicationWindow {
     private GameArea game_area;
     private EventControllerKey key_controller;
     private Properties properties;
+    private RobotsScoresContext highscores;
 
     public RobotsWindow (Gtk.Application app,
                          Properties properties,
@@ -83,16 +81,9 @@ public class RobotsWindow : ApplicationWindow {
         key_controller = new EventControllerKey (this);
         key_controller.key_pressed.connect (keyboard_cb);
 
+        highscores = new RobotsScoresContext (this);
         game_area.add_score.connect ((game_type, score) => {
-            string name = category_name_from_key (game_type);
-            var category = new Scores.Category (game_type, name);
-            highscores.add_score.begin (score, category, null, (ctx, res) => {
-                try {
-                    highscores.add_score.end (res);
-                } catch (Error error) {
-                    warning ("Failed to add score: %s", error.message);
-                }
-            });
+            highscores.add_game_score (game_type, score);
         });
     }
 
@@ -198,50 +189,10 @@ public class RobotsWindow : ApplicationWindow {
     public void start_new_game () {
         game_area.start_new_game ();
     }
-}
 
-public string? category_name_from_key (string key) {
-    switch (key) {
-    case "classic_robots":
-        return N_("Classic robots");
-    case "classic_robots-safe":
-        return N_("Classic robots with safe moves");
-    case "classic_robots-super-safe":
-        return N_("Classic robots with super-safe moves");
-    case "nightmare":
-        return N_("Nightmare");
-    case "nightmare-safe":
-        return N_("Nightmare with safe moves");
-    case "nightmare-super-safe":
-        return N_("Nightmare with super-safe moves");
-    case "robots2":
-        return N_("Robots2");
-    case "robots2-safe":
-        return N_("Robots2 with safe moves");
-    case "robots2-super-safe":
-        return N_("Robots2 with super-safe moves");
-    case "robots2_easy":
-        return N_("Robots2 easy");
-    case "robots2_easy-safe":
-        return N_("Robots2 easy with safe moves");
-    case "robots2_easy-super-safe":
-        return N_("Robots2 easy with super-safe moves");
-    case "robots_with_safe_teleport":
-        return N_("Robots with safe teleport");
-    case "robots_with_safe_teleport-safe":
-        return N_("Robots with safe teleport with safe moves");
-    case "robots_with_safe_teleport-super-safe":
-        return N_("Robots with safe teleport with super-safe moves");
-    default:
-        return null;
+    public void show_highscores () {
+        highscores.run_dialog ();
     }
-}
-
-Games.Scores.Category? create_category_from_key (string key) {
-    string name = category_name_from_key (key);
-    if (name == null)
-        return null;
-    return new Games.Scores.Category (key, name);
 }
 
 class RobotsApplication : Gtk.Application {
@@ -323,16 +274,6 @@ class RobotsApplication : Gtk.Application {
             quit ();
         }
 
-        var importer = new Games.Scores.DirectoryImporter ();
-        highscores = new Games.Scores.Context.with_importer_and_icon_name ("gnome-robots",
-                                                                           /* Label on the scores dialog, next to map type dropdown */
-                                                                           _("Game Type:"),
-                                                                           window,
-                                                                           create_category_from_key,
-                                                                           Games.Scores.Style.POINTS_GREATER_IS_BETTER,
-                                                                           importer,
-                                                                           "org.gnome.Robots");
-
         window.show_all ();
     }
 
@@ -367,7 +308,10 @@ class RobotsApplication : Gtk.Application {
     }
 
     private void scores_cb () {
-        highscores.run_dialog ();
+        var window = get_active_window () as RobotsWindow;
+        if (window != null) {
+            window.show_highscores ();
+        }
     }
 
     private void help_cb () {

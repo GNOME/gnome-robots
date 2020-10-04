@@ -29,6 +29,7 @@ sources = files(
     'game-area.vala',
     'bubble.vala',
     'window-size.vala',
+    'scores.vala',
     'robots.vala',
 )
 

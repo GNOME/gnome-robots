@@ -16,9 +16,9 @@
 
   <maintainer>
     <foaf:Person>
-      <foaf:name>Michael Catanzaro</foaf:name>
-      <foaf:mbox rdf:resource="mailto:mcatanzaro@gnome.org" />
-      <gnome:userid>mcatanzaro</gnome:userid>
+      <foaf:name>Andrey Kutejko</foaf:name>
+      <foaf:mbox rdf:resource="mailto:andy128k@gmail.com" />
+      <gnome:userid>akutejko</gnome:userid>
     </foaf:Person>
   </maintainer>
 </Project>

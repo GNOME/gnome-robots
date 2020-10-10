@@ -4,8 +4,9 @@ data/app-menu.ui
 data/org.gnome.Robots.appdata.xml.in
 data/org.gnome.Robots.desktop.in
 data/org.gnome.Robots.gschema.xml
-src/game.c
-src/games-controls.c
-src/gnome-robots.c
-src/graphics.c
-src/properties.c
+src/application.vala
+src/controls.vala
+src/game-area.vala
+src/properties-dialog.vala
+src/scores.vala
+src/window.vala

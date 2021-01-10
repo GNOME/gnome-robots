@@ -53,7 +53,8 @@ msgstr "GNOME Robots"
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Eviteu els robots i feu que xoquin entre ells"
 
-#. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
+#. Translators: "It is the distant future: the year 2000" is a reference to
+#. Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
 #: data/org.gnome.Robots.appdata.xml.in:11
 msgid ""
 "It is the distant future: the year 2000. Evil robots are trying to kill you. "
@@ -95,7 +96,8 @@ msgstr "El projecte GNOME"
 msgid "Robots"
 msgstr "Robots"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
 msgid "game;arcade;teleport;"
 msgstr "joc;arcade;teleportació;"
@@ -171,35 +173,35 @@ msgstr ""
 
 #: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
 msgid "Key to move NW"
-msgstr "Tecla per moure al nord-oest"
+msgstr "Tecla per a moure al nord-oest"
 
 #: data/org.gnome.Robots.gschema.xml:41
 msgid "The key used to move north-west."
-msgstr "La tecla que s'utilitza per moure's cap al nord-oest."
+msgstr "La tecla que s'utilitza per a moure's cap al nord-oest."
 
 #: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
 msgid "Key to move N"
-msgstr "Tecla per moure al nord"
+msgstr "Tecla per a moure al nord"
 
 #: data/org.gnome.Robots.gschema.xml:46
 msgid "The key used to move north."
-msgstr "La tecla que s'utilitza per moure's cap al nord."
+msgstr "La tecla que s'utilitza per a moure's cap al nord."
 
 #: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
 msgid "Key to move NE"
-msgstr "Tecla per moure al nord-est"
+msgstr "Tecla per a moure al nord-est"
 
 #: data/org.gnome.Robots.gschema.xml:51
 msgid "The key used to move north-east."
-msgstr "La tecla que s'utilitza per moure's cap al nord-est."
+msgstr "La tecla que s'utilitza per a moure's cap al nord-est."
 
 #: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
 msgid "Key to move W"
-msgstr "Tecla per moure a l'oest"
+msgstr "Tecla per a moure a l'oest"
 
 #: data/org.gnome.Robots.gschema.xml:57
 msgid "The key used to move west."
-msgstr "La tecla que s'utilitza per moure's cap a l'oest."
+msgstr "La tecla que s'utilitza per a moure's cap a l'oest."
 
 #: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
 msgid "Key to hold"
@@ -207,39 +209,39 @@ msgstr "Tecla a prémer"
 
 #: data/org.gnome.Robots.gschema.xml:62
 msgid "The key used to hold still."
-msgstr "La tecla que s'utilitza per mantenir-se quiet."
+msgstr "La tecla que s'utilitza per a mantenir-se quiet."
 
 #: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
 msgid "Key to move E"
-msgstr "Tecla per moure a l'est"
+msgstr "Tecla per a moure a l'est"
 
 #: data/org.gnome.Robots.gschema.xml:67
 msgid "The key used to move east."
-msgstr "La tecla que s'utilitza per moure's cap a l'est."
+msgstr "La tecla que s'utilitza per a moure's cap a l'est."
 
 #: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
 msgid "Key to move SW"
-msgstr "Tecla per moure al sud-oest"
+msgstr "Tecla per a moure al sud-oest"
 
 #: data/org.gnome.Robots.gschema.xml:72
 msgid "The key used to move south-west."
-msgstr "La tecla que s'utilitza per moure's cap al sud-oest."
+msgstr "La tecla que s'utilitza per a moure's cap al sud-oest."
 
 #: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
 msgid "Key to move S"
-msgstr "Tecla per moure al sud"
+msgstr "Tecla per a moure al sud"
 
 #: data/org.gnome.Robots.gschema.xml:77
 msgid "The key used to move south."
-msgstr "La tecla que s'utilitza per moure's cap al sud."
+msgstr "La tecla que s'utilitza per a moure's cap al sud."
 
 #: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
 msgid "Key to move SE"
-msgstr "Tecla per moure al sud-est"
+msgstr "Tecla per a moure al sud-est"
 
 #: data/org.gnome.Robots.gschema.xml:82
 msgid "The key used to move south-east."
-msgstr "La tecla que s'utilitza per moure's cap al sud-est."
+msgstr "La tecla que s'utilitza per a moure's cap al sud-est."
 
 #: data/org.gnome.Robots.gschema.xml:86
 msgid "Width of the window in pixels"
@@ -334,13 +336,15 @@ msgstr "Robots amb teleportació segura i moviments segurs"
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robots amb teleportació segura i moviments supersegurs"
 
-#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
+#. Window subtitle. The first %d is the level, the second is the score. \t
+#. creates a tab.
 #: src/gnome-robots.c:156
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Nivell: %d\tPuntuació: %d"
 
-#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#. Second line of safe teleports button label. %d is the number of teleports
+#. remaining.
 #: src/gnome-robots.c:167
 #, c-format
 msgid "(Remaining: %d)"
@@ -471,4 +475,3 @@ msgstr "Restaura els pre_determinats"
 #: src/properties.c:526
 msgid "Keyboard"
 msgstr "Teclat"
-

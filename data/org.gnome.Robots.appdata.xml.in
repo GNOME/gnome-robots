@@ -34,6 +34,7 @@
     <id>gnome-robots.desktop</id>
   </provides>
   <releases>
+    <release version="40.alpha" date="2021-01-14" />
     <release version="3.38.0" date="2020-09-11" />
     <release version="3.37.90" date="2020-08-06" />
     <release version="3.37.3" date="2020-07-02" />

@@ -96,7 +96,7 @@ public class GameArea : DrawingArea {
         this.sound_player = sound_player;
         this.properties = properties;
 
-        game.config = game_configs.find_by_name (properties.selected_config);
+        game.config = game_configs.find_by_name (properties.selected_config) ?? game_configs[0];
 
         add_events (Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
         configure_event.connect (event => resize_cb (event));

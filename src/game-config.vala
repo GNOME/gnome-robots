@@ -194,7 +194,7 @@ public class GameConfigs {
 
     public GameConfig? find_by_name (string name) {
         for (var i = 0; i < game_configs.size; ++i) {
-            if (game_configs[i].name () == name) {
+            if (game_configs[i].description == name || game_configs[i].name () == name) {
                 return game_configs[i];
             }
         }

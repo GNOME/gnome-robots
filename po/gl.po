@@ -10,13 +10,13 @@
 # Antón Méixome <meixome@mancomun.org>, 2009.
 # Fran Diéguez <frandieguez@gnome.org>, 2009, 2010, 2011.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2011-2019.
+# Fran Dieguez <frandieguez@gnome.org>, 2011-2019, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games-master-po-gl-54590\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2020-01-04 15:09+0000\n"
-"PO-Revision-Date: 2020-02-15 21:52+0100\n"
+"POT-Creation-Date: 2020-10-10 09:56+0000\n"
+"PO-Revision-Date: 2021-02-24 20:47+0100\n"
 "Last-Translator: Fran Diéguez <frandieguez@gnome.org>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -24,10 +24,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Gtranslator 3.38.0\n"
 "X-Project-Style: gnome\n"
 
-#: data/app-menu.ui:7 src/gnome-robots.c:256
+#: data/app-menu.ui:7 src/application.vala:112
 msgid "_New Game"
 msgstr "Xogo _novo"
 
@@ -55,7 +55,8 @@ msgstr "Robots de GNOME"
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Evitar os robots e facer que choquen entre eles"
 
-#: data/org.gnome.Robots.appdata.xml.in:10
+#. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
+#: data/org.gnome.Robots.appdata.xml.in:11
 msgid ""
 "It is the distant future: the year 2000. Evil robots are trying to kill you. "
 "Avoid the robots or face certain death."
@@ -63,7 +64,7 @@ msgstr ""
 "É un futuro distante: o ano 2000. Os robots demoníacos están tentando "
 "matarte. Evita os robots ou verás a morte."
 
-#: data/org.gnome.Robots.appdata.xml.in:14
+#: data/org.gnome.Robots.appdata.xml.in:15
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -76,7 +77,7 @@ msgstr ""
 "ou, ou nas pilas de lixo ou escapa de forma segura co teu dispositivo de "
 "teletransporte."
 
-#: data/org.gnome.Robots.appdata.xml.in:21
+#: data/org.gnome.Robots.appdata.xml.in:22
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -86,12 +87,12 @@ msgstr ""
 "teletransporte podería poñerche xusto ao lado dun robot o cal che matará. "
 "Sobrevive tanto como poidas!"
 
-#: data/org.gnome.Robots.appdata.xml.in:54
+#: data/org.gnome.Robots.appdata.xml.in:61
 msgid "The GNOME Project"
 msgstr "O Proxecto GNOME"
 
-#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:318 src/gnome-robots.c:364
+#: data/org.gnome.Robots.desktop.in:3 src/application.vala:39
+#: src/application.vala:164 src/window.vala:42
 msgid "Robots"
 msgstr "Robots"
 
@@ -171,7 +172,7 @@ msgstr ""
 "Activar os sons do xogo. Reproducir sons para diversos eventos ao longo da "
 "partida."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:84
 msgid "Key to move NW"
 msgstr "Tecla para moverse ao NO"
 
@@ -179,7 +180,7 @@ msgstr "Tecla para moverse ao NO"
 msgid "The key used to move north-west."
 msgstr "A tecla usada para moverse ao noroeste."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:85
 msgid "Key to move N"
 msgstr "Tecla para moverse ao N"
 
@@ -187,7 +188,7 @@ msgstr "Tecla para moverse ao N"
 msgid "The key used to move north."
 msgstr "A tecla usada para moverse ao norte."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:86
 msgid "Key to move NE"
 msgstr "Tecla para moverse ao NL"
 
@@ -195,7 +196,7 @@ msgstr "Tecla para moverse ao NL"
 msgid "The key used to move north-east."
 msgstr "A tecla usada para moverse ao noreste."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:87
 msgid "Key to move W"
 msgstr "Tecla para moverse ao O"
 
@@ -203,7 +204,7 @@ msgstr "Tecla para moverse ao O"
 msgid "The key used to move west."
 msgstr "A tecla usada para moverse ao oeste."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:88
 msgid "Key to hold"
 msgstr "Tecla para permanecer quieto"
 
@@ -211,7 +212,7 @@ msgstr "Tecla para permanecer quieto"
 msgid "The key used to hold still."
 msgstr "A tecla usada para quedarse quieto."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:89
 msgid "Key to move E"
 msgstr "Tecla para moverse ao L"
 
@@ -219,7 +220,7 @@ msgstr "Tecla para moverse ao L"
 msgid "The key used to move east."
 msgstr "A tecla usada para moverse ao este."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:90
 msgid "Key to move SW"
 msgstr "Tecla para moverse ao SO"
 
@@ -227,7 +228,7 @@ msgstr "Tecla para moverse ao SO"
 msgid "The key used to move south-west."
 msgstr "A tecla usada para moverse ao suroeste."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:91
 msgid "Key to move S"
 msgstr "Tecla para moverse ao S"
 
@@ -235,13 +236,13 @@ msgstr "Tecla para moverse ao S"
 msgid "The key used to move south."
 msgstr "A tecla usada para moverse ao sur."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:92
 msgid "Key to move SE"
 msgstr "Tecla para moverse ao SL"
 
 #: data/org.gnome.Robots.gschema.xml:82
 msgid "The key used to move south-east."
-msgstr "A tecla usada para moverse ao sudeste."
+msgstr "A tecla usada para moverse ao sueste."
 
 #: data/org.gnome.Robots.gschema.xml:86
 msgid "Width of the window in pixels"
@@ -255,112 +256,34 @@ msgstr "Altura da xanela en píxeles"
 msgid "true if the window is maximized"
 msgstr "verdadeiro se a xanela está maximizada"
 
-#: src/game.c:343 src/game.c:359
+#: src/application.vala:68
+msgid "No game data could be found."
+msgstr "Non foi posíbel atopar datos do xogo."
+
+#: src/application.vala:69
 msgid ""
-"Congratulations, You Have Defeated the Robots!! \n"
-"But Can You do it Again?"
+"The program Robots was unable to find any valid game configuration files. "
+"Please check that the program is installed correctly."
 msgstr ""
-"Parabéns, conseguiu vencer os Robots!!\n"
-"Pero pode facelo de novo?"
+"O programa Robots non puido atopar ningún ficheiro de configuración de xogo "
+"válido. Comprobe que o programa foi instalado correctamente."
 
-#. This should never happen.
-#: src/game.c:1108
-msgid "There are no teleport locations left!!"
-msgstr "Non quedan lugares aos que teletransportarse!!"
+#: src/application.vala:109
+msgid "Are you sure you want to discard the current game?"
+msgstr "Ten certeza que quere rexeitar o xogo actual?"
 
-#: src/game.c:1136
-msgid "There are no safe locations to teleport to!!"
-msgstr "Non hai lugares seguros aos que teletransportarse!!"
+#: src/application.vala:111
+msgid "Keep _Playing"
+msgstr "_Continuar xogando"
 
-#: src/games-controls.c:292
-msgid "Unknown Command"
-msgstr "Orde descoñecida"
-
-#: src/gnome-robots.c:106
-msgid "Classic robots"
-msgstr "Robots clásicos"
-
-#: src/gnome-robots.c:107
-msgid "Classic robots with safe moves"
-msgstr "Robots clásicos con movementos seguros"
-
-#: src/gnome-robots.c:108
-msgid "Classic robots with super-safe moves"
-msgstr "Robots clásicos con movementos moi seguros"
-
-#: src/gnome-robots.c:109
-msgid "Nightmare"
-msgstr "Pesadelo"
-
-#: src/gnome-robots.c:110
-msgid "Nightmare with safe moves"
-msgstr "Pesadelo con movementos seguros"
-
-#: src/gnome-robots.c:111
-msgid "Nightmare with super-safe moves"
-msgstr "Pesadelo con movementos moi seguros"
-
-#: src/gnome-robots.c:112
-msgid "Robots2"
-msgstr "Robots2"
-
-#: src/gnome-robots.c:113
-msgid "Robots2 with safe moves"
-msgstr "Robots2 con movementos seguros"
-
-#: src/gnome-robots.c:114
-msgid "Robots2 with super-safe moves"
-msgstr "Robots2 con movementos moi seguros"
-
-#: src/gnome-robots.c:115
-msgid "Robots2 easy"
-msgstr "Robots2 fácil"
-
-#: src/gnome-robots.c:116
-msgid "Robots2 easy with safe moves"
-msgstr "Robots2 con movementos seguros"
-
-#: src/gnome-robots.c:117
-msgid "Robots2 easy with super-safe moves"
-msgstr "Robots2 con movementos moi seguros"
-
-#: src/gnome-robots.c:118
-msgid "Robots with safe teleport"
-msgstr "Robots con teleportación segura"
-
-#: src/gnome-robots.c:119
-msgid "Robots with safe teleport with safe moves"
-msgstr "Robots con teleportación segura e movementos seguros"
-
-#: src/gnome-robots.c:120
-msgid "Robots with safe teleport with super-safe moves"
-msgstr "Robots con teleportación segura e movementos moi seguros"
-
-#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: src/gnome-robots.c:156
-#, c-format
-msgid "Level: %d\tScore: %d"
-msgstr "Nivel: %d       Puntuación: %d"
-
-#. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/gnome-robots.c:167
-#, c-format
-msgid "(Remaining: %d)"
-msgstr "(Restante: %d)"
-
-#. First line of safe teleports button label.
-#: src/gnome-robots.c:169
-msgid "Teleport _Safely"
-msgstr "Teleportarse de forma _segura"
-
-#: src/gnome-robots.c:227
+#: src/application.vala:170
 msgid "Based on classic BSD Robots"
 msgstr "Baseado no clásico xogo Robots de BSD"
 
-#: src/gnome-robots.c:231
+#: src/application.vala:174
 msgid "translator-credits"
 msgstr ""
-"Fran Dieguez <frandieguez@gnome.org>, 2009-2020;\n"
+"Fran Diéguez <frandieguez@gnome.org>, 2009-2020;\n"
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.\n"
 "Antón Méixome <meixome@mancomun.org>, 2009.\n"
 "Suso Baleato <suso.baleato@xunta.es>, 2009.\n"
@@ -373,111 +296,181 @@ msgstr ""
 "Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas\n"
 "colaborar connosco, podes atopar máis información en http://www.trasno.net"
 
-#: src/gnome-robots.c:252
-msgid "Are you sure you want to discard the current game?"
-msgstr "Ten certeza que quere rexeitar o xogo actual?"
-
-#: src/gnome-robots.c:255
-msgid "Keep _Playing"
-msgstr "_Continuar xogando"
-
-#: src/gnome-robots.c:410
-msgid "Teleport _Randomly"
-msgstr "Teleportarse de forma _aleatoria"
-
-#: src/gnome-robots.c:429
-msgid "_Wait for Robots"
-msgstr "_Agardar polos robots"
-
-#. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:453
-msgid "Game Type:"
-msgstr "Tipo de xogo:"
-
-#: src/gnome-robots.c:468
-msgid "No game data could be found."
-msgstr "Non foi posíbel atopar datos do xogo."
-
-#: src/gnome-robots.c:470
+#: src/game-area.vala:374
 msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
+"Congratulations, You Have Defeated the Robots!! \n"
+"But Can You do it Again?"
 msgstr ""
-"O programa Robots non puido atopar ningún ficheiro de configuración de xogo "
-"válido. Comprobe que o programa foi instalado correctamente."
+"Parabéns, conseguiu vencer os Robots!!\n"
+"Pero pode facelo de novo?"
 
-#: src/gnome-robots.c:487
-msgid "Some graphics files are missing or corrupt."
-msgstr "Algúns ficheiros de gráficas faltan ou están corrompidos."
+#: src/game-area.vala:378
+msgid "There are no teleport locations left!!"
+msgstr "Non quedan lugares aos que teletransportarse!!"
 
-#: src/gnome-robots.c:489
-msgid ""
-"The program Robots was unable to load all the necessary graphics files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"O programa Robots non puido cargar todos os ficheiros de gráficas "
-"necesarios. Comprobe que o programa está instalado correctamente."
-
-#: src/graphics.c:149
-#, c-format
-msgid "Could not find “%s” pixmap file\n"
-msgstr "Non foi posíbel atopar o ficheiro pixmap «%s»\n"
-
-#: src/properties.c:391
+#: src/properties-dialog.vala:99
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: src/properties.c:416
+#: src/properties-dialog.vala:121
 msgid "Game Type"
 msgstr "Tipo de xogo"
 
-#: src/properties.c:426
+#: src/properties-dialog.vala:128
 msgid "_Use safe moves"
 msgstr "_Usar movementos seguros"
 
-#: src/properties.c:431
+#: src/properties-dialog.vala:130
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Evitar movementos accidentais nos que o acaben matando."
 
-#: src/properties.c:434
+#: src/properties-dialog.vala:133
 msgid "U_se super safe moves"
 msgstr "U_sar movementos moi seguros"
 
-#: src/properties.c:441
+#: src/properties-dialog.vala:135
 msgid "Prevents all moves that result in getting killed."
 msgstr "Evita todos os movementos nos que o acaben matando."
 
-#: src/properties.c:447
+#: src/properties-dialog.vala:147
 msgid "_Enable sounds"
 msgstr "_Activar son"
 
-#: src/properties.c:453
+#: src/properties-dialog.vala:152
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Reproducir sons nos eventos como gañar nun nivel ou morrer."
 
-#: src/properties.c:455
+#: src/properties-dialog.vala:155
 msgid "Game"
 msgstr "Xogo"
 
-#: src/properties.c:468
+#: src/properties-dialog.vala:167
 msgid "_Image theme:"
 msgstr "Tema da _imaxe:"
 
-#: src/properties.c:480
+#: src/properties-dialog.vala:177
 msgid "_Background color:"
 msgstr "Cor de _fondo:"
 
-#: src/properties.c:492
+#: src/properties-dialog.vala:187
 msgid "Appearance"
 msgstr "Aparencia"
 
-#: src/properties.c:521
+#: src/properties-dialog.vala:205
 msgid "_Restore Defaults"
 msgstr "_Restaurar as predefinicións"
 
-#: src/properties.c:526
+#: src/properties-dialog.vala:209
 msgid "Keyboard"
 msgstr "Teclado"
+
+#. Label on the scores dialog, next to map type dropdown
+#: src/scores.vala:29
+msgid "Game Type:"
+msgstr "Tipo de xogo:"
+
+#: src/scores.vala:54
+msgid "Classic robots"
+msgstr "Robots clásicos"
+
+#: src/scores.vala:56
+msgid "Classic robots with safe moves"
+msgstr "Robots clásicos con movementos seguros"
+
+#: src/scores.vala:58
+msgid "Classic robots with super-safe moves"
+msgstr "Robots clásicos con movementos moi seguros"
+
+#: src/scores.vala:60
+msgid "Nightmare"
+msgstr "Pesadelo"
+
+#: src/scores.vala:62
+msgid "Nightmare with safe moves"
+msgstr "Pesadelo con movementos seguros"
+
+#: src/scores.vala:64
+msgid "Nightmare with super-safe moves"
+msgstr "Pesadelo con movementos moi seguros"
+
+#: src/scores.vala:66
+msgid "Robots2"
+msgstr "Robots2"
+
+#: src/scores.vala:68
+msgid "Robots2 with safe moves"
+msgstr "Robots2 con movementos seguros"
+
+#: src/scores.vala:70
+msgid "Robots2 with super-safe moves"
+msgstr "Robots2 con movementos moi seguros"
+
+#: src/scores.vala:72
+msgid "Robots2 easy"
+msgstr "Robots2 fácil"
+
+#: src/scores.vala:74
+msgid "Robots2 easy with safe moves"
+msgstr "Robots2 con movementos seguros"
+
+#: src/scores.vala:76
+msgid "Robots2 easy with super-safe moves"
+msgstr "Robots2 con movementos moi seguros"
+
+#: src/scores.vala:78
+msgid "Robots with safe teleport"
+msgstr "Robots con teleportación segura"
+
+#: src/scores.vala:80
+msgid "Robots with safe teleport with safe moves"
+msgstr "Robots con teleportación segura e movementos seguros"
+
+#: src/scores.vala:82
+msgid "Robots with safe teleport with super-safe moves"
+msgstr "Robots con teleportación segura e movementos moi seguros"
+
+#: src/window.vala:97
+msgid "Teleport _Randomly"
+msgstr "Teleportarse de forma _aleatoria"
+
+#: src/window.vala:120
+msgid "_Wait for Robots"
+msgstr "_Agardar polos robots"
+
+#: src/window.vala:135
+#, c-format
+msgid "Level: %d\tScore: %d"
+msgstr "Nivel: %d       Puntuación: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: src/window.vala:138
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(Restante: %d)"
+
+#. First line of safe teleports button label.
+#: src/window.vala:140
+msgid "Teleport _Safely"
+msgstr "Teleportarse de forma _segura"
+
+#~ msgid "There are no safe locations to teleport to!!"
+#~ msgstr "Non hai lugares seguros aos que teletransportarse!!"
+
+#~ msgid "Unknown Command"
+#~ msgstr "Orde descoñecida"
+
+#~ msgid "Some graphics files are missing or corrupt."
+#~ msgstr "Algúns ficheiros de gráficas faltan ou están corrompidos."
+
+#~ msgid ""
+#~ "The program Robots was unable to load all the necessary graphics files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "O programa Robots non puido cargar todos os ficheiros de gráficas "
+#~ "necesarios. Comprobe que o programa está instalado correctamente."
+
+#~ msgid "Could not find “%s” pixmap file\n"
+#~ msgstr "Non foi posíbel atopar o ficheiro pixmap «%s»\n"
 
 #~ msgid "org.gnome.Robots"
 #~ msgstr "org.gnome.Robots"

@@ -1,55 +1,55 @@
 # Hungarian translation of gnome-robots.
-# Copyright (C) 2014. Free Software Foundation, Inc.
+# Copyright (C) 2014, 2015, 2021. Free Software Foundation, Inc.
 # This file is distributed under the same license as the user help.
 #
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2014, 2015.
-# Balázs Úr <urbalazs at gmail dot com>, 2014, 2015.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2014, 2015, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots_help master\n"
-"POT-Creation-Date: 2015-08-18 07:53+0000\n"
-"PO-Revision-Date: 2015-08-19 08:26+0200\n"
-"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
-"Language-Team: Hungarian <openscope at gmail dot com>\n"
+"POT-Creation-Date: 2020-10-10 09:51+0000\n"
+"PO-Revision-Date: 2021-03-03 01:11+0100\n"
+"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
+"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 19.12.3\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Kelemen Gábor <kelemeng at gnome dot hu>, 2014.\n"
-"Úr Balázs <urbalazs at gmail dot com>, 2014, 2015."
+"Úr Balázs <ur.balazs at fsf dot hu>, 2014, 2015, 2021."
 
 #. (itstool) path: credit/name
-#: C/appearance.page:16 C/basics.page:16 C/controls-change.page:15
-#: C/controls-default.page:16 C/game-types.page:15 C/index.page:13
-#: C/moves.page:16 C/scores.page:15
+#: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:14
+#: C/moves.page:17 C/scores.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
 
 #. (itstool) path: credit/name
-#: C/appearance.page:20 C/basics.page:20 C/controls-default.page:20
-#: C/game-types.page:19 C/scores.page:19
+#: C/appearance.page:21 C/basics.page:21 C/controls-default.page:21
+#: C/game-types.page:20 C/scores.page:20
 msgid "Rachel Dunstan"
 msgstr "Rachel Dunstan"
 
 #. (itstool) path: info/desc
-#: C/appearance.page:24
+#: C/appearance.page:25
 msgid "Use different game-themes in <app>Robots</app>."
 msgstr "Eltérő játéktémák használata a <app>Robotok</app> játékban."
 
 #. (itstool) path: page/title
-#: C/appearance.page:27
+#: C/appearance.page:28
 msgid "Change the default appearance of the game"
 msgstr "A játék alapértelmezett megjelenésének módosítása"
 
 #. (itstool) path: page/p
-#: C/appearance.page:29
+#: C/appearance.page:30
 msgid ""
 "You can change the <app>Robots</app> backdrop and the different robots that "
 "are present in a game by changing the game theme and background."
@@ -58,30 +58,33 @@ msgstr ""
 "különböző robotokat a játéktéma és a háttér módosításával."
 
 #. (itstool) path: steps/title
-#: C/appearance.page:33
+#: C/appearance.page:34
 msgid "To change the game theme and background:"
 msgstr "A játéktéma és a háttér megváltoztatásához:"
 
 #. (itstool) path: item/p
-#: C/appearance.page:35
+#. (itstool) path: section/p
+#: C/appearance.page:36 C/basics.page:40 C/controls-change.page:31
+#: C/game-types.page:36
 msgid ""
-"Select <guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
-"\">Appearance</gui></guiseq>."
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Preferences</gui>."
 msgstr ""
-"Válassza a <guiseq><gui style=\"menu\">Beállítások</gui> <gui style="
-"\"menuitem\">Megjelenés</gui></guiseq> menüpontot."
+"Nyomja meg az ablak jobb felső sarkában lévő menügombot, és válassza a <gui"
+" style=\"menuitem\">Beállítások</gui> menüpontot."
 
 #. (itstool) path: item/p
 #: C/appearance.page:39
-msgid ""
-"Select a theme from the drop-down menu available when you click the button "
-"next to <gui>Image theme</gui>."
-msgstr ""
-"Válasszon egy témát a <gui>Képtéma</gui> melletti gombra kattintáskor "
-"legördülő menüben elérhetőkből."
+msgid "Select the <gui>Appearance</gui> tab."
+msgstr "Válassza ki a <gui>Megjelenés</gui> lapot."
 
 #. (itstool) path: item/p
-#: C/appearance.page:43
+#: C/appearance.page:42
+msgid "Select a theme from the <gui>Image theme</gui> drop-down menu."
+msgstr "Válasszon egy témát a <gui>Képtéma</gui> legördülő menüből."
+
+#. (itstool) path: item/p
+#: C/appearance.page:45
 msgid ""
 "To change your background color, click the button next to <gui>Background "
 "color</gui>. Select a color from the available choices and click <gui style="
@@ -92,76 +95,80 @@ msgstr ""
 "<gui style=\"button\">Kiválasztás</gui> gombra."
 
 #. (itstool) path: info/desc
-#: C/basics.page:24
+#: C/basics.page:25
 msgid "Start, quit, and enable sounds."
 msgstr "Indítás, kilépés és hangok engedélyezése."
 
 #. (itstool) path: page/title
-#: C/basics.page:27
+#: C/basics.page:28
 msgid "Basic instructions"
 msgstr "Alapvető utasítások"
 
 #. (itstool) path: section/title
-#: C/basics.page:30
+#: C/basics.page:31
 msgid "Start a new game"
 msgstr "Új játék indítása"
 
 #. (itstool) path: section/p
-#: C/basics.page:32
+#: C/basics.page:33
+#| msgid ""
+#| "Select <gui style=\"menuitem\">New Game</gui> from the menu or press "
+#| "<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgid ""
-"Select <gui style=\"menuitem\">New Game</gui> from the menu or press "
-"<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">New Game</gui>, or press <keyseq><key>Ctrl</key><key>N</"
+"key></keyseq> to start a new game."
 msgstr ""
-"Válassza az <gui style=\"menuitem\">Új játék</gui> menüpontot a menüből, "
-"vagy nyomja meg a <keyseq><key>Ctrl</key><key>N</key></keyseq> "
-"billentyűkombinációt az új játék indításához."
+"Nyomja meg az ablak jobb felső sarkában lévő menügombot, és válassza az <gui"
+" style=\"menuitem\">Új játék</gui> menüpontot, vagy nyomja meg a <keyseq><key"
+">Ctrl</key><key>N</key></keyseq> billentyűkombinációt az új játék indításához."
 
 #. (itstool) path: section/title
-#: C/basics.page:38
+#: C/basics.page:39
 msgid "Enable sounds"
 msgstr "Hangok engedélyezése"
 
 #. (itstool) path: section/p
-#: C/basics.page:39
+#: C/basics.page:41
 msgid ""
-"Select <guiseq><gui style=\"menu\">Preferences</gui><gui style=\"menuitem"
-"\">Game</gui></guiseq>. Check the <gui style=\"checkbox\">Enable sounds</"
-"gui> checkbox to enable sounds."
+"Then select the <gui>Game</gui> tab and check <gui style=\"checkbox\">Enable "
+"sounds</gui>."
 msgstr ""
-"Válassza a <guiseq><gui style=\"menu\">Beállítások</gui><gui style=\"menuitem"
-"\">Játék</gui></guiseq> menüpontot. Jelölje be a <gui style=\"checkbox"
-"\">Hangok engedélyezése</gui> jelölőnégyzetet a hangok engedélyezéséhez."
+"Ezután válassza ki a <gui>Játék</gui> lapot, és jelölje be a <gui"
+" style=\"checkbox\">Hangok engedélyezése</gui> jelölőnégyzetet."
 
 #. (itstool) path: section/title
-#: C/basics.page:45
+#: C/basics.page:46
 msgid "Quit <app>Robots</app>"
 msgstr "Kilépés a <app>Robotok</app> játékból"
 
 #. (itstool) path: section/p
-#: C/basics.page:47
+#: C/basics.page:48
+#| msgid ""
+#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
+#| "\">Quit</gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></"
+#| "keyseq> to quit <app>Robots</app> at any time."
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem\">Quit</"
-"gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit "
-"<app>Robots</app> at any time."
+"Press the close button in the title bar, or press <keyseq><key>Ctrl</"
+"key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
 msgstr ""
-"Válassza a <guiseq><gui style=\"menu\">Játék</gui> <gui style=\"menuitem"
-"\">Kilépés</gui></guiseq> menüpontot, vagy nyomja meg bármikor a "
+"Nyomja meg a címsávon lévő bezárás gombot, vagy nyomja meg bármikor a "
 "<keyseq><key>Ctrl</key><key>Q</key></keyseq> billentyűkombinációt a "
 "<app>Robotok</app> játékból való kilépéshez."
 
 #. (itstool) path: info/desc
-#: C/controls-change.page:19
+#: C/controls-change.page:20
 msgid "Change the default keys in <app>Robots</app>."
 msgstr ""
 "Az alapértelmezett billentyűk megváltoztatása a <app>Robotok</app> játékban."
 
 #. (itstool) path: page/title
-#: C/controls-change.page:22
+#: C/controls-change.page:23
 msgid "Customize the keyboard controls"
 msgstr "A billentyűzetes vezérlés személyre szabása"
 
 #. (itstool) path: page/p
-#: C/controls-change.page:24
+#: C/controls-change.page:25
 msgid ""
 "The <link xref=\"controls-default\">default controls</link> can be changed "
 "in <app>Robots</app> to suit your preference."
@@ -171,62 +178,64 @@ msgstr ""
 "ízléséhez."
 
 #. (itstool) path: steps/title
-#: C/controls-change.page:28
+#: C/controls-change.page:29
 msgid "To change the default keys:"
 msgstr "Az alapértelmezett billentyűk megváltoztatásához:"
 
 #. (itstool) path: item/p
-#: C/controls-change.page:30
-msgid ""
-"Select <guiseq><gui style=\"menu\">Preferences</gui><gui style=\"menuitem"
-"\">Keyboard</gui></guiseq>."
-msgstr ""
-"Válassza a <guiseq><gui style=\"menu\">Beállítások</gui><gui style=\"menuitem"
-"\">Billentyűzet</gui></guiseq> menüpontot."
+#: C/controls-change.page:34
+msgid "Select the <gui>Keyboard</gui> tab."
+msgstr "Válassza ki a <gui>Billentyűzet</gui> lapot."
 
 #. (itstool) path: item/p
-#: C/controls-change.page:33
-msgid ""
-"In the <gui style=\"group\">Keyboard Controls</gui> list, select the line, "
-"then click on the control. This highlights the line and the words <gui>New "
-"accelerator…</gui> are now present in place of the old control."
+#: C/controls-change.page:37
+msgid "In the list, select the key that you want to change."
 msgstr ""
-"A <gui style=\"group\">Billentyűzetes vezérlés</gui> listában válasszon egy "
-"sort, majd kattintson a vezérlőre. Ez kiemeli a sort és az <gui>Új "
+"Válassza ki a listában azt a billentyűt, amelyet meg szeretne változtatni."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:40
+#| msgid ""
+#| "In the <gui style=\"group\">Keyboard Controls</gui> list, select the "
+#| "line, then click on the control. This highlights the line and the words "
+#| "<gui>New accelerator…</gui> are now present in place of the old control."
+msgid ""
+"Either click on the control in the second column, or press the <key>Enter</"
+"key> key. The words <gui>New accelerator…</gui> are now present in place of "
+"the old control."
+msgstr ""
+"Kattintson a vezérlőre a második oszlopban, vagy nyomja meg az <key>Enter<"
+"/key> billentyűt. Az <gui>Új "
 "gyorsbillentyű…</gui> szavak jelennek meg a régi vezérlő helyén."
 
 #. (itstool) path: item/p
-#: C/controls-change.page:39
+#: C/controls-change.page:45
 msgid "Press the key you want to use instead of the default key."
 msgstr ""
 "Nyomja le azt a billentyűt, amelyet az alapértelmezett billentyű helyett "
 "szeretne használni."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:41
-msgid ""
-"To keep the old setting click <gui>New accelerator…</gui> again, right click "
-"on <gui>New accelerator…</gui>, press <key>Esc</key> or click anywhere else "
-"inside the <gui>Robots Preferences</gui> box."
-msgstr ""
-"A régi beállítások megtartásához kattintson ismét az <gui>Új gyorsbillentyű…"
-"</gui> gombra, kattintson a jobb egérgombbal az <gui>Új gyorsbillentyű…</"
-"gui> gombra, nyomja meg az <key>Esc</key> billentyűt vagy kattintson bárhova "
-"a <gui>Robotok beállításai</gui> ablakon belül."
-
-#. (itstool) path: item/p
 #: C/controls-change.page:47
-msgid "Repeat the above step to change the other default keys."
+msgid "To keep the old setting, press <key>Esc</key>."
 msgstr ""
-"Ismételje meg a fenti lépést a többi alapértelmezett billentyű módosításához."
+"A régi beállítások megtartásához nyomja meg az <key>Esc</key> billentyűt."
 
 #. (itstool) path: item/p
-#: C/controls-change.page:50
-msgid "Click <gui style=\"button\">Close</gui>."
-msgstr "Nyomja meg a <gui style=\"button\">Bezárás</gui> gombot."
+#: C/controls-change.page:51
+#| msgid "Repeat the above step to change the other default keys."
+msgid "Repeat the above steps to change any other default keys."
+msgstr ""
+"Ismételje meg a fenti lépéseket bármely egyéb alapértelmezett billentyű"
+" megváltoztatásához."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:54
+msgid "Close the <gui>Preferences</gui> dialog."
+msgstr "Zárja be a <gui>Beállítások</gui> párbeszédablakot."
 
 #. (itstool) path: note/p
-#: C/controls-change.page:55
+#: C/controls-change.page:59
 msgid ""
 "You can always reset the controls to the default controls by clicking the "
 "<gui style=\"button\">Restore Defaults</gui> button."
@@ -235,22 +244,22 @@ msgstr ""
 "style=\"button\">Alapértelmezettek visszaállítása</gui> gomb megnyomásával."
 
 #. (itstool) path: info/desc
-#: C/controls-default.page:24
+#: C/controls-default.page:25
 msgid "How do I control the main character?"
 msgstr "Hogyan irányíthatom a fő karaktert?"
 
 #. (itstool) path: page/title
-#: C/controls-default.page:27
+#: C/controls-default.page:28
 msgid "Mouse and keyboard controls for <app>Robots</app>"
 msgstr "Egér és billentyűzetes vezérlés a <app>Robotokhoz</app>"
 
 #. (itstool) path: section/title
-#: C/controls-default.page:30
+#: C/controls-default.page:31
 msgid "Keyboard controls"
 msgstr "Billentyűzetes vezérlés"
 
 #. (itstool) path: section/p
-#: C/controls-default.page:32
+#: C/controls-default.page:33
 msgid ""
 "Use the following keys from the numeric keypad on the far right of your "
 "keyboard, to move in <app>Robots</app>."
@@ -259,138 +268,138 @@ msgstr ""
 "számbillentyűzetről a <app>Robotok</app> játékban való lépéshez."
 
 #. (itstool) path: td/p
-#: C/controls-default.page:38
+#: C/controls-default.page:39
 msgid "Possible moves"
 msgstr "Lehetséges lépések"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:39
+#: C/controls-default.page:40
 msgid "Key"
 msgstr "Billentyű"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:44
+#: C/controls-default.page:45
 msgid "North west"
 msgstr "Északnyugat"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:45
+#: C/controls-default.page:46
 msgid "<key>y</key>"
 msgstr "<key>y</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:48
+#: C/controls-default.page:49
 msgid "North"
 msgstr "Észak"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:49
+#: C/controls-default.page:50
 msgid "<key>k</key>"
 msgstr "<key>k</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:52
+#: C/controls-default.page:53
 msgid "North east"
 msgstr "Északkelet"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:53
+#: C/controls-default.page:54
 msgid "<key>u</key>"
 msgstr "<key>u</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:56
+#: C/controls-default.page:57
 msgid "West"
 msgstr "Nyugat"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:57
+#: C/controls-default.page:58
 msgid "<key>h</key>"
 msgstr "<key>h</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:60
+#: C/controls-default.page:61
 msgid "East"
 msgstr "Kelet"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:61
+#: C/controls-default.page:62
 msgid "<key>l</key>"
 msgstr "<key>l</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:64
+#: C/controls-default.page:65
 msgid "South west"
 msgstr "Délnyugat"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:65
+#: C/controls-default.page:66
 msgid "<key>b</key>"
 msgstr "<key>b</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:68
+#: C/controls-default.page:69
 msgid "South"
 msgstr "Dél"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:69
+#: C/controls-default.page:70
 msgid "<key>j</key>"
 msgstr "<key>j</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:72
+#: C/controls-default.page:73
 msgid "South east"
 msgstr "Délkelet"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:73
+#: C/controls-default.page:74
 msgid "<key>n</key>"
 msgstr "<key>n</key>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:76
+#: C/controls-default.page:77
 msgid "Stay in the same position (one turn)"
 msgstr "Maradjon ugyanabban a pozícióban (egy kör)"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:77
+#: C/controls-default.page:78
 msgid "Space"
 msgstr "Szóköz"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:80
+#: C/controls-default.page:81
 msgid "Teleport safely"
 msgstr "Teleportálás biztonságosan"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:81
+#: C/controls-default.page:82
 msgid "<keyseq><key>Alt</key><key>s</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>b</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:84
+#: C/controls-default.page:85
 msgid "Teleport randomly"
 msgstr "Teleportálás véletlenszerűen"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:85
+#: C/controls-default.page:86
 msgid "<keyseq><key>Alt</key><key>r</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>e</key></keyseq>"
 
 #. (itstool) path: td/p
 #. (itstool) path: item/title
-#: C/controls-default.page:88 C/controls-default.page:119
+#: C/controls-default.page:89 C/controls-default.page:120
 msgid "Wait for the robots"
 msgstr "Várakozás a robotokra"
 
 #. (itstool) path: td/p
-#: C/controls-default.page:89
+#: C/controls-default.page:90
 msgid "<keyseq><key>Alt</key><key>w</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>v</key></keyseq>"
 
 #. (itstool) path: note/p
-#: C/controls-default.page:95
+#: C/controls-default.page:96
 msgid ""
 "You can <link xref=\"controls-change\">change</link> the default controls to "
 "suit your preference."
@@ -399,17 +408,17 @@ msgstr ""
 "vezérlőket, hogy az ízléséhez illeszkedjenek."
 
 #. (itstool) path: section/title
-#: C/controls-default.page:102
+#: C/controls-default.page:103
 msgid "Use the mouse to move around"
 msgstr "Használja az egeret a mozgáshoz"
 
 #. (itstool) path: item/title
-#: C/controls-default.page:106
+#: C/controls-default.page:107
 msgid "Move in a particular direction"
 msgstr "Mozgás egy adott irányba"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:107
+#: C/controls-default.page:108
 msgid ""
 "When you move your mouse around the main character, a small black arrow will "
 "appear pointing towards the direction in which the character will move if "
@@ -424,17 +433,17 @@ msgstr ""
 "Kattintáskor a karakter egy mezőt észak felé fog lépni."
 
 #. (itstool) path: item/title
-#: C/controls-default.page:115
+#: C/controls-default.page:116
 msgid "Stay in the same position"
 msgstr "Maradjon ugyanabban a pozícióban"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:116
+#: C/controls-default.page:117
 msgid "Click on the main character to stay put in the same square."
 msgstr "Kattintson a fő karakterre, hogy ugyanazon a mezőn maradjon."
 
 #. (itstool) path: item/p
-#: C/controls-default.page:120
+#: C/controls-default.page:121
 msgid ""
 "Click the <gui>Wait for Robots</gui> button to wait for the enemy robots to "
 "finish making all their moves."
@@ -443,24 +452,24 @@ msgstr ""
 "ellenséges robotok lépéseinek befejezését."
 
 #. (itstool) path: item/title
-#: C/controls-default.page:124 C/moves.page:55
+#: C/controls-default.page:125 C/moves.page:56
 msgid "Safe teleports"
 msgstr "Biztonságos teleportok"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:125
+#: C/controls-default.page:126
 msgid "To safely teleport, click the <gui>Teleport Safely</gui> button."
 msgstr ""
 "A biztonságos teleporthoz kattintson a <gui>Teleportálás biztonságosan</gui> "
 "gombra."
 
 #. (itstool) path: item/title
-#: C/controls-default.page:128 C/moves.page:61
+#: C/controls-default.page:129 C/moves.page:62
 msgid "Random teleports"
 msgstr "Véletlenszerű teleportok"
 
 #. (itstool) path: item/p
-#: C/controls-default.page:129
+#: C/controls-default.page:130
 msgid ""
 "To teleport to a random spot, click the <gui>Teleport Randomly</gui> button."
 msgstr ""
@@ -468,17 +477,17 @@ msgstr ""
 "véletlenszerűen</gui> gombra."
 
 #. (itstool) path: info/desc
-#: C/game-types.page:23
+#: C/game-types.page:24
 msgid "Change the level of difficulty in <app>Robots</app>."
 msgstr "A nehézségi szint módosítása a <app>Robotok</app> játékban."
 
 #. (itstool) path: page/title
-#: C/game-types.page:26
+#: C/game-types.page:27
 msgid "Game type"
 msgstr "Játék típusa"
 
 #. (itstool) path: page/p
-#: C/game-types.page:28
+#: C/game-types.page:29
 msgid ""
 "You can play <app>Robots</app> in different ways by choosing a different "
 "game type. This changes the level of difficulty involved in playing "
@@ -489,21 +498,17 @@ msgstr ""
 "nehézségi szintjét."
 
 #. (itstool) path: steps/title
-#: C/game-types.page:33
+#: C/game-types.page:34
 msgid "To change the level of difficulty:"
 msgstr "A nehézségi szint módosításához:"
 
 #. (itstool) path: item/p
-#: C/game-types.page:35
-msgid ""
-"Select <guiseq> <gui style=\"menu\">Settings</gui><gui>Preferences</"
-"gui><gui>Game</gui> </guiseq>."
-msgstr ""
-"Válassza a <guiseq><gui style=\"menu\">Beállítások</gui><gui>Beállítások</"
-"gui><gui>Játék</gui></guiseq> menüpontot."
+#: C/game-types.page:39
+msgid "Select the <gui>Game</gui> tab."
+msgstr "Válassza ki a <gui>Játék</gui>lapot."
 
 #. (itstool) path: item/p
-#: C/game-types.page:40
+#: C/game-types.page:42
 msgid ""
 "From the drop down menu next to <gui>Game Type</gui>, choose your option."
 msgstr ""
@@ -511,17 +516,17 @@ msgstr ""
 "lehetőséget."
 
 #. (itstool) path: td/p
-#: C/game-types.page:45
+#: C/game-types.page:47
 msgid "Game Type"
 msgstr "Játéktípus"
 
 #. (itstool) path: td/p
-#: C/game-types.page:46
+#: C/game-types.page:48
 msgid "Initial safe <link xref=\"moves#teleport\">teleports</link>"
 msgstr "Kezdeti biztonságos <link xref=\"moves#teleport\">teleportok</link>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:48
+#: C/game-types.page:50
 msgid ""
 "Initial <link xref=\"scores#high-low-risk\">low-risk enemy robots</link>"
 msgstr ""
@@ -529,7 +534,7 @@ msgstr ""
 "robotok</link>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:51
+#: C/game-types.page:53
 msgid ""
 "Initial <link xref=\"scores#high-low-risk\">high-risk enemy robots</link>"
 msgstr ""
@@ -537,49 +542,43 @@ msgstr ""
 "robotok</link>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:54
+#: C/game-types.page:56
 msgid "Do safe teleports increase in successive levels?"
 msgstr "A biztonságos teleportok növekednek az egymást követő szinteken?"
 
 #. (itstool) path: td/p
-#: C/game-types.page:59
+#: C/game-types.page:61
 msgid "<gui>nightmare</gui>"
 msgstr "<gui>rémálom</gui>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:60 C/game-types.page:61 C/game-types.page:77
-#: C/game-types.page:85
+#: C/game-types.page:62 C/game-types.page:63 C/game-types.page:71
+#: C/game-types.page:94
 msgid "2"
 msgstr "2"
 
 #. (itstool) path: td/p
-#: C/game-types.page:62 C/game-types.page:76 C/game-types.page:84
+#: C/game-types.page:64 C/game-types.page:70 C/game-types.page:93
 msgid "8"
 msgstr "8"
 
 #. (itstool) path: td/p
-#: C/game-types.page:63 C/game-types.page:86
+#: C/game-types.page:65 C/game-types.page:95
 msgid "Yes"
 msgstr "Igen"
 
 #. (itstool) path: td/p
-#: C/game-types.page:66
-msgid "<gui>robots with safe teleport</gui>"
-msgstr "<gui>robotok biztonságos teleporttal</gui>"
+#: C/game-types.page:68
+msgid "<gui>robots2</gui>"
+msgstr "<gui>robotok2</gui>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:67 C/game-types.page:69 C/game-types.page:90
-#: C/game-types.page:92
-msgid "0"
-msgstr "0"
+#: C/game-types.page:69
+msgid "1"
+msgstr "1"
 
 #. (itstool) path: td/p
-#: C/game-types.page:68 C/game-types.page:91
-msgid "10"
-msgstr "10"
-
-#. (itstool) path: td/p
-#: C/game-types.page:70 C/game-types.page:78
+#: C/game-types.page:72 C/game-types.page:80
 msgid ""
 "Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
 "link>"
@@ -588,37 +587,43 @@ msgstr ""
 "haltak meg"
 
 #. (itstool) path: td/p
-#: C/game-types.page:74
-msgid "<gui>robots2</gui>"
-msgstr "<gui>robotok2</gui>"
+#: C/game-types.page:76
+msgid "<gui>robots with safe teleport</gui>"
+msgstr "<gui>robotok biztonságos teleporttal</gui>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:75
-msgid "1"
-msgstr "1"
+#: C/game-types.page:77 C/game-types.page:79 C/game-types.page:85
+#: C/game-types.page:87
+msgid "0"
+msgstr "0"
 
 #. (itstool) path: td/p
-#: C/game-types.page:82
-msgid "<gui>robots2 easy</gui>"
-msgstr "<gui>könnyű robotok2</gui>"
+#: C/game-types.page:78 C/game-types.page:86
+msgid "10"
+msgstr "10"
 
 #. (itstool) path: td/p
-#: C/game-types.page:83
-msgid "3"
-msgstr "3"
-
-#. (itstool) path: td/p
-#: C/game-types.page:89
+#: C/game-types.page:84
 msgid "<gui>classic robots</gui>"
 msgstr "<gui>klasszikus robotok</gui>"
 
 #. (itstool) path: td/p
-#: C/game-types.page:93
+#: C/game-types.page:88
 msgid "No"
 msgstr "Nem"
 
+#. (itstool) path: td/p
+#: C/game-types.page:91
+msgid "<gui>robots2 easy</gui>"
+msgstr "<gui>könnyű robotok2</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:92
+msgid "3"
+msgstr "3"
+
 #. (itstool) path: item/p
-#: C/game-types.page:99
+#: C/game-types.page:101
 msgid ""
 "If you check the <gui style=\"checkbox\">Use safe moves</gui> checkbox, the "
 "game will prevent you from moving if the move would cause a robot to kill "
@@ -638,17 +643,17 @@ msgstr ""
 "kiveheti a pipát ezekből, ha a játékot túl könnyűnek találja."
 
 #. (itstool) path: info/desc
-#: C/index.page:17
+#: C/index.page:18
 msgid "Index"
 msgstr "Tárgymutató"
 
 #. (itstool) path: page/title
-#: C/index.page:20
+#: C/index.page:21
 msgid "<_:media-1/> Robots"
 msgstr "<_:media-1/> Robotok"
 
 #. (itstool) path: page/p
-#: C/index.page:25
+#: C/index.page:26
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
@@ -660,27 +665,37 @@ msgstr ""
 "maradt szeméthalommal összeütköztetve anélkül, hogy Önnel ütközzenek."
 
 #. (itstool) path: section/title
-#: C/index.page:31
+#: C/index.page:32
 msgid "Game play"
 msgstr "Játékmenet"
 
 #. (itstool) path: section/title
-#: C/index.page:35
+#: C/index.page:36
 msgid "Preferences"
 msgstr "Beállítások"
 
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Ez a munka a <_:link-1/> feltételei szerint használható."
+
 #. (itstool) path: info/desc
-#: C/moves.page:20
+#: C/moves.page:21
 msgid "How can I move around in <app>Robots</app>?"
 msgstr "Hogyan léphetek a <app>Robotok</app> játékban?"
 
 #. (itstool) path: page/title
-#: C/moves.page:23
+#: C/moves.page:24
 msgid "Different moves in <app>Robots</app>"
 msgstr "Különböző lépések a <app>Robotok</app> játékban"
 
 #. (itstool) path: page/p
-#: C/moves.page:25
+#: C/moves.page:26
 msgid ""
 "In <app>Robots</app> you can move in one of eight directions, wait for the "
 "robots, or teleport. The enemy robots and the main character take turns to "
@@ -693,23 +708,23 @@ msgstr ""
 "megpróbálnak úgy lépni, hogy egyre közelebb kerüljenek Önhöz."
 
 #. (itstool) path: section/title
-#: C/moves.page:31
+#: C/moves.page:32
 msgid "Basic moves"
 msgstr "Alapvető lépések"
 
 #. (itstool) path: section/p
-#: C/moves.page:33
+#: C/moves.page:34
 msgid ""
 "In one turn, you can move to any adjacent square. You may move diagonally."
 msgstr "Egy körben bármely szomszédos mezőre léphet, akár átlósan is."
 
 #. (itstool) path: section/title
-#: C/moves.page:38
+#: C/moves.page:39
 msgid "Wait"
 msgstr "Várakozás"
 
 #. (itstool) path: section/p
-#: C/moves.page:40
+#: C/moves.page:41
 msgid ""
 "You can stay put and wait for the robots to finish making all their moves. "
 "This is not advisable unless there are very few robots and you are "
@@ -720,12 +735,12 @@ msgstr ""
 "biztos abban, hogy mindegyik el fog pusztulni, mielőtt elérnék Önt."
 
 #. (itstool) path: section/title
-#: C/moves.page:47
+#: C/moves.page:48
 msgid "Teleport to a different location"
 msgstr "Teleportálás egy eltérő helyre"
 
 #. (itstool) path: section/p
-#: C/moves.page:49
+#: C/moves.page:50
 msgid ""
 "If there are no moves possible or if you want to make a leap across the "
 "board instead of moving square by square, you can teleport. There are two "
@@ -736,7 +751,7 @@ msgstr ""
 "érhető el."
 
 #. (itstool) path: item/p
-#: C/moves.page:56
+#: C/moves.page:57
 msgid ""
 "Safe teleports move the main character to a location that is safe from enemy "
 "robots. In each game only a few safe teleports are allowed."
@@ -746,7 +761,7 @@ msgstr ""
 "biztonságos teleport engedélyezett."
 
 #. (itstool) path: item/p
-#: C/moves.page:62
+#: C/moves.page:63
 msgid ""
 "Use random teleports to teleport to a random location that may be safe or "
 "may not be safe. You can use as many random teleports as you want during a "
@@ -757,17 +772,17 @@ msgstr ""
 "véletlenszerű teleportot használhat, amennyit csak akar."
 
 #. (itstool) path: info/desc
-#: C/scores.page:23
+#: C/scores.page:24
 msgid "Scoring points in <app>Robots</app>"
 msgstr "Pontszerzés a <app>Robotok</app> játékban"
 
 #. (itstool) path: page/title
-#: C/scores.page:26
+#: C/scores.page:27
 msgid "Scores"
 msgstr "Pontok"
 
 #. (itstool) path: page/p
-#: C/scores.page:28
+#: C/scores.page:29
 msgid ""
 "There are two type of enemies in <app>Robots</app>: high-risk enemies which "
 "give you 20 points when they die and low-risk enemies which give you 10 "
@@ -778,12 +793,12 @@ msgstr ""
 "kockázatú ellenségek, amelyek 10 pontot, ha meghalnak."
 
 #. (itstool) path: section/title
-#: C/scores.page:33
+#: C/scores.page:34
 msgid "High and low risk enemies by theme"
 msgstr "Magas és alacsony kockázatú ellenségek téma szerint"
 
 #. (itstool) path: section/p
-#: C/scores.page:35
+#: C/scores.page:36
 msgid ""
 "The enemies in a game depend on the <link xref=\"appearance\">game theme</"
 "link> chosen."
@@ -792,202 +807,202 @@ msgstr ""
 "\">játéktémától</link> függ."
 
 #. (itstool) path: td/p
-#: C/scores.page:41
+#: C/scores.page:42
 msgid "Game theme"
 msgstr "Játéktéma"
 
 #. (itstool) path: td/p
-#: C/scores.page:42
+#: C/scores.page:43
 msgid "High-risk enemy (20 points)"
 msgstr "Magas kockázatú ellenség (20 pont)"
 
 #. (itstool) path: td/p
-#: C/scores.page:43
+#: C/scores.page:44
 msgid "Low-risk enemy (10 points)"
 msgstr "Alacsony kockázatú ellenség (10 pont)"
 
 #. (itstool) path: td/p
-#: C/scores.page:47
+#: C/scores.page:48
 msgid "anthills"
 msgstr "anthills"
 
 #. (itstool) path: media/span
-#: C/scores.page:50
+#: C/scores.page:51
 msgid "High-risk anthill"
 msgstr "Magas kockázatú hangyaboly"
 
 #. (itstool) path: media/span
-#: C/scores.page:53
+#: C/scores.page:54
 msgid "Low-risk anthill"
 msgstr "Alacsony kockázatú hangyaboly"
 
 #. (itstool) path: td/p
-#: C/scores.page:56
+#: C/scores.page:57
 msgid "boo"
 msgstr "boo"
 
 #. (itstool) path: media/span
-#: C/scores.page:59
+#: C/scores.page:60
 msgid "High-risk bat"
 msgstr "Magas kockázatú denevér"
 
 #. (itstool) path: media/span
-#: C/scores.page:62
+#: C/scores.page:63
 msgid "Low-risk ghost"
 msgstr "Alacsony kockázatú szellem"
 
 #. (itstool) path: td/p
-#: C/scores.page:65
+#: C/scores.page:66
 msgid "cows"
 msgstr "cows"
 
 #. (itstool) path: media/span
-#: C/scores.page:68
+#: C/scores.page:69
 msgid "High-risk cow"
 msgstr "Magas kockázatú tehén"
 
 #. (itstool) path: media/span
-#: C/scores.page:71
+#: C/scores.page:72
 msgid "Low-risk cow"
 msgstr "Alacsony kockázatú tehén"
 
 #. (itstool) path: td/p
-#: C/scores.page:74
+#: C/scores.page:75
 msgid "eggs"
 msgstr "eggs"
 
 #. (itstool) path: media/span
-#: C/scores.page:78
+#: C/scores.page:79
 msgid "High-risk egg"
 msgstr "Magas kockázatú tojás"
 
 #. (itstool) path: media/span
-#: C/scores.page:82
+#: C/scores.page:83
 msgid "Low-risk egg"
 msgstr "Alacsony kockázatú tojás"
 
 #. (itstool) path: td/p
-#: C/scores.page:85
+#: C/scores.page:86
 msgid "gnomes"
 msgstr "gnomes"
 
 #. (itstool) path: media/span
-#: C/scores.page:88
+#: C/scores.page:89
 msgid "High-risk gnome"
 msgstr "Magas kockázatú törpe"
 
 #. (itstool) path: media/span
-#: C/scores.page:91
+#: C/scores.page:92
 msgid "Low-risk gnome"
 msgstr "Alacsony kockázatú törpe"
 
 #. (itstool) path: td/p
-#: C/scores.page:94
+#: C/scores.page:95
 msgid "mice"
 msgstr "mice"
 
 #. (itstool) path: media/span
-#: C/scores.page:97
+#: C/scores.page:98
 msgid "High-risk mouse"
 msgstr "Magas kockázatú egér"
 
 #. (itstool) path: media/span
-#: C/scores.page:100
+#: C/scores.page:101
 msgid "Low-risk mouse"
 msgstr "Alacsony kockázatú egér"
 
 #. (itstool) path: td/p
-#: C/scores.page:103
+#: C/scores.page:104
 msgid "robots"
 msgstr "robots"
 
 #. (itstool) path: media/span
-#: C/scores.page:106
+#: C/scores.page:107
 msgid "High-risk robot"
 msgstr "Magas kockázatú robot"
 
 #. (itstool) path: media/span
-#: C/scores.page:109
+#: C/scores.page:110
 msgid "Low-risk robot"
 msgstr "Alacsony kockázatú robot"
 
 #. (itstool) path: td/p
-#: C/scores.page:111
+#: C/scores.page:112
 msgid "spills"
 msgstr "spills"
 
 #. (itstool) path: media/span
-#: C/scores.page:115
+#: C/scores.page:116
 msgid "High-risk spill"
 msgstr "Magas kockázatú paca"
 
 #. (itstool) path: media/span
-#: C/scores.page:118
+#: C/scores.page:119
 msgid "Low-risk spill"
 msgstr "Alacsony kockázatú paca"
 
 #. (itstool) path: td/p
-#: C/scores.page:121
+#: C/scores.page:122
 msgid "stormclouds"
 msgstr "stormclouds"
 
 #. (itstool) path: media/span
-#: C/scores.page:124
+#: C/scores.page:125
 msgid "High-risk stormcloud"
 msgstr "Magas kockázatú viharfelhő"
 
 #. (itstool) path: media/span
-#: C/scores.page:127
+#: C/scores.page:128
 msgid "Low-risk stormcloud"
 msgstr "Alacsony kockázatú viharfelhő"
 
 #. (itstool) path: td/p
-#: C/scores.page:130
+#: C/scores.page:131
 msgid "toasters"
 msgstr "toasters"
 
 #. (itstool) path: media/span
-#: C/scores.page:133
+#: C/scores.page:134
 msgid "High-risk toaster"
 msgstr "Magas kockázatú kenyérpirító"
 
 #. (itstool) path: media/span
-#: C/scores.page:136
+#: C/scores.page:137
 msgid "Low-risk toaster"
 msgstr "Alacsony kockázatú kenyérpirító"
 
 #. (itstool) path: td/p
-#: C/scores.page:139
+#: C/scores.page:140
 msgid "ufo"
 msgstr "ufo"
 
 #. (itstool) path: media/span
-#: C/scores.page:142
+#: C/scores.page:143
 msgid "High-risk UFO"
 msgstr "Magas kockázatú UFO"
 
 #. (itstool) path: media/span
-#: C/scores.page:145
-#| msgid "Low-risk cow"
+#: C/scores.page:146
 msgid "Low-risk UFO"
 msgstr "Alacsony kockázatú UFO"
 
 #. (itstool) path: section/title
-#: C/scores.page:153
+#: C/scores.page:154
 msgid "High scores"
 msgstr "Legmagasabb pontok"
 
 #. (itstool) path: section/p
-#: C/scores.page:155
+#: C/scores.page:156
 msgid ""
-"Select <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem\">Scores</"
-"gui></guiseq> to view the high scores."
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Scores</gui> to view the high scores."
 msgstr ""
-"Válassza a <guiseq><gui style=\"menu\">Játék</gui><gui style=\"menuitem"
-"\">Pontszámok</gui></guiseq> menüpontot a legmagasabb pontok megtekintéséhez."
+"Nyomja meg az ablak jobb felső sarkában lévő menügombot, és válassza a <gui"
+" style=\"menuitem\">Pontszámok</gui> menüpontot a legmagasabb pontszámok"
+" megtekintéséhez."
 
 #. (itstool) path: section/p
-#: C/scores.page:158
+#: C/scores.page:159
 msgid ""
 "Scores are recorded separately for each combination of <link xref=\"game-"
 "types\">game type and safe move option</link>. Use the drop-down menu next "
@@ -998,306 +1013,3 @@ msgstr ""
 "\">játéktípus és biztonságos lépési lehetőség</link> kombinációjához. A "
 "<gui>Térkép</gui> melletti lenyíló menü használatával megtekintheti a "
 "pontokat az egyes játéktípus és biztonságos lépési lehetőség kombinációknál."
-
-#. (itstool) path: p/link
-#: C/legal.xml:4
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-
-#. (itstool) path: license/p
-#: C/legal.xml:3
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Ez a munka a <_:link-1/> feltételei szerint használható."
-
-#~ msgid ""
-#~ "You can hide the toolbar that contains buttons to start a new game, wait "
-#~ "and teleport, by selecting <guiseq><gui style=\"menu\">View</gui> <gui "
-#~ "style=\"menuitem\">Toolbar</gui></guiseq>. The small tick mark next to "
-#~ "<gui>Toolbar</gui> will disappear and the toolbar will be hidden."
-#~ msgstr ""
-#~ "Elrejtheti az új játék indítása, várakozás és teleportálás gombokat "
-#~ "tartalmazó az eszköztárat a <guiseq><gui style=\"menu\">Nézet</gui> <gui "
-#~ "style=\"menuitem\">Eszköztár</gui></guiseq> menüpont kiválasztásával. Az "
-#~ "<gui>Eszköztár</gui> melletti kis pipa el fog tűnni, és az eszköztár el "
-#~ "lesz rejtve."
-
-#~ msgid "Start, quit and play <app>Robots</app> in fullscreen."
-#~ msgstr ""
-#~ "Indítás, kilépés és a <app>Robotok</app> használata teljes képernyőn."
-
-#~ msgid "New"
-#~ msgstr "Új"
-
-#~ msgid "Play <app>Robots</app> in fullscreen mode"
-#~ msgstr "A <app>Robotok</app> használata teljes képernyős módban"
-
-#~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
-#~ "\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
-#~ "fullscreen mode. You can return to the default screen size by pressing "
-#~ "<key>F11</key> again."
-#~ msgstr ""
-#~ "Válassza a <guiseq><gui style=\"menu\">Nézet</gui> <gui style=\"menuitem"
-#~ "\">Teljes képernyő</gui></guiseq> menüpontot, vagy nyomja meg az "
-#~ "<key>F11</key> billentyűt a játék használatához teljes képernyős módban. "
-#~ "Az <key>F11</key> ismételt megnyomásával visszatérhet az alapértelmezett "
-#~ "képernyőmérethez."
-
-#~| msgid "Teleport safely"
-#~ msgid "Teleport"
-#~ msgstr "Teleportálás"
-
-#~| msgid ""
-#~| "To safely teleport, click the <_:media-1/> button on the toolbar or "
-#~| "select <guiseq><gui style=\"menu\">Move</gui> <gui style=\"menuitem"
-#~| "\">Teleport</gui></guiseq>."
-#~ msgid ""
-#~ "To safely teleport, click the <_:media-1/> button on the toolbar or "
-#~ "select <guiseq><gui style=\"menu\">Move</gui><gui style=\"menuitem"
-#~ "\">Teleport</gui></guiseq>."
-#~ msgstr ""
-#~ "A biztonságos teleporthoz kattintson az eszköztáron lévő <_:media-1/> "
-#~ "gombra, vagy válassza a <guiseq><gui style=\"menu\">Mozgatás</gui><gui "
-#~ "style=\"menuitem\">Teleport</gui></guiseq> menüpontot."
-
-#~| msgid "Random teleports"
-#~ msgid "Random teleport"
-#~ msgstr "Véletlenszerű teleport"
-
-#~| msgid ""
-#~| "To teleport to a random spot, click the <_:media-1/> button on the "
-#~| "toolbar or select <guiseq><gui style=\"menu\">Move</gui> <gui style="
-#~| "\"menuitem\">Random</gui></guiseq>."
-#~ msgid ""
-#~ "To teleport to a random spot, click the <_:media-1/> button on the "
-#~ "toolbar or select <guiseq><gui style=\"menu\">Move</gui><gui style="
-#~ "\"menuitem\">Random</gui></guiseq>."
-#~ msgstr ""
-#~ "Egy véletlenszerű mezőre teleportáláshoz kattintson az eszköztáron lévő "
-#~ "<_:media-1/> gombra, vagy válassza a <guiseq><gui style=\"menu"
-#~ "\">Mozgatás</gui><gui style=\"menuitem\">Véletlenszerű</gui></guiseq> "
-#~ "menüpontot."
-
-#~ msgid ""
-#~ "You can move in any of the following directions. Each move takes you one "
-#~ "square forward in the direction of your choice."
-#~ msgstr ""
-#~ "A következő irányok bármelyikébe léphet. Minden lépés egy mezővel lépteti "
-#~ "előre a választott irányba."
-
-#~ msgid "North west or up left"
-#~ msgstr "Északnyugat vagy balra fel"
-
-#~ msgid "North or up"
-#~ msgstr "Észak vagy fel"
-
-#~ msgid "North east or up right"
-#~ msgstr "Északkelet vagy jobbra fel"
-
-#~ msgid "East or right"
-#~ msgstr "Kelet vagy jobbra"
-
-#~ msgid "South east or down right"
-#~ msgstr "Délkelet vagy jobbra le"
-
-#~ msgid "South or down"
-#~ msgstr "Dél vagy le"
-
-#~ msgid "South west or down left"
-#~ msgstr "Délnyugat vagy balra le"
-
-#~ msgid "West or left"
-#~ msgstr "Nyugat vagy balra"
-
-#~ msgid "Stay in the same square"
-#~ msgstr "Maradás ugyanazon a mezőn"
-
-#~ msgid ""
-#~ "Depending on your <link xref=\"appearance\">game theme</link>, the "
-#~ "following are the enemies that give you 20 points when they die."
-#~ msgstr ""
-#~ "A <link xref=\"appearance\">játéktémától</link> függően a következők azok "
-#~ "az ellenségek, amelyek elpusztítása 20 pontot ér."
-
-#~| msgid "<_:media-1/> Robots"
-#~ msgid "Bats <_:media-1/>"
-#~ msgstr "Denevérek <_:media-1/>"
-
-#~| msgid "High-risk enemies"
-#~ msgid "High-risk gnomes <_:media-1/>"
-#~ msgstr "Magas kockázatú törpék <_:media-1/>"
-
-#~ msgid "High-risk UFOs <_:media-1/>"
-#~ msgstr "Magas kockázatú UFO-k <_:media-1/>"
-
-#~ msgid ""
-#~ "The following are the enemies that give you 10 points when they die. "
-#~ "Again, it is your theme that determines which of these will appear in a "
-#~ "game."
-#~ msgstr ""
-#~ "A következők azok az ellenségek, amelyek elpusztítása 10 pontot ér. Még "
-#~ "egyszer: a téma határozza meg, hogy ezek közül melyek jelennek meg a "
-#~ "játékban."
-
-#~| msgid "<_:media-1/> Robots"
-#~ msgid "Ghosts <_:media-1/>"
-#~ msgstr "Szellemek <_:media-1/>"
-
-#~ msgid "Low-risk gnomes <_:media-1/>"
-#~ msgstr "Alacsony kockázatú törpék <_:media-1/>"
-
-#~ msgid "Low-risk UFOs <_:media-1/>"
-#~ msgstr "Alacsony kockázatú UFO-k <_:media-1/>"
-
-#~ msgid "<key>Home</key>"
-#~ msgstr "<key>Home</key>"
-
-#~ msgid "<key>↑</key>"
-#~ msgstr "<key>↑</key>"
-
-#~ msgid "<key>PgUp</key>"
-#~ msgstr "<key>PgUp</key>"
-
-#~ msgid "<key>→</key>"
-#~ msgstr "<key>→</key>"
-
-#~ msgid "<key>←</key>"
-#~ msgstr "<key>←</key>"
-
-#~ msgid "<key>↓</key>"
-#~ msgstr "<key>↓</key>"
-
-#~ msgid "<key>PgDn</key>"
-#~ msgstr "<key>PgDn</key>"
-
-#~ msgid "<key>+</key>"
-#~ msgstr "<key>+</key>"
-
-#~ msgid "<key>*</key>"
-#~ msgstr "<key>*</key>"
-
-#~ msgid "<key>Enter</key>"
-#~ msgstr "<key>Enter</key>"
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/boo-high-risk.png' "
-#~ "md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
-#~ msgstr ""
-#~ "external ref='figures/boo-high-risk.png' "
-#~ "md5='c7d5afcbd6395ddb19f52fa20f6ef6e5'"
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/robots-high-risk.png' "
-#~ "md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
-#~ msgstr ""
-#~ "external ref='figures/robots-high-risk.png' "
-#~ "md5='82aa07f40fee7c440d4156ec0ec2ecc4'"
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/gnome-high-risk.png' "
-#~ "md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
-#~ msgstr ""
-#~ "external ref='figures/gnome-high-risk.png' "
-#~ "md5='d59d73f6167860cc3ad9fa037c2ec1e6'"
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/ufo-high-risk.png' "
-#~ "md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
-#~ msgstr ""
-#~ "external ref='figures/ufo-high-risk.png' "
-#~ "md5='b6ab2ec7e6605593c4134dd5ad63a5de'"
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/boo-low-risk.png' "
-#~ "md5='69c143d6283761adf553b170570e121d'"
-#~ msgstr ""
-#~ "external ref='figures/boo-low-risk.png' "
-#~ "md5='69c143d6283761adf553b170570e121d'"
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/robots-low-risk.png' "
-#~ "md5='55f455ea45fad3d7fb453f992f2aad94'"
-#~ msgstr ""
-#~ "external ref='figures/robots-low-risk.png' "
-#~ "md5='55f455ea45fad3d7fb453f992f2aad94'"
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/gnome-low-risk.png' "
-#~ "md5='1195e6a49de2b6efdf2d9185e1e184e0'"
-#~ msgstr ""
-#~ "external ref='figures/gnome-low-risk.png' "
-#~ "md5='1195e6a49de2b6efdf2d9185e1e184e0'"
-
-#~ msgctxt "_"
-#~ msgid ""
-#~ "external ref='figures/ufo-low-risk.png' "
-#~ "md5='183efc4bba58248fc97edf5528af5a9a'"
-#~ msgstr ""
-#~ "external ref='figures/ufo-low-risk.png' "
-#~ "md5='183efc4bba58248fc97edf5528af5a9a'"
-
-#~ msgid ""
-#~ "Bats <media type=\"image\" src=\"figures/boo-high-risk.png\" height="
-#~ "\"20\" width=\"20\"/>"
-#~ msgstr ""
-#~ "Denevérek <media type=\"image\" src=\"figures/boo-high-risk.png\" height="
-#~ "\"20\" width=\"20\"/>"
-
-#~ msgid ""
-#~ "High-risk Robots <media type=\"image\" src=\"figures/robots-high-risk.png"
-#~ "\" height=\"20\" width=\"20\"/>"
-#~ msgstr ""
-#~ "Magas kockázatú robotok <media type=\"image\" src=\"figures/robots-high-"
-#~ "risk.png\" height=\"20\" width=\"20\"/>"
-
-#~ msgid ""
-#~ "High-risk gnomes <media type=\"image\" src=\"figures/gnome-high-risk.png"
-#~ "\" height=\"20\" width=\"20\"/>"
-#~ msgstr ""
-#~ "Magas kockázatú törpék <media type=\"image\" src=\"figures/gnome-high-"
-#~ "risk.png\" height=\"20\" width=\"20\"/>"
-
-#~ msgid ""
-#~ "High-risk UFOs <media type=\"image\" src=\"figures/ufo-high-risk.png\" "
-#~ "height=\"20\" width=\"20\"/>"
-#~ msgstr ""
-#~ "Magas kockázatú UFO-k <media type=\"image\" src=\"figures/ufo-high-risk."
-#~ "png\" height=\"20\" width=\"20\"/>"
-
-#~ msgid ""
-#~ "Ghosts <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
-#~ "\"20\" width=\"20\"/>"
-#~ msgstr ""
-#~ "Szellemek <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
-#~ "\"20\" width=\"20\"/>"
-
-#~ msgid ""
-#~ "Low-risk Robots <media type=\"image\" src=\"figures/robots-low-risk.png\" "
-#~ "height=\"20\" width=\"20\"/>"
-#~ msgstr ""
-#~ "Alacsony kockázatú robotok <media type=\"image\" src=\"figures/robots-low-"
-#~ "risk.png\" height=\"20\" width=\"20\"/>"
-
-#~ msgid ""
-#~ "Low-risk gnomes <media type=\"image\" src=\"figures/gnome-low-risk.png\" "
-#~ "height=\"20\" width=\"20\"/>"
-#~ msgstr ""
-#~ "Alacsony kockázatú törpék <media type=\"image\" src=\"figures/gnome-low-"
-#~ "risk.png\" height=\"20\" width=\"20\"/>"
-
-#~ msgid ""
-#~ "Low-risk UFOs <media type=\"image\" src=\"figures/ufo-low-risk.png\" "
-#~ "height=\"20\" width=\"20\"/>"
-#~ msgstr ""
-#~ "Alacsony kockázatú UFO-k <media type=\"image\" src=\"figures/ufo-low-risk."
-#~ "png\" height=\"20\" width=\"20\"/>"
-
-#~ msgid "Available themes:"
-#~ msgstr "Elérhető témák:"

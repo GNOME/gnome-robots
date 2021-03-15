@@ -4,6 +4,10 @@
 	id="index">
 
   <info>
+    <title type="link" role="trail">Robots</title>
+    <title type="text">Robots</title>
+    <title type="link">Robots</title>
+
     <revision pkgversion="3.8" version="0.1" date="2013-04-03" status="draft"/>
     <revision pkgversion="3.14" date="2015-01-25" status="review"/>
     <revision pkgversion="3.34" date="2020-01-03" status="review"/>
@@ -19,8 +23,8 @@
   </info>
 
   <title>
-    <media type="image" its:translate="no" src="figures/gnome-robots.png" />
-    Robots
+    <media type="image" its:translate="no" width="48px" height="48px"
+      src="figures/org.gnome.Robots.svg" /> Robots
   </title>
 
   <p><app>Robots</app> is based on the UNIX command-line game of the same

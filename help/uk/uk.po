@@ -2,21 +2,21 @@
 # Copyright (C) 2020 gnome-robots's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-robots package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
-"POT-Creation-Date: 2020-04-03 20:50+0000\n"
-"PO-Revision-Date: 2020-05-13 16:23+0300\n"
+"POT-Creation-Date: 2021-04-05 08:56+0000\n"
+"PO-Revision-Date: 2021-04-05 17:19+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.07.70\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -25,7 +25,7 @@ msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2020"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
-#: C/controls-default.page:17 C/game-types.page:16 C/index.page:14
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:18
 #: C/moves.page:17 C/scores.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -52,8 +52,8 @@ msgid ""
 "You can change the <app>Robots</app> backdrop and the different robots that "
 "are present in a game by changing the game theme and background."
 msgstr ""
-"Ви можете змінити декорації і використати інших роботів у <app>Роботах</app>,"
-" змінивши тему і тло гри."
+"Ви можете змінити декорації і використати інших роботів у <app>Роботах</"
+"app>, змінивши тему і тло гри."
 
 #. (itstool) path: steps/title
 #: C/appearance.page:34
@@ -68,8 +68,8 @@ msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Preferences</gui>."
 msgstr ""
-"Натисніть кнопку меню у верхньому правому куті вікна і виберіть <gui"
-" style=\"menuitem\">Параметри</gui>."
+"Натисніть кнопку меню у верхньому правому куті вікна і виберіть <gui style="
+"\"menuitem\">Параметри</gui>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:39
@@ -88,9 +88,9 @@ msgid ""
 "color</gui>. Select a color from the available choices and click <gui style="
 "\"button\">Select</gui>."
 msgstr ""
-"Щоб змінити колір тла, натисніть кнопку, розташовану поруч із написом <gui"
-">Колір тла</gui>. Виберіть колір із доступних варіантів і натисніть кнопку <"
-"gui style=\"button\">Вибрати</gui>."
+"Щоб змінити колір тла, натисніть кнопку, розташовану поруч із написом "
+"<gui>Колір тла</gui>. Виберіть колір із доступних варіантів і натисніть "
+"кнопку <gui style=\"button\">Вибрати</gui>."
 
 #. (itstool) path: info/desc
 #: C/basics.page:25
@@ -114,9 +114,9 @@ msgid ""
 "style=\"menuitem\">New Game</gui>, or press <keyseq><key>Ctrl</key><key>N</"
 "key></keyseq> to start a new game."
 msgstr ""
-"Натисніть кнопку меню у верхньому правому куті вікна програми і виберіть <gui"
-" style=\"menuitem\">Нова гра</gui> або комбінацію клавіш <keyseq><key>Ctrl<"
-"/key><key>N</key></keyseq>, щоб розпочати нову гру."
+"Натисніть кнопку меню у верхньому правому куті вікна програми і виберіть "
+"<gui style=\"menuitem\">Нова гра</gui> або комбінацію клавіш "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq>, щоб розпочати нову гру."
 
 #. (itstool) path: section/title
 #: C/basics.page:39
@@ -129,8 +129,8 @@ msgid ""
 "Then select the <gui>Game</gui> tab and check <gui style=\"checkbox\">Enable "
 "sounds</gui>."
 msgstr ""
-"Далі, виберіть вкладку <gui>Гра</gui> і позначте пункт <gui"
-" style=\"checkbox\">Увімкнути звуки</gui>."
+"Далі, виберіть вкладку <gui>Гра</gui> і позначте пункт <gui style=\"checkbox"
+"\">Увімкнути звуки</gui>."
 
 #. (itstool) path: section/title
 #: C/basics.page:46
@@ -143,9 +143,9 @@ msgid ""
 "Press the close button in the title bar, or press <keyseq><key>Ctrl</"
 "key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
 msgstr ""
-"Будь-коли натисніть кнопку закриття на панелі заголовка або натисніть"
-" комбінацію клавіш <keyseq><key>Ctrl</key><key>Q</key></keyseq>, щоб вийти з"
-" <app>Роботів</app>."
+"Будь-коли натисніть кнопку закриття на панелі заголовка або натисніть "
+"комбінацію клавіш <keyseq><key>Ctrl</key><key>Q</key></keyseq>, щоб вийти з "
+"<app>Роботів</app>."
 
 #. (itstool) path: info/desc
 #: C/controls-change.page:20
@@ -163,8 +163,8 @@ msgid ""
 "The <link xref=\"controls-default\">default controls</link> can be changed "
 "in <app>Robots</app> to suit your preference."
 msgstr ""
-"<link xref=\"controls-default\">Типове керування з клавіатури</link> у <app"
-">Роботах</app> можна змінити так, як вам зручно."
+"<link xref=\"controls-default\">Типове керування з клавіатури</link> у "
+"<app>Роботах</app> можна змінити так, як вам зручно."
 
 #. (itstool) path: steps/title
 #: C/controls-change.page:29
@@ -188,9 +188,9 @@ msgid ""
 "key> key. The words <gui>New accelerator…</gui> are now present in place of "
 "the old control."
 msgstr ""
-"Або клацніть на пункт у другому стовпчику або натисніть клавішу <key>Enter<"
-"/key>. На місці старої комбінації буде показано слова <gui>Нове скорочення…<"
-"/gui>."
+"Або клацніть на пункт у другому стовпчику або натисніть клавішу <key>Enter</"
+"key>. На місці старої комбінації буде показано слова <gui>Нове скорочення…</"
+"gui>."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:45
@@ -219,8 +219,8 @@ msgid ""
 "You can always reset the controls to the default controls by clicking the "
 "<gui style=\"button\">Restore Defaults</gui> button."
 msgstr ""
-"Ви завжди можете скинути комбінації до типових натисканням кнопки <gui"
-" style=\"button\">Відновити типові</gui>."
+"Ви завжди можете скинути комбінації до типових натисканням кнопки <gui style="
+"\"button\">Відновити типові</gui>."
 
 #. (itstool) path: info/desc
 #: C/controls-default.page:25
@@ -243,8 +243,8 @@ msgid ""
 "Use the following keys from the numeric keypad on the far right of your "
 "keyboard, to move in <app>Robots</app>."
 msgstr ""
-"Скористайтеся вказаними нижче клавішами на цифровому блоці клавіатури у"
-" правій частині вашої клавіатури для пересування у <app>Роботах</app>."
+"Скористайтеся вказаними нижче клавішами на цифровому блоці клавіатури у "
+"правій частині вашої клавіатури для пересування у <app>Роботах</app>."
 
 #. (itstool) path: td/p
 #: C/controls-default.page:39
@@ -383,8 +383,8 @@ msgid ""
 "You can <link xref=\"controls-change\">change</link> the default controls to "
 "suit your preference."
 msgstr ""
-"Ви можете <link xref=\"controls-change\">змінити</link> типове керування за"
-" власними уподобаннями."
+"Ви можете <link xref=\"controls-change\">змінити</link> типове керування за "
+"власними уподобаннями."
 
 #. (itstool) path: section/title
 #: C/controls-default.page:103
@@ -405,13 +405,13 @@ msgid ""
 "above the main character, a small black arrow will appear pointing "
 "northwards. On clicking, the character will move one square northwards."
 msgstr ""
-"Коли вказівник миші перебуватиме поруч із вашим головним персонажем, програма"
-" показуватиме невеличку чорну стрілку, яка вказуватиме напрямок, у якому"
-" рухатиметься персонаж, якщо ви клацнете лівою кнопкою миші. Наприклад, щоб"
-" рухатися на північ, вам слід навести вказівник миші на місце вище за"
-" персонажа у тому самому стовпчику, щоб побачити чорну стрілочку, яка"
-" вказуватиме на північ. Після клацання персонаж перейде на одну клітинку на"
-" північ."
+"Коли вказівник миші перебуватиме поруч із вашим головним персонажем, "
+"програма показуватиме невеличку чорну стрілку, яка вказуватиме напрямок, у "
+"якому рухатиметься персонаж, якщо ви клацнете лівою кнопкою миші. Наприклад, "
+"щоб рухатися на північ, вам слід навести вказівник миші на місце вище за "
+"персонажа у тому самому стовпчику, щоб побачити чорну стрілочку, яка "
+"вказуватиме на північ. Після клацання персонаж перейде на одну клітинку на "
+"північ."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:116
@@ -429,8 +429,8 @@ msgid ""
 "Click the <gui>Wait for Robots</gui> button to wait for the enemy robots to "
 "finish making all their moves."
 msgstr ""
-"Натисніть кнопку <gui>Зачекати на роботів</gui>, щоб зачекати, доки ворожі"
-" роботи завершать усі власні ходи."
+"Натисніть кнопку <gui>Зачекати на роботів</gui>, щоб зачекати, доки ворожі "
+"роботи завершать усі власні ходи."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:125 C/moves.page:56
@@ -441,8 +441,8 @@ msgstr "Рятувальний телепорт"
 #: C/controls-default.page:126
 msgid "To safely teleport, click the <gui>Teleport Safely</gui> button."
 msgstr ""
-"Щоб телепортуватися безпечно, натисніть кнопку <gui>Рятувальний телепорт</gui"
-">."
+"Щоб телепортуватися безпечно, натисніть кнопку <gui>Рятувальний телепорт</"
+"gui>."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:129 C/moves.page:62
@@ -454,8 +454,8 @@ msgstr "Випадкові телепортування"
 msgid ""
 "To teleport to a random spot, click the <gui>Teleport Randomly</gui> button."
 msgstr ""
-"Щоб телепортуватися випадковим чином, натисніть кнопку <gui>Випадкова"
-" телепортація</gui>."
+"Щоб телепортуватися випадковим чином, натисніть кнопку <gui>Випадкова "
+"телепортація</gui>."
 
 #. (itstool) path: info/desc
 #: C/game-types.page:24
@@ -474,9 +474,9 @@ msgid ""
 "game type. This changes the level of difficulty involved in playing "
 "<app>Robots</app>."
 msgstr ""
-"Ви можете грати у <app>Роботів</app> у різні способи, вибравши відповідний"
-" тип гри. Зміни у рівні складності стосуються параметрів гри у <app>Роботів<"
-"/app>."
+"Ви можете грати у <app>Роботів</app> у різні способи, вибравши відповідний "
+"тип гри. Зміни у рівні складності стосуються параметрів гри у <app>Роботів</"
+"app>."
 
 #. (itstool) path: steps/title
 #: C/game-types.page:34
@@ -493,8 +493,8 @@ msgstr "Перейдіть на вкладку <gui>Гра</gui>."
 msgid ""
 "From the drop down menu next to <gui>Game Type</gui>, choose your option."
 msgstr ""
-"Зі спадного меню, розташованого поряд із міткою <gui>Тип гри</gui>, виберіть"
-" потрібний вам пункт."
+"Зі спадного меню, розташованого поряд із міткою <gui>Тип гри</gui>, виберіть "
+"потрібний вам пункт."
 
 #. (itstool) path: td/p
 #: C/game-types.page:47
@@ -511,16 +511,16 @@ msgstr "Початкові рятівні <link xref=\"moves#teleport\">теле
 msgid ""
 "Initial <link xref=\"scores#high-low-risk\">low-risk enemy robots</link>"
 msgstr ""
-"Початкові <link xref=\"scores#high-low-risk\">малоризикові ворожі роботи<"
-"/link>"
+"Початкові <link xref=\"scores#high-low-risk\">малоризикові ворожі роботи</"
+"link>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:53
 msgid ""
 "Initial <link xref=\"scores#high-low-risk\">high-risk enemy robots</link>"
 msgstr ""
-"Початкові <link xref=\"scores#high-low-risk\">високоризикові ворожі роботи<"
-"/link>"
+"Початкові <link xref=\"scores#high-low-risk\">високоризикові ворожі роботи</"
+"link>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:56
@@ -564,8 +564,8 @@ msgid ""
 "Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
 "link>"
 msgstr ""
-"Так, але лише якщо роботів вбиватиме під час <link xref=\"moves#wait\""
-">очікування</link>"
+"Так, але лише якщо роботів вбиватиме під час <link xref=\"moves#wait"
+"\">очікування</link>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:76
@@ -614,45 +614,66 @@ msgid ""
 "teleport. This reduces the level of difficulty. You can always uncheck these "
 "if you find the game too easy."
 msgstr ""
-"Якщо ви позначите пункт <gui style=\"checkbox\">Використовувати безпечні"
-" ходи</gui>, гра заборонятиме вам виконувати ходи, які спричинятимуть"
-" вбивство вашого персонажа роботом, якщо єдиним способом вижити буде"
-" телепортація. Якщо ви позначите пункт <gui style=\"checkbox\""
-">Використовувати особливо безпечні ходи</gui>, гра заборонятиме вам робити у"
-" цьому випадку будь-які ходи, отже ви змушені будете телепортуватися. Ви"
-" завжди можете зняти позначку з цих пунктів, якщо гра здаватиметься вам надто"
-" простою."
+"Якщо ви позначите пункт <gui style=\"checkbox\">Використовувати безпечні "
+"ходи</gui>, гра заборонятиме вам виконувати ходи, які спричинятимуть "
+"вбивство вашого персонажа роботом, якщо єдиним способом вижити буде "
+"телепортація. Якщо ви позначите пункт <gui style=\"checkbox"
+"\">Використовувати особливо безпечні ходи</gui>, гра заборонятиме вам робити "
+"у цьому випадку будь-які ходи, отже ви змушені будете телепортуватися. Ви "
+"завжди можете зняти позначку з цих пунктів, якщо гра здаватиметься вам надто "
+"простою."
+
+#. (itstool) path: info/title
+#: C/index.page:7
+#| msgid "robots"
+msgctxt "link:trail"
+msgid "Robots"
+msgstr "Роботи"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+#| msgid "robots"
+msgctxt "text"
+msgid "Robots"
+msgstr "Роботи"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+#| msgid "robots"
+msgctxt "link"
+msgid "Robots"
+msgstr "Роботи"
 
 #. (itstool) path: info/desc
-#: C/index.page:18
+#: C/index.page:22
 msgid "Index"
 msgstr "Покажчик"
 
 #. (itstool) path: page/title
-#: C/index.page:21
+#: C/index.page:25
 msgid "<_:media-1/> Robots"
 msgstr "<_:media-1/> Роботи"
 
 #. (itstool) path: page/p
-#: C/index.page:26
+#: C/index.page:30
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
 "into each other or into junk heaps from previous collisions, without them "
 "crashing into you."
 msgstr ""
-"<app>Роботи</app> засновано на грі UNIX із тією самою назвою і керуванням у"
-" командному рядку. Метою гри є знищення усіх роботів примушенням їх до"
-" зіткнення між собою або із купами уламків від попередніх зіткнень так, щоб"
-" вони не зіткнулися із вашим персонажем."
+"<app>Роботи</app> засновано на грі UNIX із тією самою назвою і керуванням у "
+"командному рядку. Метою гри є знищення усіх роботів примушенням їх до "
+"зіткнення між собою або із купами уламків від попередніх зіткнень так, щоб "
+"вони не зіткнулися із вашим персонажем."
 
 #. (itstool) path: section/title
-#: C/index.page:32
+#: C/index.page:36
 msgid "Game play"
 msgstr "Ігровий процес"
 
 #. (itstool) path: section/title
-#: C/index.page:36
+#: C/index.page:40
 msgid "Preferences"
 msgstr "Параметри"
 
@@ -684,11 +705,11 @@ msgid ""
 "make their move. So, after each of your moves, the enemy robots try to make "
 "a move that gets them closer to you."
 msgstr ""
-"У <app>Роботах</app> під час кожного ходу ви можете рухатися у восьми"
-" напрямках, чекати на роботів або телепортуватися. Кожен раунд гри"
-" складається із ходів ворожих роботів та ходу головного персонажа. Отже, у"
-" відповідь на кожен ваш хід, ворожі роботи намагатимуться рухатися так, щоб"
-" наблизитися до вашого персонажа."
+"У <app>Роботах</app> під час кожного ходу ви можете рухатися у восьми "
+"напрямках, чекати на роботів або телепортуватися. Кожен раунд гри "
+"складається із ходів ворожих роботів та ходу головного персонажа. Отже, у "
+"відповідь на кожен ваш хід, ворожі роботи намагатимуться рухатися так, щоб "
+"наблизитися до вашого персонажа."
 
 #. (itstool) path: section/title
 #: C/moves.page:32
@@ -700,8 +721,8 @@ msgstr "Базові ходи"
 msgid ""
 "In one turn, you can move to any adjacent square. You may move diagonally."
 msgstr ""
-"Протягом раунду ви можете перейти на будь-яке сусіднє поле. Можна ходити по"
-" діагоналі."
+"Протягом раунду ви можете перейти на будь-яке сусіднє поле. Можна ходити по "
+"діагоналі."
 
 #. (itstool) path: section/title
 #: C/moves.page:39
@@ -715,9 +736,9 @@ msgid ""
 "This is not advisable unless there are very few robots and you are "
 "absolutely sure that they will all perish before reaching you."
 msgstr ""
-"Ви можете лишитися на тому самому місці, надавши ворожим роботам зробити"
-" власні ходи. Не радимо це роботи, хіба що роботів дуже мало і ви абсолютно"
-" певні, що вони усі загинуть, перш ніж зможуть добратися до вас."
+"Ви можете лишитися на тому самому місці, надавши ворожим роботам зробити "
+"власні ходи. Не радимо це роботи, хіба що роботів дуже мало і ви абсолютно "
+"певні, що вони усі загинуть, перш ніж зможуть добратися до вас."
 
 #. (itstool) path: section/title
 #: C/moves.page:48
@@ -731,8 +752,8 @@ msgid ""
 "board instead of moving square by square, you can teleport. There are two "
 "types of teleports available."
 msgstr ""
-"Якщо безпечних ходів немає або ви хочете перестрибнути на дошці замість руху"
-" поле за полем, ви можете телепортуватися. Передбачено два типи телепортацій."
+"Якщо безпечних ходів немає або ви хочете перестрибнути на дошці замість руху "
+"поле за полем, ви можете телепортуватися. Передбачено два типи телепортацій."
 
 #. (itstool) path: item/p
 #: C/moves.page:57
@@ -740,9 +761,9 @@ msgid ""
 "Safe teleports move the main character to a location that is safe from enemy "
 "robots. In each game only a few safe teleports are allowed."
 msgstr ""
-"Рятівні телепортації пересувають головного персонажа у місце, яке є безпечним"
-" від ворожих роботів. Протягом кожної гри можна скористатися лише декількома"
-" рятівними телепортаціями."
+"Рятівні телепортації пересувають головного персонажа у місце, яке є "
+"безпечним від ворожих роботів. Протягом кожної гри можна скористатися лише "
+"декількома рятівними телепортаціями."
 
 #. (itstool) path: item/p
 #: C/moves.page:63
@@ -751,9 +772,9 @@ msgid ""
 "may not be safe. You can use as many random teleports as you want during a "
 "game."
 msgstr ""
-"Випадковими телепортаціями можна скористатися для телепортування до"
-" випадкового місця, яке може бути безпечним або ні. Протягом гри можна"
-" випадковим чином телепортуватися довільну кількість разів."
+"Випадковими телепортаціями можна скористатися для телепортування до "
+"випадкового місця, яке може бути безпечним або ні. Протягом гри можна "
+"випадковим чином телепортуватися довільну кількість разів."
 
 #. (itstool) path: info/desc
 #: C/scores.page:24
@@ -772,9 +793,9 @@ msgid ""
 "give you 20 points when they die and low-risk enemies which give you 10 "
 "points when they die."
 msgstr ""
-"У <app>Роботах</app> є два типи ворожих роботів: високоризикові ворожі"
-" роботи, знищення яких дає вам 20 очок, і низькоризикові ворожі роботи,"
-" знищення яких дає вам 10 очок."
+"У <app>Роботах</app> є два типи ворожих роботів: високоризикові ворожі "
+"роботи, знищення яких дає вам 20 очок, і низькоризикові ворожі роботи, "
+"знищення яких дає вам 10 очок."
 
 #. (itstool) path: section/title
 #: C/scores.page:34
@@ -787,8 +808,8 @@ msgid ""
 "The enemies in a game depend on the <link xref=\"appearance\">game theme</"
 "link> chosen."
 msgstr ""
-"Вигляд ворожих роботів залежить від вибраної <link xref=\"appearance\">теми"
-" гри</link>."
+"Вигляд ворожих роботів залежить від вибраної <link xref=\"appearance\">теми "
+"гри</link>."
 
 #. (itstool) path: td/p
 #: C/scores.page:42
@@ -981,9 +1002,8 @@ msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Scores</gui> to view the high scores."
 msgstr ""
-"Натисніть кнопку меню у верхньому правому куті вікна і виберіть <gui"
-" style=\"menuitem\">Результати</gui>, щоб переглянути список найкращих"
-" результатів."
+"Натисніть кнопку меню у верхньому правому куті вікна і виберіть <gui style="
+"\"menuitem\">Результати</gui>, щоб переглянути список найкращих результатів."
 
 #. (itstool) path: section/p
 #: C/scores.page:159
@@ -993,7 +1013,7 @@ msgid ""
 "to <gui>Map</gui> to view scores for a particular game type and safe move "
 "option combination."
 msgstr ""
-"Результати записуються окремо для кожної комбінації <link xref=\"game-types\""
-">типу гри і параметрів рятівних ходів</link>. Скористайтеся спадним меню"
-" поряд із міткою <gui>Карта</gui>, щоб переглянути результати для комбінацій"
-" певного типу гри та параметрів рятівних ходів."
+"Результати записуються окремо для кожної комбінації <link xref=\"game-types"
+"\">типу гри і параметрів рятівних ходів</link>. Скористайтеся спадним меню "
+"поряд із міткою <gui>Карта</gui>, щоб переглянути результати для комбінацій "
+"певного типу гри та параметрів рятівних ходів."

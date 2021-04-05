@@ -1,12 +1,12 @@
 # Daniel Nylander <po@danielnylander.se>, 2007, 2009.
 # Erik Sköldås <erik.skoldas@tele2.se>, 2015.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2016, 2020.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2016, 2020, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots doc\n"
-"POT-Creation-Date: 2020-01-04 02:23+0000\n"
-"PO-Revision-Date: 2020-03-08 19:40+0100\n"
+"POT-Creation-Date: 2021-04-05 08:56+0000\n"
+"PO-Revision-Date: 2021-04-05 21:46+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -25,7 +25,7 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
-#: C/controls-default.page:17 C/game-types.page:16 C/index.page:14
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:18
 #: C/moves.page:17 C/scores.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -616,18 +616,36 @@ msgstr ""
 "teleportera. Detta minskar svårighetsgraden. Du kan alltid avmarkera dessa "
 "om du tycker spelet blir alltför lätt."
 
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Robots"
+msgstr "Robotar"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Robots"
+msgstr "Robotar"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Robots"
+msgstr "Robotar"
+
 #. (itstool) path: info/desc
-#: C/index.page:18
+#: C/index.page:22
 msgid "Index"
 msgstr "Index"
 
 #. (itstool) path: page/title
-#: C/index.page:21
+#: C/index.page:25
 msgid "<_:media-1/> Robots"
 msgstr "<_:media-1/> Robotar"
 
 #. (itstool) path: page/p
-#: C/index.page:26
+#: C/index.page:30
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
@@ -640,12 +658,12 @@ msgstr ""
 "kraschar in i dig."
 
 #. (itstool) path: section/title
-#: C/index.page:32
+#: C/index.page:36
 msgid "Game play"
 msgstr "Spelets gång"
 
 #. (itstool) path: section/title
-#: C/index.page:36
+#: C/index.page:40
 msgid "Preferences"
 msgstr "Inställningar"
 
@@ -987,60 +1005,3 @@ msgstr ""
 "\">speltyp och alternativ för säker flyttning</link>. Använd "
 "rullgardinsmenyn bredvid <gui>Bana</gui> för att se poängen för de olika "
 "speltyperna och alternativen för säkra förflyttningar."
-
-#~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
-#~ "\">Appearance</gui></guiseq>."
-#~ msgstr ""
-#~ "Välj <guiseq><gui style=\"menu\">Inställningar</gui> <gui style=\"menuitem"
-#~ "\">Utseende</gui></guiseq>."
-
-#~ msgid ""
-#~ "Select a theme from the drop-down menu available when you click the "
-#~ "button next to <gui>Image theme</gui>."
-#~ msgstr ""
-#~ "Välj ett tema från rullgardinsmenyn som blir tillgänglig när du klickar "
-#~ "på knappen bredvid <gui>Bildtema</gui>."
-
-#~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Preferences</gui><gui style=\"menuitem"
-#~ "\">Game</gui></guiseq>. Check the <gui style=\"checkbox\">Enable sounds</"
-#~ "gui> checkbox to enable sounds."
-#~ msgstr ""
-#~ "Välj <guiseq><gui style=\"menu\">Inställningar</gui><gui style=\"menuitem"
-#~ "\">Spel</gui></guiseq>. Markera kryssrutan <gui style=\"checkbox"
-#~ "\">Aktivera ljud</gui> för att aktivera ljudet."
-
-#~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Preferences</gui><gui style=\"menuitem"
-#~ "\">Keyboard</gui></guiseq>."
-#~ msgstr ""
-#~ "Välj <guiseq><gui style=\"menu\">Inställningar</gui><gui style=\"menuitem"
-#~ "\">Tangentbord</gui></guiseq>."
-
-#~ msgid ""
-#~ "To keep the old setting click <gui>New accelerator…</gui> again, right "
-#~ "click on <gui>New accelerator…</gui>, press <key>Esc</key> or click "
-#~ "anywhere else inside the <gui>Robots Preferences</gui> box."
-#~ msgstr ""
-#~ "För att behålla den gamla inställningen klicka åter på <gui>Ny "
-#~ "snabbtangent…</gui>, högerklicka på <gui>Ny snabbtangent…</gui>, tryck "
-#~ "<key>Esc</key> eller klicka inuti rutan <gui>Inställningar för Robotar</"
-#~ "gui>."
-
-#~ msgid "Click <gui style=\"button\">Close</gui>."
-#~ msgstr "Klicka <gui style=\"button\">Stäng</gui>."
-
-#~ msgid ""
-#~ "Select <guiseq> <gui style=\"menu\">Settings</gui><gui>Preferences</"
-#~ "gui><gui>Game</gui> </guiseq>."
-#~ msgstr ""
-#~ "Välj <guiseq> <gui style=\"menu\">Inställningar</gui><gui>Inställningar</"
-#~ "gui><gui>Spel</gui> </guiseq>."
-
-#~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem"
-#~ "\">Scores</gui></guiseq> to view the high scores."
-#~ msgstr ""
-#~ "Välj <guiseq><gui style=\"menu\">Spel</gui><gui style=\"menuitem\">Poäng</"
-#~ "gui></guiseq> för att visa poänglistan."

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots-help\n"
-"POT-Creation-Date: 2020-01-04 02:23+0000\n"
+"POT-Creation-Date: 2021-04-05 08:56+0000\n"
 "PO-Revision-Date: 2020-03-05 14:22+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
-#: C/controls-default.page:17 C/game-types.page:16 C/index.page:14
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:18
 #: C/moves.page:17 C/scores.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -617,18 +617,36 @@ msgstr ""
 "teleportu. Zmniejsza to poziom trudności. Zawsze można odznaczyć te opcje, "
 "jeśli gra jest za łatwa."
 
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Robots"
+msgstr "Roboty"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Robots"
+msgstr "Roboty"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Robots"
+msgstr "Roboty"
+
 #. (itstool) path: info/desc
-#: C/index.page:18
+#: C/index.page:22
 msgid "Index"
 msgstr "Indeks"
 
 #. (itstool) path: page/title
-#: C/index.page:21
+#: C/index.page:25
 msgid "<_:media-1/> Robots"
 msgstr "<_:media-1/> Roboty"
 
 #. (itstool) path: page/p
-#: C/index.page:26
+#: C/index.page:30
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
@@ -641,12 +659,12 @@ msgstr ""
 "jednocześnie nie uderzając się o nie."
 
 #. (itstool) path: section/title
-#: C/index.page:32
+#: C/index.page:36
 msgid "Game play"
 msgstr "Rozgrywka"
 
 #. (itstool) path: section/title
-#: C/index.page:36
+#: C/index.page:40
 msgid "Preferences"
 msgstr "Preferencje"
 

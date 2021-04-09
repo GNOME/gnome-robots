@@ -13,16 +13,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnobots2.HEAD\n"
-"POT-Creation-Date: 2020-01-04 02:23+0000\n"
-"PO-Revision-Date: 2020-03-26 21:26+0100\n"
-"Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
+"POT-Creation-Date: 2021-04-05 08:56+0000\n"
+"PO-Revision-Date: 2021-04-07 22:13+0200\n"
+"Last-Translator: Guillaume Bernard <associations@guillaume-bernard.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 3.34.0\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -35,7 +35,7 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
-#: C/controls-default.page:17 C/game-types.page:16 C/index.page:14
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:18
 #: C/moves.page:17 C/scores.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -122,9 +122,6 @@ msgstr "Démarrage d’une nouvelle partie"
 
 #. (itstool) path: section/p
 #: C/basics.page:33
-#| msgid ""
-#| "Select <gui style=\"menuitem\">New Game</gui> from the menu or press "
-#| "<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">New Game</gui>, or press <keyseq><key>Ctrl</key><key>N</"
@@ -156,10 +153,6 @@ msgstr "Quitter <app>Robots</app>"
 
 #. (itstool) path: section/p
 #: C/basics.page:48
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-#| "\">Quit</gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></"
-#| "keyseq> to quit <app>Robots</app> at any time."
 msgid ""
 "Press the close button in the title bar, or press <keyseq><key>Ctrl</"
 "key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
@@ -208,10 +201,6 @@ msgstr "Dans la liste, choisissez la touche que vous souhaitez modifier."
 # « New accelerator » volontairement traduit par « Nouveau raccourci », afin d’uniformiser avec l’interface utilisateur (Charles).
 #. (itstool) path: item/p
 #: C/controls-change.page:40
-#| msgid ""
-#| "In the <gui style=\"group\">Keyboard Controls</gui> list, select the "
-#| "line, then click on the control. This highlights the line and the words "
-#| "<gui>New accelerator…</gui> are now present in place of the old control."
 msgid ""
 "Either click on the control in the second column, or press the <key>Enter</"
 "key> key. The words <gui>New accelerator…</gui> are now present in place of "
@@ -235,7 +224,6 @@ msgstr "Pour conserver l’ancien réglage, appuyez sur <key>Échap</key>."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:51
-#| msgid "Repeat the above step to change the other default keys."
 msgid "Repeat the above steps to change any other default keys."
 msgstr ""
 "Répétez les étapes précédentes pour modifier les autres touches par défaut."
@@ -654,18 +642,36 @@ msgstr ""
 "Ces options diminuent le niveau de difficulté. Vous avez toujours la "
 "possibilité de les décocher si vous trouvez que le jeu est trop facile."
 
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Robots"
+msgstr "Robots"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Robots"
+msgstr "Robots"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Robots"
+msgstr "Robots"
+
 #. (itstool) path: info/desc
-#: C/index.page:18
+#: C/index.page:22
 msgid "Index"
 msgstr "Index"
 
 #. (itstool) path: page/title
-#: C/index.page:21
+#: C/index.page:25
 msgid "<_:media-1/> Robots"
 msgstr "<_:media-1/> Robots"
 
 #. (itstool) path: page/p
-#: C/index.page:26
+#: C/index.page:30
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
@@ -678,12 +684,12 @@ msgstr ""
 "antérieures, tout en évitant qu’ils ne s’écrasent sur vous."
 
 #. (itstool) path: section/title
-#: C/index.page:32
+#: C/index.page:36
 msgid "Game play"
 msgstr "Le jeu"
 
 #. (itstool) path: section/title
-#: C/index.page:36
+#: C/index.page:40
 msgid "Preferences"
 msgstr "Préférences"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
-"POT-Creation-Date: 2020-01-04 02:23+0000\n"
+"POT-Creation-Date: 2021-04-05 08:56+0000\n"
 "PO-Revision-Date: 2020-01-08 08:37+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
-#: C/controls-default.page:17 C/game-types.page:16 C/index.page:14
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:18
 #: C/moves.page:17 C/scores.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -110,9 +110,6 @@ msgstr "Iniciar un juego nuevo"
 
 #. (itstool) path: section/p
 #: C/basics.page:33
-#| msgid ""
-#| "Select <gui style=\"menuitem\">New Game</gui> from the menu or press "
-#| "<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">New Game</gui>, or press <keyseq><key>Ctrl</key><key>N</"
@@ -143,10 +140,6 @@ msgstr "Salir de <app>Robots</app>"
 
 #. (itstool) path: section/p
 #: C/basics.page:48
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-#| "\">Quit</gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></"
-#| "keyseq> to quit <app>Robots</app> at any time."
 msgid ""
 "Press the close button in the title bar, or press <keyseq><key>Ctrl</"
 "key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
@@ -192,10 +185,6 @@ msgstr "En esta lista seleccione la tecla que quiere cambiar."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:40
-#| msgid ""
-#| "In the <gui style=\"group\">Keyboard Controls</gui> list, select the "
-#| "line, then click on the control. This highlights the line and the words "
-#| "<gui>New accelerator…</gui> are now present in place of the old control."
 msgid ""
 "Either click on the control in the second column, or press the <key>Enter</"
 "key> key. The words <gui>New accelerator…</gui> are now present in place of "
@@ -217,7 +206,6 @@ msgstr "Para conservar la configuración antigua pulse <key>Esc</key>."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:51
-#| msgid "Repeat the above step to change the other default keys."
 msgid "Repeat the above steps to change any other default keys."
 msgstr ""
 "Repita los pasos anteriores para cambiar el resto de teclas predeterminadas."
@@ -637,18 +625,42 @@ msgstr ""
 "estará obligado a teletransportarse. Esto reduce el nivel de dificultad. "
 "Siempre puede desmarcarlas si el juego le resulta demasiado fácil"
 
+#. (itstool) path: info/title
+#: C/index.page:7
+#, fuzzy
+#| msgid "robots"
+msgctxt "link:trail"
+msgid "Robots"
+msgstr "robots"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+#, fuzzy
+#| msgid "robots"
+msgctxt "text"
+msgid "Robots"
+msgstr "robots"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+#, fuzzy
+#| msgid "robots"
+msgctxt "link"
+msgid "Robots"
+msgstr "robots"
+
 #. (itstool) path: info/desc
-#: C/index.page:18
+#: C/index.page:22
 msgid "Index"
 msgstr "Índice"
 
 #. (itstool) path: page/title
-#: C/index.page:21
+#: C/index.page:25
 msgid "<_:media-1/> Robots"
 msgstr "<_:media-1/> Robots"
 
 #. (itstool) path: page/p
-#: C/index.page:26
+#: C/index.page:30
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
@@ -661,12 +673,12 @@ msgstr ""
 "anteriores, mientras evita que choquen contra el jugador."
 
 #. (itstool) path: section/title
-#: C/index.page:32
+#: C/index.page:36
 msgid "Game play"
 msgstr "Juego"
 
 #. (itstool) path: section/title
-#: C/index.page:36
+#: C/index.page:40
 msgid "Preferences"
 msgstr "Preferencias"
 

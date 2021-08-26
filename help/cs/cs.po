@@ -1,13 +1,14 @@
 # Czech translation of gnobots2 help.
 # Copyright (C) 2009 the author(s) of gnome-games.
 # This file is distributed under the same license as the gnobots2 help.
-# Marek Černocký <marek@manet.cz>, 2009, 2013, 2014, 2015, 2020.
+#
+# Marek Černocký <marek@manet.cz>, 2009, 2013, 2014, 2015, 2020, 2021.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-games gnome-2-28\n"
-"POT-Creation-Date: 2020-01-04 02:23+0000\n"
-"PO-Revision-Date: 2020-03-09 04:17+0100\n"
+"Project-Id-Version: gnome-robots\n"
+"POT-Creation-Date: 2021-04-05 08:56+0000\n"
+"PO-Revision-Date: 2021-08-26 18:09+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -27,7 +28,7 @@ msgstr "Marek Černocký <marek@manet.cz>, 2009, 2013, 2014"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
-#: C/controls-default.page:17 C/game-types.page:16 C/index.page:14
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:18
 #: C/moves.page:17 C/scores.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -131,8 +132,8 @@ msgid ""
 "Then select the <gui>Game</gui> tab and check <gui style=\"checkbox\">Enable "
 "sounds</gui>."
 msgstr ""
-"Pak se přepněte na kartu <gui>Hra</gui> a zaškrtněte <gui style=\"checkbox\">"
-"Povolit zvuky</gui>."
+"Pak se přepněte na kartu <gui>Hra</gui> a zaškrtněte <gui style=\"checkbox"
+"\">Povolit zvuky</gui>."
 
 #. (itstool) path: section/title
 #: C/basics.page:46
@@ -146,7 +147,8 @@ msgid ""
 "key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
 msgstr ""
 "Hru <app>Roboti</app> můžete kdykoliv ukončit zmáčknutím zavíracího tlačítka "
-"v záhlavní liště nebo zmáčknutím <keyseq><key>Ctrl</key><key>Q</key></keyseq>."
+"v záhlavní liště nebo zmáčknutím <keyseq><key>Ctrl</key><key>Q</key></"
+"keyseq>."
 
 #. (itstool) path: info/desc
 #: C/controls-change.page:20
@@ -190,8 +192,8 @@ msgid ""
 "the old control."
 msgstr ""
 "Buď klikněte na ovládací klávesu ve druhém sloupci nebo zmáčkněte klávesu "
-"<key>Enter</key>. Na místě původní ovládací klávesy se objeví text <gui>"
-"klávesová zkratka…</gui>."
+"<key>Enter</key>. Na místě původní ovládací klávesy se objeví text "
+"<gui>klávesová zkratka…</gui>."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:45
@@ -621,18 +623,36 @@ msgstr ""
 "nuceni se teleportovat. Tím se sníží náročnost hry, takže jestli vám bude "
 "hra připadat příliš snadná, zrušte zaškrtnutí u těchto dvou voleb."
 
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Robots"
+msgstr "Roboti"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Robots"
+msgstr "Roboti"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Robots"
+msgstr "Roboti"
+
 #. (itstool) path: info/desc
-#: C/index.page:18
+#: C/index.page:22
 msgid "Index"
 msgstr "Index"
 
 #. (itstool) path: page/title
-#: C/index.page:21
+#: C/index.page:25
 msgid "<_:media-1/> Robots"
 msgstr "<_:media-1/> Roboti"
 
 #. (itstool) path: page/p
-#: C/index.page:26
+#: C/index.page:30
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
@@ -645,12 +665,12 @@ msgstr ""
 "aby nenarazili do vás."
 
 #. (itstool) path: section/title
-#: C/index.page:32
+#: C/index.page:36
 msgid "Game play"
 msgstr "Hraní hry"
 
 #. (itstool) path: section/title
-#: C/index.page:36
+#: C/index.page:40
 msgid "Preferences"
 msgstr "Předvolby"
 
@@ -994,3 +1014,4 @@ msgstr ""
 "\">typu hry a volby bezpečné tahy</link>. Pro zobrazení skóre pro konkrétní "
 "typ hry a volby bezpečných tahů použijte rozbalovací nabídku vedle popisku "
 "<gui>Mapa</gui>."
+

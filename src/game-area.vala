@@ -27,9 +27,6 @@ public class GameArea : DrawingArea {
     const int MINIMUM_TILE_HEIGHT = 8;
     const int ANIMATION_DELAY = 100;
 
-    private int tile_width = 0;
-    private int tile_height = 0;
-
     private GestureMultiPress click_controller;
     private EventControllerMotion motion_controller;
     private Game game;
@@ -99,7 +96,6 @@ public class GameArea : DrawingArea {
         game.config = game_configs.find_by_name (properties.selected_config) ?? game_configs[0];
 
         add_events (Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
-        configure_event.connect (event => resize_cb (event));
         draw.connect ((cr) => draw_cb (cr));
 
         click_controller = new GestureMultiPress (this);
@@ -148,41 +144,45 @@ public class GameArea : DrawingArea {
         Source.remove (timer_id);
     }
 
-    private bool resize_cb (Gdk.EventConfigure e) {
-        int trial_width = e.width / game.arena.width;
-        int trial_height = e.height / game.arena.height;
+    private struct Size {
+        int width;
+        int height;
+    }
 
-        if (trial_width != tile_width || trial_height != tile_height) {
-            tile_width = trial_width;
-            tile_height = trial_height;
-        }
-
-        return false;
+    private Size tile_size () {
+        Allocation allocation;
+        get_allocation (out allocation);
+        return Size () {
+            width = allocation.width / game.arena.width,
+            height = allocation.height / game.arena.height
+        };
     }
 
     private bool draw_cb (Context cr) {
+        Size tile_size = tile_size ();
+
         for (int j = 0; j < game.arena.height; j++) {
             for (int i = 0; i < game.arena.width; i++) {
-                draw_object (i, j, game.arena[i, j], cr);
+                draw_object (i, j, game.arena[i, j], tile_size, cr);
             }
         }
 
         if (game.splat != null) {
             assets.splat_bubble.draw (cr,
-                                      game.splat.x * tile_width + 8,
-                                      game.splat.y * tile_height + 8);
+                                      game.splat.x * tile_size.width + 8,
+                                      game.splat.y * tile_size.height + 8);
         }
 
         switch (game.state) {
         case Game.State.DEAD:
             assets.aieee_bubble.draw (cr,
-                                      game.player.x * tile_width + 8,
-                                      game.player.y * tile_height + 4);
+                                      game.player.x * tile_size.width + 8,
+                                      game.player.y * tile_size.height + 4);
             break;
         case Game.State.COMPLETE:
             assets.yahoo_bubble.draw (cr,
-                                      game.player.x * tile_width + 8,
-                                      game.player.y * tile_height + 4);
+                                      game.player.x * tile_size.width + 8,
+                                      game.player.y * tile_size.height + 4);
             break;
         default:
             break;
@@ -191,17 +191,17 @@ public class GameArea : DrawingArea {
         return true;
     }
 
-    private void draw_object (int x, int y, ObjectType type, Context cr) {
+    private void draw_object (int x, int y, ObjectType type, Size tile_size, Context cr) {
         if ((x + y) % 2 != 0) {
             cairo_set_source_rgba (cr, dark_background);
         } else {
             cairo_set_source_rgba (cr, light_background);
         }
 
-        x *= tile_width;
-        y *= tile_height;
+        x *= tile_size.width;
+        y *= tile_size.height;
 
-        cr.rectangle (x, y, tile_width, tile_height);
+        cr.rectangle (x, y, tile_size.width, tile_size.height);
         cr.fill ();
 
         int animation = 0;
@@ -228,7 +228,7 @@ public class GameArea : DrawingArea {
 
         cr.save ();
         cr.translate (x, y);
-        theme.draw_object (type, animation, cr, tile_width, tile_height);
+        theme.draw_object (type, animation, cr, tile_size.width, tile_size.height);
         cr.restore ();
     }
 
@@ -277,8 +277,9 @@ public class GameArea : DrawingArea {
             {-1, 0}, {-1, -1}, {0, -1}, {1, -1},
             {1, 0}, {1, 1}, {0, 1}, {-1, 1}
         };
-        int x = ((int) (ix / tile_width)).clamp (0, game.arena.width);
-        int y = ((int) (iy / tile_height)).clamp (0, game.arena.height);
+        Size tile_size = tile_size ();
+        int x = ((int) (ix / tile_size.width)).clamp (0, game.arena.width);
+        int y = ((int) (iy / tile_size.height)).clamp (0, game.arena.height);
 
         /* If we click on our man then we assume we hold. */
         if ((x == game.player.x) && (y == game.player.y)) {
@@ -297,8 +298,8 @@ public class GameArea : DrawingArea {
         }
 
         /* Otherwise go in the general direction of the mouse click. */
-        double dx = ix - (game.player.x + 0.5) * tile_width;
-        double dy = iy - (game.player.y + 0.5) * tile_height;
+        double dx = ix - (game.player.x + 0.5) * tile_size.width;
+        double dy = iy - (game.player.y + 0.5) * tile_size.height;
 
         double angle = Math.atan2 (dy, dx);
 
@@ -416,13 +417,13 @@ public class GameArea : DrawingArea {
     private void message_box (string msg) {
         var window = get_toplevel () as Gtk.Window;
         if (window != null) {
-            var box = new Gtk.MessageDialog (window,
+            var dlg = new Gtk.MessageDialog (window,
                                              Gtk.DialogFlags.MODAL,
                                              Gtk.MessageType.INFO,
                                              Gtk.ButtonsType.OK,
                                              "%s", msg);
-            box.run ();
-            box.destroy ();
+            dlg.response.connect (() => dlg.destroy ());
+            dlg.present ();
         } else {
             warning ("There is no top level window.");
             info ("%s", msg);

@@ -19,7 +19,7 @@
 
 using Gtk;
 
-public class GamesControlsList : ScrolledWindow {
+public class GamesControlsList : Bin {
 
     private Gtk.ListStore store;
     private TreeView view;
@@ -72,10 +72,13 @@ public class GamesControlsList : ScrolledWindow {
 
         view.append_column (column2);
 
-        hscrollbar_policy = PolicyType.NEVER;
-        vscrollbar_policy = PolicyType.AUTOMATIC;
-        shadow_type = ShadowType.IN;
-        add (view);
+        var sw = new ScrolledWindow (null, null);
+        sw.hscrollbar_policy = PolicyType.NEVER;
+        sw.vscrollbar_policy = PolicyType.AUTOMATIC;
+        sw.shadow_type = ShadowType.IN;
+        sw.add (view);
+
+        add (sw);
 
         this.properties = properties;
         properties.changed.connect (properties_changed_cb);

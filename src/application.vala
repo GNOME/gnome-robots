@@ -58,18 +58,10 @@ class RobotsApplication : Gtk.Application {
             game_configs = new GameConfigs.load ();
             sound_player = new SoundPlayer ();
         } catch (Error e) {
-            critical ("%s", e.message);
-
-            var errordialog = new MessageDialog.with_markup (get_active_window (), // is it null?
-                                                             DialogFlags.MODAL,
-                                                             MessageType.ERROR,
-                                                             ButtonsType.OK,
-                                                             "<b>%s</b>\n\n%s",
-                                                             _("No game data could be found."),
-                                                             _("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."));
-            errordialog.set_resizable (false);
-            errordialog.run ();
-
+            critical ("%s\n%s",
+                _("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."),
+                e.message
+            );
             quit ();
         }
 
@@ -111,12 +103,13 @@ class RobotsApplication : Gtk.Application {
             dialog.add_button (_("Keep _Playing"), ResponseType.REJECT);
             dialog.add_button (_("_New Game"), ResponseType.ACCEPT);
 
-            var ret = dialog.run ();
-            dialog.destroy ();
-
-            if (ret == ResponseType.ACCEPT) {
-                window.start_new_game ();
-            }
+            dialog.response.connect ((ret) => {
+                dialog.destroy ();
+                if (ret == ResponseType.ACCEPT) {
+                    window.start_new_game ();
+                }
+            });
+            dialog.present ();
         } else {
             activate ();
         }

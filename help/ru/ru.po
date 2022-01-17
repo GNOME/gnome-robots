@@ -1,0 +1,1014 @@
+# Russian translation for gnome-robots.
+# Copyright (C) 2022 gnome-robots's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-robots package.
+# Ser82-png <sw@atrus.ru>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-robots master\n"
+"POT-Creation-Date: 2021-09-29 10:28+0000\n"
+"PO-Revision-Date: 2022-01-15 01:39+1000\n"
+"Language-Team: Russian <gnome-cyr@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Last-Translator: Ser82-png\n"
+"X-Generator: Poedit 2.3\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Ser82-png <sw@atrus.ru>, 2022"
+
+#. (itstool) path: credit/name
+#: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:18
+#: C/moves.page:17 C/scores.page:16
+msgid "Aruna Sankaranarayanan"
+msgstr "Aruna Sankaranarayanan"
+
+#. (itstool) path: credit/name
+#: C/appearance.page:21 C/basics.page:21 C/controls-default.page:21
+#: C/game-types.page:20 C/scores.page:20
+msgid "Rachel Dunstan"
+msgstr "Rachel Dunstan"
+
+#. (itstool) path: info/desc
+#: C/appearance.page:25
+msgid "Use different game-themes in <app>Robots</app>."
+msgstr "Используйте разные игровые темы в <app>Роботах</app>."
+
+#. (itstool) path: page/title
+#: C/appearance.page:28
+msgid "Change the default appearance of the game"
+msgstr "Изменить внешний вид игры, установленный по умолчанию"
+
+#. (itstool) path: page/p
+#: C/appearance.page:30
+msgid ""
+"You can change the <app>Robots</app> backdrop and the different robots that "
+"are present in a game by changing the game theme and background."
+msgstr ""
+"Вы можете изменить фон игры <app>Роботы</app>, а также тему самих роботов, "
+"присутствующих в игре, настроив тему и фон игры."
+
+#. (itstool) path: steps/title
+#: C/appearance.page:34
+msgid "To change the game theme and background:"
+msgstr "Чтобы изменить тему игры и фон:"
+
+#. (itstool) path: item/p
+#. (itstool) path: section/p
+#: C/appearance.page:36 C/basics.page:40 C/controls-change.page:31
+#: C/game-types.page:36
+msgid ""
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Preferences</gui>."
+msgstr ""
+"Нажмите кнопку меню в правом верхнем углу окна и выберите <gui style="
+"\"menuitem\">Параметры</gui>."
+
+#. (itstool) path: item/p
+#: C/appearance.page:39
+msgid "Select the <gui>Appearance</gui> tab."
+msgstr "Выберите вкладку <gui>Внешний вид</gui>."
+
+#. (itstool) path: item/p
+#: C/appearance.page:42
+msgid "Select a theme from the <gui>Image theme</gui> drop-down menu."
+msgstr "Выберите тему роботов в раскрывающемся меню <gui>Тема роботов</gui>."
+
+#. (itstool) path: item/p
+#: C/appearance.page:45
+msgid ""
+"To change your background color, click the button next to <gui>Background "
+"color</gui>. Select a color from the available choices and click <gui style="
+"\"button\">Select</gui>."
+msgstr ""
+"Чтобы изменить цвет фона, нажмите кнопку рядом с надписью <gui>Цвет фона</"
+"gui>. Выберите цвет из доступных вариантов и нажмите <gui style=\"button"
+"\">Выбрать</gui>."
+
+#. (itstool) path: info/desc
+#: C/basics.page:25
+msgid "Start, quit, and enable sounds."
+msgstr "Запуск, выход и включение звуков."
+
+#. (itstool) path: page/title
+#: C/basics.page:28
+msgid "Basic instructions"
+msgstr "Базовые инструкции"
+
+#. (itstool) path: section/title
+#: C/basics.page:31
+msgid "Start a new game"
+msgstr "Начать новую игру"
+
+#. (itstool) path: section/p
+#: C/basics.page:33
+msgid ""
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">New Game</gui>, or press <keyseq><key>Ctrl</key><key>N</"
+"key></keyseq> to start a new game."
+msgstr ""
+"Нажмите кнопку меню в правом верхнем углу окна и выберите <gui style="
+"\"menuitem\">Новая игра</gui> или нажмите <keyseq><key>Ctrl</key><key>N</"
+"key></keyseq>, чтобы начать новую игру."
+
+#. (itstool) path: section/title
+#: C/basics.page:39
+msgid "Enable sounds"
+msgstr "Включить звуки"
+
+#. (itstool) path: section/p
+#: C/basics.page:41
+msgid ""
+"Then select the <gui>Game</gui> tab and check <gui style=\"checkbox\">Enable "
+"sounds</gui>."
+msgstr ""
+"Затем выберите вкладку <gui>Игра</gui> и установите флажок <gui style="
+"\"checkbox\">Включить звуки</gui>."
+
+#. (itstool) path: section/title
+#: C/basics.page:46
+msgid "Quit <app>Robots</app>"
+msgstr "Выход из игры <app>Роботы</app>"
+
+#. (itstool) path: section/p
+#: C/basics.page:48
+msgid ""
+"Press the close button in the title bar, or press <keyseq><key>Ctrl</"
+"key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
+msgstr ""
+"Нажмите кнопку закрытия в панели заголовка или нажмите <keyseq><key>Ctrl</"
+"key><key>Q</key></keyseq>, чтобы выйти из игры <app>Роботы</app> в любое "
+"время."
+
+#. (itstool) path: info/desc
+#: C/controls-change.page:20
+msgid "Change the default keys in <app>Robots</app>."
+msgstr ""
+"Измените клавиши управления, установленные по умолчанию в игре <app>Роботы</"
+"app>."
+
+#. (itstool) path: page/title
+#: C/controls-change.page:23
+msgid "Customize the keyboard controls"
+msgstr "Настройка клавиш управления"
+
+#. (itstool) path: page/p
+#: C/controls-change.page:25
+msgid ""
+"The <link xref=\"controls-default\">default controls</link> can be changed "
+"in <app>Robots</app> to suit your preference."
+msgstr ""
+"Клавиши, <link xref=\"controls-default\">установленные по умолчанию</link>, "
+"можно изменить в игре <app>Роботы</app> по своему желанию."
+
+#. (itstool) path: steps/title
+#: C/controls-change.page:29
+msgid "To change the default keys:"
+msgstr "Чтобы изменить клавиши управления:"
+
+#. (itstool) path: item/p
+#: C/controls-change.page:34
+msgid "Select the <gui>Keyboard</gui> tab."
+msgstr "Выберите вкладку <gui>Клавиатура</gui>."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:37
+msgid "In the list, select the key that you want to change."
+msgstr "В списке выберите клавишу, которую хотите изменить."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:40
+msgid ""
+"Either click on the control in the second column, or press the <key>Enter</"
+"key> key. The words <gui>New accelerator…</gui> are now present in place of "
+"the old control."
+msgstr ""
+"Либо дважды щёлкните по элементу во втором столбце, либо нажмите клавишу "
+"<key>Enter</key>. После этого вместо старого элемента управления появятся "
+"слова <gui>Новый ускоритель…</gui>."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:45
+msgid "Press the key you want to use instead of the default key."
+msgstr "Нажмите клавишу, которую вы хотите использовать вместо установленной."
+
+#. (itstool) path: note/p
+#: C/controls-change.page:47
+msgid "To keep the old setting, press <key>Esc</key>."
+msgstr "Чтобы вернуть старую настройку, нажмите <key>Esc</key>."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:51
+msgid "Repeat the above steps to change any other default keys."
+msgstr ""
+"Повторите вышеуказанные шаги, чтобы изменить любые другие установленные по "
+"умолчанию клавиши."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:54
+msgid "Close the <gui>Preferences</gui> dialog."
+msgstr "Закройте диалоговое окно <gui>Параметры</gui>."
+
+#. (itstool) path: note/p
+#: C/controls-change.page:59
+msgid ""
+"You can always reset the controls to the default controls by clicking the "
+"<gui style=\"button\">Restore Defaults</gui> button."
+msgstr ""
+"Вы всегда можете вернуть элементы управления к исходному состоянию, нажав "
+"кнопку <gui style=\"button\">Восстановить параметры по умолчанию</gui>."
+
+#. (itstool) path: info/desc
+#: C/controls-default.page:25
+msgid "How do I control the main character?"
+msgstr "Как управлять главным героем?"
+
+#. (itstool) path: page/title
+#: C/controls-default.page:28
+msgid "Mouse and keyboard controls for <app>Robots</app>"
+msgstr "Управление мышью и клавиатурой в игре <app>Роботы</app>"
+
+#. (itstool) path: section/title
+#: C/controls-default.page:31
+msgid "Keyboard controls"
+msgstr "Управление клавиатурой"
+
+#. (itstool) path: section/p
+#: C/controls-default.page:33
+msgid ""
+"Use the following keys from the numeric keypad on the far right of your "
+"keyboard, to move in <app>Robots</app>."
+msgstr ""
+"Используйте клавиши цифровой клавиатуры, чтобы перемещаться в игре "
+"<app>Роботы</app>."
+
+#. (itstool) path: td/p
+#: C/controls-default.page:39
+msgid "Possible moves"
+msgstr "Варианты перемещения"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:40
+msgid "Key"
+msgstr "Клавиша"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:45
+msgid "North west"
+msgstr "Вверх и влево"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:46
+msgid "<key>y</key>"
+msgstr "<key>y</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:49
+msgid "North"
+msgstr "Вверх"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:50
+msgid "<key>k</key>"
+msgstr "<key>k</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:53
+msgid "North east"
+msgstr "Вправо и вверх"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:54
+msgid "<key>u</key>"
+msgstr "<key>u</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:57
+msgid "West"
+msgstr "Влево"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:58
+msgid "<key>h</key>"
+msgstr "<key>h</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:61
+msgid "East"
+msgstr "Вправо"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:62
+msgid "<key>l</key>"
+msgstr "<key>l</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:65
+msgid "South west"
+msgstr "Влево и вниз"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:66
+msgid "<key>b</key>"
+msgstr "<key>b</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:69
+msgid "South"
+msgstr "Вниз"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:70
+msgid "<key>j</key>"
+msgstr "<key>j</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:73
+msgid "South east"
+msgstr "Вправо и вниз"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:74
+msgid "<key>n</key>"
+msgstr "<key>n</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:77
+msgid "Stay in the same position (one turn)"
+msgstr "Оставаться на том же месте (один ход)"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:78
+msgid "Space"
+msgstr "Пробел"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:81
+msgid "Teleport safely"
+msgstr "Безопасная телепортация"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:82
+msgid "<keyseq><key>Alt</key><key>s</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>s</key></keyseq>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:85
+msgid "Teleport randomly"
+msgstr "Случайная телепортация"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:86
+msgid "<keyseq><key>Alt</key><key>r</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>r</key></keyseq>"
+
+#. (itstool) path: td/p
+#. (itstool) path: item/title
+#: C/controls-default.page:89 C/controls-default.page:120
+msgid "Wait for the robots"
+msgstr "Подождать роботов"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:90
+msgid "<keyseq><key>Alt</key><key>w</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>w</key></keyseq>"
+
+#. (itstool) path: note/p
+#: C/controls-default.page:96
+msgid ""
+"You can <link xref=\"controls-change\">change</link> the default controls to "
+"suit your preference."
+msgstr ""
+"Вы можете <link xref=\"controls-change\">изменить</link> установленные по "
+"умолчанию клавиши управления в соответствии со своими предпочтениями."
+
+#. (itstool) path: section/title
+#: C/controls-default.page:103
+msgid "Use the mouse to move around"
+msgstr "Использование мыши для перемещения"
+
+#. (itstool) path: item/title
+#: C/controls-default.page:107
+msgid "Move in a particular direction"
+msgstr "Перемещаться в определённом направлении"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:108
+msgid ""
+"When you move your mouse around the main character, a small black arrow will "
+"appear pointing towards the direction in which the character will move if "
+"you click. For example, to move north, if you move your cursor to the column "
+"above the main character, a small black arrow will appear pointing "
+"northwards. On clicking, the character will move one square northwards."
+msgstr ""
+"Когда вы перемещаете мышь вокруг главного героя, появляется маленькая чёрная "
+"стрелка, указывающая направление, в котором персонаж будет двигаться, если "
+"вы щёлкните кнопкой. Например, чтобы двигаться вверх, поместите курсор над "
+"главным героем, там появится маленькая чёрная стрелка, указывающая вверх. "
+"Щёлкнув кнопкой мыши, персонаж переместится на одну клетку вверх."
+
+#. (itstool) path: item/title
+#: C/controls-default.page:116
+msgid "Stay in the same position"
+msgstr "Оставаться на той же позиции"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:117
+msgid "Click on the main character to stay put in the same square."
+msgstr "Щёлкните на главного героя, чтобы остаться на том же квадрате."
+
+#. (itstool) path: item/p
+#: C/controls-default.page:121
+msgid ""
+"Click the <gui>Wait for Robots</gui> button to wait for the enemy robots to "
+"finish making all their moves."
+msgstr ""
+"Нажмите кнопку <gui>Подождать роботов</gui>, чтобы дождаться, пока все "
+"вражеские роботы закончат все свои ходы."
+
+#. (itstool) path: item/title
+#: C/controls-default.page:125 C/moves.page:56
+msgid "Safe teleports"
+msgstr "Безопасные телепортации"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:126
+msgid "To safely teleport, click the <gui>Teleport Safely</gui> button."
+msgstr ""
+"Чтобы безопасно телепортироваться, нажмите кнопку <gui>Безопасная "
+"телепортация</gui>."
+
+#. (itstool) path: item/title
+#: C/controls-default.page:129 C/moves.page:62
+msgid "Random teleports"
+msgstr "Случайные телепортации"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:130
+msgid ""
+"To teleport to a random spot, click the <gui>Teleport Randomly</gui> button."
+msgstr ""
+"Чтобы телепортироваться в случайное место, нажмите кнопку <gui>Случайная "
+"телепортация</gui>."
+
+#. (itstool) path: info/desc
+#: C/game-types.page:24
+msgid "Change the level of difficulty in <app>Robots</app>."
+msgstr "Изменить уровень сложности в игре <app>Роботы</app>."
+
+#. (itstool) path: page/title
+#: C/game-types.page:27
+msgid "Game type"
+msgstr "Тип игры"
+
+#. (itstool) path: page/p
+#: C/game-types.page:29
+msgid ""
+"You can play <app>Robots</app> in different ways by choosing a different "
+"game type. This changes the level of difficulty involved in playing "
+"<app>Robots</app>."
+msgstr ""
+"Вы можете играть в <app>Роботов</app> по-разному, выбирая другие типы игры. "
+"Это изменит уровень сложности игры <app>Роботы</app>."
+
+#. (itstool) path: steps/title
+#: C/game-types.page:34
+msgid "To change the level of difficulty:"
+msgstr "Чтобы изменить уровень сложности:"
+
+#. (itstool) path: item/p
+#: C/game-types.page:39
+msgid "Select the <gui>Game</gui> tab."
+msgstr "Выберите вкладку <gui>Игра</gui>."
+
+#. (itstool) path: item/p
+#: C/game-types.page:42
+msgid ""
+"From the drop down menu next to <gui>Game Type</gui>, choose your option."
+msgstr "В раскрывающемся меню <gui>Тип игры</gui> выберите нужный вариант."
+
+#. (itstool) path: td/p
+#: C/game-types.page:47
+msgid "Game Type"
+msgstr "Тип игры"
+
+#. (itstool) path: td/p
+#: C/game-types.page:48
+msgid "Initial safe <link xref=\"moves#teleport\">teleports</link>"
+msgstr "Безопасных <link xref=\"moves#teleport\">телепортов</link> в начале"
+
+#. (itstool) path: td/p
+#: C/game-types.page:50
+msgid ""
+"Initial <link xref=\"scores#high-low-risk\">low-risk enemy robots</link>"
+msgstr ""
+"<link xref=\"scores#high-low-risk\">Малоопасных вражеских роботов</link> в "
+"начале"
+
+#. (itstool) path: td/p
+#: C/game-types.page:53
+msgid ""
+"Initial <link xref=\"scores#high-low-risk\">high-risk enemy robots</link>"
+msgstr ""
+"<link xref=\"scores#high-low-risk\">Высокоопасных вражеских роботов</link> в "
+"начале"
+
+#. (itstool) path: td/p
+#: C/game-types.page:56
+msgid "Do safe teleports increase in successive levels?"
+msgstr ""
+"Увеличивается ли количество безопасных телепортов на последующих уровнях?"
+
+#. (itstool) path: td/p
+#: C/game-types.page:61
+msgid "<gui>nightmare</gui>"
+msgstr "<gui>кошмар</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:62 C/game-types.page:63 C/game-types.page:71
+#: C/game-types.page:94
+msgid "2"
+msgstr "2"
+
+#. (itstool) path: td/p
+#: C/game-types.page:64 C/game-types.page:70 C/game-types.page:93
+msgid "8"
+msgstr "8"
+
+#. (itstool) path: td/p
+#: C/game-types.page:65 C/game-types.page:95
+msgid "Yes"
+msgstr "Да"
+
+#. (itstool) path: td/p
+#: C/game-types.page:68
+msgid "<gui>robots2</gui>"
+msgstr "<gui>роботы2</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:69
+msgid "1"
+msgstr "1"
+
+#. (itstool) path: td/p
+#: C/game-types.page:72 C/game-types.page:80
+msgid ""
+"Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
+"link>"
+msgstr ""
+"Да, но только если роботы убиты во время <link xref=\"moves#wait\">ожидания</"
+"link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:76
+msgid "<gui>robots with safe teleport</gui>"
+msgstr "<gui>Роботы с безопасными телепортами</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:77 C/game-types.page:79 C/game-types.page:85
+#: C/game-types.page:87
+msgid "0"
+msgstr "0"
+
+#. (itstool) path: td/p
+#: C/game-types.page:78 C/game-types.page:86
+msgid "10"
+msgstr "10"
+
+#. (itstool) path: td/p
+#: C/game-types.page:84
+msgid "<gui>classic robots</gui>"
+msgstr "<gui>классические работы</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:88
+msgid "No"
+msgstr "Нет"
+
+#. (itstool) path: td/p
+#: C/game-types.page:91
+msgid "<gui>robots2 easy</gui>"
+msgstr "<gui>простые роботы2</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:92
+msgid "3"
+msgstr "3"
+
+#. (itstool) path: item/p
+#: C/game-types.page:101
+msgid ""
+"If you check the <gui style=\"checkbox\">Use safe moves</gui> checkbox, the "
+"game will prevent you from moving if the move would cause a robot to kill "
+"you, unless the only way to survive is to teleport. If you check the <gui "
+"style=\"checkbox\">Use super safe moves</gui> checkbox, the game will "
+"prevent you from making any move in this case, so that you are forced to "
+"teleport. This reduces the level of difficulty. You can always uncheck these "
+"if you find the game too easy."
+msgstr ""
+"Если вы установите флажок <gui style=\"checkbox\">Использовать безопасные "
+"ходы</gui>, игра не позволит вам двигаться, если это движение приведет к "
+"тому, что вас убьет робот, если единственным способом выжить будет являться "
+"телепортация. Если вы установите флажок <gui style=\"checkbox\">Использовать "
+"особо безопасные ходы</gui>, игра, в этом случае, не позволит вам сделать "
+"никакого хода, так что вы будете вынуждены только телепортироваться. Это "
+"снижает уровень сложности. Вы всегда можете снять эти галочки, если игра "
+"покажется вам слишком простой."
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Robots"
+msgstr "Роботы"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Robots"
+msgstr "Роботы"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Robots"
+msgstr "Роботы"
+
+#. (itstool) path: info/desc
+#: C/index.page:22
+msgid "Index"
+msgstr "Индекс"
+
+#. (itstool) path: page/title
+#: C/index.page:25
+msgid "<_:media-1/> Robots"
+msgstr "Роботы"
+
+#. (itstool) path: page/p
+#: C/index.page:30
+msgid ""
+"<app>Robots</app> is based on the UNIX command-line game of the same name. "
+"The aim of the game is to destroy all the robots by getting them to crash "
+"into each other or into junk heaps from previous collisions, without them "
+"crashing into you."
+msgstr ""
+"<app>Роботы</app> основаны на одноименной игре для командной строки UNIX. "
+"Цель игры состоит в том, чтобы уничтожить всех роботов, заставив их "
+"врезаться друг в друга или в кучи мусора от предыдущих столкновений, при "
+"этом не врезаясь в вас."
+
+#. (itstool) path: section/title
+#: C/index.page:36
+msgid "Game play"
+msgstr "Процесс игры"
+
+#. (itstool) path: section/title
+#: C/index.page:40
+msgid "Preferences"
+msgstr "Параметры"
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Эта работа находится под лицензией <_:link-1/>."
+
+#. (itstool) path: info/desc
+#: C/moves.page:21
+msgid "How can I move around in <app>Robots</app>?"
+msgstr "Как я могу перемещаться в игре <app>Роботы</app>?"
+
+#. (itstool) path: page/title
+#: C/moves.page:24
+msgid "Different moves in <app>Robots</app>"
+msgstr "Различные перемещения в <app>Роботах</app>"
+
+#. (itstool) path: page/p
+#: C/moves.page:26
+msgid ""
+"In <app>Robots</app> you can move in one of eight directions, wait for the "
+"robots, or teleport. The enemy robots and the main character take turns to "
+"make their move. So, after each of your moves, the enemy robots try to make "
+"a move that gets them closer to you."
+msgstr ""
+"В игре <app>Роботы</app> вы можете перемещаться в одном из восьми "
+"направлений, ждать роботов или телепортироваться. Вражеские роботы и главный "
+"герой по очереди делают ход. После каждого вашего хода, ходят вражеские "
+"роботы и пытаются приблизиться к вам."
+
+#. (itstool) path: section/title
+#: C/moves.page:32
+msgid "Basic moves"
+msgstr "Базовые перемещения"
+
+#. (itstool) path: section/p
+#: C/moves.page:34
+msgid ""
+"In one turn, you can move to any adjacent square. You may move diagonally."
+msgstr ""
+"За один ход вы можете переместиться на любую соседнюю клетку. Вы даже можете "
+"двигаться по диагонали."
+
+#. (itstool) path: section/title
+#: C/moves.page:39
+msgid "Wait"
+msgstr "Ожидание"
+
+#. (itstool) path: section/p
+#: C/moves.page:41
+msgid ""
+"You can stay put and wait for the robots to finish making all their moves. "
+"This is not advisable unless there are very few robots and you are "
+"absolutely sure that they will all perish before reaching you."
+msgstr ""
+"Вы можете оставаться на месте и ждать, пока роботы закончат свои ходы. По "
+"большому счёту, это нецелесообразно, и только если роботов очень мало и вы "
+"абсолютно уверены, что они все погибнут, не добравшись до вас."
+
+#. (itstool) path: section/title
+#: C/moves.page:48
+msgid "Teleport to a different location"
+msgstr "Телепортироваться в другое место"
+
+#. (itstool) path: section/p
+#: C/moves.page:50
+msgid ""
+"If there are no moves possible or if you want to make a leap across the "
+"board instead of moving square by square, you can teleport. There are two "
+"types of teleports available."
+msgstr ""
+"Если не осталось возможных ходов или если вы хотите совершить прыжок через "
+"игровое поле минуя перемещение квадрат за квадратом, вы можете "
+"телепортироваться. Доступны два типа телепортаций."
+
+#. (itstool) path: item/p
+#: C/moves.page:57
+msgid ""
+"Safe teleports move the main character to a location that is safe from enemy "
+"robots. In each game only a few safe teleports are allowed."
+msgstr ""
+"Безопасные телепортации перемещают главного героя в место, наиболее "
+"безопасное от вражеских роботов. В каждой игре разрешено только несколько "
+"безопасных телепортаций."
+
+#. (itstool) path: item/p
+#: C/moves.page:63
+msgid ""
+"Use random teleports to teleport to a random location that may be safe or "
+"may not be safe. You can use as many random teleports as you want during a "
+"game."
+msgstr ""
+"Используйте случайные телепортации, чтобы перемещаться в произвольное место, "
+"которое может быть как безопасным, так и небезопасным. Вы можете "
+"использовать столько случайных телепортаций во время игры, сколько захотите."
+
+#. (itstool) path: info/desc
+#: C/scores.page:24
+msgid "Scoring points in <app>Robots</app>"
+msgstr "Начисление очков в игре <app>Роботы</app>"
+
+#. (itstool) path: page/title
+#: C/scores.page:27
+msgid "Scores"
+msgstr "Результаты"
+
+#. (itstool) path: page/p
+#: C/scores.page:29
+msgid ""
+"There are two type of enemies in <app>Robots</app>: high-risk enemies which "
+"give you 20 points when they die and low-risk enemies which give you 10 "
+"points when they die."
+msgstr ""
+"В игре <app>Роботы</app> есть два типа врагов: высокоопасные, которые дают "
+"вам 20 очков при гибели, и малоопасные, которые дают 10 очков при гибели."
+
+#. (itstool) path: section/title
+#: C/scores.page:34
+msgid "High and low risk enemies by theme"
+msgstr "Высоко- и малоопасные враги по темам"
+
+#. (itstool) path: section/p
+#: C/scores.page:36
+msgid ""
+"The enemies in a game depend on the <link xref=\"appearance\">game theme</"
+"link> chosen."
+msgstr ""
+"Вид врагов в игре зависят от выбранной <link xref=\"appearance\">темы игры</"
+"link>."
+
+#. (itstool) path: td/p
+#: C/scores.page:42
+msgid "Game theme"
+msgstr "Тема игры"
+
+#. (itstool) path: td/p
+#: C/scores.page:43
+msgid "High-risk enemy (20 points)"
+msgstr "Высокоопасные враги (20 очков)"
+
+#. (itstool) path: td/p
+#: C/scores.page:44
+msgid "Low-risk enemy (10 points)"
+msgstr "Малоопасные враги (10 очков)"
+
+#. (itstool) path: td/p
+#: C/scores.page:48
+msgid "anthills"
+msgstr "муравейники"
+
+#. (itstool) path: media/span
+#: C/scores.page:51
+msgid "High-risk anthill"
+msgstr "Высокоопасный муравейник"
+
+#. (itstool) path: media/span
+#: C/scores.page:54
+msgid "Low-risk anthill"
+msgstr "Малоопасный муравейник"
+
+#. (itstool) path: td/p
+#: C/scores.page:57
+msgid "boo"
+msgstr "страшилки"
+
+#. (itstool) path: media/span
+#: C/scores.page:60
+msgid "High-risk bat"
+msgstr "Высокоопасная летучая мышь"
+
+#. (itstool) path: media/span
+#: C/scores.page:63
+msgid "Low-risk ghost"
+msgstr "Малоопасное приведение"
+
+#. (itstool) path: td/p
+#: C/scores.page:66
+msgid "cows"
+msgstr "коровы"
+
+#. (itstool) path: media/span
+#: C/scores.page:69
+msgid "High-risk cow"
+msgstr "Высокоопасная корова"
+
+#. (itstool) path: media/span
+#: C/scores.page:72
+msgid "Low-risk cow"
+msgstr "Малоопасная корова"
+
+#. (itstool) path: td/p
+#: C/scores.page:75
+msgid "eggs"
+msgstr "яйца"
+
+#. (itstool) path: media/span
+#: C/scores.page:79
+msgid "High-risk egg"
+msgstr "Высокоопасное яйцо"
+
+#. (itstool) path: media/span
+#: C/scores.page:83
+msgid "Low-risk egg"
+msgstr "Малоопасное яйцо"
+
+#. (itstool) path: td/p
+#: C/scores.page:86
+msgid "gnomes"
+msgstr "гномы"
+
+#. (itstool) path: media/span
+#: C/scores.page:89
+msgid "High-risk gnome"
+msgstr "Высокоопасный гном"
+
+#. (itstool) path: media/span
+#: C/scores.page:92
+msgid "Low-risk gnome"
+msgstr "Малоопасный гном"
+
+#. (itstool) path: td/p
+#: C/scores.page:95
+msgid "mice"
+msgstr "мышь"
+
+#. (itstool) path: media/span
+#: C/scores.page:98
+msgid "High-risk mouse"
+msgstr "Высокоопасная мышь"
+
+#. (itstool) path: media/span
+#: C/scores.page:101
+msgid "Low-risk mouse"
+msgstr "Малоопасная мышь"
+
+#. (itstool) path: td/p
+#: C/scores.page:104
+msgid "robots"
+msgstr "роботы"
+
+#. (itstool) path: media/span
+#: C/scores.page:107
+msgid "High-risk robot"
+msgstr "Высокоопасный робот"
+
+#. (itstool) path: media/span
+#: C/scores.page:110
+msgid "Low-risk robot"
+msgstr "Малоопасный робот"
+
+#. (itstool) path: td/p
+#: C/scores.page:112
+msgid "spills"
+msgstr "лужи"
+
+#. (itstool) path: media/span
+#: C/scores.page:116
+msgid "High-risk spill"
+msgstr "Высокоопасная лужа"
+
+#. (itstool) path: media/span
+#: C/scores.page:119
+msgid "Low-risk spill"
+msgstr "Малоопасная лужа"
+
+#. (itstool) path: td/p
+#: C/scores.page:122
+msgid "stormclouds"
+msgstr "штормовые облака"
+
+#. (itstool) path: media/span
+#: C/scores.page:125
+msgid "High-risk stormcloud"
+msgstr "Высокоопасное штормовое облако"
+
+#. (itstool) path: media/span
+#: C/scores.page:128
+msgid "Low-risk stormcloud"
+msgstr "Малоопасное штормовое облако"
+
+#. (itstool) path: td/p
+#: C/scores.page:131
+msgid "toasters"
+msgstr "тостеры"
+
+#. (itstool) path: media/span
+#: C/scores.page:134
+msgid "High-risk toaster"
+msgstr "Высокоопасный тостер"
+
+#. (itstool) path: media/span
+#: C/scores.page:137
+msgid "Low-risk toaster"
+msgstr "Малоопасный тостер"
+
+#. (itstool) path: td/p
+#: C/scores.page:140
+msgid "ufo"
+msgstr "нло"
+
+#. (itstool) path: media/span
+#: C/scores.page:143
+msgid "High-risk UFO"
+msgstr "Высокоопасное НЛО"
+
+#. (itstool) path: media/span
+#: C/scores.page:146
+msgid "Low-risk UFO"
+msgstr "Малоопасное НЛО"
+
+#. (itstool) path: section/title
+#: C/scores.page:154
+msgid "High scores"
+msgstr "Лучшие результаты"
+
+#. (itstool) path: section/p
+#: C/scores.page:156
+msgid ""
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Scores</gui> to view the high scores."
+msgstr ""
+"Вы можете просмотреть лучшие результаты, нажав кнопку меню в правом верхнем "
+"углу окна и выбрав <gui style=\"menuitem\">Результаты</gui>."
+
+#. (itstool) path: section/p
+#: C/scores.page:159
+msgid ""
+"Scores are recorded separately for each combination of <link xref=\"game-"
+"types\">game type and safe move option</link>. Use the drop-down menu next "
+"to <gui>Map</gui> to view scores for a particular game type and safe move "
+"option combination."
+msgstr ""
+"Очки записываются отдельно для каждой комбинации <link xref=\"game-types"
+"\">типа игры и варианта безопасного хода</link>. Используйте раскрывающееся "
+"меню рядом с меткой <gui>Тип игры</gui>, чтобы просмотреть результаты для "
+"конкретного типа игры и комбинации вариантов безопасного хода."

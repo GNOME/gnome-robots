@@ -6,15 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
-"POT-Creation-Date: 2020-02-24 18:13+0000\n"
-"PO-Revision-Date: 2020-09-14 00:00+0200\n"
-"Last-Translator: scootergrisen\n"
+"POT-Creation-Date: 2021-04-05 08:56+0000\n"
+"PO-Revision-Date: 2022-01-25 19:35+0100\n"
+"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -23,7 +24,7 @@ msgstr "scootergrisen <>, 2020"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
-#: C/controls-default.page:17 C/game-types.page:16 C/index.page:14
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:18
 #: C/moves.page:17 C/scores.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -66,8 +67,8 @@ msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Preferences</gui>."
 msgstr ""
-"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <gui "
-"style=\"menuitem\">Indstillinger</gui>."
+"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <gui style="
+"\"menuitem\">Indstillinger</gui>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:39
@@ -112,9 +113,9 @@ msgid ""
 "style=\"menuitem\">New Game</gui>, or press <keyseq><key>Ctrl</key><key>N</"
 "key></keyseq> to start a new game."
 msgstr ""
-"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <gui "
-"style=\"menuitem\">Nyt spil</gui> eller tryk på "
-"<keyseq><key>Ctrl</key><key>N</key></keyseq> for at starte et nyt spil."
+"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <gui style="
+"\"menuitem\">Nyt spil</gui> eller tryk på <keyseq><key>Ctrl</key><key>N</"
+"key></keyseq> for at starte et nyt spil."
 
 #. (itstool) path: section/title
 #: C/basics.page:39
@@ -127,8 +128,8 @@ msgid ""
 "Then select the <gui>Game</gui> tab and check <gui style=\"checkbox\">Enable "
 "sounds</gui>."
 msgstr ""
-"Vælg så fanebladet <gui>Spil</gui> og tilvælg <gui style=\"checkbox\">Aktivér "
-"lyde</gui>."
+"Vælg så fanebladet <gui>Spil</gui> og tilvælg <gui style=\"checkbox"
+"\">Aktivér lyde</gui>."
 
 #. (itstool) path: section/title
 #: C/basics.page:46
@@ -141,9 +142,9 @@ msgid ""
 "Press the close button in the title bar, or press <keyseq><key>Ctrl</"
 "key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
 msgstr ""
-"Tryk på lukkeknappen i titellinjen eller tryk på "
-"<keyseq><key>Ctrl</key><key>Q</key></keyseq> for, når som helst, at afslutte "
-"<app>Robotter</app>."
+"Tryk på lukkeknappen i titellinjen eller tryk på <keyseq><key>Ctrl</"
+"key><key>Q</key></keyseq> for, når som helst, at afslutte <app>Robotter</"
+"app>."
 
 #. (itstool) path: info/desc
 #: C/controls-change.page:20
@@ -186,9 +187,8 @@ msgid ""
 "key> key. The words <gui>New accelerator…</gui> are now present in place of "
 "the old control."
 msgstr ""
-"Klik enten på styringen i den anden kolonne eller tryk på "
-"<key>Enter</key>-tasten. Ordene <gui>Ny genvejstast …</gui> vises nu ved den "
-"gamle styring."
+"Klik enten på styringen i den anden kolonne eller tryk på <key>Enter</key>-"
+"tasten. Ordene <gui>Ny genvejstast …</gui> vises nu ved den gamle styring."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:45
@@ -402,11 +402,11 @@ msgid ""
 "above the main character, a small black arrow will appear pointing "
 "northwards. On clicking, the character will move one square northwards."
 msgstr ""
-"Når du flytter din mus rundt om hovedpersonen, så viser en lille sort pil den "
-"retning, som personen trækkes, hvis du klikker. For f.eks. at trække "
-"mod nord, hvis du flytter din markør til kolonnen over hovedpersonen, så "
-"vises en lille sort pil som peger mod nord. Når der klikkes, så trækkes "
-"personen én firkant mod nord."
+"Når du flytter din mus rundt om hovedpersonen, så viser en lille sort pil "
+"den retning, som personen trækkes, hvis du klikker. For f.eks. at trække mod "
+"nord, hvis du flytter din markør til kolonnen over hovedpersonen, så vises "
+"en lille sort pil som peger mod nord. Når der klikkes, så trækkes personen "
+"én firkant mod nord."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:116
@@ -557,8 +557,8 @@ msgid ""
 "Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
 "link>"
 msgstr ""
-"Ja, men kun hvis robotterne dræbes under <link "
-"xref=\"moves#wait\">venter</link>"
+"Ja, men kun hvis robotterne dræbes under <link xref=\"moves#wait\">venter</"
+"link>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:76
@@ -610,24 +610,41 @@ msgstr ""
 "Hvis du tilvælger afkrydsningsboksen <gui style=\"checkbox\">Benyt sikre "
 "træk</gui>, så forhindrer spillet dig i at trække, hvis trækket får en robot "
 "til at dræbe dig, med mindre den eneste måde at overleve på er at "
-"teleportere. Hvis du tilvælger afkrydsningsboksen <gui "
-"style=\"checkbox\">Benyt supersikre træk</gui>, så forhindrer spillet dig i at "
-"trække når det er tilfældet, så du er tvunget til at teleportere. Det "
-"reducerer sværhedsgraden. Du kan altid fravælge dem, hvis du synes spillet er "
-"for let."
+"teleportere. Hvis du tilvælger afkrydsningsboksen <gui style=\"checkbox"
+"\">Benyt supersikre træk</gui>, så forhindrer spillet dig i at trække når "
+"det er tilfældet, så du er tvunget til at teleportere. Det reducerer "
+"sværhedsgraden. Du kan altid fravælge dem, hvis du synes spillet er for let."
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Robots"
+msgstr "Robotter"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Robots"
+msgstr "Robotter"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Robots"
+msgstr "Robotter"
 
 #. (itstool) path: info/desc
-#: C/index.page:18
+#: C/index.page:22
 msgid "Index"
 msgstr "Indeks"
 
 #. (itstool) path: page/title
-#: C/index.page:21
+#: C/index.page:25
 msgid "<_:media-1/> Robots"
 msgstr "<_:media-1/> Robotter"
 
 #. (itstool) path: page/p
-#: C/index.page:26
+#: C/index.page:30
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
@@ -640,12 +657,12 @@ msgstr ""
 "dig."
 
 #. (itstool) path: section/title
-#: C/index.page:32
+#: C/index.page:36
 msgid "Game play"
 msgstr "Gameplay"
 
 #. (itstool) path: section/title
-#: C/index.page:36
+#: C/index.page:40
 msgid "Preferences"
 msgstr "Indstillinger"
 
@@ -678,10 +695,10 @@ msgid ""
 "make their move. So, after each of your moves, the enemy robots try to make "
 "a move that gets them closer to you."
 msgstr ""
-"I <app>Robotter</app> kan du trække i en af otte retninger, vente på robotter "
-"eller teleportere. De fjendtlige robotter og hovedpersonen skiftes til at "
-"trække. Så hver gang du har trukket, prøver fjenden at trække, så de kommer "
-"tættere på dig."
+"I <app>Robotter</app> kan du trække i en af otte retninger, vente på "
+"robotter eller teleportere. De fjendtlige robotter og hovedpersonen skiftes "
+"til at trække. Så hver gang du har trukket, prøver fjenden at trække, så de "
+"kommer tættere på dig."
 
 #. (itstool) path: section/title
 #: C/moves.page:32
@@ -724,8 +741,8 @@ msgid ""
 "board instead of moving square by square, you can teleport. There are two "
 "types of teleports available."
 msgstr ""
-"Hvis det ikke er muligt at foretage flere træk, eller hvis du vil springe til "
-"den anden ende af brættet frem for en firkant ad gangen, så kan du "
+"Hvis det ikke er muligt at foretage flere træk, eller hvis du vil springe "
+"til den anden ende af brættet frem for en firkant ad gangen, så kan du "
 "teleportere. Der findes 2 typer teleporteringer."
 
 #. (itstool) path: item/p
@@ -780,8 +797,8 @@ msgid ""
 "The enemies in a game depend on the <link xref=\"appearance\">game theme</"
 "link> chosen."
 msgstr ""
-"Fjenderne i et spil afhænger af det valgte <link "
-"xref=\"appearance\">spiltema</link>."
+"Fjenderne i et spil afhænger af det valgte <link xref=\"appearance"
+"\">spiltema</link>."
 
 #. (itstool) path: td/p
 #: C/scores.page:42
@@ -974,8 +991,8 @@ msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Scores</gui> to view the high scores."
 msgstr ""
-"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <gui "
-"style=\"menuitem\">Resultater</gui> for at vise de bedste resultater."
+"Tryk på menuknappen i øverste højre hjørne af vinduet og vælg <gui style="
+"\"menuitem\">Resultater</gui> for at vise de bedste resultater."
 
 #. (itstool) path: section/p
 #: C/scores.page:159
@@ -985,7 +1002,7 @@ msgid ""
 "to <gui>Map</gui> to view scores for a particular game type and safe move "
 "option combination."
 msgstr ""
-"Resultater huskes separat for hver kombination af <link xref=\"game-"
-"types\">indstilling for spiltype og sikre træk</link>. Brug "
-"rullegardinsmenuen ved siden af <gui>Kort</gui> for at vise resultater for "
-"en bestemt kombination af indstilling for spiltype og sikre træk."
+"Resultater huskes separat for hver kombination af <link xref=\"game-types"
+"\">indstilling for spiltype og sikre træk</link>. Brug rullegardinsmenuen "
+"ved siden af <gui>Kort</gui> for at vise resultater for en bestemt "
+"kombination af indstilling for spiltype og sikre træk."

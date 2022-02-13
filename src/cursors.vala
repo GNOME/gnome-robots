@@ -19,23 +19,24 @@
 
 using Gdk;
 
-public Array<Cursor> make_cursors_for_display (Display display) {
+public Array<Cursor> make_cursors () {
     Array<Cursor> cursors = new Array<Cursor> ();
-    cursors.append_val (make_cursor (display, cursor_up_left, 3, 3));
-    cursors.append_val (make_cursor (display, cursor_up, 10, 3));
-    cursors.append_val (make_cursor (display, cursor_up_right, 17, 3));
-    cursors.append_val (make_cursor (display, cursor_left, 3, 10));
-    cursors.append_val (make_cursor (display, cursor_hold, 10, 10));
-    cursors.append_val (make_cursor (display, cursor_right, 17, 10));
-    cursors.append_val (make_cursor (display, cursor_down_left, 3, 17));
-    cursors.append_val (make_cursor (display, cursor_down, 10, 17));
-    cursors.append_val (make_cursor (display, cursor_down_right, 17, 17));
+    cursors.append_val (make_cursor (cursor_up_left, 3, 3));
+    cursors.append_val (make_cursor (cursor_up, 10, 3));
+    cursors.append_val (make_cursor (cursor_up_right, 17, 3));
+    cursors.append_val (make_cursor (cursor_left, 3, 10));
+    cursors.append_val (make_cursor (cursor_hold, 10, 10));
+    cursors.append_val (make_cursor (cursor_right, 17, 10));
+    cursors.append_val (make_cursor (cursor_down_left, 3, 17));
+    cursors.append_val (make_cursor (cursor_down, 10, 17));
+    cursors.append_val (make_cursor (cursor_down_right, 17, 17));
     return cursors;
 }
 
-private Cursor make_cursor (Display display, string[] xpm, int hsx, int hsy) {
+private Cursor make_cursor (string[] xpm, int hsx, int hsy) {
     var pixbuf = new Pixbuf.from_xpm_data (xpm);
-    return new Cursor.from_pixbuf (display, pixbuf, hsx, hsy);
+    var texture = Texture.for_pixbuf (pixbuf);
+    return new Cursor.from_texture (texture, hsx, hsy, null);
 }
 
 const string cursor_up_left[] = {

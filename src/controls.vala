@@ -19,7 +19,7 @@
 
 using Gtk;
 
-public class GamesControlsList : Bin {
+public class GamesControlsList : Widget {
 
     private Gtk.ListStore store;
     private TreeView view;
@@ -31,6 +31,11 @@ public class GamesControlsList : Bin {
         KEYCODE,
         KEYMODS,
         COUNT
+    }
+
+    construct {
+        var layout = new Gtk.BinLayout ();
+        this.set_layout_manager (layout);
     }
 
     public GamesControlsList(Properties properties) {
@@ -72,13 +77,12 @@ public class GamesControlsList : Bin {
 
         view.append_column (column2);
 
-        var sw = new ScrolledWindow (null, null);
+        var sw = new ScrolledWindow ();
         sw.hscrollbar_policy = PolicyType.NEVER;
         sw.vscrollbar_policy = PolicyType.AUTOMATIC;
-        sw.shadow_type = ShadowType.IN;
-        sw.add (view);
-
-        add (sw);
+        sw.has_frame = true;
+        sw.set_child (view);
+        sw.set_parent (this);
 
         this.properties = properties;
         properties.changed.connect (properties_changed_cb);

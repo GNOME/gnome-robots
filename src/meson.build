@@ -52,7 +52,6 @@ executable(
         gnome_games_dependency,
         gsound_dependency,
         gtk_dependency,
-        gdk_dependency,
         rsvg_dependency
     ],
     install_dir: get_option('bindir'),

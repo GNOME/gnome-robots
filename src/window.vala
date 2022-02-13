@@ -22,6 +22,7 @@ using Gtk;
 public class RobotsWindow : ApplicationWindow {
 
     private HeaderBar headerbar;
+    private Label header_subtitle;
     private Label safe_teleports_label;
     private GameArea game_area;
     private EventControllerKey key_controller;
@@ -38,17 +39,28 @@ public class RobotsWindow : ApplicationWindow {
         remember_window_size (this, new WindowSizeSettings ("org.gnome.Robots"));
         this.properties = properties;
 
+        var header_title = new Label.with_mnemonic (_("Robots"));
+        header_title.single_line_mode = true;
+        header_title.get_style_context ().add_class ("title");
+
+        header_subtitle = new Label.with_mnemonic ("");
+        header_subtitle.single_line_mode = true;
+        header_subtitle.get_style_context ().add_class ("subtitle");
+
+        var header_box = new Box (Orientation.VERTICAL, 0);
+        header_box.valign = Align.CENTER;
+        header_box.append (header_title);
+        header_box.append (header_subtitle);
+
         headerbar = new HeaderBar ();
-        headerbar.set_title (_("Robots"));
-        headerbar.set_show_close_button (true);
+        headerbar.set_title_widget (header_box);
+        headerbar.show_title_buttons = true;
         set_titlebar (headerbar);
 
         var appmenu = app.get_menu_by_id ("primary-menu");
         var menu_button = new MenuButton ();
-        var icon = new Image.from_icon_name ("open-menu-symbolic", IconSize.BUTTON);
-        menu_button.set_image (icon);
+        menu_button.set_icon_name ("open-menu-symbolic");
         menu_button.set_menu_model (appmenu);
-        menu_button.show ();
         headerbar.pack_end (menu_button);
 
         GLib.ActionEntry[] win_entries = {
@@ -67,18 +79,22 @@ public class RobotsWindow : ApplicationWindow {
         game_area.updated.connect (game => update_game_status (game));
 
         var gridframe = new Games.GridFrame (game.width, game.height);
-        gridframe.add (game_area);
+        gridframe.child = game_area;
 
         var hbox = button_box ();
 
         var vbox = new Box (Orientation.VERTICAL, 0);
-        vbox.pack_start (gridframe, true, true, 0);
-        vbox.pack_start (hbox, false, false, 0);
+        gridframe.vexpand = true;
+        gridframe.hexpand = true;
+        vbox.append (gridframe);
+        hbox.hexpand = true;
+        vbox.append (hbox);
 
-        add (vbox);
+        set_child (vbox);
 
-        key_controller = new EventControllerKey (this);
+        key_controller = new EventControllerKey ();
         key_controller.key_pressed.connect (keyboard_cb);
+        ((Widget) this).add_controller (key_controller);
 
         highscores = new RobotsScoresContext (this);
         game_area.add_score.connect ((game_type, score) => {
@@ -98,10 +114,11 @@ public class RobotsWindow : ApplicationWindow {
             label.margin_top = 15;
             label.margin_bottom = 15;
             var button = new Button ();
-            button.add (label);
+            button.set_child (label);
             button.set_action_name ("win.random-teleport");
             size_group.add_widget (button);
-            hbox.pack_start (button, true, true, 0);
+            button.hexpand = true;
+            hbox.append (button);
         }
 
         {
@@ -110,10 +127,11 @@ public class RobotsWindow : ApplicationWindow {
             safe_teleports_label.margin_top = 15;
             safe_teleports_label.margin_bottom = 15;
             var button = new Button ();
-            button.add (safe_teleports_label);
+            button.set_child (safe_teleports_label);
             button.set_action_name ("win.safe-teleport");
             size_group.add_widget (button);
-            hbox.pack_start (button, true, true, 0);
+            button.hexpand = true;
+            hbox.append (button);
         }
 
         {
@@ -121,17 +139,18 @@ public class RobotsWindow : ApplicationWindow {
             label.margin_top = 15;
             label.margin_bottom = 15;
             var button = new Button ();
-            button.add (label);
+            button.set_child (label);
             button.set_action_name ("win.wait");
             size_group.add_widget (button);
-            hbox.pack_start (button, true, true, 0);
+            button.hexpand = true;
+            hbox.append (button);
         }
 
         return hbox;
     }
 
     private void update_game_status (Game game) {
-        headerbar.set_subtitle (
+        header_subtitle.set_label (
             _("Level: %d\tScore: %d").printf (game.status.current_level, game.status.score));
 
         /* Second line of safe teleports button label. %d is the number of teleports remaining. */
@@ -169,7 +188,7 @@ public class RobotsWindow : ApplicationWindow {
          * if N is used as a key, then Ctrl-N is never picked up. The cleaner
          * option, making the signal a connect_after signal skims the arrow keys
          * before we can get to them which is a bigger problem. */
-        if ((state & (Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.MOD1_MASK)) != 0) {
+        if ((state & (Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.ALT_MASK)) != 0) {
             return false;
         }
 

@@ -18,6 +18,7 @@
  */
 
 using Gtk;
+using Gdk;
 
 class RobotsApplication : Gtk.Application {
 
@@ -72,7 +73,7 @@ class RobotsApplication : Gtk.Application {
     protected override void activate () {
         var window = get_active_window () as RobotsWindow;
         if (window != null) {
-            window.present_with_time (get_current_event_time ());
+            window.present_with_time (CURRENT_TIME);
             return;
         }
 
@@ -87,8 +88,7 @@ class RobotsApplication : Gtk.Application {
             // TODO message box
             quit ();
         }
-
-        window.show_all ();
+        window.show ();
     }
 
     private void new_game_cb () {
@@ -130,13 +130,7 @@ class RobotsApplication : Gtk.Application {
     }
 
     private void help_cb () {
-        try {
-            show_uri_on_window (get_active_window (),
-                                "help:gnome-robots",
-                                get_current_event_time ());
-        } catch (Error error) {
-            warning ("Failed to show help: %s", error.message);
-        }
+        show_uri (get_active_window (), "help:gnome-robots", CURRENT_TIME);
     }
 
     private void about_cb () {

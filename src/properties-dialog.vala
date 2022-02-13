@@ -76,7 +76,7 @@ public class PropertiesDialog : Dialog {
         notebook.margin_bottom = 10;
         notebook.margin_start = 10;
         notebook.margin_end = 10;
-        get_content_area ().pack_start (notebook, true, true, 0);
+        get_content_area ().append (notebook);
 
         /* The configuration page */
         var cpage = form_grid ();
@@ -161,7 +161,7 @@ public class PropertiesDialog : Dialog {
 
         var dbut = new Button.with_mnemonic (_("_Restore Defaults"));
         dbut.clicked.connect (reset_keys);
-        hbox.pack_start (dbut, false, false, 0);
+        hbox.append (dbut);
 
         label = new Label.with_mnemonic (_("Keyboard"));
         notebook.append_page (kpage, label);
@@ -190,7 +190,7 @@ public class PropertiesDialog : Dialog {
                                         themes,
                                         properties);
         dlg.response.connect (() => dlg.destroy ());
-        dlg.show_all ();
+        dlg.present ();
     }
 }
 

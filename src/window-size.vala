@@ -48,31 +48,20 @@ public class WindowSizeSettings : Object, WindowSize {
     }
 }
 
-private bool window_configure_event_cb (Gtk.Window window,
-                                        WindowSize size
-) {
-    if (!size.is_maximized) {
-        int width, height;
-        window.get_size (out width, out height);
-        size.width = width;
-        size.height = height;
-    }
-    return false;
-}
-
-private bool window_state_event_cb (Gtk.Window window,
-                                    WindowSize size,
-                                    Gdk.EventWindowState event
-) {
-    if ((event.changed_mask & Gdk.WindowState.MAXIMIZED) != 0) {
-        size.is_maximized = (event.new_window_state & Gdk.WindowState.MAXIMIZED) != 0;
-    }
-    return false;
-}
-
 public void remember_window_size (Gtk.Window window, WindowSize size) {
-    window.configure_event.connect (() => window_configure_event_cb (window, size));
-    window.window_state_event.connect (event => window_state_event_cb (window, size, event));
+    window.notify["default-width"].connect (() => {
+        if (!window.maximized) {
+            size.width = window.default_width;
+        }
+    });
+    window.notify["default-height"].connect (() => {
+        if (!window.maximized) {
+            size.height = window.default_height;
+        }
+    });
+    window.notify["maximized"].connect (() => {
+        size.is_maximized = window.maximized;
+    });
     window.set_default_size (size.width, size.height);
     if (size.is_maximized) {
         window.maximize ();

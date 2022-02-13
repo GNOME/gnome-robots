@@ -27,7 +27,7 @@ public class GameArea : DrawingArea {
     const int MINIMUM_TILE_HEIGHT = 8;
     const int ANIMATION_DELAY = 100;
 
-    private GestureMultiPress click_controller;
+    private GestureClick click_controller;
     private EventControllerMotion motion_controller;
     private Game game;
     private GameConfigs game_configs;
@@ -95,14 +95,15 @@ public class GameArea : DrawingArea {
 
         game.config = game_configs.find_by_name (properties.selected_config) ?? game_configs[0];
 
-        add_events (Gdk.EventMask.BUTTON_PRESS_MASK | Gdk.EventMask.BUTTON_RELEASE_MASK | Gdk.EventMask.POINTER_MOTION_MASK);
-        draw.connect ((cr) => draw_cb (cr));
+        set_draw_func ((_area, cr, width, height) => draw_cb (cr, width, height));
 
-        click_controller = new GestureMultiPress (this);
+        click_controller = new GestureClick ();
         click_controller.pressed.connect ((n_pressed, x, y) => mouse_cb (n_pressed, x, y));
+        add_controller (click_controller);
 
-        motion_controller = new EventControllerMotion (this);
+        motion_controller = new EventControllerMotion ();
         motion_controller.motion.connect ((x, y) => move_cb (x, y));
+        add_controller (motion_controller);
 
         set_size_request (MINIMUM_TILE_WIDTH * game.arena.width,
                           MINIMUM_TILE_HEIGHT * game.arena.height);
@@ -158,7 +159,7 @@ public class GameArea : DrawingArea {
         };
     }
 
-    private bool draw_cb (Context cr) {
+    private bool draw_cb (Context cr, int _width, int _height) {
         Size tile_size = tile_size ();
 
         for (int j = 0; j < game.arena.height; j++) {
@@ -259,16 +260,15 @@ public class GameArea : DrawingArea {
     }
 
     private void move_cb (double x, double y) {
-        var window = get_window ();
         if (game.state != Game.State.PLAYING) {
-            window.set_cursor (null);
+            set_cursor (null);
         } else {
             int dx, dy;
             get_dir (x, y, out dx, out dy);
 
             var cursor_index = 3 * dy + dx + 4;
             var cursor = assets.cursors.index(cursor_index);
-            window.set_cursor (cursor);
+            set_cursor (cursor);
         }
     }
 
@@ -415,7 +415,7 @@ public class GameArea : DrawingArea {
      * Displays a modal dialog box with a given message
      **/
     private void message_box (string msg) {
-        var window = get_toplevel () as Gtk.Window;
+        var window = get_root () as Gtk.Window;
         if (window != null) {
             var dlg = new Gtk.MessageDialog (window,
                                              Gtk.DialogFlags.MODAL,

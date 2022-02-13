@@ -41,21 +41,21 @@ public RGBA calculate_light_color (RGBA color) {
     double brightness = color.red + color.green + color.blue;
     if (brightness > (1.0 / 1.1)) {
         /* Darken light colours. */
-        light.red = 0.9 * color.red;
-        light.green = 0.9 * color.green;
-        light.blue = 0.9 * color.blue;
+        light.red = 0.9f * color.red;
+        light.green = 0.9f * color.green;
+        light.blue = 0.9f * color.blue;
     } else if (brightness > 0.04) {
         /* Lighten darker colours. */
-        light.red = 1.1 * color.red;
-        light.green = 1.1 * color.green;
-        light.blue = 1.1 * color.blue;
+        light.red = 1.1f * color.red;
+        light.green = 1.1f * color.green;
+        light.blue = 1.1f * color.blue;
     } else {
         /* Very dark colours, add rather than multiply. */
-        light.red = 0.04 + color.red;
-        light.green = 0.04 + color.green;
-        light.blue = 0.04 + color.blue;
+        light.red = 0.04f + color.red;
+        light.green = 0.04f + color.green;
+        light.blue = 0.04f + color.blue;
     }
-    light.alpha = 1.0;
+    light.alpha = 1.0f;
     return light;
 }
 

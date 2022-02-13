@@ -52,8 +52,7 @@ public class DirectoryAssets : Object, Assets {
         _splat_bubble = new Bubble.from_file (
             Path.build_filename (directory, "pixmaps", "splat.png"));
 
-        var display = Gdk.Display.get_default ();
-        _cursors = make_cursors_for_display (display);
+        _cursors = make_cursors ();
     }
 }
 

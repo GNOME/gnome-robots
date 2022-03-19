@@ -978,7 +978,7 @@ msgid ""
 "style=\"menuitem\">Scores</gui> to view the high scores."
 msgstr ""
 "Premeu el botó de menú a la cantonada superior dreta de la finestra i "
-"seleccioneu <gui style=\"menuitem\">Puntuació<unk>/gui> per a veure les "
+"seleccioneu <gui style=\"menuitem\">Puntuacions</gui> per a veure les "
 "puntuacions altes."
 
 #. (itstool) path: section/p

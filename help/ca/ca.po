@@ -6,10 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots-help\n"
 "POT-Creation-Date: 2020-05-28 23:22+0000\n"
-"PO-Revision-Date: 2019-01-02 09:51+0000\n"
+"PO-Revision-Date: 2019-03-19 09:51+0000\n"
 "Last-Translator: Jaume Jorba <jaume.jorba@gmail.com>, 2019\n"
-"Language-Team: Catalan (https://www.transifex.com/softcatala/teams/62837/"
-"ca/)\n"
+"Language-Team: Catalan (https://www.transifex.com/softcatala/teams/62837/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,17 +76,18 @@ msgstr "Seleccioneu la pestanya <gui>Aparença</gui>."
 #. (itstool) path: item/p
 #: C/appearance.page:42
 msgid "Select a theme from the <gui>Image theme</gui> drop-down menu."
-msgstr "Seleccioneu un tema des del menú desplegable <gui>Tema d'imatge</gui>."
+msgstr ""
+"Seleccioneu un tema des del menú desplegable <gui>Tema d'imatge</gui>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:45
 msgid ""
 "To change your background color, click the button next to <gui>Background "
-"color</gui>. Select a color from the available choices and click <gui style="
-"\"button\">Select</gui>."
+"color</gui>. Select a color from the available choices and click <gui "
+"style=\"button\">Select</gui>."
 msgstr ""
-"Per a canviar el color de fons, fes clic al botó del costat de <gui>Color de "
-"fons</gui>. Selecciona un color entre les opcions disponibles i fes clic a "
+"Per a canviar el color de fons, fes clic al botó del costat de <gui>Color de"
+" fons</gui>. Selecciona un color entre les opcions disponibles i fes clic a "
 "<gui style=\"button\">Selecciona</gui>."
 
 #. (itstool) path: info/desc
@@ -107,31 +107,28 @@ msgstr "Inicia una altra partida"
 
 #. (itstool) path: section/p
 #: C/basics.page:33
-#, fuzzy
-#| msgid ""
-#| "Select <gui style=\"menuitem\">New Game</gui> from the menu or press "
-#| "<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
-"style=\"menuitem\">New Game</gui>, or press <keyseq><key>Ctrl</key><key>N</"
-"key></keyseq> to start a new game."
+"style=\"menuitem\">New Game</gui>, or press "
+"<keyseq><key>Ctrl</key><key>N</key></keyseq> to start a new game."
 msgstr ""
-"Seleccioneu <gui style=\"menuitem\">Partida nova</gui> des del menú o premeu "
+"Premeu el botó de menú a la cantonada superior dreta de la finestra i "
+"seleccioneu <gui style=\"menuitem\">Partida nova</gui>, o premeu "
 "<keyseq><key>Ctrl</key><key>N</key></keyseq> per a iniciar una nova partida."
 
 #. (itstool) path: section/title
 #: C/basics.page:39
 msgid "Enable sounds"
-msgstr "Activar sons"
+msgstr "Activar els sons"
 
 #. (itstool) path: section/p
 #: C/basics.page:41
 msgid ""
-"Then select the <gui>Game</gui> tab and check <gui style=\"checkbox\">Enable "
-"sounds</gui>."
+"Then select the <gui>Game</gui> tab and check <gui style=\"checkbox\">Enable"
+" sounds</gui>."
 msgstr ""
-"A continuació seleccioneu la pestanya <gui>Joc</gui> i marqueu <gui style="
-"\"checkbox\">Activa els sons</gui>."
+"A continuació seleccioneu la pestanya <gui>Joc</gui> i marqueu <gui "
+"style=\"checkbox\">Activa els sons</gui>."
 
 #. (itstool) path: section/title
 #: C/basics.page:46
@@ -140,18 +137,14 @@ msgstr "Sortir de <app>Robots</app>"
 
 #. (itstool) path: section/p
 #: C/basics.page:48
-#, fuzzy
-#| msgid ""
-#| "Select <guiseq><gui style=\"menu\">Game</gui> <gui style=\"menuitem"
-#| "\">Quit</gui></guiseq> or press <keyseq><key>Ctrl</key><key>Q</key></"
-#| "keyseq> to quit <app>Robots</app> at any time."
 msgid ""
-"Press the close button in the title bar, or press <keyseq><key>Ctrl</"
-"key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
+"Press the close button in the title bar, or press "
+"<keyseq><key>Ctrl</key><key>Q</key></keyseq> to quit <app>Robots</app> at "
+"any time."
 msgstr ""
-"Seleccioneu <guiseq><gui style=\"menu\">Partida</gui> <gui style=\"menuitem"
-"\">Sortir</gui></guiseq> o premeu <keyseq><key>Ctrl</key><key>Q</key></"
-"keyseq> per a sortir de <app>Robots</app> en qualsevol moment."
+"Premeu el botó de tancament a la barra de títol, o premeu "
+"<keyseq><key>Ctrl</key><key>Q</key></keyseq> per a sortir de <app>Robots</app>"
+" en qualsevol moment."
 
 #. (itstool) path: info/desc
 #: C/controls-change.page:20
@@ -189,24 +182,20 @@ msgstr "A la llista, seleccioneu la clau que voleu canviar."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:40
-#, fuzzy
-#| msgid ""
-#| "In the <gui style=\"group\">Keyboard Controls</gui> list, select the "
-#| "line, then click on the control. This highlights the line and the words "
-#| "<gui>New accelerator…</gui> are now present in place of the old control."
 msgid ""
-"Either click on the control in the second column, or press the <key>Enter</"
-"key> key. The words <gui>New accelerator…</gui> are now present in place of "
-"the old control."
+"Either click on the control in the second column, or press the "
+"<key>Enter</key> key. The words <gui>New accelerator…</gui> are now present "
+"in place of the old control."
 msgstr ""
-"A la llista de <gui style=\"group\">Controls de teclat</gui>, seleccioneu la "
-"línia, aleshores feu clic al control. Així es destaca la línia i les "
-"paraules <gui>Nou accelerador…</gui> es mostren en comptes del control antic."
+"Feu clic al control de la segona columna, o premeu la tecla "
+"<key>Retorn</key>. Les paraules <gui>Accelerador nou…</gui> es mostraran "
+"en lloc de l'antic control."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:45
 msgid "Press the key you want to use instead of the default key."
-msgstr "Premeu la tecla que vulgueu utilitzar en comptes de la predeterminada."
+msgstr ""
+"Premeu la tecla que vulgueu utilitzar en comptes de la predeterminada."
 
 #. (itstool) path: note/p
 #: C/controls-change.page:47
@@ -391,8 +380,8 @@ msgstr "<keyseq><key>Alt</key><key>w</key></keyseq>"
 #. (itstool) path: note/p
 #: C/controls-default.page:96
 msgid ""
-"You can <link xref=\"controls-change\">change</link> the default controls to "
-"suit your preference."
+"You can <link xref=\"controls-change\">change</link> the default controls to"
+" suit your preference."
 msgstr ""
 "Podeu <link xref=\"controls-change\">canviar</link> els controls "
 "predeterminats per a adaptar-los a les vostres preferències."
@@ -410,16 +399,16 @@ msgstr "Moure's en una direcció particular"
 #. (itstool) path: item/p
 #: C/controls-default.page:108
 msgid ""
-"When you move your mouse around the main character, a small black arrow will "
-"appear pointing towards the direction in which the character will move if "
-"you click. For example, to move north, if you move your cursor to the column "
-"above the main character, a small black arrow will appear pointing "
+"When you move your mouse around the main character, a small black arrow will"
+" appear pointing towards the direction in which the character will move if "
+"you click. For example, to move north, if you move your cursor to the column"
+" above the main character, a small black arrow will appear pointing "
 "northwards. On clicking, the character will move one square northwards."
 msgstr ""
 "Quan moveu el ratolí al voltant del personatge principal, apareixerà una "
-"petita fletxa negra apuntant cap a la direcció en què el personatge es mourà "
-"si feu clic. Per exemple, per a moure't cap al nord, si moveu el cursor fins "
-"a la columna que hi ha a sobre del protagonista, apareixerà una petita "
+"petita fletxa negra apuntant cap a la direcció en què el personatge es mourà"
+" si feu clic. Per exemple, per a moure't cap al nord, si moveu el cursor "
+"fins a la columna que hi ha a sobre del protagonista, apareixerà una petita "
 "fletxa negra que apunta cap al nord. En fer clic, el protagonista es mourà "
 "un quadrat cap al nord."
 
@@ -431,7 +420,8 @@ msgstr "Quedar-se a la mateixa posició"
 #. (itstool) path: item/p
 #: C/controls-default.page:117
 msgid "Click on the main character to stay put in the same square."
-msgstr "Feu clic al personatge principal perquè es quedi a la mateixa posició."
+msgstr ""
+"Feu clic al personatge principal perquè es quedi a la mateixa posició."
 
 #. (itstool) path: item/p
 #: C/controls-default.page:121
@@ -451,8 +441,8 @@ msgstr "Tele-transport segur"
 #: C/controls-default.page:126
 msgid "To safely teleport, click the <gui>Teleport Safely</gui> button."
 msgstr ""
-"Per a un tele-transport segur, feu clic al botó <gui>Tele-transport segur</"
-"gui>."
+"Per a un tele-transport segur, feu clic al botó <gui>Tele-transport "
+"segur</gui>."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:129 C/moves.page:62
@@ -517,18 +507,17 @@ msgstr "<link xref=\"moves#teleport\">Tele-transports</link> segurs inicials"
 
 #. (itstool) path: td/p
 #: C/game-types.page:50
-msgid ""
-"Initial <link xref=\"scores#high-low-risk\">low-risk enemy robots</link>"
+msgid "Initial <link xref=\"scores#high-low-risk\">low-risk enemy robots</link>"
 msgstr ""
-"<link xref=\"scores#high-low-risk\">Robots enemics inicials de baix risc</"
-"link>"
+"<link xref=\"scores#high-low-risk\">Robots enemics inicials de baix "
+"risc</link>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:53
-msgid ""
-"Initial <link xref=\"scores#high-low-risk\">high-risk enemy robots</link>"
+msgid "Initial <link xref=\"scores#high-low-risk\">high-risk enemy robots</link>"
 msgstr ""
-"<link xref=\"scores#high-low-risk\">Robots enemics inicials d'alt risc</link>"
+"<link xref=\"scores#high-low-risk\">Robots enemics inicials d'alt "
+"risc</link>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:56
@@ -569,8 +558,8 @@ msgstr "1"
 #. (itstool) path: td/p
 #: C/game-types.page:72 C/game-types.page:80
 msgid ""
-"Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
-"link>"
+"Yes, but only if robots are killed while <link "
+"xref=\"moves#wait\">waiting</link>"
 msgstr ""
 "Sí, però només si els robots moren <link xref=\"moves#wait\">esperant</link>"
 
@@ -618,16 +607,17 @@ msgid ""
 "you, unless the only way to survive is to teleport. If you check the <gui "
 "style=\"checkbox\">Use super safe moves</gui> checkbox, the game will "
 "prevent you from making any move in this case, so that you are forced to "
-"teleport. This reduces the level of difficulty. You can always uncheck these "
-"if you find the game too easy."
+"teleport. This reduces the level of difficulty. You can always uncheck these"
+" if you find the game too easy."
 msgstr ""
-"Si marqueu la casella de selecció <gui style=\"checkbox\">Utilitza moviments "
-"segurs</gui> el joc no us permetrà moure's si el desplaçament provoca que un "
-"robot us mati, tret que l'única manera de sobreviure sigui tele-transportar-"
-"se. Si marqueu la casella de selecció <gui style=\"checkbox\">Utilitza els "
-"moviments supersegurs</gui>, el joc no us permetrà fer cap moviment, de "
-"manera que se l'obligarà a tele-transportar. Això en redueix el nivell de "
-"dificultat. Sempre podeu desmarcar-lo si trobeu el joc massa fàcil."
+"Si marqueu la casella de selecció <gui style=\"checkbox\">Utilitza moviments"
+" segurs</gui> el joc no us permetrà moure's si el desplaçament provoca que "
+"un robot us mati, tret que l'única manera de sobreviure sigui tele-"
+"transportar-se. Si marqueu la casella de selecció <gui "
+"style=\"checkbox\">Utilitza els moviments supersegurs</gui>, el joc no us "
+"permetrà fer cap moviment, de manera que se l'obligarà a tele-transportar. "
+"Això en redueix el nivell de dificultat. Sempre podeu desmarcar-lo si trobeu"
+" el joc massa fàcil."
 
 #. (itstool) path: info/desc
 #: C/index.page:18
@@ -648,9 +638,9 @@ msgid ""
 "crashing into you."
 msgstr ""
 "<app>Robots</app> es basa en el joc de línia d'ordres UNIX del mateix nom. "
-"L'objectiu del joc és destruir tots els robots fent que es xoquin entre si o "
-"bé en acumulacions d'escombraries fruit de col·lisions anteriors, sense que "
-"xoquin contra tu."
+"L'objectiu del joc és destruir tots els robots fent que es xoquin entre si o"
+" bé en acumulacions d'escombraries fruit de col·lisions anteriors, sense que"
+" xoquin contra tu."
 
 #. (itstool) path: section/title
 #: C/index.page:32
@@ -737,15 +727,15 @@ msgid ""
 "board instead of moving square by square, you can teleport. There are two "
 "types of teleports available."
 msgstr ""
-"Si no hi ha moviments possibles o si voleu fer un salt pel tauler en lloc de "
-"moure's de casella en casella, podeu tele-transportar-vos. Hi ha dos tipus "
+"Si no hi ha moviments possibles o si voleu fer un salt pel tauler en lloc de"
+" moure's de casella en casella, podeu tele-transportar-vos. Hi ha dos tipus "
 "de tele-transports disponibles."
 
 #. (itstool) path: item/p
 #: C/moves.page:57
 msgid ""
-"Safe teleports move the main character to a location that is safe from enemy "
-"robots. In each game only a few safe teleports are allowed."
+"Safe teleports move the main character to a location that is safe from enemy"
+" robots. In each game only a few safe teleports are allowed."
 msgstr ""
 "Els tele-transports segurs mouen el personatge principal a una ubicació que "
 "està fora de perill dels robots enemics. A cada joc només es permeten uns "
@@ -759,8 +749,8 @@ msgid ""
 "game."
 msgstr ""
 "Utilitzeu els aleatoris per tele-transportar-vos a una ubicació aleatòria "
-"que pot ser segura o no. Podeu utilitzar tants tele-transports aleatoris com "
-"vulgueu durant un joc."
+"que pot ser segura o no. Podeu utilitzar tants tele-transports aleatoris com"
+" vulgueu durant un joc."
 
 #. (itstool) path: info/desc
 #: C/scores.page:24
@@ -790,11 +780,11 @@ msgstr "Enemics d'alt i baix risc per tema"
 #. (itstool) path: section/p
 #: C/scores.page:36
 msgid ""
-"The enemies in a game depend on the <link xref=\"appearance\">game theme</"
-"link> chosen."
+"The enemies in a game depend on the <link xref=\"appearance\">game "
+"theme</link> chosen."
 msgstr ""
-"Els enemics al joc, depenen del <link xref=\"appearance\">tema del joc</"
-"link> triat."
+"Els enemics al joc, depenen del <link xref=\"appearance\">tema del "
+"joc</link> triat."
 
 #. (itstool) path: td/p
 #: C/scores.page:42
@@ -983,13 +973,12 @@ msgstr "Puntuacions més altes"
 
 #. (itstool) path: section/p
 #: C/scores.page:156
-#, fuzzy
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Scores</gui> to view the high scores."
 msgstr ""
 "Premeu el botó de menú a la cantonada superior dreta de la finestra i "
-"seleccioneu <gui style=\"menuitem\">Punts<unk>/gui> per a veure les "
+"seleccioneu <gui style=\"menuitem\">Puntuació<unk>/gui> per a veure les "
 "puntuacions altes."
 
 #. (itstool) path: section/p
@@ -1000,7 +989,7 @@ msgid ""
 "to <gui>Map</gui> to view scores for a particular game type and safe move "
 "option combination."
 msgstr ""
-"Les puntuacions es desen de forma separada per cada combinació de <link xref="
-"\"game-types\">tipus de joc i opció de moviment segur</link>. Utilitzeu el "
-"menú desplegable <gui>Mapa</gui> per a veure les puntuacions d'un tipus de "
-"joc en particular i les combinacions de les opcions de moviment segur."
+"Les puntuacions es desen de forma separada per cada combinació de <link "
+"xref=\"game-types\">tipus de joc i opció de moviment segur</link>. Utilitzeu"
+" el menú desplegable <gui>Mapa</gui> per a veure les puntuacions d'un tipus "
+"de joc en particular i les combinacions de les opcions de moviment segur."

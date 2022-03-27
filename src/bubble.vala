@@ -17,32 +17,43 @@
  * For more details see the file COPYING.
  */
 
-using Gtk;
 using Gdk;
-using Cairo;
+using Graphene;
 
 public class Bubble {
-    private Pixbuf pixbuf;
-
-    public int width {
-        get { return pixbuf.width / 2; }
-    }
-
-    public int height {
-        get { return pixbuf.height / 2; }
-    }
+    private Paintable paintable;
 
     public Bubble.from_file (string filename) throws Error {
-        pixbuf = new Pixbuf.from_file (filename);
+        paintable = image_from_file (filename);
     }
 
-    public void draw (Context cr, int x, int y) {
-        int clip_x = x < width ? x : x - width;
-        int clip_y = y < height ? y : y - height;
+    public void draw (Gtk.Snapshot snapshot, float x, float y) {
+        var width = paintable.get_intrinsic_width ();
+        var height = paintable.get_intrinsic_height ();
 
-        cairo_set_source_pixbuf (cr, pixbuf, x - width, y - height);
-        cr.rectangle (clip_x, clip_y, width, height);
-        cr.fill ();
+        var bubble_width = width / 2;
+        var bubble_height = height / 2;
+
+        var clip_rect = Rect () {
+            origin = Point () {
+                x = x < bubble_width ? x : x - bubble_width,
+                y = y < bubble_height ? y : y - bubble_height,
+            },
+            size = Size () {
+                width = bubble_width,
+                height = bubble_height,
+            },
+        };
+
+        snapshot.push_clip (clip_rect);
+        snapshot.save ();
+        snapshot.translate (Point () {
+            x = x - bubble_width,
+            y = y - bubble_height,
+        });
+        paintable.snapshot (snapshot, width, height);
+        snapshot.restore ();
+        snapshot.pop ();
     }
 }
 

@@ -17,8 +17,10 @@
  * For more details see the file COPYING.
  */
 
+using Gtk;
+using Graphene;
 using Gdk;
-using Cairo;
+using Rsvg;
 
 public class Theme {
 
@@ -38,25 +40,20 @@ public class Theme {
         NUM_HEAP_ANIMATIONS = COUNT - HEAP_START,
     }
 
-    private GamesPreimage preimage;
-    private Pixbuf pixbuf;
-    private int tile_width;
-    private int tile_height;
+    private Paintable paintable;
     public string path { get; private set; }
     public string name { get; private set; }
 
-    public Theme.from_file (string path, string name) throws Error {
-        preimage = new GamesPreimage.from_file (path);
-        pixbuf = null;
+    public Theme.from_file (string path, string name) throws GLib.Error {
+        paintable = image_from_file (path);
         this.path = path;
         this.name = name;
     }
 
     public void draw_object (ObjectType type,
                              int frame_no,
-                             Context cr,
-                             int width,
-                             int height
+                             Gtk.Snapshot snapshot,
+                             Rect rect
     ) {
         int tile_no = -1;
         switch (type) {
@@ -76,15 +73,17 @@ public class Theme {
             return;
         }
 
-        if (pixbuf == null || tile_width != width || tile_height != height) {
-            tile_width = width;
-            tile_height = height;
-            pixbuf = preimage.render (Frames.COUNT * tile_width, tile_height);
-        }
+        snapshot.push_clip (rect);
 
-        cairo_set_source_pixbuf (cr, pixbuf, - tile_no * tile_width, 0);
-        cr.rectangle (0, 0, tile_width, tile_height);
-        cr.fill ();
+        snapshot.save ();
+        snapshot.translate (Point () {
+            x = rect.origin.x - tile_no * rect.size.width,
+            y = rect.origin.y,
+        });
+        paintable.snapshot (snapshot, rect.size.width * Frames.COUNT, rect.size.height);
+        snapshot.restore ();
+
+        snapshot.pop ();
     }
 }
 

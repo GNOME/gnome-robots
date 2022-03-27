@@ -18,7 +18,6 @@
  */
 
 using Gdk;
-using Cairo;
 
 public RGBA string_to_rgba (string color) {
     RGBA rgba = RGBA ();

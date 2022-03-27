@@ -19,9 +19,9 @@
 
 using Gtk;
 using Gdk;
-using Cairo;
+using Graphene;
 
-public class GameArea : DrawingArea {
+public class GameArea : Widget {
 
     const int MINIMUM_TILE_WIDTH = 8;
     const int MINIMUM_TILE_HEIGHT = 8;
@@ -95,8 +95,6 @@ public class GameArea : DrawingArea {
 
         game.config = game_configs.find_by_name (properties.selected_config) ?? game_configs[0];
 
-        set_draw_func ((_area, cr, width, height) => draw_cb (cr, width, height));
-
         click_controller = new GestureClick ();
         click_controller.pressed.connect ((n_pressed, x, y) => mouse_cb (n_pressed, x, y));
         add_controller (click_controller);
@@ -145,92 +143,75 @@ public class GameArea : DrawingArea {
         Source.remove (timer_id);
     }
 
-    private struct Size {
-        int width;
-        int height;
-    }
-
     private Size tile_size () {
-        Allocation allocation;
-        get_allocation (out allocation);
         return Size () {
-            width = allocation.width / game.arena.width,
-            height = allocation.height / game.arena.height
+            width = get_width () / game.arena.width,
+            height = get_height () / game.arena.height
         };
     }
 
-    private bool draw_cb (Context cr, int _width, int _height) {
+    public override void snapshot (Gtk.Snapshot snapshot) {
         Size tile_size = tile_size ();
 
         for (int j = 0; j < game.arena.height; j++) {
             for (int i = 0; i < game.arena.width; i++) {
-                draw_object (i, j, game.arena[i, j], tile_size, cr);
+                var tile_rect = Rect () {
+                    origin = Point () { x = i * tile_size.width, y = j * tile_size.height },
+                    size = tile_size,
+                };
+
+                var color = ((i + j) % 2 != 0) ? dark_background : light_background;
+                snapshot.append_color (color, tile_rect);
+
+                draw_object (i, j, game.arena[i, j], snapshot, tile_rect);
             }
         }
 
         if (game.splat != null) {
-            assets.splat_bubble.draw (cr,
+            assets.splat_bubble.draw (snapshot,
                                       game.splat.x * tile_size.width + 8,
                                       game.splat.y * tile_size.height + 8);
         }
 
         switch (game.state) {
         case Game.State.DEAD:
-            assets.aieee_bubble.draw (cr,
+            assets.aieee_bubble.draw (snapshot,
                                       game.player.x * tile_size.width + 8,
                                       game.player.y * tile_size.height + 4);
             break;
         case Game.State.COMPLETE:
-            assets.yahoo_bubble.draw (cr,
+            assets.yahoo_bubble.draw (snapshot,
                                       game.player.x * tile_size.width + 8,
                                       game.player.y * tile_size.height + 4);
             break;
         default:
             break;
         }
-
-        return true;
     }
 
-    private void draw_object (int x, int y, ObjectType type, Size tile_size, Context cr) {
-        if ((x + y) % 2 != 0) {
-            cairo_set_source_rgba (cr, dark_background);
-        } else {
-            cairo_set_source_rgba (cr, light_background);
-        }
+    private void draw_object (int x, int y, ObjectType type, Gtk.Snapshot snapshot, Rect tile_rect) {
+        int animation = object_animation_frame (type);
+        theme.draw_object (type, animation, snapshot, tile_rect);
+    }
 
-        x *= tile_size.width;
-        y *= tile_size.height;
-
-        cr.rectangle (x, y, tile_size.width, tile_size.height);
-        cr.fill ();
-
-        int animation = 0;
+    private int object_animation_frame (ObjectType type) {
         switch (type) {
         case ObjectType.PLAYER:
             if (game.state != Game.State.DEAD) {
-                animation = player_animation.frame;
+                return player_animation.frame;
             } else {
-                animation = player_dead_animation.frame;
+                return player_dead_animation.frame;
             }
-            break;
         case ObjectType.ROBOT1:
-            animation = robot1_animation.frame;
-            break;
+            return robot1_animation.frame;
         case ObjectType.ROBOT2:
-            animation = robot2_animation.frame;
-            break;
+            return robot2_animation.frame;
         case ObjectType.HEAP:
-            animation = 0;
-            break;
+            return 0;
         case ObjectType.NONE:
-            break;
+        default:
+            return 0;
         }
-
-        cr.save ();
-        cr.translate (x, y);
-        theme.draw_object (type, animation, cr, tile_size.width, tile_size.height);
-        cr.restore ();
     }
 
     private bool timer_cb () {

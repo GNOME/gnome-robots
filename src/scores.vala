@@ -18,7 +18,6 @@
  */
 
 using Gtk;
-using Cairo;
 using Games;
 
 public class RobotsScoresContext : Games.Scores.Context {

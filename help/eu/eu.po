@@ -1,18 +1,18 @@
 # Basque translation for gnome-robots.
 # Copyright (C) 2021 gnome-robots's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-robots package.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2021.
+# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2021, 2022.
 #
 msgid ""
 msgstr "Project-Id-Version: gnome-robots master\n"
-"POT-Creation-Date: 2021-08-26 16:11+0000\n"
-"PO-Revision-Date: 2021-08-26 16:11+0000\n"
+"POT-Creation-Date: 2021-09-06 10:02+0000\n"
+"PO-Revision-Date: 2022-05-09 16:11+0000\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: eu\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -35,7 +35,7 @@ msgstr "Rachel Dunstan"
 #. (itstool) path: info/desc
 #: C/appearance.page:25
 msgid "Use different game-themes in <app>Robots</app>."
-msgstr ""
+msgstr "Erabili joko-gai desberdinak <app>Robotak</app> aplikazioan."
 
 #. (itstool) path: page/title
 #: C/appearance.page:28
@@ -47,7 +47,7 @@ msgstr "Aldatu jokoaren itxura lehenetsia"
 msgid ""
 "You can change the <app>Robots</app> backdrop and the different robots that "
 "are present in a game by changing the game theme and background."
-msgstr ""
+msgstr "<app>Robotak</app> aplikazioaren atzekoak eta jokoetan ageri diren robot desberdinak aldatu daitezke jokoaren gaia eta atzeko planoa aldatuta."
 
 #. (itstool) path: steps/title
 #: C/appearance.page:34
@@ -61,7 +61,7 @@ msgstr "Jokoaren gaia eta atzeko planoa aldatzeko:"
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Preferences</gui>."
-msgstr ""
+msgstr "Sakatu goiko eskuineko izkinan dagoen menu-botoia eta hautatu <gui style=\"menuitem\">Hobespenak</gui>."
 
 #. (itstool) path: item/p
 #: C/appearance.page:39
@@ -79,7 +79,7 @@ msgid ""
 "To change your background color, click the button next to <gui>Background "
 "color</gui>. Select a color from the available choices and click <gui style="
 "\"button\">Select</gui>."
-msgstr ""
+msgstr "Atzeko planoaren kolorea aldatzeko, egin klik <gui>Atzeko planoaren kolorea</gui> aukeraren alboan dagoen botoian. Aukeratu erabiliko den kolorea kolore-laginean eta egin klik <gui style=\"button\">Hautatu</gui> aukeran."
 
 #. (itstool) path: info/desc
 #: C/basics.page:25
@@ -102,7 +102,7 @@ msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">New Game</gui>, or press <keyseq><key>Ctrl</key><key>N</"
 "key></keyseq> to start a new game."
-msgstr ""
+msgstr "Sakatu leihoaren goiko eskuineko izkinan dagoen menu-botoia eta hautatu <gui style=\"menuitem\">Joko berria</gui>, edo sakatu <keyseq><key>Ctrl</key><key>N</key></keyseq> joko berria abiarazteko."
 
 #. (itstool) path: section/title
 #: C/basics.page:39
@@ -114,7 +114,7 @@ msgstr "Gaitu soinuak"
 msgid ""
 "Then select the <gui>Game</gui> tab and check <gui style=\"checkbox\">Enable "
 "sounds</gui>."
-msgstr ""
+msgstr "Ondoren, hautatu <gui>Jokoa</gui> fitxa eta markatu <gui style=\"checkbox\">Gaitu soinuak</gui>."
 
 #. (itstool) path: section/title
 #: C/basics.page:46
@@ -126,39 +126,39 @@ msgstr "<app>Nibbles</app> jokotik irtetea"
 msgid ""
 "Press the close button in the title bar, or press <keyseq><key>Ctrl</"
 "key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
-msgstr ""
+msgstr "Sakatu goiburu-barran dagoen itxiera-botoia edo sakatu <keyseq><key>Ctrl</key><key>Q</key></keyseq> <app>Robotak</app> jokotik edozein momentutan irteteko."
 
 #. (itstool) path: info/desc
 #: C/controls-change.page:20
 msgid "Change the default keys in <app>Robots</app>."
-msgstr ""
+msgstr "Aldatu <app>Robotak</app> aplikazioaren tekla lehenetsiak."
 
 #. (itstool) path: page/title
 #: C/controls-change.page:23
 msgid "Customize the keyboard controls"
-msgstr ""
+msgstr "Pertsonalizatu teklatuko kontrolak"
 
 #. (itstool) path: page/p
 #: C/controls-change.page:25
 msgid ""
 "The <link xref=\"controls-default\">default controls</link> can be changed "
 "in <app>Robots</app> to suit your preference."
-msgstr ""
+msgstr "<link xref=\"controls-default\">Kontrol lehenetsiak</link> aldatu egin daitezke <app>Robotak</app> aplikazioan, zure nahietara hobeto egokitzeko."
 
 #. (itstool) path: steps/title
 #: C/controls-change.page:29
 msgid "To change the default keys:"
-msgstr ""
+msgstr "Tekla lehenetsiak aldatzeko:"
 
 #. (itstool) path: item/p
 #: C/controls-change.page:34
 msgid "Select the <gui>Keyboard</gui> tab."
-msgstr ""
+msgstr "Hautatu <gui>Teklatua</gui> fitxa."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:37
 msgid "In the list, select the key that you want to change."
-msgstr ""
+msgstr "Zerrendan, hautatu aldatuko nahi den tekla."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:40
@@ -166,56 +166,56 @@ msgid ""
 "Either click on the control in the second column, or press the <key>Enter</"
 "key> key. The words <gui>New accelerator…</gui> are now present in place of "
 "the old control."
-msgstr ""
+msgstr "Egin klik bigarren zutabeko kontrolean edo sakatu <gui>Enter</gui> tekla. <gui>Bizkortzaile berria…</gui> hitzak agertuko dira kontrol zaharraren ordez."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:45
 msgid "Press the key you want to use instead of the default key."
-msgstr ""
+msgstr "Sakatu tekla lehenetsiaren ordez erabili nahi duzun tekla."
 
 #. (itstool) path: note/p
 #: C/controls-change.page:47
 msgid "To keep the old setting, press <key>Esc</key>."
-msgstr ""
+msgstr "Ezarpen zaharra mantentzeko, sakatu <key>Esc</key>."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:51
 msgid "Repeat the above steps to change any other default keys."
-msgstr ""
+msgstr "Errepikatu goiko urratsak beste tekla lehenetsiak aldatzeko."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:54
 msgid "Close the <gui>Preferences</gui> dialog."
-msgstr ""
+msgstr "Itxi <gui>Hobespenak</gui> elkarrizketa-koadroa."
 
 #. (itstool) path: note/p
 #: C/controls-change.page:59
 msgid ""
 "You can always reset the controls to the default controls by clicking the "
 "<gui style=\"button\">Restore Defaults</gui> button."
-msgstr ""
+msgstr "Kontrolak leheneratzeko eta lehenespenetara itzultzeko, egin klik <gui style=\"button\">Itzuli lehenespenetara</gui> botoia."
 
 #. (itstool) path: info/desc
 #: C/controls-default.page:25
 msgid "How do I control the main character?"
-msgstr ""
+msgstr "Nola kontrolatzen da pertsonaia nagusia?"
 
 #. (itstool) path: page/title
 #: C/controls-default.page:28
 msgid "Mouse and keyboard controls for <app>Robots</app>"
-msgstr ""
+msgstr "Sagu bidezko eta teklatu bidezko kontrolak <app>Robotak</app> aplikazioan"
 
 #. (itstool) path: section/title
 #: C/controls-default.page:31
 msgid "Keyboard controls"
-msgstr ""
+msgstr "Teklatu-kontrolak"
 
 #. (itstool) path: section/p
 #: C/controls-default.page:33
 msgid ""
 "Use the following keys from the numeric keypad on the far right of your "
 "keyboard, to move in <app>Robots</app>."
-msgstr ""
+msgstr "Erabili zenbakizko teklatuaren hurrengo teklak <app>Robotak</app> aplikazioan mugitzeko."
 
 #. (itstool) path: td/p
 #: C/controls-default.page:39
@@ -315,12 +315,12 @@ msgstr "Gelditu toki berean (txanda bat)"
 #. (itstool) path: td/p
 #: C/controls-default.page:78
 msgid "Space"
-msgstr ""
+msgstr "Lekua"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:81
 msgid "Teleport safely"
-msgstr ""
+msgstr "Aldendu modu seguruan"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:82
@@ -330,40 +330,40 @@ msgstr "<keyseq><key>Alt</key><key>s</key></keyseq>"
 #. (itstool) path: td/p
 #: C/controls-default.page:85
 msgid "Teleport randomly"
-msgstr ""
+msgstr "Aldendu ausaz"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:86
 msgid "<keyseq><key>Alt</key><key>r</key></keyseq>"
-msgstr ""
+msgstr "<keyseq><key>Alt</key><key>r</key></keyseq>"
 
 #. (itstool) path: td/p
 #. (itstool) path: item/title
 #: C/controls-default.page:89 C/controls-default.page:120
 msgid "Wait for the robots"
-msgstr ""
+msgstr "Itxaron robotei"
 
 #. (itstool) path: td/p
 #: C/controls-default.page:90
 msgid "<keyseq><key>Alt</key><key>w</key></keyseq>"
-msgstr ""
+msgstr "<keyseq><key>Alt</key><key>w</key></keyseq>"
 
 #. (itstool) path: note/p
 #: C/controls-default.page:96
 msgid ""
 "You can <link xref=\"controls-change\">change</link> the default controls to "
 "suit your preference."
-msgstr ""
+msgstr "Kontrol lehenetsiak <link xref=\"controls-change\">aldatu</link> egin daitezke nahieran."
 
 #. (itstool) path: section/title
 #: C/controls-default.page:103
 msgid "Use the mouse to move around"
-msgstr ""
+msgstr "Erabili sagua leku batetik bestera joateko"
 
 #. (itstool) path: item/title
 #: C/controls-default.page:107
 msgid "Move in a particular direction"
-msgstr ""
+msgstr "Mugitu norabide jakin batean"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:108
@@ -373,50 +373,50 @@ msgid ""
 "you click. For example, to move north, if you move your cursor to the column "
 "above the main character, a small black arrow will appear pointing "
 "northwards. On clicking, the character will move one square northwards."
-msgstr ""
+msgstr "Sagua pertsonaia nagusiaren inguruan mugitzen denean, gezi beltz txiki bat agertzen da klik egitean pertsonaia mugituko den tokia adierazteko. Adibidez, iparraldera mugitzeko, kurtsorea pertsonaia nagusiaren gaineko zutabera eramaten bada, gezi beltz txiki bat agertuko da iparralderantz begira. Klik egitean, pertsonaia lauki bat iparralderantz mugituko da."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:116
 msgid "Stay in the same position"
-msgstr ""
+msgstr "Geratu toki berean"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:117
 msgid "Click on the main character to stay put in the same square."
-msgstr ""
+msgstr "Egin klik pertsonaia nagusian koadro berean geratzeko."
 
 #. (itstool) path: item/p
 #: C/controls-default.page:121
 msgid ""
 "Click the <gui>Wait for Robots</gui> button to wait for the enemy robots to "
 "finish making all their moves."
-msgstr ""
+msgstr "Egin klik <gui>Itxaron robotei</gui> botoian robot etsaiek beren mugimendu guztiak egin arte itxaroteko."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:125 C/moves.page:56
 msgid "Safe teleports"
-msgstr ""
+msgstr "Aldentze seguruak"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:126
 msgid "To safely teleport, click the <gui>Teleport Safely</gui> button."
-msgstr ""
+msgstr "Modu seguruan aldentzeko, egin klik <gui>Aldendu modu seguruan</gui> botoian."
 
 #. (itstool) path: item/title
 #: C/controls-default.page:129 C/moves.page:62
 msgid "Random teleports"
-msgstr ""
+msgstr "Ausazko aldentzeak"
 
 #. (itstool) path: item/p
 #: C/controls-default.page:130
 msgid ""
 "To teleport to a random spot, click the <gui>Teleport Randomly</gui> button."
-msgstr ""
+msgstr "Ausazko gune batera aldentzeko, egin klik <gui>Aldendu ausaz</gui> botoian."
 
 #. (itstool) path: info/desc
 #: C/game-types.page:24
 msgid "Change the level of difficulty in <app>Robots</app>."
-msgstr ""
+msgstr "Aldatu <app>Robotak</app> aplikazioaren zailtasun-maila."
 
 #. (itstool) path: page/title
 #: C/game-types.page:27
@@ -429,7 +429,7 @@ msgid ""
 "You can play <app>Robots</app> in different ways by choosing a different "
 "game type. This changes the level of difficulty involved in playing "
 "<app>Robots</app>."
-msgstr ""
+msgstr "<app>Robotak</app> aplikazioan hainbat modutara jokatu daiteke, joko mota desberdinak hautatuta. Zailtasun-maila aldatu daiteke horrela."
 
 #. (itstool) path: steps/title
 #: C/game-types.page:34
@@ -445,7 +445,7 @@ msgstr "Hautatu <gui>Jokoa</gui> fitxa."
 #: C/game-types.page:42
 msgid ""
 "From the drop down menu next to <gui>Game Type</gui>, choose your option."
-msgstr ""
+msgstr "<gui>Joko mota</gui> alboan dagoen goitibeherako menuan, aukeratu nahi duzuna."
 
 #. (itstool) path: td/p
 #: C/game-types.page:47
@@ -455,29 +455,29 @@ msgstr "Joko mota"
 #. (itstool) path: td/p
 #: C/game-types.page:48
 msgid "Initial safe <link xref=\"moves#teleport\">teleports</link>"
-msgstr ""
+msgstr "Hasierako <link xref=\"moves#teleport\">aldentze</link> seguruak"
 
 #. (itstool) path: td/p
 #: C/game-types.page:50
 msgid ""
 "Initial <link xref=\"scores#high-low-risk\">low-risk enemy robots</link>"
-msgstr ""
+msgstr "Hasierako <link xref=\"scores#high-low-risk\">arrisku txikiko robot etsaiak</link>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:53
 msgid ""
 "Initial <link xref=\"scores#high-low-risk\">high-risk enemy robots</link>"
-msgstr ""
+msgstr "Hasierako <link xref=\"scores#high-low-risk\">arrisku handiko robot etsaiak</link>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:56
 msgid "Do safe teleports increase in successive levels?"
-msgstr ""
+msgstr "Hurrengo mailetan aldetze seguru gehiago al daude?"
 
 #. (itstool) path: td/p
 #: C/game-types.page:61
 msgid "<gui>nightmare</gui>"
-msgstr ""
+msgstr "<gui>amesgaiztoa</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:62 C/game-types.page:63 C/game-types.page:71
@@ -510,12 +510,12 @@ msgstr "1"
 msgid ""
 "Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
 "link>"
-msgstr ""
+msgstr "Bai, baina robotak <link xref=\"moves#wait\">zain</link> dauden bitartean hiltzen badira soilik"
 
 #. (itstool) path: td/p
 #: C/game-types.page:76
 msgid "<gui>robots with safe teleport</gui>"
-msgstr ""
+msgstr "<gui>aldentze segurua duten robotak</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:77 C/game-types.page:79 C/game-types.page:85
@@ -531,7 +531,7 @@ msgstr "10"
 #. (itstool) path: td/p
 #: C/game-types.page:84
 msgid "<gui>classic robots</gui>"
-msgstr ""
+msgstr "<gui>robot klasikoak</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:88
@@ -541,7 +541,7 @@ msgstr "Ez"
 #. (itstool) path: td/p
 #: C/game-types.page:91
 msgid "<gui>robots2 easy</gui>"
-msgstr "<gui>robots2 easy</gui>"
+msgstr "<gui>robot errazak</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:92
@@ -558,7 +558,7 @@ msgid ""
 "prevent you from making any move in this case, so that you are forced to "
 "teleport. This reduces the level of difficulty. You can always uncheck these "
 "if you find the game too easy."
-msgstr ""
+msgstr "<gui style=\"checkbox\">Erabili mugimendu seguruak</gui> kontrol-laukia markatzen bada, jokoak eragotzi egingo du mugimendu bat egin dezazun mugimendu horren ondorioz robot batek zu hiltzea eragiten badu, bizirauteko modu bakarra aldentzea bada salbu. <gui style=\"checkbox\">Erabili mugimendu seguru-seguruak</gui> kontrol-laukia markatuta, kasu horretan mugimendurik egin dezazun eragotziko du, eta aldentzea beste aukerarik ez duzu izango. Aukera horiek desgaitu egin daitezke jokoa errazegia bada."
 
 #. (itstool) path: info/title
 #: C/index.page:7
@@ -595,12 +595,12 @@ msgid ""
 "The aim of the game is to destroy all the robots by getting them to crash "
 "into each other or into junk heaps from previous collisions, without them "
 "crashing into you."
-msgstr ""
+msgstr "<app>Robotak</app> izen bereko UNIX komando-lerroko jokoan oinarrituta dago. Jokoaren xedea robot guztiak suntsitzea da, elkarrekin talka egin dezaten edo aurreko talketako hondakinetan erori daitezen lortuz, haiek zurekin talka egin dezaten saihetsita."
 
 #. (itstool) path: section/title
 #: C/index.page:36
 msgid "Game play"
-msgstr ""
+msgstr "Jokoa"
 
 #. (itstool) path: section/title
 #: C/index.page:40
@@ -620,12 +620,12 @@ msgstr "Lan honen lizentzia <_:link-1/> da."
 #. (itstool) path: info/desc
 #: C/moves.page:21
 msgid "How can I move around in <app>Robots</app>?"
-msgstr ""
+msgstr "Nola mugituko naiz <app>Robotak</app> aplikazioan?"
 
 #. (itstool) path: page/title
 #: C/moves.page:24
 msgid "Different moves in <app>Robots</app>"
-msgstr ""
+msgstr "<app>Robotak</app> aplikazioko mugimendu desberdinak"
 
 #. (itstool) path: page/p
 #: C/moves.page:26
@@ -634,7 +634,7 @@ msgid ""
 "robots, or teleport. The enemy robots and the main character take turns to "
 "make their move. So, after each of your moves, the enemy robots try to make "
 "a move that gets them closer to you."
-msgstr ""
+msgstr "Zortzi norabidetako batean mugitu zaitezke, robotei itxaron diezaiekezu edo aldedu egin zaitezke. Robot etsaiak eta pertsonaia nagusia txandaka mugitzen dira. Zu mugitu ondoren, robot etsaiak zugana hurbiltzen saiatzeko mugimendu bat egingo dute."
 
 #. (itstool) path: section/title
 #: C/moves.page:32
@@ -645,7 +645,7 @@ msgstr "Oinarrizko mugimenduak"
 #: C/moves.page:34
 msgid ""
 "In one turn, you can move to any adjacent square. You may move diagonally."
-msgstr ""
+msgstr "Txanda batean, alboko edozein koadrotara joan zaitezke. Zeharka ere lekuz aldatu zaitezke."
 
 #. (itstool) path: section/title
 #: C/moves.page:39
@@ -658,12 +658,12 @@ msgid ""
 "You can stay put and wait for the robots to finish making all their moves. "
 "This is not advisable unless there are very few robots and you are "
 "absolutely sure that they will all perish before reaching you."
-msgstr ""
+msgstr "Geldi geratu eta robot guztiek beren mugimenduak egin ditzaten itxaron dezakezu. Hori ez da gomendagarria, ezpada robot gutxi daudela eta erabat ziur zaudela denak hilko direla zugana iritsi baino lehen."
 
 #. (itstool) path: section/title
 #: C/moves.page:48
 msgid "Teleport to a different location"
-msgstr ""
+msgstr "Aldetu beste toki batera"
 
 #. (itstool) path: section/p
 #: C/moves.page:50
@@ -671,14 +671,14 @@ msgid ""
 "If there are no moves possible or if you want to make a leap across the "
 "board instead of moving square by square, you can teleport. There are two "
 "types of teleports available."
-msgstr ""
+msgstr "Ez badago mugimendu posiblerik edo taularen alde batetik bestera jauzia egin nahi baduzu, aldendu egin zaitezke. Bi aldentze mota daude."
 
 #. (itstool) path: item/p
 #: C/moves.page:57
 msgid ""
 "Safe teleports move the main character to a location that is safe from enemy "
 "robots. In each game only a few safe teleports are allowed."
-msgstr ""
+msgstr "Aldentze seguruetan, pertsonaia nagusia toki seguru batera doa. Joko bakoitzean aldentze seguru gutxi batzuk soilik egin daitezke."
 
 #. (itstool) path: item/p
 #: C/moves.page:63
@@ -686,12 +686,12 @@ msgid ""
 "Use random teleports to teleport to a random location that may be safe or "
 "may not be safe. You can use as many random teleports as you want during a "
 "game."
-msgstr ""
+msgstr "Erabili ausazko aldentzeak ausazko toki batera joateko. Tokia segurua izan daiteke edo ez. Nahi adina ausazko aldentze erabili daitezke joko batean."
 
 #. (itstool) path: info/desc
 #: C/scores.page:24
 msgid "Scoring points in <app>Robots</app>"
-msgstr ""
+msgstr "Puntuak eskuratzea <app>Robots</app> jokoan"
 
 #. (itstool) path: page/title
 #: C/scores.page:27
@@ -704,19 +704,19 @@ msgid ""
 "There are two type of enemies in <app>Robots</app>: high-risk enemies which "
 "give you 20 points when they die and low-risk enemies which give you 10 "
 "points when they die."
-msgstr ""
+msgstr "Bii etsai mota daude <app>Robots</app> jokoan: arrisku handiko etsaiek 20 puntu ematen dituzte hiltzen direnean, eta arrisku baxuko etsaiek 10 puntu."
 
 #. (itstool) path: section/title
 #: C/scores.page:34
 msgid "High and low risk enemies by theme"
-msgstr ""
+msgstr "Arrisku handiko eta txiki etsaiak, gaika"
 
 #. (itstool) path: section/p
 #: C/scores.page:36
 msgid ""
 "The enemies in a game depend on the <link xref=\"appearance\">game theme</"
 "link> chosen."
-msgstr ""
+msgstr "Joko bateko etsaiak desberdinak dira hautatzen den <link xref=\"appearance\">joko-gai</link> bakoitzeko."
 
 #. (itstool) path: td/p
 #: C/scores.page:42
@@ -726,189 +726,189 @@ msgstr "Jokoaren gaia"
 #. (itstool) path: td/p
 #: C/scores.page:43
 msgid "High-risk enemy (20 points)"
-msgstr ""
+msgstr "Arrisku handiko etsaia (20 puntu)"
 
 #. (itstool) path: td/p
 #: C/scores.page:44
 msgid "Low-risk enemy (10 points)"
-msgstr ""
+msgstr "Arrisku txikiko etsaia (10 puntu)"
 
 #. (itstool) path: td/p
 #: C/scores.page:48
 msgid "anthills"
-msgstr ""
+msgstr "inurritegiak"
 
 #. (itstool) path: media/span
 #: C/scores.page:51
 msgid "High-risk anthill"
-msgstr ""
+msgstr "Arrisku handiko inurritegia"
 
 #. (itstool) path: media/span
 #: C/scores.page:54
 msgid "Low-risk anthill"
-msgstr ""
+msgstr "Arrisku txikiko inurritegia"
 
 #. (itstool) path: td/p
 #: C/scores.page:57
 msgid "boo"
-msgstr ""
+msgstr "boo"
 
 #. (itstool) path: media/span
 #: C/scores.page:60
 msgid "High-risk bat"
-msgstr ""
+msgstr "Arrisku handiko saguzarra"
 
 #. (itstool) path: media/span
 #: C/scores.page:63
 msgid "Low-risk ghost"
-msgstr ""
+msgstr "Arrisku handiko mamua"
 
 #. (itstool) path: td/p
 #: C/scores.page:66
 msgid "cows"
-msgstr ""
+msgstr "behiak"
 
 #. (itstool) path: media/span
 #: C/scores.page:69
 msgid "High-risk cow"
-msgstr ""
+msgstr "Arrisku handiko behia"
 
 #. (itstool) path: media/span
 #: C/scores.page:72
 msgid "Low-risk cow"
-msgstr ""
+msgstr "Arrisku txikiko behia"
 
 #. (itstool) path: td/p
 #: C/scores.page:75
 msgid "eggs"
-msgstr ""
+msgstr "arrautzak"
 
 #. (itstool) path: media/span
 #: C/scores.page:79
 msgid "High-risk egg"
-msgstr ""
+msgstr "Arrisku handiko arrautza"
 
 #. (itstool) path: media/span
 #: C/scores.page:83
 msgid "Low-risk egg"
-msgstr ""
+msgstr "Arrisku txikiko arrautza"
 
 #. (itstool) path: td/p
 #: C/scores.page:86
 msgid "gnomes"
-msgstr ""
+msgstr "gnomoak"
 
 #. (itstool) path: media/span
 #: C/scores.page:89
 msgid "High-risk gnome"
-msgstr ""
+msgstr "Arrisku handiko gnomoa"
 
 #. (itstool) path: media/span
 #: C/scores.page:92
 msgid "Low-risk gnome"
-msgstr ""
+msgstr "Arrisku txikiko gnomoa"
 
 #. (itstool) path: td/p
 #: C/scores.page:95
 msgid "mice"
-msgstr ""
+msgstr "saguak"
 
 #. (itstool) path: media/span
 #: C/scores.page:98
 msgid "High-risk mouse"
-msgstr ""
+msgstr "Arrisku handiko sagua"
 
 #. (itstool) path: media/span
 #: C/scores.page:101
 msgid "Low-risk mouse"
-msgstr ""
+msgstr "Arrisku txikiko sagua"
 
 #. (itstool) path: td/p
 #: C/scores.page:104
 msgid "robots"
-msgstr ""
+msgstr "robotak"
 
 #. (itstool) path: media/span
 #: C/scores.page:107
 msgid "High-risk robot"
-msgstr ""
+msgstr "Arrisku handiko robota"
 
 #. (itstool) path: media/span
 #: C/scores.page:110
 msgid "Low-risk robot"
-msgstr ""
+msgstr "Arrisku txikiko robota"
 
 #. (itstool) path: td/p
 #: C/scores.page:112
 msgid "spills"
-msgstr ""
+msgstr "isuriak"
 
 #. (itstool) path: media/span
 #: C/scores.page:116
 msgid "High-risk spill"
-msgstr ""
+msgstr "Arrisku handiko isuria"
 
 #. (itstool) path: media/span
 #: C/scores.page:119
 msgid "Low-risk spill"
-msgstr ""
+msgstr "Arrisku txikiko isuria"
 
 #. (itstool) path: td/p
 #: C/scores.page:122
 msgid "stormclouds"
-msgstr ""
+msgstr "ekaitz-hodeiak"
 
 #. (itstool) path: media/span
 #: C/scores.page:125
 msgid "High-risk stormcloud"
-msgstr ""
+msgstr "Arrisku handiko ekaitz-hodeiak"
 
 #. (itstool) path: media/span
 #: C/scores.page:128
 msgid "Low-risk stormcloud"
-msgstr ""
+msgstr "Arrisku txikiko ekaitz-hodeiak"
 
 #. (itstool) path: td/p
 #: C/scores.page:131
 msgid "toasters"
-msgstr ""
+msgstr "txigorgailuak"
 
 #. (itstool) path: media/span
 #: C/scores.page:134
 msgid "High-risk toaster"
-msgstr ""
+msgstr "Arrisku handiko txigorgailua"
 
 #. (itstool) path: media/span
 #: C/scores.page:137
 msgid "Low-risk toaster"
-msgstr ""
+msgstr "Arrisku txikiko txigorgailua"
 
 #. (itstool) path: td/p
 #: C/scores.page:140
 msgid "ufo"
-msgstr ""
+msgstr "OHEak"
 
 #. (itstool) path: media/span
 #: C/scores.page:143
 msgid "High-risk UFO"
-msgstr ""
+msgstr "Arrisku handiko OHEa"
 
 #. (itstool) path: media/span
 #: C/scores.page:146
 msgid "Low-risk UFO"
-msgstr ""
+msgstr "Arrisku txikiko OHEa"
 
 #. (itstool) path: section/title
 #: C/scores.page:154
 msgid "High scores"
-msgstr ""
+msgstr "Puntuazio altuak"
 
 #. (itstool) path: section/p
 #: C/scores.page:156
 msgid ""
 "Press the menu button in the top-right corner of the window and select <gui "
 "style=\"menuitem\">Scores</gui> to view the high scores."
-msgstr ""
+msgstr "Sakatu goiko eskuineko izkinako menu-botoia eta hautatu <gui style=\"menuitem\">Puntuazioak</gui> puntuazio altuenak ikusteko."
 
 #. (itstool) path: section/p
 #: C/scores.page:159
@@ -917,4 +917,4 @@ msgid ""
 "types\">game type and safe move option</link>. Use the drop-down menu next "
 "to <gui>Map</gui> to view scores for a particular game type and safe move "
 "option combination."
-msgstr ""
+msgstr "Puntuazioak bereizita gordetzen dira <link xref=\"game-types\">joko motaren eta mugimendu seguruaren aukeraren</link> arabera. Erabili <gui>Mapa</gui> aukeraren alboko goitibeherako menua joko mota baten eta mugimendu seguruaren aukera baten konbinazio baterako puntuazioak ikusteko."

@@ -4,20 +4,21 @@
 # Mario Blättermann <mariobl@gnome.org>, 2008, 2009, 2012, 2013, 2020.
 # Hendrik Richter <hendrikr@gnome.org>, 2008.
 # Benjamin Steinwender <b@stbe.at>, 2014.
+# Jürgen Benvenuti <gastornis@posteo.org>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots manual master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-25 22:33+0000\n"
-"PO-Revision-Date: 2020-09-07 20:52+0200\n"
-"Last-Translator: Tim Sabsch <tim@sabsch.com>\n"
+"POT-Creation-Date: 2022-05-09 18:06+0000\n"
+"PO-Revision-Date: 2022-07-23 11:39+0200\n"
+"Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -27,11 +28,12 @@ msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com>, 2008, 2009, 2012, 2013, "
 "2020\n"
 "Christian Kirbach <christian.kirbach@gmail.com>, 2014,2015\n"
-"Benjamin Steinwender <b@stbe.at>, 2014"
+"Benjamin Steinwender <b@stbe.at>, 2014\n"
+"Jürgen Benvenuti <gastornis@posteo.org>, 2022"
 
 #. (itstool) path: credit/name
 #: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
-#: C/controls-default.page:17 C/game-types.page:16 C/index.page:14
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:18
 #: C/moves.page:17 C/scores.page:16
 msgid "Aruna Sankaranarayanan"
 msgstr "Aruna Sankaranarayanan"
@@ -45,7 +47,7 @@ msgstr "Rachel Dunstan"
 #. (itstool) path: info/desc
 #: C/appearance.page:25
 msgid "Use different game-themes in <app>Robots</app>."
-msgstr "So verwenden Sie verschiedene Themen in <app>Robots</app>."
+msgstr "So verwenden Sie verschiedene Themen in <app>Roboter</app>."
 
 #. (itstool) path: page/title
 #: C/appearance.page:28
@@ -58,7 +60,7 @@ msgid ""
 "You can change the <app>Robots</app> backdrop and the different robots that "
 "are present in a game by changing the game theme and background."
 msgstr ""
-"Ändern Sie den Hintergrund in <app>Robots</app> und das Erscheinungsbild "
+"Ändern Sie den Hintergrund in <app>Roboter</app> und das Erscheinungsbild "
 "verschiedener Roboter durch Ändern des Spielthemas und des Hintergrundes."
 
 #. (itstool) path: steps/title
@@ -91,8 +93,8 @@ msgstr "Wählen Sie ein Thema aus dem Auswahlmenü <gui>Bildthema</gui>."
 #: C/appearance.page:45
 msgid ""
 "To change your background color, click the button next to <gui>Background "
-"color</gui>. Select a color from the available choices and click <gui style="
-"\"button\">Select</gui>."
+"color</gui>. Select a color from the available choices and click <gui "
+"style=\"button\">Select</gui>."
 msgstr ""
 "Um die gewünschte Farbe zu wählen, klicken Sie auf den Knopf neben "
 "<gui>Hintergrundfarbe</gui>. Wählen Sie eine verfügbare Farbe und klicken "
@@ -135,13 +137,13 @@ msgid ""
 "Then select the <gui>Game</gui> tab and check <gui style=\"checkbox\">Enable "
 "sounds</gui>."
 msgstr ""
-"Dann wählen Sie den Reiter <gui>Spiel</gui> und aktivieren <gui style="
-"\"checkbox\">Klang aktivieren</gui>."
+"Dann wählen Sie den Reiter <gui>Spiel</gui> und aktivieren Sie <gui "
+"style=\"checkbox\">Klang aktivieren</gui>."
 
 #. (itstool) path: section/title
 #: C/basics.page:46
 msgid "Quit <app>Robots</app>"
-msgstr "<app>Robots</app> beenden"
+msgstr "<app>Roboter</app> beenden"
 
 #. (itstool) path: section/p
 #: C/basics.page:48
@@ -150,13 +152,13 @@ msgid ""
 "key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
 msgstr ""
 "Klicken Sie auf den Schließen-Knopf in der Titelleiste oder drücken Sie "
-"<keyseq><key>Strg</key><key>Q</key></keyseq>, um <app>Robots</app> jederzeit "
-"zu beenden."
+"<keyseq><key>Strg</key><key>Q</key></keyseq>, um <app>Roboter</app> "
+"jederzeit zu beenden."
 
 #. (itstool) path: info/desc
 #: C/controls-change.page:20
 msgid "Change the default keys in <app>Robots</app>."
-msgstr "So ändern Sie die voreingestellten Tasten in <app>Robots</app>."
+msgstr "So ändern Sie die voreingestellten Tasten in <app>Roboter</app>."
 
 #. (itstool) path: page/title
 #: C/controls-change.page:23
@@ -170,7 +172,7 @@ msgid ""
 "in <app>Robots</app> to suit your preference."
 msgstr ""
 "So passen Sie die <link xref=\"controls-default\">voreingestellte Steuerung</"
-"link> in <app>Robots</app> nach Ihren Wünschen an."
+"link> in <app>Roboter</app> nach Ihren Wünschen an."
 
 #. (itstool) path: steps/title
 #: C/controls-change.page:29
@@ -196,7 +198,7 @@ msgid ""
 msgstr ""
 "Klicken Sie entweder auf das Bedienelement in der zweiten Spalte oder "
 "drücken Sie die <key>Eingabetaste</key>. Die Worte <gui>Neue "
-"Tastenkombination …</gui> erscheinen nun an Stelle der alten Kombination."
+"Tastenkombination …</gui> erscheinen nun anstelle der alten Kombination."
 
 #. (itstool) path: item/p
 #: C/controls-change.page:45
@@ -232,6 +234,7 @@ msgstr ""
 "wiederherstellen</gui> drücken, um die Steuerung auf die ursprünglichen "
 "Einstellungen zurückzusetzen."
 
+# main character wird hier übersetzt mit Hauptfigur, Hauptspielfigur und Hauptdarsteller. Ich habe das überall auf Hauptfigur angeglichen (außer euch gefällt ein anderer Ausdruck besser). - jb
 #. (itstool) path: info/desc
 #: C/controls-default.page:25
 msgid "How do I control the main character?"
@@ -240,7 +243,7 @@ msgstr "Wie wird die Hauptfigur gesteuert?"
 #. (itstool) path: page/title
 #: C/controls-default.page:28
 msgid "Mouse and keyboard controls for <app>Robots</app>"
-msgstr "Maus- und Tastatursteuerung in <app>Robots</app>"
+msgstr "Maus- und Tastatursteuerung in <app>Roboter</app>"
 
 #. (itstool) path: section/title
 #: C/controls-default.page:31
@@ -254,7 +257,7 @@ msgid ""
 "keyboard, to move in <app>Robots</app>."
 msgstr ""
 "Verwenden Sie die folgenden Tasten des Nummernblocks ganz rechts auf Ihrer "
-"Tastatur, um in <app>Robots</app> zu steuern."
+"Tastatur, um in <app>Roboter</app> zu steuern."
 
 #. (itstool) path: td/p
 #: C/controls-default.page:39
@@ -393,8 +396,8 @@ msgid ""
 "You can <link xref=\"controls-change\">change</link> the default controls to "
 "suit your preference."
 msgstr ""
-"Sie können die voreingestellte Steuerung nach Ihren Wünschen <link xref="
-"\"controls-default\">ändern</link>."
+"Sie können die voreingestellte Steuerung nach Ihren Wünschen <link "
+"xref=\"controls-default\">ändern</link>."
 
 #. (itstool) path: section/title
 #: C/controls-default.page:103
@@ -415,10 +418,10 @@ msgid ""
 "above the main character, a small black arrow will appear pointing "
 "northwards. On clicking, the character will move one square northwards."
 msgstr ""
-"Wenn Sie Ihre Maus um den Hauptdarsteller bewegen erscheint ein kleiner "
-"schwarzer Pfeil, der die Richtung andeutet, in der sich die Figur bei einem "
-"Mausklick hinbewegt. Um beispielsweise nach Norden zu steuern platzieren Sie "
-"den Mauszeiger in die Spalte über der Figur und ein kleiner Pfeil zeigt "
+"Wenn Sie Ihre Maus um die Hauptfigur bewegen, erscheint ein kleiner "
+"schwarzer Pfeil, der die Richtung andeutet, in die sich die Figur bei einem "
+"Mausklick hinbewegt. Um beispielsweise nach Norden zu steuern, platzieren "
+"Sie den Mauszeiger in die Spalte über der Figur und ein kleiner Pfeil zeigt "
 "nordwärts. Bei einem Mausklick bewegt sich die Figur ein Feld nach Norden."
 
 #. (itstool) path: item/title
@@ -429,8 +432,7 @@ msgstr "Auf der aktuellen Position bleiben"
 #. (itstool) path: item/p
 #: C/controls-default.page:117
 msgid "Click on the main character to stay put in the same square."
-msgstr ""
-"Klicken Sie auf den Hauptdarsteller, um im gleichen Quadrat zu verbleiben."
+msgstr "Klicken Sie auf die Hauptfigur, um im gleichen Quadrat zu verbleiben."
 
 #. (itstool) path: item/p
 #: C/controls-default.page:121
@@ -469,7 +471,7 @@ msgstr ""
 #. (itstool) path: info/desc
 #: C/game-types.page:24
 msgid "Change the level of difficulty in <app>Robots</app>."
-msgstr "So ändern Sie den Schwierigkeitsgrad in <app>Robots</app>."
+msgstr "So ändern Sie den Schwierigkeitsgrad in <app>Roboter</app>."
 
 #. (itstool) path: page/title
 #: C/game-types.page:27
@@ -483,9 +485,9 @@ msgid ""
 "game type. This changes the level of difficulty involved in playing "
 "<app>Robots</app>."
 msgstr ""
-"Man kann <app>Robots</app> auf verschiedene Weisen durch Wahl eines anderen "
-"Spieltyps spielen. Somit ändert sich auch der Schwierigkeitsgrad beim "
-"Spielen von <app>Robots</app>."
+"Man kann <app>Roboter</app> auf verschiedene Weisen durch die Wahl eines "
+"anderen Spieltyps spielen. Somit ändert sich auch der Schwierigkeitsgrad "
+"beim Spielen von <app>Roboter</app>."
 
 #. (itstool) path: steps/title
 #: C/game-types.page:34
@@ -512,7 +514,7 @@ msgstr "Spieltyp"
 #. (itstool) path: td/p
 #: C/game-types.page:48
 msgid "Initial safe <link xref=\"moves#teleport\">teleports</link>"
-msgstr "Anfangs sicheres <link xref=\"moves#teleport\">teleportieren</link> "
+msgstr "Anfangs sicheres <link xref=\"moves#teleport\">teleportieren</link>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:50
@@ -559,7 +561,7 @@ msgstr "Ja"
 #. (itstool) path: td/p
 #: C/game-types.page:68
 msgid "<gui>robots2</gui>"
-msgstr "<gui>Robots 2</gui>"
+msgstr "<gui>Roboter 2</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:69
@@ -578,7 +580,7 @@ msgstr ""
 #. (itstool) path: td/p
 #: C/game-types.page:76
 msgid "<gui>robots with safe teleport</gui>"
-msgstr "<gui>Robots mit sicherem Teleport</gui>"
+msgstr "<gui>Roboter mit sicherem Teleport</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:77 C/game-types.page:79 C/game-types.page:85
@@ -594,7 +596,7 @@ msgstr "10"
 #. (itstool) path: td/p
 #: C/game-types.page:84
 msgid "<gui>classic robots</gui>"
-msgstr "<gui>Klassisches Robots</gui>"
+msgstr "<gui>Klassisches Roboter</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:88
@@ -604,7 +606,7 @@ msgstr "Nein"
 #. (itstool) path: td/p
 #: C/game-types.page:91
 msgid "<gui>robots2 easy</gui>"
-msgstr "<gui>Robots 2 einfach</gui>"
+msgstr "<gui>Roboter 2 einfach</gui>"
 
 #. (itstool) path: td/p
 #: C/game-types.page:92
@@ -622,7 +624,7 @@ msgid ""
 "teleport. This reduces the level of difficulty. You can always uncheck these "
 "if you find the game too easy."
 msgstr ""
-"Wählen Sie das Ankreuzfeld <gui style=\"checkbox\">Sichere Züge verwenden</"
+"Wenn Sie das Ankreuzfeld <gui style=\"checkbox\">Sichere Züge verwenden</"
 "gui> auswählen, dann hindert Sie das Spiel an einem Spielzug, nach dem Sie "
 "ein Roboter vernichten würde, abgesehen von einem Teleport. Wenn Sie das "
 "Ankreuzfeld <gui style=\"checkbox\">Extrem sichere Züge verwenden</gui> "
@@ -631,18 +633,36 @@ msgstr ""
 "Schwierigkeitsgrad vermindert. Sie können diese Einstellungen jederzeit "
 "abwählen, wenn das Spiel für Sie zu einfach ist."
 
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Robots"
+msgstr "Roboter"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Robots"
+msgstr "Roboter"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Robots"
+msgstr "Roboter"
+
 #. (itstool) path: info/desc
-#: C/index.page:18
+#: C/index.page:22
 msgid "Index"
 msgstr "Inhalt"
 
 #. (itstool) path: page/title
-#: C/index.page:21
+#: C/index.page:25
 msgid "<_:media-1/> Robots"
-msgstr "<_:media-1/> Robots"
+msgstr "<_:media-1/> Roboter"
 
 #. (itstool) path: page/p
-#: C/index.page:26
+#: C/index.page:30
 msgid ""
 "<app>Robots</app> is based on the UNIX command-line game of the same name. "
 "The aim of the game is to destroy all the robots by getting them to crash "
@@ -652,15 +672,15 @@ msgstr ""
 "<app>Roboter</app> basiert auf dem gleichnamigen Spiel der UNIX "
 "Befehlszeile. Ziel des Spiels ist es, alle Roboter zu zerstören, indem diese "
 "miteinander oder mit früheren Kollisionsresten kollidieren. Dabei müssen Sie "
-"diese davon abhalten mit Ihnen zusammenzustoßen."
+"diese davon abhalten, mit Ihnen zusammenzustoßen."
 
 #. (itstool) path: section/title
-#: C/index.page:32
+#: C/index.page:36
 msgid "Game play"
 msgstr "Spielverlauf"
 
 #. (itstool) path: section/title
-#: C/index.page:36
+#: C/index.page:40
 msgid "Preferences"
 msgstr "Einstellungen"
 
@@ -676,15 +696,16 @@ msgstr ""
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Dieses Werk wird unter folgender Lizenz verbreitet: <_:link-1/>."
 
+# Manchmal ist Robots hier übersetzt, manchmal nicht. Ich habe alles eingedeutscht, wobei das Spiel selbst auch auf Deutsch GNOME Robots heißt. Vielleicht sollten wir den Namen des Spiels auch eindeutschen. - jb
 #. (itstool) path: info/desc
 #: C/moves.page:21
 msgid "How can I move around in <app>Robots</app>?"
-msgstr "Wie bewege ich mich in <app>Robots</app>?"
+msgstr "Wie bewege ich mich in <app>Roboter</app>?"
 
 #. (itstool) path: page/title
 #: C/moves.page:24
 msgid "Different moves in <app>Robots</app>"
-msgstr "Verschiedene Bewegungen in <app>Robots</app>"
+msgstr "Verschiedene Bewegungen in <app>Roboter</app>"
 
 #. (itstool) path: page/p
 #: C/moves.page:26
@@ -696,9 +717,8 @@ msgid ""
 msgstr ""
 "In <app>Roboter</app> können Sie sich in eine der acht Richtungen bewegen, "
 "auf die Roboter warten oder teleportieren. Feindliche Roboter und die "
-"Hauptspielfigur spielen abwechselnd rundenbasiert. Nach jedem Ihrer Züge "
-"sind die feindlichen Roboter an der Reihe und versuchen, sich Ihnen zu "
-"nähern."
+"Hauptfigur spielen abwechselnd rundenbasiert. Nach jedem Ihrer Züge sind die "
+"feindlichen Roboter an der Reihe und versuchen, sich Ihnen zu nähern."
 
 #. (itstool) path: section/title
 #: C/moves.page:32
@@ -726,9 +746,9 @@ msgid ""
 "absolutely sure that they will all perish before reaching you."
 msgstr ""
 "Sie können auf der Stelle verbleiben und auf den Zug aller Roboter warten. "
-"Dies ist nicht ratsam, es sei denn es sind nur sehr wenige Roboter vorhanden "
-"und Sie sind sich absolut sicher, dass alle verenden werden, bevor diese Sie "
-"erreichen."
+"Dies ist nicht ratsam, es sei denn, es sind nur sehr wenige Roboter "
+"vorhanden und Sie sind sich absolut sicher, dass alle verenden werden, bevor "
+"diese Sie erreichen."
 
 #. (itstool) path: section/title
 #: C/moves.page:48
@@ -770,7 +790,7 @@ msgstr ""
 #. (itstool) path: info/desc
 #: C/scores.page:24
 msgid "Scoring points in <app>Robots</app>"
-msgstr "Punkte in <app>Robots</app> erzielen"
+msgstr "Punkte in <app>Roboter</app> erzielen"
 
 #. (itstool) path: page/title
 #: C/scores.page:27
@@ -799,7 +819,7 @@ msgid ""
 "The enemies in a game depend on the <link xref=\"appearance\">game theme</"
 "link> chosen."
 msgstr ""
-"Die Spielgegener hängen vom gewählten <link xref=\"appearance\">Spielthema</"
+"Die Spielgegner hängen vom gewählten <link xref=\"appearance\">Spielthema</"
 "link> ab."
 
 #. (itstool) path: td/p
@@ -822,6 +842,7 @@ msgstr "Bedrohliche Gegner (10 Punkte)"
 msgid "anthills"
 msgstr "Ameisenbauten"
 
+# Im Original immer Einzahl, in der Übersetzung immer Mehrzahl. Ich lass das mal so stehen. - jb
 #. (itstool) path: media/span
 #: C/scores.page:51
 msgid "High-risk anthill"
@@ -901,8 +922,9 @@ msgstr "Mäuse"
 #. (itstool) path: media/span
 #: C/scores.page:98
 msgid "High-risk mouse"
-msgstr "Sehr gefährliche Maus"
+msgstr "Sehr gefährliche Mäuse"
 
+# Hier ist die Maus plötzlich in der Einzahl. Wir sollten uns für eine Variante entscheiden, EZ oder MZ. - jb
 #. (itstool) path: media/span
 #: C/scores.page:101
 msgid "Low-risk mouse"
@@ -943,11 +965,13 @@ msgstr "Bedrohliche Pfützen"
 msgid "stormclouds"
 msgstr "Gewitterwolken"
 
+# Einzahl in beiden Sprachen. Anpassen an den Rest, sprich, im Deutschen MZ? - jb
 #. (itstool) path: media/span
 #: C/scores.page:125
 msgid "High-risk stormcloud"
 msgstr "Sehr gefährliche Gewitterwolke"
 
+# s.o.
 #. (itstool) path: media/span
 #: C/scores.page:128
 msgid "Low-risk stormcloud"
@@ -1006,18 +1030,18 @@ msgid ""
 "to <gui>Map</gui> to view scores for a particular game type and safe move "
 "option combination."
 msgstr ""
-"Die Bestenlisten werden getrennt geführt für jede Kombination von <link xref="
-"\"game-types\">Spieltyp und Einstellung für sichere Züge</link>. Verwenden "
-"Sie das Auswahlmenü neben <gui>Karte</gui>, um die Bestenliste für einen "
-"bestimmten Spieltyp in Kombination mit einer Einstellung für sichere Züge zu "
-"sehen."
+"Die Bestenlisten werden getrennt geführt für jede Kombination von <link "
+"xref=\"game-types\">Spieltyp und Einstellung für sichere Züge</link>. "
+"Verwenden Sie das Auswahlmenü neben der <gui>Karte</gui>, um die Bestenliste "
+"für einen bestimmten Spieltyp in Kombination mit einer Einstellung für "
+"sichere Züge zu sehen."
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Preferences</gui> <gui style=\"menuitem"
-#~ "\">Appearance</gui></guiseq>."
+#~ "Select <guiseq><gui style=\"menu\">Preferences</gui> <gui "
+#~ "style=\"menuitem\">Appearance</gui></guiseq>."
 #~ msgstr ""
-#~ "Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui> <gui style="
-#~ "\"menuitem\">Erscheinungsbild</gui></guiseq>."
+#~ "Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui> <gui "
+#~ "style=\"menuitem\">Erscheinungsbild</gui></guiseq>."
 
 #~ msgid ""
 #~ "Select a theme from the drop-down menu available when you click the "
@@ -1027,20 +1051,20 @@ msgstr ""
 #~ "Knopf neben <gui>Bildthema</gui> klicken."
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Preferences</gui><gui style=\"menuitem"
-#~ "\">Game</gui></guiseq>. Check the <gui style=\"checkbox\">Enable sounds</"
-#~ "gui> checkbox to enable sounds."
+#~ "Select <guiseq><gui style=\"menu\">Preferences</gui><gui "
+#~ "style=\"menuitem\">Game</gui></guiseq>. Check the <gui "
+#~ "style=\"checkbox\">Enable sounds</gui> checkbox to enable sounds."
 #~ msgstr ""
-#~ "Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui><gui style="
-#~ "\"menuitem\">Spiel</gui></guiseq>. Wählen Sie das Ankreuzfeld <gui style="
-#~ "\"checkbox\">Klang aktivieren</gui>, um Töne einzuschalten. "
+#~ "Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui><gui "
+#~ "style=\"menuitem\">Spiel</gui></guiseq>. Wählen Sie das Ankreuzfeld <gui "
+#~ "style=\"checkbox\">Klang aktivieren</gui>, um Töne einzuschalten. "
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Preferences</gui><gui style=\"menuitem"
-#~ "\">Keyboard</gui></guiseq>."
+#~ "Select <guiseq><gui style=\"menu\">Preferences</gui><gui "
+#~ "style=\"menuitem\">Keyboard</gui></guiseq>."
 #~ msgstr ""
-#~ "Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui> <gui style="
-#~ "\"menuitem\">Tastatur</gui></guiseq>."
+#~ "Wählen Sie <guiseq><gui style=\"menu\">Einstellungen</gui> <gui "
+#~ "style=\"menuitem\">Tastatur</gui></guiseq>."
 
 #~ msgid ""
 #~ "To keep the old setting click <gui>New accelerator…</gui> again, right "
@@ -1064,11 +1088,12 @@ msgstr ""
 #~ "gui><gui>Einstellungen</gui><gui>Spiel</gui></guiseq>."
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">Game</gui><gui style=\"menuitem"
-#~ "\">Scores</gui></guiseq> to view the high scores."
+#~ "Select <guiseq><gui style=\"menu\">Game</gui><gui "
+#~ "style=\"menuitem\">Scores</gui></guiseq> to view the high scores."
 #~ msgstr ""
-#~ "Wählen Sie <guiseq><gui style=\"menu\">Spiel</gui> <gui style=\"menuitem"
-#~ "\">Punktestand</gui></guiseq>, um den Punktestand einzusehen."
+#~ "Wählen Sie <guiseq><gui style=\"menu\">Spiel</gui> <gui "
+#~ "style=\"menuitem\">Punktestand</gui></guiseq>, um den Punktestand "
+#~ "einzusehen."
 
 #~ msgid ""
 #~ "You can hide the toolbar that contains buttons to start a new game, wait "
@@ -1077,10 +1102,10 @@ msgstr ""
 #~ "<gui>Toolbar</gui> will disappear and the toolbar will be hidden."
 #~ msgstr ""
 #~ "Sie können die Werkzeugleiste mit den Knöpfen für »Neues Spiel«, »Warten« "
-#~ "und »Teleportieren« verstecken, in dem Sie <guiseq><gui style=\"menu"
-#~ "\">Ansicht</gui> <gui style=\"menuitem\">Werkzeugleiste</gui></guiseq> "
-#~ "wählen. Der kleine Hacken neben <gui>Werkzeugleiste</gui> wird abgewählt "
-#~ "und die Werkzeugleiste wird ausgeblendet."
+#~ "und »Teleportieren« verstecken, in dem Sie <guiseq><gui "
+#~ "style=\"menu\">Ansicht</gui> <gui style=\"menuitem\">Werkzeugleiste</"
+#~ "gui></guiseq> wählen. Der kleine Hacken neben <gui>Werkzeugleiste</gui> "
+#~ "wird abgewählt und die Werkzeugleiste wird ausgeblendet."
 
 #~ msgid "Start, quit and play <app>Robots</app> in fullscreen."
 #~ msgstr "<app>Robots</app> starten, im Vollbildmodus spielen und beenden."
@@ -1092,23 +1117,23 @@ msgstr ""
 #~ msgstr "<app>Robots</app> im Vollbildmodus spielen"
 
 #~ msgid ""
-#~ "Select <guiseq><gui style=\"menu\">View</gui> <gui style=\"menuitem"
-#~ "\">Fullscreen</gui></guiseq> or press <key>F11</key> to play your game in "
-#~ "fullscreen mode. You can return to the default screen size by pressing "
-#~ "<key>F11</key> again."
+#~ "Select <guiseq><gui style=\"menu\">View</gui> <gui "
+#~ "style=\"menuitem\">Fullscreen</gui></guiseq> or press <key>F11</key> to "
+#~ "play your game in fullscreen mode. You can return to the default screen "
+#~ "size by pressing <key>F11</key> again."
 #~ msgstr ""
-#~ "Wählen Sie <guiseq><gui style=\"menu\">Ansicht</gui> <gui style=\"menuitem"
-#~ "\">Vollbild</gui></guiseq> oder drücken Sie <key>F11</key>, um das Spiel "
-#~ "im Vollbildmodus zu spielen. Drücken Sie erneut <key>F11</key>, um auf "
-#~ "die voreingestellte Bildgröße zurückzuschalten."
+#~ "Wählen Sie <guiseq><gui style=\"menu\">Ansicht</gui> <gui "
+#~ "style=\"menuitem\">Vollbild</gui></guiseq> oder drücken Sie <key>F11</"
+#~ "key>, um das Spiel im Vollbildmodus zu spielen. Drücken Sie erneut "
+#~ "<key>F11</key>, um auf die voreingestellte Bildgröße zurückzuschalten."
 
 #~ msgid "Teleport"
 #~ msgstr "Teleportieren"
 
 #~ msgid ""
 #~ "To safely teleport, click the <_:media-1/> button on the toolbar or "
-#~ "select <guiseq><gui style=\"menu\">Move</gui><gui style=\"menuitem"
-#~ "\">Teleport</gui></guiseq>."
+#~ "select <guiseq><gui style=\"menu\">Move</gui><gui "
+#~ "style=\"menuitem\">Teleport</gui></guiseq>."
 #~ msgstr ""
 #~ "Klicken Sie in der Werkzeugleiste auf den Knopf <_:media-1/>, um sicher "
 #~ "zu teleportieren, oder wählen Sie <guiseq><gui style=\"menu\">Bewegen</"
@@ -1119,8 +1144,8 @@ msgstr ""
 
 #~ msgid ""
 #~ "To teleport to a random spot, click the <_:media-1/> button on the "
-#~ "toolbar or select <guiseq><gui style=\"menu\">Move</gui><gui style="
-#~ "\"menuitem\">Random</gui></guiseq>."
+#~ "toolbar or select <guiseq><gui style=\"menu\">Move</gui><gui "
+#~ "style=\"menuitem\">Random</gui></guiseq>."
 #~ msgstr ""
 #~ "Klicken Sie in der Werkzeugleiste auf den Knopf <_:media-1/>, um zufällig "
 #~ "zu teleportieren, oder wählen Sie <guiseq><gui style=\"menu\">Bewegen</"
@@ -1272,22 +1297,22 @@ msgstr ""
 #~ msgstr "original"
 
 #~ msgid ""
-#~ "Bats <media type=\"image\" src=\"figures/boo-high-risk.png\" height="
-#~ "\"20\" width=\"20\"/>"
+#~ "Bats <media type=\"image\" src=\"figures/boo-high-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
 #~ msgstr ""
 #~ "Fledermäuse <media type=\"image\" src=\"figures/boo-high-risk.png\" "
 #~ "height=\"20\" width=\"20\"/>"
 
 #~ msgid ""
-#~ "High-risk Robots <media type=\"image\" src=\"figures/robots-high-risk.png"
-#~ "\" height=\"20\" width=\"20\"/>"
+#~ "High-risk Robots <media type=\"image\" src=\"figures/robots-high-risk."
+#~ "png\" height=\"20\" width=\"20\"/>"
 #~ msgstr ""
 #~ "Risikoreiche Roboter <media type=\"image\" src=\"figures/robots-high-risk."
 #~ "png\" height=\"20\" width=\"20\"/>"
 
 #~ msgid ""
-#~ "High-risk gnomes <media type=\"image\" src=\"figures/gnome-high-risk.png"
-#~ "\" height=\"20\" width=\"20\"/>"
+#~ "High-risk gnomes <media type=\"image\" src=\"figures/gnome-high-risk."
+#~ "png\" height=\"20\" width=\"20\"/>"
 #~ msgstr ""
 #~ "Risikoreiche Zwerge <media type=\"image\" src=\"figures/gnome-high-risk."
 #~ "png\" height=\"20\" width=\"20\"/>"
@@ -1300,25 +1325,25 @@ msgstr ""
 #~ "height=\"20\" width=\"20\"/>"
 
 #~ msgid ""
-#~ "Ghosts <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
-#~ "\"20\" width=\"20\"/>"
+#~ "Ghosts <media type=\"image\" src=\"figures/boo-low-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
 #~ msgstr ""
-#~ "Geister <media type=\"image\" src=\"figures/boo-low-risk.png\" height="
-#~ "\"20\" width=\"20\"/>"
+#~ "Geister <media type=\"image\" src=\"figures/boo-low-risk.png\" "
+#~ "height=\"20\" width=\"20\"/>"
 
 #~ msgid ""
 #~ "Low-risk Robots <media type=\"image\" src=\"figures/robots-low-risk.png\" "
 #~ "height=\"20\" width=\"20\"/>"
 #~ msgstr ""
-#~ "Risikoarme Roboter <media type=\"image\" src=\"figures/robots-low-risk.png"
-#~ "\" height=\"20\" width=\"20\"/>"
+#~ "Risikoarme Roboter <media type=\"image\" src=\"figures/robots-low-risk."
+#~ "png\" height=\"20\" width=\"20\"/>"
 
 #~ msgid ""
 #~ "Low-risk gnomes <media type=\"image\" src=\"figures/gnome-low-risk.png\" "
 #~ "height=\"20\" width=\"20\"/>"
 #~ msgstr ""
-#~ "Risikoarme Zwerge <media type=\"image\" src=\"figures/gnome-low-risk.png"
-#~ "\" height=\"20\" width=\"20\"/>"
+#~ "Risikoarme Zwerge <media type=\"image\" src=\"figures/gnome-low-risk."
+#~ "png\" height=\"20\" width=\"20\"/>"
 
 #~ msgid ""
 #~ "Low-risk UFOs <media type=\"image\" src=\"figures/ufo-low-risk.png\" "
@@ -1351,8 +1376,9 @@ msgstr ""
 #~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
 #~ "or any later version published by the Free Software Foundation with no "
 #~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
-#~ "can find a copy of the GFDL at this <ulink type=\"help\" url=\"help:fdl"
-#~ "\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
+#~ "can find a copy of the GFDL at this <ulink type=\"help\" url=\"help:"
+#~ "fdl\">link</ulink> or in the file COPYING-DOCS distributed with this "
+#~ "manual."
 #~ msgstr ""
 #~ "Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free "
 #~ "Documentation License (GFDL), Version 1.1 oder jeder späteren, von der "
@@ -1657,12 +1683,12 @@ msgstr ""
 #~ msgstr "Robots Hauptfenster"
 
 #~ msgid ""
-#~ "<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
-#~ "\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> "
+#~ "<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" "
+#~ "format=\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> "
 #~ "<phrase>GNOME Robots Main Window.</phrase> </textobject>"
 #~ msgstr ""
-#~ "<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" format="
-#~ "\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> "
+#~ "<imageobject> <imagedata fileref=\"figures/gnome-robots-main.png\" "
+#~ "format=\"PNG\" srccredit=\"Patanjali\"/> </imageobject> <textobject> "
 #~ "<phrase>Hauptfenster von GNOME Robots.</phrase> </textobject>"
 
 #~ msgid ""
@@ -1671,8 +1697,8 @@ msgstr ""
 #~ "fig\"/>. <_:figure-1/>"
 #~ msgstr ""
 #~ "Wenn <application>Robots</application> gestartet wird, öffnet sich das "
-#~ "<interface>Hauptfenster</interface>, wie es unter <xref linkend="
-#~ "\"mainwindow-fig\"/> zu sehen ist. <_:figure-1/>"
+#~ "<interface>Hauptfenster</interface>, wie es unter <xref "
+#~ "linkend=\"mainwindow-fig\"/> zu sehen ist. <_:figure-1/>"
 
 #~ msgid ""
 #~ "To start a new game, choose <guimenuitem>New</guimenuitem> in the "
@@ -1937,8 +1963,8 @@ msgstr ""
 #~ "You can design your own graphics for the game if you want. The graphics "
 #~ "files are found in <filename class=\"directory\"> $PREFIX/share/gnome-"
 #~ "games/gnome-robots/pixmaps </filename>, where $PREFIX is the prefix into "
-#~ "which GNOME was installed. This is usually either <filename class="
-#~ "\"directory\">/usr</filename> or <filename class=\"directory\">/usr/"
+#~ "which GNOME was installed. This is usually either <filename "
+#~ "class=\"directory\">/usr</filename> or <filename class=\"directory\">/usr/"
 #~ "local</filename>."
 #~ msgstr ""
 #~ "Wenn Sie mögen, können Sie Ihre eigenen Grafiken für das Spiel entwerfen. "
@@ -1969,9 +1995,9 @@ msgstr ""
 #~ "Grafikdateien, die in diesem Ordner abgelegt werden, werden automatisch "
 #~ "erkannt, also müssen Sie keine Konfigurationsdateien bearbeiten. Außerdem "
 #~ "können Sie Ihre eigenen Spieleinstellungen erstellen, indem Sie "
-#~ "zusätzliche <filename>.cfg</filename>-Dateien im Ordner <filename class="
-#~ "\"directory\">$PREFIX/share/gnome-games/gnome-robots/games</filename> "
-#~ "ablegen."
+#~ "zusätzliche <filename>.cfg</filename>-Dateien im Ordner <filename "
+#~ "class=\"directory\">$PREFIX/share/gnome-games/gnome-robots/games</"
+#~ "filename> ablegen."
 
 #~ msgid "Authors"
 #~ msgstr "Autoren"
@@ -1981,16 +2007,16 @@ msgstr ""
 #~ "rae@inpharmatica.co.uk</email>). This manual was written by Patanjali "
 #~ "Somayaji (<email>patanjali@mindless.com</email>), from the original HTML "
 #~ "documentation by Mark Rae. To report a bug or make a suggestion regarding "
-#~ "this application or this manual, follow the directions in this <ulink url="
-#~ "\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
+#~ "this application or this manual, follow the directions in this <ulink "
+#~ "url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">document</ulink>."
 #~ msgstr ""
 #~ "<application>Robots</application> wurde von Mark Rae (<email>m."
 #~ "rae@inpharmatica.co.uk</email>) programmiert. Dieses Handbuch wurde von "
 #~ "Patanjali Somayaji (<email>patanjali@mindless.com</email>) auf Grundlage "
 #~ "der ursprünglichen HTML-Dokumentation von Mark Rae geschrieben. Um einen "
 #~ "Fehler zu melden oder Vorschläge zu dieser Anwendungen oder zu diesem "
-#~ "Handbuch zu machen, folgen Sie den Anweisungen in diesem <ulink url="
-#~ "\"ghelp:user-guide?feedback-bugs\" type=\"help\">Dokument</ulink>."
+#~ "Handbuch zu machen, folgen Sie den Anweisungen in diesem <ulink "
+#~ "url=\"ghelp:user-guide?feedback-bugs\" type=\"help\">Dokument</ulink>."
 
 #~ msgid "License"
 #~ msgstr "Lizenz"
@@ -2003,10 +2029,10 @@ msgstr ""
 #~ "your option) any later version."
 #~ msgstr ""
 #~ "Dieses Programm ist freie Software; Sie können es weiterverbreiten und/"
-#~ "oder ändern unter den Bedingungen der <ulink type=\"help\" url=\"help:gpl"
-#~ "\"><citetitle>GNU General Public License</citetitle></ulink> wie sie von "
-#~ "der Free Software Foundation veröffentlicht wurde; entweder in Version 2 "
-#~ "der Lizenz oder (nach Ihrer Wahl) jeder neueren Version."
+#~ "oder ändern unter den Bedingungen der <ulink type=\"help\" url=\"help:"
+#~ "gpl\"><citetitle>GNU General Public License</citetitle></ulink> wie sie "
+#~ "von der Free Software Foundation veröffentlicht wurde; entweder in "
+#~ "Version 2 der Lizenz oder (nach Ihrer Wahl) jeder neueren Version."
 
 #~ msgid ""
 #~ "This program is distributed in the hope that it will be useful, but "
@@ -2042,18 +2068,18 @@ msgstr ""
 #~ "A copy of the <citetitle>GNU General Public License</citetitle> is "
 #~ "included as an appendix to the <citetitle>GNOME Users Guide</citetitle>. "
 #~ "You may also obtain a copy of the <citetitle>GNU General Public License</"
-#~ "citetitle> from the Free Software Foundation by visiting <ulink type="
-#~ "\"http\" url=\"http://www.fsf.org\">their Web site</ulink> or by writing "
-#~ "to <_:address-1/>"
+#~ "citetitle> from the Free Software Foundation by visiting <ulink "
+#~ "type=\"http\" url=\"http://www.fsf.org\">their Web site</ulink> or by "
+#~ "writing to <_:address-1/>"
 #~ msgstr ""
 #~ "Eine Kopie der <citetitle><ulink type=\"help\" url=\"help:gpl\">GNU "
 #~ "General Public License</ulink></citetitle> ist im Anhang des "
 #~ "<citetitle>GNOME Benutzerhandbuchs</citetitle> enthalten. Sie können "
-#~ "außerdem eine Kopie der <citetitle><ulink type=\"help\" url=\"help:gpl"
-#~ "\">GNU General Public License</ulink></citetitle> von der Free Software "
-#~ "Foundation erhalten, indem Sie auf <ulink type=\"http\" url=\"http://www."
-#~ "fsf.org\">ihre Internetseite</ulink> gehen oder schreiben Sie an die <_:"
-#~ "address-1/>"
+#~ "außerdem eine Kopie der <citetitle><ulink type=\"help\" url=\"help:"
+#~ "gpl\">GNU General Public License</ulink></citetitle> von der Free "
+#~ "Software Foundation erhalten, indem Sie auf <ulink type=\"http\" "
+#~ "url=\"http://www.fsf.org\">ihre Internetseite</ulink> gehen oder "
+#~ "schreiben Sie an die <_:address-1/>"
 
 #~ msgid "link"
 #~ msgstr "Link"

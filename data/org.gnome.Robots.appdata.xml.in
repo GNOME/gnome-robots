@@ -4,7 +4,7 @@
   <id>org.gnome.Robots</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
-  <name>GNOME Robots</name>
+  <name>Robots</name>
   <summary>Avoid the robots and make them crash into each other</summary>
   <description>
     <!-- Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro -->
@@ -59,7 +59,7 @@
     <kudo>UserDocs</kudo>
   </kudos>
   <translation type="gettext">gnome-robots</translation>
-  <developer_name>The GNOME Project</developer_name>
+  <developer_name>Andrey Kutejko</developer_name>
   <content_rating type="oars-1.0">
     <content_attribute id="violence-cartoon">mild</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>

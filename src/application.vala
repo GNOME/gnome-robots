@@ -19,8 +19,9 @@
 
 using Gtk;
 using Gdk;
+using Adw;
 
-class RobotsApplication : Gtk.Application {
+class RobotsApplication : Adw.Application {
 
     private Properties properties;
 
@@ -38,7 +39,7 @@ class RobotsApplication : Gtk.Application {
         base.startup ();
 
         Environment.set_application_name (_("Robots"));
-        Window.set_default_icon_name ("org.gnome.Robots");
+        Gtk.Window.set_default_icon_name ("org.gnome.Robots");
 
         GLib.ActionEntry[] app_entries = {
             { "new-game",         new_game_cb    },
@@ -94,24 +95,23 @@ class RobotsApplication : Gtk.Application {
     private void new_game_cb () {
         var window = get_active_window () as RobotsWindow;
         if (window != null) {
-            var dialog = new AlertDialog (_("Are you sure you want to discard the current game?"));
-            dialog.buttons = new string[] {
-                _("Keep _Playing"),
-                _("_New Game")
-            };
-            dialog.modal = true;
-            dialog.default_button = 0;
-            dialog.cancel_button = 0;
-            dialog.choose.begin (window, null, (obj, res) => {
-                try {
-                    var choice = dialog.choose.end (res);
-                    if (choice == 1) {
-                        window.start_new_game ();
-                    }
-                } catch (Error e) {
-                    warning ("%s", e.message);
+            var dialog = new Adw.MessageDialog (get_active_window (),
+                                                _("_New Game"),
+                                                _("Are you sure you want to discard the current game?"));
+
+            dialog.add_response ("cancel", _("Keep _Playing"));
+            dialog.add_response ("new", _("_New Game"));
+
+            dialog.default_response = "new";
+            dialog.close_response = "cancel";
+
+            dialog.response.connect ((ret) => {
+                dialog.destroy ();
+                if (ret == "new") {
+                    window.start_new_game ();
                 }
             });
+            dialog.present ();
         } else {
             activate ();
         }
@@ -136,33 +136,32 @@ class RobotsApplication : Gtk.Application {
     }
 
     private void about_cb () {
-        string[] authors = {
-            "Mark Rae <m.rae@inpharmatica.co.uk>"
-        };
+        var window = new AboutWindow();
+        window.set_transient_for (get_active_window ());
 
-        string[] artists = {
+        window.application_icon = "org.gnome.Robots";
+        window.application_name = _("Robots");
+        window.version = VERSION;
+        window.copyright = "Copyright © 1998–2008 Mark Rae\n"
+            + "Copyright © 2014–2016 Michael Catanzaro\n"
+            + "Copyright © 2020-2022 Andrey Kutejko";
+        window.license_type = License.GPL_3_0;
+        window.comments = _("Based on classic BSD Robots");
+        window.developers = {
+            "Mark Rae <m.rae@inpharmatica.co.uk>",
+            "Andrey Kutejko <andy128k@gmail.com>"
+        };
+        window.artists = {
             "Kirstie Opstad <K.Opstad@ed.ac.uk>",
             "Rasoul M.P. Aghdam (player death sound)"
         };
-
-        string[] documenters = {
+        window.documenters = {
             "Aruna Sankaranarayanan"
         };
+        window.translator_credits = _("translator-credits");
+        window.website = "https://wiki.gnome.org/Apps/Robots";
 
-        show_about_dialog (get_active_window (),
-                           "name", _("Robots"),
-                           "version", VERSION,
-                           "copyright", "Copyright © 1998–2008 Mark Rae\n"
-                                + "Copyright © 2014–2016 Michael Catanzaro\n"
-                                + "Copyright © 2020 Andrey Kutejko",
-                           "license-type", License.GPL_3_0,
-                           "comments", _("Based on classic BSD Robots"),
-                           "authors", authors,
-                           "artists", artists,
-                           "documenters", documenters,
-                           "translator-credits", _("translator-credits"),
-                           "logo-icon-name", "org.gnome.Robots",
-                           "website", "https://wiki.gnome.org/Apps/Robots");
+        window.present ();
     }
 }
 

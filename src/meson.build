@@ -53,6 +53,7 @@ executable(
         gnome_games_dependency,
         gtk_dependency,
         rsvg_dependency,
+        adw_dependency,
         gstreamer_dependency
     ],
     install_dir: get_option('bindir'),

@@ -18,6 +18,7 @@ gio_dependency = dependency('gio-2.0', version: '>= 2.36')
 glib_dependency = dependency('glib-2.0', version: '>= 2.36')
 gnome_games_dependency = dependency('libgnome-games-support-2', version: '>= 2.0')
 gtk_dependency = dependency('gtk4', version: '>= 4.10.0')
+adw_dependency = dependency('libadwaita-1', version: '>= 1.2')
 rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.36.2')
 gstreamer_dependency = dependency('gstreamer-1.0', version: '>= 1.20')
 

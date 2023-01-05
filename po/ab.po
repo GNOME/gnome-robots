@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2022-10-09 21:22+0000\n"
+"POT-Creation-Date: 2022-11-06 14:22+0000\n"
 "Last-Translator: Нанба Наала <naala-nanba@rambler.ru>\n"
 "Language-Team: Abkhazian <daniel.abzakh@gmail.com>\n"
 "Language: ab\n"
@@ -264,6 +264,8 @@ msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
 msgstr ""
+"Ишәыдаҳныҳәалоит, шәара ароботқәа шәыриааит!!\n"
+"Ишәылшару еиҭа уи аҟаҵара"
 
 #: src/game-area.vala:378
 msgid "There are no teleport locations left!!"
@@ -384,7 +386,7 @@ msgstr "Ароботқәа ишәарҭам ателепорт ҟазҵо"
 
 #: src/scores.vala:80
 msgid "Robots with safe teleport with safe moves"
-msgstr "Ароботқәа ишәарҭам ателепортҟаҵареи, ишәарҭам аныҟәарақәеи змоу. "
+msgstr "Ароботқәа ишәарҭам ателепортҟаҵареи, ишәарҭам аныҟәарақәеи змоу."
 
 #: src/scores.vala:82
 msgid "Robots with safe teleport with super-safe moves"
@@ -401,7 +403,7 @@ msgstr "_ Ароботқәа рзыԥшра"
 #: src/window.vala:135
 #, c-format
 msgid "Level: %d\tScore: %d"
-msgstr ""
+msgstr "Аҩаӡара: %d\t Аԥхьаӡара: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
 #: src/window.vala:138

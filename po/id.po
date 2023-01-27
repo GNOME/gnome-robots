@@ -5,13 +5,13 @@
 # Andika Triwidada <andika@gmail.com>, 2010, 2012, 2013, 2014.
 # Vincent Sebastian The <vincent.s.the@gmail.com>, 2011, 2012.
 # Dirgita <dirgitadevina@yahoo.co.id>, 2012.
-# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019, 2020.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots gnome-3-8\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2020-01-04 15:09+0000\n"
-"PO-Revision-Date: 2020-01-13 19:30+0700\n"
+"POT-Creation-Date: 2023-01-25 19:23+0000\n"
+"PO-Revision-Date: 2023-01-27 10:17+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome@i15n.org>\n"
 "Language: id\n"
@@ -20,9 +20,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Rosetta-Export-Date: 2007-04-23 05:58:10+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.2.2\n"
 
-#: data/app-menu.ui:7 src/gnome-robots.c:256
+#: data/app-menu.ui:7 src/application.vala:104
 msgid "_New Game"
 msgstr "Mai_nkan Permainan Baru"
 
@@ -42,15 +42,17 @@ msgstr "_Bantuan"
 msgid "_About Robots"
 msgstr "Tent_ang Robot"
 
-#: data/org.gnome.Robots.appdata.xml.in:7
-msgid "GNOME Robots"
-msgstr "GNOME Robot"
+#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
+#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+msgid "Robots"
+msgstr "Robot"
 
 #: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Hindari robot dan buat mereka menabrak satu sama lain"
 
-#: data/org.gnome.Robots.appdata.xml.in:10
+#. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
+#: data/org.gnome.Robots.appdata.xml.in:11
 msgid ""
 "It is the distant future: the year 2000. Evil robots are trying to kill you. "
 "Avoid the robots or face certain death."
@@ -58,7 +60,7 @@ msgstr ""
 "Jauh di masa mendatang: tahun 2000. Robot jahat mencoba membunuh Anda. "
 "Hindari robot atau hadapi kematian yang pasti."
 
-#: data/org.gnome.Robots.appdata.xml.in:14
+#: data/org.gnome.Robots.appdata.xml.in:15
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -72,7 +74,7 @@ msgstr ""
 "dapat mempertahankan diri Anda sendiri dengan memindah tumpukan sampah, atau "
 "meloloskan diri ke tempat aman dengan perangkat teleportasi yang Anda bawa."
 
-#: data/org.gnome.Robots.appdata.xml.in:21
+#: data/org.gnome.Robots.appdata.xml.in:22
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -82,14 +84,9 @@ msgstr ""
 "bisa mendaratkan Anda tepat di sebelah robot, yang akan membunuhmu. "
 "Bertahanlah untuk hidup selama mungkin!"
 
-#: data/org.gnome.Robots.appdata.xml.in:54
-msgid "The GNOME Project"
-msgstr "Proyek GNOME"
-
-#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:318 src/gnome-robots.c:364
-msgid "Robots"
-msgstr "Robot"
+#: data/org.gnome.Robots.appdata.xml.in:62
+msgid "Andrey Kutejko"
+msgstr "Andrey Kutejko"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
@@ -163,7 +160,7 @@ msgstr "Aktifkan suara"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Aktifkan suara. Aktifkan suara untuk kejadian dalam permainan."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
 msgid "Key to move NW"
 msgstr "Tombol untuk bergerak ke Barat Laut"
 
@@ -171,7 +168,7 @@ msgstr "Tombol untuk bergerak ke Barat Laut"
 msgid "The key used to move north-west."
 msgstr "Tombol yang ditekan untuk bergerak ke utara-barat."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
 msgid "Key to move N"
 msgstr "Tombol untuk bergerak ke Utara"
 
@@ -179,7 +176,7 @@ msgstr "Tombol untuk bergerak ke Utara"
 msgid "The key used to move north."
 msgstr "Tombol yang ditekan untuk bergerak ke utara."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
 msgid "Key to move NE"
 msgstr "Tombol untuk bergerak ke Timur Laut"
 
@@ -187,7 +184,7 @@ msgstr "Tombol untuk bergerak ke Timur Laut"
 msgid "The key used to move north-east."
 msgstr "Tombol yang ditekan untuk bergerak ke utara-timur."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
 msgid "Key to move W"
 msgstr "Tombol untuk bergerak ke Barat"
 
@@ -195,7 +192,7 @@ msgstr "Tombol untuk bergerak ke Barat"
 msgid "The key used to move west."
 msgstr "Tombol yang ditekan untuk bergerak ke barat."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
 msgid "Key to hold"
 msgstr "Tombol untuk menahan"
 
@@ -203,7 +200,7 @@ msgstr "Tombol untuk menahan"
 msgid "The key used to hold still."
 msgstr "Tombol yang ditekan agar diam."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
 msgid "Key to move E"
 msgstr "Tombol untuk bergerak ke Timur"
 
@@ -211,7 +208,7 @@ msgstr "Tombol untuk bergerak ke Timur"
 msgid "The key used to move east."
 msgstr "Tombol yang ditekan untuk bergerak ke timur."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
 msgid "Key to move SW"
 msgstr "Tombol untuk bergerak ke Barat Daya"
 
@@ -219,7 +216,7 @@ msgstr "Tombol untuk bergerak ke Barat Daya"
 msgid "The key used to move south-west."
 msgstr "Tombol yang ditekan untuk bergerak ke selatan-barat."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
 msgid "Key to move S"
 msgstr "Tombol untuk bergerak ke Selatan"
 
@@ -227,7 +224,7 @@ msgstr "Tombol untuk bergerak ke Selatan"
 msgid "The key used to move south."
 msgstr "Tombol yang ditekan untuk bergerak ke selatan."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
 msgid "Key to move SE"
 msgstr "Tombol untuk bergerak ke Tenggara"
 
@@ -247,144 +244,7 @@ msgstr "Tinggi jendela dalam piksel"
 msgid "true if the window is maximized"
 msgstr "bernilai \"true\" bila jendela dimaksimalkan"
 
-#: src/game.c:343 src/game.c:359
-msgid ""
-"Congratulations, You Have Defeated the Robots!! \n"
-"But Can You do it Again?"
-msgstr ""
-"Selamat, anda telah mengalahkan Robot!! \n"
-"Tapi, Bisakah Anda Melakukannya Lagi?"
-
-#. This should never happen.
-#: src/game.c:1108
-msgid "There are no teleport locations left!!"
-msgstr "Tidak ada lokasi teleport yang tersisa!!"
-
-#: src/game.c:1136
-msgid "There are no safe locations to teleport to!!"
-msgstr "Tidak ada lokasi aman untuk teleport!!"
-
-#: src/games-controls.c:292
-msgid "Unknown Command"
-msgstr "Perintah tidak dikenal"
-
-#: src/gnome-robots.c:106
-msgid "Classic robots"
-msgstr "Robot Klasik"
-
-#: src/gnome-robots.c:107
-msgid "Classic robots with safe moves"
-msgstr "Robot klasik dengan langkah aman"
-
-#: src/gnome-robots.c:108
-msgid "Classic robots with super-safe moves"
-msgstr "Robot klasik dengan langkah sangat aman"
-
-#: src/gnome-robots.c:109
-msgid "Nightmare"
-msgstr "Sangat sulit"
-
-#: src/gnome-robots.c:110
-msgid "Nightmare with safe moves"
-msgstr "Sangat sulit dengan langkah aman"
-
-#: src/gnome-robots.c:111
-msgid "Nightmare with super-safe moves"
-msgstr "Sangat susah dengan langkah sangat aman"
-
-#: src/gnome-robots.c:112
-msgid "Robots2"
-msgstr "Robots2"
-
-#: src/gnome-robots.c:113
-msgid "Robots2 with safe moves"
-msgstr "Robots2 dengan langkah aman"
-
-#: src/gnome-robots.c:114
-msgid "Robots2 with super-safe moves"
-msgstr "Robots2 dengan langkah sangat aman"
-
-#: src/gnome-robots.c:115
-msgid "Robots2 easy"
-msgstr "Robots2 mudah"
-
-#: src/gnome-robots.c:116
-msgid "Robots2 easy with safe moves"
-msgstr "Robots2 mudah dengan langkah aman"
-
-#: src/gnome-robots.c:117
-msgid "Robots2 easy with super-safe moves"
-msgstr "Robots2 mudah dengan langkah sangat aman"
-
-#: src/gnome-robots.c:118
-msgid "Robots with safe teleport"
-msgstr "Robot dengan teleport aman"
-
-#: src/gnome-robots.c:119
-msgid "Robots with safe teleport with safe moves"
-msgstr "Robot dengan teleport aman dan langkah aman"
-
-#: src/gnome-robots.c:120
-msgid "Robots with safe teleport with super-safe moves"
-msgstr "Robot dengan teleport aman dan langkah sangat aman"
-
-#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: src/gnome-robots.c:156
-#, c-format
-msgid "Level: %d\tScore: %d"
-msgstr "Tingkat: %d\tNilai: %d"
-
-#. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/gnome-robots.c:167
-#, c-format
-msgid "(Remaining: %d)"
-msgstr "(Tersisa: %d)"
-
-#. First line of safe teleports button label.
-#: src/gnome-robots.c:169
-msgid "Teleport _Safely"
-msgstr "Teleport _Secara Aman"
-
-#: src/gnome-robots.c:227
-msgid "Based on classic BSD Robots"
-msgstr "Berdasarkan pada BSD Robots klasik"
-
-#: src/gnome-robots.c:231
-msgid "translator-credits"
-msgstr ""
-"Mohammad DAMT <mdamt@bisnisweb.com>\n"
-"Ahmad Riza H Nst  <rizahnst@gnome.org>\n"
-"Andika Triwidada <andika@gmail.com>, 2010, 2012, 2013, 2014.\n"
-"Vincent Sebastian The <vincent.s.the@gmail.com>, 2011, 2012.\n"
-"Dirgita <dirgitadevina@yahoo.co.id>, 2012.\n"
-"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019, 2020."
-
-#: src/gnome-robots.c:252
-msgid "Are you sure you want to discard the current game?"
-msgstr "Anda yakin ingin membuang permainan saat ini?"
-
-#: src/gnome-robots.c:255
-msgid "Keep _Playing"
-msgstr "Tetap _Bermain"
-
-#: src/gnome-robots.c:410
-msgid "Teleport _Randomly"
-msgstr "Teleport Seca_ra Acak"
-
-#: src/gnome-robots.c:429
-msgid "_Wait for Robots"
-msgstr "_Tunggu para Robot"
-
-#. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:453
-msgid "Game Type:"
-msgstr "Tipe Permainan:"
-
-#: src/gnome-robots.c:468
-msgid "No game data could be found."
-msgstr "Tidak ada data permainan yang ditemukan."
-
-#: src/gnome-robots.c:470
+#: src/application.vala:63
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -392,78 +252,212 @@ msgstr ""
 "Program Robots tidak dapat menemukan berkas konfigurasi yang benar. Silahkan "
 "periksa apakah program telah terinstal dengan benar."
 
-#: src/gnome-robots.c:487
-msgid "Some graphics files are missing or corrupt."
-msgstr "Beberapa berkas grafik hilang atau rusak."
+#: src/application.vala:101
+msgid "Are you sure you want to discard the current game?"
+msgstr "Anda yakin ingin membuang permainan saat ini?"
 
-#: src/gnome-robots.c:489
-msgid ""
-"The program Robots was unable to load all the necessary graphics files. "
-"Please check that the program is installed correctly."
+#: src/application.vala:103
+msgid "Keep _Playing"
+msgstr "Tetap _Bermain"
+
+#: src/application.vala:157
+msgid "Based on classic BSD Robots"
+msgstr "Berdasarkan pada BSD Robots klasik"
+
+#: src/application.vala:161
+msgid "translator-credits"
 msgstr ""
-"Program Robots tidak bisa memuat semua berkas grafik yang dibutuhkan. "
-"Silahkan periksa apakah program telah terinstal dengan benar."
+"Mohammad DAMT <mdamt@bisnisweb.com>\n"
+"Ahmad Riza H Nst  <rizahnst@gnome.org>\n"
+"Andika Triwidada <andika@gmail.com>, 2010, 2012, 2013, 2014.\n"
+"Vincent Sebastian The <vincent.s.the@gmail.com>, 2011, 2012.\n"
+"Dirgita <dirgitadevina@yahoo.co.id>, 2012.\n"
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2017, 2019, 2020, 2023."
 
-#: src/graphics.c:149
-#, c-format
-msgid "Could not find “%s” pixmap file\n"
-msgstr "Tidak bisa menemukan \"%s\" berkas pixmap\n"
+#: src/game-area.vala:356
+msgid ""
+"Congratulations, You Have Defeated the Robots!! \n"
+"But Can You do it Again?"
+msgstr ""
+"Selamat, anda telah mengalahkan Robot!! \n"
+"Tapi, Bisakah Anda Melakukannya Lagi?"
 
-#: src/properties.c:391
+#: src/game-area.vala:360
+msgid "There are no teleport locations left!!"
+msgstr "Tidak ada lokasi teleport yang tersisa!!"
+
+#: src/properties-dialog.vala:68
 msgid "Preferences"
 msgstr "Preferensi"
 
-#: src/properties.c:416
+#: src/properties-dialog.vala:84
 msgid "Game Type"
 msgstr "Tipe Permainan"
 
-#: src/properties.c:426
+#: src/properties-dialog.vala:95
 msgid "_Use safe moves"
 msgstr "_Pakai langkah aman"
 
-#: src/properties.c:431
+#: src/properties-dialog.vala:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Mencegah langkah yang tidak sengaja yang mengakibatkan kekalahan."
 
-#: src/properties.c:434
+#: src/properties-dialog.vala:100
 msgid "U_se super safe moves"
 msgstr "Pakai langkah _sangat aman"
 
-#: src/properties.c:441
+#: src/properties-dialog.vala:102
 msgid "Prevents all moves that result in getting killed."
 msgstr "Mencegah semua langkah yang mengakibatkan kekalahan."
 
-#: src/properties.c:447
+#: src/properties-dialog.vala:114
 msgid "_Enable sounds"
 msgstr "_Aktifkan suara"
 
-#: src/properties.c:453
+#: src/properties-dialog.vala:119
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Aktifkan suara untuk kejadian seperti menang atau sekarat."
 
-#: src/properties.c:455
+#: src/properties-dialog.vala:122
 msgid "Game"
 msgstr "Permainan"
 
-#: src/properties.c:468
+#: src/properties-dialog.vala:128
 msgid "_Image theme:"
 msgstr "Tema c_itra:"
 
-#: src/properties.c:480
+#: src/properties-dialog.vala:138
 msgid "_Background color:"
 msgstr "Warna latar _belakang:"
 
-#: src/properties.c:492
+#: src/properties-dialog.vala:148
 msgid "Appearance"
 msgstr "Tampilan"
 
-#: src/properties.c:521
+#: src/properties-dialog.vala:162
 msgid "_Restore Defaults"
 msgstr "Kembalikan ke Pengatu_ran Baku"
 
-#: src/properties.c:526
+#: src/properties-dialog.vala:166
 msgid "Keyboard"
 msgstr "Papan Ketik"
+
+#. Label on the scores dialog, next to map type dropdown
+#: src/scores.vala:28
+msgid "Game Type:"
+msgstr "Tipe Permainan:"
+
+#: src/scores.vala:53
+msgid "Classic robots"
+msgstr "Robot Klasik"
+
+#: src/scores.vala:55
+msgid "Classic robots with safe moves"
+msgstr "Robot klasik dengan langkah aman"
+
+#: src/scores.vala:57
+msgid "Classic robots with super-safe moves"
+msgstr "Robot klasik dengan langkah sangat aman"
+
+#: src/scores.vala:59
+msgid "Nightmare"
+msgstr "Sangat sulit"
+
+#: src/scores.vala:61
+msgid "Nightmare with safe moves"
+msgstr "Sangat sulit dengan langkah aman"
+
+#: src/scores.vala:63
+msgid "Nightmare with super-safe moves"
+msgstr "Sangat susah dengan langkah sangat aman"
+
+#: src/scores.vala:65
+msgid "Robots2"
+msgstr "Robots2"
+
+#: src/scores.vala:67
+msgid "Robots2 with safe moves"
+msgstr "Robots2 dengan langkah aman"
+
+#: src/scores.vala:69
+msgid "Robots2 with super-safe moves"
+msgstr "Robots2 dengan langkah sangat aman"
+
+#: src/scores.vala:71
+msgid "Robots2 easy"
+msgstr "Robots2 mudah"
+
+#: src/scores.vala:73
+msgid "Robots2 easy with safe moves"
+msgstr "Robots2 mudah dengan langkah aman"
+
+#: src/scores.vala:75
+msgid "Robots2 easy with super-safe moves"
+msgstr "Robots2 mudah dengan langkah sangat aman"
+
+#: src/scores.vala:77
+msgid "Robots with safe teleport"
+msgstr "Robot dengan teleport aman"
+
+#: src/scores.vala:79
+msgid "Robots with safe teleport with safe moves"
+msgstr "Robot dengan teleport aman dan langkah aman"
+
+#: src/scores.vala:81
+msgid "Robots with safe teleport with super-safe moves"
+msgstr "Robot dengan teleport aman dan langkah sangat aman"
+
+#: src/window.vala:113
+msgid "Teleport _Randomly"
+msgstr "Teleport Seca_ra Acak"
+
+#: src/window.vala:138
+msgid "_Wait for Robots"
+msgstr "_Tunggu para Robot"
+
+#: src/window.vala:154
+#, c-format
+msgid "Level: %d\tScore: %d"
+msgstr "Tingkat: %d\tNilai: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: src/window.vala:157
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(Tersisa: %d)"
+
+#. First line of safe teleports button label.
+#: src/window.vala:159
+msgid "Teleport _Safely"
+msgstr "Teleport _Secara Aman"
+
+#~ msgid "GNOME Robots"
+#~ msgstr "GNOME Robot"
+
+#~ msgid "The GNOME Project"
+#~ msgstr "Proyek GNOME"
+
+#~ msgid "There are no safe locations to teleport to!!"
+#~ msgstr "Tidak ada lokasi aman untuk teleport!!"
+
+#~ msgid "Unknown Command"
+#~ msgstr "Perintah tidak dikenal"
+
+#~ msgid "No game data could be found."
+#~ msgstr "Tidak ada data permainan yang ditemukan."
+
+#~ msgid "Some graphics files are missing or corrupt."
+#~ msgstr "Beberapa berkas grafik hilang atau rusak."
+
+#~ msgid ""
+#~ "The program Robots was unable to load all the necessary graphics files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "Program Robots tidak bisa memuat semua berkas grafik yang dibutuhkan. "
+#~ "Silahkan periksa apakah program telah terinstal dengan benar."
+
+#~ msgid "Could not find “%s” pixmap file\n"
+#~ msgstr "Tidak bisa menemukan \"%s\" berkas pixmap\n"
 
 #~ msgid "_Quit"
 #~ msgstr "_Keluar"

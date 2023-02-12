@@ -4,14 +4,14 @@
 #
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008, 2009, 2010, 2011, 2012, 2013.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2014, 2015, 2016.
-# Asier Sarasua Garmendia  <asier.sarasua@gmail.com>, 2019, 2020.
+# Asier Sarasua Garmendia  <asiersarasua@ni.eus>, 2019, 2020, 2023.
 #
 msgid ""
 msgstr "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2021-09-12 17:20+0000\n"
-"PO-Revision-Date: 2020-02-15 10:00+0100\n"
-"Last-Translator: Asier Sarasua Garmendia <asier.sarasua@gmail.com>\n"
+"POT-Creation-Date: 2023-01-25 19:23+0000\n"
+"PO-Revision-Date: 2023-02-12 10:00+0100\n"
+"Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
@@ -39,9 +39,10 @@ msgstr "_Laguntza"
 msgid "_About Robots"
 msgstr "Robots aplikazioari _buruz"
 
-#: data/org.gnome.Robots.appdata.xml.in:7
-msgid "GNOME Robots"
-msgstr "GNOME Robotak"
+#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
+#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+msgid "Robots"
+msgstr "Robotak"
 
 #: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
 msgid "Avoid the robots and make them crash into each other"
@@ -71,13 +72,8 @@ msgid ""
 msgstr "Telegarraiatzaileak eskaintzen duen babesa mugatua da. Behin gailu horretan sartutakoan, batek daki non agertuko zaren. Agian, robot baten alboan eta honek bertan hilko zaitu. Iraun bizirik ahalik eta denbora gehien."
 
 #: data/org.gnome.Robots.appdata.xml.in:62
-msgid "The GNOME Project"
-msgstr "GNOME proiektua"
-
-#: data/org.gnome.Robots.desktop.in:3 src/application.vala:39
-#: src/application.vala:157 src/window.vala:42
-msgid "Robots"
-msgstr "Robotak"
+msgid "Andrey Kutejko"
+msgstr "Andrey Kutejko"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
@@ -145,7 +141,7 @@ msgstr "Gaitu jokoaren soinuak"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Gaitu jokoaren soinuak. Erreproduzitu soinuak jokoko hainbat gertaeretan."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:87
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
 msgid "Key to move NW"
 msgstr "Ipar-mendebalderantz mugitzeko tekla"
 
@@ -153,7 +149,7 @@ msgstr "Ipar-mendebalderantz mugitzeko tekla"
 msgid "The key used to move north-west."
 msgstr "Erabilitako tekla ipar-mendebaldera mugitzeko"
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:88
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
 msgid "Key to move N"
 msgstr "Iparralderantz mugitzeko tekla"
 
@@ -161,7 +157,7 @@ msgstr "Iparralderantz mugitzeko tekla"
 msgid "The key used to move north."
 msgstr "Erabilitako tekla iparraldera mugitzeko"
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:89
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
 msgid "Key to move NE"
 msgstr "Ipar-ekialderantz mugitzeko tekla"
 
@@ -169,7 +165,7 @@ msgstr "Ipar-ekialderantz mugitzeko tekla"
 msgid "The key used to move north-east."
 msgstr "Erabilitako tekla ipar-ekialdera mugitzeko"
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:90
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
 msgid "Key to move W"
 msgstr "Mendebalderantz mugitzeko tekla"
 
@@ -177,7 +173,7 @@ msgstr "Mendebalderantz mugitzeko tekla"
 msgid "The key used to move west."
 msgstr "Erabilitako tekla mendebaldera mugitzeko"
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:91
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
 msgid "Key to hold"
 msgstr "Gelditzeko tekla"
 
@@ -185,7 +181,7 @@ msgstr "Gelditzeko tekla"
 msgid "The key used to hold still."
 msgstr "Erabilitako tekla geldik egoteko."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:92
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
 msgid "Key to move E"
 msgstr "Ekialderantz mugitzeko tekla"
 
@@ -193,7 +189,7 @@ msgstr "Ekialderantz mugitzeko tekla"
 msgid "The key used to move east."
 msgstr "Erabilitako tekla ekialdera mugitzeko"
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:93
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
 msgid "Key to move SW"
 msgstr "Hego-mendebalderantz mugitzeko tekla"
 
@@ -201,7 +197,7 @@ msgstr "Hego-mendebalderantz mugitzeko tekla"
 msgid "The key used to move south-west."
 msgstr "Erabilitako tekla hego-mendebaldera mugitzeko"
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:94
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
 msgid "Key to move S"
 msgstr "Hegoalderantz mugitzeko tekla"
 
@@ -209,7 +205,7 @@ msgstr "Hegoalderantz mugitzeko tekla"
 msgid "The key used to move south."
 msgstr "Erabilitako tekla hegoaldera mugitzeko"
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:95
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
 msgid "Key to move SE"
 msgstr "Hego-ekialderantz mugitzeko tekla"
 
@@ -229,7 +225,7 @@ msgstr "Leihoaren altuera (pixeletan)"
 msgid "true if the window is maximized"
 msgstr "egia leihoa maximizatuta badago"
 
-#: src/application.vala:62
+#: src/application.vala:63
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -243,22 +239,22 @@ msgstr "Ziur zaude uneko jokoa baztertzea nahi duzula?"
 msgid "Keep _Playing"
 msgstr "Jarraitu _jokatzen"
 
-#: src/application.vala:163
+#: src/application.vala:157
 msgid "Based on classic BSD Robots"
 msgstr "BSD robot klasikoan oinarritua"
 
-#: src/application.vala:167
+#: src/application.vala:161
 msgid "translator-credits"
 msgstr "translator-credits"
 
-#: src/game-area.vala:375
+#: src/game-area.vala:356
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
 msgstr "Zorionak. Robotak garaitu dituzu!! \n"
 "Robotak berriro menderatzeko gauza zara?"
 
-#: src/game-area.vala:379
+#: src/game-area.vala:360
 msgid "There are no teleport locations left!!"
 msgstr "Ez dago aldentzeko leku gehiago!!"
 
@@ -319,93 +315,99 @@ msgid "Keyboard"
 msgstr "Teklatua"
 
 #. Label on the scores dialog, next to map type dropdown
-#: src/scores.vala:29
+#: src/scores.vala:28
 msgid "Game Type:"
 msgstr "Joko mota:"
 
-#: src/scores.vala:54
+#: src/scores.vala:53
 msgid "Classic robots"
 msgstr "Robot klasikoak"
 
-#: src/scores.vala:56
+#: src/scores.vala:55
 msgid "Classic robots with safe moves"
 msgstr "Robot klasikoak eta mugimendu seguruak"
 
-#: src/scores.vala:58
+#: src/scores.vala:57
 msgid "Classic robots with super-safe moves"
 msgstr "Robot klasikoak eta mugimendu seguru-seguruak"
 
-#: src/scores.vala:60
+#: src/scores.vala:59
 msgid "Nightmare"
 msgstr "Amesgaiztoa"
 
-#: src/scores.vala:62
+#: src/scores.vala:61
 msgid "Nightmare with safe moves"
 msgstr "Amesgaiztoa eta mugimendu seguruak"
 
-#: src/scores.vala:64
+#: src/scores.vala:63
 msgid "Nightmare with super-safe moves"
 msgstr "Amesgaiztoa eta mugimendu seguru-seguruak"
 
-#: src/scores.vala:66
+#: src/scores.vala:65
 msgid "Robots2"
 msgstr "Robotak2"
 
-#: src/scores.vala:68
+#: src/scores.vala:67
 msgid "Robots2 with safe moves"
 msgstr "Robotak2 eta mugimendu seguruak"
 
-#: src/scores.vala:70
+#: src/scores.vala:69
 msgid "Robots2 with super-safe moves"
 msgstr "Robotak2 eta mugimendu seguru-seguruak"
 
-#: src/scores.vala:72
+#: src/scores.vala:71
 msgid "Robots2 easy"
 msgstr "Robotak2 erraza"
 
-#: src/scores.vala:74
+#: src/scores.vala:73
 msgid "Robots2 easy with safe moves"
 msgstr "Robotak2 erraza eta mugimendu seguruak"
 
-#: src/scores.vala:76
+#: src/scores.vala:75
 msgid "Robots2 easy with super-safe moves"
 msgstr "Robotak2 erraza eta mugimendu seguru-seguruak"
 
-#: src/scores.vala:78
+#: src/scores.vala:77
 msgid "Robots with safe teleport"
 msgstr "Robotak eta aldentze segurua"
 
-#: src/scores.vala:80
+#: src/scores.vala:79
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robotak, aldentze segurua eta mugimendu seguruak"
 
-#: src/scores.vala:82
+#: src/scores.vala:81
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robotak, aldentze segurua eta mugimendu seguru-seguruak"
 
-#: src/window.vala:97
+#: src/window.vala:113
 msgid "Teleport _Randomly"
 msgstr "Aldendu _ausaz"
 
-#: src/window.vala:120
+#: src/window.vala:138
 msgid "_Wait for Robots"
 msgstr "_Itxaron robotei"
 
-#: src/window.vala:135
+#: src/window.vala:154
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Maila: %d\tPuntuazioa: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:138
+#: src/window.vala:157
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(falta: %d)"
 
 #. First line of safe teleports button label.
-#: src/window.vala:140
+#: src/window.vala:159
 msgid "Teleport _Safely"
 msgstr "Aldendu modu _seguruan"
+
+#~ msgid "GNOME Robots"
+#~ msgstr "GNOME Robotak"
+
+#~ msgid "The GNOME Project"
+#~ msgstr "GNOME proiektua"
 
 #~ msgid "There are no safe locations to teleport to!!"
 #~ msgstr "Ez dago aldentze segururako leku gehiago!!"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2020-10-10 09:56+0000\n"
-"PO-Revision-Date: 2021-08-11 22:32+0200\n"
+"POT-Creation-Date: 2023-01-25 19:23+0000\n"
+"PO-Revision-Date: 2023-02-12 21:11+0100\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: Tot En Òc\n"
 "Language: oc\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Project-Style: gnome\n"
 
-#: data/app-menu.ui:7 src/application.vala:112
+#: data/app-menu.ui:7 src/application.vala:104
 msgid "_New Game"
 msgstr "Partida _novèla"
 
@@ -39,9 +39,10 @@ msgstr "_Ajuda"
 msgid "_About Robots"
 msgstr "_A prepaus de Robots"
 
-#: data/org.gnome.Robots.appdata.xml.in:7
-msgid "GNOME Robots"
-msgstr "GNOME Robòts"
+#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
+#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+msgid "Robots"
+msgstr "Robòts"
 
 #: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
 msgid "Avoid the robots and make them crash into each other"
@@ -80,14 +81,9 @@ msgstr ""
 "la teleportacion vos pòt menar a costat d'un robòt, aquò vos tuariá. "
 "Subrevivètz tan longtemps coma possible !"
 
-#: data/org.gnome.Robots.appdata.xml.in:61
-msgid "The GNOME Project"
-msgstr "Lo projècte GNOME"
-
-#: data/org.gnome.Robots.desktop.in:3 src/application.vala:39
-#: src/application.vala:164 src/window.vala:42
-msgid "Robots"
-msgstr "Robòts"
+#: data/org.gnome.Robots.appdata.xml.in:62
+msgid "Andrey Kutejko"
+msgstr "Andrey Kutejko"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
@@ -166,7 +162,7 @@ msgstr ""
 "Activar los sons del jòc. Jòga de sons pels diferents eveniments long de la "
 "partida."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:84
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
 msgid "Key to move NW"
 msgstr "Tòca per se desplaçar cap al nòrd-oèst"
 
@@ -174,7 +170,7 @@ msgstr "Tòca per se desplaçar cap al nòrd-oèst"
 msgid "The key used to move north-west."
 msgstr "La tòca utilizada per se desplaçar cap al nòrd-oèst."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:85
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
 msgid "Key to move N"
 msgstr "Tòca per se desplaçar cap al nòrd"
 
@@ -182,7 +178,7 @@ msgstr "Tòca per se desplaçar cap al nòrd"
 msgid "The key used to move north."
 msgstr "La tòca utilizada per se desplaçar cap al nòrd."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:86
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
 msgid "Key to move NE"
 msgstr "Tòca per se desplaçar cap al nòrd-est"
 
@@ -190,7 +186,7 @@ msgstr "Tòca per se desplaçar cap al nòrd-est"
 msgid "The key used to move north-east."
 msgstr "La tòca utilizada per se desplaçar cap al nòrd-est."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:87
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
 msgid "Key to move W"
 msgstr "Tòca per se desplaçar cap a l'oèst"
 
@@ -198,7 +194,7 @@ msgstr "Tòca per se desplaçar cap a l'oèst"
 msgid "The key used to move west."
 msgstr "La tòca utilizada per se desplaçar cap a l'oèst."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:88
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
 msgid "Key to hold"
 msgstr "Tòca per arrestar"
 
@@ -206,7 +202,7 @@ msgstr "Tòca per arrestar"
 msgid "The key used to hold still."
 msgstr "La tòca utilizada per rester immobile."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:89
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
 msgid "Key to move E"
 msgstr "Tòca per se desplaçar cap a l'èst"
 
@@ -214,7 +210,7 @@ msgstr "Tòca per se desplaçar cap a l'èst"
 msgid "The key used to move east."
 msgstr "La tòca utilizada per se desplaçar cap a l'èst."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:90
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
 msgid "Key to move SW"
 msgstr "Tòca per se desplaçar cap al sud-oèst"
 
@@ -222,7 +218,7 @@ msgstr "Tòca per se desplaçar cap al sud-oèst"
 msgid "The key used to move south-west."
 msgstr "La tòca utilizada per se desplaçar cap al sud-oèst."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:91
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
 msgid "Key to move S"
 msgstr "Tòca per se desplaçar cap al sud"
 
@@ -230,7 +226,7 @@ msgstr "Tòca per se desplaçar cap al sud"
 msgid "The key used to move south."
 msgstr "La tòca utilizada per se desplaçar cap al sud."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:92
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
 msgid "Key to move SE"
 msgstr "Tòca per se desplaçar cap al sud-est"
 
@@ -250,11 +246,7 @@ msgstr "Nautor de la fenèstra en pixèls"
 msgid "true if the window is maximized"
 msgstr "verai se la fenèstra es maximizada"
 
-#: src/application.vala:68
-msgid "No game data could be found."
-msgstr "Cap de donada de jòc pòt pas èsser trobada."
-
-#: src/application.vala:69
+#: src/application.vala:63
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -263,23 +255,23 @@ msgstr ""
 "configuracion de jòc valid. Verificatz que lo programa es corrèctament "
 "installat."
 
-#: src/application.vala:109
+#: src/application.vala:101
 msgid "Are you sure you want to discard the current game?"
 msgstr "Sètz segur que volètz abandonar lo jòc en cors ?"
 
-#: src/application.vala:111
+#: src/application.vala:103
 msgid "Keep _Playing"
 msgstr "_Contunhar de jogar"
 
-#: src/application.vala:170
+#: src/application.vala:157
 msgid "Based on classic BSD Robots"
 msgstr "Basat suls robòts BSD classics"
 
-#: src/application.vala:174
+#: src/application.vala:161
 msgid "translator-credits"
 msgstr "Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>"
 
-#: src/game-area.vala:374
+#: src/game-area.vala:356
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -287,155 +279,164 @@ msgstr ""
 "Felicitacions, avètz ganhat contra los Robòts !\n"
 "Mas o poiretz far un còp de mai ?"
 
-#: src/game-area.vala:378
+#: src/game-area.vala:360
 msgid "There are no teleport locations left!!"
 msgstr "Demòra pas mai d'emplaçaments de teleportacion !"
 
-#: src/properties-dialog.vala:99
+#: src/properties-dialog.vala:68
 msgid "Preferences"
 msgstr "Preferéncias"
 
-#: src/properties-dialog.vala:121
+#: src/properties-dialog.vala:84
 msgid "Game Type"
 msgstr "Tipe de jòc"
 
-#: src/properties-dialog.vala:128
+#: src/properties-dialog.vala:95
 msgid "_Use safe moves"
 msgstr "_Utilizar de movements sens dangièr"
 
-#: src/properties-dialog.vala:130
+#: src/properties-dialog.vala:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Evita los movements accidentals que menan a èsser tuat."
 
-#: src/properties-dialog.vala:133
+#: src/properties-dialog.vala:100
 msgid "U_se super safe moves"
 msgstr "Ut_ilizar de movements *vertadièrament* sens dangièr"
 
-#: src/properties-dialog.vala:135
+#: src/properties-dialog.vala:102
 msgid "Prevents all moves that result in getting killed."
 msgstr "Evita totes los movements que menan a èsser tuats."
 
-#: src/properties-dialog.vala:147
+#: src/properties-dialog.vala:114
 msgid "_Enable sounds"
 msgstr "_Activar los sons"
 
-#: src/properties-dialog.vala:152
+#: src/properties-dialog.vala:119
 msgid "Play sounds for events like winning a level and dying."
 msgstr ""
 "Jòga de sons pels eveniments tals coma la reüssida d'un nivèl o la mòrt."
 
-#: src/properties-dialog.vala:155
+#: src/properties-dialog.vala:122
 msgid "Game"
 msgstr "Jòc"
 
-#: src/properties-dialog.vala:167
+#: src/properties-dialog.vala:128
 msgid "_Image theme:"
 msgstr "Tèma d'_imatge :"
 
-#: src/properties-dialog.vala:177
+#: src/properties-dialog.vala:138
 msgid "_Background color:"
 msgstr "Color de _fons :"
 
-#: src/properties-dialog.vala:187
+#: src/properties-dialog.vala:148
 msgid "Appearance"
 msgstr "Aparéncia"
 
-#: src/properties-dialog.vala:205
+#: src/properties-dialog.vala:162
 msgid "_Restore Defaults"
 msgstr "_Paramètres per defaut"
 
-#: src/properties-dialog.vala:209
+#: src/properties-dialog.vala:166
 msgid "Keyboard"
 msgstr "Clavièr"
 
 #. Label on the scores dialog, next to map type dropdown
-#: src/scores.vala:29
+#: src/scores.vala:28
 msgid "Game Type:"
 msgstr "Tipe de jòc :"
 
-#: src/scores.vala:54
+#: src/scores.vala:53
 msgid "Classic robots"
 msgstr "Robòts classics"
 
-#: src/scores.vala:56
+#: src/scores.vala:55
 msgid "Classic robots with safe moves"
 msgstr "Robòts classics amb movements sens dangièr"
 
-#: src/scores.vala:58
+#: src/scores.vala:57
 msgid "Classic robots with super-safe moves"
 msgstr "Robòts classics amb movements *vertadièrament* sens dangièr"
 
-#: src/scores.vala:60
+#: src/scores.vala:59
 msgid "Nightmare"
 msgstr "Cachavièlha"
 
-#: src/scores.vala:62
+#: src/scores.vala:61
 msgid "Nightmare with safe moves"
 msgstr "Cachavièlha amb movements sens dangièr"
 
-#: src/scores.vala:64
+#: src/scores.vala:63
 msgid "Nightmare with super-safe moves"
 msgstr "Cachavièlha amb movements *vertadièrament* sens dangièr"
 
-#: src/scores.vala:66
+#: src/scores.vala:65
 msgid "Robots2"
 msgstr "Robòts2"
 
-#: src/scores.vala:68
+#: src/scores.vala:67
 msgid "Robots2 with safe moves"
 msgstr "Robòts2 amb movements sens dangièr"
 
-#: src/scores.vala:70
+#: src/scores.vala:69
 msgid "Robots2 with super-safe moves"
 msgstr "Robòts2 amb movements *vertadièrament* sens dangièr"
 
-#: src/scores.vala:72
+#: src/scores.vala:71
 msgid "Robots2 easy"
 msgstr "Robòts2 aisit"
 
-#: src/scores.vala:74
+#: src/scores.vala:73
 msgid "Robots2 easy with safe moves"
 msgstr "Robòts2 aisit amb movements sens dangièr"
 
-#: src/scores.vala:76
+#: src/scores.vala:75
 msgid "Robots2 easy with super-safe moves"
 msgstr "Robòts2 aisit amb movements *vertadièrament* sens dangièr"
 
-#: src/scores.vala:78
+#: src/scores.vala:77
 msgid "Robots with safe teleport"
 msgstr "Robòts amb teleportacion sens dangièr"
 
-#: src/scores.vala:80
+#: src/scores.vala:79
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robòts amb teleportacion e movements sens dangièr"
 
-#: src/scores.vala:82
+#: src/scores.vala:81
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robòts amb teleportacion e movements *vertadièrament* sens dangièr"
 
-#: src/window.vala:97
+#: src/window.vala:113
 msgid "Teleport _Randomly"
 msgstr "Se teleportar _aléatoirement"
 
-#: src/window.vala:120
+#: src/window.vala:138
 msgid "_Wait for Robots"
 msgstr "E_sperar los robòts"
 
-#: src/window.vala:135
+#: src/window.vala:154
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Nivèl : %d\tMarca : %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:138
+#: src/window.vala:157
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Restant : %d)"
 
 #. First line of safe teleports button label.
-#: src/window.vala:140
+#: src/window.vala:159
 msgid "Teleport _Safely"
 msgstr "Se teleportar sens _dangièr"
+
+#~ msgid "GNOME Robots"
+#~ msgstr "GNOME Robòts"
+
+#~ msgid "The GNOME Project"
+#~ msgstr "Lo projècte GNOME"
+
+#~ msgid "No game data could be found."
+#~ msgstr "Cap de donada de jòc pòt pas èsser trobada."
 
 #~ msgid "_Quit"
 #~ msgstr "_Quitar"

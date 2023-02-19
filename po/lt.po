@@ -8,25 +8,25 @@
 # Vytautas Povilaitis <punktyras@nkm.lt>, 2007.
 # Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008, 2010.
 # Algimantas Margevičius <gymka@mail.ru>, 2011.
-# Aurimas Černius <aurisc4@gmail.com>, 2010-2020.
+# Aurimas Černius <aurisc4@gmail.com>, 2010-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2020-01-04 15:09+0000\n"
-"PO-Revision-Date: 2020-02-08 14:40+0200\n"
+"POT-Creation-Date: 2023-01-25 19:23+0000\n"
+"PO-Revision-Date: 2023-02-19 21:24+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 3.34.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 42.0\n"
 
-#: data/app-menu.ui:7 src/gnome-robots.c:256
+#: data/app-menu.ui:7 src/application.vala:104
 msgid "_New Game"
 msgstr "_Naujas žaidimas"
 
@@ -46,18 +46,17 @@ msgstr "_Žinynas"
 msgid "_About Robots"
 msgstr "_Apie robotus"
 
-#: data/org.gnome.Robots.appdata.xml.in:7
-msgid "GNOME Robots"
-msgstr "GNOME Robotai"
+#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
+#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+msgid "Robots"
+msgstr "Robotai"
 
 #: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Išvenkite robotų ir sudaužykite juos vieną su kitu"
 
-#: data/org.gnome.Robots.appdata.xml.in:10
-#| msgid ""
-#| "It is the distant future – the year 2000. Evil robots are trying to kill "
-#| "you. Avoid the robots or face certain death."
+#. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
+#: data/org.gnome.Robots.appdata.xml.in:11
 msgid ""
 "It is the distant future: the year 2000. Evil robots are trying to kill you. "
 "Avoid the robots or face certain death."
@@ -65,7 +64,7 @@ msgstr ""
 "Tai yra tolima ateitis: 2000 metai. Blogieji robotai bando tave nužudyti. "
 "Išvenk robotų arba mirk."
 
-#: data/org.gnome.Robots.appdata.xml.in:14
+#: data/org.gnome.Robots.appdata.xml.in:15
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -78,7 +77,7 @@ msgstr ""
 "atsiradusiomis šlamšto krūvomis. Taip pat gali gintis stumdydamas šlamšto "
 "krūvas bei pabėgti į saugią vietą naudodamas savo teleportavimo įrankį."
 
-#: data/org.gnome.Robots.appdata.xml.in:21
+#: data/org.gnome.Robots.appdata.xml.in:22
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -88,14 +87,9 @@ msgstr ""
 "tave nukelti tiesiai šalia roboto, kuris tave nužudys. Išgyvenk kiek galima "
 "ilgiau!"
 
-#: data/org.gnome.Robots.appdata.xml.in:54
-msgid "The GNOME Project"
-msgstr "GNOME projektas"
-
-#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:318 src/gnome-robots.c:364
-msgid "Robots"
-msgstr "Robotai"
+#: data/org.gnome.Robots.appdata.xml.in:62
+msgid "Andrey Kutejko"
+msgstr "Andrey Kutejko"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
@@ -170,7 +164,7 @@ msgstr "Įjungti garsus"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Įjungia garsus. Skleisti garsus atsitikus įvairiems žaidimo įvykiams."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
 msgid "Key to move NW"
 msgstr "Judėjimo į Šiaurės Vakarus klavišas."
 
@@ -178,7 +172,7 @@ msgstr "Judėjimo į Šiaurės Vakarus klavišas."
 msgid "The key used to move north-west."
 msgstr "Judėjimo į šiaurės vakarus klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
 msgid "Key to move N"
 msgstr "Judėjimo į Šiaurę klavišas."
 
@@ -186,7 +180,7 @@ msgstr "Judėjimo į Šiaurę klavišas."
 msgid "The key used to move north."
 msgstr "Judėjimo į šiaurę klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
 msgid "Key to move NE"
 msgstr "Judėjimo į Šiaurės Rytus klavišas."
 
@@ -194,7 +188,7 @@ msgstr "Judėjimo į Šiaurės Rytus klavišas."
 msgid "The key used to move north-east."
 msgstr "Judėjimo į šiaurės rytus klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
 msgid "Key to move W"
 msgstr "Judėjimo į Vakarus klavišas."
 
@@ -202,7 +196,7 @@ msgstr "Judėjimo į Vakarus klavišas."
 msgid "The key used to move west."
 msgstr "Judėjimo į vakarus klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
 msgid "Key to hold"
 msgstr "Laikymo klavišas"
 
@@ -210,7 +204,7 @@ msgstr "Laikymo klavišas"
 msgid "The key used to hold still."
 msgstr "Klavišas, naudojamas laikymui."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
 msgid "Key to move E"
 msgstr "Judėjimo į Rytus klavišas"
 
@@ -218,7 +212,7 @@ msgstr "Judėjimo į Rytus klavišas"
 msgid "The key used to move east."
 msgstr "Judėjimo į rytus klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
 msgid "Key to move SW"
 msgstr "Judėjimo į Pietvakarius klavišas."
 
@@ -226,7 +220,7 @@ msgstr "Judėjimo į Pietvakarius klavišas."
 msgid "The key used to move south-west."
 msgstr "Judėjimo į pietvakarius klavišas"
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
 msgid "Key to move S"
 msgstr "Judėjimo į Pietus klavišas."
 
@@ -234,7 +228,7 @@ msgstr "Judėjimo į Pietus klavišas."
 msgid "The key used to move south."
 msgstr "Judėjimo į pietus klavišas."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
 msgid "Key to move SE"
 msgstr "Judėjimo į Pietryčius klavišas."
 
@@ -254,109 +248,27 @@ msgstr "Lango aukštis pikseliais"
 msgid "true if the window is maximized"
 msgstr "teigiama, jei langas yra išdidintas"
 
-#: src/game.c:343 src/game.c:359
+#: src/application.vala:63
 msgid ""
-"Congratulations, You Have Defeated the Robots!! \n"
-"But Can You do it Again?"
+"The program Robots was unable to find any valid game configuration files. "
+"Please check that the program is installed correctly."
 msgstr ""
-"Sveikiname, jūs nugalėjote robotus!\n"
-"Bet ar sugebėsite tai padaryti dar kartą?"
+"Robots programai nepavyko rasti tinkamų žaidimo nustatymų failų. "
+"Patikrinkite, ar programa yra įdiegta teisingai."
 
-#. This should never happen.
-#: src/game.c:1108
-msgid "There are no teleport locations left!!"
-msgstr "Neliko nei vienos vietos teleportuotis!!"
+#: src/application.vala:101
+msgid "Are you sure you want to discard the current game?"
+msgstr "Ar tikrai norite nutraukti dabartinį žaidimą?"
 
-#: src/game.c:1136
-msgid "There are no safe locations to teleport to!!"
-msgstr "Nėra saugios vietos, kur teleportuotis!!"
+#: src/application.vala:103
+msgid "Keep _Playing"
+msgstr "Tęsti _žaidimą"
 
-#: src/games-controls.c:292
-msgid "Unknown Command"
-msgstr "Nežinoma komanda"
-
-#: src/gnome-robots.c:106
-msgid "Classic robots"
-msgstr "Klasikiniai robotai"
-
-#: src/gnome-robots.c:107
-msgid "Classic robots with safe moves"
-msgstr "Klasikiniai robotai su saugiais ėjimais"
-
-#: src/gnome-robots.c:108
-msgid "Classic robots with super-safe moves"
-msgstr "Klasikiniai robotai su ypač saugiais ėjimais"
-
-#: src/gnome-robots.c:109
-msgid "Nightmare"
-msgstr "Košmaras"
-
-#: src/gnome-robots.c:110
-msgid "Nightmare with safe moves"
-msgstr "Košmaras su saugiais ėjimais"
-
-#: src/gnome-robots.c:111
-msgid "Nightmare with super-safe moves"
-msgstr "Košmaras su ypač saugiais ėjimais"
-
-#: src/gnome-robots.c:112
-msgid "Robots2"
-msgstr "Robotai2"
-
-#: src/gnome-robots.c:113
-msgid "Robots2 with safe moves"
-msgstr "Robotai2 su saugiais ėjimais"
-
-#: src/gnome-robots.c:114
-msgid "Robots2 with super-safe moves"
-msgstr "Robotai2 su ypač saugiais ėjimais"
-
-#: src/gnome-robots.c:115
-msgid "Robots2 easy"
-msgstr "lengvi Robotai2"
-
-#: src/gnome-robots.c:116
-msgid "Robots2 easy with safe moves"
-msgstr "Robotai2 su saugiais ėjimais"
-
-#: src/gnome-robots.c:117
-msgid "Robots2 easy with super-safe moves"
-msgstr "Robotai2 su ypač saugiais ėjimais"
-
-#: src/gnome-robots.c:118
-msgid "Robots with safe teleport"
-msgstr "Robotai su saugiu teleportavimu"
-
-#: src/gnome-robots.c:119
-msgid "Robots with safe teleport with safe moves"
-msgstr "Robotai su saugiu teleportavimu saugiais ėjimais"
-
-#: src/gnome-robots.c:120
-msgid "Robots with safe teleport with super-safe moves"
-msgstr "Robotai su saugiu teleportavimu ypač saugiais ėjimais"
-
-#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: src/gnome-robots.c:156
-#, c-format
-msgid "Level: %d\tScore: %d"
-msgstr "Lygis: %d\tRezultatas: %d"
-
-#. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/gnome-robots.c:167
-#, c-format
-msgid "(Remaining: %d)"
-msgstr "(Liko: %d)"
-
-#. First line of safe teleports button label.
-#: src/gnome-robots.c:169
-msgid "Teleport _Safely"
-msgstr "Teleportuotis _saugiai"
-
-#: src/gnome-robots.c:227
+#: src/application.vala:157
 msgid "Based on classic BSD Robots"
 msgstr "Sukurtas pagal klasikinį BSD Robots."
 
-#: src/gnome-robots.c:231
+#: src/application.vala:161
 msgid "translator-credits"
 msgstr ""
 "Paskutinis vertėjas:\n"
@@ -368,111 +280,191 @@ msgstr ""
 "Tomas Kuliavas <tokul@users.sf.net>,\n"
 "Gediminas Paulauskas <menesis@chatsubo.lt>"
 
-#: src/gnome-robots.c:252
-msgid "Are you sure you want to discard the current game?"
-msgstr "Ar tikrai norite nutraukti dabartinį žaidimą?"
-
-#: src/gnome-robots.c:255
-msgid "Keep _Playing"
-msgstr "Tęsti _žaidimą"
-
-#: src/gnome-robots.c:410
-msgid "Teleport _Randomly"
-msgstr "Teleportuotis _atsitiktinai"
-
-#: src/gnome-robots.c:429
-msgid "_Wait for Robots"
-msgstr "_Laukti robotų"
-
-#. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:453
-msgid "Game Type:"
-msgstr "Žaidimo tipas:"
-
-#: src/gnome-robots.c:468
-msgid "No game data could be found."
-msgstr "Nepavyko rasti žaidimo duomenų."
-
-#: src/gnome-robots.c:470
+#: src/game-area.vala:356
 msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
+"Congratulations, You Have Defeated the Robots!! \n"
+"But Can You do it Again?"
 msgstr ""
-"Robots programai nepavyko rasti tinkamų žaidimo nustatymų failų. "
-"Patikrinkite, ar programa yra įdiegta teisingai."
+"Sveikiname, jūs nugalėjote robotus!\n"
+"Bet ar sugebėsite tai padaryti dar kartą?"
 
-#: src/gnome-robots.c:487
-msgid "Some graphics files are missing or corrupt."
-msgstr "Trūksta kai kurių grafikos failų arba jos yra sugadintos."
+#: src/game-area.vala:360
+msgid "There are no teleport locations left!!"
+msgstr "Neliko nei vienos vietos teleportuotis!!"
 
-#: src/gnome-robots.c:489
-msgid ""
-"The program Robots was unable to load all the necessary graphics files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Robots programai nepavyko įkelti visų reikalingų grafinių failų. "
-"Patikrinkite, ar programa yra įdiegta teisingai."
-
-#: src/graphics.c:149
-#, c-format
-msgid "Could not find “%s” pixmap file\n"
-msgstr "Nepavyko rasti „%s“ paveikslėlio failo\n"
-
-#: src/properties.c:391
+#: src/properties-dialog.vala:68
 msgid "Preferences"
 msgstr "Nuostatos"
 
-#: src/properties.c:416
+#: src/properties-dialog.vala:84
 msgid "Game Type"
 msgstr "Žaidimo tipas"
 
-#: src/properties.c:426
+#: src/properties-dialog.vala:95
 msgid "_Use safe moves"
 msgstr "_Naudoti saugius ėjimus"
 
-#: src/properties.c:431
+#: src/properties-dialog.vala:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Drausti atsitiktinius ėjimus, kurie baigiasi žuvimu."
 
-#: src/properties.c:434
+#: src/properties-dialog.vala:100
 msgid "U_se super safe moves"
 msgstr "N_audoti ypač saugius ėjimus"
 
-#: src/properties.c:441
+#: src/properties-dialog.vala:102
 msgid "Prevents all moves that result in getting killed."
 msgstr "Neleidžia atlikti ėjimu, kurie baigiasi žuvimu."
 
-#: src/properties.c:447
+#: src/properties-dialog.vala:114
 msgid "_Enable sounds"
 msgstr "Įj_ungti garsus"
 
-#: src/properties.c:453
+#: src/properties-dialog.vala:119
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Groti garsus tokiems įvykiams kaip lygio perėjimas ir mirimas."
 
-#: src/properties.c:455
+#: src/properties-dialog.vala:122
 msgid "Game"
 msgstr "Žaidimas"
 
-#: src/properties.c:468
+#: src/properties-dialog.vala:128
 msgid "_Image theme:"
 msgstr "_Paveikslėlių tema:"
 
-#: src/properties.c:480
+#: src/properties-dialog.vala:138
 msgid "_Background color:"
 msgstr "_Fono spalva:"
 
-#: src/properties.c:492
+#: src/properties-dialog.vala:148
 msgid "Appearance"
 msgstr "Išvaizda"
 
-#: src/properties.c:521
+#: src/properties-dialog.vala:162
 msgid "_Restore Defaults"
 msgstr "_Atstatyti numatytuosius"
 
-#: src/properties.c:526
+#: src/properties-dialog.vala:166
 msgid "Keyboard"
 msgstr "Klaviatūra"
+
+#. Label on the scores dialog, next to map type dropdown
+#: src/scores.vala:28
+msgid "Game Type:"
+msgstr "Žaidimo tipas:"
+
+#: src/scores.vala:53
+msgid "Classic robots"
+msgstr "Klasikiniai robotai"
+
+#: src/scores.vala:55
+msgid "Classic robots with safe moves"
+msgstr "Klasikiniai robotai su saugiais ėjimais"
+
+#: src/scores.vala:57
+msgid "Classic robots with super-safe moves"
+msgstr "Klasikiniai robotai su ypač saugiais ėjimais"
+
+#: src/scores.vala:59
+msgid "Nightmare"
+msgstr "Košmaras"
+
+#: src/scores.vala:61
+msgid "Nightmare with safe moves"
+msgstr "Košmaras su saugiais ėjimais"
+
+#: src/scores.vala:63
+msgid "Nightmare with super-safe moves"
+msgstr "Košmaras su ypač saugiais ėjimais"
+
+#: src/scores.vala:65
+msgid "Robots2"
+msgstr "Robotai2"
+
+#: src/scores.vala:67
+msgid "Robots2 with safe moves"
+msgstr "Robotai2 su saugiais ėjimais"
+
+#: src/scores.vala:69
+msgid "Robots2 with super-safe moves"
+msgstr "Robotai2 su ypač saugiais ėjimais"
+
+#: src/scores.vala:71
+msgid "Robots2 easy"
+msgstr "lengvi Robotai2"
+
+#: src/scores.vala:73
+msgid "Robots2 easy with safe moves"
+msgstr "Robotai2 su saugiais ėjimais"
+
+#: src/scores.vala:75
+msgid "Robots2 easy with super-safe moves"
+msgstr "Robotai2 su ypač saugiais ėjimais"
+
+#: src/scores.vala:77
+msgid "Robots with safe teleport"
+msgstr "Robotai su saugiu teleportavimu"
+
+#: src/scores.vala:79
+msgid "Robots with safe teleport with safe moves"
+msgstr "Robotai su saugiu teleportavimu saugiais ėjimais"
+
+#: src/scores.vala:81
+msgid "Robots with safe teleport with super-safe moves"
+msgstr "Robotai su saugiu teleportavimu ypač saugiais ėjimais"
+
+#: src/window.vala:113
+msgid "Teleport _Randomly"
+msgstr "Teleportuotis _atsitiktinai"
+
+#: src/window.vala:138
+msgid "_Wait for Robots"
+msgstr "_Laukti robotų"
+
+#: src/window.vala:154
+#, c-format
+msgid "Level: %d\tScore: %d"
+msgstr "Lygis: %d\tRezultatas: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: src/window.vala:157
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(Liko: %d)"
+
+#. First line of safe teleports button label.
+#: src/window.vala:159
+msgid "Teleport _Safely"
+msgstr "Teleportuotis _saugiai"
+
+#~ msgid "GNOME Robots"
+#~ msgstr "GNOME Robotai"
+
+#~ msgid "The GNOME Project"
+#~ msgstr "GNOME projektas"
+
+#~ msgid "There are no safe locations to teleport to!!"
+#~ msgstr "Nėra saugios vietos, kur teleportuotis!!"
+
+#~ msgid "Unknown Command"
+#~ msgstr "Nežinoma komanda"
+
+#~ msgid "No game data could be found."
+#~ msgstr "Nepavyko rasti žaidimo duomenų."
+
+#~ msgid "Some graphics files are missing or corrupt."
+#~ msgstr "Trūksta kai kurių grafikos failų arba jos yra sugadintos."
+
+#~ msgid ""
+#~ "The program Robots was unable to load all the necessary graphics files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "Robots programai nepavyko įkelti visų reikalingų grafinių failų. "
+#~ "Patikrinkite, ar programa yra įdiegta teisingai."
+
+#, c-format
+#~ msgid "Could not find “%s” pixmap file\n"
+#~ msgstr "Nepavyko rasti „%s“ paveikslėlio failo\n"
 
 #~ msgid "org.gnome.Robots"
 #~ msgstr "org.gnome.Robots"

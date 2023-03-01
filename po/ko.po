@@ -9,7 +9,7 @@
 # Updated for gnome-robots:
 #
 # Changwoo Ryu <cwryu@debian.org>, 2013-2016.
-# DaeHyun Sung <sungdh86@gmail.com>, 2019-2020.
+# DaeHyun Sung <sungdh86@gmail.com>, 2019-2023.
 #
 # 새로 번역하신 분은 아래 "translator-credits"에 추가하세요.
 #
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2020-01-09 03:06+0000\n"
-"PO-Revision-Date: 2020-02-23 23:37+0900\n"
+"POT-Creation-Date: 2023-01-25 19:23+0000\n"
+"PO-Revision-Date: 2023-02-28 14:33+0900\n"
 "Last-Translator: DaeHyun Sung <sungdh86+git@gmail.com>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -30,9 +30,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.2.2\n"
 
-#: data/app-menu.ui:7 src/gnome-robots.c:256
+#: data/app-menu.ui:7 src/application.vala:104
 msgid "_New Game"
 msgstr "새 게임(_N)"
 
@@ -52,15 +52,17 @@ msgstr "도움말(_H)"
 msgid "_About Robots"
 msgstr "로봇 정보(_A)"
 
-#: data/org.gnome.Robots.appdata.xml.in:7
-msgid "GNOME Robots"
-msgstr "그놈 로봇"
+#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
+#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+msgid "Robots"
+msgstr "로봇"
 
 #: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
 msgid "Avoid the robots and make them crash into each other"
 msgstr "로봇을 피해 서로 부딪혀 부서지도록 합니다"
 
-#: data/org.gnome.Robots.appdata.xml.in:10
+#. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
+#: data/org.gnome.Robots.appdata.xml.in:11
 msgid ""
 "It is the distant future: the year 2000. Evil robots are trying to kill you. "
 "Avoid the robots or face certain death."
@@ -68,7 +70,7 @@ msgstr ""
 "먼 미래: 2000년. 악당 로봇이 당신을 죽이려 합니다. 로봇을 피하지 않으면 피할 "
 "수 없는 죽음을 맞게 됩니다."
 
-#: data/org.gnome.Robots.appdata.xml.in:14
+#: data/org.gnome.Robots.appdata.xml.in:15
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -81,7 +83,7 @@ msgstr ""
 "더미를 옮겨서 보호할 수도 있고, 휴대용 순간이동 장치를 사용해 탈출할 수도 있"
 "습니다."
 
-#: data/org.gnome.Robots.appdata.xml.in:21
+#: data/org.gnome.Robots.appdata.xml.in:22
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -90,14 +92,9 @@ msgstr ""
 "안전 순간이동 보급은 제한되어 있습니다. 다 떨어지면 로봇 바로 옆으로 순간이동"
 "할 수 있고 그러면 로봇에 죽임을 당합니다. 가능한 오래 살아남으십시오!"
 
-#: data/org.gnome.Robots.appdata.xml.in:54
-msgid "The GNOME Project"
-msgstr "그놈 프로젝트"
-
-#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:318 src/gnome-robots.c:364
-msgid "Robots"
-msgstr "로봇"
+#: data/org.gnome.Robots.appdata.xml.in:62
+msgid "Andrey Kutejko"
+msgstr "Andrey Kutejko"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
@@ -169,7 +166,7 @@ msgstr "게임 사운드 사용"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "게임 사운드 사용. 게임중에 여러가지 이벤트에 대한 소리를 냅니다."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
 msgid "Key to move NW"
 msgstr "북서쪽으로 이동하는 키"
 
@@ -177,7 +174,7 @@ msgstr "북서쪽으로 이동하는 키"
 msgid "The key used to move north-west."
 msgstr "북서쪽으로 이동할 때 사용할 키."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
 msgid "Key to move N"
 msgstr "북쪽으로 이동하는 키"
 
@@ -185,7 +182,7 @@ msgstr "북쪽으로 이동하는 키"
 msgid "The key used to move north."
 msgstr "북쪽으로 이동할 때 사용할 키."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
 msgid "Key to move NE"
 msgstr "북동쪽으로 이동하는 키"
 
@@ -193,7 +190,7 @@ msgstr "북동쪽으로 이동하는 키"
 msgid "The key used to move north-east."
 msgstr "북동쪽으로 이동할 때 사용할 키."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
 msgid "Key to move W"
 msgstr "서쪽으로 이동하는 키"
 
@@ -201,7 +198,7 @@ msgstr "서쪽으로 이동하는 키"
 msgid "The key used to move west."
 msgstr "서쪽으로 이동할 때 사용할 키."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
 msgid "Key to hold"
 msgstr "위치 유지하는 키"
 
@@ -209,7 +206,7 @@ msgstr "위치 유지하는 키"
 msgid "The key used to hold still."
 msgstr "위치를 유지할 때 사용할 키."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
 msgid "Key to move E"
 msgstr "동쪽으로 이동하는 키"
 
@@ -217,7 +214,7 @@ msgstr "동쪽으로 이동하는 키"
 msgid "The key used to move east."
 msgstr "동쪽으로 이동할 때 사용할 키."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
 msgid "Key to move SW"
 msgstr "남서쪽으로 이동하는 키"
 
@@ -225,7 +222,7 @@ msgstr "남서쪽으로 이동하는 키"
 msgid "The key used to move south-west."
 msgstr "남서쪽으로 이동할 때 사용할 키."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
 msgid "Key to move S"
 msgstr "남쪽으로 이동하는 키"
 
@@ -233,7 +230,7 @@ msgstr "남쪽으로 이동하는 키"
 msgid "The key used to move south."
 msgstr "남쪽으로 이동할 때 사용할 키."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
 msgid "Key to move SE"
 msgstr "남동쪽으로 이동하는 키"
 
@@ -253,140 +250,7 @@ msgstr "창의 높이, 픽셀 단위"
 msgid "true if the window is maximized"
 msgstr "참이면 창을 최대화"
 
-#: src/game.c:343 src/game.c:359
-msgid ""
-"Congratulations, You Have Defeated the Robots!! \n"
-"But Can You do it Again?"
-msgstr ""
-"축하합니다. 로봇을 모두 물리쳤습니다!! \n"
-"다시 플레이하시겠습니까?"
-
-#. This should never happen.
-#: src/game.c:1108
-msgid "There are no teleport locations left!!"
-msgstr "순간이동할 위치가 남아 있지 않습니다!!"
-
-#: src/game.c:1136
-msgid "There are no safe locations to teleport to!!"
-msgstr "순간이동할 안전한 위치가 남아 있지 않습니다!!"
-
-#: src/games-controls.c:292
-msgid "Unknown Command"
-msgstr "알 수 없는 명령"
-
-#: src/gnome-robots.c:106
-msgid "Classic robots"
-msgstr "전통적 로봇"
-
-#: src/gnome-robots.c:107
-msgid "Classic robots with safe moves"
-msgstr "전통적인 로봇, 안전한 움직임"
-
-#: src/gnome-robots.c:108
-msgid "Classic robots with super-safe moves"
-msgstr "전통적인 로봇, 수퍼 안전한 움직임"
-
-#: src/gnome-robots.c:109
-msgid "Nightmare"
-msgstr "악몽"
-
-#: src/gnome-robots.c:110
-msgid "Nightmare with safe moves"
-msgstr "악몽, 안전한 움직임"
-
-#: src/gnome-robots.c:111
-msgid "Nightmare with super-safe moves"
-msgstr "악몽, 수퍼 안전한 움직임"
-
-#: src/gnome-robots.c:112
-msgid "Robots2"
-msgstr "로봇2"
-
-#: src/gnome-robots.c:113
-msgid "Robots2 with safe moves"
-msgstr "로봇2, 안전한 움직임"
-
-#: src/gnome-robots.c:114
-msgid "Robots2 with super-safe moves"
-msgstr "로봇2, 수퍼 안전한 움직임"
-
-#: src/gnome-robots.c:115
-msgid "Robots2 easy"
-msgstr "로봇2 쉽게"
-
-#: src/gnome-robots.c:116
-msgid "Robots2 easy with safe moves"
-msgstr "안전한 움직임이 있는 로봇2 쉽게"
-
-#: src/gnome-robots.c:117
-msgid "Robots2 easy with super-safe moves"
-msgstr "수퍼 안전한 움직임이 있는 로봇2 쉽게"
-
-#: src/gnome-robots.c:118
-msgid "Robots with safe teleport"
-msgstr "로봇, 안전한 순간이동"
-
-#: src/gnome-robots.c:119
-msgid "Robots with safe teleport with safe moves"
-msgstr "로봇, 안전한 순간이동 및 안전한 움직임"
-
-#: src/gnome-robots.c:120
-msgid "Robots with safe teleport with super-safe moves"
-msgstr "로봇, 안전한 순간이동 및 수퍼 안전한 움직임"
-
-#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: src/gnome-robots.c:156
-#, c-format
-msgid "Level: %d\tScore: %d"
-msgstr "단계: %d\t점수: %d"
-
-#. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/gnome-robots.c:167
-#, c-format
-msgid "(Remaining: %d)"
-msgstr "(남은 수: %d)"
-
-#. First line of safe teleports button label.
-#: src/gnome-robots.c:169
-msgid "Teleport _Safely"
-msgstr "안전하게 순간이동(_S)"
-
-#: src/gnome-robots.c:227
-msgid "Based on classic BSD Robots"
-msgstr "전통적인 BSD 로봇 게임에 기반합니다"
-
-#: src/gnome-robots.c:231
-msgid "translator-credits"
-msgstr ""
-"류창우 <cwryu@debian.org>\n"
-"성대현 <sungdh86@gmail.com>"
-
-#: src/gnome-robots.c:252
-msgid "Are you sure you want to discard the current game?"
-msgstr "정말로 현재 게임을 포기하시겠습니까?"
-
-#: src/gnome-robots.c:255
-msgid "Keep _Playing"
-msgstr "계속 플레이(_P)"
-
-#: src/gnome-robots.c:410
-msgid "Teleport _Randomly"
-msgstr "임의 위치로 순간 이동(_R)"
-
-#: src/gnome-robots.c:429
-msgid "_Wait for Robots"
-msgstr "로봇 기다리기(_W)"
-
-#. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:453
-msgid "Game Type:"
-msgstr "게임 종류:"
-
-#: src/gnome-robots.c:468
-msgid "No game data could be found."
-msgstr "게임 데이터를 찾을 수 없습니다."
-
-#: src/gnome-robots.c:470
+#: src/application.vala:63
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -394,78 +258,209 @@ msgstr ""
 "로봇 프로그램에서 올바른 게임 설정 파일을 찾지 못했습니다. 프로그램이 올바르"
 "게 설치되었는지 확인하십시오."
 
-#: src/gnome-robots.c:487
-msgid "Some graphics files are missing or corrupt."
-msgstr "그래픽 파일중에 없거나 망가진 파일이 있습니다."
+#: src/application.vala:101
+msgid "Are you sure you want to discard the current game?"
+msgstr "정말로 현재 게임을 포기하시겠습니까?"
 
-#: src/gnome-robots.c:489
-msgid ""
-"The program Robots was unable to load all the necessary graphics files. "
-"Please check that the program is installed correctly."
+#: src/application.vala:103
+msgid "Keep _Playing"
+msgstr "계속 플레이(_P)"
+
+#: src/application.vala:157
+msgid "Based on classic BSD Robots"
+msgstr "전통적인 BSD 로봇 게임에 기반합니다"
+
+#: src/application.vala:161
+msgid "translator-credits"
 msgstr ""
-"로봇 프로그램에서 필요한 그래픽 파일을 읽어들이지 못했습니다. 프로그램이 올바"
-"르게 설치되었는지 확인하십시오."
+"류창우 <cwryu@debian.org>\n"
+"성대현 <sungdh86+git@gmail.com>"
 
-#: src/graphics.c:149
-#, c-format
-msgid "Could not find “%s” pixmap file\n"
-msgstr "“%s” 픽스맵 파일을 찾을 수 없습니다\n"
+#: src/game-area.vala:356
+msgid ""
+"Congratulations, You Have Defeated the Robots!! \n"
+"But Can You do it Again?"
+msgstr ""
+"축하합니다. 로봇을 모두 물리쳤습니다!! \n"
+"다시 플레이하시겠습니까?"
 
-#: src/properties.c:391
+#: src/game-area.vala:360
+msgid "There are no teleport locations left!!"
+msgstr "순간이동할 위치가 남아 있지 않습니다!!"
+
+#: src/properties-dialog.vala:68
 msgid "Preferences"
 msgstr "기본 설정"
 
-#: src/properties.c:416
+#: src/properties-dialog.vala:84
 msgid "Game Type"
 msgstr "게임 종류"
 
-#: src/properties.c:426
+#: src/properties-dialog.vala:95
 msgid "_Use safe moves"
 msgstr "안전한 움직임 사용(_U)"
 
-#: src/properties.c:431
+#: src/properties-dialog.vala:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "죽게 되는 움직임을 우연히 하지 못하도록 막습니다."
 
-#: src/properties.c:434
+#: src/properties-dialog.vala:100
 msgid "U_se super safe moves"
 msgstr "수퍼 안전한 움직임 사용(_S)"
 
-#: src/properties.c:441
+#: src/properties-dialog.vala:102
 msgid "Prevents all moves that result in getting killed."
 msgstr "죽게 되는 움직임을 무엇이든 하지 못하도록 막습니다."
 
-#: src/properties.c:447
+#: src/properties-dialog.vala:114
 msgid "_Enable sounds"
 msgstr "사운드 사용(_E)"
 
-#: src/properties.c:453
+#: src/properties-dialog.vala:119
 msgid "Play sounds for events like winning a level and dying."
 msgstr "레벨을 마쳤거나 죽을 때와 같은 이벤트에 대해 소리를 냅니다."
 
-#: src/properties.c:455
+#: src/properties-dialog.vala:122
 msgid "Game"
 msgstr "게임"
 
-#: src/properties.c:468
+#: src/properties-dialog.vala:128
 msgid "_Image theme:"
 msgstr "이미지 테마(_I):"
 
-#: src/properties.c:480
+#: src/properties-dialog.vala:138
 msgid "_Background color:"
 msgstr "배경색(_B):"
 
-#: src/properties.c:492
+#: src/properties-dialog.vala:148
 msgid "Appearance"
 msgstr "모양"
 
-#: src/properties.c:521
+#: src/properties-dialog.vala:162
 msgid "_Restore Defaults"
 msgstr "기본값으로 되돌리기(_R)"
 
-#: src/properties.c:526
+#: src/properties-dialog.vala:166
 msgid "Keyboard"
 msgstr "키보드"
+
+#. Label on the scores dialog, next to map type dropdown
+#: src/scores.vala:28
+msgid "Game Type:"
+msgstr "게임 종류:"
+
+#: src/scores.vala:53
+msgid "Classic robots"
+msgstr "전통적 로봇"
+
+#: src/scores.vala:55
+msgid "Classic robots with safe moves"
+msgstr "전통적인 로봇, 안전한 움직임"
+
+#: src/scores.vala:57
+msgid "Classic robots with super-safe moves"
+msgstr "전통적인 로봇, 수퍼 안전한 움직임"
+
+#: src/scores.vala:59
+msgid "Nightmare"
+msgstr "악몽"
+
+#: src/scores.vala:61
+msgid "Nightmare with safe moves"
+msgstr "악몽, 안전한 움직임"
+
+#: src/scores.vala:63
+msgid "Nightmare with super-safe moves"
+msgstr "악몽, 수퍼 안전한 움직임"
+
+#: src/scores.vala:65
+msgid "Robots2"
+msgstr "로봇2"
+
+#: src/scores.vala:67
+msgid "Robots2 with safe moves"
+msgstr "로봇2, 안전한 움직임"
+
+#: src/scores.vala:69
+msgid "Robots2 with super-safe moves"
+msgstr "로봇2, 수퍼 안전한 움직임"
+
+#: src/scores.vala:71
+msgid "Robots2 easy"
+msgstr "로봇2 쉽게"
+
+#: src/scores.vala:73
+msgid "Robots2 easy with safe moves"
+msgstr "안전한 움직임이 있는 로봇2 쉽게"
+
+#: src/scores.vala:75
+msgid "Robots2 easy with super-safe moves"
+msgstr "수퍼 안전한 움직임이 있는 로봇2 쉽게"
+
+#: src/scores.vala:77
+msgid "Robots with safe teleport"
+msgstr "로봇, 안전한 순간이동"
+
+#: src/scores.vala:79
+msgid "Robots with safe teleport with safe moves"
+msgstr "로봇, 안전한 순간이동 및 안전한 움직임"
+
+#: src/scores.vala:81
+msgid "Robots with safe teleport with super-safe moves"
+msgstr "로봇, 안전한 순간이동 및 수퍼 안전한 움직임"
+
+#: src/window.vala:113
+msgid "Teleport _Randomly"
+msgstr "임의 위치로 순간 이동(_R)"
+
+#: src/window.vala:138
+msgid "_Wait for Robots"
+msgstr "로봇 기다리기(_W)"
+
+#: src/window.vala:154
+#, c-format
+msgid "Level: %d\tScore: %d"
+msgstr "단계: %d\t점수: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: src/window.vala:157
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(남은 수: %d)"
+
+#. First line of safe teleports button label.
+#: src/window.vala:159
+msgid "Teleport _Safely"
+msgstr "안전하게 순간이동(_S)"
+
+#~ msgid "GNOME Robots"
+#~ msgstr "그놈 로봇"
+
+#~ msgid "The GNOME Project"
+#~ msgstr "그놈 프로젝트"
+
+#~ msgid "There are no safe locations to teleport to!!"
+#~ msgstr "순간이동할 안전한 위치가 남아 있지 않습니다!!"
+
+#~ msgid "Unknown Command"
+#~ msgstr "알 수 없는 명령"
+
+#~ msgid "No game data could be found."
+#~ msgstr "게임 데이터를 찾을 수 없습니다."
+
+#~ msgid "Some graphics files are missing or corrupt."
+#~ msgstr "그래픽 파일중에 없거나 망가진 파일이 있습니다."
+
+#~ msgid ""
+#~ "The program Robots was unable to load all the necessary graphics files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "로봇 프로그램에서 필요한 그래픽 파일을 읽어들이지 못했습니다. 프로그램이 "
+#~ "올바르게 설치되었는지 확인하십시오."
+
+#, c-format
+#~ msgid "Could not find “%s” pixmap file\n"
+#~ msgstr "“%s” 픽스맵 파일을 찾을 수 없습니다\n"
 
 #~ msgid "_Quit"
 #~ msgstr "끝내기(_Q)"

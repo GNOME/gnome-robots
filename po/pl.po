@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2020-01-04 15:09+0000\n"
+"POT-Creation-Date: 2023-01-25 19:23+0000\n"
 "PO-Revision-Date: 2020-03-05 14:15+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: data/app-menu.ui:7 src/gnome-robots.c:256
+#: data/app-menu.ui:7 src/application.vala:104
 msgid "_New Game"
 msgstr "_Nowa gra"
 
@@ -50,15 +50,17 @@ msgstr "Pomo_c"
 msgid "_About Robots"
 msgstr "_O grze"
 
-#: data/org.gnome.Robots.appdata.xml.in:7
-msgid "GNOME Robots"
-msgstr "Roboty GNOME"
+#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
+#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+msgid "Robots"
+msgstr "Roboty"
 
 #: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Unikanie robotów i sprawianie, że zderzają się między sobą"
 
-#: data/org.gnome.Robots.appdata.xml.in:10
+#. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
+#: data/org.gnome.Robots.appdata.xml.in:11
 msgid ""
 "It is the distant future: the year 2000. Evil robots are trying to kill you. "
 "Avoid the robots or face certain death."
@@ -66,7 +68,7 @@ msgstr ""
 "Daleka przyszłość: rok 2000. Złe roboty próbują cię zabić. Unikaj robotów "
 "lub stań twarzą w twarz z pewną śmiercią."
 
-#: data/org.gnome.Robots.appdata.xml.in:14
+#: data/org.gnome.Robots.appdata.xml.in:15
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -79,7 +81,7 @@ msgstr ""
 "szczątki. Można się bronić przez przesuwanie szczątków lub uciekać dzięki "
 "podręcznemu urządzeniu do teleportacji."
 
-#: data/org.gnome.Robots.appdata.xml.in:21
+#: data/org.gnome.Robots.appdata.xml.in:22
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -89,14 +91,9 @@ msgstr ""
 "teleportacja może przenieść cię zaraz obok robota, który cię zabije. Przeżyj "
 "tak długo, jak możesz!"
 
-#: data/org.gnome.Robots.appdata.xml.in:54
-msgid "The GNOME Project"
-msgstr "Projekt GNOME"
-
-#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:223
-#: src/gnome-robots.c:318 src/gnome-robots.c:364
-msgid "Robots"
-msgstr "Roboty"
+#: data/org.gnome.Robots.appdata.xml.in:62
+msgid "Andrey Kutejko"
+msgstr "Andrey Kutejko"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
@@ -170,7 +167,7 @@ msgstr "Dźwięki podczas gry"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Odtwarzanie dźwięków podczas gry."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
 msgid "Key to move NW"
 msgstr "Klawisz przesunięcia na północny zachód"
 
@@ -178,7 +175,7 @@ msgstr "Klawisz przesunięcia na północny zachód"
 msgid "The key used to move north-west."
 msgstr "Klawisz używany do przesunięcia na północny zachód."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
 msgid "Key to move N"
 msgstr "Klawisz przesunięcia na północ"
 
@@ -186,7 +183,7 @@ msgstr "Klawisz przesunięcia na północ"
 msgid "The key used to move north."
 msgstr "Klawisz używany do przesunięcia na północ."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
 msgid "Key to move NE"
 msgstr "Klawisz przesunięcia na północny wschód"
 
@@ -194,7 +191,7 @@ msgstr "Klawisz przesunięcia na północny wschód"
 msgid "The key used to move north-east."
 msgstr "Klawisz używany do przesunięcia na północny wschód."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
 msgid "Key to move W"
 msgstr "Klawisz przesunięcia na zachód"
 
@@ -202,7 +199,7 @@ msgstr "Klawisz przesunięcia na zachód"
 msgid "The key used to move west."
 msgstr "Klawisz używany do przesunięcia na zachód."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
 msgid "Key to hold"
 msgstr "Klawisz do stania w miejscu"
 
@@ -210,7 +207,7 @@ msgstr "Klawisz do stania w miejscu"
 msgid "The key used to hold still."
 msgstr "Klawisz używany do stania w miejscu."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
 msgid "Key to move E"
 msgstr "Klawisz przesunięcia na wschód"
 
@@ -218,7 +215,7 @@ msgstr "Klawisz przesunięcia na wschód"
 msgid "The key used to move east."
 msgstr "Klawisz używany do przesunięcia na wschód."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
 msgid "Key to move SW"
 msgstr "Klawisz przesunięcia na południowy zachód"
 
@@ -226,7 +223,7 @@ msgstr "Klawisz przesunięcia na południowy zachód"
 msgid "The key used to move south-west."
 msgstr "Klawisz używany do przesunięcia na południowy zachód."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
 msgid "Key to move S"
 msgstr "Klawisz przesunięcia na południe"
 
@@ -234,7 +231,7 @@ msgstr "Klawisz przesunięcia na południe"
 msgid "The key used to move south."
 msgstr "Klawisz używany do przesunięcia na południe."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
 msgid "Key to move SE"
 msgstr "Klawisz przesunięcia na południowy wschód"
 
@@ -254,109 +251,27 @@ msgstr "Wysokość okna w pikselach"
 msgid "true if the window is maximized"
 msgstr "Wartość „true” oznacza, że okno jest zmaksymalizowane"
 
-#: src/game.c:343 src/game.c:359
+#: src/application.vala:63
 msgid ""
-"Congratulations, You Have Defeated the Robots!! \n"
-"But Can You do it Again?"
+"The program Robots was unable to find any valid game configuration files. "
+"Please check that the program is installed correctly."
 msgstr ""
-"Gratulacje, roboty zostały pokonane! \n"
-"Ale czy uda się to po raz kolejny?"
+"Nie można odnaleźć żadnych poprawnych plików konfiguracyjnych gry. Proszę "
+"sprawdzić, czy gra jest prawidłowo zainstalowana."
 
-#. This should never happen.
-#: src/game.c:1108
-msgid "There are no teleport locations left!!"
-msgstr "Brak miejsc na teleportację!"
+#: src/application.vala:101
+msgid "Are you sure you want to discard the current game?"
+msgstr "Na pewno odrzucić obecną grę?"
 
-#: src/game.c:1136
-msgid "There are no safe locations to teleport to!!"
-msgstr "Nie ma bezpiecznych miejsc na teleportację!"
+#: src/application.vala:103
+msgid "Keep _Playing"
+msgstr "_Graj dalej"
 
-#: src/games-controls.c:292
-msgid "Unknown Command"
-msgstr "Nieznane polecenie"
-
-#: src/gnome-robots.c:106
-msgid "Classic robots"
-msgstr "Klasyczne roboty"
-
-#: src/gnome-robots.c:107
-msgid "Classic robots with safe moves"
-msgstr "Klasyczne roboty z bezpiecznymi ruchami"
-
-#: src/gnome-robots.c:108
-msgid "Classic robots with super-safe moves"
-msgstr "Klasyczne roboty z bardzo bezpiecznymi ruchami"
-
-#: src/gnome-robots.c:109
-msgid "Nightmare"
-msgstr "Koszmar"
-
-#: src/gnome-robots.c:110
-msgid "Nightmare with safe moves"
-msgstr "Koszmar z bezpiecznymi ruchami"
-
-#: src/gnome-robots.c:111
-msgid "Nightmare with super-safe moves"
-msgstr "Koszmar z bardzo bezpiecznymi ruchami"
-
-#: src/gnome-robots.c:112
-msgid "Robots2"
-msgstr "Roboty 2"
-
-#: src/gnome-robots.c:113
-msgid "Robots2 with safe moves"
-msgstr "Roboty 2 z bezpiecznymi ruchami"
-
-#: src/gnome-robots.c:114
-msgid "Robots2 with super-safe moves"
-msgstr "Roboty 2 z bardzo bezpiecznymi ruchami"
-
-#: src/gnome-robots.c:115
-msgid "Robots2 easy"
-msgstr "Łatwe Roboty 2"
-
-#: src/gnome-robots.c:116
-msgid "Robots2 easy with safe moves"
-msgstr "Łatwe Roboty 2 z bezpiecznymi ruchami"
-
-#: src/gnome-robots.c:117
-msgid "Robots2 easy with super-safe moves"
-msgstr "Łatwe Roboty 2 z bardzo bezpiecznymi ruchami"
-
-#: src/gnome-robots.c:118
-msgid "Robots with safe teleport"
-msgstr "Roboty z bezpiecznym teleportem"
-
-#: src/gnome-robots.c:119
-msgid "Robots with safe teleport with safe moves"
-msgstr "Roboty z bezpiecznym teleportem i ruchami"
-
-#: src/gnome-robots.c:120
-msgid "Robots with safe teleport with super-safe moves"
-msgstr "Roboty z bezpiecznym teleportem i bardzo bezpiecznymi ruchami"
-
-#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: src/gnome-robots.c:156
-#, c-format
-msgid "Level: %d\tScore: %d"
-msgstr "Poziom: %d\tWynik: %d"
-
-#. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/gnome-robots.c:167
-#, c-format
-msgid "(Remaining: %d)"
-msgstr "(Pozostało: %d)"
-
-#. First line of safe teleports button label.
-#: src/gnome-robots.c:169
-msgid "Teleport _Safely"
-msgstr "Teleportuj _bezpiecznie"
-
-#: src/gnome-robots.c:227
+#: src/application.vala:157
 msgid "Based on classic BSD Robots"
 msgstr "Na podstawie klasycznej gry Robots systemów BSD"
 
-#: src/gnome-robots.c:231
+#: src/application.vala:161
 msgid "translator-credits"
 msgstr ""
 "Zbigniew Chyla <chyla@alice.ci.pwr.wroc.pl>, 1998-2002\n"
@@ -373,109 +288,160 @@ msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2010-2020\n"
 "Aviary.pl <community-poland@mozilla.org>, 2007-2020"
 
-#: src/gnome-robots.c:252
-msgid "Are you sure you want to discard the current game?"
-msgstr "Na pewno odrzucić obecną grę?"
-
-#: src/gnome-robots.c:255
-msgid "Keep _Playing"
-msgstr "_Graj dalej"
-
-#: src/gnome-robots.c:410
-msgid "Teleport _Randomly"
-msgstr "Teleportuj l_osowo"
-
-#: src/gnome-robots.c:429
-msgid "_Wait for Robots"
-msgstr "_Czekaj na roboty"
-
-#. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:453
-msgid "Game Type:"
-msgstr "Typ gry:"
-
-#: src/gnome-robots.c:468
-msgid "No game data could be found."
-msgstr "Nie można odnaleźć danych gry."
-
-#: src/gnome-robots.c:470
+#: src/game-area.vala:356
 msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
+"Congratulations, You Have Defeated the Robots!! \n"
+"But Can You do it Again?"
 msgstr ""
-"Nie można odnaleźć żadnych poprawnych plików konfiguracyjnych gry. Proszę "
-"sprawdzić, czy gra jest prawidłowo zainstalowana."
+"Gratulacje, roboty zostały pokonane! \n"
+"Ale czy uda się to po raz kolejny?"
 
-#: src/gnome-robots.c:487
-msgid "Some graphics files are missing or corrupt."
-msgstr "Brakuje niektórych plików graficznych lub są uszkodzone."
+#: src/game-area.vala:360
+msgid "There are no teleport locations left!!"
+msgstr "Brak miejsc na teleportację!"
 
-#: src/gnome-robots.c:489
-msgid ""
-"The program Robots was unable to load all the necessary graphics files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Nie można wczytać wszystkich niezbędnych plików graficznych. Proszę "
-"sprawdzić, czy gra jest prawidłowo zainstalowana."
-
-#: src/graphics.c:149
-#, c-format
-msgid "Could not find “%s” pixmap file\n"
-msgstr "Nie można odnaleźć pliku z mapą pikseli „%s”\n"
-
-#: src/properties.c:391
+#: src/properties-dialog.vala:68
 msgid "Preferences"
 msgstr "Preferencje"
 
-#: src/properties.c:416
+#: src/properties-dialog.vala:84
 msgid "Game Type"
 msgstr "Typ gry"
 
-#: src/properties.c:426
+#: src/properties-dialog.vala:95
 msgid "_Use safe moves"
 msgstr "B_ezpieczne ruchy"
 
-#: src/properties.c:431
+#: src/properties-dialog.vala:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Zapobieganie niebezpiecznym ruchom, w wyniku których można zginąć."
 
-#: src/properties.c:434
+#: src/properties-dialog.vala:100
 msgid "U_se super safe moves"
 msgstr "_Bardzo bezpieczne ruchy"
 
-#: src/properties.c:441
+#: src/properties-dialog.vala:102
 msgid "Prevents all moves that result in getting killed."
 msgstr ""
 "Zapobieganie wszystkim niebezpiecznym ruchom, w wyniku których można zginąć."
 
-#: src/properties.c:447
+#: src/properties-dialog.vala:114
 msgid "_Enable sounds"
 msgstr "_Dźwięki"
 
-#: src/properties.c:453
+#: src/properties-dialog.vala:119
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Odtwarzanie dźwięków dla zdarzeń typu wygrana i śmierć."
 
-#: src/properties.c:455
+#: src/properties-dialog.vala:122
 msgid "Game"
 msgstr "Gra"
 
-#: src/properties.c:468
+#: src/properties-dialog.vala:128
 msgid "_Image theme:"
 msgstr "_Motyw obrazu:"
 
-#: src/properties.c:480
+#: src/properties-dialog.vala:138
 msgid "_Background color:"
 msgstr "_Kolor tła:"
 
-#: src/properties.c:492
+#: src/properties-dialog.vala:148
 msgid "Appearance"
 msgstr "Wygląd"
 
-#: src/properties.c:521
+#: src/properties-dialog.vala:162
 msgid "_Restore Defaults"
 msgstr "Przywróć _domyślne"
 
-#: src/properties.c:526
+#: src/properties-dialog.vala:166
 msgid "Keyboard"
 msgstr "Klawiatura"
+
+#. Label on the scores dialog, next to map type dropdown
+#: src/scores.vala:28
+msgid "Game Type:"
+msgstr "Typ gry:"
+
+#: src/scores.vala:53
+msgid "Classic robots"
+msgstr "Klasyczne roboty"
+
+#: src/scores.vala:55
+msgid "Classic robots with safe moves"
+msgstr "Klasyczne roboty z bezpiecznymi ruchami"
+
+#: src/scores.vala:57
+msgid "Classic robots with super-safe moves"
+msgstr "Klasyczne roboty z bardzo bezpiecznymi ruchami"
+
+#: src/scores.vala:59
+msgid "Nightmare"
+msgstr "Koszmar"
+
+#: src/scores.vala:61
+msgid "Nightmare with safe moves"
+msgstr "Koszmar z bezpiecznymi ruchami"
+
+#: src/scores.vala:63
+msgid "Nightmare with super-safe moves"
+msgstr "Koszmar z bardzo bezpiecznymi ruchami"
+
+#: src/scores.vala:65
+msgid "Robots2"
+msgstr "Roboty 2"
+
+#: src/scores.vala:67
+msgid "Robots2 with safe moves"
+msgstr "Roboty 2 z bezpiecznymi ruchami"
+
+#: src/scores.vala:69
+msgid "Robots2 with super-safe moves"
+msgstr "Roboty 2 z bardzo bezpiecznymi ruchami"
+
+#: src/scores.vala:71
+msgid "Robots2 easy"
+msgstr "Łatwe Roboty 2"
+
+#: src/scores.vala:73
+msgid "Robots2 easy with safe moves"
+msgstr "Łatwe Roboty 2 z bezpiecznymi ruchami"
+
+#: src/scores.vala:75
+msgid "Robots2 easy with super-safe moves"
+msgstr "Łatwe Roboty 2 z bardzo bezpiecznymi ruchami"
+
+#: src/scores.vala:77
+msgid "Robots with safe teleport"
+msgstr "Roboty z bezpiecznym teleportem"
+
+#: src/scores.vala:79
+msgid "Robots with safe teleport with safe moves"
+msgstr "Roboty z bezpiecznym teleportem i ruchami"
+
+#: src/scores.vala:81
+msgid "Robots with safe teleport with super-safe moves"
+msgstr "Roboty z bezpiecznym teleportem i bardzo bezpiecznymi ruchami"
+
+#: src/window.vala:113
+msgid "Teleport _Randomly"
+msgstr "Teleportuj l_osowo"
+
+#: src/window.vala:138
+msgid "_Wait for Robots"
+msgstr "_Czekaj na roboty"
+
+#: src/window.vala:154
+#, c-format
+msgid "Level: %d\tScore: %d"
+msgstr "Poziom: %d\tWynik: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: src/window.vala:157
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(Pozostało: %d)"
+
+#. First line of safe teleports button label.
+#: src/window.vala:159
+msgid "Teleport _Safely"
+msgstr "Teleportuj _bezpiecznie"

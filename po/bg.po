@@ -346,7 +346,7 @@ msgstr "_Цвят на фона:"
 
 #: src/properties-dialog.vala:148
 msgid "Appearance"
-msgstr "Изглед"
+msgstr "Външен вид"
 
 #: src/properties-dialog.vala:162
 msgid "_Restore Defaults"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2020-06-26 10:00+0000\n"
-"PO-Revision-Date: 2020-07-03 10:59+0500\n"
+"POT-Creation-Date: 2023-01-25 19:23+0000\n"
+"PO-Revision-Date: 2023-08-20 18:51+0600\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
@@ -16,9 +16,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
-#: data/app-menu.ui:7 src/gnome-robots.c:255
+#: data/app-menu.ui:7 src/application.vala:104
 msgid "_New Game"
 msgstr "Ж_аңа ойын"
 
@@ -38,9 +38,10 @@ msgstr "_Көмек"
 msgid "_About Robots"
 msgstr "Роботтар ойыны тур_алы"
 
-#: data/org.gnome.Robots.appdata.xml.in:7
-msgid "GNOME Robots"
-msgstr "GNOME роботтары"
+#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
+#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+msgid "Robots"
+msgstr "Роботтар"
 
 #: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
 msgid "Avoid the robots and make them crash into each other"
@@ -78,14 +79,9 @@ msgstr ""
 "Сіздің қауіпсіз телепорт саны шектеулі, ол таусылғанда, телепортация сізді "
 "өлтіретін роботтың қасына тура әкелуі мүмкін. Барынша ұзақ өмір сүріңіз!"
 
-#: data/org.gnome.Robots.appdata.xml.in:58
-msgid "The GNOME Project"
-msgstr "GNOME жобасы"
-
-#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:222
-#: src/gnome-robots.c:317 src/gnome-robots.c:365
-msgid "Robots"
-msgstr "Роботтар"
+#: data/org.gnome.Robots.appdata.xml.in:62
+msgid "Andrey Kutejko"
+msgstr "Andrey Kutejko"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
@@ -164,7 +160,7 @@ msgstr ""
 "Ойын дыбыстарын іске қосу. Ойын бойы түрлі оқиғаларға арналған дыбыстарды "
 "ойнату."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
 msgid "Key to move NW"
 msgstr "Жоғары-солға жылжу пернесі"
 
@@ -172,7 +168,7 @@ msgstr "Жоғары-солға жылжу пернесі"
 msgid "The key used to move north-west."
 msgstr "Жоғары-солға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
 msgid "Key to move N"
 msgstr "Жоғарыға жылжу пернесі"
 
@@ -180,7 +176,7 @@ msgstr "Жоғарыға жылжу пернесі"
 msgid "The key used to move north."
 msgstr "Жоғарыға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
 msgid "Key to move NE"
 msgstr "Жоғары-оңға жылжу пернесі"
 
@@ -188,7 +184,7 @@ msgstr "Жоғары-оңға жылжу пернесі"
 msgid "The key used to move north-east."
 msgstr "Жоғары-оңға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
 msgid "Key to move W"
 msgstr "Солға жылжу пернесі"
 
@@ -196,7 +192,7 @@ msgstr "Солға жылжу пернесі"
 msgid "The key used to move west."
 msgstr "Солға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
 msgid "Key to hold"
 msgstr "Орында қалу пернесі"
 
@@ -204,7 +200,7 @@ msgstr "Орында қалу пернесі"
 msgid "The key used to hold still."
 msgstr "Орында қалу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
 msgid "Key to move E"
 msgstr "Оңға жылжу пернесі"
 
@@ -212,7 +208,7 @@ msgstr "Оңға жылжу пернесі"
 msgid "The key used to move east."
 msgstr "Оңға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
 msgid "Key to move SW"
 msgstr "Төмен-солға жылжу пернесі"
 
@@ -220,7 +216,7 @@ msgstr "Төмен-солға жылжу пернесі"
 msgid "The key used to move south-west."
 msgstr "Төмен-солға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
 msgid "Key to move S"
 msgstr "Төменге жылжу пернесі"
 
@@ -228,7 +224,7 @@ msgstr "Төменге жылжу пернесі"
 msgid "The key used to move south."
 msgstr "Төменге жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
 msgid "Key to move SE"
 msgstr "Төмен-оңға жылжу пернесі"
 
@@ -248,138 +244,7 @@ msgstr "Терезе биіктігі, пиксельмен"
 msgid "true if the window is maximized"
 msgstr "терезе максималды болса, мәні true болады"
 
-#: src/game.c:344 src/game.c:359
-msgid ""
-"Congratulations, You Have Defeated the Robots!! \n"
-"But Can You do it Again?"
-msgstr ""
-"Құттықтаймыз, Сіз роботтарды жеңдіңіз!!\n"
-"Бірақ оны қайтадан жасай аласыз ба?"
-
-#. This should never happen.
-#: src/game.c:1125
-msgid "There are no teleport locations left!!"
-msgstr "Телепорт орындары қалмады!!"
-
-#: src/game.c:1153
-msgid "There are no safe locations to teleport to!!"
-msgstr "Телепортқа қауіпсіз орындар жоқ!!"
-
-#: src/games-controls.c:292
-msgid "Unknown Command"
-msgstr "Белгісіз команда"
-
-#: src/gnome-robots.c:106
-msgid "Classic robots"
-msgstr "Классикалық роботтар"
-
-#: src/gnome-robots.c:107
-msgid "Classic robots with safe moves"
-msgstr "Қауіпсіз жүрістері бар классикалық роботтар"
-
-#: src/gnome-robots.c:108
-msgid "Classic robots with super-safe moves"
-msgstr "Аса қауіпсіз жүрістері бар классикалық роботтар"
-
-#: src/gnome-robots.c:109
-msgid "Nightmare"
-msgstr "Күрделі ойын"
-
-#: src/gnome-robots.c:110
-msgid "Nightmare with safe moves"
-msgstr "Қауіпсіз жүрістері бар Күрделі ойын"
-
-#: src/gnome-robots.c:111
-msgid "Nightmare with super-safe moves"
-msgstr "Аса қауіпсіз жүрістері бар Күрделі ойын"
-
-#: src/gnome-robots.c:112
-msgid "Robots2"
-msgstr "Роботтар2"
-
-#: src/gnome-robots.c:113
-msgid "Robots2 with safe moves"
-msgstr "Қауіпсіз жүрістері бар Роботтар2 ойыны"
-
-#: src/gnome-robots.c:114
-msgid "Robots2 with super-safe moves"
-msgstr "Аса қауіпсіз жүрістері бар Роботтар2 ойыны"
-
-#: src/gnome-robots.c:115
-msgid "Robots2 easy"
-msgstr "Роботтар2 оңай"
-
-#: src/gnome-robots.c:116
-msgid "Robots2 easy with safe moves"
-msgstr "Қауіпсіз жүрістері бар Роботтар2 оңай ойыны"
-
-#: src/gnome-robots.c:117
-msgid "Robots2 easy with super-safe moves"
-msgstr "Аса қауіпсіз жүрістері бар Роботтар2 оңай ойыны"
-
-#: src/gnome-robots.c:118
-msgid "Robots with safe teleport"
-msgstr "Қауіпсіз телепорты бар роботтар ойыны"
-
-#: src/gnome-robots.c:119
-msgid "Robots with safe teleport with safe moves"
-msgstr "Қауіпсіз жүрістері бар қауіпсіз телепорты бар Роботтар ойыны"
-
-#: src/gnome-robots.c:120
-msgid "Robots with safe teleport with super-safe moves"
-msgstr "Аса қауіпсіз жүрістері бар қауіпсіз телепорты бар Роботтар ойыны"
-
-#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: src/gnome-robots.c:156
-#, c-format
-msgid "Level: %d\tScore: %d"
-msgstr "Деңгейі: %d\tЕсебі: %d"
-
-#. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/gnome-robots.c:167
-#, c-format
-msgid "(Remaining: %d)"
-msgstr "(Қалған: %d)"
-
-#. First line of safe teleports button label.
-#: src/gnome-robots.c:169
-msgid "Teleport _Safely"
-msgstr "Қауіп_сіз телепортация"
-
-#: src/gnome-robots.c:226
-msgid "Based on classic BSD Robots"
-msgstr "Классикалық BSD роботтар ойыны негізінде"
-
-#: src/gnome-robots.c:230
-msgid "translator-credits"
-msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
-
-#: src/gnome-robots.c:251
-msgid "Are you sure you want to discard the current game?"
-msgstr "Ағымдағы ойынды тайдырғыңыз келе ме?"
-
-#: src/gnome-robots.c:254
-msgid "Keep _Playing"
-msgstr "О_йнауды жалғастыру"
-
-#: src/gnome-robots.c:409
-msgid "Teleport _Randomly"
-msgstr "Ке_здейсоқ телепортация"
-
-#: src/gnome-robots.c:428
-msgid "_Wait for Robots"
-msgstr "Роботтарды _күту"
-
-#. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:452
-msgid "Game Type:"
-msgstr "Ойын түрі:"
-
-#: src/gnome-robots.c:467
-msgid "No game data could be found."
-msgstr "Ойын деректері табылмады."
-
-#: src/gnome-robots.c:468
+#: src/application.vala:63
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -387,79 +252,208 @@ msgstr ""
 "Роботтар бағдарламасы жарамды ойын конфигурация файлдарын таба алмады. "
 "Бағдарламаның дұрыс орнатылғанын тексеріңіз."
 
-#: src/gnome-robots.c:484
-msgid "Some graphics files are missing or corrupt."
-msgstr "Кейбір графикалық файлдар жоқ немесе зақымдалған."
+#: src/application.vala:101
+msgid "Are you sure you want to discard the current game?"
+msgstr "Ағымдағы ойынды тайдырғыңыз келе ме?"
 
-#: src/gnome-robots.c:485
+#: src/application.vala:103
+msgid "Keep _Playing"
+msgstr "О_йнауды жалғастыру"
+
+#: src/application.vala:157
+msgid "Based on classic BSD Robots"
+msgstr "Классикалық BSD роботтар ойыны негізінде"
+
+#: src/application.vala:161
+msgid "translator-credits"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#: src/game-area.vala:356
 msgid ""
-"The program Robots was unable to load all the necessary graphics files. "
-"Please check that the program is installed correctly."
+"Congratulations, You Have Defeated the Robots!! \n"
+"But Can You do it Again?"
 msgstr ""
-"Роботтар бағдарламасы барлық қажетті графикалық файлдарды жүктей алмады. "
-"Бағдарламаның дұрыс орнатылғанын тексеріңіз."
+"Құттықтаймыз, Сіз роботтарды жеңдіңіз!!\n"
+"Бірақ оны қайтадан жасай аласыз ба?"
 
-#: src/graphics.c:149
-#, c-format
-msgid "Could not find “%s” pixmap file\n"
-msgstr "\"%s\" сурет файлы табылмады\n"
+#: src/game-area.vala:360
+msgid "There are no teleport locations left!!"
+msgstr "Телепорт орындары қалмады!!"
 
-#: src/properties.c:391
+#: src/properties-dialog.vala:68
 msgid "Preferences"
 msgstr "Қалаулар"
 
-#: src/properties.c:416
+#: src/properties-dialog.vala:84
 msgid "Game Type"
 msgstr "Ойын түрі"
 
-#: src/properties.c:426
+#: src/properties-dialog.vala:95
 msgid "_Use safe moves"
 msgstr "Қауіпсіз жүрістерді па_йдалану"
 
-#: src/properties.c:431
+#: src/properties-dialog.vala:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Ұтылуға әкелетін кездейсоқ жүрістерге жол бермеу."
 
-#: src/properties.c:434
+#: src/properties-dialog.vala:100
 msgid "U_se super safe moves"
 msgstr "Аса қауіпсіз жүрістерді қо_лдану"
 
-#: src/properties.c:441
+#: src/properties-dialog.vala:102
 msgid "Prevents all moves that result in getting killed."
 msgstr "Ұтылуға әкелетін барлық жүрістерге жол бермеу."
 
-#: src/properties.c:447
+#: src/properties-dialog.vala:114
 msgid "_Enable sounds"
 msgstr "Дыбыстарды іск_е қосу"
 
-#: src/properties.c:453
+#: src/properties-dialog.vala:119
 msgid "Play sounds for events like winning a level and dying."
 msgstr ""
 "Деңгейді жеңу немесе ұтылу сияқты оқиғаларға арналған дыбыстарды ойнау."
 
-#: src/properties.c:455
+#: src/properties-dialog.vala:122
 msgid "Game"
 msgstr "Ойын"
 
-#: src/properties.c:468
+#: src/properties-dialog.vala:128
 msgid "_Image theme:"
 msgstr "С_уреттер темасы:"
 
-#: src/properties.c:480
+#: src/properties-dialog.vala:138
 msgid "_Background color:"
 msgstr "Ф_он түсі:"
 
-#: src/properties.c:492
+#: src/properties-dialog.vala:148
 msgid "Appearance"
 msgstr "Сыртқы түрі"
 
-#: src/properties.c:521
+#: src/properties-dialog.vala:162
 msgid "_Restore Defaults"
 msgstr "Бастапқ_ы түріне келтіру"
 
-#: src/properties.c:526
+#: src/properties-dialog.vala:166
 msgid "Keyboard"
 msgstr "Пернетақта"
+
+#. Label on the scores dialog, next to map type dropdown
+#: src/scores.vala:28
+msgid "Game Type:"
+msgstr "Ойын түрі:"
+
+#: src/scores.vala:53
+msgid "Classic robots"
+msgstr "Классикалық роботтар"
+
+#: src/scores.vala:55
+msgid "Classic robots with safe moves"
+msgstr "Қауіпсіз жүрістері бар классикалық роботтар"
+
+#: src/scores.vala:57
+msgid "Classic robots with super-safe moves"
+msgstr "Аса қауіпсіз жүрістері бар классикалық роботтар"
+
+#: src/scores.vala:59
+msgid "Nightmare"
+msgstr "Күрделі ойын"
+
+#: src/scores.vala:61
+msgid "Nightmare with safe moves"
+msgstr "Қауіпсіз жүрістері бар Күрделі ойын"
+
+#: src/scores.vala:63
+msgid "Nightmare with super-safe moves"
+msgstr "Аса қауіпсіз жүрістері бар Күрделі ойын"
+
+#: src/scores.vala:65
+msgid "Robots2"
+msgstr "Роботтар2"
+
+#: src/scores.vala:67
+msgid "Robots2 with safe moves"
+msgstr "Қауіпсіз жүрістері бар Роботтар2 ойыны"
+
+#: src/scores.vala:69
+msgid "Robots2 with super-safe moves"
+msgstr "Аса қауіпсіз жүрістері бар Роботтар2 ойыны"
+
+#: src/scores.vala:71
+msgid "Robots2 easy"
+msgstr "Роботтар2 оңай"
+
+#: src/scores.vala:73
+msgid "Robots2 easy with safe moves"
+msgstr "Қауіпсіз жүрістері бар Роботтар2 оңай ойыны"
+
+#: src/scores.vala:75
+msgid "Robots2 easy with super-safe moves"
+msgstr "Аса қауіпсіз жүрістері бар Роботтар2 оңай ойыны"
+
+#: src/scores.vala:77
+msgid "Robots with safe teleport"
+msgstr "Қауіпсіз телепорты бар роботтар ойыны"
+
+#: src/scores.vala:79
+msgid "Robots with safe teleport with safe moves"
+msgstr "Қауіпсіз жүрістері бар қауіпсіз телепорты бар Роботтар ойыны"
+
+#: src/scores.vala:81
+msgid "Robots with safe teleport with super-safe moves"
+msgstr "Аса қауіпсіз жүрістері бар қауіпсіз телепорты бар Роботтар ойыны"
+
+#: src/window.vala:113
+msgid "Teleport _Randomly"
+msgstr "Ке_здейсоқ телепортация"
+
+#: src/window.vala:138
+msgid "_Wait for Robots"
+msgstr "Роботтарды _күту"
+
+#: src/window.vala:154
+#, c-format
+msgid "Level: %d\tScore: %d"
+msgstr "Деңгейі: %d\tЕсебі: %d"
+
+#. Second line of safe teleports button label. %d is the number of teleports remaining.
+#: src/window.vala:157
+#, c-format
+msgid "(Remaining: %d)"
+msgstr "(Қалған: %d)"
+
+#. First line of safe teleports button label.
+#: src/window.vala:159
+msgid "Teleport _Safely"
+msgstr "Қауіп_сіз телепортация"
+
+#~ msgid "GNOME Robots"
+#~ msgstr "GNOME роботтары"
+
+#~ msgid "The GNOME Project"
+#~ msgstr "GNOME жобасы"
+
+#~ msgid "There are no safe locations to teleport to!!"
+#~ msgstr "Телепортқа қауіпсіз орындар жоқ!!"
+
+#~ msgid "Unknown Command"
+#~ msgstr "Белгісіз команда"
+
+#~ msgid "No game data could be found."
+#~ msgstr "Ойын деректері табылмады."
+
+#~ msgid "Some graphics files are missing or corrupt."
+#~ msgstr "Кейбір графикалық файлдар жоқ немесе зақымдалған."
+
+#~ msgid ""
+#~ "The program Robots was unable to load all the necessary graphics files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "Роботтар бағдарламасы барлық қажетті графикалық файлдарды жүктей алмады. "
+#~ "Бағдарламаның дұрыс орнатылғанын тексеріңіз."
+
+#, c-format
+#~ msgid "Could not find “%s” pixmap file\n"
+#~ msgstr "\"%s\" сурет файлы табылмады\n"
 
 #~ msgid "_Quit"
 #~ msgstr "_Шығу"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2023 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -89,7 +89,7 @@ public class GameArea : Widget {
         this.game_configs = game_configs;
         this.assets = assets;
         this.background_color = properties.bgcolour;
-        this._theme = assets.themes.find_best_match (properties.theme);
+        this._theme = Themes.find_best_match (assets.themes, properties.theme);
         this.sound_player = sound_player;
         this.properties = properties;
 
@@ -300,7 +300,7 @@ public class GameArea : Widget {
 
         if (theme.name != properties.theme) {
             try {
-                theme = assets.themes.find_best_match (properties.theme);
+                theme = Themes.find_best_match (assets.themes, properties.theme);
             } catch (Error e) {
                 warning ("Cannot change theme to %s: %s",
                          properties.theme,
@@ -398,13 +398,8 @@ public class GameArea : Widget {
     private void message_box (string msg) {
         var window = get_root () as Gtk.Window;
         if (window != null) {
-            var dlg = new Gtk.MessageDialog (window,
-                                             Gtk.DialogFlags.MODAL,
-                                             Gtk.MessageType.INFO,
-                                             Gtk.ButtonsType.OK,
-                                             "%s", msg);
-            dlg.response.connect (() => dlg.destroy ());
-            dlg.present ();
+            var dialog = new AlertDialog (msg);
+            dialog.show (window);
         } else {
             warning ("There is no top level window.");
             info ("%s", msg);

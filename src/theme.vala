@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2023 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ using Graphene;
 using Gdk;
 using Rsvg;
 
-public class Theme {
+public class Theme: Object {
 
     public enum Frames {
         PLAYER_START = 0,
@@ -43,6 +43,9 @@ public class Theme {
     private Paintable paintable;
     public string path { get; private set; }
     public string name { get; private set; }
+    public string display_name {
+        owned get { return remove_suffix (this.name).replace ("_", " "); }
+    }
 
     public Theme.from_file (string path, string name) throws GLib.Error {
         paintable = image_from_file (path);
@@ -84,6 +87,15 @@ public class Theme {
         snapshot.restore ();
 
         snapshot.pop ();
+    }
+}
+
+string remove_suffix (string filename) {
+    var s = filename.last_index_of_char ('.');
+    if (s >= 0) {
+        return filename.substring (0, s);
+    } else {
+        return filename;
     }
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2023 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
  */
 
 public interface Assets : Object {
-    public abstract Themes themes { get; }
+    public abstract ListStore themes { get; }
     public abstract Bubble aieee_bubble { get; }
     public abstract Bubble yahoo_bubble { get; }
     public abstract Bubble splat_bubble { get; }
@@ -26,8 +26,8 @@ public interface Assets : Object {
 }
 
 public class DirectoryAssets : Object, Assets {
-    private Themes _themes;
-    public override Themes themes { get { return _themes; } }
+    private ListStore _themes;
+    public override ListStore themes { get { return _themes; } }
 
     private Bubble _aieee_bubble;
     public override Bubble aieee_bubble { get { return _aieee_bubble; } }

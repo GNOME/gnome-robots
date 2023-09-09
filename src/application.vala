@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2023 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,22 +94,24 @@ class RobotsApplication : Gtk.Application {
     private void new_game_cb () {
         var window = get_active_window () as RobotsWindow;
         if (window != null) {
-            var dialog = new MessageDialog (get_active_window (),
-                                            DialogFlags.MODAL,
-                                            MessageType.QUESTION,
-                                            ButtonsType.NONE,
-                                            _("Are you sure you want to discard the current game?"));
-
-            dialog.add_button (_("Keep _Playing"), ResponseType.REJECT);
-            dialog.add_button (_("_New Game"), ResponseType.ACCEPT);
-
-            dialog.response.connect ((ret) => {
-                dialog.destroy ();
-                if (ret == ResponseType.ACCEPT) {
-                    window.start_new_game ();
+            var dialog = new AlertDialog (_("Are you sure you want to discard the current game?"));
+            dialog.buttons = new string[] {
+                _("Keep _Playing"),
+                _("_New Game")
+            };
+            dialog.modal = true;
+            dialog.default_button = 0;
+            dialog.cancel_button = 0;
+            dialog.choose.begin (window, null, (obj, res) => {
+                try {
+                    var choice = dialog.choose.end (res);
+                    if (choice == 1) {
+                        window.start_new_game ();
+                    }
+                } catch (Error e) {
+                    warning ("%s", e.message);
                 }
             });
-            dialog.present ();
         } else {
             activate ();
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2023 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,11 +41,11 @@ public class RobotsWindow : ApplicationWindow {
 
         var header_title = new Label.with_mnemonic (_("Robots"));
         header_title.single_line_mode = true;
-        header_title.get_style_context ().add_class ("title");
+        header_title.add_css_class ("title");
 
         header_subtitle = new Label.with_mnemonic ("");
         header_subtitle.single_line_mode = true;
-        header_subtitle.get_style_context ().add_class ("subtitle");
+        header_subtitle.add_css_class ("subtitle");
 
         var header_box = new Box (Orientation.VERTICAL, 0);
         header_box.valign = Align.CENTER;
@@ -106,8 +106,7 @@ public class RobotsWindow : ApplicationWindow {
         var hbox = new Box (Orientation.HORIZONTAL, 0);
         var size_group = new SizeGroup (SizeGroupMode.BOTH);
 
-        var style_context = hbox.get_style_context ();
-        style_context.add_class ("linked");
+        hbox.add_css_class ("linked");
 
         {
             var label = new Label.with_mnemonic (_("Teleport _Randomly"));

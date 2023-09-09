@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2023 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,120 +17,56 @@
  * For more details see the file COPYING.
  */
 
-public class Themes : Gtk.ListStore {
+namespace Themes {
 
-    public enum Column {
-        DISPLAY = 0,
-        NAME,
-        PATH,
-    }
-
-    public Themes () {
-        set_column_types ({ Type.STRING, Type.STRING, Type.STRING });
-    }
-
-    public void add (string path) {
-        var filename = Path.get_basename (path);
-        var display = remove_suffix (filename).replace ("_", " ");
-
-        Gtk.TreeIter iter;
-        append (out iter);
-
-        set_value (iter, Column.DISPLAY, display);
-        set_value (iter, Column.NAME, filename);
-        set_value (iter, Column.PATH, path);
-    }
-
-    public static Themes from_directory (string directory) {
-        var themes = new Themes ();
+    public ListStore from_directory (string directory) {
+        var themes = new ListStore (typeof (Theme));
         try {
             var dir = Dir.open (directory);
             string? filename;
             while ((filename = dir.read_name ()) != null) {
                 if (ImageSuffixList.has_image_suffix (filename)) {
-                    var fullname = Path.build_filename (directory, filename);
-                    if (FileUtils.test (fullname, FileTest.IS_REGULAR)) {
-                        themes.add (fullname);
+                    var path = Path.build_filename (directory, filename);
+                    if (FileUtils.test (path, FileTest.IS_REGULAR)) {
+                        var theme = new Theme.from_file (path, filename);
+                        themes.append (theme);
                     }
                 }
             }
-        } catch (FileError e) {
-            warning ("Themes.from_data_dir: %s.", e.message);
+        } catch (Error e) {
+            warning ("Themes.from_directory: %s.", e.message);
         }
         return themes;
     }
 
-    public Gtk.TreeIter? find_iter_by_name (string name) {
-        Gtk.TreeIter iter;
-        if (get_iter_first (out iter)) {
-            do {
-                Value val;
-                get_value (iter, Column.NAME, out val);
-                if (val == name) {
-                    return iter;
-                }
-            } while (iter_next (ref iter));
+    public struct ThemeResult {
+        public uint index;
+        public Theme theme;
+    }
+
+    public ThemeResult? find_by_name (ListModel themes, string name) {
+        var size = themes.get_n_items ();
+        for (var index = 0; index < size; ++index) {
+            var theme = (Theme) themes.get_item (index);
+            if (theme.name == name) {
+                return ThemeResult() { index = index, theme = theme };
+            }
         }
         return null;
     }
 
-    public string? find_path_by_name (string name) {
-        var iter = find_iter_by_name (name);
-        if (iter != null) {
-            Value path;
-            get_value (iter, Column.PATH, out path);
-            return path.get_string ();
-        } else {
-            return null;
+    const string DEFAULT_THEME = "robots.svg";
+
+    public Theme find_best_match (ListModel themes, string name) throws Error {
+        var named = find_by_name (themes, name);
+        if (named != null) {
+            return named.theme;
         }
-    }
-
-    public void get_values (Gtk.TreeIter iter, out string name, out string path) {
-        Value name_value;
-        Value path_value;
-        get_value (iter, Column.NAME, out name_value);
-        get_value (iter, Column.PATH, out path_value);
-        name = name_value.get_string ();
-        path = path_value.get_string ();
-    }
-
-    public Gtk.TreeIter find_best_match_iter (string name) throws Error {
-        const string DEFAULT_THEME = "robots.svg";
-
-        var iter = find_iter_by_name (name);
-        if (iter != null) {
-            return iter;
+        var deflt = find_by_name (themes, DEFAULT_THEME);
+        if (deflt != null) {
+            return deflt.theme;
         }
-
-        iter = find_iter_by_name (DEFAULT_THEME);
-        if (iter != null) {
-            return iter;
-        }
-
-        if (get_iter_first (out iter)) {
-            return iter;
-        } else {
-            throw new FileError.NOENT ("No theme was found.");
-        }
-    }
-
-    public Theme find_best_match (string name) throws Error {
-        var iter = find_best_match_iter (name);
-
-        string theme_name;
-        string theme_path;
-        get_values (iter, out theme_name, out theme_path);
-
-        return new Theme.from_file (theme_path, theme_name);
-    }
-}
-
-string remove_suffix (string filename) {
-    var s = filename.last_index_of_char ('.');
-    if (s >= 0) {
-        return filename.substring (0, s);
-    } else {
-        return filename;
+        throw new FileError.NOENT ("No theme was found.");
     }
 }
 

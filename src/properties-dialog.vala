@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2023 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,48 +20,13 @@
 using Gtk;
 using Gdk;
 
-class ThemePicker : ComboBox {
-
-    private Themes themes;
-
-    public ThemePicker (Themes themes, string current_theme) {
-        Object (model: themes);
-        this.themes = themes;
-
-        var renderer = new CellRendererText ();
-        pack_start (renderer, true);
-        add_attribute (renderer, "text", 0);
-
-        TreeIter? iter = themes.find_iter_by_name (current_theme);
-        if (iter != null) {
-            set_active_iter (iter);
-        } else {
-            set_active (0);
-        }
-
-        changed.connect (theme_changed_cb);
-    }
-
-    public signal void theme_changed (string theme_name);
-
-    private void theme_changed_cb () {
-        TreeIter iter;
-        if (get_active_iter (out iter)) {
-            string theme_name;
-            string theme_path;
-            themes.get_values (iter, out theme_name, out theme_path);
-            theme_changed (theme_name);
-        }
-    }
-}
-
 public class PropertiesDialog : Dialog {
 
     private Properties properties;
 
     public PropertiesDialog (Gtk.Window parent,
                              GameConfigs game_configs,
-                             Themes themes,
+                             GLib.ListStore themes,
                              Properties properties
     ) {
         Object (use_header_bar: 1,
@@ -86,8 +51,8 @@ public class PropertiesDialog : Dialog {
 
         var typemenu = create_game_config_picker (game_configs,
                                                   properties.selected_config);
-        typemenu.changed.connect (() => {
-            properties.selected_config = typemenu.get_active_text ();
+        typemenu.notify["selected-item"].connect (() => {
+            properties.selected_config = ((StringObject) typemenu.selected_item).get_string ();
         });
 
         cpage.attach (typemenu, 1, 0, 1, 1);
@@ -130,8 +95,10 @@ public class PropertiesDialog : Dialog {
         label.set_halign (Align.START);
         gpage.attach (label, 0, 0, 1, 1);
 
-        var theme_picker = new ThemePicker (themes, properties.theme);
-        theme_picker.theme_changed.connect (theme_changed);
+        var theme_picker = create_theme_picker (themes, properties.theme);
+        theme_picker.notify["selected-item"].connect (() => {
+            properties.theme = ((Theme) theme_picker.selected_item).name;
+        });
         label.set_mnemonic_widget (theme_picker);
         gpage.attach (theme_picker, 1, 0, 1, 1);
 
@@ -139,9 +106,12 @@ public class PropertiesDialog : Dialog {
         label.set_halign (Align.START);
         gpage.attach (label, 0, 1, 1, 1);
 
-        var w = new ColorButton ();
+        var color_dialog = new ColorDialog ();
+        var w = new ColorDialogButton (color_dialog);
         w.set_rgba (properties.bgcolour);
-        w.color_set.connect((color) => bg_color_changed(color));
+        w.notify["rgba"].connect (() => {
+            properties.bgcolour = w.get_rgba();
+        });
         label.set_mnemonic_widget (w);
         gpage.attach (w, 1, 1, 1, 1);
 
@@ -167,22 +137,13 @@ public class PropertiesDialog : Dialog {
         notebook.append_page (kpage, label);
     }
 
-    private void theme_changed (string theme_name) {
-        /* FIXME: Should be de-suffixed. */
-        properties.theme = theme_name;
-    }
-
-    private void bg_color_changed (ColorChooser color_chooser) {
-        properties.bgcolour = color_chooser.get_rgba ();
-    }
-
     private void reset_keys () {
         properties.keys.reset_all ();
     }
 
     public static void show_dialog (Gtk.Window parent_window,
                                     GameConfigs game_configs,
-                                    Themes themes,
+                                    GLib.ListStore themes,
                                     Properties properties
     ) {
         var dlg = new PropertiesDialog (parent_window,
@@ -205,23 +166,38 @@ private Grid form_grid () {
     return grid;
 }
 
-private ComboBoxText create_game_config_picker (GameConfigs game_configs,
-                                                string current_config
+private DropDown create_game_config_picker (GameConfigs game_configs,
+                                            string current_config
 ) {
-    var cb = new ComboBoxText ();
-
+    var model = new StringList (null);
     int active_index = 0;
     for (int i = 0; i < game_configs.count (); ++i) {
         var config = game_configs[(uint)i];
 
         var config_name = config.name ();
-        cb.append_text (config_name);
+        model.append (config_name);
 
         if (config_name == current_config) {
             active_index = i;
         }
     }
-    cb.set_active (active_index);
+
+    var cb = new DropDown (model, null);
+    cb.set_selected (active_index);
 
     return cb;
+}
+
+private DropDown create_theme_picker (GLib.ListStore themes,
+                                      string current_theme) {
+    var expression = new PropertyExpression (typeof (Theme), null, "display-name");
+    var drop_down = new DropDown (themes, expression);
+
+    var result = Themes.find_by_name (themes, current_theme);
+    if (result != null) {
+        drop_down.set_selected (result.index);
+    } else {
+        drop_down.set_selected (0);
+    }
+    return drop_down;
 }

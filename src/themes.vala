@@ -49,7 +49,9 @@ namespace Themes {
         for (var index = 0; index < size; ++index) {
             var theme = (Theme) themes.get_item (index);
             if (theme.name == name) {
-                return ThemeResult() { index = index, theme = theme };
+                return ThemeResult () {
+                           index = index, theme = theme
+                };
             }
         }
         return null;

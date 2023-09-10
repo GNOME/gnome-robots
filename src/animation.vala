@@ -38,7 +38,7 @@ abstract class Animated {
 
     public static Animated bounce (int start, int limit) {
         return sequence (start).limit (limit)
-            .then (sequence (start + limit - 1, -1).limit (limit));
+               .then (sequence (start + limit - 1, -1).limit (limit));
     }
 
     public Animated then (Animated another) {

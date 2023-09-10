@@ -1,0 +1,8 @@
+#!/bin/sh
+
+docker build -t uncrustify uncrustify/
+
+docker run \
+    --mount type=bind,source="$(pwd)",target=/project \
+    -t uncrustify \
+    /bin/sh -c "uncrustify -c /uncrustify.cfg --no-backup src/*.vala && chown -R $(id -u):$(id -g) src/*.vala"

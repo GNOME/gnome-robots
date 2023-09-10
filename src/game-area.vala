@@ -53,7 +53,9 @@ public class GameArea : Widget {
     }
 
     public RGBA background_color {
-        get { return dark_background; }
+        get {
+            return dark_background;
+        }
         set {
             dark_background = value;
             light_background = calculate_light_color (value);
@@ -106,28 +108,27 @@ public class GameArea : Widget {
                           MINIMUM_TILE_HEIGHT * game.arena.height);
 
         player_animation = Animated
-            .sequence (Theme.Frames.PLAYER_START, 0)
-            .limit (20)
-            .then (
-                Animated
-                    .bounce (Theme.Frames.PLAYER_START, Theme.Frames.NUM_PLAYER_ANIMATIONS)
-                    .repeat (2)
-            )
-            .forever ();
+                           .sequence (Theme.Frames.PLAYER_START, 0)
+                           .limit (20)
+                           .then (Animated
+                                  .bounce (Theme.Frames.PLAYER_START, Theme.Frames.NUM_PLAYER_ANIMATIONS)
+                                  .repeat (2)
+                           )
+                           .forever ();
 
         player_dead_animation = Animated
-            .bounce (Theme.Frames.PLAYER_DEAD, Theme.Frames.NUM_PLAYER_DEAD_ANIMATIONS)
-            .forever ();
+                                .bounce (Theme.Frames.PLAYER_DEAD, Theme.Frames.NUM_PLAYER_DEAD_ANIMATIONS)
+                                .forever ();
 
         robot1_animation = Animated
-            .sequence (Theme.Frames.ROBOT1_START)
-            .limit (Theme.Frames.NUM_ROBOT1_ANIMATIONS)
-            .forever ();
+                           .sequence (Theme.Frames.ROBOT1_START)
+                           .limit (Theme.Frames.NUM_ROBOT1_ANIMATIONS)
+                           .forever ();
 
         robot2_animation = Animated
-            .sequence (Theme.Frames.ROBOT2_START)
-            .limit (Theme.Frames.NUM_ROBOT2_ANIMATIONS)
-            .forever ();
+                           .sequence (Theme.Frames.ROBOT2_START)
+                           .limit (Theme.Frames.NUM_ROBOT2_ANIMATIONS)
+                           .forever ();
 
         timer_id = Timeout.add (ANIMATION_DELAY, timer_cb);
 
@@ -144,8 +145,8 @@ public class GameArea : Widget {
 
     private Size tile_size () {
         return Size () {
-            width = get_width () / game.arena.width,
-            height = get_height () / game.arena.height
+                   width = get_width () / game.arena.width,
+                   height = get_height () / game.arena.height
         };
     }
 

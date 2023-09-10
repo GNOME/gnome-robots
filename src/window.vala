@@ -54,9 +54,9 @@ public class RobotsWindow : Adw.ApplicationWindow {
         headerbar.pack_end (menu_button);
 
         GLib.ActionEntry[] win_entries = {
-            { "random-teleport",  random_teleport_cb },
-            { "safe-teleport",    safe_teleport_cb   },
-            { "wait",             wait_cb            },
+            { "random-teleport", random_teleport_cb },
+            { "safe-teleport", safe_teleport_cb },
+            { "wait", wait_cb },
         };
         add_action_entries (win_entries, this);
 

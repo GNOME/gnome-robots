@@ -32,7 +32,7 @@ class RobotsApplication : Adw.Application {
     public RobotsApplication () {
         Object (
             application_id: "org.gnome.Robots",
-            flags: ApplicationFlags.FLAGS_NONE);
+            flags : ApplicationFlags.FLAGS_NONE);
     }
 
     protected override void startup () {
@@ -42,12 +42,12 @@ class RobotsApplication : Adw.Application {
         Gtk.Window.set_default_icon_name ("org.gnome.Robots");
 
         GLib.ActionEntry[] app_entries = {
-            { "new-game",         new_game_cb    },
-            { "preferences",      preferences_cb },
-            { "scores",           scores_cb      },
-            { "help",             help_cb        },
-            { "about",            about_cb       },
-            { "quit",             quit           },
+            { "new-game", new_game_cb },
+            { "preferences", preferences_cb },
+            { "scores", scores_cb },
+            { "help", help_cb },
+            { "about", about_cb },
+            { "quit", quit },
         };
         add_action_entries (app_entries, this);
 
@@ -61,8 +61,8 @@ class RobotsApplication : Adw.Application {
             sound_player = new SoundPlayer ();
         } catch (Error e) {
             critical ("%s\n%s",
-                _("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."),
-                e.message
+                      _("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."),
+                      e.message
             );
             quit ();
         }

@@ -27,18 +27,30 @@ public interface WindowSize : Object {
 
 public class WindowSizeSettings : Object, WindowSize {
     public override int width {
-        get { return settings.get_int ("window-width"); }
-        set { settings.set_int ("window-width", value); }
+        get {
+            return settings.get_int ("window-width");
+        }
+        set {
+            settings.set_int ("window-width", value);
+        }
     }
 
     public override int height {
-        get { return settings.get_int ("window-height"); }
-        set { settings.set_int ("window-height", value); }
+        get {
+            return settings.get_int ("window-height");
+        }
+        set {
+            settings.set_int ("window-height", value);
+        }
     }
 
     public override bool is_maximized {
-        get { return settings.get_boolean ("window-is-maximized"); }
-        set { settings.set_boolean ("window-is-maximized", value); }
+        get {
+            return settings.get_boolean ("window-is-maximized");
+        }
+        set {
+            settings.set_boolean ("window-is-maximized", value);
+        }
     }
 
     private GLib.Settings settings;

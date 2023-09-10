@@ -61,15 +61,15 @@ struct Direction {
 }
 
 const Direction[] directions = {
-    { PlayerCommand.NW,    -1, -1 },
-    { PlayerCommand.N,      0, -1 },
-    { PlayerCommand.NE,     1, -1 },
-    { PlayerCommand.W,     -1,  0 },
-    { PlayerCommand.STAY,   0,  0 },
-    { PlayerCommand.E,      1,  0 },
-    { PlayerCommand.SW,    -1,  1 },
-    { PlayerCommand.S,      0,  1 },
-    { PlayerCommand.SE,     1,  1 }
+    { PlayerCommand.NW, -1, -1 },
+    { PlayerCommand.N, 0, -1 },
+    { PlayerCommand.NE, 1, -1 },
+    { PlayerCommand.W, -1, 0 },
+    { PlayerCommand.STAY, 0, 0 },
+    { PlayerCommand.E, 1, 0 },
+    { PlayerCommand.SW, -1, 1 },
+    { PlayerCommand.S, 0, 1 },
+    { PlayerCommand.SE, 1, 1 }
 };
 
 public class Game {
@@ -102,10 +102,14 @@ public class Game {
     public Arena arena { get; private set; }
     public GameConfig config { get; set; }
     public int width {
-        get { return arena.width; }
+        get {
+            return arena.width;
+        }
     }
     public int height {
-        get { return arena.height; }
+        get {
+            return arena.height;
+        }
     }
     public Arena.Coords player { get; private set; }
     public Arena.Coords? splat { get; private set; }
@@ -121,9 +125,9 @@ public class Game {
     public Status status {
         get {
             return Status () {
-                score = score,
-                current_level = current_level + 1,
-                safe_teleports = safe_teleports
+                       score = score,
+                       current_level = current_level + 1,
+                       safe_teleports = safe_teleports
             };
         }
     }
@@ -272,12 +276,12 @@ public class Game {
     private void update_arena (ArenaChange change) {
         if (change.push != null) {
             switch (arena[change.push.x, change.push.y]) {
-            case ObjectType.ROBOT1:
+            case ObjectType.ROBOT1 :
                 splat = change.push;
                 game_event (Event.SPLAT);
                 score += config.score_type1_splatted;
                 break;
-            case ObjectType.ROBOT2:
+            case ObjectType.ROBOT2 :
                 splat = change.push;
                 game_event (Event.SPLAT);
                 score += config.score_type2_splatted;
@@ -363,7 +367,7 @@ public class Game {
     private Arena move_all_robots () {
         return chase (arena,
                       obj => obj == ObjectType.ROBOT1
-                          || obj == ObjectType.ROBOT2,
+                      || obj == ObjectType.ROBOT2,
                       player.x,
                       player.y,
                       victim => add_kill (victim));
@@ -463,7 +467,7 @@ public class Game {
     private bool check_safe (ArenaChange change) {
         var temp2_arena = chase (change.arena,
                                  obj => obj == ObjectType.ROBOT1
-                                     || obj == ObjectType.ROBOT2,
+                                 || obj == ObjectType.ROBOT2,
                                  change.player.x,
                                  change.player.y,
                                  null);
@@ -514,9 +518,9 @@ public class Game {
         new_arena[coords.x, coords.y] = ObjectType.PLAYER;
         new_arena[push_to.x, push_to.y] = ObjectType.HEAP;
         return ArenaChange () {
-            arena = new_arena,
-            player = coords,
-            push = push_to
+                   arena = new_arena,
+                   player = coords,
+                   push = push_to
         };
     }
 
@@ -572,9 +576,9 @@ public class Game {
             new_arena[coords.x, coords.y] = ObjectType.PLAYER;
         }
         return ArenaChange () {
-            arena = new_arena,
-            player = coords,
-            push = null
+                   arena = new_arena,
+                   player = coords,
+                   push = null
         };
     }
 
@@ -696,10 +700,10 @@ public class Game {
         }
 
         switch (cmd) {
-        case PlayerCommand.NW:
-        case PlayerCommand.N:
-        case PlayerCommand.NE:
-        case PlayerCommand.W:
+        case PlayerCommand.NW :
+        case PlayerCommand.N :
+        case PlayerCommand.NE :
+        case PlayerCommand.W :
         case PlayerCommand.STAY:
         case PlayerCommand.E:
         case PlayerCommand.SW:

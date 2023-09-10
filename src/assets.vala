@@ -27,19 +27,39 @@ public interface Assets : Object {
 
 public class DirectoryAssets : Object, Assets {
     private ListStore _themes;
-    public override ListStore themes { get { return _themes; } }
+    public override ListStore themes {
+        get {
+            return _themes;
+        }
+    }
 
     private Bubble _aieee_bubble;
-    public override Bubble aieee_bubble { get { return _aieee_bubble; } }
+    public override Bubble aieee_bubble {
+        get {
+            return _aieee_bubble;
+        }
+    }
 
     private Bubble _yahoo_bubble;
-    public override Bubble yahoo_bubble { get { return _yahoo_bubble; } }
+    public override Bubble yahoo_bubble {
+        get {
+            return _yahoo_bubble;
+        }
+    }
 
     private Bubble _splat_bubble;
-    public override Bubble splat_bubble { get { return _splat_bubble; } }
+    public override Bubble splat_bubble {
+        get {
+            return _splat_bubble;
+        }
+    }
 
     private Array<Gdk.Cursor> _cursors;
-    public override Array<Gdk.Cursor> cursors { get { return _cursors; } }
+    public override Array<Gdk.Cursor> cursors {
+        get {
+            return _cursors;
+        }
+    }
 
     public DirectoryAssets.from_directory (string directory) throws Error {
         _themes = Themes.from_directory (

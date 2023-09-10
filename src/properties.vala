@@ -18,13 +18,13 @@
  */
 
 public class Properties {
-    const string KEY_BACKGROUND_COLOR  = "background-color";
-    const string KEY_CONFIGURATION     = "configuration";
-    const string KEY_ENABLE_SOUND      = "enable-sound";
-    const string KEY_SAFE_MOVES        = "use-safe-moves";
-    const string KEY_SHOW_TOOLBAR      = "show-toolbar";
-    const string KEY_SUPER_SAFE_MOVES  = "use-super-safe-moves";
-    const string KEY_THEME             = "theme";
+    const string KEY_BACKGROUND_COLOR = "background-color";
+    const string KEY_CONFIGURATION = "configuration";
+    const string KEY_ENABLE_SOUND = "enable-sound";
+    const string KEY_SAFE_MOVES = "use-safe-moves";
+    const string KEY_SHOW_TOOLBAR = "show-toolbar";
+    const string KEY_SUPER_SAFE_MOVES = "use-super-safe-moves";
+    const string KEY_THEME = "theme";
 
     public class Keys {
         private GLib.Settings settings;
@@ -34,7 +34,9 @@ public class Properties {
         }
 
         public int size {
-            get { return 9; }
+            get {
+                return 9;
+            }
         }
 
         public uint get (uint index) {
@@ -54,8 +56,8 @@ public class Properties {
         public uint get_default (uint index) {
             if (index < size) {
                 return (uint) settings
-                    .get_default_value ("key%02u".printf (index))
-                    .get_int32 ();
+                       .get_default_value ("key%02u".printf (index))
+                       .get_int32 ();
             } else {
                 return 0;
             }

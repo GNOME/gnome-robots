@@ -160,28 +160,28 @@ class ControlEditor : Widget {
             editing = false;
             if (mods == 0) {
                 switch (keyval) {
-                    case Gdk.Key.Tab:
-                        return false;
-                    case Gdk.Key.BackSpace:
-                        cleared ();
-                        break;
-                    case Gdk.Key.Escape:
-                        break;
-                    default:
-                        edited (keyval);
-                        break;
+                case Gdk.Key.Tab:
+                    return false;
+                case Gdk.Key.BackSpace:
+                    cleared ();
+                    break;
+                case Gdk.Key.Escape:
+                    break;
+                default:
+                    edited (keyval);
+                    break;
                 }
                 return true;
             }
         } else {
             if (mods == 0) {
                 switch (keyval) {
-                    case Gdk.Key.Return:
-                    case Gdk.Key.KP_Enter:
-                        editing = true;
-                        return true;
-                    default:
-                        return false;
+                case Gdk.Key.Return:
+                case Gdk.Key.KP_Enter:
+                    editing = true;
+                    return true;
+                default:
+                    return false;
                 }
             }
         }

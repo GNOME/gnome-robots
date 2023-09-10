@@ -35,8 +35,8 @@ public class Arena {
 
         public Coords move (int dx, int dy) {
             return Coords () {
-                x = x + dx,
-                y = y + dy,
+                       x = x + dx,
+                       y = y + dy,
             };
         }
     }
@@ -46,11 +46,15 @@ public class Arena {
     private ObjectType[] arena;
 
     public int width {
-        get { return this._width; }
+        get {
+            return this._width;
+        }
     }
 
     public int height {
-        get { return this._height; }
+        get {
+            return this._height;
+        }
     }
 
     public Arena (int width, int height) {
@@ -70,9 +74,9 @@ public class Arena {
 
     public bool are_coords_valid (Coords coords) {
         return coords.x >= 0
-            && coords.y >= 0
-            && coords.x < _width
-            && coords.y < _height;
+               && coords.y >= 0
+               && coords.x < _width
+               && coords.y < _height;
     }
 
     public ObjectType @get (int x, int y) {

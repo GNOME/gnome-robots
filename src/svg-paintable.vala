@@ -40,7 +40,7 @@ class SvgPaintable : Object, Gdk.Paintable {
             },
         };
 
-        var gtk_snapshot = (Gtk.Snapshot)snapshot;
+        var gtk_snapshot = (Gtk.Snapshot) snapshot;
         var cr = gtk_snapshot.append_cairo (rect);
 
         try {

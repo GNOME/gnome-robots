@@ -50,35 +50,35 @@ public class RobotsScoresContext : Games.Scores.Context {
     private static string? category_name_from_game_type (string game_type) {
         switch (game_type) {
         case "classic_robots":
-            return N_("Classic robots");
+            return N_ ("Classic robots");
         case "classic_robots-safe":
-            return N_("Classic robots with safe moves");
+            return N_ ("Classic robots with safe moves");
         case "classic_robots-super-safe":
-            return N_("Classic robots with super-safe moves");
+            return N_ ("Classic robots with super-safe moves");
         case "nightmare":
-            return N_("Nightmare");
+            return N_ ("Nightmare");
         case "nightmare-safe":
-            return N_("Nightmare with safe moves");
+            return N_ ("Nightmare with safe moves");
         case "nightmare-super-safe":
-            return N_("Nightmare with super-safe moves");
+            return N_ ("Nightmare with super-safe moves");
         case "robots2":
-            return N_("Robots2");
+            return N_ ("Robots2");
         case "robots2-safe":
-            return N_("Robots2 with safe moves");
+            return N_ ("Robots2 with safe moves");
         case "robots2-super-safe":
-            return N_("Robots2 with super-safe moves");
+            return N_ ("Robots2 with super-safe moves");
         case "robots2_easy":
-            return N_("Robots2 easy");
+            return N_ ("Robots2 easy");
         case "robots2_easy-safe":
-            return N_("Robots2 easy with safe moves");
+            return N_ ("Robots2 easy with safe moves");
         case "robots2_easy-super-safe":
-            return N_("Robots2 easy with super-safe moves");
+            return N_ ("Robots2 easy with super-safe moves");
         case "robots_with_safe_teleport":
-            return N_("Robots with safe teleport");
+            return N_ ("Robots with safe teleport");
         case "robots_with_safe_teleport-safe":
-            return N_("Robots with safe teleport with safe moves");
+            return N_ ("Robots with safe teleport with safe moves");
         case "robots_with_safe_teleport-super-safe":
-            return N_("Robots with safe teleport with super-safe moves");
+            return N_ ("Robots with safe teleport with super-safe moves");
         default:
             return null;
         }

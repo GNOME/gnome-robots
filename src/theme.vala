@@ -44,7 +44,9 @@ public class Theme : Object {
     public string path { get; private set; }
     public string name { get; private set; }
     public string display_name {
-        owned get { return remove_suffix (this.name).replace ("_", " "); }
+        owned get {
+            return remove_suffix (this.name).replace ("_", " ");
+        }
     }
 
     public Theme.from_file (string path, string name) throws GLib.Error {

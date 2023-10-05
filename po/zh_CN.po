@@ -2,23 +2,24 @@
 # Copyright 2011 Free Software Foundation, Inc.
 # Aron Xu <aronxu@gnome.org>, 2011.
 # YunQiang Su <wzssyqa@gmail.com>, 2011, 2012.
+# lumingzh <lumingzh@qq.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2020-05-28 23:21+0000\n"
-"PO-Revision-Date: 2020-08-11 17:30+0800\n"
-"Last-Translator: Mandy Wang <wangmychn@gmail.com>\n"
-"Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
+"POT-Creation-Date: 2023-01-25 19:23+0000\n"
+"PO-Revision-Date: 2023-10-05 20:48+0800\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
+"Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Gtranslator 45.2\n"
 
-#: data/app-menu.ui:7 src/gnome-robots.c:255
+#: data/app-menu.ui:7 src/application.vala:104
 msgid "_New Game"
 msgstr "新建游戏(_N)"
 
@@ -38,9 +39,10 @@ msgstr "帮助(_H)"
 msgid "_About Robots"
 msgstr "关于机器人(_A)"
 
-#: data/org.gnome.Robots.appdata.xml.in:7
-msgid "GNOME Robots"
-msgstr "GNOME 机器人"
+#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
+#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+msgid "Robots"
+msgstr "机器人"
 
 #: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
 msgid "Avoid the robots and make them crash into each other"
@@ -74,14 +76,9 @@ msgstr ""
 "你手里的安全传送是有限的，一旦用完，游戏可能会把你正好传送到机器人跟前，那你"
 "就挂了。想方设法活下去！"
 
-#: data/org.gnome.Robots.appdata.xml.in:58
-msgid "The GNOME Project"
-msgstr "GNOME 项目"
-
-#: data/org.gnome.Robots.desktop.in:3 src/gnome-robots.c:222
-#: src/gnome-robots.c:317 src/gnome-robots.c:365
-msgid "Robots"
-msgstr "机器人"
+#: data/org.gnome.Robots.appdata.xml.in:62
+msgid "Andrey Kutejko"
+msgstr "Andrey Kutejko"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
@@ -153,7 +150,7 @@ msgstr "启用游戏音效"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "启用游戏音效。在玩游戏的过程中的各种事件可播放声音。"
 
-#: data/org.gnome.Robots.gschema.xml:40 src/properties.c:504
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
 msgid "Key to move NW"
 msgstr "左上移键"
 
@@ -161,7 +158,7 @@ msgstr "左上移键"
 msgid "The key used to move north-west."
 msgstr "左上移的按键。"
 
-#: data/org.gnome.Robots.gschema.xml:45 src/properties.c:505
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
 msgid "Key to move N"
 msgstr "上移键"
 
@@ -169,7 +166,7 @@ msgstr "上移键"
 msgid "The key used to move north."
 msgstr "上移的按键。"
 
-#: data/org.gnome.Robots.gschema.xml:50 src/properties.c:506
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
 msgid "Key to move NE"
 msgstr "右上移键"
 
@@ -177,7 +174,7 @@ msgstr "右上移键"
 msgid "The key used to move north-east."
 msgstr "右上移的按键。"
 
-#: data/org.gnome.Robots.gschema.xml:56 src/properties.c:507
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
 msgid "Key to move W"
 msgstr "左移键"
 
@@ -185,7 +182,7 @@ msgstr "左移键"
 msgid "The key used to move west."
 msgstr "左移的按键。"
 
-#: data/org.gnome.Robots.gschema.xml:61 src/properties.c:508
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
 msgid "Key to hold"
 msgstr "停住键"
 
@@ -193,7 +190,7 @@ msgstr "停住键"
 msgid "The key used to hold still."
 msgstr "用于停住的按键。"
 
-#: data/org.gnome.Robots.gschema.xml:66 src/properties.c:509
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
 msgid "Key to move E"
 msgstr "右移键"
 
@@ -201,7 +198,7 @@ msgstr "右移键"
 msgid "The key used to move east."
 msgstr "右移的按键。"
 
-#: data/org.gnome.Robots.gschema.xml:71 src/properties.c:510
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
 msgid "Key to move SW"
 msgstr "左下移键"
 
@@ -209,7 +206,7 @@ msgstr "左下移键"
 msgid "The key used to move south-west."
 msgstr "左下移的按键。"
 
-#: data/org.gnome.Robots.gschema.xml:76 src/properties.c:511
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
 msgid "Key to move S"
 msgstr "下移键"
 
@@ -217,7 +214,7 @@ msgstr "下移键"
 msgid "The key used to move south."
 msgstr "下移的按键。"
 
-#: data/org.gnome.Robots.gschema.xml:81 src/properties.c:512
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
 msgid "Key to move SE"
 msgstr "右下移键"
 
@@ -237,7 +234,35 @@ msgstr "主窗口的高度(像素)"
 msgid "true if the window is maximized"
 msgstr "若窗口已最大化则为 true"
 
-#: src/game.c:344 src/game.c:359
+#: src/application.vala:63
+msgid ""
+"The program Robots was unable to find any valid game configuration files. "
+"Please check that the program is installed correctly."
+msgstr ""
+"GNOME 机器人程序无法找到任何可用的游戏配置文件。请检查程序是否正确安装。"
+
+#: src/application.vala:101
+msgid "Are you sure you want to discard the current game?"
+msgstr "您确定要放弃当前游戏吗？"
+
+#: src/application.vala:103
+msgid "Keep _Playing"
+msgstr "继续玩(_P)"
+
+#: src/application.vala:157
+msgid "Based on classic BSD Robots"
+msgstr "基于经典的 BSD 机器人"
+
+#: src/application.vala:161
+msgid "translator-credits"
+msgstr ""
+"Yang Zhang <zyangmath@gmail.com>, 2007\n"
+"Ping Z <zpsigma@gmail.com>, 2007\n"
+"Xhacker Liu <liu.dongyuan@gmail.com>, 2010\n"
+"Mandy Wang <wangmychn@gmail.com>, 2016\n"
+"lumingzh <lumingzh@qq.com>, 2023"
+
+#: src/game-area.vala:356
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -245,210 +270,181 @@ msgstr ""
 "恭喜，您已击败机器人！\n"
 "但您能再次击败它吗？"
 
-#. This should never happen.
-#: src/game.c:1125
+#: src/game-area.vala:360
 msgid "There are no teleport locations left!!"
 msgstr "没有剩下传送点了！"
 
-#: src/game.c:1153
-msgid "There are no safe locations to teleport to!!"
-msgstr "没有可传送到的安全的位置了！"
+#: src/properties-dialog.vala:68
+msgid "Preferences"
+msgstr "首选项"
 
-#: src/games-controls.c:292
-msgid "Unknown Command"
-msgstr "未知命令"
+#: src/properties-dialog.vala:84
+msgid "Game Type"
+msgstr "游戏类型"
 
-#: src/gnome-robots.c:106
+#: src/properties-dialog.vala:95
+msgid "_Use safe moves"
+msgstr "使用安全移动(_U)"
+
+#: src/properties-dialog.vala:97
+msgid "Prevent accidental moves that result in getting killed."
+msgstr "阻止会导致死亡的意外移动。"
+
+#: src/properties-dialog.vala:100
+msgid "U_se super safe moves"
+msgstr "使用超级安全移动(_S)"
+
+#: src/properties-dialog.vala:102
+msgid "Prevents all moves that result in getting killed."
+msgstr "避免将导致丢命的全部移动。"
+
+#: src/properties-dialog.vala:114
+msgid "_Enable sounds"
+msgstr "启用声音(_E)"
+
+#: src/properties-dialog.vala:119
+msgid "Play sounds for events like winning a level and dying."
+msgstr "对通关或死亡等事件使用声音通知。"
+
+#: src/properties-dialog.vala:122
+msgid "Game"
+msgstr "游戏"
+
+#: src/properties-dialog.vala:128
+msgid "_Image theme:"
+msgstr "图像主题(_I)："
+
+#: src/properties-dialog.vala:138
+msgid "_Background color:"
+msgstr "背景颜色(_B)："
+
+#: src/properties-dialog.vala:148
+msgid "Appearance"
+msgstr "外观"
+
+#: src/properties-dialog.vala:162
+msgid "_Restore Defaults"
+msgstr "恢复默认值(_R)"
+
+#: src/properties-dialog.vala:166
+msgid "Keyboard"
+msgstr "键盘"
+
+#. Label on the scores dialog, next to map type dropdown
+#: src/scores.vala:28
+msgid "Game Type:"
+msgstr "游戏类型："
+
+#: src/scores.vala:53
 msgid "Classic robots"
 msgstr "经典机器人"
 
-#: src/gnome-robots.c:107
+#: src/scores.vala:55
 msgid "Classic robots with safe moves"
 msgstr "带安全移动的经典机器人"
 
-#: src/gnome-robots.c:108
+#: src/scores.vala:57
 msgid "Classic robots with super-safe moves"
 msgstr "带超级安全移动的经典机器人"
 
-#: src/gnome-robots.c:109
+#: src/scores.vala:59
 msgid "Nightmare"
 msgstr "噩梦"
 
-#: src/gnome-robots.c:110
+#: src/scores.vala:61
 msgid "Nightmare with safe moves"
 msgstr "带安全移动的噩梦"
 
-#: src/gnome-robots.c:111
+#: src/scores.vala:63
 msgid "Nightmare with super-safe moves"
 msgstr "带超级安全移动的噩梦"
 
-#: src/gnome-robots.c:112
+#: src/scores.vala:65
 msgid "Robots2"
 msgstr "机器人2"
 
-#: src/gnome-robots.c:113
+#: src/scores.vala:67
 msgid "Robots2 with safe moves"
 msgstr "带安全移动的机器人2"
 
-#: src/gnome-robots.c:114
+#: src/scores.vala:69
 msgid "Robots2 with super-safe moves"
 msgstr "带超级安全移动的机器人2"
 
-#: src/gnome-robots.c:115
+#: src/scores.vala:71
 msgid "Robots2 easy"
 msgstr "机器人2简单"
 
-#: src/gnome-robots.c:116
+#: src/scores.vala:73
 msgid "Robots2 easy with safe moves"
 msgstr "带安全移动的机器人2 简单"
 
-#: src/gnome-robots.c:117
+#: src/scores.vala:75
 msgid "Robots2 easy with super-safe moves"
 msgstr "带超级安全移动的机器人2 简单"
 
-#: src/gnome-robots.c:118
+#: src/scores.vala:77
 msgid "Robots with safe teleport"
 msgstr "带有安全传送点的机器人"
 
-#: src/gnome-robots.c:119
+#: src/scores.vala:79
 msgid "Robots with safe teleport with safe moves"
 msgstr "带有安全传送点的机器人"
 
-#: src/gnome-robots.c:120
+#: src/scores.vala:81
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "带有安全传送点的机器人"
 
-#. Window subtitle. The first %d is the level, the second is the score. \t creates a tab.
-#: src/gnome-robots.c:156
+#: src/window.vala:113
+msgid "Teleport _Randomly"
+msgstr "随机瞬移(_R)"
+
+#: src/window.vala:138
+msgid "_Wait for Robots"
+msgstr "等候机器人(_W)"
+
+#: src/window.vala:154
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "关数：%d关\t得分：%d分"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/gnome-robots.c:167
+#: src/window.vala:157
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(剩下: %d 个)"
 
 #. First line of safe teleports button label.
-#: src/gnome-robots.c:169
+#: src/window.vala:159
 msgid "Teleport _Safely"
 msgstr "安全瞬移(_S)"
 
-#: src/gnome-robots.c:226
-msgid "Based on classic BSD Robots"
-msgstr "基于经典的 BSD 机器人"
+#~ msgid "GNOME Robots"
+#~ msgstr "GNOME 机器人"
 
-#: src/gnome-robots.c:230
-msgid "translator-credits"
-msgstr ""
-"Yang Zhang <zyangmath@gmail.com>, 2007\n"
-"Ping Z <zpsigma@gmail.com>, 2007\n"
-"Xhacker Liu <liu.dongyuan@gmail.com>, 2010\n"
-"Mandy Wang <wangmychn@gmail.com>, 2016"
+#~ msgid "The GNOME Project"
+#~ msgstr "GNOME 项目"
 
-#: src/gnome-robots.c:251
-msgid "Are you sure you want to discard the current game?"
-msgstr "您确定要放弃当前游戏吗？"
+#~ msgid "There are no safe locations to teleport to!!"
+#~ msgstr "没有可传送到的安全的位置了！"
 
-#: src/gnome-robots.c:254
-msgid "Keep _Playing"
-msgstr "继续玩(_P)"
+#~ msgid "Unknown Command"
+#~ msgstr "未知命令"
 
-#: src/gnome-robots.c:409
-msgid "Teleport _Randomly"
-msgstr "随机瞬移(_R)"
+#~ msgid "No game data could be found."
+#~ msgstr "没有找到游戏数据。"
 
-#: src/gnome-robots.c:428
-msgid "_Wait for Robots"
-msgstr "等候机器人(_W)"
+#~ msgid "Some graphics files are missing or corrupt."
+#~ msgstr "某些图像文件缺少或损坏。"
 
-#. Label on the scores dialog, next to map type dropdown
-#: src/gnome-robots.c:452
-msgid "Game Type:"
-msgstr "游戏类型："
+#~ msgid ""
+#~ "The program Robots was unable to load all the necessary graphics files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr "GNOME 机器人程序无法载入必需的图像文件。请检查程序是否正确安装。"
 
-#: src/gnome-robots.c:467
-msgid "No game data could be found."
-msgstr "没有找到游戏数据。"
-
-#: src/gnome-robots.c:468
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"GNOME 机器人程序无法找到任何可用的游戏配置文件。请检查程序是否正确安装。"
-
-#: src/gnome-robots.c:484
-msgid "Some graphics files are missing or corrupt."
-msgstr "某些图像文件缺少或损坏。"
-
-#: src/gnome-robots.c:485
-msgid ""
-"The program Robots was unable to load all the necessary graphics files. "
-"Please check that the program is installed correctly."
-msgstr "GNOME 机器人程序无法载入必需的图像文件。请检查程序是否正确安装。"
-
-#: src/graphics.c:149
 #, c-format
-msgid "Could not find “%s” pixmap file\n"
-msgstr "无法找到“%s”位图文件\n"
-
-#: src/properties.c:391
-msgid "Preferences"
-msgstr "首选项"
-
-#: src/properties.c:416
-msgid "Game Type"
-msgstr "游戏类型"
-
-#: src/properties.c:426
-msgid "_Use safe moves"
-msgstr "使用安全移动(_U)"
-
-#: src/properties.c:431
-msgid "Prevent accidental moves that result in getting killed."
-msgstr "阻止会导致死亡的意外移动。"
-
-#: src/properties.c:434
-msgid "U_se super safe moves"
-msgstr "使用超级安全移动(_S)"
-
-#: src/properties.c:441
-msgid "Prevents all moves that result in getting killed."
-msgstr "避免将导致丢命的全部移动。"
-
-#: src/properties.c:447
-msgid "_Enable sounds"
-msgstr "启用声音(_E)"
-
-#: src/properties.c:453
-msgid "Play sounds for events like winning a level and dying."
-msgstr "对通关或死亡等事件使用声音通知。"
-
-#: src/properties.c:455
-msgid "Game"
-msgstr "游戏"
-
-#: src/properties.c:468
-msgid "_Image theme:"
-msgstr "图像主题(_I)："
-
-#: src/properties.c:480
-msgid "_Background color:"
-msgstr "背景颜色(_B)："
-
-#: src/properties.c:492
-msgid "Appearance"
-msgstr "外观"
-
-#: src/properties.c:521
-msgid "_Restore Defaults"
-msgstr "恢复默认值(_R)"
-
-#: src/properties.c:526
-msgid "Keyboard"
-msgstr "键盘"
+#~ msgid "Could not find “%s” pixmap file\n"
+#~ msgstr "无法找到“%s”位图文件\n"
 
 #~ msgid "_Quit"
 #~ msgstr "退出(_Q)"

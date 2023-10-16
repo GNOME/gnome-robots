@@ -8,24 +8,24 @@
 # Hakan Bekdas <hakanbekdas@yahoo.com>, 2006.
 # Baris Cicek <baris@teamforce.name.tr>, 2004, 2005, 2008, 2009.
 # Muhammet Kara <muhammetk@gmail.com>, 2011, 2014, 2015, 2017.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2019.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2019, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2022-11-05 22:04+0000\n"
-"PO-Revision-Date: 2023-01-22 14:39+0300\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"POT-Creation-Date: 2023-10-05 19:33+0000\n"
+"PO-Revision-Date: 2023-10-16 16:43+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.4\n"
 
-#: data/app-menu.ui:7 src/application.vala:104
+#: data/app-menu.ui:7 src/application.vala:100
 msgid "_New Game"
 msgstr "Yeni _Oyun"
 
@@ -46,7 +46,7 @@ msgid "_About Robots"
 msgstr "Robotlar _Hakkında"
 
 #: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
-#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+#: src/application.vala:40 src/application.vala:153 src/window.vala:42
 msgid "Robots"
 msgstr "Robotlar"
 
@@ -61,7 +61,7 @@ msgid ""
 "Avoid the robots or face certain death."
 msgstr ""
 "Uzak bir gelecekte, 2000 yılındasınız ve şeytani robotlar sizi öldürmeye "
-"çalışıyor. Robotlardan saklanın ya da kesin bir ölümle yüzleşin."
+"çalışıyor. Robotlardan sakının ya da kesin bir ölümle yüzleşin."
 
 #: data/org.gnome.Robots.appdata.xml.in:15
 msgid ""
@@ -72,10 +72,10 @@ msgid ""
 "device."
 msgstr ""
 "Neyse ki, robotlar aşırı derecede aptaldır ve her zaman doğrudan size doğru "
-"hareket edeceklerdir. Birbirlerine çarparak yok olmaları ya da bu "
-"çarpışmaların sonucunda oluşan çöp yığınlarına çarpmaları için robotları "
-"kanndırın. Çöp yığınlarını hareket ettirerek kendinizi savunabilir ya da "
-"elinizdeki ışınlanma cihazını kullanarak güvenli bir yere kaçabilirsiniz."
+"geleceklerdir. Birbirlerine çarparak yok olmaları ya da bu çarpışmaların "
+"sonucunda oluşan çöp yığınlarına çarpmaları için robotları kandırın. Çöp "
+"yığınlarını oynatarak kendinizi savunabilir ya da elinizdeki ışınlanma "
+"aygıtını kullanarak güvenli bir yere kaçabilirsiniz."
 
 #: data/org.gnome.Robots.appdata.xml.in:22
 msgid ""
@@ -84,8 +84,8 @@ msgid ""
 "Survive for as long as possible!"
 msgstr ""
 "Güvenli ışınlanma hakkınız sınırlıdır ve bittiğinde, ışınlanma sizi bir "
-"robotun yanına götürebilir, ki bu da ölümünüze sebep olacaktır. "
-"Olabildiğince uzun süre hayatta kalın!"
+"robotun yanına götürebilir, ki bu da ölümünüze neden olacaktır. "
+"Olabildiğince uzun süre yaşamda kalın!"
 
 #: data/org.gnome.Robots.appdata.xml.in:62
 msgid "Andrey Kutejko"
@@ -94,7 +94,7 @@ msgstr "Andrey Kutejko"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
 msgid "game;arcade;teleport;"
-msgstr "oyun;arcade;teleport;ışınlanma;"
+msgstr "oyun;macera;arcade;teleport;ışınlanma;"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
@@ -114,11 +114,11 @@ msgstr "Robot resim teması. Robotlar için kullanılacak resim teması."
 
 #: data/org.gnome.Robots.gschema.xml:15
 msgid "Background color"
-msgstr "Arkaplan rengi"
+msgstr "Arka plan rengi"
 
 #: data/org.gnome.Robots.gschema.xml:16
 msgid "Background color. The hex specification of the background color."
-msgstr "Arkaplan rengi. Arkaplan renginin hex belirtimi."
+msgstr "Arka plan rengi. Arka plan renginin hex belirtimi."
 
 #: data/org.gnome.Robots.gschema.xml:20
 msgid "Game type"
@@ -126,7 +126,7 @@ msgstr "Oyun türü"
 
 #: data/org.gnome.Robots.gschema.xml:21
 msgid "Game type. The name of the game variation to use."
-msgstr "Oyun türü. Kullanılacak oyun çeşitinin adı."
+msgstr "Oyun türü. Kullanılacak oyun türünün adı."
 
 #: data/org.gnome.Robots.gschema.xml:25
 msgid "Use safe moves"
@@ -138,21 +138,21 @@ msgid ""
 "due to a mistake. If you try to make a move that would lead to your death "
 "when there is a safe move available you will not be allowed to proceed."
 msgstr ""
-"Güvenli hareketleri kullanır. Güvenli hareketler hata sonucu ölmenize engel "
-"olur. Güvenli bir hareket olduğu halde sizi öldürecek bir hareket yapmaya "
-"çalıştığınızda bunun gerçekleşmesine izin vermez."
+"Güvenli hareketleri kullanır. Güvenli hareketler, hata sonucu ölmenizi "
+"engeller. Kullanılabilir güvenli hareket varsa, sizi öldürecek bir hareket "
+"yaparken bunun gerçekleşmesini önler."
 
 #: data/org.gnome.Robots.gschema.xml:30
 msgid "Use super safe moves"
-msgstr "Süper güvenli harekeri kullan"
+msgstr "Süper güvenli hareketi kullan"
 
 #: data/org.gnome.Robots.gschema.xml:31
 msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
 msgstr ""
-"Süper güvenli harekeri kullanır. Kullanıcı güvenli bir hareket kalmadığında "
-"ve tek seçeneğin ışınlanma olduğu hallerde uyarılır."
+"Süper güvenli hareketi kullanır. Kullanıcı, güvenli bir hareket kalmadığında "
+"ve tek seçenek ışınlanma olduğunda uyarılır."
 
 #: data/org.gnome.Robots.gschema.xml:35
 msgid "Enable game sounds"
@@ -160,7 +160,7 @@ msgstr "Oyun seslerini etkinleştir"
 
 #: data/org.gnome.Robots.gschema.xml:36
 msgid "Enable game sounds. Play sounds for various events throughout the game."
-msgstr "Oyun seslerini etkinleştirir. Oyundaki bir çok olay için ses çalar."
+msgstr "Oyun seslerini etkinleştirir. Oyundaki birçok olay için ses çalar."
 
 #: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
 msgid "Key to move NW"
@@ -168,7 +168,7 @@ msgstr "KB için tuş"
 
 #: data/org.gnome.Robots.gschema.xml:41
 msgid "The key used to move north-west."
-msgstr "Kuzeybatıya hareket etmek için kullanılan tuş."
+msgstr "Kuzeybatıya gitmede kullanılan tuş."
 
 #: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
 msgid "Key to move N"
@@ -176,7 +176,7 @@ msgstr "K için tuş"
 
 #: data/org.gnome.Robots.gschema.xml:46
 msgid "The key used to move north."
-msgstr "Kuzeye hareket etmek için kullanılan tuş."
+msgstr "Kuzeye gitmede kullanılan tuş."
 
 #: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
 msgid "Key to move NE"
@@ -184,7 +184,7 @@ msgstr "KD için tuş"
 
 #: data/org.gnome.Robots.gschema.xml:51
 msgid "The key used to move north-east."
-msgstr "Kuzeydoğuya hareket etmek için kullanılan tuş."
+msgstr "Kuzeydoğuya gitmede kullanılan tuş."
 
 #: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
 msgid "Key to move W"
@@ -192,7 +192,7 @@ msgstr "B için tuş"
 
 #: data/org.gnome.Robots.gschema.xml:57
 msgid "The key used to move west."
-msgstr "Batıya hareket etmek için kullanılan tuş."
+msgstr "Batıya gitmede kullanılan tuş."
 
 #: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
 msgid "Key to hold"
@@ -208,7 +208,7 @@ msgstr "D için tuş"
 
 #: data/org.gnome.Robots.gschema.xml:67
 msgid "The key used to move east."
-msgstr "Doğuya hareket etmek için kullanılan tuş."
+msgstr "Doğuya gitmede kullanılan tuş."
 
 #: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
 msgid "Key to move SW"
@@ -216,7 +216,7 @@ msgstr "GB için tuş"
 
 #: data/org.gnome.Robots.gschema.xml:72
 msgid "The key used to move south-west."
-msgstr "Güzeybatıya hareket etmek için kullanılan tuş."
+msgstr "Güzeybatıya gitmede kullanılan tuş."
 
 #: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
 msgid "Key to move S"
@@ -224,7 +224,7 @@ msgstr "G için tuş"
 
 #: data/org.gnome.Robots.gschema.xml:77
 msgid "The key used to move south."
-msgstr "Güneye hareket etmek için kullanılan tuş."
+msgstr "Güneye gitmede kullanılan tuş."
 
 #: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
 msgid "Key to move SE"
@@ -232,7 +232,7 @@ msgstr "GD için tuş"
 
 #: data/org.gnome.Robots.gschema.xml:82
 msgid "The key used to move south-east."
-msgstr "Güneydoğuya hareket etmek için kullanılan tuş."
+msgstr "Güneydoğuya gitmede kullanılan tuş."
 
 #: data/org.gnome.Robots.gschema.xml:86
 msgid "Width of the window in pixels"
@@ -254,24 +254,24 @@ msgstr ""
 "Robotlar uygulaması geçerli bir yapılandırma dosyası bulamadı. Lütfen bu "
 "programın kurulumunu gözden geçirin."
 
-#: src/application.vala:101
+#: src/application.vala:97
 msgid "Are you sure you want to discard the current game?"
-msgstr ""
-"Mevcut oyunu bırakarak ilerlemenizi kaybetmek istediğinizden emin misiniz?"
+msgstr "Geçerli oyunu gözden çıkarmak istediğinize emin misiniz?"
 
-#: src/application.vala:103
+#: src/application.vala:99
 msgid "Keep _Playing"
-msgstr "_Oynamaya Devam Et"
+msgstr "_Oyunu Sürdür"
 
-#: src/application.vala:157
+#: src/application.vala:159
 msgid "Based on classic BSD Robots"
 msgstr "Klasik BSD Robotlar Örnek Alınmıştır"
 
-#: src/application.vala:161
+#: src/application.vala:163
 msgid "translator-credits"
 msgstr ""
 "Barış Çiçek <baris@teamforce.name.tr> \n"
-"Muhammet Kara <muhammetk@gmail.com>"
+"Muhammet Kara <muhammetk@gmail.com>\n"
+"Emin Tufan Çetin <etcetin@gmail.com>"
 
 #: src/game-area.vala:356
 msgid ""
@@ -279,65 +279,65 @@ msgid ""
 "But Can You do it Again?"
 msgstr ""
 "Tebrikler, Robotları Yendiniz!! \n"
-"Peki,Tekrar Yapabilir misiniz?"
+"Peki,Yeniden Yapabilir Misiniz?"
 
 #: src/game-area.vala:360
 msgid "There are no teleport locations left!!"
 msgstr "Geriye hiç ışınlanma bölgesi kalmadı!!"
 
-#: src/properties-dialog.vala:68
+#: src/properties-dialog.vala:33
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: src/properties-dialog.vala:84
+#: src/properties-dialog.vala:49
 msgid "Game Type"
 msgstr "Oyun Türü"
 
-#: src/properties-dialog.vala:95
+#: src/properties-dialog.vala:60
 msgid "_Use safe moves"
-msgstr "_Güvenli hareketleri kullan"
+msgstr "Güvenli hareketleri _kullan"
 
-#: src/properties-dialog.vala:97
+#: src/properties-dialog.vala:62
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Ölüm ile sonuçlanabilecek kazalı hamleleri önle."
 
-#: src/properties-dialog.vala:100
+#: src/properties-dialog.vala:65
 msgid "U_se super safe moves"
-msgstr "_Süper güvenli harekeri kullan"
+msgstr "_Süper güvenli hareketi kullan"
 
-#: src/properties-dialog.vala:102
+#: src/properties-dialog.vala:67
 msgid "Prevents all moves that result in getting killed."
 msgstr "Ölüm ile sonuçlanan tüm hamleleri önle."
 
-#: src/properties-dialog.vala:114
+#: src/properties-dialog.vala:79
 msgid "_Enable sounds"
 msgstr "_Sesleri etkinleştir"
 
-#: src/properties-dialog.vala:119
+#: src/properties-dialog.vala:84
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Düzeyi geçme ve ölme gibi olaylar için ses çal."
 
-#: src/properties-dialog.vala:122
+#: src/properties-dialog.vala:87
 msgid "Game"
 msgstr "Oyun"
 
-#: src/properties-dialog.vala:128
+#: src/properties-dialog.vala:93
 msgid "_Image theme:"
 msgstr "_Resim teması:"
 
-#: src/properties-dialog.vala:138
+#: src/properties-dialog.vala:105
 msgid "_Background color:"
 msgstr "_Arka plan rengi:"
 
-#: src/properties-dialog.vala:148
+#: src/properties-dialog.vala:118
 msgid "Appearance"
 msgstr "Görünüm"
 
-#: src/properties-dialog.vala:162
+#: src/properties-dialog.vala:132
 msgid "_Restore Defaults"
 msgstr "Ö_ntanımlılara Dön"
 
-#: src/properties-dialog.vala:166
+#: src/properties-dialog.vala:136
 msgid "Keyboard"
 msgstr "Klavye"
 
@@ -352,11 +352,11 @@ msgstr "Klasik robotlar"
 
 #: src/scores.vala:55
 msgid "Classic robots with safe moves"
-msgstr "Klasik robotlar güvenli hareketler ile"
+msgstr "Klasik robotlar, güvenli hareketler ile"
 
 #: src/scores.vala:57
 msgid "Classic robots with super-safe moves"
-msgstr "Klasik robotlar süper güvenli hareketler ile"
+msgstr "Klasik robotlar, süper güvenli hareketler ile"
 
 #: src/scores.vala:59
 msgid "Nightmare"
@@ -364,11 +364,11 @@ msgstr "Kabus"
 
 #: src/scores.vala:61
 msgid "Nightmare with safe moves"
-msgstr "Kabus güvenli hareketler ile"
+msgstr "Kabus, güvenli hareketler ile"
 
 #: src/scores.vala:63
 msgid "Nightmare with super-safe moves"
-msgstr "Kabus süper güvenli hareketler ile"
+msgstr "Kabus, süper güvenli hareketler ile"
 
 #: src/scores.vala:65
 msgid "Robots2"
@@ -376,56 +376,56 @@ msgstr "Robotlar2"
 
 #: src/scores.vala:67
 msgid "Robots2 with safe moves"
-msgstr "Robotlar2 güvenli hareketler ile"
+msgstr "Robotlar2, güvenli hareketler ile"
 
 #: src/scores.vala:69
 msgid "Robots2 with super-safe moves"
-msgstr "Robotlar2 süper güvenli hareketler ile"
+msgstr "Robotlar2, süper güvenli hareketler ile"
 
 #: src/scores.vala:71
 msgid "Robots2 easy"
-msgstr "Robotlar2 kolay"
+msgstr "Robotlar2, kolay"
 
 #: src/scores.vala:73
 msgid "Robots2 easy with safe moves"
-msgstr "Robotlar2 kolay güvenli hareketler ile"
+msgstr "Robotlar2, kolay, güvenli hareketler ile"
 
 #: src/scores.vala:75
 msgid "Robots2 easy with super-safe moves"
-msgstr "Robotlar2 kolay süper güvenli hareketler ile"
+msgstr "Robotlar2, kolay, süper güvenli hareketler ile"
 
 #: src/scores.vala:77
 msgid "Robots with safe teleport"
-msgstr "Robotlar güvenli ışınlama ile"
+msgstr "Robotlar, güvenli ışınlama ile"
 
 #: src/scores.vala:79
 msgid "Robots with safe teleport with safe moves"
-msgstr "Robotlar güvenli ışınlama ve güvenli hareketler ile"
+msgstr "Robotlar, güvenli ışınlama ve güvenli hareketler ile"
 
 #: src/scores.vala:81
 msgid "Robots with safe teleport with super-safe moves"
-msgstr "Robotlar güvenli ışınlama ve süper güvenli hareketler ile"
+msgstr "Robotlar, güvenli ışınlama ve süper güvenli hareketler ile"
 
-#: src/window.vala:113
+#: src/window.vala:112
 msgid "Teleport _Randomly"
 msgstr "_Rastgele Işınlan"
 
-#: src/window.vala:138
+#: src/window.vala:137
 msgid "_Wait for Robots"
 msgstr "Robotları _Bekle"
 
-#: src/window.vala:154
+#: src/window.vala:153
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Düzey: %d\tPuan: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:157
+#: src/window.vala:156
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Kalan: %d)"
 
 #. First line of safe teleports button label.
-#: src/window.vala:159
+#: src/window.vala:158
 msgid "Teleport _Safely"
-msgstr "G_üvenle Işınlan"
+msgstr "_Güvenle Işınlan"

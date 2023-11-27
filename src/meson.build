@@ -51,9 +51,9 @@ executable(
         gio_dependency,
         glib_dependency,
         gnome_games_dependency,
-        gsound_dependency,
         gtk_dependency,
-        rsvg_dependency
+        rsvg_dependency,
+        gstreamer_dependency
     ],
     install_dir: get_option('bindir'),
     install: true

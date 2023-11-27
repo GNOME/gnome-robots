@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2023 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +22,8 @@ public static int main (string[] args) {
     Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
     Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
     Intl.textdomain (GETTEXT_PACKAGE);
+
+    Gst.init (ref args);
 
     var app = new RobotsApplication ();
     return app.run (args);

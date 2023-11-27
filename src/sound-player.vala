@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2023 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,15 +28,17 @@ public enum Sound {
 
 public class SoundPlayer {
 
-    private GSound.Context ctx;
+    private Gst.Pipeline pipeline;
+    private Gst.Element playbin;
 
     public SoundPlayer () {
-        try {
-            ctx = new GSound.Context ();
-        } catch (Error error) {
-            warning ("Failed to create gsound context: %s", error.message);
-            ctx = null;
-        }
+        pipeline = new Gst.Pipeline ("robots");
+        return_if_fail(pipeline != null);
+
+        playbin = Gst.ElementFactory.make ("playbin3", "play");
+        return_if_fail(playbin != null);
+
+        pipeline.add (playbin);
     }
 
     public void beep () {
@@ -47,20 +49,23 @@ public class SoundPlayer {
     }
 
     public void play_file (string name) {
-        if (ctx == null) {
-            return;
-        }
+        return_if_fail(pipeline != null);
+        return_if_fail(playbin != null);
 
         var filename = "%s.ogg".printf (name);
         var path = Path.build_filename (SOUND_DIRECTORY, filename);
 
+        string uri;
         try {
-            ctx.play_simple (null,
-                             GSound.Attribute.MEDIA_NAME, name,
-                             GSound.Attribute.MEDIA_FILENAME, path);
-        } catch (Error error) {
-            warning ("Failed to play sound \"%s\": %s", name, error.message);
+            uri = Filename.to_uri (path);
+        } catch (GLib.Error error) {
+            warning ("Failed to convert a path '%s' to an URI. %s", path, error.message);
+            return;
         }
+
+        pipeline.set_state(Gst.State.NULL);
+        playbin.set_property("uri", uri);
+        pipeline.set_state(Gst.State.PLAYING);
     }
 
     public void play (Sound sound) {

@@ -14,8 +14,8 @@ add_project_arguments([
 )
 
 gee_dependency = dependency('gee-0.8')
-gio_dependency = dependency('gio-2.0', version: '>= 2.32')
-glib_dependency = dependency('glib-2.0', version: '>= 2.32')
+gio_dependency = dependency('gio-2.0', version: '>= 2.36')
+glib_dependency = dependency('glib-2.0', version: '>= 2.36')
 gnome_games_dependency = dependency('libgnome-games-support-2', version: '>= 2.0')
 gsound_dependency = dependency('gsound', version: '>= 1.0.3')
 gtk_dependency = dependency('gtk4', version: '>= 4.2.0')
@@ -39,6 +39,6 @@ subdir('help')
 subdir('po')
 subdir('src')
 
-meson.add_install_script(python3.find_python().path(), join_paths(meson.source_root(), 
-                                                                  'build-aux', 
+meson.add_install_script(python3.find_python().path(), join_paths(meson.source_root(),
+                                                                  'build-aux',
                                                                   'meson_post_install.py'))

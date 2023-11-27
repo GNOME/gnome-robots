@@ -19,155 +19,96 @@
 
 using Gtk;
 using Gdk;
+using Adw;
 
-public class PropertiesDialog : Dialog {
+public void show_preferences (Gtk.Window parent_window,
+                              GameConfigs game_configs,
+                              GLib.ListStore themes,
+                              Properties properties
+) {
+    var window = new Adw.PreferencesWindow ();
+    window.transient_for = parent_window;
 
-    private Properties properties;
+    /* The configuration page */
+    var configuration_page = new Adw.PreferencesPage ();
+    configuration_page.title = _("Game");
+    configuration_page.add (create_game_group (game_configs, properties));
+    configuration_page.add (create_sound_group (properties));
+    window.add (configuration_page);
 
-    public PropertiesDialog (Gtk.Window parent,
-                             GameConfigs game_configs,
-                             GLib.ListStore themes,
-                             Properties properties
-    ) {
-        Object (use_header_bar: 1,
-                title: _("Preferences"),
-                transient_for: parent,
-                modal: true);
-        this.properties = properties;
+    /* The graphics page */
+    var graphics_page = new Adw.PreferencesPage ();
+    graphics_page.title = _("Appearance");
+    var appearance_group = new Adw.PreferencesGroup ();
+    appearance_group.add (create_theme_picker (themes, properties));
+    appearance_group.add (create_background_picker (properties));
+    graphics_page.add (appearance_group);
+    window.add (graphics_page);
 
-        /* Set up notebook and add it to hbox of the gtk_dialog */
-        var notebook = new Notebook ();
-        notebook.margin_top = 10;
-        notebook.margin_bottom = 10;
-        notebook.margin_start = 10;
-        notebook.margin_end = 10;
-        get_content_area ().append (notebook);
+    /* The keyboard page */
+    var keyboard_page = new Adw.PreferencesPage ();
+    keyboard_page.title = _("Keyboard");
+    keyboard_page.add (new GamesControlsList (properties));
+    window.add (keyboard_page);
 
-        /* The configuration page */
-        var cpage = form_grid ();
+    window.present ();
+}
 
-        var label = new Label (_("Game Type"));
-        cpage.attach (label, 0, 0, 1, 1);
+private Adw.PreferencesGroup create_game_group (GameConfigs game_configs,
+                                                Properties properties) {
+    var group = new Adw.PreferencesGroup ();
 
-        var typemenu = create_game_config_picker (game_configs,
-                                                  properties.selected_config);
-        typemenu.notify["selected-item"].connect (() => {
-            properties.selected_config = ((StringObject) typemenu.selected_item).get_string ();
-        });
+    var typemenu = create_game_config_picker (game_configs,
+                                              properties.selected_config);
+    typemenu.notify["selected-item"].connect (() => {
+        properties.selected_config = ((StringObject) typemenu.selected_item).get_string ();
+    });
+    group.add (typemenu);
 
-        cpage.attach (typemenu, 1, 0, 1, 1);
+    var safe_chkbox = new Adw.SwitchRow ();
+    safe_chkbox.title = _("_Use safe moves");
+    safe_chkbox.use_underline = true;
+    safe_chkbox.subtitle = _("Prevent accidental moves that result in getting killed.");
+    safe_chkbox.active = properties.safe_moves;
+    group.add (safe_chkbox);
 
-        var safe_chkbox = new CheckButton.with_mnemonic (_("_Use safe moves"));
-        safe_chkbox.set_active (properties.safe_moves);
-        safe_chkbox.set_tooltip_text (_("Prevent accidental moves that result in getting killed."));
-        cpage.attach (safe_chkbox, 0, 1, 2, 1);
+    var super_safe_chkbox = new Adw.SwitchRow ();
+    super_safe_chkbox.title = _("U_se super safe moves");
+    super_safe_chkbox.use_underline = true;
+    super_safe_chkbox.subtitle = _("Prevents all moves that result in getting killed.");
+    super_safe_chkbox.active = properties.super_safe_moves;
+    super_safe_chkbox.sensitive = properties.safe_moves;
+    group.add (super_safe_chkbox);
 
-        var super_safe_chkbox = new CheckButton.with_mnemonic (_("U_se super safe moves"));
-        super_safe_chkbox.set_active (properties.super_safe_moves);
-        super_safe_chkbox.set_tooltip_text (_("Prevents all moves that result in getting killed."));
+    safe_chkbox.notify["active"].connect (() => {
+        properties.safe_moves = safe_chkbox.active;
         super_safe_chkbox.set_sensitive (properties.safe_moves);
-        cpage.attach (super_safe_chkbox, 0, 2, 2, 1);
+    });
+    super_safe_chkbox.notify["active"].connect (() => {
+        properties.super_safe_moves = super_safe_chkbox.active;
+    });
 
-        safe_chkbox.toggled.connect ((toggle) => {
-            properties.safe_moves = toggle.active;
-            super_safe_chkbox.set_sensitive (properties.safe_moves);
-        });
-        super_safe_chkbox.toggled.connect ((toggle) => {
-            properties.super_safe_moves = toggle.get_active ();
-        });
-
-        var sound_chkbox = new CheckButton.with_mnemonic (_("_Enable sounds"));
-        sound_chkbox.set_active (properties.sound);
-        sound_chkbox.toggled.connect ((toggle) => {
-            properties.sound = toggle.active;
-        });
-        sound_chkbox.set_tooltip_text (_("Play sounds for events like winning a level and dying."));
-        cpage.attach (sound_chkbox, 0, 3, 2, 1);
-
-        label = new Label.with_mnemonic (_("Game"));
-        notebook.append_page (cpage, label);
-
-        /* The graphics page */
-        var gpage = form_grid ();
-
-        label = new Label.with_mnemonic (_("_Image theme:"));
-        label.set_hexpand (true);
-        label.set_halign (Align.START);
-        gpage.attach (label, 0, 0, 1, 1);
-
-        var theme_picker = create_theme_picker (themes, properties.theme);
-        theme_picker.notify["selected-item"].connect (() => {
-            properties.theme = ((Theme) theme_picker.selected_item).name;
-        });
-        label.set_mnemonic_widget (theme_picker);
-        gpage.attach (theme_picker, 1, 0, 1, 1);
-
-        label = new Label.with_mnemonic (_("_Background color:"));
-        label.set_halign (Align.START);
-        gpage.attach (label, 0, 1, 1, 1);
-
-        var color_dialog = new ColorDialog ();
-        var w = new ColorDialogButton (color_dialog);
-        w.set_rgba (properties.bgcolour);
-        w.notify["rgba"].connect (() => {
-            properties.bgcolour = w.get_rgba();
-        });
-        label.set_mnemonic_widget (w);
-        gpage.attach (w, 1, 1, 1, 1);
-
-        label = new Label.with_mnemonic (_("Appearance"));
-        notebook.append_page (gpage, label);
-
-        /* The keyboard page */
-        var kpage = form_grid ();
-
-        var controls_list = new GamesControlsList (properties);
-        controls_list.hexpand = true;
-        controls_list.vexpand = true;
-        kpage.attach (controls_list, 0, 0, 1, 1);
-
-        var hbox = new Box (Orientation.HORIZONTAL, 12);
-        kpage.attach (hbox, 0, 1, 1, 1);
-
-        var dbut = new Button.with_mnemonic (_("_Restore Defaults"));
-        dbut.clicked.connect (reset_keys);
-        hbox.append (dbut);
-
-        label = new Label.with_mnemonic (_("Keyboard"));
-        notebook.append_page (kpage, label);
-    }
-
-    private void reset_keys () {
-        properties.keys.reset_all ();
-    }
-
-    public static void show_dialog (Gtk.Window parent_window,
-                                    GameConfigs game_configs,
-                                    GLib.ListStore themes,
-                                    Properties properties
-    ) {
-        var dlg = new PropertiesDialog (parent_window,
-                                        game_configs,
-                                        themes,
-                                        properties);
-        dlg.response.connect (() => dlg.destroy ());
-        dlg.present ();
-    }
+    return group;
 }
 
-private Grid form_grid () {
-    var grid = new Grid ();
-    grid.row_spacing = 6;
-    grid.column_spacing = 12;
-    grid.margin_top = 12;
-    grid.margin_bottom = 12;
-    grid.margin_start = 12;
-    grid.margin_end = 12;
-    return grid;
+private Adw.PreferencesGroup create_sound_group (Properties properties) {
+    var group = new Adw.PreferencesGroup ();
+
+    var sound_chkbox = new Adw.SwitchRow ();
+    sound_chkbox.title = _("_Enable sounds");
+    sound_chkbox.use_underline = true;
+    sound_chkbox.subtitle = _("Play sounds for events like winning a level and dying.");
+    sound_chkbox.active = properties.sound;
+    sound_chkbox.notify["active"].connect (() => {
+        properties.sound = sound_chkbox.active;
+    });
+    group.add (sound_chkbox);
+
+    return group;
 }
 
-private DropDown create_game_config_picker (GameConfigs game_configs,
-                                            string current_config
+private Adw.ComboRow create_game_config_picker (GameConfigs game_configs,
+                                                string current_config
 ) {
     var model = new StringList (null);
     int active_index = 0;
@@ -182,22 +123,50 @@ private DropDown create_game_config_picker (GameConfigs game_configs,
         }
     }
 
-    var cb = new DropDown (model, null);
-    cb.set_selected (active_index);
+    var row = new Adw.ComboRow ();
+    row.title = _("Game Type");
+    row.model = model;
+    row.selected = active_index;
 
-    return cb;
+    return row;
 }
 
-private DropDown create_theme_picker (GLib.ListStore themes,
-                                      string current_theme) {
-    var expression = new PropertyExpression (typeof (Theme), null, "display-name");
-    var drop_down = new DropDown (themes, expression);
+private Adw.ComboRow create_theme_picker (GLib.ListStore themes,
+                                          Properties properties
+) {
+    var theme_picker = new Adw.ComboRow ();
+    theme_picker.title = _("_Image theme:");
+    theme_picker.use_underline = true;
+    theme_picker.model = themes;
+    theme_picker.expression = new PropertyExpression (typeof (Theme), null, "display-name");
 
-    var result = Themes.find_by_name (themes, current_theme);
+    var result = Themes.find_by_name (themes, properties.theme);
     if (result != null) {
-        drop_down.set_selected (result.index);
+        theme_picker.selected = result.index;
     } else {
-        drop_down.set_selected (0);
+        theme_picker.selected = 0;
     }
-    return drop_down;
+
+    theme_picker.notify["selected-item"].connect (() => {
+        properties.theme = ((Theme) theme_picker.selected_item).name;
+    });
+
+    return theme_picker;
+}
+
+private Adw.ActionRow create_background_picker (Properties properties) {
+    var color_dialog = new ColorDialog ();
+
+    var button = new ColorDialogButton (color_dialog);
+    button.set_rgba (properties.bgcolour);
+    button.notify["rgba"].connect (() => {
+        properties.bgcolour = button.get_rgba();
+    });
+
+    var color_row = new Adw.ActionRow ();
+    color_row.title = _("_Background color:");
+    color_row.use_underline = true;
+    color_row.add_suffix(button);
+
+    return color_row;
 }

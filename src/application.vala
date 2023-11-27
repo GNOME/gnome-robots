@@ -118,10 +118,10 @@ class RobotsApplication : Adw.Application {
     }
 
     private void preferences_cb () {
-        PropertiesDialog.show_dialog (get_active_window (),
-                                      game_configs,
-                                      assets.themes,
-                                      properties);
+        show_preferences (get_active_window (),
+                          game_configs,
+                          assets.themes,
+                          properties);
     }
 
     private void scores_cb () {

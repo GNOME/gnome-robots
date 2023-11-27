@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2023 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,73 +19,16 @@
 
 using Gtk;
 
-public class GamesControlsList : Widget {
+public class GamesControlsList : Adw.PreferencesGroup {
 
-    private Gtk.ListStore store;
-    private TreeView view;
     private Properties properties;
-
-    private enum Column {
-        LABEL = 0,
-        INDEX,
-        KEYCODE,
-        KEYMODS,
-        COUNT
-    }
-
-    construct {
-        var layout = new Gtk.BinLayout ();
-        this.set_layout_manager (layout);
-    }
+    private ControlEditor[] editors;
 
     public GamesControlsList(Properties properties) {
-        store = new Gtk.ListStore (Column.COUNT,
-                                   Type.STRING,
-                                   Type.INT,
-                                   Type.UINT,
-                                   Type.UINT);
-
-        view = new TreeView.with_model (store);
-        view.set_headers_visible (false);
-        view.set_enable_search (false);
-
-        /* label column */
-        var label_renderer = new CellRendererText ();
-        var column = new TreeViewColumn ();
-        column.title = "Control";
-        column.pack_start (label_renderer, true);
-        column.add_attribute (label_renderer, "text", Column.LABEL);
-
-        view.append_column (column);
-
-        /* key column */
-        var key_renderer = new CellRendererAccel ();
-        key_renderer.editable = true;
-        key_renderer.accel_mode = CellRendererAccelMode.OTHER;
-        key_renderer.accel_edited.connect ((_cell, path, keyval, _mods, _keycode) => {
-            accel_edited_cb (path, keyval);
-        });
-        key_renderer.accel_cleared.connect ((_cell, path) => {
-            accel_cleared_cb(path);
-        });
-
-        var column2 = new TreeViewColumn ();
-        column2.title = "Key";
-        column2.pack_start (key_renderer, true);
-        column2.add_attribute (key_renderer, "accel-key", Column.KEYCODE);
-        column2.add_attribute (key_renderer, "accel-mods", Column.KEYMODS);
-
-        view.append_column (column2);
-
-        var sw = new ScrolledWindow ();
-        sw.hscrollbar_policy = PolicyType.NEVER;
-        sw.vscrollbar_policy = PolicyType.AUTOMATIC;
-        sw.has_frame = true;
-        sw.set_child (view);
-        sw.set_parent (this);
-
         this.properties = properties;
         properties.changed.connect (properties_changed_cb);
+
+        title = _("Keyboard");
 
         var key_labels = new string[] {
             _("Key to move NW"),
@@ -98,74 +41,151 @@ public class GamesControlsList : Widget {
             _("Key to move S"),
             _("Key to move SE")
         };
+        editors = new ControlEditor[key_labels.length];
         for (var i = 0; i < key_labels.length; ++i) {
-            add_control (i, key_labels[i]);
+            editors[i] = new_editor (i);
+
+            var action_row = new Adw.ActionRow ();
+            action_row.title = key_labels[i];
+            action_row.add_suffix (editors[i]);
+            action_row.activatable_widget = editors[i];
+            add (action_row);
         }
+
+        var dbut = new Button.with_mnemonic (_("_Restore Defaults"));
+        dbut.clicked.connect (reset_keys);
+        header_suffix = dbut;
     }
 
     ~GamesControlsList () {
         properties.changed.disconnect (properties_changed_cb);
     }
 
-    private void add_control (int index, string label) {
-        TreeIter iter;
-        store.append (out iter);
-        store.set_value (iter, Column.LABEL, label);
-        store.set_value (iter, Column.INDEX, index);
-        store.set_value (iter, Column.KEYCODE, properties.keys[index]);
-        store.set_value (iter, Column.KEYMODS, 0);
-    }
-
-    private void accel_edited_cb (string path_string, uint keyval) {
-        var path = new TreePath.from_string (path_string);
-        if (path == null)
-            return;
-
-        TreeIter iter;
-        if (!store.get_iter (out iter, path)) {
-            return;
-        }
-
-        Value key_index_value;
-        store.get_value (iter, Column.INDEX, out key_index_value);
-        int key_index = key_index_value.get_int();
-
-        /* FIXME: what to do with the modifiers? */
-        properties.keys[key_index] = keyval;
-        store.set_value (iter, Column.KEYCODE, keyval);
-    }
-
-    private void accel_cleared_cb (string path_string) {
-        var path = new TreePath.from_string (path_string);
-        if (path == null)
-            return;
-
-        TreeIter iter;
-        if (!store.get_iter (out iter, path))
-            return;
-
-        Value key_index_value;
-        store.get_value (iter, Column.INDEX, out key_index_value);
-        int key_index = key_index_value.get_int();
-
-        /* FIXME: what to do with the modifiers? */
-        properties.keys.reset (key_index);
-        var keyval = properties.keys[key_index];
-        store.set_value (iter, Column.KEYCODE, keyval);
+    private ControlEditor new_editor (int index) {
+        var editor = new ControlEditor ();
+        editor.keycode = properties.keys[index];
+        editor.edited.connect ((keyval) => {
+            properties.keys[index] = keyval;
+            editor.keycode = keyval;
+        });
+        editor.cleared.connect (() => {
+            properties.keys.reset (index);
+            editor.keycode = properties.keys[index];
+        });
+        return editor;
     }
 
     private void properties_changed_cb () {
-        TreeIter iter;
-        if (store.get_iter_first (out iter)) {
-            do {
-                Value key_index_value;
-                store.get_value (iter, Column.INDEX, out key_index_value);
-                int key_index = key_index_value.get_int();
-
-                store.set_value (iter, Column.KEYCODE, properties.keys[key_index]);
-                store.set_value (iter, Column.KEYMODS, 0); // FIXME?
-            } while (store.iter_next(ref iter));
+        for (var i = 0; i < editors.length; ++i) {
+            editors[i].keycode = properties.keys[i];
         }
+    }
+
+    private void reset_keys () {
+        properties.keys.reset_all ();
+    }
+}
+
+class ControlEditor : Widget {
+    private Label label;
+
+    private uint keycode_ = 0;
+    public uint keycode {
+        get {
+            return keycode_;
+        }
+        set {
+            keycode_ = value;
+            update_label ();
+        }
+    }
+
+    private bool editing_ = false;
+    public bool editing {
+        get {
+            return editing_;
+        }
+        set {
+            editing_ = value;
+            if (editing_) {
+                grab_focus ();
+            }
+            update_label ();
+        }
+    }
+
+    public ControlEditor () {
+        set_layout_manager (new BinLayout ());
+        focusable = true;
+
+        var click_controller = new GestureClick ();
+        click_controller.pressed.connect ((_n, _x, _y) => {
+            editing = true;
+        });
+        add_controller (click_controller);
+
+        var key_controller = new EventControllerKey ();
+        key_controller.key_pressed.connect ((keyval, _keycode, mods) => key_controller_key_pressed (keyval, mods));
+        add_controller (key_controller);
+
+        label = new Label ("");
+        label.halign = Align.START;
+        label.valign = Align.CENTER;
+        label.set_parent (this);
+
+        notify["mnemonic-activate"].connect (() => {
+            editing = true;
+        });
+
+        move_focus.connect_after ((direction) => {
+            editing = false;
+        });
+    }
+
+    private void update_label () {
+        if (editing) {
+            label.label = _("New accelerator…");
+        } else if (keycode_ > 0) {
+            label.label = accelerator_get_label_with_keycode (get_display (), keycode_, keycode_, 0);
+        } else {
+            label.label = _("Disabled");
+        }
+    }
+
+    public signal void edited (uint keyval);
+    public signal void cleared ();
+
+    private bool key_controller_key_pressed (uint keyval, Gdk.ModifierType mods) {
+        if (editing) {
+            editing = false;
+            if (mods == 0) {
+                switch (keyval) {
+                    case Gdk.Key.Tab:
+                        return false;
+                    case Gdk.Key.BackSpace:
+                        cleared ();
+                        break;
+                    case Gdk.Key.Escape:
+                        break;
+                    default:
+                        edited (keyval);
+                        break;
+                }
+                return true;
+            }
+        } else {
+            if (mods == 0) {
+                switch (keyval) {
+                    case Gdk.Key.Return:
+                    case Gdk.Key.KP_Enter:
+                        editing = true;
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        }
+        return false;
     }
 }
 

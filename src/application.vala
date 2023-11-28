@@ -132,7 +132,8 @@ class RobotsApplication : Adw.Application {
     }
 
     private void help_cb () {
-        show_uri (get_active_window (), "help:gnome-robots", CURRENT_TIME);
+        var launcher = new UriLauncher ("help:gnome-robots");
+        launcher.launch.begin (get_active_window (), null);
     }
 
     private void about_cb () {

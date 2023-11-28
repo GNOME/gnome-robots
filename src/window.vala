@@ -18,11 +18,11 @@
  */
 
 using Gtk;
+using Adw;
 
-public class RobotsWindow : ApplicationWindow {
+public class RobotsWindow : Adw.ApplicationWindow {
 
-    private HeaderBar headerbar;
-    private Label header_subtitle;
+    private Adw.WindowTitle window_title;
     private Label safe_teleports_label;
     private GameArea game_area;
     private EventControllerKey key_controller;
@@ -39,23 +39,14 @@ public class RobotsWindow : ApplicationWindow {
         remember_window_size (this, new WindowSizeSettings ("org.gnome.Robots"));
         this.properties = properties;
 
-        var header_title = new Label.with_mnemonic (_("Robots"));
-        header_title.single_line_mode = true;
-        header_title.add_css_class ("title");
+        var vbox = new Box (Orientation.VERTICAL, 0);
+        content = vbox;
 
-        header_subtitle = new Label.with_mnemonic ("");
-        header_subtitle.single_line_mode = true;
-        header_subtitle.add_css_class ("subtitle");
+        window_title = new Adw.WindowTitle (_("Robots"), "");
 
-        var header_box = new Box (Orientation.VERTICAL, 0);
-        header_box.valign = Align.CENTER;
-        header_box.append (header_title);
-        header_box.append (header_subtitle);
-
-        headerbar = new HeaderBar ();
-        headerbar.set_title_widget (header_box);
-        headerbar.show_title_buttons = true;
-        set_titlebar (headerbar);
+        var headerbar = new Adw.HeaderBar ();
+        headerbar.title_widget = window_title;
+        vbox.append (headerbar);
 
         var appmenu = app.get_menu_by_id ("primary-menu");
         var menu_button = new MenuButton ();
@@ -80,17 +71,17 @@ public class RobotsWindow : ApplicationWindow {
 
         var gridframe = new Games.GridFrame (game.width, game.height);
         gridframe.child = game_area;
-
-        var hbox = button_box ();
-
-        var vbox = new Box (Orientation.VERTICAL, 0);
         gridframe.vexpand = true;
         gridframe.hexpand = true;
-        vbox.append (gridframe);
-        hbox.hexpand = true;
-        vbox.append (hbox);
 
-        set_child (vbox);
+        var toolbar_view = new Adw.ToolbarView ();
+        toolbar_view.content = gridframe;
+
+        var action_bar = new Gtk.ActionBar ();
+        action_bar.set_center_widget (button_box ());
+        toolbar_view.add_bottom_bar (action_bar);
+
+        vbox.append (toolbar_view);
 
         key_controller = new EventControllerKey ();
         key_controller.key_pressed.connect (keyboard_cb);
@@ -103,10 +94,8 @@ public class RobotsWindow : ApplicationWindow {
     }
 
     private Box button_box () {
-        var hbox = new Box (Orientation.HORIZONTAL, 0);
+        var hbox = new Box (Orientation.HORIZONTAL, 10);
         var size_group = new SizeGroup (SizeGroupMode.BOTH);
-
-        hbox.add_css_class ("linked");
 
         {
             var label = new Label.with_mnemonic (_("Teleport _Randomly"));
@@ -149,8 +138,7 @@ public class RobotsWindow : ApplicationWindow {
     }
 
     private void update_game_status (Game game) {
-        header_subtitle.set_label (
-            _("Level: %d\tScore: %d").printf (game.status.current_level, game.status.score));
+        window_title.subtitle = _("Level: %d\tScore: %d").printf (game.status.current_level, game.status.score);
 
         /* Second line of safe teleports button label. %d is the number of teleports remaining. */
         var remaining_teleports_text = _("(Remaining: %d)").printf (game.status.safe_teleports);

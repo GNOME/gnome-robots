@@ -180,7 +180,7 @@ public class GameConfigs {
 
     public GameConfig? @get (uint n) {
         if (n < game_configs.size)
-            return game_configs[(int)n];
+            return game_configs[(int) n];
         else
             return null;
     }

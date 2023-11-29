@@ -226,11 +226,11 @@ public class Game {
         };
         arena[player.x, player.y] = ObjectType.PLAYER;
 
-        var num_robots1 = int.min(
+        var num_robots1 = int.min (
             config.initial_type1 + config.increment_type1 * current_level,
             config.maximum_type1
         );
-        var num_robots2 = int.min(
+        var num_robots2 = int.min (
             config.initial_type2 + config.increment_type2 * current_level,
             config.maximum_type2
         );
@@ -404,7 +404,7 @@ public class Game {
         update_arena (change);
     }
 
-    private delegate void KillTracker(ObjectType victim);
+    private delegate void KillTracker (ObjectType victim);
 
     private static Arena chase (Arena arena, Gee.Predicate<ObjectType> is_chaser, int x, int y, KillTracker? track_kill) {
         var new_arena = arena.map ((obj) => {
@@ -491,14 +491,14 @@ public class Game {
         }
 
         var coords = player.move (dx, dy);
-        if (!arena.are_coords_valid(coords)
+        if (!arena.are_coords_valid (coords)
             || arena[coords.x, coords.y] != ObjectType.HEAP
         ) {
             return null;
         }
 
         var push_to = coords.move (dx, dy);
-        if (!arena.are_coords_valid(push_to)
+        if (!arena.are_coords_valid (push_to)
             || arena[push_to.x, push_to.y] == ObjectType.HEAP
         ) {
             return null;
@@ -526,7 +526,7 @@ public class Game {
     private ArenaChange? try_player_move (int dx, int dy) {
         var coords = player.move (dx, dy);
 
-        if (!arena.are_coords_valid(coords)) {
+        if (!arena.are_coords_valid (coords)) {
             return null;
         }
 
@@ -690,8 +690,7 @@ public class Game {
      * handles player's commands
      **/
     public bool player_command (PlayerCommand cmd,
-                                MoveSafety safety = MoveSafety.UNSAFE
-    ) {
+                                MoveSafety safety = MoveSafety.UNSAFE) {
         if (state != State.PLAYING) {
             return false;
         }

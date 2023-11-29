@@ -89,14 +89,14 @@ class Then : Animated {
 
     protected override int do_tick () {
         if (is_second) {
-            return second.tick();
+            return second.tick ();
         } else {
-            var result = first.tick();
+            var result = first.tick ();
             if (result >= 0) {
                 return result;
             } else {
                 is_second = true;
-                return second.tick();
+                return second.tick ();
             }
         }
     }
@@ -123,13 +123,13 @@ class Repeat : Animated {
         if (current >= count) {
             return -1;
         }
-        var result = inner.tick();
+        var result = inner.tick ();
         if (result >= 0) {
             return result;
         } else {
             inner.reset ();
             ++current;
-            return inner.tick();
+            return inner.tick ();
         }
     }
 
@@ -147,12 +147,12 @@ class Forever : Animated {
     }
 
     protected override int do_tick () {
-        var result = inner.tick();
+        var result = inner.tick ();
         if (result >= 0) {
             return result;
         } else {
             inner.reset ();
-            return inner.tick();
+            return inner.tick ();
         }
     }
 
@@ -177,7 +177,7 @@ class Limit : Animated {
             return -1;
         }
         ++count;
-        return inner.tick();
+        return inner.tick ();
     }
 
     public override void reset () {

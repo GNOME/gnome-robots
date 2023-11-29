@@ -24,8 +24,7 @@ using Adw;
 public void show_preferences (Gtk.Window parent_window,
                               GameConfigs game_configs,
                               GLib.ListStore themes,
-                              Properties properties
-) {
+                              Properties properties) {
     var window = new Adw.PreferencesWindow ();
     window.transient_for = parent_window;
 
@@ -108,12 +107,11 @@ private Adw.PreferencesGroup create_sound_group (Properties properties) {
 }
 
 private Adw.ComboRow create_game_config_picker (GameConfigs game_configs,
-                                                string current_config
-) {
+                                                string current_config) {
     var model = new StringList (null);
     int active_index = 0;
     for (int i = 0; i < game_configs.count (); ++i) {
-        var config = game_configs[(uint)i];
+        var config = game_configs[(uint) i];
 
         var config_name = config.name ();
         model.append (config_name);
@@ -132,8 +130,7 @@ private Adw.ComboRow create_game_config_picker (GameConfigs game_configs,
 }
 
 private Adw.ComboRow create_theme_picker (GLib.ListStore themes,
-                                          Properties properties
-) {
+                                          Properties properties) {
     var theme_picker = new Adw.ComboRow ();
     theme_picker.title = _("_Image theme:");
     theme_picker.use_underline = true;
@@ -160,13 +157,13 @@ private Adw.ActionRow create_background_picker (Properties properties) {
     var button = new ColorDialogButton (color_dialog);
     button.set_rgba (properties.bgcolour);
     button.notify["rgba"].connect (() => {
-        properties.bgcolour = button.get_rgba();
+        properties.bgcolour = button.get_rgba ();
     });
 
     var color_row = new Adw.ActionRow ();
     color_row.title = _("_Background color:");
     color_row.use_underline = true;
-    color_row.add_suffix(button);
+    color_row.add_suffix (button);
 
     return color_row;
 }

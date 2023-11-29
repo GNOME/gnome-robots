@@ -31,14 +31,16 @@ class SvgPaintable : Object, Gdk.Paintable {
 
     public void snapshot (Gdk.Snapshot snapshot,
                           double width,
-                          double height
-    ) {
+                          double height) {
         var rect = Rect () {
             origin = Point.zero (),
-            size = Size () { width = (float) width, height = (float) height },
+            size = Size () {
+                width = (float) width,
+                height = (float) height,
+            },
         };
 
-        var gtk_snapshot = (Gtk.Snapshot) snapshot;
+        var gtk_snapshot = (Gtk.Snapshot)snapshot;
         var cr = gtk_snapshot.append_cairo (rect);
 
         try {

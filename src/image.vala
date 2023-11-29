@@ -30,4 +30,3 @@ public Paintable image_from_file (string filename) throws GLib.Error {
         return Texture.for_pixbuf (pixbuf);
     }
 }
-

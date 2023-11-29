@@ -20,12 +20,11 @@
 using Gee;
 using Gdk;
 
-namespace ImageSuffixList
-{
+namespace ImageSuffixList {
     private static ArrayList<string> list = null;
     private static Mutex mutex;
 
-    public unowned ArrayList<string> get() {
+    public unowned ArrayList<string> get () {
         mutex.lock ();
 
         if (list == null) {

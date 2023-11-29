@@ -83,8 +83,7 @@ public class GameArea : Widget {
                      GameConfigs game_configs,
                      Assets assets,
                      SoundPlayer sound_player,
-                     Properties properties
-    ) throws Error {
+                     Properties properties) throws Error {
         this.game = game;
         this.game_configs = game_configs;
         this.assets = assets;
@@ -156,7 +155,10 @@ public class GameArea : Widget {
         for (int j = 0; j < game.arena.height; j++) {
             for (int i = 0; i < game.arena.width; i++) {
                 var tile_rect = Rect () {
-                    origin = Point () { x = i * tile_size.width, y = j * tile_size.height },
+                    origin = Point () {
+                        x = i * tile_size.width,
+                        y = j * tile_size.height,
+                    },
                     size = tile_size,
                 };
 
@@ -248,15 +250,15 @@ public class GameArea : Widget {
             get_dir (x, y, out dx, out dy);
 
             var cursor_index = 3 * dy + dx + 4;
-            var cursor = assets.cursors.index(cursor_index);
+            var cursor = assets.cursors.index (cursor_index);
             set_cursor (cursor);
         }
     }
 
     private void get_dir (double ix, double iy, out int odx, out int ody) {
-        const int[,] MOVE_TABLE = {
-            {-1, 0}, {-1, -1}, {0, -1}, {1, -1},
-            {1, 0}, {1, 1}, {0, 1}, {-1, 1}
+        const int[, ] MOVE_TABLE = {
+            { -1, 0 }, { -1, -1 }, { 0, -1 }, { 1, -1 },
+            { 1, 0 }, { 1, 1 }, { 0, 1 }, { -1, 1 }
         };
         Size tile_size = tile_size ();
         int x = ((int) (ix / tile_size.width)).clamp (0, game.arena.width);

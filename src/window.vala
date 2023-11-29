@@ -33,8 +33,7 @@ public class RobotsWindow : Adw.ApplicationWindow {
                          Properties properties,
                          GameConfigs game_configs,
                          Assets assets,
-                         SoundPlayer sound_player
-    ) throws Error {
+                         SoundPlayer sound_player) throws Error {
         Object (application: app);
         remember_window_size (this, new WindowSizeSettings ("org.gnome.Robots"));
         this.properties = properties;
@@ -182,8 +181,8 @@ public class RobotsWindow : Adw.ApplicationWindow {
         char pressed = ((char) keyval).toupper ();
 
         for (var i = 0; i < properties.keys.size; ++i) {
-            if (pressed == ((char)properties.keys[i]).toupper ()) {
-                game_area.player_command ((PlayerCommand)i);
+            if (pressed == ((char) properties.keys[i]).toupper ()) {
+                game_area.player_command ((PlayerCommand) i);
                 return true;
             }
         }

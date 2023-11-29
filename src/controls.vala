@@ -24,7 +24,7 @@ public class GamesControlsList : Adw.PreferencesGroup {
     private Properties properties;
     private ControlEditor[] editors;
 
-    public GamesControlsList(Properties properties) {
+    public GamesControlsList (Properties properties) {
         this.properties = properties;
         properties.changed.connect (properties_changed_cb);
 

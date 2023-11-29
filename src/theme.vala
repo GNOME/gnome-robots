@@ -22,7 +22,7 @@ using Graphene;
 using Gdk;
 using Rsvg;
 
-public class Theme: Object {
+public class Theme : Object {
 
     public enum Frames {
         PLAYER_START = 0,
@@ -56,8 +56,7 @@ public class Theme: Object {
     public void draw_object (ObjectType type,
                              int frame_no,
                              Gtk.Snapshot snapshot,
-                             Rect rect
-    ) {
+                             Rect rect) {
         int tile_no = -1;
         switch (type) {
         case ObjectType.PLAYER:
@@ -98,4 +97,3 @@ string remove_suffix (string filename) {
         return filename;
     }
 }
-

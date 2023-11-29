@@ -33,10 +33,10 @@ public class SoundPlayer {
 
     public SoundPlayer () {
         pipeline = new Gst.Pipeline ("robots");
-        return_if_fail(pipeline != null);
+        return_if_fail (pipeline != null);
 
         playbin = Gst.ElementFactory.make ("playbin3", "play");
-        return_if_fail(playbin != null);
+        return_if_fail (playbin != null);
 
         pipeline.add (playbin);
     }
@@ -49,8 +49,8 @@ public class SoundPlayer {
     }
 
     public void play_file (string name) {
-        return_if_fail(pipeline != null);
-        return_if_fail(playbin != null);
+        return_if_fail (pipeline != null);
+        return_if_fail (playbin != null);
 
         var filename = "%s.ogg".printf (name);
         var path = Path.build_filename (SOUND_DIRECTORY, filename);
@@ -63,9 +63,9 @@ public class SoundPlayer {
             return;
         }
 
-        pipeline.set_state(Gst.State.NULL);
-        playbin.set_property("uri", uri);
-        pipeline.set_state(Gst.State.PLAYING);
+        pipeline.set_state (Gst.State.NULL);
+        playbin.set_property ("uri", uri);
+        pipeline.set_state (Gst.State.PLAYING);
     }
 
     public void play (Sound sound) {

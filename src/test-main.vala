@@ -26,7 +26,7 @@ static void test_arena_create () {
 }
 
 static void test_game_kill_two () {
-    var config = GameConfig();
+    var config = GameConfig ();
     config.moveable_heaps = true;
 
     var game = new Game ();
@@ -59,4 +59,3 @@ public static int main (string[] args) {
 
     return Test.run ();
 }
-

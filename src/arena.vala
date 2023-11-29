@@ -36,7 +36,7 @@ public class Arena {
         public Coords move (int dx, int dy) {
             return Coords () {
                 x = x + dx,
-                y = y + dy
+                y = y + dy,
             };
         }
     }
@@ -129,8 +129,8 @@ public class ArenaIterable {
         this.initial_y = initial_y;
     }
 
-    public Iterator iterator() {
-        return new Iterator(this);
+    public Iterator iterator () {
+        return new Iterator (this);
     }
 
     public class Iterator {
@@ -147,7 +147,7 @@ public class ArenaIterable {
             this.i = 0;
         }
 
-        public Arena.Coords? next_value() {
+        public Arena.Coords? next_value () {
             if (i >= size) {
                 return null;
             }

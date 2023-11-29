@@ -137,15 +137,15 @@ class RobotsApplication : Adw.Application {
     }
 
     private void about_cb () {
-        var window = new AboutWindow();
+        var window = new AboutWindow ();
         window.set_transient_for (get_active_window ());
 
         window.application_icon = "org.gnome.Robots";
         window.application_name = _("Robots");
         window.version = VERSION;
         window.copyright = "Copyright © 1998–2008 Mark Rae\n"
-            + "Copyright © 2014–2016 Michael Catanzaro\n"
-            + "Copyright © 2020-2022 Andrey Kutejko";
+                           + "Copyright © 2014–2016 Michael Catanzaro\n"
+                           + "Copyright © 2020-2022 Andrey Kutejko";
         window.license_type = License.GPL_3_0;
         window.comments = _("Based on classic BSD Robots");
         window.developers = {

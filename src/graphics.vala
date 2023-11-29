@@ -57,4 +57,3 @@ public RGBA calculate_light_color (RGBA color) {
     light.alpha = 1.0f;
     return light;
 }
-

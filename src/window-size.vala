@@ -67,4 +67,3 @@ public void remember_window_size (Gtk.Window window, WindowSize size) {
         window.maximize ();
     }
 }
-

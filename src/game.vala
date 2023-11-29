@@ -692,8 +692,9 @@ public class Game {
     public bool player_command (PlayerCommand cmd,
                                 MoveSafety safety = MoveSafety.UNSAFE
     ) {
-        if (state != State.PLAYING)
+        if (state != State.PLAYING) {
             return false;
+        }
 
         switch (cmd) {
         case PlayerCommand.NW:

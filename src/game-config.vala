@@ -185,13 +185,6 @@ public class GameConfigs {
             return null;
     }
 
-    public string? get_name (uint n) {
-        if (n < game_configs.size)
-            return game_configs[(int)n].description.replace ("_", " ");
-        else
-            return null;
-    }
-
     public GameConfig? find_by_name (string name) {
         for (var i = 0; i < game_configs.size; ++i) {
             if (game_configs[i].description == name || game_configs[i].name () == name) {

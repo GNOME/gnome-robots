@@ -33,7 +33,6 @@ sources = files(
     'scores.vala',
     'application.vala',
     'window.vala',
-    'robots.vala',
 )
 
 resources = gnome.compile_resources(
@@ -42,20 +41,31 @@ resources = gnome.compile_resources(
     source_dir: '../'
 )
 
+dependencies = [
+    gee_dependency,
+    gio_dependency,
+    glib_dependency,
+    gnome_games_dependency,
+    gtk_dependency,
+    rsvg_dependency,
+    adw_dependency,
+    gstreamer_dependency
+]
+
 executable(
     meson.project_name(),
-    sources + resources,
+    sources + resources + ['robots.vala'],
     config_header,
-    dependencies: [
-        gee_dependency,
-        gio_dependency,
-        glib_dependency,
-        gnome_games_dependency,
-        gtk_dependency,
-        rsvg_dependency,
-        adw_dependency,
-        gstreamer_dependency
-    ],
+    dependencies: dependencies,
     install_dir: get_option('bindir'),
     install: true
 )
+
+test_executable = executable(
+    'tests',
+    sources + resources + ['test-main.vala'],
+    config_header,
+    dependencies: dependencies,
+)
+
+test('tests', test_executable)

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.he\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2023-01-24 22:23+0000\n"
-"PO-Revision-Date: 2023-01-25 10:28+0200\n"
+"POT-Creation-Date: 2023-11-29 12:37+0000\n"
+"PO-Revision-Date: 2023-12-26 08:21+0200\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: Hebrew <yoseforb@gmail.com>\n"
 "Language: he\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 42.0\n"
+"X-Generator: Gtranslator 45.3\n"
 "X-Launchpad-Export-Date: 2008-01-13 04:36+0000\n"
 "X-Poedit-Language: Hebrew\n"
 
-#: data/app-menu.ui:7 src/application.vala:104
+#: data/app-menu.ui:7 src/application.vala:99 src/application.vala:103
 msgid "_New Game"
 msgstr "_משחק חדש"
 
@@ -44,7 +44,7 @@ msgid "_About Robots"
 msgstr "על _אודות רובוטים"
 
 #: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
-#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+#: src/application.vala:41 src/application.vala:144 src/window.vala:45
 msgid "Robots"
 msgstr "רובוטים"
 
@@ -161,7 +161,7 @@ msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Enable game sounds. Play sounds for various events throughout the game."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:34
 msgid "Key to move NW"
 msgstr "לחיצת מקש לתנועה לצפון-מערב"
 
@@ -169,7 +169,7 @@ msgstr "לחיצת מקש לתנועה לצפון-מערב"
 msgid "The key used to move north-west."
 msgstr "The key used to move north-west."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:35
 msgid "Key to move N"
 msgstr "לחיצת מקש לתנועה צפונה"
 
@@ -177,7 +177,7 @@ msgstr "לחיצת מקש לתנועה צפונה"
 msgid "The key used to move north."
 msgstr "The key used to move north."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:36
 msgid "Key to move NE"
 msgstr "לחיצת מקש לתנועה לצפון-מזרח"
 
@@ -185,7 +185,7 @@ msgstr "לחיצת מקש לתנועה לצפון-מזרח"
 msgid "The key used to move north-east."
 msgstr "The key used to move north-east."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:37
 msgid "Key to move W"
 msgstr "מקש לתנועה מערבה"
 
@@ -193,7 +193,7 @@ msgstr "מקש לתנועה מערבה"
 msgid "The key used to move west."
 msgstr "The key used to move west."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:38
 msgid "Key to hold"
 msgstr "מקש להחזקה"
 
@@ -201,7 +201,7 @@ msgstr "מקש להחזקה"
 msgid "The key used to hold still."
 msgstr "The key used to hold still."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:39
 msgid "Key to move E"
 msgstr "לחיצת מקשה לתנועה מזרחה"
 
@@ -209,7 +209,7 @@ msgstr "לחיצת מקשה לתנועה מזרחה"
 msgid "The key used to move east."
 msgstr "The key used to move east."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:40
 msgid "Key to move SW"
 msgstr "מקש לתנועה לדרום-מערב"
 
@@ -217,7 +217,7 @@ msgstr "מקש לתנועה לדרום-מערב"
 msgid "The key used to move south-west."
 msgstr "The key used to move south-west."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:41
 msgid "Key to move S"
 msgstr "לחיצת מקש לתנועה דרומה"
 
@@ -225,7 +225,7 @@ msgstr "לחיצת מקש לתנועה דרומה"
 msgid "The key used to move south."
 msgstr "The key used to move south."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:42
 msgid "Key to move SE"
 msgstr "מקש לתנועה לדרום-מזרח"
 
@@ -245,7 +245,7 @@ msgstr "Height of the window in pixels"
 msgid "true if the window is maximized"
 msgstr "true if the window is maximized"
 
-#: src/application.vala:63
+#: src/application.vala:64
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -253,19 +253,19 @@ msgstr ""
 "התכנית רובוטי GNOME לא הצליחה למצוא קובצי הגדרת משחק תקינים. נא לבדוק "
 "שהתכנית מותקנת כראוי."
 
-#: src/application.vala:101
+#: src/application.vala:100
 msgid "Are you sure you want to discard the current game?"
 msgstr "האם ברצונך לבטל את המשחק הנוכחי?"
 
-#: src/application.vala:103
+#: src/application.vala:102
 msgid "Keep _Playing"
 msgstr "להמשיך _לשחק"
 
-#: src/application.vala:157
+#: src/application.vala:150
 msgid "Based on classic BSD Robots"
 msgstr "מבוסס על BSD רובוטים הקלאסי"
 
-#: src/application.vala:161
+#: src/application.vala:162
 msgid "translator-credits"
 msgstr ""
 "גיל אשר <dolfin@rpg.org.il>\n"
@@ -277,8 +277,24 @@ msgstr ""
 "ירון שהרבני <sh.yaron@gmail.com>\n"
 "יוסף אור בוצ׳קו <yoseforb@gmail.com>\n"
 "\n"
-"פרויקט תרגום GNOME לעברית:\n"
-"‏http://gnome-il.berlios.de"
+"מיזם תרגום GNOME לעברית:\n"
+"https://l10n.gnome.org/teams/he/"
+
+#: src/controls.vala:31 src/properties-dialog.vala:50
+msgid "Keyboard"
+msgstr "מקלדת"
+
+#: src/controls.vala:55
+msgid "_Restore Defaults"
+msgstr "_חזרה להגדרות בררת המחדל"
+
+#: src/controls.vala:147
+msgid "New accelerator…"
+msgstr "מאיץ חדש…"
+
+#: src/controls.vala:151
+msgid "Disabled"
+msgstr "מושבת"
 
 #: src/game-area.vala:356
 msgid ""
@@ -292,61 +308,49 @@ msgstr ""
 msgid "There are no teleport locations left!!"
 msgstr "לא נותרו מקומות לשיגור!!"
 
-#: src/properties-dialog.vala:68
-msgid "Preferences"
-msgstr "העדפות"
-
-#: src/properties-dialog.vala:84
-msgid "Game Type"
-msgstr "סוג משחק"
-
-#: src/properties-dialog.vala:95
-msgid "_Use safe moves"
-msgstr "השת_מש במהלכים בטוחים"
-
-#: src/properties-dialog.vala:97
-msgid "Prevent accidental moves that result in getting killed."
-msgstr "מנע תנועות אקראיות שעלולות להוביל למותך."
-
-#: src/properties-dialog.vala:100
-msgid "U_se super safe moves"
-msgstr "_השתמש במהלכים בטוחים מאוד"
-
-#: src/properties-dialog.vala:102
-msgid "Prevents all moves that result in getting killed."
-msgstr "מונע את כל התנועות שמובילות למותך."
-
-#: src/properties-dialog.vala:114
-msgid "_Enable sounds"
-msgstr "ה_פעלת צלילים"
-
-#: src/properties-dialog.vala:119
-msgid "Play sounds for events like winning a level and dying."
-msgstr "יש להשמיע צלילים עבור אירועים כגון ניצחון בשלב ותמותה."
-
-#: src/properties-dialog.vala:122
+#: src/properties-dialog.vala:34
 msgid "Game"
 msgstr "משחק"
 
-#: src/properties-dialog.vala:128
-msgid "_Image theme:"
-msgstr "ערכת נושא ל_תמונה:"
-
-#: src/properties-dialog.vala:138
-msgid "_Background color:"
-msgstr "_צבע הרקע:"
-
-#: src/properties-dialog.vala:148
+#: src/properties-dialog.vala:41
 msgid "Appearance"
 msgstr "מראה"
 
-#: src/properties-dialog.vala:162
-msgid "_Restore Defaults"
-msgstr "_חזרה להגדרות בררת המחדל"
+#: src/properties-dialog.vala:69
+msgid "_Use safe moves"
+msgstr "השת_מש במהלכים בטוחים"
 
-#: src/properties-dialog.vala:166
-msgid "Keyboard"
-msgstr "מקלדת"
+#: src/properties-dialog.vala:71
+msgid "Prevent accidental moves that result in getting killed."
+msgstr "מנע תנועות אקראיות שעלולות להוביל למותך."
+
+#: src/properties-dialog.vala:76
+msgid "U_se super safe moves"
+msgstr "_השתמש במהלכים בטוחים מאוד"
+
+#: src/properties-dialog.vala:78
+msgid "Prevents all moves that result in getting killed."
+msgstr "מונע את כל התנועות שמובילות למותך."
+
+#: src/properties-dialog.vala:98
+msgid "_Enable sounds"
+msgstr "ה_פעלת צלילים"
+
+#: src/properties-dialog.vala:100
+msgid "Play sounds for events like winning a level and dying."
+msgstr "יש להשמיע צלילים עבור אירועים כגון ניצחון בשלב ותמותה."
+
+#: src/properties-dialog.vala:127
+msgid "Game Type"
+msgstr "סוג משחק"
+
+#: src/properties-dialog.vala:138
+msgid "_Image theme:"
+msgstr "ערכת נושא ל_תמונה:"
+
+#: src/properties-dialog.vala:167
+msgid "_Background color:"
+msgstr "_צבע הרקע:"
 
 #. Label on the scores dialog, next to map type dropdown
 #: src/scores.vala:28
@@ -413,29 +417,32 @@ msgstr "רובוטים עם שיגור בטוח ומהלכים בטוחים"
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "רובוטים עם שיגור בטוח ומהלכים בטוחים מאוד"
 
-#: src/window.vala:113
+#: src/window.vala:101
 msgid "Teleport _Randomly"
 msgstr "שיגור _אקראי"
 
-#: src/window.vala:138
+#: src/window.vala:126
 msgid "_Wait for Robots"
 msgstr "המ_תנה לרובוטים"
 
-#: src/window.vala:154
+#: src/window.vala:141
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "שלב: %d\tניקוד: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:157
+#: src/window.vala:144
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(נותר: %d)"
 
 #. First line of safe teleports button label.
-#: src/window.vala:159
+#: src/window.vala:146
 msgid "Teleport _Safely"
 msgstr "שיגור _בטוח"
+
+#~ msgid "Preferences"
+#~ msgstr "העדפות"
 
 #~ msgid "GNOME Robots"
 #~ msgstr "‏GNOME רובוטים"

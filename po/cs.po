@@ -22,19 +22,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2023-01-25 19:23+0000\n"
-"PO-Revision-Date: 2023-03-03 10:02+0100\n"
-"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"POT-Creation-Date: 2023-11-29 12:37+0000\n"
+"PO-Revision-Date: 2024-02-07 16:04+0100\n"
+"Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Project-Style: gnome\n"
 
-#: data/app-menu.ui:7 src/application.vala:104
+#: data/app-menu.ui:7 src/application.vala:99 src/application.vala:103
 msgid "_New Game"
 msgstr "_Nová hra"
 
@@ -55,7 +55,7 @@ msgid "_About Robots"
 msgstr "O _aplikaci Roboti"
 
 #: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
-#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+#: src/application.vala:41 src/application.vala:144 src/window.vala:45
 msgid "Robots"
 msgstr "Roboti"
 
@@ -173,7 +173,7 @@ msgstr "Povolit zvuky hry"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Povolit zvuky hry. Přehrávat zvuky pro různé události ve hře."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:34
 msgid "Key to move NW"
 msgstr "Klávesa pro pohyb SZ"
 
@@ -181,7 +181,7 @@ msgstr "Klávesa pro pohyb SZ"
 msgid "The key used to move north-west."
 msgstr "Klávesa sloužící pro přesun severozápadně."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:35
 msgid "Key to move N"
 msgstr "Klávesa pro pohyb S"
 
@@ -189,7 +189,7 @@ msgstr "Klávesa pro pohyb S"
 msgid "The key used to move north."
 msgstr "Klávesa sloužící pro přesun severně."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:36
 msgid "Key to move NE"
 msgstr "Klávesa pro pohyb SV"
 
@@ -197,7 +197,7 @@ msgstr "Klávesa pro pohyb SV"
 msgid "The key used to move north-east."
 msgstr "Klávesa sloužící pro přesun severovýchodně."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:37
 msgid "Key to move W"
 msgstr "Klávesa pro pohyb Z"
 
@@ -205,7 +205,7 @@ msgstr "Klávesa pro pohyb Z"
 msgid "The key used to move west."
 msgstr "Klávesa sloužící pro přesun západně."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:38
 msgid "Key to hold"
 msgstr "Klávesa pro stání"
 
@@ -213,7 +213,7 @@ msgstr "Klávesa pro stání"
 msgid "The key used to hold still."
 msgstr "Klávesa sloužící ke stání na místě."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:39
 msgid "Key to move E"
 msgstr "Klávesa pro pohyb V"
 
@@ -221,7 +221,7 @@ msgstr "Klávesa pro pohyb V"
 msgid "The key used to move east."
 msgstr "Klávesa sloužící pro přesun východně."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:40
 msgid "Key to move SW"
 msgstr "Klávesa pro pohyb JZ"
 
@@ -229,7 +229,7 @@ msgstr "Klávesa pro pohyb JZ"
 msgid "The key used to move south-west."
 msgstr "Klávesa sloužící pro přesun jihozápadně."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:41
 msgid "Key to move S"
 msgstr "Klávesa pro pohyb J"
 
@@ -237,7 +237,7 @@ msgstr "Klávesa pro pohyb J"
 msgid "The key used to move south."
 msgstr "Klávesa sloužící pro přesun jižně."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:42
 msgid "Key to move SE"
 msgstr "Klávesa pro pohyb JV"
 
@@ -257,7 +257,7 @@ msgstr "Výška okna v pixelech."
 msgid "true if the window is maximized"
 msgstr "Zapnuto, pokud je okno maximalizováno"
 
-#: src/application.vala:63
+#: src/application.vala:64
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -265,19 +265,19 @@ msgstr ""
 "Program Roboti nemohl najít platné soubory nastavení hry. Zkontrolujte "
 "prosím, zda je program správně nainstalován."
 
-#: src/application.vala:101
+#: src/application.vala:100
 msgid "Are you sure you want to discard the current game?"
 msgstr "Opravdu chcete zrušit současnou hru?"
 
-#: src/application.vala:103
+#: src/application.vala:102
 msgid "Keep _Playing"
 msgstr "_Pokračovat ve hře"
 
-#: src/application.vala:157
+#: src/application.vala:150
 msgid "Based on classic BSD Robots"
 msgstr "Založeno na klasických Robotech z BSD"
 
-#: src/application.vala:161
+#: src/application.vala:162
 msgid "translator-credits"
 msgstr ""
 "Jirka Lébl\n"
@@ -294,6 +294,22 @@ msgstr ""
 "Petr Pulc <petrpulc@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
+#: src/controls.vala:31 src/properties-dialog.vala:50
+msgid "Keyboard"
+msgstr "Klávesnice"
+
+#: src/controls.vala:55
+msgid "_Restore Defaults"
+msgstr "_Obnovit výchozí"
+
+#: src/controls.vala:147
+msgid "New accelerator…"
+msgstr "Nový urychlovač…"
+
+#: src/controls.vala:151
+msgid "Disabled"
+msgstr "Zakázáno"
+
 #: src/game-area.vala:356
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
@@ -306,61 +322,49 @@ msgstr ""
 msgid "There are no teleport locations left!!"
 msgstr "Nezbývá žádné umístění teleportu!!"
 
-#: src/properties-dialog.vala:68
-msgid "Preferences"
-msgstr "Předvolby"
-
-#: src/properties-dialog.vala:84
-msgid "Game Type"
-msgstr "Typ hry"
-
-#: src/properties-dialog.vala:95
-msgid "_Use safe moves"
-msgstr "Používat _bezpečné tahy"
-
-#: src/properties-dialog.vala:97
-msgid "Prevent accidental moves that result in getting killed."
-msgstr "Bránit náhodným tahům, které způsobí smrt."
-
-#: src/properties-dialog.vala:100
-msgid "U_se super safe moves"
-msgstr "Používat _superbezpečné tahy"
-
-#: src/properties-dialog.vala:102
-msgid "Prevents all moves that result in getting killed."
-msgstr "Bránit všem tahům, které způsobí smrt."
-
-#: src/properties-dialog.vala:114
-msgid "_Enable sounds"
-msgstr "_Povolit zvuky"
-
-#: src/properties-dialog.vala:119
-msgid "Play sounds for events like winning a level and dying."
-msgstr "Přehrávat zvuky pro události jako výhra úrovně a smrt."
-
-#: src/properties-dialog.vala:122
+#: src/properties-dialog.vala:34
 msgid "Game"
 msgstr "Hra"
 
-#: src/properties-dialog.vala:128
-msgid "_Image theme:"
-msgstr "_Obrázkový motiv:"
-
-#: src/properties-dialog.vala:138
-msgid "_Background color:"
-msgstr "Barva _pozadí:"
-
-#: src/properties-dialog.vala:148
+#: src/properties-dialog.vala:41
 msgid "Appearance"
 msgstr "Vzhled"
 
-#: src/properties-dialog.vala:162
-msgid "_Restore Defaults"
-msgstr "_Obnovit výchozí"
+#: src/properties-dialog.vala:69
+msgid "_Use safe moves"
+msgstr "Používat _bezpečné tahy"
 
-#: src/properties-dialog.vala:166
-msgid "Keyboard"
-msgstr "Klávesnice"
+#: src/properties-dialog.vala:71
+msgid "Prevent accidental moves that result in getting killed."
+msgstr "Bránit náhodným tahům, které způsobí smrt."
+
+#: src/properties-dialog.vala:76
+msgid "U_se super safe moves"
+msgstr "Používat _superbezpečné tahy"
+
+#: src/properties-dialog.vala:78
+msgid "Prevents all moves that result in getting killed."
+msgstr "Bránit všem tahům, které způsobí smrt."
+
+#: src/properties-dialog.vala:98
+msgid "_Enable sounds"
+msgstr "_Povolit zvuky"
+
+#: src/properties-dialog.vala:100
+msgid "Play sounds for events like winning a level and dying."
+msgstr "Přehrávat zvuky pro události jako výhra úrovně a smrt."
+
+#: src/properties-dialog.vala:127
+msgid "Game Type"
+msgstr "Typ hry"
+
+#: src/properties-dialog.vala:138
+msgid "_Image theme:"
+msgstr "_Obrázkový motiv:"
+
+#: src/properties-dialog.vala:167
+msgid "_Background color:"
+msgstr "Barva _pozadí:"
 
 #. Label on the scores dialog, next to map type dropdown
 #: src/scores.vala:28
@@ -427,26 +431,29 @@ msgstr "Roboti s bezpečným teleportem a bezpečnými tahy"
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Roboti s bezpečným teleportem se superbezpečnými tahy"
 
-#: src/window.vala:113
+#: src/window.vala:101
 msgid "Teleport _Randomly"
 msgstr "Telepo_rtovat se náhodně"
 
-#: src/window.vala:138
+#: src/window.vala:126
 msgid "_Wait for Robots"
 msgstr "Č_ekat na roboty"
 
-#: src/window.vala:154
+#: src/window.vala:141
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Úroveň: %d\tSkóre: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:157
+#: src/window.vala:144
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(zbývá: %d)"
 
 #. First line of safe teleports button label.
-#: src/window.vala:159
+#: src/window.vala:146
 msgid "Teleport _Safely"
 msgstr "Teleportovat _se bezpečně"
+
+#~ msgid "Preferences"
+#~ msgstr "Předvolby"

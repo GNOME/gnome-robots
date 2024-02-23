@@ -1,5 +1,5 @@
 # Hungarian translation for gnome-robots.
-# Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2019, 2020, 2022 Free Software Foundation, Inc.
+# Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2019, 2020, 2022, 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-robots package.
 #
 # Szabolcs Ban <shooby at gnome dot hu>, 1999, 2000, 2001.
@@ -9,23 +9,23 @@
 # Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
 # Szabolcs Varga <shirokuma at shirokuma dot hu>, 2005.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2014, 2016.
-# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2015, 2016, 2019, 2020, 2022.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2015, 2016, 2019, 2020, 2022, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2022-10-04 13:11+0000\n"
-"PO-Revision-Date: 2022-11-05 23:03+0100\n"
+"POT-Creation-Date: 2023-11-29 12:37+0000\n"
+"PO-Revision-Date: 2024-02-23 01:17+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
-"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
-#: data/app-menu.ui:7 src/application.vala:104
+#: data/app-menu.ui:7 src/application.vala:99 src/application.vala:103
 msgid "_New Game"
 msgstr "Ú_j játék"
 
@@ -46,7 +46,7 @@ msgid "_About Robots"
 msgstr "A Robotok _névjegye"
 
 #: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
-#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+#: src/application.vala:41 src/application.vala:144 src/window.vala:45
 msgid "Robots"
 msgstr "Robotok"
 
@@ -162,7 +162,7 @@ msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Hang bekapcsolása. Hangok lejátszása különböző eseményekhez a játék alatt."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:34
 msgid "Key to move NW"
 msgstr "Billentyű az északnyugati irányba mozgáshoz"
 
@@ -170,7 +170,7 @@ msgstr "Billentyű az északnyugati irányba mozgáshoz"
 msgid "The key used to move north-west."
 msgstr "Billentyű az északnyugatra lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:35
 msgid "Key to move N"
 msgstr "Billentyű az északi irányba mozgáshoz"
 
@@ -178,7 +178,7 @@ msgstr "Billentyű az északi irányba mozgáshoz"
 msgid "The key used to move north."
 msgstr "Billentyű az északra lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:36
 msgid "Key to move NE"
 msgstr "Billentyű az északkeleti irányba mozgáshoz"
 
@@ -186,7 +186,7 @@ msgstr "Billentyű az északkeleti irányba mozgáshoz"
 msgid "The key used to move north-east."
 msgstr "Billentyű az északkeletre lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:37
 msgid "Key to move W"
 msgstr "Billentyű a nyugati irányba mozgáshoz"
 
@@ -194,7 +194,7 @@ msgstr "Billentyű a nyugati irányba mozgáshoz"
 msgid "The key used to move west."
 msgstr "Billentyű a nyugatra lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:38
 msgid "Key to hold"
 msgstr "Billentyű az állva maradáshoz"
 
@@ -202,7 +202,7 @@ msgstr "Billentyű az állva maradáshoz"
 msgid "The key used to hold still."
 msgstr "Az állva maradáshoz használandó billentyű."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:39
 msgid "Key to move E"
 msgstr "Billentyű a keleti irányba mozgáshoz"
 
@@ -210,7 +210,7 @@ msgstr "Billentyű a keleti irányba mozgáshoz"
 msgid "The key used to move east."
 msgstr "Billentyű a keletre lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:40
 msgid "Key to move SW"
 msgstr "Billentyű a délnyugati irányba mozgáshoz"
 
@@ -218,7 +218,7 @@ msgstr "Billentyű a délnyugati irányba mozgáshoz"
 msgid "The key used to move south-west."
 msgstr "Billentyű a délnyugatra lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:41
 msgid "Key to move S"
 msgstr "Billentyű a déli irányba mozgáshoz"
 
@@ -226,7 +226,7 @@ msgstr "Billentyű a déli irányba mozgáshoz"
 msgid "The key used to move south."
 msgstr "Billentyű a délre lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:42
 msgid "Key to move SE"
 msgstr "Billentyű a délkeleti irányba mozgáshoz"
 
@@ -246,7 +246,7 @@ msgstr "Az ablak magassága képpontokban"
 msgid "true if the window is maximized"
 msgstr "Az ablak teljes méretű-e"
 
-#: src/application.vala:63
+#: src/application.vala:64
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -254,19 +254,19 @@ msgstr ""
 "A Robotok program nem talált érvényes játékbeállítás-fájlt. Ellenőrizze, "
 "hogy a program megfelelően van-e telepítve."
 
-#: src/application.vala:101
+#: src/application.vala:100
 msgid "Are you sure you want to discard the current game?"
 msgstr "Biztosan el szeretné dobni a jelenlegi játékot?"
 
-#: src/application.vala:103
+#: src/application.vala:102
 msgid "Keep _Playing"
 msgstr "Játék _folytatása"
 
-#: src/application.vala:157
+#: src/application.vala:150
 msgid "Based on classic BSD Robots"
 msgstr "A klasszikus BSD Robotok alapján"
 
-#: src/application.vala:161
+#: src/application.vala:162
 msgid "translator-credits"
 msgstr ""
 "Bán Szabolcs <shooby at gnome dot hu>\n"
@@ -276,6 +276,22 @@ msgstr ""
 "Nagy Gergely <greg at gnome dot hu>\n"
 "Tímár András <timar at gnome dot hu>\n"
 "Varga Szabolcs <shirokuma at shirokuma dot hu>"
+
+#: src/controls.vala:31 src/properties-dialog.vala:50
+msgid "Keyboard"
+msgstr "Billentyűzet"
+
+#: src/controls.vala:55
+msgid "_Restore Defaults"
+msgstr "Alapértelmezések vissz_aállítása"
+
+#: src/controls.vala:147
+msgid "New accelerator…"
+msgstr "Új gyorsbillentyű…"
+
+#: src/controls.vala:151
+msgid "Disabled"
+msgstr "Letiltva"
 
 #: src/game-area.vala:356
 msgid ""
@@ -289,61 +305,49 @@ msgstr ""
 msgid "There are no teleport locations left!!"
 msgstr "Nem maradt több teleport hely!"
 
-#: src/properties-dialog.vala:68
-msgid "Preferences"
-msgstr "Beállítások"
-
-#: src/properties-dialog.vala:84
-msgid "Game Type"
-msgstr "Játéktípus"
-
-#: src/properties-dialog.vala:95
-msgid "_Use safe moves"
-msgstr "_Biztonságos lépések használata"
-
-#: src/properties-dialog.vala:97
-msgid "Prevent accidental moves that result in getting killed."
-msgstr "Halálhoz vezető véletlen lépések megelőzése."
-
-#: src/properties-dialog.vala:100
-msgid "U_se super safe moves"
-msgstr "_Tutibiztos lépések használata"
-
-#: src/properties-dialog.vala:102
-msgid "Prevents all moves that result in getting killed."
-msgstr "Minden halálhoz vezető lépés megelőzése."
-
-#: src/properties-dialog.vala:114
-msgid "_Enable sounds"
-msgstr "_Hangok bekapcsolása"
-
-#: src/properties-dialog.vala:119
-msgid "Play sounds for events like winning a level and dying."
-msgstr "Hangok lejátszása győzelem vagy halál esetén."
-
-#: src/properties-dialog.vala:122
+#: src/properties-dialog.vala:34
 msgid "Game"
 msgstr "Játék"
 
-#: src/properties-dialog.vala:128
-msgid "_Image theme:"
-msgstr "_Képtéma:"
-
-#: src/properties-dialog.vala:138
-msgid "_Background color:"
-msgstr "_Háttérszín:"
-
-#: src/properties-dialog.vala:148
+#: src/properties-dialog.vala:41
 msgid "Appearance"
 msgstr "Megjelenés"
 
-#: src/properties-dialog.vala:162
-msgid "_Restore Defaults"
-msgstr "Alapértelmezések vissz_aállítása"
+#: src/properties-dialog.vala:69
+msgid "_Use safe moves"
+msgstr "_Biztonságos lépések használata"
 
-#: src/properties-dialog.vala:166
-msgid "Keyboard"
-msgstr "Billentyűzet"
+#: src/properties-dialog.vala:71
+msgid "Prevent accidental moves that result in getting killed."
+msgstr "Halálhoz vezető véletlen lépések megelőzése."
+
+#: src/properties-dialog.vala:76
+msgid "U_se super safe moves"
+msgstr "_Tutibiztos lépések használata"
+
+#: src/properties-dialog.vala:78
+msgid "Prevents all moves that result in getting killed."
+msgstr "Minden halálhoz vezető lépés megelőzése."
+
+#: src/properties-dialog.vala:98
+msgid "_Enable sounds"
+msgstr "_Hangok bekapcsolása"
+
+#: src/properties-dialog.vala:100
+msgid "Play sounds for events like winning a level and dying."
+msgstr "Hangok lejátszása győzelem vagy halál esetén."
+
+#: src/properties-dialog.vala:127
+msgid "Game Type"
+msgstr "Játéktípus"
+
+#: src/properties-dialog.vala:138
+msgid "_Image theme:"
+msgstr "_Képtéma:"
+
+#: src/properties-dialog.vala:167
+msgid "_Background color:"
+msgstr "_Háttérszín:"
 
 #. Label on the scores dialog, next to map type dropdown
 #: src/scores.vala:28
@@ -410,26 +414,26 @@ msgstr "Robotok biztonságos teleporttal biztonságos mozgásokkal"
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robotok biztonságos teleporttal tuti-biztos mozgásokkal"
 
-#: src/window.vala:113
+#: src/window.vala:101
 msgid "Teleport _Randomly"
 msgstr "Teleportálás vél_etlenszerűen"
 
-#: src/window.vala:138
+#: src/window.vala:126
 msgid "_Wait for Robots"
 msgstr "_Várakozás a robotokra"
 
-#: src/window.vala:154
+#: src/window.vala:141
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Szint: %d\tPontszám: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:157
+#: src/window.vala:144
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Hátra van: %d)"
 
 #. First line of safe teleports button label.
-#: src/window.vala:159
+#: src/window.vala:146
 msgid "Teleport _Safely"
 msgstr "Teleportálás _biztonságosan"

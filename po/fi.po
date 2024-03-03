@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2023-01-25 19:23+0000\n"
-"PO-Revision-Date: 2023-02-28 20:26+0200\n"
+"POT-Creation-Date: 2023-11-29 12:37+0000\n"
+"PO-Revision-Date: 2024-03-03 21:56+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -24,10 +24,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Launchpad-Export-Date: 2010-09-13 15:09+0000\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-POT-Import-Date: 2012-03-05 14:46:29+0000\n"
 
-#: data/app-menu.ui:7 src/application.vala:104
+#: data/app-menu.ui:7 src/application.vala:99 src/application.vala:103
 msgid "_New Game"
 msgstr "_Uusi peli"
 
@@ -48,7 +48,7 @@ msgid "_About Robots"
 msgstr "_Tietoja - Robotit"
 
 #: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
-#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+#: src/application.vala:41 src/application.vala:144 src/window.vala:45
 msgid "Robots"
 msgstr "Robotit"
 
@@ -164,7 +164,7 @@ msgstr "Peliäänet päälle"
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Peliäänet päälle. Soittaa ääniä erilaisissa tapahtumissa pelin aikana."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:34
 msgid "Key to move NW"
 msgstr "Näppäin vasemmalle ylös siirtämiseen."
 
@@ -172,7 +172,7 @@ msgstr "Näppäin vasemmalle ylös siirtämiseen."
 msgid "The key used to move north-west."
 msgstr "Näppäin luoteeseen siirtämiseen."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:35
 msgid "Key to move N"
 msgstr "Näppäin ylöspäin siirtämiseen."
 
@@ -180,7 +180,7 @@ msgstr "Näppäin ylöspäin siirtämiseen."
 msgid "The key used to move north."
 msgstr "Näppäin pohjoiseen siirtämiseen."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:36
 msgid "Key to move NE"
 msgstr "Näppäin oikealle ylös siirtämiseen."
 
@@ -188,7 +188,7 @@ msgstr "Näppäin oikealle ylös siirtämiseen."
 msgid "The key used to move north-east."
 msgstr "Näppäin koilliseen siirtämiseen."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:37
 msgid "Key to move W"
 msgstr "Näppäin vasemmalle siirtämiseen."
 
@@ -196,7 +196,7 @@ msgstr "Näppäin vasemmalle siirtämiseen."
 msgid "The key used to move west."
 msgstr "Näppäin länteen siirtämiseen."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:38
 msgid "Key to hold"
 msgstr "Painettava näppäin"
 
@@ -204,7 +204,7 @@ msgstr "Painettava näppäin"
 msgid "The key used to hold still."
 msgstr "Näppäin paikallaan pysymiseen."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:39
 msgid "Key to move E"
 msgstr "Näppäin oikealle siirtämiseen."
 
@@ -212,7 +212,7 @@ msgstr "Näppäin oikealle siirtämiseen."
 msgid "The key used to move east."
 msgstr "Näppäin itään siirtämiseen."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:40
 msgid "Key to move SW"
 msgstr "Näppäin vasemmalle alas siirtämiseen."
 
@@ -220,7 +220,7 @@ msgstr "Näppäin vasemmalle alas siirtämiseen."
 msgid "The key used to move south-west."
 msgstr "Näppäin lounaaseen siirtämiseen."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:41
 msgid "Key to move S"
 msgstr "Näppäin alas siirtämiseen."
 
@@ -228,7 +228,7 @@ msgstr "Näppäin alas siirtämiseen."
 msgid "The key used to move south."
 msgstr "Näppäin etelään siirtämiseen."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:42
 msgid "Key to move SE"
 msgstr "Näppäin oikealle alas siirtämiseen."
 
@@ -248,7 +248,7 @@ msgstr "Ikkunan korkeus kuvapisteinä"
 msgid "true if the window is maximized"
 msgstr "tosi jos ikkuna on suurennettu"
 
-#: src/application.vala:63
+#: src/application.vala:64
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -256,19 +256,19 @@ msgstr ""
 "Gnome-robotit ei löytänyt toimivia pelin asetustiedostoja. Tarkista, että "
 "ohjelma on oikein asennettu."
 
-#: src/application.vala:101
+#: src/application.vala:100
 msgid "Are you sure you want to discard the current game?"
 msgstr "Haluatko varmasti hylätä nykyisen pelin?"
 
-#: src/application.vala:103
+#: src/application.vala:102
 msgid "Keep _Playing"
 msgstr "Jatka _pelaamista"
 
-#: src/application.vala:157
+#: src/application.vala:150
 msgid "Based on classic BSD Robots"
 msgstr "Pohjautuu klassiseen BSD Robots -peliin"
 
-#: src/application.vala:161
+#: src/application.vala:162
 msgid "translator-credits"
 msgstr ""
 "Jiri Grönroos, 2014-2023\n"
@@ -289,6 +289,22 @@ msgstr ""
 "  Timo Jyrinki https://launchpad.net/~timo-jyrinki\n"
 "  eGetin https://launchpad.net/~egetin"
 
+#: src/controls.vala:31 src/properties-dialog.vala:50
+msgid "Keyboard"
+msgstr "Näppäimistö"
+
+#: src/controls.vala:55
+msgid "_Restore Defaults"
+msgstr "_Palauta oletukset"
+
+#: src/controls.vala:147
+msgid "New accelerator…"
+msgstr "Uusi valintanäppäin…"
+
+#: src/controls.vala:151
+msgid "Disabled"
+msgstr "Poissa käytöstä"
+
 #: src/game-area.vala:356
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
@@ -301,61 +317,49 @@ msgstr ""
 msgid "There are no teleport locations left!!"
 msgstr "Ei paikkaa, joihin teleportata!"
 
-#: src/properties-dialog.vala:68
-msgid "Preferences"
-msgstr "Asetukset"
-
-#: src/properties-dialog.vala:84
-msgid "Game Type"
-msgstr "Pelin tyyppi"
-
-#: src/properties-dialog.vala:95
-msgid "_Use safe moves"
-msgstr "Käytä _turvallisia liikkeitä"
-
-#: src/properties-dialog.vala:97
-msgid "Prevent accidental moves that result in getting killed."
-msgstr "Estä kuolemaan johtavat varomattomat siirrot."
-
-#: src/properties-dialog.vala:100
-msgid "U_se super safe moves"
-msgstr "Käytä _superturvallisia liikkeitä"
-
-#: src/properties-dialog.vala:102
-msgid "Prevents all moves that result in getting killed."
-msgstr "Estä kaikki kuolemaan johtavat siirrot."
-
-#: src/properties-dialog.vala:114
-msgid "_Enable sounds"
-msgstr "Ää_net päälle"
-
-#: src/properties-dialog.vala:119
-msgid "Play sounds for events like winning a level and dying."
-msgstr "Soita äänet tapahtumiin kuten tason läpäisy tai kuoleminen."
-
-#: src/properties-dialog.vala:122
+#: src/properties-dialog.vala:34
 msgid "Game"
 msgstr "Peli"
 
-#: src/properties-dialog.vala:128
-msgid "_Image theme:"
-msgstr "_Kuvateema:"
-
-#: src/properties-dialog.vala:138
-msgid "_Background color:"
-msgstr "_Taustaväri:"
-
-#: src/properties-dialog.vala:148
+#: src/properties-dialog.vala:41
 msgid "Appearance"
 msgstr "Ulkoasu"
 
-#: src/properties-dialog.vala:162
-msgid "_Restore Defaults"
-msgstr "_Palauta oletukset"
+#: src/properties-dialog.vala:69
+msgid "_Use safe moves"
+msgstr "Käytä _turvallisia liikkeitä"
 
-#: src/properties-dialog.vala:166
-msgid "Keyboard"
-msgstr "Näppäimistö"
+#: src/properties-dialog.vala:71
+msgid "Prevent accidental moves that result in getting killed."
+msgstr "Estä kuolemaan johtavat varomattomat siirrot."
+
+#: src/properties-dialog.vala:76
+msgid "U_se super safe moves"
+msgstr "Käytä _superturvallisia liikkeitä"
+
+#: src/properties-dialog.vala:78
+msgid "Prevents all moves that result in getting killed."
+msgstr "Estä kaikki kuolemaan johtavat siirrot."
+
+#: src/properties-dialog.vala:98
+msgid "_Enable sounds"
+msgstr "Ää_net päälle"
+
+#: src/properties-dialog.vala:100
+msgid "Play sounds for events like winning a level and dying."
+msgstr "Soita äänet tapahtumiin kuten tason läpäisy tai kuoleminen."
+
+#: src/properties-dialog.vala:127
+msgid "Game Type"
+msgstr "Pelin tyyppi"
+
+#: src/properties-dialog.vala:138
+msgid "_Image theme:"
+msgstr "_Kuvateema:"
+
+#: src/properties-dialog.vala:167
+msgid "_Background color:"
+msgstr "_Taustaväri:"
 
 #. Label on the scores dialog, next to map type dropdown
 #: src/scores.vala:28
@@ -423,29 +427,32 @@ msgid "Robots with safe teleport with super-safe moves"
 msgstr ""
 "Robotit turvallisella teleportilla ja erittäin turvallisilla siirroilla"
 
-#: src/window.vala:113
+#: src/window.vala:101
 msgid "Teleport _Randomly"
 msgstr "Teleporttaa _satunnaiseen kohteeseen"
 
-#: src/window.vala:138
+#: src/window.vala:126
 msgid "_Wait for Robots"
 msgstr "_Odota robotteja"
 
-#: src/window.vala:154
+#: src/window.vala:141
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Taso: %d\tPisteet: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:157
+#: src/window.vala:144
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Jäljellä: %d)"
 
 #. First line of safe teleports button label.
-#: src/window.vala:159
+#: src/window.vala:146
 msgid "Teleport _Safely"
 msgstr "Teleporttaa _turvallisesti"
+
+#~ msgid "Preferences"
+#~ msgstr "Asetukset"
 
 #~ msgid "GNOME Robots"
 #~ msgstr "Gnomen robotit"

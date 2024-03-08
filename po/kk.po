@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2023-01-25 19:23+0000\n"
-"PO-Revision-Date: 2023-08-20 18:51+0600\n"
+"POT-Creation-Date: 2023-11-29 12:37+0000\n"
+"PO-Revision-Date: 2024-03-08 09:55+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
@@ -16,9 +16,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
-#: data/app-menu.ui:7 src/application.vala:104
+#: data/app-menu.ui:7 src/application.vala:99 src/application.vala:103
 msgid "_New Game"
 msgstr "Ж_аңа ойын"
 
@@ -39,7 +39,7 @@ msgid "_About Robots"
 msgstr "Роботтар ойыны тур_алы"
 
 #: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
-#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+#: src/application.vala:41 src/application.vala:144 src/window.vala:45
 msgid "Robots"
 msgstr "Роботтар"
 
@@ -160,7 +160,7 @@ msgstr ""
 "Ойын дыбыстарын іске қосу. Ойын бойы түрлі оқиғаларға арналған дыбыстарды "
 "ойнату."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
+#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:34
 msgid "Key to move NW"
 msgstr "Жоғары-солға жылжу пернесі"
 
@@ -168,7 +168,7 @@ msgstr "Жоғары-солға жылжу пернесі"
 msgid "The key used to move north-west."
 msgstr "Жоғары-солға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
+#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:35
 msgid "Key to move N"
 msgstr "Жоғарыға жылжу пернесі"
 
@@ -176,7 +176,7 @@ msgstr "Жоғарыға жылжу пернесі"
 msgid "The key used to move north."
 msgstr "Жоғарыға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
+#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:36
 msgid "Key to move NE"
 msgstr "Жоғары-оңға жылжу пернесі"
 
@@ -184,7 +184,7 @@ msgstr "Жоғары-оңға жылжу пернесі"
 msgid "The key used to move north-east."
 msgstr "Жоғары-оңға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
+#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:37
 msgid "Key to move W"
 msgstr "Солға жылжу пернесі"
 
@@ -192,7 +192,7 @@ msgstr "Солға жылжу пернесі"
 msgid "The key used to move west."
 msgstr "Солға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
+#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:38
 msgid "Key to hold"
 msgstr "Орында қалу пернесі"
 
@@ -200,7 +200,7 @@ msgstr "Орында қалу пернесі"
 msgid "The key used to hold still."
 msgstr "Орында қалу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
+#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:39
 msgid "Key to move E"
 msgstr "Оңға жылжу пернесі"
 
@@ -208,7 +208,7 @@ msgstr "Оңға жылжу пернесі"
 msgid "The key used to move east."
 msgstr "Оңға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
+#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:40
 msgid "Key to move SW"
 msgstr "Төмен-солға жылжу пернесі"
 
@@ -216,7 +216,7 @@ msgstr "Төмен-солға жылжу пернесі"
 msgid "The key used to move south-west."
 msgstr "Төмен-солға жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
+#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:41
 msgid "Key to move S"
 msgstr "Төменге жылжу пернесі"
 
@@ -224,7 +224,7 @@ msgstr "Төменге жылжу пернесі"
 msgid "The key used to move south."
 msgstr "Төменге жылжу пернесі."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
+#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:42
 msgid "Key to move SE"
 msgstr "Төмен-оңға жылжу пернесі"
 
@@ -244,7 +244,7 @@ msgstr "Терезе биіктігі, пиксельмен"
 msgid "true if the window is maximized"
 msgstr "терезе максималды болса, мәні true болады"
 
-#: src/application.vala:63
+#: src/application.vala:64
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -252,21 +252,37 @@ msgstr ""
 "Роботтар бағдарламасы жарамды ойын конфигурация файлдарын таба алмады. "
 "Бағдарламаның дұрыс орнатылғанын тексеріңіз."
 
-#: src/application.vala:101
+#: src/application.vala:100
 msgid "Are you sure you want to discard the current game?"
 msgstr "Ағымдағы ойынды тайдырғыңыз келе ме?"
 
-#: src/application.vala:103
+#: src/application.vala:102
 msgid "Keep _Playing"
 msgstr "О_йнауды жалғастыру"
 
-#: src/application.vala:157
+#: src/application.vala:150
 msgid "Based on classic BSD Robots"
 msgstr "Классикалық BSD роботтар ойыны негізінде"
 
-#: src/application.vala:161
+#: src/application.vala:162
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#: src/controls.vala:31 src/properties-dialog.vala:50
+msgid "Keyboard"
+msgstr "Пернетақта"
+
+#: src/controls.vala:55
+msgid "_Restore Defaults"
+msgstr "Бастапқ_ы түріне келтіру"
+
+#: src/controls.vala:147
+msgid "New accelerator…"
+msgstr "Жаңа үдеткіш…"
+
+#: src/controls.vala:151
+msgid "Disabled"
+msgstr "Сөндірулі"
 
 #: src/game-area.vala:356
 msgid ""
@@ -280,62 +296,50 @@ msgstr ""
 msgid "There are no teleport locations left!!"
 msgstr "Телепорт орындары қалмады!!"
 
-#: src/properties-dialog.vala:68
-msgid "Preferences"
-msgstr "Қалаулар"
+#: src/properties-dialog.vala:34
+msgid "Game"
+msgstr "Ойын"
 
-#: src/properties-dialog.vala:84
-msgid "Game Type"
-msgstr "Ойын түрі"
+#: src/properties-dialog.vala:41
+msgid "Appearance"
+msgstr "Сыртқы түрі"
 
-#: src/properties-dialog.vala:95
+#: src/properties-dialog.vala:69
 msgid "_Use safe moves"
 msgstr "Қауіпсіз жүрістерді па_йдалану"
 
-#: src/properties-dialog.vala:97
+#: src/properties-dialog.vala:71
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Ұтылуға әкелетін кездейсоқ жүрістерге жол бермеу."
 
-#: src/properties-dialog.vala:100
+#: src/properties-dialog.vala:76
 msgid "U_se super safe moves"
 msgstr "Аса қауіпсіз жүрістерді қо_лдану"
 
-#: src/properties-dialog.vala:102
+#: src/properties-dialog.vala:78
 msgid "Prevents all moves that result in getting killed."
 msgstr "Ұтылуға әкелетін барлық жүрістерге жол бермеу."
 
-#: src/properties-dialog.vala:114
+#: src/properties-dialog.vala:98
 msgid "_Enable sounds"
 msgstr "Дыбыстарды іск_е қосу"
 
-#: src/properties-dialog.vala:119
+#: src/properties-dialog.vala:100
 msgid "Play sounds for events like winning a level and dying."
 msgstr ""
 "Деңгейді жеңу немесе ұтылу сияқты оқиғаларға арналған дыбыстарды ойнау."
 
-#: src/properties-dialog.vala:122
-msgid "Game"
-msgstr "Ойын"
+#: src/properties-dialog.vala:127
+msgid "Game Type"
+msgstr "Ойын түрі"
 
-#: src/properties-dialog.vala:128
+#: src/properties-dialog.vala:138
 msgid "_Image theme:"
 msgstr "С_уреттер темасы:"
 
-#: src/properties-dialog.vala:138
+#: src/properties-dialog.vala:167
 msgid "_Background color:"
 msgstr "Ф_он түсі:"
-
-#: src/properties-dialog.vala:148
-msgid "Appearance"
-msgstr "Сыртқы түрі"
-
-#: src/properties-dialog.vala:162
-msgid "_Restore Defaults"
-msgstr "Бастапқ_ы түріне келтіру"
-
-#: src/properties-dialog.vala:166
-msgid "Keyboard"
-msgstr "Пернетақта"
 
 #. Label on the scores dialog, next to map type dropdown
 #: src/scores.vala:28
@@ -402,29 +406,32 @@ msgstr "Қауіпсіз жүрістері бар қауіпсіз телепо
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Аса қауіпсіз жүрістері бар қауіпсіз телепорты бар Роботтар ойыны"
 
-#: src/window.vala:113
+#: src/window.vala:101
 msgid "Teleport _Randomly"
 msgstr "Ке_здейсоқ телепортация"
 
-#: src/window.vala:138
+#: src/window.vala:126
 msgid "_Wait for Robots"
 msgstr "Роботтарды _күту"
 
-#: src/window.vala:154
+#: src/window.vala:141
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Деңгейі: %d\tЕсебі: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:157
+#: src/window.vala:144
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Қалған: %d)"
 
 #. First line of safe teleports button label.
-#: src/window.vala:159
+#: src/window.vala:146
 msgid "Teleport _Safely"
 msgstr "Қауіп_сіз телепортация"
+
+#~ msgid "Preferences"
+#~ msgstr "Қалаулар"
 
 #~ msgid "GNOME Robots"
 #~ msgstr "GNOME роботтары"

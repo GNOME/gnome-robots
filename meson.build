@@ -22,6 +22,9 @@ adw_dependency = dependency('libadwaita-1', version: '>= 1.2')
 rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.36.2')
 gstreamer_dependency = dependency('gstreamer-1.0', version: '>= 1.20')
 
+cc = meson.get_compiler('c')
+m_dep = cc.find_library('m', required : false)
+
 bindir      = join_paths(get_option('prefix'), get_option('bindir'))
 datadir     = join_paths(get_option('prefix'), get_option('datadir'))
 pkgdatadir  = join_paths(datadir, meson.project_name())

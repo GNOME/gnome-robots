@@ -49,7 +49,8 @@ dependencies = [
     gtk_dependency,
     rsvg_dependency,
     adw_dependency,
-    gstreamer_dependency
+    gstreamer_dependency,
+    m_dep
 ]
 
 executable(

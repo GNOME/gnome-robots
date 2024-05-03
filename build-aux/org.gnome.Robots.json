@@ -17,12 +17,18 @@
         "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
     "cleanup": [
-        "/share/man",
         "/include",
-        "/lib/*.la",
-        "/lib/pkgconfig",
+        "/man",
+        "/share/aclocal",
+        "/share/doc",
+        "/share/gdm",
+        "/share/gnome",
+        "/share/gtk-doc",
         "/share/man",
-        "/share/vala"
+        "/share/pkgconfig",
+        "/share/vala",
+        "*.la",
+        "*.a"
     ],
     "modules": [{
             "name": "libgnome-games-support",

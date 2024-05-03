@@ -49,7 +49,7 @@
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-robots/issues</url>
   <url type="donation">https://www.gnome.org/donate/</url>
   <url type="help">https://help.gnome.org/users/gnome-robots/stable/</url>
-  <url type="translate">https://wiki.gnome.org/TranslationProject</url>
+  <url type="translate">https://l10n.gnome.org/module/gnome-robots/</url>
   <url type="vcs-browser">https://gitlab.gnome.org/GNOME/gnome-robots</url>
   <update_contact>mcatanzaro_at_gnome.org</update_contact>
   <project_group>GNOME</project_group>
@@ -61,6 +61,9 @@
   </kudos>
   <translation type="gettext">gnome-robots</translation>
   <developer_name>Andrey Kutejko</developer_name>
+  <developer id="org.gnome">
+    <name>Andrey Kutejko</name>
+  </developer>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">mild</content_attribute>
   </content_rating>

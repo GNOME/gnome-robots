@@ -1,7 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this file in alphabetical order.
 data/app-menu.ui
-data/org.gnome.Robots.appdata.xml.in
+data/org.gnome.Robots.metainfo.xml.in
 data/org.gnome.Robots.desktop.in
 data/org.gnome.Robots.gschema.xml
 src/application.vala

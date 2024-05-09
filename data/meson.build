@@ -76,6 +76,21 @@ install_data(
 
 install_data(
     [
+	'cursors/cursor-up-left.png',
+	'cursors/cursor-up.png',
+	'cursors/cursor-up-right.png',
+	'cursors/cursor-left.png',
+	'cursors/cursor-hold.png',
+	'cursors/cursor-right.png',
+	'cursors/cursor-down-left.png',
+	'cursors/cursor-down.png',
+	'cursors/cursor-down-right.png'
+    ],
+    install_dir: join_paths(pkgdatadir, 'cursors')
+)
+
+install_data(
+    [
         'pixmaps/aieee.png',
         'pixmaps/splat.png',
         'pixmaps/yahoo.png'

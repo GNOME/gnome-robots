@@ -1,0 +1,10 @@
+option(
+    'profile',
+    type: 'combo',
+    choices: [
+        'debug',
+        'release',
+    ],
+    value: 'debug',
+    description: 'The build profile: "debug" or "release".'
+)

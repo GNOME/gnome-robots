@@ -26,7 +26,7 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 pub fn list_directory(directory: &Path) -> io::Result<Vec<PathBuf>> {
     let mut files = Vec::new();
-    for entry in fs::read_dir(&directory)? {
+    for entry in fs::read_dir(directory)? {
         files.push(entry?.path());
     }
     Ok(files)

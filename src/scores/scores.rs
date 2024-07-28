@@ -236,7 +236,7 @@ pub async fn add_score(category: &Category, score: i64, parent_window: &gtk::Win
     };
 
     if high_score_added {
-        let new_name = new_score_dialog(&score, &category, &score_list, parent_window).await;
+        let new_name = new_score_dialog(&score, category, &score_list, parent_window).await;
         if let Err(error) = save_score_to_file(&scores_dir, category, &score.rename(new_name)) {
             eprint!("{}", error);
         }

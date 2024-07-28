@@ -173,18 +173,18 @@ mod imp {
                     } else {
                         self.alternate_background_color.borrow()
                     };
-                    snapshot.append_color(&*color, &tile_rect);
+                    snapshot.append_color(&color, &tile_rect);
 
                     let object_type = game.get(position);
                     let frame = match object_type {
-                        ObjectType::PLAYER if game.state() == State::Dead => {
+                        ObjectType::Player if game.state() == State::Dead => {
                             self.player_dead_animation.frame(time)
                         }
-                        ObjectType::PLAYER => self.player_animation.frame(time),
-                        ObjectType::ROBOT1 => self.robot1_animation.frame(time),
-                        ObjectType::ROBOT2 => self.robot2_animation.frame(time),
-                        ObjectType::HEAP => 0,
-                        ObjectType::NONE => 0,
+                        ObjectType::Player => self.player_animation.frame(time),
+                        ObjectType::Robot1 => self.robot1_animation.frame(time),
+                        ObjectType::Robot2 => self.robot2_animation.frame(time),
+                        ObjectType::Heap => 0,
+                        ObjectType::None => 0,
                     };
                     self.theme.borrow().as_ref().unwrap().draw_object(
                         object_type,
@@ -275,7 +275,7 @@ impl GameArea {
         let game_listener_id =
             game.on_game_event
                 .connect(glib::clone!(@weak self as this => move |event| {
-                    let event = event.clone();
+                    let event = *event;
                     glib::MainContext::default().spawn_local(async move {
                         this.on_game_event(event).await;
                     });
@@ -400,22 +400,22 @@ impl GameArea {
         if game.player_command(cmd, safety) {
             self.queue_draw();
         } else {
-            self.play_sound(Sound::BAD);
+            self.play_sound(Sound::Bad);
         }
     }
 
     async fn on_game_event(&self, event: GameEvent) {
         match event {
-            GameEvent::Teleported => self.play_sound(Sound::TELEPORT),
-            GameEvent::Splat => self.play_sound(Sound::SPLAT),
-            GameEvent::LevelComplete => self.play_sound(Sound::YAHOO),
-            GameEvent::Death => self.play_sound(Sound::DIE),
+            GameEvent::Teleported => self.play_sound(Sound::Teleport),
+            GameEvent::Splat => self.play_sound(Sound::Splat),
+            GameEvent::LevelComplete => self.play_sound(Sound::Yahoo),
+            GameEvent::Death => self.play_sound(Sound::Die),
             GameEvent::Scored(score) if score > 0 => self.log_score(score).await,
             GameEvent::Victory => {
                 self.message_box(&gettext(
                     "Congratulations, You Have Defeated the Robots!! \nBut Can You do it Again?",
                 ));
-                self.play_sound(Sound::VICTORY);
+                self.play_sound(Sound::Victory);
             }
             GameEvent::NoTeleportLocations => {
                 self.message_box(&gettext("There are no teleport locations left!!"));
@@ -433,10 +433,14 @@ impl GameArea {
         }
     }
 
+    fn game_name(&self) -> Option<String> {
+        let game = self.imp().game.borrow();
+        game.as_ref().map(|g| g.config.borrow().name())
+    }
+
     /// Enters a score in the high-score table
     async fn log_score(&self, score: u32) {
-        let game_ref = self.imp().game.borrow();
-        let Some(game) = game_ref.as_ref() else {
+        let Some(key) = self.game_name() else {
             return;
         };
         let Some(window) = self.root().and_downcast::<gtk::Window>() else {
@@ -444,7 +448,7 @@ impl GameArea {
         };
 
         let category = Category {
-            key: game.config.borrow().name(),
+            key,
             safety: self.move_safety(),
         };
         add_score(&category, score as i64, &window).await;

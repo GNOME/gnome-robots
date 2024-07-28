@@ -42,7 +42,7 @@ pub fn create_controls_list(settings: &gio::Settings) -> adw::PreferencesGroup {
         (CONTROL_KEY_S, gettext("Key to move S")),
         (CONTROL_KEY_SE, gettext("Key to move SE")),
     ] {
-        let editor = new_editor(&settings, key);
+        let editor = new_editor(settings, key);
 
         let action_row = adw::ActionRow::builder()
             .title(&label)

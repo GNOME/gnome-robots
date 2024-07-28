@@ -23,12 +23,12 @@ use std::path::Path;
 
 #[derive(Clone, Copy)]
 pub enum Sound {
-    VICTORY,
-    DIE,
-    TELEPORT,
-    SPLAT,
-    YAHOO,
-    BAD,
+    Victory,
+    Die,
+    Teleport,
+    Splat,
+    Yahoo,
+    Bad,
 }
 
 pub struct SoundPlayer {
@@ -43,11 +43,11 @@ impl SoundPlayer {
     pub fn new() -> Self {
         let path = Path::new(SOUND_DIRECTORY);
         Self {
-            victory: gtk::MediaFile::for_filename(&path.join("victory.ogg")),
-            die: gtk::MediaFile::for_filename(&path.join("die.ogg")),
-            teleport: gtk::MediaFile::for_filename(&path.join("teleport.ogg")),
-            splat: gtk::MediaFile::for_filename(&path.join("splat.ogg")),
-            yahoo: gtk::MediaFile::for_filename(&path.join("yahoo.ogg")),
+            victory: gtk::MediaFile::for_filename(path.join("victory.ogg")),
+            die: gtk::MediaFile::for_filename(path.join("die.ogg")),
+            teleport: gtk::MediaFile::for_filename(path.join("teleport.ogg")),
+            splat: gtk::MediaFile::for_filename(path.join("splat.ogg")),
+            yahoo: gtk::MediaFile::for_filename(path.join("yahoo.ogg")),
         }
     }
 
@@ -59,12 +59,12 @@ impl SoundPlayer {
 
     pub fn play(&self, sound: Sound) {
         match sound {
-            Sound::VICTORY => self.victory.play(),
-            Sound::DIE => self.die.play(),
-            Sound::TELEPORT => self.teleport.play(),
-            Sound::SPLAT => self.splat.play(),
-            Sound::YAHOO => self.yahoo.play(),
-            Sound::BAD => self.beep(),
+            Sound::Victory => self.victory.play(),
+            Sound::Die => self.die.play(),
+            Sound::Teleport => self.teleport.play(),
+            Sound::Splat => self.splat.play(),
+            Sound::Yahoo => self.yahoo.play(),
+            Sound::Bad => self.beep(),
         }
     }
 }

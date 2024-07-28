@@ -45,7 +45,7 @@ mod imp {
                 eprintln!("SvgPaintable is not initialized");
                 return 0;
             };
-            let renderer = rsvg::CairoRenderer::new(&handle);
+            let renderer = rsvg::CairoRenderer::new(handle);
             match renderer.intrinsic_size_in_pixels() {
                 Some((width, _height)) => width as i32,
                 _ => 0,
@@ -57,7 +57,7 @@ mod imp {
                 eprintln!("SvgPaintable is not initialized");
                 return 0;
             };
-            let renderer = rsvg::CairoRenderer::new(&handle);
+            let renderer = rsvg::CairoRenderer::new(handle);
             match renderer.intrinsic_size_in_pixels() {
                 Some((_width, height)) => height as i32,
                 _ => 0,
@@ -74,7 +74,7 @@ mod imp {
             let cr = snapshot.append_cairo(&rect);
 
             let rect = cairo::Rectangle::new(0.0, 0.0, width, height);
-            let renderer = rsvg::CairoRenderer::new(&handle);
+            let renderer = rsvg::CairoRenderer::new(handle);
             if let Err(error) = renderer.render_document(&cr, &rect) {
                 eprintln!("SVG rendering error: {}", error);
             }

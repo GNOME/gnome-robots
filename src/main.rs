@@ -54,6 +54,6 @@ fn main() -> Result<impl Termination, Box<dyn Error>> {
     gettextrs::bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8")?;
     gettextrs::textdomain(GETTEXT_PACKAGE)?;
 
-    let app = RobotsApplication::new();
+    let app = RobotsApplication::default();
     Ok(app.run())
 }

@@ -204,7 +204,7 @@ impl Game {
         self.state.set(State::Dead);
         self.arena
             .borrow()
-            .set(self.player.get(), ObjectType::PLAYER);
+            .set(self.player.get(), ObjectType::Player);
         self.endlev_counter.set(0);
         self.on_game_event.emit(GameEvent::Death);
     }
@@ -218,7 +218,7 @@ impl Game {
      **/
     fn add_kill(&self, _type: ObjectType) {
         let si = match (self.state.get(), _type) {
-            (State::Waiting | State::WaitingType2, ObjectType::ROBOT1) => {
+            (State::Waiting | State::WaitingType2, ObjectType::Robot1) => {
                 self.kills.set(self.kills.get() + 1);
                 self.config.borrow().score_type1_waiting
             }
@@ -226,7 +226,7 @@ impl Game {
                 self.kills.set(self.kills.get() + 2);
                 self.config.borrow().score_type2_waiting
             }
-            (_, ObjectType::ROBOT1) => self.config.borrow().score_type1,
+            (_, ObjectType::Robot1) => self.config.borrow().score_type1,
             _ => self.config.borrow().score_type2,
         };
 
@@ -252,7 +252,7 @@ impl Game {
             x: arena.width() / 2,
             y: arena.height() / 2,
         });
-        arena.set(self.player.get(), ObjectType::PLAYER);
+        arena.set(self.player.get(), ObjectType::Player);
 
         let mut num_robots1 = self
             .config
@@ -264,7 +264,7 @@ impl Game {
             .type2_robots_on_level(self.current_level.get());
 
         let max_robots = arena.width() * arena.height() / 2;
-        if (num_robots1 + num_robots2) > max_robots as u32 {
+        if num_robots1 + num_robots2 > max_robots {
             self.current_level.set(0);
             num_robots1 = self.config.borrow().initial_type1;
             num_robots2 = self.config.borrow().initial_type2;
@@ -278,14 +278,14 @@ impl Game {
             let p = arena
                 .random_vacant_position(&mut *self.rand.borrow_mut())
                 .expect("No vacant positions");
-            arena.set(p, ObjectType::ROBOT1);
+            arena.set(p, ObjectType::Robot1);
         }
 
         for _ in 0..num_robots2 {
             let p = arena
                 .random_vacant_position(&mut *self.rand.borrow_mut())
                 .expect("No vacant positions");
-            arena.set(p, ObjectType::ROBOT2);
+            arena.set(p, ObjectType::Robot2);
         }
     }
 
@@ -299,13 +299,13 @@ impl Game {
     fn update_arena(&self, change: ArenaChange) {
         if let Some(push) = change.push {
             match self.arena.borrow().get(push) {
-                ObjectType::ROBOT1 => {
+                ObjectType::Robot1 => {
                     self.splat.set(Some(push));
                     self.on_game_event.emit(GameEvent::Splat);
                     self.score
                         .set(self.score.get() + self.config.borrow().score_type1_splatted);
                 }
-                ObjectType::ROBOT2 => {
+                ObjectType::Robot2 => {
                     self.splat.set(Some(push));
                     self.on_game_event.emit(GameEvent::Splat);
                     self.score
@@ -318,7 +318,7 @@ impl Game {
         self.player.set(change.player);
         *self.arena.borrow_mut() = change.arena;
 
-        if self.arena.borrow().get(change.player) != ObjectType::PLAYER {
+        if self.arena.borrow().get(change.player) != ObjectType::Player {
             self.kill_player();
         } else {
             /* This is in the else statement to catch the case where the last
@@ -327,8 +327,8 @@ impl Game {
             if self
                 .arena
                 .borrow()
-                .count(|obj| obj == ObjectType::ROBOT1 || obj == ObjectType::ROBOT2)
-                <= 0
+                .count(|obj| obj == ObjectType::Robot1 || obj == ObjectType::Robot2)
+                == 0
             {
                 self.state.set(State::Complete);
                 self.on_game_event.emit(GameEvent::LevelComplete);
@@ -404,8 +404,8 @@ impl Game {
     /// Moves all of the robots and checks for collisions
     fn move_all_robots(&self) -> Arena {
         return Self::chase(
-            &*self.arena.borrow(),
-            |obj| obj == ObjectType::ROBOT1 || obj == ObjectType::ROBOT2,
+            &self.arena.borrow(),
+            |obj| obj == ObjectType::Robot1 || obj == ObjectType::Robot2,
             self.player.get(),
             |victim| self.add_kill(victim),
         );
@@ -414,8 +414,8 @@ impl Game {
     /// Makes the extra move for all of the type2 robots
     fn move_type2_robots(&self) -> Arena {
         return Self::chase(
-            &*self.arena.borrow(),
-            |obj| obj == ObjectType::ROBOT2,
+            &self.arena.borrow(),
+            |obj| obj == ObjectType::Robot2,
             self.player.get(),
             |victim| self.add_kill(victim),
         );
@@ -425,7 +425,7 @@ impl Game {
     fn move_robots(&self) {
         let new_arena = self.move_all_robots();
 
-        let num_robots2 = new_arena.count(|obj| obj == ObjectType::ROBOT2);
+        let num_robots2 = new_arena.count(|obj| obj == ObjectType::Robot2);
         if num_robots2 > 0 {
             if self.state.get() == State::Waiting {
                 self.state.set(State::WaitingType2);
@@ -452,8 +452,8 @@ impl Game {
         track_kill: impl Fn(ObjectType),
     ) -> Arena {
         let new_arena = arena.map(|obj| {
-            if obj == ObjectType::PLAYER || (is_chaser)(obj) {
-                ObjectType::NONE
+            if obj == ObjectType::Player || (is_chaser)(obj) {
+                ObjectType::None
             } else {
                 obj
             }
@@ -470,13 +470,13 @@ impl Game {
                     );
 
                     let destination = new_arena.get(new_postions);
-                    if destination == ObjectType::HEAP {
+                    if destination == ObjectType::Heap {
                         (track_kill)(who);
-                    } else if destination == ObjectType::ROBOT1 || destination == ObjectType::ROBOT2
+                    } else if destination == ObjectType::Robot1 || destination == ObjectType::Robot2
                     {
                         (track_kill)(who);
                         (track_kill)(destination);
-                        new_arena.set(new_postions, ObjectType::HEAP);
+                        new_arena.set(new_postions, ObjectType::Heap);
                     } else {
                         new_arena.set(new_postions, who);
                     }
@@ -484,8 +484,8 @@ impl Game {
             }
         }
 
-        if new_arena.get(player) == ObjectType::NONE {
-            new_arena.set(player, ObjectType::PLAYER);
+        if new_arena.get(player) == ObjectType::None {
+            new_arena.set(player, ObjectType::Player);
         }
 
         new_arena
@@ -495,23 +495,23 @@ impl Game {
     fn check_safe(&self, change: &ArenaChange) -> bool {
         let temp2_arena = Self::chase(
             &change.arena,
-            |obj| obj == ObjectType::ROBOT1 || obj == ObjectType::ROBOT2,
+            |obj| obj == ObjectType::Robot1 || obj == ObjectType::Robot2,
             change.player,
             |_| {},
         );
 
-        if temp2_arena.get(change.player) != ObjectType::PLAYER {
+        if temp2_arena.get(change.player) != ObjectType::Player {
             return false;
         }
 
         let temp3_arena = Self::chase(
             &temp2_arena,
-            |obj| obj == ObjectType::ROBOT2,
+            |obj| obj == ObjectType::Robot2,
             change.player,
             |_| {},
         );
 
-        if temp3_arena.get(change.player) != ObjectType::PLAYER {
+        if temp3_arena.get(change.player) != ObjectType::Player {
             return false;
         }
 
@@ -525,24 +525,24 @@ impl Game {
 
         let arena = self.arena.borrow();
         let coords = self.player.get().move_by(dx, dy);
-        if !arena.are_coords_valid(coords) || arena.get(coords) != ObjectType::HEAP {
+        if !arena.are_coords_valid(coords) || arena.get(coords) != ObjectType::Heap {
             return None;
         }
 
         let push_to = coords.move_by(dx, dy);
-        if !arena.are_coords_valid(push_to) || arena.get(push_to) == ObjectType::HEAP {
+        if !arena.are_coords_valid(push_to) || arena.get(push_to) == ObjectType::Heap {
             return None;
         }
 
         let new_arena = arena.map(|obj| {
-            if obj != ObjectType::PLAYER {
+            if obj != ObjectType::Player {
                 obj
             } else {
-                ObjectType::NONE
+                ObjectType::None
             }
         });
-        new_arena.set(coords, ObjectType::PLAYER);
-        new_arena.set(push_to, ObjectType::HEAP);
+        new_arena.set(coords, ObjectType::Player);
+        new_arena.set(push_to, ObjectType::Heap);
         Some(ArenaChange {
             arena: new_arena,
             player: coords,
@@ -559,7 +559,7 @@ impl Game {
             return None;
         }
 
-        if arena.get(coords) == ObjectType::HEAP {
+        if arena.get(coords) == ObjectType::Heap {
             self.try_push_heap(dx, dy)
         } else {
             Some(self.move_player_to(coords))
@@ -585,18 +585,18 @@ impl Game {
                 }
             }
         }
-        return false;
+        false
     }
 
     fn move_player_to(&self, coords: Position) -> ArenaChange {
         let new_arena = self.arena.borrow().map(|obj| {
-            if obj != ObjectType::PLAYER {
+            if obj != ObjectType::Player {
                 obj
             } else {
-                ObjectType::NONE
+                ObjectType::None
             }
         });
-        new_arena.put(coords, ObjectType::PLAYER);
+        new_arena.put(coords, ObjectType::Player);
         ArenaChange {
             arena: new_arena,
             player: coords,
@@ -701,7 +701,7 @@ impl Game {
         self.splat.set(None);
         self.on_game_event.emit(GameEvent::Teleported);
 
-        return true;
+        true
     }
 
     /// handles player's commands

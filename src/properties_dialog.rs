@@ -110,7 +110,7 @@ fn create_game_group(
         super_safe_chkbox.set_sensitive(properties.safe_moves());
     }));
 
-    return group;
+    group
 }
 
 fn create_sound_group(settings: &gio::Settings) -> adw::PreferencesGroup {
@@ -174,7 +174,7 @@ fn create_theme_picker(themes: &gio::ListModel, settings: &gio::Settings) -> adw
         }
     }));
 
-    return theme_picker;
+    theme_picker
 }
 
 fn create_background_picker(settings: &gio::Settings) -> adw::ActionRow {

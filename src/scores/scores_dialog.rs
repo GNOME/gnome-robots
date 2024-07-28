@@ -84,7 +84,7 @@ pub fn scores_dialog(
         let combo = gtk::DropDown::builder()
             .focus_on_click(false)
             .model(&model)
-            .expression(&gtk::ClosureExpression::with_callback::<String, _>(
+            .expression(gtk::ClosureExpression::with_callback::<String, _>(
                 params,
                 |values| {
                     values[0]

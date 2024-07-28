@@ -38,5 +38,5 @@ pub fn make_cursors() -> Vec<gdk::Cursor> {
 fn make_cursor(filename: &str, hsx: i32, hsy: i32) -> gdk::Cursor {
     let path = Path::new(DATA_DIRECTORY).join("cursors").join(filename);
     let texture = gdk::Texture::from_filename(path).unwrap();
-    return gdk::Cursor::from_texture(&texture, hsx, hsy, None);
+    gdk::Cursor::from_texture(&texture, hsx, hsy, None)
 }

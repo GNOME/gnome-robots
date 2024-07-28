@@ -46,7 +46,7 @@ pub async fn new_score_dialog(
     vbox.set_spacing(20);
 
     let category_label = gtk::Label::builder()
-        .label(&current_cat.name().unwrap())
+        .label(current_cat.name().unwrap())
         .halign(gtk::Align::Center)
         .valign(gtk::Align::Center)
         .build();

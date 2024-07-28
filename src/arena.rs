@@ -22,11 +22,11 @@ use std::cell::Cell;
 
 #[derive(Clone, Copy, PartialEq, Eq)]
 pub enum ObjectType {
-    PLAYER = 0,
-    HEAP = 1,
-    ROBOT1 = 2,
-    ROBOT2 = 3,
-    NONE = 99,
+    Player = 0,
+    Heap = 1,
+    Robot1 = 2,
+    Robot2 = 3,
+    None = 99,
 }
 
 #[derive(Clone, Copy)]
@@ -55,7 +55,7 @@ impl Arena {
         Self {
             width,
             height,
-            objects: vec![Cell::new(ObjectType::NONE); (width * height) as usize],
+            objects: vec![Cell::new(ObjectType::None); (width * height) as usize],
         }
     }
 
@@ -69,7 +69,7 @@ impl Arena {
 
     pub fn clear(&self) {
         for obj in &self.objects {
-            obj.set(ObjectType::NONE);
+            obj.set(ObjectType::None);
         }
     }
 
@@ -89,7 +89,7 @@ impl Arena {
         if let Some(index) = self.index_of(position) {
             self.objects[index].get()
         } else {
-            ObjectType::NONE
+            ObjectType::None
         }
     }
 
@@ -101,7 +101,7 @@ impl Arena {
 
     pub fn put(&self, position: Position, obj: ObjectType) -> bool {
         if let Some(index) = self.index_of(position) {
-            if self.objects[index].get() == ObjectType::NONE {
+            if self.objects[index].get() == ObjectType::None {
                 self.objects[index].set(obj);
                 return true;
             }
@@ -136,7 +136,7 @@ impl Arena {
         let start = rand.gen_range(0..size);
         for i in 0..size {
             let index = (start + i) % size;
-            if self.objects[index as usize].get() == ObjectType::NONE {
+            if self.objects[index as usize].get() == ObjectType::None {
                 return Some(Position {
                     x: index % self.width,
                     y: index / self.width,

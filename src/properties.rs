@@ -141,7 +141,7 @@ impl Properties for gio::Settings {
     }
 
     fn bgcolour(&self) -> gdk::RGBA {
-        gdk::RGBA::parse(&self.string(BACKGROUND_COLOR)).unwrap_or(gdk::RGBA::BLACK)
+        gdk::RGBA::parse(self.string(BACKGROUND_COLOR)).unwrap_or(gdk::RGBA::BLACK)
     }
 
     fn set_bgcolour(&self, value: gdk::RGBA) {
@@ -165,19 +165,19 @@ impl Properties for gio::Settings {
     }
 
     fn get_control_key(&self, k: &ControlKey) -> gdk::Key {
-        key_from_i32(self.int(&k.settings_key))
+        key_from_i32(self.int(k.settings_key))
     }
 
     fn set_control_key(&self, k: &ControlKey, key: gdk::Key) {
-        self.set_int_or_warn(&k.settings_key, key_into_i32(key));
+        self.set_int_or_warn(k.settings_key, key_into_i32(key));
     }
 
     fn get_control_key_default(&self, k: &ControlKey) -> Option<gdk::Key> {
-        let key = self.default_value(&k.settings_key)?.get::<i32>()?;
+        let key = self.default_value(k.settings_key)?.get::<i32>()?;
         Some(key_from_i32(key))
     }
 
     fn reset_control_key(&self, k: &ControlKey) {
-        self.reset(&k.settings_key);
+        self.reset(k.settings_key);
     }
 }

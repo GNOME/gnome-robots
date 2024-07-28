@@ -99,7 +99,7 @@ mod imp {
             self.obj()
                 .set_accels_for_action("app.quit", &["<Primary>q"]);
 
-            match DirectoryAssets::from_directory(&Path::new(DATA_DIRECTORY)) {
+            match DirectoryAssets::from_directory(Path::new(DATA_DIRECTORY)) {
                 Ok(assets) => {
                     self.assets.set(Rc::new(assets)).ok().unwrap();
                 }
@@ -239,8 +239,8 @@ glib::wrapper! {
         @implements gio::ActionMap;
 }
 
-impl RobotsApplication {
-    pub fn new() -> Self {
+impl Default for RobotsApplication {
+    fn default() -> Self {
         glib::Object::builder()
             .property("application-id", "org.gnome.Robots")
             .property("flags", gio::ApplicationFlags::FLAGS_NONE)

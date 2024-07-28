@@ -239,7 +239,7 @@ impl RobotsWindow {
         game.start_new_game();
 
         let game_area = GameArea::new(game_configs, assets, settings)?;
-        game_area.connect_updated(glib::clone!(@weak this => move |ga| this.update_game_status(&ga.game().as_ref().unwrap())));
+        game_area.connect_updated(glib::clone!(@weak this => move |ga| this.update_game_status(ga.game().as_ref().unwrap())));
 
         let gridframe = gtk::AspectFrame::builder()
             .ratio((game.width() as f32) / (game.height() as f32))

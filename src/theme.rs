@@ -78,7 +78,7 @@ impl Theme {
     }
 
     pub fn path(&self) -> &Path {
-        &self.imp().path.get().unwrap()
+        self.imp().path.get().unwrap()
     }
 
     pub fn draw_object(
@@ -89,11 +89,11 @@ impl Theme {
         rect: &graphene::Rect,
     ) {
         let tile_no = match _type {
-            ObjectType::PLAYER => frame_index(PLAYER_ANIMATION_FRAMES, frame_no),
-            ObjectType::ROBOT1 => frame_index(ROBOT1_ANIMATION_FRAMES, frame_no),
-            ObjectType::ROBOT2 => frame_index(ROBOT2_ANIMATION_FRAMES, frame_no),
-            ObjectType::HEAP => frame_index(HEAP_ANIMATION_FRAMES, frame_no),
-            ObjectType::NONE => return,
+            ObjectType::Player => frame_index(PLAYER_ANIMATION_FRAMES, frame_no),
+            ObjectType::Robot1 => frame_index(ROBOT1_ANIMATION_FRAMES, frame_no),
+            ObjectType::Robot2 => frame_index(ROBOT2_ANIMATION_FRAMES, frame_no),
+            ObjectType::Heap => frame_index(HEAP_ANIMATION_FRAMES, frame_no),
+            ObjectType::None => return,
         };
 
         snapshot.push_clip(rect);

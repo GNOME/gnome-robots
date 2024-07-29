@@ -15,16 +15,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2023-11-29 12:37+0000\n"
-"PO-Revision-Date: 2023-11-30 17:42+0300\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"POT-Creation-Date: 2023-11-30 18:04+0000\n"
+"PO-Revision-Date: 2024-05-10 22:38+0300\n"
+"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.3\n"
 
 #: data/app-menu.ui:7 src/application.vala:99 src/application.vala:103
 msgid "_New Game"
@@ -47,7 +47,7 @@ msgid "_About Robots"
 msgstr "Robotlar _Hakkında"
 
 #: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
-#: src/application.vala:41 src/application.vala:144 src/window.vala:45
+#: src/application.vala:41 src/application.vala:144 src/window.vala:44
 msgid "Robots"
 msgstr "Robotlar"
 
@@ -95,7 +95,9 @@ msgstr "Andrey Kutejko"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:6
 msgid "game;arcade;teleport;"
-msgstr "oyun;macera;arcade;teleport;ışınlanma;"
+msgstr ""
+"gnome robots;gnome robotlar;game;arcade;teleport;oyun;macera;oyun makinesi;"
+"teleport;ışınlanma;"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
@@ -274,7 +276,7 @@ msgstr ""
 "Muhammet Kara <muhammetk@gmail.com>\n"
 "Emin Tufan Çetin <etcetin@gmail.com>"
 
-#: src/controls.vala:31 src/properties-dialog.vala:50
+#: src/controls.vala:31 src/properties-dialog.vala:49
 msgid "Keyboard"
 msgstr "Klavye"
 
@@ -290,7 +292,7 @@ msgstr "Yeni hızlandırıcı…"
 msgid "Disabled"
 msgstr "Devre Dışı"
 
-#: src/game-area.vala:356
+#: src/game-area.vala:358
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -298,51 +300,51 @@ msgstr ""
 "Tebrikler, Robotları Yendiniz!! \n"
 "Peki, Yeniden Yapabilir Misiniz?"
 
-#: src/game-area.vala:360
+#: src/game-area.vala:362
 msgid "There are no teleport locations left!!"
 msgstr "Geriye hiç ışınlanma bölgesi kalmadı!!"
 
-#: src/properties-dialog.vala:34
+#: src/properties-dialog.vala:33
 msgid "Game"
 msgstr "Oyun"
 
-#: src/properties-dialog.vala:41
+#: src/properties-dialog.vala:40
 msgid "Appearance"
 msgstr "Görünüm"
 
-#: src/properties-dialog.vala:69
+#: src/properties-dialog.vala:68
 msgid "_Use safe moves"
 msgstr "Güvenli hareketleri _kullan"
 
-#: src/properties-dialog.vala:71
+#: src/properties-dialog.vala:70
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Ölüm ile sonuçlanabilecek kazalı hamleleri önle."
 
-#: src/properties-dialog.vala:76
+#: src/properties-dialog.vala:75
 msgid "U_se super safe moves"
 msgstr "_Süper güvenli hareketi kullan"
 
-#: src/properties-dialog.vala:78
+#: src/properties-dialog.vala:77
 msgid "Prevents all moves that result in getting killed."
 msgstr "Ölüm ile sonuçlanan tüm hamleleri önle."
 
-#: src/properties-dialog.vala:98
+#: src/properties-dialog.vala:97
 msgid "_Enable sounds"
 msgstr "_Sesleri etkinleştir"
 
-#: src/properties-dialog.vala:100
+#: src/properties-dialog.vala:99
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Düzeyi geçme ve ölme gibi olaylar için ses çal."
 
-#: src/properties-dialog.vala:127
+#: src/properties-dialog.vala:125
 msgid "Game Type"
 msgstr "Oyun Türü"
 
-#: src/properties-dialog.vala:138
+#: src/properties-dialog.vala:135
 msgid "_Image theme:"
 msgstr "_Resim teması:"
 
-#: src/properties-dialog.vala:167
+#: src/properties-dialog.vala:164
 msgid "_Background color:"
 msgstr "_Arka plan rengi:"
 
@@ -411,26 +413,26 @@ msgstr "Robotlar, güvenli ışınlama ve güvenli hareketler ile"
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robotlar, güvenli ışınlama ve süper güvenli hareketler ile"
 
-#: src/window.vala:101
+#: src/window.vala:100
 msgid "Teleport _Randomly"
 msgstr "_Rastgele Işınlan"
 
-#: src/window.vala:126
+#: src/window.vala:125
 msgid "_Wait for Robots"
 msgstr "Robotları _Bekle"
 
-#: src/window.vala:141
+#: src/window.vala:140
 #, c-format
 msgid "Level: %d\tScore: %d"
 msgstr "Düzey: %d\tPuan: %d"
 
 #. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:144
+#: src/window.vala:143
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Kalan: %d)"
 
 #. First line of safe teleports button label.
-#: src/window.vala:146
+#: src/window.vala:145
 msgid "Teleport _Safely"
 msgstr "_Güvenle Işınlan"

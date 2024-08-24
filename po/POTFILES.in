@@ -1,12 +1,17 @@
 # List of source files containing translatable strings.
 # Please keep this file in alphabetical order.
-data/app-menu.ui
-data/org.gnome.Robots.metainfo.xml.in
 data/org.gnome.Robots.desktop.in
+data/org.gnome.Robots.metainfo.xml.in
 data/org.gnome.Robots.gschema.xml
-src/application.vala
-src/controls.vala
-src/game-area.vala
-src/properties-dialog.vala
-src/scores.vala
-src/window.vala
+src/application.rs
+src/controls/controls.rs
+src/controls/editor.rs
+src/game_area.rs
+src/properties_dialog.rs
+src/scores/category_bar.rs
+src/scores/grid.rs
+src/scores/new_score_dialog.rs
+src/scores/no_scores.rs
+src/scores/scores_dialog.rs
+src/scores/scores.rs
+src/window.rs

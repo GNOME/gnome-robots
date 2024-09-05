@@ -1,18 +1,18 @@
 # Swedish messages for gnome-robots.
-# Copyright © 1999-2023 Free Software Foundation, Inc.
+# Copyright © 1999-2024 Free Software Foundation, Inc.
 # Andreas Persenius <ndap@swipnet.se>, 1999.
 # Andreas Hyden <a.hyden@cyberpoint.se>
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 2000.
 # Christian Rose <menthos@menthos.com>, 2000, 2001, 2002, 2003, 2004, 2005.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2018, 2019, 2020, 2022, 2023.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2018, 2019, 2020, 2022, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2023-11-29 12:37+0000\n"
-"PO-Revision-Date: 2023-11-29 17:09+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
+"POT-Creation-Date: 2024-08-24 13:23+0000\n"
+"PO-Revision-Date: 2024-08-24 15:29+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -20,39 +20,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.4\n"
 
-#: data/app-menu.ui:7 src/application.vala:99 src/application.vala:103
-msgid "_New Game"
-msgstr "_Nytt spel"
-
-#: data/app-menu.ui:11
-msgid "_Scores"
-msgstr "_Poänglista"
-
-#: data/app-menu.ui:17
-msgid "_Preferences"
-msgstr "_Inställningar"
-
-#: data/app-menu.ui:21
-msgid "_Help"
-msgstr "_Hjälp"
-
-#: data/app-menu.ui:25
-msgid "_About Robots"
-msgstr "_Om Robotar"
-
-#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
-#: src/application.vala:41 src/application.vala:144 src/window.vala:45
+#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
+#: src/application.rs:72 src/application.rs:211 src/window.rs:55
 msgid "Robots"
 msgstr "Robotar"
 
-#: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
+#: data/org.gnome.Robots.desktop.in:4 data/org.gnome.Robots.metainfo.xml.in:8
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Undvik robotarna och få dem att krocka med varandra"
 
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Robots.desktop.in:6
+msgid "game;arcade;teleport;"
+msgstr "spel;arkad;teleport;"
+
 #. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
-#: data/org.gnome.Robots.appdata.xml.in:11
+#: data/org.gnome.Robots.metainfo.xml.in:11
 msgid ""
 "It is the distant future: the year 2000. Evil robots are trying to kill you. "
 "Avoid the robots or face certain death."
@@ -60,7 +45,7 @@ msgstr ""
 "Det är den avlägsna framtiden: år 2000. Onda robotar försöker att döda dig. "
 "Undvik robotarna eller möt en säker död."
 
-#: data/org.gnome.Robots.appdata.xml.in:15
+#: data/org.gnome.Robots.metainfo.xml.in:15
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -74,7 +59,7 @@ msgstr ""
 "att flytta skrothögarna, eller fly till säkerhet med din praktiska "
 "teleportör."
 
-#: data/org.gnome.Robots.appdata.xml.in:22
+#: data/org.gnome.Robots.metainfo.xml.in:22
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -84,14 +69,9 @@ msgstr ""
 "teleportering placera dig intill en robot som kommer att döda dig. Överlev "
 "så länge som möjligt!"
 
-#: data/org.gnome.Robots.appdata.xml.in:62
+#: data/org.gnome.Robots.metainfo.xml.in:63
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Robots.desktop.in:6
-msgid "game;arcade;teleport;"
-msgstr "spel;arkad;teleport;"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
@@ -161,7 +141,7 @@ msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Aktivera spelljud. Spela ljud för diverse händelser under spelets gång."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:34
+#: data/org.gnome.Robots.gschema.xml:40 src/controls/controls.rs:35
 msgid "Key to move NW"
 msgstr "Tangent för att flytta åt nordväst"
 
@@ -169,7 +149,7 @@ msgstr "Tangent för att flytta åt nordväst"
 msgid "The key used to move north-west."
 msgstr "Tangenten för att flytta till nordväst."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:35
+#: data/org.gnome.Robots.gschema.xml:45 src/controls/controls.rs:36
 msgid "Key to move N"
 msgstr "Tangent för att flytta åt norr"
 
@@ -177,7 +157,7 @@ msgstr "Tangent för att flytta åt norr"
 msgid "The key used to move north."
 msgstr "Tangenten för att flytta till nord."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:36
+#: data/org.gnome.Robots.gschema.xml:50 src/controls/controls.rs:37
 msgid "Key to move NE"
 msgstr "Tangent för att flytta åt nordöst"
 
@@ -185,7 +165,7 @@ msgstr "Tangent för att flytta åt nordöst"
 msgid "The key used to move north-east."
 msgstr "Tangenten för att flytta till nordöst."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:37
+#: data/org.gnome.Robots.gschema.xml:56 src/controls/controls.rs:38
 msgid "Key to move W"
 msgstr "Tangent för att flytta åt väster"
 
@@ -193,7 +173,7 @@ msgstr "Tangent för att flytta åt väster"
 msgid "The key used to move west."
 msgstr "Tangenten för att flytta till väst."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:38
+#: data/org.gnome.Robots.gschema.xml:61 src/controls/controls.rs:39
 msgid "Key to hold"
 msgstr "Tangent att hålla intryckt"
 
@@ -201,7 +181,7 @@ msgstr "Tangent att hålla intryckt"
 msgid "The key used to hold still."
 msgstr "Tangenten för att stå still."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:39
+#: data/org.gnome.Robots.gschema.xml:66 src/controls/controls.rs:40
 msgid "Key to move E"
 msgstr "Tangent för att flytta åt öster"
 
@@ -209,7 +189,7 @@ msgstr "Tangent för att flytta åt öster"
 msgid "The key used to move east."
 msgstr "Tangenten för att flytta till öst."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:40
+#: data/org.gnome.Robots.gschema.xml:71 src/controls/controls.rs:41
 msgid "Key to move SW"
 msgstr "Tangent för att flytta åt sydväst"
 
@@ -217,7 +197,7 @@ msgstr "Tangent för att flytta åt sydväst"
 msgid "The key used to move south-west."
 msgstr "Tangenten för att flytta till sydväst."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:41
+#: data/org.gnome.Robots.gschema.xml:76 src/controls/controls.rs:42
 msgid "Key to move S"
 msgstr "Tangent för att flytta åt söder"
 
@@ -225,7 +205,7 @@ msgstr "Tangent för att flytta åt söder"
 msgid "The key used to move south."
 msgstr "Tangenten för att flytta till syd."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:42
+#: data/org.gnome.Robots.gschema.xml:81 src/controls/controls.rs:43
 msgid "Key to move SE"
 msgstr "Tangent för att flytta åt sydöst"
 
@@ -245,7 +225,7 @@ msgstr "Höjden på fönstret i bildpunkter"
 msgid "true if the window is maximized"
 msgstr "sant om fönstret är maximerat"
 
-#: src/application.vala:64
+#: src/application.rs:118
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -253,19 +233,27 @@ msgstr ""
 "Programmet Robotar kunde inte hitta några giltiga spelkonfigurationsfiler. "
 "Kontrollera att programmet installerats korrekt."
 
-#: src/application.vala:100
+#: src/application.rs:160
+msgid "New Game"
+msgstr "Nytt spel"
+
+#: src/application.rs:162
 msgid "Are you sure you want to discard the current game?"
 msgstr "Är du säker att du vill kassera aktuellt spel?"
 
-#: src/application.vala:102
+#: src/application.rs:166
 msgid "Keep _Playing"
 msgstr "Fortsätt s_pela"
 
-#: src/application.vala:150
+#: src/application.rs:167 src/window.rs:202
+msgid "_New Game"
+msgstr "_Nytt spel"
+
+#: src/application.rs:215
 msgid "Based on classic BSD Robots"
 msgstr "Baserad på klassiska BSD-robotar"
 
-#: src/application.vala:162
+#: src/application.rs:227
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -277,23 +265,23 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/controls.vala:31 src/properties-dialog.vala:50
+#: src/controls/controls.rs:31 src/properties_dialog.rs:59
 msgid "Keyboard"
 msgstr "Tangentbord"
 
-#: src/controls.vala:55
+#: src/controls/controls.rs:56
 msgid "_Restore Defaults"
 msgstr "_Återställ standardalternativen"
 
-#: src/controls.vala:147
+#: src/controls/editor.rs:118
 msgid "New accelerator…"
 msgstr "Ny snabbtangent…"
 
-#: src/controls.vala:151
+#: src/controls/editor.rs:128
 msgid "Disabled"
 msgstr "Inaktiverad"
 
-#: src/game-area.vala:356
+#: src/game_area.rs:416
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -301,142 +289,194 @@ msgstr ""
 "Gratulerar, du har besegrat robotarna!!\n"
 "Men kan du göra om det?"
 
-#: src/game-area.vala:360
+#: src/game_area.rs:421
 msgid "There are no teleport locations left!!"
 msgstr "Det finns inte några teleportplatser kvar!!"
 
-#: src/properties-dialog.vala:34
+#: src/properties_dialog.rs:39
 msgid "Game"
 msgstr "Spel"
 
-#: src/properties-dialog.vala:41
+#: src/properties_dialog.rs:48
 msgid "Appearance"
 msgstr "Utseende"
 
-#: src/properties-dialog.vala:69
+#: src/properties_dialog.rs:87
 msgid "_Use safe moves"
 msgstr "_Använd säkra förflyttningar"
 
-#: src/properties-dialog.vala:71
+#: src/properties_dialog.rs:90
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Förhindra olyckliga drag som kan resultera i död."
 
-#: src/properties-dialog.vala:76
+#: src/properties_dialog.rs:97
 msgid "U_se super safe moves"
 msgstr "A_nvänd supersäkra förflyttningar"
 
-#: src/properties-dialog.vala:78
+#: src/properties_dialog.rs:99
 msgid "Prevents all moves that result in getting killed."
 msgstr "Förhindrar alla drag som kan resultera i död."
 
-#: src/properties-dialog.vala:98
+#: src/properties_dialog.rs:120
 msgid "_Enable sounds"
 msgstr "A_ktivera ljud"
 
-#: src/properties-dialog.vala:100
+#: src/properties_dialog.rs:123
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Spela ljud för händelser som exempelvis att vinna en nivå och att dö."
 
-#: src/properties-dialog.vala:127
+#: src/properties_dialog.rs:148
 msgid "Game Type"
 msgstr "Speltyp"
 
-#: src/properties-dialog.vala:138
+#: src/properties_dialog.rs:160
 msgid "_Image theme:"
 msgstr "_Bildtema:"
 
-#: src/properties-dialog.vala:167
+#: src/properties_dialog.rs:192
 msgid "_Background color:"
 msgstr "_Bakgrundsfärg:"
 
-#. Label on the scores dialog, next to map type dropdown
-#: src/scores.vala:28
+#: src/scores/category_bar.rs:34
 msgid "Game Type:"
 msgstr "Speltyp:"
 
-#: src/scores.vala:53
+#: src/scores/grid.rs:35
+msgid "Rank"
+msgstr "Rang"
+
+#: src/scores/grid.rs:36
+msgid "Score"
+msgstr "Poäng"
+
+#: src/scores/grid.rs:37
+msgid "Player"
+msgstr "Spelare"
+
+#: src/scores/new_score_dialog.rs:43
+msgid "Congratulations!"
+msgstr "Gratulerar!"
+
+#: src/scores/new_score_dialog.rs:65
+msgid "_Done"
+msgstr "_Klar"
+
+#: src/scores/new_score_dialog.rs:83
+msgid "Your score is the best!"
+msgstr "Din poäng är den bästa!"
+
+#: src/scores/new_score_dialog.rs:85
+msgid "Your score has made the top ten."
+msgstr "Ditt resultat är bland de tio bästa."
+
+#: src/scores/no_scores.rs:45
+msgid "No scores yet"
+msgstr "Inga poäng än"
+
+#: src/scores/no_scores.rs:53
+msgid "Play some games and your scores will show up here."
+msgstr "Spela några spel så kommer dina poäng att visas här."
+
+#: src/scores/scores_dialog.rs:45
+msgid "High Scores"
+msgstr "Poänglista"
+
+#: src/scores/scores.rs:61
 msgid "Classic robots"
 msgstr "Klassiska robotar"
 
-#: src/scores.vala:55
+#: src/scores/scores.rs:62
 msgid "Classic robots with safe moves"
 msgstr "Klassiska robotar med säkra förflyttningar"
 
-#: src/scores.vala:57
+#: src/scores/scores.rs:64
 msgid "Classic robots with super-safe moves"
 msgstr "Klassiska robotar med supersäkra förflyttningar"
 
-#: src/scores.vala:59
+#: src/scores/scores.rs:66
 msgid "Nightmare"
 msgstr "Mardröm"
 
-#: src/scores.vala:61
+#: src/scores/scores.rs:67
 msgid "Nightmare with safe moves"
 msgstr "Mardröm med säkra förflyttningar"
 
-#: src/scores.vala:63
+#: src/scores/scores.rs:69
 msgid "Nightmare with super-safe moves"
 msgstr "Mardröm med supersäkra förflyttningar"
 
-#: src/scores.vala:65
+#: src/scores/scores.rs:71
 msgid "Robots2"
 msgstr "Robotar2"
 
-#: src/scores.vala:67
+#: src/scores/scores.rs:72
 msgid "Robots2 with safe moves"
 msgstr "Robotar2 med säkra förflyttningar"
 
-#: src/scores.vala:69
+#: src/scores/scores.rs:73
 msgid "Robots2 with super-safe moves"
 msgstr "Robotar2 med supersäkra förflyttningar"
 
-#: src/scores.vala:71
+#: src/scores/scores.rs:74
 msgid "Robots2 easy"
 msgstr "Robotar2 lätt"
 
-#: src/scores.vala:73
+#: src/scores/scores.rs:75
 msgid "Robots2 easy with safe moves"
 msgstr "Robotar2 med säkra förflyttningar"
 
-#: src/scores.vala:75
+#: src/scores/scores.rs:77
 msgid "Robots2 easy with super-safe moves"
 msgstr "Robotar2 med supersäkra förflyttningar"
 
-#: src/scores.vala:77
+#: src/scores/scores.rs:80
 msgid "Robots with safe teleport"
 msgstr "Robotar med säker teleport"
 
-#: src/scores.vala:79
+#: src/scores/scores.rs:83
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robotar med säker teleport och säkra förflyttningar"
 
-#: src/scores.vala:81
+#: src/scores/scores.rs:86
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robotar med säker teleport och supersäkra förflyttningar"
 
-#: src/window.vala:101
+#: src/window.rs:113
 msgid "Teleport _Randomly"
 msgstr "Teleporte_ra slumpmässigt"
 
-#: src/window.vala:126
+#: src/window.rs:134
+msgid "Teleport _Safely"
+msgstr "Teleportera _säkert"
+
+#: src/window.rs:150
 msgid "_Wait for Robots"
 msgstr "_Vänta på robotarna"
 
-#: src/window.vala:141
-#, c-format
-msgid "Level: %d\tScore: %d"
-msgstr "Nivå: %d\tPoäng: %d"
+#: src/window.rs:206
+msgid "_Scores"
+msgstr "_Poänglista"
 
-#. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:144
+#: src/window.rs:214
+msgid "_Preferences"
+msgstr "_Inställningar"
+
+#: src/window.rs:218
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: src/window.rs:222
+msgid "_About Robots"
+msgstr "_Om Robotar"
+
+#: src/window.rs:279
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Kvarvarande: %d)"
 
-#. First line of safe teleports button label.
-#: src/window.vala:146
-msgid "Teleport _Safely"
-msgstr "Teleportera _säkert"
+#, c-format
+#~ msgid "Level: %d\tScore: %d"
+#~ msgstr "Nivå: %d\tPoäng: %d"
 
 #~ msgid "Preferences"
 #~ msgstr "Inställningar"

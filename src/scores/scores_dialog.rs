@@ -98,11 +98,17 @@ pub fn scores_dialog(
                 },
             ))
             .build();
-        combo.connect_selected_item_notify(glib::clone!(@weak grid => move |cb| {
-            if let Some(selected_category) = cb.selected_item().and_downcast::<glib::BoxedAnyObject>() {
-                scores_grid_update(&grid, &selected_category.borrow::<Page>().score_list);
+        combo.connect_selected_item_notify(glib::clone!(
+            #[weak]
+            grid,
+            move |cb| {
+                if let Some(selected_category) =
+                    cb.selected_item().and_downcast::<glib::BoxedAnyObject>()
+                {
+                    scores_grid_update(&grid, &selected_category.borrow::<Page>().score_list);
+                }
             }
-        }));
+        ));
         combo.set_selected(to_select.unwrap_or_default());
 
         combo.upcast()

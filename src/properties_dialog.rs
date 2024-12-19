@@ -72,15 +72,19 @@ fn create_game_group(
     let group = adw::PreferencesGroup::new();
 
     let typemenu = create_game_config_picker(game_configs, &properties.selected_config());
-    typemenu.connect_selected_item_notify(glib::clone!(@weak properties => move |cr| {
-        if let Some(selection) = cr
-            .selected_item()
-            .and_downcast::<gtk::StringObject>()
-            .map(|s| s.string())
-        {
-            properties.set_selected_config(&selection);
+    typemenu.connect_selected_item_notify(glib::clone!(
+        #[weak]
+        properties,
+        move |cr| {
+            if let Some(selection) = cr
+                .selected_item()
+                .and_downcast::<gtk::StringObject>()
+                .map(|s| s.string())
+            {
+                properties.set_selected_config(&selection);
+            }
         }
-    }));
+    ));
     group.add(&typemenu);
 
     let safe_chkbox = adw::SwitchRow::builder()
@@ -102,13 +106,21 @@ fn create_game_group(
         .build();
     group.add(&super_safe_chkbox);
 
-    super_safe_chkbox.connect_active_notify(glib::clone!(@weak properties => move |cb| {
-        properties.set_super_safe_moves(cb.is_active());
-    }));
-    safe_chkbox.connect_active_notify(glib::clone!(@weak properties => move |cb| {
-        properties.set_safe_moves(cb.is_active());
-        super_safe_chkbox.set_sensitive(properties.safe_moves());
-    }));
+    super_safe_chkbox.connect_active_notify(glib::clone!(
+        #[weak]
+        properties,
+        move |cb| {
+            properties.set_super_safe_moves(cb.is_active());
+        }
+    ));
+    safe_chkbox.connect_active_notify(glib::clone!(
+        #[weak]
+        properties,
+        move |cb| {
+            properties.set_safe_moves(cb.is_active());
+            super_safe_chkbox.set_sensitive(properties.safe_moves());
+        }
+    ));
 
     group
 }
@@ -124,9 +136,13 @@ fn create_sound_group(settings: &gio::Settings) -> adw::PreferencesGroup {
         ))
         .active(settings.sound())
         .build();
-    sound_chkbox.connect_active_notify(glib::clone!(@weak settings => move |cb| {
-        settings.set_sound(cb.is_active());
-    }));
+    sound_chkbox.connect_active_notify(glib::clone!(
+        #[weak]
+        settings,
+        move |cb| {
+            settings.set_sound(cb.is_active());
+        }
+    ));
     group.add(&sound_chkbox);
 
     group
@@ -168,11 +184,15 @@ fn create_theme_picker(themes: &gio::ListModel, settings: &gio::Settings) -> adw
         ))
         .build();
 
-    theme_picker.connect_selected_item_notify(glib::clone!(@weak settings => move |tp| {
-        if let Some(theme) = tp.selected_item().and_downcast::<Theme>() {
-            settings.set_theme(&theme.name());
+    theme_picker.connect_selected_item_notify(glib::clone!(
+        #[weak]
+        settings,
+        move |tp| {
+            if let Some(theme) = tp.selected_item().and_downcast::<Theme>() {
+                settings.set_theme(&theme.name());
+            }
         }
-    }));
+    ));
 
     theme_picker
 }
@@ -184,9 +204,13 @@ fn create_background_picker(settings: &gio::Settings) -> adw::ActionRow {
         .dialog(&color_dialog)
         .rgba(&settings.bgcolour())
         .build();
-    button.connect_rgba_notify(glib::clone!(@weak settings => move |b| {
-        settings.set_bgcolour(b.rgba());
-    }));
+    button.connect_rgba_notify(glib::clone!(
+        #[weak]
+        settings,
+        move |b| {
+            settings.set_bgcolour(b.rgba());
+        }
+    ));
 
     let color_row = adw::ActionRow::builder()
         .title(gettext("_Background color:"))

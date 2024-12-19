@@ -239,7 +239,11 @@ impl RobotsWindow {
         game.start_new_game();
 
         let game_area = GameArea::new(game_configs, assets, settings)?;
-        game_area.connect_updated(glib::clone!(@weak this => move |ga| this.update_game_status(ga.game().as_ref().unwrap())));
+        game_area.connect_updated(glib::clone!(
+            #[weak]
+            this,
+            move |ga| this.update_game_status(ga.game().as_ref().unwrap())
+        ));
 
         let gridframe = gtk::AspectFrame::builder()
             .ratio((game.width() as f32) / (game.height() as f32))
@@ -260,7 +264,13 @@ impl RobotsWindow {
         vbox.append(&toolbar_view);
 
         let key_controller = gtk::EventControllerKey::new();
-        key_controller.connect_key_pressed(glib::clone!(@weak this => @default-return glib::Propagation::Proceed, move |_, keyval, _keycode, state| this.keyboard_cb(keyval, state)));
+        key_controller.connect_key_pressed(glib::clone!(
+            #[weak]
+            this,
+            #[upgrade_or]
+            glib::Propagation::Proceed,
+            move |_, keyval, _keycode, state| this.keyboard_cb(keyval, state)
+        ));
         this.add_controller(key_controller);
 
         Ok(this)
@@ -269,11 +279,11 @@ impl RobotsWindow {
     fn update_game_status(&self, game: &Game) {
         let status = game.status();
 
-        self.imp().window_title.set_subtitle(&gettext!(
-            "Level: {}\tScore: {}",
-            status.current_level,
-            status.score
-        ));
+        self.imp().window_title.set_subtitle(
+            &gettext("Level: {level}\tScore: {score}")
+                .replace("{level}", &status.current_level.to_string())
+                .replace("{score}", &status.score.to_string()),
+        );
 
         let remaining_teleports_text =
             gettext("(Remaining: %d)").replacen("%d", &status.safe_teleports.to_string(), 1);

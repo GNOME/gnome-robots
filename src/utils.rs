@@ -81,9 +81,11 @@ pub fn settings_aware_widget<W, F>(
 {
     let signal_handler_id = settings.connect_changed(
         settings_key,
-        glib::clone!(@weak widget => move |s, _| {
-            (f)(&widget, s);
-        }),
+        glib::clone!(
+            #[weak]
+            widget,
+            move |s, _| (f)(&widget, s)
+        ),
     );
     widget.connect_destroy({
         let signal_handler_id = RefCell::new(Some(signal_handler_id));

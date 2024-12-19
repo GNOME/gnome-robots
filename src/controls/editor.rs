@@ -59,25 +59,40 @@ mod imp {
             obj.set_focusable(true);
 
             let click_controller = gtk::GestureClick::new();
-            click_controller.connect_pressed(
-                glib::clone!(@weak self as imp => move |_, _, _, _| imp.set_editing(true)),
-            );
+            click_controller.connect_pressed(glib::clone!(
+                #[weak(rename_to = imp)]
+                self,
+                move |_, _, _, _| imp.set_editing(true)
+            ));
             obj.add_controller(click_controller);
 
             let key_controller = gtk::EventControllerKey::new();
-            key_controller.connect_key_pressed(glib::clone!(@weak self as imp =>
-                    @default-return glib::Propagation::Proceed, move |_, keyval, _keycode, mods| imp.key_controller_key_pressed(keyval, mods)));
+            key_controller.connect_key_pressed(glib::clone!(
+                #[weak(rename_to = imp)]
+                self,
+                #[upgrade_or]
+                glib::Propagation::Proceed,
+                move |_, keyval, _keycode, mods| imp.key_controller_key_pressed(keyval, mods)
+            ));
             obj.add_controller(key_controller);
 
             self.label.set_parent(&*obj);
 
-            obj.connect_mnemonic_activate(glib::clone!(@weak self as imp => @default-return glib::Propagation::Proceed, move |_, _| {
-                imp.set_editing(true);
-                glib::Propagation::Proceed
-            }));
-            obj.connect_move_focus(
-                glib::clone!(@weak self as imp => move |_, _| imp.set_editing(false)),
-            );
+            obj.connect_mnemonic_activate(glib::clone!(
+                #[weak(rename_to = imp)]
+                self,
+                #[upgrade_or]
+                glib::Propagation::Proceed,
+                move |_, _| {
+                    imp.set_editing(true);
+                    glib::Propagation::Proceed
+                }
+            ));
+            obj.connect_move_focus(glib::clone!(
+                #[weak(rename_to = imp)]
+                self,
+                move |_, _| imp.set_editing(false)
+            ));
         }
 
         fn dispose(&self) {

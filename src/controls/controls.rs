@@ -56,9 +56,13 @@ pub fn create_controls_list(settings: &gio::Settings) -> adw::PreferencesGroup {
         .label(gettext("_Restore Defaults"))
         .use_underline(true)
         .build();
-    dbut.connect_clicked(glib::clone!(@weak settings => move |_| {
-        settings.reset_all_control_keys();
-    }));
+    dbut.connect_clicked(glib::clone!(
+        #[weak]
+        settings,
+        move |_| {
+            settings.reset_all_control_keys();
+        }
+    ));
     pg.set_header_suffix(Some(&dbut));
 
     pg
@@ -69,13 +73,21 @@ fn new_editor(settings: &gio::Settings, control_key: ControlKey) -> ControlEdito
 
     editor.set_key(settings.get_control_key(&control_key));
 
-    editor.connect_edited(glib::clone!(@strong settings => move |keyval| {
-        settings.set_control_key(&control_key, keyval);
-    }));
-    editor.connect_cleared(glib::clone!(@strong settings => move || {
-        settings.reset_control_key(&control_key);
-        settings.get_control_key(&control_key)
-    }));
+    editor.connect_edited(glib::clone!(
+        #[strong]
+        settings,
+        move |keyval| {
+            settings.set_control_key(&control_key, keyval);
+        }
+    ));
+    editor.connect_cleared(glib::clone!(
+        #[strong]
+        settings,
+        move || {
+            settings.reset_control_key(&control_key);
+            settings.get_control_key(&control_key)
+        }
+    ));
     settings_aware_widget(
         &editor,
         settings,

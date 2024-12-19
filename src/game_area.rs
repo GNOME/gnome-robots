@@ -33,10 +33,7 @@ use crate::{
 };
 use gettextrs::gettext;
 use gtk::{gdk, gio, glib, graphene, prelude::*, subclass::prelude::*};
-use std::f64::consts::PI;
-use std::rc::Rc;
-use std::time::Duration;
-use std::{cell::Ref, error::Error};
+use std::{cell::Ref, error::Error, f64::consts::PI, rc::Rc, time::Duration};
 
 const MINIMUM_TILE_WIDTH: u32 = 8;
 const MINIMUM_TILE_HEIGHT: u32 = 8;
@@ -107,22 +104,31 @@ mod imp {
             obj.set_layout_manager(Some(gtk::BinLayout::new()));
 
             let click_controller = gtk::GestureClick::new();
-            click_controller.connect_pressed(
-                glib::clone!(@weak obj => move |_, n_pressed, x, y| obj.mouse_cb(n_pressed, x, y)),
-            );
+            click_controller.connect_pressed(glib::clone!(
+                #[weak]
+                obj,
+                move |_, n_pressed, x, y| obj.mouse_cb(n_pressed, x, y)
+            ));
             obj.add_controller(click_controller);
 
             let motion_controller = gtk::EventControllerMotion::new();
-            motion_controller
-                .connect_motion(glib::clone!(@weak obj => move |_, x, y| obj.move_cb(x, y)));
+            motion_controller.connect_motion(glib::clone!(
+                #[weak]
+                obj,
+                move |_, x, y| obj.move_cb(x, y)
+            ));
             obj.add_controller(motion_controller);
 
             self.timer_id.set(Some(glib::timeout_add_local(
                 ANIMATION_DELAY,
-                glib::clone!(@strong obj => move || {
-                    obj.timer_cb();
-                    glib::ControlFlow::Continue
-                }),
+                glib::clone!(
+                    #[strong]
+                    obj,
+                    move || {
+                        obj.timer_cb();
+                        glib::ControlFlow::Continue
+                    }
+                ),
             )));
         }
 
@@ -272,14 +278,16 @@ impl GameArea {
             (MINIMUM_TILE_HEIGHT * game.height()) as i32,
         );
 
-        let game_listener_id =
-            game.on_game_event
-                .connect(glib::clone!(@weak self as this => move |event| {
-                    let event = *event;
-                    glib::MainContext::default().spawn_local(async move {
-                        this.on_game_event(event).await;
-                    });
-                }));
+        let game_listener_id = game.on_game_event.connect(glib::clone!(
+            #[weak(rename_to = this)]
+            self,
+            move |event| {
+                let event = *event;
+                glib::MainContext::default().spawn_local(async move {
+                    this.on_game_event(event).await;
+                });
+            }
+        ));
         *this_game = Some(game);
         self.imp().game_listener_id.set(Some(game_listener_id));
     }

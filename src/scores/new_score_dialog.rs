@@ -18,7 +18,7 @@
  */
 
 use super::category_bar::category_bar;
-use super::dialog::{self, new_scores_dialog, ScoresDialog};
+use super::dialog::{new_scores_dialog, ScoresDialog};
 use super::grid::{create_scores_grid, scores_grid_update};
 use super::scores::{Category, Score, ScoreList};
 use super::ROWS_TO_DISPLAY;
@@ -66,7 +66,11 @@ pub async fn new_score_dialog(
         .use_underline(true)
         .build();
     done.add_css_class("suggested-action");
-    done.connect_clicked(glib::clone!(@weak dlg => move |_| dlg.close()));
+    done.connect_clicked(glib::clone!(
+        #[weak]
+        dlg,
+        move |_| dlg.close()
+    ));
 
     headerbar.set_show_start_title_buttons(false);
     headerbar.set_show_end_title_buttons(false);

@@ -104,7 +104,7 @@ pub fn scores_grid_update(grid: &gtk::Grid, score_list: &ScoreList) {
 
 fn title_label(label: &str) -> gtk::Label {
     gtk::Label::builder()
-        .label(format!("<bold>{}</bold>", label))
+        .label(format!("<b>{}</b>", label))
         .use_markup(true)
         .build()
 }

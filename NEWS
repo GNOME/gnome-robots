@@ -1,3 +1,48 @@
+41.0 - December 21, 2024
+===========================
+
+- Remove GNOME branding
+- Migrate to Gtk 4 and libadwaita
+- Rewrite in Rust
+- Add Abkhazian translation
+- Update Basque translation
+- Update Belarusian translation
+- Update Brazilian Portuguese translation
+- Update Bulgarian translation
+- Update Catalan translation
+- Update Chinese (China) translation
+- Update Czech translation
+- Update Danish translation
+- Update Dutch translation
+- Update Finnish translation
+- Update French translation
+- Update Friulian translation
+- Update Galician translation
+- Update Georgian translation
+- Update German translation
+- Update Greek translation
+- Update Hebrew translation
+- Update Hindi translation
+- Update Hungarian translation
+- Update Icelandic translation
+- Update Indonesian translation
+- Update Kazakh translation
+- Add Korean translation
+- Update Latvian translation
+- Update Lithuanian translation
+- Update Occitan translation
+- Update Persian translation
+- Update Polish translation
+- Update Portuguese translation
+- Update Romanian translation
+- Update Russian translation
+- Update Serbian translation
+- Update Slovenian translation
+- Update Spanish translation
+- Update Swedish translation
+- Update Turkish translation
+- Update Ukrainian translation
+
 40.0 - March 20, 2021
 ===========================
 

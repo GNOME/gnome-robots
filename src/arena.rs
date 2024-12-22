@@ -163,7 +163,7 @@ pub struct ArenaIter<'arena> {
     size: usize,
 }
 
-impl<'arena> Iterator for ArenaIter<'arena> {
+impl Iterator for ArenaIter<'_> {
     type Item = Position;
 
     fn next(&mut self) -> Option<Self::Item> {

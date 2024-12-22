@@ -17,15 +17,7 @@
  * For more details see the file COPYING.
  */
 
-use gtk::gdk::{self, ffi::GdkRGBA};
-
-#[no_mangle]
-pub unsafe extern "C" fn br_calculate_contrast_color(color: *const GdkRGBA) -> *mut GdkRGBA {
-    let c = Box::new(calculate_contrast_color(gdk::RGBA::from_glib_ptr_borrow(
-        color,
-    )));
-    Box::leak(c).as_ptr()
-}
+use gtk::gdk;
 
 pub fn calculate_contrast_color(color: &gdk::RGBA) -> gdk::RGBA {
     // While the two colours are labelled "light" and "dark" which one is

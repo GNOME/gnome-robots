@@ -39,9 +39,11 @@ mod imp {
     #[derive(glib::Properties, Default)]
     #[properties(wrapper_type = super::Theme)]
     pub struct Theme {
+        #[property(construct_only)]
         pub paintable: OnceCell<gdk::Paintable>,
+        #[property(get, construct_only)]
         pub path: OnceCell<PathBuf>,
-        #[property(get)]
+        #[property(get, construct_only)]
         pub name: OnceCell<String>,
     }
 
@@ -63,32 +65,26 @@ glib::wrapper! {
 impl Theme {
     pub fn from_file(path: &Path) -> Result<Self, Box<dyn Error>> {
         let paintable = image_from_file(path)?;
-        let path = path.to_owned();
         let name = path
             .file_stem()
             .ok_or("Bad file name")?
             .to_string_lossy()
             .replace("_", " ");
-
-        let this: Self = glib::Object::builder().build();
-        this.imp().paintable.set(paintable).ok().unwrap();
-        this.imp().path.set(path).ok().unwrap();
-        this.imp().name.set(name).ok().unwrap();
-        Ok(this)
-    }
-
-    pub fn path(&self) -> &Path {
-        self.imp().path.get().unwrap()
+        Ok(glib::Object::builder()
+            .property("paintable", paintable)
+            .property("path", path)
+            .property("name", name)
+            .build())
     }
 
     pub fn draw_object(
         &self,
-        _type: ObjectType,
+        r#type: ObjectType,
         frame_no: usize,
         snapshot: &gtk::Snapshot,
         rect: &graphene::Rect,
     ) {
-        let tile_no = match _type {
+        let tile_no = match r#type {
             ObjectType::Player => frame_index(PLAYER_ANIMATION_FRAMES, frame_no),
             ObjectType::Robot1 => frame_index(ROBOT1_ANIMATION_FRAMES, frame_no),
             ObjectType::Robot2 => frame_index(ROBOT2_ANIMATION_FRAMES, frame_no),

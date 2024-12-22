@@ -17,44 +17,20 @@
  * For more details see the file COPYING.
  */
 
-use crate::utils::SettingsWarnExt;
-use gtk::{gio, glib, prelude::*};
+use gtk::gio::{self, prelude::*};
 
 const KEY_WINDOW_WIDTH: &str = "window-width";
 const KEY_WINDOW_HEIGHT: &str = "window-height";
 const KEY_WINDOW_IS_MAXIMIZED: &str = "window-is-maximized";
 
 pub fn remember_window_size(window: &gtk::Window, settings: &gio::Settings) {
-    window.connect_default_width_notify(glib::clone!(
-        #[strong]
-        settings,
-        move |w| {
-            if !w.is_maximized() {
-                settings.set_int_or_warn(KEY_WINDOW_WIDTH, w.default_width());
-            }
-        }
-    ));
-    window.connect_default_height_notify(glib::clone!(
-        #[strong]
-        settings,
-        move |w| {
-            if !w.is_maximized() {
-                settings.set_int_or_warn(KEY_WINDOW_HEIGHT, w.default_height());
-            }
-        }
-    ));
-    window.connect_maximized_notify(glib::clone!(
-        #[strong]
-        settings,
-        move |w| {
-            settings.set_boolean_or_warn(KEY_WINDOW_IS_MAXIMIZED, w.is_maximized());
-        }
-    ));
-    window.set_default_size(
-        settings.int(KEY_WINDOW_WIDTH),
-        settings.int(KEY_WINDOW_HEIGHT),
-    );
-    if settings.boolean(KEY_WINDOW_IS_MAXIMIZED) {
-        window.maximize();
-    }
+    settings
+        .bind(KEY_WINDOW_WIDTH, window, "default-width")
+        .build();
+    settings
+        .bind(KEY_WINDOW_HEIGHT, window, "default-height")
+        .build();
+    settings
+        .bind(KEY_WINDOW_IS_MAXIMIZED, window, "maximized")
+        .build();
 }

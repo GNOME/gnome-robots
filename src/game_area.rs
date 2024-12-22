@@ -37,7 +37,8 @@ use std::{cell::Ref, error::Error, f64::consts::PI, rc::Rc, time::Duration};
 
 const MINIMUM_TILE_WIDTH: u32 = 8;
 const MINIMUM_TILE_HEIGHT: u32 = 8;
-const ANIMATION_DELAY: Duration = Duration::from_millis(100);
+const ANIMATION_DELAY_MILLIS: u64 = 100;
+const ANIMATION_DELAY: Duration = Duration::from_millis(ANIMATION_DELAY_MILLIS);
 
 mod imp {
     use super::*;
@@ -47,9 +48,10 @@ mod imp {
     use crate::theme::{
         player_animation, player_dead_animation, robot1_animation, robot2_animation,
     };
-    use crate::utils::now;
     use std::cell::{Cell, OnceCell, RefCell};
     use std::sync::OnceLock;
+    use std::time::{SystemTime, UNIX_EPOCH};
+    use std::usize;
 
     pub struct GameArea {
         pub game: RefCell<Option<Game>>,
@@ -159,7 +161,10 @@ mod imp {
                 return;
             };
 
-            let time = now() as usize;
+            let time = SystemTime::now()
+                .duration_since(UNIX_EPOCH)
+                .map_or(0, |t| t.as_millis() / ANIMATION_DELAY_MILLIS as u128)
+                as usize;
             let tile_width = (self.obj().width() as f64) / (game.width() as f64);
             let tile_height = (self.obj().height() as f64) / (game.height() as f64);
             let assets = self.assets.get().unwrap();

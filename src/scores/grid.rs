@@ -87,7 +87,7 @@ pub fn scores_grid_update(grid: &gtk::Grid, score_list: &ScoreList) {
             .and_downcast::<gtk::Label>()
             .unwrap();
 
-        match score_list.scores.get(row) {
+        match score_list.scores.get(row - 1) {
             Some(score) => {
                 rank_label.set_text(&row.to_string());
                 score_label.set_text(&score.score.to_string());

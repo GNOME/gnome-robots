@@ -22,7 +22,7 @@ use crate::game::{Game, PlayerCommand, State};
 use crate::game_area::GameArea;
 use crate::game_config::GameConfigs;
 use crate::properties::{Properties, CONTROL_KEYS};
-use crate::scores::scores::show_scores;
+use crate::scores::scores::{show_scores, Category};
 use crate::window_size::remember_window_size;
 use adw::{prelude::*, subclass::prelude::*};
 use gettextrs::gettext;
@@ -325,6 +325,13 @@ impl RobotsWindow {
     }
 
     pub fn show_highscores(&self) {
-        show_scores(None, self);
+        let settings = self.imp().settings.get().unwrap();
+
+        let category = Category {
+            key: settings.selected_config(),
+            safety: settings.move_safety(),
+        };
+
+        show_scores(Some(&category), self);
     }
 }

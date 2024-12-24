@@ -216,8 +216,8 @@ impl Game {
      * Description:
      * registers a robot kill and updates the score
      **/
-    fn add_kill(&self, _type: ObjectType) {
-        let si = match (self.state.get(), _type) {
+    fn add_kill(&self, object_type: ObjectType) {
+        let si = match (self.state.get(), object_type) {
             (State::Waiting | State::WaitingType2, ObjectType::Robot1) => {
                 self.kills.set(self.kills.get() + 1);
                 self.config.borrow().score_type1_waiting

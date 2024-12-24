@@ -439,21 +439,17 @@ impl GameArea {
 
     fn move_safety(&self) -> MoveSafety {
         let properties = self.imp().settings.get().unwrap();
-        match (properties.safe_moves(), properties.super_safe_moves()) {
-            (true, true) => MoveSafety::SuperSafe,
-            (true, false) => MoveSafety::Safe,
-            _ => MoveSafety::Unsafe,
-        }
+        properties.move_safety()
     }
 
-    fn game_name(&self) -> Option<String> {
+    fn game_description(&self) -> Option<String> {
         let game = self.imp().game.borrow();
-        game.as_ref().map(|g| g.config.borrow().name())
+        game.as_ref().map(|g| g.config.borrow().description.clone())
     }
 
     /// Enters a score in the high-score table
     async fn log_score(&self, score: u32) {
-        let Some(key) = self.game_name() else {
+        let Some(key) = self.game_description() else {
             return;
         };
         let Some(window) = self.root().and_downcast::<gtk::Window>() else {

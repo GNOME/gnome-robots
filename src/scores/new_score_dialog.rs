@@ -80,24 +80,28 @@ pub async fn new_score_dialog(
 
     let user = Rc::new(RefCell::new(new_high_score.user.clone()));
 
-    let count = score_list.scores.len();
-    for (row_count, score) in score_list.scores.iter().enumerate().take(ROWS_TO_DISPLAY) {
-        if score == new_high_score {
-            if count > 1 && row_count == 0 {
-                window_title.set_subtitle(&gettext("Your score is the best!"));
-            } else {
-                window_title.set_subtitle(&gettext("Your score has made the top ten."));
-            }
-
-            let entry = gtk::Entry::builder().text(&score.user).build(); // 20x20
-            entry.connect_text_notify({
-                let user = user.clone();
-                move |e| {
-                    *user.borrow_mut() = e.text().into();
-                }
-            });
-            grid.attach(&entry, 2, row_count as i32 + 1, 1, 1);
+    if let Some(position) = score_list
+        .scores
+        .iter()
+        .take(ROWS_TO_DISPLAY)
+        .position(|score| score == new_high_score)
+        .map(|p| p as i32)
+    {
+        let count = score_list.scores.len();
+        if count > 1 && position == 0 {
+            window_title.set_subtitle(&gettext("Your score is the best!"));
+        } else {
+            window_title.set_subtitle(&gettext("Your score has made the top ten."));
         }
+
+        let entry = gtk::Entry::builder().text(&new_high_score.user).build();
+        entry.connect_text_notify({
+            let user = user.clone();
+            move |e| {
+                *user.borrow_mut() = e.text().into();
+            }
+        });
+        grid_replace(&grid, entry.upcast_ref(), 2, position + 1);
     }
 
     let (sender, receiver) = async_channel::unbounded();
@@ -111,4 +115,11 @@ pub async fn new_score_dialog(
 
     let user = user.borrow_mut().clone(); // Rc::unwrap_or_clone()
     user
+}
+
+fn grid_replace(grid: &gtk::Grid, child: &gtk::Widget, column: i32, row: i32) {
+    if let Some(prev_child) = grid.child_at(column, row) {
+        grid.remove(&prev_child);
+    }
+    grid.attach(child, column, row, 1, 1);
 }

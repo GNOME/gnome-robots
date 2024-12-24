@@ -23,7 +23,7 @@ use gtk::{gdk, gio, gio::prelude::*};
 
 use crate::{
     controls::{key_from_i32, key_into_i32},
-    game::PlayerCommand,
+    game::{MoveSafety, PlayerCommand},
     utils::SettingsWarnExt,
 };
 
@@ -104,6 +104,14 @@ pub trait Properties {
         self.reset_control_key(&CONTROL_KEY_SW);
         self.reset_control_key(&CONTROL_KEY_S);
         self.reset_control_key(&CONTROL_KEY_SE);
+    }
+
+    fn move_safety(&self) -> MoveSafety {
+        match (self.safe_moves(), self.super_safe_moves()) {
+            (_, true) => MoveSafety::SuperSafe,
+            (true, false) => MoveSafety::Safe,
+            _ => MoveSafety::Unsafe,
+        }
     }
 }
 

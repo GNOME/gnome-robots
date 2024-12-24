@@ -56,6 +56,14 @@ impl Category {
         }
     }
 
+    fn game_type(&self) -> String {
+        match self.safety {
+            MoveSafety::Unsafe => self.key.replace(' ', "_").clone(),
+            MoveSafety::Safe => format!("{}-safe", self.key.replace(' ', "_")),
+            MoveSafety::SuperSafe => format!("{}-super-safe", self.key.replace(' ', "_")),
+        }
+    }
+
     pub fn name(&self) -> Option<String> {
         match (self.key.as_str(), self.safety) {
             ("classic_robots", MoveSafety::Unsafe) => Some(gettext("Classic robots")),
@@ -90,7 +98,7 @@ impl Category {
     }
 }
 
-#[derive(PartialEq, Eq)]
+#[derive(PartialEq, Eq, Clone, Debug)]
 pub struct Score {
     pub score: i64,
     pub time: u64,
@@ -120,8 +128,11 @@ impl Score {
 fn save_score_to_file(scores_dir: &Path, category: &Category, score: &Score) -> io::Result<()> {
     fs::create_dir_all(scores_dir)?;
 
-    let filename = scores_dir.join(&category.key);
-    let mut file = fs::OpenOptions::new().append(true).open(&filename)?;
+    let filename = scores_dir.join(category.game_type());
+    let mut file = fs::OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open(&filename)?;
     writeln!(file, "{}", score.to_line())?;
     Ok(())
 }
@@ -132,10 +143,6 @@ pub struct ScoreList {
 }
 
 impl ScoreList {
-    pub fn len(&self) -> usize {
-        self.scores.len()
-    }
-
     pub fn load(path: &Path, fallback_user: &str) -> io::Result<Self> {
         let mut scores = Vec::new();
         let file = fs::OpenOptions::new().read(true).open(path)?;
@@ -158,6 +165,11 @@ impl ScoreList {
 
     pub fn high_scores(&self, n: usize) -> Vec<&Score> {
         self.scores.iter().take(n).collect()
+    }
+
+    pub fn add(&mut self, score: Score) {
+        self.scores.push(score);
+        self.scores.sort_by_key(|s| Reverse(s.score));
     }
 }
 
@@ -223,22 +235,24 @@ pub async fn add_score(category: &Category, score: i64, parent_window: &gtk::Win
     };
 
     let scores_dir = scores_dir();
-    let score_list = ScoreList::load(&scores_dir, &user)
+    let mut score_list = ScoreList::load(&scores_dir.join(category.game_type()), &user)
         .map_err(|err| {
-            eprintln!("{}", err);
+            eprintln!("Failed to read scores for {}: {}", category.key, err);
             err
         })
         .unwrap_or_default();
 
-    let high_score_added = {
+    let high_score_gained = {
         let best_scores = score_list.high_scores(ROWS_TO_DISPLAY);
         best_scores.len() < ROWS_TO_DISPLAY || score.score > best_scores.last().unwrap().score
     };
 
-    if high_score_added {
+    if high_score_gained {
+        score_list.add(score.clone());
+
         let new_name = new_score_dialog(&score, category, &score_list, parent_window).await;
         if let Err(error) = save_score_to_file(&scores_dir, category, &score.rename(new_name)) {
-            eprint!("{}", error);
+            eprint!("Failed to save scores for {}: {}", category.key, error);
         }
     }
 }

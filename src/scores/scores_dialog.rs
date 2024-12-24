@@ -110,6 +110,12 @@ pub fn scores_dialog(
             }
         ));
         combo.set_selected(to_select.unwrap_or_default());
+        if let Some(selected_category) = model
+            .item(to_select.unwrap_or_default())
+            .and_downcast::<glib::BoxedAnyObject>()
+        {
+            scores_grid_update(&grid, &selected_category.borrow::<Page>().score_list);
+        }
 
         combo.upcast()
     };

@@ -18,6 +18,7 @@
  */
 
 use crate::config::DATA_DIRECTORY;
+use gettextrs::gettext;
 use regex::Regex;
 use std::fs;
 use std::io::{self, BufRead};
@@ -27,7 +28,7 @@ use std::sync::OnceLock;
 
 #[derive(PartialEq, Eq)]
 pub struct GameConfig {
-    pub description: String,
+    pub name: String,
     pub initial_type1: u32,
     pub initial_type2: u32,
     pub increment_type1: u32,
@@ -66,8 +67,15 @@ pub struct Reward {
 }
 
 impl GameConfig {
-    pub fn name(&self) -> String {
-        self.description.replace("_", " ")
+    pub fn display_name(&self) -> String {
+        match self.name.as_str() {
+            "classic_robots" => gettext("Classic robots"),
+            "nightmare" => gettext("Nightmare"),
+            "robots2" => gettext("Robots2"),
+            "robots2_easy" => gettext("Robots2 easy"),
+            "robots_with_safe_teleport" => gettext("Robots with safe teleport"),
+            _ => self.name.replace("_", " "),
+        }
     }
 
     pub fn type1_robots_on_level(&self, level: u32) -> u32 {
@@ -111,7 +119,7 @@ impl GameConfig {
     }
 
     pub fn from_file(filename: &Path) -> io::Result<Self> {
-        let description = filename
+        let name = filename
             .file_stem()
             .unwrap_or_default()
             .to_string_lossy()
@@ -165,7 +173,7 @@ impl GameConfig {
         }
 
         Ok(Self {
-            description,
+            name,
             initial_type1: initial_type1.ok_or_else(|| {
                 io::Error::other("Bad game config file. Value `initial_type1` is missing.")
             })?,
@@ -250,7 +258,7 @@ impl GameConfigs {
     pub fn find_by_name(&self, name: &str) -> Option<&Rc<GameConfig>> {
         self.game_configs
             .iter()
-            .find(|gc| gc.description == name || gc.name() == name)
+            .find(|gc| gc.name == name || gc.name.replace('_', " ") == name)
     }
 
     pub fn best_match(&self, name: &str) -> &Rc<GameConfig> {

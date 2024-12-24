@@ -22,7 +22,7 @@ use crate::{
     arena::ObjectType,
     assets::Assets,
     game::{Game, GameEvent, MoveSafety, PlayerCommand, State},
-    game_config::GameConfigs,
+    game_config::{GameConfig, GameConfigs},
     graphics::calculate_contrast_color,
     properties::Properties,
     scores::scores::{add_score, Category},
@@ -297,10 +297,6 @@ impl GameArea {
         self.imp().game_listener_id.set(Some(game_listener_id));
     }
 
-    // pub fn background_color(&self) -> &gdk::RGBA {
-    //     &self.imp().background_color.borrow()
-    // }
-
     pub fn set_background_color(&self, color: gdk::RGBA) {
         *self.imp().background_color.borrow_mut() = color;
         *self.imp().alternate_background_color.borrow_mut() = calculate_contrast_color(&color);
@@ -442,14 +438,14 @@ impl GameArea {
         properties.move_safety()
     }
 
-    fn game_description(&self) -> Option<String> {
+    fn game_config(&self) -> Option<Rc<GameConfig>> {
         let game = self.imp().game.borrow();
-        game.as_ref().map(|g| g.config.borrow().description.clone())
+        game.as_ref().map(|g| g.config.borrow().clone())
     }
 
     /// Enters a score in the high-score table
     async fn log_score(&self, score: u32) {
-        let Some(key) = self.game_description() else {
+        let Some(game_config) = self.game_config() else {
             return;
         };
         let Some(window) = self.root().and_downcast::<gtk::Window>() else {
@@ -457,7 +453,7 @@ impl GameArea {
         };
 
         let category = Category {
-            key,
+            key: game_config.name.clone(),
             safety: self.move_safety(),
         };
         add_score(&category, score as i64, &window).await;

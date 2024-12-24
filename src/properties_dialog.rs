@@ -18,12 +18,16 @@
  */
 
 use crate::{
-    controls::controls::create_controls_list, game_config::GameConfigs, properties::Properties,
-    theme::Theme, themes,
+    controls::controls::create_controls_list,
+    game_config::{GameConfig, GameConfigs},
+    properties::Properties,
+    theme::Theme,
+    themes,
 };
 use adw::prelude::*;
 use gettextrs::gettext;
 use gtk::{gio, glib};
+use std::rc::Rc;
 
 pub fn show_preferences(
     parent_window: Option<&gtk::Window>,
@@ -78,10 +82,10 @@ fn create_game_group(
         move |cr| {
             if let Some(selection) = cr
                 .selected_item()
-                .and_downcast::<gtk::StringObject>()
-                .map(|s| s.string())
+                .and_downcast::<glib::BoxedAnyObject>()
+                .map(|b| b.borrow::<Rc<GameConfig>>().clone())
             {
-                properties.set_selected_config(&selection);
+                properties.set_selected_config(&selection.name);
             }
         }
     ));
@@ -149,13 +153,11 @@ fn create_sound_group(settings: &gio::Settings) -> adw::PreferencesGroup {
 }
 
 fn create_game_config_picker(game_configs: &GameConfigs, current_config: &str) -> adw::ComboRow {
-    let model = gtk::StringList::new(&[]);
+    let model = gio::ListStore::new::<glib::BoxedAnyObject>();
     let mut active_index = 0;
     for (i, config) in game_configs.game_configs.iter().enumerate() {
-        let config_name = config.name();
-        model.append(&config_name);
-
-        if config_name == current_config {
+        model.append(&glib::BoxedAnyObject::new(config.clone()));
+        if config.name == current_config {
             active_index = i as u32;
         }
     }
@@ -163,6 +165,14 @@ fn create_game_config_picker(game_configs: &GameConfigs, current_config: &str) -
     adw::ComboRow::builder()
         .title(gettext("Game Type"))
         .model(&model)
+        .expression(gtk::ClosureExpression::new::<String>(
+            &[] as &[gtk::Expression],
+            glib::closure!(|item: &glib::Object| {
+                item.downcast_ref::<glib::BoxedAnyObject>()
+                    .map(|b| b.borrow::<Rc<GameConfig>>().display_name())
+                    .unwrap_or_default()
+            }),
+        ))
         .selected(active_index)
         .build()
 }

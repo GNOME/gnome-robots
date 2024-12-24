@@ -20,10 +20,9 @@
 use gtk::{cairo, gdk, gdk::subclass::prelude::*, glib, graphene};
 
 mod imp {
+    use super::*;
     use gtk::prelude::SnapshotExt;
     use std::cell::OnceCell;
-
-    use super::*;
 
     #[derive(Default)]
     pub struct SvgPaintable {

@@ -20,6 +20,7 @@
 use super::new_score_dialog::new_score_dialog;
 use super::scores_dialog::scores_dialog;
 use super::ROWS_TO_DISPLAY;
+use crate::config::PACKAGE;
 use crate::game::MoveSafety;
 use crate::utils::{list_directory, now};
 use gettextrs::gettext;
@@ -207,7 +208,7 @@ impl Scores {
 }
 
 fn scores_dir() -> PathBuf {
-    glib::user_data_dir().join("gnome-robots").join("scores")
+    glib::user_data_dir().join(PACKAGE).join("scores")
 }
 
 pub fn show_scores(category: Option<&Category>, parent_window: &impl IsA<gtk::Window>) {

@@ -145,37 +145,4 @@ impl Arena {
         }
         None
     }
-
-    pub fn iterate_from(&self, x: u32, y: u32) -> ArenaIter<'_> {
-        ArenaIter {
-            arena: self,
-            initial_position: self.index_of(Position { x, y }).unwrap(),
-            i: 0,
-            size: self.objects.len(),
-        }
-    }
-}
-
-pub struct ArenaIter<'arena> {
-    arena: &'arena Arena,
-    initial_position: usize,
-    i: usize,
-    size: usize,
-}
-
-impl Iterator for ArenaIter<'_> {
-    type Item = Position;
-
-    fn next(&mut self) -> Option<Self::Item> {
-        if self.i >= self.size {
-            return None;
-        }
-        let position = ((self.initial_position + self.i) % self.size) as u32;
-        let result = Position {
-            x: position % self.arena.width,
-            y: position / self.arena.width,
-        };
-        self.i += 1;
-        Some(result)
-    }
 }

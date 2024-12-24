@@ -17,21 +17,18 @@
  * For more details see the file COPYING.
  */
 
-use std::marker::PhantomData;
-
-use gtk::{gdk, gio, gio::prelude::*};
-
 use crate::{
     controls::{key_from_i32, key_into_i32},
     game::{MoveSafety, PlayerCommand},
     utils::SettingsWarnExt,
 };
+use gtk::{gdk, gio, gio::prelude::*};
+use std::marker::PhantomData;
 
 const BACKGROUND_COLOR: &str = "background-color";
 const GAME_CONFIGURATION: &str = "configuration";
 const ENABLE_SOUND: &str = "enable-sound";
 const SAFE_MOVES: &str = "use-safe-moves";
-const SHOW_TOOLBAR: &str = "show-toolbar";
 const SUPER_SAFE_MOVES: &str = "use-super-safe-moves";
 const THEME: &str = "theme";
 
@@ -81,8 +78,6 @@ pub trait Properties {
     fn set_super_safe_moves(&self, value: bool);
     fn sound(&self) -> bool;
     fn set_sound(&self, value: bool);
-    fn show_toolbar(&self) -> bool;
-    fn set_show_toolbar(&self, value: bool);
     fn bgcolour(&self) -> gdk::RGBA;
     fn set_bgcolour(&self, value: gdk::RGBA);
     fn selected_config(&self) -> String;
@@ -92,7 +87,6 @@ pub trait Properties {
 
     fn get_control_key(&self, k: &ControlKey) -> gdk::Key;
     fn set_control_key(&self, k: &ControlKey, key: gdk::Key);
-    fn get_control_key_default(&self, k: &ControlKey) -> Option<gdk::Key>;
     fn reset_control_key(&self, k: &ControlKey);
     fn reset_all_control_keys(&self) {
         self.reset_control_key(&CONTROL_KEY_NW);
@@ -140,14 +134,6 @@ impl Properties for gio::Settings {
         self.set_boolean_or_warn(ENABLE_SOUND, value);
     }
 
-    fn show_toolbar(&self) -> bool {
-        self.boolean(SHOW_TOOLBAR)
-    }
-
-    fn set_show_toolbar(&self, value: bool) {
-        self.set_boolean_or_warn(SHOW_TOOLBAR, value);
-    }
-
     fn bgcolour(&self) -> gdk::RGBA {
         gdk::RGBA::parse(self.string(BACKGROUND_COLOR)).unwrap_or(gdk::RGBA::BLACK)
     }
@@ -178,11 +164,6 @@ impl Properties for gio::Settings {
 
     fn set_control_key(&self, k: &ControlKey, key: gdk::Key) {
         self.set_int_or_warn(k.settings_key, key_into_i32(key));
-    }
-
-    fn get_control_key_default(&self, k: &ControlKey) -> Option<gdk::Key> {
-        let key = self.default_value(k.settings_key)?.get::<i32>()?;
-        Some(key_from_i32(key))
     }
 
     fn reset_control_key(&self, k: &ControlKey) {

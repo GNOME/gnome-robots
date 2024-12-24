@@ -39,9 +39,7 @@ mod imp {
         pub window_title: adw::WindowTitle,
         pub safe_teleports_label: gtk::Label,
         pub game_area: OnceCell<GameArea>,
-        // key_controller: gtk::EventControllerKey,
         pub settings: OnceCell<gio::Settings>,
-        // highscores: RobotsScoresContext,
     }
 
     #[glib::object_subclass]
@@ -225,7 +223,6 @@ impl RobotsWindow {
             section
         });
 
-        // let appmenu = application.menu_by_id("primary-menu").unwrap();
         let menu_button = gtk::MenuButton::builder()
             .icon_name("open-menu-symbolic")
             .menu_model(&appmenu)

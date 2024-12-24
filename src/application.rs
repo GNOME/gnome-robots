@@ -35,7 +35,6 @@ mod imp {
     use std::{cell::OnceCell, rc::Rc};
 
     pub struct RobotsApplication {
-        // properties: Properties,
         settings: gio::Settings,
         game_configs: OnceCell<GameConfigs>,
         assets: OnceCell<Rc<dyn Assets>>,

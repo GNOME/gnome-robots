@@ -17,8 +17,12 @@
  * For more details see the file COPYING.
  */
 
-use std::sync::atomic::{AtomicU32, Ordering};
-use std::{cell::RefCell, collections::HashMap, rc::Rc};
+use std::{
+    cell::RefCell,
+    collections::HashMap,
+    rc::Rc,
+    sync::atomic::{AtomicU32, Ordering},
+};
 
 pub type Listener<T> = Rc<dyn Fn(&T)>;
 

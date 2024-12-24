@@ -1,10 +1,5 @@
 <schemalist>
   <schema id="org.gnome.Robots" path="/org/gnome/Robots/" gettext-domain="gnome-robots">
-    <key name="show-toolbar" type="b">
-      <default>true</default>
-      <summary>Show toolbar</summary>
-      <description>Show toolbar. A standard option for toolbars.</description>
-    </key>
     <key name="theme" type="s">
       <default>"robots.svg"</default>
       <summary>Robot image theme</summary>
@@ -50,7 +45,6 @@
       <summary>Key to move NE</summary>
       <description>The key used to move north-east.</description>
     </key>
-    
     <key name="key03" type="i">
       <default>104</default>
       <summary>Key to move W</summary>

@@ -594,7 +594,7 @@ dependencies = [
 
 [[package]]
 name = "gnome-robots"
-version = "41.0.0"
+version = "41.1.0"
 dependencies = [
  "async-channel",
  "gettext-rs",

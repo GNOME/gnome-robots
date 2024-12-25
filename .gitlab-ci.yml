@@ -1,6 +1,6 @@
 include:
     - remote: "https://gitlab.gnome.org/GNOME/citemplates/raw/master/flatpak/flatpak_ci_initiative.yml"
-    - component: gitlab.gnome.org/GNOME/citemplates/release-service@93cc336aa8c6b8103aba6ec36a03f80a6ca80444
+    - component: gitlab.gnome.org/GNOME/citemplates/release-service@master
       inputs:
         job-stage: deploy
         dist-job-name: build-release-tarball

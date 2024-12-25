@@ -11,7 +11,7 @@
   <support-forum rdf:resource="https://discourse.gnome.org/tag/games" />
   <download-page rdf:resource="http://download.gnome.org/sources/gnome-robots/" />
   <bug-database rdf:resource="https://gitlab.gnome.org/GNOME/gnome-robots/issues/" />
-  <programming-language>C</programming-language>
+  <programming-language>Rust</programming-language>
 
   <maintainer>
     <foaf:Person>

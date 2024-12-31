@@ -25,3 +25,4 @@ install_data(
     ],
     install_dir: join_paths(pkg_icon_dir, 'scalable', 'categories')
 )
+meson.add_install_script('gtk4-update-icon-cache', '-qtf', pkg_icon_dir, skip_if_destdir: true)

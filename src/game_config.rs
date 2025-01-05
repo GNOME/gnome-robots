@@ -19,14 +19,12 @@
 
 use crate::config::DATA_DIRECTORY;
 use gettextrs::gettext;
-use regex::Regex;
+use std::error::Error;
 use std::fs;
-use std::io::{self, BufRead};
 use std::path::Path;
 use std::rc::Rc;
-use std::sync::OnceLock;
 
-#[derive(PartialEq, Eq)]
+#[derive(PartialEq, Eq, serde::Deserialize)]
 pub struct GameConfig {
     pub name: String,
     pub initial_type1: u32,
@@ -47,18 +45,6 @@ pub struct GameConfig {
     pub free_safe_teleports: u32,
     pub max_safe_teleports: u32,
     pub moveable_heaps: bool,
-}
-
-fn line_regex() -> &'static Regex {
-    static REGEX: OnceLock<Regex> = OnceLock::new();
-    REGEX.get_or_init(|| Regex::new("^(\\w+)\\s*=\\s*(\\d+)").unwrap())
-}
-
-fn parse_line(line: &str) -> Option<(&str, u32)> {
-    let captures = line_regex().captures(line)?;
-    let key = captures.get(1)?.as_str();
-    let val = captures.get(2)?.as_str().parse::<u32>().ok()?;
-    Some((key, val))
 }
 
 pub struct Reward {
@@ -118,117 +104,10 @@ impl GameConfig {
         }
     }
 
-    pub fn from_file(filename: &Path) -> io::Result<Self> {
-        let name = filename
-            .file_stem()
-            .unwrap_or_default()
-            .to_string_lossy()
-            .to_string();
-        let mut initial_type1: Option<u32> = None;
-        let mut initial_type2: Option<u32> = None;
-        let mut increment_type1: Option<u32> = None;
-        let mut increment_type2: Option<u32> = None;
-        let mut maximum_type1: Option<u32> = None;
-        let mut maximum_type2: Option<u32> = None;
-        let mut score_type1: Option<u32> = None;
-        let mut score_type2: Option<u32> = None;
-        let mut score_type1_waiting: Option<u32> = None;
-        let mut score_type2_waiting: Option<u32> = None;
-        let mut score_type1_splatted: Option<u32> = None;
-        let mut score_type2_splatted: Option<u32> = None;
-        let mut num_robots_per_safe: Option<u32> = None;
-        let mut safe_score_boundary: Option<u32> = None;
-        let mut initial_safe_teleports: Option<u32> = None;
-        let mut free_safe_teleports: Option<u32> = None;
-        let mut max_safe_teleports: Option<u32> = None;
-        let mut moveable_heaps: Option<bool> = None;
-
-        let file = fs::OpenOptions::new().read(true).open(filename)?;
-        for line in io::BufReader::new(file).lines() {
-            let line = line?;
-            let Some((key, val)) = parse_line(&line) else {
-                continue;
-            };
-            match key {
-                "initial_type1" => initial_type1 = Some(val),
-                "initial_type2" => initial_type2 = Some(val),
-                "increment_type1" => increment_type1 = Some(val),
-                "increment_type2" => increment_type2 = Some(val),
-                "maximum_type1" => maximum_type1 = Some(val),
-                "maximum_type2" => maximum_type2 = Some(val),
-                "score_type1" => score_type1 = Some(val),
-                "score_type2" => score_type2 = Some(val),
-                "score_type1_waiting" => score_type1_waiting = Some(val),
-                "score_type2_waiting" => score_type2_waiting = Some(val),
-                "score_type1_splatted" => score_type1_splatted = Some(val),
-                "score_type2_splatted" => score_type2_splatted = Some(val),
-                "num_robots_per_safe" => num_robots_per_safe = Some(val),
-                "safe_score_boundary" => safe_score_boundary = Some(val),
-                "max_safe_teleports" => max_safe_teleports = Some(val),
-                "initial_safe_teleports" => initial_safe_teleports = Some(val),
-                "free_safe_teleports" => free_safe_teleports = Some(val),
-                "moveable_heaps" => moveable_heaps = Some(val != 0),
-                _ => {}
-            }
-        }
-
-        Ok(Self {
-            name,
-            initial_type1: initial_type1.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `initial_type1` is missing.")
-            })?,
-            initial_type2: initial_type2.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `initial_type2` is missing.")
-            })?,
-            increment_type1: increment_type1.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `increment_type1` is missing.")
-            })?,
-            increment_type2: increment_type2.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `increment_type2` is missing.")
-            })?,
-            maximum_type1: maximum_type1.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `maximum_type1` is missing.")
-            })?,
-            maximum_type2: maximum_type2.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `maximum_type2` is missing.")
-            })?,
-            score_type1: score_type1.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `score_type1` is missing.")
-            })?,
-            score_type2: score_type2.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `score_type2` is missing.")
-            })?,
-            score_type1_waiting: score_type1_waiting.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `score_type1_waiting` is missing.")
-            })?,
-            score_type2_waiting: score_type2_waiting.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `score_type2_waiting` is missing.")
-            })?,
-            score_type1_splatted: score_type1_splatted.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `score_type1_splatted` is missing.")
-            })?,
-            score_type2_splatted: score_type2_splatted.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `score_type2_splatted` is missing.")
-            })?,
-            num_robots_per_safe: num_robots_per_safe.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `num_robots_per_safe` is missing.")
-            })?,
-            safe_score_boundary: safe_score_boundary.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `safe_score_boundary` is missing.")
-            })?,
-            initial_safe_teleports: initial_safe_teleports.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `initial_safe_teleports` is missing.")
-            })?,
-            free_safe_teleports: free_safe_teleports.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `free_safe_teleports` is missing.")
-            })?,
-            max_safe_teleports: max_safe_teleports.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `max_safe_teleports` is missing.")
-            })?,
-            moveable_heaps: moveable_heaps.ok_or_else(|| {
-                io::Error::other("Bad game config file. Value `moveable_heaps` is missing.")
-            })?,
-        })
+    pub fn from_file(filename: &Path) -> Result<Self, Box<dyn Error>> {
+        let content = fs::read_to_string(filename)?;
+        let config: Self = toml::from_str(&content)?;
+        Ok(config)
     }
 }
 
@@ -238,19 +117,22 @@ pub struct GameConfigs {
 }
 
 impl GameConfigs {
-    pub fn load() -> io::Result<Self> {
+    pub fn load() -> Result<Self, Box<dyn Error>> {
         let directory = Path::new(DATA_DIRECTORY).join("games");
         let mut game_configs = Vec::new();
         for entry in fs::read_dir(&directory)? {
             let path = entry?.path();
-            if path.extension().map_or(false, |ex| ex == "cfg") {
+            if path
+                .extension()
+                .map_or(false, |ex| ex == "cfg" || ex == "toml")
+            {
                 let gcfg = GameConfig::from_file(&path)?;
                 game_configs.push(Rc::new(gcfg));
             }
         }
 
         if game_configs.is_empty() {
-            return Err(io::Error::other("No game config was found."));
+            return Err("No game config was found.".into());
         }
         Ok(Self { game_configs })
     }

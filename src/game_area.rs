@@ -51,7 +51,6 @@ mod imp {
     use std::cell::{Cell, OnceCell, RefCell};
     use std::sync::OnceLock;
     use std::time::{SystemTime, UNIX_EPOCH};
-    use std::usize;
 
     pub struct GameArea {
         pub game: RefCell<Option<Game>>,

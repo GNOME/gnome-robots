@@ -124,7 +124,7 @@ impl GameConfigs {
             let path = entry?.path();
             if path
                 .extension()
-                .map_or(false, |ex| ex == "cfg" || ex == "toml")
+                .is_some_and(|ex| ex == "cfg" || ex == "toml")
             {
                 let gcfg = GameConfig::from_file(&path)?;
                 game_configs.push(Rc::new(gcfg));

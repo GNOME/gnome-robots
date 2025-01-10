@@ -113,8 +113,7 @@ pub async fn new_score_dialog(
 
     receiver.recv().await.unwrap();
 
-    let user = user.borrow_mut().clone(); // Rc::unwrap_or_clone()
-    user
+    Rc::unwrap_or_clone(user).take()
 }
 
 fn grid_replace(grid: &gtk::Grid, child: &gtk::Widget, column: i32, row: i32) {

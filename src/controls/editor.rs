@@ -19,12 +19,10 @@
 
 use gettextrs::gettext;
 use gtk::{gdk, glib, prelude::*, subclass::prelude::*};
-use std::cell::Cell;
 
 mod imp {
-    use std::sync::OnceLock;
-
     use super::*;
+    use std::{cell::Cell, sync::OnceLock};
 
     pub struct ControlEditor {
         pub label: gtk::Label,

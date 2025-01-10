@@ -52,7 +52,7 @@ pub fn find_by_name(themes: &gio::ListModel, name: &str) -> Option<(u32, Theme)>
         let Some(theme) = themes.item(index).and_downcast::<Theme>() else {
             continue;
         };
-        if theme.name() == name || theme.path().file_name().map_or(false, |n| n == name) {
+        if theme.name() == name || theme.path().file_name().is_some_and(|n| n == name) {
             return Some((index, theme));
         }
     }

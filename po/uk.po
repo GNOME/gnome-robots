@@ -4,13 +4,13 @@
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2004-2010.
 # Wanderlust <wanderlust@ukr.net>, 2009.
 # Daniel Korostil <ted.korostiled@gmail.com>, 2015, 2016, 2017.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2022, 2023, 2024.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2024-08-24 13:23+0000\n"
-"PO-Revision-Date: 2024-08-25 09:46+0300\n"
+"POT-Creation-Date: 2025-01-12 21:08+0000\n"
+"PO-Revision-Date: 2025-01-12 23:21+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:72 src/application.rs:211 src/window.rs:55
+#: src/application.rs:71 src/application.rs:210 src/window.rs:53
 msgid "Robots"
 msgstr "Роботи"
 
@@ -68,47 +68,39 @@ msgstr ""
 "може перенести поперед самого робота, що вас уб'є. Намагайтесь вижити "
 "якнайдовше!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:63
+#: data/org.gnome.Robots.metainfo.xml.in:65
 msgid "Andrey Kutejko"
 msgstr "Андрєй Кутєйко"
 
 #: data/org.gnome.Robots.gschema.xml:5
-msgid "Show toolbar"
-msgstr "Показати панель інструментів"
-
-#: data/org.gnome.Robots.gschema.xml:6
-msgid "Show toolbar. A standard option for toolbars."
-msgstr "Показувати панель інструментів. Стандартний параметри для інтерфейсу."
-
-#: data/org.gnome.Robots.gschema.xml:10
 msgid "Robot image theme"
 msgstr "Тема гри Роботи"
 
-#: data/org.gnome.Robots.gschema.xml:11
+#: data/org.gnome.Robots.gschema.xml:6
 msgid "Robot image theme. The theme of the images to use for the robots."
 msgstr "Тема зображень роботів."
 
-#: data/org.gnome.Robots.gschema.xml:15
+#: data/org.gnome.Robots.gschema.xml:10
 msgid "Background color"
 msgstr "Колір тла"
 
-#: data/org.gnome.Robots.gschema.xml:16
+#: data/org.gnome.Robots.gschema.xml:11
 msgid "Background color. The hex specification of the background color."
 msgstr "Колір тла. Шістнадцяткове визначення кольору тла."
 
-#: data/org.gnome.Robots.gschema.xml:20
+#: data/org.gnome.Robots.gschema.xml:15
 msgid "Game type"
 msgstr "Тип гри"
 
-#: data/org.gnome.Robots.gschema.xml:21
+#: data/org.gnome.Robots.gschema.xml:16
 msgid "Game type. The name of the game variation to use."
 msgstr "Назва варіанту гри."
 
-#: data/org.gnome.Robots.gschema.xml:25
+#: data/org.gnome.Robots.gschema.xml:20
 msgid "Use safe moves"
 msgstr "Використовувати безпечні ходи"
 
-#: data/org.gnome.Robots.gschema.xml:26
+#: data/org.gnome.Robots.gschema.xml:21
 msgid ""
 "Use safe moves. The safe moves option will help you to avoid being killed "
 "due to a mistake. If you try to make a move that would lead to your death "
@@ -119,11 +111,11 @@ msgstr ""
 "невдалий хід, що призведе до загибелі, коли є безпечний хід, то гра не дасть "
 "вам його зробити."
 
-#: data/org.gnome.Robots.gschema.xml:30
+#: data/org.gnome.Robots.gschema.xml:25
 msgid "Use super safe moves"
 msgstr "Використовувати особливо безпечні ходи"
 
-#: data/org.gnome.Robots.gschema.xml:31
+#: data/org.gnome.Robots.gschema.xml:26
 msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
@@ -131,100 +123,100 @@ msgstr ""
 "Використовувати особливо безпечні ходи. Гравця попереджається, коли "
 "безпечних ходів більше немає, і терміново потрібна телепортація."
 
-#: data/org.gnome.Robots.gschema.xml:35
+#: data/org.gnome.Robots.gschema.xml:30
 msgid "Enable game sounds"
 msgstr "Увімкнути звуки гри"
 
-#: data/org.gnome.Robots.gschema.xml:36
+#: data/org.gnome.Robots.gschema.xml:31
 msgid ""
 "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Увімкнути звуки гри. Відтворювати звуки для різних подій гри."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls/controls.rs:35
+#: data/org.gnome.Robots.gschema.xml:35 src/controls/controls.rs:35
 msgid "Key to move NW"
 msgstr "Клавіша руху вліво-вгору"
 
-#: data/org.gnome.Robots.gschema.xml:41
+#: data/org.gnome.Robots.gschema.xml:36
 msgid "The key used to move north-west."
 msgstr "Натисніть клавішу для пересування на північний захід."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls/controls.rs:36
+#: data/org.gnome.Robots.gschema.xml:40 src/controls/controls.rs:36
 msgid "Key to move N"
 msgstr "Клавіша руху вгору"
 
-#: data/org.gnome.Robots.gschema.xml:46
+#: data/org.gnome.Robots.gschema.xml:41
 msgid "The key used to move north."
 msgstr "Натисніть клавішу для пересування на північ."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls/controls.rs:37
+#: data/org.gnome.Robots.gschema.xml:45 src/controls/controls.rs:37
 msgid "Key to move NE"
 msgstr "Клавіша руху праворуч-вгору"
 
-#: data/org.gnome.Robots.gschema.xml:51
+#: data/org.gnome.Robots.gschema.xml:46
 msgid "The key used to move north-east."
 msgstr "Натисніть клавішу для пересування на північний схід."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls/controls.rs:38
+#: data/org.gnome.Robots.gschema.xml:50 src/controls/controls.rs:38
 msgid "Key to move W"
 msgstr "Клавіша руху вліво"
 
-#: data/org.gnome.Robots.gschema.xml:57
+#: data/org.gnome.Robots.gschema.xml:51
 msgid "The key used to move west."
 msgstr "Натисніть клавішу для пересування на захід."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls/controls.rs:39
+#: data/org.gnome.Robots.gschema.xml:55 src/controls/controls.rs:39
 msgid "Key to hold"
 msgstr "Клавіша, щоб залишатись на місці"
 
-#: data/org.gnome.Robots.gschema.xml:62
+#: data/org.gnome.Robots.gschema.xml:56
 msgid "The key used to hold still."
 msgstr "Клавіша все ще утримується."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls/controls.rs:40
+#: data/org.gnome.Robots.gschema.xml:60 src/controls/controls.rs:40
 msgid "Key to move E"
 msgstr "Клавіша руху праворуч"
 
-#: data/org.gnome.Robots.gschema.xml:67
+#: data/org.gnome.Robots.gschema.xml:61
 msgid "The key used to move east."
 msgstr "Натисніть клавішу для пересування на схід."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls/controls.rs:41
+#: data/org.gnome.Robots.gschema.xml:65 src/controls/controls.rs:41
 msgid "Key to move SW"
 msgstr "Клавіша руху вліво-вниз"
 
-#: data/org.gnome.Robots.gschema.xml:72
+#: data/org.gnome.Robots.gschema.xml:66
 msgid "The key used to move south-west."
 msgstr "Натисніть клавішу для пересування на південний захід."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls/controls.rs:42
+#: data/org.gnome.Robots.gschema.xml:70 src/controls/controls.rs:42
 msgid "Key to move S"
 msgstr "Клавіша руху вниз"
 
-#: data/org.gnome.Robots.gschema.xml:77
+#: data/org.gnome.Robots.gschema.xml:71
 msgid "The key used to move south."
 msgstr "Натисніть клавішу для пересування на південь."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls/controls.rs:43
+#: data/org.gnome.Robots.gschema.xml:75 src/controls/controls.rs:43
 msgid "Key to move SE"
 msgstr "Клавіша руху праворуч-вниз"
 
-#: data/org.gnome.Robots.gschema.xml:82
+#: data/org.gnome.Robots.gschema.xml:76
 msgid "The key used to move south-east."
 msgstr "Натисніть клавішу для пересування на південний схід."
 
-#: data/org.gnome.Robots.gschema.xml:86
+#: data/org.gnome.Robots.gschema.xml:80
 msgid "Width of the window in pixels"
 msgstr "Ширина вікна у точках"
 
-#: data/org.gnome.Robots.gschema.xml:90
+#: data/org.gnome.Robots.gschema.xml:84
 msgid "Height of the window in pixels"
 msgstr "Висота вікна у точках"
 
-#: data/org.gnome.Robots.gschema.xml:94
+#: data/org.gnome.Robots.gschema.xml:88
 msgid "true if the window is maximized"
 msgstr "вказано, коли вікно розгорнуто"
 
-#: src/application.rs:118
+#: src/application.rs:117
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -232,28 +224,27 @@ msgstr ""
 "Програмі \"Роботи\" не вдалось знайти жодного файлу конфігурації. Перевірте "
 "коректність встановлення гри."
 
-#: src/application.rs:160
-#| msgid "_New Game"
+#: src/application.rs:159
 msgid "New Game"
 msgstr "Нова гра"
 
-#: src/application.rs:162
+#: src/application.rs:161
 msgid "Are you sure you want to discard the current game?"
 msgstr "Відкинути поточну гру?"
 
-#: src/application.rs:166
+#: src/application.rs:165
 msgid "Keep _Playing"
 msgstr "_Далі грати"
 
-#: src/application.rs:167 src/window.rs:202
+#: src/application.rs:166 src/window.rs:200
 msgid "_New Game"
 msgstr "_Нова гра"
 
-#: src/application.rs:215
+#: src/application.rs:214
 msgid "Based on classic BSD Robots"
 msgstr "Ґрунтується на класичні грі Роботи BSD"
 
-#: src/application.rs:227
+#: src/application.rs:226
 msgid "translator-credits"
 msgstr ""
 "Юрій Сирота\n"
@@ -261,7 +252,7 @@ msgstr ""
 "Wanderlust <wanderlust@ukr.net\n"
 ">Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: src/controls/controls.rs:31 src/properties_dialog.rs:59
+#: src/controls/controls.rs:31 src/properties_dialog.rs:63
 msgid "Keyboard"
 msgstr "Клавіатура"
 
@@ -269,15 +260,15 @@ msgstr "Клавіатура"
 msgid "_Restore Defaults"
 msgstr "_Відновити початкові параметри"
 
-#: src/controls/editor.rs:118
+#: src/controls/editor.rs:131
 msgid "New accelerator…"
 msgstr "Нове скорочення…"
 
-#: src/controls/editor.rs:128
+#: src/controls/editor.rs:141
 msgid "Disabled"
 msgstr "Вимкнено"
 
-#: src/game_area.rs:416
+#: src/game_area.rs:424
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -285,51 +276,51 @@ msgstr ""
 "Витаємо. Ви перемогли роботів!\n"
 "Але чи вдасться вам зробити це ще раз?"
 
-#: src/game_area.rs:421
+#: src/game_area.rs:429
 msgid "There are no teleport locations left!!"
 msgstr "Немає місць для телепортації!"
 
-#: src/properties_dialog.rs:39
+#: src/properties_dialog.rs:43
 msgid "Game"
 msgstr "Гра"
 
-#: src/properties_dialog.rs:48
+#: src/properties_dialog.rs:52
 msgid "Appearance"
 msgstr "Вигляд"
 
-#: src/properties_dialog.rs:87
+#: src/properties_dialog.rs:95
 msgid "_Use safe moves"
 msgstr "_Використовувати безпечні ходи"
 
-#: src/properties_dialog.rs:90
+#: src/properties_dialog.rs:98
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Не дозволяти деякі ходи, що спричинять смерть гравця."
 
-#: src/properties_dialog.rs:97
+#: src/properties_dialog.rs:105
 msgid "U_se super safe moves"
 msgstr "_Особливо  безпечні ходи"
 
-#: src/properties_dialog.rs:99
+#: src/properties_dialog.rs:107
 msgid "Prevents all moves that result in getting killed."
 msgstr "Не дозволяти всі ходи, що спричинять смерть гравця."
 
-#: src/properties_dialog.rs:120
+#: src/properties_dialog.rs:136
 msgid "_Enable sounds"
 msgstr "_Увімкнути звуки"
 
-#: src/properties_dialog.rs:123
+#: src/properties_dialog.rs:139
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Відтворювати звуки на події на зразок перемоги чи смерті."
 
-#: src/properties_dialog.rs:148
+#: src/properties_dialog.rs:166
 msgid "Game Type"
 msgstr "Тип гри"
 
-#: src/properties_dialog.rs:160
+#: src/properties_dialog.rs:186
 msgid "_Image theme:"
 msgstr "_Тема зображень:"
 
-#: src/properties_dialog.rs:192
+#: src/properties_dialog.rs:226
 msgid "_Background color:"
 msgstr "Колір _тла:"
 
@@ -342,7 +333,6 @@ msgid "Rank"
 msgstr "Ранг"
 
 #: src/scores/grid.rs:36
-#| msgid "_Scores"
 msgid "Score"
 msgstr "Результат"
 
@@ -358,11 +348,11 @@ msgstr "Вітання!"
 msgid "_Done"
 msgstr "Виконано"
 
-#: src/scores/new_score_dialog.rs:83
+#: src/scores/new_score_dialog.rs:92
 msgid "Your score is the best!"
 msgstr "Ваш результат — найкращий!"
 
-#: src/scores/new_score_dialog.rs:85
+#: src/scores/new_score_dialog.rs:94
 msgid "Your score has made the top ten."
 msgstr "Ваш результат потрапив до десятки найкращих."
 
@@ -375,106 +365,113 @@ msgid "Play some games and your scores will show up here."
 msgstr "Зіграйте декілька разів, і програма покаже тут ваші результати."
 
 #: src/scores/scores_dialog.rs:45
-#| msgid "_Scores"
 msgid "High Scores"
 msgstr "Найкращі результати"
 
-#: src/scores/scores.rs:61
+#: src/scores/scores.rs:70
 msgid "Classic robots"
 msgstr "Класичні роботи"
 
-#: src/scores/scores.rs:62
+#: src/scores/scores.rs:71
 msgid "Classic robots with safe moves"
 msgstr "Класичні роботи з безпечними ходами"
 
-#: src/scores/scores.rs:64
+#: src/scores/scores.rs:73
 msgid "Classic robots with super-safe moves"
 msgstr "Класичні роботи з особливо безпечними ходами"
 
-#: src/scores/scores.rs:66
+#: src/scores/scores.rs:75
 msgid "Nightmare"
 msgstr "Жах"
 
-#: src/scores/scores.rs:67
+#: src/scores/scores.rs:76
 msgid "Nightmare with safe moves"
 msgstr "Жах з безпечними ходами"
 
-#: src/scores/scores.rs:69
+#: src/scores/scores.rs:78
 msgid "Nightmare with super-safe moves"
 msgstr "Жах з особливо безпечними ходами"
 
-#: src/scores/scores.rs:71
+#: src/scores/scores.rs:80
 msgid "Robots2"
 msgstr "Роботи2"
 
-#: src/scores/scores.rs:72
+#: src/scores/scores.rs:81
 msgid "Robots2 with safe moves"
 msgstr "Роботи2 з безпечними ходами"
 
-#: src/scores/scores.rs:73
+#: src/scores/scores.rs:82
 msgid "Robots2 with super-safe moves"
 msgstr "Роботи2 з особливо безпечними ходами"
 
-#: src/scores/scores.rs:74
+#: src/scores/scores.rs:83
 msgid "Robots2 easy"
 msgstr "Прості роботи2"
 
-#: src/scores/scores.rs:75
+#: src/scores/scores.rs:84
 msgid "Robots2 easy with safe moves"
 msgstr "Роботи2 з безпечними ходами"
 
-#: src/scores/scores.rs:77
+#: src/scores/scores.rs:86
 msgid "Robots2 easy with super-safe moves"
 msgstr "Роботи2 з особливо безпечними ходами"
 
-#: src/scores/scores.rs:80
+#: src/scores/scores.rs:89
 msgid "Robots with safe teleport"
 msgstr "Роботи з безпечною телепортацією"
 
-#: src/scores/scores.rs:83
+#: src/scores/scores.rs:92
 msgid "Robots with safe teleport with safe moves"
 msgstr "Роботи з безпечною телепортацією"
 
-#: src/scores/scores.rs:86
+#: src/scores/scores.rs:95
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Роботи з безпечною телепортацією та безпечними ходами"
 
-#: src/window.rs:113
+#: src/window.rs:111
 msgid "Teleport _Randomly"
 msgstr "_Випадкова телепортація"
 
-#: src/window.rs:134
+#: src/window.rs:132
 msgid "Teleport _Safely"
 msgstr "_Рятувальний телепорт"
 
-#: src/window.rs:150
+#: src/window.rs:148
 msgid "_Wait for Robots"
 msgstr "За_чекати на роботів"
 
-#: src/window.rs:206
+#: src/window.rs:204
 msgid "_Scores"
 msgstr "_Результати"
 
-#: src/window.rs:214
+#: src/window.rs:212
 msgid "_Preferences"
 msgstr "_Параметри"
 
-#: src/window.rs:218
+#: src/window.rs:216
 msgid "_Help"
 msgstr "_Довідка"
 
-#: src/window.rs:222
+#: src/window.rs:220
 msgid "_About Robots"
 msgstr "_Про «Роботи»"
 
-#: src/window.rs:279
+#: src/window.rs:280
+#| msgid "Level: %d\tScore: %d"
+msgid "Level: {level}\tScore: {score}"
+msgstr "Рівень: {level}\tБали: {score}"
+
+#: src/window.rs:286
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Залишилось: %d)"
 
-#, c-format
-#~ msgid "Level: %d\tScore: %d"
-#~ msgstr "Рівень: %d\tБали: %d"
+#~ msgid "Show toolbar"
+#~ msgstr "Показати панель інструментів"
+
+#~ msgid "Show toolbar. A standard option for toolbars."
+#~ msgstr ""
+#~ "Показувати панель інструментів. Стандартний параметри для інтерфейсу."
 
 #~ msgid "Preferences"
 #~ msgstr "Параметри"

@@ -1,59 +1,45 @@
 # Serbian translation of gnome-games
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2016.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2025.
 # This file is distributed under the same license as the gnome-games package.
 # Душан Марјановић <madafaka@bsd.org.yu>
-# Игор Несторовић <igor@prevod.org>, 2005.
 # Милош Поповић <gpopac@gmail.com>, 2010.
+# Игор Несторовић <igor@prevod.org>, 2005.
+# Марко М. Костић <marko.m.kostic@gmail.com>
 # Бранко Кокановић <branko.kokanovic@gmail.com>, 2010
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2016.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Гномове игре\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2023-02-12 20:11+0000\n"
-"PO-Revision-Date: 2023-02-16 11:06+0100\n"
-"Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
+"POT-Creation-Date: 2025-01-12 21:08+0000\n"
+"PO-Revision-Date: 2025-01-26 08:16+0100\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.5\n"
 
-#: data/app-menu.ui:7 src/application.vala:104
-msgid "_New Game"
-msgstr "_Нова игра"
-
-#: data/app-menu.ui:11
-msgid "_Scores"
-msgstr "_Резултати"
-
-#: data/app-menu.ui:17
-msgid "_Preferences"
-msgstr "_Поставке"
-
-#: data/app-menu.ui:21
-msgid "_Help"
-msgstr "По_моћ"
-
-#: data/app-menu.ui:25
-msgid "_About Robots"
-msgstr "_О Роботима"
-
-#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
-#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
+#: src/application.rs:71 src/application.rs:210 src/window.rs:53
 msgid "Robots"
 msgstr "Роботи"
 
-#: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
+#: data/org.gnome.Robots.desktop.in:4 data/org.gnome.Robots.metainfo.xml.in:8
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Избегавајте роботе и потрудите се да се сударе"
 
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Robots.desktop.in:6
+msgid "game;arcade;teleport;"
+msgstr "роботи;игра;аркадна;телепортовање;пренос на даљину;"
+
 #. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
-#: data/org.gnome.Robots.appdata.xml.in:11
+#: data/org.gnome.Robots.metainfo.xml.in:11
 msgid ""
 "It is the distant future: the year 2000. Evil robots are trying to kill you. "
 "Avoid the robots or face certain death."
@@ -61,7 +47,7 @@ msgstr ""
 "Далека будућност: година 2000. Зли роботи покушавају да вам дођу главе. "
 "Избегавајте их или се суочите са сигурном погибијом."
 
-#: data/org.gnome.Robots.appdata.xml.in:15
+#: data/org.gnome.Robots.metainfo.xml.in:15
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -74,7 +60,7 @@ msgstr ""
 "смећа. Можете да се заштитите премештајући гомиле смећа, или да побегнете на "
 "сигурно помоћу вашег пригодног уређаја за телепортовање."
 
-#: data/org.gnome.Robots.appdata.xml.in:22
+#: data/org.gnome.Robots.metainfo.xml.in:22
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -85,52 +71,39 @@ msgstr ""
 "неког робота, који ће вас у тили час умлатити. Преживите што дуже можете, "
 "ако можете (сами против њих)!"
 
-#: data/org.gnome.Robots.appdata.xml.in:62
+#: data/org.gnome.Robots.metainfo.xml.in:65
 msgid "Andrey Kutejko"
 msgstr "Андреј Кутејко (Andrey Kutejko)"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Robots.desktop.in:6
-msgid "game;arcade;teleport;"
-msgstr "роботи;игра;аркадна;телепортовање;пренос на даљину;"
-
 #: data/org.gnome.Robots.gschema.xml:5
-msgid "Show toolbar"
-msgstr "Прикажи палету алата"
-
-#: data/org.gnome.Robots.gschema.xml:6
-msgid "Show toolbar. A standard option for toolbars."
-msgstr "Прикажи палету алата. Уобичајена опција за палете алата."
-
-#: data/org.gnome.Robots.gschema.xml:10
 msgid "Robot image theme"
 msgstr "Тема за изглед робота"
 
-#: data/org.gnome.Robots.gschema.xml:11
+#: data/org.gnome.Robots.gschema.xml:6
 msgid "Robot image theme. The theme of the images to use for the robots."
 msgstr "Тема за изглед робота. Тема са сликама које се користе за роботе."
 
-#: data/org.gnome.Robots.gschema.xml:15
+#: data/org.gnome.Robots.gschema.xml:10
 msgid "Background color"
 msgstr "Боја позадине"
 
-#: data/org.gnome.Robots.gschema.xml:16
+#: data/org.gnome.Robots.gschema.xml:11
 msgid "Background color. The hex specification of the background color."
 msgstr "Боја позадине. Хексадекадна вредност за боју позадине."
 
-#: data/org.gnome.Robots.gschema.xml:20
+#: data/org.gnome.Robots.gschema.xml:15
 msgid "Game type"
 msgstr "Врсте игара"
 
-#: data/org.gnome.Robots.gschema.xml:21
+#: data/org.gnome.Robots.gschema.xml:16
 msgid "Game type. The name of the game variation to use."
 msgstr "Врста игре. Назив варијације игре која ће се играти."
 
-#: data/org.gnome.Robots.gschema.xml:25
+#: data/org.gnome.Robots.gschema.xml:20
 msgid "Use safe moves"
 msgstr "Користи безбедне потезе"
 
-#: data/org.gnome.Robots.gschema.xml:26
+#: data/org.gnome.Robots.gschema.xml:21
 msgid ""
 "Use safe moves. The safe moves option will help you to avoid being killed "
 "due to a mistake. If you try to make a move that would lead to your death "
@@ -140,11 +113,11 @@ msgstr ""
 "грешке. Уколико је ова опција укључена и покушате да направите потез који ће "
 "довести до ваше смрти нећете моћи да га извршите."
 
-#: data/org.gnome.Robots.gschema.xml:30
+#: data/org.gnome.Robots.gschema.xml:25
 msgid "Use super safe moves"
 msgstr "Користи супер безбедне потезе"
 
-#: data/org.gnome.Robots.gschema.xml:31
+#: data/org.gnome.Robots.gschema.xml:26
 msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
@@ -152,99 +125,99 @@ msgstr ""
 "Користи супер безбедне потезе. Играч се обавештава кад нема више безбедних "
 "потеза и када је једина могућност телепортовање."
 
-#: data/org.gnome.Robots.gschema.xml:35
+#: data/org.gnome.Robots.gschema.xml:30
 msgid "Enable game sounds"
 msgstr "Укључи звукове игре"
 
-#: data/org.gnome.Robots.gschema.xml:36
+#: data/org.gnome.Robots.gschema.xml:31
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Укључи звукове игре. Пусти звукове за разне догађаје током игре."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
+#: data/org.gnome.Robots.gschema.xml:35 src/controls/controls.rs:35
 msgid "Key to move NW"
 msgstr "Тастер за кретање на северозапад"
 
-#: data/org.gnome.Robots.gschema.xml:41
+#: data/org.gnome.Robots.gschema.xml:36
 msgid "The key used to move north-west."
 msgstr "Тастер коришћен за кретање на северозапад."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
+#: data/org.gnome.Robots.gschema.xml:40 src/controls/controls.rs:36
 msgid "Key to move N"
 msgstr "Тастер за кретање на север"
 
-#: data/org.gnome.Robots.gschema.xml:46
+#: data/org.gnome.Robots.gschema.xml:41
 msgid "The key used to move north."
 msgstr "Тастер коришћен за кретање на север."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
+#: data/org.gnome.Robots.gschema.xml:45 src/controls/controls.rs:37
 msgid "Key to move NE"
 msgstr "Тастер за кретање на североисток"
 
-#: data/org.gnome.Robots.gschema.xml:51
+#: data/org.gnome.Robots.gschema.xml:46
 msgid "The key used to move north-east."
 msgstr "Тастер коришћен за кретање на североисток."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
+#: data/org.gnome.Robots.gschema.xml:50 src/controls/controls.rs:38
 msgid "Key to move W"
 msgstr "Тастер за кретање на запад"
 
-#: data/org.gnome.Robots.gschema.xml:57
+#: data/org.gnome.Robots.gschema.xml:51
 msgid "The key used to move west."
 msgstr "Тастер коришћен за кретање на запад."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
+#: data/org.gnome.Robots.gschema.xml:55 src/controls/controls.rs:39
 msgid "Key to hold"
 msgstr "Тастер за држање"
 
-#: data/org.gnome.Robots.gschema.xml:62
+#: data/org.gnome.Robots.gschema.xml:56
 msgid "The key used to hold still."
 msgstr "Тастер коришћен за држање непокретним."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
+#: data/org.gnome.Robots.gschema.xml:60 src/controls/controls.rs:40
 msgid "Key to move E"
 msgstr "Тастер за кретање на исток"
 
-#: data/org.gnome.Robots.gschema.xml:67
+#: data/org.gnome.Robots.gschema.xml:61
 msgid "The key used to move east."
 msgstr "Тастер коришћен за кретање на исток."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
+#: data/org.gnome.Robots.gschema.xml:65 src/controls/controls.rs:41
 msgid "Key to move SW"
 msgstr "Тастер за кретање на југозапад"
 
-#: data/org.gnome.Robots.gschema.xml:72
+#: data/org.gnome.Robots.gschema.xml:66
 msgid "The key used to move south-west."
 msgstr "Тастер коришћен за кретање на југозапад."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
+#: data/org.gnome.Robots.gschema.xml:70 src/controls/controls.rs:42
 msgid "Key to move S"
 msgstr "Тастер за кретање на југ"
 
-#: data/org.gnome.Robots.gschema.xml:77
+#: data/org.gnome.Robots.gschema.xml:71
 msgid "The key used to move south."
 msgstr "Тастер коришћен за кретање на југ."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
+#: data/org.gnome.Robots.gschema.xml:75 src/controls/controls.rs:43
 msgid "Key to move SE"
 msgstr "Тастер за кретање на југоисток"
 
-#: data/org.gnome.Robots.gschema.xml:82
+#: data/org.gnome.Robots.gschema.xml:76
 msgid "The key used to move south-east."
 msgstr "Тастер коришћен за кретање на југоисток."
 
-#: data/org.gnome.Robots.gschema.xml:86
+#: data/org.gnome.Robots.gschema.xml:80
 msgid "Width of the window in pixels"
 msgstr "Ширина прозора у тачкама"
 
-#: data/org.gnome.Robots.gschema.xml:90
+#: data/org.gnome.Robots.gschema.xml:84
 msgid "Height of the window in pixels"
 msgstr "Висина прозора у тачкама"
 
-#: data/org.gnome.Robots.gschema.xml:94
+#: data/org.gnome.Robots.gschema.xml:88
 msgid "true if the window is maximized"
 msgstr "изабрано ако је прозор увећан"
 
-#: src/application.vala:63
+#: src/application.rs:117
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -252,19 +225,27 @@ msgstr ""
 "Програм Роботи није успео да пронађе ниједну датотеку са исправним "
 "подешавањима игре. Проверите да ли је програм исправно инсталиран."
 
-#: src/application.vala:101
+#: src/application.rs:159
+msgid "New Game"
+msgstr "Нова игра"
+
+#: src/application.rs:161
 msgid "Are you sure you want to discard the current game?"
 msgstr "Да ли сигурно желите да одбаците текућу игру?"
 
-#: src/application.vala:103
+#: src/application.rs:165
 msgid "Keep _Playing"
 msgstr "_Настави игру"
 
-#: src/application.vala:157
+#: src/application.rs:166 src/window.rs:200
+msgid "_New Game"
+msgstr "_Нова игра"
+
+#: src/application.rs:214
 msgid "Based on classic BSD Robots"
 msgstr "Засновано на класичним БСД Роботима"
 
-#: src/application.vala:161
+#: src/application.rs:226
 msgid "translator-credits"
 msgstr ""
 "Душан Марјановић <madafaka@root.co.yu>\n"
@@ -273,7 +254,23 @@ msgstr ""
 "\n"
 "http://prevod.org — превод на српски језик"
 
-#: src/game-area.vala:356
+#: src/controls/controls.rs:31 src/properties_dialog.rs:63
+msgid "Keyboard"
+msgstr "Тастатура"
+
+#: src/controls/controls.rs:56
+msgid "_Restore Defaults"
+msgstr "_Поврати подразумевано"
+
+#: src/controls/editor.rs:131
+msgid "New accelerator…"
+msgstr "Нова пречица…"
+
+#: src/controls/editor.rs:141
+msgid "Disabled"
+msgstr "Искључено"
+
+#: src/game_area.rs:424
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -281,154 +278,204 @@ msgstr ""
 "Честитамо, Победили сте роботе!! \n"
 "Али да ли можете опет?"
 
-#: src/game-area.vala:360
+#: src/game_area.rs:429
 msgid "There are no teleport locations left!!"
 msgstr "Нема више места за пренос на даљину!!"
 
-#: src/properties-dialog.vala:68
-msgid "Preferences"
-msgstr "Поставке"
-
-#: src/properties-dialog.vala:84
-msgid "Game Type"
-msgstr "Врста игара"
-
-#: src/properties-dialog.vala:95
-msgid "_Use safe moves"
-msgstr "_Користи безбедне потезе"
-
-#: src/properties-dialog.vala:97
-msgid "Prevent accidental moves that result in getting killed."
-msgstr "Спречи ненамерне потезе који могу довести до погибије."
-
-#: src/properties-dialog.vala:100
-msgid "U_se super safe moves"
-msgstr "Кори_сти супер безбедне потезе"
-
-#: src/properties-dialog.vala:102
-msgid "Prevents all moves that result in getting killed."
-msgstr "Спречава све потезе који могу довести до погибије."
-
-#: src/properties-dialog.vala:114
-msgid "_Enable sounds"
-msgstr "_Укључи звукове"
-
-#: src/properties-dialog.vala:119
-msgid "Play sounds for events like winning a level and dying."
-msgstr "Пушта звуке за догађаје као што је освајање нивоа или погибија."
-
-#: src/properties-dialog.vala:122
+#: src/properties_dialog.rs:43
 msgid "Game"
 msgstr "Игра"
 
-#: src/properties-dialog.vala:128
-msgid "_Image theme:"
-msgstr "Тема за _слике:"
-
-#: src/properties-dialog.vala:138
-msgid "_Background color:"
-msgstr "Боја _позадине:"
-
-#: src/properties-dialog.vala:148
+#: src/properties_dialog.rs:52
 msgid "Appearance"
 msgstr "Изглед"
 
-#: src/properties-dialog.vala:162
-msgid "_Restore Defaults"
-msgstr "_Поврати подразумевано"
+#: src/properties_dialog.rs:95
+msgid "_Use safe moves"
+msgstr "_Користи безбедне потезе"
 
-#: src/properties-dialog.vala:166
-msgid "Keyboard"
-msgstr "Тастатура"
+#: src/properties_dialog.rs:98
+msgid "Prevent accidental moves that result in getting killed."
+msgstr "Спречи ненамерне потезе који могу довести до погибије."
 
-#. Label on the scores dialog, next to map type dropdown
-#: src/scores.vala:28
+#: src/properties_dialog.rs:105
+msgid "U_se super safe moves"
+msgstr "Кори_сти супер безбедне потезе"
+
+#: src/properties_dialog.rs:107
+msgid "Prevents all moves that result in getting killed."
+msgstr "Спречава све потезе који могу довести до погибије."
+
+#: src/properties_dialog.rs:136
+msgid "_Enable sounds"
+msgstr "_Укључи звукове"
+
+#: src/properties_dialog.rs:139
+msgid "Play sounds for events like winning a level and dying."
+msgstr "Пушта звуке за догађаје као што је освајање нивоа или погибија."
+
+#: src/properties_dialog.rs:166
+msgid "Game Type"
+msgstr "Врста игара"
+
+#: src/properties_dialog.rs:186
+msgid "_Image theme:"
+msgstr "Тема за _слике:"
+
+#: src/properties_dialog.rs:226
+msgid "_Background color:"
+msgstr "Боја _позадине:"
+
+#: src/scores/category_bar.rs:34
 msgid "Game Type:"
 msgstr "Врста игре:"
 
-#: src/scores.vala:53
+#: src/scores/grid.rs:35
+msgid "Rank"
+msgstr "Пласман"
+
+#: src/scores/grid.rs:36
+msgid "Score"
+msgstr "Резултат"
+
+#: src/scores/grid.rs:37
+msgid "Player"
+msgstr "Играч"
+
+#: src/scores/new_score_dialog.rs:43
+msgid "Congratulations!"
+msgstr "Честитамо!"
+
+#: src/scores/new_score_dialog.rs:65
+msgid "_Done"
+msgstr "_Готово"
+
+#: src/scores/new_score_dialog.rs:92
+msgid "Your score is the best!"
+msgstr "Ваш резултат је најбољи!"
+
+#: src/scores/new_score_dialog.rs:94
+msgid "Your score has made the top ten."
+msgstr "Ваш резултат је у најбољих десет."
+
+#: src/scores/no_scores.rs:45
+msgid "No scores yet"
+msgstr "За сада нема резултата"
+
+#: src/scores/no_scores.rs:53
+msgid "Play some games and your scores will show up here."
+msgstr "Одиграјте неку игру и ваш резултат ће се појавити овде."
+
+#: src/scores/scores_dialog.rs:45
+msgid "High Scores"
+msgstr "Најбољи резултати"
+
+#: src/scores/scores.rs:70
 msgid "Classic robots"
 msgstr "Класични роботи"
 
-#: src/scores.vala:55
+#: src/scores/scores.rs:71
 msgid "Classic robots with safe moves"
 msgstr "Класични роботи са сигурним потезима"
 
-#: src/scores.vala:57
+#: src/scores/scores.rs:73
 msgid "Classic robots with super-safe moves"
 msgstr "Класични роботи са супер-сигурним потезима"
 
-#: src/scores.vala:59
+#: src/scores/scores.rs:75
 msgid "Nightmare"
 msgstr "Ноћна мора"
 
-#: src/scores.vala:61
+#: src/scores/scores.rs:76
 msgid "Nightmare with safe moves"
 msgstr "Ноћна мора са безбедним потезима"
 
-#: src/scores.vala:63
+#: src/scores/scores.rs:78
 msgid "Nightmare with super-safe moves"
 msgstr "Ноћна мора са супер-безбедним потезима"
 
-#: src/scores.vala:65
+#: src/scores/scores.rs:80
 msgid "Robots2"
 msgstr "Роботи2"
 
-#: src/scores.vala:67
+#: src/scores/scores.rs:81
 msgid "Robots2 with safe moves"
 msgstr "Роботи2 са безбедним потезима"
 
-#: src/scores.vala:69
+#: src/scores/scores.rs:82
 msgid "Robots2 with super-safe moves"
 msgstr "Роботи2 са супер-безбедним потезима"
 
-#: src/scores.vala:71
+#: src/scores/scores.rs:83
 msgid "Robots2 easy"
 msgstr "Роботи2 лаки"
 
-#: src/scores.vala:73
+#: src/scores/scores.rs:84
 msgid "Robots2 easy with safe moves"
 msgstr "Роботи2 лаки са безбедним потезима"
 
-#: src/scores.vala:75
+#: src/scores/scores.rs:86
 msgid "Robots2 easy with super-safe moves"
 msgstr "Роботи2 лаки са супер-безбедним потезима"
 
-#: src/scores.vala:77
+#: src/scores/scores.rs:89
 msgid "Robots with safe teleport"
 msgstr "Роботи са безбедним телепортима"
 
-#: src/scores.vala:79
+#: src/scores/scores.rs:92
 msgid "Robots with safe teleport with safe moves"
 msgstr "Роботи са безбедним телепортима"
 
-#: src/scores.vala:81
+#: src/scores/scores.rs:95
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Роботи са супер-безбедним телепортима"
 
-#: src/window.vala:113
+#: src/window.rs:111
 msgid "Teleport _Randomly"
 msgstr "_Случајно телепортуј"
 
-#: src/window.vala:138
+#: src/window.rs:132
+msgid "Teleport _Safely"
+msgstr "_Безбедно телепортуј"
+
+#: src/window.rs:148
 msgid "_Wait for Robots"
 msgstr "Чекај _роботе"
 
-#: src/window.vala:154
-#, c-format
-msgid "Level: %d\tScore: %d"
-msgstr "Ниво: %d\tРезултат: %d"
+#: src/window.rs:204
+msgid "_Scores"
+msgstr "_Резултати"
 
-#. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:157
+#: src/window.rs:212
+msgid "_Preferences"
+msgstr "_Поставке"
+
+#: src/window.rs:216
+msgid "_Help"
+msgstr "По_моћ"
+
+#: src/window.rs:220
+msgid "_About Robots"
+msgstr "_О Роботима"
+
+#: src/window.rs:280
+#| msgid "Level: %d\tScore: %d"
+msgid "Level: {level}\tScore: {score}"
+msgstr "Ниво: {level}\tРезултат: {score}"
+
+#: src/window.rs:286
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Преосталих: %d)"
 
-#. First line of safe teleports button label.
-#: src/window.vala:159
-msgid "Teleport _Safely"
-msgstr "_Безбедно телепортуј"
+#~ msgid "Show toolbar"
+#~ msgstr "Прикажи палету алата"
+
+#~ msgid "Show toolbar. A standard option for toolbars."
+#~ msgstr "Прикажи палету алата. Уобичајена опција за палете алата."
+
+#~ msgid "Preferences"
+#~ msgstr "Поставке"
 
 #~ msgid "GNOME Robots"
 #~ msgstr "Гномови роботи"

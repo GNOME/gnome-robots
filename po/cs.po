@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2024-08-24 13:23+0000\n"
-"PO-Revision-Date: 2024-09-10 16:06+0200\n"
+"POT-Creation-Date: 2025-02-12 23:17+0000\n"
+"PO-Revision-Date: 2025-02-22 00:24+0100\n"
 "Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -31,11 +31,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:72 src/application.rs:211 src/window.rs:55
+#: src/application.rs:71 src/application.rs:210 src/window.rs:53
 msgid "Robots"
 msgstr "Roboti"
 
@@ -81,49 +81,41 @@ msgstr ""
 "stát, že vás teleportace přenese přímo do cesty robota, který vás následně "
 "zabije. Snažte se přežít jak nejdéle to půjde."
 
-#: data/org.gnome.Robots.metainfo.xml.in:63
+#: data/org.gnome.Robots.metainfo.xml.in:65
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
 
 #: data/org.gnome.Robots.gschema.xml:5
-msgid "Show toolbar"
-msgstr "Zobrazit lištu nástrojů"
-
-#: data/org.gnome.Robots.gschema.xml:6
-msgid "Show toolbar. A standard option for toolbars."
-msgstr "Zobrazovat lištu nástrojů. Standardní volba pro lištu nástrojů."
-
-#: data/org.gnome.Robots.gschema.xml:10
 msgid "Robot image theme"
 msgstr "Obrázkový motiv robotů"
 
-#: data/org.gnome.Robots.gschema.xml:11
+#: data/org.gnome.Robots.gschema.xml:6
 msgid "Robot image theme. The theme of the images to use for the robots."
 msgstr ""
 "Obrázkový motiv robotů. Motiv obrázků, které se mají používat pro zobrazení "
 "robotů."
 
-#: data/org.gnome.Robots.gschema.xml:15
+#: data/org.gnome.Robots.gschema.xml:10
 msgid "Background color"
 msgstr "Barva pozadí"
 
-#: data/org.gnome.Robots.gschema.xml:16
+#: data/org.gnome.Robots.gschema.xml:11
 msgid "Background color. The hex specification of the background color."
 msgstr "Barva pozadí. Šestnáctková specifikace barvy pozadí."
 
-#: data/org.gnome.Robots.gschema.xml:20
+#: data/org.gnome.Robots.gschema.xml:15
 msgid "Game type"
 msgstr "Typ hry"
 
-#: data/org.gnome.Robots.gschema.xml:21
+#: data/org.gnome.Robots.gschema.xml:16
 msgid "Game type. The name of the game variation to use."
 msgstr "Typ hry. Název varianty hry, která se má používat."
 
-#: data/org.gnome.Robots.gschema.xml:25
+#: data/org.gnome.Robots.gschema.xml:20
 msgid "Use safe moves"
 msgstr "Používat bezpečné tahy"
 
-#: data/org.gnome.Robots.gschema.xml:26
+#: data/org.gnome.Robots.gschema.xml:21
 msgid ""
 "Use safe moves. The safe moves option will help you to avoid being killed "
 "due to a mistake. If you try to make a move that would lead to your death "
@@ -133,11 +125,11 @@ msgstr ""
 "omylem. Pokud se pokusíte provést tah, který by vedl k vaší smrti, a "
 "existuje bezpečný tah, nebude vám dovoleno pokračovat."
 
-#: data/org.gnome.Robots.gschema.xml:30
+#: data/org.gnome.Robots.gschema.xml:25
 msgid "Use super safe moves"
 msgstr "Používat superbezpečné tahy"
 
-#: data/org.gnome.Robots.gschema.xml:31
+#: data/org.gnome.Robots.gschema.xml:26
 msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
@@ -145,99 +137,99 @@ msgstr ""
 "Používat superbezpečné tahy. Hráč je upozorněn, když neexistuje bezpečný tah "
 "a jediná možnost je teleportovat se pryč."
 
-#: data/org.gnome.Robots.gschema.xml:35
+#: data/org.gnome.Robots.gschema.xml:30
 msgid "Enable game sounds"
 msgstr "Povolit zvuky hry"
 
-#: data/org.gnome.Robots.gschema.xml:36
+#: data/org.gnome.Robots.gschema.xml:31
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr "Povolit zvuky hry. Přehrávat zvuky pro různé události ve hře."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls/controls.rs:35
+#: data/org.gnome.Robots.gschema.xml:35 src/controls/controls.rs:35
 msgid "Key to move NW"
 msgstr "Klávesa pro pohyb SZ"
 
-#: data/org.gnome.Robots.gschema.xml:41
+#: data/org.gnome.Robots.gschema.xml:36
 msgid "The key used to move north-west."
 msgstr "Klávesa sloužící pro přesun severozápadně."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls/controls.rs:36
+#: data/org.gnome.Robots.gschema.xml:40 src/controls/controls.rs:36
 msgid "Key to move N"
 msgstr "Klávesa pro pohyb S"
 
-#: data/org.gnome.Robots.gschema.xml:46
+#: data/org.gnome.Robots.gschema.xml:41
 msgid "The key used to move north."
 msgstr "Klávesa sloužící pro přesun severně."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls/controls.rs:37
+#: data/org.gnome.Robots.gschema.xml:45 src/controls/controls.rs:37
 msgid "Key to move NE"
 msgstr "Klávesa pro pohyb SV"
 
-#: data/org.gnome.Robots.gschema.xml:51
+#: data/org.gnome.Robots.gschema.xml:46
 msgid "The key used to move north-east."
 msgstr "Klávesa sloužící pro přesun severovýchodně."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls/controls.rs:38
+#: data/org.gnome.Robots.gschema.xml:50 src/controls/controls.rs:38
 msgid "Key to move W"
 msgstr "Klávesa pro pohyb Z"
 
-#: data/org.gnome.Robots.gschema.xml:57
+#: data/org.gnome.Robots.gschema.xml:51
 msgid "The key used to move west."
 msgstr "Klávesa sloužící pro přesun západně."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls/controls.rs:39
+#: data/org.gnome.Robots.gschema.xml:55 src/controls/controls.rs:39
 msgid "Key to hold"
 msgstr "Klávesa pro stání"
 
-#: data/org.gnome.Robots.gschema.xml:62
+#: data/org.gnome.Robots.gschema.xml:56
 msgid "The key used to hold still."
 msgstr "Klávesa sloužící ke stání na místě."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls/controls.rs:40
+#: data/org.gnome.Robots.gschema.xml:60 src/controls/controls.rs:40
 msgid "Key to move E"
 msgstr "Klávesa pro pohyb V"
 
-#: data/org.gnome.Robots.gschema.xml:67
+#: data/org.gnome.Robots.gschema.xml:61
 msgid "The key used to move east."
 msgstr "Klávesa sloužící pro přesun východně."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls/controls.rs:41
+#: data/org.gnome.Robots.gschema.xml:65 src/controls/controls.rs:41
 msgid "Key to move SW"
 msgstr "Klávesa pro pohyb JZ"
 
-#: data/org.gnome.Robots.gschema.xml:72
+#: data/org.gnome.Robots.gschema.xml:66
 msgid "The key used to move south-west."
 msgstr "Klávesa sloužící pro přesun jihozápadně."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls/controls.rs:42
+#: data/org.gnome.Robots.gschema.xml:70 src/controls/controls.rs:42
 msgid "Key to move S"
 msgstr "Klávesa pro pohyb J"
 
-#: data/org.gnome.Robots.gschema.xml:77
+#: data/org.gnome.Robots.gschema.xml:71
 msgid "The key used to move south."
 msgstr "Klávesa sloužící pro přesun jižně."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls/controls.rs:43
+#: data/org.gnome.Robots.gschema.xml:75 src/controls/controls.rs:43
 msgid "Key to move SE"
 msgstr "Klávesa pro pohyb JV"
 
-#: data/org.gnome.Robots.gschema.xml:82
+#: data/org.gnome.Robots.gschema.xml:76
 msgid "The key used to move south-east."
 msgstr "Klávesa sloužící pro přesun jihovýchodně."
 
-#: data/org.gnome.Robots.gschema.xml:86
+#: data/org.gnome.Robots.gschema.xml:80
 msgid "Width of the window in pixels"
 msgstr "Šířka okna v pixelech."
 
-#: data/org.gnome.Robots.gschema.xml:90
+#: data/org.gnome.Robots.gschema.xml:84
 msgid "Height of the window in pixels"
 msgstr "Výška okna v pixelech."
 
-#: data/org.gnome.Robots.gschema.xml:94
+#: data/org.gnome.Robots.gschema.xml:88
 msgid "true if the window is maximized"
 msgstr "Zapnuto, pokud je okno maximalizováno"
 
-#: src/application.rs:118
+#: src/application.rs:117
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -245,27 +237,27 @@ msgstr ""
 "Program Roboti nemohl najít platné soubory nastavení hry. Zkontrolujte "
 "prosím, zda je program správně nainstalován."
 
-#: src/application.rs:160
+#: src/application.rs:159
 msgid "New Game"
 msgstr "Nová hra"
 
-#: src/application.rs:162
+#: src/application.rs:161
 msgid "Are you sure you want to discard the current game?"
 msgstr "Opravdu chcete zrušit současnou hru?"
 
-#: src/application.rs:166
+#: src/application.rs:165
 msgid "Keep _Playing"
 msgstr "_Pokračovat ve hře"
 
-#: src/application.rs:167 src/window.rs:202
+#: src/application.rs:166 src/window.rs:200
 msgid "_New Game"
 msgstr "_Nová hra"
 
-#: src/application.rs:215
+#: src/application.rs:214
 msgid "Based on classic BSD Robots"
 msgstr "Založeno na klasických Robotech z BSD"
 
-#: src/application.rs:227
+#: src/application.rs:226
 msgid "translator-credits"
 msgstr ""
 "Jirka Lébl\n"
@@ -282,7 +274,7 @@ msgstr ""
 "Petr Pulc <petrpulc@gmail.com>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: src/controls/controls.rs:31 src/properties_dialog.rs:59
+#: src/controls/controls.rs:31 src/properties_dialog.rs:63
 msgid "Keyboard"
 msgstr "Klávesnice"
 
@@ -290,15 +282,15 @@ msgstr "Klávesnice"
 msgid "_Restore Defaults"
 msgstr "_Obnovit výchozí"
 
-#: src/controls/editor.rs:118
+#: src/controls/editor.rs:131
 msgid "New accelerator…"
 msgstr "Nový urychlovač…"
 
-#: src/controls/editor.rs:128
+#: src/controls/editor.rs:141
 msgid "Disabled"
 msgstr "Zakázáno"
 
-#: src/game_area.rs:416
+#: src/game_area.rs:424
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -306,51 +298,51 @@ msgstr ""
 "Blahopřejeme, porazili jste roboty!! \n"
 "Povede se vám to znovu?"
 
-#: src/game_area.rs:421
+#: src/game_area.rs:429
 msgid "There are no teleport locations left!!"
 msgstr "Nezbývá žádné umístění teleportu!!"
 
-#: src/properties_dialog.rs:39
+#: src/properties_dialog.rs:43
 msgid "Game"
 msgstr "Hra"
 
-#: src/properties_dialog.rs:48
+#: src/properties_dialog.rs:52
 msgid "Appearance"
 msgstr "Vzhled"
 
-#: src/properties_dialog.rs:87
+#: src/properties_dialog.rs:95
 msgid "_Use safe moves"
 msgstr "Používat _bezpečné tahy"
 
-#: src/properties_dialog.rs:90
+#: src/properties_dialog.rs:98
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Bránit náhodným tahům, které způsobí smrt."
 
-#: src/properties_dialog.rs:97
+#: src/properties_dialog.rs:105
 msgid "U_se super safe moves"
 msgstr "Používat _superbezpečné tahy"
 
-#: src/properties_dialog.rs:99
+#: src/properties_dialog.rs:107
 msgid "Prevents all moves that result in getting killed."
 msgstr "Bránit všem tahům, které způsobí smrt."
 
-#: src/properties_dialog.rs:120
+#: src/properties_dialog.rs:136
 msgid "_Enable sounds"
 msgstr "_Povolit zvuky"
 
-#: src/properties_dialog.rs:123
+#: src/properties_dialog.rs:139
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Přehrávat zvuky pro události jako výhra úrovně a smrt."
 
-#: src/properties_dialog.rs:148
+#: src/properties_dialog.rs:166
 msgid "Game Type"
 msgstr "Typ hry"
 
-#: src/properties_dialog.rs:160
+#: src/properties_dialog.rs:186
 msgid "_Image theme:"
 msgstr "_Obrázkový motiv:"
 
-#: src/properties_dialog.rs:192
+#: src/properties_dialog.rs:226
 msgid "_Background color:"
 msgstr "Barva _pozadí:"
 
@@ -378,11 +370,11 @@ msgstr "Gratulujeme!"
 msgid "_Done"
 msgstr "_Hotovo"
 
-#: src/scores/new_score_dialog.rs:83
+#: src/scores/new_score_dialog.rs:92
 msgid "Your score is the best!"
 msgstr "Vaše skóre je nejlepší!"
 
-#: src/scores/new_score_dialog.rs:85
+#: src/scores/new_score_dialog.rs:94
 msgid "Your score has made the top ten."
 msgstr "Vaše skóre se dostalo do první desítky."
 
@@ -398,102 +390,108 @@ msgstr "Zahrajte si nějaké hry a vaše skóre se zobrazí zde."
 msgid "High Scores"
 msgstr "Nejvyšší skóre"
 
-#: src/scores/scores.rs:61
+#: src/scores/scores.rs:70
 msgid "Classic robots"
 msgstr "Klasičtí roboti"
 
-#: src/scores/scores.rs:62
+#: src/scores/scores.rs:71
 msgid "Classic robots with safe moves"
 msgstr "Klasičtí roboti s bezpečnými tahy"
 
-#: src/scores/scores.rs:64
+#: src/scores/scores.rs:73
 msgid "Classic robots with super-safe moves"
 msgstr "Klasičtí roboti se superbezpečnými tahy"
 
-#: src/scores/scores.rs:66
+#: src/scores/scores.rs:75
 msgid "Nightmare"
 msgstr "Noční můra"
 
-#: src/scores/scores.rs:67
+#: src/scores/scores.rs:76
 msgid "Nightmare with safe moves"
 msgstr "Noční můra s bezpečnými tahy"
 
-#: src/scores/scores.rs:69
+#: src/scores/scores.rs:78
 msgid "Nightmare with super-safe moves"
 msgstr "Noční můra se superbezpečnými tahy"
 
-#: src/scores/scores.rs:71
+#: src/scores/scores.rs:80
 msgid "Robots2"
 msgstr "Roboti 2"
 
-#: src/scores/scores.rs:72
+#: src/scores/scores.rs:81
 msgid "Robots2 with safe moves"
 msgstr "Roboti 2 s bezpečnými tahy"
 
-#: src/scores/scores.rs:73
+#: src/scores/scores.rs:82
 msgid "Robots2 with super-safe moves"
 msgstr "Roboti 2 se superbezpečnými tahy"
 
-#: src/scores/scores.rs:74
+#: src/scores/scores.rs:83
 msgid "Robots2 easy"
 msgstr "Roboti 2 snadní"
 
-#: src/scores/scores.rs:75
+#: src/scores/scores.rs:84
 msgid "Robots2 easy with safe moves"
 msgstr "Roboti 2 snadní s bezpečnými tahy"
 
-#: src/scores/scores.rs:77
+#: src/scores/scores.rs:86
 msgid "Robots2 easy with super-safe moves"
 msgstr "Roboti 2 snadní se superbezpečnými tahy"
 
-#: src/scores/scores.rs:80
+#: src/scores/scores.rs:89
 msgid "Robots with safe teleport"
 msgstr "Roboti s bezpečným teleportem"
 
-#: src/scores/scores.rs:83
+#: src/scores/scores.rs:92
 msgid "Robots with safe teleport with safe moves"
 msgstr "Roboti s bezpečným teleportem a bezpečnými tahy"
 
-#: src/scores/scores.rs:86
+#: src/scores/scores.rs:95
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Roboti s bezpečným teleportem se superbezpečnými tahy"
 
-#: src/window.rs:113
+#: src/window.rs:111
 msgid "Teleport _Randomly"
 msgstr "Telepo_rtovat se náhodně"
 
-#: src/window.rs:134
+#: src/window.rs:132
 msgid "Teleport _Safely"
 msgstr "Teleportovat _se bezpečně"
 
-#: src/window.rs:150
+#: src/window.rs:148
 msgid "_Wait for Robots"
 msgstr "Č_ekat na roboty"
 
-#: src/window.rs:206
+#: src/window.rs:204
 msgid "_Scores"
 msgstr "_Skóre"
 
-#: src/window.rs:214
+#: src/window.rs:212
 msgid "_Preferences"
 msgstr "_Předvolby"
 
-#: src/window.rs:218
+#: src/window.rs:216
 msgid "_Help"
 msgstr "_Nápověda"
 
-#: src/window.rs:222
+#: src/window.rs:220
 msgid "_About Robots"
 msgstr "O _aplikaci Roboti"
 
-#: src/window.rs:279
+#: src/window.rs:280
+msgid "Level: {level}\tScore: {score}"
+msgstr "Úroveň: {level}\tSkóre: {score}"
+
+#: src/window.rs:286
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(zbývá: %d)"
 
-#, c-format
-#~ msgid "Level: %d\tScore: %d"
-#~ msgstr "Úroveň: %d\tSkóre: %d"
+#~ msgid "Show toolbar"
+#~ msgstr "Zobrazit lištu nástrojů"
+
+#~ msgid "Show toolbar. A standard option for toolbars."
+#~ msgstr "Zobrazovat lištu nástrojů. Standardní volba pro lištu nástrojů."
 
 #~ msgid "Preferences"
 #~ msgstr "Předvolby"

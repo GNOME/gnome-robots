@@ -19,8 +19,8 @@
 
 use crate::animation::{self, Animation, InfiniteAnimation};
 use crate::arena::ObjectType;
-use crate::image::image_from_file;
-use gtk::{gdk, glib, glib::subclass::prelude::*, graphene, prelude::*};
+use crate::image::Image;
+use gtk::{glib, glib::subclass::prelude::*, graphene, prelude::*};
 use std::error::Error;
 use std::ops::Range;
 use std::path::{Path, PathBuf};
@@ -39,8 +39,7 @@ mod imp {
     #[derive(glib::Properties, Default)]
     #[properties(wrapper_type = super::Theme)]
     pub struct Theme {
-        #[property(construct_only)]
-        pub paintable: OnceCell<gdk::Paintable>,
+        pub image: OnceCell<Image>,
         #[property(get, construct_only)]
         pub path: OnceCell<PathBuf>,
         #[property(get, construct_only)]
@@ -64,17 +63,18 @@ glib::wrapper! {
 
 impl Theme {
     pub fn from_file(path: &Path) -> Result<Self, Box<dyn Error>> {
-        let paintable = image_from_file(path)?;
+        let image = Image::from_file(path)?;
         let name = path
             .file_stem()
             .ok_or("Bad file name")?
             .to_string_lossy()
             .replace("_", " ");
-        Ok(glib::Object::builder()
-            .property("paintable", paintable)
+        let this: Self = glib::Object::builder()
             .property("path", path)
             .property("name", name)
-            .build())
+            .build();
+        this.imp().image.set(image).ok().unwrap();
+        Ok(this)
     }
 
     pub fn draw_object(
@@ -95,15 +95,22 @@ impl Theme {
         snapshot.push_clip(rect);
 
         snapshot.save();
-        snapshot.translate(&graphene::Point::new(
-            rect.x() - (tile_no as f32) * rect.width(),
-            rect.y(),
-        ));
-        self.imp().paintable.get().unwrap().snapshot(
-            snapshot,
-            (rect.width() as f64) * (FRAMES_COUNT as f64),
-            rect.height() as f64,
-        );
+        let frame_offset = (tile_no as i32) * (rect.width() as i32);
+        let texture_width = (rect.width() as i32) * (FRAMES_COUNT as i32);
+        let texture_height = rect.height() as i32;
+        let image = self.imp().image.get().unwrap();
+        match image.scaled(texture_width, texture_height) {
+            Ok(texture) => {
+                snapshot.translate(&graphene::Point::new(
+                    rect.x() - frame_offset as f32,
+                    rect.y(),
+                ));
+                texture.snapshot(snapshot, texture_width as f64, texture_height as f64);
+            }
+            Err(error) => {
+                eprintln!("Failed to get a scaled texture: {error}");
+            }
+        }
         snapshot.restore();
 
         snapshot.pop();

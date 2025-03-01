@@ -17,7 +17,7 @@
  * For more details see the file COPYING.
  */
 
-use crate::image::image_from_file;
+use crate::image::Image;
 use gtk::{gdk, graphene, prelude::*};
 use std::error::Error;
 use std::path::Path;
@@ -30,7 +30,7 @@ pub struct Bubble {
 impl Bubble {
     pub fn from_file(filename: &Path) -> Result<Self, Box<dyn Error>> {
         Ok(Self {
-            paintable: image_from_file(filename)?,
+            paintable: Image::from_file(filename)?.to_paintable(),
         })
     }
 

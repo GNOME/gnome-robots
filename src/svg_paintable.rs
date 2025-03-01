@@ -18,6 +18,7 @@
  */
 
 use gtk::{cairo, gdk, gdk::subclass::prelude::*, glib, graphene};
+use std::rc::Rc;
 
 mod imp {
     use super::*;
@@ -26,7 +27,7 @@ mod imp {
 
     #[derive(Default)]
     pub struct SvgPaintable {
-        pub handle: OnceCell<rsvg::SvgHandle>,
+        pub handle: OnceCell<Rc<rsvg::SvgHandle>>,
     }
 
     #[glib::object_subclass]
@@ -86,9 +87,9 @@ glib::wrapper! {
 }
 
 impl SvgPaintable {
-    pub fn new(handle: rsvg::SvgHandle) -> Self {
+    pub fn new(handle: &Rc<rsvg::SvgHandle>) -> Self {
         let this: Self = glib::Object::builder().build();
-        this.imp().handle.set(handle).ok().unwrap();
+        this.imp().handle.set(handle.clone()).ok().unwrap();
         this
     }
 }

@@ -1,5 +1,5 @@
 # Hungarian translation for gnome-robots.
-# Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2019, 2020, 2022, 2024 Free Software Foundation, Inc.
+# Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2019, 2020, 2022, 2024, 2025 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-robots package.
 #
 # Szabolcs Ban <shooby at gnome dot hu>, 1999, 2000, 2001.
@@ -9,13 +9,13 @@
 # Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
 # Szabolcs Varga <shirokuma at shirokuma dot hu>, 2005.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2014, 2016.
-# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2015, 2016, 2019, 2020, 2022, 2024.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2015, 2016, 2019, 2020, 2022, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2024-08-24 13:23+0000\n"
-"PO-Revision-Date: 2024-09-09 01:16+0200\n"
+"POT-Creation-Date: 2025-02-28 17:30+0000\n"
+"PO-Revision-Date: 2025-03-02 21:04+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
@@ -23,10 +23,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:72 src/application.rs:211 src/window.rs:55
+#: src/application.rs:71 src/application.rs:210 src/window.rs:53
 msgid "Robots"
 msgstr "Robotok"
 
@@ -70,47 +70,39 @@ msgstr ""
 "A biztonságos teleportok száma korlátozott, és ha elfogy, a teleportálás egy "
 "robot mellé röpítheti, aki megöli. Éljen túl, amíg csak lehet!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:63
+#: data/org.gnome.Robots.metainfo.xml.in:65
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
 
 #: data/org.gnome.Robots.gschema.xml:5
-msgid "Show toolbar"
-msgstr "Eszköztár megjelenítése"
-
-#: data/org.gnome.Robots.gschema.xml:6
-msgid "Show toolbar. A standard option for toolbars."
-msgstr "Eszköztár mutatása. Egy szabvány lehetőség eszköztárakhoz."
-
-#: data/org.gnome.Robots.gschema.xml:10
 msgid "Robot image theme"
 msgstr "Robotkép-téma"
 
-#: data/org.gnome.Robots.gschema.xml:11
+#: data/org.gnome.Robots.gschema.xml:6
 msgid "Robot image theme. The theme of the images to use for the robots."
 msgstr "Robotkép-téma. A rendszer a képek témáját használja a robotokhoz."
 
-#: data/org.gnome.Robots.gschema.xml:15
+#: data/org.gnome.Robots.gschema.xml:10
 msgid "Background color"
 msgstr "Háttérszín"
 
-#: data/org.gnome.Robots.gschema.xml:16
+#: data/org.gnome.Robots.gschema.xml:11
 msgid "Background color. The hex specification of the background color."
 msgstr "Háttérszín. A háttérszín hexa specifikációja."
 
-#: data/org.gnome.Robots.gschema.xml:20
+#: data/org.gnome.Robots.gschema.xml:15
 msgid "Game type"
 msgstr "Játék típusa"
 
-#: data/org.gnome.Robots.gschema.xml:21
+#: data/org.gnome.Robots.gschema.xml:16
 msgid "Game type. The name of the game variation to use."
 msgstr "Játék típusa. A használandó játékváltozat neve."
 
-#: data/org.gnome.Robots.gschema.xml:25
+#: data/org.gnome.Robots.gschema.xml:20
 msgid "Use safe moves"
 msgstr "Biztonságos lépések használata"
 
-#: data/org.gnome.Robots.gschema.xml:26
+#: data/org.gnome.Robots.gschema.xml:21
 msgid ""
 "Use safe moves. The safe moves option will help you to avoid being killed "
 "due to a mistake. If you try to make a move that would lead to your death "
@@ -121,11 +113,11 @@ msgstr ""
 "tenni, amely a halálához vezetne, amikor van biztonságos lépés, akkor a "
 "rendszer ezt nem fogja engedni."
 
-#: data/org.gnome.Robots.gschema.xml:30
+#: data/org.gnome.Robots.gschema.xml:25
 msgid "Use super safe moves"
 msgstr "Tutibiztos lépések használata"
 
-#: data/org.gnome.Robots.gschema.xml:31
+#: data/org.gnome.Robots.gschema.xml:26
 msgid ""
 "Use super safe moves. The player is alerted when there is no safe move and "
 "the only option is to teleport out."
@@ -133,100 +125,100 @@ msgstr ""
 "Használja a tutibiztos lépéseket. A rendszer figyelmeztetést küld, ha nincs "
 "biztonságos lépés, és az egyetlen lehetőség kiteleportálni."
 
-#: data/org.gnome.Robots.gschema.xml:35
+#: data/org.gnome.Robots.gschema.xml:30
 msgid "Enable game sounds"
 msgstr "Hang bekapcsolása"
 
-#: data/org.gnome.Robots.gschema.xml:36
+#: data/org.gnome.Robots.gschema.xml:31
 msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Hang bekapcsolása. Hangok lejátszása különböző eseményekhez a játék alatt."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls/controls.rs:35
+#: data/org.gnome.Robots.gschema.xml:35 src/controls/controls.rs:35
 msgid "Key to move NW"
 msgstr "Billentyű az északnyugati irányba mozgáshoz"
 
-#: data/org.gnome.Robots.gschema.xml:41
+#: data/org.gnome.Robots.gschema.xml:36
 msgid "The key used to move north-west."
 msgstr "Billentyű az északnyugatra lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls/controls.rs:36
+#: data/org.gnome.Robots.gschema.xml:40 src/controls/controls.rs:36
 msgid "Key to move N"
 msgstr "Billentyű az északi irányba mozgáshoz"
 
-#: data/org.gnome.Robots.gschema.xml:46
+#: data/org.gnome.Robots.gschema.xml:41
 msgid "The key used to move north."
 msgstr "Billentyű az északra lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls/controls.rs:37
+#: data/org.gnome.Robots.gschema.xml:45 src/controls/controls.rs:37
 msgid "Key to move NE"
 msgstr "Billentyű az északkeleti irányba mozgáshoz"
 
-#: data/org.gnome.Robots.gschema.xml:51
+#: data/org.gnome.Robots.gschema.xml:46
 msgid "The key used to move north-east."
 msgstr "Billentyű az északkeletre lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls/controls.rs:38
+#: data/org.gnome.Robots.gschema.xml:50 src/controls/controls.rs:38
 msgid "Key to move W"
 msgstr "Billentyű a nyugati irányba mozgáshoz"
 
-#: data/org.gnome.Robots.gschema.xml:57
+#: data/org.gnome.Robots.gschema.xml:51
 msgid "The key used to move west."
 msgstr "Billentyű a nyugatra lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls/controls.rs:39
+#: data/org.gnome.Robots.gschema.xml:55 src/controls/controls.rs:39
 msgid "Key to hold"
 msgstr "Billentyű az állva maradáshoz"
 
-#: data/org.gnome.Robots.gschema.xml:62
+#: data/org.gnome.Robots.gschema.xml:56
 msgid "The key used to hold still."
 msgstr "Az állva maradáshoz használandó billentyű."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls/controls.rs:40
+#: data/org.gnome.Robots.gschema.xml:60 src/controls/controls.rs:40
 msgid "Key to move E"
 msgstr "Billentyű a keleti irányba mozgáshoz"
 
-#: data/org.gnome.Robots.gschema.xml:67
+#: data/org.gnome.Robots.gschema.xml:61
 msgid "The key used to move east."
 msgstr "Billentyű a keletre lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls/controls.rs:41
+#: data/org.gnome.Robots.gschema.xml:65 src/controls/controls.rs:41
 msgid "Key to move SW"
 msgstr "Billentyű a délnyugati irányba mozgáshoz"
 
-#: data/org.gnome.Robots.gschema.xml:72
+#: data/org.gnome.Robots.gschema.xml:66
 msgid "The key used to move south-west."
 msgstr "Billentyű a délnyugatra lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls/controls.rs:42
+#: data/org.gnome.Robots.gschema.xml:70 src/controls/controls.rs:42
 msgid "Key to move S"
 msgstr "Billentyű a déli irányba mozgáshoz"
 
-#: data/org.gnome.Robots.gschema.xml:77
+#: data/org.gnome.Robots.gschema.xml:71
 msgid "The key used to move south."
 msgstr "Billentyű a délre lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls/controls.rs:43
+#: data/org.gnome.Robots.gschema.xml:75 src/controls/controls.rs:43
 msgid "Key to move SE"
 msgstr "Billentyű a délkeleti irányba mozgáshoz"
 
-#: data/org.gnome.Robots.gschema.xml:82
+#: data/org.gnome.Robots.gschema.xml:76
 msgid "The key used to move south-east."
 msgstr "Billentyű a délkeletre lépéshez."
 
-#: data/org.gnome.Robots.gschema.xml:86
+#: data/org.gnome.Robots.gschema.xml:80
 msgid "Width of the window in pixels"
 msgstr "Az ablak szélessége képpontokban"
 
-#: data/org.gnome.Robots.gschema.xml:90
+#: data/org.gnome.Robots.gschema.xml:84
 msgid "Height of the window in pixels"
 msgstr "Az ablak magassága képpontokban"
 
-#: data/org.gnome.Robots.gschema.xml:94
+#: data/org.gnome.Robots.gschema.xml:88
 msgid "true if the window is maximized"
 msgstr "Az ablak teljes méretű-e"
 
-#: src/application.rs:118
+#: src/application.rs:117
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -234,28 +226,27 @@ msgstr ""
 "A Robotok program nem talált érvényes játékbeállítás-fájlt. Ellenőrizze, "
 "hogy a program megfelelően van-e telepítve."
 
-#: src/application.rs:160
-#| msgid "_New Game"
+#: src/application.rs:159
 msgid "New Game"
 msgstr "Új játék"
 
-#: src/application.rs:162
+#: src/application.rs:161
 msgid "Are you sure you want to discard the current game?"
 msgstr "Biztosan el szeretné dobni a jelenlegi játékot?"
 
-#: src/application.rs:166
+#: src/application.rs:165
 msgid "Keep _Playing"
 msgstr "Játék _folytatása"
 
-#: src/application.rs:167 src/window.rs:202
+#: src/application.rs:166 src/window.rs:200
 msgid "_New Game"
 msgstr "Ú_j játék"
 
-#: src/application.rs:215
+#: src/application.rs:214
 msgid "Based on classic BSD Robots"
 msgstr "A klasszikus BSD Robotok alapján"
 
-#: src/application.rs:227
+#: src/application.rs:226
 msgid "translator-credits"
 msgstr ""
 "Bán Szabolcs <shooby at gnome dot hu>\n"
@@ -266,7 +257,7 @@ msgstr ""
 "Tímár András <timar at gnome dot hu>\n"
 "Varga Szabolcs <shirokuma at shirokuma dot hu>"
 
-#: src/controls/controls.rs:31 src/properties_dialog.rs:59
+#: src/controls/controls.rs:31 src/properties_dialog.rs:63
 msgid "Keyboard"
 msgstr "Billentyűzet"
 
@@ -274,15 +265,15 @@ msgstr "Billentyűzet"
 msgid "_Restore Defaults"
 msgstr "Alapértelmezések vissz_aállítása"
 
-#: src/controls/editor.rs:118
+#: src/controls/editor.rs:131
 msgid "New accelerator…"
 msgstr "Új gyorsbillentyű…"
 
-#: src/controls/editor.rs:128
+#: src/controls/editor.rs:141
 msgid "Disabled"
 msgstr "Letiltva"
 
-#: src/game_area.rs:416
+#: src/game_area.rs:424
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -290,51 +281,71 @@ msgstr ""
 "Gratulálok, legyőzte a robotokat!\n"
 "De meg tudja-e csinálni még egyszer?"
 
-#: src/game_area.rs:421
+#: src/game_area.rs:429
 msgid "There are no teleport locations left!!"
 msgstr "Nem maradt több teleport hely!"
 
-#: src/properties_dialog.rs:39
+#: src/game_config.rs:58 src/scores/scores.rs:70
+msgid "Classic robots"
+msgstr "Klasszikus robotok"
+
+#: src/game_config.rs:59 src/scores/scores.rs:75
+msgid "Nightmare"
+msgstr "Rémálom"
+
+#: src/game_config.rs:60 src/scores/scores.rs:80
+msgid "Robots2"
+msgstr "Robotok 2"
+
+#: src/game_config.rs:61 src/scores/scores.rs:83
+msgid "Robots2 easy"
+msgstr "Könnyű Robotok 2"
+
+#: src/game_config.rs:62 src/scores/scores.rs:89
+msgid "Robots with safe teleport"
+msgstr "Robotok biztonságos teleporttal"
+
+#: src/properties_dialog.rs:43
 msgid "Game"
 msgstr "Játék"
 
-#: src/properties_dialog.rs:48
+#: src/properties_dialog.rs:52
 msgid "Appearance"
 msgstr "Megjelenés"
 
-#: src/properties_dialog.rs:87
+#: src/properties_dialog.rs:95
 msgid "_Use safe moves"
 msgstr "_Biztonságos lépések használata"
 
-#: src/properties_dialog.rs:90
+#: src/properties_dialog.rs:98
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Halálhoz vezető véletlen lépések megelőzése."
 
-#: src/properties_dialog.rs:97
+#: src/properties_dialog.rs:105
 msgid "U_se super safe moves"
 msgstr "_Tutibiztos lépések használata"
 
-#: src/properties_dialog.rs:99
+#: src/properties_dialog.rs:107
 msgid "Prevents all moves that result in getting killed."
 msgstr "Minden halálhoz vezető lépés megelőzése."
 
-#: src/properties_dialog.rs:120
+#: src/properties_dialog.rs:136
 msgid "_Enable sounds"
 msgstr "_Hangok bekapcsolása"
 
-#: src/properties_dialog.rs:123
+#: src/properties_dialog.rs:139
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Hangok lejátszása győzelem vagy halál esetén."
 
-#: src/properties_dialog.rs:148
+#: src/properties_dialog.rs:166
 msgid "Game Type"
 msgstr "Játéktípus"
 
-#: src/properties_dialog.rs:160
+#: src/properties_dialog.rs:186
 msgid "_Image theme:"
 msgstr "_Képtéma:"
 
-#: src/properties_dialog.rs:192
+#: src/properties_dialog.rs:226
 msgid "_Background color:"
 msgstr "_Háttérszín:"
 
@@ -347,7 +358,6 @@ msgid "Rank"
 msgstr "Rang"
 
 #: src/scores/grid.rs:36
-#| msgid "_Scores"
 msgid "Score"
 msgstr "Pontszám"
 
@@ -363,11 +373,11 @@ msgstr "Gratulálunk!"
 msgid "_Done"
 msgstr "_Kész"
 
-#: src/scores/new_score_dialog.rs:83
+#: src/scores/new_score_dialog.rs:92
 msgid "Your score is the best!"
 msgstr "Pontszáma a legjobb!"
 
-#: src/scores/new_score_dialog.rs:85
+#: src/scores/new_score_dialog.rs:94
 msgid "Your score has made the top ten."
 msgstr "Pontszáma benne van az első tízben."
 
@@ -380,99 +390,82 @@ msgid "Play some games and your scores will show up here."
 msgstr "Játsszon pár játékot, és a pontjai itt fognak megjelenni."
 
 #: src/scores/scores_dialog.rs:45
-#| msgid "_Scores"
 msgid "High Scores"
 msgstr "Legmagasabb pontok"
 
-#: src/scores/scores.rs:61
-msgid "Classic robots"
-msgstr "Klasszikus robotok"
-
-#: src/scores/scores.rs:62
+#: src/scores/scores.rs:71
 msgid "Classic robots with safe moves"
 msgstr "Klasszikus robotok biztonságos mozgásokkal"
 
-#: src/scores/scores.rs:64
+#: src/scores/scores.rs:73
 msgid "Classic robots with super-safe moves"
 msgstr "Klasszikus robotok tuti-biztos mozgásokkal"
 
-#: src/scores/scores.rs:66
-msgid "Nightmare"
-msgstr "Rémálom"
-
-#: src/scores/scores.rs:67
+#: src/scores/scores.rs:76
 msgid "Nightmare with safe moves"
 msgstr "Rémálom biztonságos mozgásokkal"
 
-#: src/scores/scores.rs:69
+#: src/scores/scores.rs:78
 msgid "Nightmare with super-safe moves"
 msgstr "Rémálom tuti-biztos mozgásokkal"
 
-#: src/scores/scores.rs:71
-msgid "Robots2"
-msgstr "Robotok 2"
-
-#: src/scores/scores.rs:72
+#: src/scores/scores.rs:81
 msgid "Robots2 with safe moves"
 msgstr "Robotok 2 biztonságos mozgásokkal"
 
-#: src/scores/scores.rs:73
+#: src/scores/scores.rs:82
 msgid "Robots2 with super-safe moves"
 msgstr "Robotok 2 tuti-biztos mozgásokkal"
 
-#: src/scores/scores.rs:74
-msgid "Robots2 easy"
-msgstr "Könnyű Robotok 2"
-
-#: src/scores/scores.rs:75
+#: src/scores/scores.rs:84
 msgid "Robots2 easy with safe moves"
 msgstr "Könnyű Robotok 2 biztonságos mozgásokkal"
 
-#: src/scores/scores.rs:77
+#: src/scores/scores.rs:86
 msgid "Robots2 easy with super-safe moves"
 msgstr "Könnyű Robotok 2 tuti-biztos mozgásokkal"
 
-#: src/scores/scores.rs:80
-msgid "Robots with safe teleport"
-msgstr "Robotok biztonságos teleporttal"
-
-#: src/scores/scores.rs:83
+#: src/scores/scores.rs:92
 msgid "Robots with safe teleport with safe moves"
 msgstr "Robotok biztonságos teleporttal biztonságos mozgásokkal"
 
-#: src/scores/scores.rs:86
+#: src/scores/scores.rs:95
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Robotok biztonságos teleporttal tuti-biztos mozgásokkal"
 
-#: src/window.rs:113
+#: src/window.rs:111
 msgid "Teleport _Randomly"
 msgstr "Teleportálás vél_etlenszerűen"
 
-#: src/window.rs:134
+#: src/window.rs:132
 msgid "Teleport _Safely"
 msgstr "Teleportálás _biztonságosan"
 
-#: src/window.rs:150
+#: src/window.rs:148
 msgid "_Wait for Robots"
 msgstr "_Várakozás a robotokra"
 
-#: src/window.rs:206
+#: src/window.rs:204
 msgid "_Scores"
 msgstr "_Pontszámok"
 
-#: src/window.rs:214
+#: src/window.rs:212
 msgid "_Preferences"
 msgstr "_Beállítások"
 
-#: src/window.rs:218
+#: src/window.rs:216
 msgid "_Help"
 msgstr "_Súgó"
 
-#: src/window.rs:222
+#: src/window.rs:220
 msgid "_About Robots"
 msgstr "A Robotok _névjegye"
 
-#: src/window.rs:279
+#: src/window.rs:280
+msgid "Level: {level}\tScore: {score}"
+msgstr "Szint: {level}\tPontszám: {score}"
+
+#: src/window.rs:286
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Hátra van: %d)"

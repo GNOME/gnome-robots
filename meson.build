@@ -7,11 +7,11 @@ i18n = import('i18n')
 
 application_id = 'org.gnome.Robots'
 
-gio_dependency = dependency('gio-2.0', version: '>= 2.36')
-glib_dependency = dependency('glib-2.0', version: '>= 2.36')
-gtk_dependency = dependency('gtk4', version: '>= 4.10.0')
-adw_dependency = dependency('libadwaita-1', version: '>= 1.2')
-rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.36.2')
+gio_dependency = dependency('gio-2.0', version: '>= 2.82')
+glib_dependency = dependency('glib-2.0', version: '>= 2.82')
+gtk_dependency = dependency('gtk4', version: '>= 4.16.1')
+adw_dependency = dependency('libadwaita-1', version: '>= 1.6')
+rsvg_dependency = dependency('librsvg-2.0', version: '>= 2.59.2')
 
 cargo = find_program('cargo', required: true)
 cargo_version = run_command(cargo, '--version', check: true).stdout().strip()

@@ -7,7 +7,7 @@
   <name xml:lang="en">gnome-robots</name>
   <shortdesc xml:lang="en">Avoid the robots and make them crash into each other</shortdesc>
   <description xml:lang="en">Avoid the robots and make them crash into each other</description>
-  <homepage rdf:resource="https://wiki.gnome.org/Apps/Robots" />
+  <homepage rdf:resource="https://gitlab.gnome.org/GNOME/gnome-robots/" />
   <support-forum rdf:resource="https://discourse.gnome.org/tag/games" />
   <download-page rdf:resource="http://download.gnome.org/sources/gnome-robots/" />
   <bug-database rdf:resource="https://gitlab.gnome.org/GNOME/gnome-robots/issues/" />

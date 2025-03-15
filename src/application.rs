@@ -209,7 +209,7 @@ mod imp {
                 .application_icon("org.gnome.Robots")
                 .application_name(gettext("Robots"))
                 .version(VERSION)
-                .copyright("Copyright © 1998–2008 Mark Rae\nCopyright © 2014–2016 Michael Catanzaro\nCopyright © 2020-2024 Andrey Kutejko")
+                .copyright("Copyright © 1998–2008 Mark Rae\nCopyright © 2014–2016 Michael Catanzaro\nCopyright © 2020-2025 Andrey Kutejko")
                 .license_type(gtk::License::Gpl30)
                 .comments(gettext("Based on classic BSD Robots"))
                 .developers([

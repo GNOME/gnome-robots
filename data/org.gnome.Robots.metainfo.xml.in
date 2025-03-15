@@ -47,12 +47,12 @@
     <release version="3.34.0" date="2019-09-08" />
   </releases>
   <launchable type="desktop-id">org.gnome.Robots.desktop</launchable>
-  <url type="homepage">https://wiki.gnome.org/Apps/Robots</url>
+  <url type="homepage">https://gitlab.gnome.org/GNOME/gnome-robots/</url>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-robots/issues</url>
   <url type="donation">https://www.gnome.org/donate/</url>
   <url type="help">https://help.gnome.org/users/gnome-robots/stable/</url>
   <url type="translate">https://l10n.gnome.org/module/gnome-robots/</url>
-  <url type="vcs-browser">https://gitlab.gnome.org/GNOME/gnome-robots</url>
+  <url type="vcs-browser">https://gitlab.gnome.org/GNOME/gnome-robots/</url>
   <update_contact>mcatanzaro_at_gnome.org</update_contact>
   <project_group>GNOME</project_group>
   <kudos>

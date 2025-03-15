@@ -35,8 +35,7 @@ pub fn show_preferences(
     themes: &gio::ListModel,
     settings: &gio::Settings,
 ) {
-    let window = adw::PreferencesWindow::builder().build();
-    window.set_transient_for(parent_window);
+    let window = adw::PreferencesDialog::builder().build();
 
     /* The configuration page */
     let configuration_page = adw::PreferencesPage::builder()
@@ -66,7 +65,7 @@ pub fn show_preferences(
     keyboard_page.add(&create_controls_list(settings));
     window.add(&keyboard_page);
 
-    window.present();
+    window.present(parent_window);
 }
 
 fn create_game_group(

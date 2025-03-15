@@ -154,8 +154,7 @@ mod imp {
     impl RobotsApplication {
         fn new_game_cb(&self) {
             if let Some(window) = self.obj().active_window().and_downcast::<RobotsWindow>() {
-                let dialog = adw::MessageDialog::new(
-                    Some(&window),
+                let dialog = adw::AlertDialog::new(
                     Some(&gettext("New Game")),
                     Some(&gettext(
                         "Are you sure you want to discard the current game?",
@@ -164,17 +163,16 @@ mod imp {
 
                 dialog.add_response("cancel", &gettext("Keep _Playing"));
                 dialog.add_response("new", &gettext("_New Game"));
+                dialog.set_response_appearance("new", adw::ResponseAppearance::Destructive);
 
                 dialog.set_default_response(Some("new"));
                 dialog.set_close_response("cancel");
 
-                dialog.connect_response(None, move |dlg, ret| {
-                    dlg.destroy();
+                dialog.choose(&window.clone(), gio::Cancellable::NONE, move |ret| {
                     if ret == "new" {
                         window.start_new_game();
                     }
                 });
-                dialog.present();
             } else {
                 self.activate();
             }
@@ -205,7 +203,7 @@ mod imp {
         }
 
         fn about_cb(&self) {
-            let window = adw::AboutWindow::builder()
+            adw::AboutDialog::builder()
                 .application_icon("org.gnome.Robots")
                 .application_name(gettext("Robots"))
                 .version(VERSION)
@@ -224,10 +222,9 @@ mod imp {
                     "Aruna Sankaranarayanan"
                 ])
                 .translator_credits(gettext("translator-credits"))
-                .website("https://wiki.gnome.org/Apps/Robots")
-                .build();
-            window.set_transient_for(self.obj().active_window().as_ref());
-            window.present();
+                .website("https://gitlab.gnome.org/GNOME/gnome-robots")
+                .build()
+            .present(self.obj().active_window().as_ref());
         }
     }
 }
@@ -242,7 +239,7 @@ impl Default for RobotsApplication {
     fn default() -> Self {
         glib::Object::builder()
             .property("application-id", "org.gnome.Robots")
-            .property("flags", gio::ApplicationFlags::FLAGS_NONE)
+            .property("flags", gio::ApplicationFlags::default())
             .build()
     }
 }

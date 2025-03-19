@@ -1,6 +1,6 @@
 [package]
 name = "gnome-robots"
-version = "41.1.0"
+version = "41.2.0"
 edition = "2021"
 
 [dependencies]

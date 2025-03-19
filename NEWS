@@ -1,3 +1,25 @@
+41.2 - March 19, 2025
+===========================
+
+- Update dependencies to Gnome SDK 47
+- Get rid of accidental GTK 3 dependency
+- Cache scaled textures
+- Update links to home page
+- Use TOML for game configs
+- Update Bulgarian translation
+- Update Hungarian translation
+- Update Finnish translation
+- Update Czech translation
+- Update Turkish translation
+- Update Russian translation
+- Update Serbian translation
+- Update Brazilian Portuguese translation
+- Update Hebrew translation
+- Update Slovenian translation
+- Update Swedish translation
+- Update Chinese (China) translation
+- Update Ukrainian translation
+
 41.1 - December 25, 2024
 ===========================
 

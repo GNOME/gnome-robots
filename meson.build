@@ -1,5 +1,5 @@
 project('gnome-robots', ['rust'],
-    version: '41.1',
+    version: '41.2',
     meson_version: '>= 0.59')
 
 gnome = import('gnome')

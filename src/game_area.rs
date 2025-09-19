@@ -237,7 +237,9 @@ mod imp {
 }
 
 glib::wrapper! {
-    pub struct GameArea(ObjectSubclass<imp::GameArea>) @extends gtk::Widget;
+    pub struct GameArea(ObjectSubclass<imp::GameArea>)
+        @extends gtk::Widget,
+        @implements gtk::Accessible, gtk::Buildable, gtk::ConstraintTarget;
 }
 
 impl GameArea {

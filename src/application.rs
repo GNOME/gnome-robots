@@ -232,7 +232,7 @@ mod imp {
 glib::wrapper! {
     pub struct RobotsApplication(ObjectSubclass<imp::RobotsApplication>)
         @extends adw::Application, gtk::Application, gio::Application,
-        @implements gio::ActionMap;
+        @implements gio::ActionGroup, gio::ActionMap;
 }
 
 impl Default for RobotsApplication {

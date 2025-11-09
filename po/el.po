@@ -30,15 +30,16 @@
 # Michael Kotsarinis <mk73628@hotmail.com>, 2010.
 # George Stefanakis <george.stefanakis@gmail.com>, 2011.
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013, 2014.
+# Giannis Antypas <gianni.antypas@gmail.com>,  2024.
 # Efstathios Iosifidis <iosifidis@opensuse.org>, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.el\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues\n"
-"POT-Creation-Date: 2023-01-25 19:23+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
+"POT-Creation-Date: 2024-08-24 13:23+0000\n"
 "PO-Revision-Date: 2023-03-11 21:46+0200\n"
-"Last-Translator: Efstathios Iosifidis <eiosifidis@gnome.org>\n"
+"Last-Translator: Giannis Antypas <gianni.antypas@gmail.com>\n"
 "Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -48,37 +49,22 @@ msgstr ""
 "X-Generator: Poedit 3.2.2\n"
 "X-Project-Style: gnome\n"
 
-#: data/app-menu.ui:7 src/application.vala:104
-msgid "_New Game"
-msgstr "_Νέο παιχνίδι"
-
-#: data/app-menu.ui:11
-msgid "_Scores"
-msgstr "_Βαθμολογίες"
-
-#: data/app-menu.ui:17
-msgid "_Preferences"
-msgstr "_Προτιμήσεις"
-
-#: data/app-menu.ui:21
-msgid "_Help"
-msgstr "_Βοήθεια"
-
-#: data/app-menu.ui:25
-msgid "_About Robots"
-msgstr "_Περί του Ρομπότ"
-
-#: data/org.gnome.Robots.appdata.xml.in:7 data/org.gnome.Robots.desktop.in:3
-#: src/application.vala:40 src/application.vala:151 src/window.vala:42
+#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
+#: src/application.rs:72 src/application.rs:211 src/window.rs:55
 msgid "Robots"
 msgstr "Ρομπότ"
 
-#: data/org.gnome.Robots.appdata.xml.in:8 data/org.gnome.Robots.desktop.in:4
+#: data/org.gnome.Robots.desktop.in:4 data/org.gnome.Robots.metainfo.xml.in:8
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Αποφύγετε τα ρομπότ και κάντε τα να συγκρουστούν μεταξύ τους"
 
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Robots.desktop.in:6
+msgid "game;arcade;teleport;"
+msgstr "παιχνίδι;τηλεμεταφορά;game;arcade;teleport;"
+
 #. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
-#: data/org.gnome.Robots.appdata.xml.in:11
+#: data/org.gnome.Robots.metainfo.xml.in:11
 msgid ""
 "It is the distant future: the year 2000. Evil robots are trying to kill you. "
 "Avoid the robots or face certain death."
@@ -86,7 +72,7 @@ msgstr ""
 "Είναι το μακρινό μέλλον: το έτος 2000. Κακά ρομπότ προσπαθούν να σας "
 "σκοτώσουν. Αποφύγετε τα ρομπότ ή αντιμετωπίστε τον βέβαιο θάνατο."
 
-#: data/org.gnome.Robots.appdata.xml.in:15
+#: data/org.gnome.Robots.metainfo.xml.in:15
 msgid ""
 "Fortunately, the robots are extremely stupid and will always move directly "
 "towards you. Trick them into colliding into each other, resulting in their "
@@ -100,7 +86,7 @@ msgstr ""
 "αμυνθείτε μετακινώντας τις ανεπιθύμητες στοίβες, ή να καταφύγετε σε ασφαλές "
 "μέρος με την εύχρηστη συσκευή τηλεμεταφοράς."
 
-#: data/org.gnome.Robots.appdata.xml.in:22
+#: data/org.gnome.Robots.metainfo.xml.in:22
 msgid ""
 "Your supply of safe teleports is limited, and once you run out, "
 "teleportation could land you right next to a robot, who will kill you. "
@@ -110,14 +96,9 @@ msgstr ""
 "τηλεμεταφορά μπορεί να σας προσγειώσει ακριβώς δίπλα σε ένα ρομπότ, που θα "
 "σας σκοτώσει. Επιβιώστε όσο μπορείτε περισσότερο!"
 
-#: data/org.gnome.Robots.appdata.xml.in:62
+#: data/org.gnome.Robots.metainfo.xml.in:63
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Robots.desktop.in:6
-msgid "game;arcade;teleport;"
-msgstr "παιχνίδι;τηλεμεταφορά;game;arcade;teleport;"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Show toolbar"
@@ -190,7 +171,7 @@ msgstr ""
 "Ενεργοποίηση ήχων παιχνιδιού. Αναπαραγωγή ήχων για διάφορα γεγονότα μέσα στο "
 "παιχνίδι."
 
-#: data/org.gnome.Robots.gschema.xml:40 src/controls.vala:91
+#: data/org.gnome.Robots.gschema.xml:40 src/controls/controls.rs:35
 msgid "Key to move NW"
 msgstr "Πλήκτρο για μετακίνηση βορειοδυτικά"
 
@@ -198,7 +179,7 @@ msgstr "Πλήκτρο για μετακίνηση βορειοδυτικά"
 msgid "The key used to move north-west."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε βόρειο-δυτικά."
 
-#: data/org.gnome.Robots.gschema.xml:45 src/controls.vala:92
+#: data/org.gnome.Robots.gschema.xml:45 src/controls/controls.rs:36
 msgid "Key to move N"
 msgstr "Πλήκτρο για μετακίνηση βόρεια"
 
@@ -206,7 +187,7 @@ msgstr "Πλήκτρο για μετακίνηση βόρεια"
 msgid "The key used to move north."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε βόρεια."
 
-#: data/org.gnome.Robots.gschema.xml:50 src/controls.vala:93
+#: data/org.gnome.Robots.gschema.xml:50 src/controls/controls.rs:37
 msgid "Key to move NE"
 msgstr "Πλήκτρο για μετακίνηση βορειοανατολικά"
 
@@ -214,7 +195,7 @@ msgstr "Πλήκτρο για μετακίνηση βορειοανατολικ�
 msgid "The key used to move north-east."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε βόρειο-ανατολικά."
 
-#: data/org.gnome.Robots.gschema.xml:56 src/controls.vala:94
+#: data/org.gnome.Robots.gschema.xml:56 src/controls/controls.rs:38
 msgid "Key to move W"
 msgstr "Πλήκτρο για μετακίνηση δυτικά"
 
@@ -222,7 +203,7 @@ msgstr "Πλήκτρο για μετακίνηση δυτικά"
 msgid "The key used to move west."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε δυτικά."
 
-#: data/org.gnome.Robots.gschema.xml:61 src/controls.vala:95
+#: data/org.gnome.Robots.gschema.xml:61 src/controls/controls.rs:39
 msgid "Key to hold"
 msgstr "Πλήκτρο για κράτημα"
 
@@ -230,7 +211,7 @@ msgstr "Πλήκτρο για κράτημα"
 msgid "The key used to hold still."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μείνετε ακίνητος."
 
-#: data/org.gnome.Robots.gschema.xml:66 src/controls.vala:96
+#: data/org.gnome.Robots.gschema.xml:66 src/controls/controls.rs:40
 msgid "Key to move E"
 msgstr "Πλήκτρο για μετακίνηση ανατολικά"
 
@@ -238,7 +219,7 @@ msgstr "Πλήκτρο για μετακίνηση ανατολικά"
 msgid "The key used to move east."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε ανατολικά."
 
-#: data/org.gnome.Robots.gschema.xml:71 src/controls.vala:97
+#: data/org.gnome.Robots.gschema.xml:71 src/controls/controls.rs:41
 msgid "Key to move SW"
 msgstr "Πλήκτρο για μετακίνηση νοτιοδυτικά"
 
@@ -246,7 +227,7 @@ msgstr "Πλήκτρο για μετακίνηση νοτιοδυτικά"
 msgid "The key used to move south-west."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε νότιο-δυτικά."
 
-#: data/org.gnome.Robots.gschema.xml:76 src/controls.vala:98
+#: data/org.gnome.Robots.gschema.xml:76 src/controls/controls.rs:42
 msgid "Key to move S"
 msgstr "Πλήκτρο για μετακίνηση νότια"
 
@@ -254,7 +235,7 @@ msgstr "Πλήκτρο για μετακίνηση νότια"
 msgid "The key used to move south."
 msgstr "Το πλήκτρο που χρησιμοποιείται για να μετακινηθείτε νότια."
 
-#: data/org.gnome.Robots.gschema.xml:81 src/controls.vala:99
+#: data/org.gnome.Robots.gschema.xml:81 src/controls/controls.rs:43
 msgid "Key to move SE"
 msgstr "Πλήκτρο για μετακίνηση νοτιοανατολικά"
 
@@ -274,7 +255,7 @@ msgstr "Το ύψος του παραθύρου σε εικονοστοιχεί�
 msgid "true if the window is maximized"
 msgstr "αληθής αν το παράθυρο είναι μεγιστοποιημένο"
 
-#: src/application.vala:63
+#: src/application.rs:118
 msgid ""
 "The program Robots was unable to find any valid game configuration files. "
 "Please check that the program is installed correctly."
@@ -282,19 +263,28 @@ msgstr ""
 "Το Ρομπότ δεν βρήκε κάποια έγκυρη ρύθμιση παιχνιδιού. Ελέγξτε αν το "
 "πρόγραμμα έχει εγκατασταθεί σωστά."
 
-#: src/application.vala:101
+#: src/application.rs:160
+#| msgid "_New Game"
+msgid "New Game"
+msgstr "Νέο παιχνίδι"
+
+#: src/application.rs:162
 msgid "Are you sure you want to discard the current game?"
 msgstr "Είστε σίγουροι ότι θέλετε να απορρίψετε το τρέχον παιχνίδι;"
 
-#: src/application.vala:103
+#: src/application.rs:166
 msgid "Keep _Playing"
 msgstr "Συνέχεια _παιχνιδιού"
 
-#: src/application.vala:157
+#: src/application.rs:167 src/window.rs:202
+msgid "_New Game"
+msgstr "_Νέο παιχνίδι"
+
+#: src/application.rs:215
 msgid "Based on classic BSD Robots"
 msgstr "Βασίζεται στο κλασικό BSD Ρομπότ"
 
-#: src/application.vala:161
+#: src/application.rs:227
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -304,10 +294,27 @@ msgstr ""
 " Κώστας Παπαδήμας <pkst@gmx.net>\n"
 " Τζένη Πετούμενου <epetoumenou@gmail.com>\n"
 " Μαρία Μαυρίδου <mavridou@gmail.com>\n"
+" Giannis Antypas <gianni.antypas@gmail.com>\n"
 " Ευστάθιος Ιωσηφίδης <iosifidis@opensuse.org>\n"
 "Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://gnome.gr/"
 
-#: src/game-area.vala:356
+#: src/controls/controls.rs:31 src/properties_dialog.rs:59
+msgid "Keyboard"
+msgstr "Πληκτρολόγιο"
+
+#: src/controls/controls.rs:56
+msgid "_Restore Defaults"
+msgstr "_Επαναφορά προεπιλογών"
+
+#: src/controls/editor.rs:118
+msgid "New accelerator…"
+msgstr "Νέος επιταχυντής…"
+
+#: src/controls/editor.rs:128
+msgid "Disabled"
+msgstr "Απενεργοποιημένο"
+
+#: src/game_area.rs:416
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -315,154 +322,199 @@ msgstr ""
 "Συγχαρητήρια, νικήσατε τα Ρομπότ!! \n"
 "Όμως, μπορείτε να το ξανακάνετε;"
 
-#: src/game-area.vala:360
+#: src/game_area.rs:421
 msgid "There are no teleport locations left!!"
 msgstr "Δεν έχουν απομείνει θέσεις τηλεμεταφοράς!!"
 
-#: src/properties-dialog.vala:68
-msgid "Preferences"
-msgstr "Προτιμήσεις"
-
-#: src/properties-dialog.vala:84
-msgid "Game Type"
-msgstr "Είδος παιχνιδιού"
-
-#: src/properties-dialog.vala:95
-msgid "_Use safe moves"
-msgstr "_Χρήση ασφαλών κινήσεων"
-
-#: src/properties-dialog.vala:97
-msgid "Prevent accidental moves that result in getting killed."
-msgstr "Αποτροπή τυχαίων κινήσεων που οδηγούν σε θάνατο."
-
-#: src/properties-dialog.vala:100
-msgid "U_se super safe moves"
-msgstr "Χρήση _υπερ-ασφαλών κινήσεων"
-
-#: src/properties-dialog.vala:102
-msgid "Prevents all moves that result in getting killed."
-msgstr "Αποτροπή όλων των κινήσεων που οδηγούν σε θάνατο."
-
-#: src/properties-dialog.vala:114
-msgid "_Enable sounds"
-msgstr "_Ενεργοποίηση ήχων"
-
-#: src/properties-dialog.vala:119
-msgid "Play sounds for events like winning a level and dying."
-msgstr "Αναπαραγωγή ήχων για γεγονότα όπως η νίκη σε ένα επίπεδο ή ο θάνατος."
-
-#: src/properties-dialog.vala:122
+#: src/properties_dialog.rs:39
 msgid "Game"
 msgstr "Παιχνίδι"
 
-#: src/properties-dialog.vala:128
-msgid "_Image theme:"
-msgstr "_Θέμα εικόνας:"
-
-#: src/properties-dialog.vala:138
-msgid "_Background color:"
-msgstr "_Χρώμα παρασκηνίου:"
-
-#: src/properties-dialog.vala:148
+#: src/properties_dialog.rs:48
 msgid "Appearance"
 msgstr "Εμφάνιση"
 
-#: src/properties-dialog.vala:162
-msgid "_Restore Defaults"
-msgstr "_Επαναφορά προεπιλογών"
+#: src/properties_dialog.rs:87
+msgid "_Use safe moves"
+msgstr "_Χρήση ασφαλών κινήσεων"
 
-#: src/properties-dialog.vala:166
-msgid "Keyboard"
-msgstr "Πληκτρολόγιο"
+#: src/properties_dialog.rs:90
+msgid "Prevent accidental moves that result in getting killed."
+msgstr "Αποτροπή τυχαίων κινήσεων που οδηγούν σε θάνατο."
 
-#. Label on the scores dialog, next to map type dropdown
-#: src/scores.vala:28
+#: src/properties_dialog.rs:97
+msgid "U_se super safe moves"
+msgstr "Χρήση _υπερ-ασφαλών κινήσεων"
+
+#: src/properties_dialog.rs:99
+msgid "Prevents all moves that result in getting killed."
+msgstr "Αποτροπή όλων των κινήσεων που οδηγούν σε θάνατο."
+
+#: src/properties_dialog.rs:120
+msgid "_Enable sounds"
+msgstr "_Ενεργοποίηση ήχων"
+
+#: src/properties_dialog.rs:123
+msgid "Play sounds for events like winning a level and dying."
+msgstr "Αναπαραγωγή ήχων για γεγονότα όπως η νίκη σε ένα επίπεδο ή ο θάνατος."
+
+#: src/properties_dialog.rs:148
+msgid "Game Type"
+msgstr "Είδος παιχνιδιού"
+
+#: src/properties_dialog.rs:160
+msgid "_Image theme:"
+msgstr "_Θέμα εικόνας:"
+
+#: src/properties_dialog.rs:192
+msgid "_Background color:"
+msgstr "_Χρώμα παρασκηνίου:"
+
+#: src/scores/category_bar.rs:34
 msgid "Game Type:"
 msgstr "Είδος παιχνιδιού:"
 
-#: src/scores.vala:53
+#: src/scores/grid.rs:35
+msgid "Rank"
+msgstr "Κατάταξη"
+
+#: src/scores/grid.rs:36
+#| msgid "_Scores"
+msgid "Score"
+msgstr "Βαθμολογίες"
+
+#: src/scores/grid.rs:37
+msgid "Player"
+msgstr "Παίκτης"
+
+#: src/scores/new_score_dialog.rs:43
+msgid "Congratulations!"
+msgstr "Συγχαρητήρια!"
+
+#: src/scores/new_score_dialog.rs:65
+msgid "_Done"
+msgstr "_Έτοιμο"
+
+#: src/scores/new_score_dialog.rs:83
+msgid "Your score is the best!"
+msgstr "Η βαθμολογία σας είναι η καλύτερη!"
+
+#: src/scores/new_score_dialog.rs:85
+msgid "Your score has made the top ten."
+msgstr "Η βαθμολογία σας μπήκε στην πρώτη δεκάδα."
+
+#: src/scores/no_scores.rs:45
+msgid "No scores yet"
+msgstr "Δεν υπάρχουν ακόμα βαθμολογίες"
+
+#: src/scores/no_scores.rs:53
+msgid "Play some games and your scores will show up here."
+msgstr "Παίξτε μερικά παιχνίδια και οι βαθμολογίες σας θα εμφανιστούν εδώ."
+
+#: src/scores/scores_dialog.rs:45
+#| msgid "_Scores"
+msgid "High Scores"
+msgstr "Υψηλές βαθμολογίες"
+
+#: src/scores/scores.rs:61
 msgid "Classic robots"
 msgstr "Κλασσικά ρομπότ"
 
-#: src/scores.vala:55
+#: src/scores/scores.rs:62
 msgid "Classic robots with safe moves"
 msgstr "Κλασσικά ρομπότ με ασφαλείς κινήσεις"
 
-#: src/scores.vala:57
+#: src/scores/scores.rs:64
 msgid "Classic robots with super-safe moves"
 msgstr "Κλασσικά ρομπότ με υπερ-ασφαλείς κινήσεις"
 
-#: src/scores.vala:59
+#: src/scores/scores.rs:66
 msgid "Nightmare"
 msgstr "Εφιάλτης"
 
-#: src/scores.vala:61
+#: src/scores/scores.rs:67
 msgid "Nightmare with safe moves"
 msgstr "Εφιάλτης με ασφαλείς κινήσεις"
 
-#: src/scores.vala:63
+#: src/scores/scores.rs:69
 msgid "Nightmare with super-safe moves"
 msgstr "Εφιάλτης με υπερ-ασφαλείς κινήσεις"
 
-#: src/scores.vala:65
+#: src/scores/scores.rs:71
 msgid "Robots2"
 msgstr "Ρομπότ2"
 
-#: src/scores.vala:67
+#: src/scores/scores.rs:72
 msgid "Robots2 with safe moves"
 msgstr "Ρομπότ2 με ασφαλείς κινήσεις"
 
-#: src/scores.vala:69
+#: src/scores/scores.rs:73
 msgid "Robots2 with super-safe moves"
 msgstr "Ρομπότ2 με υπερ-ασφαλείς κινήσεις"
 
-#: src/scores.vala:71
+#: src/scores/scores.rs:74
 msgid "Robots2 easy"
 msgstr "Ρομπότ2 εύκολο"
 
-#: src/scores.vala:73
+#: src/scores/scores.rs:75
 msgid "Robots2 easy with safe moves"
 msgstr "Ρομπότ2 εύκολο με ασφαλείς κινήσεις"
 
-#: src/scores.vala:75
+#: src/scores/scores.rs:77
 msgid "Robots2 easy with super-safe moves"
 msgstr "Ρομπότ2 εύκολο με υπερ-ασφαλείς κινήσεις"
 
-#: src/scores.vala:77
+#: src/scores/scores.rs:80
 msgid "Robots with safe teleport"
 msgstr "Ρομπότ με ασφαλή τηλεμεταφορά"
 
-#: src/scores.vala:79
+#: src/scores/scores.rs:83
 msgid "Robots with safe teleport with safe moves"
 msgstr "Ρομπότ με ασφαλή τηλεμεταφορά με ασφαλείς κινήσεις"
 
-#: src/scores.vala:81
+#: src/scores/scores.rs:86
 msgid "Robots with safe teleport with super-safe moves"
 msgstr "Ρομπότ με ασφαλή τηλεμεταφορά με υπερ-ασφαλείς κινήσεις"
 
-#: src/window.vala:113
+#: src/window.rs:113
 msgid "Teleport _Randomly"
 msgstr "Τυχαία τηλεμεταφο_ρά"
 
-#: src/window.vala:138
+#: src/window.rs:134
+msgid "Teleport _Safely"
+msgstr "Α_σφαλής τηλεμεταφορά"
+
+#: src/window.rs:150
 msgid "_Wait for Robots"
 msgstr "_Αναμονή για ρομπότ"
 
-#: src/window.vala:154
-#, c-format
-msgid "Level: %d\tScore: %d"
-msgstr "Επίπεδο: %d\tΒαθμολογία: %d"
+#: src/window.rs:206
+msgid "_Scores"
+msgstr "_Βαθμολογίες"
 
-#. Second line of safe teleports button label. %d is the number of teleports remaining.
-#: src/window.vala:157
+#: src/window.rs:214
+msgid "_Preferences"
+msgstr "_Προτιμήσεις"
+
+#: src/window.rs:218
+msgid "_Help"
+msgstr "_Βοήθεια"
+
+#: src/window.rs:222
+msgid "_About Robots"
+msgstr "_Περί του Ρομπότ"
+
+#: src/window.rs:279
 #, c-format
 msgid "(Remaining: %d)"
 msgstr "(Απομένουν: %d)"
 
-#. First line of safe teleports button label.
-#: src/window.vala:159
-msgid "Teleport _Safely"
-msgstr "Α_σφαλής τηλεμεταφορά"
+#~ msgid "Preferences"
+#~ msgstr "Προτιμήσεις"
+
+#, c-format
+#~ msgid "Level: %d\tScore: %d"
+#~ msgstr "Επίπεδο: %d\tΒαθμολογία: %d"
 
 #~ msgid "GNOME Robots"
 #~ msgstr "Ρομπότ"

@@ -168,7 +168,7 @@ mod imp {
                 dialog.set_default_response(Some("new"));
                 dialog.set_close_response("cancel");
 
-                dialog.choose(&window.clone(), gio::Cancellable::NONE, move |ret| {
+                dialog.choose(Some(&window.clone()), gio::Cancellable::NONE, move |ret| {
                     if ret == "new" {
                         window.start_new_game();
                     }

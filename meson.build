@@ -9,8 +9,8 @@ application_id = 'org.gnome.Robots'
 
 gio_dependency = dependency('gio-2.0', version: '>= 2.82')
 glib_dependency = dependency('glib-2.0', version: '>= 2.82')
-gtk_dependency = dependency('gtk4', version: '>= 4.16.1')
-adw_dependency = dependency('libadwaita-1', version: '>= 1.6')
+gtk_dependency = dependency('gtk4', version: '>= 4.20.0')
+adw_dependency = dependency('libadwaita-1', version: '>= 1.8')
 glycin_dependency = dependency('glycin-2', version: '>= 2.0')
 glycin_gtk4_dependency = dependency('glycin-gtk4-2', version: '>= 2.0')
 

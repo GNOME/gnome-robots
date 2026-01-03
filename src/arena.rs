@@ -133,7 +133,7 @@ impl Arena {
 
     pub fn random_vacant_position(&self, rand: &mut dyn rand::RngCore) -> Option<Position> {
         let size = self.width * self.height;
-        let start = rand.gen_range(0..size);
+        let start = rand.random_range(0..size);
         for i in 0..size {
             let index = (start + i) % size;
             if self.objects[index as usize].get() == ObjectType::None {

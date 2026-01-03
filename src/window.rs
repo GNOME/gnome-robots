@@ -27,7 +27,7 @@ use crate::window_size::remember_window_size;
 use adw::{prelude::*, subclass::prelude::*};
 use gettextrs::gettext;
 use gtk::{gdk, gio, glib};
-use rand::thread_rng;
+use rand::rng;
 use std::error::Error;
 use std::rc::Rc;
 
@@ -230,10 +230,7 @@ impl RobotsWindow {
             .build();
         headerbar.pack_end(&menu_button);
 
-        let game = Game::new(
-            game_configs.best_match(&settings.selected_config()),
-            thread_rng(),
-        );
+        let game = Game::new(game_configs.best_match(&settings.selected_config()), rng());
         game.start_new_game();
 
         let game_area = GameArea::new(game_configs, assets, settings)?;

@@ -22,7 +22,7 @@ use crate::game::{Game, PlayerCommand, State};
 use crate::game_area::GameArea;
 use crate::game_config::GameConfigs;
 use crate::properties::Properties;
-use crate::scores::scores::{show_scores, Category};
+use crate::scores::scores::{Category, show_scores};
 use crate::window_size::remember_window_size;
 use adw::{prelude::*, subclass::prelude::*};
 use gettextrs::gettext;

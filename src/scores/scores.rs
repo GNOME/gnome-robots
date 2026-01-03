@@ -17,9 +17,9 @@
  * For more details see the file COPYING.
  */
 
+use super::ROWS_TO_DISPLAY;
 use super::new_score_dialog::new_score_dialog;
 use super::scores_dialog::scores_dialog;
-use super::ROWS_TO_DISPLAY;
 use crate::config::PACKAGE;
 use crate::game::MoveSafety;
 use crate::utils::{list_directory, now};

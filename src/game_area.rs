@@ -24,8 +24,8 @@ use crate::{
     game::{Game, GameEvent, MoveSafety, PlayerCommand, State},
     game_config::{GameConfig, GameConfigs},
     graphics::calculate_contrast_color,
-    properties::{Properties, CONTROL_KEYS},
-    scores::scores::{add_score, Category},
+    properties::{CONTROL_KEYS, Properties},
+    scores::scores::{Category, add_score},
     sound_player::{Sound, SoundPlayer},
     theme::Theme,
     themes,
@@ -159,9 +159,11 @@ mod imp {
         fn signals() -> &'static [glib::subclass::Signal] {
             static SIGNALS: OnceLock<Vec<glib::subclass::Signal>> = OnceLock::new();
             SIGNALS.get_or_init(|| {
-                vec![glib::subclass::Signal::builder("updated")
-                    .return_type::<()>()
-                    .build()]
+                vec![
+                    glib::subclass::Signal::builder("updated")
+                        .return_type::<()>()
+                        .build(),
+                ]
             })
         }
     }

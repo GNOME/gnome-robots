@@ -18,7 +18,7 @@
  */
 
 use super::category_bar::category_bar;
-use super::dialog::{new_scores_dialog, ScoresDialog};
+use super::dialog::{ScoresDialog, new_scores_dialog};
 use super::grid::{create_scores_grid, scores_grid_update};
 use super::no_scores::no_scores;
 use super::scores::{Category, ScoreList, Scores};

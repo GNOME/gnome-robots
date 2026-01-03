@@ -17,7 +17,7 @@
  * For more details see the file COPYING.
  */
 
-use super::{scores::ScoreList, ROWS_TO_DISPLAY};
+use super::{ROWS_TO_DISPLAY, scores::ScoreList};
 use gettextrs::gettext;
 use gtk::prelude::*;
 

@@ -113,8 +113,11 @@ mod imp {
                     self.game_configs.set(game_configs).ok().unwrap();
                 }
                 Err(e) => {
-                    eprintln!("CRITICAL {}\n{}",
-                        gettext("The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."),
+                    eprintln!(
+                        "CRITICAL {}\n{}",
+                        gettext(
+                            "The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."
+                        ),
                         e
                     );
                     self.obj().quit();

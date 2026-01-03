@@ -1,7 +1,8 @@
 [package]
 name = "gnome-robots"
 version = "41.2.0"
-edition = "2021"
+edition = "2024"
+rust-version = "1.90"
 
 [dependencies]
 gtk = { package = "gtk4", version = "0.10", features = ["gnome_49"] }

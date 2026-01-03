@@ -17,11 +17,11 @@
  * For more details see the file COPYING.
  */
 
+use super::ROWS_TO_DISPLAY;
 use super::category_bar::category_bar;
-use super::dialog::{new_scores_dialog, ScoresDialog};
+use super::dialog::{ScoresDialog, new_scores_dialog};
 use super::grid::{create_scores_grid, scores_grid_update};
 use super::scores::{Category, Score, ScoreList};
-use super::ROWS_TO_DISPLAY;
 use gettextrs::gettext;
 use gtk::{glib, prelude::*};
 use std::cell::RefCell;

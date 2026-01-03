@@ -21,12 +21,12 @@ use crate::assets::Assets;
 use crate::game::{Game, PlayerCommand, State};
 use crate::game_area::GameArea;
 use crate::game_config::GameConfigs;
-use crate::properties::{Properties, CONTROL_KEYS};
+use crate::properties::Properties;
 use crate::scores::scores::{show_scores, Category};
 use crate::window_size::remember_window_size;
 use adw::{prelude::*, subclass::prelude::*};
 use gettextrs::gettext;
-use gtk::{gdk, gio, glib};
+use gtk::{gio, glib};
 use rand::rng;
 use std::error::Error;
 use std::rc::Rc;
@@ -258,16 +258,6 @@ impl RobotsWindow {
 
         vbox.append(&toolbar_view);
 
-        let key_controller = gtk::EventControllerKey::new();
-        key_controller.connect_key_pressed(glib::clone!(
-            #[weak]
-            this,
-            #[upgrade_or]
-            glib::Propagation::Proceed,
-            move |_, keyval, _keycode, state| this.keyboard_cb(keyval, state)
-        ));
-        this.add_controller(key_controller);
-
         Ok(this)
     }
 
@@ -301,18 +291,8 @@ impl RobotsWindow {
         }
     }
 
-    fn keyboard_cb(&self, pressed: gdk::Key, state: gdk::ModifierType) -> glib::Propagation {
-        if state.is_empty() {
-            let settings = self.imp().settings.get().unwrap();
-            let game_area = self.imp().game_area.get().unwrap();
-            for ck in CONTROL_KEYS {
-                if settings.get_control_key(ck) == pressed {
-                    game_area.player_command(ck.command);
-                    return glib::Propagation::Stop;
-                }
-            }
-        }
-        glib::Propagation::Proceed
+    pub fn focus_game(&self) {
+        self.imp().game_area.get().unwrap().grab_focus();
     }
 
     pub fn start_new_game(&self) {

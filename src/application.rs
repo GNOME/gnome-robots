@@ -138,6 +138,7 @@ mod imp {
             ) {
                 Ok(window) => {
                     window.present();
+                    window.focus_game();
                 }
                 Err(e) => {
                     eprintln!("CRITICAL: {}", e);

@@ -24,7 +24,7 @@ use crate::{
     game::{Game, GameEvent, MoveSafety, PlayerCommand, State},
     game_config::{GameConfig, GameConfigs},
     graphics::calculate_contrast_color,
-    properties::Properties,
+    properties::{Properties, CONTROL_KEYS},
     scores::scores::{add_score, Category},
     sound_player::{Sound, SoundPlayer},
     theme::Theme,
@@ -104,6 +104,9 @@ mod imp {
             let obj = self.obj();
             obj.set_layout_manager(Some(gtk::BinLayout::new()));
 
+            obj.set_focusable(true);
+            obj.set_focus_on_click(true);
+
             let click_controller = gtk::GestureClick::new();
             click_controller.connect_pressed(glib::clone!(
                 #[weak]
@@ -119,6 +122,16 @@ mod imp {
                 move |_, x, y| obj.move_cb(x, y)
             ));
             obj.add_controller(motion_controller);
+
+            let key_controller = gtk::EventControllerKey::new();
+            key_controller.connect_key_pressed(glib::clone!(
+                #[weak]
+                obj,
+                #[upgrade_or]
+                glib::Propagation::Proceed,
+                move |_, keyval, _keycode, state| obj.keyboard_cb(keyval, state)
+            ));
+            obj.add_controller(key_controller);
 
             self.timer_id.set(Some(glib::timeout_add_local(
                 ANIMATION_DELAY,
@@ -347,6 +360,40 @@ impl GameArea {
             self.set_cursor(Some(cursor));
         } else {
             self.set_cursor(None);
+        }
+    }
+
+    fn keyboard_cb(&self, key: gdk::Key, state: gdk::ModifierType) -> glib::Propagation {
+        const NO_MOD: gdk::ModifierType = gdk::ModifierType::NO_MODIFIER_MASK;
+        const CTRL: gdk::ModifierType = gdk::ModifierType::CONTROL_MASK;
+
+        let command = match (state, key) {
+            (NO_MOD, gdk::Key::KP_0 | gdk::Key::KP_Insert) => Some(PlayerCommand::RandomTeleport),
+            (CTRL, gdk::Key::KP_0 | gdk::Key::KP_Insert) => Some(PlayerCommand::SafeTeleport),
+            (NO_MOD, gdk::Key::KP_1 | gdk::Key::KP_End) => Some(PlayerCommand::SW),
+            (NO_MOD, gdk::Key::KP_2 | gdk::Key::KP_Down) => Some(PlayerCommand::S),
+            (NO_MOD, gdk::Key::KP_3 | gdk::Key::KP_Page_Down) => Some(PlayerCommand::SE),
+            (NO_MOD, gdk::Key::KP_4 | gdk::Key::KP_Left) => Some(PlayerCommand::W),
+            (NO_MOD, gdk::Key::KP_5 | gdk::Key::KP_Begin) => Some(PlayerCommand::Stay),
+            (CTRL, gdk::Key::KP_5 | gdk::Key::KP_Begin) => Some(PlayerCommand::Wait),
+            (NO_MOD, gdk::Key::KP_6 | gdk::Key::KP_Right) => Some(PlayerCommand::E),
+            (NO_MOD, gdk::Key::KP_7 | gdk::Key::KP_Home) => Some(PlayerCommand::NW),
+            (NO_MOD, gdk::Key::KP_8 | gdk::Key::KP_Up) => Some(PlayerCommand::N),
+            (NO_MOD, gdk::Key::KP_9 | gdk::Key::KP_Page_Up) => Some(PlayerCommand::NE),
+            (NO_MOD, key) => {
+                let settings = self.imp().settings.get().unwrap();
+                CONTROL_KEYS
+                    .iter()
+                    .find_map(|ck| (settings.get_control_key(ck) == key).then_some(ck.command))
+            }
+            _ => None,
+        };
+
+        if let Some(command) = command {
+            self.player_command(command);
+            glib::Propagation::Stop
+        } else {
+            glib::Propagation::Proceed
         }
     }
 

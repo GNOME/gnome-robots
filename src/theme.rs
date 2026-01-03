@@ -20,7 +20,7 @@
 use crate::animation::{self, Animation, InfiniteAnimation};
 use crate::arena::ObjectType;
 use crate::image::Image;
-use gtk::{glib, glib::subclass::prelude::*, graphene, prelude::*};
+use gtk::{glib, glib::subclass::prelude::*, graphene, gsk, prelude::*};
 use std::error::Error;
 use std::ops::Range;
 use std::path::{Path, PathBuf};
@@ -83,6 +83,7 @@ impl Theme {
         frame_no: usize,
         snapshot: &gtk::Snapshot,
         rect: &graphene::Rect,
+        renderer: &gsk::Renderer,
     ) {
         let tile_no = match r#type {
             ObjectType::Player => frame_index(PLAYER_ANIMATION_FRAMES, frame_no),
@@ -99,7 +100,7 @@ impl Theme {
         let texture_width = (rect.width() as i32) * (FRAMES_COUNT as i32);
         let texture_height = rect.height() as i32;
         let image = self.imp().image.get().unwrap();
-        match image.scaled(texture_width, texture_height) {
+        match image.scaled(texture_width, texture_height, renderer) {
             Ok(texture) => {
                 snapshot.translate(&graphene::Point::new(
                     rect.x() - frame_offset as f32,

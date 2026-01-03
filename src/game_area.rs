@@ -155,6 +155,16 @@ mod imp {
 
     impl WidgetImpl for GameArea {
         fn snapshot(&self, snapshot: &gtk::Snapshot) {
+            let Some(renderer) = self
+                .obj()
+                .root()
+                .and_downcast::<gtk::Window>()
+                .and_then(|w| w.renderer())
+            else {
+                eprintln!("No renderer available");
+                return;
+            };
+
             let game_ref = self.game.borrow();
             let Some(game) = game_ref.as_ref() else {
                 return;
@@ -201,6 +211,7 @@ mod imp {
                         frame,
                         snapshot,
                         &tile_rect,
+                        &renderer,
                     );
                 }
             }

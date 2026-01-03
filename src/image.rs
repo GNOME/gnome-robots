@@ -1,5 +1,5 @@
 /*
- * Copyright 2022-2024 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2022-2026 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,7 @@
  * For more details see the file COPYING.
  */
 
-use crate::svg_paintable::SvgPaintable;
-use gtk::{cairo, gdk, gdk_pixbuf, glib, prelude::*};
+use gtk::{gdk, gio, graphene, gsk, prelude::*};
 use std::cell::RefCell;
 use std::error::Error;
 use std::path::Path;
@@ -28,82 +27,57 @@ use std::rc::Rc;
 pub struct Image(Rc<ImageInner>);
 
 struct ImageInner {
-    origin: ImageOrigin,
+    image: gly::Image,
+    texture: gdk::Texture,
     scaled: RefCell<Option<gdk::Texture>>,
 }
 
-enum ImageOrigin {
-    Svg(Rc<rsvg::SvgHandle>),
-    Pixbuf(gdk_pixbuf::Pixbuf),
-}
-
 impl Image {
-    fn new_svg(handle: rsvg::SvgHandle) -> Self {
-        Self(Rc::new(ImageInner {
-            origin: ImageOrigin::Svg(Rc::new(handle)),
-            scaled: Default::default(),
-        }))
-    }
-
-    fn new_pixbuf(pixbuf: gdk_pixbuf::Pixbuf) -> Self {
-        Self(Rc::new(ImageInner {
-            origin: ImageOrigin::Pixbuf(pixbuf),
-            scaled: Default::default(),
-        }))
-    }
-
     pub fn from_file(filename: &Path) -> Result<Self, Box<dyn Error>> {
-        rsvg::Loader::new()
-            .read_path(filename)
-            .map(|handle| Self::new_svg(handle))
-            .or_else(|_svg_error| {
-                let pixbuf = gdk_pixbuf::Pixbuf::from_file(filename)?;
-                Ok(Self::new_pixbuf(pixbuf))
-            })
+        let file = gio::File::for_path(filename);
+        let loader = gly::Loader::new(&file);
+        let image = loader.load()?;
+        let frame = image.next_frame()?;
+        let texture = gly_gtk::frame_get_texture(&frame);
+        Ok(Self(Rc::new(ImageInner {
+            image,
+            texture,
+            scaled: Default::default(),
+        })))
+    }
+
+    fn is_svg(&self) -> bool {
+        const SVG_CONTENT_TYPE: &str = "image/svg+xml";
+        self.0.image.mime_type() == SVG_CONTENT_TYPE
     }
 
     pub fn to_paintable(&self) -> gdk::Paintable {
-        match &self.0.origin {
-            ImageOrigin::Svg(handle) => SvgPaintable::new(handle).upcast(),
-            ImageOrigin::Pixbuf(pixbuf) => gdk::Texture::for_pixbuf(pixbuf).upcast(),
-        }
+        self.0.texture.clone().upcast()
     }
 
-    pub fn scaled(&self, width: i32, height: i32) -> Result<gdk::Texture, Box<dyn Error>> {
+    pub fn scaled(
+        &self,
+        width: i32,
+        height: i32,
+        renderer: &gsk::Renderer,
+    ) -> Result<gdk::Texture, Box<dyn Error>> {
         if let Some(texture) = self.0.scaled.borrow().as_ref() {
             if texture.width() == width && texture.height() == height {
                 return Ok(texture.clone());
             }
         }
 
-        let texture = match &self.0.origin {
-            ImageOrigin::Svg(handle) => {
-                let surface = cairo::ImageSurface::create(cairo::Format::ARgb32, width, height)?;
-
-                let cr = cairo::Context::new(&surface)?;
-                let rect = cairo::Rectangle::new(0.0, 0.0, width as f64, height as f64);
-                let renderer = rsvg::CairoRenderer::new(handle);
-                renderer.render_document(&cr, &rect)?;
-                drop(cr);
-
-                let stride = surface.stride() as usize;
-                let data = surface.take_data()?;
-                let bytes = glib::Bytes::from_owned(data.as_ref().to_vec());
-
-                gdk::MemoryTexture::new(
-                    width,
-                    height,
-                    gdk::MemoryFormat::B8g8r8a8Premultiplied,
-                    &bytes,
-                    stride,
-                )
-                .upcast()
-            }
-            ImageOrigin::Pixbuf(pixbuf) => gdk::Texture::for_pixbuf(
-                &pixbuf
-                    .scale_simple(width, height, gdk_pixbuf::InterpType::Bilinear)
-                    .ok_or("Scale failed")?,
-            ),
+        let texture = if self.is_svg() {
+            let request = gly::FrameRequest::new();
+            request.set_scale(width as u32, height as u32);
+            let frame = self.0.image.specific_frame(&request)?;
+            gly_gtk::frame_get_texture(&frame)
+        } else {
+            let snapshot = gtk::Snapshot::new();
+            let bounds = graphene::Rect::new(0.0, 0.0, width as f32, height as f32);
+            snapshot.append_texture(&self.0.texture, &bounds);
+            let node = snapshot.to_node().ok_or("No node")?;
+            renderer.render_texture(node, None)
         };
 
         self.0.scaled.replace(Some(texture.clone()));

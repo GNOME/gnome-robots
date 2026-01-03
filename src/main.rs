@@ -41,7 +41,6 @@ mod properties_dialog;
 mod scores;
 mod slot;
 mod sound_player;
-mod svg_paintable;
 mod theme;
 mod themes;
 mod utils;

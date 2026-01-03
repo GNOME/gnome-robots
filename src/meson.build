@@ -24,7 +24,7 @@ endif
 
 cargo_env = [ 'CARGO_HOME=' + meson.project_build_root() / 'cargo-home' ]
 
-custom_target(
+robots = custom_target(
     'cargo-build',
     build_by_default: true,
     build_always_stale: true,
@@ -40,4 +40,12 @@ custom_target(
         '&&',
         'cp', 'src' / rust_target / meson.project_name(), '@OUTPUT@',
     ]
+)
+
+test(
+    'cargo-test', cargo,
+    env: cargo_env,
+    args: ['test', '--no-fail-fast'] + cargo_options,
+    depends: [robots],
+    timeout: 180
 )

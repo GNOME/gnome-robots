@@ -130,7 +130,7 @@ pub struct Game {
     pub config: RefCell<Rc<GameConfig>>,
     player: Cell<Position>,
     splat: Cell<Option<Position>>,
-    rand: RefCell<Box<dyn rand::RngCore>>,
+    rand: RefCell<Box<dyn rand::Rng>>,
     endlev_counter: Cell<u32>,
     current_level: Cell<u32>,
     score: Cell<u32>,
@@ -142,7 +142,7 @@ pub struct Game {
 }
 
 impl Game {
-    pub fn new(config: &Rc<GameConfig>, rand: impl rand::RngCore + 'static) -> Self {
+    pub fn new(config: &Rc<GameConfig>, rand: impl rand::Rng + 'static) -> Self {
         Self {
             state: Cell::new(State::Playing),
             arena: RefCell::new(Arena::new(GAME_WIDTH, GAME_HEIGHT)),

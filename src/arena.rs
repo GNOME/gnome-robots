@@ -17,7 +17,7 @@
  * For more details see the file COPYING.
  */
 
-use rand::Rng;
+use rand::RngExt;
 use std::cell::Cell;
 
 #[derive(Clone, Copy, PartialEq, Eq)]
@@ -131,7 +131,7 @@ impl Arena {
         result
     }
 
-    pub fn random_vacant_position(&self, rand: &mut dyn rand::RngCore) -> Option<Position> {
+    pub fn random_vacant_position(&self, rand: &mut dyn rand::Rng) -> Option<Position> {
         let size = self.width * self.height;
         let start = rand.random_range(0..size);
         for i in 0..size {

@@ -76,6 +76,14 @@ mod imp {
 
             self.label.set_parent(&*obj);
 
+            let focus_controller = gtk::EventControllerFocus::new();
+            focus_controller.connect_leave(glib::clone!(
+                #[weak(rename_to = imp)]
+                self,
+                move |_| imp.set_editing(false)
+            ));
+            obj.add_controller(focus_controller);
+
             obj.connect_mnemonic_activate(glib::clone!(
                 #[weak(rename_to = imp)]
                 self,

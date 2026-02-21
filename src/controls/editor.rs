@@ -25,6 +25,8 @@ mod imp {
     use std::{cell::Cell, sync::OnceLock};
 
     pub struct ControlEditor {
+        pub stack: gtk::Stack,
+        pub shortcut_label: adw::ShortcutLabel,
         pub label: gtk::Label,
         pub key: Cell<Option<gdk::Key>>,
         pub editing: Cell<bool>,
@@ -38,6 +40,8 @@ mod imp {
 
         fn new() -> Self {
             Self {
+                stack: gtk::Stack::new(),
+                shortcut_label: adw::ShortcutLabel::new(""),
                 label: gtk::Label::builder()
                     .halign(gtk::Align::Start)
                     .valign(gtk::Align::Center)
@@ -56,6 +60,12 @@ mod imp {
             obj.set_layout_manager(Some(gtk::BinLayout::new()));
             obj.set_focusable(true);
 
+            self.stack.set_parent(&*obj);
+            self.stack.add_child(&self.shortcut_label);
+            self.stack.add_child(&self.label);
+
+            self.shortcut_label.set_halign(gtk::Align::End);
+
             let click_controller = gtk::GestureClick::new();
             click_controller.connect_pressed(glib::clone!(
                 #[weak(rename_to = imp)]
@@ -73,8 +83,6 @@ mod imp {
                 move |_, keyval, _keycode, mods| imp.key_controller_key_pressed(keyval, mods)
             ));
             obj.add_controller(key_controller);
-
-            self.label.set_parent(&*obj);
 
             let focus_controller = gtk::EventControllerFocus::new();
             focus_controller.connect_leave(glib::clone!(
@@ -136,16 +144,14 @@ mod imp {
 
         pub fn update_label(&self) {
             if self.editing.get() {
+                self.stack.set_visible_child(&self.label);
                 self.label.set_label(&gettext("New accelerator…"));
             } else if let Some(key) = self.key.get() {
-                self.label
-                    .set_label(&gtk::accelerator_get_label_with_keycode(
-                        Some(&self.obj().display()),
-                        key,
-                        0,
-                        gdk::ModifierType::empty(),
-                    ));
+                self.stack.set_visible_child(&self.shortcut_label);
+                self.shortcut_label
+                    .set_accelerator(&gtk::accelerator_name(key, gdk::ModifierType::empty()));
             } else {
+                self.stack.set_visible_child(&self.label);
                 self.label.set_label(&gettext("Disabled"));
             }
         }

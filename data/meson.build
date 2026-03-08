@@ -65,17 +65,6 @@ install_data(
 
 install_data(
     [
-        'games/classic_robots.cfg',
-        'games/nightmare.cfg',
-        'games/robots2.cfg',
-        'games/robots2_easy.cfg',
-        'games/robots_with_safe_teleport.cfg'
-    ],
-    install_dir: join_paths(pkgdatadir, 'games') 
-)
-
-install_data(
-    [
 	'cursors/cursor-up-left.png',
 	'cursors/cursor-up.png',
 	'cursors/cursor-up-right.png',

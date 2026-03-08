@@ -168,7 +168,7 @@ fn create_game_config_picker(game_configs: &GameConfigs, current_config: &str) -
             &[] as &[gtk::Expression],
             glib::closure!(|item: &glib::Object| {
                 item.downcast_ref::<glib::BoxedAnyObject>()
-                    .map(|b| b.borrow::<Rc<GameConfig>>().display_name())
+                    .map(|b| b.borrow::<Rc<GameConfig>>().display_name.to_owned())
                     .unwrap_or_default()
             }),
         ))

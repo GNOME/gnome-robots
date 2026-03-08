@@ -36,7 +36,7 @@ mod imp {
 
     pub struct RobotsApplication {
         settings: gio::Settings,
-        game_configs: OnceCell<GameConfigs>,
+        game_configs: GameConfigs,
         assets: OnceCell<Rc<dyn Assets>>,
     }
 
@@ -49,7 +49,7 @@ mod imp {
         fn new() -> Self {
             Self {
                 settings: gio::Settings::new("org.gnome.Robots"),
-                game_configs: Default::default(),
+                game_configs: GameConfigs::new(),
                 assets: Default::default(),
             }
         }
@@ -107,22 +107,6 @@ mod imp {
                     self.obj().quit();
                 }
             }
-
-            match GameConfigs::load() {
-                Ok(game_configs) => {
-                    self.game_configs.set(game_configs).ok().unwrap();
-                }
-                Err(e) => {
-                    eprintln!(
-                        "CRITICAL {}\n{}",
-                        gettext(
-                            "The program Robots was unable to find any valid game configuration files. Please check that the program is installed correctly."
-                        ),
-                        e
-                    );
-                    self.obj().quit();
-                }
-            }
         }
 
         fn activate(&self) {
@@ -136,7 +120,7 @@ mod imp {
             match RobotsWindow::new(
                 &*self.obj(),
                 &self.settings,
-                self.game_configs.get().unwrap().clone(),
+                self.game_configs.clone(),
                 self.assets.get().unwrap(),
             ) {
                 Ok(window) => {
@@ -185,7 +169,7 @@ mod imp {
         fn preferences_cb(&self) {
             show_preferences(
                 self.obj().active_window().as_ref(),
-                self.game_configs.get().unwrap(),
+                &self.game_configs,
                 &self.assets.get().unwrap().themes(),
                 &self.settings,
             );

@@ -7,8 +7,6 @@ number of UNIX systems.
 
 ## Useful links
 
-Homepage: https://gitlab.gnome.org/GNOME/gnome-robots
-
-Report issues: https://gitlab.gnome.org/GNOME/gnome-robots/issues/
-
-Translate: https://l10n.gnome.org/module/gnome-robots/
+- [Homepage](https://gitlab.gnome.org/GNOME/gnome-robots)
+- [Report issues](https://gitlab.gnome.org/GNOME/gnome-robots/issues/)
+- [Translate](https://l10n.gnome.org/module/gnome-robots/)

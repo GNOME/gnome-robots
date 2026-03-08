@@ -218,26 +218,24 @@ impl Game {
         let score_increment = match (self.state.get(), object_type) {
             (State::Waiting | State::WaitingType2, ObjectType::Robot1) => {
                 self.kills.update(|k| k + 1);
-                config.score_type1_waiting
+                config.robot_type1.score_waiting
             }
             (State::Waiting | State::WaitingType2, ObjectType::Robot2) => {
                 self.kills.update(|k| k + 2);
-                config.score_type2_waiting
+                config.robot_type2.score_waiting
             }
-            (_, ObjectType::Robot1) => config.score_type1,
-            (_, ObjectType::Robot2) => config.score_type2,
+            (_, ObjectType::Robot1) => config.robot_type1.score,
+            (_, ObjectType::Robot2) => config.robot_type2.score,
             _ => return,
         };
 
         self.score.update(|s| s + score_increment);
 
-        if let Some(Reward {
-            price,
-            safe_teleports_reward,
-        }) = self
-            .config
-            .borrow()
-            .kills_reward(self.safe_teleports.get(), self.kills.get())
+        if let Some(ref safe_teleports) = config.safe_teleports
+            && let Some(Reward {
+                price,
+                safe_teleports_reward,
+            }) = safe_teleports.kills_reward(self.safe_teleports.get(), self.kills.get())
         {
             self.kills.update(|k| k - price);
             self.safe_teleports.update(|t| t + safe_teleports_reward);
@@ -257,20 +255,25 @@ impl Game {
         });
         arena.set(self.player.get(), ObjectType::Player);
 
-        let mut num_robots1 = config.type1_robots_on_level(self.current_level.get());
-        let mut num_robots2 = config.type2_robots_on_level(self.current_level.get());
+        let mut num_robots1 = config.robot_type1.robots_on_level(self.current_level.get());
+        let mut num_robots2 = config.robot_type2.robots_on_level(self.current_level.get());
 
         let max_robots = arena.width() * arena.height() / 2;
         if num_robots1 + num_robots2 > max_robots {
             self.current_level.set(0);
-            num_robots1 = config.type1_robots_on_level(0);
-            num_robots2 = config.type2_robots_on_level(0);
+            num_robots1 = config.robot_type1.robots_on_level(0);
+            num_robots2 = config.robot_type2.robots_on_level(0);
 
             self.on_game_event.emit(GameEvent::Victory);
         }
 
-        self.safe_teleports
-            .update(|t| (t + config.free_safe_teleports).clamp(0, config.max_safe_teleports));
+        if let Some(free_teleports) = config
+            .safe_teleports
+            .as_ref()
+            .map(|st| st.free(self.safe_teleports.get()))
+        {
+            self.safe_teleports.update(|t| t + free_teleports);
+        }
 
         for robot in chain(
             repeat_n(ObjectType::Robot1, num_robots1 as usize),
@@ -290,13 +293,13 @@ impl Game {
                     self.splat.set(Some(push));
                     self.on_game_event.emit(GameEvent::Splat);
                     self.score
-                        .update(|s| s + self.config.borrow().score_type1_splatted);
+                        .update(|s| s + self.config.borrow().robot_type1.score_splatted);
                 }
                 ObjectType::Robot2 => {
                     self.splat.set(Some(push));
                     self.on_game_event.emit(GameEvent::Splat);
                     self.score
-                        .update(|s| s + self.config.borrow().score_type2_splatted);
+                        .update(|s| s + self.config.borrow().robot_type2.score_splatted);
                 }
                 _ => {}
             }
@@ -378,8 +381,13 @@ impl Game {
         self.score.set(0);
         self.kills.set(0);
 
-        self.safe_teleports
-            .set(self.config.borrow().initial_safe_teleports);
+        self.safe_teleports.set(
+            self.config
+                .borrow()
+                .safe_teleports
+                .as_ref()
+                .map_or(0, |s| s.initial),
+        );
 
         self.splat.set(None);
         self.generate_level();

@@ -17,33 +17,36 @@
  * For more details see the file COPYING.
  */
 
-use crate::config::DATA_DIRECTORY;
 use gettextrs::gettext;
-use std::error::Error;
-use std::fs;
-use std::path::Path;
+use std::num::NonZeroU32;
 use std::rc::Rc;
 
-#[derive(PartialEq, Eq, serde::Deserialize)]
+#[derive(PartialEq, Eq)]
 pub struct GameConfig {
-    pub name: String,
-    pub initial_type1: u32,
-    pub initial_type2: u32,
-    pub increment_type1: u32,
-    pub increment_type2: u32,
-    pub maximum_type1: u32,
-    pub maximum_type2: u32,
-    pub score_type1: u32,
-    pub score_type2: u32,
-    pub score_type1_waiting: u32,
-    pub score_type2_waiting: u32,
-    pub score_type1_splatted: u32,
-    pub score_type2_splatted: u32,
-    pub num_robots_per_safe: u32,
-    pub initial_safe_teleports: u32,
-    pub free_safe_teleports: u32,
-    pub max_safe_teleports: u32,
+    pub name: &'static str,
+    pub display_name: String,
+    pub robot_type1: RobotTypeConfig,
+    pub robot_type2: RobotTypeConfig,
+    pub safe_teleports: Option<SafeTeleportsConfig>,
     pub moveable_heaps: bool,
+}
+
+#[derive(PartialEq, Eq)]
+pub struct RobotTypeConfig {
+    pub initial: u32,
+    pub increment: u32,
+    pub maximum: u32,
+    pub score: u32,
+    pub score_waiting: u32,
+    pub score_splatted: u32,
+}
+
+#[derive(PartialEq, Eq)]
+pub struct SafeTeleportsConfig {
+    pub initial: u32,
+    pub free: u32,
+    pub max: u32,
+    pub kill_reward_price: Option<NonZeroU32>,
 }
 
 pub struct Reward {
@@ -51,48 +54,140 @@ pub struct Reward {
     pub safe_teleports_reward: u32,
 }
 
-impl GameConfig {
-    pub fn display_name(&self) -> String {
-        match self.name.as_str() {
-            "classic_robots" => gettext("Classic robots"),
-            "nightmare" => gettext("Nightmare"),
-            "robots2" => gettext("Robots2"),
-            "robots2_easy" => gettext("Robots2 easy"),
-            "robots_with_safe_teleport" => gettext("Robots with safe teleport"),
-            _ => self.name.replace("_", " "),
-        }
+impl RobotTypeConfig {
+    pub fn robots_on_level(&self, level: u32) -> u32 {
+        (self.initial + self.increment * level).clamp(0, self.maximum)
     }
+}
 
-    pub fn type1_robots_on_level(&self, level: u32) -> u32 {
-        (self.initial_type1 + self.increment_type1 * level).clamp(0, self.maximum_type1)
-    }
-
-    pub fn type2_robots_on_level(&self, level: u32) -> u32 {
-        (self.initial_type2 + self.increment_type2 * level).clamp(0, self.maximum_type2)
+impl SafeTeleportsConfig {
+    pub fn free(&self, current: u32) -> u32 {
+        u32::min(self.free, self.max.saturating_sub(current))
     }
 
     pub fn kills_reward(&self, current: u32, kills: u32) -> Option<Reward> {
-        if self.num_robots_per_safe <= 0 {
-            return None;
-        }
-        let safe_teleports_reward = u32::min(
-            kills / self.num_robots_per_safe,
-            self.max_safe_teleports.saturating_sub(current),
-        );
-        if safe_teleports_reward <= 0 {
-            return None;
-        }
-        let price = safe_teleports_reward * self.num_robots_per_safe;
-        Some(Reward {
-            price,
-            safe_teleports_reward,
+        let kill_reward_price: u32 = self.kill_reward_price?.into();
+        let safe_teleports_reward =
+            u32::min(kills / kill_reward_price, self.max.saturating_sub(current));
+        (safe_teleports_reward > 0).then_some({
+            Reward {
+                price: safe_teleports_reward * kill_reward_price,
+                safe_teleports_reward,
+            }
         })
     }
+}
 
-    pub fn from_file(filename: &Path) -> Result<Self, Box<dyn Error>> {
-        let content = fs::read_to_string(filename)?;
-        let config: Self = toml::from_str(&content)?;
-        Ok(config)
+fn classic_robots() -> GameConfig {
+    GameConfig {
+        name: "classic_robots",
+        display_name: gettext("Classic robots"),
+        robot_type1: RobotTypeConfig {
+            initial: 10,
+            increment: 10,
+            maximum: 9999,
+            score: 10,
+            score_waiting: 10,
+            score_splatted: 10,
+        },
+        robot_type2: RobotTypeConfig {
+            initial: 0,
+            increment: 0,
+            maximum: 0,
+            score: 0,
+            score_waiting: 0,
+            score_splatted: 0,
+        },
+        safe_teleports: None,
+        moveable_heaps: false,
+    }
+}
+
+fn robots_with_safe_teleport() -> GameConfig {
+    GameConfig {
+        name: "robots_with_safe_teleport",
+        display_name: gettext("Robots with safe teleport"),
+        safe_teleports: Some(SafeTeleportsConfig {
+            initial: 0,
+            free: 0,
+            max: 10,
+            kill_reward_price: NonZeroU32::new(1),
+        }),
+        ..classic_robots()
+    }
+}
+
+fn robots2() -> GameConfig {
+    GameConfig {
+        name: "robots2",
+        display_name: gettext("Robots2"),
+        robot_type1: RobotTypeConfig {
+            initial: 8,
+            increment: 8,
+            maximum: 9999,
+            score: 10,
+            score_waiting: 10,
+            score_splatted: 20,
+        },
+        robot_type2: RobotTypeConfig {
+            initial: 2,
+            increment: 2,
+            maximum: 9999,
+            score: 20,
+            score_waiting: 20,
+            score_splatted: 40,
+        },
+        safe_teleports: Some(SafeTeleportsConfig {
+            initial: 1,
+            free: 0,
+            max: 10,
+            kill_reward_price: NonZeroU32::new(1),
+        }),
+        moveable_heaps: true,
+    }
+}
+
+fn robots2_easy() -> GameConfig {
+    let robots2 = robots2();
+    GameConfig {
+        name: "robots2_easy",
+        display_name: gettext("Robots2 easy"),
+        safe_teleports: Some(SafeTeleportsConfig {
+            initial: 2,
+            free: 1,
+            ..robots2.safe_teleports.unwrap()
+        }),
+        ..robots2
+    }
+}
+
+fn nightmare() -> GameConfig {
+    GameConfig {
+        name: "nightmare",
+        display_name: gettext("Nightmare"),
+        robot_type1: RobotTypeConfig {
+            initial: 2,
+            increment: 2,
+            maximum: 9999,
+            score: 10,
+            score_waiting: 10,
+            score_splatted: 20,
+        },
+        robot_type2: RobotTypeConfig {
+            initial: 8,
+            increment: 8,
+            maximum: 9999,
+            score: 20,
+            score_waiting: 20,
+            score_splatted: 40,
+        },
+        safe_teleports: Some(SafeTeleportsConfig {
+            initial: 1,
+            free: 1,
+            max: 10,
+            kill_reward_price: NonZeroU32::new(2),
+        }),
+        moveable_heaps: true,
     }
 }
 
@@ -102,24 +197,16 @@ pub struct GameConfigs {
 }
 
 impl GameConfigs {
-    pub fn load() -> Result<Self, Box<dyn Error>> {
-        let directory = Path::new(DATA_DIRECTORY).join("games");
-        let mut game_configs = Vec::new();
-        for entry in fs::read_dir(&directory)? {
-            let path = entry?.path();
-            if path
-                .extension()
-                .is_some_and(|ex| ex == "cfg" || ex == "toml")
-            {
-                let gcfg = GameConfig::from_file(&path)?;
-                game_configs.push(Rc::new(gcfg));
-            }
+    pub fn new() -> Self {
+        Self {
+            game_configs: vec![
+                Rc::new(classic_robots()),
+                Rc::new(robots_with_safe_teleport()),
+                Rc::new(robots2()),
+                Rc::new(robots2_easy()),
+                Rc::new(nightmare()),
+            ],
         }
-
-        if game_configs.is_empty() {
-            return Err("No game config was found.".into());
-        }
-        Ok(Self { game_configs })
     }
 
     pub fn find_by_name(&self, name: &str) -> Option<&Rc<GameConfig>> {

@@ -513,7 +513,7 @@ impl GameArea {
         };
 
         let category = Category {
-            key: game_config.name.clone(),
+            key: game_config.name.to_string(),
             safety: self.move_safety(),
         };
         add_score(&category, score as i64, &window).await;

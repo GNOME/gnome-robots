@@ -61,10 +61,11 @@ impl Image {
         height: i32,
         renderer: &gsk::Renderer,
     ) -> Result<gdk::Texture, Box<dyn Error>> {
-        if let Some(texture) = self.0.scaled.borrow().as_ref() {
-            if texture.width() == width && texture.height() == height {
-                return Ok(texture.clone());
-            }
+        if let Some(texture) = self.0.scaled.borrow().as_ref()
+            && texture.width() == width
+            && texture.height() == height
+        {
+            return Ok(texture.clone());
         }
 
         let texture = if self.is_svg() {

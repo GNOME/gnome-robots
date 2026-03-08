@@ -127,7 +127,7 @@ pub enum MoveSafety {
 pub struct Game {
     state: Cell<State>,
     arena: RefCell<Arena>,
-    pub config: RefCell<Rc<GameConfig>>,
+    config: RefCell<Rc<GameConfig>>,
     player: Cell<Position>,
     splat: Cell<Option<Position>>,
     rand: RefCell<Box<dyn rand::Rng>>,
@@ -190,6 +190,10 @@ impl Game {
 
     pub fn splat(&self) -> Option<Position> {
         self.splat.get()
+    }
+
+    pub fn config(&self) -> Rc<GameConfig> {
+        self.config.borrow().clone()
     }
 
     pub fn set_config(&self, config: &Rc<GameConfig>) {
@@ -566,6 +570,14 @@ impl Game {
         }
     }
 
+    fn available_moves(&self) -> impl Iterator<Item = ArenaChange> {
+        (0..9).filter_map(|d| {
+            let dx = d % 3 - 1;
+            let dy = d / 3 - 1;
+            self.try_player_move(dx, dy)
+        })
+    }
+
     /**
      * safe_move_available
      *
@@ -576,16 +588,8 @@ impl Game {
      * TRUE if there is a possible safe move, FALSE otherwise
      **/
     fn safe_move_available(&self) -> bool {
-        for dx in -1..=1 {
-            for dy in -1..=1 {
-                if let Some(change) = self.try_player_move(dx, dy) {
-                    if self.check_safe(&change) {
-                        return true;
-                    }
-                }
-            }
-        }
-        false
+        self.available_moves()
+            .any(|change| self.check_safe(&change))
     }
 
     fn move_player_to(&self, coords: Position) -> ArenaChange {
@@ -616,24 +620,30 @@ impl Game {
      * TRUE if the player can move, FALSE otherwise
      **/
     fn player_move(&self, dx: i32, dy: i32, safety: MoveSafety) -> bool {
-        let change = self.try_player_move(dx, dy);
+        let Some(change) = self.try_player_move(dx, dy) else {
+            return false;
+        };
 
-        if let Some(change) = change {
-            if safety != MoveSafety::Unsafe {
-                if !self.check_safe(&change) {
-                    if safety == MoveSafety::SuperSafe || self.safe_move_available() {
-                        return false;
-                    }
+        match safety {
+            MoveSafety::Unsafe => {}
+            MoveSafety::Safe => {
+                // Prevent unsafe moves, but only when a safe one is available
+                if !self.check_safe(&change) && self.safe_move_available() {
+                    return false;
                 }
             }
-
-            self.splat.set(None);
-            self.update_arena(change);
-
-            true
-        } else {
-            false
+            MoveSafety::SuperSafe => {
+                // Prevent unsafe moves
+                if !self.check_safe(&change) {
+                    return false;
+                }
+            }
         }
+
+        self.splat.set(None);
+        self.update_arena(change);
+
+        true
     }
 
     /**

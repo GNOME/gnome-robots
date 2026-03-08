@@ -100,13 +100,14 @@ impl Arena {
     }
 
     pub fn put(&self, position: Position, obj: ObjectType) -> bool {
-        if let Some(index) = self.index_of(position) {
-            if self.objects[index].get() == ObjectType::None {
-                self.objects[index].set(obj);
-                return true;
-            }
+        if let Some(index) = self.index_of(position)
+            && self.objects[index].get() == ObjectType::None
+        {
+            self.objects[index].set(obj);
+            true
+        } else {
+            false
         }
-        false
     }
 
     pub fn map(&self, mapper: impl Fn(ObjectType) -> ObjectType) -> Self {
@@ -132,14 +133,14 @@ impl Arena {
     }
 
     pub fn random_vacant_position(&self, rand: &mut dyn rand::Rng) -> Option<Position> {
-        let size = self.width * self.height;
+        let size = self.objects.len();
         let start = rand.random_range(0..size);
         for i in 0..size {
             let index = (start + i) % size;
-            if self.objects[index as usize].get() == ObjectType::None {
+            if self.objects[index].get() == ObjectType::None {
                 return Some(Position {
-                    x: index % self.width,
-                    y: index / self.width,
+                    x: index as u32 % self.width,
+                    y: index as u32 / self.width,
                 });
             }
         }

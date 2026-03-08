@@ -299,10 +299,10 @@ impl GameArea {
     pub fn set_game(&self, game: Game) {
         let mut this_game = self.imp().game.borrow_mut();
 
-        if let Some(listener_id) = self.imp().game_listener_id.take() {
-            if let Some(game) = this_game.as_ref() {
-                game.on_game_event.disconnect(listener_id);
-            }
+        if let Some(listener_id) = self.imp().game_listener_id.take()
+            && let Some(game) = this_game.as_ref()
+        {
+            game.on_game_event.disconnect(listener_id);
         }
 
         self.set_size_request(
@@ -500,8 +500,7 @@ impl GameArea {
     }
 
     fn game_config(&self) -> Option<Rc<GameConfig>> {
-        let game = self.imp().game.borrow();
-        game.as_ref().map(|g| g.config.borrow().clone())
+        self.imp().game.borrow().as_ref().map(|g| g.config())
     }
 
     /// Enters a score in the high-score table

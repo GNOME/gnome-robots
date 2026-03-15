@@ -19,7 +19,7 @@
 
 use crate::{
     arena::{Arena, ObjectType, Position},
-    game_config::GameConfig,
+    game_config::{GameConfig, Reward},
     slot::Slot,
 };
 use std::cell::{Cell, RefCell};
@@ -213,29 +213,41 @@ impl Game {
 
     /// Registers a robot kill and updates the score
     fn add_kill(&self, object_type: ObjectType) {
+        let config = self.config.borrow().clone();
+
         let score_increment = match (self.state.get(), object_type) {
             (State::Waiting | State::WaitingType2, ObjectType::Robot1) => {
                 self.kills.update(|k| k + 1);
-                self.config.borrow().score_type1_waiting
+                config.score_type1_waiting
             }
             (State::Waiting | State::WaitingType2, ObjectType::Robot2) => {
                 self.kills.update(|k| k + 2);
-                self.config.borrow().score_type2_waiting
+                config.score_type2_waiting
             }
-            (_, ObjectType::Robot1) => self.config.borrow().score_type1,
-            (_, ObjectType::Robot2) => self.config.borrow().score_type2,
+            (_, ObjectType::Robot1) => config.score_type1,
+            (_, ObjectType::Robot2) => config.score_type2,
             _ => return,
         };
 
         self.score.update(|s| s + score_increment);
 
-        let kill_reward = self.config.borrow().kills_reward(self.kills.get());
-        self.kills.set(self.kills.get() - kill_reward.price);
-        self.add_safe_teleports(kill_reward.safe_teleports_reward);
+        if let Some(Reward {
+            price,
+            safe_teleports_reward,
+        }) = self
+            .config
+            .borrow()
+            .kills_reward(self.safe_teleports.get(), self.kills.get())
+        {
+            self.kills.update(|k| k - price);
+            self.safe_teleports.update(|t| t + safe_teleports_reward);
+        }
     }
 
     /// Creates a new level and populates it with robots
     fn generate_level(&self) {
+        let config = self.config.borrow().clone();
+
         let arena = self.arena.borrow_mut();
         arena.clear();
 
@@ -245,25 +257,20 @@ impl Game {
         });
         arena.set(self.player.get(), ObjectType::Player);
 
-        let mut num_robots1 = self
-            .config
-            .borrow()
-            .type1_robots_on_level(self.current_level.get());
-        let mut num_robots2 = self
-            .config
-            .borrow()
-            .type2_robots_on_level(self.current_level.get());
+        let mut num_robots1 = config.type1_robots_on_level(self.current_level.get());
+        let mut num_robots2 = config.type2_robots_on_level(self.current_level.get());
 
         let max_robots = arena.width() * arena.height() / 2;
         if num_robots1 + num_robots2 > max_robots {
             self.current_level.set(0);
-            num_robots1 = self.config.borrow().initial_type1;
-            num_robots2 = self.config.borrow().initial_type2;
+            num_robots1 = config.type1_robots_on_level(0);
+            num_robots2 = config.type2_robots_on_level(0);
 
             self.on_game_event.emit(GameEvent::Victory);
         }
 
-        self.add_safe_teleports(self.config.borrow().free_safe_teleports);
+        self.safe_teleports
+            .update(|t| (t + config.free_safe_teleports).clamp(0, config.max_safe_teleports));
 
         for robot in chain(
             repeat_n(ObjectType::Robot1, num_robots1 as usize),
@@ -274,13 +281,6 @@ impl Game {
                 .expect("No vacant positions");
             arena.set(p, robot);
         }
-    }
-
-    fn add_safe_teleports(&self, teleports: u32) {
-        self.safe_teleports.set(
-            (self.safe_teleports.get() + teleports)
-                .clamp(0, self.config.borrow().max_safe_teleports),
-        );
     }
 
     fn update_arena(&self, change: ArenaChange) {

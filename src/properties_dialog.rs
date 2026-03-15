@@ -84,7 +84,7 @@ fn create_game_group(
                 .and_downcast::<glib::BoxedAnyObject>()
                 .map(|b| b.borrow::<Rc<GameConfig>>().clone())
             {
-                properties.set_selected_config(&selection.name);
+                properties.set_selected_config(selection.name);
             }
         }
     ));

@@ -40,7 +40,6 @@ pub struct GameConfig {
     pub score_type1_splatted: u32,
     pub score_type2_splatted: u32,
     pub num_robots_per_safe: u32,
-    pub safe_score_boundary: u32,
     pub initial_safe_teleports: u32,
     pub free_safe_teleports: u32,
     pub max_safe_teleports: u32,
@@ -70,22 +69,6 @@ impl GameConfig {
 
     pub fn type2_robots_on_level(&self, level: u32) -> u32 {
         (self.initial_type2 + self.increment_type2 * level).clamp(0, self.maximum_type2)
-    }
-
-    pub fn score_reward(&self, score: u32) -> Reward {
-        if self.safe_score_boundary > 0 {
-            let safe_teleports_reward = score / self.safe_score_boundary;
-            let price = safe_teleports_reward * self.safe_score_boundary;
-            Reward {
-                price,
-                safe_teleports_reward,
-            }
-        } else {
-            Reward {
-                price: 0,
-                safe_teleports_reward: 0,
-            }
-        }
     }
 
     pub fn kills_reward(&self, kills: u32) -> Reward {

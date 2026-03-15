@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2024 Andrey Kutejko <andy128k@gmail.com>
+ * Copyright 2020-2026 Andrey Kutejko <andy128k@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,14 +17,14 @@
  * For more details see the file COPYING.
  */
 
-use std::cell::{Cell, RefCell};
-use std::rc::Rc;
-
-use crate::slot::Slot;
 use crate::{
     arena::{Arena, ObjectType, Position},
     game_config::GameConfig,
+    slot::Slot,
 };
+use std::cell::{Cell, RefCell};
+use std::iter::{chain, repeat_n};
+use std::rc::Rc;
 
 #[derive(Clone, Copy)]
 pub enum PlayerCommand {
@@ -135,7 +135,6 @@ pub struct Game {
     current_level: Cell<u32>,
     score: Cell<u32>,
     kills: Cell<u32>,
-    score_step: Cell<u32>,
     safe_teleports: Cell<u32>,
 
     pub on_game_event: Slot<GameEvent>,
@@ -154,7 +153,6 @@ impl Game {
             current_level: Cell::new(0),
             score: Cell::new(0),
             kills: Cell::new(0),
-            score_step: Cell::new(0),
             safe_teleports: Cell::new(0),
             on_game_event: Slot::new(),
         }
@@ -213,34 +211,23 @@ impl Game {
         self.on_game_event.emit(GameEvent::Death);
     }
 
-    /**
-     * add_kill
-     * @type: robot type
-     *
-     * Description:
-     * registers a robot kill and updates the score
-     **/
+    /// Registers a robot kill and updates the score
     fn add_kill(&self, object_type: ObjectType) {
-        let si = match (self.state.get(), object_type) {
+        let score_increment = match (self.state.get(), object_type) {
             (State::Waiting | State::WaitingType2, ObjectType::Robot1) => {
-                self.kills.set(self.kills.get() + 1);
+                self.kills.update(|k| k + 1);
                 self.config.borrow().score_type1_waiting
             }
-            (State::Waiting | State::WaitingType2, _) => {
-                self.kills.set(self.kills.get() + 2);
+            (State::Waiting | State::WaitingType2, ObjectType::Robot2) => {
+                self.kills.update(|k| k + 2);
                 self.config.borrow().score_type2_waiting
             }
             (_, ObjectType::Robot1) => self.config.borrow().score_type1,
-            _ => self.config.borrow().score_type2,
+            (_, ObjectType::Robot2) => self.config.borrow().score_type2,
+            _ => return,
         };
 
-        self.score.set(self.score.get() + si);
-        self.score_step.set(self.score_step.get() + si);
-
-        let score_reward = self.config.borrow().score_reward(self.score_step.get());
-        self.score_step
-            .set(self.score_step.get() - score_reward.price);
-        self.add_safe_teleports(score_reward.safe_teleports_reward);
+        self.score.update(|s| s + score_increment);
 
         let kill_reward = self.config.borrow().kills_reward(self.kills.get());
         self.kills.set(self.kills.get() - kill_reward.price);
@@ -278,18 +265,14 @@ impl Game {
 
         self.add_safe_teleports(self.config.borrow().free_safe_teleports);
 
-        for _ in 0..num_robots1 {
+        for robot in chain(
+            repeat_n(ObjectType::Robot1, num_robots1 as usize),
+            repeat_n(ObjectType::Robot2, num_robots2 as usize),
+        ) {
             let p = arena
                 .random_vacant_position(&mut *self.rand.borrow_mut())
                 .expect("No vacant positions");
-            arena.set(p, ObjectType::Robot1);
-        }
-
-        for _ in 0..num_robots2 {
-            let p = arena
-                .random_vacant_position(&mut *self.rand.borrow_mut())
-                .expect("No vacant positions");
-            arena.set(p, ObjectType::Robot2);
+            arena.set(p, robot);
         }
     }
 
@@ -307,13 +290,13 @@ impl Game {
                     self.splat.set(Some(push));
                     self.on_game_event.emit(GameEvent::Splat);
                     self.score
-                        .set(self.score.get() + self.config.borrow().score_type1_splatted);
+                        .update(|s| s + self.config.borrow().score_type1_splatted);
                 }
                 ObjectType::Robot2 => {
                     self.splat.set(Some(push));
                     self.on_game_event.emit(GameEvent::Splat);
                     self.score
-                        .set(self.score.get() + self.config.borrow().score_type2_splatted);
+                        .update(|s| s + self.config.borrow().score_type2_splatted);
                 }
                 _ => {}
             }
@@ -394,7 +377,6 @@ impl Game {
         self.current_level.set(0);
         self.score.set(0);
         self.kills.set(0);
-        self.score_step.set(0);
 
         self.safe_teleports
             .set(self.config.borrow().initial_safe_teleports);

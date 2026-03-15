@@ -2,13 +2,13 @@
 name = "gnome-robots"
 version = "41.2.0"
 edition = "2024"
-rust-version = "1.90"
+rust-version = "1.92"
 
 [dependencies]
-gtk = { package = "gtk4", version = "0.10", features = ["gnome_49"] }
-adw = { package = "libadwaita", version = "0.8", features = ["v1_8"] }
-gly = { package = "libglycin-rebind", version = "0.0.1" }
-gly_gtk = { package = "libglycin-gtk4-rebind", version = "0.0.1" }
+gtk = { package = "gtk4", version = "0.11", features = ["gnome_49"] }
+adw = { package = "libadwaita", version = "0.9", features = ["v1_8"] }
+gly = { package = "libglycin-rebind", version = "0.1" }
+gly_gtk = { package = "libglycin-gtk4-rebind", version = "0.1" }
 gettext-rs = { version = "0.7", features = ["gettext-system"] }
 rand = "0.10"
 async-channel = "2.1.1"

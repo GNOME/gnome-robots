@@ -437,8 +437,6 @@ impl Game {
         self.update_arena(change);
     }
 
-    // private delegate void KillTracker (ObjectType victim);
-
     fn chase(
         arena: &Arena,
         is_chaser: impl Fn(ObjectType) -> bool,

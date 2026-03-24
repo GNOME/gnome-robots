@@ -27,13 +27,14 @@
   </description>
   <screenshots>
     <screenshot type="default" width="1148" height="623">
-      <image>https://gitlab.gnome.org/GNOME/gnome-robots/-/raw/master/data/screenshot.png</image>
+      <image>https://gitlab.gnome.org/GNOME/gnome-robots/-/raw/main/data/screenshot.png</image>
     </screenshot>
   </screenshots>
   <provides>
     <id>gnome-robots.desktop</id>
   </provides>
   <releases>
+    <release version="50.0" date="2026-03-18" />
     <release version="41.2" date="2025-03-19" />
     <release version="41.1" date="2024-12-25" />
     <release version="41.0" date="2024-12-21" />

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2025-01-12 21:08+0000\n"
-"PO-Revision-Date: 2025-01-17 11:16+0100\n"
+"POT-Creation-Date: 2026-03-24 10:29+0000\n"
+"PO-Revision-Date: 2026-03-24 15:55+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -23,20 +23,20 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,-1,-1,-1,-1,-1,81\n"
 
-#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:71 src/application.rs:210 src/window.rs:53
+#: data/org.gnome.Robots.desktop.in:2 data/org.gnome.Robots.metainfo.xml.in:7
+#: src/application.rs:71 src/application.rs:196 src/window.rs:53
 msgid "Robots"
 msgstr "Roboti"
 
-#: data/org.gnome.Robots.desktop.in:4 data/org.gnome.Robots.metainfo.xml.in:8
+#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:8
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Izogibajte se robotom in poskrbite, da se zaletijo en v drugega"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Robots.desktop.in:6
+#: data/org.gnome.Robots.desktop.in:5
 msgid "game;arcade;teleport;"
 msgstr "igra;arkadna;teleportiranje;"
 
@@ -72,7 +72,11 @@ msgstr ""
 "vodijo prav pred oči robotov. Cilj igre je preživeti čim dlje v tem okrutnem "
 "svetu!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:65
+#: data/org.gnome.Robots.metainfo.xml.in:31
+msgid "A game preview"
+msgstr "Predogled igre"
+
+#: data/org.gnome.Robots.metainfo.xml.in:68
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
 
@@ -218,35 +222,27 @@ msgstr "Višina okna v točkah"
 msgid "true if the window is maximized"
 msgstr "prav, če je okno razpeto."
 
-#: src/application.rs:117
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Ni mogoče najti datotek z veljavnimi nastavitvami za igro za program Roboti. "
-"Preverite, če je program pravilno nameščen."
-
-#: src/application.rs:159
+#: src/application.rs:146
 msgid "New Game"
 msgstr "Nova igra"
 
-#: src/application.rs:161
+#: src/application.rs:148
 msgid "Are you sure you want to discard the current game?"
 msgstr "Ali ste prepričani, da želite končati trenutno igro?"
 
-#: src/application.rs:165
+#: src/application.rs:152
 msgid "Keep _Playing"
 msgstr "Nadaljuj z _igranjem"
 
-#: src/application.rs:166 src/window.rs:200
+#: src/application.rs:153 src/window.rs:201
 msgid "_New Game"
 msgstr "_Nova igra"
 
-#: src/application.rs:214
+#: src/application.rs:200
 msgid "Based on classic BSD Robots"
 msgstr "Igra je zasnovana po znani BSD igri Roboti."
 
-#: src/application.rs:226
+#: src/application.rs:212
 msgid "translator-credits"
 msgstr ""
 "Matej Urbančič <mateju@svn.gnome.org>\n"
@@ -254,7 +250,7 @@ msgstr ""
 "Matej Erman\n"
 "Tadej Janež"
 
-#: src/controls/controls.rs:31 src/properties_dialog.rs:63
+#: src/controls/controls.rs:31 src/properties_dialog.rs:62
 msgid "Keyboard"
 msgstr "Tipkovnica"
 
@@ -262,15 +258,15 @@ msgstr "Tipkovnica"
 msgid "_Restore Defaults"
 msgstr "_Obnovi privzeto"
 
-#: src/controls/editor.rs:131
+#: src/controls/editor.rs:148
 msgid "New accelerator…"
 msgstr "Nova bližnjica …"
 
-#: src/controls/editor.rs:141
+#: src/controls/editor.rs:155
 msgid "Disabled"
 msgstr "Onemogočeno"
 
-#: src/game_area.rs:424
+#: src/game_area.rs:486
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -278,51 +274,71 @@ msgstr ""
 "Čestitke, premagali ste robote!! \n"
 "Toda ali jih lahko premagate znova?"
 
-#: src/game_area.rs:429
+#: src/game_area.rs:491
 msgid "There are no teleport locations left!!"
 msgstr "Ostalo ni nič več mest za prežarčenje!!"
 
-#: src/properties_dialog.rs:43
+#: src/game_config.rs:84 src/scores/scores.rs:70
+msgid "Classic robots"
+msgstr "Običajni roboti"
+
+#: src/game_config.rs:109 src/scores/scores.rs:89
+msgid "Robots with safe teleport"
+msgstr "Roboti z varnim teleportiranjem"
+
+#: src/game_config.rs:123 src/scores/scores.rs:80
+msgid "Robots2"
+msgstr "Roboti2"
+
+#: src/game_config.rs:154 src/scores/scores.rs:83
+msgid "Robots2 easy"
+msgstr "Enostavni Roboti2"
+
+#: src/game_config.rs:167 src/scores/scores.rs:75
+msgid "Nightmare"
+msgstr "Nočna mora"
+
+#: src/properties_dialog.rs:42
 msgid "Game"
 msgstr "Igra"
 
-#: src/properties_dialog.rs:52
+#: src/properties_dialog.rs:51
 msgid "Appearance"
 msgstr "Videz"
 
-#: src/properties_dialog.rs:95
+#: src/properties_dialog.rs:94
 msgid "_Use safe moves"
 msgstr "_Uporabi varne premike"
 
-#: src/properties_dialog.rs:98
+#: src/properties_dialog.rs:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Prepreči ponesrečene poteze, katerih posledica je smrt."
 
-#: src/properties_dialog.rs:105
+#: src/properties_dialog.rs:104
 msgid "U_se super safe moves"
 msgstr "U_porabi zelo varne premike"
 
-#: src/properties_dialog.rs:107
+#: src/properties_dialog.rs:106
 msgid "Prevents all moves that result in getting killed."
 msgstr "Prepreči vse poteze, katerih posledica je smrt."
 
-#: src/properties_dialog.rs:136
+#: src/properties_dialog.rs:135
 msgid "_Enable sounds"
 msgstr "_Omogoči zvoke"
 
-#: src/properties_dialog.rs:139
+#: src/properties_dialog.rs:138
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Predvajanje zvoka ob dogodkih, kot so končanje ravni in umiranje."
 
-#: src/properties_dialog.rs:166
+#: src/properties_dialog.rs:165
 msgid "Game Type"
 msgstr "Vrsta igre"
 
-#: src/properties_dialog.rs:186
+#: src/properties_dialog.rs:185
 msgid "_Image theme:"
 msgstr "_Slikovna tema:"
 
-#: src/properties_dialog.rs:226
+#: src/properties_dialog.rs:225
 msgid "_Background color:"
 msgstr "Barva _ozadja:"
 
@@ -370,10 +386,6 @@ msgstr "Odigrajte nekaj iger in vaši rezultati se bodo prikazali tukaj."
 msgid "High Scores"
 msgstr "Najboljši rezultati"
 
-#: src/scores/scores.rs:70
-msgid "Classic robots"
-msgstr "Običajni roboti"
-
 #: src/scores/scores.rs:71
 msgid "Classic robots with safe moves"
 msgstr "Običajni roboti z varnimi premiki"
@@ -381,10 +393,6 @@ msgstr "Običajni roboti z varnimi premiki"
 #: src/scores/scores.rs:73
 msgid "Classic robots with super-safe moves"
 msgstr "Običajni roboti z zelo varnimi premiki"
-
-#: src/scores/scores.rs:75
-msgid "Nightmare"
-msgstr "Nočna mora"
 
 #: src/scores/scores.rs:76
 msgid "Nightmare with safe moves"
@@ -394,10 +402,6 @@ msgstr "Nočna mora z varnimi premiki"
 msgid "Nightmare with super-safe moves"
 msgstr "Nočna mora z zelo varnimi premiki"
 
-#: src/scores/scores.rs:80
-msgid "Robots2"
-msgstr "Roboti2"
-
 #: src/scores/scores.rs:81
 msgid "Robots2 with safe moves"
 msgstr "Roboti2 z varnimi premiki"
@@ -406,10 +410,6 @@ msgstr "Roboti2 z varnimi premiki"
 msgid "Robots2 with super-safe moves"
 msgstr "Roboti2 z zelo varnimi premiki"
 
-#: src/scores/scores.rs:83
-msgid "Robots2 easy"
-msgstr "Enostavni Roboti2"
-
 #: src/scores/scores.rs:84
 msgid "Robots2 easy with safe moves"
 msgstr "Enostavni Roboti2 z varnimi premiki"
@@ -417,10 +417,6 @@ msgstr "Enostavni Roboti2 z varnimi premiki"
 #: src/scores/scores.rs:86
 msgid "Robots2 easy with super-safe moves"
 msgstr "Enostavni Roboti2 z zelo varnimi premiki"
-
-#: src/scores/scores.rs:89
-msgid "Robots with safe teleport"
-msgstr "Roboti z varnim teleportiranjem"
 
 #: src/scores/scores.rs:92
 msgid "Robots with safe teleport with safe moves"
@@ -442,33 +438,27 @@ msgstr "Teleportiraj _varno"
 msgid "_Wait for Robots"
 msgstr "_Počakaj na robote"
 
-#: src/window.rs:204
+#: src/window.rs:205
 msgid "_Scores"
 msgstr "_Točke"
 
-#: src/window.rs:212
+#: src/window.rs:213
 msgid "_Preferences"
 msgstr "_Možnosti"
 
-#: src/window.rs:216
+#: src/window.rs:217
 msgid "_Help"
 msgstr "Pomo_č"
 
-#: src/window.rs:220
+#: src/window.rs:221
 msgid "_About Robots"
 msgstr "_O igri"
 
-#: src/window.rs:280
+#: src/window.rs:268
+#, rust-format
 msgid "Level: {level}\tScore: {score}"
 msgstr "Stopnja: {level}\tRezultat: {score}"
 
-#: src/window.rs:286
-#, c-format
+#: src/window.rs:274
 msgid "(Remaining: %d)"
 msgstr "(Še: %d)"
-
-#~ msgid "Show toolbar"
-#~ msgstr "Pokaži orodno vrstico"
-
-#~ msgid "Show toolbar. A standard option for toolbars."
-#~ msgstr "Pokaži orodno vrstico. Standardna možnost za orodne vrstice."

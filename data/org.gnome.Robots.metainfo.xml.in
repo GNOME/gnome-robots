@@ -26,8 +26,9 @@
     </p>
   </description>
   <screenshots>
-    <screenshot type="default" width="1148" height="623">
+    <screenshot type="default" width="3312" height="2498">
       <image>https://gitlab.gnome.org/GNOME/gnome-robots/-/raw/main/data/screenshot.png</image>
+      <caption>A game preview</caption>
     </screenshot>
   </screenshots>
   <provides>

@@ -31,6 +31,10 @@
       <caption>A game preview</caption>
     </screenshot>
   </screenshots>
+  <branding>
+    <color type="primary" scheme_preference="light">#7590ae</color>
+    <color type="primary" scheme_preference="dark">#69819d</color>
+  </branding>
   <provides>
     <id>gnome-robots.desktop</id>
   </provides>

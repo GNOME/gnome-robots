@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2026-01-03 18:38+0000\n"
-"PO-Revision-Date: 2026-01-26 20:15+0500\n"
+"POT-Creation-Date: 2026-03-25 23:54+0000\n"
+"PO-Revision-Date: 2026-03-26 22:40+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/org.gnome.Robots.desktop.in:2 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:71 src/application.rs:212 src/window.rs:53
+#: src/application.rs:71 src/application.rs:196 src/window.rs:53
 msgid "Robots"
 msgstr "Роботтар"
 
@@ -27,18 +27,16 @@ msgstr "Роботтар"
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Роботтардан аулақ болу және оларды бір-біріне соғыстыру"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Robots.desktop.in:5
 msgid "game;arcade;teleport;"
 msgstr "game;arcade;teleport;ойын;аркада;телепорт;"
 
-#. Translators: "It is the distant future: the year 2000" is a reference to
-#. Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
+#. Translators: "It is the distant future: the year 2000" is a reference to Flight of the Conchords, see https://www.youtube.com/watch?v=2IPAOxrH7Ro
 #: data/org.gnome.Robots.metainfo.xml.in:11
 msgid ""
-"It is the distant future: the year 2000. Evil robots are trying to kill "
-"you. Avoid the robots or face certain death."
+"It is the distant future: the year 2000. Evil robots are trying to kill you. "
+"Avoid the robots or face certain death."
 msgstr ""
 "Бұл алыс болашақ: 2000 жыл. Жауыз роботтар сізді өлтіруге тырысады. "
 "Роботтардан сақ болыңыз немесе өлімге ұшырайсыз."
@@ -52,10 +50,10 @@ msgid ""
 "device."
 msgstr ""
 "Бақытымызға орай, роботтар өте ақымақ және әрдайым сізге қарай тікелей "
-"жылжиды. Олардың жойылуына әкеп соғатын оларды бір-бірімен, немесе "
-"соқтығысу нәтижесі болатын үйілген қоқыспен соқтығыстырыңыз. Үйілген "
-"қоқысты жылжыту немесе ыңғайлы телепорттау құрылғысымен қауіпсіздікке қашу "
-"арқылы өзіңізді қорғауға болады."
+"жылжиды. Олардың жойылуына әкеп соғатын оларды бір-бірімен, немесе соқтығысу "
+"нәтижесі болатын үйілген қоқыспен соқтығыстырыңыз. Үйілген қоқысты жылжыту "
+"немесе ыңғайлы телепорттау құрылғысымен қауіпсіздікке қашу арқылы өзіңізді "
+"қорғауға болады."
 
 #: data/org.gnome.Robots.metainfo.xml.in:22
 msgid ""
@@ -66,7 +64,11 @@ msgstr ""
 "Сіздің қауіпсіз телепорт саны шектеулі, ол таусылғанда, телепортация сізді "
 "өлтіретін роботтың қасына тура әкелуі мүмкін. Барынша ұзақ өмір сүріңіз!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:66
+#: data/org.gnome.Robots.metainfo.xml.in:31
+msgid "A game preview"
+msgstr "Ойынның алдын ала қарауы"
+
+#: data/org.gnome.Robots.metainfo.xml.in:72
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
 
@@ -127,8 +129,7 @@ msgid "Enable game sounds"
 msgstr "Ойын дыбыстарын іске қосу"
 
 #: data/org.gnome.Robots.gschema.xml:31
-msgid ""
-"Enable game sounds. Play sounds for various events throughout the game."
+msgid "Enable game sounds. Play sounds for various events throughout the game."
 msgstr ""
 "Ойын дыбыстарын іске қосу. Ойын бойы түрлі оқиғаларға арналған дыбыстарды "
 "ойнату."
@@ -217,35 +218,27 @@ msgstr "Терезе биіктігі, пиксельмен"
 msgid "true if the window is maximized"
 msgstr "терезе максималды болса, мәні true болады"
 
-#: src/application.rs:119
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Роботтар бағдарламасы жарамды ойын конфигурация файлдарын таба алмады. "
-"Бағдарламаның дұрыс орнатылғанын тексеріңіз."
-
-#: src/application.rs:162
+#: src/application.rs:146
 msgid "New Game"
 msgstr "Жаңа ойын"
 
-#: src/application.rs:164
+#: src/application.rs:148
 msgid "Are you sure you want to discard the current game?"
 msgstr "Ағымдағы ойынды тайдырғыңыз келе ме?"
 
-#: src/application.rs:168
+#: src/application.rs:152
 msgid "Keep _Playing"
 msgstr "О_йнауды жалғастыру"
 
-#: src/application.rs:169 src/window.rs:201
+#: src/application.rs:153 src/window.rs:201
 msgid "_New Game"
 msgstr "Ж_аңа ойын"
 
-#: src/application.rs:216
+#: src/application.rs:200
 msgid "Based on classic BSD Robots"
 msgstr "Классикалық BSD роботтар ойыны негізінде"
 
-#: src/application.rs:228
+#: src/application.rs:212
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
@@ -257,11 +250,11 @@ msgstr "Пернетақта"
 msgid "_Restore Defaults"
 msgstr "Бастапқ_ы түріне келтіру"
 
-#: src/controls/editor.rs:131
+#: src/controls/editor.rs:148
 msgid "New accelerator…"
 msgstr "Жаңа үдеткіш…"
 
-#: src/controls/editor.rs:141
+#: src/controls/editor.rs:155
 msgid "Disabled"
 msgstr "Сөндірулі"
 
@@ -277,25 +270,25 @@ msgstr ""
 msgid "There are no teleport locations left!!"
 msgstr "Телепорт орындары қалмады!!"
 
-#: src/game_config.rs:58 src/scores/scores.rs:70
+#: src/game_config.rs:84 src/scores/scores.rs:70
 msgid "Classic robots"
 msgstr "Классикалық роботтар"
 
-#: src/game_config.rs:59 src/scores/scores.rs:75
-msgid "Nightmare"
-msgstr "Күрделі ойын"
+#: src/game_config.rs:109 src/scores/scores.rs:89
+msgid "Robots with safe teleport"
+msgstr "Қауіпсіз телепорты бар роботтар ойыны"
 
-#: src/game_config.rs:60 src/scores/scores.rs:80
+#: src/game_config.rs:123 src/scores/scores.rs:80
 msgid "Robots2"
 msgstr "Роботтар2"
 
-#: src/game_config.rs:61 src/scores/scores.rs:83
+#: src/game_config.rs:154 src/scores/scores.rs:83
 msgid "Robots2 easy"
 msgstr "Роботтар2 оңай"
 
-#: src/game_config.rs:62 src/scores/scores.rs:89
-msgid "Robots with safe teleport"
-msgstr "Қауіпсіз телепорты бар роботтар ойыны"
+#: src/game_config.rs:167 src/scores/scores.rs:75
+msgid "Nightmare"
+msgstr "Күрделі ойын"
 
 #: src/properties_dialog.rs:42
 msgid "Game"
@@ -462,6 +455,13 @@ msgstr "Деңгей: {level}\tҰпай: {score}"
 #: src/window.rs:274
 msgid "(Remaining: %d)"
 msgstr "(Қалған: %d)"
+
+#~ msgid ""
+#~ "The program Robots was unable to find any valid game configuration files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "Роботтар бағдарламасы жарамды ойын конфигурация файлдарын таба алмады. "
+#~ "Бағдарламаның дұрыс орнатылғанын тексеріңіз."
 
 #~ msgid "Show toolbar"
 #~ msgstr "Саймандар панелін көрсету"

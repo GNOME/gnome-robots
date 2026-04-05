@@ -1,0 +1,926 @@
+# Serbian translation for gnome-robots.
+# Copyright (C) 2026 gnome-robots's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-robots package.
+# Марко Костић <marko.m.kostic@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-robots main\n"
+"POT-Creation-Date: 2026-04-03 01:33+0000\n"
+"PO-Revision-Date: 2026-04-04 17:31+0200\n"
+"Last-Translator: Марко Костић <marko.m.kostic@gmail.com>\n"
+"Language-Team: Serbian <Serbian>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 3.9\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Марко Костић <marko.m.kostic@gmail.com>\n"
+"Превод на српски језик https://гном.срб"
+
+#. (itstool) path: credit/name
+#: C/appearance.page:17 C/basics.page:17 C/controls-change.page:16
+#: C/controls-default.page:17 C/game-types.page:16 C/index.page:18
+#: C/moves.page:17 C/scores.page:16
+msgid "Aruna Sankaranarayanan"
+msgstr "Аруна Санкаранарајанан"
+
+#. (itstool) path: credit/name
+#: C/appearance.page:21 C/basics.page:21 C/controls-default.page:21
+#: C/game-types.page:20 C/scores.page:20
+msgid "Rachel Dunstan"
+msgstr "Рејчел Данстан"
+
+#. (itstool) path: info/desc
+#: C/appearance.page:25
+msgid "Use different game-themes in <app>Robots</app>."
+msgstr "Користите различите теме игара у <app>Роботима</app>."
+
+#. (itstool) path: page/title
+#: C/appearance.page:28
+msgid "Change the default appearance of the game"
+msgstr "Промените подразумевани изглед игре"
+
+#. (itstool) path: page/p
+#: C/appearance.page:30
+msgid ""
+"You can change the <app>Robots</app> backdrop and the different robots that "
+"are present in a game by changing the game theme and background."
+msgstr "Можете променити позадину <app>Робота</app> и различите роботе који су присутни у игри променом теме игре и позадине."
+
+#. (itstool) path: steps/title
+#: C/appearance.page:34
+msgid "To change the game theme and background:"
+msgstr "За промену теме игре и позадине:"
+
+#. (itstool) path: item/p
+#. (itstool) path: section/p
+#: C/appearance.page:36 C/basics.page:40 C/controls-change.page:31
+#: C/game-types.page:36
+msgid ""
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Preferences</gui>."
+msgstr "Притисните дугме менија у горњем десном углу прозора и изаберите <gui style=\"menuitem\">Поставки</gui>."
+
+#. (itstool) path: item/p
+#: C/appearance.page:39
+msgid "Select the <gui>Appearance</gui> tab."
+msgstr "Изаберите картицу <gui>Изглед</gui>."
+
+#. (itstool) path: item/p
+#: C/appearance.page:42
+msgid "Select a theme from the <gui>Image theme</gui> drop-down menu."
+msgstr "Изаберите тему из падајућег менија <gui>Тема слике</gui>."
+
+#. (itstool) path: item/p
+#: C/appearance.page:45
+msgid ""
+"To change your background color, click the button next to <gui>Background "
+"color</gui>. Select a color from the available choices and click <gui "
+"style=\"button\">Select</gui>."
+msgstr "Да бисте променили боју позадине, кликните на дугме поред <gui>Боја позадине</gui>. Изаберите боју из доступних избора и кликните на <gui style=\"button\">Изабери</gui>."
+
+#. (itstool) path: info/desc
+#: C/basics.page:25
+msgid "Start, quit, and enable sounds."
+msgstr "Покрените, изађите и омогућите звукове."
+
+#. (itstool) path: page/title
+#: C/basics.page:28
+msgid "Basic instructions"
+msgstr "Основна упутства"
+
+#. (itstool) path: section/title
+#: C/basics.page:31
+msgid "Start a new game"
+msgstr "Почетак нове игре"
+
+#. (itstool) path: section/p
+#: C/basics.page:33
+msgid ""
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">New Game</gui>, or press <keyseq><key>Ctrl</key><key>N</"
+"key></keyseq> to start a new game."
+msgstr "Притисните дугме менија у горњем десном углу прозора и изаберите <gui style=\"menuitem\">Нова игра</gui>, или притисните <keyseq><key>Ctrl</key><key>N</key></keyseq> да започнете нову игру."
+
+#. (itstool) path: section/title
+#: C/basics.page:39
+msgid "Enable sounds"
+msgstr "Укључује звуке"
+
+#. (itstool) path: section/p
+#: C/basics.page:41
+msgid ""
+"Then select the <gui>Game</gui> tab and check <gui style=\"checkbox\">Enable "
+"sounds</gui>."
+msgstr "Затим изаберите картицу <gui>Игра</gui> и означите <gui style=\"checkbox\">Омогући звукове</gui>."
+
+#. (itstool) path: section/title
+#: C/basics.page:46
+msgid "Quit <app>Robots</app>"
+msgstr "Изађите из <app>Робота</app>"
+
+#. (itstool) path: section/p
+#: C/basics.page:48
+msgid ""
+"Press the close button in the title bar, or press <keyseq><key>Ctrl</"
+"key><key>Q</key></keyseq> to quit <app>Robots</app> at any time."
+msgstr "Притисните дугме за затварање у траци наслова, или притисните <keyseq><key>Ctrl</key><key>Q</key></keyseq> да изађете из <app>Робота</app> у било ком тренутку."
+
+#. (itstool) path: info/desc
+#: C/controls-change.page:20
+msgid "Change the default keys in <app>Robots</app>."
+msgstr "Промените подразумеване тастере у <app>Роботима</app>."
+
+#. (itstool) path: page/title
+#: C/controls-change.page:23
+msgid "Customize the keyboard controls"
+msgstr "Прилагодите контроле тастатуре"
+
+#. (itstool) path: page/p
+#: C/controls-change.page:25
+msgid ""
+"The <link xref=\"controls-default\">default controls</link> can be changed "
+"in <app>Robots</app> to suit your preference."
+msgstr "<link xref=\"controls-default\">Подразумеване контроле</link> се могу променити у <app>Роботима</app> како би одговарале вашим жељама."
+
+#. (itstool) path: steps/title
+#: C/controls-change.page:29
+msgid "To change the default keys:"
+msgstr "За промену подразумеваних тастера:"
+
+#. (itstool) path: item/p
+#: C/controls-change.page:34
+msgid "Select the <gui>Keyboard</gui> tab."
+msgstr "Изаберите језичак <gui>Тастатура</gui>."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:37
+msgid "In the list, select the key that you want to change."
+msgstr "На списку изаберите тастер који желите да промените."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:40
+msgid ""
+"Either click on the control in the second column, or press the <key>Enter</"
+"key> key. The words <gui>New accelerator…</gui> are now present in place of "
+"the old control."
+msgstr "Или кликните на контролу у другој колони, или притисните тастер <key>Enter</key>. Речи <gui>Нови убрзавач…</gui> су сада присутне уместо старе контроле."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:45
+msgid "Press the key you want to use instead of the default key."
+msgstr "Притисните тастер који желите да користите уместо подразумеваног тастера."
+
+#. (itstool) path: note/p
+#: C/controls-change.page:47
+msgid "To keep the old setting, press <key>Esc</key>."
+msgstr "Да задржите старо подешавање, притисните <key>Esc</key>."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:51
+msgid "Repeat the above steps to change any other default keys."
+msgstr "Поновите горње кораке да промените било које друге подразумеване тастере."
+
+#. (itstool) path: item/p
+#: C/controls-change.page:54
+msgid "Close the <gui>Preferences</gui> dialog."
+msgstr "Затворите прозорче <gui>Поставки</gui>."
+
+#. (itstool) path: note/p
+#: C/controls-change.page:59
+msgid ""
+"You can always reset the controls to the default controls by clicking the "
+"<gui style=\"button\">Restore Defaults</gui> button."
+msgstr "Увек можете да вратите контроле на подразумеване кликом на дугме <gui style=\"button\">Поврати подразумевано</gui>."
+
+#. (itstool) path: info/desc
+#: C/controls-default.page:25
+msgid "How do I control the main character?"
+msgstr "Како да управљам главним ликом?"
+
+#. (itstool) path: page/title
+#: C/controls-default.page:28
+msgid "Mouse and keyboard controls for <app>Robots</app>"
+msgstr "Миш и контроле тастатуре за <app>Роботе</app>"
+
+#. (itstool) path: section/title
+#: C/controls-default.page:31
+msgid "Keyboard controls"
+msgstr "Контроле тастатуре"
+
+#. (itstool) path: section/p
+#: C/controls-default.page:33
+msgid ""
+"Use the following keys from the numeric keypad on the far right of your "
+"keyboard, to move in <app>Robots</app>."
+msgstr "Користите следеће тастере са бројевног дела на крајњој десној страни ваше тастатуре за кретање у <app>Роботима</app>."
+
+#. (itstool) path: td/p
+#: C/controls-default.page:39
+msgid "Possible moves"
+msgstr "Могући потези"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:40
+msgid "Key"
+msgstr "Key"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:45
+msgid "North west"
+msgstr "Северозапад"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:46
+msgid "<key>y</key>"
+msgstr "<key>y</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:49
+msgid "North"
+msgstr "Север"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:50
+msgid "<key>k</key>"
+msgstr "<key>k</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:53
+msgid "North east"
+msgstr "Североисток"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:54
+msgid "<key>u</key>"
+msgstr "<key>u</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:57
+msgid "West"
+msgstr "Запад"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:58
+msgid "<key>h</key>"
+msgstr "<key>h</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:61
+msgid "East"
+msgstr "Исток"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:62
+msgid "<key>l</key>"
+msgstr "<key>l</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:65
+msgid "South west"
+msgstr "Југозападно"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:66
+msgid "<key>b</key>"
+msgstr "<key>b</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:69
+msgid "South"
+msgstr "Југ"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:70
+msgid "<key>j</key>"
+msgstr "<key>j</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:73
+msgid "South east"
+msgstr "Југоисточно"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:74
+msgid "<key>n</key>"
+msgstr "<key>n</key>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:77
+msgid "Stay in the same position (one turn)"
+msgstr "Остани на истом месту (један потез)"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:78
+msgid "Space"
+msgstr "Space"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:81
+msgid "Teleport safely"
+msgstr "Безбедно телепортуј"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:82
+msgid "<keyseq><key>Alt</key><key>s</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>s</key></keyseq>"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:85
+msgid "Teleport randomly"
+msgstr "Насумично телепортуј"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:86
+msgid "<keyseq><key>Alt</key><key>r</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>r</key></keyseq>"
+
+#. (itstool) path: td/p
+#. (itstool) path: item/title
+#: C/controls-default.page:89 C/controls-default.page:120
+msgid "Wait for the robots"
+msgstr "Сачекај роботе"
+
+#. (itstool) path: td/p
+#: C/controls-default.page:90
+msgid "<keyseq><key>Alt</key><key>w</key></keyseq>"
+msgstr "<keyseq><key>Alt</key><key>w</key></keyseq>"
+
+#. (itstool) path: note/p
+#: C/controls-default.page:96
+msgid ""
+"You can <link xref=\"controls-change\">change</link> the default controls to "
+"suit your preference."
+msgstr "Можете <link xref=\"controls-change\">изменити</link> подразумеване контроле како вам одговара."
+
+#. (itstool) path: section/title
+#: C/controls-default.page:103
+msgid "Use the mouse to move around"
+msgstr "Користите миша за кретање"
+
+#. (itstool) path: item/title
+#: C/controls-default.page:107
+msgid "Move in a particular direction"
+msgstr "Померање у одређеном смеру"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:108
+msgid ""
+"When you move your mouse around the main character, a small black arrow will "
+"appear pointing towards the direction in which the character will move if "
+"you click. For example, to move north, if you move your cursor to the column "
+"above the main character, a small black arrow will appear pointing "
+"northwards. On clicking, the character will move one square northwards."
+msgstr "Када померате миша око главног лика, појавиће се мала црна стрелица која показује у смеру у коме ће се лик померити ако кликнете. На пример, да бисте се померили на север, ако померите курсор у колону изнад главног лика, појавиће се мала црна стрелица која показује на север. Након клика, лик ће се померити за једно поље на север."
+
+#. (itstool) path: item/title
+#: C/controls-default.page:116
+msgid "Stay in the same position"
+msgstr "Остани на истом месту"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:117
+msgid "Click on the main character to stay put in the same square."
+msgstr "Кликните на главног лика да бисте остали на истом пољу."
+
+#. (itstool) path: item/p
+#: C/controls-default.page:121
+msgid ""
+"Click the <gui>Wait for Robots</gui> button to wait for the enemy robots to "
+"finish making all their moves."
+msgstr "Кликните на дугме <gui>Сачекај роботе</gui> да бисте сачекали да непријатељски роботи заврше све своје потезе."
+
+#. (itstool) path: item/title
+#: C/controls-default.page:125 C/moves.page:56
+msgid "Safe teleports"
+msgstr "Безбедни телепорти"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:126
+msgid "To safely teleport, click the <gui>Teleport Safely</gui> button."
+msgstr "Да бисте се безбедно телепортовали, кликните на дугме <gui>Безбедно телепортуј</gui>."
+
+#. (itstool) path: item/title
+#: C/controls-default.page:129 C/moves.page:62
+msgid "Random teleports"
+msgstr "Насумични телепорти"
+
+#. (itstool) path: item/p
+#: C/controls-default.page:130
+msgid ""
+"To teleport to a random spot, click the <gui>Teleport Randomly</gui> button."
+msgstr "Да бисте се телепортовали на насумично место, кликните на дугме <gui>Случајно телепортуј</gui>."
+
+#. (itstool) path: info/desc
+#: C/game-types.page:24
+msgid "Change the level of difficulty in <app>Robots</app>."
+msgstr "Промените ниво тежине у <app>Роботима</app>."
+
+#. (itstool) path: page/title
+#: C/game-types.page:27
+msgid "Game type"
+msgstr "Врста игре"
+
+#. (itstool) path: page/p
+#: C/game-types.page:29
+msgid ""
+"You can play <app>Robots</app> in different ways by choosing a different "
+"game type. This changes the level of difficulty involved in playing "
+"<app>Robots</app>."
+msgstr "Можете играти <app>Роботе</app> на различите начине бирањем другачије врсте игре. Ово мења ниво тежине укључен у играње <app>Робота</app>."
+
+#. (itstool) path: steps/title
+#: C/game-types.page:34
+msgid "To change the level of difficulty:"
+msgstr "Да бисте променили ниво тежине:"
+
+#. (itstool) path: item/p
+#: C/game-types.page:39
+msgid "Select the <gui>Game</gui> tab."
+msgstr "Изаберите језичак <gui>Игра</gui>."
+
+#. (itstool) path: item/p
+#: C/game-types.page:42
+msgid ""
+"From the drop down menu next to <gui>Game Type</gui>, choose your option."
+msgstr "Из падајућег менија поред <gui>Врста игре</gui>, изаберите своју опцију."
+
+#. (itstool) path: td/p
+#: C/game-types.page:47
+msgid "Game Type"
+msgstr "Врста игара"
+
+#. (itstool) path: td/p
+#: C/game-types.page:48
+msgid "Initial safe <link xref=\"moves#teleport\">teleports</link>"
+msgstr "Почетни безбедни <link xref=\"moves#teleport\">телепорти</link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:50
+msgid ""
+"Initial <link xref=\"scores#high-low-risk\">low-risk enemy robots</link>"
+msgstr "Почетни <link xref=\"scores#high-low-risk\">нискоризични непријатељски роботи</link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:53
+msgid ""
+"Initial <link xref=\"scores#high-low-risk\">high-risk enemy robots</link>"
+msgstr "Почетни <link xref=\"scores#high-low-risk\">високоризични непријатељски роботи</link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:56
+msgid "Do safe teleports increase in successive levels?"
+msgstr "Да ли се број безбедних телепорта повећава на следећим нивоима?"
+
+#. (itstool) path: td/p
+#: C/game-types.page:61
+msgid "<gui>nightmare</gui>"
+msgstr "<gui>ноћна мора</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:62 C/game-types.page:63 C/game-types.page:71
+#: C/game-types.page:94
+msgid "2"
+msgstr "2"
+
+#. (itstool) path: td/p
+#: C/game-types.page:64 C/game-types.page:70 C/game-types.page:93
+msgid "8"
+msgstr "8"
+
+#. (itstool) path: td/p
+#: C/game-types.page:65 C/game-types.page:95
+msgid "Yes"
+msgstr "Да"
+
+#. (itstool) path: td/p
+#: C/game-types.page:68
+msgid "<gui>robots2</gui>"
+msgstr "<gui>роботи2</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:69
+msgid "1"
+msgstr "1"
+
+#. (itstool) path: td/p
+#: C/game-types.page:72 C/game-types.page:80
+msgid ""
+"Yes, but only if robots are killed while <link xref=\"moves#wait\">waiting</"
+"link>"
+msgstr "Да, али само ако су роботи убијени током <link xref=\"moves#wait\">чекања</link>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:76
+msgid "<gui>robots with safe teleport</gui>"
+msgstr "<gui>роботи са безбедним телепортом</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:77 C/game-types.page:79 C/game-types.page:85
+#: C/game-types.page:87
+msgid "0"
+msgstr "0"
+
+#. (itstool) path: td/p
+#: C/game-types.page:78 C/game-types.page:86
+msgid "10"
+msgstr "10"
+
+#. (itstool) path: td/p
+#: C/game-types.page:84
+msgid "<gui>classic robots</gui>"
+msgstr "<gui>класични роботи</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:88
+msgid "No"
+msgstr "Не"
+
+#. (itstool) path: td/p
+#: C/game-types.page:91
+msgid "<gui>robots2 easy</gui>"
+msgstr "<gui>роботи2 лако</gui>"
+
+#. (itstool) path: td/p
+#: C/game-types.page:92
+msgid "3"
+msgstr "3"
+
+#. (itstool) path: item/p
+#: C/game-types.page:101
+msgid ""
+"If you check the <gui style=\"checkbox\">Use safe moves</gui> checkbox, the "
+"game will prevent you from moving if the move would cause a robot to kill "
+"you, unless the only way to survive is to teleport. If you check the <gui "
+"style=\"checkbox\">Use super safe moves</gui> checkbox, the game will "
+"prevent you from making any move in this case, so that you are forced to "
+"teleport. This reduces the level of difficulty. You can always uncheck these "
+"if you find the game too easy."
+msgstr "Ако означите поље <gui style=\"checkbox\">Користи безбедне потезе</gui>, игра ће вас спречити да се померите ако би тај потез довео до тога да вас робот убије, осим ако је једини начин да преживите телепортовање. Ако означите поље <gui style=\"checkbox\">Користи супер безбедне потезе</gui>, игра ће вас спречити да направите било какакав потез у овом случају, тако да сте приморани да се телепортујете. Ово смањује ниво тежине. Увек можете одзначити ова поља ако сматрате да је игра превише лака."
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link:trail"
+msgid "Robots"
+msgstr "Роботи"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "Robots"
+msgstr "Роботи"
+
+#. (itstool) path: info/title
+#: C/index.page:9
+msgctxt "link"
+msgid "Robots"
+msgstr "Роботи"
+
+#. (itstool) path: info/desc
+#: C/index.page:22
+msgid "Index"
+msgstr "Индекс"
+
+#. (itstool) path: page/title
+#: C/index.page:25
+msgid "<_:media-1/> Robots"
+msgstr "<_:media-1/> Роботи"
+
+#. (itstool) path: page/p
+#: C/index.page:30
+msgid ""
+"<app>Robots</app> is based on the UNIX command-line game of the same name. "
+"The aim of the game is to destroy all the robots by getting them to crash "
+"into each other or into junk heaps from previous collisions, without them "
+"crashing into you."
+msgstr "<app>Роботи</app> су засновани на Јуниксовој игри из командне линије истог имена. Циљ игре је уништити све роботе тако што ћете их натерати да се сударе једни са другима или у гомиле ђубрета из претходних судара, а да се они не сударе са вама."
+
+#. (itstool) path: section/title
+#: C/index.page:36
+msgid "Game play"
+msgstr "Ток игре"
+
+#. (itstool) path: section/title
+#: C/index.page:40
+msgid "Preferences"
+msgstr "Преференце"
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Овај рад је лиценциран под <_:link-1/>."
+
+#. (itstool) path: info/desc
+#: C/moves.page:21
+msgid "How can I move around in <app>Robots</app>?"
+msgstr "Како могу да се крећем у <app>Роботима</app>?"
+
+#. (itstool) path: page/title
+#: C/moves.page:24
+msgid "Different moves in <app>Robots</app>"
+msgstr "Различити потези у <app>Роботима</app>"
+
+#. (itstool) path: page/p
+#: C/moves.page:26
+msgid ""
+"In <app>Robots</app> you can move in one of eight directions, wait for the "
+"robots, or teleport. The enemy robots and the main character take turns to "
+"make their move. So, after each of your moves, the enemy robots try to make "
+"a move that gets them closer to you."
+msgstr "У <app>Роботима</app> можете да се крећете у једном од осам смерова, да чекате роботе или да се телепортујете. Непријатељски роботи и главни лик се смењују у својим потезима. Дакле, након сваког вашег потеза, непријатељски роботи покушавају да направе потез који их приближава вама."
+
+#. (itstool) path: section/title
+#: C/moves.page:32
+msgid "Basic moves"
+msgstr "Основни потези"
+
+#. (itstool) path: section/p
+#: C/moves.page:34
+msgid ""
+"In one turn, you can move to any adjacent square. You may move diagonally."
+msgstr "У једном потезу, можете се померити на било које суседно поље. Можете се кретати дијагонално."
+
+#. (itstool) path: section/title
+#: C/moves.page:39
+msgid "Wait"
+msgstr "Сачекај"
+
+#. (itstool) path: section/p
+#: C/moves.page:41
+msgid ""
+"You can stay put and wait for the robots to finish making all their moves. "
+"This is not advisable unless there are very few robots and you are "
+"absolutely sure that they will all perish before reaching you."
+msgstr "Можете остати у месту и чекати да роботи заврше све своје потезе. Ово није препоручљиво осим ако има врло мало робота и ако сте потпуно сигурни да ће сви страдати пре него што стигну до вас."
+
+#. (itstool) path: section/title
+#: C/moves.page:48
+msgid "Teleport to a different location"
+msgstr "Телепортовање на друго место"
+
+#. (itstool) path: section/p
+#: C/moves.page:50
+msgid ""
+"If there are no moves possible or if you want to make a leap across the "
+"board instead of moving square by square, you can teleport. There are two "
+"types of teleports available."
+msgstr "Ако нема могућих потеза или ако желите да направите скок преко табле уместо да се крећете поље по поље, можете се телепортовати. Постоје две врсте доступних телепорта."
+
+#. (itstool) path: item/p
+#: C/moves.page:57
+msgid ""
+"Safe teleports move the main character to a location that is safe from enemy "
+"robots. In each game only a few safe teleports are allowed."
+msgstr "Безбедни телепорти премештају главног лика на место које је безбедно од непријатељских робота. У свакој игри је дозвољено само неколико безбедних телепорта."
+
+#. (itstool) path: item/p
+#: C/moves.page:63
+msgid ""
+"Use random teleports to teleport to a random location that may be safe or "
+"may not be safe. You can use as many random teleports as you want during a "
+"game."
+msgstr "Користите насумичне телепорте да се телепортујете на насумично место које може бити безбедно или не. Можете користити колико год желите насумичних телепорта током игре."
+
+#. (itstool) path: info/desc
+#: C/scores.page:24
+msgid "Scoring points in <app>Robots</app>"
+msgstr "Освајање поена у <app>Роботима</app>"
+
+#. (itstool) path: page/title
+#: C/scores.page:27
+msgid "Scores"
+msgstr "Резултати"
+
+#. (itstool) path: page/p
+#: C/scores.page:29
+msgid ""
+"There are two type of enemies in <app>Robots</app>: high-risk enemies which "
+"give you 20 points when they die and low-risk enemies which give you 10 "
+"points when they die."
+msgstr "Постоје две врсте непријатеља у <app>Роботима</app>: високоризични непријатељи који вам дају 20 поена када умру и нискоризични непријатељи који вам дају 10 поена када умру."
+
+#. (itstool) path: section/title
+#: C/scores.page:34
+msgid "High and low risk enemies by theme"
+msgstr "Високоризични и нискоризични непријатељи по теми"
+
+#. (itstool) path: section/p
+#: C/scores.page:36
+msgid ""
+"The enemies in a game depend on the <link xref=\"appearance\">game theme</"
+"link> chosen."
+msgstr "Непријатељи у игри зависе од изабране <link xref=\"appearance\">теме игре</link>."
+
+#. (itstool) path: td/p
+#: C/scores.page:42
+msgid "Game theme"
+msgstr "Тема игре"
+
+#. (itstool) path: td/p
+#: C/scores.page:43
+msgid "High-risk enemy (20 points)"
+msgstr "Непријатељ високог ризика (20 поена)"
+
+#. (itstool) path: td/p
+#: C/scores.page:44
+msgid "Low-risk enemy (10 points)"
+msgstr "Непријатељ ниског ризика (10 поена)"
+
+#. (itstool) path: td/p
+#: C/scores.page:48
+msgid "anthills"
+msgstr "мравињаци"
+
+#. (itstool) path: media/span
+#: C/scores.page:51
+msgid "High-risk anthill"
+msgstr "Мравињак високог ризика"
+
+#. (itstool) path: media/span
+#: C/scores.page:54
+msgid "Low-risk anthill"
+msgstr "Мравињак ниског ризика"
+
+#. (itstool) path: td/p
+#: C/scores.page:57
+msgid "boo"
+msgstr "бу"
+
+#. (itstool) path: media/span
+#: C/scores.page:60
+msgid "High-risk bat"
+msgstr "Слепи миш високог ризика"
+
+#. (itstool) path: media/span
+#: C/scores.page:63
+msgid "Low-risk ghost"
+msgstr "Дух ниског ризика"
+
+#. (itstool) path: td/p
+#: C/scores.page:66
+msgid "cows"
+msgstr "краве"
+
+#. (itstool) path: media/span
+#: C/scores.page:69
+msgid "High-risk cow"
+msgstr "Крава високог ризика"
+
+#. (itstool) path: media/span
+#: C/scores.page:72
+msgid "Low-risk cow"
+msgstr "Крава ниског ризика"
+
+#. (itstool) path: td/p
+#: C/scores.page:75
+msgid "eggs"
+msgstr "јаја"
+
+#. (itstool) path: media/span
+#: C/scores.page:79
+msgid "High-risk egg"
+msgstr "Јаје високог ризика"
+
+#. (itstool) path: media/span
+#: C/scores.page:83
+msgid "Low-risk egg"
+msgstr "Јаје ниског ризика"
+
+#. (itstool) path: td/p
+#: C/scores.page:86
+msgid "gnomes"
+msgstr "гнoмови"
+
+#. (itstool) path: media/span
+#: C/scores.page:89
+msgid "High-risk gnome"
+msgstr "Гном високог ризика"
+
+#. (itstool) path: media/span
+#: C/scores.page:92
+msgid "Low-risk gnome"
+msgstr "Гном ниског ризика"
+
+#. (itstool) path: td/p
+#: C/scores.page:95
+msgid "mice"
+msgstr "мишеви"
+
+#. (itstool) path: media/span
+#: C/scores.page:98
+msgid "High-risk mouse"
+msgstr "Миш високог ризика"
+
+#. (itstool) path: media/span
+#: C/scores.page:101
+msgid "Low-risk mouse"
+msgstr "Миш ниског ризика"
+
+#. (itstool) path: td/p
+#: C/scores.page:104
+msgid "robots"
+msgstr "роботи"
+
+#. (itstool) path: media/span
+#: C/scores.page:107
+msgid "High-risk robot"
+msgstr "Високоризични робот"
+
+#. (itstool) path: media/span
+#: C/scores.page:110
+msgid "Low-risk robot"
+msgstr "Нискоризични робот"
+
+#. (itstool) path: td/p
+#: C/scores.page:112
+msgid "spills"
+msgstr "просипања"
+
+#. (itstool) path: media/span
+#: C/scores.page:116
+msgid "High-risk spill"
+msgstr "Високоризично просипање"
+
+#. (itstool) path: media/span
+#: C/scores.page:119
+msgid "Low-risk spill"
+msgstr "Нискоризично просипање"
+
+#. (itstool) path: td/p
+#: C/scores.page:122
+msgid "stormclouds"
+msgstr "олујни облаци"
+
+#. (itstool) path: media/span
+#: C/scores.page:125
+msgid "High-risk stormcloud"
+msgstr "Високоризични олујни облак"
+
+#. (itstool) path: media/span
+#: C/scores.page:128
+msgid "Low-risk stormcloud"
+msgstr "Нискоризични олујни облак"
+
+#. (itstool) path: td/p
+#: C/scores.page:131
+msgid "toasters"
+msgstr "тостери"
+
+#. (itstool) path: media/span
+#: C/scores.page:134
+msgid "High-risk toaster"
+msgstr "Високоризични тостер"
+
+#. (itstool) path: media/span
+#: C/scores.page:137
+msgid "Low-risk toaster"
+msgstr "Нискоризични тостер"
+
+#. (itstool) path: td/p
+#: C/scores.page:140
+msgid "ufo"
+msgstr "нло"
+
+#. (itstool) path: media/span
+#: C/scores.page:143
+msgid "High-risk UFO"
+msgstr "Високоризични НЛО"
+
+#. (itstool) path: media/span
+#: C/scores.page:146
+msgid "Low-risk UFO"
+msgstr "Нискоризични НЛО"
+
+#. (itstool) path: section/title
+#: C/scores.page:154
+msgid "High scores"
+msgstr "Најбољи резултати"
+
+#. (itstool) path: section/p
+#: C/scores.page:156
+msgid ""
+"Press the menu button in the top-right corner of the window and select <gui "
+"style=\"menuitem\">Scores</gui> to view the high scores."
+msgstr "Притисните дугме менија у горњем десном углу прозора и изаберите <gui style=\"menuitem\">Резултати</gui> да бисте видели најбоље резултате."
+
+#. (itstool) path: section/p
+#: C/scores.page:159
+msgid ""
+"Scores are recorded separately for each combination of <link xref=\"game-"
+"types\">game type and safe move option</link>. Use the drop-down menu next "
+"to <gui>Map</gui> to view scores for a particular game type and safe move "
+"option combination."
+msgstr "Резултати се бележе засебно за сваку комбинацију <link xref=\"game-types\">врсте игре и опције безбедног потеза</link>. Користите падајући мени поред ставке <gui>Мапа</gui> да бисте видели резултате за одређену комбинацију врсте игре и опције безбедног потеза."

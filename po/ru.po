@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games trunk\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2025-01-12 21:08+0000\n"
-"PO-Revision-Date: 2025-01-16 22:20+1000\n"
+"POT-Creation-Date: 2026-03-25 23:54+0000\n"
+"PO-Revision-Date: 2026-04-06 22:02+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -31,17 +31,17 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:71 src/application.rs:210 src/window.rs:53
+#: data/org.gnome.Robots.desktop.in:2 data/org.gnome.Robots.metainfo.xml.in:7
+#: src/application.rs:71 src/application.rs:196 src/window.rs:53
 msgid "Robots"
 msgstr "Роботы"
 
-#: data/org.gnome.Robots.desktop.in:4 data/org.gnome.Robots.metainfo.xml.in:8
+#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:8
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Убегайте от роботов, заставляя их сталкиваться друг с другом"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Robots.desktop.in:6
+#: data/org.gnome.Robots.desktop.in:5
 msgid "game;arcade;teleport;"
 msgstr "игра;аркада;телепорт;"
 
@@ -77,7 +77,11 @@ msgstr ""
 "телепорт может перенести вас прямо в лапы роботам, которые не замедлят вас "
 "убить. Вы должны продержаться как можно дольше!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:65
+#: data/org.gnome.Robots.metainfo.xml.in:31
+msgid "A game preview"
+msgstr "Предварительный просмотр игры"
+
+#: data/org.gnome.Robots.metainfo.xml.in:72
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
 
@@ -224,42 +228,34 @@ msgstr "Высота окна в пикселах"
 msgid "true if the window is maximized"
 msgstr "истинно, если окно имеет максимальный размер"
 
-#: src/application.rs:117
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Программа Роботы не смогла найти ни одного файла настроек. Проверьте "
-"корректность установки игры."
-
-#: src/application.rs:159
+#: src/application.rs:146
 msgid "New Game"
 msgstr "Новая игра"
 
-#: src/application.rs:161
+#: src/application.rs:148
 msgid "Are you sure you want to discard the current game?"
 msgstr "Уверены, что хотите отменить текущую игру?"
 
-#: src/application.rs:165
+#: src/application.rs:152
 msgid "Keep _Playing"
 msgstr "Вернуться к _игре"
 
-#: src/application.rs:166 src/window.rs:200
+#: src/application.rs:153 src/window.rs:201
 msgid "_New Game"
 msgstr "_Новая игра"
 
-#: src/application.rs:214
+#: src/application.rs:200
 msgid "Based on classic BSD Robots"
 msgstr "Основано на классических роботах из BSD"
 
-#: src/application.rs:226
+#: src/application.rs:212
 msgid "translator-credits"
 msgstr ""
 "Станислав Соловей <whats_up@tut.by>, 2013-2019.\n"
 "Юрий Мясоедов <ymyasoedov@yandex.ru>, 2014.\n"
 "Alexey Rubtsov <rushills@gmail.com>, 2021"
 
-#: src/controls/controls.rs:31 src/properties_dialog.rs:63
+#: src/controls/controls.rs:31 src/properties_dialog.rs:62
 msgid "Keyboard"
 msgstr "Клавиатура"
 
@@ -267,15 +263,15 @@ msgstr "Клавиатура"
 msgid "_Restore Defaults"
 msgstr "_Восстановить параметры по умолчанию"
 
-#: src/controls/editor.rs:131
+#: src/controls/editor.rs:148
 msgid "New accelerator…"
 msgstr "Новая клавиша…"
 
-#: src/controls/editor.rs:141
+#: src/controls/editor.rs:155
 msgid "Disabled"
 msgstr "Выключено"
 
-#: src/game_area.rs:424
+#: src/game_area.rs:486
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -283,51 +279,71 @@ msgstr ""
 "Примите поздравления. Вы победили роботов!!\n"
 "Но удастся ли вам это ещё раз?"
 
-#: src/game_area.rs:429
+#: src/game_area.rs:491
 msgid "There are no teleport locations left!!"
 msgstr "Нет больше мест для телепортации!!"
 
-#: src/properties_dialog.rs:43
+#: src/game_config.rs:84 src/scores/scores.rs:70
+msgid "Classic robots"
+msgstr "Классические роботы"
+
+#: src/game_config.rs:109 src/scores/scores.rs:89
+msgid "Robots with safe teleport"
+msgstr "Роботы с безопасными телепортациями"
+
+#: src/game_config.rs:123 src/scores/scores.rs:80
+msgid "Robots2"
+msgstr "Роботы2"
+
+#: src/game_config.rs:154 src/scores/scores.rs:83
+msgid "Robots2 easy"
+msgstr "Простые Роботы 2"
+
+#: src/game_config.rs:167 src/scores/scores.rs:75
+msgid "Nightmare"
+msgstr "Кошмар"
+
+#: src/properties_dialog.rs:42
 msgid "Game"
 msgstr "Игра"
 
-#: src/properties_dialog.rs:52
+#: src/properties_dialog.rs:51
 msgid "Appearance"
 msgstr "Внешний вид"
 
-#: src/properties_dialog.rs:95
+#: src/properties_dialog.rs:94
 msgid "_Use safe moves"
 msgstr "Использовать _безопасные ходы"
 
-#: src/properties_dialog.rs:98
+#: src/properties_dialog.rs:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Предотвращать случайные ходы, которые закончатся смертью."
 
-#: src/properties_dialog.rs:105
+#: src/properties_dialog.rs:104
 msgid "U_se super safe moves"
 msgstr "Использовать _особо безопасные ходы"
 
-#: src/properties_dialog.rs:107
+#: src/properties_dialog.rs:106
 msgid "Prevents all moves that result in getting killed."
 msgstr "Предотвращать все ходы, которые закончатся смертью."
 
-#: src/properties_dialog.rs:136
+#: src/properties_dialog.rs:135
 msgid "_Enable sounds"
 msgstr "Включить _звуки"
 
-#: src/properties_dialog.rs:139
+#: src/properties_dialog.rs:138
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Проигрывать звук для событий победы и смерти."
 
-#: src/properties_dialog.rs:166
+#: src/properties_dialog.rs:165
 msgid "Game Type"
 msgstr "Тип игры"
 
-#: src/properties_dialog.rs:186
+#: src/properties_dialog.rs:185
 msgid "_Image theme:"
 msgstr "_Тема роботов:"
 
-#: src/properties_dialog.rs:226
+#: src/properties_dialog.rs:225
 msgid "_Background color:"
 msgstr "_Цвет фона:"
 
@@ -375,10 +391,6 @@ msgstr "Сыграйте несколько раз, и ваши результа
 msgid "High Scores"
 msgstr "Лучшие результаты"
 
-#: src/scores/scores.rs:70
-msgid "Classic robots"
-msgstr "Классические роботы"
-
 #: src/scores/scores.rs:71
 msgid "Classic robots with safe moves"
 msgstr "Классические роботы с безопасными ходами"
@@ -386,10 +398,6 @@ msgstr "Классические роботы с безопасными хода
 #: src/scores/scores.rs:73
 msgid "Classic robots with super-safe moves"
 msgstr "Классические роботы с особо безопасными ходами"
-
-#: src/scores/scores.rs:75
-msgid "Nightmare"
-msgstr "Кошмар"
 
 #: src/scores/scores.rs:76
 msgid "Nightmare with safe moves"
@@ -399,10 +407,6 @@ msgstr "Кошмар с безопасными ходами"
 msgid "Nightmare with super-safe moves"
 msgstr "Кошмар с особо безопасными ходами"
 
-#: src/scores/scores.rs:80
-msgid "Robots2"
-msgstr "Роботы2"
-
 #: src/scores/scores.rs:81
 msgid "Robots2 with safe moves"
 msgstr "Роботы2 с безопасными ходами"
@@ -411,10 +415,6 @@ msgstr "Роботы2 с безопасными ходами"
 msgid "Robots2 with super-safe moves"
 msgstr "Роботы2 с особо безопасными ходами"
 
-#: src/scores/scores.rs:83
-msgid "Robots2 easy"
-msgstr "Простые Роботы 2"
-
 #: src/scores/scores.rs:84
 msgid "Robots2 easy with safe moves"
 msgstr "Роботы2 с безопасными ходами"
@@ -422,10 +422,6 @@ msgstr "Роботы2 с безопасными ходами"
 #: src/scores/scores.rs:86
 msgid "Robots2 easy with super-safe moves"
 msgstr "Роботы2 с особо безопасными ходами"
-
-#: src/scores/scores.rs:89
-msgid "Robots with safe teleport"
-msgstr "Роботы с безопасными телепортациями"
 
 #: src/scores/scores.rs:92
 msgid "Robots with safe teleport with safe moves"
@@ -447,31 +443,36 @@ msgstr "_Безопасная телепортация"
 msgid "_Wait for Robots"
 msgstr "_Подождать роботов"
 
-#: src/window.rs:204
+#: src/window.rs:205
 msgid "_Scores"
 msgstr "_Результаты"
 
-#: src/window.rs:212
+#: src/window.rs:213
 msgid "_Preferences"
 msgstr "_Параметры"
 
-#: src/window.rs:216
+#: src/window.rs:217
 msgid "_Help"
 msgstr "_Справка"
 
-#: src/window.rs:220
+#: src/window.rs:221
 msgid "_About Robots"
 msgstr "_О Роботах"
 
-#: src/window.rs:280
-#| msgid "Level: %d\tScore: %d"
+#: src/window.rs:268
 msgid "Level: {level}\tScore: {score}"
 msgstr "Уровень: {level}\tСчёт: {score}"
 
-#: src/window.rs:286
-#, c-format
+#: src/window.rs:274
 msgid "(Remaining: %d)"
 msgstr "(Осталось: %d)"
+
+#~ msgid ""
+#~ "The program Robots was unable to find any valid game configuration files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "Программа Роботы не смогла найти ни одного файла настроек. Проверьте "
+#~ "корректность установки игры."
 
 #~ msgid "Show toolbar"
 #~ msgstr "Показывать панель инструментов"

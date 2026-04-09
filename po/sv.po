@@ -1,18 +1,18 @@
 # Swedish messages for gnome-robots.
-# Copyright © 1999-2025 Free Software Foundation, Inc.
+# Copyright © 1999-2026 Free Software Foundation, Inc.
 # Andreas Persenius <ndap@swipnet.se>, 1999.
 # Andreas Hyden <a.hyden@cyberpoint.se>
 # Martin Norbäck <d95mback@dtek.chalmers.se>, 2000.
 # Christian Rose <menthos@menthos.com>, 2000, 2001, 2002, 2003, 2004, 2005.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2018, 2019, 2020, 2022, 2023, 2024, 2025.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2015, 2016, 2018, 2019, 2020, 2022, 2023, 2024, 2025, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2025-01-12 21:08+0000\n"
-"PO-Revision-Date: 2025-01-12 22:39+0100\n"
+"POT-Creation-Date: 2026-03-25 23:54+0000\n"
+"PO-Revision-Date: 2026-04-09 13:37+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -20,19 +20,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:71 src/application.rs:210 src/window.rs:53
+#: data/org.gnome.Robots.desktop.in:2 data/org.gnome.Robots.metainfo.xml.in:7
+#: src/application.rs:71 src/application.rs:196 src/window.rs:53
 msgid "Robots"
 msgstr "Robotar"
 
-#: data/org.gnome.Robots.desktop.in:4 data/org.gnome.Robots.metainfo.xml.in:8
+#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:8
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Undvik robotarna och få dem att krocka med varandra"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Robots.desktop.in:6
+#: data/org.gnome.Robots.desktop.in:5
 msgid "game;arcade;teleport;"
 msgstr "spel;arkad;teleport;"
 
@@ -69,7 +69,11 @@ msgstr ""
 "teleportering placera dig intill en robot som kommer att döda dig. Överlev "
 "så länge som möjligt!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:65
+#: data/org.gnome.Robots.metainfo.xml.in:31
+msgid "A game preview"
+msgstr "Förhandsvisning av ett spel"
+
+#: data/org.gnome.Robots.metainfo.xml.in:72
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
 
@@ -217,35 +221,27 @@ msgstr "Höjden på fönstret i bildpunkter"
 msgid "true if the window is maximized"
 msgstr "sant om fönstret är maximerat"
 
-#: src/application.rs:117
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Programmet Robotar kunde inte hitta några giltiga spelkonfigurationsfiler. "
-"Kontrollera att programmet installerats korrekt."
-
-#: src/application.rs:159
+#: src/application.rs:146
 msgid "New Game"
 msgstr "Nytt spel"
 
-#: src/application.rs:161
+#: src/application.rs:148
 msgid "Are you sure you want to discard the current game?"
 msgstr "Är du säker att du vill kassera aktuellt spel?"
 
-#: src/application.rs:165
+#: src/application.rs:152
 msgid "Keep _Playing"
 msgstr "Fortsätt s_pela"
 
-#: src/application.rs:166 src/window.rs:200
+#: src/application.rs:153 src/window.rs:201
 msgid "_New Game"
 msgstr "_Nytt spel"
 
-#: src/application.rs:214
+#: src/application.rs:200
 msgid "Based on classic BSD Robots"
 msgstr "Baserad på klassiska BSD-robotar"
 
-#: src/application.rs:226
+#: src/application.rs:212
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -257,7 +253,7 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/controls/controls.rs:31 src/properties_dialog.rs:63
+#: src/controls/controls.rs:31 src/properties_dialog.rs:62
 msgid "Keyboard"
 msgstr "Tangentbord"
 
@@ -265,15 +261,15 @@ msgstr "Tangentbord"
 msgid "_Restore Defaults"
 msgstr "_Återställ standardalternativen"
 
-#: src/controls/editor.rs:131
+#: src/controls/editor.rs:148
 msgid "New accelerator…"
 msgstr "Ny snabbtangent…"
 
-#: src/controls/editor.rs:141
+#: src/controls/editor.rs:155
 msgid "Disabled"
 msgstr "Inaktiverad"
 
-#: src/game_area.rs:424
+#: src/game_area.rs:486
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -281,51 +277,71 @@ msgstr ""
 "Gratulerar, du har besegrat robotarna!!\n"
 "Men kan du göra om det?"
 
-#: src/game_area.rs:429
+#: src/game_area.rs:491
 msgid "There are no teleport locations left!!"
 msgstr "Det finns inte några teleportplatser kvar!!"
 
-#: src/properties_dialog.rs:43
+#: src/game_config.rs:84 src/scores/scores.rs:70
+msgid "Classic robots"
+msgstr "Klassiska robotar"
+
+#: src/game_config.rs:109 src/scores/scores.rs:89
+msgid "Robots with safe teleport"
+msgstr "Robotar med säker teleport"
+
+#: src/game_config.rs:123 src/scores/scores.rs:80
+msgid "Robots2"
+msgstr "Robotar2"
+
+#: src/game_config.rs:154 src/scores/scores.rs:83
+msgid "Robots2 easy"
+msgstr "Robotar2 lätt"
+
+#: src/game_config.rs:167 src/scores/scores.rs:75
+msgid "Nightmare"
+msgstr "Mardröm"
+
+#: src/properties_dialog.rs:42
 msgid "Game"
 msgstr "Spel"
 
-#: src/properties_dialog.rs:52
+#: src/properties_dialog.rs:51
 msgid "Appearance"
 msgstr "Utseende"
 
-#: src/properties_dialog.rs:95
+#: src/properties_dialog.rs:94
 msgid "_Use safe moves"
 msgstr "_Använd säkra förflyttningar"
 
-#: src/properties_dialog.rs:98
+#: src/properties_dialog.rs:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Förhindra olyckliga drag som kan resultera i död."
 
-#: src/properties_dialog.rs:105
+#: src/properties_dialog.rs:104
 msgid "U_se super safe moves"
 msgstr "A_nvänd supersäkra förflyttningar"
 
-#: src/properties_dialog.rs:107
+#: src/properties_dialog.rs:106
 msgid "Prevents all moves that result in getting killed."
 msgstr "Förhindrar alla drag som kan resultera i död."
 
-#: src/properties_dialog.rs:136
+#: src/properties_dialog.rs:135
 msgid "_Enable sounds"
 msgstr "A_ktivera ljud"
 
-#: src/properties_dialog.rs:139
+#: src/properties_dialog.rs:138
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Spela ljud för händelser som exempelvis att vinna en nivå och att dö."
 
-#: src/properties_dialog.rs:166
+#: src/properties_dialog.rs:165
 msgid "Game Type"
 msgstr "Speltyp"
 
-#: src/properties_dialog.rs:186
+#: src/properties_dialog.rs:185
 msgid "_Image theme:"
 msgstr "_Bildtema:"
 
-#: src/properties_dialog.rs:226
+#: src/properties_dialog.rs:225
 msgid "_Background color:"
 msgstr "_Bakgrundsfärg:"
 
@@ -373,10 +389,6 @@ msgstr "Spela några spel så kommer dina poäng att visas här."
 msgid "High Scores"
 msgstr "Poänglista"
 
-#: src/scores/scores.rs:70
-msgid "Classic robots"
-msgstr "Klassiska robotar"
-
 #: src/scores/scores.rs:71
 msgid "Classic robots with safe moves"
 msgstr "Klassiska robotar med säkra förflyttningar"
@@ -384,10 +396,6 @@ msgstr "Klassiska robotar med säkra förflyttningar"
 #: src/scores/scores.rs:73
 msgid "Classic robots with super-safe moves"
 msgstr "Klassiska robotar med supersäkra förflyttningar"
-
-#: src/scores/scores.rs:75
-msgid "Nightmare"
-msgstr "Mardröm"
 
 #: src/scores/scores.rs:76
 msgid "Nightmare with safe moves"
@@ -397,10 +405,6 @@ msgstr "Mardröm med säkra förflyttningar"
 msgid "Nightmare with super-safe moves"
 msgstr "Mardröm med supersäkra förflyttningar"
 
-#: src/scores/scores.rs:80
-msgid "Robots2"
-msgstr "Robotar2"
-
 #: src/scores/scores.rs:81
 msgid "Robots2 with safe moves"
 msgstr "Robotar2 med säkra förflyttningar"
@@ -409,10 +413,6 @@ msgstr "Robotar2 med säkra förflyttningar"
 msgid "Robots2 with super-safe moves"
 msgstr "Robotar2 med supersäkra förflyttningar"
 
-#: src/scores/scores.rs:83
-msgid "Robots2 easy"
-msgstr "Robotar2 lätt"
-
 #: src/scores/scores.rs:84
 msgid "Robots2 easy with safe moves"
 msgstr "Robotar2 med säkra förflyttningar"
@@ -420,10 +420,6 @@ msgstr "Robotar2 med säkra förflyttningar"
 #: src/scores/scores.rs:86
 msgid "Robots2 easy with super-safe moves"
 msgstr "Robotar2 med supersäkra förflyttningar"
-
-#: src/scores/scores.rs:89
-msgid "Robots with safe teleport"
-msgstr "Robotar med säker teleport"
 
 #: src/scores/scores.rs:92
 msgid "Robots with safe teleport with safe moves"
@@ -445,30 +441,36 @@ msgstr "Teleportera _säkert"
 msgid "_Wait for Robots"
 msgstr "_Vänta på robotarna"
 
-#: src/window.rs:204
+#: src/window.rs:205
 msgid "_Scores"
 msgstr "_Poänglista"
 
-#: src/window.rs:212
+#: src/window.rs:213
 msgid "_Preferences"
 msgstr "_Inställningar"
 
-#: src/window.rs:216
+#: src/window.rs:217
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: src/window.rs:220
+#: src/window.rs:221
 msgid "_About Robots"
 msgstr "_Om Robotar"
 
-#: src/window.rs:280
+#: src/window.rs:268
 msgid "Level: {level}\tScore: {score}"
 msgstr "Nivå: {level}\tPoäng: {score}"
 
-#: src/window.rs:286
-#, c-format
+#: src/window.rs:274
 msgid "(Remaining: %d)"
 msgstr "(Kvarvarande: %d)"
+
+#~ msgid ""
+#~ "The program Robots was unable to find any valid game configuration files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "Programmet Robotar kunde inte hitta några giltiga "
+#~ "spelkonfigurationsfiler. Kontrollera att programmet installerats korrekt."
 
 #~ msgid "Show toolbar"
 #~ msgstr "Visa verktygsfält"

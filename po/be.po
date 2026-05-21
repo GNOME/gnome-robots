@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2025-05-10 17:18+0000\n"
-"PO-Revision-Date: 2025-05-29 01:39+0300\n"
+"POT-Creation-Date: 2026-03-25 23:54+0000\n"
+"PO-Revision-Date: 2026-05-21 14:27+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
@@ -16,20 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 "X-Project-Style: gnome\n"
 
-#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:71 src/application.rs:208 src/window.rs:53
+#: data/org.gnome.Robots.desktop.in:2 data/org.gnome.Robots.metainfo.xml.in:7
+#: src/application.rs:71 src/application.rs:196 src/window.rs:53
 msgid "Robots"
 msgstr "Робаты"
 
-#: data/org.gnome.Robots.desktop.in:4 data/org.gnome.Robots.metainfo.xml.in:8
+#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:8
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Унікайце сустрэчы з робатамі, каб яны сутыкаліся адзін з другім"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Robots.desktop.in:6
+#: data/org.gnome.Robots.desktop.in:5
 msgid "game;arcade;teleport;"
 msgstr "аркадная;гульня;аркада;тэлепартацыя;"
 
@@ -65,17 +65,23 @@ msgstr ""
 "можа перанесці непасрэдна да робата, які вас заб'е. Трэба выжываць як мага "
 "даўжэй!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:66
+#: data/org.gnome.Robots.metainfo.xml.in:31
+msgid "A game preview"
+msgstr "Папярэдні агляд гульні"
+
+#: data/org.gnome.Robots.metainfo.xml.in:72
 msgid "Andrey Kutejko"
 msgstr "Андрэй Куцейка (Andrey Kutejko)"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Robot image theme"
-msgstr "Тэма выяў для робатаў"
+msgstr "Тэма відарысаў для робатаў"
 
 #: data/org.gnome.Robots.gschema.xml:6
 msgid "Robot image theme. The theme of the images to use for the robots."
-msgstr "Тэма выяў для робатаў. Набор выяў, які выкарыстоўваецца для робатаў."
+msgstr ""
+"Тэма відарысаў для робатаў. Набор відарысаў, які выкарыстоўваецца для "
+"робатаў."
 
 #: data/org.gnome.Robots.gschema.xml:10
 msgid "Background color"
@@ -212,35 +218,27 @@ msgstr "Вышыня акна ў пікселях"
 msgid "true if the window is maximized"
 msgstr "праўда, калі акно разгорнута"
 
-#: src/application.rs:117
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Праграма \"Robots\" не здолела адшукаць прыдатныя файлы настроек гульні. "
-"Праверце правільнасць усталявання праграмы."
-
-#: src/application.rs:158
+#: src/application.rs:146
 msgid "New Game"
 msgstr "Новая гульня"
 
-#: src/application.rs:160
+#: src/application.rs:148
 msgid "Are you sure you want to discard the current game?"
 msgstr "Сапраўды кінуць бягучую гульню?"
 
-#: src/application.rs:164
+#: src/application.rs:152
 msgid "Keep _Playing"
 msgstr "Працягваць _гульню"
 
-#: src/application.rs:165 src/window.rs:200
+#: src/application.rs:153 src/window.rs:201
 msgid "_New Game"
 msgstr "_Новая гульня"
 
-#: src/application.rs:212
+#: src/application.rs:200
 msgid "Based on classic BSD Robots"
 msgstr "Заснавана на класічнай гульні «Робаты» для сістэмы BSD"
 
-#: src/application.rs:224
+#: src/application.rs:212
 msgid "translator-credits"
 msgstr ""
 "Ales Nyakhaychyk <nab@mail.by>\n"
@@ -255,15 +253,15 @@ msgstr "Клавіятура"
 msgid "_Restore Defaults"
 msgstr "Вярнуць _прадвызначаныя налады"
 
-#: src/controls/editor.rs:131
+#: src/controls/editor.rs:148
 msgid "New accelerator…"
 msgstr "Новая хуткая клавіша…"
 
-#: src/controls/editor.rs:141
+#: src/controls/editor.rs:155
 msgid "Disabled"
 msgstr "Адключана"
 
-#: src/game_area.rs:424
+#: src/game_area.rs:486
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -271,29 +269,29 @@ msgstr ""
 "Віншуем, вы перамаглі робатаў!\n"
 "Але ці вы здолееце паўтарыць гэта?"
 
-#: src/game_area.rs:429
+#: src/game_area.rs:491
 msgid "There are no teleport locations left!!"
 msgstr "Болей няма месцаў для тэлепартацыі!"
 
-#: src/game_config.rs:58 src/scores/scores.rs:70
+#: src/game_config.rs:84 src/scores/scores.rs:70
 msgid "Classic robots"
 msgstr "Класічныя робаты"
 
-#: src/game_config.rs:59 src/scores/scores.rs:75
-msgid "Nightmare"
-msgstr "Кашмар"
+#: src/game_config.rs:109 src/scores/scores.rs:89
+msgid "Robots with safe teleport"
+msgstr "Робаты з бяспечнымі тэлепартацыямі"
 
-#: src/game_config.rs:60 src/scores/scores.rs:80
+#: src/game_config.rs:123 src/scores/scores.rs:80
 msgid "Robots2"
 msgstr "Робаты 2"
 
-#: src/game_config.rs:61 src/scores/scores.rs:83
+#: src/game_config.rs:154 src/scores/scores.rs:83
 msgid "Robots2 easy"
 msgstr "Робаты 2: простая гульня"
 
-#: src/game_config.rs:62 src/scores/scores.rs:89
-msgid "Robots with safe teleport"
-msgstr "Робаты з бяспечнымі тэлепартацыямі"
+#: src/game_config.rs:167 src/scores/scores.rs:75
+msgid "Nightmare"
+msgstr "Кашмар"
 
 #: src/properties_dialog.rs:42
 msgid "Game"
@@ -333,7 +331,7 @@ msgstr "Тып гульні"
 
 #: src/properties_dialog.rs:185
 msgid "_Image theme:"
-msgstr "_Тэма выяў:"
+msgstr "_Тэма відарысаў:"
 
 #: src/properties_dialog.rs:225
 msgid "_Background color:"
@@ -435,31 +433,37 @@ msgstr "_Бяспечная тэлепартацыя"
 msgid "_Wait for Robots"
 msgstr "_Чакаць робатаў"
 
-#: src/window.rs:204
+#: src/window.rs:205
 msgid "_Scores"
 msgstr "_Лепшыя вынікі"
 
-#: src/window.rs:212
+#: src/window.rs:213
 msgid "_Preferences"
 msgstr "_Налады"
 
-#: src/window.rs:216
+#: src/window.rs:217
 msgid "_Help"
 msgstr "_Даведка"
 
-#: src/window.rs:220
+#: src/window.rs:221
 msgid "_About Robots"
 msgstr "_Аб праграме"
 
-#: src/window.rs:280
-#| msgid "Level: %d\tScore: %d"
+#: src/window.rs:268
+#, rust-format
 msgid "Level: {level}\tScore: {score}"
 msgstr "Узровень: {level}\tЛік: {score}"
 
-#: src/window.rs:286
-#, c-format
+#: src/window.rs:274
 msgid "(Remaining: %d)"
 msgstr "(Засталося: %d)"
+
+#~ msgid ""
+#~ "The program Robots was unable to find any valid game configuration files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "Праграма \"Robots\" не здолела адшукаць прыдатныя файлы настроек гульні. "
+#~ "Праверце правільнасць усталявання праграмы."
 
 #~ msgid "Show toolbar"
 #~ msgstr "Паказваць панэль інструментаў"

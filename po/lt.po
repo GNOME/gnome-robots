@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2025-11-09 01:54+0000\n"
-"PO-Revision-Date: 2025-12-03 23:00+0200\n"
+"POT-Creation-Date: 2026-03-25 23:54+0000\n"
+"PO-Revision-Date: 2026-06-06 22:29+0300\n"
 "Last-Translator: Aurimas Černius <aurimas.cernius@mailo.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -24,10 +24,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/org.gnome.Robots.desktop.in:2 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:71 src/application.rs:208 src/window.rs:53
+#: src/application.rs:71 src/application.rs:196 src/window.rs:53
 msgid "Robots"
 msgstr "Robotai"
 
@@ -72,7 +72,11 @@ msgstr ""
 "tave nukelti tiesiai šalia roboto, kuris tave nužudys. Išgyvenk kiek galima "
 "ilgiau!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:66
+#: data/org.gnome.Robots.metainfo.xml.in:31
+msgid "A game preview"
+msgstr "Žaidimo peržiūra"
+
+#: data/org.gnome.Robots.metainfo.xml.in:72
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
 
@@ -220,35 +224,27 @@ msgstr "Lango aukštis pikseliais"
 msgid "true if the window is maximized"
 msgstr "teigiama, jei langas yra išdidintas"
 
-#: src/application.rs:117
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Robots programai nepavyko rasti tinkamų žaidimo nustatymų failų. "
-"Patikrinkite, ar programa yra įdiegta teisingai."
-
-#: src/application.rs:158
+#: src/application.rs:146
 msgid "New Game"
 msgstr "Naujas žaidimas"
 
-#: src/application.rs:160
+#: src/application.rs:148
 msgid "Are you sure you want to discard the current game?"
 msgstr "Ar tikrai norite nutraukti dabartinį žaidimą?"
 
-#: src/application.rs:164
+#: src/application.rs:152
 msgid "Keep _Playing"
 msgstr "Tęsti _žaidimą"
 
-#: src/application.rs:165 src/window.rs:201
+#: src/application.rs:153 src/window.rs:201
 msgid "_New Game"
 msgstr "_Naujas žaidimas"
 
-#: src/application.rs:212
+#: src/application.rs:200
 msgid "Based on classic BSD Robots"
 msgstr "Sukurtas pagal klasikinį BSD Robots"
 
-#: src/application.rs:224
+#: src/application.rs:212
 msgid "translator-credits"
 msgstr ""
 "Aurimas Černius <aurimas.cernius@mailo.com>\n"
@@ -265,15 +261,15 @@ msgstr "Klaviatūra"
 msgid "_Restore Defaults"
 msgstr "_Atstatyti numatytuosius"
 
-#: src/controls/editor.rs:131
+#: src/controls/editor.rs:148
 msgid "New accelerator…"
 msgstr "Naujas trumpinys…"
 
-#: src/controls/editor.rs:141
+#: src/controls/editor.rs:155
 msgid "Disabled"
 msgstr "Išjungta"
 
-#: src/game_area.rs:426
+#: src/game_area.rs:486
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -281,29 +277,29 @@ msgstr ""
 "Sveikiname, jūs nugalėjote robotus!\n"
 "Bet ar sugebėsite tai padaryti dar kartą?"
 
-#: src/game_area.rs:431
+#: src/game_area.rs:491
 msgid "There are no teleport locations left!!"
 msgstr "Neliko nei vienos vietos teleportuotis!!"
 
-#: src/game_config.rs:58 src/scores/scores.rs:70
+#: src/game_config.rs:84 src/scores/scores.rs:70
 msgid "Classic robots"
 msgstr "Klasikiniai robotai"
 
-#: src/game_config.rs:59 src/scores/scores.rs:75
-msgid "Nightmare"
-msgstr "Košmaras"
+#: src/game_config.rs:109 src/scores/scores.rs:89
+msgid "Robots with safe teleport"
+msgstr "Robotai su saugiu teleportavimu"
 
-#: src/game_config.rs:60 src/scores/scores.rs:80
+#: src/game_config.rs:123 src/scores/scores.rs:80
 msgid "Robots2"
 msgstr "Robotai2"
 
-#: src/game_config.rs:61 src/scores/scores.rs:83
+#: src/game_config.rs:154 src/scores/scores.rs:83
 msgid "Robots2 easy"
 msgstr "Lengvi Robotai2"
 
-#: src/game_config.rs:62 src/scores/scores.rs:89
-msgid "Robots with safe teleport"
-msgstr "Robotai su saugiu teleportavimu"
+#: src/game_config.rs:167 src/scores/scores.rs:75
+msgid "Nightmare"
+msgstr "Košmaras"
 
 #: src/properties_dialog.rs:42
 msgid "Game"
@@ -461,14 +457,21 @@ msgstr "_Žinynas"
 msgid "_About Robots"
 msgstr "_Apie robotus"
 
-#: src/window.rs:281
+#: src/window.rs:268
+#, rust-format
 msgid "Level: {level}\tScore: {score}"
 msgstr "Lygis: {level}\tRezultatas: {score}"
 
-#: src/window.rs:287
-#, c-format
+#: src/window.rs:274
 msgid "(Remaining: %d)"
 msgstr "(Liko: %d)"
+
+#~ msgid ""
+#~ "The program Robots was unable to find any valid game configuration files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "Robots programai nepavyko rasti tinkamų žaidimo nustatymų failų. "
+#~ "Patikrinkite, ar programa yra įdiegta teisingai."
 
 #~ msgid "Show toolbar"
 #~ msgstr "Rodyti įrankių juostą"

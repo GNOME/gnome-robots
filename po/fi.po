@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2025-02-28 17:30+0000\n"
-"PO-Revision-Date: 2025-03-02 11:44+0200\n"
+"POT-Creation-Date: 2026-03-25 23:54+0000\n"
+"PO-Revision-Date: 2026-08-20 15:15+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -24,20 +24,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Launchpad-Export-Date: 2010-09-13 15:09+0000\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.9\n"
 "X-POT-Import-Date: 2012-03-05 14:46:29+0000\n"
 
-#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:71 src/application.rs:210 src/window.rs:53
+#: data/org.gnome.Robots.desktop.in:2 data/org.gnome.Robots.metainfo.xml.in:7
+#: src/application.rs:71 src/application.rs:196 src/window.rs:53
 msgid "Robots"
 msgstr "Robotit"
 
-#: data/org.gnome.Robots.desktop.in:4 data/org.gnome.Robots.metainfo.xml.in:8
+#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:8
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Välttele robotteja ja ohjaa ne tuhoutumaan toisiinsa"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Robots.desktop.in:6
+#: data/org.gnome.Robots.desktop.in:5
 msgid "game;arcade;teleport;"
 msgstr "game;arcade;teleport;peli;pelihalli;teleportti;"
 
@@ -73,7 +73,12 @@ msgstr ""
 "tulee vastaan, teleporttaus saattaa asettaa sinut suoraan robotin viereen, "
 "jolloin olet kuoleman oma. Selviä niin kauan kuin pystyt!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:65
+#: data/org.gnome.Robots.metainfo.xml.in:31
+msgid "A game preview"
+msgstr "Pelin esikatselu"
+
+#: data/org.gnome.Robots.metainfo.xml.in:72
+#: data/org.gnome.Robots.metainfo.xml.in:74
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
 
@@ -220,35 +225,27 @@ msgstr "Ikkunan korkeus kuvapisteinä"
 msgid "true if the window is maximized"
 msgstr "tosi jos ikkuna on suurennettu"
 
-#: src/application.rs:117
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Gnome-robotit ei löytänyt toimivia pelin asetustiedostoja. Tarkista, että "
-"ohjelma on oikein asennettu."
-
-#: src/application.rs:159
+#: src/application.rs:146
 msgid "New Game"
 msgstr "Uusi peli"
 
-#: src/application.rs:161
+#: src/application.rs:148
 msgid "Are you sure you want to discard the current game?"
 msgstr "Haluatko varmasti hylätä nykyisen pelin?"
 
-#: src/application.rs:165
+#: src/application.rs:152
 msgid "Keep _Playing"
 msgstr "Jatka _pelaamista"
 
-#: src/application.rs:166 src/window.rs:200
+#: src/application.rs:153 src/window.rs:201
 msgid "_New Game"
 msgstr "_Uusi peli"
 
-#: src/application.rs:214
+#: src/application.rs:200
 msgid "Based on classic BSD Robots"
 msgstr "Pohjautuu klassiseen BSD Robots -peliin"
 
-#: src/application.rs:226
+#: src/application.rs:212
 msgid "translator-credits"
 msgstr ""
 "Jiri Grönroos, 2014-2025\n"
@@ -269,7 +266,7 @@ msgstr ""
 "  Timo Jyrinki https://launchpad.net/~timo-jyrinki\n"
 "  eGetin https://launchpad.net/~egetin"
 
-#: src/controls/controls.rs:31 src/properties_dialog.rs:63
+#: src/controls/controls.rs:31 src/properties_dialog.rs:62
 msgid "Keyboard"
 msgstr "Näppäimistö"
 
@@ -277,15 +274,15 @@ msgstr "Näppäimistö"
 msgid "_Restore Defaults"
 msgstr "_Palauta oletukset"
 
-#: src/controls/editor.rs:131
+#: src/controls/editor.rs:148
 msgid "New accelerator…"
 msgstr "Uusi valintanäppäin…"
 
-#: src/controls/editor.rs:141
+#: src/controls/editor.rs:155
 msgid "Disabled"
 msgstr "Poissa käytöstä"
 
-#: src/game_area.rs:424
+#: src/game_area.rs:486
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -293,71 +290,71 @@ msgstr ""
 "Onnittelut, murskasit robotit!\n"
 "Mutta onnistutko siinä uudestaan?"
 
-#: src/game_area.rs:429
+#: src/game_area.rs:491
 msgid "There are no teleport locations left!!"
 msgstr "Ei paikkaa, joihin teleportata!"
 
-#: src/game_config.rs:58 src/scores/scores.rs:70
+#: src/game_config.rs:84 src/scores/scores.rs:70
 msgid "Classic robots"
 msgstr "Klassiset robotit"
 
-#: src/game_config.rs:59 src/scores/scores.rs:75
-msgid "Nightmare"
-msgstr "Painajainen"
-
-#: src/game_config.rs:60 src/scores/scores.rs:80
-msgid "Robots2"
-msgstr "Robotit II"
-
-#: src/game_config.rs:61 src/scores/scores.rs:83
-msgid "Robots2 easy"
-msgstr "Robotit II - helppo"
-
-#: src/game_config.rs:62 src/scores/scores.rs:89
+#: src/game_config.rs:109 src/scores/scores.rs:89
 msgid "Robots with safe teleport"
 msgstr "Robotit turvallisella teleportilla"
 
-#: src/properties_dialog.rs:43
+#: src/game_config.rs:123 src/scores/scores.rs:80
+msgid "Robots2"
+msgstr "Robotit II"
+
+#: src/game_config.rs:154 src/scores/scores.rs:83
+msgid "Robots2 easy"
+msgstr "Robotit II - helppo"
+
+#: src/game_config.rs:167 src/scores/scores.rs:75
+msgid "Nightmare"
+msgstr "Painajainen"
+
+#: src/properties_dialog.rs:42
 msgid "Game"
 msgstr "Peli"
 
-#: src/properties_dialog.rs:52
+#: src/properties_dialog.rs:51
 msgid "Appearance"
 msgstr "Ulkoasu"
 
-#: src/properties_dialog.rs:95
+#: src/properties_dialog.rs:94
 msgid "_Use safe moves"
 msgstr "Käytä _turvallisia liikkeitä"
 
-#: src/properties_dialog.rs:98
+#: src/properties_dialog.rs:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Estä kuolemaan johtavat varomattomat siirrot."
 
-#: src/properties_dialog.rs:105
+#: src/properties_dialog.rs:104
 msgid "U_se super safe moves"
 msgstr "Käytä _superturvallisia liikkeitä"
 
-#: src/properties_dialog.rs:107
+#: src/properties_dialog.rs:106
 msgid "Prevents all moves that result in getting killed."
 msgstr "Estä kaikki kuolemaan johtavat siirrot."
 
-#: src/properties_dialog.rs:136
+#: src/properties_dialog.rs:135
 msgid "_Enable sounds"
 msgstr "Ää_net päälle"
 
-#: src/properties_dialog.rs:139
+#: src/properties_dialog.rs:138
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Soita äänet tapahtumiin kuten tason läpäisy tai kuoleminen."
 
-#: src/properties_dialog.rs:166
+#: src/properties_dialog.rs:165
 msgid "Game Type"
 msgstr "Pelin tyyppi"
 
-#: src/properties_dialog.rs:186
+#: src/properties_dialog.rs:185
 msgid "_Image theme:"
 msgstr "_Kuvateema:"
 
-#: src/properties_dialog.rs:226
+#: src/properties_dialog.rs:225
 msgid "_Background color:"
 msgstr "_Taustaväri:"
 
@@ -458,31 +455,37 @@ msgstr "Teleporttaa _turvallisesti"
 msgid "_Wait for Robots"
 msgstr "_Odota robotteja"
 
-#: src/window.rs:204
+#: src/window.rs:205
 msgid "_Scores"
 msgstr "_Pisteet"
 
-#: src/window.rs:212
+#: src/window.rs:213
 msgid "_Preferences"
 msgstr "_Asetukset"
 
-#: src/window.rs:216
+#: src/window.rs:217
 msgid "_Help"
 msgstr "_Ohje"
 
-#: src/window.rs:220
+#: src/window.rs:221
 msgid "_About Robots"
 msgstr "_Tietoja - Robotit"
 
-#: src/window.rs:280
-#| msgid "Level: %d\tScore: %d"
+#: src/window.rs:268
+#, rust-format
 msgid "Level: {level}\tScore: {score}"
 msgstr "Taso: {level}\tPisteet: {score}"
 
-#: src/window.rs:286
-#, c-format
+#: src/window.rs:274
 msgid "(Remaining: %d)"
 msgstr "(Jäljellä: %d)"
+
+#~ msgid ""
+#~ "The program Robots was unable to find any valid game configuration files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "Gnome-robotit ei löytänyt toimivia pelin asetustiedostoja. Tarkista, että "
+#~ "ohjelma on oikein asennettu."
 
 #~ msgid "Show toolbar"
 #~ msgstr "Näytä työkalupalkki"

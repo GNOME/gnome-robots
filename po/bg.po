@@ -2,10 +2,10 @@
 # Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
 # Copyright (C) 2009, 2010, 2012, 2016, 2017 Free Software Foundation, Inc.
 # Copyright (C) 2010, 2012 Krasimir Chonov <mk2616@abv.bg>.
-# Copyright (C) 2022, 2023 Alexander Shopov <ash@kambanaria.org>.
+# Copyright (C) 2022, 2023, 2026 Alexander Shopov <ash@kambanaria.org>.
 # Evgeni Boevski <linkej@yahoo.com>, 2002, 2003.
 # Rostislav "zbrox" Raykov <zbrox@i-space.org>, 2004, 2005, 2006.
-# Alexander Shopov <ash@kambanaria.org>, 2007, 2008, 2009, 2010, 2012, 2016, 2017, 2022, 2023.
+# Alexander Shopov <ash@kambanaria.org>, 2007, 2008, 2009, 2010, 2012, 2016, 2017, 2022, 2023, 2026.
 # Yavor Doganov <yavor@gnu.org>, 2008.
 # Krasimir Chonov <mk2616@abv.bg>, 2010, 2012.
 # twlvnn kraftwerk <kraft_werk@tutanota.com>, 2024.
@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-robots master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2025-03-02 20:06+0000\n"
-"PO-Revision-Date: 2025-03-03 20:23+0100\n"
+"POT-Creation-Date: 2026-03-25 23:54+0000\n"
+"PO-Revision-Date: 2026-09-09 16:31+0200\n"
 "Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
 "Language: bg\n"
@@ -25,17 +25,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.5\n"
 
-#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:71 src/application.rs:210 src/window.rs:53
+#: data/org.gnome.Robots.desktop.in:2 data/org.gnome.Robots.metainfo.xml.in:7
+#: src/application.rs:71 src/application.rs:196 src/window.rs:53
 msgid "Robots"
 msgstr "Роботи"
 
-#: data/org.gnome.Robots.desktop.in:4 data/org.gnome.Robots.metainfo.xml.in:8
+#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:8
 msgid "Avoid the robots and make them crash into each other"
 msgstr "Бягане от роботи, така че да се сблъскват едни с други"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Robots.desktop.in:6
+#: data/org.gnome.Robots.desktop.in:5
 msgid "game;arcade;teleport;"
 msgstr "телепорт;роботи;сблъсъци;game;arcade;teleport;"
 
@@ -72,7 +72,12 @@ msgstr ""
 "изчерпването им, може да се телепортирате навсякъде, дори до робот, който ще "
 "ви убие на следващия ход. Опитайте се да оцелеете възможно най дълго!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:65
+#: data/org.gnome.Robots.metainfo.xml.in:31
+msgid "A game preview"
+msgstr "Преглед на играта"
+
+#: data/org.gnome.Robots.metainfo.xml.in:72
+#: data/org.gnome.Robots.metainfo.xml.in:74
 msgid "Andrey Kutejko"
 msgstr "Andrey Kutejko"
 
@@ -221,35 +226,27 @@ msgstr "Височината на прозореца в пиксели"
 msgid "true if the window is maximized"
 msgstr "ИСТИНА, ако прозорецът е максимизиран"
 
-#: src/application.rs:117
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"Програмата „Роботи“ не може да открие валидни конфигурационни файлове. "
-"Проверете дали програмата е инсталирана правилно."
-
-#: src/application.rs:159
+#: src/application.rs:146
 msgid "New Game"
 msgstr "Нова игра"
 
-#: src/application.rs:161
+#: src/application.rs:148
 msgid "Are you sure you want to discard the current game?"
 msgstr "Искате ли да приключите тази игра?"
 
-#: src/application.rs:165
+#: src/application.rs:152
 msgid "Keep _Playing"
 msgstr "_Продължаване на играта"
 
-#: src/application.rs:166 src/window.rs:200
+#: src/application.rs:153 src/window.rs:201
 msgid "_New Game"
 msgstr "_Нова игра"
 
-#: src/application.rs:214
+#: src/application.rs:200
 msgid "Based on classic BSD Robots"
 msgstr "Базирана на класическата игра „BSD Robots“"
 
-#: src/application.rs:226
+#: src/application.rs:212
 msgid "translator-credits"
 msgstr ""
 "Ростислав „zbrox“ Райков &lt;<a href='mailto:zbrox@i-space.org'>zbrox@i-"
@@ -270,7 +267,7 @@ msgstr ""
 "Докладвайте за грешки в превода в <a href='https://fsa-bg.org/project/gtp/"
 "newticket'>съответния раздел</a>."
 
-#: src/controls/controls.rs:31 src/properties_dialog.rs:63
+#: src/controls/controls.rs:31 src/properties_dialog.rs:62
 msgid "Keyboard"
 msgstr "Клавиатура"
 
@@ -278,15 +275,15 @@ msgstr "Клавиатура"
 msgid "_Restore Defaults"
 msgstr "_Връщане на стандартните настройки"
 
-#: src/controls/editor.rs:131
+#: src/controls/editor.rs:148
 msgid "New accelerator…"
 msgstr "Нова клавишна комбинация…"
 
-#: src/controls/editor.rs:141
+#: src/controls/editor.rs:155
 msgid "Disabled"
 msgstr "Изключено"
 
-#: src/game_area.rs:424
+#: src/game_area.rs:486
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -294,71 +291,71 @@ msgstr ""
 "Поздравления, вие победихте „Роботи“!\n"
 "Но можете ли да го направите пак?"
 
-#: src/game_area.rs:429
+#: src/game_area.rs:491
 msgid "There are no teleport locations left!!"
 msgstr "Няма повече места за телепортиране!"
 
-#: src/game_config.rs:58 src/scores/scores.rs:70
+#: src/game_config.rs:84 src/scores/scores.rs:70
 msgid "Classic robots"
 msgstr "Класически роботи"
 
-#: src/game_config.rs:59 src/scores/scores.rs:75
-msgid "Nightmare"
-msgstr "Кошмарно трудни роботи"
-
-#: src/game_config.rs:60 src/scores/scores.rs:80
-msgid "Robots2"
-msgstr "Роботи-2"
-
-#: src/game_config.rs:61 src/scores/scores.rs:83
-msgid "Robots2 easy"
-msgstr "Лесни Роботи-2"
-
-#: src/game_config.rs:62 src/scores/scores.rs:89
+#: src/game_config.rs:109 src/scores/scores.rs:89
 msgid "Robots with safe teleport"
 msgstr "Роботи със сигурен телепорт"
 
-#: src/properties_dialog.rs:43
+#: src/game_config.rs:123 src/scores/scores.rs:80
+msgid "Robots2"
+msgstr "Роботи-2"
+
+#: src/game_config.rs:154 src/scores/scores.rs:83
+msgid "Robots2 easy"
+msgstr "Лесни Роботи-2"
+
+#: src/game_config.rs:167 src/scores/scores.rs:75
+msgid "Nightmare"
+msgstr "Кошмарно трудни роботи"
+
+#: src/properties_dialog.rs:42
 msgid "Game"
 msgstr "Игра"
 
-#: src/properties_dialog.rs:52
+#: src/properties_dialog.rs:51
 msgid "Appearance"
 msgstr "Външен вид"
 
-#: src/properties_dialog.rs:95
+#: src/properties_dialog.rs:94
 msgid "_Use safe moves"
 msgstr "_Използване на сигурни ходове"
 
-#: src/properties_dialog.rs:98
+#: src/properties_dialog.rs:97
 msgid "Prevent accidental moves that result in getting killed."
 msgstr "Предпазване от случайни, смъртоносни ходове."
 
-#: src/properties_dialog.rs:105
+#: src/properties_dialog.rs:104
 msgid "U_se super safe moves"
 msgstr "_Използване на изключително сигурни ходове"
 
-#: src/properties_dialog.rs:107
+#: src/properties_dialog.rs:106
 msgid "Prevents all moves that result in getting killed."
 msgstr "Предпазване от всички смъртоносни ходове."
 
-#: src/properties_dialog.rs:136
+#: src/properties_dialog.rs:135
 msgid "_Enable sounds"
 msgstr "_Включване на звуците"
 
-#: src/properties_dialog.rs:139
+#: src/properties_dialog.rs:138
 msgid "Play sounds for events like winning a level and dying."
 msgstr "Пускане на звуци за събития като спечелване на ниво или умиране."
 
-#: src/properties_dialog.rs:166
+#: src/properties_dialog.rs:165
 msgid "Game Type"
 msgstr "Вид игра"
 
-#: src/properties_dialog.rs:186
+#: src/properties_dialog.rs:185
 msgid "_Image theme:"
 msgstr "_Тема на изображенията:"
 
-#: src/properties_dialog.rs:226
+#: src/properties_dialog.rs:225
 msgid "_Background color:"
 msgstr "_Цвят на фона:"
 
@@ -458,27 +455,27 @@ msgstr "_Безопасно телепортиране"
 msgid "_Wait for Robots"
 msgstr "_Изчакване на роботите"
 
-#: src/window.rs:204
+#: src/window.rs:205
 msgid "_Scores"
 msgstr "_Резултати"
 
-#: src/window.rs:212
+#: src/window.rs:213
 msgid "_Preferences"
 msgstr "_Настройки"
 
-#: src/window.rs:216
+#: src/window.rs:217
 msgid "_Help"
 msgstr "Помо_щ"
 
-#: src/window.rs:220
+#: src/window.rs:221
 msgid "_About Robots"
 msgstr "_Относно"
 
-#: src/window.rs:280
+#: src/window.rs:268
+#, rust-format
 msgid "Level: {level}\tScore: {score}"
 msgstr "Ниво: {level}\tРезултат: {score}"
 
-#: src/window.rs:286
-#, c-format
+#: src/window.rs:274
 msgid "(Remaining: %d)"
 msgstr "(Остават: %d)"

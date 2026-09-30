@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-games.HEAD.he\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-robots/issues/\n"
-"POT-Creation-Date: 2025-01-12 21:08+0000\n"
-"PO-Revision-Date: 2025-01-19 11:53+0200\n"
+"POT-Creation-Date: 2026-03-25 23:54+0000\n"
+"PO-Revision-Date: 2026-09-30 08:59+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <yoseforb@gmail.com>\n"
 "Language: he\n"
@@ -19,20 +19,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.9\n"
 "X-Launchpad-Export-Date: 2008-01-13 04:36+0000\n"
 
-#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:7
-#: src/application.rs:71 src/application.rs:210 src/window.rs:53
+#: data/org.gnome.Robots.desktop.in:2 data/org.gnome.Robots.metainfo.xml.in:7
+#: src/application.rs:71 src/application.rs:196 src/window.rs:53
 msgid "Robots"
 msgstr "רובוטים"
 
-#: data/org.gnome.Robots.desktop.in:4 data/org.gnome.Robots.metainfo.xml.in:8
+#: data/org.gnome.Robots.desktop.in:3 data/org.gnome.Robots.metainfo.xml.in:8
 msgid "Avoid the robots and make them crash into each other"
 msgstr "התחמקות מהרובוטים וכך לגרום להם להתנגש אחד בשני"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Robots.desktop.in:6
+#: data/org.gnome.Robots.desktop.in:5
 msgid "game;arcade;teleport;"
 msgstr "משחק;ארקייד;עלילה;שיגור;טלפורט;"
 
@@ -69,9 +69,14 @@ msgstr ""
 "teleportation could land you right next to a robot, who will kill you. "
 "Survive for as long as possible!"
 
-#: data/org.gnome.Robots.metainfo.xml.in:65
+#: data/org.gnome.Robots.metainfo.xml.in:31
+msgid "A game preview"
+msgstr "תצוגת משחק מקדימה"
+
+#: data/org.gnome.Robots.metainfo.xml.in:72
+#: data/org.gnome.Robots.metainfo.xml.in:74
 msgid "Andrey Kutejko"
-msgstr "Andrey Kutejko"
+msgstr "אנדריי קוטייקו"
 
 #: data/org.gnome.Robots.gschema.xml:5
 msgid "Robot image theme"
@@ -134,7 +139,7 @@ msgstr ""
 
 #: data/org.gnome.Robots.gschema.xml:35 src/controls/controls.rs:35
 msgid "Key to move NW"
-msgstr "לחיצת מקש לתנועה לצפון-מערב"
+msgstr "מקש לתנועה לצפון-מערב"
 
 #: data/org.gnome.Robots.gschema.xml:36
 msgid "The key used to move north-west."
@@ -142,7 +147,7 @@ msgstr "The key used to move north-west."
 
 #: data/org.gnome.Robots.gschema.xml:40 src/controls/controls.rs:36
 msgid "Key to move N"
-msgstr "לחיצת מקש לתנועה צפונה"
+msgstr "מקש לתנועה צפונה"
 
 #: data/org.gnome.Robots.gschema.xml:41
 msgid "The key used to move north."
@@ -150,7 +155,7 @@ msgstr "The key used to move north."
 
 #: data/org.gnome.Robots.gschema.xml:45 src/controls/controls.rs:37
 msgid "Key to move NE"
-msgstr "לחיצת מקש לתנועה לצפון-מזרח"
+msgstr "מקש לתנועה לצפון-מזרח"
 
 #: data/org.gnome.Robots.gschema.xml:46
 msgid "The key used to move north-east."
@@ -174,7 +179,7 @@ msgstr "The key used to hold still."
 
 #: data/org.gnome.Robots.gschema.xml:60 src/controls/controls.rs:40
 msgid "Key to move E"
-msgstr "לחיצת מקשה לתנועה מזרחה"
+msgstr "מקש לתנועה מזרחה"
 
 #: data/org.gnome.Robots.gschema.xml:61
 msgid "The key used to move east."
@@ -190,7 +195,7 @@ msgstr "The key used to move south-west."
 
 #: data/org.gnome.Robots.gschema.xml:70 src/controls/controls.rs:42
 msgid "Key to move S"
-msgstr "לחיצת מקש לתנועה דרומה"
+msgstr "מקש לתנועה דרומה"
 
 #: data/org.gnome.Robots.gschema.xml:71
 msgid "The key used to move south."
@@ -206,45 +211,37 @@ msgstr "The key used to move south-east."
 
 #: data/org.gnome.Robots.gschema.xml:80
 msgid "Width of the window in pixels"
-msgstr "Width of the window in pixels"
+msgstr "רוחב החלון בפיקסלים"
 
 #: data/org.gnome.Robots.gschema.xml:84
 msgid "Height of the window in pixels"
-msgstr "Height of the window in pixels"
+msgstr "גובה החלון בפיקסלים"
 
 #: data/org.gnome.Robots.gschema.xml:88
 msgid "true if the window is maximized"
-msgstr "true if the window is maximized"
+msgstr "חיובי (true) אם החלון מוגדל"
 
-#: src/application.rs:117
-msgid ""
-"The program Robots was unable to find any valid game configuration files. "
-"Please check that the program is installed correctly."
-msgstr ""
-"התכנית רובוטי GNOME לא הצליחה למצוא קובצי הגדרת משחק תקינים. נא לבדוק "
-"שהתכנית מותקנת כראוי."
-
-#: src/application.rs:159
+#: src/application.rs:146
 msgid "New Game"
 msgstr "משחק חדש"
 
-#: src/application.rs:161
+#: src/application.rs:148
 msgid "Are you sure you want to discard the current game?"
-msgstr "האם ברצונך לבטל את המשחק הנוכחי?"
+msgstr "לבטל את המשחק הנוכחי?"
 
-#: src/application.rs:165
+#: src/application.rs:152
 msgid "Keep _Playing"
 msgstr "להמשיך _לשחק"
 
-#: src/application.rs:166 src/window.rs:200
+#: src/application.rs:153 src/window.rs:201
 msgid "_New Game"
 msgstr "_משחק חדש"
 
-#: src/application.rs:214
+#: src/application.rs:200
 msgid "Based on classic BSD Robots"
 msgstr "מבוסס על BSD רובוטים הקלאסי"
 
-#: src/application.rs:226
+#: src/application.rs:212
 msgid "translator-credits"
 msgstr ""
 "גיל אשר <dolfin@rpg.org.il>\n"
@@ -259,7 +256,7 @@ msgstr ""
 "מיזם תרגום GNOME לעברית:\n"
 "https://l10n.gnome.org/teams/he/"
 
-#: src/controls/controls.rs:31 src/properties_dialog.rs:63
+#: src/controls/controls.rs:31 src/properties_dialog.rs:62
 msgid "Keyboard"
 msgstr "מקלדת"
 
@@ -267,15 +264,15 @@ msgstr "מקלדת"
 msgid "_Restore Defaults"
 msgstr "_חזרה להגדרות בררת המחדל"
 
-#: src/controls/editor.rs:131
+#: src/controls/editor.rs:148
 msgid "New accelerator…"
 msgstr "מאיץ חדש…"
 
-#: src/controls/editor.rs:141
+#: src/controls/editor.rs:155
 msgid "Disabled"
 msgstr "מושבת"
 
-#: src/game_area.rs:424
+#: src/game_area.rs:486
 msgid ""
 "Congratulations, You Have Defeated the Robots!! \n"
 "But Can You do it Again?"
@@ -283,51 +280,71 @@ msgstr ""
 "ברכות, הבסת את הרובוטים!! \n"
 "אך האם יש לך את היכולת לעשות זאת שוב?"
 
-#: src/game_area.rs:429
+#: src/game_area.rs:491
 msgid "There are no teleport locations left!!"
 msgstr "לא נותרו מקומות לשיגור!!"
 
-#: src/properties_dialog.rs:43
+#: src/game_config.rs:84 src/scores/scores.rs:70
+msgid "Classic robots"
+msgstr "רובוטים קלסי"
+
+#: src/game_config.rs:109 src/scores/scores.rs:89
+msgid "Robots with safe teleport"
+msgstr "רובוטים עם שיגור בטוח"
+
+#: src/game_config.rs:123 src/scores/scores.rs:80
+msgid "Robots2"
+msgstr "רובוטים2"
+
+#: src/game_config.rs:154 src/scores/scores.rs:83
+msgid "Robots2 easy"
+msgstr "רובוטים2 קל"
+
+#: src/game_config.rs:167 src/scores/scores.rs:75
+msgid "Nightmare"
+msgstr "סיוט"
+
+#: src/properties_dialog.rs:42
 msgid "Game"
 msgstr "משחק"
 
-#: src/properties_dialog.rs:52
+#: src/properties_dialog.rs:51
 msgid "Appearance"
 msgstr "מראה"
 
-#: src/properties_dialog.rs:95
+#: src/properties_dialog.rs:94
 msgid "_Use safe moves"
-msgstr "השת_מש במהלכים בטוחים"
+msgstr "להשת_מש במהלכים בטוחים"
 
-#: src/properties_dialog.rs:98
+#: src/properties_dialog.rs:97
 msgid "Prevent accidental moves that result in getting killed."
-msgstr "מנע תנועות אקראיות שעלולות להוביל למותך."
+msgstr "כדאי להימנע מתנועות אקראיות שעלולות להוביל למותך."
 
-#: src/properties_dialog.rs:105
+#: src/properties_dialog.rs:104
 msgid "U_se super safe moves"
-msgstr "_השתמש במהלכים בטוחים מאוד"
+msgstr "ל_השתמש במהלכים בטוחים מאוד"
 
-#: src/properties_dialog.rs:107
+#: src/properties_dialog.rs:106
 msgid "Prevents all moves that result in getting killed."
-msgstr "מונע את כל התנועות שמובילות למותך."
+msgstr "מניעת כל התנועות שמובילות למותך."
 
-#: src/properties_dialog.rs:136
+#: src/properties_dialog.rs:135
 msgid "_Enable sounds"
 msgstr "ה_פעלת צלילים"
 
-#: src/properties_dialog.rs:139
+#: src/properties_dialog.rs:138
 msgid "Play sounds for events like winning a level and dying."
-msgstr "יש להשמיע צלילים עבור אירועים כגון ניצחון בשלב ותמותה."
+msgstr "יש להשמיע צלילים עבור אירועים כגון ניצחון בשלב ומוות."
 
-#: src/properties_dialog.rs:166
+#: src/properties_dialog.rs:165
 msgid "Game Type"
 msgstr "סוג משחק"
 
-#: src/properties_dialog.rs:186
+#: src/properties_dialog.rs:185
 msgid "_Image theme:"
 msgstr "ערכת נושא ל_תמונה:"
 
-#: src/properties_dialog.rs:226
+#: src/properties_dialog.rs:225
 msgid "_Background color:"
 msgstr "_צבע הרקע:"
 
@@ -375,10 +392,6 @@ msgstr "צריך לשחק כמה משחקים כדי שהניקוד שלך יו�
 msgid "High Scores"
 msgstr "תוצאות מובילות"
 
-#: src/scores/scores.rs:70
-msgid "Classic robots"
-msgstr "רובוטים קלסי"
-
 #: src/scores/scores.rs:71
 msgid "Classic robots with safe moves"
 msgstr "רובוטים קלסי עם תנועה בטוחה"
@@ -386,10 +399,6 @@ msgstr "רובוטים קלסי עם תנועה בטוחה"
 #: src/scores/scores.rs:73
 msgid "Classic robots with super-safe moves"
 msgstr "רובוטים קלסי עם תנועה סופר-בטוחה"
-
-#: src/scores/scores.rs:75
-msgid "Nightmare"
-msgstr "סיוט"
 
 #: src/scores/scores.rs:76
 msgid "Nightmare with safe moves"
@@ -399,10 +408,6 @@ msgstr "סיוט עם תנועה בטוחה"
 msgid "Nightmare with super-safe moves"
 msgstr "סיוט עם תנועה סופר-בטוחה"
 
-#: src/scores/scores.rs:80
-msgid "Robots2"
-msgstr "רובוטים2"
-
 #: src/scores/scores.rs:81
 msgid "Robots2 with safe moves"
 msgstr "רובוטים2  עם תנועה בטוחה"
@@ -411,10 +416,6 @@ msgstr "רובוטים2  עם תנועה בטוחה"
 msgid "Robots2 with super-safe moves"
 msgstr "רובוטים2  עם תנועה סופר-בטוחה"
 
-#: src/scores/scores.rs:83
-msgid "Robots2 easy"
-msgstr "רובוטים2 קל"
-
 #: src/scores/scores.rs:84
 msgid "Robots2 easy with safe moves"
 msgstr "רובוטים2 קל עם תנועות בטוחות"
@@ -422,10 +423,6 @@ msgstr "רובוטים2 קל עם תנועות בטוחות"
 #: src/scores/scores.rs:86
 msgid "Robots2 easy with super-safe moves"
 msgstr "רובוטים2 קל עם תנועות סופר-בטוחות"
-
-#: src/scores/scores.rs:89
-msgid "Robots with safe teleport"
-msgstr "רובוטים עם שיגור בטוח"
 
 #: src/scores/scores.rs:92
 msgid "Robots with safe teleport with safe moves"
@@ -447,30 +444,37 @@ msgstr "שיגור _בטוח"
 msgid "_Wait for Robots"
 msgstr "המ_תנה לרובוטים"
 
-#: src/window.rs:204
+#: src/window.rs:205
 msgid "_Scores"
 msgstr "_תוצאות"
 
-#: src/window.rs:212
+#: src/window.rs:213
 msgid "_Preferences"
 msgstr "ה_עדפות"
 
-#: src/window.rs:216
+#: src/window.rs:217
 msgid "_Help"
 msgstr "_עזרה"
 
-#: src/window.rs:220
+#: src/window.rs:221
 msgid "_About Robots"
-msgstr "על _אודות רובוטים"
+msgstr "על _רובוטים"
 
-#: src/window.rs:280
+#: src/window.rs:268
+#, rust-format
 msgid "Level: {level}\tScore: {score}"
 msgstr "שלב: {level}\tניקוד: {score}"
 
-#: src/window.rs:286
-#, c-format
+#: src/window.rs:274
 msgid "(Remaining: %d)"
 msgstr "(נותר: %d)"
+
+#~ msgid ""
+#~ "The program Robots was unable to find any valid game configuration files. "
+#~ "Please check that the program is installed correctly."
+#~ msgstr ""
+#~ "התכנית רובוטי GNOME לא הצליחה למצוא קובצי הגדרת משחק תקינים. נא לבדוק "
+#~ "שהתכנית מותקנת כראוי."
 
 #~ msgid "Show toolbar"
 #~ msgstr "Show toolbar"

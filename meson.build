@@ -7,10 +7,10 @@ i18n = import('i18n')
 
 application_id = 'org.gnome.Robots'
 
-gio_dependency = dependency('gio-2.0', version: '>= 2.86')
-glib_dependency = dependency('glib-2.0', version: '>= 2.86')
-gtk_dependency = dependency('gtk4', version: '>= 4.20.0')
-adw_dependency = dependency('libadwaita-1', version: '>= 1.8')
+gio_dependency = dependency('gio-2.0', version: '>= 2.88')
+glib_dependency = dependency('glib-2.0', version: '>= 2.88')
+gtk_dependency = dependency('gtk4', version: '>= 4.22.0')
+adw_dependency = dependency('libadwaita-1', version: '>= 1.10')
 glycin_dependency = dependency('glycin-2', version: '>= 2.0')
 glycin_gtk4_dependency = dependency('glycin-gtk4-2', version: '>= 2.0')
 

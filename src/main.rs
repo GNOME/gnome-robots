@@ -48,7 +48,9 @@ mod window;
 mod window_size;
 
 fn main() -> Result<impl Termination, Box<dyn Error>> {
-    gettextrs::setlocale(gettextrs::LocaleCategory::LcAll, "");
+    unsafe {
+        gettextrs::setlocale(gettextrs::LocaleCategory::LcAll, "");
+    }
     gettextrs::bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR)?;
     gettextrs::bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8")?;
     gettextrs::textdomain(GETTEXT_PACKAGE)?;

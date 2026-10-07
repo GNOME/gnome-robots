@@ -6,7 +6,7 @@ rust-version = "1.93"
 
 [dependencies]
 gtk = { package = "gtk4", version = "0.11", features = ["gnome_50"] }
-adw = { package = "libadwaita", version = "0.9", features = ["v1_10"] }
+adw = { package = "libadwaita", version = "0.9", features = ["v1_9"] }
 gly = { package = "libglycin-rebind", version = "0.2" }
 gly_gtk = { package = "libglycin-gtk4-rebind", version = "0.2" }
 gettext-rs = { version = "0.8", features = ["gettext-system"] }

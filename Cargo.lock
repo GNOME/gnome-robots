@@ -310,9 +310,9 @@ dependencies = [
 
 [[package]]
 name = "gettext-sys"
-version = "0.26.0"
+version = "0.27.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4ea859ab0dd7e70ff823032b3e077d03d39c965d68c6c10775add60e999d8ee9"
+checksum = "4caa7e4460b196107cc1bb2629488e8b6dbb7f34f6683ea6753c4ac22f590785"
 dependencies = [
  "cc",
  "temp-dir",
